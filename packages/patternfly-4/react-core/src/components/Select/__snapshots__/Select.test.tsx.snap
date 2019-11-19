@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`checkbox select renders checkbox select groups successfully - old classes 1`] = `
-<Component
+<Select
   isExpanded={true}
   isGrouped={true}
   onSelect={[MockFunction]}
@@ -738,11 +738,11 @@ exports[`checkbox select renders checkbox select groups successfully - old class
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   isGrouped={true}
   onSelect={[MockFunction]}
@@ -1543,11 +1543,11 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`checkbox select renders closed successfully - old classes 1`] = `
-<Component
+<Select
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   variant="checkbox"
@@ -1755,11 +1755,11 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`checkbox select renders closed successfully 1`] = `
-<Component
+<Select
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   variant="checkbox"
@@ -1983,11 +1983,11 @@ exports[`checkbox select renders closed successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`checkbox select renders expanded successfully - old classes 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -2422,11 +2422,11 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`checkbox select renders expanded successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -2893,11 +2893,11 @@ exports[`checkbox select renders expanded successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -3344,7 +3344,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`select custom select filter filters properly 1`] = `
@@ -3762,7 +3762,7 @@ exports[`select custom select filter filters properly 1`] = `
 `;
 
 exports[`select renders select groups successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   isGrouped={true}
   onSelect={[MockFunction]}
@@ -4483,11 +4483,11 @@ exports[`select renders select groups successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`select renders up drection successfully 1`] = `
-<Component
+<Select
   direction="up"
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -4717,11 +4717,11 @@ exports[`select renders up drection successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`select single select renders closed successfully 1`] = `
-<Component
+<Select
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   variant="single"
@@ -4949,11 +4949,11 @@ exports[`select single select renders closed successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`select single select renders disabled successfully 1`] = `
-<Component
+<Select
   isDisabled={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -5184,11 +5184,11 @@ exports[`select single select renders disabled successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`select single select renders expanded successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -5617,11 +5617,11 @@ exports[`select single select renders expanded successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`select single select renders expanded successfully with custom objects 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -6034,7 +6034,7 @@ exports[`select single select renders expanded successfully with custom objects 
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`toggle icon select checkbox 1`] = `
@@ -6078,7 +6078,7 @@ exports[`toggle icon typeahead select 1`] = `
 `;
 
 exports[`typeahead multi select renders closed successfully 1`] = `
-<Component
+<Select
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   variant="typeaheadmulti"
@@ -6196,10 +6196,10 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       >
         <SelectToggle
           ariaLabelToggle="Options menu"
-          ariaLabelledBy=" pf-toggle-id-22"
+          ariaLabelledBy=" pf-toggle-id-20"
           className=""
           handleTypeaheadKeys={[Function]}
-          id="pf-toggle-id-22"
+          id="pf-toggle-id-20"
           isActive={false}
           isDisabled={false}
           isExpanded={false}
@@ -6236,9 +6236,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     aria-label="Options menu"
-                    aria-labelledby=" pf-toggle-id-22"
+                    aria-labelledby=" pf-toggle-id-20"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                    id="pf-toggle-id-22"
+                    id="pf-toggle-id-20"
                   >
                     <svg
                       aria-hidden="true"
@@ -6290,10 +6290,10 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               aria-expanded={false}
               aria-haspopup="listbox"
               aria-label="Options menu"
-              aria-labelledby=" pf-toggle-id-22"
+              aria-labelledby=" pf-toggle-id-20"
               className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
-              id="pf-toggle-id-22"
+              id="pf-toggle-id-20"
               onClick={[Function]}
             >
               <CaretDownIcon
@@ -6330,11 +6330,11 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`typeahead multi select renders expanded successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -6454,10 +6454,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       >
         <SelectToggle
           ariaLabelToggle="Options menu"
-          ariaLabelledBy=" pf-toggle-id-23"
+          ariaLabelledBy=" pf-toggle-id-21"
           className=""
           handleTypeaheadKeys={[Function]}
-          id="pf-toggle-id-23"
+          id="pf-toggle-id-21"
           isActive={false}
           isDisabled={false}
           isExpanded={true}
@@ -6494,9 +6494,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-expanded="true"
                     aria-haspopup="listbox"
                     aria-label="Options menu"
-                    aria-labelledby=" pf-toggle-id-23"
+                    aria-labelledby=" pf-toggle-id-21"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                    id="pf-toggle-id-23"
+                    id="pf-toggle-id-21"
                   >
                     <svg
                       aria-hidden="true"
@@ -6601,10 +6601,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-expanded={true}
               aria-haspopup="listbox"
               aria-label="Options menu"
-              aria-labelledby=" pf-toggle-id-23"
+              aria-labelledby=" pf-toggle-id-21"
               className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
-              id="pf-toggle-id-23"
+              id="pf-toggle-id-21"
               onClick={[Function]}
             >
               <CaretDownIcon
@@ -6787,11 +6787,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`typeahead multi select renders selected successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -6926,10 +6926,10 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       >
         <SelectToggle
           ariaLabelToggle="Options menu"
-          ariaLabelledBy=" pf-toggle-id-24"
+          ariaLabelledBy=" pf-toggle-id-22"
           className=""
           handleTypeaheadKeys={[Function]}
-          id="pf-toggle-id-24"
+          id="pf-toggle-id-22"
           isActive={false}
           isDisabled={false}
           isExpanded={true}
@@ -7052,9 +7052,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     aria-expanded="true"
                     aria-haspopup="listbox"
                     aria-label="Options menu"
-                    aria-labelledby=" pf-toggle-id-24"
+                    aria-labelledby=" pf-toggle-id-22"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                    id="pf-toggle-id-24"
+                    id="pf-toggle-id-22"
                   >
                     <svg
                       aria-hidden="true"
@@ -7193,7 +7193,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     onToggleCollapse={[Function]}
                     withToolbar={false}
                   >
-                    <Component
+                    <Chip
                       closeBtnAriaLabel="Remove"
                       component="li"
                       key=".$Mr"
@@ -7249,7 +7249,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 id="remove_pf-random-id-0"
                                 onClick={[Function]}
                               >
-                                <Component
+                                <Button
                                   aria-label="Remove"
                                   aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                                   className=""
@@ -7338,14 +7338,14 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                       </button>
                                     </Button>
                                   </ComponentWithOuia>
-                                </Component>
+                                </Button>
                               </Component>
                             </li>
                           </GenerateId>
                         </Chip>
                       </ComponentWithOuia>
-                    </Component>
-                    <Component
+                    </Chip>
+                    <Chip
                       closeBtnAriaLabel="Remove"
                       component="li"
                       key=".$Mrs"
@@ -7401,7 +7401,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 id="remove_pf-random-id-1"
                                 onClick={[Function]}
                               >
-                                <Component
+                                <Button
                                   aria-label="Remove"
                                   aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                                   className=""
@@ -7490,13 +7490,13 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                       </button>
                                     </Button>
                                   </ComponentWithOuia>
-                                </Component>
+                                </Button>
                               </Component>
                             </li>
                           </GenerateId>
                         </Chip>
                       </ComponentWithOuia>
-                    </Component>
+                    </Chip>
                   </InnerChipGroup>
                 </ul>
               </ChipGroup>
@@ -7554,10 +7554,10 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-expanded={true}
               aria-haspopup="listbox"
               aria-label="Options menu"
-              aria-labelledby=" pf-toggle-id-24"
+              aria-labelledby=" pf-toggle-id-22"
               className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
-              id="pf-toggle-id-24"
+              id="pf-toggle-id-22"
               onClick={[Function]}
             >
               <CaretDownIcon
@@ -7803,7 +7803,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`typeahead multi select test onChange 1`] = `
@@ -8133,7 +8133,7 @@ exports[`typeahead multi select test onChange 1`] = `
 `;
 
 exports[`typeahead select renders closed successfully 1`] = `
-<Component
+<Select
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   variant="typeahead"
@@ -8384,11 +8384,11 @@ exports[`typeahead select renders closed successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`typeahead select renders expanded successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -8840,11 +8840,11 @@ exports[`typeahead select renders expanded successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`typeahead select renders selected successfully 1`] = `
-<Component
+<Select
   isExpanded={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
@@ -9397,7 +9397,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       </div>
     </Select>
   </ComponentWithOuia>
-</Component>
+</Select>
 `;
 
 exports[`typeahead select test creatable option 1`] = `

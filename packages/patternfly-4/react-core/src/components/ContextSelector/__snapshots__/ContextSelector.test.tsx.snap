@@ -69,7 +69,7 @@ exports[`Renders ContextSelector open 1`] = `
             type="search"
             value=""
           />
-          <Component
+          <Button
             aria-label="Search menu items"
             id="pf-context-selector-search-button-id-0"
             onClick={[Function]}
@@ -82,7 +82,7 @@ exports[`Renders ContextSelector open 1`] = `
               size="sm"
               title={null}
             />
-          </Component>
+          </Button>
         </Component>
       </div>
       <ContextProvider

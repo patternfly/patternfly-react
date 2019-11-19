@@ -43,7 +43,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
       onMouseUp={[MockFunction]}
       variant="primary"
     >
-      <Component
+      <Button
         aria-label="Confirm"
         onMouseUp={[MockFunction]}
         variant="primary"
@@ -114,7 +114,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
             </button>
           </Button>
         </ComponentWithOuia>
-      </Component>
+      </Button>
     </ConfirmButton>
     <CancelButton
       aria-label="Discard"
@@ -122,7 +122,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
       onMouseUp={[MockFunction]}
       variant="plain"
     >
-      <Component
+      <Button
         aria-label="Discard"
         onMouseUp={[MockFunction]}
         variant="plain"
@@ -193,7 +193,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
             </button>
           </Button>
         </ComponentWithOuia>
-      </Component>
+      </Button>
     </CancelButton>
   </div>
 </ConfirmButtons>

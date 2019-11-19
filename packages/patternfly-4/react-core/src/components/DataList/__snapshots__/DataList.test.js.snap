@@ -33,11 +33,11 @@ exports[`DataList DataListAction button 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <Component
+  <Button
     id="delete-item-1"
   >
     Delete
-  </Component>
+  </Button>
 </div>
 `;
 

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should call handleScrollButtons tabs with scrolls 1`] = `
-<Component
+<Tabs
   id="handleScrollButtons"
   isFilled={true}
 >
@@ -359,11 +359,11 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       </ForwardRef>
     </Tabs>
   </ComponentWithOuia>
-</Component>
+</Tabs>
 `;
 
 exports[`should call scrollLeft tabs with scrolls 1`] = `
-<Component
+<Tabs
   id="scrollLeft"
   isFilled={true}
 >
@@ -721,11 +721,11 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       </ForwardRef>
     </Tabs>
   </ComponentWithOuia>
-</Component>
+</Tabs>
 `;
 
 exports[`should call scrollRight tabs with scrolls 1`] = `
-<Component
+<Tabs
   id="scrollRight"
   isFilled={true}
 >
@@ -1083,7 +1083,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       </ForwardRef>
     </Tabs>
   </ComponentWithOuia>
-</Component>
+</Tabs>
 `;
 
 exports[`should render accessible tabs 1`] = `

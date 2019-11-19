@@ -39,7 +39,7 @@ exports[`optionsMenu expanded 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     dropdownItems={
       Array [
@@ -1073,7 +1073,7 @@ exports[`optionsMenu expanded 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -1117,7 +1117,7 @@ exports[`optionsMenu isDisabled 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     dropdownItems={
       Array [
@@ -1458,7 +1458,7 @@ exports[`optionsMenu isDisabled 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -1501,7 +1501,7 @@ exports[`optionsMenu open up 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     direction="up"
     dropdownItems={
@@ -1834,7 +1834,7 @@ exports[`optionsMenu open up 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -1877,7 +1877,7 @@ exports[`optionsMenu plain 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     dropdownItems={
       Array [
@@ -2132,7 +2132,7 @@ exports[`optionsMenu plain 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -2174,7 +2174,7 @@ exports[`optionsMenu regular 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     dropdownItems={
       Array [
@@ -2505,7 +2505,7 @@ exports[`optionsMenu regular 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -2549,7 +2549,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     direction="up"
     dropdownItems={
@@ -2884,7 +2884,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -2927,7 +2927,7 @@ exports[`optionsMenu right aligned 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     dropdownItems={
       Array [
@@ -3260,7 +3260,7 @@ exports[`optionsMenu right aligned 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -3307,7 +3307,7 @@ exports[`optionsMenu text 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     className=""
     dropdownItems={
       Array [
@@ -3775,6 +3775,6 @@ exports[`optionsMenu text 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;

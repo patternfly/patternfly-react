@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`component render custom pagination toggle 1`] = `
-<Component
+<Pagination
   itemCount={40}
   toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
 >
@@ -87,7 +87,7 @@ exports[`component render custom pagination toggle 1`] = `
           toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -590,7 +590,7 @@ exports[`component render custom pagination toggle 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -617,7 +617,7 @@ exports[`component render custom pagination toggle 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -700,8 +700,8 @@ exports[`component render custom pagination toggle 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -784,7 +784,7 @@ exports[`component render custom pagination toggle 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -806,7 +806,7 @@ exports[`component render custom pagination toggle 1`] = `
                 4
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -889,8 +889,8 @@ exports[`component render custom pagination toggle 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -973,17 +973,17 @@ exports[`component render custom pagination toggle 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render custom perPageOptions 1`] = `
-<Component
+<Pagination
   itemCount={40}
   perPageOptions={
     Array [
@@ -1076,7 +1076,7 @@ exports[`component render custom perPageOptions 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -1482,7 +1482,7 @@ exports[`component render custom perPageOptions 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -1509,7 +1509,7 @@ exports[`component render custom perPageOptions 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -1592,8 +1592,8 @@ exports[`component render custom perPageOptions 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -1676,7 +1676,7 @@ exports[`component render custom perPageOptions 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -1698,7 +1698,7 @@ exports[`component render custom perPageOptions 1`] = `
                 4
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -1781,8 +1781,8 @@ exports[`component render custom perPageOptions 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -1865,17 +1865,17 @@ exports[`component render custom perPageOptions 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render custom start end 1`] = `
-<Component
+<Pagination
   itemCount={40}
   itemsEnd={15}
   itemsStart={5}
@@ -1964,7 +1964,7 @@ exports[`component render custom start end 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -2517,7 +2517,7 @@ exports[`component render custom start end 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -2544,7 +2544,7 @@ exports[`component render custom start end 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={false}
@@ -2627,8 +2627,8 @@ exports[`component render custom start end 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={false}
@@ -2711,7 +2711,7 @@ exports[`component render custom start end 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -2733,7 +2733,7 @@ exports[`component render custom start end 1`] = `
                 4
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -2816,8 +2816,8 @@ exports[`component render custom start end 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -2900,17 +2900,17 @@ exports[`component render custom start end 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render empty per page options 1`] = `
-<Component
+<Pagination
   itemCount={40}
   perPageOptions={Array []}
 >
@@ -2977,7 +2977,7 @@ exports[`component render empty per page options 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={Array []}
             isOpen={false}
@@ -3107,7 +3107,7 @@ exports[`component render empty per page options 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -3134,7 +3134,7 @@ exports[`component render empty per page options 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -3217,8 +3217,8 @@ exports[`component render empty per page options 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -3301,7 +3301,7 @@ exports[`component render empty per page options 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -3323,7 +3323,7 @@ exports[`component render empty per page options 1`] = `
                 4
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -3406,8 +3406,8 @@ exports[`component render empty per page options 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -3490,17 +3490,17 @@ exports[`component render empty per page options 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render last page 1`] = `
-<Component
+<Pagination
   itemCount={20}
   page={2}
   perPage={10}
@@ -3589,7 +3589,7 @@ exports[`component render last page 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -4142,7 +4142,7 @@ exports[`component render last page 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -4169,7 +4169,7 @@ exports[`component render last page 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={false}
@@ -4252,8 +4252,8 @@ exports[`component render last page 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={false}
@@ -4336,7 +4336,7 @@ exports[`component render last page 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -4358,7 +4358,7 @@ exports[`component render last page 1`] = `
                 2
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={true}
@@ -4441,8 +4441,8 @@ exports[`component render last page 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={true}
@@ -4525,17 +4525,17 @@ exports[`component render last page 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render limited number of pages 1`] = `
-<Component
+<Pagination
   itemCount={20}
   perPage={20}
 >
@@ -4621,7 +4621,7 @@ exports[`component render limited number of pages 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -5174,7 +5174,7 @@ exports[`component render limited number of pages 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -5201,7 +5201,7 @@ exports[`component render limited number of pages 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -5284,8 +5284,8 @@ exports[`component render limited number of pages 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -5368,7 +5368,7 @@ exports[`component render limited number of pages 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -5390,7 +5390,7 @@ exports[`component render limited number of pages 1`] = `
                 1
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={true}
@@ -5473,8 +5473,8 @@ exports[`component render limited number of pages 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={true}
@@ -5557,17 +5557,17 @@ exports[`component render limited number of pages 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render no items 1`] = `
-<Component
+<Pagination
   itemCount={0}
 >
   <ComponentWithOuia
@@ -5650,7 +5650,7 @@ exports[`component render no items 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -6206,7 +6206,7 @@ exports[`component render no items 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -6233,7 +6233,7 @@ exports[`component render no items 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={false}
@@ -6316,8 +6316,8 @@ exports[`component render no items 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={false}
@@ -6400,7 +6400,7 @@ exports[`component render no items 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -6422,7 +6422,7 @@ exports[`component render no items 1`] = `
                 0
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={true}
@@ -6505,8 +6505,8 @@ exports[`component render no items 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={true}
@@ -6589,17 +6589,17 @@ exports[`component render no items 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render should render correctly bottom 1`] = `
-<Component
+<Pagination
   itemCount={20}
   variant="bottom"
 >
@@ -6663,7 +6663,7 @@ exports[`component render should render correctly bottom 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -7216,7 +7216,7 @@ exports[`component render should render correctly bottom 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -7243,7 +7243,7 @@ exports[`component render should render correctly bottom 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -7326,8 +7326,8 @@ exports[`component render should render correctly bottom 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -7410,7 +7410,7 @@ exports[`component render should render correctly bottom 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -7432,7 +7432,7 @@ exports[`component render should render correctly bottom 1`] = `
                 2
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -7515,8 +7515,8 @@ exports[`component render should render correctly bottom 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -7599,17 +7599,17 @@ exports[`component render should render correctly bottom 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render should render correctly compact 1`] = `
-<Component
+<Pagination
   isCompact={true}
   itemCount={20}
 >
@@ -7695,7 +7695,7 @@ exports[`component render should render correctly compact 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -8248,7 +8248,7 @@ exports[`component render should render correctly compact 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -8275,7 +8275,7 @@ exports[`component render should render correctly compact 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -8358,8 +8358,8 @@ exports[`component render should render correctly compact 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -8442,17 +8442,17 @@ exports[`component render should render correctly compact 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render should render correctly disabled 1`] = `
-<Component
+<Pagination
   isDisabled={true}
   itemCount={20}
 >
@@ -8538,7 +8538,7 @@ exports[`component render should render correctly disabled 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -9094,7 +9094,7 @@ exports[`component render should render correctly disabled 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -9121,7 +9121,7 @@ exports[`component render should render correctly disabled 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -9204,8 +9204,8 @@ exports[`component render should render correctly disabled 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -9288,7 +9288,7 @@ exports[`component render should render correctly disabled 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -9310,7 +9310,7 @@ exports[`component render should render correctly disabled 1`] = `
                 2
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={true}
@@ -9393,8 +9393,8 @@ exports[`component render should render correctly disabled 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={true}
@@ -9477,17 +9477,17 @@ exports[`component render should render correctly disabled 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render should render correctly top 1`] = `
-<Component
+<Pagination
   itemCount={20}
 >
   <ComponentWithOuia
@@ -9570,7 +9570,7 @@ exports[`component render should render correctly top 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -10123,7 +10123,7 @@ exports[`component render should render correctly top 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -10150,7 +10150,7 @@ exports[`component render should render correctly top 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -10233,8 +10233,8 @@ exports[`component render should render correctly top 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -10317,7 +10317,7 @@ exports[`component render should render correctly top 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -10339,7 +10339,7 @@ exports[`component render should render correctly top 1`] = `
                 2
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -10422,8 +10422,8 @@ exports[`component render should render correctly top 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -10506,17 +10506,17 @@ exports[`component render should render correctly top 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render titles 1`] = `
-<Component
+<Pagination
   itemCount={40}
   titles={
     Object {
@@ -10616,7 +10616,7 @@ exports[`component render titles 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -11170,7 +11170,7 @@ exports[`component render titles 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -11197,7 +11197,7 @@ exports[`component render titles 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -11280,8 +11280,8 @@ exports[`component render titles 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -11364,7 +11364,7 @@ exports[`component render titles 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -11386,7 +11386,7 @@ exports[`component render titles 1`] = `
                 4 bookss
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -11469,8 +11469,8 @@ exports[`component render titles 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -11553,17 +11553,17 @@ exports[`component render titles 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render up drop direction 1`] = `
-<Component
+<Pagination
   dropDirection="up"
   itemCount={40}
 >
@@ -11649,7 +11649,7 @@ exports[`component render up drop direction 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="up"
             dropdownItems={
               Array [
@@ -12202,7 +12202,7 @@ exports[`component render up drop direction 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -12229,7 +12229,7 @@ exports[`component render up drop direction 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={true}
@@ -12312,8 +12312,8 @@ exports[`component render up drop direction 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={true}
@@ -12396,7 +12396,7 @@ exports[`component render up drop direction 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -12418,7 +12418,7 @@ exports[`component render up drop direction 1`] = `
                 4
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={false}
@@ -12501,8 +12501,8 @@ exports[`component render up drop direction 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={false}
@@ -12585,17 +12585,17 @@ exports[`component render up drop direction 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;
 
 exports[`component render zero results 1`] = `
-<Component
+<Pagination
   itemCount={0}
 >
   <ComponentWithOuia
@@ -12678,7 +12678,7 @@ exports[`component render zero results 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <Component
+          <DropdownWithContext
             direction="down"
             dropdownItems={
               Array [
@@ -13234,7 +13234,7 @@ exports[`component render zero results 1`] = `
                 </div>
               </DropdownWithContext>
             </ComponentWithOuia>
-          </Component>
+          </DropdownWithContext>
         </PaginationOptionsMenu>
         <Navigation
           className=""
@@ -13261,7 +13261,7 @@ exports[`component render zero results 1`] = `
             aria-label="Pagination"
             className="pf-c-pagination__nav"
           >
-            <Component
+            <Button
               aria-label="Go to first page"
               data-action="first"
               isDisabled={false}
@@ -13344,8 +13344,8 @@ exports[`component render zero results 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to previous page"
               data-action="previous"
               isDisabled={false}
@@ -13428,7 +13428,7 @@ exports[`component render zero results 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
             <div
               className="pf-c-pagination__nav-page-select"
             >
@@ -13450,7 +13450,7 @@ exports[`component render zero results 1`] = `
                 0
               </span>
             </div>
-            <Component
+            <Button
               aria-label="Go to next page"
               data-action="next"
               isDisabled={true}
@@ -13533,8 +13533,8 @@ exports[`component render zero results 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
-            <Component
+            </Button>
+            <Button
               aria-label="Go to last page"
               data-action="last"
               isDisabled={true}
@@ -13617,11 +13617,11 @@ exports[`component render zero results 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </nav>
         </Navigation>
       </div>
     </Pagination>
   </ComponentWithOuia>
-</Component>
+</Pagination>
 `;

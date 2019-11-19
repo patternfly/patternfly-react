@@ -3,7 +3,7 @@
 exports[`RowWrapper renders correctly 1`] = `
 <table>
   <tbody>
-    <Component
+    <RowWrapper
       onResize={[MockFunction]}
       onScroll={[MockFunction]}
       trRef={
@@ -91,7 +91,7 @@ exports[`RowWrapper renders correctly 1`] = `
           />
         </RowWrapper>
       </ComponentWithOuia>
-    </Component>
+    </RowWrapper>
   </tbody>
 </table>
 `;
@@ -99,7 +99,7 @@ exports[`RowWrapper renders correctly 1`] = `
 exports[`RowWrapper renders expanded correctly 1`] = `
 <table>
   <tbody>
-    <Component
+    <RowWrapper
       row={
         Object {
           "isExpanded": true,
@@ -138,7 +138,7 @@ exports[`RowWrapper renders expanded correctly 1`] = `
           />
         </RowWrapper>
       </ComponentWithOuia>
-    </Component>
+    </RowWrapper>
   </tbody>
 </table>
 `;

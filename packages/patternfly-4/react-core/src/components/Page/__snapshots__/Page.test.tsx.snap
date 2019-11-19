@@ -327,7 +327,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         className="pf-c-page__main-breadcrumb"
       >
         <PageBreadcrumb>
-          <Component>
+          <Breadcrumb>
             <ComponentWithOuia
               component={[Function]}
               componentProps={
@@ -520,7 +520,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                 </nav>
               </Breadcrumb>
             </ComponentWithOuia>
-          </Component>
+          </Breadcrumb>
         </PageBreadcrumb>
       </section>
       <Component
@@ -568,7 +568,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
 <Page
   aria-label="Page layout"
   breadcrumb={
-    <Unknown>
+    <Breadcrumb>
       <Unknown>
         Section Home
       </Unknown>
@@ -588,7 +588,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
       >
         Section Landing
       </Unknown>
-    </Unknown>
+    </Breadcrumb>
   }
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
@@ -691,7 +691,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
       <section
         className="pf-c-page__main-breadcrumb"
       >
-        <Component>
+        <Breadcrumb>
           <ComponentWithOuia
             component={[Function]}
             componentProps={
@@ -884,7 +884,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
               </nav>
             </Breadcrumb>
           </ComponentWithOuia>
-        </Component>
+        </Breadcrumb>
       </section>
       <Component
         variant="default"

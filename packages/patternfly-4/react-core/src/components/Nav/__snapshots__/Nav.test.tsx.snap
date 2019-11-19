@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dark Nav List 1`] = `
-<Component
+<Nav
   className="test=nav-class"
   theme="dark"
 >
@@ -149,11 +149,11 @@ exports[`Dark Nav List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Default Nav List - Trigger item active update 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -288,11 +288,11 @@ exports[`Default Nav List - Trigger item active update 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Default Nav List 1`] = `
-<Component
+<Nav
   className="test=nav-class"
 >
   <ComponentWithOuia
@@ -438,11 +438,11 @@ exports[`Default Nav List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Expandable Nav List - Trigger toggle 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -654,11 +654,11 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Expandable Nav List 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -870,11 +870,11 @@ exports[`Expandable Nav List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Expandable Nav List with aria label 1`] = `
-<Component
+<Nav
   aria-label="Test"
 >
   <ComponentWithOuia
@@ -1095,11 +1095,11 @@ exports[`Expandable Nav List with aria label 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Horizontal Nav List 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -1298,11 +1298,11 @@ exports[`Horizontal Nav List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Nav Grouped List 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -1595,11 +1595,11 @@ exports[`Nav Grouped List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Nav List with custom item nodes 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -1736,11 +1736,11 @@ exports[`Nav List with custom item nodes 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Simple Nav List 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -1875,11 +1875,11 @@ exports[`Simple Nav List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;
 
 exports[`Tertiary Nav List 1`] = `
-<Component>
+<Nav>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -2078,5 +2078,5 @@ exports[`Tertiary Nav List 1`] = `
       </nav>
     </Nav>
   </ComponentWithOuia>
-</Component>
+</Nav>
 `;

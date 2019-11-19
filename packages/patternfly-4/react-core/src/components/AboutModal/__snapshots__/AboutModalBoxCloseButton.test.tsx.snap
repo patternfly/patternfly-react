@@ -4,7 +4,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
 <div
   className="pf-c-about-modal-box__close"
 >
-  <Component
+  <Button
     aria-label="Close Dialog"
     onClick={[Function]}
     variant="plain"
@@ -15,7 +15,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
       size="sm"
       title={null}
     />
-  </Component>
+  </Button>
 </div>
 `;
 
@@ -23,7 +23,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
 <div
   className="pf-c-about-modal-box__close"
 >
-  <Component
+  <Button
     aria-label="Close Dialog"
     onClick={[MockFunction]}
     variant="plain"
@@ -34,6 +34,6 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
       size="sm"
       title={null}
     />
-  </Component>
+  </Button>
 </div>
 `;

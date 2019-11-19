@@ -54,7 +54,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     aria-label="Application launcher"
     className=""
     direction="down"
@@ -919,7 +919,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </ApplicationLauncher>
 `;
 
@@ -976,7 +976,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     aria-label="Application launcher"
     className=""
     direction="up"
@@ -1303,7 +1303,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </ApplicationLauncher>
 `;
 
@@ -1360,7 +1360,7 @@ exports[`ApplicationLauncher dropup 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     aria-label="Application launcher"
     className=""
     direction="up"
@@ -1687,7 +1687,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </ApplicationLauncher>
 `;
 
@@ -1744,7 +1744,7 @@ exports[`ApplicationLauncher expanded 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     aria-label="Application launcher"
     className=""
     direction="down"
@@ -2602,7 +2602,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </ApplicationLauncher>
 `;
 
@@ -2659,7 +2659,7 @@ exports[`ApplicationLauncher regular 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     aria-label="Application launcher"
     className=""
     direction="down"
@@ -2986,7 +2986,7 @@ exports[`ApplicationLauncher regular 1`] = `
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </ApplicationLauncher>
 `;
 
@@ -3043,7 +3043,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     aria-label="Application launcher"
     className=""
     direction="down"
@@ -3370,6 +3370,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </ApplicationLauncher>
 `;

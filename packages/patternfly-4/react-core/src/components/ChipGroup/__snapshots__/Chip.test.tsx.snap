@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chip closable 1`] = `
-<Component
+<Chip
   className="my-chp-cls"
   id="chip_one"
 >
@@ -50,7 +50,7 @@ exports[`Chip closable 1`] = `
             id="remove_pf-random-id-1"
             onClick={[Function]}
           >
-            <Component
+            <Button
               aria-label="close"
               aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
               className=""
@@ -139,17 +139,17 @@ exports[`Chip closable 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </GenerateId>
     </Chip>
   </ComponentWithOuia>
-</Component>
+</Chip>
 `;
 
 exports[`Chip closable with tooltip 1`] = `
-<Component
+<Chip
   className="my-chp-cls"
   id="chip_one"
 >
@@ -198,7 +198,7 @@ exports[`Chip closable with tooltip 1`] = `
             id="remove_pf-random-id-2"
             onClick={[Function]}
           >
-            <Component
+            <Button
               aria-label="close"
               aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
               className=""
@@ -287,17 +287,17 @@ exports[`Chip closable with tooltip 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </GenerateId>
     </Chip>
   </ComponentWithOuia>
-</Component>
+</Chip>
 `;
 
 exports[`Chip overflow 1`] = `
-<Component
+<Chip
   className="my-chp-cls"
   isOverflowChip={true}
 >
@@ -336,7 +336,7 @@ exports[`Chip overflow 1`] = `
           <Component
             onClick={[Function]}
           >
-            <Component
+            <Button
               aria-label="close"
               className=""
               onClick={[Function]}
@@ -393,17 +393,17 @@ exports[`Chip overflow 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </GenerateId>
     </Chip>
   </ComponentWithOuia>
-</Component>
+</Chip>
 `;
 
 exports[`Chip readonly 1`] = `
-<Component
+<Chip
   className="my-chp-cls"
   isReadOnly={true}
 >
@@ -449,7 +449,7 @@ exports[`Chip readonly 1`] = `
       </GenerateId>
     </Chip>
   </ComponentWithOuia>
-</Component>
+</Chip>
 `;
 
 exports[`ChipButton 1`] = `
@@ -457,7 +457,7 @@ exports[`ChipButton 1`] = `
   className="chip-bttn-cls"
   id="my-chip-button"
 >
-  <Component
+  <Button
     aria-label="close"
     className="chip-bttn-cls"
     id="my-chip-button"
@@ -509,6 +509,6 @@ exports[`ChipButton 1`] = `
         </button>
       </Button>
     </ComponentWithOuia>
-  </Component>
+  </Button>
 </Component>
 `;

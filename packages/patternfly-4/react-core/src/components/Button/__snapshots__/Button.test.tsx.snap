@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled 1`] = `
-<Component
+<Button
   component="a"
   isDisabled={true}
 >
@@ -38,11 +38,11 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
       </a>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`control button 1`] = `
-<Component
+<Button
   aria-label="control"
   variant="control"
 >
@@ -83,11 +83,11 @@ exports[`control button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`danger button 1`] = `
-<Component
+<Button
   aria-label="danger"
   variant="danger"
 >
@@ -128,11 +128,11 @@ exports[`danger button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`isBlock 1`] = `
-<Component
+<Button
   isBlock={true}
 >
   <ComponentWithOuia
@@ -166,11 +166,11 @@ exports[`isBlock 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`isDisabled 1`] = `
-<Component
+<Button
   isDisabled={true}
 >
   <ComponentWithOuia
@@ -204,11 +204,11 @@ exports[`isDisabled 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`isFocus 1`] = `
-<Component
+<Button
   isFocus={true}
 >
   <ComponentWithOuia
@@ -242,11 +242,11 @@ exports[`isFocus 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`isHover 1`] = `
-<Component
+<Button
   isHover={true}
 >
   <ComponentWithOuia
@@ -280,11 +280,11 @@ exports[`isHover 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`isInline 1`] = `
-<Component
+<Button
   isInline={true}
   variant="link"
 >
@@ -321,11 +321,11 @@ exports[`isInline 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`link button 1`] = `
-<Component
+<Button
   aria-label="link"
   variant="link"
 >
@@ -366,11 +366,11 @@ exports[`link button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`link with icon 1`] = `
-<Component
+<Button
   icon={
     <CartArrowDownIcon
       color="currentColor"
@@ -456,11 +456,11 @@ exports[`link with icon 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`plain button 1`] = `
-<Component
+<Button
   aria-label="plain"
   variant="plain"
 >
@@ -501,11 +501,11 @@ exports[`plain button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`primary button 1`] = `
-<Component
+<Button
   aria-label="primary"
   variant="primary"
 >
@@ -546,11 +546,11 @@ exports[`primary button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`secondary button 1`] = `
-<Component
+<Button
   aria-label="secondary"
   variant="secondary"
 >
@@ -591,11 +591,11 @@ exports[`secondary button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;
 
 exports[`tertiary button 1`] = `
-<Component
+<Button
   aria-label="tertiary"
   variant="tertiary"
 >
@@ -636,5 +636,5 @@ exports[`tertiary button 1`] = `
       </button>
     </Button>
   </ComponentWithOuia>
-</Component>
+</Button>
 `;

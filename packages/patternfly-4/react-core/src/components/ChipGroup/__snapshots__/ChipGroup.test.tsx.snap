@@ -14,9 +14,9 @@ exports[`ChipGroup chip group default 1`] = `
     onToggleCollapse={[Function]}
     withToolbar={false}
   >
-    <Component>
+    <Chip>
       1.1
-    </Component>
+    </Chip>
   </InnerChipGroup>
 </ul>
 `;
@@ -36,9 +36,9 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     withToolbar={true}
   >
     <Component>
-      <Component>
+      <Chip>
         1.1
-      </Component>
+      </Chip>
     </Component>
   </InnerChipGroup>
 </ContextProvider>

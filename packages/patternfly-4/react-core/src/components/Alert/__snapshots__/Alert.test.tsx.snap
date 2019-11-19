@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert - danger Action Close Button 1`] = `
-<Component
+<Alert
   action={
     <Unknown
       aria-label="Close"
@@ -103,7 +103,7 @@ exports[`Alert - danger Action Close Button 1`] = `
             title=""
             variantLabel="Danger alert:"
           >
-            <Component
+            <Button
               aria-label="Close"
               onClick={[MockFunction]}
               variant="plain"
@@ -179,17 +179,17 @@ exports[`Alert - danger Action Close Button 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - danger Action Link 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -286,7 +286,7 @@ exports[`Alert - danger Action Link 1`] = `
             title=""
             variantLabel="Danger alert:"
           >
-            <Component
+            <Button
               className=""
               title=""
               variant="link"
@@ -336,17 +336,17 @@ exports[`Alert - danger Action Link 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - danger Action and Title 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -444,7 +444,7 @@ exports[`Alert - danger Action and Title 1`] = `
             title="Some title"
             variantLabel="Danger alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -494,17 +494,17 @@ exports[`Alert - danger Action and Title 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - danger Custom aria label 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -605,7 +605,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             title="Some title"
             variantLabel="Danger alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -655,17 +655,17 @@ exports[`Alert - danger Custom aria label 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - danger Description 1`] = `
-<Component
+<Alert
   title=""
   variant="danger"
 >
@@ -745,11 +745,11 @@ exports[`Alert - danger Description 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - danger Title 1`] = `
-<Component
+<Alert
   title="Some title"
   variant="danger"
 >
@@ -830,11 +830,11 @@ exports[`Alert - danger Title 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - danger inline variation 1`] = `
-<Component
+<Alert
   isInline={true}
   title="Some title"
   variant="danger"
@@ -918,11 +918,11 @@ exports[`Alert - danger inline variation 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default Action Close Button 1`] = `
-<Component
+<Alert
   action={
     <Unknown
       aria-label="Close"
@@ -1024,7 +1024,7 @@ exports[`Alert - default Action Close Button 1`] = `
             title=""
             variantLabel="Default alert:"
           >
-            <Component
+            <Button
               aria-label="Close"
               onClick={[MockFunction]}
               variant="plain"
@@ -1100,17 +1100,17 @@ exports[`Alert - default Action Close Button 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default Action Link 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -1207,7 +1207,7 @@ exports[`Alert - default Action Link 1`] = `
             title=""
             variantLabel="Default alert:"
           >
-            <Component
+            <Button
               className=""
               title=""
               variant="link"
@@ -1257,17 +1257,17 @@ exports[`Alert - default Action Link 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default Action and Title 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -1365,7 +1365,7 @@ exports[`Alert - default Action and Title 1`] = `
             title="Some title"
             variantLabel="Default alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -1415,17 +1415,17 @@ exports[`Alert - default Action and Title 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default Custom aria label 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -1526,7 +1526,7 @@ exports[`Alert - default Custom aria label 1`] = `
             title="Some title"
             variantLabel="Default alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -1576,17 +1576,17 @@ exports[`Alert - default Custom aria label 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default Description 1`] = `
-<Component
+<Alert
   title=""
   variant="default"
 >
@@ -1666,11 +1666,11 @@ exports[`Alert - default Description 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default Title 1`] = `
-<Component
+<Alert
   title="Some title"
   variant="default"
 >
@@ -1751,11 +1751,11 @@ exports[`Alert - default Title 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - default inline variation 1`] = `
-<Component
+<Alert
   isInline={true}
   title="Some title"
   variant="default"
@@ -1839,11 +1839,11 @@ exports[`Alert - default inline variation 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info Action Close Button 1`] = `
-<Component
+<Alert
   action={
     <Unknown
       aria-label="Close"
@@ -1945,7 +1945,7 @@ exports[`Alert - info Action Close Button 1`] = `
             title=""
             variantLabel="Info alert:"
           >
-            <Component
+            <Button
               aria-label="Close"
               onClick={[MockFunction]}
               variant="plain"
@@ -2021,17 +2021,17 @@ exports[`Alert - info Action Close Button 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info Action Link 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -2128,7 +2128,7 @@ exports[`Alert - info Action Link 1`] = `
             title=""
             variantLabel="Info alert:"
           >
-            <Component
+            <Button
               className=""
               title=""
               variant="link"
@@ -2178,17 +2178,17 @@ exports[`Alert - info Action Link 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info Action and Title 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -2286,7 +2286,7 @@ exports[`Alert - info Action and Title 1`] = `
             title="Some title"
             variantLabel="Info alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -2336,17 +2336,17 @@ exports[`Alert - info Action and Title 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info Custom aria label 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -2447,7 +2447,7 @@ exports[`Alert - info Custom aria label 1`] = `
             title="Some title"
             variantLabel="Info alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -2497,17 +2497,17 @@ exports[`Alert - info Custom aria label 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info Description 1`] = `
-<Component
+<Alert
   title=""
   variant="info"
 >
@@ -2587,11 +2587,11 @@ exports[`Alert - info Description 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info Title 1`] = `
-<Component
+<Alert
   title="Some title"
   variant="info"
 >
@@ -2672,11 +2672,11 @@ exports[`Alert - info Title 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - info inline variation 1`] = `
-<Component
+<Alert
   isInline={true}
   title="Some title"
   variant="info"
@@ -2760,11 +2760,11 @@ exports[`Alert - info inline variation 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success Action Close Button 1`] = `
-<Component
+<Alert
   action={
     <Unknown
       aria-label="Close"
@@ -2866,7 +2866,7 @@ exports[`Alert - success Action Close Button 1`] = `
             title=""
             variantLabel="Success alert:"
           >
-            <Component
+            <Button
               aria-label="Close"
               onClick={[MockFunction]}
               variant="plain"
@@ -2942,17 +2942,17 @@ exports[`Alert - success Action Close Button 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success Action Link 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -3049,7 +3049,7 @@ exports[`Alert - success Action Link 1`] = `
             title=""
             variantLabel="Success alert:"
           >
-            <Component
+            <Button
               className=""
               title=""
               variant="link"
@@ -3099,17 +3099,17 @@ exports[`Alert - success Action Link 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success Action and Title 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -3207,7 +3207,7 @@ exports[`Alert - success Action and Title 1`] = `
             title="Some title"
             variantLabel="Success alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -3257,17 +3257,17 @@ exports[`Alert - success Action and Title 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success Custom aria label 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -3368,7 +3368,7 @@ exports[`Alert - success Custom aria label 1`] = `
             title="Some title"
             variantLabel="Success alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -3418,17 +3418,17 @@ exports[`Alert - success Custom aria label 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success Description 1`] = `
-<Component
+<Alert
   title=""
   variant="success"
 >
@@ -3508,11 +3508,11 @@ exports[`Alert - success Description 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success Title 1`] = `
-<Component
+<Alert
   title="Some title"
   variant="success"
 >
@@ -3593,11 +3593,11 @@ exports[`Alert - success Title 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - success inline variation 1`] = `
-<Component
+<Alert
   isInline={true}
   title="Some title"
   variant="success"
@@ -3681,11 +3681,11 @@ exports[`Alert - success inline variation 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning Action Close Button 1`] = `
-<Component
+<Alert
   action={
     <Unknown
       aria-label="Close"
@@ -3787,7 +3787,7 @@ exports[`Alert - warning Action Close Button 1`] = `
             title=""
             variantLabel="Warning alert:"
           >
-            <Component
+            <Button
               aria-label="Close"
               onClick={[MockFunction]}
               variant="plain"
@@ -3863,17 +3863,17 @@ exports[`Alert - warning Action Close Button 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning Action Link 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -3970,7 +3970,7 @@ exports[`Alert - warning Action Link 1`] = `
             title=""
             variantLabel="Warning alert:"
           >
-            <Component
+            <Button
               className=""
               title=""
               variant="link"
@@ -4020,17 +4020,17 @@ exports[`Alert - warning Action Link 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning Action and Title 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -4128,7 +4128,7 @@ exports[`Alert - warning Action and Title 1`] = `
             title="Some title"
             variantLabel="Warning alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -4178,17 +4178,17 @@ exports[`Alert - warning Action and Title 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning Custom aria label 1`] = `
-<Component
+<Alert
   action={
     <Unknown>
       test
@@ -4289,7 +4289,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             title="Some title"
             variantLabel="Warning alert:"
           >
-            <Component
+            <Button
               className=""
               title="Some title"
               variant="link"
@@ -4339,17 +4339,17 @@ exports[`Alert - warning Custom aria label 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </Component>
         </div>
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning Description 1`] = `
-<Component
+<Alert
   title=""
   variant="warning"
 >
@@ -4429,11 +4429,11 @@ exports[`Alert - warning Description 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning Title 1`] = `
-<Component
+<Alert
   title="Some title"
   variant="warning"
 >
@@ -4514,11 +4514,11 @@ exports[`Alert - warning Title 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;
 
 exports[`Alert - warning inline variation 1`] = `
-<Component
+<Alert
   isInline={true}
   title="Some title"
   variant="warning"
@@ -4602,5 +4602,5 @@ exports[`Alert - warning inline variation 1`] = `
       </div>
     </Alert>
   </ComponentWithOuia>
-</Component>
+</Alert>
 `;

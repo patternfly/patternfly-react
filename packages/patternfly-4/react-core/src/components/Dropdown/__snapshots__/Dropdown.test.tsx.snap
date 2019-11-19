@@ -9,7 +9,7 @@ exports[`KebabToggle basic 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     isOpen={true}
     toggle={
       <Unknown
@@ -223,7 +223,7 @@ exports[`KebabToggle basic 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -374,7 +374,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     direction="up"
     dropdownItems={
       Array [
@@ -959,7 +959,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -1109,7 +1109,7 @@ exports[`KebabToggle dropup 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     direction="up"
     dropdownItems={
       Array [
@@ -1692,7 +1692,7 @@ exports[`KebabToggle dropup 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -1842,7 +1842,7 @@ exports[`KebabToggle expanded 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -2900,7 +2900,7 @@ exports[`KebabToggle expanded 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -3050,7 +3050,7 @@ exports[`KebabToggle plain 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -3633,7 +3633,7 @@ exports[`KebabToggle plain 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -3782,7 +3782,7 @@ exports[`KebabToggle regular 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -4363,7 +4363,7 @@ exports[`KebabToggle regular 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -4513,7 +4513,7 @@ exports[`KebabToggle right aligned 1`] = `
     />
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -5096,7 +5096,7 @@ exports[`KebabToggle right aligned 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -5111,7 +5111,7 @@ exports[`dropdown basic 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     isOpen={true}
     toggle={
       <Unknown
@@ -5346,7 +5346,7 @@ exports[`dropdown basic 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -5499,7 +5499,7 @@ exports[`dropdown dropup + right aligned 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     direction="up"
     dropdownItems={
       Array [
@@ -6105,7 +6105,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -6257,7 +6257,7 @@ exports[`dropdown dropup 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     direction="up"
     dropdownItems={
       Array [
@@ -6861,7 +6861,7 @@ exports[`dropdown dropup 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -7013,7 +7013,7 @@ exports[`dropdown expanded 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -8092,7 +8092,7 @@ exports[`dropdown expanded 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -8244,7 +8244,7 @@ exports[`dropdown primary 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -8850,7 +8850,7 @@ exports[`dropdown primary 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -9001,7 +9001,7 @@ exports[`dropdown regular 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -9603,7 +9603,7 @@ exports[`dropdown regular 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -9755,7 +9755,7 @@ exports[`dropdown right aligned 1`] = `
     </Unknown>
   }
 >
-  <Component
+  <DropdownWithContext
     dropdownItems={
       Array [
         <InternalDropdownItem
@@ -10359,6 +10359,6 @@ exports[`dropdown right aligned 1`] = `
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
-  </Component>
+  </DropdownWithContext>
 </Component>
 `;

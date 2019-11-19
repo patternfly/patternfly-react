@@ -40,7 +40,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             <div
               className="pf-c-data-toolbar__toggle"
             >
-              <Component
+              <Button
                 aria-controls="data-toolbar-expandable-content-7"
                 aria-haspopup={false}
                 aria-label="Show Filters"
@@ -119,7 +119,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     </button>
                   </Button>
                 </ComponentWithOuia>
-              </Component>
+              </Button>
             </div>
             <Component
               variant="filter-group"
@@ -142,7 +142,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     <div
                       className="pf-c-data-toolbar__item"
                     >
-                      <Component
+                      <Select
                         aria-label="Select Input"
                         isExpanded={false}
                         onSelect={[Function]}
@@ -348,7 +348,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             </div>
                           </Select>
                         </ComponentWithOuia>
-                      </Component>
+                      </Select>
                     </div>
                   </Component>
                   <Portal
@@ -533,7 +533,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   <ul
                                     className="pf-c-chip-group"
                                   >
-                                    <Component
+                                    <Chip
                                       component="li"
                                       key=".$New"
                                       onClick={[Function]}
@@ -582,7 +582,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                 id="remove_pf-random-id-3"
                                                 onClick={[Function]}
                                               >
-                                                <Component
+                                                <Button
                                                   aria-label="close"
                                                   aria-labelledby="remove_pf-random-id-3 pf-random-id-3"
                                                   className=""
@@ -671,14 +671,14 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       </button>
                                                     </Button>
                                                   </ComponentWithOuia>
-                                                </Component>
+                                                </Button>
                                               </Component>
                                             </li>
                                           </GenerateId>
                                         </Chip>
                                       </ComponentWithOuia>
-                                    </Component>
-                                    <Component
+                                    </Chip>
+                                    <Chip
                                       component="li"
                                       key=".$Pending"
                                       onClick={[Function]}
@@ -727,7 +727,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                 id="remove_pf-random-id-4"
                                                 onClick={[Function]}
                                               >
-                                                <Component
+                                                <Button
                                                   aria-label="close"
                                                   aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
                                                   className=""
@@ -816,13 +816,13 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       </button>
                                                     </Button>
                                                   </ComponentWithOuia>
-                                                </Component>
+                                                </Button>
                                               </Component>
                                             </li>
                                           </GenerateId>
                                         </Chip>
                                       </ComponentWithOuia>
-                                    </Component>
+                                    </Chip>
                                   </ul>
                                 </li>
                               </ul>
@@ -847,7 +847,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     <div
                       className="pf-c-data-toolbar__item"
                     >
-                      <Component
+                      <Select
                         aria-label="Select Input"
                         isExpanded={false}
                         onSelect={[Function]}
@@ -1053,7 +1053,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             </div>
                           </Select>
                         </ComponentWithOuia>
-                      </Component>
+                      </Select>
                     </div>
                   </Component>
                   <Portal
@@ -1238,7 +1238,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   <ul
                                     className="pf-c-chip-group"
                                   >
-                                    <Component
+                                    <Chip
                                       component="li"
                                       key=".$Low"
                                       onClick={[Function]}
@@ -1287,7 +1287,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                 id="remove_pf-random-id-5"
                                                 onClick={[Function]}
                                               >
-                                                <Component
+                                                <Button
                                                   aria-label="close"
                                                   aria-labelledby="remove_pf-random-id-5 pf-random-id-5"
                                                   className=""
@@ -1376,13 +1376,13 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       </button>
                                                     </Button>
                                                   </ComponentWithOuia>
-                                                </Component>
+                                                </Button>
                                               </Component>
                                             </li>
                                           </GenerateId>
                                         </Chip>
                                       </ComponentWithOuia>
-                                    </Component>
+                                    </Chip>
                                   </ul>
                                 </li>
                               </ul>
@@ -1440,7 +1440,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
               <div
                 className="pf-c-data-toolbar__item"
               >
-                <Component
+                <Button
                   isInline={true}
                   onClick={[Function]}
                   variant="link"
@@ -1481,7 +1481,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       </button>
                     </Button>
                   </ComponentWithOuia>
-                </Component>
+                </Button>
               </div>
             </Component>
           </div>
@@ -1669,7 +1669,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
           <div
             className="pf-c-data-toolbar__item"
           >
-            <Component
+            <Button
               isInline={true}
               onClick={[Function]}
               variant="link"
@@ -1710,7 +1710,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                   </button>
                 </Button>
               </ComponentWithOuia>
-            </Component>
+            </Button>
           </div>
         </Component>
       </div>
@@ -1749,7 +1749,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
               <div
                 className="pf-c-data-toolbar__item"
               >
-                <Component
+                <Button
                   variant="plain"
                 >
                   <ComponentWithOuia
@@ -1813,14 +1813,14 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                       </button>
                     </Button>
                   </ComponentWithOuia>
-                </Component>
+                </Button>
               </div>
             </Component>
             <Component>
               <div
                 className="pf-c-data-toolbar__item"
               >
-                <Component
+                <Button
                   variant="plain"
                 >
                   <ComponentWithOuia
@@ -1884,7 +1884,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                       </button>
                     </Button>
                   </ComponentWithOuia>
-                </Component>
+                </Button>
               </div>
             </Component>
           </div>
@@ -2081,7 +2081,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
             <div
               className="pf-c-data-toolbar__toggle"
             >
-              <Component
+              <Button
                 aria-controls="data-toolbar-expandable-content-4"
                 aria-haspopup={false}
                 aria-label="Show Filters"
@@ -2160,7 +2160,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                     </button>
                   </Button>
                 </ComponentWithOuia>
-              </Component>
+              </Button>
             </div>
             <Component
               variant="filter-group"
@@ -2172,7 +2172,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                   <div
                     className="pf-c-data-toolbar__item"
                   >
-                    <Component
+                    <Select
                       aria-label="Select Input"
                       isExpanded={false}
                       onSelect={[Function]}
@@ -2378,14 +2378,14 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           </div>
                         </Select>
                       </ComponentWithOuia>
-                    </Component>
+                    </Select>
                   </div>
                 </Component>
                 <Component>
                   <div
                     className="pf-c-data-toolbar__item"
                   >
-                    <Component
+                    <Select
                       aria-label="Select Input"
                       isExpanded={false}
                       onSelect={[Function]}
@@ -2591,7 +2591,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           </div>
                         </Select>
                       </ComponentWithOuia>
-                    </Component>
+                    </Select>
                   </div>
                 </Component>
               </div>

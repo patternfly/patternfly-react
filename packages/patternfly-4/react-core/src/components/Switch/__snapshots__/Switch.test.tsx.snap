@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`no label switch is checked 1`] = `
-<Component
+<Switch
   id="no-label-switch-is-checked"
   isChecked={true}
 >
@@ -79,11 +79,11 @@ exports[`no label switch is checked 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`no label switch is not checked 1`] = `
-<Component
+<Switch
   id="no-label-switch-is-not-checked"
   isChecked={false}
 >
@@ -161,11 +161,11 @@ exports[`no label switch is not checked 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`switch is checked 1`] = `
-<Component
+<Switch
   id="switch-is-checked"
   isChecked={true}
   label="On"
@@ -233,11 +233,11 @@ exports[`switch is checked 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`switch is checked and disabled 1`] = `
-<Component
+<Switch
   id="switch-is-checked-and-disabled"
   isChecked={true}
   isDisabled={true}
@@ -317,11 +317,11 @@ exports[`switch is checked and disabled 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`switch is not checked 1`] = `
-<Component
+<Switch
   id="switch-is-not-checked"
   isChecked={false}
   label="On"
@@ -389,11 +389,11 @@ exports[`switch is not checked 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`switch is not checked and disabled 1`] = `
-<Component
+<Switch
   id="switch-is-not-checked-and-disabled"
   isChecked={false}
   isDisabled={true}
@@ -473,11 +473,11 @@ exports[`switch is not checked and disabled 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`switch with only label is checked 1`] = `
-<Component
+<Switch
   id="switch-is-checked"
   isChecked={true}
   label="On"
@@ -543,11 +543,11 @@ exports[`switch with only label is checked 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;
 
 exports[`switch with only label is not checked 1`] = `
-<Component
+<Switch
   id="switch-is-not-checked"
   isChecked={false}
   label="Off"
@@ -613,5 +613,5 @@ exports[`switch with only label is not checked 1`] = `
       </label>
     </Switch>
   </ComponentWithOuia>
-</Component>
+</Switch>
 `;

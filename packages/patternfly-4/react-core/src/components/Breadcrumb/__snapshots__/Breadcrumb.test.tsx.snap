@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb component should render breadcrumb with aria-label 1`] = `
-<Component
+<Breadcrumb
   aria-label="custom label"
 >
   <ComponentWithOuia
@@ -32,11 +32,11 @@ exports[`Breadcrumb component should render breadcrumb with aria-label 1`] = `
       </nav>
     </Breadcrumb>
   </ComponentWithOuia>
-</Component>
+</Breadcrumb>
 `;
 
 exports[`Breadcrumb component should render breadcrumb with children 1`] = `
-<Component>
+<Breadcrumb>
   <ComponentWithOuia
     component={[Function]}
     componentProps={
@@ -168,11 +168,11 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
       </nav>
     </Breadcrumb>
   </ComponentWithOuia>
-</Component>
+</Breadcrumb>
 `;
 
 exports[`Breadcrumb component should render breadcrumb with className 1`] = `
-<Component
+<Breadcrumb
   className="className"
 >
   <ComponentWithOuia
@@ -203,11 +203,11 @@ exports[`Breadcrumb component should render breadcrumb with className 1`] = `
       </nav>
     </Breadcrumb>
   </ComponentWithOuia>
-</Component>
+</Breadcrumb>
 `;
 
 exports[`Breadcrumb component should render default breadcrumb 1`] = `
-<Component>
+<Breadcrumb>
   <ComponentWithOuia
     component={[Function]}
     componentProps={Object {}}
@@ -231,5 +231,5 @@ exports[`Breadcrumb component should render default breadcrumb 1`] = `
       </nav>
     </Breadcrumb>
   </ComponentWithOuia>
-</Component>
+</Breadcrumb>
 `;

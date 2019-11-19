@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Actions virtualized table 1`] = `
-<Component
+<Table
   actionResolver={[Function]}
   areActionsDisabled={[Function]}
   aria-label="Aria labeled"
@@ -1332,11 +1332,11 @@ exports[`Actions virtualized table 1`] = `
       </Provider>
     </Table>
   </ComponentWithOuia>
-</Component>
+</Table>
 `;
 
 exports[`Selectable virtualized table 1`] = `
-<Component
+<Table
   aria-label="Aria labeled"
   cells={
     Array [
@@ -2681,11 +2681,11 @@ exports[`Selectable virtualized table 1`] = `
       </Provider>
     </Table>
   </ComponentWithOuia>
-</Component>
+</Table>
 `;
 
 exports[`Simple Actions table 1`] = `
-<Component
+<Table
   actions={
     Array [
       Object {
@@ -4446,11 +4446,11 @@ exports[`Simple Actions table 1`] = `
       </Provider>
     </Table>
   </ComponentWithOuia>
-</Component>
+</Table>
 `;
 
 exports[`Simple virtualized table aria-label 1`] = `
-<Component
+<Table
   cells={
     Array [
       Object {
@@ -5569,11 +5569,11 @@ exports[`Simple virtualized table aria-label 1`] = `
       </Provider>
     </Table>
   </ComponentWithOuia>
-</Component>
+</Table>
 `;
 
 exports[`Simple virtualized table className 1`] = `
-<Component
+<Table
   cells={
     Array [
       Object {
@@ -6692,11 +6692,11 @@ exports[`Simple virtualized table className 1`] = `
       </Provider>
     </Table>
   </ComponentWithOuia>
-</Component>
+</Table>
 `;
 
 exports[`Sortable Virtualized Table 1`] = `
-<Component
+<Table
   aria-label="Aria labeled"
   cells={
     Array [
@@ -7883,5 +7883,5 @@ exports[`Sortable Virtualized Table 1`] = `
       </Provider>
     </Table>
   </ComponentWithOuia>
-</Component>
+</Table>
 `;

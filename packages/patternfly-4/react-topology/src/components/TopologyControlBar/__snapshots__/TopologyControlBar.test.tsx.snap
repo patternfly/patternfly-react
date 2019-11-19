@@ -171,7 +171,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -238,7 +238,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -373,7 +373,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -466,7 +466,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -601,7 +601,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={true}
                     className="pf-topology-control-bar__button pf-m-disabled"
                     disabled={true}
@@ -694,7 +694,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -923,7 +923,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1016,7 +1016,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -1151,7 +1151,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1244,7 +1244,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -1379,7 +1379,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1472,7 +1472,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -1607,7 +1607,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Component
+                  <Button
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1700,7 +1700,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         </button>
                       </Button>
                     </ComponentWithOuia>
-                  </Component>
+                  </Button>
                   <Portal
                     containerInfo={
                       <div>
@@ -1744,7 +1744,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             <div
               className="pf-l-toolbar__item"
             >
-              <Component
+              <Button
                 aria-disabled={false}
                 className="pf-topology-control-bar__button"
                 disabled={false}
@@ -1798,7 +1798,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     </button>
                   </Button>
                 </ComponentWithOuia>
-              </Component>
+              </Button>
             </div>
           </ToolbarItem>
         </div>
