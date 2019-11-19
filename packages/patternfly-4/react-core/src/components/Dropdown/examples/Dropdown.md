@@ -7,7 +7,7 @@ propComponents:
 typescript: true
 ---
 
-import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownIcon, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownItemIcon, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -943,7 +943,7 @@ import {
   DropdownToggle,
   DropdownToggleAction,
   DropdownItem,
-  DropdownIcon,
+  DropdownItemIcon,
   DropdownSeparator,
   DropdownPosition,
   DropdownDirection,
@@ -1001,21 +1001,21 @@ class SplitButtonActionDropdown extends React.Component {
     ];
     const dropdownIconItems = [
       <DropdownItem key="action" component="button" variant="icon">
-        <DropdownIcon>
+        <DropdownItemIcon>
           <CogIcon />
-        </DropdownIcon>
+        </DropdownItemIcon>
         Action
       </DropdownItem>,
       <DropdownItem key="disabled link" component="button" variant="icon" isDisabled>
-        <DropdownIcon>
+        <DropdownItemIcon>
           <BellIcon />
-        </DropdownIcon>
+        </DropdownItemIcon>
         Disabled action
       </DropdownItem>,
       <DropdownItem key="other action" component="button" variant="icon">
-        <DropdownIcon>
+        <DropdownItemIcon>
           <CubesIcon />
-        </DropdownIcon>
+        </DropdownItemIcon>
         Other action
       </DropdownItem>
     ];

@@ -11,7 +11,7 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode;
-  /** Variant of item */
+  /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
   variant?: 'item' | 'icon';
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;

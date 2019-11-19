@@ -14,7 +14,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
-  /** Variant of item */
+  /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
   variant?: 'item' | 'icon';
   /** Role for the item */
   role?: string;
