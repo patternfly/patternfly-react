@@ -57,15 +57,15 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
   }
 
   renderOverflowChip = () => {
-    const { children, className, onClick, ouiaContext, ouiaId, } = this.props;
+    const { children, className, onClick, ouiaContext, ouiaId } = this.props;
     const Component = this.props.component as any;
     return (
       <Component
         className={css(styles.chip, styles.modifiers.overflow, className)}
-        {...ouiaContext.isOuia && {
+        {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'OverflowChip',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        }}
+        })}
       >
         <ChipButton onClick={onClick}>
           <span className={css(styles.chipText)}>{children}</span>
@@ -83,7 +83,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
       onClick,
       isReadOnly,
       ouiaContext,
-      ouiaId,
+      ouiaId
     } = this.props;
     const Component = this.props.component as any;
     if (this.state.isTooltipVisible) {
@@ -91,10 +91,10 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
         <Tooltip position={tooltipPosition} content={children}>
           <Component
             className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
-            {...ouiaContext.isOuia && {
+            {...(ouiaContext.isOuia && {
               'data-ouia-component-type': 'Chip',
               'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-            }}
+            })}
           >
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
@@ -114,12 +114,12 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
       );
     }
     return (
-      <Component 
+      <Component
         className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
-        {...ouiaContext.isOuia && {
+        {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'Chip',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        }}
+        })}
       >
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
@@ -145,6 +145,8 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
     );
   }
 }
-  
+
 const ChipWithOuiaContext = withOuiaContext(Chip);
+ChipWithOuiaContext.displayName = 'Chip';
+
 export { ChipWithOuiaContext as Chip };

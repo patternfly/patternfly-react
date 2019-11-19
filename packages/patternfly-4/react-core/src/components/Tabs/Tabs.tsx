@@ -292,5 +292,6 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
 }
 
 const TabsWithOuiaContext = withOuiaContext(Tabs);
+TabsWithOuiaContext.displayName = 'Tabs';
 
 export { TabsWithOuiaContext as Tabs };

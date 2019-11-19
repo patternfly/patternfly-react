@@ -1,7 +1,14 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { InjectedOuiaProps, withOuiaContext, DropdownPosition, DropdownDirection, DropdownItemProps, Omit } from '@patternfly/react-core';
+import {
+  InjectedOuiaProps,
+  withOuiaContext,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownItemProps,
+  Omit
+} from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
@@ -58,7 +65,7 @@ export enum SortByDirection {
   desc = 'desc'
 }
 
-export interface IHeaderRow extends ColumnType { }
+export interface IHeaderRow extends ColumnType {}
 
 export interface IRowData extends IRow {
   disableActions?: boolean;
@@ -91,7 +98,7 @@ export interface IExtraColumnData {
   property?: string;
 }
 
-export interface IExtraData extends IExtraColumnData, IExtraRowData { }
+export interface IExtraData extends IExtraColumnData, IExtraRowData {}
 
 export interface IExtra extends IExtraData {
   rowData?: IRowData;
@@ -141,18 +148,11 @@ export type decoratorReturnType = {
   parentId?: number;
   colSpan?: number;
   id?: React.ReactText;
-}
+};
 
-export type ITransform = ((
-  label?: IFormatterValueType,
-  extra?: IExtra
-) => decoratorReturnType
-);
+export type ITransform = (label?: IFormatterValueType, extra?: IExtra) => decoratorReturnType;
 
-export type IFormatter = ((
-  data?: IFormatterValueType,
-  extra?: IExtra
-) => formatterValueType & decoratorReturnType);
+export type IFormatter = (data?: IFormatterValueType, extra?: IExtra) => formatterValueType & decoratorReturnType;
 
 export interface ICell {
   title?: string | React.ReactNode;
@@ -354,10 +354,10 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className
           )}
-          {...ouiaContext.isOuia && {
+          {...(ouiaContext.isOuia && {
             'data-ouia-component-type': 'Table',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          }}
+          })}
         >
           {caption && <caption>{caption}</caption>}
           {children}
@@ -368,5 +368,6 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
 }
 
 const TableWithOuiaContext = withOuiaContext(Table);
+TableWithOuiaContext.displayName = 'Table';
 
 export { TableWithOuiaContext as Table };

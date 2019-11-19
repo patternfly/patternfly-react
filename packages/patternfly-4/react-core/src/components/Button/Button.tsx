@@ -99,4 +99,6 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
 };
 
 const ButtonWithOuiaContext = withOuiaContext(Button);
+ButtonWithOuiaContext.displayName = 'Button';
+
 export { ButtonWithOuiaContext as Button };

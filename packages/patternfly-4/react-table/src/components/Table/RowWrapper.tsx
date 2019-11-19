@@ -103,15 +103,16 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
           isHeightAuto && styles.modifiers.heightAuto
         )}
         hidden={isExpanded !== undefined && !isExpanded}
-        {...ouiaContext.isOuia && {
+        {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'TableRow',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        }}
+        })}
       />
     );
   }
 }
 
 const RowWrapperWithOuiaContext = withOuiaContext(RowWrapper);
+RowWrapperWithOuiaContext.displayName = 'RowWrapper';
 
 export { RowWrapperWithOuiaContext as RowWrapper };

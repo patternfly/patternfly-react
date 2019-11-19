@@ -82,4 +82,6 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
 };
 
 const AlertWithOuiaContext = withOuiaContext(Alert);
+AlertWithOuiaContext.displayName = 'Alert';
+
 export { AlertWithOuiaContext as Alert };

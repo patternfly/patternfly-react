@@ -120,5 +120,6 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
 }
 
 const SwitchWithOuiaContext = withOuiaContext(Switch);
+SwitchWithOuiaContext.displayName = 'Switch';
 
 export { SwitchWithOuiaContext as Switch };

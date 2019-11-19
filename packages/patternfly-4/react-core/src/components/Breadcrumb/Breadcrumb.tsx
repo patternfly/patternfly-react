@@ -34,4 +34,6 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps & InjectedOuiaProps> =
 );
 
 const BreadcrumbWithOuiaContext = withOuiaContext(Breadcrumb);
+BreadcrumbWithOuiaContext.displayName = 'Breadcrumb';
+
 export { BreadcrumbWithOuiaContext as Breadcrumb };

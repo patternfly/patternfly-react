@@ -223,4 +223,6 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
 };
 
 const PaginationWithOuiaContext = withOuiaContext(Pagination);
+PaginationWithOuiaContext.displayName = 'Pagination';
+
 export { PaginationWithOuiaContext as Pagination };

@@ -157,4 +157,6 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
 }
 
 const NavWithOuiaContext = withOuiaContext(Nav);
+NavWithOuiaContext.displayName = 'Nav';
+
 export { NavWithOuiaContext as Nav };

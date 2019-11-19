@@ -553,5 +553,6 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
 }
 
 const SelectWithOuiaContext = withOuiaContext(Select);
+SelectWithOuiaContext.displayName = 'Select';
 
 export { SelectWithOuiaContext as Select };
