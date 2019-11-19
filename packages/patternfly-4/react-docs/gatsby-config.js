@@ -77,6 +77,14 @@ module.exports = {
         path: path.resolve(__dirname, '../../../RELEASE-NOTES.md')
       }
     },
+    // Source training
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'react', // This goes in URLs
+        path: path.resolve(__dirname, './src/training.md')
+      }
+    },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
     {
       resolve: path.resolve(__dirname, './plugins/gatsby-transformer-react-docgen-typescript')
