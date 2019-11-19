@@ -6,6 +6,7 @@ import { RefObject } from 'react';
 import { DataToolbarGroup } from './DataToolbarGroup';
 import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
+import { DataToolbarContext } from './DataToolbarUtils';
 
 export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes added to the root element of the data toolbar expandable content */
@@ -25,6 +26,8 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
 }
 
 export class DataToolbarExpandableContent extends React.Component<DataToolbarExpandableContentProps> {
+  // @ts-ignore
+  static contextType: any = DataToolbarContext;
   static defaultProps = {
     isExpanded: false
   };
@@ -40,6 +43,7 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
       showClearFiltersButton,
       ...props
     } = this.props;
+    const { numberOfFilters } = this.context;
 
     const clearChipGroups = () => {
       clearAllFilters();
@@ -55,16 +59,18 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
         {...props}
       >
         <DataToolbarGroup/>
-        <DataToolbarGroup className={getModifier(styles, 'chip-container')}>
+        {numberOfFilters > 0 && (
+          <DataToolbarGroup className={getModifier(styles, 'chip-container')}>
           <DataToolbarGroup ref={chipContainerRef}/>
-          {showClearFiltersButton && (
-            <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-              <Button variant="link" onClick={clearChipGroups} isInline>
-                Clear all filters
-              </Button>
-            </DataToolbarItem>
-          )}
-        </DataToolbarGroup>
+            {showClearFiltersButton && (
+              <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+                <Button variant="link" onClick={clearChipGroups} isInline>
+                  Clear all filters
+                </Button>
+              </DataToolbarItem>
+            )}
+          </DataToolbarGroup>
+        )}
       </div>
     );
   }

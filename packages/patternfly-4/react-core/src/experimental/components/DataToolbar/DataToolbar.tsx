@@ -115,7 +115,8 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
             isExpanded: this.isToggleManaged() ? isManagedToggleExpanded : isExpanded,
             toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
             chipGroupContentRef: this.chipGroupContentRef,
-            updateNumberFilters: this.updateNumberFilters
+            updateNumberFilters: this.updateNumberFilters,
+            numberOfFilters: numberOfFilters
           }}
         >
           { React.Children.map(children, (child: any) => {
