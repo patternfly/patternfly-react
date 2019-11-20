@@ -239,7 +239,8 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
       <DataToolbar id="data-toolbar-filter-demo"
                    clearAllFilters={this.onDelete}
                    className='pf-m-toggle-group-container'
-                   collapseListedFiltersBreakpoint='xl'>
+                   collapseListedFiltersBreakpoint='xl'
+                   clearFiltersButtonText="Clear filters">
         <DataToolbarContent>
           {toolbarItems}
         </DataToolbarContent>
