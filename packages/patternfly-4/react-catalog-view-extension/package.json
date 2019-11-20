@@ -43,17 +43,8 @@
     "@patternfly/patternfly": "2.43.0",
     "@patternfly/react-core": "^3.122.1",
     "@patternfly/react-styles": "^3.6.10",
-    "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
-    "css-element-queries": "^1.0.1",
-    "patternfly": "^3.59.4",
-    "patternfly-react": "^2.39.9",
-    "react-bootstrap": "^0.33.0",
-    "react-click-outside": "^3.0.1",
-    "react-diff-view": "^1.8.1",
-    "react-ellipsis-with-tooltip": "^1.0.8",
-    "react-virtualized": "^9.21.1",
-    "unidiff": "^1.0.1"
+    "patternfly": "^3.59.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
