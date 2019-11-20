@@ -1026,7 +1026,7 @@ class SplitButtonActionDropdown extends React.Component {
           toggle={
             <DropdownToggle
               splitButtonItems={[
-                <DropdownToggleAction id="example-action-text" key="action" onClick={this.onActionClick}>
+                <DropdownToggleAction key="action" onClick={this.onActionClick}>
                   Action
                 </DropdownToggleAction>
               ]}
@@ -1042,12 +1042,7 @@ class SplitButtonActionDropdown extends React.Component {
           toggle={
             <DropdownToggle
               splitButtonItems={[
-                <DropdownToggleAction
-                  id="example-action-icon"
-                  key="cog-action"
-                  aria-label="Action"
-                  onClick={this.onCogClick}
-                >
+                <DropdownToggleAction key="cog-action" aria-label="Action" onClick={this.onCogClick}>
                   <CogIcon />
                 </DropdownToggleAction>
               ]}
