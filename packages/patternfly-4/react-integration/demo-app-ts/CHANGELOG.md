@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.10.0...demo-app-ts@3.11.0) (2019-11-20)
+
+
+### Features
+
+* **Accordion:** Add a prop to allow th box shadow to be removed ([#3309](https://github.com/patternfly/patternfly-react/issues/3309)) ([02145a2](https://github.com/patternfly/patternfly-react/commit/02145a2b224846e35c8c23df5958b57a5e47f101)), closes [#3195](https://github.com/patternfly/patternfly-react/issues/3195)
+
+
+
+
+
 # [3.10.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.20...demo-app-ts@3.10.0) (2019-11-19)
 
 
