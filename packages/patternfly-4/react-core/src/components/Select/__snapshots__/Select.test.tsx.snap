@@ -8997,7 +8997,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                       id="select-typeahead"
                       placeholder=""
                       type="text"
-                      value=""
+                      value="Mr"
                     />
                   </div>
                   <button
@@ -9140,7 +9140,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 onFocus={[Function]}
                 placeholder=""
                 type="text"
-                value=""
+                value="Mr"
               />
             </div>
             <button

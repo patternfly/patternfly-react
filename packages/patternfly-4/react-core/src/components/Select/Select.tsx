@@ -83,7 +83,7 @@ export interface SelectProps
 
 export interface SelectState {
   openedOnEnter: boolean;
-  typeaheadInputValue: string;
+  typeaheadInputValue: string|null;
   typeaheadActiveChild?: HTMLElement;
   typeaheadFilteredChildren: React.ReactNode[];
   typeaheadCurrIndex: number;
@@ -122,9 +122,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     onFilter: null
   } as Partial<SelectProps & InjectedOuiaProps>;
 
-  state = {
+  state: SelectState = {
     openedOnEnter: false,
-    typeaheadInputValue: '',
+    typeaheadInputValue: null,
     typeaheadActiveChild: null as HTMLElement,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     typeaheadCurrIndex: -1,
@@ -215,7 +215,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   clearSelection = (e: React.MouseEvent) => {
     e.stopPropagation();
     this.setState({
-      typeaheadInputValue: '',
+      typeaheadInputValue: null,
       typeaheadActiveChild: null,
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
       typeaheadCurrIndex: -1
