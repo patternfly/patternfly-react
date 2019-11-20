@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.122.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.0...@patternfly/react-core@3.122.1) (2019-11-20)
+
+
+### Bug Fixes
+
+* **Select:** Display pre-selected input ([#3305](https://github.com/patternfly/patternfly-react/issues/3305)) ([f04fe92](https://github.com/patternfly/patternfly-react/commit/f04fe9240c710c0cf1fd7c76d1a0542cd6b3845d))
+
+
+
+
+
 # [3.122.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.121.0...@patternfly/react-core@3.122.0) (2019-11-20)
 
 
