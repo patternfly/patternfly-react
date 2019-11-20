@@ -12,7 +12,7 @@ export interface DropdownToggleActionProps {
   /** Element to be rendered inside the <button> */
   children?: React.ReactNode;
   /** Id of the action button */
-  id: string;
+  id?: string;
   /** Aria-label of the action button */
   'aria-label'?: string;
 }

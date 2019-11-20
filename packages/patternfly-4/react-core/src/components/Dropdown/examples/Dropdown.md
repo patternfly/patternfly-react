@@ -1045,7 +1045,7 @@ class SplitButtonActionDropdown extends React.Component {
                 <DropdownToggleAction
                   id="example-action-icon"
                   key="cog-action"
-                  aria-label="Cog icon button"
+                  aria-label="Action"
                   onClick={this.onCogClick}
                 >
                   <CogIcon />
