@@ -19,6 +19,8 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
   clearAllFilters?: () => void;
   /** Flag indicating that the clear all filters button should be visible */
   showClearFiltersButton?: boolean;
+  /** Text to display in the clear all filters button */
+  clearFiltersButtonText?: string;
   /** Id of the parent DataToolbar component */
   toolbarId?: string;
 }
@@ -43,6 +45,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
       breakpointMods,
       clearAllFilters,
       showClearFiltersButton,
+      clearFiltersButtonText,
       ...props
     } = this.props;
 
@@ -68,6 +71,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
             chipContainerRef={this.chipContainerRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}
+            clearFiltersButtonText={clearFiltersButtonText}
           />
         </DataToolbarContentContext.Provider>
       </div>

@@ -139,6 +139,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
             chipGroupContentRef={this.chipGroupContentRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}
+            clearFiltersButtonText={clearFiltersButtonText}
             numberOfFilters={numberOfFilters}
             collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
           />

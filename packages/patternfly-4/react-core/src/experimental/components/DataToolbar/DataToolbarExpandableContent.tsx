@@ -29,7 +29,8 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
   // @ts-ignore
   static contextType: any = DataToolbarContext;
   static defaultProps = {
-    isExpanded: false
+    isExpanded: false,
+    clearFiltersButtonText: 'Clear all filters'
   };
 
   render() {
@@ -65,7 +66,7 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
             {showClearFiltersButton && (
               <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
                 <Button variant="link" onClick={clearChipGroups} isInline>
-                  Clear all filters
+                  {clearFiltersButtonText}
                 </Button>
               </DataToolbarItem>
             )}

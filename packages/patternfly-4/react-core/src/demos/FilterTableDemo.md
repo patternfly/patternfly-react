@@ -317,6 +317,7 @@ class FilterTableDemo extends React.Component {
         id="data-toolbar-with-chip-groups"
         clearAllFilters={this.onDelete}
         collapseListedFiltersBreakpoint="xl"
+        clearFiltersButtonText="Clear filters"
       >
         <DataToolbarContent>
           <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">

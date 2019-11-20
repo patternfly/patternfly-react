@@ -1412,6 +1412,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             }
           }
           clearAllFilters={[Function]}
+          clearFiltersButtonText="Clear all filters"
           expandableContentRef={
             Object {
               "current": <div
@@ -1963,6 +1964,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
               "current": null,
             }
           }
+          clearFiltersButtonText="Clear all filters"
           expandableContentRef={
             Object {
               "current": <div
@@ -2067,6 +2069,7 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
               "current": null,
             }
           }
+          clearFiltersButtonText="Clear all filters"
           expandableContentRef={
             Object {
               "current": <div
@@ -2712,6 +2715,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
               "current": null,
             }
           }
+          clearFiltersButtonText="Clear all filters"
           expandableContentRef={
             Object {
               "current": <div
@@ -2816,6 +2820,7 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
               "current": null,
             }
           }
+          clearFiltersButtonText="Clear all filters"
           expandableContentRef={
             Object {
               "current": <div
@@ -2867,6 +2872,7 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
               "current": null,
             }
           }
+          clearFiltersButtonText="Clear all filters"
           expandableContentRef={
             Object {
               "current": <div
