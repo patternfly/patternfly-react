@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.122.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.1...@patternfly/react-core@3.122.2) (2019-11-20)
+
+
+### Bug Fixes
+
+* **flex:** typo in align and justify modifiers ([#3328](https://github.com/patternfly/patternfly-react/issues/3328)) ([89f8bae](https://github.com/patternfly/patternfly-react/commit/89f8bae708cb6df7aed501d0c830ab18b351453e))
+
+
+
+
+
 ## [3.122.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.0...@patternfly/react-core@3.122.1) (2019-11-20)
 
 
