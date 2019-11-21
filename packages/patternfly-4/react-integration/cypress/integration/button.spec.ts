@@ -18,11 +18,15 @@ describe('Button Demo Test', () => {
   });
 
   it('Tertiary button should be disabled', () => {
-    cy.get('.pf-m-tertiary').should('have.class', 'pf-m-disabled');
+    cy.get('.pf-m-tertiary').should('be.disabled');
   });
 
   it('Verify primary button clicks', () => {
-    cy.get('.pf-m-primary').click();
+    cy.get('button.pf-m-primary').click();
     cy.url().should('not.eq', 'http://localhost:3000/button-demo-nav-link');
+  });
+
+  it('Link button should be set to tabindex=-1', () => {
+    cy.get('.pf-m-link').should('have.attr', 'tabindex', '-1');
   });
 });

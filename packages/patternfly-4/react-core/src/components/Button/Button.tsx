@@ -46,6 +46,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   'aria-label'?: string;
   /** Icon for the button if variant is a link */
   icon?: React.ReactNode | null;
+  /** Set button tab index unless component is not a button and is disabled */
+  tabIndex?: number;
 }
 
 const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
@@ -64,6 +66,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   icon = null,
   ouiaContext = null,
   ouiaId = null,
+  tabIndex = null as number,
   ...props
 }: ButtonProps & InjectedOuiaProps) => {
   const Component = component as any;
@@ -85,7 +88,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
-      tabIndex={isDisabled && !isButtonElement ? -1 : null}
+      tabIndex={isDisabled && !isButtonElement ? -1 : tabIndex}
       type={isButtonElement ? type : null}
       {...(ouiaContext.isOuia && {
         'data-ouia-component-type': 'Button',
