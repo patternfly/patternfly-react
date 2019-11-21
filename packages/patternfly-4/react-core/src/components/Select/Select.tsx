@@ -20,7 +20,7 @@ let currentId = 0;
 export interface SelectProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
   /** Content rendered inside the Select */
-  children: React.ReactElement[];
+  children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
   /** Flag specifying which direction the Select menu expands */
@@ -39,7 +39,7 @@ export interface SelectProps
   createText?: string;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
-  /** Text to display in typeahead select when no results are found **/
+  /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
   /** Selected item for single select variant.  Array of selected items for multi select variants. */
   selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
@@ -79,6 +79,8 @@ export interface SelectProps
   maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
   toggleIcon?: React.ReactElement;
+  /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
+  customContent?: React.ReactNode;
 }
 
 export interface SelectState {
@@ -119,7 +121,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     onClear: (_e: React.MouseEvent) => undefined as void,
     onCreateOption: (_newOptionValue: string) => undefined as void,
     toggleIcon: null as React.ReactElement,
-    onFilter: null
+    onFilter: null,
+    customContent: null
   } as Partial<SelectProps & InjectedOuiaProps>;
 
   state: SelectState = {
@@ -324,6 +327,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     const {
       children,
       className,
+      customContent,
       variant,
       direction,
       onToggle,
@@ -357,11 +361,13 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
-    if (!selections && !placeholderText) {
-      const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
-      childPlaceholderText =
-        (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
-        (children[0] && this.getDisplay(children[0].props.value, 'node'));
+    if (!customContent) {
+      if (!selections && !placeholderText) {
+        const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
+        childPlaceholderText =
+          (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
+          (children[0] && this.getDisplay(children[0].props.value, 'node'));
+      }
     }
     let selectedChips = null;
     if (variant === SelectVariant.typeaheadMulti) {
@@ -407,7 +413,13 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
             handleTypeaheadKeys={this.handleTypeaheadKeys}
             isDisabled={isDisabled}
           >
-            {variant === SelectVariant.single && (
+            {customContent && (
+              <div className={css(styles.selectToggleWrapper)}>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+              </div>
+            )}
+            {variant === SelectVariant.single && !customContent && (
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <span className={css(styles.selectToggleText)}>
@@ -415,7 +427,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 </span>
               </div>
             )}
-            {variant === SelectVariant.checkbox && (
+            {variant === SelectVariant.checkbox && !customContent && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
@@ -428,7 +440,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 </div>
               </React.Fragment>
             )}
-            {variant === SelectVariant.typeahead && (
+            {variant === SelectVariant.typeahead && !customContent && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
@@ -467,7 +479,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 )}
               </React.Fragment>
             )}
-            {variant === SelectVariant.typeaheadMulti && (
+            {variant === SelectVariant.typeaheadMulti && !customContent && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
@@ -504,7 +516,22 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               </React.Fragment>
             )}
           </SelectToggle>
-          {variant === SelectVariant.single && isExpanded && (
+          {customContent && isExpanded && (
+            <SelectMenu
+              {...props}
+              selected={selections}
+              openedOnEnter={openedOnEnter}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+              sendRef={this.sendRef}
+              keyHandler={this.handleArrowKeys}
+              maxHeight={maxHeight}
+              isCustomContent
+            >
+              {customContent}
+            </SelectMenu>
+          )}
+          {variant === SelectVariant.single && isExpanded && !customContent && (
             <SelectMenu
               {...props}
               selected={selections}
@@ -518,7 +545,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               {children}
             </SelectMenu>
           )}
-          {variant === SelectVariant.checkbox && isExpanded && (
+          {variant === SelectVariant.checkbox && isExpanded && !customContent && (
             <SelectMenu
               {...props}
               checked={selections as string[]}
@@ -532,20 +559,22 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               {children}
             </SelectMenu>
           )}
-          {(variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) && isExpanded && (
-            <SelectMenu
-              {...props}
-              selected={selections}
-              openedOnEnter={openedOnEnter}
-              aria-label={ariaLabel}
-              aria-labelledby={ariaLabelledBy}
-              sendRef={this.sendRef}
-              keyHandler={this.handleArrowKeys}
-              maxHeight={maxHeight}
-            >
-              {this.extendTypeaheadChildren(typeaheadActiveChild)}
-            </SelectMenu>
-          )}
+          {(variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) &&
+            isExpanded &&
+            !customContent && (
+              <SelectMenu
+                {...props}
+                selected={selections}
+                openedOnEnter={openedOnEnter}
+                aria-label={ariaLabel}
+                aria-labelledby={ariaLabelledBy}
+                sendRef={this.sendRef}
+                keyHandler={this.handleArrowKeys}
+                maxHeight={maxHeight}
+              >
+                {this.extendTypeaheadChildren(typeaheadActiveChild)}
+              </SelectMenu>
+            )}
         </SelectContext.Provider>
       </div>
     );
