@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.122.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.3...@patternfly/react-core@3.122.4) (2019-11-21)
+
+
+### Bug Fixes
+
+* **button:** support setting tab index unless not button and disabled ([#3240](https://github.com/patternfly/patternfly-react/issues/3240)) ([759c8f1](https://github.com/patternfly/patternfly-react/commit/759c8f1bb486cc9b2533160e7f91846f2728f817))
+
+
+
+
+
 ## [3.122.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.2...@patternfly/react-core@3.122.3) (2019-11-21)
 
 

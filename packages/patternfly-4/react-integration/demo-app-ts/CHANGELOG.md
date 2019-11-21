@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.3...demo-app-ts@3.11.4) (2019-11-21)
+
+
+### Bug Fixes
+
+* **button:** support setting tab index unless not button and disabled ([#3240](https://github.com/patternfly/patternfly-react/issues/3240)) ([759c8f1](https://github.com/patternfly/patternfly-react/commit/759c8f1bb486cc9b2533160e7f91846f2728f817))
+
+
+
+
+
 ## [3.11.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.2...demo-app-ts@3.11.3) (2019-11-21)
 
 **Note:** Version bump only for package demo-app-ts
