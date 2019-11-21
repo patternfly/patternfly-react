@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/",
   "dependencies": {
-    "@patternfly/patternfly": "2.43.0",
+    "@patternfly/patternfly": "2.43.1",
     "@patternfly/react-core": "^3.124.0",
     "@patternfly/react-icons": "^3.14.22",
     "@patternfly/react-styles": "^3.6.10",
