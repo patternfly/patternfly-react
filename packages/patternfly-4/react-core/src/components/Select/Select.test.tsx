@@ -381,3 +381,14 @@ describe('toggle icon', () => {
     expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
   });
 });
+
+describe('select with custom content', () => {
+  test('renders closed successfully', () => {
+    const view = mount(<Select customContent="testing custom" onToggle={jest.fn()} />);
+    expect(view).toMatchSnapshot();
+  });
+  test('renders expanded successfully', () => {
+    const view = mount(<Select customContent="testing custom" onToggle={jest.fn()} isExpanded />);
+    expect(view).toMatchSnapshot();
+  });
+});

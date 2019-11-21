@@ -126,4 +126,16 @@ describe('Select Test', () => {
       .should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
   });
+
+  it('Verify Custom Content Select', () => {
+    cy.get('#custom-content-select').click();
+    cy.get('#custom-content-select-id').within(() => {
+      cy.get('.pf-m-expanded').should('exist');
+    });
+    cy.get('div[class="pf-c-select__menu"]').should('exist');
+    cy.get('#custom-content-select').click();
+    cy.get('#custom-content-select-id').within(() => {
+      cy.get('.pf-m-expanded').should('not.exist');
+    });
+  });
 });
