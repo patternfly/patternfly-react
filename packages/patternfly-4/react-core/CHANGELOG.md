@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.122.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.2...@patternfly/react-core@3.122.3) (2019-11-21)
+
+
+### Bug Fixes
+
+* **PaginationTableDemo:** add Spinner and empty state to demo ([#3294](https://github.com/patternfly/patternfly-react/issues/3294)) ([c4cb9f4](https://github.com/patternfly/patternfly-react/commit/c4cb9f496be52224608985912d7a2673969f5531))
+
+
+
+
+
 ## [3.122.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.1...@patternfly/react-core@3.122.2) (2019-11-20)
 
 
