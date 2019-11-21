@@ -53,7 +53,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
 
   extendChildren() {
     const { children, isGrouped } = this.props;
-    const childrenArray = children as React.ReactElement[];
+    const childrenArray: React.ReactElement[] = children as React.ReactElement[];
     if (isGrouped) {
       let index = 0;
       return React.Children.map(childrenArray, (group: React.ReactElement) =>

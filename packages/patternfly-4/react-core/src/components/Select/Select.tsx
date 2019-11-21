@@ -122,7 +122,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     onCreateOption: (_newOptionValue: string) => undefined as void,
     toggleIcon: null as React.ReactElement,
     onFilter: null,
-    customContent: null as React.ReactNode
+    customContent: null
   } as Partial<SelectProps & InjectedOuiaProps>;
 
   state: SelectState = {
