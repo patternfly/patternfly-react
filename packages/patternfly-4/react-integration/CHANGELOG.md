@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.11.1...@patternfly/react-integration@3.12.0) (2019-11-21)
+
+
+### Features
+
+* **Dropdown:** add split button action variant ([#3307](https://github.com/patternfly/patternfly-react/issues/3307)) ([625ea59](https://github.com/patternfly/patternfly-react/commit/625ea59df1c23ec7f70fb0c8de717a6b404db277))
+
+
+
+
+
 ## [3.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.11.0...@patternfly/react-integration@3.11.1) (2019-11-21)
 
 
