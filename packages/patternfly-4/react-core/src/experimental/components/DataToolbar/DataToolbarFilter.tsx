@@ -2,9 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { DataToolbarItem, DataToolbarItemProps } from './DataToolbarItem';
 import { ChipGroup, Chip, ChipGroupToolbarItem } from '../../../components/ChipGroup';
-import { DataToolbarContext } from './DataToolbarUtils';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
-import { getModifier } from '@patternfly/react-styles';
+import { DataToolbarContentContext, DataToolbarContext } from './DataToolbarUtils';
 
 export interface DataToolbarChip {
   /** A unique key to identify this chip */
@@ -88,10 +86,16 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     }
 
     return (
-      <React.Fragment>
-        {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
-        {chipGroup}
-      </React.Fragment>
+      <DataToolbarContentContext.Consumer>
+        {({ chipContainerRef }) => {
+          return (
+            <React.Fragment>
+              {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
+              {chipContainerRef.current && ReactDOM.createPortal(chipGroup, chipContainerRef.current)}
+            </React.Fragment>
+          );
+        }}
+      </DataToolbarContentContext.Consumer>
     );
   }
 }

@@ -21,41 +21,40 @@ import {
   KebabToggle,
   TextInput
 } from '@patternfly/react-core';
-import { SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
+import { SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
 
-type Filter = {
-  risk: string[],
-  status: string[],
+interface Filter {
+  risk: string[];
+  status: string[];
 }
 
 interface DataToolbarState {
-  isExpanded: boolean,
-  inputValue: string,
-  statusIsExpanded: false,
-  riskIsExpanded: false,
-  filters: Filter,
-  kebabIsOpen: false,
+  isExpanded: boolean;
+  inputValue: string;
+  statusIsExpanded: false;
+  riskIsExpanded: false;
+  filters: Filter;
+  kebabIsOpen: false;
 }
-
 
 export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolbarState> {
   constructor(props) {
     super(props);
     this.state = {
       isExpanded: false,
-      inputValue: "",
+      inputValue: '',
       statusIsExpanded: false,
       riskIsExpanded: false,
       filters: {
         risk: ['Low'],
-        status: ['New', 'Pending'],
+        status: ['New', 'Pending']
       },
       kebabIsOpen: false
     };
   }
 
   toggleIsExpanded = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       isExpanded: !prevState.isExpanded
     }));
   };
@@ -66,20 +65,18 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }));
   };
 
-  onInputChange = (newValue) => {
-    this.setState({inputValue: newValue});
+  onInputChange = newValue => {
+    this.setState({ inputValue: newValue });
   };
 
   onSelect = (type, event, selection) => {
     const checked = event.target.checked;
-    this.setState((prevState) => {
+    this.setState(prevState => {
       const prevSelections = prevState.filters[type];
       return {
         filters: {
           ...prevState.filters,
-          [type]: checked
-            ? [...prevSelections, selection]
-            : prevSelections.filter(value => value !== selection)
+          [type]: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
         }
       };
     });
@@ -93,21 +90,21 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     this.onSelect('risk', event, selection);
   };
 
-  onDelete = (type = "", id = "") => {
+  onDelete = (type = '', id = '') => {
     if (type) {
-      this.setState((prevState) => {
+      this.setState(prevState => {
         prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
         return {
-          filters: prevState.filters,
-        }
+          filters: prevState.filters
+        };
       });
     } else {
       this.setState({
         filters: {
           risk: [],
-          status: [],
+          status: []
         }
-      })
+      });
     }
   };
 
@@ -134,13 +131,7 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
   }
 
   render() {
-    const {
-      inputValue,
-      filters,
-      statusIsExpanded,
-      riskIsExpanded,
-      kebabIsOpen,
-    } = this.state;
+    const { inputValue, filters, statusIsExpanded, riskIsExpanded, kebabIsOpen } = this.state;
 
     const statusMenuItems = [
       <SelectOption key="statusNew" value="New" />,
@@ -155,44 +146,53 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
       <SelectOption key="riskHigh" value="High" />
     ];
 
-    const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem id="toolbar-demo-search">
-        <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
-        </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group" id="toolbar-demo-filters">
-        <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
-          <Select
-            variant={SelectVariant.checkbox}
-            aria-label="Status"
-            onToggle={this.onStatusToggle}
-            onSelect={this.onStatusSelect}
-            selections={filters.status}
-            isExpanded={statusIsExpanded}
-            placeholderText="Status"
-          >
-            {statusMenuItems}
-          </Select>
-        </DataToolbarFilter>
-        <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
-          <Select
-            variant={SelectVariant.checkbox}
-            aria-label="Risk"
-            onToggle={this.onRiskToggle}
-            onSelect={this.onRiskSelect}
-            selections={filters.risk}
-            isExpanded={riskIsExpanded}
-            placeholderText="Risk"
-          >
-            {riskMenuItems}
-          </Select>
-        </DataToolbarFilter>
-      </DataToolbarGroup>
-    </React.Fragment>;
+    const toggleGroupItems = (
+      <React.Fragment>
+        <DataToolbarItem id="toolbar-demo-search">
+          <InputGroup>
+            <TextInput
+              name="textInput2"
+              id="textInput2"
+              type="search"
+              aria-label="search input example"
+              onChange={this.onInputChange}
+              value={inputValue}
+            />
+            <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </DataToolbarItem>
+        <DataToolbarGroup variant="filter-group" id="toolbar-demo-filters">
+          <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Status"
+              onToggle={this.onStatusToggle}
+              onSelect={this.onStatusSelect}
+              selections={filters.status}
+              isExpanded={statusIsExpanded}
+              placeholderText="Status"
+            >
+              {statusMenuItems}
+            </Select>
+          </DataToolbarFilter>
+          <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Risk"
+              onToggle={this.onRiskToggle}
+              onSelect={this.onRiskSelect}
+              selections={filters.risk}
+              isExpanded={riskIsExpanded}
+              placeholderText="Risk"
+            >
+              {riskMenuItems}
+            </Select>
+          </DataToolbarFilter>
+        </DataToolbarGroup>
+      </React.Fragment>
+    );
 
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -212,37 +212,48 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
       </DropdownItem>
     ];
 
-    const toolbarItems = <React.Fragment>
-      <DataToolbarToggleGroup
-        toggleIcon={<FilterIcon />}
-        breakpoint='xl'
-        id='demo-toggle-group'
-      >
-        {toggleGroupItems}
-      </DataToolbarToggleGroup>
-      <DataToolbarGroup variant="icon-button-group">
-        <DataToolbarItem><Button variant="plain"><EditIcon /></Button></DataToolbarItem>
-        <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>
-        <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>
-      </DataToolbarGroup>
-      <DataToolbarItem>
-        <Dropdown
-          toggle={<KebabToggle onToggle={this.onKebabToggle} />}
-          isOpen={kebabIsOpen}
-          isPlain
-          dropdownItems={dropdownItems}
-        />
-      </DataToolbarItem>
-    </React.Fragment>;
+    const toolbarItems = (
+      <React.Fragment>
+        <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
+          {toggleGroupItems}
+        </DataToolbarToggleGroup>
+        <DataToolbarGroup variant="icon-button-group">
+          <DataToolbarItem>
+            <Button variant="plain">
+              <EditIcon />
+            </Button>
+          </DataToolbarItem>
+          <DataToolbarItem>
+            <Button variant="plain">
+              <CloneIcon />
+            </Button>
+          </DataToolbarItem>
+          <DataToolbarItem>
+            <Button variant="plain">
+              <SyncIcon />
+            </Button>
+          </DataToolbarItem>
+        </DataToolbarGroup>
+        <DataToolbarItem>
+          <Dropdown
+            toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+            isOpen={kebabIsOpen}
+            isPlain
+            dropdownItems={dropdownItems}
+          />
+        </DataToolbarItem>
+      </React.Fragment>
+    );
 
     return (
-      <DataToolbar id="data-toolbar-filter-demo"
-                   clearAllFilters={this.onDelete}
-                   className='pf-m-toggle-group-container'
-                   collapseListedFiltersBreakpoint='xl'>
-        <DataToolbarContent>
-          {toolbarItems}
-        </DataToolbarContent>
+      <DataToolbar
+        id="data-toolbar-filter-demo"
+        clearAllFilters={this.onDelete}
+        className="pf-m-toggle-group-container"
+        collapseListedFiltersBreakpoint="xl"
+        clearFiltersButtonText="Clear filters"
+      >
+        <DataToolbarContent>{toolbarItems}</DataToolbarContent>
       </DataToolbar>
     );
   }

@@ -18,7 +18,8 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 ```js title=Items
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, ButtonVariant, InputGroup, TextInput, SearchIcon } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
+import { SearchIcon } from '@patternfly/react-icons'
 
 class DataToolbarItems extends React.Component {
   constructor(props) {

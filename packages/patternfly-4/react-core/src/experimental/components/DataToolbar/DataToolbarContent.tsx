@@ -19,12 +19,15 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
   clearAllFilters?: () => void;
   /** Flag indicating that the clear all filters button should be visible */
   showClearFiltersButton?: boolean;
+  /** Text to display in the clear all filters button */
+  clearFiltersButtonText?: string;
   /** Id of the parent DataToolbar component */
   toolbarId?: string;
 }
 
 export class DataToolbarContent extends React.Component<DataToolbarContentProps> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
+  private chipContainerRef = React.createRef<HTMLDivElement>();
   private static currentId: number = 0;
 
   static defaultProps = {
@@ -42,6 +45,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
       breakpointMods,
       clearAllFilters,
       showClearFiltersButton,
+      clearFiltersButtonText,
       ...props
     } = this.props;
 
@@ -55,7 +59,8 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
         <DataToolbarContentContext.Provider
           value={{
             expandableContentRef: this.expandableContentRef,
-            expandableContentId
+            expandableContentId,
+            chipContainerRef: this.chipContainerRef
           }}
         >
           {children}
@@ -63,8 +68,10 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
             id={expandableContentId}
             isExpanded={isExpanded}
             expandableContentRef={this.expandableContentRef}
+            chipContainerRef={this.chipContainerRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}
+            clearFiltersButtonText={clearFiltersButtonText}
           />
         </DataToolbarContentContext.Provider>
       </div>
