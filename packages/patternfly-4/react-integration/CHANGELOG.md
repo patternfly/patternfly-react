@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.12.1...@patternfly/react-integration@3.13.0) (2019-11-21)
+
+
+### Features
+
+* **Select:** Add the ability to have custom content in the Select Menu ([#3333](https://github.com/patternfly/patternfly-react/issues/3333)) ([7f3b550](https://github.com/patternfly/patternfly-react/commit/7f3b550a604f99fce993f93ca6a3ef5cfd27c312)), closes [#3193](https://github.com/patternfly/patternfly-react/issues/3193)
+
+
+
+
+
 ## [3.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.12.0...@patternfly/react-integration@3.12.1) (2019-11-21)
 
 

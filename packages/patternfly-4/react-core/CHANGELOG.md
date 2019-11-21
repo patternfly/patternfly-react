@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.124.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.123.1...@patternfly/react-core@3.124.0) (2019-11-21)
+
+
+### Features
+
+* **Select:** Add the ability to have custom content in the Select Menu ([#3333](https://github.com/patternfly/patternfly-react/issues/3333)) ([7f3b550](https://github.com/patternfly/patternfly-react/commit/7f3b550a604f99fce993f93ca6a3ef5cfd27c312)), closes [#3193](https://github.com/patternfly/patternfly-react/issues/3193)
+
+
+
+
+
 ## [3.123.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.123.0...@patternfly/react-core@3.123.1) (2019-11-21)
 
 
