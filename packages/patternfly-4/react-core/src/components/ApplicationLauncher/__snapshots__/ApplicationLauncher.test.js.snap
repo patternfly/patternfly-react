@@ -615,6 +615,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -662,6 +663,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -710,6 +712,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -758,6 +761,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -803,6 +807,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onSelect={[Function]}
                   role="separator"
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -845,6 +850,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -892,6 +898,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2298,6 +2305,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2345,6 +2353,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2393,6 +2402,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2441,6 +2451,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2486,6 +2497,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onSelect={[Function]}
                   role="separator"
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2528,6 +2540,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2575,6 +2588,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   tabIndex={-1}
                   tooltip={null}
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}

@@ -34,6 +34,8 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   iconComponent?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems?: React.ReactNode[];
+  /** Variant of split button toggle */
+  splitButtonVariant?: 'action' | 'checkbox';
   /** Accessible label for the dropdown toggle button */
   'aria-label'?: string;
   /** Accessibility property to indicate correct has popup */
@@ -59,6 +61,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   onToggle = (_isOpen: boolean) => undefined as any,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
+  splitButtonVariant = 'checkbox',
   ariaHasPopup,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
@@ -92,7 +95,12 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   if (splitButtonItems) {
     return (
       <div
-        className={css(styles.dropdownToggle, styles.modifiers.splitButton, isDisabled && styles.modifiers.disabled)}
+        className={css(
+          styles.dropdownToggle,
+          styles.modifiers.splitButton,
+          splitButtonVariant === 'action' && styles.modifiers.action,
+          isDisabled && styles.modifiers.disabled
+        )}
       >
         {splitButtonItems}
         {toggle}

@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 import { Tooltip } from '../Tooltip';
+import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
 export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Anything which can be rendered as dropdown item */
@@ -13,6 +14,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
+  /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
+  variant?: 'item' | 'icon';
   /** Role for the item */
   role?: string;
   /** Render dropdown item as disabled option */
@@ -45,6 +48,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     className: '',
     isHovered: false,
     component: 'a',
+    variant: 'item',
     role: 'none',
     isDisabled: false,
     href: '',
@@ -57,7 +61,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       sendRef: Function.prototype
     },
     id: '',
-    componentID: '',
+    componentID: ''
   };
 
   componentDidMount() {
@@ -96,6 +100,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       context,
       onClick,
       component,
+      variant,
       role,
       isDisabled,
       index,
@@ -157,13 +162,17 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                 isComponentReactElement ? (
                   React.cloneElement(Component as React.ReactHTMLElement<any>, {
                     ...additionalProps,
-                    className: css(classes, itemClass)
+                    className: css(classes, itemClass, variant === 'icon' && styles.modifiers.icon)
                   })
                 ) : (
                   <Component
                     {...additionalProps}
                     href={href || null}
-                    className={css(classes, this.props.role !== 'separator' && itemClass)}
+                    className={css(
+                      classes,
+                      this.props.role !== 'separator' && itemClass,
+                      variant === 'icon' && styles.modifiers.icon
+                    )}
                     id={componentID}
                   >
                     {children}
