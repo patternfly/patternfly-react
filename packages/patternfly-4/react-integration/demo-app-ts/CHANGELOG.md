@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.12.0...demo-app-ts@3.12.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **DataToolbar:** move and wrap chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/issues/3319)) ([99f1efe](https://github.com/patternfly/patternfly-react/commit/99f1efe4c179754a1e1aa46585c9776c3073ee34))
+
+
+
+
+
 # [3.12.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.4...demo-app-ts@3.12.0) (2019-11-21)
 
 

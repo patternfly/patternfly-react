@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.123.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.123.0...@patternfly/react-core@3.123.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **DataToolbar:** move and wrap chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/issues/3319)) ([99f1efe](https://github.com/patternfly/patternfly-react/commit/99f1efe4c179754a1e1aa46585c9776c3073ee34))
+
+
+
+
+
 # [3.123.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.122.4...@patternfly/react-core@3.123.0) (2019-11-21)
 
 
