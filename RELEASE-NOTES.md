@@ -22,7 +22,7 @@ Packages released:
 - Added Interactive legend example ([#3253](https://github.com/patternfly/patternfly-react/pull/3253))
 
 ## Components
-- **About Modal:**
+- **About modal:**
    - Removed appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
 - **Accordion:**  
   - Added a prop to allow the box shadow to be removed ([#3309](https://github.com/patternfly/patternfly-react/pull/3309))
