@@ -118,7 +118,7 @@ Packages released:
 - Moved ChartThreshold to its own example ([#3019](https://github.com/patternfly/patternfly-react/pull/3019))
 
 ## Components
-- **About Modal:**
+- **About modal:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102))
 - **Application launcher:**
   - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
