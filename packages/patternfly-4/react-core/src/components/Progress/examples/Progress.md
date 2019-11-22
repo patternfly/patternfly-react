@@ -37,7 +37,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 <Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.outside} />
 ```
 
-```js title=Inside)
+```js title=Inside
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
