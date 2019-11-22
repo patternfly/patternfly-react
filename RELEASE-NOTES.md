@@ -22,23 +22,23 @@ Packages released:
 - Added Interactive legend example ([#3253](https://github.com/patternfly/patternfly-react/pull/3253))
 
 ## Components
-- **AboutModal:**
-   - Remove appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
+- **About Modal:**
+   - Removed appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
 - **Accordion:**  
   - Added a prop to allow the box shadow to be removed ([#3309](https://github.com/patternfly/patternfly-react/pull/3309))
 - **Button:**  
-  - Add support for setting tab index unless not button and disabled ([#3240](https://github.com/patternfly/patternfly-react/pull/3240))
-- **DataToolbar:**  
+  - Added support for setting tab index unless not button and disabled ([#3240](https://github.com/patternfly/patternfly-react/pull/3240))
+- **Data toolbar:**  
   - Moved and wrapped chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/pull/3319))
 - **Dropdown:**  
   - Added split button action variant ([#3307](https://github.com/patternfly/patternfly-react/pull/3307))
-  - Update keyboard interaction ([#3293](https://github.com/patternfly/patternfly-react/pull/3293))
+  - Updated keyboard interaction ([#3293](https://github.com/patternfly/patternfly-react/pull/3293))
 - **Flex:**
   - In breakpointMods, set the breakpoint as optional and added enums  ([#3258](https://github.com/patternfly/patternfly-react/pull/3258))
   - Fixed typo in align and justify modifiers ([#3328](https://github.com/patternfly/patternfly-react/pull/3328))
 - **Form:** 
   - Added validated variant to form inputs ([#3220](https://github.com/patternfly/patternfly-react/pull/3220))
-- **OptionsMenu:**
+- **Options menu:**
   - Removed the `<i>` element around selected item svg ([#3238](https://github.com/patternfly/patternfly-react/pull/3238))
 - **Pagination:**
   - Fixed previous page navigation issues with 1 row per page ([#3297](https://github.com/patternfly/patternfly-react/pull/3297))
@@ -47,7 +47,7 @@ Packages released:
   - Added the ability to have custom content in the select menu ([#3333](https://github.com/patternfly/patternfly-react/pull/3333))
   - Removed `<form>` from typeahead and checkbox selects ([#3298](https://github.com/patternfly/patternfly-react/pull/3298))
 - **Wizard:**
-  - Remove appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
+  - Removed appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
 
 ## Catalog view extension
 - **Chore:**
@@ -57,13 +57,13 @@ Packages released:
     - fixed @types errors when using the extension ([#3284](https://github.com/patternfly/patternfly-react/pull/3284))
     - Removed unused dev dependencies from package.json ([#3275](https://github.com/patternfly/patternfly-react/pull/3275))
     - Added check for sass changes ([#3271](https://github.com/patternfly/patternfly-react/pull/3271))
-- **CatalogTile:**  
+- **Catalog tile:**  
     - Removed unneeded selector ([#3331](https://github.com/patternfly/patternfly-react/pull/3331))
     - Edited target selector ([#3291](https://github.com/patternfly/patternfly-react/pull/3291))
     - Removed margin and fixed hidden text ([#3285](https://github.com/patternfly/patternfly-react/pull/3285))
     - Updated scss and add class to image ([#3282](https://github.com/patternfly/patternfly-react/pull/3282))
-- **PropertiesSidePanel:**
-  - Align sass file with correct styles for properties panel ([#3236](https://github.com/patternfly/patternfly-react/pull/3236))
+- **Properties side panel:**
+  - Aligned sass file with correct styles for properties panel ([#3236](https://github.com/patternfly/patternfly-react/pull/3236))
 
 ## Table
 - Added types, examples, and demo for onRowClick ([#3265](https://github.com/patternfly/patternfly-react/pull/3265))
@@ -88,8 +88,8 @@ Packages released:
   - fix(README.md) ([#3254](https://github.com/patternfly/patternfly-react/pull/3254))
 
 ## PF3
-  - **DateTimePicker:** 
-    - Properly import formatTime to DateTimePicker ([#3303](https://github.com/patternfly/patternfly-react/pull/3303))
+  - **Date and time picker:** 
+    - Properly imported formatTime to DateTimePicker ([#3303](https://github.com/patternfly/patternfly-react/pull/3303))
 
 # 2019.09 release notes (2019-11-01)
 Packages released:
