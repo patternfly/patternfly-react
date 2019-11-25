@@ -1,7 +1,6 @@
 ---
 title: Release notes
 section: overview
-hideTOC: true
 releaseNoteTOC: true
 ---
 
