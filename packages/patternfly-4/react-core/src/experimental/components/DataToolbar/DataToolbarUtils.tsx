@@ -12,23 +12,27 @@ interface DataToolbarContextProps {
   toggleIsExpanded: () => void;
   chipGroupContentRef: RefObject<HTMLDivElement>;
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => void;
+  numberOfFilters: number;
 }
 
 export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({
   isExpanded: false,
   toggleIsExpanded: () => {},
   chipGroupContentRef: null,
-  updateNumberFilters: (categoryName: string, numberOfFilters: number) => {}
+  updateNumberFilters: (categoryName: string, numberOfFilters: number) => {},
+  numberOfFilters: 0,
 });
 
 interface DataToolbarContentContextProps {
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
+  chipContainerRef: RefObject<any>;
 }
 
 export const DataToolbarContentContext = React.createContext<Partial<DataToolbarContentContextProps>>({
   expandableContentRef: null,
   expandableContentId: '',
+  chipContainerRef: null,
 });
 
 export interface DataToolbarBreakpointMod {

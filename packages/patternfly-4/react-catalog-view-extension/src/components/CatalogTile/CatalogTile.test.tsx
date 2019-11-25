@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
 import { shallow, mount } from 'enzyme';
 

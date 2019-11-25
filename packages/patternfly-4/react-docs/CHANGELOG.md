@@ -3,6 +3,190 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.16.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.43...@patternfly/react-docs@4.16.44) (2019-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.42...@patternfly/react-docs@4.16.43) (2019-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.41...@patternfly/react-docs@4.16.42) (2019-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.40...@patternfly/react-docs@4.16.41) (2019-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.39...@patternfly/react-docs@4.16.40) (2019-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.38...@patternfly/react-docs@4.16.39) (2019-11-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.37...@patternfly/react-docs@4.16.38) (2019-11-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.36...@patternfly/react-docs@4.16.37) (2019-11-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.35...@patternfly/react-docs@4.16.36) (2019-11-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.34...@patternfly/react-docs@4.16.35) (2019-11-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.33...@patternfly/react-docs@4.16.34) (2019-11-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.32...@patternfly/react-docs@4.16.33) (2019-11-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.31...@patternfly/react-docs@4.16.32) (2019-11-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.30...@patternfly/react-docs@4.16.31) (2019-11-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.29...@patternfly/react-docs@4.16.30) (2019-11-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.28...@patternfly/react-docs@4.16.29) (2019-11-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.27...@patternfly/react-docs@4.16.28) (2019-11-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.26...@patternfly/react-docs@4.16.27) (2019-11-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.25...@patternfly/react-docs@4.16.26) (2019-11-15)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.24...@patternfly/react-docs@4.16.25) (2019-11-15)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.23...@patternfly/react-docs@4.16.24) (2019-11-15)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.22...@patternfly/react-docs@4.16.23) (2019-11-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.16.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.21...@patternfly/react-docs@4.16.22) (2019-11-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [4.16.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.20...@patternfly/react-docs@4.16.21) (2019-11-08)
 
 **Note:** Version bump only for package @patternfly/react-docs

@@ -3,6 +3,176 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.0...demo-app-ts@3.13.1) (2019-11-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [3.13.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.12.1...demo-app-ts@3.13.0) (2019-11-21)
+
+
+### Features
+
+* **Select:** Add the ability to have custom content in the Select Menu ([#3333](https://github.com/patternfly/patternfly-react/issues/3333)) ([7f3b550](https://github.com/patternfly/patternfly-react/commit/7f3b550a604f99fce993f93ca6a3ef5cfd27c312)), closes [#3193](https://github.com/patternfly/patternfly-react/issues/3193)
+
+
+
+
+
+## [3.12.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.12.0...demo-app-ts@3.12.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **DataToolbar:** move and wrap chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/issues/3319)) ([99f1efe](https://github.com/patternfly/patternfly-react/commit/99f1efe4c179754a1e1aa46585c9776c3073ee34))
+
+
+
+
+
+# [3.12.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.4...demo-app-ts@3.12.0) (2019-11-21)
+
+
+### Features
+
+* **Dropdown:** add split button action variant ([#3307](https://github.com/patternfly/patternfly-react/issues/3307)) ([625ea59](https://github.com/patternfly/patternfly-react/commit/625ea59df1c23ec7f70fb0c8de717a6b404db277))
+
+
+
+
+
+## [3.11.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.3...demo-app-ts@3.11.4) (2019-11-21)
+
+
+### Bug Fixes
+
+* **button:** support setting tab index unless not button and disabled ([#3240](https://github.com/patternfly/patternfly-react/issues/3240)) ([759c8f1](https://github.com/patternfly/patternfly-react/commit/759c8f1bb486cc9b2533160e7f91846f2728f817))
+
+
+
+
+
+## [3.11.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.2...demo-app-ts@3.11.3) (2019-11-21)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.11.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.1...demo-app-ts@3.11.2) (2019-11-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.11.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.11.0...demo-app-ts@3.11.1) (2019-11-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.10.0...demo-app-ts@3.11.0) (2019-11-20)
+
+
+### Features
+
+* **Accordion:** Add a prop to allow th box shadow to be removed ([#3309](https://github.com/patternfly/patternfly-react/issues/3309)) ([02145a2](https://github.com/patternfly/patternfly-react/commit/02145a2b224846e35c8c23df5958b57a5e47f101)), closes [#3195](https://github.com/patternfly/patternfly-react/issues/3195)
+
+
+
+
+
+# [3.10.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.20...demo-app-ts@3.10.0) (2019-11-19)
+
+
+### Features
+
+* **form:** Add validated variant to form inputs ([#3220](https://github.com/patternfly/patternfly-react/issues/3220)) ([52b17e9](https://github.com/patternfly/patternfly-react/commit/52b17e9e8a31311ce1860051928755e5a394d827))
+
+
+
+
+
+## [3.9.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.19...demo-app-ts@3.9.20) (2019-11-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.19](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.18...demo-app-ts@3.9.19) (2019-11-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.18](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.17...demo-app-ts@3.9.18) (2019-11-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.17](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.16...demo-app-ts@3.9.17) (2019-11-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.16](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.15...demo-app-ts@3.9.16) (2019-11-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.15](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.14...demo-app-ts@3.9.15) (2019-11-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.13...demo-app-ts@3.9.14) (2019-11-15)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.12...demo-app-ts@3.9.13) (2019-11-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.9.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.11...demo-app-ts@3.9.12) (2019-11-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.9.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.10...demo-app-ts@3.9.11) (2019-11-08)
 
 **Note:** Version bump only for package demo-app-ts

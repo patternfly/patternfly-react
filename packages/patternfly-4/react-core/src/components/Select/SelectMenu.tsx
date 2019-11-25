@@ -11,7 +11,9 @@ const FocusTrap: any = require('focus-trap-react');
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */
-  children: React.ReactElement[];
+  children: React.ReactElement[] | React.ReactNode;
+  /** Flag indicating that the children is custom content to render inside the SelectMenu.  If true, variant prop is ignored. */
+  isCustomContent?: boolean;
   /** Additional classes added to the SelectMenu control */
   className?: string;
   /** Flag indicating the Select is expanded */
@@ -45,21 +47,23 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     selected: '',
     maxHeight: '',
     sendRef: Function.prototype,
-    keyHandler: Function.prototype
+    keyHandler: Function.prototype,
+    isCustomContent: false
   };
 
   extendChildren() {
     const { children, isGrouped } = this.props;
+    const childrenArray: React.ReactElement[] = children as React.ReactElement[];
     if (isGrouped) {
       let index = 0;
-      return React.Children.map(children, (group: React.ReactElement) =>
+      return React.Children.map(childrenArray, (group: React.ReactElement) =>
         React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
           children: group.props.children.map((option: React.ReactElement) => this.cloneOption(option, index++))
         })
       );
     }
-    return React.Children.map(this.props.children, (child: React.ReactElement, index: number) =>
+    return React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
       this.cloneOption(child, index)
     );
   }
@@ -79,16 +83,19 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     });
   }
 
-  extendCheckboxChildren(props: any) {
+  extendCheckboxChildren() {
     const { children, isGrouped, checked, sendRef, keyHandler } = this.props;
-    const { 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy } = props;
+    const childrenArray = children as React.ReactElement[];
     if (isGrouped) {
       let index = 0;
-      return React.Children.map(children, (group: React.ReactElement) =>
+      return React.Children.map(childrenArray, (group: React.ReactElement) =>
         React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
           children: (
-            <fieldset aria-labelledby={group.props.label.replace(/\W/g, '-')} className={css(formStyles.formFieldset)}>
+            <fieldset
+              aria-labelledby={group.props.label.replace(/\W/g, '-')}
+              className={css(styles.selectMenuFieldset)}
+            >
               {group.props.children.map((option: React.ReactElement) =>
                 React.cloneElement(option, {
                   isChecked: checked && checked.includes(option.props.value),
@@ -103,13 +110,8 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       );
     }
     return (
-      <fieldset
-        {...props}
-        aria-label={ariaLabel}
-        aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-        className={css(formStyles.formFieldset)}
-      >
-        {React.Children.map(children, (child: React.ReactElement, index: number) =>
+      <React.Fragment>
+        {React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
           React.cloneElement(child, {
             isChecked: checked && checked.includes(child.props.value),
             sendRef,
@@ -117,13 +119,14 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             index
           })
         )}
-      </fieldset>
+      </React.Fragment>
     );
   }
 
   render() {
     const {
       children,
+      isCustomContent,
       className,
       isExpanded,
       openedOnEnter,
@@ -135,14 +138,26 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       maxHeight,
       noResultsFoundText,
       createText,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       ...props
     } = this.props;
+    const {} = props;
 
     return (
       <SelectConsumer>
         {({ variant }) => (
           <React.Fragment>
-            {variant !== SelectVariant.checkbox && (
+            {isCustomContent && (
+              <div
+                className={css(styles.selectMenu, className)}
+                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                {...props}
+              >
+                {children}
+              </div>
+            )}
+            {variant !== SelectVariant.checkbox && !isCustomContent && (
               <ul
                 className={css(styles.selectMenu, className)}
                 role="listbox"
@@ -152,26 +167,29 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
                 {this.extendChildren()}
               </ul>
             )}
-            {variant === SelectVariant.checkbox && React.Children.count(children) > 0 && (
+            {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
                 <div
                   className={css(styles.selectMenu, className)}
                   {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 >
-                  <form noValidate className={css(formStyles.form)}>
-                    <div className={css(formStyles.formGroup)}>{this.extendCheckboxChildren(props)}</div>
-                  </form>
+                  <fieldset
+                    {...props}
+                    aria-label={ariaLabel}
+                    aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+                    className={css(formStyles.formFieldset)}
+                  >
+                    {this.extendCheckboxChildren()}
+                  </fieldset>
                 </div>
               </FocusTrap>
             )}
-            {variant === SelectVariant.checkbox && React.Children.count(children) === 0 && (
+            {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
               <div
                 className={css(styles.selectMenu, className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
-                <form noValidate className={css(formStyles.form)}>
-                  <div className={css(formStyles.formGroup)} />
-                </form>
+                <fieldset className={css(styles.selectMenuFieldset)} />
               </div>
             )}
           </React.Fragment>

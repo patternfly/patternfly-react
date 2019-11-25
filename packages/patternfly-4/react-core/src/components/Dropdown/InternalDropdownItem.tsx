@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 import { Tooltip } from '../Tooltip';
+import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
 export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Anything which can be rendered as dropdown item */
@@ -13,6 +14,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
+  /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
+  variant?: 'item' | 'icon';
   /** Role for the item */
   role?: string;
   /** Render dropdown item as disabled option */
@@ -45,6 +48,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     className: '',
     isHovered: false,
     component: 'a',
+    variant: 'item',
     role: 'none',
     isDisabled: false,
     href: '',
@@ -57,7 +61,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       sendRef: Function.prototype
     },
     id: '',
-    componentID: '',
+    componentID: ''
   };
 
   componentDidMount() {
@@ -65,18 +69,20 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     context.sendRef(index, this.ref.current, isDisabled, role === 'separator');
   }
 
+  componentDidUpdate() {
+    const { context, index, isDisabled, role } = this.props;
+    context.sendRef(index, this.ref.current, isDisabled, role === 'separator');
+  }
+
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.keyCode === KEY_CODES.TAB) {
-      return;
-    }
     event.preventDefault();
-    if (event.keyCode === KEY_CODES.ARROW_UP) {
+    if (event.key === 'ArrowUp') {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
-    } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
+    } else if (event.key === 'ArrowDown') {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
-    } else if (event.keyCode === KEY_CODES.ENTER) {
+    } else if (event.key === 'Enter' || event.key === ' ') {
       const childNode = (this.ref.current && this.ref.current.childNodes && this.ref.current.childNodes.length
         ? this.ref.current.childNodes[0]
         : this.ref.current) as HTMLElement;
@@ -94,6 +100,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       context,
       onClick,
       component,
+      variant,
       role,
       isDisabled,
       index,
@@ -155,13 +162,17 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                 isComponentReactElement ? (
                   React.cloneElement(Component as React.ReactHTMLElement<any>, {
                     ...additionalProps,
-                    className: css(classes, itemClass)
+                    className: css(classes, itemClass, variant === 'icon' && styles.modifiers.icon)
                   })
                 ) : (
                   <Component
                     {...additionalProps}
                     href={href || null}
-                    className={css(classes, this.props.role !== 'separator' && itemClass)}
+                    className={css(
+                      classes,
+                      this.props.role !== 'separator' && itemClass,
+                      variant === 'icon' && styles.modifiers.icon
+                    )}
                     id={componentID}
                   >
                     {children}

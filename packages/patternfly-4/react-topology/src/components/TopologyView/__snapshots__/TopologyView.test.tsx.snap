@@ -14,11 +14,11 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
       id="simple-test-id"
     >
       <StackItem
-        className=""
+        className="pf-topology-container"
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill"
+          className="pf-l-stack__item pf-m-fill pf-topology-container"
         >
           <div
             className="pf-topology-content"
@@ -81,11 +81,11 @@ exports[`TopologyView should display topology correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className=""
+        className="pf-topology-container"
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill"
+          className="pf-l-stack__item pf-m-fill pf-topology-container"
         >
           <div
             className="pf-topology-content"
@@ -165,11 +165,11 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className="pf-topology-container__with-sidebar"
+        className="pf-topology-container pf-topology-container__with-sidebar"
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill pf-topology-container__with-sidebar"
+          className="pf-l-stack__item pf-m-fill pf-topology-container pf-topology-container__with-sidebar"
         >
           <div
             className="pf-topology-content"
@@ -252,11 +252,11 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className="pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
+        className="pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
+          className="pf-l-stack__item pf-m-fill pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
         >
           <div
             className="pf-topology-content"

@@ -37,6 +37,7 @@ export interface SelectDemoState {
   typeaheadOptions: any[];
   typeaheadCreateNew: () => void;
   typeaheadNewOptions: boolean;
+  customContentIsExpanded: boolean;
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -67,7 +68,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       { value: 'New Jersey', disabled: false }
     ],
     typeaheadIsCreatable: false,
-    typeaheadNewOptions: false
+    typeaheadNewOptions: false,
+    customContentIsExpanded: false
   };
 
   singleOptions = [
@@ -181,6 +183,12 @@ export class SelectDemo extends Component<SelectDemoState> {
   customTypeaheadMultiOnToggle = (customTypeaheadMultiIsExpanded: boolean) => {
     this.setState({
       customTypeaheadMultiIsExpanded
+    });
+  };
+
+  customContentOnToggle = (customContentIsExpanded: boolean) => {
+    this.setState({
+      customContentIsExpanded
     });
   };
 
@@ -709,6 +717,32 @@ export class SelectDemo extends Component<SelectDemoState> {
     );
   }
 
+  renderSelectCustomContent() {
+    const { customContentIsExpanded } = this.state;
+    const titleId = 'custom-content-title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Custom Content Select</Title>
+        <div id="custom-content-select-id">
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            customContent="[Panel contents here]"
+            toggleId="custom-content-select"
+            aria-label="Select Input"
+            onToggle={this.customContentOnToggle}
+            isExpanded={customContentIsExpanded}
+            ariaLabelledBy={titleId}
+            direction={this.state.direction}
+            maxHeight={200}
+            placeholderText="Custom Content..."
+          />
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack gutter="md">
@@ -721,6 +755,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderCustomDataTypeaheadMultiSelect()}
         {this.renderCustomTypeaheadMultiSelect()}
         {this.renderPlainTypeaheadMultiSelect()}
+        {this.renderSelectCustomContent()}
       </Stack>
     );
   }

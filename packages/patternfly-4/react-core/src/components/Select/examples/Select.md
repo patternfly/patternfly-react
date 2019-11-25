@@ -9,6 +9,7 @@ typescript: true
 import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 ## Examples
+
 ```js title=Single
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
@@ -59,29 +60,29 @@ class SingleSelectInput extends React.Component {
       });
     };
 
-    this.toggleDisabled = (checked) => {
+    this.toggleDisabled = checked => {
       this.setState({
         isDisabled: checked
-      })
-    }
+      });
+    };
 
-    this.setIcon = (checked) => {
+    this.setIcon = checked => {
       this.setState({
         isToggleIcon: checked
-      })
-    }
+      });
+    };
 
     this.toggleDirection = () => {
-      if(this.state.direction === SelectDirection.up) {
+      if (this.state.direction === SelectDirection.up) {
         this.setState({
           direction: SelectDirection.down
         });
       } else {
         this.setState({
           direction: SelectDirection.up
-        })
+        });
       }
-    }
+    };
   }
 
   render() {
@@ -340,11 +341,11 @@ class TypeaheadSelectInput extends React.Component {
       }
     };
 
-    this.onCreateOption = (newValue) => {
+    this.onCreateOption = newValue => {
       this.setState({
-        options: [...this.state.options, {value: newValue}]
+        options: [...this.state.options, { value: newValue }]
       });
-    }
+    };
 
     this.clearSelection = () => {
       this.setState({
@@ -353,23 +354,23 @@ class TypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.toggleDisabled = (checked) => {
+    this.toggleDisabled = checked => {
       this.setState({
         isDisabled: checked
-      })
-    }
+      });
+    };
 
-    this.toggleCreatable = (checked) => {
+    this.toggleCreatable = checked => {
       this.setState({
         isCreatable: checked
-      })
-    }
+      });
+    };
 
-    this.toggleCreateNew = (checked) => {
+    this.toggleCreateNew = checked => {
       this.setState({
         hasOnCreateOption: checked
-      })
-    }
+      });
+    };
   }
 
   render() {
@@ -392,7 +393,7 @@ class TypeaheadSelectInput extends React.Component {
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
-          onCreateOption={hasOnCreateOption && this.onCreateOption || undefined}
+          onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
         >
           {options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -436,13 +437,13 @@ class TypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.options = [
-        <SelectOption key={0} value="Alabama" />,
-        <SelectOption key={1} value="Florida" />,
-        <SelectOption key={2} value="New Jersey" />,
-        <SelectOption key={3} value="New Mexico" />,
-        <SelectOption key={4} value="New York" />,
-        <SelectOption key={5} value="North Carolina" />
-      ];
+      <SelectOption key={0} value="Alabama" />,
+      <SelectOption key={1} value="Florida" />,
+      <SelectOption key={2} value="New Jersey" />,
+      <SelectOption key={3} value="New Mexico" />,
+      <SelectOption key={4} value="New York" />,
+      <SelectOption key={5} value="North Carolina" />
+    ];
     this.state = {
       isExpanded: false,
       selected: null,
@@ -473,7 +474,7 @@ class TypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.customFilter = (e) => {
+    this.customFilter = e => {
       let input;
       try {
         input = new RegExp(e.target.value, 'i');
@@ -481,13 +482,11 @@ class TypeaheadSelectInput extends React.Component {
         input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
       let typeaheadFilteredChildren =
-        e.target.value !== ''
-          ? this.options.filter(child => input.test(child.props.value))
-          : this.options;
+        e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
       this.setState({
         options: typeaheadFilteredChildren
       });
-    }
+    };
   }
 
   render() {
@@ -541,9 +540,9 @@ class MultiTypeaheadSelectInput extends React.Component {
       hasOnCreateOption: false
     };
 
-    this.onCreateOption = (newValue) => {
+    this.onCreateOption = newValue => {
       this.setState({
-        options: [...this.state.options, {value: newValue}]
+        options: [...this.state.options, { value: newValue }]
       });
     };
 
@@ -575,17 +574,17 @@ class MultiTypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.toggleCreatable = (checked) => {
+    this.toggleCreatable = checked => {
       this.setState({
         isCreatable: checked
-      })
-    }
+      });
+    };
 
-    this.toggleCreateNew = (checked) => {
+    this.toggleCreateNew = checked => {
       this.setState({
         hasOnCreateOption: checked
-      })
-    }
+      });
+    };
   }
 
   render() {
@@ -608,7 +607,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
           isCreatable={isCreatable}
-          onCreateOption={hasOnCreateOption && this.onCreateOption || undefined}
+          onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
         >
           {this.state.options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -644,23 +643,23 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   constructor(props) {
     super(props);
     this.createState = (name, abbreviation, capital, founded) => {
-    return {
-      name: name,
-      abbreviation: abbreviation,
-      capital: capital,
-      founded: founded,
-      toString: function() {
-        return `${this.name} (${this.abbreviation}) - Founded: ${this.founded}`;
-      }
-    }
-  }
+      return {
+        name: name,
+        abbreviation: abbreviation,
+        capital: capital,
+        founded: founded,
+        toString: function() {
+          return `${this.name} (${this.abbreviation}) - Founded: ${this.founded}`;
+        }
+      };
+    };
     this.options = [
-      <SelectOption value={ this.createState('Alabama', 'AL', 'Montgomery', 1846)} />,
-      <SelectOption value={ this.createState('Florida', 'FL', 'Tailahassee', 1845)} />,
-      <SelectOption value={ this.createState('New Jersey', 'NJ', 'Trenton', 1787)} />,
-      <SelectOption value={ this.createState('New Mexico', 'NM', 'Santa Fe', 1912)} />,
-      <SelectOption value={ this.createState('New York', 'NY', 'Albany', 1788)} />,
-      <SelectOption value={ this.createState('North Carolina', 'NC', 'Raleigh', 1789)} />
+      <SelectOption key={0} value={this.createState('Alabama', 'AL', 'Montgomery', 1846)} />,
+      <SelectOption key={1} value={this.createState('Florida', 'FL', 'Tailahassee', 1845)} />,
+      <SelectOption key={2} value={this.createState('New Jersey', 'NJ', 'Trenton', 1787)} />,
+      <SelectOption key={3} value={this.createState('New Mexico', 'NM', 'Santa Fe', 1912)} />,
+      <SelectOption key={4} value={this.createState('New York', 'NY', 'Albany', 1788)} />,
+      <SelectOption key={5} value={this.createState('North Carolina', 'NC', 'Raleigh', 1789)} />
     ];
 
     this.state = {
@@ -696,8 +695,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
       });
     };
 
-
-    this.customFilter = (e) => {
+    this.customFilter = e => {
       let input;
       try {
         input = new RegExp(e.target.value.toString(), 'i');
@@ -709,7 +707,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
           ? this.options.filter(option => input.test(option.props.value.toString()))
           : this.options;
       return typeaheadFilteredChildren;
-    }
+    };
   }
 
   render() {
@@ -765,7 +763,7 @@ class PlainSelectInput extends React.Component {
 
     this.onToggle = isExpanded => {
       this.setState({
-        isExpanded,
+        isExpanded
       });
     };
 
@@ -823,6 +821,82 @@ class PlainSelectInput extends React.Component {
 }
 ```
 
+```js title=Panel
+import React from 'react';
+import { CubeIcon } from '@patternfly/react-icons';
+import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
 
+class SingleSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false,
+      isDisabled: false,
+      direction: SelectDirection.down
+    };
 
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
 
+    this.toggleDisabled = checked => {
+      this.setState({
+        isDisabled: checked
+      });
+    };
+
+    this.toggleDirection = () => {
+      if (this.state.direction === SelectDirection.up) {
+        this.setState({
+          direction: SelectDirection.down
+        });
+      } else {
+        this.setState({
+          direction: SelectDirection.up
+        });
+      }
+    };
+  }
+
+  render() {
+    const { isExpanded, selected, isDisabled, direction } = this.state;
+    const titleId = 'title-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.panel}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          isExpanded={isExpanded}
+          ariaLabelledBy={titleId}
+          isDisabled={isDisabled}
+          direction={direction}
+          customContent="[Panel contents here]"
+          placeholderText="Filter by birth month"
+        />
+        <Checkbox
+          label="isDisabled"
+          isChecked={this.state.isDisabled}
+          onChange={this.toggleDisabled}
+          aria-label="disabled checkbox"
+          id="toggle-disabled"
+          name="toggle-disabled"
+        />
+        <Checkbox
+          label="Expands up"
+          isChecked={direction === SelectDirection.up}
+          onChange={this.toggleDirection}
+          aria-label="direction checkbox"
+          id="toggle-direction"
+          name="toggle-direction"
+        />
+      </div>
+    );
+  }
+}
+```

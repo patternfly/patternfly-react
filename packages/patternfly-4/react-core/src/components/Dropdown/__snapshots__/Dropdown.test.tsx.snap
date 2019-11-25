@@ -251,6 +251,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -273,6 +274,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -295,6 +297,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -317,6 +320,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -340,6 +344,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -362,6 +367,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -397,6 +403,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -419,6 +426,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -441,6 +449,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -463,6 +472,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -486,6 +496,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -508,6 +519,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -545,6 +557,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -567,6 +580,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -589,6 +603,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -611,6 +626,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -634,6 +650,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -656,6 +673,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -693,6 +711,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -715,6 +734,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -737,6 +757,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -759,6 +780,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -782,6 +804,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -804,6 +827,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -987,6 +1011,7 @@ exports[`KebabToggle dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -1009,6 +1034,7 @@ exports[`KebabToggle dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -1031,6 +1057,7 @@ exports[`KebabToggle dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -1053,6 +1080,7 @@ exports[`KebabToggle dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -1076,6 +1104,7 @@ exports[`KebabToggle dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -1098,6 +1127,7 @@ exports[`KebabToggle dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -1132,6 +1162,7 @@ exports[`KebabToggle dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -1154,6 +1185,7 @@ exports[`KebabToggle dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -1176,6 +1208,7 @@ exports[`KebabToggle dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -1198,6 +1231,7 @@ exports[`KebabToggle dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -1221,6 +1255,7 @@ exports[`KebabToggle dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -1243,6 +1278,7 @@ exports[`KebabToggle dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -1279,6 +1315,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -1301,6 +1338,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -1323,6 +1361,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -1345,6 +1384,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -1368,6 +1408,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -1390,6 +1431,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -1426,6 +1468,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -1448,6 +1491,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -1470,6 +1514,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -1492,6 +1537,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -1515,6 +1561,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -1537,6 +1584,7 @@ exports[`KebabToggle dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -1719,6 +1767,7 @@ exports[`KebabToggle expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -1741,6 +1790,7 @@ exports[`KebabToggle expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -1763,6 +1813,7 @@ exports[`KebabToggle expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -1785,6 +1836,7 @@ exports[`KebabToggle expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -1808,6 +1860,7 @@ exports[`KebabToggle expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -1830,6 +1883,7 @@ exports[`KebabToggle expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -1864,6 +1918,7 @@ exports[`KebabToggle expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -1886,6 +1941,7 @@ exports[`KebabToggle expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -1908,6 +1964,7 @@ exports[`KebabToggle expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -1930,6 +1987,7 @@ exports[`KebabToggle expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -1953,6 +2011,7 @@ exports[`KebabToggle expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -1975,6 +2034,7 @@ exports[`KebabToggle expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -2011,6 +2071,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -2033,6 +2094,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -2055,6 +2117,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -2077,6 +2140,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -2100,6 +2164,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -2122,6 +2187,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -2159,6 +2225,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -2181,6 +2248,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -2203,6 +2271,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -2225,6 +2294,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -2248,6 +2318,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -2270,6 +2341,7 @@ exports[`KebabToggle expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -2637,6 +2709,7 @@ exports[`KebabToggle expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -2676,6 +2749,7 @@ exports[`KebabToggle expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -2716,6 +2790,7 @@ exports[`KebabToggle expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -2756,6 +2831,7 @@ exports[`KebabToggle expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -2799,6 +2875,7 @@ exports[`KebabToggle expanded 1`] = `
                   onSelect={[Function]}
                   role="separator"
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -2836,6 +2913,7 @@ exports[`KebabToggle expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -2875,6 +2953,7 @@ exports[`KebabToggle expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -2927,6 +3006,7 @@ exports[`KebabToggle plain 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -2949,6 +3029,7 @@ exports[`KebabToggle plain 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -2971,6 +3052,7 @@ exports[`KebabToggle plain 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -2993,6 +3075,7 @@ exports[`KebabToggle plain 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -3016,6 +3099,7 @@ exports[`KebabToggle plain 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -3038,6 +3122,7 @@ exports[`KebabToggle plain 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -3072,6 +3157,7 @@ exports[`KebabToggle plain 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -3094,6 +3180,7 @@ exports[`KebabToggle plain 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -3116,6 +3203,7 @@ exports[`KebabToggle plain 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -3138,6 +3226,7 @@ exports[`KebabToggle plain 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -3161,6 +3250,7 @@ exports[`KebabToggle plain 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -3183,6 +3273,7 @@ exports[`KebabToggle plain 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -3219,6 +3310,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -3241,6 +3333,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -3263,6 +3356,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -3285,6 +3379,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -3308,6 +3403,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -3330,6 +3426,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -3367,6 +3464,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -3389,6 +3487,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -3411,6 +3510,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -3433,6 +3533,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -3456,6 +3557,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -3478,6 +3580,7 @@ exports[`KebabToggle plain 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -3660,6 +3763,7 @@ exports[`KebabToggle regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -3682,6 +3786,7 @@ exports[`KebabToggle regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -3704,6 +3809,7 @@ exports[`KebabToggle regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -3726,6 +3832,7 @@ exports[`KebabToggle regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -3749,6 +3856,7 @@ exports[`KebabToggle regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -3771,6 +3879,7 @@ exports[`KebabToggle regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -3804,6 +3913,7 @@ exports[`KebabToggle regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -3826,6 +3936,7 @@ exports[`KebabToggle regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -3848,6 +3959,7 @@ exports[`KebabToggle regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -3870,6 +3982,7 @@ exports[`KebabToggle regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -3893,6 +4006,7 @@ exports[`KebabToggle regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -3915,6 +4029,7 @@ exports[`KebabToggle regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -3950,6 +4065,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -3972,6 +4088,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -3994,6 +4111,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -4016,6 +4134,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -4039,6 +4158,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -4061,6 +4181,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -4097,6 +4218,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -4119,6 +4241,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -4141,6 +4264,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -4163,6 +4287,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -4186,6 +4311,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -4208,6 +4334,7 @@ exports[`KebabToggle regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -4390,6 +4517,7 @@ exports[`KebabToggle right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -4412,6 +4540,7 @@ exports[`KebabToggle right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -4434,6 +4563,7 @@ exports[`KebabToggle right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -4456,6 +4586,7 @@ exports[`KebabToggle right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -4479,6 +4610,7 @@ exports[`KebabToggle right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -4501,6 +4633,7 @@ exports[`KebabToggle right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -4535,6 +4668,7 @@ exports[`KebabToggle right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -4557,6 +4691,7 @@ exports[`KebabToggle right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -4579,6 +4714,7 @@ exports[`KebabToggle right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -4601,6 +4737,7 @@ exports[`KebabToggle right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -4624,6 +4761,7 @@ exports[`KebabToggle right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -4646,6 +4784,7 @@ exports[`KebabToggle right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -4682,6 +4821,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -4704,6 +4844,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -4726,6 +4867,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -4748,6 +4890,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -4771,6 +4914,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -4793,6 +4937,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -4830,6 +4975,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -4852,6 +4998,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -4874,6 +5021,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -4896,6 +5044,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -4919,6 +5068,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -4941,6 +5091,7 @@ exports[`KebabToggle right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -5374,6 +5525,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -5396,6 +5548,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -5418,6 +5571,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -5440,6 +5594,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -5463,6 +5618,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -5485,6 +5641,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -5522,6 +5679,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -5544,6 +5702,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -5566,6 +5725,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -5588,6 +5748,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -5611,6 +5772,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -5633,6 +5795,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -5672,6 +5835,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -5694,6 +5858,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -5716,6 +5881,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -5738,6 +5904,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -5761,6 +5928,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -5783,6 +5951,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -5822,6 +5991,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -5844,6 +6014,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -5866,6 +6037,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -5888,6 +6060,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -5911,6 +6084,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -5933,6 +6107,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -6133,6 +6308,7 @@ exports[`dropdown dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -6155,6 +6331,7 @@ exports[`dropdown dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -6177,6 +6354,7 @@ exports[`dropdown dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -6199,6 +6377,7 @@ exports[`dropdown dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -6222,6 +6401,7 @@ exports[`dropdown dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -6244,6 +6424,7 @@ exports[`dropdown dropup 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -6280,6 +6461,7 @@ exports[`dropdown dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -6302,6 +6484,7 @@ exports[`dropdown dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -6324,6 +6507,7 @@ exports[`dropdown dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -6346,6 +6530,7 @@ exports[`dropdown dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -6369,6 +6554,7 @@ exports[`dropdown dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -6391,6 +6577,7 @@ exports[`dropdown dropup 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -6429,6 +6616,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -6451,6 +6639,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -6473,6 +6662,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -6495,6 +6685,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -6518,6 +6709,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -6540,6 +6732,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -6578,6 +6771,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -6600,6 +6794,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -6622,6 +6817,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -6644,6 +6840,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -6667,6 +6864,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -6689,6 +6887,7 @@ exports[`dropdown dropup 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -6888,6 +7087,7 @@ exports[`dropdown expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -6910,6 +7110,7 @@ exports[`dropdown expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -6932,6 +7133,7 @@ exports[`dropdown expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -6954,6 +7156,7 @@ exports[`dropdown expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -6977,6 +7180,7 @@ exports[`dropdown expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -6999,6 +7203,7 @@ exports[`dropdown expanded 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -7035,6 +7240,7 @@ exports[`dropdown expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -7057,6 +7263,7 @@ exports[`dropdown expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -7079,6 +7286,7 @@ exports[`dropdown expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -7101,6 +7309,7 @@ exports[`dropdown expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -7124,6 +7333,7 @@ exports[`dropdown expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -7146,6 +7356,7 @@ exports[`dropdown expanded 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -7184,6 +7395,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -7206,6 +7418,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -7228,6 +7441,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -7250,6 +7464,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -7273,6 +7488,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -7295,6 +7511,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -7334,6 +7551,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -7356,6 +7574,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -7378,6 +7597,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -7400,6 +7620,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -7423,6 +7644,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -7445,6 +7667,7 @@ exports[`dropdown expanded 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -7829,6 +8052,7 @@ exports[`dropdown expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -7868,6 +8092,7 @@ exports[`dropdown expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -7908,6 +8133,7 @@ exports[`dropdown expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -7948,6 +8174,7 @@ exports[`dropdown expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -7991,6 +8218,7 @@ exports[`dropdown expanded 1`] = `
                   onSelect={[Function]}
                   role="separator"
                   tooltipProps={Object {}}
+                  variant="item"
                 >
                   <li
                     className={null}
@@ -8028,6 +8256,7 @@ exports[`dropdown expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -8067,6 +8296,7 @@ exports[`dropdown expanded 1`] = `
                 onSelect={[Function]}
                 role="none"
                 tooltipProps={Object {}}
+                variant="item"
               >
                 <li
                   className={null}
@@ -8119,6 +8349,7 @@ exports[`dropdown primary 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -8141,6 +8372,7 @@ exports[`dropdown primary 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -8163,6 +8395,7 @@ exports[`dropdown primary 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -8185,6 +8418,7 @@ exports[`dropdown primary 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -8208,6 +8442,7 @@ exports[`dropdown primary 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -8230,6 +8465,7 @@ exports[`dropdown primary 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -8266,6 +8502,7 @@ exports[`dropdown primary 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -8288,6 +8525,7 @@ exports[`dropdown primary 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -8310,6 +8548,7 @@ exports[`dropdown primary 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -8332,6 +8571,7 @@ exports[`dropdown primary 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -8355,6 +8595,7 @@ exports[`dropdown primary 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -8377,6 +8618,7 @@ exports[`dropdown primary 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -8415,6 +8657,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -8437,6 +8680,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -8459,6 +8703,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -8481,6 +8726,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -8504,6 +8750,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -8526,6 +8773,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -8565,6 +8813,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -8587,6 +8836,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -8609,6 +8859,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -8631,6 +8882,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -8654,6 +8906,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -8676,6 +8929,7 @@ exports[`dropdown primary 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -8877,6 +9131,7 @@ exports[`dropdown regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -8899,6 +9154,7 @@ exports[`dropdown regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -8921,6 +9177,7 @@ exports[`dropdown regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -8943,6 +9200,7 @@ exports[`dropdown regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -8966,6 +9224,7 @@ exports[`dropdown regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -8988,6 +9247,7 @@ exports[`dropdown regular 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -9023,6 +9283,7 @@ exports[`dropdown regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -9045,6 +9306,7 @@ exports[`dropdown regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -9067,6 +9329,7 @@ exports[`dropdown regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -9089,6 +9352,7 @@ exports[`dropdown regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -9112,6 +9376,7 @@ exports[`dropdown regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -9134,6 +9399,7 @@ exports[`dropdown regular 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -9171,6 +9437,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -9193,6 +9460,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -9215,6 +9483,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -9237,6 +9506,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -9260,6 +9530,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -9282,6 +9553,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -9320,6 +9592,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -9342,6 +9615,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -9364,6 +9638,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -9386,6 +9661,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -9409,6 +9685,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -9431,6 +9708,7 @@ exports[`dropdown regular 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -9630,6 +9908,7 @@ exports[`dropdown right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -9652,6 +9931,7 @@ exports[`dropdown right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -9674,6 +9954,7 @@ exports[`dropdown right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -9696,6 +9977,7 @@ exports[`dropdown right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -9719,6 +10001,7 @@ exports[`dropdown right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -9741,6 +10024,7 @@ exports[`dropdown right aligned 1`] = `
         onSelect={[Function]}
         role="none"
         tooltipProps={Object {}}
+        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -9777,6 +10061,7 @@ exports[`dropdown right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -9799,6 +10084,7 @@ exports[`dropdown right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -9821,6 +10107,7 @@ exports[`dropdown right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -9843,6 +10130,7 @@ exports[`dropdown right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -9866,6 +10154,7 @@ exports[`dropdown right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -9888,6 +10177,7 @@ exports[`dropdown right aligned 1`] = `
           onSelect={[Function]}
           role="none"
           tooltipProps={Object {}}
+          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -9926,6 +10216,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -9948,6 +10239,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -9970,6 +10262,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -9992,6 +10285,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -10015,6 +10309,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -10037,6 +10332,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,
@@ -10076,6 +10372,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Link
             </InternalDropdownItem>,
@@ -10098,6 +10395,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Action
             </InternalDropdownItem>,
@@ -10120,6 +10418,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Link
             </InternalDropdownItem>,
@@ -10142,6 +10441,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Disabled Action
             </InternalDropdownItem>,
@@ -10165,6 +10465,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Link
             </InternalDropdownItem>,
@@ -10187,6 +10488,7 @@ exports[`dropdown right aligned 1`] = `
               onSelect={[Function]}
               role="none"
               tooltipProps={Object {}}
+              variant="item"
             >
               Separated Action
             </InternalDropdownItem>,

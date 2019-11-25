@@ -3,6 +3,80 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.12.1...@patternfly/react-integration@3.13.0) (2019-11-21)
+
+
+### Features
+
+* **Select:** Add the ability to have custom content in the Select Menu ([#3333](https://github.com/patternfly/patternfly-react/issues/3333)) ([7f3b550](https://github.com/patternfly/patternfly-react/commit/7f3b550a604f99fce993f93ca6a3ef5cfd27c312)), closes [#3193](https://github.com/patternfly/patternfly-react/issues/3193)
+
+
+
+
+
+## [3.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.12.0...@patternfly/react-integration@3.12.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **DataToolbar:** move and wrap chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/issues/3319)) ([99f1efe](https://github.com/patternfly/patternfly-react/commit/99f1efe4c179754a1e1aa46585c9776c3073ee34))
+
+
+
+
+
+# [3.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.11.1...@patternfly/react-integration@3.12.0) (2019-11-21)
+
+
+### Features
+
+* **Dropdown:** add split button action variant ([#3307](https://github.com/patternfly/patternfly-react/issues/3307)) ([625ea59](https://github.com/patternfly/patternfly-react/commit/625ea59df1c23ec7f70fb0c8de717a6b404db277))
+
+
+
+
+
+## [3.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.11.0...@patternfly/react-integration@3.11.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **button:** support setting tab index unless not button and disabled ([#3240](https://github.com/patternfly/patternfly-react/issues/3240)) ([759c8f1](https://github.com/patternfly/patternfly-react/commit/759c8f1bb486cc9b2533160e7f91846f2728f817))
+
+
+
+
+
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.10.0...@patternfly/react-integration@3.11.0) (2019-11-20)
+
+
+### Features
+
+* **Accordion:** Add a prop to allow th box shadow to be removed ([#3309](https://github.com/patternfly/patternfly-react/issues/3309)) ([02145a2](https://github.com/patternfly/patternfly-react/commit/02145a2b224846e35c8c23df5958b57a5e47f101)), closes [#3195](https://github.com/patternfly/patternfly-react/issues/3195)
+
+
+
+
+
+# [3.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.9.4...@patternfly/react-integration@3.10.0) (2019-11-19)
+
+
+### Features
+
+* **form:** Add validated variant to form inputs ([#3220](https://github.com/patternfly/patternfly-react/issues/3220)) ([52b17e9](https://github.com/patternfly/patternfly-react/commit/52b17e9e8a31311ce1860051928755e5a394d827))
+
+
+
+
+
+## [3.9.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.9.3...@patternfly/react-integration@3.9.4) (2019-11-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 ## [3.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.9.2...@patternfly/react-integration@3.9.3) (2019-11-06)
 
 **Note:** Version bump only for package @patternfly/react-integration

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Flex } from './Flex';
 import { FlexItem } from './FlexItem';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { FlexModifiers, FlexItemModifiers } from './FlexUtils';
 
 test('Simple flex with single item', () => {
   const view = shallow(
@@ -32,4 +33,22 @@ test('extra props are spread to the root element', () => {
   const testId = 'flex';
   const view = shallow(<Flex data-testid={testId} />);
   expect(view.prop('data-testid')).toBe(testId);
+});
+
+describe('flex modifiers', () => {
+  Object.values(FlexModifiers).forEach(mod => {
+    test(`${mod} is a valid modifier`, () => {
+      const view = mount(<Flex breakpointMods={[{ modifier: mod as keyof typeof FlexModifiers }]}>{mod}</Flex>)
+      expect(view.find('div').prop('className')).not.toMatch(/undefined/)
+    })
+  })
+});
+
+describe('flex item modifiers', () => {
+  Object.values(FlexItemModifiers).forEach(mod => {
+    test(`${mod} is a valid modifier`, () => {
+      const view = mount(<FlexItem breakpointMods={[{ modifier: mod as keyof typeof FlexItemModifiers }]}>{mod}</FlexItem>)
+      expect(view.find('div').prop('className')).not.toMatch(/undefined/)
+    })
+  })
 });

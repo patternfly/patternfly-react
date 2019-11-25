@@ -5,6 +5,7 @@ import DateInput from './DateComponents/DateInput';
 import TodayButton from './DateComponents/TodayButton';
 import TimeInput from './TimeComponents/TimeInput';
 import { MONTH } from './DateComponents/DateConstants';
+import { formatTime } from './TimeHelpers';
 
 class DateTimePicker extends React.Component {
   constructor(props) {

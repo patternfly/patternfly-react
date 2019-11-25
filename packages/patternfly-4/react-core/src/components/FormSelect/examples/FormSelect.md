@@ -84,6 +84,72 @@ class FormSelectInputInvalid extends React.Component {
 }
 ```
 
+```js title=Validated
+import React from 'react';
+import { Form, FormGroup, FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+
+class FormSelectInputInvalid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      invalidText: 'You must choose something',
+      isValid: true,
+      validated: 'default',
+      helperText: 'Make a selection'
+    };
+
+    this.onChange = (value, event) => {
+      const isValid = value === '3';
+      this.setState({ value, isValid,  validated: 'error', helperText: 'Validating...'});
+      if (isValid) {
+        setTimeout(() => {
+          if (this.state.isValid) {
+            this.setState({isValid: true, validated: 'success', helperText: 'You chose wisely'});
+          } else {
+            this.setState({isValid: false, validated: 'error', invalidText: 'You must chose Three (thought that was obvious)'});
+          }
+        }, 2000);
+      }
+    };
+    this.options = [
+      { value: '', label: 'Choose a number', disabled: false },
+      { value: '1', label: 'One', disabled: false },
+      { value: '2', label: 'Two', disabled: false },
+      { value: '3', label: 'Three - the only valid option', disabled: false }
+    ];
+  }
+
+  render() {
+    const { value, isValid, validated, helperText, invalidText } = this.state;
+    return (
+      <Form>
+        <FormGroup
+          label="Selection:"
+          type="string"
+          helperText={helperText}
+          helperTextInvalid={invalidText}
+          fieldId="selection"
+          validated={validated}
+        >
+          <FormSelect
+            id="selection"
+            validated={validated}
+            value={value}
+            onChange={this.onChange}
+            aria-label="FormSelect Input"
+          >
+            {this.options.map((option, index) => (
+              <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+            ))}
+          </FormSelect>
+        </FormGroup>
+      </Form>
+    );
+  }
+}
+```
+
 ```js title=Disabled
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';

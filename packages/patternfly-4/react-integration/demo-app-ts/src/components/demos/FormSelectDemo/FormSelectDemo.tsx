@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup, Text, ValidatedOptions } from '@patternfly/react-core';
 
 interface FormSelectState {
   value: string;
+  validatedValue: string;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
 }
 
 export class FormSelectDemo extends Component<{}, FormSelectState> {
   groups: any[];
+  validatedSelectOptions: any[];
   constructor(props) {
     super(props);
     this.state = {
-      value: '2'
+      value: '2',
+      validatedValue: '',
+      validated: ValidatedOptions.default
     };
     this.groups = [
       {
@@ -38,10 +43,22 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
         ]
       }
     ];
+
+    this.validatedSelectOptions = [
+      { value: '', label: 'Choose a number', disabled: false },
+      { value: '1', label: 'One', disabled: false },
+      { value: '2', label: 'Two', disabled: false },
+      { value: '3', label: 'Three - the only valid option', disabled: false }
+    ];
   }
 
   onChange = (value: string, event: any) => {
     this.setState({ value });
+  };
+
+  onChangeValidatedSelect = (value: string, event: any) => {
+    const validated = value === '3' ? ValidatedOptions.success : ValidatedOptions.error;
+    this.setState({ validatedValue: value, validated });
   };
 
   componentDidMount() {
@@ -55,15 +72,29 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
 
   render() {
     return (
-      <FormSelect value={this.state.value} onChange={this.onChange} aria-label="FormSelect Input">
-        {this.groups.map((group, index) => (
-          <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
-            {group.options.map((option, i) => (
-              <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
-            ))}
-          </FormSelectOptionGroup>
-        ))}
-      </FormSelect>
+      <React.Fragment>
+        <FormSelect id="select1" value={this.state.value} onChange={this.onChange} aria-label="FormSelect Input">
+          {this.groups.map((group, index) => (
+            <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
+              {group.options.map((option, i) => (
+                <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
+              ))}
+            </FormSelectOptionGroup>
+          ))}
+        </FormSelect>
+        <Text>Validated text area </Text>
+        <FormSelect
+          id="validated-select"
+          value={this.state.validatedValue}
+          onChange={this.onChangeValidatedSelect}
+          aria-label="FormSelect Validated Input"
+          validated={this.state.validated}
+        >
+          {this.validatedSelectOptions.map((option, index) => (
+            <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+          ))}
+        </FormSelect>
+      </React.Fragment>
     );
   }
 }
