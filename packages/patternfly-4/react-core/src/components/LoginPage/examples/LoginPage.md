@@ -21,7 +21,6 @@ import { ExclamationCircleIcon } from '@patternfly/react-icons';
 ## Examples
 ```js title=Basic isFullscreen
 import React from 'react';
-import brandImg from './brandImgColor.svg';
 import {
   LoginFooterItem,
   LoginForm,
@@ -158,7 +157,7 @@ class SimpleLoginPage extends React.Component {
     return (
       <LoginPage
         footerListVariants="inline"
-        brandImgSrc={brandImg}
+        brandImgSrc="https://www.patternfly.org/assets/images/pf_logo_color.svg"
         brandImgAlt="PatternFly logo"
         backgroundImgSrc={images}
         backgroundImgAlt="Images"
