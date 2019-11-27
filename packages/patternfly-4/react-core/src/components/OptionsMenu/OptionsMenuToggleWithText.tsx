@@ -71,18 +71,14 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       {...props}
     >
       <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
-      <OptionsMenuToggle
-        className={toggleButtonContentsClassName}
-        isDisabled={isDisabled}
-        aria-label={ariaLabel}
-        isOpen={isOpen}
-        isSplitButton
-        onToggle={onToggle}
-        aria-haspopup="listbox"
-        parentRef={parentRef}
-        onEnter={onEnter}
-        toggleTemplate={toggleButtonContents}
-      />
+      <button className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
+              id={`${parentId}-toggle`}
+              aria-haspopup="listbox"
+              aria-label={ariaLabel}
+              aria-expanded={isOpen}
+              onClick={() => onToggle(!isOpen)}>
+        {toggleButtonContents}
+      </button>
     </div>
   );
 };

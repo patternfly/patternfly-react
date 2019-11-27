@@ -3,7 +3,7 @@ import {
   OptionsMenu,
   OptionsMenuProps,
   OptionsMenuItem,
-  OptionsMenuItemGroup,
+  OptionsMenuGroup,
   OptionsMenuSeparator,
   OptionsMenuToggle,
   OptionsMenuDirection,
@@ -42,7 +42,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
   };
 
   onSelect = event => {
-    const id = event.target.id;
+    const id = event.currentTarget.id;
     this.setState(() => {
       return { selectedOption: id };
     });
@@ -93,13 +93,13 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     const myModifiedMenuProps: OptionsMenuProps = {
       id: 'options-menu-modified-example',
       menuItems: [
-        <OptionsMenuItemGroup>
+        <OptionsMenuGroup groupTitle="Second group">
           <OptionsMenuItem onSelect={() => {}}>First Option</OptionsMenuItem>
-        </OptionsMenuItemGroup>,
+        </OptionsMenuGroup>,
         <OptionsMenuSeparator />,
-        <OptionsMenuItemGroup>
+        <OptionsMenuGroup groupTitle="First group">
           <OptionsMenuItem onSelect={() => {}}>Second Option</OptionsMenuItem>
-        </OptionsMenuItemGroup>
+        </OptionsMenuGroup>
       ],
       toggle: (
         <OptionsMenuToggleWithText
@@ -115,7 +115,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     };
 
     const myDisabledOptionsMenuProps: OptionsMenuProps = {
-      id: 'options-menu-single-option-disabled-example',
+      id: 'options-menu-modified-disabled',
       menuItems: [],
       toggle: (
         <OptionsMenuToggle

@@ -19,7 +19,7 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Id of the root element of the Options menu */
   id: string;
-  /** Array of OptionsMenuItem and/or OptionMenuItemGroup nodes that will be rendered in the Options menu list */
+  /** Array of OptionsMenuItem and/or OptionMenuGroup nodes that will be rendered in the Options menu list */
   menuItems: React.ReactNode[];
   /** Either an OptionsMenuToggle or an OptionsMenuToggleWithText to use to toggle the Options menu */
   toggle: React.ReactElement;
