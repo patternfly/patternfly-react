@@ -288,10 +288,11 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
+    const rows = this.state.rows.map(row => ({ cells: row.cells }));
     return (
       <React.Fragment>
         {this.renderPagination()}
-        <Table aria-label="Automated pagination table" cells={this.columns} rows={this.state.rows.map(row => row.cells)}>
+        <Table aria-label="Automated pagination table" cells={this.columns} rows={rows}>
           <TableHeader />
           <TableBody />
         </Table>
