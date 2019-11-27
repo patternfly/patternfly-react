@@ -83,18 +83,6 @@ class ComplexPaginationTableDemo extends React.Component {
     )
   }
 
-  fetch(page, perPage) {
-    this.setState({ loading: true });
-    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ res: resp, perPage, page, loading: false }))
-      .catch(err => this.setState({ error: err, loading: false }));
-  }
-
-  componentDidMount() {
-    this.fetch(this.state.page, this.state.perPage);
-  }
-
   renderPagination(variant = 'top') {
     const { page, perPage, total } = this.state;
     return (
@@ -264,21 +252,6 @@ class ComplexPaginationTableDemo extends React.Component {
     };
   }
 
-  handleSetPage(page, startIdx, endIdx) {
-    this.setState({
-      page,
-      rows: this.defaultRows.slice(startIdx, endIdx)
-    });
-  }
-
-  handlePerPageSelect(page, perPage, startIdx, endIdx) {
-    this.setState({
-      perPage,
-      page,
-      rows: this.defaultRows.slice(startIdx, endIdx)
-    });
-  }
-
   renderPagination(variant = 'top') {
     const { page, perPage, total } = this.state;
     return (
@@ -287,11 +260,18 @@ class ComplexPaginationTableDemo extends React.Component {
         page={page}
         perPage={perPage}
         defaultToFullPage
-        onSetPage={(_evt, newPage, perPage, startIdx, endIdx) => {
-          this.handleSetPage(newPage, startIdx, endIdx);
+        onSetPage={(_evt, page, perPage, startIdx, endIdx) => {
+          this.setState({
+            page,
+            rows: this.defaultRows.slice(startIdx, endIdx)
+          });
         }}
-        onPerPageSelect={(_evt, newPerPage, newPage, startIdx, endIdx) => {
-          this.handlePerPageSelect(newPage, newPerPage, startIdx, endIdx);
+        onPerPageSelect={(_evt, perPage, page, startIdx, endIdx) => {
+          this.setState({
+            page,
+            perPage,
+            rows: this.defaultRows.slice(startIdx, endIdx)
+          });
         }}
         perPageOptions={[
           { title: "3", value: 3 },

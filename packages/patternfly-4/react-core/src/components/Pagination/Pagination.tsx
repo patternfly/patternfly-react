@@ -63,7 +63,7 @@ export type OnSetPage = (
 export type OnPerPageSelect = (
   _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
   newPerPage: number,
-  newPage?: number,
+  newPage: number,
   startIdx?: number,
   endIdx?: number
 ) => void;
