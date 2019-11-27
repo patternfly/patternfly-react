@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 
 import { BackgroundImage, BackgroundImageSrcMap } from '../BackgroundImage';
 import { Brand } from '../Brand';
-import { List } from '../List';
+import { List, ListVariant } from '../List';
 
 import { Login } from './Login';
 import { LoginHeader } from './LoginHeader';
@@ -30,7 +30,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Items rendered inside of the Footer List Component of the LoginPage */
   footerListItems?: React.ReactNode;
   /** Adds list variant styles for the Footer List component of the LoginPage. The only current value is'inline' */
-  footerListVariants?: 'inline';
+  footerListVariants?: ListVariant.inline;
   /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: string;
   /** Subtitle for the Login Main Body Header of the LoginPage */
