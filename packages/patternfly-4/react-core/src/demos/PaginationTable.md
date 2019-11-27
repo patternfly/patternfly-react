@@ -168,9 +168,7 @@ class ComplexPaginationTableDemo extends React.Component {
 }
 ```
 
-## Automated pagination table demo
-
-```js
+```js title=Automated-pagination-table-demo
 import React from 'react';
 import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
@@ -250,6 +248,23 @@ class ComplexPaginationTableDemo extends React.Component {
       page: 1,
       rows: this.defaultRows.slice(0, this.defaultPerPage)
     };
+    this.handleSetPage = this.handleSetPage.bind(this);
+    this.handlePerPageSelect = this.handlePerPageSelect.bind(this);
+  }
+
+  handleSetPage(_evt, newPage, perPage, startIdx, endIdx) {
+    this.setState({
+      page: newPage,
+      rows: this.defaultRows.slice(startIdx, endIdx)
+    });
+  }
+
+  handlePerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx) {
+    this.setState({
+      perPage: newPerPage,
+      page: newPage,
+      rows: this.defaultRows.slice(startIdx, endIdx)
+    });
   }
 
   renderPagination(variant = 'top') {
@@ -260,19 +275,8 @@ class ComplexPaginationTableDemo extends React.Component {
         page={page}
         perPage={perPage}
         defaultToFullPage
-        onSetPage={(_evt, page, perPage, startIdx, endIdx) => {
-          this.setState({
-            page,
-            rows: this.defaultRows.slice(startIdx, endIdx)
-          });
-        }}
-        onPerPageSelect={(_evt, perPage, page, startIdx, endIdx) => {
-          this.setState({
-            page,
-            perPage,
-            rows: this.defaultRows.slice(startIdx, endIdx)
-          });
-        }}
+        onSetPage={this.handleSetPage}
+        onPerPageSelect={this.handlePerPageSelect}
         perPageOptions={[
           { title: "3", value: 3 },
           { title: "5", value: 5 },

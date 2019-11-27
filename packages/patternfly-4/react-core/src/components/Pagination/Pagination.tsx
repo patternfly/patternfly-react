@@ -160,7 +160,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   ouiaId = null,
   ...props
 }: PaginationProps & InjectedOuiaProps) => {
-  const lastPage = Math.ceil(itemCount / perPage);
+  const lastPage = Math.ceil(itemCount / perPage) || 0;
   if (page < firstPage) {
     page = firstPage;
   } else if (page > lastPage) {
