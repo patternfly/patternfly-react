@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.2...demo-app-ts@3.13.3) (2019-12-02)
+
+
+### Bug Fixes
+
+* **nav & pagelayout:** removes basic nav example, switches to default variant,  updates PF masthead logo ([#3262](https://github.com/patternfly/patternfly-react/issues/3262)) ([fe707a3](https://github.com/patternfly/patternfly-react/commit/fe707a3c23a1b072e13664786c4b95ef91a5e361))
+* **select:** make integration tests pass ([#3359](https://github.com/patternfly/patternfly-react/issues/3359)) ([9ce7eff](https://github.com/patternfly/patternfly-react/commit/9ce7eff5b0a6e9d875d4b049409db2550199e03f))
+
+
+
+
+
 ## [3.13.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.1...demo-app-ts@3.13.2) (2019-11-27)
 
 **Note:** Version bump only for package demo-app-ts
