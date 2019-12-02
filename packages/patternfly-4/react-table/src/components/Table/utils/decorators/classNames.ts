@@ -8,12 +8,12 @@ export const Visibility = pickProperties(styles.modifiers, [
   'hiddenOnMd',
   'hiddenOnLg',
   'hiddenOnXl',
-  'hiddenOn2Xl',
+  'hiddenOn_2xl',
   'visibleOnSm',
   'visibleOnMd',
   'visibleOnLg',
   'visibleOnXl',
-  'visibleOn2Xl'
+  'visibleOn_2xl'
 ]);
 
 // tslint:disable-next-line:no-shadowed-variable
