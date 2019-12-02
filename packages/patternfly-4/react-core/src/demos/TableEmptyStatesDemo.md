@@ -1,6 +1,7 @@
 ---
-title: 'Various table states'
+title: 'Table Empty States'
 section: 'demos'
+experimentalStage: 'early'
 ---
 
 ## Examples
