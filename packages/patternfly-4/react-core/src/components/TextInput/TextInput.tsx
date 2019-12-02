@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, withInnerRef } from '../../helpers'
 import { ValidatedOptions } from '../../helpers/constants';
 
 export enum TextInputTypes {
@@ -53,18 +53,20 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   value?: string | number;
   /** Aria-label. The input requires an associated id or aria-label. */
   'aria-label'?: string;
+  /** A reference object to attach to the input box. */
+  innerRef?: React.Ref<any>;
 }
 
-export class TextInput extends React.Component<TextInputProps> {
+class TextInputBase extends React.Component<TextInputProps> {
   static defaultProps = {
     'aria-label': null as string,
     className: '',
     isRequired: false,
     isValid: true,
-    validated: 'default',
+    validated: 'default' as 'success' | 'error' | 'default',
     isDisabled: false,
     isReadOnly: false,
-    type: 'text',
+    type: TextInputTypes.text,
     onChange: (): any => undefined
   };
 
@@ -84,6 +86,7 @@ export class TextInput extends React.Component<TextInputProps> {
 
   render() {
     const {
+      innerRef,
       className,
       type,
       value,
@@ -110,7 +113,11 @@ export class TextInput extends React.Component<TextInputProps> {
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}
+        ref={innerRef}
       />
     );
   }
 }
+
+const TextInputFR = withInnerRef<HTMLInputElement, TextInputProps>(TextInputBase)
+export { TextInputFR as TextInput, TextInputBase } 

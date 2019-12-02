@@ -1409,7 +1409,7 @@ exports[`Nav Grouped List 1`] = `
               Section 1
             </h2>
             <ul
-              className="pf-c-nav__simple-list"
+              className="pf-c-nav__list"
             >
               <NavList
                 ariaLeftScroll="Scroll left"
@@ -1508,7 +1508,7 @@ exports[`Nav Grouped List 1`] = `
               Section 2
             </h2>
             <ul
-              className="pf-c-nav__simple-list"
+              className="pf-c-nav__list"
             >
               <NavList
                 ariaLeftScroll="Scroll left"

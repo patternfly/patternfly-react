@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.125.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.3...@patternfly/react-core@3.125.0) (2019-12-02)
+
+
+### Features
+
+* **textinput:** support passing a ref ([#3168](https://github.com/patternfly/patternfly-react/issues/3168)) ([1e1ca74](https://github.com/patternfly/patternfly-react/commit/1e1ca741db3bcf31614365fa75ea1947abbccf8e))
+
+
+
+
+
+## [3.124.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.2...@patternfly/react-core@3.124.3) (2019-12-02)
+
+
+### Bug Fixes
+
+* **nav & pagelayout:** removes basic nav example, switches to default variant,  updates PF masthead logo ([#3262](https://github.com/patternfly/patternfly-react/issues/3262)) ([fe707a3](https://github.com/patternfly/patternfly-react/commit/fe707a3c23a1b072e13664786c4b95ef91a5e361))
+
+
+
+
+
+## [3.124.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.1...@patternfly/react-core@3.124.2) (2019-11-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.124.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.0...@patternfly/react-core@3.124.1) (2019-11-21)
 
 **Note:** Version bump only for package @patternfly/react-core

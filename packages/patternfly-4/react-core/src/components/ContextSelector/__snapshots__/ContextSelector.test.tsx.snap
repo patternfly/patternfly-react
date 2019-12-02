@@ -55,19 +55,12 @@ exports[`Renders ContextSelector open 1`] = `
         className="pf-c-context-selector__menu-input"
       >
         <Component>
-          <TextInput
-            aria-label={null}
+          <ForwardRef
             aria-labelledby="pf-context-selector-search-button-id-0"
-            className=""
-            isDisabled={false}
-            isReadOnly={false}
-            isRequired={false}
-            isValid={true}
             onChange={[Function]}
             onKeyPress={[Function]}
             placeholder="Search"
             type="search"
-            validated="default"
             value=""
           />
           <Component
