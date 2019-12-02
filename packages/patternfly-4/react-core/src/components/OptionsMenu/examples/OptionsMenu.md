@@ -512,7 +512,8 @@ class GroupedItems extends React.Component {
         position={OptionsMenuPosition.right} 
         menuItems={menuGroups} 
         toggle={toggle} 
-        isOpen={isOpen} />
+        isOpen={isOpen} 
+        isGrouped />
     );
   }
 }
