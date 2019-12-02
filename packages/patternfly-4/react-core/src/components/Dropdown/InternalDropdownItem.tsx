@@ -39,6 +39,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   id?: string;
   /** ID for the component element */
   componentID?: string;
+  /** Additional content to include alongside item within the <li> */
+  additionalChildren?: React.ReactNode;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -110,6 +112,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       id,
       componentID,
       listItemClassName,
+      additionalChildren,
       ...additionalProps
     } = this.props;
     const Component = component as any;
@@ -179,6 +182,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                   </Component>
                 )
               )}
+              {additionalChildren && additionalChildren}
             </li>
           );
         }}

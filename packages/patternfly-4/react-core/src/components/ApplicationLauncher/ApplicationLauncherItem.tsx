@@ -3,6 +3,8 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { ApplicationLauncherContent } from './ApplicationLauncherContent';
+import { ApplicationLauncherContext } from './ApplicationLauncher';
+import { StarIcon } from '@patternfly/react-icons';
 
 export const ApplicationLauncherItemContext = React.createContext({ isExternal: false, icon: null });
 
@@ -25,10 +27,15 @@ export interface ApplicationLauncherItemProps {
    * } />
    */
   component?: React.ReactNode;
+  /** Flag indicating if the item is favorited */
+  isFavorite?: boolean;
+  /** ID of the item. Required for tracking favorites. */
+  id?: string;
 }
 
 export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
   className = '',
+  id,
   children,
   icon = null,
   isExternal = false,
@@ -36,18 +43,41 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   tooltip = null,
   tooltipProps = null,
   component = 'a',
+  isFavorite = false,
   ...props
 }: ApplicationLauncherItemProps & DropdownItemProps) => (
   <ApplicationLauncherItemContext.Provider value={{ isExternal, icon }}>
-    <DropdownItem
-      component={component}
-      href={href || null}
-      className={css(isExternal && styles.modifiers.external, className)}
-      tooltip={tooltip}
-      tooltipProps={tooltipProps}
-      {...props}
-    >
-      {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}
-    </DropdownItem>
+    <ApplicationLauncherContext.Consumer>
+      {({ onFavorite }) => (
+        <DropdownItem
+          id={id}
+          component={component}
+          href={href || null}
+          className={css(isExternal && styles.modifiers.link, className)}
+          listItemClassName={css(
+            (isExternal || onFavorite) && styles.appLauncherMenuWrapper,
+            isExternal && styles.modifiers.external,
+            isFavorite && styles.modifiers.favorite
+          )}
+          tooltip={tooltip}
+          tooltipProps={tooltipProps}
+          {...(onFavorite && {
+            additionalChildren: (
+              <button
+                className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
+                onClick={() => {
+                  onFavorite(id, isFavorite);
+                }}
+              >
+                <StarIcon />
+              </button>
+            )
+          })}
+          {...props}
+        >
+          {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}
+        </DropdownItem>
+      )}
+    </ApplicationLauncherContext.Consumer>
   </ApplicationLauncherItemContext.Provider>
 );

@@ -23,6 +23,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   tooltip?: React.ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
+  /** Additional node to include alongside item within the <li> */
+  additionalChildren?: React.ReactNode;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
@@ -38,6 +40,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   listItemClassName,
   onClick,
   ref, // Types of Ref are different for React.FC vs React.Component
+  additionalChildren,
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
@@ -57,6 +60,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         tooltipProps={tooltipProps}
         listItemClassName={listItemClassName}
         onClick={onClick}
+        additionalChildren={additionalChildren}
         {...props}
       />
     )}
