@@ -99,6 +99,11 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   handleNewPerPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
     const { page, onPerPageSelect, itemCount, defaultToFullPage } = this.props;
     let newPage = page;
+
+    while (Math.ceil(itemCount / newPerPage) < newPage) {
+      newPage--;
+    }
+
     if (defaultToFullPage) {
       if (itemCount / newPerPage !== newPage) {
         while (newPage > 1 && (itemCount - (newPerPage * newPage)) < 0) {
