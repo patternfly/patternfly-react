@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.125.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.3...@patternfly/react-core@3.125.0) (2019-12-02)
+
+
+### Features
+
+* **textinput:** support passing a ref ([#3168](https://github.com/patternfly/patternfly-react/issues/3168)) ([1e1ca74](https://github.com/patternfly/patternfly-react/commit/1e1ca741db3bcf31614365fa75ea1947abbccf8e))
+
+
+
+
+
 ## [3.124.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.2...@patternfly/react-core@3.124.3) (2019-12-02)
 
 
