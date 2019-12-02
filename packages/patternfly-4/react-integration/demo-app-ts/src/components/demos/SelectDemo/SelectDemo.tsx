@@ -64,8 +64,10 @@ export class SelectDemo extends Component<SelectDemoState> {
     direction: SelectDirection.down,
     typeaheadOptions: [
       { value: 'Alabama', disabled: false },
+      { value: 'Boston', disabled: false },
       { value: 'Florida', disabled: false },
-      { value: 'New Jersey', disabled: false }
+      { value: 'New Jersey', disabled: false },
+      { value: 'Texas', disabled: false }
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
