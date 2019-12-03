@@ -122,7 +122,10 @@ class ScatterAreaChart extends React.Component {
             <ChartGroup>
               {this.series.map((s, idx) => {
                 return (
-                  <ChartArea key={'area-' + idx} name={'area-' + idx} data={s.datapoints} />
+                  <ChartArea 
+                    interpolation="monotoneX"
+                    key={'area-' + idx} name={'area-' + idx} data={s.datapoints} 
+                  />
                 );
               })}
             </ChartGroup>
