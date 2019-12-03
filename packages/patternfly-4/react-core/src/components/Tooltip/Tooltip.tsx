@@ -68,7 +68,7 @@ export interface TooltipProps {
   /** z-index of the tooltip */
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
-  tippyProps?: TippyProps;
+  tippyProps?: object;
   /** ID */
   id?: string;
 }
@@ -167,9 +167,7 @@ export class Tooltip extends React.Component<TooltipProps> {
         appendTo={appendTo}
         content={content}
         lazy
-        animateFill={false}
         theme="pf-tooltip"
-        performance
         placement={position}
         trigger={trigger}
         delay={[entryDelay, exitDelay]}

@@ -45,7 +45,7 @@
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1",
-    "tippy.js": "3.4.1"
+    "tippy.js": "5.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

@@ -112,7 +112,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -153,7 +152,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
@@ -314,7 +312,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -355,7 +352,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
@@ -542,7 +538,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -583,7 +578,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
@@ -864,7 +858,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -905,7 +898,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
@@ -1092,7 +1084,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -1133,7 +1124,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
@@ -1320,7 +1310,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -1361,7 +1350,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
@@ -1548,7 +1536,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 zIndex={9999}
               >
                 <PopoverBase
-                  animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
                   arrow={true}
@@ -1589,7 +1576,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
-                  performance={true}
                   placement="top"
                   popperOptions={
                     Object {
