@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
+import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { ThIcon } from '@patternfly/react-icons';
 import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
@@ -40,6 +42,12 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   favorites?: string[];
   /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
   onFavorite?(itemId: string, isFavorite: boolean): void;
+  /** Enables search. Callback called when text input is entered into search box */
+  onSearch?(textInput: string): void;
+  /** Placeholder text for search input */
+  searchPlaceholderText?: string;
+  /** Additional properties for search input */
+  searchProps?: any;
 }
 
 export const ApplicationLauncherContext = React.createContext({ onFavorite: Function.prototype });
@@ -58,7 +66,24 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     onToggle: (_value: boolean): any => undefined,
     'aria-label': 'Application launcher',
     isGrouped: false,
-    toggleIcon: <ThIcon />
+    toggleIcon: <ThIcon />,
+    searchPlaceholderText: 'Filter by name...'
+  };
+
+  createSearchBox = () => {
+    const { onSearch, searchPlaceholderText, searchProps } = this.props;
+
+    return (
+      <div className={css(styles.appLauncherMenuSearch)}>
+        <input
+          type="search"
+          className={css(formStyles.formControl)}
+          placeholder={searchPlaceholderText}
+          onChange={e => onSearch(e.target.value)}
+          {...searchProps}
+        ></input>
+      </div>
+    );
   };
 
   createRenderableFavorites = () => {
@@ -113,6 +138,9 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       dropdownItems,
       favorites,
       onFavorite,
+      onSearch,
+      searchPlaceholderText,
+      searchProps,
       items,
       ref,
       ...props
@@ -131,6 +159,10 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
     } else {
       renderableItems = items;
+    }
+
+    if (onSearch) {
+      renderableItems = [this.createSearchBox(), ...renderableItems];
     }
 
     return (

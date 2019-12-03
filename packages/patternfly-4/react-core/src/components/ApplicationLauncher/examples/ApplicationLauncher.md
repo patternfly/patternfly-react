@@ -414,35 +414,13 @@ class ApplicationLauncherSections extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      favorites: []
+      favorites: [],
+      filteredItems: null
     };
-    this.onToggle = isOpen => {
-      this.setState({
-        isOpen
-      });
-    };
-    this.onSelect = event => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-    this.onFavorite = (itemId, isFavorite) => {
-      if (isFavorite) {
-        this.setState({
-          favorites: this.state.favorites.filter(id => id !== itemId)
-        });
-      } else
-        this.setState({
-          favorites: [...this.state.favorites, itemId]
-        });
-    };
-  }
 
-  render() {
-    const { isOpen, favorites } = this.state;
     const icon = <img src={pfIcon} />;
-
-    const appLauncherItems = [
+    this.isGrouped = true;
+    this.appLauncherItems = [
       <ApplicationLauncherGroup key="group 1c">
         <ApplicationLauncherItem key="group 1a" id="item-1" icon={icon}>
           Item without group title
@@ -467,12 +445,63 @@ class ApplicationLauncherSections extends React.Component {
         </ApplicationLauncherItem>
       </ApplicationLauncherGroup>
     ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+    this.onFavorite = (itemId, isFavorite) => {
+      if (isFavorite) {
+        this.setState({
+          favorites: this.state.favorites.filter(id => id !== itemId)
+        });
+      } else
+        this.setState({
+          favorites: [...this.state.favorites, itemId]
+        });
+    };
+    this.onSearch = textInput => {
+      if (textInput === '') {
+        this.setState({
+          filteredItems: null
+        });
+      } else if (this.isGrouped) {
+        this.setState({
+          filteredItems: this.appLauncherItems.map(group => {
+            return React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                if (item.type === ApplicationLauncherSeparator) return item;
+                return item.props.children.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+          })
+        });
+      } else {
+        this.setState({
+          filteredItems: this.appLauncherItems.filter(item => {
+            if (item.type === ApplicationLauncherSeparator) return item;
+            return item.props.children.toLowerCase().includes(textInput.toLowerCase());
+          })
+        });
+      }
+    };
+  }
+
+  render() {
+    const { isOpen, favorites, filteredItems } = this.state;
     return (
       <ApplicationLauncher
         onToggle={this.onToggle}
         onFavorite={this.onFavorite}
+        onSearch={this.onSearch}
         isOpen={isOpen}
-        items={appLauncherItems}
+        items={filteredItems || this.appLauncherItems}
         favorites={favorites}
         isGrouped
       />
