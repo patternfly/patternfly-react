@@ -95,7 +95,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
     isGrouped={false}
     isOpen={true}
     position="left"
-    searchPlaceholderText="Filter by name..."
     toggle={
       <Unknown
         aria-label="Application launcher"
@@ -154,7 +153,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
           "isGrouped": false,
           "isOpen": true,
           "position": "left",
-          "searchPlaceholderText": "Filter by name...",
           "toggle": <Unknown
             aria-label="Application launcher"
             iconComponent={null}
@@ -223,7 +221,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
           }
         }
         position="left"
-        searchPlaceholderText="Filter by name..."
         toggle={
           <Unknown
             aria-label="Application launcher"
@@ -245,7 +242,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-expanded"
-          searchPlaceholderText="Filter by name..."
         >
           <Component
             aria-label="Application launcher"
@@ -263,7 +259,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 "current": <nav
                   aria-label="Application launcher"
                   class="pf-c-app-launcher pf-m-expanded"
-                  searchplaceholdertext="Filter by name..."
                 >
                   <button
                     aria-expanded="true"
@@ -409,7 +404,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   "current": <nav
                     aria-label="Application launcher"
                     class="pf-c-app-launcher pf-m-expanded"
-                    searchplaceholdertext="Filter by name..."
                   >
                     <button
                       aria-expanded="true"
@@ -1032,7 +1026,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     isGrouped={false}
     isOpen={false}
     position="right"
-    searchPlaceholderText="Filter by name..."
     toggle={
       <Unknown
         aria-label="Application launcher"
@@ -1090,7 +1083,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           "isGrouped": false,
           "isOpen": false,
           "position": "right",
-          "searchPlaceholderText": "Filter by name...",
           "toggle": <Unknown
             aria-label="Application launcher"
             iconComponent={null}
@@ -1158,7 +1150,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           }
         }
         position="right"
-        searchPlaceholderText="Filter by name..."
         toggle={
           <Unknown
             aria-label="Application launcher"
@@ -1179,7 +1170,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-top"
-          searchPlaceholderText="Filter by name..."
         >
           <Component
             aria-label="Application launcher"
@@ -1197,7 +1187,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 "current": <nav
                   aria-label="Application launcher"
                   class="pf-c-app-launcher pf-m-top"
-                  searchplaceholdertext="Filter by name..."
                 >
                   <button
                     aria-expanded="false"
@@ -1248,7 +1237,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                   "current": <nav
                     aria-label="Application launcher"
                     class="pf-c-app-launcher pf-m-top"
-                    searchplaceholdertext="Filter by name..."
                   >
                     <button
                       aria-expanded="false"
@@ -1424,7 +1412,6 @@ exports[`ApplicationLauncher dropup 1`] = `
     isGrouped={false}
     isOpen={false}
     position="left"
-    searchPlaceholderText="Filter by name..."
     toggle={
       <Unknown
         aria-label="Application launcher"
@@ -1482,7 +1469,6 @@ exports[`ApplicationLauncher dropup 1`] = `
           "isGrouped": false,
           "isOpen": false,
           "position": "left",
-          "searchPlaceholderText": "Filter by name...",
           "toggle": <Unknown
             aria-label="Application launcher"
             iconComponent={null}
@@ -1550,7 +1536,6 @@ exports[`ApplicationLauncher dropup 1`] = `
           }
         }
         position="left"
-        searchPlaceholderText="Filter by name..."
         toggle={
           <Unknown
             aria-label="Application launcher"
@@ -1571,7 +1556,6 @@ exports[`ApplicationLauncher dropup 1`] = `
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-top"
-          searchPlaceholderText="Filter by name..."
         >
           <Component
             aria-label="Application launcher"
@@ -1589,7 +1573,6 @@ exports[`ApplicationLauncher dropup 1`] = `
                 "current": <nav
                   aria-label="Application launcher"
                   class="pf-c-app-launcher pf-m-top"
-                  searchplaceholdertext="Filter by name..."
                 >
                   <button
                     aria-expanded="false"
@@ -1640,7 +1623,6 @@ exports[`ApplicationLauncher dropup 1`] = `
                   "current": <nav
                     aria-label="Application launcher"
                     class="pf-c-app-launcher pf-m-top"
-                    searchplaceholdertext="Filter by name..."
                   >
                     <button
                       aria-expanded="false"
@@ -1816,7 +1798,6 @@ exports[`ApplicationLauncher expanded 1`] = `
     isGrouped={false}
     isOpen={true}
     position="left"
-    searchPlaceholderText="Filter by name..."
     toggle={
       <Unknown
         aria-label="Application launcher"
@@ -1874,7 +1855,6 @@ exports[`ApplicationLauncher expanded 1`] = `
           "isGrouped": false,
           "isOpen": true,
           "position": "left",
-          "searchPlaceholderText": "Filter by name...",
           "toggle": <Unknown
             aria-label="Application launcher"
             iconComponent={null}
@@ -1942,7 +1922,6 @@ exports[`ApplicationLauncher expanded 1`] = `
           }
         }
         position="left"
-        searchPlaceholderText="Filter by name..."
         toggle={
           <Unknown
             aria-label="Application launcher"
@@ -1963,7 +1942,6 @@ exports[`ApplicationLauncher expanded 1`] = `
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-expanded"
-          searchPlaceholderText="Filter by name..."
         >
           <Component
             aria-label="Application launcher"
@@ -1981,7 +1959,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 "current": <nav
                   aria-label="Application launcher"
                   class="pf-c-app-launcher pf-m-expanded"
-                  searchplaceholdertext="Filter by name..."
                 >
                   <button
                     aria-expanded="true"
@@ -2126,7 +2103,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   "current": <nav
                     aria-label="Application launcher"
                     class="pf-c-app-launcher pf-m-expanded"
-                    searchplaceholdertext="Filter by name..."
                   >
                     <button
                       aria-expanded="true"
@@ -2746,7 +2722,6 @@ exports[`ApplicationLauncher regular 1`] = `
     isGrouped={false}
     isOpen={false}
     position="left"
-    searchPlaceholderText="Filter by name..."
     toggle={
       <Unknown
         aria-label="Application launcher"
@@ -2804,7 +2779,6 @@ exports[`ApplicationLauncher regular 1`] = `
           "isGrouped": false,
           "isOpen": false,
           "position": "left",
-          "searchPlaceholderText": "Filter by name...",
           "toggle": <Unknown
             aria-label="Application launcher"
             iconComponent={null}
@@ -2872,7 +2846,6 @@ exports[`ApplicationLauncher regular 1`] = `
           }
         }
         position="left"
-        searchPlaceholderText="Filter by name..."
         toggle={
           <Unknown
             aria-label="Application launcher"
@@ -2893,7 +2866,6 @@ exports[`ApplicationLauncher regular 1`] = `
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher"
-          searchPlaceholderText="Filter by name..."
         >
           <Component
             aria-label="Application launcher"
@@ -2911,7 +2883,6 @@ exports[`ApplicationLauncher regular 1`] = `
                 "current": <nav
                   aria-label="Application launcher"
                   class="pf-c-app-launcher"
-                  searchplaceholdertext="Filter by name..."
                 >
                   <button
                     aria-expanded="false"
@@ -2962,7 +2933,6 @@ exports[`ApplicationLauncher regular 1`] = `
                   "current": <nav
                     aria-label="Application launcher"
                     class="pf-c-app-launcher"
-                    searchplaceholdertext="Filter by name..."
                   >
                     <button
                       aria-expanded="false"
@@ -3138,7 +3108,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
     isGrouped={false}
     isOpen={false}
     position="right"
-    searchPlaceholderText="Filter by name..."
     toggle={
       <Unknown
         aria-label="Application launcher"
@@ -3196,7 +3165,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
           "isGrouped": false,
           "isOpen": false,
           "position": "right",
-          "searchPlaceholderText": "Filter by name...",
           "toggle": <Unknown
             aria-label="Application launcher"
             iconComponent={null}
@@ -3264,7 +3232,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
           }
         }
         position="right"
-        searchPlaceholderText="Filter by name..."
         toggle={
           <Unknown
             aria-label="Application launcher"
@@ -3285,7 +3252,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher"
-          searchPlaceholderText="Filter by name..."
         >
           <Component
             aria-label="Application launcher"
@@ -3303,7 +3269,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 "current": <nav
                   aria-label="Application launcher"
                   class="pf-c-app-launcher"
-                  searchplaceholdertext="Filter by name..."
                 >
                   <button
                     aria-expanded="false"
@@ -3354,7 +3319,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
                   "current": <nav
                     aria-label="Application launcher"
                     class="pf-c-app-launcher"
-                    searchplaceholdertext="Filter by name..."
                   >
                     <button
                       aria-expanded="false"
