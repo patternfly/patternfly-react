@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.41...@patternfly/react-catalog-view-extension@1.1.42) (2019-12-03)
+
+
+### Bug Fixes
+
+* **FilterSidePanel:** pass remaining props to checkbox component ([#3374](https://github.com/patternfly/patternfly-react/issues/3374)) ([0050615](https://github.com/patternfly/patternfly-react/commit/005061506dde5fdf903e93a813b612187d650f51))
+
+
+
+
+
 ## [1.1.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.40...@patternfly/react-catalog-view-extension@1.1.41) (2019-12-02)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
