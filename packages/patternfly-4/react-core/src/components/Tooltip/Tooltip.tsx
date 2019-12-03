@@ -68,7 +68,7 @@ export interface TooltipProps {
   /** z-index of the tooltip */
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
-  tippyProps?: object;
+  tippyProps?: Partial<TippyProps>;
   /** ID */
   id?: string;
 }

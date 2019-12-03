@@ -95,7 +95,7 @@ export interface PopoverProps {
   /** z-index of the popover */
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
-  tippyProps?: object;
+  tippyProps?: Partial<TippyProps>;
 }
 
 export interface PopoverState {
