@@ -12,7 +12,9 @@
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
     "gatsby": "gatsby",
-    "serve": "gatsby serve --prefix-paths"
+    "serve": "gatsby serve --prefix-paths",
+    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000/patternfly-4 --aggregate --noIncomplete",
+    "test:a11y:ci": "start-server-and-test serve http://localhost:9000/patternfly-4 test:a11y"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",
@@ -32,15 +34,17 @@
     "gatsby": "2.17.10",
     "gatsby-cli": "2.8.8",
     "gatsby-source-filesystem": "^2.1.22",
-    "gatsby-theme-patternfly-org": "^0.0.20",
+    "gatsby-theme-patternfly-org": "^1.1.1",
     "gatsby-transformer-json": "^2.2.15",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@patternfly/patternfly-a11y": "^0.0.11",
     "rimraf": "^2.6.3",
-    "shx": "^0.3.2"
+    "shx": "^0.3.2",
+    "start-server-and-test": "^1.5.0"
   },
   "keywords": [
     "gatsby"
