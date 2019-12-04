@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Title, PageSection, PageSectionVariants } from '@patternfly/react-core';
-import SideNavLayout from 'gatsby-theme-patternfly-org/layouts/sideNavLayout';
+import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';
 
 const containerStyle = {
   display: 'flex',

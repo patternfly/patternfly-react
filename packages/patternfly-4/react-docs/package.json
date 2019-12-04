@@ -12,8 +12,7 @@
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
-    "gatsby": "gatsby",
-    "serve": "gatsby serve --prefix-paths"
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",
@@ -30,11 +29,9 @@
     "@patternfly/react-tokens": "^2.7.10",
     "@patternfly/react-topology": "^2.11.27",
     "@patternfly/react-virtualized-extension": "^1.3.40",
-    "gatsby": "2.17.10",
-    "gatsby-cli": "2.8.8",
-    "gatsby-source-filesystem": "^2.1.22",
+    "gatsby": "2.18.6",
+    "gatsby-cli": "2.8.15",
     "gatsby-theme-patternfly-org": "*",
-    "gatsby-transformer-json": "^2.2.15",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"
