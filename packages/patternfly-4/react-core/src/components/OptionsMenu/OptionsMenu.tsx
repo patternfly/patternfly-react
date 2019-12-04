@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { css } from '@patternfly/react-styles';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 
@@ -60,7 +59,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       toggleClass: isText ? styles.optionsMenuToggleButton : styles.optionsMenuToggle,
       baseClass: styles.optionsMenu,
       disabledClass: styles.modifiers.disabled,
-      menuComponent: 'ul',
+      menuComponent: isGrouped ? 'div' : 'ul',
       baseComponent: 'div'
     }}
   >
