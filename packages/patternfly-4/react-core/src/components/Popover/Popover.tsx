@@ -100,6 +100,7 @@ export interface PopoverProps {
 
 export interface PopoverState {
   isOpen: boolean;
+  focusTrapActive: boolean;
 }
 
 export class Popover extends React.Component<PopoverProps, PopoverState> {
@@ -133,7 +134,8 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   constructor(props: PopoverProps) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      focusTrapActive: false
     };
   }
 
@@ -147,18 +149,20 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     }
   };
 
-  handleEscKeyClick = (event: KeyboardEvent) => {
+  handleEscOrEnterKey = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
       this.hideOrNotify();
+    } else if (!this.state.isOpen && event.keyCode === KEY_CODES.ENTER) {
+      this.setState({ focusTrapActive: true })
     }
   };
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleEscKeyClick, false);
+    document.addEventListener('keydown', this.handleEscOrEnterKey, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscKeyClick, false);
+    document.removeEventListener('keydown', this.handleEscOrEnterKey, false);
   }
 
   storeTippyInstance = (tip: TippyInstance) => {
@@ -168,6 +172,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 
   closePopover = () => {
     this.hideOrNotify();
+    this.setState({ focusTrapActive: false });
   };
 
   hideAllPopovers = () => {
@@ -203,6 +208,12 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 
   onShown = (tip: TippyInstance) => this.props.onShown(tip);
 
+  onContentMouseDown = () => {
+    if (this.state.focusTrapActive) {
+      this.setState({ focusTrapActive: false });
+    }
+  }
+
   render() {
     const {
       position,
@@ -236,10 +247,12 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       return new Error('aria-label is required when header is not used');
     }
 
-    const content = (
+    const content = this.state.isOpen && (
       <GenerateId>
         {randomId => (
-          <FocusTrap active={this.state.isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <FocusTrap 
+            active={this.state.focusTrapActive} 
+            focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div
               className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
               role="dialog"
@@ -247,6 +260,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
               aria-label={headerContent ? undefined : ariaLabel}
               aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
               aria-describedby={`popover-${randomId}-body`}
+              onMouseDown={this.onContentMouseDown}
               {...rest}
             >
               <PopoverContent>
