@@ -171,6 +171,10 @@ class ComplexPaginationTableDemo extends React.Component {
 The below example illustrates the `defaultToFullPage` prop, which makes the following changes when the user sets the number of items to display per page to an amount that exceeds the remaining amount of data:
 - The component automatically changes the page back to the last full page of results, rather than defaulting to the final page of results.
 
+To demonstrate this, navigate to the last page of data below using the `>>` navigation arrows, then use the dropdown selector to change the view to 5 per page.
+  - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
+  - The `defaultToFullPage` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
+
 ```js title=Automated-pagination-table-demo
 import React from 'react';
 import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
