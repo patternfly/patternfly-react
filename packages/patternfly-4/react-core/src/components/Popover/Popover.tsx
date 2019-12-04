@@ -247,7 +247,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       return new Error('aria-label is required when header is not used');
     }
 
-    const content = this.state.isOpen && (
+    const content = this.state.isOpen ? (
       <GenerateId>
         {randomId => (
           <FocusTrap 
@@ -273,7 +273,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
           </FocusTrap>
         )}
       </GenerateId>
-    );
+    ): <></>;
     const handleEvents = isVisible === null;
     const shouldHideOnClick = () => {
       if (handleEvents) {

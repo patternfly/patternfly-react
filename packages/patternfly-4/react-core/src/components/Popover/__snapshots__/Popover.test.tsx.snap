@@ -6,13 +6,7 @@ exports[`popover can specify position as object value 1`] = `
   appendTo={[Function]}
   arrow={true}
   boundary="window"
-  content={
-    <GenerateId
-      prefix="pf-random-id-"
-    >
-      [Function]
-    </GenerateId>
-  }
+  content={<React.Fragment />}
   distance={25}
   flip={true}
   flipBehavior={
@@ -68,13 +62,7 @@ exports[`popover passes along values to tippy.js 1`] = `
   appendTo={[Function]}
   arrow={true}
   boundary="window"
-  content={
-    <GenerateId
-      prefix="pf-random-id-"
-    >
-      [Function]
-    </GenerateId>
-  }
+  content={<React.Fragment />}
   distance={25}
   duration={
     Array [
@@ -137,13 +125,7 @@ exports[`popover renders close-button, header and body 1`] = `
   appendTo={[Function]}
   arrow={true}
   boundary="window"
-  content={
-    <GenerateId
-      prefix="pf-random-id-"
-    >
-      [Function]
-    </GenerateId>
-  }
+  content={<React.Fragment />}
   distance={25}
   flip={true}
   flipBehavior={
