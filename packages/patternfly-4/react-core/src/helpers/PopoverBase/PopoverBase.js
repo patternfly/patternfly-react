@@ -28,7 +28,8 @@ class PopoverBase extends React.Component {
     isEnabled: PropTypes.bool,
     isVisible: PropTypes.bool,
     onCreate: PropTypes.func,
-    trigger: PropTypes.string
+    trigger: PropTypes.string,
+    hideOnClick: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -58,7 +59,7 @@ class PopoverBase extends React.Component {
     this.setState({ isMounted: true });
 
     /* eslint-disable-next-line */
-    this.tip = tippy.one(ReactDOM.findDOMNode(this), this.options);
+    this.tip = tippy(ReactDOM.findDOMNode(this), this.options);
 
     const { onCreate, isEnabled, isVisible } = this.props;
 
@@ -76,7 +77,7 @@ class PopoverBase extends React.Component {
   }
 
   componentDidUpdate() {
-    this.tip.set(this.options);
+    this.tip.setProps(this.options);
 
     const { isEnabled, isVisible } = this.props;
 

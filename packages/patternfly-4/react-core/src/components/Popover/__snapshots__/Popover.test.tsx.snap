@@ -2,7 +2,6 @@
 
 exports[`popover can specify position as object value 1`] = `
 <PopoverBase
-  animateFill={false}
   appendTo={[Function]}
   arrow={true}
   boundary="window"
@@ -32,7 +31,6 @@ exports[`popover can specify position as object value 1`] = `
   onMount={[Function]}
   onShow={[Function]}
   onShown={[Function]}
-  performance={true}
   placement="right"
   popperOptions={
     Object {
@@ -58,7 +56,6 @@ exports[`popover can specify position as object value 1`] = `
 
 exports[`popover passes along values to tippy.js 1`] = `
 <PopoverBase
-  animateFill={false}
   appendTo={[Function]}
   arrow={true}
   boundary="window"
@@ -95,7 +92,6 @@ exports[`popover passes along values to tippy.js 1`] = `
   onMount={[Function]}
   onShow={[Function]}
   onShown={[Function]}
-  performance={true}
   placement="right"
   popperOptions={
     Object {
@@ -121,7 +117,6 @@ exports[`popover passes along values to tippy.js 1`] = `
 
 exports[`popover renders close-button, header and body 1`] = `
 <PopoverBase
-  animateFill={false}
   appendTo={[Function]}
   arrow={true}
   boundary="window"
@@ -151,7 +146,6 @@ exports[`popover renders close-button, header and body 1`] = `
   onMount={[Function]}
   onShow={[Function]}
   onShown={[Function]}
-  performance={true}
   placement="top"
   popperOptions={
     Object {

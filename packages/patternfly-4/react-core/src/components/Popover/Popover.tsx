@@ -95,7 +95,7 @@ export interface PopoverProps {
   /** z-index of the popover */
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
-  tippyProps?: TippyProps;
+  tippyProps?: Partial<TippyProps>;
 }
 
 export interface PopoverState {
@@ -297,9 +297,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         trigger={handleEvents ? 'click' : 'manual'}
         isVisible={isVisible}
         hideOnClick={shouldHideOnClick()}
-        animateFill={false}
         theme="pf-popover"
-        performance
         interactive
         interactiveBorder={0}
         placement={position}
