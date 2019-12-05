@@ -1,10 +1,3 @@
-@mixin co-line-clamp($lines: 3) {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $lines;
-}
-
 .catalog-tile-pf {
   &.featured {
     border-top: 2px solid $color-pf-blue-300;
@@ -66,15 +59,7 @@
 
 .catalog-tile-pf-description {
   margin-top: 0;
-
-  .truncated {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
-
-  .has-footer {
-    -webkit-line-clamp: 2;
-  }
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }

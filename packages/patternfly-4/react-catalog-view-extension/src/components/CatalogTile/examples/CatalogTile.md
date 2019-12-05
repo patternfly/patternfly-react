@@ -130,7 +130,7 @@ Link = () => (
       ]}
       href="http://patternfly.org/v4"
       title="Patternfly-React"
-      vendor={<React.Fragment>provided by <a href="http://redhat.com">Red Hat</a></React.Fragment>}
+      vendor="provided by Red Hat"
       description={
         'This is a very long description that should be truncated after 112 characters. ' +
         '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
