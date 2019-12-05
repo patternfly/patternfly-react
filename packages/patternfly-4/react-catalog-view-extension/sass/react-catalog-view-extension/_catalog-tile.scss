@@ -68,7 +68,13 @@
   margin-top: 0;
 
   .truncated {
+    display: -webkit-box;
     overflow: hidden;
-    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .has-footer {
+    -webkit-line-clamp: 2;
   }
 }
