@@ -11,8 +11,11 @@ export enum IconSize {
 }
 
 export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
+  /** deprecated */
   color?: string;
+  /** deprecated */
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  /** deprecated */
   title?: string;
 }
 
