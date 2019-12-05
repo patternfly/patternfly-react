@@ -161,7 +161,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     } else {
       renderableItems = items;
     }
-    if (items.length === 0) {
+    if (items.length === 0 && dropdownItems.length === 0) {
       renderableItems = [
         <ApplicationLauncherGroup key="no-results-group">
           <ApplicationLauncherItem key="no-results">No results found</ApplicationLauncherItem>

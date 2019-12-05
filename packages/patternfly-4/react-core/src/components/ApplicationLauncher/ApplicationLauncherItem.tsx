@@ -53,7 +53,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
           id={id}
           component={component}
           href={href || null}
-          className={css(isExternal && styles.modifiers.link, className)}
+          className={css((isExternal || onFavorite) && styles.modifiers.link, className)}
           listItemClassName={css(
             (isExternal || onFavorite) && styles.appLauncherMenuWrapper,
             isExternal && styles.modifiers.external,
