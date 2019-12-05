@@ -1,3 +1,9 @@
+.ws-react-c-catalogtile .co-line-clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
 .ws-react-c-catalogtile .catalog-tile-pf.featured {
   border-top: 2px solid #39a5dc;
 }
@@ -42,16 +48,6 @@
 .ws-react-c-catalogtile .catalog-tile-pf-body .catalog-tile-pf-description span.truncated {
   overflow: hidden;
   position: relative;
-}
-.ws-react-c-catalogtile .catalog-tile-pf-body .catalog-tile-pf-description span.truncated::after {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 75%);
-  bottom: 0;
-  color: transparent;
-  content: ".";
-  position: absolute;
-  right: 0;
-  width: 50%;
-  text-align: right;
 }
 .ws-react-c-catalogtile .example-ok-icon {
   color: #4CB140;

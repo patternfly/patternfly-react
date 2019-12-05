@@ -143,7 +143,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         </CardHeader>
         <CardBody className="catalog-tile-pf-body">
           <div className="catalog-tile-pf-description">
-            <span className={classNames({'truncated': isTruncated})}>
+            <span className={classNames('co-line-clamp', {'truncated': isTruncated})}>
               {truncateDescription(description, maxDescriptionLength, id)}
             </span>
           </div>

@@ -1,3 +1,10 @@
+@mixin co-line-clamp($lines: 3) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
 .catalog-tile-pf {
   &.featured {
     border-top: 2px solid $color-pf-blue-300;
@@ -63,16 +70,5 @@
   .truncated {
     overflow: hidden;
     position: relative;
-
-    &::after {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
-      bottom: 0;
-      color: transparent;
-      content: ".";
-      position: absolute;
-      right: 0;
-      width: 50%;
-      text-align: right;
-    }
   }
 }
