@@ -7,6 +7,7 @@ import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } 
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
+import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
@@ -109,7 +110,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     if (isGrouped) {
       return (items as React.ReactElement[]).map(group =>
         React.cloneElement(group, {
-          children: (group.props.children as React.ReactElement[]).map(item => {
+          children: React.Children.map(group.props.children as React.ReactElement[], item => {
             if (item.type === ApplicationLauncherSeparator) return item;
             return React.cloneElement(item, {
               isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
@@ -145,8 +146,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       ref,
       ...props
     } = this.props;
-
     let renderableItems: React.ReactNode[] = [];
+
     if (onFavorite) {
       let favoritesGroup: React.ReactNode[] = [];
       if (favorites.length > 0)
@@ -160,7 +161,13 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     } else {
       renderableItems = items;
     }
-
+    if (items.length === 0) {
+      renderableItems = [
+        <ApplicationLauncherGroup key="no-results-group">
+          <ApplicationLauncherItem key="no-results">No results found</ApplicationLauncherItem>
+        </ApplicationLauncherGroup>
+      ];
+    }
     if (onSearch) {
       renderableItems = [this.createSearchBox(), ...renderableItems];
     }
@@ -185,7 +192,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
         >
           <DropdownWithContext
             {...props}
-            dropdownItems={items.length ? renderableItems : dropdownItems}
+            dropdownItems={renderableItems.length ? renderableItems : dropdownItems}
             isOpen={isOpen}
             className={className}
             aria-label={ariaLabel}

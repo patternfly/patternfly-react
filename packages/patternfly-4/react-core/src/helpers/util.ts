@@ -128,7 +128,7 @@ export function keyHandler(index: number, position: string, refsCollection: any[
   } else {
     nextIndex = index + 1;
   }
-  if (refsCollection[nextIndex] === null) {
+  if (refsCollection[nextIndex] === null || refsCollection[nextIndex] === undefined) {
     keyHandler(nextIndex, position, refsCollection, kids, custom);
   } else if (custom) {
     if (refsCollection[nextIndex].focus) {

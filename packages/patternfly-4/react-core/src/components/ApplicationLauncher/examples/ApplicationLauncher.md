@@ -419,7 +419,6 @@ class ApplicationLauncherSections extends React.Component {
     };
 
     const icon = <img src={pfIcon} />;
-    this.isGrouped = true;
     this.appLauncherItems = [
       <ApplicationLauncherGroup key="group 1c">
         <ApplicationLauncherItem key="group 1a" id="item-1" icon={icon}>
@@ -471,23 +470,33 @@ class ApplicationLauncherSections extends React.Component {
         this.setState({
           filteredItems: null
         });
-      } else if (this.isGrouped) {
-        this.setState({
-          filteredItems: this.appLauncherItems.map(group => {
-            return React.cloneElement(group, {
+      } else {
+        let filteredGroups = this.appLauncherItems
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
               children: group.props.children.filter(item => {
                 if (item.type === ApplicationLauncherSeparator) return item;
                 return item.props.children.toLowerCase().includes(textInput.toLowerCase());
               })
             });
+            if (
+              filteredGroup.props.children.length > 0 &&
+              filteredGroup.props.children[0].type !== ApplicationLauncherSeparator
+            )
+              return filteredGroup;
           })
-        });
-      } else {
+          .filter(newGroup => newGroup);
+
+        if (filteredGroups.length > 0) {
+          let lastGroup = filteredGroups.pop();
+          lastGroup = React.cloneElement(lastGroup, {
+            children: lastGroup.props.children.filter(item => item.type !== ApplicationLauncherSeparator)
+          });
+          filteredGroups.push(lastGroup);
+        }
+
         this.setState({
-          filteredItems: this.appLauncherItems.filter(item => {
-            if (item.type === ApplicationLauncherSeparator) return item;
-            return item.props.children.toLowerCase().includes(textInput.toLowerCase());
-          })
+          filteredItems: filteredGroups
         });
       }
     };

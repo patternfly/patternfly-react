@@ -43,7 +43,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   tooltip = null,
   tooltipProps = null,
   component = 'a',
-  isFavorite = false,
+  isFavorite = null,
   ...props
 }: ApplicationLauncherItemProps & DropdownItemProps) => (
   <ApplicationLauncherItemContext.Provider value={{ isExternal, icon }}>
@@ -61,7 +61,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
           )}
           tooltip={tooltip}
           tooltipProps={tooltipProps}
-          {...(onFavorite && {
+          {...(isFavorite !== null && {
             additionalChildren: (
               <button
                 className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
@@ -73,6 +73,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
               </button>
             )
           })}
+          {...(isFavorite !== null && { 'aria-label': isFavorite ? 'starred' : 'not starred' })}
           {...props}
         >
           {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}
