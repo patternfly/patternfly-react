@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.126.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.125.1...@patternfly/react-core@3.126.0) (2019-12-05)
+
+
+### Features
+
+* **Pagination:** automate pagination and overflow logic ([#3182](https://github.com/patternfly/patternfly-react/issues/3182)) ([af19ff8](https://github.com/patternfly/patternfly-react/commit/af19ff80026c4f69b83e5818345f0bf5da8b58bd)), closes [#3136](https://github.com/patternfly/patternfly-react/issues/3136) [#3136](https://github.com/patternfly/patternfly-react/issues/3136)
+
+
+
+
+
 ## [3.125.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.125.0...@patternfly/react-core@3.125.1) (2019-12-04)
 
 **Note:** Version bump only for package @patternfly/react-core
