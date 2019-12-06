@@ -25,29 +25,11 @@ describe('Select Test', () => {
       .should('exist');
   });
 
-  it('Verify Checkbox Select', () => {
-    cy.get('#check-select').click();
-    cy.get('.pf-c-form__fieldset > :nth-child(1)').click();
-    cy.get('#check-select')
-      .contains('1')
-      .should('exist');
-    cy.get('.pf-c-form__fieldset > :nth-child(2)').click();
-    cy.get('#check-select')
-      .contains('2')
-      .should('exist');
-    cy.get('.pf-c-form__fieldset > :nth-child(1)').click();
-    cy.get('#check-select')
-      .contains('1')
-      .should('exist');
-    cy.get('#check-select').click();
-    cy.get('.pf-c-select__menu').should('not.exist');
-  });
-
   it('Verify Typeahead Select', () => {
     cy.get('#typeahead-select').click();
-    cy.get('#Florida-1').click();
+    cy.get('#Florida-2').click();
     cy.get('#select-typeahead').should('have.value', 'Florida');
-    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+    cy.get('button.pf-c-select__toggle-clear').click();
     cy.get('#select-typeahead').should('have.value', '');
   });
 
@@ -59,24 +41,26 @@ describe('Select Test', () => {
     cy.get('#Al-1').click();
     cy.get('#select-typeahead').should('have.value', 'Al');
     cy.get('#typeahead-select').click();
-    cy.get('#Al-3').should('exist');
-    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+    cy.get('#Al-5').should('exist');
+    cy.get('button.pf-c-select__toggle-clear').click();
   });
 
   it('Verify Typeahead Multi Select', () => {
     cy.get('#typeahead-multi-select').click();
-    cy.get('#Florida-1').click();
+    cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
       .contains('Florida')
       .should('exist');
     cy.get('#Alabama-0').click();
+    cy.get('#Boston-1').click();
+    cy.get('#Texas-4').click();
     cy.get('.pf-m-overflow > .pf-c-button').should('exist');
-    cy.get('#Florida-1').click();
+    cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
       .contains('Alabama')
       .should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
-    cy.get('#Florida-1').click();
+    cy.get('#Florida-2').click();
     cy.get('.pf-m-overflow > .pf-c-button').should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').click();
     cy.get('.pf-c-chip')
@@ -92,50 +76,56 @@ describe('Select Test', () => {
     cy.get('.pf-c-chip')
       .contains('Florida')
       .should('not.exist');
-    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+    cy.get('button.pf-c-select__toggle-clear').click();
     cy.get('.pf-c-chip').should('not.exist');
   });
 
   it('Verify Custom Typeahead Multi Select', () => {
     cy.get('#custom-typeahead-multi-select').click();
-    cy.get('#Florida-1').click();
+    cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
       .contains('div-Florida-test_span')
       .should('exist');
     cy.get('#Alabama-0').click();
-    cy.get('.pf-m-overflow > .pf-c-button').should('exist');
-    cy.get('#Florida-1').click();
+    cy.get('#Boston-1').click();
+    cy.get('#Texas-4').click();
+    cy.get('button.pf-c-select__toggle-clear').should('exist');
+    cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
       .contains('div-Alabama-test_span')
       .should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
-    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+    cy.get('button.pf-c-select__toggle-clear').click();
   });
 
   it('Verify Custom Typeahead Plain Multi Select', () => {
     cy.get('#custom-typeahead-plain-multi-select').click();
-    cy.get('#Florida-1').click();
+    cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
       .contains('div-Florida-test_span')
       .should('exist');
     cy.get('#Alabama-0').click();
-    cy.get('.pf-m-overflow > .pf-c-button').should('exist');
-    cy.get('#Florida-1').click();
+    cy.get('#Boston-1').click();
+    cy.get('#Texas-4').click();
+    cy.get('button.pf-c-select__toggle-clear').should('exist');
+    cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
       .contains('div-Alabama-test_span')
       .should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
   });
 
-  it('Verify Custom Content Select', () => {
-    cy.get('#custom-content-select').click();
-    cy.get('#custom-content-select-id').within(() => {
-      cy.get('.pf-m-expanded').should('exist');
-    });
-    cy.get('div[class="pf-c-select__menu"]').should('exist');
-    cy.get('#custom-content-select').click();
-    cy.get('#custom-content-select-id').within(() => {
-      cy.get('.pf-m-expanded').should('not.exist');
-    });
+  it('Verify Checkbox Select', () => {
+    cy.get('#check-select').click();
+    cy.get('input#Active').click();
+    cy.get('#check-select')
+      .contains('1')
+      .should('exist');
+    cy.get('input#Cancelled').click();
+    cy.get('#check-select')
+      .contains('2')
+      .should('exist');
+    cy.get('#check-select').click();
+    cy.get('.pf-c-select__menu').should('not.exist');
   });
 });

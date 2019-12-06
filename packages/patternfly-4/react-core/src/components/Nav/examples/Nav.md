@@ -19,7 +19,8 @@ import {
 import './nav.css';
 
 ## Examples
-```js title=Basic
+
+```js title=Default
 import React from 'react';
 import {
   Nav,
@@ -31,7 +32,7 @@ import {
   NavVariants
 } from '@patternfly/react-core';
 
-class NavSimpleList extends React.Component {
+class NavDefaultList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,19 +48,18 @@ class NavSimpleList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} id="nav-primary-simple" theme="dark">
-        <NavList id="nav-list-simple" variant={NavVariants.simple}>
-          <NavItem id="simple-link1" preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
+      <Nav onSelect={this.onSelect} theme="dark">
+        <NavList>
+          <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
           </NavItem>
-          <NavItem id="simple-link2" preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
+          <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </NavItem>
-          <NavItem id="simple-link3" preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2}>
+          <NavItem id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
             Link 3
           </NavItem>
-          <NavItemSeparator />
-          <NavItem id="simple-link4" preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>
+          <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
             Link 4
           </NavItem>
         </NavList>
@@ -120,55 +120,6 @@ class NavGroupedList extends React.Component {
             Link 3
           </NavItem>
         </NavGroup>
-      </Nav>
-    );
-  }
-}
-```
-
-```js title=Default
-import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup,
-  NavVariants
-} from '@patternfly/react-core';
-
-class NavDefaultList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
-  }
-
-  render() {
-    const { activeItem } = this.state;
-    return (
-      <Nav onSelect={this.onSelect} theme="dark">
-        <NavList>
-          <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-            Link 1
-          </NavItem>
-          <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Link 2
-          </NavItem>
-          <NavItem id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
-            Link 3
-          </NavItem>
-          <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
-            Link 4
-          </NavItem>
-        </NavList>
       </Nav>
     );
   }

@@ -345,7 +345,7 @@ class MultiColorChart extends React.Component {
                   { name: 'Cats', x: 'Friday', y: 2 },
                   { name: 'Cats', x: 'Saturday', y: 0 }
                 ]}
-                interpolation="basis"
+                interpolation="monotoneX"
               />
              <ChartArea
                data={[
@@ -357,7 +357,7 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds', x: 'Friday', y: 3 },
                   { name: 'Birds', x: 'Saturday', y: 5 }
                 ]}
-                interpolation="basis"
+                interpolation="monotoneX"
               />
               <ChartArea
                 data={[
@@ -369,7 +369,7 @@ class MultiColorChart extends React.Component {
                   { name: 'Dogs', x: 'Friday', y: 8 },
                   { name: 'Dogs', x: 'Saturday', y: 12 }
                 ]}
-                interpolation="basis"
+                interpolation="monotoneX"
               />
             </ChartStack>
           </Chart>

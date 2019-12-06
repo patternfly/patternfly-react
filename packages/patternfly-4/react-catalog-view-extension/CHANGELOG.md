@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.47...@patternfly/react-catalog-view-extension@1.1.48) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.46...@patternfly/react-catalog-view-extension@1.1.47) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.45...@patternfly/react-catalog-view-extension@1.1.46) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.44...@patternfly/react-catalog-view-extension@1.1.45) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.43...@patternfly/react-catalog-view-extension@1.1.44) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.42...@patternfly/react-catalog-view-extension@1.1.43) (2019-12-04)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.41...@patternfly/react-catalog-view-extension@1.1.42) (2019-12-03)
+
+
+### Bug Fixes
+
+* **FilterSidePanel:** pass remaining props to checkbox component ([#3374](https://github.com/patternfly/patternfly-react/issues/3374)) ([0050615](https://github.com/patternfly/patternfly-react/commit/005061506dde5fdf903e93a813b612187d650f51))
+
+
+
+
+
+## [1.1.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.40...@patternfly/react-catalog-view-extension@1.1.41) (2019-12-02)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.40](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.39...@patternfly/react-catalog-view-extension@1.1.40) (2019-12-02)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.38...@patternfly/react-catalog-view-extension@1.1.39) (2019-11-27)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [1.1.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.37...@patternfly/react-catalog-view-extension@1.1.38) (2019-11-21)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

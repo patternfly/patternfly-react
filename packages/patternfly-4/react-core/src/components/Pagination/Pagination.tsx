@@ -52,6 +52,22 @@ export interface PaginationTitles {
   paginationTitle?: string;
 }
 
+export type OnSetPage = (
+  _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+  newPage: number,
+  perPage?: number,
+  startIdx?: number,
+  endIdx?: number
+) => void;
+
+export type OnPerPageSelect = (
+  _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+  newPerPage: number,
+  newPage: number,
+  startIdx?: number,
+  endIdx?: number
+) => void;
+
 export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** What should be rendered inside */
   children?: React.ReactNode;
@@ -69,6 +85,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   perPage?: number;
   /** Select from options to number of items per page. */
   perPageOptions?: PerPageOptions[];
+  /** Indicate whether to show last full page of results when user selects perPage value greater than remaining rows */
+  defaultToFullPage?: boolean;
   /** Page we start at. */
   firstPage?: number;
   /** Current page number. */
@@ -86,7 +104,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user sets page. */
-  onSetPage?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onSetPage?: OnSetPage;
   /** Function called when user clicks on navigate to first page. */
   onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to previous page. */
@@ -98,7 +116,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Function called when user inputs page number. */
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
+  onPerPageSelect?: OnPerPageSelect;
 }
 
 const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> = ({
@@ -123,6 +141,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   },
   firstPage = 1,
   page = 1,
+  defaultToFullPage = false,
   itemCount,
   itemsStart = null,
   itemsEnd = null,
@@ -141,7 +160,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   ouiaId = null,
   ...props
 }: PaginationProps & InjectedOuiaProps) => {
-  const lastPage = Math.ceil(itemCount / perPage);
+  const lastPage = Math.ceil(itemCount / perPage) || 0;
   if (page < firstPage) {
     page = firstPage;
   } else if (page > lastPage) {
@@ -189,8 +208,11 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
         perPageOptions={perPageOptions}
         firstIndex={itemsStart !== null ? itemsStart : firstIndex}
         lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
+        defaultToFullPage={defaultToFullPage}
         itemCount={itemCount}
+        page={page}
         perPage={perPage}
+        lastPage={lastPage}
         onPerPageSelect={onPerPageSelect}
         dropDirection={dropDirection}
         widgetId={widgetId}
@@ -206,6 +228,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
         currPage={titles.currPage}
         paginationTitle={titles.paginationTitle}
         page={itemCount <= 0 ? 0 : page}
+        perPage={perPage}
         firstPage={itemsStart !== null ? itemsStart : 1}
         lastPage={lastPage}
         onSetPage={onSetPage}

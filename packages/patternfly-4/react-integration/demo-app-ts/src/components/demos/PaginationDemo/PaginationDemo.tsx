@@ -4,6 +4,7 @@ import { Pagination, PaginationVariant, Stack, StackItem, Title } from '@pattern
 interface OptionsMenuDemoState {
   topPage: number;
   bottomPage: number;
+  defaultFullPage: number;
   perPage: number;
 }
 
@@ -11,6 +12,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   state = {
     topPage: 1,
     bottomPage: 1,
+    defaultFullPage: 1,
     perPage: 20
   };
 
@@ -26,11 +28,24 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     });
   };
 
+  onSetDefaultPage = (_event, pageNumber) => {
+    this.setState({
+      defaultFullPage: pageNumber
+    })
+  }
+
   onPerPageSelect = (_event, perPage) => {
     this.setState({
       perPage
     });
   };
+
+  onDefaultToFullPerPageSelect = (_event, perPage, pageNumber) => {
+    this.setState({
+      perPage,
+      defaultFullPage: pageNumber
+    })
+  }
 
   renderPagination() {
     return (
@@ -63,6 +78,16 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             onSetPage={this.onSetBottomPage}
             onPerPageSelect={this.onPerPageSelect}
             isCompact
+          />
+          <Pagination
+            itemCount={523}
+            widgetId="pagination-options-menu-default-fullpage"
+            perPage={this.state.perPage}
+            page={this.state.defaultFullPage}
+            variant={PaginationVariant.bottom}
+            onSetPage={this.onSetDefaultPage}
+            onPerPageSelect={this.onDefaultToFullPerPageSelect}
+            defaultToFullPage
           />
         </React.Fragment>
       </StackItem>

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.3...@patternfly/react-charts@5.2.4) (2019-12-05)
+
+
+### Bug Fixes
+
+* **charts:** Update interpolation examples to use monotoneX ([#3372](https://github.com/patternfly/patternfly-react/issues/3372)) ([ff96204](https://github.com/patternfly/patternfly-react/commit/ff96204f760b0d60af35c1d3d3353f1248f9a6e9))
+
+
+
+
+
+## [5.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.2...@patternfly/react-charts@5.2.3) (2019-11-27)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## [5.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.1...@patternfly/react-charts@5.2.2) (2019-11-21)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -31,34 +31,6 @@ export class NavDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  renderSimpleNav() {
-    const { simpleActiveItem } = this.state;
-    return (
-      <StackItem isFilled>
-        <Title size="2xl">Simple Nav</Title>
-        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)', backgroundColor: '#fff' }}>
-          <Nav onSelect={this.onSimpleSelect} id="nav-primary-simple">
-            <NavList id="nav-list-simple" variant={NavVariants.simple}>
-              <NavItem id="simple-link1" preventDefault to="#simple-link1" itemId={0} isActive={simpleActiveItem === 0}>
-                Link 1
-              </NavItem>
-              <NavItem id="simple-link2" preventDefault to="#simple-link2" itemId={1} isActive={simpleActiveItem === 1}>
-                Link 2
-              </NavItem>
-              <NavItem id="simple-link3" preventDefault to="#simple-link3" itemId={2} isActive={simpleActiveItem === 2}>
-                Link 3
-              </NavItem>
-              <NavItemSeparator />
-              <NavItem id="simple-link4" preventDefault to="#simple-link4" itemId={3} isActive={simpleActiveItem === 3}>
-                Link 4
-              </NavItem>
-            </NavList>
-          </Nav>
-        </div>
-      </StackItem>
-    );
-  }
-
   onDefaultSelect = result => {
     this.setState({ defaultActiveItem: result.itemId });
   };
@@ -282,7 +254,6 @@ export class NavDemo extends Component {
     // https://github.com/patternfly/patternfly-react/issues/1234
     return (
       <Stack gutter="md">
-        {this.renderSimpleNav()}
         {this.renderDefaultNav()}
         {this.renderExpandableNav()}
         {this.renderHorizontalNav()}

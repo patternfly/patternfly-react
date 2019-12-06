@@ -463,6 +463,7 @@ class InteractiveLegendChart extends React.Component {
                 return (
                   <ChartArea
                     data={!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]}
+                    interpolation="monotoneX"
                     key={'area-' + index}
                     name={'area-' + index}
                   />

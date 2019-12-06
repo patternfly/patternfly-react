@@ -201,7 +201,6 @@ exports[`CatalogTile renders properly 1`] = `
                         zIndex={9999}
                       >
                         <PopoverBase
-                          animateFill={false}
                           appendTo={[Function]}
                           aria="describedby"
                           arrow={true}
@@ -242,7 +241,6 @@ exports[`CatalogTile renders properly 1`] = `
                           lazy={true}
                           maxWidth="18.75rem"
                           onCreate={[Function]}
-                          performance={true}
                           placement="top"
                           popperOptions={
                             Object {
@@ -527,7 +525,6 @@ exports[`CatalogTile renders properly 1`] = `
                         zIndex={9999}
                       >
                         <PopoverBase
-                          animateFill={false}
                           appendTo={[Function]}
                           aria="describedby"
                           arrow={true}
@@ -568,7 +565,6 @@ exports[`CatalogTile renders properly 1`] = `
                           lazy={true}
                           maxWidth="18.75rem"
                           onCreate={[Function]}
-                          performance={true}
                           placement="top"
                           popperOptions={
                             Object {
@@ -697,7 +693,6 @@ exports[`CatalogTile renders properly 1`] = `
                         zIndex={9999}
                       >
                         <PopoverBase
-                          animateFill={false}
                           appendTo={[Function]}
                           aria="describedby"
                           arrow={true}
@@ -738,7 +733,6 @@ exports[`CatalogTile renders properly 1`] = `
                           lazy={true}
                           maxWidth="18.75rem"
                           onCreate={[Function]}
-                          performance={true}
                           placement="top"
                           popperOptions={
                             Object {
@@ -976,7 +970,6 @@ exports[`CatalogTile renders properly 1`] = `
                         zIndex={9999}
                       >
                         <PopoverBase
-                          animateFill={false}
                           appendTo={[Function]}
                           aria="describedby"
                           arrow={true}
@@ -1017,7 +1010,6 @@ exports[`CatalogTile renders properly 1`] = `
                           lazy={true}
                           maxWidth="18.75rem"
                           onCreate={[Function]}
-                          performance={true}
                           placement="top"
                           popperOptions={
                             Object {
@@ -1257,7 +1249,6 @@ exports[`CatalogTile renders properly 1`] = `
                         zIndex={9999}
                       >
                         <PopoverBase
-                          animateFill={false}
                           appendTo={[Function]}
                           aria="describedby"
                           arrow={true}
@@ -1298,7 +1289,6 @@ exports[`CatalogTile renders properly 1`] = `
                           lazy={true}
                           maxWidth="18.75rem"
                           onCreate={[Function]}
-                          performance={true}
                           placement="top"
                           popperOptions={
                             Object {
@@ -1634,7 +1624,6 @@ exports[`CatalogTile renders properly 1`] = `
                         zIndex={9999}
                       >
                         <PopoverBase
-                          animateFill={false}
                           appendTo={[Function]}
                           aria="describedby"
                           arrow={true}
@@ -1675,7 +1664,6 @@ exports[`CatalogTile renders properly 1`] = `
                           lazy={true}
                           maxWidth="18.75rem"
                           onCreate={[Function]}
-                          performance={true}
                           placement="top"
                           popperOptions={
                             Object {

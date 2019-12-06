@@ -14,19 +14,14 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     isValid={true}
     label="Username"
   >
-    <TextInput
-      aria-label={null}
+    <ForwardRef
       autoFocus={true}
-      className=""
       id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
-      validated="default"
       value=""
     />
   </Component>
@@ -36,18 +31,13 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     isValid={true}
     label="Password"
   >
-    <TextInput
-      aria-label={null}
-      className=""
+    <ForwardRef
       id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
-      validated="default"
       value=""
     />
   </Component>
@@ -92,19 +82,14 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     isValid={true}
     label="Username"
   >
-    <TextInput
-      aria-label={null}
+    <ForwardRef
       autoFocus={true}
-      className=""
       id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
-      validated="default"
       value=""
     />
   </Component>
@@ -114,18 +99,13 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     isValid={true}
     label="Password"
   >
-    <TextInput
-      aria-label={null}
-      className=""
+    <ForwardRef
       id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
-      validated="default"
       value=""
     />
   </Component>
@@ -170,19 +150,14 @@ exports[`should render Login form 1`] = `
     isValid={true}
     label="Username"
   >
-    <TextInput
-      aria-label={null}
+    <ForwardRef
       autoFocus={true}
-      className=""
       id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
-      validated="default"
       value=""
     />
   </Component>
@@ -192,18 +167,13 @@ exports[`should render Login form 1`] = `
     isValid={true}
     label="Password"
   >
-    <TextInput
-      aria-label={null}
-      className=""
+    <ForwardRef
       id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
-      validated="default"
       value=""
     />
   </Component>

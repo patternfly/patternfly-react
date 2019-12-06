@@ -68,6 +68,9 @@ workflows:
     - test_jest_other:
         requires:
         - build
+    - test_a11y_pf4:
+        requires:
+        - build_pf4_docs
     - build_integration:
         requires:
         - build
@@ -212,14 +215,28 @@ jobs:
     - persist_to_workspace:
         root: ~/project
         paths:
+        - packages/patternfly-4/react-docs/.cache/
         - packages/patternfly-4/react-docs/public/
+  test_a11y_pf4:
+    docker:
+    - image: circleci/node:10-browsers
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: PF4 a11y tests
+        command: yarn test:a11y || true
+    - store_artifacts:
+        path: packages/patternfly-4/react-docs/coverage/
   upload_docs:
     docker:
     - image: circleci/node:10
     steps:
     - *attach_workspace
     - run:
-        name: Build docs Folder
+        name: Build docs folder
         command: .circleci/copy-docs.sh
     - run:
         name: Upload docs to surge.sh

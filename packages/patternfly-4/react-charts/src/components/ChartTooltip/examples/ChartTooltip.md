@@ -52,7 +52,7 @@ VononoiContainer = (
               { name: 'Cats', x: '2017', y: 8 },
               { name: 'Cats', x: '2018', y: 6 }
             ]}
-            interpolation="basis"
+            interpolation="monotoneX"
           />
           <ChartArea
             data={[
@@ -62,7 +62,7 @@ VononoiContainer = (
               { name: 'Dogs', x: '2018', y: 5 },
               { name: 'Dogs', x: '2019', y: 6 }
             ]}
-            interpolation="basis"
+            interpolation="monotoneX"
           />
           <ChartArea
             data={[
@@ -72,7 +72,7 @@ VononoiContainer = (
               { name: 'Birds', x: '2018', y: 2 },
               { name: 'Birds', x: '2019', y: 4 }
             ]}
-            interpolation="basis"
+            interpolation="monotoneX"
           />
         </ChartGroup>
       </Chart>

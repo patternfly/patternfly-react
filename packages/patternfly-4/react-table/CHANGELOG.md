@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.50...@patternfly/react-table@2.24.51) (2019-12-06)
+
+
+### Bug Fixes
+
+* **table:** rename visible/hiddenOn2Xl to visible/hiddenOn_2xl ([#3365](https://github.com/patternfly/patternfly-react/issues/3365)) ([45049a2](https://github.com/patternfly/patternfly-react/commit/45049a2e5c082425bc8e70e1341ad77370f37d38))
+
+
+
+
+
+## [2.24.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.49...@patternfly/react-table@2.24.50) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.48...@patternfly/react-table@2.24.49) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.47...@patternfly/react-table@2.24.48) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.46...@patternfly/react-table@2.24.47) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.45...@patternfly/react-table@2.24.46) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.44...@patternfly/react-table@2.24.45) (2019-12-04)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.43...@patternfly/react-table@2.24.44) (2019-12-02)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.42...@patternfly/react-table@2.24.43) (2019-12-02)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.41...@patternfly/react-table@2.24.42) (2019-11-27)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## [2.24.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.40...@patternfly/react-table@2.24.41) (2019-11-21)
 
 **Note:** Version bump only for package @patternfly/react-table
