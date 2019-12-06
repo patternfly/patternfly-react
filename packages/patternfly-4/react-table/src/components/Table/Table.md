@@ -802,12 +802,12 @@ class HiddenVisibleBreakpointTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn2Xl)]
+          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn_2xl)]
         },
         'Branches',
         {
           title: 'Pull requests',
-          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg, Visibility.hiddenOn2Xl)]
+          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg, Visibility.hiddenOn_2xl)]
         },
         'Workspaces',
         {

@@ -1,5 +1,7 @@
 import { mount } from 'enzyme';
 import {
+  Visibility,
+  classNames,
   selectable,
   sortable,
   cellActions,
@@ -305,4 +307,12 @@ describe('Transformer functions', () => {
   test('cell height auto', () => {
     expect(cellHeightAuto()).toEqual({ className: 'pf-m-height-auto' });
   });
+  
+  describe('visibility classNames', () => {
+    Object.keys(Visibility).forEach((className => {
+      test(`${className} is defined`, () => {
+        expect(Visibility[className]).not.toBe(undefined)
+      })
+    }))
+  })
 });
