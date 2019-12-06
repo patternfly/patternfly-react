@@ -154,7 +154,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         {!isCompact && (
           <Button
             variant={ButtonVariant.plain}
-            isDisabled={isDisabled || page === firstPage}
+            isDisabled={isDisabled || page === firstPage || page === 0}
             aria-label={toFirstPage}
             data-action="first"
             onClick={event => {
@@ -168,7 +168,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         )}
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={isDisabled || page === firstPage}
+          isDisabled={isDisabled || page === firstPage || page === 0}
           data-action="previous"
           onClick={event => {
             const newPage = (page as number) - 1 >= 1 ? (page as number) - 1 : 1;

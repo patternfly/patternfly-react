@@ -6264,7 +6264,7 @@ exports[`component render no items 1`] = `
             <Component
               aria-label="Go to first page"
               data-action="first"
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
@@ -6280,7 +6280,7 @@ exports[`component render no items 1`] = `
                       title={null}
                     />,
                     "data-action": "first",
-                    "isDisabled": false,
+                    "isDisabled": true,
                     "onClick": [Function],
                     "variant": "plain",
                   }
@@ -6295,7 +6295,7 @@ exports[`component render no items 1`] = `
                 <Button
                   aria-label="Go to first page"
                   data-action="first"
-                  isDisabled={false}
+                  isDisabled={true}
                   onClick={[Function]}
                   ouiaContext={
                     Object {
@@ -6310,7 +6310,7 @@ exports[`component render no items 1`] = `
                     aria-label="Go to first page"
                     className="pf-c-button pf-m-plain"
                     data-action="first"
-                    disabled={false}
+                    disabled={true}
                     onClick={[Function]}
                     tabIndex={null}
                     type="button"
@@ -6348,7 +6348,7 @@ exports[`component render no items 1`] = `
             <Component
               aria-label="Go to previous page"
               data-action="previous"
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
@@ -6364,7 +6364,7 @@ exports[`component render no items 1`] = `
                       title={null}
                     />,
                     "data-action": "previous",
-                    "isDisabled": false,
+                    "isDisabled": true,
                     "onClick": [Function],
                     "variant": "plain",
                   }
@@ -6379,7 +6379,7 @@ exports[`component render no items 1`] = `
                 <Button
                   aria-label="Go to previous page"
                   data-action="previous"
-                  isDisabled={false}
+                  isDisabled={true}
                   onClick={[Function]}
                   ouiaContext={
                     Object {
@@ -6394,7 +6394,7 @@ exports[`component render no items 1`] = `
                     aria-label="Go to previous page"
                     className="pf-c-button pf-m-plain"
                     data-action="previous"
-                    disabled={false}
+                    disabled={true}
                     onClick={[Function]}
                     tabIndex={null}
                     type="button"
@@ -13320,7 +13320,7 @@ exports[`component render zero results 1`] = `
             <Component
               aria-label="Go to first page"
               data-action="first"
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
@@ -13336,7 +13336,7 @@ exports[`component render zero results 1`] = `
                       title={null}
                     />,
                     "data-action": "first",
-                    "isDisabled": false,
+                    "isDisabled": true,
                     "onClick": [Function],
                     "variant": "plain",
                   }
@@ -13351,7 +13351,7 @@ exports[`component render zero results 1`] = `
                 <Button
                   aria-label="Go to first page"
                   data-action="first"
-                  isDisabled={false}
+                  isDisabled={true}
                   onClick={[Function]}
                   ouiaContext={
                     Object {
@@ -13366,7 +13366,7 @@ exports[`component render zero results 1`] = `
                     aria-label="Go to first page"
                     className="pf-c-button pf-m-plain"
                     data-action="first"
-                    disabled={false}
+                    disabled={true}
                     onClick={[Function]}
                     tabIndex={null}
                     type="button"
@@ -13404,7 +13404,7 @@ exports[`component render zero results 1`] = `
             <Component
               aria-label="Go to previous page"
               data-action="previous"
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
@@ -13420,7 +13420,7 @@ exports[`component render zero results 1`] = `
                       title={null}
                     />,
                     "data-action": "previous",
-                    "isDisabled": false,
+                    "isDisabled": true,
                     "onClick": [Function],
                     "variant": "plain",
                   }
@@ -13435,7 +13435,7 @@ exports[`component render zero results 1`] = `
                 <Button
                   aria-label="Go to previous page"
                   data-action="previous"
-                  isDisabled={false}
+                  isDisabled={true}
                   onClick={[Function]}
                   ouiaContext={
                     Object {
@@ -13450,7 +13450,7 @@ exports[`component render zero results 1`] = `
                     aria-label="Go to previous page"
                     className="pf-c-button pf-m-plain"
                     data-action="previous"
-                    disabled={false}
+                    disabled={true}
                     onClick={[Function]}
                     tabIndex={null}
                     type="button"
