@@ -162,13 +162,13 @@ class PageLayoutDefaultNav extends React.Component {
     const userDropdownItems = [
       <DropdownItem>Link</DropdownItem>,
       <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
+      <DropdownItem isDisabled>Disabled link</DropdownItem>,
       <DropdownItem isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownItem>Separated link</DropdownItem>,
+      <DropdownItem component="button">Separated action</DropdownItem>
     ];
     const PageToolbar = (
       <Toolbar>
@@ -219,15 +219,15 @@ class PageLayoutDefaultNav extends React.Component {
     );
     const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
     const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
     const PageBreadcrumb = (
       <Breadcrumb>
-        <BreadcrumbItem>Section Home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem>Section home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
         <BreadcrumbItem to="#" isActive>
-          Section Landing
+          Section landing
         </BreadcrumbItem>
       </Breadcrumb>
     );
@@ -244,7 +244,7 @@ class PageLayoutDefaultNav extends React.Component {
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
@@ -357,7 +357,7 @@ class PageLayoutExpandableNav extends React.Component {
               Overview
             </NavItem>
             <NavItem groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
-              Resource Usage
+              Resource usage
             </NavItem>
             <NavItem groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
               Hypervisors
@@ -374,18 +374,18 @@ class PageLayoutExpandableNav extends React.Component {
           </NavExpandable>
           <NavExpandable title="Policy" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
             <NavItem groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
-              Subnav Link 1
+              Subnav link 1
             </NavItem>
             <NavItem groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
-              Subnav Link 2
+              Subnav link 2
             </NavItem>
           </NavExpandable>
           <NavExpandable title="Authentication" groupId="grp-3" isActive={activeGroup === 'grp-3'}>
             <NavItem groupId="grp-3" itemId="grp-3_itm-1" isActive={activeItem === 'grp-3_itm-1'}>
-              Subnav Link 1
+              Subnav link 1
             </NavItem>
             <NavItem groupId="grp-3" itemId="grp-3_itm-2" isActive={activeItem === 'grp-3_itm-2'}>
-              Subnav Link 2
+              Subnav link 2
             </NavItem>
           </NavExpandable>
         </NavList>
@@ -402,13 +402,13 @@ class PageLayoutExpandableNav extends React.Component {
     const userDropdownItems = [
       <DropdownItem>Link</DropdownItem>,
       <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
+      <DropdownItem isDisabled>Disabled link</DropdownItem>,
       <DropdownItem isDisabled component="button">
-        Disabled Action
+        Disabled action
       </DropdownItem>,
       <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownItem>Separated link</DropdownItem>,
+      <DropdownItem component="button">Separated action</DropdownItem>
     ];
     const PageToolbar = (
       <Toolbar>
@@ -460,16 +460,16 @@ class PageLayoutExpandableNav extends React.Component {
     const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
     const PageBreadcrumb = (
       <Breadcrumb>
-        <BreadcrumbItem>Section Home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem>Section home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
         <BreadcrumbItem to="#" isActive>
-          Section Landing
+          Section landing
         </BreadcrumbItem>
       </Breadcrumb>
     );
     const pageId = 'main-content-page-layout-expandable-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
     return (
       <React.Fragment>
@@ -483,7 +483,7 @@ class PageLayoutExpandableNav extends React.Component {
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
@@ -702,7 +702,7 @@ class PageLayoutGroupsNav extends React.Component {
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
@@ -895,22 +895,22 @@ class PageLayoutHorizontalNav extends React.Component {
     const PageBreadcrumb = (
       <Breadcrumb>
         <BreadcrumbItem>Section Home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
         <BreadcrumbItem to="#" isActive>
-          Section Landing
+          Section landing
         </BreadcrumbItem>
       </Breadcrumb>
     );
     const pageId = 'main-content-page-layout-horizontal-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
     return (
       <React.Fragment>
         <Page header={Header} skipToContent={PageSkipToContent} breadcrumb={PageBreadcrumb} mainContainerId={pageId}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
@@ -1151,7 +1151,7 @@ class PageLayoutManualNav extends React.Component {
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
@@ -1360,7 +1360,7 @@ class PageLayoutLightNav extends React.Component {
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
                 of it’s relative line height of 1.5.
