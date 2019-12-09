@@ -1,20 +1,19 @@
 import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { OptionsMenuToggle } from './OptionsMenuToggle';
 
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
-  /** Id of the parent Options menu component */
+  /** Id of the parent options menu component */
   parentId?: string;
-  /** Content to be rendered inside the Options menu toggle as text or another non-interactive element */
+  /** Content to be rendered inside the options menu toggle as text or another non-interactive element */
   toggleText: React.ReactNode;
-  /** classes to be added to the Options menu toggle text */
+  /** classes to be added to the options menu toggle text */
   toggleTextClassName?: string;
-  /** Content to be rendered inside the Options menu toggle button */
+  /** Content to be rendered inside the options menu toggle button */
   toggleButtonContents?: React.ReactNode;
-  /** Classes to be added to the Options menu toggle button */
+  /** Classes to be added to the options menu toggle button */
   toggleButtonContentsClassName?: string;
-  /** Callback for when this Options menu is toggled */
+  /** Callback for when this options menu is toggled */
   onToggle?: (event: boolean) => void;
   /** Inner function to indicate open on Enter */
   onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -22,11 +21,11 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
-  /** Forces display of the focused state of the Options menu button */
+  /** Forces display of the focused state of the options menu button */
   isFocused?: boolean;
-  /** Forces display of the hover state of the Options menu button */
+  /** Forces display of the hover state of the options menu button */
   isHovered?: boolean;
-  /** Forces display of the active state of the Options menu button */
+  /** Forces display of the active state of the options menu button */
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;

@@ -3,7 +3,7 @@ import {
   OptionsMenu,
   OptionsMenuProps,
   OptionsMenuItem,
-  OptionsMenuGroup,
+  OptionsMenuItemGroup,
   OptionsMenuSeparator,
   OptionsMenuToggle,
   OptionsMenuDirection,
@@ -93,13 +93,13 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     const myModifiedMenuProps: OptionsMenuProps = {
       id: 'options-menu-modified-example',
       menuItems: [
-        <OptionsMenuGroup groupTitle="Second group">
+        <OptionsMenuItemGroup groupTitle="Second group">
           <OptionsMenuItem onSelect={() => {}}>First Option</OptionsMenuItem>
-        </OptionsMenuGroup>,
+        </OptionsMenuItemGroup>,
         <OptionsMenuSeparator />,
-        <OptionsMenuGroup groupTitle="First group">
+        <OptionsMenuItemGroup groupTitle="First group">
           <OptionsMenuItem onSelect={() => {}}>Second Option</OptionsMenuItem>
-        </OptionsMenuGroup>
+        </OptionsMenuItemGroup>
       ],
       toggle: (
         <OptionsMenuToggleWithText

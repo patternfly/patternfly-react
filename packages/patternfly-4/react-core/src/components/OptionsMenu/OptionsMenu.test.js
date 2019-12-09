@@ -2,25 +2,25 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { OptionsMenu, OptionsMenuDirection, OptionsMenuPosition } from './OptionsMenu';
 import { OptionsMenuToggle } from './OptionsMenuToggle';
-import { OptionsMenuGroup } from './OptionsMenuGroup';
+import { OptionsMenuItemGroup } from './OptionsMenuItemGroup';
 import { OptionsMenuItem } from './OptionsMenuItem';
 import { OptionsMenuSeparator } from './OptionsMenuSeparator';
 import { OptionsMenuToggleWithText } from './OptionsMenuToggleWithText';
 
 const menuItems = [
-  <OptionsMenuGroup key="first group" groupTitle="Sort order">
+  <OptionsMenuItemGroup key="first group" groupTitle="Sort order">
     <OptionsMenuItem key="name">Name</OptionsMenuItem>
     <OptionsMenuItem key="date">Date</OptionsMenuItem>
     <OptionsMenuItem isDisabled key="disabled">
       Disabled
     </OptionsMenuItem>
     <OptionsMenuItem key="size">Size</OptionsMenuItem>
-  </OptionsMenuGroup>,
+  </OptionsMenuItemGroup>,
   <OptionsMenuSeparator key="separator" />,
-  <OptionsMenuGroup key="second group" groupTitle="Sort direction" hasSeparator>
+  <OptionsMenuItemGroup key="second group" groupTitle="Sort direction" hasSeparator>
     <OptionsMenuItem key="ascending">Ascending</OptionsMenuItem>
     <OptionsMenuItem key="descending">Descending</OptionsMenuItem>
-  </OptionsMenuGroup>
+  </OptionsMenuItemGroup>
 ];
 
 describe('optionsMenu', () => {

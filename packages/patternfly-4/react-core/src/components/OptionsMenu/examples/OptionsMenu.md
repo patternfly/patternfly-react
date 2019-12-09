@@ -10,7 +10,7 @@ import {
   OptionsMenu,
   OptionsMenuItem,
   OptionsMenuToggle,
-  OptionsMenuGroup,
+  OptionsMenuItemGroup,
   OptionsMenuDirection,
   OptionsMenuPosition,
   OptionsMenuSeparator,
@@ -76,7 +76,7 @@ class DisabledOptionsMenu extends React.Component {
       super(props);
       this.state = {
         isOpen: false,
-        toggleTemplateText: "Disabled Options menu"
+        toggleTemplateText: "Disabled options menu"
       };
 
       this.onToggle = () => {
@@ -104,7 +104,7 @@ class DisabledOptionsMenu extends React.Component {
 
 ```js title=Multiple-options
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuGroup, OptionsMenuToggle} from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuItemGroup, OptionsMenuToggle} from '@patternfly/react-core';
 
 class MultipleOptions extends React.Component {
   constructor(props) {
@@ -140,17 +140,17 @@ class MultipleOptions extends React.Component {
   render() {
     const { sortColumn, sortDirection, toggleTemplateText, isOpen } = this.state;
     const menuItems = [
-        <OptionsMenuGroup key="first group" aria-label="Sort Column">
+        <OptionsMenuItemGroup key="first group" aria-label="Sort Column">
           <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={sortColumn === "name"} id="name" key="name">Name</OptionsMenuItem>
           <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={sortColumn === "date"} id="date" key="date">Date</OptionsMenuItem>
           <OptionsMenuItem isDisabled onSelect={this.onSelectColumn} isSelected={sortColumn === "disabled"} id="disabled" key="disabled">Disabled</OptionsMenuItem>
           <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={sortColumn === "size"} id="size" key="size">Size</OptionsMenuItem>
-        </OptionsMenuGroup>,
+        </OptionsMenuItemGroup>,
         <OptionsMenuSeparator key="separator"/>,
-        <OptionsMenuGroup key="second group" aria-label="Sort Direction">
+        <OptionsMenuItemGroup key="second group" aria-label="Sort Direction">
           <OptionsMenuItem onSelect={this.onSelectDirection} isSelected={sortDirection === "ascending"} id="ascending" key="ascending">Ascending</OptionsMenuItem>
           <OptionsMenuItem onSelect={this.onSelectDirection} isSelected={sortDirection === "descending"} id="descending" key="descending">Descending</OptionsMenuItem>
-        </OptionsMenuGroup>
+        </OptionsMenuItemGroup>
       ];
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
 
@@ -462,7 +462,7 @@ class PlainWithText extends React.Component {
 
 ```js title=Grouped-items-with-titles
 import React from 'react';
-import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle, OptionsMenuGroup } from '@patternfly/react-core';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle, OptionsMenuItemGroup } from '@patternfly/react-core';
 
 class GroupedItems extends React.Component {
   constructor(props) {
@@ -491,18 +491,18 @@ class GroupedItems extends React.Component {
     const { isOpen, selectedOption, toggleTemplateText } = this.state;
     
     const menuGroups = [
-      <OptionsMenuGroup hasSeparator key="group0">
+      <OptionsMenuItemGroup hasSeparator key="group0">
         <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "groupOption1"} id="groupOption1" key="option 1">Option 1</OptionsMenuItem>
         <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "groupOption2"} id="groupOption2" key="option 2">Option 2</OptionsMenuItem>
-      </OptionsMenuGroup>,
-      <OptionsMenuGroup groupTitle="Group 1" hasSeparator key="group1">
+      </OptionsMenuItemGroup>,
+      <OptionsMenuItemGroup groupTitle="Group 1" hasSeparator key="group1">
         <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "groupOption3"} id="groupOption3" key="option 3">Option 1</OptionsMenuItem>
         <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "groupOption4"} id="groupOption4" key="option 4">Option 2</OptionsMenuItem>
-      </OptionsMenuGroup>,
-      <OptionsMenuGroup groupTitle="Group 2" key="group2">
+      </OptionsMenuItemGroup>,
+      <OptionsMenuItemGroup groupTitle="Group 2" key="group2">
         <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "groupOption5"} id="groupOption5" key="option 5">Option 1</OptionsMenuItem>
         <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "groupOption6"} id="groupOption6" key="option 6">Option 2</OptionsMenuItem>
-      </OptionsMenuGroup>
+      </OptionsMenuItemGroup>
     ];
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
     
