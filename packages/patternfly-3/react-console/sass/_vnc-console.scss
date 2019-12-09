@@ -19,5 +19,9 @@
     .dropdown-menu {
       min-width: 102px;
     }
+
+    .dropdown + .btn {
+      margin-left: 0.5rem;
+    }
   }
 }
