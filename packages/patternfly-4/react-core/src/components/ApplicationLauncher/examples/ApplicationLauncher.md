@@ -400,16 +400,13 @@ class ApplicationLauncherSections extends React.Component {
 import React from 'react';
 import {
   ApplicationLauncher,
-  ApplicationLauncherIcon,
-  ApplicationLauncherText,
   ApplicationLauncherItem,
   ApplicationLauncherGroup,
   ApplicationLauncherSeparator
 } from '@patternfly/react-core';
-import { StarIcon } from '@patternfly/react-icons';
 import pfIcon from './examples/pf-logo-small.svg';
 
-class ApplicationLauncherSections extends React.Component {
+class ApplicationLauncherFavorites extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

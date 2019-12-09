@@ -47,8 +47,14 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   onSearch?(textInput: string): void;
   /** Placeholder text for search input */
   searchPlaceholderText?: string;
+  /** Text for search input when no results are found */
+  searchNoResultsText?: string;
   /** Additional properties for search input */
   searchProps?: any;
+  /** Label for the favorites group */
+  favoritesLabel?: string;
+  /** ID of toggle */
+  toggleId?: string;
 }
 
 export const ApplicationLauncherContext = React.createContext({ onFavorite: Function.prototype });
@@ -68,7 +74,9 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     'aria-label': 'Application launcher',
     isGrouped: false,
     toggleIcon: <ThIcon />,
-    searchPlaceholderText: 'Filter by name...'
+    searchPlaceholderText: 'Filter by name...',
+    searchNoResultsText: 'No results found',
+    favoritesLabel: 'Favorites'
   };
 
   createSearchBox = () => {
@@ -132,6 +140,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       isOpen,
       onToggle,
       toggleIcon,
+      toggleId,
       onSelect,
       isDisabled,
       className,
@@ -144,6 +153,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       searchProps,
       items,
       ref,
+      favoritesLabel,
+      searchNoResultsText,
       ...props
     } = this.props;
     let renderableItems: React.ReactNode[] = [];
@@ -152,7 +163,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       let favoritesGroup: React.ReactNode[] = [];
       if (favorites.length > 0)
         favoritesGroup = [
-          <ApplicationLauncherGroup key="favorites" label="Favorites">
+          <ApplicationLauncherGroup key="favorites" label={favoritesLabel}>
             {this.createRenderableFavorites()}
             <ApplicationLauncherSeparator key="separator" />
           </ApplicationLauncherGroup>
@@ -164,7 +175,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     if (items.length === 0 && dropdownItems.length === 0) {
       renderableItems = [
         <ApplicationLauncherGroup key="no-results-group">
-          <ApplicationLauncherItem key="no-results">No results found</ApplicationLauncherItem>
+          <ApplicationLauncherItem key="no-results">{searchNoResultsText}</ApplicationLauncherItem>
         </ApplicationLauncherGroup>
       ];
     }
@@ -198,6 +209,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             aria-label={ariaLabel}
             toggle={
               <DropdownToggle
+                id={toggleId}
                 iconComponent={null}
                 isOpen={isOpen}
                 onToggle={onToggle}

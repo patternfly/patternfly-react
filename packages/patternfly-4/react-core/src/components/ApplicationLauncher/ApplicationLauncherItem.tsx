@@ -29,6 +29,10 @@ export interface ApplicationLauncherItemProps {
   component?: React.ReactNode;
   /** Flag indicating if the item is favorited */
   isFavorite?: boolean;
+  /** Aria label text for favoritable button when favorited */
+  ariaIsFavorite?: string;
+  /** Aria label text for favoritable button when not favorited */
+  ariaIsNotFavorite?: string;
   /** ID of the item. Required for tracking favorites. */
   id?: string;
 }
@@ -44,6 +48,8 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   tooltipProps = null,
   component = 'a',
   isFavorite = null,
+  ariaIsFavorite = 'starred',
+  ariaIsNotFavorite = 'not starred',
   ...props
 }: ApplicationLauncherItemProps & DropdownItemProps) => (
   <ApplicationLauncherItemContext.Provider value={{ isExternal, icon }}>
@@ -73,7 +79,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
               </button>
             )
           })}
-          {...(isFavorite !== null && { 'aria-label': isFavorite ? 'starred' : 'not starred' })}
+          {...(isFavorite !== null && { 'aria-label': isFavorite ? ariaIsFavorite : ariaIsNotFavorite })}
           {...props}
         >
           {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}

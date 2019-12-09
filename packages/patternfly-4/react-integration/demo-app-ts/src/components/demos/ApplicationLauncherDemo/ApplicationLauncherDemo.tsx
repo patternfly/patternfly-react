@@ -57,6 +57,7 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
       <ApplicationLauncher
         onSelect={this.onSelect}
         onToggle={this.onToggle}
+        toggleId="toggle"
         isOpen={isOpen}
         dropdownItems={dropdownItems}
       />
