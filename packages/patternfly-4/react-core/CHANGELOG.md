@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.126.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.4...@patternfly/react-core@3.126.5) (2019-12-06)
+
+
+### Bug Fixes
+
+* **Pagination:** fixed prev arrows active with 0 rows ([#3384](https://github.com/patternfly/patternfly-react/issues/3384)) ([901cb13](https://github.com/patternfly/patternfly-react/commit/901cb1379b8685c1957fb3575a0de3209846fb48))
+
+
+
+
+
 ## [3.126.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.3...@patternfly/react-core@3.126.4) (2019-12-05)
 
 **Note:** Version bump only for package @patternfly/react-core
