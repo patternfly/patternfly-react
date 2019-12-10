@@ -37,6 +37,8 @@ Basic = () => (
       ]}
       title="Patternfly-React"
       vendor="provided by Red Hat"
+        maxDescriptionLength={-1}
+
       description={
         'This is a very long description that should be truncated after 112 characters. ' +
         '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
@@ -56,7 +58,7 @@ import { pfLogo2 } from './examples/pfLogo2.svg'
 SimpleNoTrunc = () => (
   <React.Fragment>
     <CatalogTile
-      id="simple"
+      id="simple-no-truncation"
       iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
@@ -64,6 +66,8 @@ SimpleNoTrunc = () => (
           <CogIcon />
         </CatalogTileBadge>
       ]}
+        maxDescriptionLength={-1}
+
       title="Patternfly-React"
       vendor="provided by Red Hat"
       maxDescriptionLength={-1}
@@ -94,6 +98,7 @@ SimpleFooter = () => (
           <CogIcon />
         </CatalogTileBadge>
       ]}
+        maxDescriptionLength={-1}
       title="Patternfly-React"
       vendor="provided by Red Hat"
       description={
@@ -120,7 +125,7 @@ import { pfLogo2 } from './examples/pfLogo2.svg'
 Link = () => (
   <React.Fragment>
     <CatalogTile
-      id="simple"
+      id="link-variant"
       iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
@@ -181,7 +186,7 @@ import { pfLogo2 } from './examples/pfLogo2.svg'
 TextBadge = () => (
   <React.Fragment>
     <CatalogTile
-      id="multiIcon"
+      id="text-badge"
       iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[

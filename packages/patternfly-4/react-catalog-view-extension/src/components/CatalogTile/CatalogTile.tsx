@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';
 import { CatalogTileBadge } from './CatalogTileBadge';
-
+const VERTICALPADDING = 48;
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
   id?: any;
@@ -76,15 +76,12 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
 
   computeDescHeight() {
     let heightStyle = { maxHeight: null as string, WebkitLineClamp: 1 };
+    //let heightStyle = { maxHeight: null as string };
 
     if (this.descFullHeight && this.descLineHeight) {
-      console.log('pizza');
-      console.log(this.descFullHeight);
-      console.log(this.descLineHeight);
-      heightStyle.maxHeight = `${Math.floor(this.descFullHeight / this.descLineHeight) * this.descLineHeight}px`;
+      heightStyle.maxHeight = `${Math.floor((this.descFullHeight) / this.descLineHeight) * this.descLineHeight}px`;
       const maxLines = `${Math.floor(this.descFullHeight / this.descLineHeight)}`;
-      console.log(maxLines);
-      heightStyle.WebkitLineClamp = `${maxLines}`;
+      heightStyle.WebkitLineClamp = parseInt(`${maxLines}`);
     }
 
     this.setState({ heightStyle });
@@ -94,7 +91,6 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     if (max === -1 || typeof text !== 'string' || text.length <= max) {
       return text;
     }
-
     return (
       <React.Fragment>
         {text.substring(0, max - 3)}
@@ -128,13 +124,12 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     );
   };
 
-
   handleDescriptionRef = (ref: HTMLDivElement) => {
     if (!ref) {
       return;
     }
 
-    this.descFullHeight = ref.clientHeight;
+    this.descFullHeight = ref.parentElement.clientHeight - VERTICALPADDING;
   };
 
   handleDescriptionSpanRef = (ref: HTMLSpanElement) => {

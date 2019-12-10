@@ -32,6 +32,9 @@ class CatalogTile extends React.Component {
     if (this.descFullHeight && this.descLineHeight) {
       heightStyle.maxHeight = `${Math.floor(this.descFullHeight / this.descLineHeight) * this.descLineHeight}px`;
     }
+    console.log('descFullHeight: ', this.descFullHeight);
+    console.log('descLineHeight: ', this.descLineHeight);
+    console.log('max: ', heightStyle.maxHeight);
 
     this.setState({ heightStyle });
   }
