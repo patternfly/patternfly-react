@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
-import { Checkbox } from '../Checkbox';
 import { Omit } from '../../helpers/typeUtils';
 
 export interface DropdownToggleCheckboxProps
@@ -34,7 +33,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     onChange: () => undefined as any
   };
 
-  handleChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {
+  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange((event.target as HTMLInputElement).checked, event);
   };
 
@@ -52,13 +51,14 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     );
     return (
       <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
-        <Checkbox
+        <input
           {...props}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
+          type="checkbox"
           ref={ref as any}
           aria-invalid={!isValid}
-          isDisabled={isDisabled}
-          isChecked={this.calculateChecked()}
+          disabled={isDisabled}
+          checked={this.calculateChecked()}
         />
         {text}
       </label>
