@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.127.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.5...@patternfly/react-core@3.127.0) (2019-12-11)
+
+
+### Features
+
+* **Pagination:** added optional offset prop ([#3383](https://github.com/patternfly/patternfly-react/issues/3383)) ([1dd38a1](https://github.com/patternfly/patternfly-react/commit/1dd38a15b19f4f60d5f09e88d553801765947705))
+
+
+
+
+
 ## [3.126.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.4...@patternfly/react-core@3.126.5) (2019-12-06)
 
 
