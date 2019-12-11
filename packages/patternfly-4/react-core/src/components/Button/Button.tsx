@@ -19,6 +19,11 @@ export enum ButtonType {
   reset = 'reset'
 }
 
+export enum IconPosition {
+  leading = 'leading',
+  trailing = 'trailing'
+}
+
 export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Content rendered inside the button */
   children?: React.ReactNode;
@@ -46,6 +51,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   'aria-label'?: string;
   /** Icon for the button if variant is a link */
   icon?: React.ReactNode | null;
+  /* Icon position if an icon is provided and th variant is in link */
+  iconPosition?: 'leading' | 'trailing';
   /** Set button tab index unless component is not a button and is disabled */
   tabIndex?: number;
 }
@@ -64,6 +71,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   variant = ButtonVariant.primary,
   'aria-label': ariaLabel = null,
   icon = null,
+  iconPosition = 'leading',
   ouiaContext = null,
   ouiaId = null,
   tabIndex = null as number,
@@ -95,8 +103,9 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
       })}
     >
-      {icon && variant === ButtonVariant.link && <span className="pf-c-button__icon">{icon}</span>}
+      {icon && iconPosition === IconPosition.leading && variant === ButtonVariant.link && <span className="pf-c-button__icon">{icon}</span>}
       {children}
+      {icon && iconPosition === IconPosition.trailing && variant === ButtonVariant.link && <span className="pf-c-button__icon">{icon}</span>}
     </Component>
   );
 };
