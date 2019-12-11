@@ -91,6 +91,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   firstPage?: number;
   /** Current page number. */
   page?: number;
+  /** Start index of rows to display, used in place of providing page */
+  offset?: number;
   /** First index of items on current page. */
   itemsStart?: number;
   /** Last index of items on current page. */
@@ -140,7 +142,8 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
     paginationTitle: 'Pagination'
   },
   firstPage = 1,
-  page = 1,
+  page = 0,
+  offset = 0,
   defaultToFullPage = false,
   itemCount,
   itemsStart = null,
@@ -160,8 +163,12 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   ouiaId = null,
   ...props
 }: PaginationProps & InjectedOuiaProps) => {
+  if (!page && offset) {
+    page = Math.ceil(offset / perPage);
+  }
+  
   const lastPage = Math.ceil(itemCount / perPage) || 0;
-  if (page < firstPage) {
+  if (page < firstPage && itemCount > 0) {
     page = firstPage;
   } else if (page > lastPage) {
     page = lastPage;
