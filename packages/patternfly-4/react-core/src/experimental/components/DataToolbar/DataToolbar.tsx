@@ -106,7 +106,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
     const isToggleManaged = this.isToggleManaged();
     const numberOfFilters = this.getNumberOfFilters();
-    const showClearFiltersButton = numberOfFilters > 0;
+    const showClearFiltersButton = clearAllFilters && numberOfFilters > 0;
 
     return (
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>

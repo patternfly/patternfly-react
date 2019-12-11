@@ -2018,7 +2018,6 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
       collapseListedFiltersBreakpoint="lg"
       isExpanded={false}
       numberOfFilters={0}
-      showClearFiltersButton={false}
     >
       <div
         className="pf-c-data-toolbar__content pf-m-hidden"
@@ -2123,7 +2122,6 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
       collapseListedFiltersBreakpoint="lg"
       isExpanded={false}
       numberOfFilters={0}
-      showClearFiltersButton={false}
     >
       <div
         className="pf-c-data-toolbar__content pf-m-hidden"
@@ -2771,7 +2769,6 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
       collapseListedFiltersBreakpoint="lg"
       isExpanded={false}
       numberOfFilters={0}
-      showClearFiltersButton={false}
     >
       <div
         className="pf-c-data-toolbar__content pf-m-hidden"
@@ -2928,7 +2925,6 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
       collapseListedFiltersBreakpoint="lg"
       isExpanded={false}
       numberOfFilters={0}
-      showClearFiltersButton={false}
     >
       <div
         className="pf-c-data-toolbar__content pf-m-hidden"
