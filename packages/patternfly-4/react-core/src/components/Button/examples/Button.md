@@ -30,7 +30,7 @@ ButtonVariants = () => (
     <Button variant="link" icon={<PlusCircleIcon />}>
       Link button
     </Button>{' '}
-    <Button variant="link" icon={<PlusCircleIcon />} iconPosition={'trailing'}>
+    <Button variant="link" icon={<PlusCircleIcon />} iconPosition='trailing'>
       Link button
     </Button>
     <Button variant="plain" aria-label="Action">
