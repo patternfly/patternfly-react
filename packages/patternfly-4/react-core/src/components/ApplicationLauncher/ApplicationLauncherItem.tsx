@@ -35,6 +35,9 @@ export interface ApplicationLauncherItemProps {
   ariaIsNotFavorite?: string;
   /** ID of the item. Required for tracking favorites. */
   id?: string;
+  customChild?: React.ReactNode;
+  /** Flag indicating if hitting enter triggers an arrow down key press. Automatically passed to favorites list items. */
+  enterTriggersArrowDown?: boolean;
 }
 
 export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
@@ -50,6 +53,8 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   isFavorite = null,
   ariaIsFavorite = 'starred',
   ariaIsNotFavorite = 'not starred',
+  customChild,
+  enterTriggersArrowDown = false,
   ...props
 }: ApplicationLauncherItemProps & DropdownItemProps) => (
   <ApplicationLauncherItemContext.Provider value={{ isExternal, icon }}>
@@ -59,7 +64,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
           id={id}
           component={component}
           href={href || null}
-          className={css((isExternal || onFavorite) && styles.modifiers.link, className)}
+          className={css((isExternal || isFavorite !== null) && styles.modifiers.link, className)}
           listItemClassName={css(
             (isExternal || onFavorite) && styles.appLauncherMenuWrapper,
             isExternal && styles.modifiers.external,
@@ -67,10 +72,13 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
           )}
           tooltip={tooltip}
           tooltipProps={tooltipProps}
+          {...(enterTriggersArrowDown === true && { enterTriggersArrowDown })}
+          {...(customChild && { customChild: customChild })}
           {...(isFavorite !== null && {
-            additionalChildren: (
+            additionalChild: (
               <button
                 className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
+                aria-label={isFavorite ? ariaIsFavorite : ariaIsNotFavorite}
                 onClick={() => {
                   onFavorite(id, isFavorite);
                 }}
@@ -79,7 +87,6 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
               </button>
             )
           })}
-          {...(isFavorite !== null && { 'aria-label': isFavorite ? ariaIsFavorite : ariaIsNotFavorite })}
           {...props}
         >
           {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}

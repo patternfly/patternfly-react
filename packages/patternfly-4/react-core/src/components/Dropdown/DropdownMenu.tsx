@@ -35,7 +35,7 @@ export interface DropdownMenuItem extends React.HTMLAttributes<any> {
 }
 
 export class DropdownMenu extends React.Component<DropdownMenuProps> {
-  refsCollection = [] as HTMLElement[];
+  refsCollection = [] as HTMLElement[][];
 
   static defaultProps = {
     className: '',
@@ -49,18 +49,26 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 
   componentDidMount() {
     const { autoFocus } = this.props;
+
     if (autoFocus) {
       // Focus first non-disabled element
-      const focusTarget = this.refsCollection.find(ref => ref && !ref.hasAttribute('disabled'));
+      const focusTarget = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'))[0];
       if (focusTarget && focusTarget.focus) {
         focusTarget.focus();
       }
     }
   }
 
-  childKeyHandler = (index: number, position: string, custom = false) => {
+  shouldComponentUpdate() {
+    // reset refsCollection before updating to account for child removal between mounts
+    this.refsCollection = [] as HTMLElement[][];
+    return true;
+  }
+
+  childKeyHandler = (index: number, innerIndex: number, position: string, custom = false) => {
     keyHandler(
       index,
+      innerIndex,
       position,
       this.refsCollection,
       this.props.isGrouped ? this.refsCollection : React.Children.toArray(this.props.children),
@@ -68,17 +76,19 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     );
   };
 
-  sendRef = (index: number, node: any, isDisabled: boolean, isSeparator: boolean) => {
-    // since the ref is on the outer <li>, target the inner child for focusing and keyboard navigation
-    const innerNode = node.childNodes && node.childNodes.length ? node.childNodes[0] : node;
-    if (!innerNode.getAttribute) {
-      // eslint-disable-line react/no-find-dom-node
-      this.refsCollection[index] = ReactDOM.findDOMNode(innerNode) as HTMLElement;
-    } else if (isDisabled || isSeparator) {
-      this.refsCollection[index] = null;
-    } else {
-      this.refsCollection[index] = innerNode;
-    }
+  sendRef = (index: number, nodes: any[], isDisabled: boolean, isSeparator: boolean) => {
+    this.refsCollection[index] = [];
+    nodes.map((node, innerIndex) => {
+      if (!node) this.refsCollection[index][innerIndex] = null;
+      else if (!node.getAttribute) {
+        // eslint-disable-line react/no-find-dom-node
+        this.refsCollection[index][innerIndex] = ReactDOM.findDOMNode(node) as HTMLElement;
+      } else if (isDisabled || isSeparator) {
+        this.refsCollection[index][innerIndex] = null;
+      } else {
+        this.refsCollection[index][innerIndex] = node;
+      }
+    });
   };
 
   extendChildren() {

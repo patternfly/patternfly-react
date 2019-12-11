@@ -83,14 +83,18 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     const { onSearch, searchPlaceholderText, searchProps } = this.props;
 
     return (
-      <div className={css(styles.appLauncherMenuSearch)}>
-        <input
-          type="search"
-          className={css(formStyles.formControl)}
-          placeholder={searchPlaceholderText}
-          onChange={e => onSearch(e.target.value)}
-          {...searchProps}
-        ></input>
+      <div key="search" className={css(styles.appLauncherMenuSearch)}>
+        <ApplicationLauncherItem
+          customChild={
+            <input
+              type="search"
+              className={css(formStyles.formControl)}
+              placeholder={searchPlaceholderText}
+              onChange={e => onSearch(e.target.value)}
+              {...searchProps}
+            ></input>
+          }
+        ></ApplicationLauncherItem>
       </div>
     );
   };
@@ -100,17 +104,15 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     if (isGrouped) {
       let favoriteItems: React.ReactNode[] = [];
       (items as React.ReactElement[]).forEach(group =>
-        favoriteItems.push(
-          (group.props.children as React.ReactElement[])
-            .filter(item => favorites.includes(item.props.id))
-            .map(item => React.cloneElement(item, { isFavorite: true }))
-        )
+        (group.props.children as React.ReactElement[])
+          .filter(item => favorites.includes(item.props.id))
+          .map(item => favoriteItems.push(React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true })))
       );
       return favoriteItems;
     }
     return (items as React.ReactElement[])
       .filter(item => favorites.includes(item.props.id))
-      .map(item => React.cloneElement(item, { isFavorite: true }));
+      .map(item => React.cloneElement(item, { isFavorite: true, enterTriggersArrowDown: true }));
   };
 
   extendItemsWithFavorite = () => {
@@ -161,14 +163,18 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
 
     if (onFavorite) {
       let favoritesGroup: React.ReactNode[] = [];
-      if (favorites.length > 0)
+      let renderableFavorites: React.ReactNode[] = [];
+      if (favorites.length > 0) {
+        renderableFavorites = this.createRenderableFavorites();
         favoritesGroup = [
           <ApplicationLauncherGroup key="favorites" label={favoritesLabel}>
-            {this.createRenderableFavorites()}
+            {renderableFavorites}
             <ApplicationLauncherSeparator key="separator" />
           </ApplicationLauncherGroup>
         ];
-      renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
+      }
+      if (renderableFavorites.length > 0) renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
+      else renderableItems = this.extendItemsWithFavorite();
     } else {
       renderableItems = items;
     }

@@ -110,11 +110,20 @@ export function fillTemplate(templateString: string, templateVars: any) {
  * @param {Object[]} kids Array of items in the dropdown
  * @param {boolean} [custom] Allows for handling of flexible content
  */
-export function keyHandler(index: number, position: string, refsCollection: any[], kids: any[], custom = false) {
+export function keyHandler(
+  index: number,
+  innerIndex: number,
+  position: string,
+  refsCollection: any[],
+  kids: any[],
+  custom = false
+) {
   if (!Array.isArray(kids)) {
     return;
   }
-  let nextIndex;
+  const isMultiDimensional = refsCollection[0].constructor === Array;
+  let nextIndex = index;
+  let nextInnerIndex = innerIndex;
   if (position === 'up') {
     if (index === 0) {
       // loop back to end
@@ -122,14 +131,33 @@ export function keyHandler(index: number, position: string, refsCollection: any[
     } else {
       nextIndex = index - 1;
     }
-  } else if (index === kids.length - 1) {
-    // loop back to beginning
-    nextIndex = 0;
-  } else {
-    nextIndex = index + 1;
+  } else if (position === 'down') {
+    if (index === kids.length - 1) {
+      // loop back to beginning
+      nextIndex = 0;
+    } else {
+      nextIndex = index + 1;
+    }
+  } else if (position === 'left') {
+    if (innerIndex === 0) {
+      nextInnerIndex = refsCollection[index].length - 1;
+    } else {
+      nextInnerIndex = innerIndex - 1;
+    }
+  } else if (position === 'right') {
+    if (innerIndex === refsCollection[index].length - 1) {
+      nextInnerIndex = 0;
+    } else {
+      nextInnerIndex = innerIndex + 1;
+    }
   }
-  if (refsCollection[nextIndex] === null || refsCollection[nextIndex] === undefined) {
-    keyHandler(nextIndex, position, refsCollection, kids, custom);
+  if (
+    refsCollection[nextIndex] === null ||
+    refsCollection[nextIndex] === undefined ||
+    (isMultiDimensional &&
+      (refsCollection[nextIndex][nextInnerIndex] === null || refsCollection[nextIndex][nextInnerIndex] === undefined))
+  ) {
+    keyHandler(nextIndex, nextInnerIndex, position, refsCollection, kids, custom);
   } else if (custom) {
     if (refsCollection[nextIndex].focus) {
       refsCollection[nextIndex].focus();
@@ -137,7 +165,8 @@ export function keyHandler(index: number, position: string, refsCollection: any[
     const element = ReactDOM.findDOMNode(refsCollection[nextIndex]) as HTMLElement;
     element.focus();
   } else {
-    refsCollection[nextIndex].focus();
+    if (isMultiDimensional) refsCollection[nextIndex][nextInnerIndex].focus();
+    else refsCollection[nextIndex].focus();
   }
 }
 

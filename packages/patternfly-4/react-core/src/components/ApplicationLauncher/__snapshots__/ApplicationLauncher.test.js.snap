@@ -608,6 +608,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={0}
@@ -656,6 +657,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={1}
@@ -705,6 +707,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={2}
@@ -754,6 +757,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={3}
@@ -802,6 +806,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={4}
@@ -843,6 +848,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={5}
@@ -891,6 +897,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={6}
@@ -2310,6 +2317,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={0}
@@ -2358,6 +2366,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={1}
@@ -2407,6 +2416,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={2}
@@ -2456,6 +2466,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={3}
@@ -2504,6 +2515,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={4}
@@ -2545,6 +2557,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={5}
@@ -2593,6 +2606,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={6}

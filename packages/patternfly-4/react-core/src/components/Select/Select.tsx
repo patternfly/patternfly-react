@@ -85,7 +85,7 @@ export interface SelectProps
 
 export interface SelectState {
   openedOnEnter: boolean;
-  typeaheadInputValue: string|null;
+  typeaheadInputValue: string | null;
   typeaheadActiveChild?: HTMLElement;
   typeaheadFilteredChildren: React.ReactNode[];
   typeaheadCurrIndex: number;
@@ -243,7 +243,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   };
 
   handleArrowKeys = (index: number, position: string) => {
-    keyHandler(index, position, this.refCollection, this.refCollection);
+    keyHandler(index, 0, position, this.refCollection, this.refCollection);
   };
 
   handleFocus = () => {
