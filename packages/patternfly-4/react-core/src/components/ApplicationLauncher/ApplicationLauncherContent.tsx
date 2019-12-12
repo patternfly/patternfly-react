@@ -22,9 +22,7 @@ export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLaun
         {icon ? <ApplicationLauncherText>{children}</ApplicationLauncherText> : children}
         {isExternal && (
           <>
-            <span className={css(styles.appLauncherMenuItemExternalIcon)}>
-              <ExternalLinkAltIcon />
-            </span>
+            <ExternalLinkAltIcon className={css(styles.appLauncherMenuItemExternalIcon)} />
             <span className={css(accessibleStyles.screenReader)}>(opens new window)</span>
           </>
         )}
