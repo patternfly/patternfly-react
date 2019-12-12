@@ -53,9 +53,12 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
       | undefined
   ): void => {
     const { rowData, extraData } = this.props;
-    event.preventDefault();
-    // tslint:disable-next-line:no-unused-expression
-    onClick && onClick(event as React.MouseEvent, extraData && extraData.rowIndex, rowData, extraData);
+    // Only prevent default if onClick is provided.  This allows href support.
+    if (onclick) {
+      event.preventDefault();
+      // tslint:disable-next-line:no-unused-expression
+      onClick(event as React.MouseEvent, extraData && extraData.rowIndex, rowData, extraData);
+    }
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
     }));

@@ -418,8 +418,7 @@ class SimpleActionsTable extends React.Component {
           onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
         },
         {
-          title: <div>Another action</div>,
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Another action, on row: ', rowId)
+          title: <a href="https://www.patternfly.org">Link action</a>
         },
         {
           isSeparator: true
