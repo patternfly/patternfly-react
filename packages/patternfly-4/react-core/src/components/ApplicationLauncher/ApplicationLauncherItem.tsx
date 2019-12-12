@@ -64,12 +64,12 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
           id={id}
           component={component}
           href={href || null}
-          className={css((isExternal || isFavorite !== null) && styles.modifiers.link, className)}
-          listItemClassName={css(
-            (isExternal || onFavorite) && styles.appLauncherMenuWrapper,
+          className={css(
             isExternal && styles.modifiers.external,
-            isFavorite && styles.modifiers.favorite
+            isFavorite !== null && styles.modifiers.link,
+            className
           )}
+          listItemClassName={css(onFavorite && styles.appLauncherMenuWrapper, isFavorite && styles.modifiers.favorite)}
           tooltip={tooltip}
           tooltipProps={tooltipProps}
           {...(enterTriggersArrowDown === true && { enterTriggersArrowDown })}
