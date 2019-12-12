@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.127.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.0...@patternfly/react-core@3.127.1) (2019-12-12)
+
+
+### Bug Fixes
+
+* **Dropdown:** Update component to use input rather than PF Checkbox ([#3391](https://github.com/patternfly/patternfly-react/issues/3391)) ([89561d5](https://github.com/patternfly/patternfly-react/commit/89561d5bb94f7f07f56acfabe09192dc5565f0d2)), closes [#3325](https://github.com/patternfly/patternfly-react/issues/3325)
+
+
+
+
+
 # [3.127.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.5...@patternfly/react-core@3.127.0) (2019-12-11)
 
 
