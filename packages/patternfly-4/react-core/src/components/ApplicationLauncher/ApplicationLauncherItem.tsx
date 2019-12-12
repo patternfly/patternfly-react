@@ -30,9 +30,9 @@ export interface ApplicationLauncherItemProps {
   /** Flag indicating if the item is favorited */
   isFavorite?: boolean;
   /** Aria label text for favoritable button when favorited */
-  ariaIsFavorite?: string;
+  ariaIsFavoriteLabel?: string;
   /** Aria label text for favoritable button when not favorited */
-  ariaIsNotFavorite?: string;
+  ariaIsNotFavoriteLabel?: string;
   /** ID of the item. Required for tracking favorites. */
   id?: string;
   customChild?: React.ReactNode;
@@ -51,8 +51,8 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   tooltipProps = null,
   component = 'a',
   isFavorite = null,
-  ariaIsFavorite = 'starred',
-  ariaIsNotFavorite = 'not starred',
+  ariaIsFavoriteLabel = 'starred',
+  ariaIsNotFavoriteLabel = 'not starred',
   customChild,
   enterTriggersArrowDown = false,
   ...props
@@ -78,7 +78,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
             additionalChild: (
               <button
                 className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
-                aria-label={isFavorite ? ariaIsFavorite : ariaIsNotFavorite}
+                aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
                 onClick={() => {
                   onFavorite(id, isFavorite);
                 }}
