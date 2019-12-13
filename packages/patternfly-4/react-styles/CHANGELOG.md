@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.12...@patternfly/react-styles@3.6.13) (2019-12-12)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 ## [3.6.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.11...@patternfly/react-styles@3.6.12) (2019-11-27)
 
 **Note:** Version bump only for package @patternfly/react-styles
