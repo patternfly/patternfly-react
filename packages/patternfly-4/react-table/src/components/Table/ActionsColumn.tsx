@@ -54,7 +54,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
   ): void => {
     const { rowData, extraData } = this.props;
     // Only prevent default if onClick is provided.  This allows href support.
-    if (onclick) {
+    if (onClick) {
       event.preventDefault();
       // tslint:disable-next-line:no-unused-expression
       onClick(event as React.MouseEvent, extraData && extraData.rowIndex, rowData, extraData);
