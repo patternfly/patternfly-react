@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.57](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.56...@patternfly/react-table@2.24.57) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Table:** Fix the ActionColumn to allow a link in the actions menu ([#3402](https://github.com/patternfly/patternfly-react/issues/3402)) ([e609cdd](https://github.com/patternfly/patternfly-react/commit/e609cdd2fda498e774aa4127b8ddf04a4ee8914d)), closes [#3392](https://github.com/patternfly/patternfly-react/issues/3392)
+
+
+
+
+
 ## [2.24.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.55...@patternfly/react-table@2.24.56) (2019-12-13)
 
 
