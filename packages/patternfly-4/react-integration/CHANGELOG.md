@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.14.0...@patternfly/react-integration@3.14.1) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
 # [3.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.13.1...@patternfly/react-integration@3.14.0) (2019-12-05)
 
 

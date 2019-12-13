@@ -852,7 +852,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
       >
         <div
-          className="pf-c-dropdown pf-m-top"
+          className="pf-c-dropdown pf-m-top pf-m-align-right"
         >
           <Component
             ariaHasPopup={true}
@@ -864,7 +864,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             parentRef={
               Object {
                 "current": <div
-                  class="pf-c-dropdown pf-m-top"
+                  class="pf-c-dropdown pf-m-top pf-m-align-right"
                 >
                   <button
                     aria-expanded="false"
@@ -911,7 +911,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               parentRef={
                 Object {
                   "current": <div
-                    class="pf-c-dropdown pf-m-top"
+                    class="pf-c-dropdown pf-m-top pf-m-align-right"
                   >
                     <button
                       aria-expanded="false"
@@ -5116,7 +5116,7 @@ exports[`KebabToggle right aligned 1`] = `
         }
       >
         <div
-          className="pf-c-dropdown"
+          className="pf-c-dropdown pf-m-align-right"
         >
           <Component
             ariaHasPopup={true}
@@ -5128,7 +5128,7 @@ exports[`KebabToggle right aligned 1`] = `
             parentRef={
               Object {
                 "current": <div
-                  class="pf-c-dropdown"
+                  class="pf-c-dropdown pf-m-align-right"
                 >
                   <button
                     aria-expanded="false"
@@ -5175,7 +5175,7 @@ exports[`KebabToggle right aligned 1`] = `
               parentRef={
                 Object {
                   "current": <div
-                    class="pf-c-dropdown"
+                    class="pf-c-dropdown pf-m-align-right"
                   >
                     <button
                       aria-expanded="false"
@@ -6134,7 +6134,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
       >
         <div
-          className="pf-c-dropdown pf-m-top"
+          className="pf-c-dropdown pf-m-top pf-m-align-right"
         >
           <Component
             ariaHasPopup={true}
@@ -6146,7 +6146,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             parentRef={
               Object {
                 "current": <div
-                  class="pf-c-dropdown pf-m-top"
+                  class="pf-c-dropdown pf-m-top pf-m-align-right"
                 >
                   <button
                     aria-expanded="false"
@@ -6197,7 +6197,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               parentRef={
                 Object {
                   "current": <div
-                    class="pf-c-dropdown pf-m-top"
+                    class="pf-c-dropdown pf-m-top pf-m-align-right"
                   >
                     <button
                       aria-expanded="false"
@@ -10515,7 +10515,7 @@ exports[`dropdown right aligned 1`] = `
         }
       >
         <div
-          className="pf-c-dropdown"
+          className="pf-c-dropdown pf-m-align-right"
         >
           <Component
             ariaHasPopup={true}
@@ -10527,7 +10527,7 @@ exports[`dropdown right aligned 1`] = `
             parentRef={
               Object {
                 "current": <div
-                  class="pf-c-dropdown"
+                  class="pf-c-dropdown pf-m-align-right"
                 >
                   <button
                     aria-expanded="false"
@@ -10578,7 +10578,7 @@ exports[`dropdown right aligned 1`] = `
               parentRef={
                 Object {
                   "current": <div
-                    class="pf-c-dropdown"
+                    class="pf-c-dropdown pf-m-align-right"
                   >
                     <button
                       aria-expanded="false"
