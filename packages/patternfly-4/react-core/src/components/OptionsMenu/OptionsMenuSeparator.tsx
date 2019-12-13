@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 
 export interface OptionsMenuSeparatorProps extends React.HTMLProps<HTMLLIElement> {
-  /** Classes applied to root element of Options menu separator item */
+  /** Classes applied to root element of options menu separator item */
   className?: string;
 }
 

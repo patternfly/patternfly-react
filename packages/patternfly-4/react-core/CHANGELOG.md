@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.127.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.2...@patternfly/react-core@3.127.3) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
 ## [3.127.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.1...@patternfly/react-core@3.127.2) (2019-12-12)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -8,7 +8,7 @@ import { OptionsMenuSeparator } from './OptionsMenuSeparator';
 import { OptionsMenuToggleWithText } from './OptionsMenuToggleWithText';
 
 const menuItems = [
-  <OptionsMenuItemGroup key="first group">
+  <OptionsMenuItemGroup key="first group" groupTitle="Sort order">
     <OptionsMenuItem key="name">Name</OptionsMenuItem>
     <OptionsMenuItem key="date">Date</OptionsMenuItem>
     <OptionsMenuItem isDisabled key="disabled">
@@ -17,7 +17,7 @@ const menuItems = [
     <OptionsMenuItem key="size">Size</OptionsMenuItem>
   </OptionsMenuItemGroup>,
   <OptionsMenuSeparator key="separator" />,
-  <OptionsMenuItemGroup key="second group">
+  <OptionsMenuItemGroup key="second group" groupTitle="Sort direction" hasSeparator>
     <OptionsMenuItem key="ascending">Ascending</OptionsMenuItem>
     <OptionsMenuItem key="descending">Descending</OptionsMenuItem>
   </OptionsMenuItemGroup>

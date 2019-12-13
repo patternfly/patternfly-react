@@ -2,7 +2,7 @@ import React from 'react';
 import { Title, Grid, GridItem, Tooltip, Text, PageSection } from '@patternfly/react-core';
 import { global_spacer_md as spacerMd, global_FontSize_sm as labelFontSize } from '@patternfly/react-tokens';
 import * as IconsModule from '@patternfly/react-icons';
-import SideNavLayout from 'gatsby-theme-patternfly-org/layouts/sideNavLayout';
+import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';
 
 export default ({ location }) => {
   const allIcons = Object.entries(IconsModule)
