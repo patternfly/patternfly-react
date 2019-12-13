@@ -1165,7 +1165,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       >
         <nav
           aria-label="Application launcher"
-          className="pf-c-app-launcher pf-m-top"
+          className="pf-c-app-launcher pf-m-top pf-m-align-right"
         >
           <Component
             aria-label="Application launcher"
@@ -1182,7 +1182,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               Object {
                 "current": <nav
                   aria-label="Application launcher"
-                  class="pf-c-app-launcher pf-m-top"
+                  class="pf-c-app-launcher pf-m-top pf-m-align-right"
                 >
                   <button
                     aria-expanded="false"
@@ -1232,7 +1232,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 Object {
                   "current": <nav
                     aria-label="Application launcher"
-                    class="pf-c-app-launcher pf-m-top"
+                    class="pf-c-app-launcher pf-m-top pf-m-align-right"
                   >
                     <button
                       aria-expanded="false"
@@ -3239,7 +3239,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
       >
         <nav
           aria-label="Application launcher"
-          className="pf-c-app-launcher"
+          className="pf-c-app-launcher pf-m-align-right"
         >
           <Component
             aria-label="Application launcher"
@@ -3256,7 +3256,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
               Object {
                 "current": <nav
                   aria-label="Application launcher"
-                  class="pf-c-app-launcher"
+                  class="pf-c-app-launcher pf-m-align-right"
                 >
                   <button
                     aria-expanded="false"
@@ -3306,7 +3306,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 Object {
                   "current": <nav
                     aria-label="Application launcher"
-                    class="pf-c-app-launcher"
+                    class="pf-c-app-launcher pf-m-align-right"
                   >
                     <button
                       aria-expanded="false"

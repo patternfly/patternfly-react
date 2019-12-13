@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownProps } from './Dropdown';
-import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
+import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaProps> {
@@ -86,6 +86,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
               className={css(
                 baseClass,
                 direction === DropdownDirection.up && styles.modifiers.top,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
                 isOpen && styles.modifiers.expanded,
                 className
               )}
