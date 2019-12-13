@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.55...@patternfly/react-table@2.24.56) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
 ## [2.24.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.54...@patternfly/react-table@2.24.55) (2019-12-12)
 
 **Note:** Version bump only for package @patternfly/react-table

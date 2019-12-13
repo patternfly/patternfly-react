@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.8...demo-app-ts@3.14.9) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
 ## [3.14.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.7...demo-app-ts@3.14.8) (2019-12-12)
 
 **Note:** Version bump only for package demo-app-ts
