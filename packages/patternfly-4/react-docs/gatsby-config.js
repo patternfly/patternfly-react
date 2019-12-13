@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
         context: 'react', // For global items that need sideNav
-        hiddenPages: ['withOuia'], // By title
+        hiddenPages: ['withOuia', 'Training'], // By title
         sideNav: {
           react: [
             { section: 'overview' },
@@ -54,6 +54,7 @@ module.exports = {
           '**/styles',
           '**/build',
           '**/utils',
+          '**/public',
           '**/test-helpers',
           /.*react-styles.*/,
           /.*react-docs.*/,
@@ -75,6 +76,14 @@ module.exports = {
       options: {
         name: 'react', // This goes in URLs
         path: path.resolve(__dirname, '../../../RELEASE-NOTES.md')
+      }
+    },
+    // Source training
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'react', // This goes in URLs
+        path: path.resolve(__dirname, './src/training.md')
       }
     },
     // Our custom plugin for *.js?x *.ts?x files to get prop types

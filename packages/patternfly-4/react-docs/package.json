@@ -6,15 +6,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:docs": "yarn build:static && node --max-old-space-size=4096 ./node_modules/.bin/gatsby build --prefix-paths",
+    "build:docs": "yarn build:static && yarn build:ram --prefix-paths",
+    "build:ram": "node --max-old-space-size=4096 ./node_modules/.bin/gatsby build",
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
-    "gatsby": "gatsby",
-    "serve": "gatsby serve --prefix-paths",
+    "serve": "gatsby serve",
+    "serve:prefix": "gatsby serve --prefix-paths",
     "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000/patternfly-4 --aggregate --noIncomplete",
-    "test:a11y:ci": "start-server-and-test serve http://localhost:9000/patternfly-4 test:a11y"
+    "test:a11y:ci": "start-server-and-test serve:prefix http://localhost:9000/patternfly-4 test:a11y"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",
@@ -31,11 +32,9 @@
     "@patternfly/react-tokens": "^2.7.12",
     "@patternfly/react-topology": "^2.11.41",
     "@patternfly/react-virtualized-extension": "^1.3.54",
-    "gatsby": "2.17.10",
-    "gatsby-cli": "2.8.8",
-    "gatsby-source-filesystem": "^2.1.22",
-    "gatsby-theme-patternfly-org": "^1.1.1",
-    "gatsby-transformer-json": "^2.2.15",
+    "gatsby": "2.18.6",
+    "gatsby-cli": "2.8.15",
+    "gatsby-theme-patternfly-org": "^1.2.9",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"

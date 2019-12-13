@@ -1,10 +1,10 @@
 ---
 title: Release notes
 section: overview
-hideTOC: true
+releaseNoteTOC: true
 ---
 
-# 2019.10 release notes (2019-11-25)
+## 2019.10 release notes (2019-11-25)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.1.38](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.38)
 - [@patternfly/react-charts@5.2.2](https://www.npmjs.com/package/@patternfly/react-charts/v/5.2.2)
@@ -17,11 +17,11 @@ Packages released:
 - [@patternfly/react-virtualized-extension@1.3.40](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.40)
 - [@patternfly/react-icons@3.14.23](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.23)
 
-## Charts
+### Charts
 - Put back the secondary title when showing percentage in the Donut Chart([#3299](https://github.com/patternfly/patternfly-react/pull/3299))
 - Added Interactive legend example ([#3253](https://github.com/patternfly/patternfly-react/pull/3253))
 
-## Components
+### Components
 - **About modal:**
    - Removed appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
 - **Accordion:**  
@@ -49,7 +49,7 @@ Packages released:
 - **Wizard:**
   - Removed appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/pull/3239))
 
-## Catalog view extension
+### Catalog view extension
 - **Chore:**
     - Added @patternfly/react-catalog-view-extension package to release promotion script ([#3260](https://github.com/patternfly/patternfly-react/pull/3260))
     - Removed unused packages ([#3332](https://github.com/patternfly/patternfly-react/pull/3332))
@@ -65,14 +65,14 @@ Packages released:
 - **Properties side panel:**
   - Aligned sass file with correct styles for properties panel ([#3236](https://github.com/patternfly/patternfly-react/pull/3236))
 
-## Table
+### Table
 - Added types, examples, and demo for onRowClick ([#3265](https://github.com/patternfly/patternfly-react/pull/3265))
 - Fixed types for table transforms ([#3203](https://github.com/patternfly/patternfly-react/pull/3203))
 
-## Topology
+### Topology
 - Set topology container to take full height of the view ([#3314](https://github.com/patternfly/patternfly-react/pull/3314))
 
-## Other
+### Other
 - **Chore:** 
   - Updated gatsby-browser.js ([#3313](https://github.com/patternfly/patternfly-react/pull/3313))
   - Added use of node 10, more resources for doc build ([#3278](https://github.com/patternfly/patternfly-react/pull/3278))
@@ -87,11 +87,11 @@ Packages released:
   - Bumped gatsby-theme-patternfly-org  ([#3269](https://github.com/patternfly/patternfly-react/pull/3269))
   - fix(README.md) ([#3254](https://github.com/patternfly/patternfly-react/pull/3254))
 
-## PF3
+### PF3
   - **Date and time picker:** 
     - Properly imported formatTime to DateTimePicker ([#3303](https://github.com/patternfly/patternfly-react/pull/3303))
 
-# 2019.09 release notes (2019-11-01)
+## 2019.09 release notes (2019-11-01)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.1.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.5)
 - [@patternfly/react-charts@5.1.5](https://www.npmjs.com/package/@patternfly/react-charts/v/5.1.5)
@@ -104,7 +104,7 @@ Packages released:
 - [@patternfly/react-virtualized-extension@1.3.17](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.17)
 - [@patternfly/react-icons@3.14.18](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.18)
 
-## Charts
+### Charts
 - Added legend examples ([#3093](https://github.com/patternfly/patternfly-react/pull/3093))
 - Added chart scatter examples ([#3086](https://github.com/patternfly/patternfly-react/pull/3086))
 - Updated ChartThreshold to use pf-core variable ([#3085](https://github.com/patternfly/patternfly-react/pull/3085))
@@ -117,8 +117,8 @@ Packages released:
 - Added custom theme example ([#3023](https://github.com/patternfly/patternfly-react/pull/3023))
 - Moved ChartThreshold to its own example ([#3019](https://github.com/patternfly/patternfly-react/pull/3019))
 
-## Components
-- **About modal:**
+### Components
+- **About Modal:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102))
 - **Application launcher:**
   - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
@@ -176,14 +176,14 @@ Packages released:
 - **Wizard:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102)
 
-## Table
+### Table
 - Added custom row wrapper example for table  ([#3160](https://github.com/patternfly/patternfly-react/pull/3160))
 - Set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/pull/3133))
 - Added support for custom dataLabel prop on table header ([#3040](https://github.com/patternfly/patternfly-react/pull/3040))
 - Disable header controls with empty table ([#3008](https://github.com/patternfly/patternfly-react/pull/3008))
 - Added OUIA compatibility to Table component ([#2964](https://github.com/patternfly/patternfly-react/pull/2964))
 
-## Other
+### Other
 - **Chore:** 
   - Add issue template ([#2804](https://github.com/patternfly/patternfly-react/pull/2804))
   - Surrounded OUIA check with a try catch ([#3178](https://github.com/patternfly/patternfly-react/pull/3178))
@@ -201,13 +201,13 @@ Packages released:
    - Use gatsby-theme-patternfly-org  ([#3146](https://github.com/patternfly/patternfly-react/pull/3146))
    - Fixed regressions from gatsby-theme-patternfly-org ([#3164](https://github.com/patternfly/patternfly-react/pull/3164))
 
-## PF3
+### PF3
 - **Serial console:**
   - Use xterm v4 ([#3030](https://github.com/patternfly/patternfly-react/pull/3030))
 - **Cards:**
   - Refactored sub-component references ([#2935](https://github.com/patternfly/patternfly-react/pull/2935))
   
-# 2019.08 release notes (2019-10-01)
+## 2019.08 release notes (2019-10-01)
 Packages released:
 - [@patternfly/react-charts@5.0.13](https://www.npmjs.com/package/@patternfly/react-charts/v/5.0.13)
 - [@patternfly/react-core@3.112.3](https://www.npmjs.com/package/@patternfly/react-core/v/3.112.3)
@@ -219,7 +219,7 @@ Packages released:
 - [@patternfly/react-virtualized-extension@1.2.55](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.2.55)
 - [@patternfly/react-icons@3.14.7](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.7)
 
-## Charts
+### Charts
 - (BREAKING CHANGE) Updated Victory to 30.0.0
   - Replace `labels={(d) => x: ${d.x}}` with `labels={({ datum }) => x: ${datum.x}}`
   - **ChartPie:**
@@ -249,7 +249,7 @@ Packages released:
 - **Sparkline:** Added line border to ChartArea and move sparkline ([#2887](https://github.com/patternfly/patternfly-react/pull/2887))
 - **Donut chart:** Added simple fix for the donut chart tutorial link ([#2940](https://github.com/patternfly/patternfly-react/pull/2940))
 
-## Components
+### Components
 - **App launcher:** Made dropdown/app launcher work better with router components ([#3011](https://github.com/patternfly/patternfly-react/pull/3011))
 - **Button:** 
   - Added control variant to button ([#2983](https://github.com/patternfly/patternfly-react/pull/2983))
@@ -287,18 +287,18 @@ Packages released:
 - **Tab:** Added two new props: mountOnEnter and unmountOnExit ([#2902](https://github.com/patternfly/patternfly-react/pull/2902))
 - **Wizard:** Added default function to onClose prop ([#2863](https://github.com/patternfly/patternfly-react/pull/2863))
 
-## Table
+### Table
 - Fixed cell title warning ([#2967](https://github.com/patternfly/patternfly-react/pull/2967))
 - Support height auto modifier in tr ([#2932](https://github.com/patternfly/patternfly-react/pull/2932))
 - Added flag to hide select all ([#2926](https://github.com/patternfly/patternfly-react/pull/2926))
 - Improved the documentation for Table component from react-table ([#3016](https://github.com/patternfly/patternfly-react/pull/3016))
 - Added tables to integration test demos and wrote unit tests ([#2685](https://github.com/patternfly/patternfly-react/pull/2685))
 
-## Other
+### Other
 - **Docs:** Fixed live edit caret color so it is visible ([#2899](https://github.com/patternfly/patternfly-react/pull/2899))
 - **PF3**: Bumped PF3 deps including Storybook ([#2985](https://github.com/patternfly/patternfly-react/pull/2895))
 
-# 2019.07 release notes (2019-09-10)
+## 2019.07 release notes (2019-09-10)
 Packages released:
 - [@patternfly/react-charts@4.9.10](https://www.npmjs.com/package/@patternfly/react-charts/v/4.9.10)
 - [@patternfly/react-core@3.104.0](https://www.npmjs.com/package/@patternfly/react-core/v/3.104.0)
@@ -310,13 +310,13 @@ Packages released:
 - [@patternfly/react-virtualized-extension@1.2.23](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.2.23)
 - [@patternfly/react-inline-edit-extension@2.11.35](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.11.35)
 
-## Charts
+### Charts
 - Adjusted legend position for axis label ([#2763](https://github.com/patternfly/patternfly-react/pull/2763))
 - Added new symbol for dash/threshold ([#2884](https://github.com/patternfly/patternfly-react/pull/2884))
 - **BulletChart:** Added new BulletChart type! ([#2708](https://github.com/patternfly/patternfly-react/pull/2708))
 - **StackChart:** Added monthly vertical stack example ([#2625](https://github.com/patternfly/patternfly-react/pull/2625))
 
-## Components
+### Components
 - **Accordion:** Allow JSX elements for content and toggle ([#2713](https://github.com/patternfly/patternfly-react/pull/2713))
 - **BackgroundImage:** Fix bug on non-Chrome browsers regarding filter's width ([#2742](https://github.com/patternfly/patternfly-react/pull/2742))
 - **ChipGroup:** Added defaultIsOpen prop to allow chip group to be initially expanded ([#2651](https://github.com/patternfly/patternfly-react/pull/2651))
@@ -350,19 +350,19 @@ Packages released:
   - Added the manual trigger option with the isVisible prop ([#2769](https://github.com/patternfly/patternfly-react/pull/2769))
 - **Wizard:** Added support for in-page rendering ([#2830](https://github.com/patternfly/patternfly-react/pull/2830))
 
-## Table
+### Table
 - Added new visibleOn and hiddenOn breakpoint ([#2676](https://github.com/patternfly/patternfly-react/pull/2676))
 
-## Icons
+### Icons
 - Added Path Missing Icon ([#2817](https://github.com/patternfly/patternfly-react/pull/2817))
 - Added Azure and OpenStack icons ([#2827](https://github.com/patternfly/patternfly-react/pull/2827))
 - Added Ansible Tower icon to custom icons definition ([#2735](https://github.com/patternfly/patternfly-react/pull/2735))
 - Publish configs as well with icons ([#2701](https://github.com/patternfly/patternfly-react/pull/2701))
 
-## Virtualized Extension
+### Virtualized Extension
 - Debounce resize event to fix inconsistent grid sizing ([#2754](https://github.com/patternfly/patternfly-react/pull/2754))
 
-## PF3
+### PF3
 - **AsyncTypeAheadSelect:** Forward ref for AsyncTypeAheadSelect ([#2760](https://github.com/patternfly/patternfly-react/pull/2760))
 - **CatalogTile:**
   - Allow JSX element for CatalogTile's icon ([#2771](https://github.com/patternfly/patternfly-react/pull/2771))
@@ -370,7 +370,7 @@ Packages released:
 - **DatePicker:** Added new date picker components ([#1873](https://github.com/patternfly/patternfly-react/pull/1873))
 - **HorizontalNavMenu:** Allow HorizontalNavMenuItem's title to be a node ([#2825](https://github.com/patternfly/patternfly-react/pull/2825))
 
-# 2019.06 release notes (2019-08-13)
+## 2019.06 release notes (2019-08-13)
 Packages released:
 - [@patternfly/react-charts@4.7.9](https://www.npmjs.com/package/@patternfly/react-charts/v/4.7.9)
 - [@patternfly/react-core@3.87.3](https://www.npmjs.com/package/@patternfly/react-core/v/3.87.3)
@@ -382,14 +382,14 @@ Packages released:
 - [@patternfly/react-virtualized-extension@1.1.117](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.1.117)
 - [@patternfly/react-inline-edit-extension@2.10.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.10.5)
 
-## Charts
+### Charts
 - Used vars to enable Red Hat fonts. When the pf-m-redhat-font selector is added to the page, the Red Hat font is expected to be used instead of the default Overpass font. This change ensures that charts and its labels use the Red Hat font as expected
 ([#2584](https://github.com/patternfly/patternfly-react/pull/2584))
 - The donut threshold chart used to generate a 'width must be a non-negative' warning when donutWidth values are zero. This change ensures the dynamic chart size is never less than zero  ([#2590](https://github.com/patternfly/patternfly-react/pull/2590))
 - Fixed missing fill and stroke colors for area and line charts. Set area.style.data.fill to first color scale value in colorTheme function. Set line.style.data.stroke to first color scale value in colorTheme function ([#2626](https://github.com/patternfly/patternfly-react/pull/2626))
 
 
-## Components
+### Components
 - **Accordion:** Added the html structure of Accordion to React  ([#2422](https://github.com/patternfly/patternfly-react/pull/2422))
 - **Alert:** Added default variant for Alert  ([#2648](https://github.com/patternfly/patternfly-react/pull/2648))
 - **Button:** Added 'reset' to types ([#2622](https://github.com/patternfly/patternfly-react/pull/2622))
@@ -424,14 +424,14 @@ responsible for returning the the localized string ([#2612](https://github.com/p
 ([#2468](https://github.com/patternfly/patternfly-react/pull/2468))
 - **Topology:** Fixed paddings for topology control bar buttons. Removed css settings that override the paddings for the topology control bar buttons  ([#2635](https://github.com/patternfly/patternfly-react/pull/2635))
 
-## Table
+### Table
 - Added the wrap modifier to react-table through transforms  ([#2615](https://github.com/patternfly/patternfly-react/pull/2615))
 - Replaced lodash-es with lodash  ([#2641](https://github.com/patternfly/patternfly-react/pull/2641))
 
-## TypeScript conversion
+### TypeScript conversion
 - **Dropdown:** ([#2502](https://github.com/patternfly/patternfly-react/pull/2502))
 
-## Docs
+### Docs
 - Made name column not wrap
 ([#2583](https://github.com/patternfly/patternfly-react/pull/2502))
 - Small adjustment for Stack layout. Updated the doc to correctly read that isFilled is related to the vertical space occupied, not horizontal  ([#2605](https://github.com/patternfly/patternfly-react/pull/2605))
@@ -440,13 +440,13 @@ responsible for returning the the localized string ([#2612](https://github.com/p
 - Fixed accessibility issues in Accordion, ClipboardCopy, and DataList ([#2634](https://github.com/patternfly/patternfly-react/pull/2634))
 
 
-## Other
+### Other
 - **Chore:**
   - Added curl command after release ([#2547](https://github.com/patternfly/patternfly-react/pull/2547))
   - Invalidate all packages if yarn.lock changes ([#2548](https://github.com/patternfly/patternfly-react/pull/2548))
   - Updated release notes to use uls ([#2604](https://github.com/patternfly/patternfly-react/pull/2604))
 
-# 2019.05 release notes (2019-07-24)
+## 2019.05 release notes (2019-07-24)
 Packages released:
 - [@patternfly/react-charts@4.7.1](https://www.npmjs.com/package/@patternfly/react-charts/v/4.7.1)
 - [@patternfly/react-core@3.75.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.75.2)
@@ -457,7 +457,7 @@ Packages released:
 - [@patternfly/react-icons@3.10.14](https://www.npmjs.com/package/@patternfly/react-icons/v/3.10.14)
 - [@patternfly/react-virtualized-extension@1.1.82](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.1.82)
 - [@patternfly/react-inline-edit-extension@2.9.49](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.9.49)
-## Charts ([@patternfly/react-charts@4.7.1](https://www.npmjs.com/package/@patternfly/react-charts/v/4.7.1))
+### Charts ([@patternfly/react-charts@4.7.1](https://www.npmjs.com/package/@patternfly/react-charts/v/4.7.1))
 - Fixed runtime errors related to theme padding ([#2430](https://github.com/patternfly/patternfly-react/pull/2430))
 - Added charts to react-integration tests ([#2354](https://github.com/patternfly/patternfly-react/pull/2354))
 - Updated chart theme to use pf-core variables ([#2439](https://github.com/patternfly/patternfly-react/pull/2439))
@@ -472,7 +472,7 @@ Packages released:
 - Added new mutil-color theme for ordered charts ([#2552](https://github.com/patternfly/patternfly-react/pull/2552))
 - Added fixed point notation into percentage donut charts ([#2375](https://github.com/patternfly/patternfly-react/pull/2375))
 - Used vars to enable Red Hat fonts ([#2584](https://github.com/patternfly/patternfly-react/pull/2584))
-## Components ([@patternfly/react-core@3.75.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.75.2))
+### Components ([@patternfly/react-core@3.75.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.75.2))
 - **About modal:** AboutModal and Modal both now trap focus in the browser ([#2428](https://github.com/patternfly/patternfly-react/pull/2428))
 - **Accordion:** Added prop to heading level of parent component ([#2290](https://github.com/patternfly/patternfly-react/pull/2290))
 - **Application launcher:** Allowed custom icon for application launcher toggle ([#2492](https://github.com/patternfly/patternfly-react/pull/2492))
@@ -500,7 +500,7 @@ Packages released:
   - Allowed eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/pull/2493))
   - Implemented overflow styles for secondary tabs ([#2512](https://github.com/patternfly/patternfly-react/pull/2512))
 - **Tooltip:** Added support for aria prop from Tippy library ([#2539](https://github.com/patternfly/patternfly-react/pull/2539))
-## TypeScript conversion
+### TypeScript conversion
 - Bullseye ([#2427](https://github.com/patternfly/patternfly-react/pull/2427))
 - Gallery ([#2432](https://github.com/patternfly/patternfly-react/pull/2432))
 - Grid ([#2443](https://github.com/patternfly/patternfly-react/pull/2443))
@@ -510,14 +510,14 @@ Packages released:
 - Stack ([#2412](https://github.com/patternfly/patternfly-react/pull/2412))
 - Switch ([#2311](https://github.com/patternfly/patternfly-react/pull/2311))
 - Toolbar ([#2475](https://github.com/patternfly/patternfly-react/pull/2475))
-## Table ([@patternfly/react-table@2.14.23](https://www.npmjs.com/package/@patternfly/react-table/v/2.14.23))
+### Table ([@patternfly/react-table@2.14.23](https://www.npmjs.com/package/@patternfly/react-table/v/2.14.23))
 - Checked empty array in areAllRowsSelected ([#2527](https://github.com/patternfly/patternfly-react/pull/2527))
 - Added exports for compoundExpand ([#2554](https://github.com/patternfly/patternfly-react/pull/2554))
-## Styles ([@patternfly/react-styles@3.5.7](https://www.npmjs.com/package/@patternfly/react-styles/v/3.5.7))
+### Styles ([@patternfly/react-styles@3.5.7](https://www.npmjs.com/package/@patternfly/react-styles/v/3.5.7))
 - Added pickProperties to react-styles utils exports ([#2481](https://github.com/patternfly/patternfly-react/pull/2481))
-## Docs
+### Docs
 - Updated link to react-tokens page in the readme ([#2453](https://github.com/patternfly/patternfly-react/pull/2453))
-## Other
+### Other
 - **Build:**
   - Added PR comment on publishing to NPM ([#2433](https://github.com/patternfly/patternfly-react/pull/2433))
   - Added Windows support ([#2471](https://github.com/patternfly/patternfly-react/pull/2471))
@@ -526,7 +526,7 @@ Packages released:
   - Updated react-docs to use Red Hat font ([#2563](https://github.com/patternfly/patternfly-react/pull/2563))
 - **Unit tests:** Fixed keyHandler tests in util.test.js ([#2489](https://github.com/patternfly/patternfly-react/pull/2489))
 
-# 2019.04 release notes (2019-07-02)
+## 2019.04 release notes (2019-07-02)
 Packages released:
 - [@patternfly/react-core@3.58.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.58.1)
 - [@patternfly/react-inline-edit-extension@2.9.12](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.9.12)
@@ -536,12 +536,12 @@ Packages released:
 - [@patternfly/react-charts@4.4.7](https://www.npmjs.com/package/@patternfly/react-charts/v/4.4.7)
 - [@patternfly/react-styles@3.4.6](https://www.npmjs.com/package/@patternfly/react-styles/v/3.4.6)
 - [@patternfly/react-tokens@2.6.5](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.6.5)
-## Charts ([@patternfly/react-charts@4.4.7](https://www.npmjs.com/package/@patternfly/react-charts/v/4.4.7))
+### Charts ([@patternfly/react-charts@4.4.7](https://www.npmjs.com/package/@patternfly/react-charts/v/4.4.7))
 - Added sparkline example and interpolation to area examples ([#2373](https://github.com/patternfly/patternfly-react/pull/2373))
 - Fixed themes for bar chart default colors ([#2112)](https://github.com/patternfly/patternfly-react/pull/2112)
 - DonutThreshold: No longer show static threshold donut tooltips by default ([#2270](https://github.com/patternfly/patternfly-react/pull/2270))
 - Added support for legends and grids ([#2324](https://github.com/patternfly/patternfly-react/pull/2324))
-## Components ([@patternfly/react-core@3.58.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.58.1))
+### Components ([@patternfly/react-core@3.58.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.58.1))
 - **About modal:** Changed strapline element to paragraph ([#2376](https://github.com/patternfly/patternfly-react/pull/2376))
 - **Breadcrumb switcher:** Disabled autocomplete ([#2407](https://github.com/patternfly/patternfly-react/pull/2407))
 - **Card:** Addedcompacted card variation ([#2399](https://github.com/patternfly/patternfly-react/pull/2399))
@@ -565,13 +565,13 @@ Packages released:
   - Fixed TypeScript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
   - Remove comment from code ([#2351](https://github.com/patternfly/patternfly-react/pull/2351))
   - Made variant prop optional ([#2348](https://github.com/patternfly/patternfly-react/pull/2348))
-## TypeScript conversion
+### TypeScript conversion
 - Copy to clipboard ([#2131](https://github.com/patternfly/patternfly-react/pull/2131))
 - Progress ([#2307](https://github.com/patternfly/patternfly-react/pull/2307))
 - Select ([#2201](https://github.com/patternfly/patternfly-react/pull/2201))
 - Input group ([#2220](https://github.com/patternfly/patternfly-react/pull/2220))
 
-# 2019.03 release notes (2019-06-11)
+## 2019.03 release notes (2019-06-11)
 Packages released:
 - [@patternfly/react-charts@4.1.5](https://www.npmjs.com/package/@patternfly/react-charts/v/4.1.5)
 - [@patternfly/react-core@3.38.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.38.1)
@@ -579,7 +579,7 @@ Packages released:
 - [@patternfly/react-styles@3.3.3](https://www.npmjs.com/package/@patternfly/react-styles/v/3.3.3)
 - [@patternfly/react-table@2.11.1](https://www.npmjs.com/package/@patternfly/react-table/v/2.11.1)
 - [@patternfly/react-tokens@2.5.5](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.5.5)
-## Charts ([@patternfly/react-charts@4.1.5](https://www.npmjs.com/package/@patternfly/react-charts/v/4.1.5))
+### Charts ([@patternfly/react-charts@4.1.5](https://www.npmjs.com/package/@patternfly/react-charts/v/4.1.5))
 - Major bump react-charts ([#2143](https://github.com/patternfly/patternfly-react/pull/2143))
 - Changed default Chart padding property to show axis
 - Refactored ChartTheme colors and utils for donut utilization theme
@@ -589,33 +589,33 @@ Packages released:
 - Apply defaults to custom legend ([#2194](https://github.com/patternfly/patternfly-react/issues/2194))
 - Chart & ChartStack to use ReactNode as children type ([#2155](https://github.com/patternfly/patternfly-react/pull/2155))
 - Remove ChartThemeDefinition export from index.ts ([#2149](https://github.com/patternfly/patternfly-react/pull/2149))
-## Components ([@patternfly/react-core@3.38.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.38.1))
+### Components ([@patternfly/react-core@3.38.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.38.1))
 - **About modal:** Support isOpen initially set true in about modal. This ensures the about modal container exists on initial load if `isOpen` is passed `true` with children contents initially ([#2153](https://github.com/patternfly/patternfly-react/pull/2153))
 - **Navigation:** On NavItems, Maintain className passed to custom NavItems. Keeps classNames set on the child of a custom NavItem ([#2134](https://github.com/patternfly/patternfly-react/pull/2134))
 - **Pagination:** When empty array is sent to pagination now no per page is visible. It is now possible with Per page option to hide by passing empty array of per page options ([#2175](https://github.com/patternfly/patternfly-react/pull/2175))
 - **Select:** Added keyboard interaction to typeahead variants, other variants remained unchanged. Enter, with select closed, toggles open the menu. Focus should now remains on input. Arrow up and down navigates the options with a focus styling. Enter, with select opened, selects the highlighted item ([#2013](https://github.com/patternfly/patternfly-react/pull/2013))
 - **Tabs:** Fixed tabs ref proptype ([#2158](https://github.com/patternfly/patternfly-react/pull/2158))
-## Table ([@patternfly/react-table@2.11.1](https://www.npmjs.com/package/@patternfly/react-table/v/2.11.1))
+### Table ([@patternfly/react-table@2.11.1](https://www.npmjs.com/package/@patternfly/react-table/v/2.11.1))
 - Added React-Virtualized PF4 tables ([#2011](https://github.com/patternfly/patternfly-react/pull/2011))
 - Exported RowWrapper implementation ([#2118](https://github.com/patternfly/patternfly-react/pull/2118))
 - Some props of IRow should not required Makes following props of `IRow` to optional isOpen parent props ([#2196](https://github.com/patternfly/patternfly-react/pull/2196))
 - Fixed error Unknown event handler property `onCollapse`. Removed `rows` and `onCollapse` from `...props` ([#2195](https://github.com/patternfly/patternfly-react/pull/2195))
 - Added support for .pf-m-grid-2xl breakpoint. Added breakpoint to list of available breakpoints and updated snapshot ([#2206](https://github.com/patternfly/patternfly-react/pull/2206))
 - Reverted bodywrapper conversion to stateless-function ([#2161](https://github.com/patternfly/patternfly-react/pull/2161))
-## Topology (@patternfly/react-topology)
+### Topology (@patternfly/react-topology)
 - Added @patternfly/react-topology package ([#2170](https://github.com/patternfly/patternfly-react/pull/2170))
 - Fixed esm output and converted react-virtualized-extension to TS ([#2190](https://github.com/patternfly/patternfly-react/pull/2190))
-## Styles ([@patternfly/react-styles@3.3.3](https://www.npmjs.com/package/@patternfly/react-styles/v/3.3.3))
+### Styles ([@patternfly/react-styles@3.3.3](https://www.npmjs.com/package/@patternfly/react-styles/v/3.3.3))
 - Changed all the React css imports and added types for them. Instead of using a babel plugin to generate the JS at compile time for our CSS-in-JS solution, we statically generate it beforehand in react-styles ([#2085](https://github.com/patternfly/patternfly-react/pull/2085))
 - Bumped jsdom ([#2080](https://github.com/patternfly/patternfly-react/pull/2080))
 - Added sideeffects to react-styles ([#2207](https://github.com/patternfly/patternfly-react/pull/2207))
-## TypeScript conversion
+### TypeScript conversion
 - Backdrop ([#2105](https://github.com/patternfly/patternfly-react/pull/2105))
 - Background image ([#2070](https://github.com/patternfly/patternfly-react/pull/2070))
 - Options menu ([#2002](https://github.com/patternfly/patternfly-react/pull/2002))
 - Text input ([#1914](https://github.com/patternfly/patternfly-react/pull/1914))
 
-# 2019.02 release notes (2019-06-05)
+## 2019.02 release notes (2019-06-05)
 Packages released:
 - [@patternfly/react-charts@3.6.4](https://www.npmjs.com/package/@patternfly/react-charts/v/3.6.4)
 - [@patternfly/react-core@3.34.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.34.2)
@@ -623,7 +623,7 @@ Packages released:
 - [@patternfly/react-styles@3.2.3](https://www.npmjs.com/package/@patternfly/react-styles/v/3.2.3)
 - [@patternfly/react-table@2.9.2](https://www.npmjs.com/package/@patternfly/react-table/v/2.9.2)
 - [@patternfly/react-tokens@2.5.3](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.5.3)
-## Components ([@patternfly/react-core@3.34.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.34.2))
+### Components ([@patternfly/react-core@3.34.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.34.2))
 - **About Modal:** Provided a way to set the background using props ([#1940](https://github.com/patternfly/patternfly-react/pull/1940))
 - **Accordion:** Added accordion component ([#1511](https://github.com/patternfly/patternfly-react/pull/1511))
 - **Background Image:** Fixed background image spacing issue ([#1923](https://github.com/patternfly/patternfly-react/pull/1923))
@@ -644,19 +644,19 @@ Packages released:
   - Updated the SelectProps interface to avoid a type error when importing react-core into a TypeScript application. I also removed some unnecessary code in a couple of the demo's I followed recently. Copying the code as is was creating an error. I think they were safe deletions but worth double checking ([#2107](https://github.com/patternfly/patternfly-react/pull/2107))
   - Fixed ListGroupItem import ([#1867](https://github.com/patternfly/patternfly-react/pull/1867))
   - Added user personalized icon in Select component ([#1768](https://github.com/patternfly/patternfly-react/pull/1768))
-## Charts [@patternfly/react-charts@3.6.4](https://www.npmjs.com/package/@patternfly/react-charts/v/3.6.4)
+### Charts [@patternfly/react-charts@3.6.4](https://www.npmjs.com/package/@patternfly/react-charts/v/3.6.4)
 - Introduced Donut utilization chart and thresholds ([#2064](https://github.com/patternfly/patternfly-react/pull/2064))
 - Added example styles ([#1889](https://github.com/patternfly/patternfly-react/pull/1889))
 - Fixed chart font stack to use PatternFly core sans-serif font stack ([#1865](https://github.com/patternfly/patternfly-react/pull/1865))
 - Refactored themes for bar chart default colors ([#2112](https://github.com/patternfly/patternfly-react/pull/2112))
 - Added default for component props ([#2103](https://github.com/patternfly/patternfly-react/pull/2103))
-## Docs
+### Docs
 - Use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/pull/2072))
 - If you add new imports to your MDX file, rerun yarn develop which now clears the gatsby-mdx cache and lets you be on your merry way ([#2059](https://github.com/patternfly/patternfly-react/pull/2059))
 - Hide inherited TypeScript props ([#1866](https://github.com/patternfly/patternfly-react/pull/1866))
 - Use MDX for docs ([#1753](https://github.com/patternfly/patternfly-react/pull/1753))
 - Reverted bodywrapper conversion to stateless-function ([#2161](https://github.com/patternfly/patternfly-react/pull/2161))
-## TypeScript conversion
+### TypeScript conversion
 Packages released:
 We are in the process of converting all components to TypeScript to provide better types for consumers. The following components have been converted:
 - Alert ([#1978](https://github.com/patternfly/patternfly-react/pull/1978))
@@ -675,5 +675,5 @@ We are in the process of converting all components to TypeScript to provide bett
 - Radio ([#1945](https://github.com/patternfly/patternfly-react/pull/1945))
 - Text ([#1907](https://github.com/patternfly/patternfly-react/pull/1907))
 
-# 2019.01 release notes (2019-05-02)
+## 2019.01 release notes (2019-05-02)
 We don't have notes for this release yet.
