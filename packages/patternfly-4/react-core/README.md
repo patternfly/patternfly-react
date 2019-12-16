@@ -140,8 +140,6 @@ module.exports = {
       "transform-imports",
       {
         "@patternfly/react-core": {
-          // Use "transform: '@material-ui/core/${member}'," if your bundler does not support ES modules
-          // transform: (importName, matches) => `@patternfly/react-core/dist/js/components/${importName}/${importName}.js`,
           transform: (importName, matches) => {
             let res = '@patternfly/react-core/dist/js/';
             if (components[importName]) {
