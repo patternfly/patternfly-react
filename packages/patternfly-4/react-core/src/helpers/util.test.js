@@ -103,7 +103,7 @@ describe('keyHandler works on ApplicationLauncher', () => {
       Disabled Link
     </DropdownItem>
   ];
-  const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />, {
+  const view = mount(<ApplicationLauncher items={dropdownItems} isOpen />, {
     attachTo: document.getElementsByName('div')[0]
   });
 

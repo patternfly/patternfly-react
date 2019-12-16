@@ -31,6 +31,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ApplicationLauncherDemo
   },
   {
+    id: 'application-launcher-favorites-demo',
+    name: 'Application Launcher Favorites Demo',
+    componentType: Examples.ApplicationLauncherFavoritesDemo
+  },
+  {
     id: 'area-chart-color-demo',
     name: 'Area Chart Color with Bottom Legend Demo',
     componentType: Examples.ColorAreaBottomLegendDemo

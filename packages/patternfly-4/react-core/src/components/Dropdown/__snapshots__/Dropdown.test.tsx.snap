@@ -242,6 +242,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -265,6 +266,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -288,6 +290,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -311,6 +314,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -335,6 +339,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -358,6 +363,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -394,6 +400,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -417,6 +424,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -440,6 +448,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -463,6 +472,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -487,6 +497,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -510,6 +521,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -548,6 +560,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -571,6 +584,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -594,6 +608,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -617,6 +632,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -641,6 +657,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -664,6 +681,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -702,6 +720,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -725,6 +744,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -748,6 +768,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -771,6 +792,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -795,6 +817,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -818,6 +841,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1002,6 +1026,7 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1025,6 +1050,7 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1048,6 +1074,7 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1071,6 +1098,7 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1095,6 +1123,7 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1118,6 +1147,7 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1153,6 +1183,7 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1176,6 +1207,7 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1199,6 +1231,7 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1222,6 +1255,7 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1246,6 +1280,7 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1269,6 +1304,7 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1306,6 +1342,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1329,6 +1366,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1352,6 +1390,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1375,6 +1414,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1399,6 +1439,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1422,6 +1463,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1459,6 +1501,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1482,6 +1525,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1505,6 +1549,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1528,6 +1573,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1552,6 +1598,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1575,6 +1622,7 @@ exports[`KebabToggle dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -1758,6 +1806,7 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1781,6 +1830,7 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1804,6 +1854,7 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1827,6 +1878,7 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1851,6 +1903,7 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1874,6 +1927,7 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -1909,6 +1963,7 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1932,6 +1987,7 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1955,6 +2011,7 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -1978,6 +2035,7 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -2002,6 +2060,7 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -2025,6 +2084,7 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -2062,6 +2122,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2085,6 +2146,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2108,6 +2170,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2131,6 +2194,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2155,6 +2219,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2178,6 +2243,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2216,6 +2282,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2239,6 +2306,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2262,6 +2330,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2285,6 +2354,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2309,6 +2379,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2332,6 +2403,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -2699,6 +2771,7 @@ exports[`KebabToggle expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={0}
@@ -2739,6 +2812,7 @@ exports[`KebabToggle expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={1}
@@ -2780,6 +2854,7 @@ exports[`KebabToggle expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={2}
@@ -2821,6 +2896,7 @@ exports[`KebabToggle expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={3}
@@ -2866,6 +2942,7 @@ exports[`KebabToggle expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={4}
@@ -2903,6 +2980,7 @@ exports[`KebabToggle expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={5}
@@ -2943,6 +3021,7 @@ exports[`KebabToggle expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={6}
@@ -2997,6 +3076,7 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3020,6 +3100,7 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3043,6 +3124,7 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3066,6 +3148,7 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3090,6 +3173,7 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3113,6 +3197,7 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3148,6 +3233,7 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3171,6 +3257,7 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3194,6 +3281,7 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3217,6 +3305,7 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3241,6 +3330,7 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3264,6 +3354,7 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3301,6 +3392,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3324,6 +3416,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3347,6 +3440,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3370,6 +3464,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3394,6 +3489,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3417,6 +3513,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3455,6 +3552,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3478,6 +3576,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3501,6 +3600,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3524,6 +3624,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3548,6 +3649,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3571,6 +3673,7 @@ exports[`KebabToggle plain 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -3754,6 +3857,7 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3777,6 +3881,7 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3800,6 +3905,7 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3823,6 +3929,7 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3847,6 +3954,7 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3870,6 +3978,7 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -3904,6 +4013,7 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3927,6 +4037,7 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3950,6 +4061,7 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3973,6 +4085,7 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -3997,6 +4110,7 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4020,6 +4134,7 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4056,6 +4171,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4079,6 +4195,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4102,6 +4219,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4125,6 +4243,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4149,6 +4268,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4172,6 +4292,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4209,6 +4330,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4232,6 +4354,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4255,6 +4378,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4278,6 +4402,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4302,6 +4427,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4325,6 +4451,7 @@ exports[`KebabToggle regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4508,6 +4635,7 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -4531,6 +4659,7 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -4554,6 +4683,7 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -4577,6 +4707,7 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -4601,6 +4732,7 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -4624,6 +4756,7 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -4659,6 +4792,7 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4682,6 +4816,7 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4705,6 +4840,7 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4728,6 +4864,7 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4752,6 +4889,7 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4775,6 +4913,7 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -4812,6 +4951,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4835,6 +4975,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4858,6 +4999,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4881,6 +5023,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4905,6 +5048,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4928,6 +5072,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4966,6 +5111,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -4989,6 +5135,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5012,6 +5159,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5035,6 +5183,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5059,6 +5208,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5082,6 +5232,7 @@ exports[`KebabToggle right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5516,6 +5667,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -5539,6 +5691,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -5562,6 +5715,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -5585,6 +5739,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -5609,6 +5764,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -5632,6 +5788,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -5670,6 +5827,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -5693,6 +5851,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -5716,6 +5875,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -5739,6 +5899,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -5763,6 +5924,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -5786,6 +5948,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -5826,6 +5989,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5849,6 +6013,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5872,6 +6037,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5895,6 +6061,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5919,6 +6086,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5942,6 +6110,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -5982,6 +6151,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6005,6 +6175,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6028,6 +6199,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6051,6 +6223,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6075,6 +6248,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6098,6 +6272,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6299,6 +6474,7 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -6322,6 +6498,7 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -6345,6 +6522,7 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -6368,6 +6546,7 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -6392,6 +6571,7 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -6415,6 +6595,7 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -6452,6 +6633,7 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -6475,6 +6657,7 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -6498,6 +6681,7 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -6521,6 +6705,7 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -6545,6 +6730,7 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -6568,6 +6754,7 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -6607,6 +6794,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6630,6 +6818,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6653,6 +6842,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6676,6 +6866,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6700,6 +6891,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6723,6 +6915,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6762,6 +6955,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6785,6 +6979,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6808,6 +7003,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6831,6 +7027,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6855,6 +7052,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -6878,6 +7076,7 @@ exports[`dropdown dropup 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7078,6 +7277,7 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -7101,6 +7301,7 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -7124,6 +7325,7 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -7147,6 +7349,7 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -7171,6 +7374,7 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -7194,6 +7398,7 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -7231,6 +7436,7 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -7254,6 +7460,7 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -7277,6 +7484,7 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -7300,6 +7508,7 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -7324,6 +7533,7 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -7347,6 +7557,7 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -7386,6 +7597,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7409,6 +7621,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7432,6 +7645,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7455,6 +7669,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7479,6 +7694,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7502,6 +7718,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7542,6 +7759,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7565,6 +7783,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7588,6 +7807,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7611,6 +7831,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7635,6 +7856,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -7658,6 +7880,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8042,6 +8265,7 @@ exports[`dropdown expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={0}
@@ -8082,6 +8306,7 @@ exports[`dropdown expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={1}
@@ -8123,6 +8348,7 @@ exports[`dropdown expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={2}
@@ -8164,6 +8390,7 @@ exports[`dropdown expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={3}
@@ -8209,6 +8436,7 @@ exports[`dropdown expanded 1`] = `
                       "sendRef": [Function],
                     }
                   }
+                  enterTriggersArrowDown={false}
                   href=""
                   id=""
                   index={4}
@@ -8246,6 +8474,7 @@ exports[`dropdown expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={5}
@@ -8286,6 +8515,7 @@ exports[`dropdown expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                enterTriggersArrowDown={false}
                 href=""
                 id=""
                 index={6}
@@ -8340,6 +8570,7 @@ exports[`dropdown primary 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -8363,6 +8594,7 @@ exports[`dropdown primary 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -8386,6 +8618,7 @@ exports[`dropdown primary 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -8409,6 +8642,7 @@ exports[`dropdown primary 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -8433,6 +8667,7 @@ exports[`dropdown primary 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -8456,6 +8691,7 @@ exports[`dropdown primary 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -8493,6 +8729,7 @@ exports[`dropdown primary 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -8516,6 +8753,7 @@ exports[`dropdown primary 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -8539,6 +8777,7 @@ exports[`dropdown primary 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -8562,6 +8801,7 @@ exports[`dropdown primary 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -8586,6 +8826,7 @@ exports[`dropdown primary 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -8609,6 +8850,7 @@ exports[`dropdown primary 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -8648,6 +8890,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8671,6 +8914,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8694,6 +8938,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8717,6 +8962,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8741,6 +8987,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8764,6 +9011,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8804,6 +9052,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8827,6 +9076,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8850,6 +9100,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8873,6 +9124,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8897,6 +9149,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -8920,6 +9173,7 @@ exports[`dropdown primary 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9122,6 +9376,7 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9145,6 +9400,7 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9168,6 +9424,7 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9191,6 +9448,7 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9215,6 +9473,7 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9238,6 +9497,7 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9274,6 +9534,7 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -9297,6 +9558,7 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -9320,6 +9582,7 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -9343,6 +9606,7 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -9367,6 +9631,7 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -9390,6 +9655,7 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -9428,6 +9694,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9451,6 +9718,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9474,6 +9742,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9497,6 +9766,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9521,6 +9791,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9544,6 +9815,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9583,6 +9855,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9606,6 +9879,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9629,6 +9903,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9652,6 +9927,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9676,6 +9952,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9699,6 +9976,7 @@ exports[`dropdown regular 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -9899,6 +10177,7 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9922,6 +10201,7 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9945,6 +10225,7 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9968,6 +10249,7 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -9992,6 +10274,7 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -10015,6 +10298,7 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
+        enterTriggersArrowDown={false}
         href=""
         id=""
         index={-1}
@@ -10052,6 +10336,7 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -10075,6 +10360,7 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -10098,6 +10384,7 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -10121,6 +10408,7 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -10145,6 +10433,7 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -10168,6 +10457,7 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
+          enterTriggersArrowDown={false}
           href=""
           id=""
           index={-1}
@@ -10207,6 +10497,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10230,6 +10521,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10253,6 +10545,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10276,6 +10569,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10300,6 +10594,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10323,6 +10618,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10363,6 +10659,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10386,6 +10683,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10409,6 +10707,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10432,6 +10731,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10456,6 +10756,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}
@@ -10479,6 +10780,7 @@ exports[`dropdown right aligned 1`] = `
                   "sendRef": [Function],
                 }
               }
+              enterTriggersArrowDown={false}
               href=""
               id=""
               index={-1}

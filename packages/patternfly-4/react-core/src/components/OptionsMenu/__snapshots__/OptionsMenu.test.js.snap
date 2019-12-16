@@ -817,6 +817,7 @@ exports[`optionsMenu expanded 1`] = `
                               "sendRef": [Function],
                             }
                           }
+                          enterTriggersArrowDown={false}
                           href=""
                           id=""
                           index={-1}
@@ -870,6 +871,7 @@ exports[`optionsMenu expanded 1`] = `
                               "sendRef": [Function],
                             }
                           }
+                          enterTriggersArrowDown={false}
                           href=""
                           id=""
                           index={-1}
@@ -927,6 +929,7 @@ exports[`optionsMenu expanded 1`] = `
                               "sendRef": [Function],
                             }
                           }
+                          enterTriggersArrowDown={false}
                           href=""
                           id=""
                           index={-1}
@@ -981,6 +984,7 @@ exports[`optionsMenu expanded 1`] = `
                               "sendRef": [Function],
                             }
                           }
+                          enterTriggersArrowDown={false}
                           href=""
                           id=""
                           index={-1}
@@ -1066,6 +1070,7 @@ exports[`optionsMenu expanded 1`] = `
                               "sendRef": [Function],
                             }
                           }
+                          enterTriggersArrowDown={false}
                           href=""
                           id=""
                           index={-1}
@@ -1119,6 +1124,7 @@ exports[`optionsMenu expanded 1`] = `
                               "sendRef": [Function],
                             }
                           }
+                          enterTriggersArrowDown={false}
                           href=""
                           id=""
                           index={-1}

@@ -1,6 +1,7 @@
 export * from './AboutModal/AboutModalDemo';
 export * from './AccordionDemo/AccordionDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherDemo';
+export * from './ApplicationLauncherDemo/ApplicationLauncherFavoritesDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AreaChart/SparklineDemo';
 export * from './AreaChart/CyanAreaDemo';
