@@ -41,7 +41,18 @@ export class DataListItem extends React.Component<DataListItemProps> {
     const { children, className, isExpanded, 'aria-labelledby': ariaLabelledBy, id, ...props } = this.props;
     const { isSelectable, selectedDataListItemId, updateSelectedDataListItem } = this.context;
 
-    const selectDataListItem = () => {
+    const selectDataListItem = (event: React.MouseEvent) => {
+      let target: any = event.target;
+      while (event.currentTarget !== target) {
+        if (("onclick" in target && target["onclick"]) ||
+          target["parentNode"]["classList"].contains(styles.dataListItemAction) ||
+          target["parentNode"]["classList"].contains(styles.dataListItemControl)) {
+          // check other event handlers are not present.
+          return;
+        } else {
+          target = target["parentNode"];
+        }
+      }
       updateSelectedDataListItem(id);
     };
 
