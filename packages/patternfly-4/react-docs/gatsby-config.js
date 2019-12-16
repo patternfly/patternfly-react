@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
         context: 'react', // For global items that need sideNav
-        hiddenPages: ['withOuia', 'Training'], // By title
+        hiddenPages: ['withOuia'], // By title
         sideNav: {
           react: [
             { section: 'overview' },
