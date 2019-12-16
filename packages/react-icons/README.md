@@ -34,3 +34,35 @@ module.exports = {
   }
 }
 ```
+
+## Tree Shaking
+
+Ensure optimization.sideEffects is set to true within your Webpack config:
+```JS
+optimization: {
+  sideEffects: true
+}
+```
+
+Use ESM module imports to enable tree shaking with no additional setup required.
+```JS
+import { TimesIcon } from '@patternfly/react-icons';
+```
+
+To enable tree shaking with named imports for CJS modules, utilize [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports) and update a babel.config.js file to utilize the plugin:
+```JS
+module.exports = {
+  presets: ["@babel/preset-env", "@babel/preset-react"],
+  plugins: [
+    [
+      "transform-imports",
+      {
+        "@patternfly/react-icons": {
+          transform: (importName, matches) => `@patternfly/react-icons/dist/js/icons/${importName.split(/(?=[A-Z])/).join('-').toLowerCase()}`,
+          preventFullImport: true
+        }
+      }
+    ]
+  ]
+}
+```
