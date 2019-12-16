@@ -1,6 +1,7 @@
 /**
  * CustomModalDialog creates custom ReactBootstrap ModalDialog
- * https://github.com/react-bootstrap/react-bootstrap/blob/master/src/ModalDialog.js
+ * https://github.com/react-bootstrap/react-bootstrap/blob/bs3-dev/src/ModalDialog.js
+ * Up-to-date with the original as of https://github.com/react-bootstrap/react-bootstrap/commit/87a9a97f8670f3a02436f8f520caf36f88e4bdab
  *
  * This extends ModalDialog and adds contentClassName prop for setting
  * `modal-content` div's class
@@ -26,7 +27,7 @@ const Size = {
 // eslint-disable-next-line react/prefer-stateless-function
 class CustomModalDialog extends React.Component {
   render() {
-    const { dialogClassName, contentClassName, className, style, children, ...props } = this.props;
+    const { dialogClassName, contentClassName, className, style, children, onMouseDownDialog, ...props } = this.props;
     const [bsProps, elementProps] = splitBsProps(props);
 
     const bsClassName = prefix(bsProps);
@@ -47,7 +48,8 @@ class CustomModalDialog extends React.Component {
         style={modalStyle}
         className={classNames(className, bsClassName)}
       >
-        <div className={classNames(dialogClassName, dialogClasses)}>
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div className={classNames(dialogClassName, dialogClasses)} onMouseDown={onMouseDownDialog}>
           <div className={classNames(prefix(bsProps, 'content'), contentClassName)} role="document">
             {children}
           </div>
