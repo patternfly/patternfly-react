@@ -60,7 +60,7 @@ BasicRightAlignedLegend = (
             { name: 'Cats', x: '2017', y: 8 },
             { name: 'Cats', x: '2018', y: 6 }
           ]}
-          interpolation="basis"
+          interpolation="monotoneX"
         />
         <ChartArea
           data={[
@@ -70,7 +70,7 @@ BasicRightAlignedLegend = (
             { name: 'Dogs', x: '2018', y: 5 },
             { name: 'Dogs', x: '2019', y: 6 }
           ]}
-          interpolation="basis"
+          interpolation="monotoneX"
         />
         <ChartArea
           data={[
@@ -80,7 +80,7 @@ BasicRightAlignedLegend = (
             { name: 'Birds', x: '2018', y: 2 },
             { name: 'Birds', x: '2019', y: 4 }
           ]}
-          interpolation="basis"
+          interpolation="monotoneX"
         />
       </ChartGroup>
     </Chart>
@@ -122,7 +122,7 @@ BottomAlignedLegend = (
             { name: 'Cats', x: '2017', y: 8 },
             { name: 'Cats', x: '2018', y: 6 }
           ]}
-          interpolation="basis"
+          interpolation="monotoneX"
         />
         <ChartArea
           data={[
@@ -132,7 +132,7 @@ BottomAlignedLegend = (
             { name: 'Dogs', x: '2018', y: 5 },
             { name: 'Dogs', x: '2019', y: 6 }
           ]}
-          interpolation="basis"
+          interpolation="monotoneX"
         />
         <ChartArea
           data={[
@@ -142,7 +142,7 @@ BottomAlignedLegend = (
             { name: 'Birds', x: '2018', y: 2 },
             { name: 'Birds', x: '2019', y: 4 }
           ]}
-          interpolation="basis"
+          interpolation="monotoneX"
         />
       </ChartGroup>
     </Chart>
@@ -210,7 +210,7 @@ class MultiColorChart extends React.Component {
                 { name: 'Cats', x: '2017', y: 8 },
                 { name: 'Cats', x: '2018', y: 6 }
               ]}
-              interpolation="basis"
+              interpolation="monotoneX"
             />
             <ChartArea
               data={[
@@ -220,7 +220,7 @@ class MultiColorChart extends React.Component {
                 { name: 'Dogs', x: '2018', y: 5 },
                 { name: 'Dogs', x: '2019', y: 6 }
               ]}
-              interpolation="basis"
+              interpolation="monotoneX"
             />
             <ChartArea
               data={[
@@ -230,7 +230,7 @@ class MultiColorChart extends React.Component {
                 { name: 'Birds', x: '2018', y: 2 },
                 { name: 'Birds', x: '2019', y: 4 }
               ]}
-              interpolation="basis"
+              interpolation="monotoneX"
             />
           </ChartGroup>
         </Chart>

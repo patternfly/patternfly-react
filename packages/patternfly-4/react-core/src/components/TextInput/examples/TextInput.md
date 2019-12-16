@@ -6,7 +6,7 @@ propComponents: ['TextInput']
 typescript: true
 ---
 
-import { TextInput } from '@patternfly/react-core';
+import { TextInput, Button } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic
@@ -77,5 +77,20 @@ class InvalidTextInput extends React.Component {
       />
     );
   }
+}
+```
+
+```js title=Select-text-using-ref
+import React from 'react';
+import { TextInput, Button } from '@patternfly/react-core';
+
+TextInputSelectAll = () => {
+  const [value, setValue] = React.useState('select all on click');
+  const ref = React.useRef(null);
+  return (
+    <React.Fragment>
+      <TextInput ref={ref} value={value} onFocus={() => ref && ref.current && ref.current.select()} onChange={value => setValue(value)} aria-label="select-all" />
+    </React.Fragment>
+  )
 }
 ```

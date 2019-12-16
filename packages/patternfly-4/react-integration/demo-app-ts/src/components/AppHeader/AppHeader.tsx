@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Brand, PageHeader } from '@patternfly/react-core';
 import { AppToolbar } from '../AppToolbar/AppToolbar';
-import imgBrand from '../../assets/images/imgBrand.png';
+import imgBrand from '../../assets/images/imgBrand.svg';
 import imgAvatar from '../../assets/images/imgAvatar.svg';
 
 const showNavToogle: boolean = false;

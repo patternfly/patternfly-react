@@ -119,7 +119,7 @@ class MultiColorChart extends React.Component {
                   { name: 'Cats', x: 3, y: 8 },
                   { name: 'Cats', x: 4, y: 6 }
                 ]}
-                interpolation="basis"
+                interpolation="monotoneX"
               />
               <ChartArea
                 data={[
@@ -129,7 +129,7 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds', x: 4, y: 5 },
                   { name: 'Birds', x: 5, y: 6 }
                 ]}
-                interpolation="basis"
+                interpolation="monotoneX"
               />
             </ChartGroup>
             <ChartThreshold

@@ -5,15 +5,14 @@ exports[`3rd state 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
-    className=""
+    checked={null}
+    disabled={false}
     id="check"
-    isChecked={null}
-    isDisabled={false}
-    isValid={true}
     onChange={[Function]}
+    type="checkbox"
   />
 </label>
 `;
@@ -23,15 +22,14 @@ exports[`controlled 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
-    className=""
+    checked={true}
+    disabled={false}
     id="check"
-    isChecked={true}
-    isDisabled={false}
-    isValid={true}
     onChange={[Function]}
+    type="checkbox"
   />
 </label>
 `;
@@ -41,15 +39,12 @@ exports[`isDisabled 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
-    className=""
+    disabled={true}
     id="check"
-    isChecked={false}
-    isDisabled={true}
-    isValid={true}
-    onChange={[Function]}
+    type="checkbox"
   />
 </label>
 `;
@@ -59,17 +54,16 @@ exports[`passing HTML attribute 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
     aria-labelledby="labelId"
-    className=""
+    checked={true}
+    disabled={false}
     id="check"
-    isChecked={true}
-    isDisabled={false}
-    isValid={true}
     label="label"
     onChange={[Function]}
+    type="checkbox"
   />
 </label>
 `;
@@ -79,16 +73,15 @@ exports[`passing class 1`] = `
   className="pf-c-dropdown__toggle-check class-123"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
-    className=""
+    checked={true}
+    disabled={false}
     id="check"
-    isChecked={true}
-    isDisabled={false}
-    isValid={true}
     label="label"
     onChange={[Function]}
+    type="checkbox"
   />
 </label>
 `;
@@ -98,15 +91,12 @@ exports[`uncontrolled 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
-    className=""
+    disabled={false}
     id="check"
-    isChecked={false}
-    isDisabled={false}
-    isValid={true}
-    onChange={[Function]}
+    type="checkbox"
   />
 </label>
 `;
@@ -116,15 +106,12 @@ exports[`with text 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <Checkbox
+  <input
     aria-invalid={false}
     aria-label="check"
-    className=""
+    disabled={true}
     id="check"
-    isChecked={false}
-    isDisabled={true}
-    isValid={true}
-    onChange={[Function]}
+    type="checkbox"
   />
   <span
     aria-hidden="true"

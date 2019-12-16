@@ -396,8 +396,6 @@ import {
   DataListAction,
   DataListToggle,
   DataListContent,
-  DataListCheck,
-  DataListAction,
   DataListItemCells,
   Dropdown,
   DropdownItem,

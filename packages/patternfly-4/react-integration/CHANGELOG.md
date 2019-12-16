@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.14.0...@patternfly/react-integration@3.14.1) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
+# [3.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.13.1...@patternfly/react-integration@3.14.0) (2019-12-05)
+
+
+### Features
+
+* **Pagination:** automate pagination and overflow logic ([#3182](https://github.com/patternfly/patternfly-react/issues/3182)) ([af19ff8](https://github.com/patternfly/patternfly-react/commit/af19ff80026c4f69b83e5818345f0bf5da8b58bd)), closes [#3136](https://github.com/patternfly/patternfly-react/issues/3136) [#3136](https://github.com/patternfly/patternfly-react/issues/3136)
+
+
+
+
+
+## [3.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.13.0...@patternfly/react-integration@3.13.1) (2019-12-02)
+
+
+### Bug Fixes
+
+* **nav & pagelayout:** removes basic nav example, switches to default variant,  updates PF masthead logo ([#3262](https://github.com/patternfly/patternfly-react/issues/3262)) ([fe707a3](https://github.com/patternfly/patternfly-react/commit/fe707a3c23a1b072e13664786c4b95ef91a5e361))
+* **select:** make integration tests pass ([#3359](https://github.com/patternfly/patternfly-react/issues/3359)) ([9ce7eff](https://github.com/patternfly/patternfly-react/commit/9ce7eff5b0a6e9d875d4b049409db2550199e03f))
+
+
+
+
+
 # [3.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.12.1...@patternfly/react-integration@3.13.0) (2019-11-21)
 
 

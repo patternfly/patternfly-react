@@ -2,20 +2,20 @@ import * as React from 'react';
 import { DropdownToggle, DropdownContext } from '../Dropdown';
 
 export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElement> {
-  /** Id of the parent Options menu component */
+  /** Id of the parent options menu component */
   parentId?: string;
-  /** Callback for when this Options menu is toggled */
+  /** Callback for when this options menu is toggled */
   onToggle?: (isOpen: boolean) => void;
   /** Flag to indicate if menu is open */
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
-  /** Forces display of the hover state of the Options menu */
+  /** Forces display of the hover state of the options menu */
   isFocused?: boolean;
-  /** Forces display of the hover state of the Options menu */
+  /** Forces display of the hover state of the options menu */
   isHovered?: boolean;
   isSplitButton?: boolean;
-  /** Forces display of the active state of the Options menu */
+  /** Forces display of the active state of the options menu */
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;
@@ -27,7 +27,7 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Internal parent reference */
   parentRef?: HTMLElement;
-  /** Content to be rendered in the Options menu toggle button */
+  /** Content to be rendered in the options menu toggle button */
   toggleTemplate?: React.ReactNode;
 }
 

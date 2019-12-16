@@ -3,6 +3,128 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.8...demo-app-ts@3.14.9) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
+## [3.14.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.7...demo-app-ts@3.14.8) (2019-12-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.6...demo-app-ts@3.14.7) (2019-12-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.5...demo-app-ts@3.14.6) (2019-12-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.4...demo-app-ts@3.14.5) (2019-12-06)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.3...demo-app-ts@3.14.4) (2019-12-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.2...demo-app-ts@3.14.3) (2019-12-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.1...demo-app-ts@3.14.2) (2019-12-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.14.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.0...demo-app-ts@3.14.1) (2019-12-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [3.14.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.5...demo-app-ts@3.14.0) (2019-12-05)
+
+
+### Features
+
+* **Pagination:** automate pagination and overflow logic ([#3182](https://github.com/patternfly/patternfly-react/issues/3182)) ([af19ff8](https://github.com/patternfly/patternfly-react/commit/af19ff80026c4f69b83e5818345f0bf5da8b58bd)), closes [#3136](https://github.com/patternfly/patternfly-react/issues/3136) [#3136](https://github.com/patternfly/patternfly-react/issues/3136)
+
+
+
+
+
+## [3.13.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.4...demo-app-ts@3.13.5) (2019-12-04)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.13.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.3...demo-app-ts@3.13.4) (2019-12-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.13.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.2...demo-app-ts@3.13.3) (2019-12-02)
+
+
+### Bug Fixes
+
+* **nav & pagelayout:** removes basic nav example, switches to default variant,  updates PF masthead logo ([#3262](https://github.com/patternfly/patternfly-react/issues/3262)) ([fe707a3](https://github.com/patternfly/patternfly-react/commit/fe707a3c23a1b072e13664786c4b95ef91a5e361))
+* **select:** make integration tests pass ([#3359](https://github.com/patternfly/patternfly-react/issues/3359)) ([9ce7eff](https://github.com/patternfly/patternfly-react/commit/9ce7eff5b0a6e9d875d4b049409db2550199e03f))
+
+
+
+
+
+## [3.13.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.1...demo-app-ts@3.13.2) (2019-11-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.13.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.13.0...demo-app-ts@3.13.1) (2019-11-21)
 
 **Note:** Version bump only for package demo-app-ts

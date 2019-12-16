@@ -3,6 +3,139 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.127.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.2...@patternfly/react-core@3.127.3) (2019-12-13)
+
+
+### Bug Fixes
+
+* **Options menu:** added support for groups and titles ([#3360](https://github.com/patternfly/patternfly-react/issues/3360)) ([e608e60](https://github.com/patternfly/patternfly-react/commit/e608e601a7841ab83a8abb3a04521ef2d8397362))
+
+
+
+
+
+## [3.127.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.1...@patternfly/react-core@3.127.2) (2019-12-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.127.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.0...@patternfly/react-core@3.127.1) (2019-12-12)
+
+
+### Bug Fixes
+
+* **Dropdown:** Update component to use input rather than PF Checkbox ([#3391](https://github.com/patternfly/patternfly-react/issues/3391)) ([89561d5](https://github.com/patternfly/patternfly-react/commit/89561d5bb94f7f07f56acfabe09192dc5565f0d2)), closes [#3325](https://github.com/patternfly/patternfly-react/issues/3325)
+
+
+
+
+
+# [3.127.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.5...@patternfly/react-core@3.127.0) (2019-12-11)
+
+
+### Features
+
+* **Pagination:** added optional offset prop ([#3383](https://github.com/patternfly/patternfly-react/issues/3383)) ([1dd38a1](https://github.com/patternfly/patternfly-react/commit/1dd38a15b19f4f60d5f09e88d553801765947705))
+
+
+
+
+
+## [3.126.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.4...@patternfly/react-core@3.126.5) (2019-12-06)
+
+
+### Bug Fixes
+
+* **Pagination:** fixed prev arrows active with 0 rows ([#3384](https://github.com/patternfly/patternfly-react/issues/3384)) ([901cb13](https://github.com/patternfly/patternfly-react/commit/901cb1379b8685c1957fb3575a0de3209846fb48))
+
+
+
+
+
+## [3.126.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.3...@patternfly/react-core@3.126.4) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.126.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.2...@patternfly/react-core@3.126.3) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.126.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.1...@patternfly/react-core@3.126.2) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.126.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.126.0...@patternfly/react-core@3.126.1) (2019-12-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.126.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.125.1...@patternfly/react-core@3.126.0) (2019-12-05)
+
+
+### Features
+
+* **Pagination:** automate pagination and overflow logic ([#3182](https://github.com/patternfly/patternfly-react/issues/3182)) ([af19ff8](https://github.com/patternfly/patternfly-react/commit/af19ff80026c4f69b83e5818345f0bf5da8b58bd)), closes [#3136](https://github.com/patternfly/patternfly-react/issues/3136) [#3136](https://github.com/patternfly/patternfly-react/issues/3136)
+
+
+
+
+
+## [3.125.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.125.0...@patternfly/react-core@3.125.1) (2019-12-04)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.125.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.3...@patternfly/react-core@3.125.0) (2019-12-02)
+
+
+### Features
+
+* **textinput:** support passing a ref ([#3168](https://github.com/patternfly/patternfly-react/issues/3168)) ([1e1ca74](https://github.com/patternfly/patternfly-react/commit/1e1ca741db3bcf31614365fa75ea1947abbccf8e))
+
+
+
+
+
+## [3.124.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.2...@patternfly/react-core@3.124.3) (2019-12-02)
+
+
+### Bug Fixes
+
+* **nav & pagelayout:** removes basic nav example, switches to default variant,  updates PF masthead logo ([#3262](https://github.com/patternfly/patternfly-react/issues/3262)) ([fe707a3](https://github.com/patternfly/patternfly-react/commit/fe707a3c23a1b072e13664786c4b95ef91a5e361))
+
+
+
+
+
+## [3.124.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.1...@patternfly/react-core@3.124.2) (2019-11-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.124.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.124.0...@patternfly/react-core@3.124.1) (2019-11-21)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -35,9 +35,7 @@ describe('Login Page Demo Test', () => {
           cy.get('#singleOption2')
             .find('.pf-c-options-menu__menu-item-icon')
             .then(secondMenuItemIcon => expect(secondMenuItemIcon).to.be.visible);
-          cy.get('#singleOption1')
-            .find('.pf-c-options-menu__menu-item-icon')
-            .then(firstMenuItemIcon => expect(firstMenuItemIcon).to.be.hidden);
+          cy.get('#singleOption1 .pf-c-options-menu__menu-item-icon').should('not.exist');
         });
         cy.wrap(toggleButton).click();
         cy.get('#options-menu-single-option-example.pf-m-expanded').should('not.exist');
@@ -55,7 +53,7 @@ describe('Login Page Demo Test', () => {
 
   it('Verify disabled options menu', () => {
     cy.get('#options-menu-modified-disabled')
-      .find('.pf-c-options-menu__toggle-button')
+      .find('.pf-c-options-menu__toggle')
       .should('be.disabled');
   });
 });

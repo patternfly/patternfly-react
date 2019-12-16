@@ -7,17 +7,17 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface OptionsMenuItemProps
   extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'> {
-  /** Anything which can be rendered as an Options menu item */
+  /** Anything which can be rendered as an options menu item */
   children?: React.ReactNode;
-  /** Classes applied to root element of an Options menu item */
+  /** Classes applied to root element of an options menu item */
   className?: string;
-  /** Render Options menu item as selected */
+  /** Render options menu item as selected */
   isSelected?: boolean;
-  /** Render Options menu item as disabled option */
+  /** Render options menu item as disabled option */
   isDisabled?: boolean;
-  /** Callback for when this Options menu item is selected */
+  /** Callback for when this options menu item is selected */
   onSelect?: (event?: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent) => void;
-  /** Unique id of this Options menu item */
+  /** Unique id of this options menu item */
   id?: string;
 }
 
