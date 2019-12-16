@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.9...demo-app-ts@3.15.0) (2019-12-16)
+
+
+### Features
+
+* **list:** add the ordered variant ([#3363](https://github.com/patternfly/patternfly-react/issues/3363)) ([373f923](https://github.com/patternfly/patternfly-react/commit/373f923af83801ce6e8126a799b734e5cb112d81))
+
+
+
+
+
 ## [3.14.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.14.8...demo-app-ts@3.14.9) (2019-12-13)
 
 

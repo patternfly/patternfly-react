@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.128.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.3...@patternfly/react-core@3.128.0) (2019-12-16)
+
+
+### Features
+
+* **list:** add the ordered variant ([#3363](https://github.com/patternfly/patternfly-react/issues/3363)) ([373f923](https://github.com/patternfly/patternfly-react/commit/373f923af83801ce6e8126a799b734e5cb112d81))
+
+
+
+
+
 ## [3.127.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.2...@patternfly/react-core@3.127.3) (2019-12-13)
 
 
