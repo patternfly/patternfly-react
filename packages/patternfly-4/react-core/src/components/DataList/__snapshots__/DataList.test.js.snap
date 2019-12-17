@@ -103,6 +103,7 @@ exports[`DataList Item 1`] = `
 <li
   aria-labelledby="item-1"
   className="pf-c-data-list__item data-list-item-custom"
+  id=""
 />
 `;
 
@@ -110,21 +111,58 @@ exports[`DataList Item default 1`] = `
 <li
   aria-labelledby="item-1"
   className="pf-c-data-list__item"
+  id=""
 />
 `;
 
 exports[`DataList List 1`] = `
-<ul
-  aria-label="this is a simple list"
-  className="pf-c-data-list data-list-custom"
-/>
+<ContextProvider
+  value={
+    Object {
+      "isSelectable": false,
+      "selectedDataListItemId": undefined,
+      "updateSelectedDataListItem": [Function],
+    }
+  }
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list data-list-custom"
+  />
+</ContextProvider>
 `;
 
 exports[`DataList List default 1`] = `
-<ul
-  aria-label="this is a simple list"
-  className="pf-c-data-list"
-/>
+<ContextProvider
+  value={
+    Object {
+      "isSelectable": false,
+      "selectedDataListItemId": undefined,
+      "updateSelectedDataListItem": [Function],
+    }
+  }
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list"
+  />
+</ContextProvider>
+`;
+
+exports[`DataList Selectable DataList 1`] = `
+<section
+  aria-label="Primary Content Details"
+  className="pf-c-data-list__expandable-content"
+  hidden={false}
+  id=""
+  isSelectable={true}
+>
+  <div
+    className="pf-c-data-list__expandable-content-body"
+  >
+     test
+  </div>
+</section>
 `;
 
 exports[`DataList item row default 1`] = `

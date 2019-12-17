@@ -822,3 +822,134 @@ class ModifiersDataList extends React.Component {
   }
 }
 ```
+```js title=Selectable-rows
+import React from 'react';
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  KebabToggle,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListItemRow,
+  DataListCheck,
+  DataListItemCells,
+  DataListAction
+} from '@patternfly/react-core';
+
+class SelectableDataList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      isOpen1: false,
+      isOpen2: false,
+      selectedDataListItemId: ''
+    };
+
+    this.onToggle1 = isOpen1  => {
+      this.setState({ isOpen1 });
+    };
+    
+    this.onToggle2 = isOpen2  => {
+      this.setState({ isOpen2 });
+    };
+
+    this.onSelect1 = event => {
+      this.setState(prevState => ({
+        isOpen1: !prevState.isOpen1
+      }));
+    };
+    
+    this.onSelect2 = event => {
+      this.setState(prevState => ({
+        isOpen2: !prevState.isOpen2
+      }));
+    };
+    
+    this.onSelectDataListItem = (id) => {
+      this.setState({ selectedDataListItemId: id });
+    }
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <DataList aria-label="selectable data list example " selectedDataListItemId={this.state.selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
+          {!this.state.isDeleted && (
+            <DataListItem aria-labelledby="selectable-action-item1" id="item1">
+              <DataListItemRow>
+                <DataListItemCells
+                  dataListCells={[
+                    <DataListCell key="primary content">
+                      <span id="selectable-action-item1">Single actionable Primary content</span>
+                    </DataListCell>,
+                    <DataListCell key="secondary content">Single actionable Secondary content</DataListCell>
+                  ]}
+                />
+                <DataListAction
+                  aria-labelledby="selectable-action-item1 selectable-action-action1"
+                  id="selectable-action-action1"
+                  aria-label="Actions"
+                >
+                  <Dropdown
+                    isPlain
+                    position={DropdownPosition.right}
+                    isOpen={this.state.isOpen1}
+                    onSelect={this.onSelect1}
+                    toggle={<KebabToggle onToggle={this.onToggle1} />}
+                    dropdownItems={[
+                      <DropdownItem key="link">Link</DropdownItem>,
+                      <DropdownItem key="action" component="button">
+                        Action
+                      </DropdownItem>,
+                      <DropdownItem key="disabled link" isDisabled>
+                        Disabled Link
+                      </DropdownItem>
+                    ]}
+                  />
+                </DataListAction>
+              </DataListItemRow>
+            </DataListItem>
+          )}
+          <DataListItem aria-labelledby="selectable-actions-item2" id="item2">
+            <DataListItemRow>
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell key="primary content">
+                    <span id="selectable-actions-item2">Selectable actions Primary content</span>
+                  </DataListCell>,
+                  <DataListCell key="secondary content">Selectable actions Secondary content</DataListCell>
+                ]}
+              />
+              <DataListAction
+                aria-labelledby="selectable-actions-item2 selectable-actions-action2"
+                id="selectable-actions-action2"
+                aria-label="Actions"
+              >
+                <Dropdown
+                  isPlain
+                  position={DropdownPosition.right}
+                  isOpen={this.state.isOpen2}
+                  onSelect={this.onSelect2}
+                  toggle={<KebabToggle onToggle={this.onToggle2} />}
+                  dropdownItems={[
+                    <DropdownItem key="link">Link</DropdownItem>,
+                    <DropdownItem key="action" component="button">
+                      Action
+                    </DropdownItem>,
+                    <DropdownItem key="disabled link" isDisabled>
+                      Disabled Link
+                    </DropdownItem>
+                  ]}
+                />
+              </DataListAction>
+            </DataListItemRow>
+          </DataListItem>
+        </DataList>
+      </React.Fragment>
+    );
+  }
+}
+```
