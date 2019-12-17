@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.129.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.128.2...@patternfly/react-core@3.129.0) (2019-12-17)
+
+
+### Features
+
+* **DataList:** add selectable variant ([#3404](https://github.com/patternfly/patternfly-react/issues/3404)) ([eeacf0c](https://github.com/patternfly/patternfly-react/commit/eeacf0c5e4a9a44abcf1c13fd98b58d7d4b9e50d))
+
+
+
+
+
 ## [3.128.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.128.1...@patternfly/react-core@3.128.2) (2019-12-16)
 
 
