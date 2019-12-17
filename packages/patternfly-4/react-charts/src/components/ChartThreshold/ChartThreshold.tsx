@@ -375,23 +375,29 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
   theme = getThresholdTheme(themeColor, themeVariant),
   ...rest
 }: ChartThresholdProps) => {
-  // Returned style prop takes precedence over themes, while user's theme takes precedence over default theme
+  // Returned style prop takes precedence over default theme
   const getStrokeDasharray = () => {
     if (style && style.data && style.data.strokeDasharray) {
       return style.data.strokeDasharray;
-    } else if (theme.line && theme.line.style && theme.line.style.data && theme.line.style.data.strokeDasharray) {
-      return theme.line.style.data.strokeDasharray;
     }
     return getThresholdTheme(themeColor, themeVariant).line.style.data.strokeDasharray;
+  };
+  const getStrokeWidth = () => {
+    if (style && style.data && style.data.strokeWidth) {
+      return style.data.strokeWidth;
+    }
+    return getThresholdTheme(themeColor, themeVariant).line.style.data.strokeWidth;
   };
 
   // Clone style and apply strokeDasharray prop
   const thresholdStyle = cloneDeep(style);
   if (thresholdStyle.data) {
     thresholdStyle.data.strokeDasharray = getStrokeDasharray();
+    thresholdStyle.data.strokeWidth = getStrokeWidth();
   } else {
     thresholdStyle.data = {
-      strokeDasharray: getStrokeDasharray()
+      strokeDasharray: getStrokeDasharray(),
+      strokeWidth: getStrokeWidth()
     }
   }
   return <ChartLine style={thresholdStyle} theme={theme} {...rest} />;

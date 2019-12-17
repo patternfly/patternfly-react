@@ -6,6 +6,7 @@ exports[`ChartThreshold 1`] = `
     Object {
       "data": Object {
         "strokeDasharray": "4,2",
+        "strokeWidth": 1.5,
       },
     }
   }
@@ -321,7 +322,7 @@ exports[`ChartThreshold 1`] = `
             "opacity": 1,
             "stroke": "#06c",
             "strokeDasharray": "4,2",
-            "strokeWidth": 2,
+            "strokeWidth": 1.5,
           },
           "labels": Object {
             "fontFamily": "var(--pf-chart-global--FontFamily)",
@@ -468,6 +469,7 @@ exports[`ChartThreshold 2`] = `
     Object {
       "data": Object {
         "strokeDasharray": "4,2",
+        "strokeWidth": 1.5,
       },
     }
   }
@@ -783,7 +785,7 @@ exports[`ChartThreshold 2`] = `
             "opacity": 1,
             "stroke": "#06c",
             "strokeDasharray": "4,2",
-            "strokeWidth": 2,
+            "strokeWidth": 1.5,
           },
           "labels": Object {
             "fontFamily": "var(--pf-chart-global--FontFamily)",
