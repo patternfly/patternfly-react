@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.7...@patternfly/react-charts@5.2.8) (2019-12-17)
+
+
+### Bug Fixes
+
+* **charts:** broken Katacoda links ([#3408](https://github.com/patternfly/patternfly-react/issues/3408)) ([e6e72cd](https://github.com/patternfly/patternfly-react/commit/e6e72cd3584536e16dcda6a1c420d9e95e58f551))
+
+
+
+
+
 ## [5.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.6...@patternfly/react-charts@5.2.7) (2019-12-17)
 
 
