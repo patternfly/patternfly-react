@@ -58,15 +58,14 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       <div
         className={css(
           styles.dataToolbarContent,
-          numberOfFilters === 0 &&  getModifier(styles, 'hidden'),
+          (numberOfFilters === 0 || isExpanded) &&  getModifier(styles, 'hidden'),
           className
         )}
-        {...(numberOfFilters === 0 && {hidden: true})}
+        {...((numberOfFilters === 0 || isExpanded) && {hidden: true})}
         ref={chipGroupContentRef}
         {...props}
       >
         <DataToolbarGroup
-          variant="filter-group"
           className={css(collapseListedFilters && getModifier(styles, 'hidden'))}
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}
