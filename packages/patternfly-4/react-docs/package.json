@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "4.16.67",
+  "version": "4.16.68",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
@@ -22,7 +22,7 @@
     "@mdx-js/react": "^1.1.5",
     "@patternfly/patternfly": "2.45.4",
     "@patternfly/react-catalog-view-extension": "^1.1.56",
-    "@patternfly/react-charts": "^5.2.6",
+    "@patternfly/react-charts": "^5.2.7",
     "@patternfly/react-core": "^3.128.2",
     "@patternfly/react-icons": "^3.14.27",
     "@patternfly/react-inline-edit-extension": "^2.14.16",

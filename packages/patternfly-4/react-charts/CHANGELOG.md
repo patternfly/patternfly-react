@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.6...@patternfly/react-charts@5.2.7) (2019-12-17)
+
+
+### Bug Fixes
+
+* **charts:** update default threshold stroke width and dash array props ([#3414](https://github.com/patternfly/patternfly-react/issues/3414)) ([43ef5be](https://github.com/patternfly/patternfly-react/commit/43ef5becd5d46b60c6546b19354f684c93372b17))
+
+
+
+
+
 ## [5.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.5...@patternfly/react-charts@5.2.6) (2019-12-16)
 
 **Note:** Version bump only for package @patternfly/react-charts
