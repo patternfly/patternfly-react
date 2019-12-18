@@ -40,6 +40,7 @@ export default ({ location }) => {
         <Title size="md" className="ws-framework-title">React</Title>
         <Title size="4xl">Icons</Title>
         <Text>These are all Patternfly React Icons.</Text>
+        <Text>Learn how you can use them in the <a href="https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons">react-icons docs</a></Text>
         <Grid>
           {allIcons.map(([id, Icon]) => (
             <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
