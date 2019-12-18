@@ -20,8 +20,9 @@ Packages released:
 ### Charts
   - Updated interpolation examples to use monotoneX ([#3372](https://github.com/patternfly/patternfly-react/pull/3372))
   - Update threshold props ([#3414](https://github.com/patternfly/patternfly-react/pull/3414))
+
 ### Components
-- **Application Launcher:** 
+- **Application launcher:** 
   - Application launcher enhancements ([#3371](https://github.com/patternfly/patternfly-react/pull/3371))
 - **Breadcrumb:** 
   - Set breadcrumb, nav and title texts to sentence case ([#3387](https://github.com/patternfly/patternfly-react/pull/3387))
@@ -63,7 +64,7 @@ Packages released:
 ### Other
 - **Build:** 
   - Used patternfly-a11y ([#3339](https://github.com/patternfly/patternfly-react/pull/3339))
-  - Updates build to not cache sstale doc build ([#3424](https://github.com/patternfly/patternfly-react/pull/3424))
+  - Updates build to not cache stale doc build ([#3424](https://github.com/patternfly/patternfly-react/pull/3424))
 - **Chore:** 
   - Updated tippy.js dependency ([#3370](https://github.com/patternfly/patternfly-react/pull/3370))
   - Fixed broken Katacoda tutorial links ([#3408](https://github.com/patternfly/patternfly-react/pull/3408))
@@ -79,7 +80,6 @@ Packages released:
   - Added spacing between VncAction buttons ([#3345](https://github.com/patternfly/patternfly-react/pull/3345))
 - **Custom modal dialog:** 
   - Updated CustomModalDialog to match changes to original react-bootstrap ModalDialog ([#3409](https://github.com/patternfly/patternfly-react/pull/3409))
-
 
 ## 2019.10 release notes (2019-11-25)
 Packages released:
