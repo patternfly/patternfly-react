@@ -37,44 +37,12 @@ Basic = () => (
       ]}
       title="Patternfly-React"
       vendor="provided by Red Hat"
-        maxDescriptionLength={-1}
-
-      description={
-        'This is a very long description that should be truncated after 112 characters. ' +
-        '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
-        'to truncate the description how you see fit. It will be passed the description, max length, and id.'
-      }
-    />
-  </React.Fragment>
-);
-```
-
-```js title=Basic-without-truncated-text
-import React from 'react';
-import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { CogIcon } from '@patternfly/react-icons';
-import { pfLogo2 } from './examples/pfLogo2.svg'
-
-SimpleNoTrunc = () => (
-  <React.Fragment>
-    <CatalogTile
-      id="simple-no-truncation"
-      iconImg={pfLogo2}
-      iconAlt="PatternFly logo"
-      badges={[
-        <CatalogTileBadge title="Certified">
-          <CogIcon />
-        </CatalogTileBadge>
-      ]}
-        maxDescriptionLength={-1}
-
-      title="Patternfly-React"
-      vendor="provided by Red Hat"
       maxDescriptionLength={-1}
+
       description={
-        'This is a very long description that is not truncated after 112 characters. ' +
-        'To turn off truncation, pass in a maxDescriptionLength of -1. Please note that this has changed from ' +
-        'PatternFly 3.'
+        'This is a very long description that has overriden the default truncation function and should be truncated after three lines. ' +
+        'The catalog tile has a fixed height and cuts off text as needed. You can also provide a custom truncation function ' +
+        'to truncate the description how you see fit. It will be passed the description, max length, and id.'
       }
     />
   </React.Fragment>
@@ -102,8 +70,8 @@ SimpleFooter = () => (
       title="Patternfly-React"
       vendor="provided by Red Hat"
       description={
-        'This is a very long description that should be truncated after 112 characters. ' +
-        '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
+        'This is a very long description that should be truncated to one line. ' +
+        'Text is cut based on how much space is left for the description. You can also provide a custom truncation function ' +
         'to truncate the description how you see fit. It will be passed the description, max length, and id.'
       }
       footer={

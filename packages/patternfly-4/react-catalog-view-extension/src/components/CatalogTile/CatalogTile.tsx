@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';
 import { CatalogTileBadge } from './CatalogTileBadge';
-const VERTICALPADDING = 30;
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
   id?: any;
@@ -138,7 +137,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       return;
     }
 
-    this.descFullHeight = ref.parentElement.clientHeight - VERTICALPADDING;
+    this.descFullHeight = ref.parentElement.clientHeight;
   };
 
   handleDescriptionSpanRef = (ref: HTMLSpanElement) => {
