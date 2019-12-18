@@ -7,14 +7,22 @@ export interface CardHeadProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the Head */
   className?: string;
+  /** Callback for head ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const CardHead: React.FunctionComponent<CardHeadProps> = ({
+export const CardHead0: React.FunctionComponent<CardHeadProps> = ({
   children = null,
   className = '',
+  innerRef,
   ...props
 }: CardHeadProps) => (
-  <div className={css(styles.cardHead, className)} {...props}>
+  <div className={css(styles.cardHead, className)} ref={innerRef} {...props}>
     {children}
   </div>
 );
+
+// eslint-disable-next-line react/no-multi-comp
+export const CardHead = React.forwardRef<any, CardHeadProps>((props, ref) => (
+  <CardHead0 innerRef={ref} {...props} />
+));

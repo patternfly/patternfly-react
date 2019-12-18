@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';
 import { CatalogTileBadge } from './CatalogTileBadge';
-const VERTICALPADDING = 48;
+const VERTICALPADDING = 30;
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
   id?: any;
@@ -69,19 +69,28 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
 
   descFullHeight = null as any;
   descLineHeight = null as any;
+  footerFullHeight = null as any;
+  cardFullHeight = null as any;
+  headerFullHeight = null as any;
+  headFullHeight = null as any;
 
   componentDidMount() {
     this.computeDescHeight();
   }
 
   computeDescHeight() {
-    let heightStyle = { maxHeight: null as string, WebkitLineClamp: 1 };
-    //let heightStyle = { maxHeight: null as string };
-
+    let heightStyle = { maxHeight: null as string, WebkitLineClamp: null as string };
+    if (this.cardFullHeight && this.headFullHeight && this.headerFullHeight && this.descFullHeight) {
+      const descriptionHeight = this.cardFullHeight - this.headFullHeight - this.headerFullHeight;
+      this.descFullHeight = descriptionHeight;
+      if (this.footerFullHeight) {
+        this.descFullHeight = descriptionHeight - this.footerFullHeight;
+      }
+    }
     if (this.descFullHeight && this.descLineHeight) {
       heightStyle.maxHeight = `${Math.floor((this.descFullHeight) / this.descLineHeight) * this.descLineHeight}px`;
       const maxLines = `${Math.floor(this.descFullHeight / this.descLineHeight)}`;
-      heightStyle.WebkitLineClamp = parseInt(`${maxLines}`);
+      heightStyle.WebkitLineClamp = maxLines;
     }
 
     this.setState({ heightStyle });
@@ -140,6 +149,38 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     this.descLineHeight = parseInt(window.getComputedStyle(ref).getPropertyValue('line-height'), 10);
   };
 
+  handleFooterRef = (ref: HTMLDivElement) => {
+    if (!ref) {
+      return;
+    }
+
+    this.footerFullHeight = ref.clientHeight;
+  }
+
+  handleHeaderRef = (ref: HTMLDivElement) => {
+    if (!ref) {
+      return;
+    }
+
+    this.headerFullHeight = ref.clientHeight;
+  }
+
+  handleHeadRef = (ref: HTMLDivElement) => {
+    if (!ref) {
+      return;
+    }
+
+    this.headFullHeight = ref.clientHeight;
+  }
+
+  handleCardRef = (ref: HTMLDivElement) => {
+    if (!ref) {
+      return;
+    }
+
+    this.cardFullHeight = ref.clientHeight;
+  }
+
   render() {
     const {
       id,
@@ -165,15 +206,15 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     const truncateDescription = truncateDescriptionFn || this.defaultTruncateDescription;
 
     return (
-      <Card component={href || onClick ? 'a' : 'div'} id={id} href={href || '#'} className={classNames('catalog-tile-pf', { featured }, className)} onClick={e => this.handleClick(e)} isHoverable {...props}>
-        <CardHead>
+      <Card component={href || onClick ? 'a' : 'div'} id={id} href={href || '#'} className={classNames('catalog-tile-pf', { featured }, className)} onClick={e => this.handleClick(e)} isHoverable ref={this.handleCardRef} {...props}>
+        <CardHead ref={this.handleHeadRef}>
           {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
           {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
           <CardActions>
             {this.renderBadges(badges)}
           </CardActions>
         </CardHead>
-        <CardHeader className="catalog-tile-pf-header">
+        <CardHeader className="catalog-tile-pf-header" ref={this.handleHeaderRef}>
           <div className="catalog-tile-pf-title">{title}</div>
           <div className="catalog-tile-pf-subtitle">{vendor}</div>
         </CardHeader>
@@ -184,7 +225,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
             </span>
           </div>
         </CardBody>
-        {footer && <CardFooter className="catalog-tile-pf-footer">{footer}</CardFooter>}
+        {footer && <CardFooter className="catalog-tile-pf-footer" ref={this.handleFooterRef} >{footer}</CardFooter>}
       </Card>
     );
   }

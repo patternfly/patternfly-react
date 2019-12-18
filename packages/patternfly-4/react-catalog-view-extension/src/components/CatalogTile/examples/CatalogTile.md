@@ -98,7 +98,7 @@ SimpleFooter = () => (
           <CogIcon />
         </CatalogTileBadge>
       ]}
-        maxDescriptionLength={-1}
+      maxDescriptionLength={-1}
       title="Patternfly-React"
       vendor="provided by Red Hat"
       description={
