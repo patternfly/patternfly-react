@@ -23,7 +23,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 
 Learn to build an area chart using a Katacoda tutorial starting with a simple chart, adding multiple datasets, tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
-[Start course](https://katacoda.com/patternfly/courses/charts/area-chart)
+[Start course](https://katacoda.com/patternfly/courses/react-charts/area-chart)
 
 ## Examples
 ```js title=Basic-with-right-aligned-legend

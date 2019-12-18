@@ -1,11 +1,32 @@
 import React from 'react';
-import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
+import { DataList, DataListProps, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
 
-export class DataListDemo extends React.Component {
+interface DataListState {
+  selectedDataListItemId: string;
+}
+
+
+export class DataListDemo extends React.Component<DataListProps, DataListState> {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedDataListItemId: ''
+    };
+  }
+
+  onSelectDataListItem = (id) => {
+    this.setState({ selectedDataListItemId: id });
+  };
+
   render() {
     return (
-      <DataList aria-label="Simple data list example">
-        <DataListItem aria-labelledby="simple-item1">
+      <DataList
+        aria-label="Simple data list example"
+        selectedDataListItemId={this.state.selectedDataListItemId}
+        onSelectDataListItem={this.onSelectDataListItem}
+      >
+        <DataListItem aria-labelledby="simple-item1" id="row1">
           <DataListItemRow>
             <DataListItemCells
               dataListCells={[
@@ -19,7 +40,7 @@ export class DataListDemo extends React.Component {
             />
           </DataListItemRow>
         </DataListItem>
-        <DataListItem aria-labelledby="simple-item2">
+        <DataListItem aria-labelledby="simple-item2" id="row2">
           <DataListItemRow>
             <DataListItemCells
               dataListCells={[

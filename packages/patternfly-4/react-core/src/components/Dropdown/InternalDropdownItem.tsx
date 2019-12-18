@@ -30,7 +30,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   tooltipProps?: any;
   index?: number;
   context?: {
-    keyHandler?: (index: number, direction: string) => void;
+    keyHandler?: (index: number, innerIndex: number, direction: string) => void;
     sendRef?: (index: number, ref: any, isDisabled: boolean, isSeparator: boolean) => void;
   };
   /** Callback for click event */
@@ -39,10 +39,17 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   id?: string;
   /** ID for the component element */
   componentID?: string;
+  /** Additional content to include alongside item within the <li> */
+  additionalChild?: React.ReactNode;
+  /** Custom item rendering that receives the DropdownContext */
+  customChild?: React.ReactNode;
+  /** Flag indicating if hitting enter on an item also triggers an arrow down key press */
+  enterTriggersArrowDown?: boolean;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
   ref = React.createRef<HTMLLIElement>();
+  additionalRef = React.createRef<any>();
 
   static defaultProps = {
     className: '',
@@ -61,36 +68,62 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       sendRef: Function.prototype
     },
     id: '',
-    componentID: ''
+    componentID: '',
+    enterTriggersArrowDown: false
   };
 
   componentDidMount() {
-    const { context, index, isDisabled, role } = this.props;
-    context.sendRef(index, this.ref.current, isDisabled, role === 'separator');
+    const { context, index, isDisabled, role, customChild } = this.props;
+    const customRef = customChild ? this.getInnerNode(this.ref.current) : this.ref.current;
+    context.sendRef(
+      index,
+      [customRef, customChild ? customRef : this.additionalRef.current],
+      isDisabled,
+      role === 'separator'
+    );
   }
 
   componentDidUpdate() {
-    const { context, index, isDisabled, role } = this.props;
-    context.sendRef(index, this.ref.current, isDisabled, role === 'separator');
+    const { context, index, isDisabled, role, customChild } = this.props;
+    const customRef = customChild ? this.getInnerNode(this.ref.current) : this.ref.current;
+    context.sendRef(
+      index,
+      [customRef, customChild ? customRef : this.additionalRef.current],
+      isDisabled,
+      role === 'separator'
+    );
   }
 
+  getInnerNode = (node: any) => {
+    return node && node.childNodes && node.childNodes.length ? node.childNodes[0] : node;
+  };
+
   onKeyDown = (event: any) => {
-    // Detected key press on this item, notify the menu parent so that the appropriate
-    // item can be focused
-    event.preventDefault();
+    // Detected key press on this item, notify the menu parent so that the appropriate item can be focused
+    const innerIndex = event.target === this.ref.current ? 0 : 1;
+    if (!this.props.customChild) event.preventDefault();
     if (event.key === 'ArrowUp') {
-      this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
+      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.UP);
     } else if (event.key === 'ArrowDown') {
-      this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
+      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
+    } else if (event.key === 'ArrowRight') {
+      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.RIGHT);
+    } else if (event.key === 'ArrowLeft') {
+      this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.LEFT);
     } else if (event.key === 'Enter' || event.key === ' ') {
-      const childNode = (this.ref.current && this.ref.current.childNodes && this.ref.current.childNodes.length
-        ? this.ref.current.childNodes[0]
-        : this.ref.current) as HTMLElement;
-      if (childNode.click) {
-        childNode.click();
-      }
+      event.target.click();
+      this.props.enterTriggersArrowDown &&
+        this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
     }
   };
+
+  extendAdditionalChildRef() {
+    const { additionalChild } = this.props;
+
+    return React.cloneElement(additionalChild as React.ReactElement<any>, {
+      ref: this.additionalRef
+    });
+  }
 
   render() {
     const {
@@ -110,6 +143,9 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       id,
       componentID,
       listItemClassName,
+      additionalChild,
+      customChild,
+      enterTriggersArrowDown,
       ...additionalProps
     } = this.props;
     const Component = component as any;
@@ -144,11 +180,16 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           } else {
             classes = css(isDisabled && disabledClass, isHovered && hoverClass, className);
           }
+          if (customChild) {
+            return React.cloneElement(customChild as React.ReactElement<any>, {
+              ref: this.ref,
+              onKeyDown: this.onKeyDown
+            });
+          }
           return (
             <li
               className={listItemClassName || null}
               role={role}
-              ref={this.ref}
               onKeyDown={this.onKeyDown}
               onClick={(event: any) => {
                 if (!isDisabled) {
@@ -168,6 +209,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                   <Component
                     {...additionalProps}
                     href={href || null}
+                    ref={this.ref}
                     className={css(
                       classes,
                       this.props.role !== 'separator' && itemClass,
@@ -179,6 +221,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                   </Component>
                 )
               )}
+              {additionalChild && this.extendAdditionalChildRef()}
             </li>
           );
         }}

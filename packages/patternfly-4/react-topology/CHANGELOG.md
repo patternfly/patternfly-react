@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.45...@patternfly/react-topology@2.11.46) (2019-12-17)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [2.11.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.44...@patternfly/react-topology@2.11.45) (2019-12-17)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [2.11.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.43...@patternfly/react-topology@2.11.44) (2019-12-16)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [2.11.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.42...@patternfly/react-topology@2.11.43) (2019-12-16)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [2.11.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.41...@patternfly/react-topology@2.11.42) (2019-12-16)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [2.11.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.40...@patternfly/react-topology@2.11.41) (2019-12-13)
 
 **Note:** Version bump only for package @patternfly/react-topology

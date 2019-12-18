@@ -14,9 +14,9 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
 
 SimpleBreadcrumbs = () => (
   <Breadcrumb>
-    <BreadcrumbItem to="#">Section Home</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section home</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
     <BreadcrumbItem to="#" isActive>
       Section Landing
     </BreadcrumbItem>
@@ -31,10 +31,10 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
 WithoutLinkBreadcrumbs = () => (
   <Breadcrumb>
     <BreadcrumbItem>Section Home</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
     <BreadcrumbItem to="#" isActive>
       Section Landing
     </BreadcrumbItem>
@@ -48,11 +48,11 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
 
 HeadingBreadcrumbs = () => (
   <Breadcrumb>
-    <BreadcrumbItem to="#">Section Home</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
-    <BreadcrumbHeading to="#">Section Title</BreadcrumbHeading>
+    <BreadcrumbItem to="#">Section home</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+    <BreadcrumbHeading to="#">Section title</BreadcrumbHeading>
   </Breadcrumb>
 );
 ```

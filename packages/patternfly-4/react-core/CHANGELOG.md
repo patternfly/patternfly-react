@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.129.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.0...@patternfly/react-core@3.129.1) (2019-12-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.129.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.128.2...@patternfly/react-core@3.129.0) (2019-12-17)
+
+
+### Features
+
+* **DataList:** add selectable variant ([#3404](https://github.com/patternfly/patternfly-react/issues/3404)) ([eeacf0c](https://github.com/patternfly/patternfly-react/commit/eeacf0c5e4a9a44abcf1c13fd98b58d7d4b9e50d))
+
+
+
+
+
+## [3.128.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.128.1...@patternfly/react-core@3.128.2) (2019-12-16)
+
+
+### Bug Fixes
+
+* **docs:** documented CJS tree shaking solution for icons and react-core ([#3410](https://github.com/patternfly/patternfly-react/issues/3410)) ([7e7eb01](https://github.com/patternfly/patternfly-react/commit/7e7eb0103a79c8cb9e6824f1c27723e7357f751a))
+
+
+
+
+
+## [3.128.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.128.0...@patternfly/react-core@3.128.1) (2019-12-16)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.128.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.3...@patternfly/react-core@3.128.0) (2019-12-16)
+
+
+### Features
+
+* **list:** add the ordered variant ([#3363](https://github.com/patternfly/patternfly-react/issues/3363)) ([373f923](https://github.com/patternfly/patternfly-react/commit/373f923af83801ce6e8126a799b734e5cb112d81))
+
+
+
+
+
 ## [3.127.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.127.2...@patternfly/react-core@3.127.3) (2019-12-13)
 
 

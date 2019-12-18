@@ -12,4 +12,8 @@ describe('List Demo Test', () => {
   it('Verify inline list', () => {
     cy.get('.pf-m-inline li').contains('I am an inline list item');
   });
+
+  it('Verify ordered list', () => {
+    cy.get('.pf-c-list li').contains('I am an ordered list item');
+  });
 });
