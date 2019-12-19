@@ -1,21 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`card with isCompact applied  1`] = `
-<article
-  className="pf-c-card pf-m-compact"
+<Component
+  innerRef={null}
+  isCompact={true}
 />
 `;
 
 exports[`card with isHoverable applied  1`] = `
-<article
-  className="pf-c-card pf-m-hoverable"
+<Component
+  innerRef={null}
+  isHoverable={true}
 />
 `;
 
-exports[`className is added to the root element 1`] = `"pf-c-card extra-class"`;
+exports[`className is added to the root element 1`] = `"extra-class"`;
 
 exports[`renders with PatternFly Core styles 1`] = `
-<article
-  className="pf-c-card"
+<Component
+  innerRef={null}
 />
 `;
