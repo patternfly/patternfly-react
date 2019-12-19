@@ -100,19 +100,15 @@ exports[`DataList DataListContent noPadding 1`] = `
 `;
 
 exports[`DataList Item 1`] = `
-<li
-  aria-labelledby="item-1"
-  className="pf-c-data-list__item data-list-item-custom"
-  id=""
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`DataList Item default 1`] = `
-<li
-  aria-labelledby="item-1"
-  className="pf-c-data-list__item"
-  id=""
-/>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`DataList List 1`] = `
