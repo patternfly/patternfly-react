@@ -83,16 +83,16 @@ Packages released:
 
 ## 2019.10 release notes (2019-11-25)
 Packages released:
-- [@patternfly/react-catalog-view-extension@1.1.38](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.38)
-- [@patternfly/react-charts@5.2.2](https://www.npmjs.com/package/@patternfly/react-charts/v/5.2.2)
-- [@patternfly/react-core@3.124.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.124.1)
-- [@patternfly/react-inline-edit-extension@2.13.9](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.13.9)
-- [@patternfly/react-styles@3.6.11](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.11)
-- [@patternfly/react-table@2.24.41](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.41)
-- [@patternfly/react-tokens@2.7.10](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.10)
-- [@patternfly/react-topology@2.11.27](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.27)
-- [@patternfly/react-virtualized-extension@1.3.40](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.40)
-- [@patternfly/react-icons@3.14.23](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.23)
+- [@patternfly/react-catalog-view-extension@1.1.60](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.60)
+- [@patternfly/react-charts@5.2.9](https://www.npmjs.com/package/@patternfly/react-charts/v/5.2.9)
+- [@patternfly/react-core@3.129.3](https://www.npmjs.com/package/@patternfly/react-core/v/3.129.3)
+- [@patternfly/react-inline-edit-extension@2.14.20](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.14.20)
+- [@patternfly/react-styles@3.6.15](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.15)
+- [@patternfly/react-table@2.24.64](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.64)
+- [@patternfly/react-tokens@2.7.14](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.14)
+- [@patternfly/react-topology@2.11.48](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.48)
+- [@patternfly/react-virtualized-extension@1.3.61](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.61)
+- [@patternfly/react-icons@3.14.28](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.28)
 
 ### Charts
 - Put back the secondary title when showing percentage in the Donut Chart([#3299](https://github.com/patternfly/patternfly-react/pull/3299))
