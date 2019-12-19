@@ -185,8 +185,4 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('Selectable DataList', () => {
-    const view = shallow(<DataListContent aria-label="Primary Content Details" isSelectable> test</DataListContent>);
-    expect(view).toMatchSnapshot();
-  });
 });
