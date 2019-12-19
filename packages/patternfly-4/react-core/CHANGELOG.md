@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.129.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.2...@patternfly/react-core@3.129.3) (2019-12-19)
+
+
+### Bug Fixes
+
+* **DataList:** remove hook ([#3434](https://github.com/patternfly/patternfly-react/issues/3434)) ([2a33ab2](https://github.com/patternfly/patternfly-react/commit/2a33ab2f5d9a9c5b194e7a8336330348fd76664a))
+
+
+
+
+
 ## [3.129.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.1...@patternfly/react-core@3.129.2) (2019-12-19)
 
 
