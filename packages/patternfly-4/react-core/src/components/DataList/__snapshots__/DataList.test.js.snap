@@ -119,8 +119,8 @@ exports[`DataList List 1`] = `
 <ContextProvider
   value={
     Object {
-      "isSelectable": false,
-      "selectedDataListItemId": undefined,
+      "isSelectable": true,
+      "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
     }
   }
@@ -136,8 +136,8 @@ exports[`DataList List default 1`] = `
 <ContextProvider
   value={
     Object {
-      "isSelectable": false,
-      "selectedDataListItemId": undefined,
+      "isSelectable": true,
+      "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
     }
   }
@@ -147,22 +147,6 @@ exports[`DataList List default 1`] = `
     className="pf-c-data-list"
   />
 </ContextProvider>
-`;
-
-exports[`DataList Selectable DataList 1`] = `
-<section
-  aria-label="Primary Content Details"
-  className="pf-c-data-list__expandable-content"
-  hidden={false}
-  id=""
-  isSelectable={true}
->
-  <div
-    className="pf-c-data-list__expandable-content-body"
-  >
-     test
-  </div>
-</section>
 `;
 
 exports[`DataList item row default 1`] = `

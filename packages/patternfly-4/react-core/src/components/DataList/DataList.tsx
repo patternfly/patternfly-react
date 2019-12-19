@@ -27,35 +27,31 @@ export const DataListContext = React.createContext<Partial<DataListContextProps>
   isSelectable: false,
 });
 
-export class DataList extends React.Component<DataListProps> {
+export const DataList: React.FunctionComponent<DataListProps> = ({
+    children = null,
+    className = '',
+    'aria-label': ariaLabel,
+    onSelectDataListItem = (id:string) => {},
+    selectedDataListItemId = '',
+    ...props
+  }: DataListProps) => {
+  const isSelectable = !isUndefined(onSelectDataListItem);
 
-  constructor(props: DataListProps) {
-    super(props);
-    this.state = {
-      selectedDataListItemId: props.selectedDataListItemId
-    }
-  }
-
-  updateSelectedDataListItem = (id: string) => {
-    this.props.onSelectDataListItem(id);
+  const updateSelectedDataListItem = (id: string) => {
+    onSelectDataListItem(id);
   };
 
-  render() {
-    const { children, className, 'aria-label': ariaLabel, selectedDataListItemId, onSelectDataListItem, ...props } = this.props;
-    const isSelectable = !isUndefined(onSelectDataListItem);
-
-    return (
-      <DataListContext.Provider
-        value={{
-          isSelectable: isSelectable,
-          selectedDataListItemId,
-          updateSelectedDataListItem: this.updateSelectedDataListItem
-        }}
-      >
-        <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props}>
-          {children}
-        </ul>
-      </DataListContext.Provider>
-    );
-  }
-}
+  return (
+    <DataListContext.Provider
+      value={{
+        isSelectable: isSelectable,
+        selectedDataListItemId,
+        updateSelectedDataListItem
+      }}
+    >
+      <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props} >
+        {children}
+      </ul>
+    </DataListContext.Provider>
+  );
+};
