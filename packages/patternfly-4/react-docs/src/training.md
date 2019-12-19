@@ -53,6 +53,16 @@ import { TrainingCard } from 'gatsby-theme-patternfly-org/components';
       katacodaId="toolbar-filter"
     />
   </GalleryItem>
+  <GalleryItem>
+    <TrainingCard
+      trainingType="react-components"
+      title="Select component: beginner"
+      level="intermediate"
+      time="30 minutes"
+      description="Build and customize a React select component."
+      katacodaId="select"
+    />
+  </GalleryItem>
 </Gallery>
 
 ## Charts
