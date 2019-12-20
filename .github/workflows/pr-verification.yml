@@ -1,8 +1,8 @@
 name: Greet Everyone
 # This workflow is triggered on pushes to the repository.
 on:
-  issue_comment:
-    types: ['created', 'edited']
+  issues:
+    types: ['opened', 'edited']
 
 jobs:
   build:
