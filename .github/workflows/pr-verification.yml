@@ -1,8 +1,6 @@
 name: Greet Everyone
 # This workflow is triggered on pushes to the repository.
-on:
-  pull_request:
-    types: ['opened', 'edited']
+on: [pull_request]
 
 jobs:
   build:
