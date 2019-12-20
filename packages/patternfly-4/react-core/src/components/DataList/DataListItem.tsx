@@ -23,68 +23,65 @@ export interface DataListItemChildProps {
   rowid: string;
 }
 
-export class DataListItem extends React.Component<DataListItemProps> {
+export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
+  isExpanded = false,
+  className = '',
+  id = '',
+  'aria-labelledby': ariaLabelledBy,
+  children,
+  ...props
+}:DataListItemProps) => {
 
-  // @ts-ignore
-  static contextType: any = DataListContext;
-  static defaultProps = {
-    className: '',
-    isExpanded: false,
-    id: ''
-  };
+  return (
+    <DataListContext.Consumer>
+      {({ isSelectable, selectedDataListItemId, updateSelectedDataListItem }) => {
 
-  constructor(props: DataListItemProps) {
-    super(props);
-  }
+        const selectDataListItem = (event: React.MouseEvent) => {
+          let target: any = event.target;
+          while (event.currentTarget !== target) {
+            if (("onclick" in target && target["onclick"]) ||
+              target["parentNode"]["classList"].contains(styles.dataListItemAction) ||
+              target["parentNode"]["classList"].contains(styles.dataListItemControl)) {
+              // check other event handlers are not present.
+              return;
+            } else {
+              target = target["parentNode"];
+            }
+          }
+          updateSelectedDataListItem(id);
+        };
 
-  render() {
-    const { children, className, isExpanded, 'aria-labelledby': ariaLabelledBy, id, ...props } = this.props;
-    const { isSelectable, selectedDataListItemId, updateSelectedDataListItem } = this.context;
+        const onKeyDown = (event: React.KeyboardEvent) => {
+          if (event.key === KeyTypes.Enter) {
+            updateSelectedDataListItem(id);
+          }
+        };
 
-    const selectDataListItem = (event: React.MouseEvent) => {
-      let target: any = event.target;
-      while (event.currentTarget !== target) {
-        if (("onclick" in target && target["onclick"]) ||
-          target["parentNode"]["classList"].contains(styles.dataListItemAction) ||
-          target["parentNode"]["classList"].contains(styles.dataListItemControl)) {
-          // check other event handlers are not present.
-          return;
-        } else {
-          target = target["parentNode"];
-        }
-      }
-      updateSelectedDataListItem(id);
-    };
-
-    const onKeyDown = (event: React.KeyboardEvent) => {
-      if (event.key === KeyTypes.Enter) {
-        updateSelectedDataListItem(id);
-      }
-    };
-
-    return (
-      <li
-        id={id}
-        className={css(
-          styles.dataListItem,
-          isExpanded && styles.modifiers.expanded,
-          isSelectable && styles.modifiers.selectable,
-          selectedDataListItemId === id && styles.modifiers.selected,
-          className)}
-        aria-labelledby={ariaLabelledBy}
-        {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown: onKeyDown })}
-        {...(selectedDataListItemId === id && { 'aria-selected': true })}
-        {...props}
-      >
-        {React.Children.map(
-          children,
-          child =>
-            React.isValidElement(child) &&
-            React.cloneElement(child as React.ReactElement<any>, {
-              rowid: ariaLabelledBy
-            })
-        )}
-      </li>
-    );
-  }
-}
+        return (
+          <li
+            id={id}
+            className={css(
+              styles.dataListItem,
+              isExpanded && styles.modifiers.expanded,
+              isSelectable && styles.modifiers.selectable,
+              selectedDataListItemId === id && styles.modifiers.selected,
+              className)}
+            aria-labelledby={ariaLabelledBy}
+            {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown: onKeyDown })}
+            {...(selectedDataListItemId === id && { 'aria-selected': true })}
+            {...props}
+          >
+            {React.Children.map(
+              children,
+              child =>
+                React.isValidElement(child) &&
+                React.cloneElement(child as React.ReactElement<any>, {
+                  rowid: ariaLabelledBy
+                })
+            )}
+          </li>
+        )
+      }}
+    </DataListContext.Consumer>
+  )
+};

@@ -6,15 +6,15 @@ releaseNoteTOC: true
 
 ## 2019.11 release notes (2019-12-18)
 Packages released:
-- [@patternfly/react-catalog-view-extension@1.1.58](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.58)
+- [@patternfly/react-catalog-view-extension@1.1.60](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.60)
 - [@patternfly/react-charts@5.2.9](https://www.npmjs.com/package/@patternfly/react-charts/v/5.2.9)
-- [@patternfly/react-core@3.129.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.129.1)
-- [@patternfly/react-inline-edit-extension@2.14.18](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.14.18)
+- [@patternfly/react-core@3.129.3](https://www.npmjs.com/package/@patternfly/react-core/v/3.129.3)
+- [@patternfly/react-inline-edit-extension@2.14.20](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.14.20)
 - [@patternfly/react-styles@3.6.15](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.15)
-- [@patternfly/react-table@2.24.62](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.62)
+- [@patternfly/react-table@2.24.64](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.64)
 - [@patternfly/react-tokens@2.7.14](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.14)
-- [@patternfly/react-topology@2.11.46](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.46)
-- [@patternfly/react-virtualized-extension@1.3.59](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.59)
+- [@patternfly/react-topology@2.11.48](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.48)
+- [@patternfly/react-virtualized-extension@1.3.61](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.61)
 - [@patternfly/react-icons@3.14.28](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.28)
 
 ### Charts

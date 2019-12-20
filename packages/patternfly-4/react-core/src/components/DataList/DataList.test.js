@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { DataList } from './DataList';
 import { DataListItem } from './DataListItem';
 import { DataListAction, DataListActionVisibility } from './DataListAction';
@@ -33,12 +33,12 @@ describe('DataList', () => {
   });
 
   test('Item expanded', () => {
-    const view = shallow(
+    const view = mount(
       <DataListItem aria-labelledby="item-1" isExpanded>
         test
       </DataListItem>
     );
-    expect(view.props().className).toBe('pf-c-data-list__item pf-m-expanded');
+    expect(view.find('li').props().className).toBe('pf-c-data-list__item pf-m-expanded');
   });
 
   test('Item', () => {
@@ -185,8 +185,4 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('Selectable DataList', () => {
-    const view = shallow(<DataListContent aria-label="Primary Content Details" isSelectable> test</DataListContent>);
-    expect(view).toMatchSnapshot();
-  });
 });

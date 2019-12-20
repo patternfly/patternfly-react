@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.129.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.2...@patternfly/react-core@3.129.3) (2019-12-19)
+
+
+### Bug Fixes
+
+* **DataList:** remove hook ([#3434](https://github.com/patternfly/patternfly-react/issues/3434)) ([2a33ab2](https://github.com/patternfly/patternfly-react/commit/2a33ab2f5d9a9c5b194e7a8336330348fd76664a))
+
+
+
+
+
+## [3.129.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.1...@patternfly/react-core@3.129.2) (2019-12-19)
+
+
+### Bug Fixes
+
+* **DataList:** Revert React.Component back to React.FunctionComponent ([#3431](https://github.com/patternfly/patternfly-react/issues/3431)) ([90f6b30](https://github.com/patternfly/patternfly-react/commit/90f6b30c627613149a999d71d2bd189a809ae579))
+
+
+
+
+
 ## [3.129.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.0...@patternfly/react-core@3.129.1) (2019-12-17)
 
 **Note:** Version bump only for package @patternfly/react-core
