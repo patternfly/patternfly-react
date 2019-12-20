@@ -26,6 +26,3 @@ If you are interested in contributing to PatternFly React, please see the [Contr
 ## Meeting Notes
 
 You can find all PatternFly React Community Meeting notes [here](http://www.patternfly.org/community/monthly-community-meeting/).
-
-
-hello sirs
