@@ -11,9 +11,7 @@ jobs:
     # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
-      # This step prints an output (time) from the previous step's action.
-      - name: Echo the PR text changes
-        run: echo '${{ github.event.changes }}'
-      # This step prints an output (time) from the previous step's action.
+      - name: Echo the PR title
+        run: echo '${{ github.event.pull_request.title }}'
       - name: Echo the PR text
-        run: echo '${{ github.event.pull_request }}'
+        run: echo '${{ github.event.pull_request.body }}'
