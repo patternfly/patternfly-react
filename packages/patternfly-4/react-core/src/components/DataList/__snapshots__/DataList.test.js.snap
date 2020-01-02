@@ -115,7 +115,7 @@ exports[`DataList List 1`] = `
 <ContextProvider
   value={
     Object {
-      "isSelectable": true,
+      "isSelectable": false,
       "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
     }
@@ -132,7 +132,7 @@ exports[`DataList List default 1`] = `
 <ContextProvider
   value={
     Object {
-      "isSelectable": true,
+      "isSelectable": false,
       "selectedDataListItemId": "",
       "updateSelectedDataListItem": [Function],
     }
