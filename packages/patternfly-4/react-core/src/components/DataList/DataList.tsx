@@ -12,7 +12,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   /* Adds accessible text to the DataList list */
   'aria-label': string;
   /* Optional callback to make DataList selectable, fired when DataListItem selected */
-  onSelectDataListItem?: (id:string) => void;
+  onSelectDataListItem?: (id:string, event?: React.SyntheticEvent) => void;
   /* Id of DataList item currently selected */
   selectedDataListItemId?: string;
 }
@@ -20,7 +20,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
 interface DataListContextProps {
   isSelectable: boolean;
   selectedDataListItemId: string;
-  updateSelectedDataListItem: (id: string) => void;
+  updateSelectedDataListItem: (id: string, event?: React.SyntheticEvent) => void;
 }
 
 export const DataListContext = React.createContext<Partial<DataListContextProps>>({
@@ -37,8 +37,8 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   }: DataListProps) => {
   const isSelectable = !isUndefined(onSelectDataListItem);
 
-  const updateSelectedDataListItem = (id: string) => {
-    onSelectDataListItem(id);
+  const updateSelectedDataListItem = (id: string, event?: React.SyntheticEvent) => {
+    onSelectDataListItem(id, event);
   };
 
   return (

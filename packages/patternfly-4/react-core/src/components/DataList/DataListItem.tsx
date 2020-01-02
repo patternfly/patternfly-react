@@ -37,23 +37,12 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
       {({ isSelectable, selectedDataListItemId, updateSelectedDataListItem }) => {
 
         const selectDataListItem = (event: React.MouseEvent) => {
-          let target: any = event.target;
-          while (event.currentTarget !== target) {
-            if (("onclick" in target && target["onclick"]) ||
-              target["parentNode"]["classList"].contains(styles.dataListItemAction) ||
-              target["parentNode"]["classList"].contains(styles.dataListItemControl)) {
-              // check other event handlers are not present.
-              return;
-            } else {
-              target = target["parentNode"];
-            }
-          }
-          updateSelectedDataListItem(id);
+          updateSelectedDataListItem(id, event);
         };
 
         const onKeyDown = (event: React.KeyboardEvent) => {
           if (event.key === KeyTypes.Enter) {
-            updateSelectedDataListItem(id);
+            updateSelectedDataListItem(id, event);
           }
         };
 
