@@ -45,8 +45,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './PageLayout/examples/imgBrand.svg';
-import imgAvatar from './PageLayout/examples/imgAvatar.svg';
+import imgBrand from '../../PageLayout/examples/imgBrand.svg';
+import imgAvatar from '../../PageLayout/examples/imgAvatar.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
 import dropBoxIcon from './camel-dropbox_200x150.png';
@@ -292,7 +292,7 @@ class CardViewDefaultNav extends React.Component {
               {Array.apply(0, Array(1)).map((x, i) => (
                <React.Fragment>
                 <GalleryItem key={0}>
-                    <Card>
+                    <Card isHoverable>
                           <CardHead>
                                 <img src={imgBrand} style={{height: "50px"}}/>
                                 <CardActions>
@@ -301,8 +301,6 @@ class CardViewDefaultNav extends React.Component {
                                       position="right"
                                       onSelect={this.onKebabDropdownSelect}
                                       toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-                                      isOpen={isKebabDropdownOpen}
-                                      dropdownItems={kebabDropdownItems}
                                     />
                                     <input
                                     type="checkbox"
@@ -321,9 +319,37 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                     </GalleryItem>
                     <GalleryItem key={1}>
-                    <Card>
+                    <Card isHoverable>
                     <CardHead>
-                                <img src={} style={{height: "50px"}}/>
+                                <img src={activeMQIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                            </CardHead>
+                          <CardHeader>ActiveMQ</CardHeader>
+                        <CardBody>
+                            The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed from a JMS Queue or Topic using Apache ActiveMQ.
+                        </CardBody>
+                    </Card>
+                </GalleryItem>
+                <GalleryItem key={2}>
+                    <Card isHoverable>
+                      <CardHead>
+                                <img src={sparkIcon} style={{height: "50px"}}/>
                                 <CardActions>
                                     <Dropdown
                                       isPlain
@@ -343,14 +369,6 @@ class CardViewDefaultNav extends React.Component {
                                     />
                                 </CardActions>
                             </CardHead>
-                          <CardHeader>ActiveMQ</CardHeader>
-                        <CardBody>
-                            The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed from a JMS Queue or Topic using Apache ActiveMQ.
-                        </CardBody>
-                    </Card>
-                </GalleryItem>
-                <GalleryItem key={2}>
-                    <Card>
                           <CardHeader>Apache Spark</CardHeader>
                           <CardBody>
                             This documentation page covers the Apache Spark component for the Apache Camel.
@@ -358,7 +376,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={3}>
-                    <Card>
+                    <Card isHoverable>
+                       <CardHead>
+                                <img src={avroIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                            </CardHead>
                         <CardHeader>Avro</CardHeader>
                         <CardBody>
                             This component provides a dataformat for avro, which allows serialization and deserialization of messages using Apache Avro’s binary dataformat. Moreover, it provides support for Apache Avro’s rpc, by providing producers and consumers endpoint for using avro over netty or http.
@@ -366,7 +405,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={4}>
-                    <Card>
+                    <Card isHoverable>
+                        <CardHead>
+                                <img src={azureIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                          </CardHead>
                     <CardHeader>Azure Services</CardHeader>
                         <CardBody>
                             The Camel Components for Windows Azure Services provide connectivity to Azure services from Camel.
@@ -374,7 +434,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={5}>
-                    <Card>
+                    <Card isHoverable>
+                        <CardHead>
+                                <img src={saxonIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                          </CardHead>
                     <CardHeader>Crypto</CardHeader>
                         <CardBody>
                             For providing flexible endpoints to sign and verify exchanges using the Signature Service of the Java Cryptographic Extension.
@@ -382,7 +463,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={6}>
-                    <Card>
+                    <Card isHoverable>
+                        <CardHead>
+                                <img src={dropBoxIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                          </CardHead>
                      <CardHeader>DropBox</CardHeader>
                         <CardBody>
                             The dropbox: component allows you to treat Dropbox remote folders as a producer or consumer of messages.
@@ -390,7 +492,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={7}>
-                    <Card>
+                    <Card isHoverable style={{height: "1.5 rem"}}>
+                        <CardHead>
+                                <img src={infinispanIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                          </CardHead>
                     <CardHeader>JBoss Data Grid</CardHeader>
                         <CardBody>
                             Read or write to a fully-supported distributed cache and data grid for faster integration services.
@@ -398,7 +521,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={8}>
-                    <Card>
+                    <Card isHoverable>
+                        <CardHead>
+                                <img src={restIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                          </CardHead>
                     <CardHeader>REST</CardHeader>
                         <CardBody>
                             The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as a client (producer) to call REST services.
@@ -406,7 +550,28 @@ class CardViewDefaultNav extends React.Component {
                     </Card>
                 </GalleryItem>
                 <GalleryItem key={9}>
-                    <Card>
+                    <Card isHoverable>
+                        <CardHead>
+                                <img src={swaggerIcon} style={{height: "50px"}}/>
+                                <CardActions>
+                                    <Dropdown
+                                      isPlain
+                                      position="right"
+                                      onSelect={this.onKebabDropdownSelect}
+                                      toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={kebabDropdownItems}
+                                    />
+                                    <input
+                                    type="checkbox"
+                                    isChecked={this.state.check1}
+                                    onChange={this.onClick}
+                                    aria-label="card checkbox example"
+                                    id="check-1"
+                                    name="check1"
+                                    />
+                                </CardActions>
+                          </CardHead>
                     <CardHeader>SWAGGER</CardHeader>
                         <CardBody>
                             Expose REST services and their APIs using Swagger specification.
