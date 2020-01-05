@@ -1,6 +1,6 @@
 ---
-title: 'Filter side panel'
-section: 'catalog view'
+title: 'Catalog view filter side panel'
+section: 'extensions'
 typescript: true
 propComponents: ['FilterSidePanel', 'FilterSidePanelCategory', 'FilterSidePanelCategoryItem']
 ---

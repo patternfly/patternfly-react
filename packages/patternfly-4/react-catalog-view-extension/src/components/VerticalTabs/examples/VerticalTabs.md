@@ -1,6 +1,6 @@
 ---
-title: 'Vertical tabs'
-section: 'catalog view'
+title: 'Catalog view vertical tabs'
+section: 'extensions'
 propComponents: ['VerticalTabs', 'VerticalTabsTab']
 typescript: true
 ---

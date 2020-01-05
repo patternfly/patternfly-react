@@ -1,6 +1,6 @@
 ---
-title: 'Window Scroller'
-section: 'virtual scroll'
+title: 'Virtual scroll window scroller'
+section: 'extensions'
 ---
 
 Note: React Virtualized Extension lives in its own package at [`@patternfly/react-virtualized-extension`](https://www.npmjs.com/package/@patternfly/react-virtualized-extension)!
