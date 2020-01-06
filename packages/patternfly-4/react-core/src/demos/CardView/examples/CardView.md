@@ -79,6 +79,7 @@ Avatar,
   DropdownSeparator,
   DropdownPosition,
   DropdownDirection,
+  DropdownToggleCheckbox,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -91,6 +92,9 @@ Avatar,
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Pagination,
+  Select,
+  SelectOption,
   SkipToContent,
   TextContent,
   Text,
@@ -98,6 +102,7 @@ Avatar,
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
 // make sure you've installed @patternfly/patternfly
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -114,25 +119,42 @@ import sparkIcon from './camel-spark_200x150.png';
 import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
+import { FilterIcon } from '@patternfly/react-icons'
 
 class CardViewDefaultNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDropdownOpen: false,
+      isPageDropdownOpen: false,
+      isCardViewDropdownOpen: false,
       isKebabDropdownOpen: false,
       check1: false,
-      activeItem: 0
+      activeItem: 0,
+      splitButtonDropdownIsOpen: false,
+      page: 1,
+      perPage: 20
     };
-    this.onDropdownToggle = isDropdownOpen => {
+    this.onPageDropdownToggle = isPageDropdownOpen => {
       this.setState({
-        isDropdownOpen
+        isPageDropdownOpen
       });
     };
 
-    this.onDropdownSelect = event => {
+    this.onCardViewDropdownToggle = isCardViewDropdownOpen => {
       this.setState({
-        isDropdownOpen: !this.state.isDropdownOpen
+        isCardViewDropdownOpen
+      });
+    };
+
+    this.onPageDropdownSelect = event => {
+      this.setState({
+        isPageDropdownOpen: !this.state.isPageDropdownOpen
+      });
+    };
+
+   this.onCardViewDropdownSelect = event => {
+      this.setState({
+        isCardViewDropdownOpen: !this.state.isCardViewDropdownOpen
       });
     };
 
@@ -160,12 +182,135 @@ class CardViewDefaultNav extends React.Component {
       const name = target.name;
       this.setState({ [name]: value });
     };
+
+    this.onSetPage = (_event, pageNumber) => {
+      this.setState({
+        page: pageNumber
+      });
+    };
+
+    this.onPerPageSelect = (_event, perPage) => {
+      this.setState({
+        perPage
+      });
+    };
+
+    this.onSplitButtonToggle = isOpen => {
+      console.log("hm");
+      this.setState({
+        splitButtonDropdownIsOpen: isOpen
+      });
+    };
+
+    this.onSplitButtonSelect = event => {
+      this.setState({
+        splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
+      });
+    };
   }
 
-  
-
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const { isPageDropdownOpen, isCardViewDropdownOpen, isKebabDropdownOpen, activeItem, splitButtonDropdownIsOpen } = this.state;
+
+    const splitButtonDropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>
+    ];
+
+    const filterDropdownItems = [
+            <DropdownItem key="item-1">Item 1</DropdownItem>,
+            <DropdownItem key="item-2">Item 2</DropdownItem>,
+            <DropdownItem key="item-3">Item 3</DropdownItem>,
+            <DropdownItem isDisabled key="all">
+                All
+            </DropdownItem>
+    ];
+
+    const toolbarKebabDropdownItems = [
+     <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    const kebabDropdownItems = [
+      <DropdownItem>
+        <BellIcon /> Notifications
+      </DropdownItem>,
+      <DropdownItem>
+        <CogIcon /> Settings
+      </DropdownItem>
+    ];
+
+    const toolbarItems = <React.Fragment>
+      <DataToolbarItem variant="bulk-select">
+        <Dropdown
+            onSelect={this.onSplitButtonSelect}
+            toggle={(
+              <DropdownToggle
+                splitButtonItems={[
+                  <DropdownToggleCheckbox
+                    id="example-checkbox-1"
+                    key="split-checkbox"
+                    aria-label="Select all"
+                  />
+                ]}
+                onToggle={this.onSplitButtonToggle}
+              />
+            )}
+            isOpen={splitButtonDropdownIsOpen}
+            dropdownItems={splitButtonDropdownItems}
+          />
+      </DataToolbarItem>
+      <DataToolbarItem>
+      <Dropdown
+            onSelect={this.onCardViewDropdownSelect}
+            position={DropdownPosition.right}
+            toggle={<DropdownToggle onToggle={this.onCardViewDropdownToggle}>Creator</DropdownToggle>}
+            isOpen={isCardViewDropdownOpen}
+            dropdownItems={filterDropdownItems}
+          />
+      </DataToolbarItem>
+      <DataToolbarItem><Button variant="primary">Create a Project</Button></DataToolbarItem>
+      <DataToolbarItem>
+        <Dropdown
+          toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+          isOpen={isKebabDropdownOpen}
+          isPlain
+          dropdownItems={toolbarKebabDropdownItems}
+        />
+      </DataToolbarItem>
+      <DataToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
+        <Pagination
+          itemCount={37}
+          perPage={this.state.perPage}
+          page={this.state.page}
+          onSetPage={this.onSetPage}
+          widgetId="pagination-options-menu-top"
+          onPerPageSelect={this.onPerPageSelect}
+        />
+      </DataToolbarItem>
+    </React.Fragment>;
+
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
@@ -188,14 +333,7 @@ class CardViewDefaultNav extends React.Component {
         </NavList>
       </Nav>
     );
-    const kebabDropdownItems = [
-      <DropdownItem>
-        <BellIcon /> Notifications
-      </DropdownItem>,
-      <DropdownItem>
-        <CogIcon /> Settings
-      </DropdownItem>
-    ];
+
     const userDropdownItems = [
       <DropdownItem>Link</DropdownItem>,
       <DropdownItem component="button">Action</DropdownItem>,
@@ -236,9 +374,9 @@ class CardViewDefaultNav extends React.Component {
             <Dropdown
               isPlain
               position="right"
-              onSelect={this.onDropdownSelect}
-              isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              onSelect={this.onPageDropdownSelect}
+              isOpen={isPageDropdownOpen}
+              toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>Kyle Baker</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
           </ToolbarItem>
@@ -280,19 +418,20 @@ class CardViewDefaultNav extends React.Component {
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
-              <Text component="h1">Main Title</Text>
+              <Text component="h1">Projects</Text>
               <Text component="p">
-                Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                This is a demo that showcases Patternfly Cards.
               </Text>
             </TextContent>
+            <DataToolbar id="data-toolbar-group-types">
+              <DataToolbarContent>{toolbarItems}</DataToolbarContent>
+            </DataToolbar>
           </PageSection>
           <PageSection>
             <Gallery gutter="md">
               {Array.apply(0, Array(1)).map((x, i) => (
                <React.Fragment>
-                <GalleryItem key={0}>
-                    <Card isHoverable>
+                    <Card isHoverable key={0}>
                           <CardHead>
                                 <img src={imgBrand} style={{height: "50px"}}/>
                                 <CardActions>
@@ -301,6 +440,8 @@ class CardViewDefaultNav extends React.Component {
                                       position="right"
                                       onSelect={this.onKebabDropdownSelect}
                                       toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                                      isOpen={isKebabDropdownOpen}
+                                      dropdownItems={userDropdownItems}
                                     />
                                     <input
                                     type="checkbox"
@@ -317,9 +458,7 @@ class CardViewDefaultNav extends React.Component {
                             PatternFly is a community project that promotes design commonality and improves user experience.
                         </CardBody>
                     </Card>
-                    </GalleryItem>
-                    <GalleryItem key={1}>
-                    <Card isHoverable>
+                    <Card isHoverable key={1}>
                     <CardHead>
                                 <img src={activeMQIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -345,9 +484,7 @@ class CardViewDefaultNav extends React.Component {
                             The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed from a JMS Queue or Topic using Apache ActiveMQ.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={2}>
-                    <Card isHoverable>
+                    <Card isHoverable key={2}>
                       <CardHead>
                                 <img src={sparkIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -374,9 +511,7 @@ class CardViewDefaultNav extends React.Component {
                             This documentation page covers the Apache Spark component for the Apache Camel.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={3}>
-                    <Card isHoverable>
+                    <Card isHoverable key={3}>
                        <CardHead>
                                 <img src={avroIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -403,9 +538,7 @@ class CardViewDefaultNav extends React.Component {
                             This component provides a dataformat for avro, which allows serialization and deserialization of messages using Apache Avro’s binary dataformat. Moreover, it provides support for Apache Avro’s rpc, by providing producers and consumers endpoint for using avro over netty or http.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={4}>
-                    <Card isHoverable>
+                    <Card isHoverable key={4}>
                         <CardHead>
                                 <img src={azureIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -432,9 +565,7 @@ class CardViewDefaultNav extends React.Component {
                             The Camel Components for Windows Azure Services provide connectivity to Azure services from Camel.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={5}>
-                    <Card isHoverable>
+                    <Card isHoverable key={5}>
                         <CardHead>
                                 <img src={saxonIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -461,9 +592,7 @@ class CardViewDefaultNav extends React.Component {
                             For providing flexible endpoints to sign and verify exchanges using the Signature Service of the Java Cryptographic Extension.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={6}>
-                    <Card isHoverable>
+                    <Card isHoverable key={6}>
                         <CardHead>
                                 <img src={dropBoxIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -490,9 +619,7 @@ class CardViewDefaultNav extends React.Component {
                             The dropbox: component allows you to treat Dropbox remote folders as a producer or consumer of messages.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={7}>
-                    <Card isHoverable style={{height: "1.5 rem"}}>
+                    <Card isHoverable key={7} style={{height: "1.5 rem"}}>
                         <CardHead>
                                 <img src={infinispanIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -519,9 +646,7 @@ class CardViewDefaultNav extends React.Component {
                             Read or write to a fully-supported distributed cache and data grid for faster integration services.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={8}>
-                    <Card isHoverable>
+                    <Card isHoverable key={8}>
                         <CardHead>
                                 <img src={restIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -548,9 +673,7 @@ class CardViewDefaultNav extends React.Component {
                             The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as a client (producer) to call REST services.
                         </CardBody>
                     </Card>
-                </GalleryItem>
-                <GalleryItem key={9}>
-                    <Card isHoverable>
+                    <Card isHoverable key={9}>
                         <CardHead>
                                 <img src={swaggerIcon} style={{height: "50px"}}/>
                                 <CardActions>
@@ -577,7 +700,6 @@ class CardViewDefaultNav extends React.Component {
                             Expose REST services and their APIs using Swagger specification.
                         </CardBody>
                     </Card>
-                </GalleryItem>
                </React.Fragment>
               ))}
             </Gallery>
