@@ -9,7 +9,7 @@ exports[`DateTimePicker is working properly 1`] = `
       aria-label="date-picker-input"
       class="form-control"
       type="text"
-      value="2/21/2019 2:22 PM"
+      value="2/21/2019 02:22 PM"
     />
     <span
       class="date-time-picker-pf input-group-addon"
@@ -32,7 +32,7 @@ exports[`Edit form of DateTimePicker 1`] = `
       aria-label="date-picker-input"
       class="form-control"
       type="text"
-      value="2/21/2019 2:22 PM"
+      value="2/21/2019 02:22 PM"
     />
     <span
       class="date-time-picker-pf input-group-addon"
