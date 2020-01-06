@@ -131,6 +131,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ChipGroupDefaultIsOpenDemo
   },
   {
+    id: 'chipgroup-toolbar-demo',
+    name: 'ChipGroup Toolbar Demo',
+    componentType: Examples.ToolbarChipGroupDemo
+  },
+  {
     id: 'clipboard-copy-demo',
     name: 'ClipboardCopy Demo',
     componentType: Examples.ClipboardCopyDemo

@@ -24,6 +24,17 @@ describe('ChipGroup', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('chip group with closable toolbar', () => {
+    const view = shallow(
+      <ChipGroup withToolbar>
+        <ChipGroupToolbarItem isClosable>
+          <Chip>1.1</Chip>
+        </ChipGroupToolbarItem>
+      </ChipGroup>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('chip group expanded', () => {
     const view = mount(
       <ChipGroup>

@@ -21,6 +21,7 @@ export * from './CardDemo/CardDemo';
 export * from './CheckboxDemo/CheckboxDemo';
 export * from './ChipGroupDemo/ChipGroupDefaultIsOpenDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
+export * from './ChipGroupDemo/ChipGroupToolbarDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyExpandedDemo';
