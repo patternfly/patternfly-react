@@ -130,6 +130,7 @@ export class Page extends React.Component<PageProps, PageState> {
       isManagedSidebar,
       defaultManagedSidebarIsOpen,
       onPageResize,
+      mainAriaLabel,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
