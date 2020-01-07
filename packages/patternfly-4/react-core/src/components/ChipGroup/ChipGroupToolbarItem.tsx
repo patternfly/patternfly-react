@@ -27,7 +27,7 @@ export const ChipGroupToolbarItem: React.FunctionComponent<ChipGroupToolbarItemP
   className = '',
   isClosable = false,
   onClick = (_e: React.MouseEvent) => undefined as any,
-  closeBtnAriaLabel = 'close chip group',
+  closeBtnAriaLabel = 'Close chip group',
   ...props
 }: ChipGroupToolbarItemProps) => {
   if (React.Children.count(children)) {

@@ -69,6 +69,7 @@ export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
             categoryName={currentGroup.category}
             isClosable
             onClick={() => this.deleteCategory(currentGroup.category)}
+            closeBtnAriaLabel="Close category demo"
           >
             {currentGroup.chips.map(chip => (
               <Chip key={chip} onClick={() => this.deleteItem(chip)}>
