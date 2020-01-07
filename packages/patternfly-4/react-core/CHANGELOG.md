@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.129.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.3...@patternfly/react-core@3.129.4) (2020-01-07)
+
+
+### Bug Fixes
+
+* **clipboardcopy:** set type of copy and toggle buttons to 'button' ([#3444](https://github.com/patternfly/patternfly-react/issues/3444)) ([e15d44a](https://github.com/patternfly/patternfly-react/commit/e15d44a825937dabea6a5945bb6b1ffb64a87742))
+* **DataList:** properly assign selectable and selected classes ([#3447](https://github.com/patternfly/patternfly-react/issues/3447)) ([1784176](https://github.com/patternfly/patternfly-react/commit/1784176e59ba8f4de54e6d9c4e2ba86026ddcfed))
+
+
+
+
+
 ## [3.129.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.2...@patternfly/react-core@3.129.3) (2019-12-19)
 
 
