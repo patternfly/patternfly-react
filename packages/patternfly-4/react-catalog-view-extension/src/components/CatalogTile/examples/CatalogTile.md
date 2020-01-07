@@ -172,3 +172,24 @@ TextBadge = () => (
 );
 ```
 
+```js title=Headless-tile
+import React from 'react';
+import { CatalogTile } from '@patternfly/react-catalog-view-extension';
+import { pfLogo2 } from './examples/pfLogo2.svg'
+
+Headless = () => (
+  <React.Fragment>
+    <CatalogTile
+      id="headless"
+      title="Patternfly-React"
+      vendor="provided by Red Hat"
+      maxDescriptionLength={-1}
+      description={
+        'This is a very long description that has overriden the default truncation function and should be truncated after four lines. ' +
+        'The catalog tile has a fixed height and cuts off text as needed. You can also provide a custom truncation function ' +
+        'to truncate the description how you see fit. It will be passed the description, max length, and id.'
+      }
+    />
+  </React.Fragment>
+);
+```
