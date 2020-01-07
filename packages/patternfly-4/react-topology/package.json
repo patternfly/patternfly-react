@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-topology#readme",
   "dependencies": {
-    "@patternfly/patternfly": "2.61.1",
     "@patternfly/react-core": "^3.139.0",
+    "@patternfly/patternfly": "2.63.0",
     "@patternfly/react-icons": "^3.14.43",
     "@patternfly/react-styles": "^3.6.31"
   },

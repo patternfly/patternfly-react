@@ -527,6 +527,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableCompoundExpandableDemo
   },
   {
+    id: 'table-editable-demo',
+    name: 'Table Editable Demo',
+    componentType: Examples.TableEditableDemo
+  },
+  {
     id: 'table-first-cell-as-header-demo',
     name: 'Table First Cell As Header Demo',
     componentType: Examples.TableFirstCellAsHeaderDemo

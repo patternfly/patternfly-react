@@ -42,6 +42,11 @@ const flagVisibility = (rows: IRow[]) => {
   }
 };
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+interface IMappedCell {
+  [name: string]: IRowCell;
+}
+
 class ContextBody extends React.Component<TableBodyProps, {}> {
   onRow = (row: IRow, rowProps: any) => {
     const { onRowClick, onRow } = this.props;
@@ -72,10 +77,15 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
         (row.cells || row).reduce(
           (acc: object, cell: IRowCell, cellIndex: number) => {
             const isCellObject = cell === Object(cell);
+            const isCellFunction = cell && typeof cell.title === 'function';
 
-            const mappedCell = {
+            const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
-                title: isCellObject ? cell.title : cell,
+                title: isCellObject
+                  ? isCellFunction
+                    ? (cell.title as Function)(cell.props.value, rowKey, cellIndex, cell.props)
+                    : cell.title
+                  : cell,
                 props: {
                   isVisible: true,
                   ...(isCellObject ? cell.props : null)
@@ -101,7 +111,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
 
-    let mappedRows;
+    let mappedRows: IRow[];
     if (headerData.length > 0) {
       mappedRows = (rows as []).map((oneRow: IRow, oneRowKey: number) => ({
         ...oneRow,

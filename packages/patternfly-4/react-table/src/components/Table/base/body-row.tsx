@@ -71,7 +71,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
         return React.createElement(
           renderers.cell as createElementType,
           {
-            key: `${columnIndex}-cell`,
+            key: `col-${columnIndex}-row-${rowIndex}`,
             ...mergeProps(props, cell && cell.props, transformed)
           },
           transformed.children ||

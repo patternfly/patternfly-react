@@ -9,6 +9,7 @@ import {
   collapsible,
   scopeColTransformer,
   headerCol,
+  editable,
   emptyCol,
   mapProps,
   expandable,
@@ -305,6 +306,15 @@ describe('Transformer functions', () => {
 
   test('cell height auto', () => {
     expect(cellHeightAuto()).toEqual({ className: 'pf-m-height-auto' });
+  });
+
+  test('editable', () => {
+    const onRowEdit = jest.fn();
+    const column = {
+      extraParams: { onRowEdit }
+    };
+    const returned = editable('test', { rowIndex: 0, column });
+    expect(returned).toMatchObject({ className: 'pf-c-table__inline-edit-action' });
   });
 
   describe('visibility classNames', () => {

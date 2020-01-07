@@ -2,6 +2,7 @@ import * as React from 'react';
 import { InjectedOuiaProps, withOuiaContext } from '@patternfly/react-core/dist/js/components/withOuia/withOuia';
 import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
@@ -9,9 +10,10 @@ export interface RowWrapperRow {
   isOpen?: boolean;
   isExpanded?: boolean;
   isHeightAuto?: boolean;
+  isEditable?: boolean;
 }
 
-export interface RowWrapperProps {
+export interface RowWrapperProps extends InjectedOuiaProps {
   trRef?: React.Ref<any> | Function;
   className?: string;
   onScroll?: React.UIEventHandler;
@@ -23,13 +25,14 @@ export interface RowWrapperProps {
   };
 }
 
-class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}> {
+class RowWrapper extends React.Component<RowWrapperProps, {}> {
   static defaultProps = {
     className: '' as string,
     row: {
       isOpen: undefined as boolean,
       isExpanded: undefined as boolean,
-      isHeightAuto: undefined as boolean
+      isHeightAuto: undefined as boolean,
+      isEditable: undefined as boolean
     } as RowWrapperRow,
     rowProps: null as any
   };
@@ -85,11 +88,11 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onScroll,
       onResize,
+      row: { isExpanded, isHeightAuto, isEditable },
       rowProps,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       trRef,
       className,
-      row: { isExpanded, isHeightAuto },
       ouiaContext,
       ouiaId,
       ...props
@@ -103,7 +106,8 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
-          isHeightAuto && styles.modifiers.heightAuto
+          isHeightAuto && styles.modifiers.heightAuto,
+          isEditable && inlineStyles.modifiers.inlineEditable
         )}
         hidden={isExpanded !== undefined && !isExpanded}
         {...(ouiaContext.isOuia && {

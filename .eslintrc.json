@@ -110,6 +110,8 @@
             "error",
             "as-needed"
         ],
+        "react/prop-types": 0,
+        "react/display-name": 0,
         "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
         "use-isnan": "error"
