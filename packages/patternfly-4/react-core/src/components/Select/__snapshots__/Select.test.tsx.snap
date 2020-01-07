@@ -141,6 +141,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -916,6 +917,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -1639,6 +1641,7 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -1868,6 +1871,7 @@ exports[`checkbox select renders closed successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -2083,6 +2087,7 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -2540,6 +2545,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -3020,6 +3026,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="checkbox"
@@ -3468,6 +3475,7 @@ exports[`select custom select filter filters properly 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"
@@ -3948,6 +3956,7 @@ exports[`select renders select groups successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -4609,6 +4618,7 @@ exports[`select renders up drection successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -4842,6 +4852,7 @@ exports[`select single select renders closed successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -5077,6 +5088,7 @@ exports[`select single select renders disabled successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -5313,6 +5325,7 @@ exports[`select single select renders expanded successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -5755,6 +5768,7 @@ exports[`select single select renders expanded successfully with custom objects 
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -6104,6 +6118,7 @@ exports[`select with custom content renders closed successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -6274,6 +6289,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="single"
@@ -6567,6 +6583,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeaheadmulti"
@@ -6606,6 +6623,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                   <div
                     class="pf-c-select__toggle-wrapper"
                   >
+                    
                     
                     <input
                       aria-label=""
@@ -6826,6 +6844,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeaheadmulti"
@@ -6865,6 +6884,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   <div
                     class="pf-c-select__toggle-wrapper"
                   >
+                    
                     
                     <input
                       aria-label=""
@@ -7300,6 +7320,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           "Mrs",
         ]
       }
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeaheadmulti"
@@ -8305,6 +8326,7 @@ exports[`typeahead multi select test onChange 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"
@@ -8629,6 +8651,7 @@ exports[`typeahead select renders closed successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"
@@ -8887,6 +8910,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"
@@ -9347,6 +9371,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       }
       placeholderText=""
       selections="Mr"
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"
@@ -9903,6 +9928,7 @@ exports[`typeahead select test creatable option 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"
@@ -10237,6 +10263,7 @@ exports[`typeahead select test onChange 1`] = `
       }
       placeholderText=""
       selections=""
+      showOnlySelectionCount={false}
       toggleIcon={null}
       toggleId={null}
       variant="typeahead"

@@ -77,6 +77,8 @@ export interface SelectProps
   width?: string | number;
   /** Max height of the select container as a number of px or string percentage */
   maxHeight?: string | number;
+  /** If true, only show count of selections rather than selected values. Default to false. */
+  showOnlySelectionCount?: boolean;
   /** Icon element to render inside the select toggle */
   toggleIcon?: React.ReactElement;
   /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
@@ -120,6 +122,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     width: '',
     onClear: (_e: React.MouseEvent) => undefined as void,
     onCreateOption: (_newOptionValue: string) => undefined as void,
+    showOnlySelectionCount: false,
     toggleIcon: null as React.ReactElement,
     onFilter: null,
     customContent: null
@@ -356,6 +359,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       ouiaId,
       createText,
       noResultsFoundText,
+      showOnlySelectionCount,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
@@ -370,7 +374,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       }
     }
     let selectedChips = null;
-    if (variant === SelectVariant.typeaheadMulti) {
+    if (variant === SelectVariant.typeaheadMulti && !showOnlySelectionCount) {
       selectedChips = (
         <ChipGroup>
           {selections &&
@@ -484,6 +488,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
+                  {selections && showOnlySelectionCount && (Array.isArray(selections) && selections.length > 0) && (
+                    <div className={css(styles.selectToggleBadge)}>
+                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                    </div>
+                  )}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}

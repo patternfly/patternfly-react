@@ -537,7 +537,8 @@ class MultiTypeaheadSelectInput extends React.Component {
       isExpanded: false,
       selected: [],
       isCreatable: false,
-      hasOnCreateOption: false
+      hasOnCreateOption: false,
+      showOnlySelectionCount: false
     };
 
     this.onCreateOption = newValue => {
@@ -585,10 +586,16 @@ class MultiTypeaheadSelectInput extends React.Component {
         hasOnCreateOption: checked
       });
     };
+
+    this.toggleShowOnlyCount = checked => {
+      this.setState({
+        showOnlySelectionCount: checked
+      });
+    };
   }
 
   render() {
-    const { isExpanded, selected, isCreatable, hasOnCreateOption } = this.state;
+    const { isExpanded, selected, isCreatable, hasOnCreateOption, showOnlySelectionCount } = this.state;
     const titleId = 'multi-typeahead-select-id';
 
     return (
@@ -608,6 +615,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           placeholderText="Select a state"
           isCreatable={isCreatable}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
+          showOnlySelectionCount={showOnlySelectionCount}
         >
           {this.state.options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -628,6 +636,14 @@ class MultiTypeaheadSelectInput extends React.Component {
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead-multi"
           name="toggle-new-typeahead-multi"
+        />
+        <Checkbox
+          label="showOnlySelectionCount"
+          isChecked={this.state.showOnlySelectionCount}
+          onChange={this.toggleShowOnlyCount}
+          aria-label="toggle show only selection count checkbox"
+          id="toggle-show-only-selection-count-multi"
+          name="toggle-show-selection-count-multi"
         />
       </div>
     );

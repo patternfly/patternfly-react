@@ -229,6 +229,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               }
                               placeholderText=""
                               selections="Running"
+                              showOnlySelectionCount={false}
                               toggleIcon={null}
                               toggleId={null}
                               variant="single"
@@ -935,6 +936,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               }
                               placeholderText=""
                               selections="Low"
+                              showOnlySelectionCount={false}
                               toggleIcon={null}
                               toggleId={null}
                               variant="single"
@@ -2366,6 +2368,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                             }
                             placeholderText=""
                             selections="Running"
+                            showOnlySelectionCount={false}
                             toggleIcon={null}
                             toggleId={null}
                             variant="single"
@@ -2580,6 +2583,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                             }
                             placeholderText=""
                             selections="Low"
+                            showOnlySelectionCount={false}
                             toggleIcon={null}
                             toggleId={null}
                             variant="single"
