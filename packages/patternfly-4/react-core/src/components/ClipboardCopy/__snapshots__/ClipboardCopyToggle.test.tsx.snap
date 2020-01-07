@@ -9,6 +9,7 @@ exports[`toggle button render 1`] = `
   className="pf-c-clipboard-copy__group-toggle myclassName"
   id="my-id"
   onClick={[MockFunction]}
+  type="button"
 >
   <AngleRightIcon
     aria-hidden="true"

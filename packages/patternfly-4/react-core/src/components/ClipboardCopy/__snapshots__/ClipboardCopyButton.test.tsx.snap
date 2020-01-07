@@ -42,6 +42,7 @@ exports[`copy button render 1`] = `
     className="pf-c-clipboard-copy__group-copy fancy-copy-button"
     id="my-id"
     onClick={[MockFunction]}
+    type="button"
   >
     <CopyIcon
       color="currentColor"
