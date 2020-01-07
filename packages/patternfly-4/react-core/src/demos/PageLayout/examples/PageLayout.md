@@ -45,7 +45,7 @@ import imgAvatar from './imgAvatar.svg';
 - All but the last example set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
 
   1. Add an onNavToggle callback to PageHeader
-  1. Pass in a boolean into the isNavOpen prop to PageSidebar
+  1. Pass a boolean into the isNavOpen prop to PageSidebar
 
   The last example demonstrates this.
 
