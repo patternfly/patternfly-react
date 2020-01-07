@@ -29,7 +29,7 @@ exports[`Edit after clear TimePicker 1`] = `
     aria-label="time-picker-input"
     class="form-control"
     type="text"
-    value="02:42 PM"
+    value="2:42 PM"
   />
   <span
     class="picker-pf input-group-addon"
@@ -50,7 +50,7 @@ exports[`Edit form of TimePicker 1`] = `
     aria-label="time-picker-input"
     class="form-control"
     type="text"
-    value="02:42 PM"
+    value="2:42 PM"
   />
   <span
     class="picker-pf input-group-addon"
@@ -71,7 +71,7 @@ exports[`Show value after clear TimePicker 1`] = `
     aria-label="time-picker-input"
     class="form-control"
     type="text"
-    value="02:22 PM"
+    value="2:22 PM"
   />
   <span
     aria-describedby="popover-time-picker"
@@ -93,7 +93,7 @@ exports[`TimePicker is working properly 1`] = `
     aria-label="time-picker-input"
     class="form-control"
     type="text"
-    value="05:22 PM"
+    value="5:22 PM"
   />
   <span
     class="picker-pf input-group-addon"
@@ -114,7 +114,7 @@ exports[`TimePicker is working properly with time only 1`] = `
     aria-label="time-picker-input"
     class="form-control"
     type="text"
-    value="05:22 PM"
+    value="5:22 PM"
   />
   <span
     class="picker-pf input-group-addon"
