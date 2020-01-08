@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.16.6...demo-app-ts@3.17.0) (2020-01-08)
+
+
+### Features
+
+* **ChipGroup:** add closable chip-group ([#3455](https://github.com/patternfly/patternfly-react/issues/3455)) ([a11dea1](https://github.com/patternfly/patternfly-react/commit/a11dea19ad9b78b6ed52420021c3f726c918a977))
+
+
+
+
+
 ## [3.16.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.16.5...demo-app-ts@3.16.6) (2020-01-08)
 
 **Note:** Version bump only for package demo-app-ts
