@@ -121,7 +121,8 @@ class VncConsole extends React.Component {
       textCtrlAltDel,
       textDisconnect,
       portalToolbarTo,
-      consoleContainerId
+      consoleContainerId,
+      additionalButtons
     } = this.props;
 
     let status = null;
@@ -136,6 +137,7 @@ class VncConsole extends React.Component {
             textCtrlAltDel={textCtrlAltDel}
             textDisconnect={textDisconnect}
             onDisconnect={this.disconnect}
+            additionalButtons={additionalButtons}
           />
         );
         break;
@@ -193,6 +195,7 @@ VncConsole.propTypes = {
   vncLogging: PropTypes.string /** log-level for noVNC */,
   portalToolbarTo: PropTypes.string,
   consoleContainerId: PropTypes.string,
+  additionalButtons: PropTypes.arrayOf(PropTypes.node),
 
   topClassName: PropTypes.string /** Enable customization */,
 
@@ -225,6 +228,7 @@ VncConsole.defaultProps = {
   vncLogging: 'warn',
   portalToolbarTo: '',
   consoleContainerId: undefined,
+  additionalButtons: [],
 
   topClassName: '',
 
