@@ -42,6 +42,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   onPageResize?: (object: any) => void;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
+  /** Accessible label, can be used to name main section */
+  mainAriaLabel?: string;
 }
 
 export interface PageState {
@@ -128,6 +130,7 @@ export class Page extends React.Component<PageProps, PageState> {
       isManagedSidebar,
       defaultManagedSidebarIsOpen,
       onPageResize,
+      mainAriaLabel,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
@@ -144,7 +147,7 @@ export class Page extends React.Component<PageProps, PageState> {
           {skipToContent}
           {header}
           {sidebar}
-          <main role="main" id={mainContainerId} className={css(styles.pageMain)} tabIndex={-1}>
+          <main role="main" id={mainContainerId} className={css(styles.pageMain)} tabIndex={-1} aria-label={mainAriaLabel}>
             {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
             {children}
           </main>
