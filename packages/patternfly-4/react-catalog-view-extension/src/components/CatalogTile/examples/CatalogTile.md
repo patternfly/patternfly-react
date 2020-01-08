@@ -38,9 +38,8 @@ Basic = () => (
       title="Patternfly-React"
       vendor="provided by Red Hat"
       maxDescriptionLength={-1}
-
       description={
-        'This is a very long description that has overriden the default truncation function and should be truncated after three lines. ' +
+        'This is a very long description that has overriden the default truncation function and should be truncated after a few lines. ' +
         'The catalog tile has a fixed height and cuts off text as needed. You can also provide a custom truncation function ' +
         'to truncate the description how you see fit. It will be passed the description, max length, and id.'
       }
@@ -66,9 +65,9 @@ SimpleFooter = () => (
           <CogIcon />
         </CatalogTileBadge>
       ]}
-      maxDescriptionLength={-1}
       title="Patternfly-React"
       vendor="provided by Red Hat"
+      maxDescriptionLength={-1}
       description={
         'This is a very long description that should be truncated to one line. ' +
         'Text is cut based on how much space is left for the description. You can also provide a custom truncation function ' +
@@ -104,9 +103,10 @@ Link = () => (
       href="http://patternfly.org/v4"
       title="Patternfly-React"
       vendor="provided by Red Hat"
+      maxDescriptionLength={-1}
       description={
-        'This is a very long description that should be truncated after 112 characters. ' +
-        '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
+        'This is a very long description that has overriden the default truncation function and should be truncated after a few lines. ' +
+        'The catalog tile has a fixed height and cuts off text as needed. You can also provide a custom truncation function ' +
         'to truncate the description how you see fit. It will be passed the description, max length, and id.'
       }
     />
@@ -136,9 +136,10 @@ MultiIcon = () => (
       ]}
       title="Patternfly-React"
       vendor={<React.Fragment>provided by <a href="http://redhat.com">Red Hat</a></React.Fragment>}
+      maxDescriptionLength={-1}
       description={
-        'This is a very long description that should be truncated after 112 characters. ' +
-        '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
+        'This is a very long description that has overriden the default truncation function and should be truncated after a few lines. ' +
+        'The catalog tile has a fixed height and cuts off text as needed. You can also provide a custom truncation function ' +
         'to truncate the description how you see fit. It will be passed the description, max length, and id.'
       }
     />
@@ -162,30 +163,9 @@ TextBadge = () => (
       ]}
       title="Patternfly-React"
       vendor={<React.Fragment>provided by <a href="http://redhat.com">Red Hat</a></React.Fragment>}
-      description={
-        'This is a very long description that should be truncated after 112 characters. ' +
-        '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
-        'to truncate the description how you see fit. It will be passed the description, max length, and id.'
-      }
-    />
-  </React.Fragment>
-);
-```
-
-```js title=Headless-tile
-import React from 'react';
-import { CatalogTile } from '@patternfly/react-catalog-view-extension';
-import { pfLogo2 } from './examples/pfLogo2.svg'
-
-Headless = () => (
-  <React.Fragment>
-    <CatalogTile
-      id="headless"
-      title="Patternfly-React"
-      vendor="provided by Red Hat"
       maxDescriptionLength={-1}
       description={
-        'This is a very long description that has overriden the default truncation function and should be truncated after four lines. ' +
+        'This is a very long description that has overriden the default truncation function and should be truncated after a few lines. ' +
         'The catalog tile has a fixed height and cuts off text as needed. You can also provide a custom truncation function ' +
         'to truncate the description how you see fit. It will be passed the description, max length, and id.'
       }

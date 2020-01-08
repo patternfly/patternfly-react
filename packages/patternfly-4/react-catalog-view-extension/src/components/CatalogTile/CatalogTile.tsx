@@ -39,10 +39,6 @@ export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'ti
   footer?: string | React.ReactNode;
 }
 
-export interface CatalogTileState {
-  heightStyle: { maxHeight: string, WebkitLineClamp: string };
-}
-
 export class CatalogTile extends React.Component<CatalogTileProps> {
   static defaultProps = {
     id: null as any,
