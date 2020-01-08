@@ -149,13 +149,13 @@ class CardViewDefaultNav extends React.Component {
       });
     };
 
-   this.onToolbarDropdownSelect = event => {
+    this.onToolbarDropdownSelect = event => {
       this.setState({
         isToolbarDropdownOpen: !this.state.isToolbarDropdownOpen
       });
     };
 
-  this.onToolbarKebabDropdownToggle = isToolbarKebabDropdownOpen => {
+    this.onToolbarKebabDropdownToggle = isToolbarKebabDropdownOpen => {
       this.setState({
         isToolbarKebabDropdownOpen
       });
