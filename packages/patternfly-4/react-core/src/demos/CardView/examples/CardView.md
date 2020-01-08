@@ -137,15 +137,15 @@ class CardViewDefaultNav extends React.Component {
       });
     };
 
-    this.onToolbarDropdownToggle = isToolbarDropdownOpen => {
-      this.setState({
-        isToolbarDropdownOpen
-      });
-    };
-
     this.onPageDropdownSelect = event => {
       this.setState({
         isPageDropdownOpen: !this.state.isPageDropdownOpen
+      });
+    };
+
+    this.onToolbarDropdownToggle = isToolbarDropdownOpen => {
+      this.setState({
+        isToolbarDropdownOpen
       });
     };
 
@@ -155,13 +155,7 @@ class CardViewDefaultNav extends React.Component {
       });
     };
 
-    this.onCardKebabDropdownToggle = isCardKebabDropdownOpen => {
-      this.setState({
-        isCardKebabDropdownOpen
-      });
-    };
-
-    this.onToolbarKebabDropdownToggle = isToolbarKebabDropdownOpen => {
+  this.onToolbarKebabDropdownToggle = isToolbarKebabDropdownOpen => {
       this.setState({
         isToolbarKebabDropdownOpen
       });
@@ -177,6 +171,12 @@ class CardViewDefaultNav extends React.Component {
     this.onFocus = () => {
       const element = document.getElementById('toggle-id-6');
       element.focus();
+    };
+
+    this.onCardKebabDropdownToggle = isCardKebabDropdownOpen => {
+      this.setState({
+        isCardKebabDropdownOpen
+      });
     };
 
     this.onCardKebabDropdownSelect = event => {
