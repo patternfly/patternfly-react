@@ -8,6 +8,7 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionObject {
   toString(): string;
+  compareTo?(selectOption: any): boolean;
 }
 export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
   /** Optional alternate display for the option */
@@ -18,7 +19,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   index?: number;
   /** Indicates which component will be used as select item */
   component?: React.ReactNode;
-  /** The value for the option, if passing an object you most provide a toString function */
+  /** The value for the option, if passing an object you most provide a toString function and optional compareTo function */
   value: string | SelectOptionObject;
   /** Flag indicating if the option is disabled */
   isDisabled?: boolean;
