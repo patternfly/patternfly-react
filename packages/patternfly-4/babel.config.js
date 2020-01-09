@@ -16,7 +16,15 @@ const createIconsTransformPlugin = (env) => [
 ]
 
 module.exports = {
-  extends: '../.babelrc',
+  "presets": ["@babel/react"],
+  "ignore": ["**/__snapshots__", "**/*.d.ts", "**/*.test.*"],
+  "plugins": [
+    "@babel/plugin-transform-typescript",
+    "babel-plugin-typescript-to-proptypes",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+  ],
   env: {
     cjs: {
       plugins: [createIconsTransformPlugin('cjs')]
@@ -29,3 +37,4 @@ module.exports = {
     }
   }
 }
+

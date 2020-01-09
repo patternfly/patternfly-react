@@ -44,9 +44,9 @@
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
-    "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:babel:cjs": "BABEL_ENV=cjs babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
+    "build:babel:esm": "BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
+    "build:babel:umd": "BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
     "postbuild": "node ./build/copyStyles.js"
   },
@@ -63,6 +63,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-plugin-transform-imports": "^2.0.0",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
