@@ -1111,6 +1111,7 @@ A react-router Link may be wrapped by DropdownItem or used directly within Dropd
 
 ```js noLive
 /** Wrapped Link for DropdownItem list **/
+<>
 <DropdownItem key="link">
   <Link to={'/'}>Link</Link>
 </DropdownItem>
@@ -1123,8 +1124,8 @@ A react-router Link may be wrapped by DropdownItem or used directly within Dropd
       Expanded Dropdown
     </DropdownToggle>
   }
-  isOpen={isOpen}
-  >
+  isOpen={isOpen}>
   <Link to={'/'}>Link</Link>
 </Dropdown>
+</>
 ```

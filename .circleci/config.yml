@@ -194,6 +194,9 @@ jobs:
         name: TSLint
         command: yarn lint:ts || true
     - run:
+        name: MarkdownLint
+        command: yarn lint:md
+    - run:
         name: "@patternfly/patternfly Versions Match"
         command: yarn lint:versions
     - run:
