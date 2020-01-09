@@ -83,7 +83,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "node scripts/incrementalBuild.js",
     "build:pf3": "yarn build pf3",
-    "build:pf4": "yarn build pf4 && yarn lint:md",
+    "build:pf4": "yarn build pf4",
     "build:docs": "lerna run build:docs --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
     "build:integration": "lerna run build:demo-app --stream",

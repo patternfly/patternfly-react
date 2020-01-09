@@ -105,7 +105,7 @@ const styles = StyleSheet.parse(`
 `);
 
 const Button = ({
-  primary, // variant primary | secondary,
+  variant, // primary | secondary
   children,
 }) => (
   <button
