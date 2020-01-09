@@ -53,7 +53,7 @@ import React from 'react';
 import {
   Table,
   TableHeader,
-  TableBody
+  TableBody,
   textCenter,
 } from '@patternfly/react-table';
 

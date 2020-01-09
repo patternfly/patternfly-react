@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    "markdown",
+    "react"
+  ],
+
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "eol-last": 1,
+    "no-console": 1,
+    "spaced-comment": 1,
+    "no-unused-vars": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-unknown-property": 1,
+    "react/jsx-no-undef": 1
+  }
+}
