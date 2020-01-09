@@ -59,7 +59,15 @@
 
 .catalog-tile-pf-description {
   margin-top: 0;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
+
+  span {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .has-footer {
+    -webkit-line-clamp: 1;
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
   const view = shallow(<Card />);
@@ -20,14 +20,14 @@ test('extra props are spread to the root element', () => {
 
 test('allows passing in a string as the component', () => {
   const component = 'section';
-  const view = mount(<Card component={component} />);
-  expect(view.find(component).type()).toBe(component);
+  const view = shallow(<Card component={component} />);
+  expect(view.type()).toBe(component);
 });
 
 test('allows passing in a React Component as the component', () => {
   const Component = () => <div>im a div</div>;
-  const view = mount(<Card component={Component} />);
-  expect(view.find(Component).type()).toBe(Component);
+  const view = shallow(<Card component={Component} />);
+  expect(view.type()).toBe(Component);
 });
 
 test('card with isHoverable applied ', () => {

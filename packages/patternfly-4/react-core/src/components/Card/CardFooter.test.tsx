@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardFooter } from './CardFooter';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
   const view = shallow(<CardFooter />);
@@ -20,12 +20,12 @@ test('extra props are spread to the root element', () => {
 
 test('allows passing in a string as the component', () => {
   const component = 'div';
-  const view = mount(<CardFooter component={component} />);
-  expect(view.find(component).type()).toBe(component);
+  const view = shallow(<CardFooter component={component} />);
+  expect(view.type()).toBe(component);
 });
 
 test('allows passing in a React Component as the component', () => {
   const Component = () => <div>im a div</div>;
-  const view = mount(<CardFooter component={Component} />);
-  expect(view.find(Component).type()).toBe(Component);
+  const view = shallow(<CardFooter component={Component} />);
+  expect(view.type()).toBe(Component);
 });

@@ -13,17 +13,14 @@ export interface CardProps extends React.HTMLProps<HTMLElement> {
   isHoverable?: boolean;
   /** Modifies the card to include compact styling */
   isCompact?: boolean;
-  /** Callback for card ref */
-  innerRef?: React.Ref<any>;
 }
 
-export const Card0: React.FunctionComponent<CardProps> = ({
+export const Card: React.FunctionComponent<CardProps> = ({
   children = null,
   className = '',
   component = 'article',
   isHoverable = false,
   isCompact = false,
-  innerRef,
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -35,15 +32,9 @@ export const Card0: React.FunctionComponent<CardProps> = ({
         isCompact && styles.modifiers.compact,
         className
       )}
-      ref={innerRef}
       {...props}
     >
       {children}
     </Component>
   );
 };
-
-// eslint-disable-next-line react/no-multi-comp
-export const Card = React.forwardRef<any, CardProps>((props, ref) => (
-  <Card0 innerRef={ref} {...props} />
-));
