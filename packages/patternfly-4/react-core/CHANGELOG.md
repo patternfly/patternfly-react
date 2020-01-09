@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.130.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.0...@patternfly/react-core@3.130.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* **react-core transform plugin:** Use direct paths to react-icons in prod build ([#3448](https://github.com/patternfly/patternfly-react/issues/3448)) ([49814a7](https://github.com/patternfly/patternfly-react/commit/49814a72fa829de6fa6f34963a21c554fad7b06e))
+
+
+
+
+
 # [3.130.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.6...@patternfly/react-core@3.130.0) (2020-01-08)
 
 
