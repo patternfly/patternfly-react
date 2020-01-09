@@ -33,7 +33,7 @@ class Slider extends React.Component {
   };
 
   onFormatChange = format => {
-    this.setState({ tooltipFormat: format });
+    this.setState({ tooltipFormat: format }, this.props.onFormatChange(format));
   };
 
   formatter = value => `${value} ${this.state.tooltipFormat}`;
@@ -103,6 +103,7 @@ Slider.propTypes = {
   value: PropTypes.oneOfType([PropTypes.array, PropTypes.number]),
   toolTip: PropTypes.bool,
   onSlide: PropTypes.func,
+  onFormatChange: PropTypes.func,
   label: PropTypes.string,
   labelClass: PropTypes.string,
   icon: PropTypes.object,
@@ -121,6 +122,7 @@ Slider.defaultProps = {
   step: 1,
   toolTip: false,
   onSlide: noop,
+  onFormatChange: noop,
   label: null,
   labelClass: null,
   input: false,
