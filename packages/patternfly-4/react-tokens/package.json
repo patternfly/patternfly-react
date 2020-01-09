@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-tokens",
-  "version": "2.7.14",
+  "version": "2.7.15",
   "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
