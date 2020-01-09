@@ -194,6 +194,9 @@ jobs:
         name: TSLint
         command: yarn lint:ts || true
     - run:
+        name: Lint patternfly-react docs
+        command: ~/.yarn/bin/yarn lint:md
+    - run:
         name: "@patternfly/patternfly Versions Match"
         command: yarn lint:versions
     - run:
@@ -239,9 +242,6 @@ jobs:
     - run:
         name: Build patternfly-react docs
         command: ~/.yarn/bin/yarn build:docs
-    - run:
-        name: Lint patternfly-react docs
-        command: ~/.yarn/bin/yarn lint:md
     - save_cache:
         paths: *doc_build_cache_paths
         key: *doc_build_cache_key
