@@ -45,6 +45,9 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
+import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
+import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
 import dropBoxIcon from './camel-dropbox_200x150.png';
@@ -108,6 +111,7 @@ import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
+import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
 import dropBoxIcon from './camel-dropbox_200x150.png';
@@ -122,48 +126,72 @@ class CardViewDefaultNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isPageDropdownOpen: false,
-      isToolbarDropdownOpen: false,
-      isToolbarKebabDropdownOpen: false,
+      isUpperToolbarDropdownOpen: false,
+      isUpperToolbarKebabDropdownOpen: false,
+      isLowerToolbarDropdownOpen: false,
+      isLowerToolbarKebabDropdownOpen: false,
+      isCardKebabDropdownOpen0: false,
+      isCardKebabDropdownOpen1: false,
+      isCardKebabDropdownOpen2: false,
+      isCardKebabDropdownOpen3: false,
+      isCardKebabDropdownOpen4: false,
+      isCardKebabDropdownOpen5: false,
+      isCardKebabDropdownOpen6: false,
+      isCardKebabDropdownOpen7: false,
+      isCardKebabDropdownOpen8: false,
+      isCardKebabDropdownOpen9: false,
       check1: false,
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
       perPage: 20
     };
-    this.onPageDropdownToggle = isPageDropdownOpen => {
+    this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
       this.setState({
-        isPageDropdownOpen
+        isUpperToolbarDropdownOpen
       });
     };
 
     this.onPageDropdownSelect = event => {
       this.setState({
-        isPageDropdownOpen: !this.state.isPageDropdownOpen
+        isUpperToolbarDropdownOpen: !this.state.isUpperToolbarDropdownOpen
       });
     };
 
-    this.onToolbarDropdownToggle = isToolbarDropdownOpen => {
+    this.onPageToolbarDropdownToggle = isPageToolbarDropdownOpen => {
       this.setState({
-        isToolbarDropdownOpen
+        isPageToolbarDropdownOpen
       });
     };
 
-    this.onToolbarDropdownSelect = event => {
+     this.onPageToolbarKebabDropdownToggle = isUpperToolbarKebabDropdownOpen => {
       this.setState({
-        isToolbarDropdownOpen: !this.state.isToolbarDropdownOpen
+        isUpperToolbarKebabDropdownOpen
       });
     };
 
-    this.onToolbarKebabDropdownToggle = isToolbarKebabDropdownOpen => {
+    this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
       this.setState({
-        isToolbarKebabDropdownOpen
+        isLowerToolbarDropdownOpen
+      });
+    };
+
+   this.onToolbarDropdownSelect = event => {
+      this.setState({
+        isLowerToolbarDropdownOpen: !this.state.isLowerToolbarDropdownOpen
+      });
+    };
+
+  this.onToolbarKebabDropdownToggle = (isLowerToolbarKebabDropdownOpen) => {
+      this.setState({
+        isLowerToolbarKebabDropdownOpen
       });
     };
 
     this.onToolbarKebabDropdownSelect = event => {
+      /* console.log("boop"); */
       this.setState({
-        isToolbarKebabDropdownOpen: !this.state.isToolbarKebabDropdownOpen
+        isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
       this.onFocus();
     };
@@ -173,15 +201,127 @@ class CardViewDefaultNav extends React.Component {
       element.focus();
     };
 
-    this.onCardKebabDropdownToggle = isCardKebabDropdownOpen => {
+    this.onCardKebabDropdownToggle0 = isCardKebabDropdownOpen0 => {
       this.setState({
-        isCardKebabDropdownOpen
+        isCardKebabDropdownOpen0
       });
     };
 
-    this.onCardKebabDropdownSelect = event => {
+    this.onCardKebabDropdownSelect0 = event => {
       this.setState({
-        isCardKebabDropdownOpen: !this.state.isCardKebabDropdownOpen
+        isCardKebabDropdownOpen0: !this.state.isCardKebabDropdownOpen0
+      });
+    };
+
+    this.onCardKebabDropdownToggle1 = isCardKebabDropdownOpen1 => {
+      this.setState({
+        isCardKebabDropdownOpen1
+      });
+    };
+
+    this.onCardKebabDropdownSelect1 = event => {
+      this.setState({
+        isCardKebabDropdownOpen1: !this.state.isCardKebabDropdownOpen1
+      });
+    };
+  
+    this.onCardKebabDropdownToggle2 = isCardKebabDropdownOpen2 => {
+      this.setState({
+        isCardKebabDropdownOpen2
+      });
+    };
+
+    this.onCardKebabDropdownSelect2 = event => {
+      this.setState({
+        isCardKebabDropdownOpen2: !this.state.isCardKebabDropdownOpen2
+      });
+    };
+
+    this.onCardKebabDropdownToggle3 = isCardKebabDropdownOpen3 => {
+      /* console.log("hskd"); */
+      this.setState({
+        isCardKebabDropdownOpen3
+      });
+    };
+
+    this.onCardKebabDropdownSelect3 = event => {
+      this.setState({
+        isCardKebabDropdownOpen3: !this.state.isCardKebabDropdownOpen3
+      });
+    };
+
+    this.onCardKebabDropdownToggle4 = isCardKebabDropdownOpen4 => {
+      this.setState({
+        isCardKebabDropdownOpen4
+      });
+    };
+
+    this.onCardKebabDropdownSelect4 = event => {
+      this.setState({
+        isCardKebabDropdownOpen4: !this.state.isCardKebabDropdownOpen4
+      });
+    };
+
+    this.onCardKebabDropdownToggle5 = isCardKebabDropdownOpen5 => {
+      this.setState({
+        isCardKebabDropdownOpen5
+      });
+    };
+
+    this.onCardKebabDropdownSelect5 = event => {
+      this.setState({
+        isCardKebabDropdownOpen5: !this.state.isCardKebabDropdownOpen5
+      });
+    };
+
+    this.onCardKebabDropdownToggle6 = isCardKebabDropdownOpen6 => {
+      this.setState({
+        isCardKebabDropdownOpen6
+      });
+    };
+
+    this.onCardKebabDropdownSelect6 = event => {
+      this.setState({
+        isCardKebabDropdownOpen6: !this.state.isCardKebabDropdownOpen6
+      });
+    };
+
+    this.onCardKebabDropdownToggle7 = isCardKebabDropdownOpen7 => {
+      /* console.log("hskd"); */
+      this.setState({
+        isCardKebabDropdownOpen7
+      });
+    };
+
+    this.onCardKebabDropdownSelect7 = event => {
+      this.setState({
+        isCardKebabDropdownOpen7: !this.state.isCardKebabDropdownOpen7
+      });
+    };
+
+    this.onCardKebabDropdownToggle8 = isCardKebabDropdownOpen8 => {
+      /* console.log("hskd"); */
+      this.setState({
+        isCardKebabDropdownOpen8
+      });
+    };
+
+    this.onCardKebabDropdownSelect8 = event => {
+      this.setState({
+        isCardKebabDropdownOpen8: !this.state.isCardKebabDropdownOpen8
+      });
+    };
+
+    this.onCardKebabDropdownToggle9 = isCardKebabDropdownOpen9 => {
+      /* console.log("hskd"); */
+      this.setState({
+        isCardKebabDropdownOpen9
+      });
+    };
+
+    this.onCardKebabDropdownSelect8 = event => {
+      this.setState({
+        isCardKebabDropdownOpen9: !this.state.isCardKebabDropdownOpen9
       });
     };
 
@@ -225,7 +365,22 @@ class CardViewDefaultNav extends React.Component {
   }
 
   render() {
-    const { isPageDropdownOpen, isToolbarDropdownOpen, isCardKebabDropdownOpen, isToolbarKebabDropdownOpen, activeItem, splitButtonDropdownIsOpen } = this.state;
+    const { isUpperToolbarDropdownOpen,
+            isLowerToolbarDropdownOpen,
+            isUpperToolbarKebabDropdownOpen,
+            isLowerToolbarKebabDropdownOpen,
+            isCardKebabDropdownOpen0,
+            isCardKebabDropdownOpen1,
+            isCardKebabDropdownOpen2,
+            isCardKebabDropdownOpen3,
+            isCardKebabDropdownOpen4,
+            isCardKebabDropdownOpen5,
+            isCardKebabDropdownOpen6,
+            isCardKebabDropdownOpen7,
+            isCardKebabDropdownOpen8,
+            isCardKebabDropdownOpen9,
+            splitButtonDropdownIsOpen,
+            activeItem} = this.state;
 
     const splitButtonDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -301,7 +456,7 @@ class CardViewDefaultNav extends React.Component {
             onSelect={this.onToolbarDropdownSelect}
             position={DropdownPosition.right}
             toggle={<DropdownToggle onToggle={this.onToolbarDropdownToggle}>Creator</DropdownToggle>}
-            isOpen={isToolbarDropdownOpen}
+            isOpen={isLowerToolbarDropdownOpen}
             dropdownItems={filterDropdownItems}
           />
       </DataToolbarItem>
@@ -310,7 +465,7 @@ class CardViewDefaultNav extends React.Component {
         <Dropdown
           onSelect={this.onToolbarKebabDropdownSelect}
           toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6"/>}
-          isOpen={isToolbarKebabDropdownOpen}
+          isOpen={isLowerToolbarKebabDropdownOpen}
           isPlain
           dropdownItems={toolbarKebabDropdownItems}
         />
@@ -381,8 +536,8 @@ class CardViewDefaultNav extends React.Component {
               isPlain
               position="right"
               onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} />}
-              isOpen={isToolbarKebabDropdownOpen}
+              toggle={<KebabToggle onToggle={this.onPageToolbarKebabDropdownToggle} />}
+              isOpen={isUpperToolbarKebabDropdownOpen}
               dropdownItems={toolbarKebabDropdownItems}
             />
           </ToolbarItem>
@@ -391,7 +546,7 @@ class CardViewDefaultNav extends React.Component {
               isPlain
               position="right"
               onSelect={this.onPageDropdownSelect}
-              isOpen={isPageDropdownOpen}
+              isOpen={isUpperToolbarDropdownOpen}
               toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>Kyle Baker</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
@@ -438,14 +593,14 @@ class CardViewDefaultNav extends React.Component {
                <React.Fragment>
                     <Card isHoverable key={0}>
                           <CardHead>
-                                <img src={imgBrand} style={{height: "50px"}}/>
+                                <img src={pfIcon} style={{height: "50px"}}/>
                                 <CardActions>
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect0}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle0} />}
+                                      isOpen={isCardKebabDropdownOpen0}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -470,9 +625,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect1}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle1} />}
+                                      isOpen={isCardKebabDropdownOpen1}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -497,9 +652,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect2}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle2} />}
+                                      isOpen={isCardKebabDropdownOpen2}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -524,9 +679,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect3}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle3} />}
+                                      isOpen={isCardKebabDropdownOpen3}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -551,9 +706,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect4}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle4} />}
+                                      isOpen={isCardKebabDropdownOpen4}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -578,9 +733,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect5}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle5} />}
+                                      isOpen={isCardKebabDropdownOpen5}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -605,9 +760,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect6}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle6} />}
+                                      isOpen={isCardKebabDropdownOpen6}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -632,9 +787,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect7}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle7} />}
+                                      isOpen={isCardKebabDropdownOpen7}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -659,9 +814,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onCardKebabDropdownSelect8}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle8} />}
+                                      isOpen={isCardKebabDropdownOpen8}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
@@ -686,9 +841,9 @@ class CardViewDefaultNav extends React.Component {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={this.onKebabDropdownSelect}
-                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle} />}
-                                      isOpen={isCardKebabDropdownOpen}
+                                      onSelect={this.onKebabDropdownSelect9}
+                                      toggle={<KebabToggle onToggle={this.onCardKebabDropdownToggle9} />}
+                                      isOpen={isCardKebabDropdownOpen9}
                                       dropdownItems={cardKebabDropdownItems}
                                     />
                                     <input
