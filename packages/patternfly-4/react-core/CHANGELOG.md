@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.130.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.3...@patternfly/react-core@3.130.4) (2020-01-10)
+
+
+### Bug Fixes
+
+* **pagination:** disable navigation input if page is equal to zero ([#3472](https://github.com/patternfly/patternfly-react/issues/3472)) ([09e1bf3](https://github.com/patternfly/patternfly-react/commit/09e1bf321f488291c2733d3c3c2141592d944c61))
+
+
+
+
+
 ## [3.130.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.2...@patternfly/react-core@3.130.3) (2020-01-09)
 
 **Note:** Version bump only for package @patternfly/react-core
