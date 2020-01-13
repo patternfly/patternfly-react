@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.17.0...@patternfly/react-integration@3.17.1) (2020-01-13)
+
+
+### Bug Fixes
+
+* **select:** Add the type prop to the select toggle button ([#3495](https://github.com/patternfly/patternfly-react/issues/3495)) ([e61c0bd](https://github.com/patternfly/patternfly-react/commit/e61c0bd6894d0fad70e89829fb114766b6e88108))
+
+
+
+
+
 # [3.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.16.1...@patternfly/react-integration@3.17.0) (2020-01-08)
 
 

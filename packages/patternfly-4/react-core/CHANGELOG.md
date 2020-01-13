@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.130.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.5...@patternfly/react-core@3.130.6) (2020-01-13)
+
+
+### Bug Fixes
+
+* **select:** Add the type prop to the select toggle button ([#3495](https://github.com/patternfly/patternfly-react/issues/3495)) ([e61c0bd](https://github.com/patternfly/patternfly-react/commit/e61c0bd6894d0fad70e89829fb114766b6e88108))
+
+
+
+
+
 ## [3.130.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.4...@patternfly/react-core@3.130.5) (2020-01-13)
 
 
