@@ -1,6 +1,6 @@
 ---
-title: 'Catalog tile'
-section: 'catalog view'
+title: 'Catalog view tile'
+section: 'extensions'
 propComponents: ['CatalogTile']
 typescript: true
 ---

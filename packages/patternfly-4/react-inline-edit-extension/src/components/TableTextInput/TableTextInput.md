@@ -1,6 +1,6 @@
 ---
-title: 'Table text input'
-section: 'inline table'
+title: 'Inline table text input'
+section: 'extensions'
 propComponents: ['TableTextInput']
 ---
 
