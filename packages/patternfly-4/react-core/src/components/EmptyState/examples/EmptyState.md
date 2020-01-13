@@ -142,9 +142,9 @@ import {
 EmptyStateSpinner = () => {
   const Spinner = () => (
     <span className="pf-c-spinner" role="progressbar" aria-valuetext="Loading...">
-      <span class="pf-c-spinner__clipper" />
-      <span class="pf-c-spinner__lead-ball" />
-      <span class="pf-c-spinner__tail-ball" />
+      <span className="pf-c-spinner__clipper" />
+      <span className="pf-c-spinner__lead-ball" />
+      <span className="pf-c-spinner__tail-ball" />
     </span>
   )
   return (
@@ -164,6 +164,7 @@ import {
   Title,
   Button,
   EmptyState,
+  EmptyStatePrimary,
   EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
