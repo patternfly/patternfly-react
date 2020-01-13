@@ -360,7 +360,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     <Portal
                       containerInfo={
                         <div
-                          class="pf-c-data-toolbar__group pf-m-filter-group"
+                          class="pf-c-data-toolbar__group"
                         >
                           <div
                             class="pf-c-data-toolbar__item pf-m-chip-group"
@@ -1073,7 +1073,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     <Portal
                       containerInfo={
                         <div
-                          class="pf-c-data-toolbar__group pf-m-filter-group"
+                          class="pf-c-data-toolbar__group"
                         >
                           <div
                             class="pf-c-data-toolbar__item pf-m-chip-group"
@@ -1567,7 +1567,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             class="pf-c-data-toolbar__content"
           >
             <div
-              class="pf-c-data-toolbar__group pf-m-filter-group"
+              class="pf-c-data-toolbar__group"
             >
               <div
                 class="pf-c-data-toolbar__item pf-m-chip-group"
@@ -1731,16 +1731,14 @@ exports[`data toolbar DataToolbarFilter 1`] = `
       >
         <ForwardRef
           className=""
-          variant="filter-group"
         >
           <DataToolbarGroupWithRef
             breakpointMods={Array []}
             className=""
             innerRef={null}
-            variant="filter-group"
           >
             <div
-              className="pf-c-data-toolbar__group pf-m-filter-group"
+              className="pf-c-data-toolbar__group"
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
@@ -2025,7 +2023,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
             hidden=""
           >
             <div
-              class="pf-c-data-toolbar__group pf-m-filter-group"
+              class="pf-c-data-toolbar__group"
             />
           </div>,
         }
@@ -2042,16 +2040,14 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
       >
         <ForwardRef
           className=""
-          variant="filter-group"
         >
           <DataToolbarGroupWithRef
             breakpointMods={Array []}
             className=""
             innerRef={null}
-            variant="filter-group"
           >
             <div
-              className="pf-c-data-toolbar__group pf-m-filter-group"
+              className="pf-c-data-toolbar__group"
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
@@ -2130,7 +2126,7 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
             hidden=""
           >
             <div
-              class="pf-c-data-toolbar__group pf-m-filter-group"
+              class="pf-c-data-toolbar__group"
             />
           </div>,
         }
@@ -2147,16 +2143,14 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
       >
         <ForwardRef
           className=""
-          variant="filter-group"
         >
           <DataToolbarGroupWithRef
             breakpointMods={Array []}
             className=""
             innerRef={null}
-            variant="filter-group"
           >
             <div
-              className="pf-c-data-toolbar__group pf-m-filter-group"
+              className="pf-c-data-toolbar__group"
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
@@ -2778,7 +2772,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
             hidden=""
           >
             <div
-              class="pf-c-data-toolbar__group pf-m-filter-group"
+              class="pf-c-data-toolbar__group"
             />
           </div>,
         }
@@ -2795,16 +2789,14 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
       >
         <ForwardRef
           className=""
-          variant="filter-group"
         >
           <DataToolbarGroupWithRef
             breakpointMods={Array []}
             className=""
             innerRef={null}
-            variant="filter-group"
           >
             <div
-              className="pf-c-data-toolbar__group pf-m-filter-group"
+              className="pf-c-data-toolbar__group"
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
@@ -2935,7 +2927,7 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
             hidden=""
           >
             <div
-              class="pf-c-data-toolbar__group pf-m-filter-group"
+              class="pf-c-data-toolbar__group"
             />
           </div>,
         }
@@ -2952,16 +2944,14 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
       >
         <ForwardRef
           className=""
-          variant="filter-group"
         >
           <DataToolbarGroupWithRef
             breakpointMods={Array []}
             className=""
             innerRef={null}
-            variant="filter-group"
           >
             <div
-              className="pf-c-data-toolbar__group pf-m-filter-group"
+              className="pf-c-data-toolbar__group"
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
