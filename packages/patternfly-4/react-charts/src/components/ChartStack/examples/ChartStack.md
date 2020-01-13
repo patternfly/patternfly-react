@@ -26,7 +26,7 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 ## Examples
 ```js title=Basic-with-right-aligned-legend
 import React from 'react';
-import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 BasicRightAlignedLegend = (
   <div style={{ height: '250px', width: '600px' }}>
@@ -62,7 +62,7 @@ BasicRightAlignedLegend = (
 
 ```js title=Horizontal-with-bottom-aligned-legend
 import React from 'react';
-import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 Horizontal = (
   <div style={{ height: '275px', width: '450px' }}>
@@ -98,7 +98,7 @@ Horizontal = (
 
 ```js title=Multi--color-(ordered)-horizontal-with-bottom-aligned-legend
 import React from 'react';
-import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 MultiColorHorizontal = (
   <div>
@@ -168,7 +168,7 @@ MultiColorHorizontal = (
 
 ```js title=Monthly-data-with-responsive-container
 import React from 'react';
-import { Chart, ChartAxis, ChartStack, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
@@ -284,7 +284,7 @@ class MonthlyResponsiveStack extends React.Component {
 
 ```js title=Multi--color-(unordered)-responsive-container
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
