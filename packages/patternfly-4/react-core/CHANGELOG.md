@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.130.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.4...@patternfly/react-core@3.130.5) (2020-01-13)
+
+
+### Bug Fixes
+
+* **DataToolbar:** add and remove some modifiers to match core ([#3422](https://github.com/patternfly/patternfly-react/issues/3422)) ([034c041](https://github.com/patternfly/patternfly-react/commit/034c041c8237c906778edfc3287c5e2193480a53))
+
+
+
+
+
 ## [3.130.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.3...@patternfly/react-core@3.130.4) (2020-01-10)
 
 
