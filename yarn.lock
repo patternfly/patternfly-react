@@ -2991,9 +2991,9 @@
     selenium-webdriver "^4.0.0-alpha.5"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@2.47.1":
-  version "2.47.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.47.1.tgz#ad1b35ba221725aa5b3571ba4705951fce818637"
+"@patternfly/patternfly@2.48.1":
+  version "2.48.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.48.1.tgz#6d0c4beb1742c68899a21bc2900c8cb5823d3c60"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
