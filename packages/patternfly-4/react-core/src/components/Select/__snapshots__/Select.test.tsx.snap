@@ -3525,6 +3525,7 @@ exports[`select custom select filter filters properly 1`] = `
                     aria-labelledby=" pf-toggle-id-6"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-6"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -3622,6 +3623,7 @@ exports[`select custom select filter filters properly 1`] = `
               disabled={false}
               id="pf-toggle-id-6"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -6625,6 +6627,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                     aria-labelledby=" pf-toggle-id-22"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-22"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -6681,6 +6684,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               disabled={false}
               id="pf-toggle-id-22"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -6884,6 +6888,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-labelledby=" pf-toggle-id-23"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-23"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -6993,6 +6998,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               disabled={false}
               id="pf-toggle-id-23"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -7444,6 +7450,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     aria-labelledby=" pf-toggle-id-24"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-24"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -7948,6 +7955,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               disabled={false}
               id="pf-toggle-id-24"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -8362,6 +8370,7 @@ exports[`typeahead multi select test onChange 1`] = `
                     aria-labelledby=" pf-toggle-id-26"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-26"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -8435,6 +8444,7 @@ exports[`typeahead multi select test onChange 1`] = `
               disabled={false}
               id="pf-toggle-id-26"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -8686,6 +8696,7 @@ exports[`typeahead select renders closed successfully 1`] = `
                     aria-labelledby=" pf-toggle-id-15"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-15"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -8742,6 +8753,7 @@ exports[`typeahead select renders closed successfully 1`] = `
               disabled={false}
               id="pf-toggle-id-15"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -8944,6 +8956,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                     aria-labelledby=" pf-toggle-id-16"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-16"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -9053,6 +9066,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               disabled={false}
               id="pf-toggle-id-16"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -9423,6 +9437,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                     aria-labelledby=" pf-toggle-id-17"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-17"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -9583,6 +9598,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               disabled={false}
               id="pf-toggle-id-17"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -9960,6 +9976,7 @@ exports[`typeahead select test creatable option 1`] = `
                     aria-labelledby=" pf-toggle-id-21"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-21"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -10036,6 +10053,7 @@ exports[`typeahead select test creatable option 1`] = `
               disabled={false}
               id="pf-toggle-id-21"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
@@ -10294,6 +10312,7 @@ exports[`typeahead select test onChange 1`] = `
                     aria-labelledby=" pf-toggle-id-19"
                     class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-19"
+                    type="button"
                   >
                     <svg
                       aria-hidden="true"
@@ -10367,6 +10386,7 @@ exports[`typeahead select test onChange 1`] = `
               disabled={false}
               id="pf-toggle-id-19"
               onClick={[Function]}
+              type="button"
             >
               <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
