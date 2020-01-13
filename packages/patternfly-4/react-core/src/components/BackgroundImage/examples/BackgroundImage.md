@@ -10,6 +10,8 @@ import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic isFullscreen
+import { BackgroundImage } from '@patternfly/react-core';
+
 class SimpleBackgroundImage extends React.Component {
   constructor(props) {
     super(props);
