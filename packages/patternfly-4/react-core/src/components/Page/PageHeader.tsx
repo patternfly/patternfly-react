@@ -57,7 +57,7 @@ export const PageHeader = ({
         const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
         return (
-          <header role="banner" className={css(styles.pageHeader, className)} {...props}>
+          <header className={css(styles.pageHeader, className)} {...props}>
             {(showNavToggle || logo) && (
               <div className={css(styles.pageHeaderBrand)}>
                 {showNavToggle && (
