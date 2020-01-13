@@ -13,7 +13,6 @@
   },
   "rules": {
     "eol-last": 1,
-    "no-console": 1,
     "spaced-comment": 1,
     "no-unused-vars": 0,
     "react/jsx-uses-react": "error",
