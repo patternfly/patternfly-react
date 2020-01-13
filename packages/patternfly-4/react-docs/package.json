@@ -20,7 +20,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",
     "@mdx-js/react": "^1.1.5",
-    "@patternfly/patternfly": "2.48.1",
+    "@patternfly/patternfly": "2.49.0",
     "@patternfly/react-catalog-view-extension": "^1.1.71",
     "@patternfly/react-charts": "^5.2.13",
     "@patternfly/react-core": "^3.130.6",
