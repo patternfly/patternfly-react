@@ -969,10 +969,10 @@ class SplitButtonActionDropdown extends React.Component {
       });
     };
     this.onActionClick = event => {
-      alert('Action clicked!');
+      console.log('Action clicked!');
     };
     this.onCogClick = event => {
-      alert('Cog clicked!');
+      console.log('Cog clicked!');
     };
     this.onActionSelect = event => {
       this.setState({
