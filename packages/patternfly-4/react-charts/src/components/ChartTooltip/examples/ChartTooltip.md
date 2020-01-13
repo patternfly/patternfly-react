@@ -83,7 +83,7 @@ VononoiContainer = (
 
 ```js title=Data-label
 import React from 'react';
-import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 DataLabel = (
   <div>
@@ -153,7 +153,7 @@ DataLabel = (
 
 ```js title=Legend
 import React from 'react';
-import { ChartLabel, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
 class TooltipPieChart extends React.Component {
@@ -212,7 +212,7 @@ class TooltipPieChart extends React.Component {
 
 ```js title=Left-aligned
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, getCustomTheme } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 
 class TooltipThemeChart extends React.Component {
   constructor(props) {

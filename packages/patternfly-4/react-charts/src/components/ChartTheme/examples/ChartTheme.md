@@ -197,7 +197,7 @@ MultiColorUnordered = (
 
 ```js title=Custom-colors
 import React from 'react';
-import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 CustomColors = (
   <div>
@@ -296,7 +296,7 @@ CustomColors = (
 
 ```js title=Custom-theme
 import React from 'react';
-import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, getCustomTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import {
   chart_color_blue_300,
   chart_color_green_300,

@@ -90,7 +90,7 @@ BasicRightAlignedLegend = (
 
 ```js title=Cyan-with-bottom-aligned-legend-and-axis-label
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 BottomAlignedLegend = (
@@ -152,7 +152,7 @@ BottomAlignedLegend = (
 
 ```js title=Multi--color-(unordered)-bottom--left-aligned-legend-and-responsive-container
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class MultiColorChart extends React.Component {
