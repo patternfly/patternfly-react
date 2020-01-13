@@ -18,7 +18,7 @@ npm install react-catalog-view-extension --save
 
 ### Usage
 
-```javascript
+```
 import { Component } from 'react-catalog-view-extension';
 ```
 

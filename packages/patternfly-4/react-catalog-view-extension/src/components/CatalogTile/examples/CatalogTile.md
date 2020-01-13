@@ -20,6 +20,7 @@ This package is currently an extension. Extension components do not undergo the 
 ```js title=Basic-featured-tile
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CogIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 
 Basic = () => (
@@ -49,6 +50,7 @@ Basic = () => (
 ```js title=Basic-without-truncated-text
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CogIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 
 SimpleNoTrunc = () => (
@@ -78,6 +80,7 @@ SimpleNoTrunc = () => (
 ```js title=Basic-with-footer
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 
 SimpleFooter = () => (
@@ -111,6 +114,7 @@ SimpleFooter = () => (
 ```js title=Link-variant
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CogIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 
 Link = () => (
@@ -140,6 +144,7 @@ Link = () => (
 ```js title=With-multiple-icon-badges
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 
 MultiIcon = () => (
@@ -170,7 +175,7 @@ MultiIcon = () => (
 
 ```js title=With-text-badge
 import React from 'react';
-import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
+import { CatalogTile } from '@patternfly/react-catalog-view-extension';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 
 TextBadge = () => (
