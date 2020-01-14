@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.13](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.12...patternfly-react@2.39.13) (2020-01-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** try using toLocaleTimeString ([#3506](https://github.com/patternfly/patternfly-react/issues/3506)) ([93fc971](https://github.com/patternfly/patternfly-react/commit/93fc971fff83b5241e388dc8d0248b5a59359f9d))
+
+
+
+
+
 ## [2.39.12](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.11...patternfly-react@2.39.12) (2020-01-09)
 
 **Note:** Version bump only for package patternfly-react
