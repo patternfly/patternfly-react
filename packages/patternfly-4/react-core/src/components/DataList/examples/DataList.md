@@ -637,7 +637,10 @@ import {
   DataListToggle,
   DataListContent,
   DataListItemCells,
-  DataListItemRow
+  DataListItemRow,
+  Dropdown,
+  DropdownItem,
+  KebabToggle
 } from '@patternfly/react-core';
 
 class ModifiersDataList extends React.Component {

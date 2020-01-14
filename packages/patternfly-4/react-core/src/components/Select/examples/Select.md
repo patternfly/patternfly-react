@@ -302,7 +302,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 
 ```js title=Typeahead
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class TypeaheadSelectInput extends React.Component {
   constructor(props) {
@@ -519,7 +519,7 @@ class TypeaheadSelectInput extends React.Component {
 
 ```js title=Multiple
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class MultiTypeaheadSelectInput extends React.Component {
   constructor(props) {
