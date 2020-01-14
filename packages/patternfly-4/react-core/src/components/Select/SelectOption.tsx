@@ -7,7 +7,9 @@ import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionObject {
+  /** Function returns a string to represent the select option object */
   toString(): string;
+  /** Function returns a true if the passed in select option is equal to this select option object, false otherwise */
   compareTo?(selectOption: any): boolean;
 }
 export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
@@ -19,7 +21,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   index?: number;
   /** Indicates which component will be used as select item */
   component?: React.ReactNode;
-  /** The value for the option, if passing an object you most provide a toString function and optional compareTo function */
+  /** The value for the option, can be a string or select option object */
   value: string | SelectOptionObject;
   /** Flag indicating if the option is disabled */
   isDisabled?: boolean;

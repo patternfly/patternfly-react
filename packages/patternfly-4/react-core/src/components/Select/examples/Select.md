@@ -2,7 +2,7 @@
 title: 'Select'
 section: components
 cssPrefix: 'pf-c-select'
-propComponents: ['Select', 'SelectOption', 'SelectGroup']
+propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
 typescript: true
 ---
 
