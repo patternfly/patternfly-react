@@ -14,7 +14,7 @@ export const formatTime = (time, locale = 'en-US') => {
   const options = { hour: '2-digit', minute: '2-digit' };
   const parsedTime = getDateFromTime(time);
   if (Date.parse(parsedTime)) {
-    return parsedTime.toLocaleString(locale, options);
+    return parsedTime.toLocaleTimeString(locale, options);
   }
   return time;
 };
