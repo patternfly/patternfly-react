@@ -25,6 +25,7 @@ import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 ```js title=Basic
 import React from 'react';
 import {
+  Checkbox,
   Pagination, 
   PaginationVariant, 
   Title, 
@@ -42,6 +43,7 @@ import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
+    super();
     this.state = {
       res: [],
       perPage: 0,
@@ -182,6 +184,7 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
+    super();
     this.columns = [
       { title: "First column" },
       { title: "Second column" },
