@@ -64,7 +64,7 @@ import { Table, TableHeader, TableBody, TextInput } from '@patternfly/react-tabl
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       filters: {
         location: [],

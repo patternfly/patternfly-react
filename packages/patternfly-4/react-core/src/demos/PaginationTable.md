@@ -41,7 +41,7 @@ import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       res: [],
       perPage: 0,
@@ -182,7 +182,7 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.columns = [
       { title: "First column" },
       { title: "Second column" },

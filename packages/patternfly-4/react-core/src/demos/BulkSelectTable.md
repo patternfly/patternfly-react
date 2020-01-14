@@ -12,7 +12,7 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class BulkSelectTableDemo extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       res: [],
       perPage: 20,
