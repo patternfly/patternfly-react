@@ -15,6 +15,7 @@
     "eol-last": 1,
     "spaced-comment": 1,
     "no-unused-vars": 0,
+    "no-this-before-super": 1,
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/no-unknown-property": 1,
