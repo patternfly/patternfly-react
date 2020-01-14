@@ -7,11 +7,12 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ```js title=Simple
 import React from 'react';
-import { Checkbox, Dropdown, DropdownItem, DropdownToggle, DropdownToggleCheckbox, Pagination, Title, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownPosition, DropdownToggle, DropdownToggleCheckbox, Pagination, Title, Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class BulkSelectTableDemo extends React.Component {
   constructor(props) {
+    super();
     this.state = {
       res: [],
       perPage: 20,
