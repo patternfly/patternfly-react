@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import {
   Avatar,
   Brand,
@@ -32,7 +32,9 @@ import {
   Text,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  DropdownToggleCheckbox,
+  Pagination
 } from '@patternfly/react-core';
 // make sure you've installed @patternfly/patternfly
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -41,18 +43,89 @@ import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
-import pfIcon from './pf-logo-small.svg';
-import activeMQIcon from './activemq-core_200x150.png';
-import avroIcon from './camel-avro_200x150.png';
-import dropBoxIcon from './camel-dropbox_200x150.png';
-import infinispanIcon from './camel-infinispan_200x150.png';
-import saxonIcon from './camel-saxon_200x150.png';
-import sparkIcon from './camel-spark_200x150.png';
-import swaggerIcon from './camel-swagger-java_200x150.png';
-import azureIcon from './FuseConnector_Icons_AzureServices.png';
-import restIcon from './FuseConnector_Icons_REST.png';
+import pfIcon from './images/pf-logo-small.svg';
+import activeMQIcon from './images/activemq-core_200x150.png';
+import avroIcon from './images/camel-avro_200x150.png';
+import dropBoxIcon from './images/camel-dropbox_200x150.png';
+import infinispanIcon from './images/camel-infinispan_200x150.png';
+import saxonIcon from './images/camel-saxon_200x150.png';
+import sparkIcon from './images/camel-spark_200x150.png';
+import swaggerIcon from './images/camel-swagger-java_200x150.png';
+import azureIcon from './images/FuseConnector_Icons_AzureServices.png';
+import restIcon from './images/FuseConnector_Icons_REST.png';
 
-export class CardViewDefaultNavDemo extends React.Component {
+interface CardViewState {
+  isUpperToolbarDropdownOpen: boolean;
+  isUpperToolbarKebabDropdownOpen: boolean;
+  isLowerToolbarDropdownOpen: boolean;
+  isLowerToolbarKebabDropdownOpen: boolean;
+  isCardKebabDropdownOpen0: boolean;
+  isCardKebabDropdownOpen1: boolean;
+  isCardKebabDropdownOpen2: boolean;
+  isCardKebabDropdownOpen3: boolean;
+  isCardKebabDropdownOpen4: boolean;
+  isCardKebabDropdownOpen5: boolean;
+  isCardKebabDropdownOpen6: boolean;
+  isCardKebabDropdownOpen7: boolean;
+  isCardKebabDropdownOpen8: boolean;
+  isCardKebabDropdownOpen9: boolean;
+  check1: boolean;
+  activeItem: number;
+  splitButtonDropdownIsOpen: boolean;
+  page: number;
+  perPage: number;
+}
+
+export class CardViewDefaultNavDemo extends React.Component<{}, CardViewState> {
+  onPageDropdownToggle: (isUpperToolbarDropdownOpen: any) => void;
+  onPageDropdownSelect: (event: any) => void;
+
+  onPageToolbarDropdownToggle: (isPageToolbarDropdownOpen: any) => void;
+  onPageToolbarKebabDropdownToggle: (isUpperToolbarKebabDropdownOpen: any) => void;
+
+  onToolbarDropdownToggle: (isLowerToolbarDropdownOpen: any) => void;
+  onToolbarDropdownSelect: (event: any) => void;
+
+  onToolbarKebabDropdownToggle: (isLowerToolbarKebabDropdownOpen: any) => void;
+  onToolbarKebabDropdownSelect: (event: any) => void;
+
+  onCardKebabDropdownToggle0: (isCardKebabDropdownOpen0: any) => void;
+  onCardKebabDropdownSelect0: (event: any) => void;
+
+  onCardKebabDropdownToggle1: (isCardKebabDropdownOpen1: any) => void;
+  onCardKebabDropdownSelect1: (event: any) => void;
+
+  onCardKebabDropdownToggle2: (isCardKebabDropdownOpen2: any) => void;
+  onCardKebabDropdownSelect2: (event: any) => void;
+
+  onCardKebabDropdownToggle3: (isCardKebabDropdownOpen3: any) => void;
+  onCardKebabDropdownSelect3: (event: any) => void;
+
+  onCardKebabDropdownToggle4: (isCardKebabDropdownOpen4: any) => void;
+  onCardKebabDropdownSelect4: (event: any) => void;
+
+  onCardKebabDropdownToggle5: (isCardKebabDropdownOpen5: any) => void;
+  onCardKebabDropdownSelect5: (event: any) => void;
+
+  onCardKebabDropdownToggle6: (isCardKebabDropdownOpen6: any) => void;
+  onCardKebabDropdownSelect6: (event: any) => void;
+
+  onCardKebabDropdownToggle7: (isCardKebabDropdownOpen7: any) => void;
+  onCardKebabDropdownSelect7: (event: any) => void;
+
+  onCardKebabDropdownToggle8: (isCardKebabDropdownOpen8: any) => void;
+  onCardKebabDropdownSelect8: (event: any) => void;
+
+  onCardKebabDropdownToggle9: (isCardKebabDropdownOpen9: any) => void;
+  
+  onNavSelect: (result: any) => void;
+  onClick: (checked: any, event: any) => void;
+  onSetPage: (_event: any, pageNumber: any) => void;
+  onPerPageSelect: (_event: any, perPage: any) => void;
+  onSplitButtonToggle: (isOpen: any) => void;
+  onSplitButtonSelect: (event: any) => void;
+  onKebabDropdownSelect: (event?: SyntheticEvent<HTMLDivElement, Event>) => void;
+  onKebabDropdownSelect9: (event?: SyntheticEvent<HTMLDivElement, Event>) => void;
   constructor(props) {
     super(props);
     this.state = {
@@ -88,9 +161,9 @@ export class CardViewDefaultNavDemo extends React.Component {
       });
     };
 
-    this.onPageToolbarDropdownToggle = isPageToolbarDropdownOpen => {
+    this.onPageToolbarDropdownToggle = isUpperToolbarDropdownOpen => {
       this.setState({
-        isPageToolbarDropdownOpen
+        isUpperToolbarDropdownOpen
       });
     };
 
@@ -122,12 +195,6 @@ export class CardViewDefaultNavDemo extends React.Component {
       this.setState({
         isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
-      this.onFocus();
-    };
-
-    this.onFocus = () => {
-      const element = document.getElementById('toggle-id-6');
-      element.focus();
     };
 
     this.onCardKebabDropdownToggle0 = isCardKebabDropdownOpen0 => {
@@ -280,7 +347,6 @@ export class CardViewDefaultNavDemo extends React.Component {
     };
 
     this.onSplitButtonToggle = isOpen => {
-      console.log('hm');
       this.setState({
         splitButtonDropdownIsOpen: isOpen
       });
