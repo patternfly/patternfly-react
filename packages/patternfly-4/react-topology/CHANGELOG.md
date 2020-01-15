@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.61](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.60...@patternfly/react-topology@2.11.61) (2020-01-15)
+
+
+### Bug Fixes
+
+* **linting:** minor updates to TopologyView package, missing imports in markdown examples ([#3510](https://github.com/patternfly/patternfly-react/issues/3510)) ([4561c59](https://github.com/patternfly/patternfly-react/commit/4561c59522d4834505b5b50215a78ed3096ba400))
+
+
+
+
+
+## [2.11.60](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.59...@patternfly/react-topology@2.11.60) (2020-01-15)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [2.11.59](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.58...@patternfly/react-topology@2.11.59) (2020-01-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [2.11.58](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.57...@patternfly/react-topology@2.11.58) (2020-01-13)
 
 **Note:** Version bump only for package @patternfly/react-topology

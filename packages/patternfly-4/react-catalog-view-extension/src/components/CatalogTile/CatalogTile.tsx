@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';
 import { CatalogTileBadge } from './CatalogTileBadge';
-
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
   id?: any;
@@ -63,7 +62,6 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     if (max === -1 || typeof text !== 'string' || text.length <= max) {
       return text;
     }
-
     return (
       <React.Fragment>
         {text.substring(0, max - 3)}
@@ -71,13 +69,6 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       </React.Fragment>
     );
   };
-
-  private isTruncated = (text: string | React.ReactNode, max: number) => {
-    if (max === -1 || typeof text !== 'string' || text.length <= max) {
-      return false;
-    }
-    return true;
-  }
 
   private handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
     const { onClick, href } = this.props;
@@ -126,28 +117,27 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       ...props
     } = this.props;
     const truncateDescription = truncateDescriptionFn || this.defaultTruncateDescription;
-    const isTruncated = this.isTruncated(description, maxDescriptionLength);
 
     return (
       <Card component={href || onClick ? 'a' : 'div'} id={id} href={href || '#'} className={classNames('catalog-tile-pf', { featured }, className)} onClick={e => this.handleClick(e)} isHoverable {...props}>
-        <CardHead>
+        {(badges.length > 0 || iconImg || iconClass || icon) && <CardHead>
           {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
           {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
-          <CardActions>
+          {badges.length > 0 && <CardActions>
             {this.renderBadges(badges)}
-          </CardActions>
-        </CardHead>
+          </CardActions>}
+        </CardHead>}
         <CardHeader className="catalog-tile-pf-header">
           <div className="catalog-tile-pf-title">{title}</div>
-          <div className="catalog-tile-pf-subtitle">{vendor}</div>
+          {vendor && <div className="catalog-tile-pf-subtitle">{vendor}</div>}
         </CardHeader>
-        <CardBody className="catalog-tile-pf-body">
+        {description && <CardBody className="catalog-tile-pf-body">
           <div className="catalog-tile-pf-description">
-            <span className={classNames({'truncated': isTruncated})}>
+            <span className={classNames({'has-footer': footer})}>
               {truncateDescription(description, maxDescriptionLength, id)}
             </span>
           </div>
-        </CardBody>
+        </CardBody>}
         {footer && <CardFooter className="catalog-tile-pf-footer">{footer}</CardFooter>}
       </Card>
     );

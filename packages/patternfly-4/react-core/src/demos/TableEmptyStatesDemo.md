@@ -20,14 +20,16 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 ```js title=Empty
 import React from 'react';
 import {
+  Bullseye,
+  Button,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateSecondaryActions,
-  Bullseye
+  Title
 } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons';
-import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class EmptyStateDemo extends React.Component {
 
@@ -74,6 +76,9 @@ class EmptyStateDemo extends React.Component {
 
 ```js title=Loading
 import React from 'react';
+import { Bullseye } from "@patternfly/react-core";
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
 class LoadingStateDemo extends React.Component {
 
@@ -114,6 +119,17 @@ class LoadingStateDemo extends React.Component {
 
 ```js title=Error
 import React from 'react';
+import {
+  Bullseye,
+  EmptyState,
+  EmptyStateBody,
+  EmptyStateIcon,
+  EmptyStateVariant,
+  Title
+} from '@patternfly/react-core';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 
 class LoadingStateDemo extends React.Component {
 
