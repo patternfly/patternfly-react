@@ -42,6 +42,14 @@ import {
   DataToolbarGroup
 } from '@patternfly/react-core/dist/esm/experimental';
 import {
+  Button,
+  ButtonVariant,
+  Bullseye,
+  Dropdown, 
+  DropdownItem, 
+  DropdownPosition,
+  DropdownToggle,
+  InputGroup, 
   Title,
   Select,
   SelectOption,
@@ -49,14 +57,14 @@ import {
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
-  Bullseye
+  EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import { SearchIcon } from '@patternfly/react-icons';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
+import { Table, TableHeader, TableBody, TextInput } from '@patternfly/react-table';
 
 class FilterTableDemo extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       filters: {
         location: [],
