@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.130.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.9...@patternfly/react-core@3.130.10) (2020-01-15)
+
+
+### Bug Fixes
+
+* **PageHeader:** removing redundant role="banner" attribute ([#3499](https://github.com/patternfly/patternfly-react/issues/3499)) ([d9452de](https://github.com/patternfly/patternfly-react/commit/d9452de235963e33178057a24305e2cf365d5097))
+
+
+
+
+
 ## [3.130.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.8...@patternfly/react-core@3.130.9) (2020-01-15)
 
 **Note:** Version bump only for package @patternfly/react-core
