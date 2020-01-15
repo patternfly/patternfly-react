@@ -1094,7 +1094,7 @@ class CompoundExpandableTable extends React.Component {
   onExpand(event, rowIndex, colIndex, isOpen, rowData, extraData) {
     const { rows } = this.state;
     if (!isOpen) {
-      //set all other expanded cells false in this row if we are expanding
+      // set all other expanded cells false in this row if we are expanding
       rows[rowIndex].cells.forEach(cell => {
         if (cell.props) cell.props.isOpen = false;
       });
@@ -1167,7 +1167,8 @@ class WrappableHeadersTable extends React.Component {
 ```js title=Empty-state
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title } from '@patternfly/react-core';
+import { EmptyStateIcon } from '@patternfly/react-icons';
 
 EmptyStateTable = () => {
   const columns = ['Repositories', 'Branches', 'Pull request', 'Workspaces', 'LastCommit']
