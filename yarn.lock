@@ -3000,9 +3000,9 @@
     selenium-webdriver "^4.0.0-alpha.5"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@2.48.1":
-  version "2.48.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.48.1.tgz#6d0c4beb1742c68899a21bc2900c8cb5823d3c60"
+"@patternfly/patternfly@2.49.0":
+  version "2.49.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.49.0.tgz#478259878245d4cfba5678911b4bb69ae0a6a7b6"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
