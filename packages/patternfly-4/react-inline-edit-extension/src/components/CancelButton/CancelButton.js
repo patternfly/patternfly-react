@@ -1,5 +1,5 @@
 import React from 'react';
-import { CloseIcon } from '@patternfly/react-icons';
+import CloseIcon from '@patternfly/react-icons/dist/js/icons/close-icon';
 import { Button } from '@patternfly/react-core';
 
 const CancelButton = props => (

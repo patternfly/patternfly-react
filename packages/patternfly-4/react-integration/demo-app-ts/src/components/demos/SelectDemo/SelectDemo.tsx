@@ -11,7 +11,7 @@ import {
   Form
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import { CartArrowDownIcon } from '@patternfly/react-icons';
+import CartArrowDownIcon from '@patternfly/react-icons/dist/js/icons/cart-arrow-down-icon';
 import { State } from '../../../common/State';
 
 export interface SelectDemoState {

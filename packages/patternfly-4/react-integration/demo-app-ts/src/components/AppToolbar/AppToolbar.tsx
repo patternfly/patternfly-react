@@ -8,7 +8,7 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { CogIcon } from '@patternfly/react-icons';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 
 const isDropdownOpen: boolean = false;
 

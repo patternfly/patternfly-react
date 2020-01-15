@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { ChipButton } from './ChipButton';
 import { OneOf } from '../../helpers/typeUtils';
 import { Tooltip, TooltipPosition } from '../Tooltip';
-import { TimesCircleIcon } from '@patternfly/react-icons';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
