@@ -53,6 +53,7 @@ class DefaultTopologyView extends React.Component {
 ```js title=Selected-controls
 import React from 'react';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
+import { ItemDetails } from './ItemDetails';
 import { ViewToolbar } from './ViewToolbar';
 
 class SelectedTopologyView extends React.Component {
@@ -87,6 +88,7 @@ class SelectedTopologyView extends React.Component {
 import React from 'react';
 import { ExternalLinkAltIcon, FilmIcon, GlassCheersIcon } from '@patternfly/react-icons';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
+import { ItemDetails } from './ItemDetails';
 import { ViewToolbar } from './ViewToolbar';
 
 class CustomTopologyView extends React.Component {
