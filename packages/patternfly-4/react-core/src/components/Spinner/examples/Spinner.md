@@ -15,14 +15,14 @@ import { Alert } from '@patternfly/react-core';
 ## Examples
 ```js title=Basic
 import React from 'react';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 SpinnerBasic = () => (<Spinner/>);
 ```
 
 ```js title=Size-variations
 import React from 'react';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 SpinnerSizeVariations = () => (
 <React.Fragment>

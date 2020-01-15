@@ -36,6 +36,7 @@ export * from './Progress';
 export * from './Radio';
 export * from './Select';
 export * from './SkipToContent';
+export * from './Spinner';
 export * from './Switch';
 export * from './Tabs';
 export * from './Text';
