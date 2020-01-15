@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.75](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.74...@patternfly/react-virtualized-extension@1.3.75) (2020-01-15)
+
+
+### Bug Fixes
+
+* **linting:** minor updates to VirtualizedTable examples. ([#3513](https://github.com/patternfly/patternfly-react/issues/3513)) ([9ad7f80](https://github.com/patternfly/patternfly-react/commit/9ad7f80359353445b71c3a99e1d3e66d06179f38))
+
+
+
+
+
 ## [1.3.74](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.73...@patternfly/react-virtualized-extension@1.3.74) (2020-01-15)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
