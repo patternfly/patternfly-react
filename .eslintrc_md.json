@@ -12,13 +12,13 @@
     }
   },
   "rules": {
-    "eol-last": 1,
-    "spaced-comment": 1,
+    "eol-last": 2,
+    "spaced-comment": 2,
     "no-unused-vars": 0,
-    "no-this-before-super": 1,
+    "no-this-before-super": 2,
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "react/no-unknown-property": 1,
-    "react/jsx-no-undef": 1
+    "react/no-unknown-property": 2,
+    "react/jsx-no-undef": 2
   }
 }

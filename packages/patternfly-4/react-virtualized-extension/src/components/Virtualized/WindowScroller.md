@@ -34,7 +34,7 @@ import windowScrollerStyles from './WindowScroller.example.css';
 
 class WindowScrollerExample extends React.Component {
   constructor(){
-    super(props)
+    super(props);
     const rows = [];
     for (let i = 0; i < 100000; i++) {
       const cells = [];
