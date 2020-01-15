@@ -33,6 +33,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 class VirtualizedExample extends React.Component {
   constructor(){
+   super(props);
    const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
@@ -151,6 +152,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 class SortableExample extends React.Component {
   constructor(){
+   super(props);
    const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
@@ -291,6 +293,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 class SelectableExample extends React.Component {
   constructor(){
+   super(props);
    const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
@@ -304,7 +307,7 @@ class SelectableExample extends React.Component {
 
     this.state = {
       columns: [
-        //headerCol transform adds checkbox column with pf-m-2-sm, pf-m-1-md+ column space
+        // headerCol transform adds checkbox column with pf-m-2-sm, pf-m-1-md+ column space
         { title: 'Repositories', cellTransforms: [headerCol()], props: { className: 'pf-m-5-col-on-sm pf-m-4-col-on-md pf-m-3-col-on-lg pf-m-2-col-on-xl'} },
         { title: 'Pull requests', props: { className: 'pf-m-5-col-on-sm pf-m-4-col-on-md pf-m-4-col-on-lg pf-m-3-col-on-xl'} },
         { title: 'Workspaces', props: { className: 'pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-hidden pf-m-visible-on-lg'} },
@@ -440,6 +443,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 class ActionsExample extends React.Component {
   constructor(){
+   super(props);
    const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
