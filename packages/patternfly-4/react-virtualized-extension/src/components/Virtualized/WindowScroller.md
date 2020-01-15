@@ -33,7 +33,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 import windowScrollerStyles from './WindowScroller.example.css';
 
 class WindowScrollerExample extends React.Component {
-  constructor(){
+  constructor(props){
     super(props);
     const rows = [];
     for (let i = 0; i < 100000; i++) {
