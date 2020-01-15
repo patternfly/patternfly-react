@@ -20,6 +20,7 @@ import { VerticalTabs, VerticalTabsTab } from '@patternfly/react-catalog-view-ex
 
 class MockVerticalTabsExample extends React.Component {
   constructor(props) {
+    super(props);
     this.state = { activeTabId: 'all' };
     this.onActivateTab = id => {
       this.setState({ activeTabId: id });
