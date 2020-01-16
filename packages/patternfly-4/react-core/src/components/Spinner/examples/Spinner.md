@@ -1,13 +1,12 @@
 ---
 title: 'Spinner'
+section: components
 cssPrefix: 'pf-c-spinner'
 typescript: true
 propComponents: ['Spinner']
-section: 'experimental'
-experimentalStage: 'early'
 ---
 
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 import { Alert } from '@patternfly/react-core';
 
 ## Spinner

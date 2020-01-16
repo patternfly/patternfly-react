@@ -16,6 +16,7 @@ export * from './ChipGroup';
 export * from './ClipboardCopy';
 export * from './ContextSelector';
 export * from './DataList';
+export * from './Divider';
 export * from './Dropdown';
 export * from './EmptyState';
 export * from './Expandable';
