@@ -452,7 +452,8 @@ class TypeaheadSelectInput extends React.Component {
 
     this.onToggle = isExpanded => {
       this.setState({
-        isExpanded
+        isExpanded,
+        options: this.options
       });
     };
 
@@ -470,7 +471,8 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false
+        isExpanded: false,
+        options: this.options
       });
     };
 
