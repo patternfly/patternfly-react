@@ -81,7 +81,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
       <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
       {children && <div className={css(styles.alertDescription)}>{children}</div>}
       {action && (
-      <div className={css(styles.alertAction)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
+        <div className={css(styles.alertAction)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
       )}
     </div>
   );

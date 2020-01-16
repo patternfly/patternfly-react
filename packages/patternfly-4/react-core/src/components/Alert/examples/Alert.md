@@ -326,6 +326,7 @@ import { Alert, AlertActionLink, AlertActionCloseButton, InputGroup } from '@pat
 
 class DynamicLiveRegionAlert extends React.Component {
   constructor() {
+    super(props);
     this.state = {
       alerts: []
     }
@@ -393,6 +394,7 @@ import { Alert, InputGroup } from '@patternfly/react-core';
 
 class AsyncLiveRegionAlert extends React.Component {
   constructor() {
+    super(props);
     this.state = {
       alerts: [],
       timer: null
