@@ -1,18 +1,18 @@
 ---
 title: 'Drawer'
+section: components
 cssPrefix: 'pf-c-drawer'
 typescript: true
 propComponents: ['Drawer', 'DrawerPanelContent', 'DrawerContent']
-section: 'experimental'
-experimentalStage: 'early'
+
 ---
-import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core';
 import { Alert } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 class SimpleDrawer extends React.Component {
@@ -49,7 +49,7 @@ class SimpleDrawer extends React.Component {
 
 ```js title=Basic-inline
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 class SimpleDrawerInlineContent extends React.Component {
