@@ -91,6 +91,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
+
+// Both imgBrand,svg & imgAvatar.svg will need to be uploaded manually to correct ModuleNotFoundError on codesandbox.
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -314,6 +316,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
+
+// Both imgBrand,svg & imgAvatar.svg will need to be uploaded manually to correct ModuleNotFoundError on codesandbox.
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -553,6 +557,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
+
+// Both imgBrand,svg & imgAvatar.svg will need to be uploaded manually to correct ModuleNotFoundError on codesandbox.
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -771,6 +777,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
+
+// Both imgBrand,svg & imgAvatar.svg will need to be uploaded manually to correct ModuleNotFoundError on codesandbox.
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -984,6 +992,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
+
+// Both imgBrand,svg & imgAvatar.svg will need to be uploaded manually to correct ModuleNotFoundError on codesandbox.
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -1226,6 +1236,8 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
+
+// Both imgBrand,svg & imgAvatar.svg will need to be uploaded manually to correct ModuleNotFoundError on codesandbox.
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
