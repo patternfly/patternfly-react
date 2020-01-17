@@ -18,5 +18,6 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tabContentRef?: React.RefObject<any>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const Tab: React.FunctionComponent<TabProps> = ({ className = '' }: TabProps) => null;
+export const Tab: React.FunctionComponent<TabProps> = ({ className = '' }: TabProps) => {
+  return <React.Fragment />;
+};
