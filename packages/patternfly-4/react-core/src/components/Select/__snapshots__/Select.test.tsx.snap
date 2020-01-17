@@ -2932,6 +2932,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             sendRef={[Function]}
             value={
               User {
+                "compareTo": [Function],
                 "firstName": "User",
                 "lastName": "One",
                 "title": "Mr",
@@ -2953,6 +2954,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             sendRef={[Function]}
             value={
               User {
+                "compareTo": [Function],
                 "firstName": "New",
                 "lastName": "User",
                 "title": "Mrs",
@@ -2974,6 +2976,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             sendRef={[Function]}
             value={
               User {
+                "compareTo": [Function],
                 "firstName": "Test",
                 "lastName": "Three",
                 "title": "Ms",
@@ -3240,6 +3243,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                     sendRef={[Function]}
                     value={
                       User {
+                        "compareTo": [Function],
                         "firstName": "User",
                         "lastName": "One",
                         "title": "Mr",
@@ -3281,6 +3285,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                     sendRef={[Function]}
                     value={
                       User {
+                        "compareTo": [Function],
                         "firstName": "New",
                         "lastName": "User",
                         "title": "Mrs",
@@ -3322,6 +3327,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                     sendRef={[Function]}
                     value={
                       User {
+                        "compareTo": [Function],
                         "firstName": "Test",
                         "lastName": "Three",
                         "title": "Ms",
@@ -5669,6 +5675,7 @@ exports[`select single select renders expanded successfully with custom objects 
             sendRef={[Function]}
             value={
               User {
+                "compareTo": [Function],
                 "firstName": "User",
                 "lastName": "One",
                 "title": "Mr",
@@ -5690,6 +5697,7 @@ exports[`select single select renders expanded successfully with custom objects 
             sendRef={[Function]}
             value={
               User {
+                "compareTo": [Function],
                 "firstName": "New",
                 "lastName": "User",
                 "title": "Mrs",
@@ -5711,6 +5719,7 @@ exports[`select single select renders expanded successfully with custom objects 
             sendRef={[Function]}
             value={
               User {
+                "compareTo": [Function],
                 "firstName": "Test",
                 "lastName": "Three",
                 "title": "Ms",
@@ -5953,6 +5962,7 @@ exports[`select single select renders expanded successfully with custom objects 
               sendRef={[Function]}
               value={
                 User {
+                  "compareTo": [Function],
                   "firstName": "User",
                   "lastName": "One",
                   "title": "Mr",
@@ -5992,6 +6002,7 @@ exports[`select single select renders expanded successfully with custom objects 
               sendRef={[Function]}
               value={
                 User {
+                  "compareTo": [Function],
                   "firstName": "New",
                   "lastName": "User",
                   "title": "Mrs",
@@ -6031,6 +6042,7 @@ exports[`select single select renders expanded successfully with custom objects 
               sendRef={[Function]}
               value={
                 User {
+                  "compareTo": [Function],
                   "firstName": "Test",
                   "lastName": "Three",
                   "title": "Ms",
