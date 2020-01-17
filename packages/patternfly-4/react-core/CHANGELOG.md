@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.131.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.10...@patternfly/react-core@3.131.0) (2020-01-17)
+
+
+### Features
+
+* **Select:** allow custom option data comparison ([#3491](https://github.com/patternfly/patternfly-react/issues/3491)) ([79204a5](https://github.com/patternfly/patternfly-react/commit/79204a5f42e531895f667d8f2fcbfce4bdf129f5))
+
+
+
+
+
 ## [3.130.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.9...@patternfly/react-core@3.130.10) (2020-01-15)
 
 
