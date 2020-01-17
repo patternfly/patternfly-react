@@ -1,5 +1,10 @@
 import React from 'react';
-import { Title, Grid, GridItem, Tooltip, Text, PageSection } from '@patternfly/react-core';
+import { Title } from '@patternfly/react-core/dist/js/components/Title/Title'
+import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip'
+import { Text } from '@patternfly/react-core/dist/js/components/Text/Text'
+import { Grid } from '@patternfly/react-core/dist/js/layouts/Grid/Grid'
+import { GridItem } from '@patternfly/react-core/dist/js/layouts/Grid/GridItem'
+import { PageSection } from '@patternfly/react-core/dist/js/components/Page/PageSection';
 import { global_spacer_md as spacerMd, global_FontSize_sm as labelFontSize } from '@patternfly/react-tokens';
 import * as IconsModule from '@patternfly/react-icons';
 import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';

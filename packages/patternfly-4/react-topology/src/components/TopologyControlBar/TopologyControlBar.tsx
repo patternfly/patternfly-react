@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
+import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Toolbar } from '@patternfly/react-core/dist/js/layouts/Toolbar/Toolbar';
+import { ToolbarGroup } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarGroup';
+import { ToolbarItem } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarItem';
 import { ExpandIcon, ExpandArrowsAltIcon, SearchPlusIcon, SearchMinusIcon } from '@patternfly/react-icons';
 import '@patternfly/react-styles/css/components/Topology/topology-controlbar.css';
 

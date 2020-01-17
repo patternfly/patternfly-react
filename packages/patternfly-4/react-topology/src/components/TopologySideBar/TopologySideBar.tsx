@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { TimesIcon } from '@patternfly/react-icons';
-import { Button } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
 import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 
 export interface TopologySideBarProps extends React.HTMLProps<HTMLDivElement> {

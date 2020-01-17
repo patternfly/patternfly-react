@@ -1,4 +1,4 @@
-import { SelectOptionObject } from '@patternfly/react-core';
+import { SelectOptionObject } from '@patternfly/react-core/dist/js/components/Select/SelectOption';
 
 export class State implements SelectOptionObject {
   name: string;
