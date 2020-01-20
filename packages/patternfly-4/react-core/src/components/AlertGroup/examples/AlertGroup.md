@@ -34,6 +34,7 @@ import * as React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
 class ToastAlertGroup extends React.Component {
   constructor() {
+    super();
     this.state = { alerts: [] };
     this.addAlert = (title, variant, key) => {
       this.setState({
@@ -82,6 +83,7 @@ import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 class SingularAdditiveAlertGroup extends React.Component {
   constructor() {
+    super();
     this.state = {
       alerts: []
     }
@@ -121,6 +123,7 @@ import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 class MultipleAdditiveAlertGroup extends React.Component {
   constructor() {
+    super();
     this.state = {
       alerts: []
     }
@@ -162,6 +165,7 @@ import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 class AsyncAdditiveAlertGroup extends React.Component {
   constructor() {
+    super();
     this.state = {
       alerts: [],
       timer: null
