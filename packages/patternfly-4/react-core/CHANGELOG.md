@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.131.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.0...@patternfly/react-core@3.131.1) (2020-01-20)
+
+
+### Bug Fixes
+
+* **Select:** clear button appears with any typeahead input ([#3502](https://github.com/patternfly/patternfly-react/issues/3502)) ([f506291](https://github.com/patternfly/patternfly-react/commit/f506291228de8ca79eaedfdb700b3b9f87270377))
+
+
+
+
+
 # [3.131.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.10...@patternfly/react-core@3.131.0) (2020-01-17)
 
 
