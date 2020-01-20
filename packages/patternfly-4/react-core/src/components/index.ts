@@ -31,6 +31,7 @@ export * from './Modal';
 export * from './Nav';
 export * from './NotificationBadge';
 export * from './OptionsMenu';
+export * from './OverflowMenu/OverflowMenu';
 export * from './Page';
 export * from './Pagination';
 export * from './Popover';
