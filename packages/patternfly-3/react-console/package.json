@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/src/console/README.md",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-3/react-console/README.md",
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
