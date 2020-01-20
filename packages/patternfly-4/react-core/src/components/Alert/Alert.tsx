@@ -74,8 +74,10 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
         'data-ouia-component-type': 'Alert',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
       })}
-      aria-live={isToast? 'polite' : undefined}
-      aria-atomic={isToast? 'false' : undefined}
+      {...(isToast && {
+        'aria-live': 'polite',
+        'aria-atomic': 'false'
+      })}
     >
       <AlertIcon variant={variant} />
       <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>

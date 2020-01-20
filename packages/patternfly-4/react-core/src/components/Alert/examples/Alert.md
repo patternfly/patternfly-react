@@ -322,11 +322,11 @@ class StaticLiveRegionAlert extends React.Component {
 
 ```js title=Dynamic-live-region-alert
 import React from 'react';
-import { Alert, AlertActionLink, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
+import { Alert, InputGroup } from '@patternfly/react-core';
 
 class DynamicLiveRegionAlert extends React.Component {
   constructor() {
-    super(props);
+    super();
     this.state = {
       alerts: []
     }
@@ -394,7 +394,7 @@ import { Alert, InputGroup } from '@patternfly/react-core';
 
 class AsyncLiveRegionAlert extends React.Component {
   constructor() {
-    super(props);
+    super();
     this.state = {
       alerts: [],
       timer: null

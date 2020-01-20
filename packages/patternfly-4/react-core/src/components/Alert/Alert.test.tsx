@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Alert, AlertVariant } from './Alert';
 import { AlertActionLink } from './AlertActionLink';
@@ -15,7 +15,7 @@ test('default Alert variant is info', () => {
   ).toContain('pf-m-info');
 });
 
-Object.values(AlertVariant).forEach(variant => {
+Object.values(['success' as AlertVariant]).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(
@@ -86,6 +86,84 @@ Object.values(AlertVariant).forEach(variant => {
         </Alert>
       );
       expect(view).toMatchSnapshot();
+    });
+
+    test('Toast alerts match snapsnot', () => {
+      const view = mount(
+        <Alert
+          isToast={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
+    test('Toast alerts contain default live region', () => {
+      const wrapper = mount(
+        <Alert
+          isToast={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      const liveRegion = wrapper.find({ 'aria-live': 'polite' }).length
+      expect (liveRegion).toBe(1)
+    });
+
+    test('Toast alert live regions are not atomic', () => {
+      const wrapper = mount(
+        <Alert
+          isToast={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      expect(wrapper.find('.pf-c-alert').prop('aria-atomic')).toBe('false');
+    });
+
+    test('Toast alert should specify pf-m-live on container', () => {
+      const wrapper = mount(
+        <Alert
+          isToast={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      const alert = wrapper.find('div').first();
+      expect(alert.hasClass('pf-m-live')).toBe(true);
+    });
+
+    test('Non-toast alerts can have custom live region settings', () => {
+      const wrapper = mount(
+        <Alert
+          aria-live="assertive"
+          aria-relevant="all"
+          aria-atomic="true"
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some noisy alert
+        </Alert>
+      );
+      const alert = wrapper.find(Alert);
+
+      expect(alert.prop('aria-live')).toBe('assertive');
+      expect(alert.prop('aria-relevant')).toBe('all');
+      expect(alert.prop('aria-atomic')).toBe('true');
     });
   });
 });
