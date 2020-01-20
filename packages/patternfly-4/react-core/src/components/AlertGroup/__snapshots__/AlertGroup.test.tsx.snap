@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Group should match snapshot 1`] = `
+<ul
+  className="pf-c-alert-group"
+/>
+`;
+
+exports[`Standard Alert Group is not a toast alert group 1`] = `
+<ul
+  className="pf-c-alert-group"
+>
+  <li
+    className="pf-c-alert-group__item"
+    key="0"
+  >
+    <Component
+      key=".0"
+      title="alert title"
+      variant="danger"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Toast Alert Group contains expected modifier class 1`] = `
+<Portal
+  containerInfo={<div />}
+>
+  <ul
+    className="pf-c-alert-group pf-m-toast"
+  >
+    <li
+      className="pf-c-alert-group__item"
+      key="0"
+    >
+      <Component
+        key=".0"
+        title="alert title"
+        variant="warning"
+      />
+    </li>
+  </ul>
+</Portal>
+`;
