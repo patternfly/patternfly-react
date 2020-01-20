@@ -463,7 +463,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {selections && (
+                {(selections || typeaheadInputValue) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
                     onClick={e => {
@@ -499,7 +499,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {selections && (Array.isArray(selections) && selections.length > 0) && (
+                {(selections && (Array.isArray(selections) && selections.length > 0) || typeaheadInputValue) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
                     onClick={e => {
