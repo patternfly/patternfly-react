@@ -1,13 +1,12 @@
 ---
 title: 'Data toolbar'
+section: components
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
 propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarFilter']
-section: 'experimental'
-experimentalStage: 'early'
 ---
 
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core';
 import { Alert, Button, ButtonVariant, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
@@ -17,7 +16,7 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 
 ```js title=Items
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons'
 
@@ -48,7 +47,7 @@ class DataToolbarItems extends React.Component {
 ```
 ```js title=Adjusting-item-spacers
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 class DataToolbarSpacers extends React.Component {
@@ -102,7 +101,7 @@ class DataToolbarSpacers extends React.Component {
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 ```js title=Groups
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
@@ -272,7 +271,7 @@ The Toggle group can either have the toggle state managed by the consumer, or th
   - The first Toggle group example below demonstrates a component managed toggle state.  
 ```js title=Component-managed-toggle-groups
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
@@ -419,7 +418,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 
 ```js title=Consumer-managed-toggle-groups
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
@@ -581,7 +580,7 @@ import {
     DataToolbarContent,
     DataToolbarFilter,
     DataToolbarToggleGroup,
-    DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+    DataToolbarGroup } from '@patternfly/react-core';
 import { 
     Button, 
     ButtonVariant,
@@ -809,7 +808,7 @@ class DataToolbarWithFilterExample extends React.Component {
 There may be situations where all of the required elements simply cannot fit in a single line.
 ```js title=Stacked-example
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem } from '@patternfly/react-core';
 import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 

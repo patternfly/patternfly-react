@@ -1,7 +1,6 @@
 ---
 title: 'Filterable table'
 section: 'demos'
-experimentalStage: 'early'
 ---
 
 ## Examples
@@ -16,7 +15,7 @@ DataToolbarItem,
 DataToolbarContent,
 DataToolbarFilter,
 DataToolbarToggleGroup,
-DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+DataToolbarGroup } from '@patternfly/react-core';
 import {
 Title,
 Select,
@@ -40,7 +39,7 @@ import {
   DataToolbarFilter,
   DataToolbarToggleGroup,
   DataToolbarGroup
-} from '@patternfly/react-core/dist/esm/experimental';
+} from '@patternfly/react-core';
 import {
   Button,
   ButtonVariant,

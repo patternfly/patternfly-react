@@ -4,12 +4,12 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
 import { DataToolbarContext, DataToolbarContentContext } from './DataToolbarUtils';
-import { Button } from '../../../components/Button';
+import { Button } from '../Button';
 import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../../helpers/util';
-import { PickOptional } from '../../../helpers/typeUtils';
+import { formatBreakpointMods } from '../../helpers/util';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */

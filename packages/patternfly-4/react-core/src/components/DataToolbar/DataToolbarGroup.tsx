@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
-
+import { Omit } from '../../helpers/typeUtils';
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../../helpers/util';
+import { formatBreakpointMods } from '../../helpers/util';
 import { RefObject } from 'react';
 
 export enum DataToolbarGroupVariant {
@@ -12,7 +12,7 @@ export enum DataToolbarGroupVariant {
   'button-group' = 'button-group'
 }
 
-export interface DataToolbarGroupProps {
+export interface DataToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'ref'> {
   /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
@@ -26,8 +26,8 @@ export interface DataToolbarGroupProps {
 }
 
 class DataToolbarGroupWithRef extends React.Component<DataToolbarGroupProps> {
-  static defaultProps: DataToolbarGroupProps = {
-    breakpointMods: [] as DataToolbarBreakpointMod[],
+  static defaultProps = {
+    breakpointMods: [] as DataToolbarBreakpointMod[]
   };
 
   render() {
@@ -47,6 +47,8 @@ class DataToolbarGroupWithRef extends React.Component<DataToolbarGroupProps> {
       </div>
     );
   }
-};
+}
 
-export const DataToolbarGroup = React.forwardRef((props: DataToolbarGroupProps, ref: any) => <DataToolbarGroupWithRef { ...props } innerRef={ref} />);
+export const DataToolbarGroup = React.forwardRef((props: DataToolbarGroupProps, ref: any) => (
+  <DataToolbarGroupWithRef {...props} innerRef={ref} />
+));

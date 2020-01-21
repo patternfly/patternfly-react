@@ -1,7 +1,6 @@
 ---
 title: 'Table Empty States'
 section: 'demos'
-experimentalStage: 'early'
 ---
 
 ## Examples
@@ -78,7 +77,7 @@ class EmptyStateDemo extends React.Component {
 import React from 'react';
 import { Bullseye } from "@patternfly/react-core";
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 class LoadingStateDemo extends React.Component {
 

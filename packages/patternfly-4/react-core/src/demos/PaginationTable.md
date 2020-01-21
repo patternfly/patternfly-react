@@ -4,9 +4,6 @@ section: 'demos'
 ---
 
 ## Examples
-```
-  Note: This demo uses the experimental Spinner component while data is loading.
-```
 import { 
   Pagination, 
   PaginationVariant, 
@@ -20,7 +17,7 @@ import {
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 ```js title=Basic
 import React from 'react';
@@ -37,7 +34,7 @@ import {
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
