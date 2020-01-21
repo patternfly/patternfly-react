@@ -18,7 +18,6 @@ export * from './ContextSelector';
 export * from './DataList';
 export * from './DataToolbar';
 export * from './Divider';
-export * from './Drawer';
 export * from './Dropdown';
 export * from './EmptyState';
 export * from './Expandable';
