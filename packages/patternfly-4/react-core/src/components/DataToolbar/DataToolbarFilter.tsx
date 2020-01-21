@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { DataToolbarItem, DataToolbarItemProps } from './DataToolbarItem';
-import { ChipGroup, Chip, ChipGroupToolbarItem } from '../../../components/ChipGroup';
+import { ChipGroup, Chip, ChipGroupToolbarItem } from '../ChipGroup';
 import { DataToolbarContentContext, DataToolbarContext } from './DataToolbarUtils';
 import { PickOptional } from '../../../helpers/typeUtils';
 

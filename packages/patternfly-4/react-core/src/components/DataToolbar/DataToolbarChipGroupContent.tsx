@@ -4,7 +4,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
-import { Button } from '../../../components/Button';
+import { Button } from '../Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
 import { globalBreakpoints } from './DataToolbarUtils';
 import { PickOptional } from '../../../helpers/typeUtils';
