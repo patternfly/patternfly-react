@@ -21,7 +21,7 @@ exports[`state active 1`] = `
     }
   }
   type="button"
-  variant={false}
+  variant="single"
 >
   <button
     aria-expanded={false}
@@ -88,7 +88,7 @@ exports[`state focus 1`] = `
     }
   }
   type="button"
-  variant={false}
+  variant="single"
 >
   <button
     aria-expanded={false}
@@ -155,7 +155,7 @@ exports[`state hover 1`] = `
     }
   }
   type="button"
-  variant={false}
+  variant="single"
 >
   <button
     aria-expanded={false}

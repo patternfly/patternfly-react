@@ -37,7 +37,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     };
   }
 
-  static defaultProps = {
+  static defaultProps: ChipGroupProps = {
     className: '',
     expandedText: 'Show Less',
     collapsedText: '${remaining} more',

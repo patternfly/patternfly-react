@@ -7,6 +7,6 @@ export interface WizardFooterProps {
   children: any;
 }
 
-export const WizardFooter: React.SFC<WizardFooterProps> = ({ children }: WizardFooterProps) => (
+export const WizardFooter: React.FunctionComponent<WizardFooterProps> = ({ children }: WizardFooterProps) => (
   <footer className={css(styles.wizardFooter)}>{children}</footer>
 );

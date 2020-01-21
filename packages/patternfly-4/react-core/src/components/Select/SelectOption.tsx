@@ -43,7 +43,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
 
 export class SelectOption extends React.Component<SelectOptionProps> {
   private ref = React.createRef<any>();
-  static defaultProps = {
+  static defaultProps: SelectOptionProps = {
     className: '',
     value: '',
     index: 0,
@@ -53,9 +53,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isChecked: false,
     isFocused: false,
     component: 'button',
-    onClick: Function.prototype,
-    sendRef: Function.prototype,
-    keyHandler: Function.prototype
+    onClick: () => {},
+    sendRef: () => {},
+    keyHandler: () => {}
   };
 
   componentDidMount() {

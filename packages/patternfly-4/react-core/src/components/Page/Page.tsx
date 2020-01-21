@@ -53,7 +53,7 @@ export interface PageState {
 }
 
 export class Page extends React.Component<PageProps, PageState> {
-  static defaultProps = {
+  static defaultProps: PageProps = {
     breadcrumb: null as React.ReactNode,
     children: null as React.ReactNode,
     className: '',

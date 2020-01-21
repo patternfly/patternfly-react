@@ -26,7 +26,7 @@ export interface DataToolbarGroupProps {
 }
 
 class DataToolbarGroupWithRef extends React.Component<DataToolbarGroupProps> {
-  static defaultProps = {
+  static defaultProps: DataToolbarGroupProps = {
     breakpointMods: [] as DataToolbarBreakpointMod[],
   };
 

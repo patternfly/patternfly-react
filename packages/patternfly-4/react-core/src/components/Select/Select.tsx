@@ -11,7 +11,7 @@ import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 // seed for the aria-labelledby ID
@@ -96,7 +96,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   private parentRef = React.createRef<HTMLDivElement>();
   private refCollection: HTMLElement[] = [];
 
-  static defaultProps = {
+  static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
     className: '',
     direction: SelectDirection.down,
@@ -123,7 +123,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     toggleIcon: null as React.ReactElement,
     onFilter: null,
     customContent: null
-  } as Partial<SelectProps & InjectedOuiaProps>;
+  };
 
   state: SelectState = {
     openedOnEnter: false,

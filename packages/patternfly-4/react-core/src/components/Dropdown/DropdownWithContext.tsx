@@ -5,6 +5,7 @@ import { DropdownMenu } from './DropdownMenu';
 import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { PickOptional } from '../../helpers/typeUtils';
 
 class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaProps> {
   openedOnEnter = false;
@@ -13,7 +14,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
   // seed for the aria-labelledby ID
   static currentId = 0;
 
-  static defaultProps = {
+  static defaultProps: PickOptional<DropdownProps> = {
     className: '',
     dropdownItems: [] as any[],
     isOpen: false,
@@ -26,7 +27,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
     ouiaComponentType: 'Dropdown'
   };
 
-  constructor(props: DropdownProps) {
+  constructor(props: DropdownProps & InjectedOuiaProps) {
     super(props);
     if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
       throw new Error(

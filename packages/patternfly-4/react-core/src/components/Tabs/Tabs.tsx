@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
@@ -66,7 +66,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     };
   }
 
-  static defaultProps = {
+  static defaultProps: PickOptional<TabsProps> = {
     className: '',
     activeKey: 0,
     onSelect: () => undefined as any,

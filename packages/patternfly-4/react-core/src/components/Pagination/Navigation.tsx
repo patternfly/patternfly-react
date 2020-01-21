@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../Button';
 import { OnSetPage } from './Pagination';
-import { pluralize } from '../../helpers';
+import { pluralize, PickOptional } from '../../helpers';
 import { KEY_CODES } from '../../helpers/constants';
 
 export interface NavigationProps extends React.HTMLProps<HTMLElement> {
@@ -60,7 +60,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     this.state = { userInputPage: this.props.page };
   }
 
-  static defaultProps = {
+  static defaultProps: PickOptional<NavigationProps> = {
     className: '',
     isDisabled: false,
     isCompact: false,
