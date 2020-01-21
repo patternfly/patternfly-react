@@ -7,7 +7,7 @@ import { DataToolbarGroup } from './DataToolbarGroup';
 import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../Button';
 import { DataToolbarContext } from './DataToolbarUtils';
-import { PickOptional } from '../../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes added to the root element of the data toolbar expandable content */
