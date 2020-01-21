@@ -14,7 +14,7 @@ export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
   children = null,
   className = null,
   ...props
-}) => (
+}: PopoverDialogProps) => (
   <div
     className={css(styles.popover, getModifier(styles, position, styles.modifiers.top), className)}
     role="dialog"

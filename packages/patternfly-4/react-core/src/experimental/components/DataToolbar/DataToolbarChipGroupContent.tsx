@@ -7,6 +7,7 @@ import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
 import { globalBreakpoints } from './DataToolbarUtils';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
@@ -28,7 +29,7 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
 }
 
 export class DataToolbarChipGroupContent extends React.Component<DataToolbarChipGroupContentProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<DataToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
     collapseListedFiltersBreakpoint: 'lg'
   };

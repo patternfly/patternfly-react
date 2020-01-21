@@ -16,7 +16,7 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
   noAboutModalBoxContentContainer?: boolean;
 }
 
-export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
+export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentProps> = ({
   children,
   className = '',
   trademark,

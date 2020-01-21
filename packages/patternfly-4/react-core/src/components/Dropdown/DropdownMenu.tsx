@@ -37,7 +37,7 @@ export interface DropdownMenuItem extends React.HTMLAttributes<any> {
 export class DropdownMenu extends React.Component<DropdownMenuProps> {
   refsCollection = [] as HTMLElement[][];
 
-  static defaultProps = {
+  static defaultProps: DropdownMenuProps = {
     className: '',
     isOpen: true,
     openedOnEnter: false,
@@ -52,7 +52,8 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 
     if (autoFocus) {
       // Focus first non-disabled element
-      const focusTarget = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'))[0];
+      const focusTargetCollection = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
+      const focusTarget = focusTargetCollection && focusTargetCollection[0];
       if (focusTarget && focusTarget.focus) {
         focusTarget.focus();
       }

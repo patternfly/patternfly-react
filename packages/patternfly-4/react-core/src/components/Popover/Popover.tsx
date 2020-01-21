@@ -14,6 +14,7 @@ import { PopoverCloseButton } from './PopoverCloseButton';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
 import { ReactElement } from 'react';
+import { PickOptional } from '../../helpers/typeUtils';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
 // tslint:disable-next-line
@@ -105,7 +106,7 @@ export interface PopoverState {
 
 export class Popover extends React.Component<PopoverProps, PopoverState> {
   private tip: TippyInstance;
-  static defaultProps = {
+  static defaultProps: PickOptional<PopoverProps> = {
     position: 'top',
     enableFlip: true,
     className: '',

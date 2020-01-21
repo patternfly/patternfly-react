@@ -9,7 +9,7 @@ export interface AboutModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const AboutModalBox: React.SFC<AboutModalBoxProps> = ({
+export const AboutModalBox: React.FunctionComponent<AboutModalBoxProps> = ({
   children,
   className = '',
   ...props

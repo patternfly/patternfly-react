@@ -13,7 +13,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** Additional element css classes */
   className?: string;
   /** Display menu above or below dropdown toggle */
-  direction?: DropdownDirection;
+  direction?: DropdownDirection | 'up' | 'down';
   /**
    * @deprecated
    * Use the items prop instead
@@ -28,7 +28,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** open bool */
   isOpen?: boolean;
   /** Indicates where menu will be alligned horizontally */
-  position?: DropdownPosition;
+  position?: DropdownPosition | 'right' | 'left';
   /** Function callback called when user selects item */
   onSelect?: (event: any) => void;
   /** Callback called when application launcher toggle is clicked */
@@ -42,9 +42,9 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** ID list of favorited ApplicationLauncherItems */
   favorites?: string[];
   /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
-  onFavorite?(itemId: string, isFavorite: boolean): void;
+  onFavorite?: (itemId: string, isFavorite: boolean) => void;
   /** Enables search. Callback called when text input is entered into search box */
-  onSearch?(textInput: string): void;
+  onSearch?: (textInput: string) => void;
   /** Placeholder text for search input */
   searchPlaceholderText?: string;
   /** Text for search input when no results are found */
@@ -57,10 +57,10 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   toggleId?: string;
 }
 
-export const ApplicationLauncherContext = React.createContext({ onFavorite: Function.prototype });
+export const ApplicationLauncherContext = React.createContext({ onFavorite: (itemId: string, isFavorite: boolean) => {} });
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
-  static defaultProps = {
+  static defaultProps: ApplicationLauncherProps = {
     className: '',
     isDisabled: false,
     direction: DropdownDirection.down,

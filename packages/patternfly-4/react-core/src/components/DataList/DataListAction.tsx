@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css, pickProperties } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 
 const visibilityModifiers = pickProperties(styles.modifiers, [
   'hidden',
@@ -39,7 +39,7 @@ interface DataListActionState {
 }
 
 export class DataListAction extends React.Component<DataListActionProps, DataListActionState> {
-  static defaultProps = {
+  static defaultProps: PickOptional<DataListActionProps> = {
     className: ''
   };
 

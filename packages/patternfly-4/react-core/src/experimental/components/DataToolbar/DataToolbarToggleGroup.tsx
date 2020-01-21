@@ -9,16 +9,19 @@ import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-to
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
   /** The breakpoint at which the toggle group is collapsed down */
   breakpoint: 'md' | 'lg' | 'xl';
+  /** An array of objects representing the various modifiers to apply to the data toolbar toggle group at various breakpoints */
+  breakpointMods?: DataToolbarBreakpointMod[];
 }
 
 export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<DataToolbarToggleGroupProps> = {
     breakpointMods: [] as DataToolbarBreakpointMod[]
   };
 

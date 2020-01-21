@@ -29,7 +29,7 @@ export interface SwitchProps
 class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   id = '';
 
-  static defaultProps = {
+  static defaultProps: SwitchProps = {
     id: '',
     className: '',
     label: '',
