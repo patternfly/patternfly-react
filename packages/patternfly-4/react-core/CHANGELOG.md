@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.132.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.5...@patternfly/react-core@3.132.0) (2020-01-22)
+
+
+### Features
+
+* **alert:** Accessibility updates to alert for toast alerts ([#3519](https://github.com/patternfly/patternfly-react/issues/3519)) ([dc57757](https://github.com/patternfly/patternfly-react/commit/dc57757a3aea6f6bd4ad0fd421e6dad8eaf40646))
+
+
+
+
+
 ## [3.131.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.4...@patternfly/react-core@3.131.5) (2020-01-22)
 
 
