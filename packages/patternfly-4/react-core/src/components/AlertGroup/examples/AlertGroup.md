@@ -107,6 +107,7 @@ class SingularAdditiveAlertGroup extends React.Component {
         <AlertGroup>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
+              isToast
               variant={AlertVariant[variant]}
               title={title}
               key={key} />
@@ -149,6 +150,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
         <AlertGroup>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
+              isToast
               variant={AlertVariant[variant]}
               title={title}
               key={key} />
@@ -198,6 +200,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
         <AlertGroup>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
+              isToast
               variant={AlertVariant[variant]}
               title={title}
               key={key} />

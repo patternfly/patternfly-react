@@ -12,41 +12,45 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   children?: React.ReactNode;
   /** Toast notifications are positioned at the top right corner of the viewport */
   isToast?: boolean;
+  /** Determine where the alert is appended to */
+  appendTo?: HTMLElement | (() => HTMLElement);
 }
 
 class AlertGroup extends React.Component<AlertGroupProps> {
-  container?: HTMLDivElement = undefined;
+  appendTo?: HTMLDivElement = undefined;
+
   constructor(props: AlertGroupProps) {
     super(props);
   }
+  
   componentDidMount() {
-    if (this.container) {
-      document.body.appendChild(this.container);
+    if (this.appendTo) {
+      document.body.appendChild(this.appendTo);
     }
   }
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    if (this.appendTo) {
+      document.body.removeChild(this.appendTo);
     }
   }
   render() {
     if (!canUseDOM) {
       return null;
     }
-    if (!this.container) {
-      this.container = document.createElement('div');
+    if (!this.appendTo) {
+      this.appendTo = document.createElement('div');
     }
     const { className, children, isToast, ...rest } = this.props;
     const alertGroup = (
       <ul
-        className={css(styles.alertGroup, className, (isToast ? 'pf-m-toast' : ''))}
+        className={css(styles.alertGroup, className, (isToast ? styles.modifiers.toast : ''))}
         {...rest}>
         {React.Children.toArray(children).map(
           (Alert: React.ReactNode, index: number) => <li className="pf-c-alert-group__item" key={index}>{Alert}</li>
         )}
       </ul>
     );
-    return (isToast) ? ReactDOM.createPortal(alertGroup, this.container) : alertGroup;
+    return (isToast) ? ReactDOM.createPortal(alertGroup, this.appendTo) : alertGroup;
   }
 }
 

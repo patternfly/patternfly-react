@@ -60,7 +60,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   const customClassName = css(
     styles.alert,
     isInline && styles.modifiers.inline,
-    isToast && 'pf-m-live',
+    isToast,
     variant !== AlertVariant.default && getModifier(styles, variant, styles.modifiers.info),
     className
   );

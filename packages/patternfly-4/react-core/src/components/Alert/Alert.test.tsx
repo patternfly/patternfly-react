@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { Alert, AlertVariant } from './Alert';
 import { AlertActionLink } from './AlertActionLink';
@@ -15,7 +15,7 @@ test('default Alert variant is info', () => {
   ).toContain('pf-m-info');
 });
 
-Object.values(['success' as AlertVariant]).forEach(variant => {
+Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(
