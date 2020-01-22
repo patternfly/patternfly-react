@@ -108,5 +108,5 @@ export interface FlexItemBreakpointMod {
   /** The attribute to modify  */
   modifier: keyof typeof FlexItemModifiers;
   /** The breakpoint at which to apply the modifier */
-  breakpoint?: FlexBreakpoints;
+  breakpoint?: keyof typeof FlexBreakpoints;
 }
