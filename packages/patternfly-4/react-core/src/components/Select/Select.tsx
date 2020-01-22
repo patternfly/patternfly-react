@@ -447,7 +447,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-typeahead"
+                    id={`${selectToggleId}-select-typeahead`}
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText as string}
                     value={
@@ -487,7 +487,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-multi-typeahead-typeahead"
+                    id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText as string}
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
