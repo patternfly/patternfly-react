@@ -80,7 +80,7 @@ class ToastAlertGroup extends React.Component {
 
 ```js title=Singular-dynamic-alert-group
 import * as React from 'react';
-import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 class SingularAdditiveAlertGroup extends React.Component {
   constructor() {
     super();
@@ -129,7 +129,7 @@ class SingularAdditiveAlertGroup extends React.Component {
 
 ```js title=Multiple-dynamic-alert-group
 import * as React from 'react';
-import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 class MultipleAdditiveAlertGroup extends React.Component {
   constructor() {
     super();
@@ -182,7 +182,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
 
 ```js title=Async-alert-group
 import * as React from 'react';
-import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
+import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
 class AsyncAdditiveAlertGroup extends React.Component {
   constructor() {
     super();
