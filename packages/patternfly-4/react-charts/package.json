@@ -34,9 +34,8 @@
     "@patternfly/react-tokens": "^2.7.20",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.15",
-    "victory": "^33.0.5",
-    "victory-core": "^33.0.1",
-    "victory-legend": "^33.0.1"
+    "victory": "^34.0.1",
+    "victory-core": "^34.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
@@ -62,7 +61,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@types/lodash": "^4.14.138",
-    "@types/victory": "^31.0.22",
+    "@types/victory": "^33.1.4",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
