@@ -86,6 +86,7 @@
     "build:pf4": "yarn build pf4",
     "build:docs": "lerna run build:docs --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
+    "build:integration:report": "lerna run build:integration:report --stream",
     "build:integration": "lerna run build:demo-app --stream",
     "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "shx rm -rf .cache",

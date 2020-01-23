@@ -7973,7 +7973,7 @@ commander@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.6.0.tgz#9df7e52fb2a0cb0fb89058ee80c3104225f37e1d"
 
-commander@2.x, commander@^2.11.0, commander@^2.12.1, commander@^2.19.0, commander@^2.20.0, commander@^2.5.0, commander@^2.8.1, commander@^2.9.0, commander@~2.20.3:
+commander@2.x, commander@^2.11.0, commander@^2.12.1, commander@^2.18.0, commander@^2.19.0, commander@^2.20.0, commander@^2.5.0, commander@^2.8.1, commander@^2.9.0, commander@~2.20.3:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
 
@@ -14398,6 +14398,13 @@ iterall@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
 
+jasmine-xml2html-converter@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/jasmine-xml2html-converter/-/jasmine-xml2html-converter-0.0.2.tgz#4cb5d4eb1b751ed7171f6b666598690d28036d2f"
+  integrity sha1-TLXU6xt1HtcXH2tmZZhpDSgDbS8=
+  dependencies:
+    xmldoc "~0.3.0"
+
 java-properties@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-1.0.2.tgz#ccd1fa73907438a5b5c38982269d0e771fe78211"
@@ -15348,6 +15355,16 @@ jszip@^3.1.5:
     pako "~1.0.2"
     readable-stream "~2.3.6"
     set-immediate-shim "~1.0.1"
+
+junit-merge@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/junit-merge/-/junit-merge-2.0.0.tgz#5f67c2bd837cd491c83a17614925d16c781a83d2"
+  integrity sha512-qwENzBWcdHPazNqPO0fKyFIqEyaSKyO0iyBeIU4Y/scjkXYpwTi88P2S/PWecqgMhzG2MOCwXk8QB9ucvXeIPw==
+  dependencies:
+    commander "^2.18.0"
+    fs-readdir-recursive "^1.1.0"
+    mkdirp "^0.5.1"
+    xmldoc "^1.1.2"
 
 junit-xml@^1.2.0:
   version "1.2.0"
@@ -21974,9 +21991,14 @@ sass-loader@^6.0.6:
     neo-async "^2.5.0"
     pify "^3.0.0"
 
-sax@>=0.6.0, sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
+sax@>=0.6.0, sax@^1.2.1, sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
+
+sax@~1.1.1:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.1.6.tgz#5d616be8a5e607d54e114afae55b7eaf2fcc3240"
+  integrity sha1-XWFr6KXmB9VOEUr65Vt+ry/MMkA=
 
 saxes@^3.1.9:
   version "3.1.11"
@@ -25699,6 +25721,20 @@ xmlbuilder@~11.0.0:
 xmlchars@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
+
+xmldoc@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/xmldoc/-/xmldoc-1.1.2.tgz#6666e029fe25470d599cd30e23ff0d1ed50466d7"
+  integrity sha512-ruPC/fyPNck2BD1dpz0AZZyrEwMOrWTO5lDdIXS91rs3wtm4j+T8Rp2o+zoOYkkAxJTZRPOSnOGei1egoRmKMQ==
+  dependencies:
+    sax "^1.2.1"
+
+xmldoc@~0.3.0:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/xmldoc/-/xmldoc-0.3.2.tgz#795dcab1fccba4827e2dbec584ff2bbddfd30468"
+  integrity sha1-eV3KsfzLpIJ+Lb7FhP8rvd/TBGg=
+  dependencies:
+    sax "~1.1.1"
 
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"
