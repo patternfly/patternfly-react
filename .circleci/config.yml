@@ -199,7 +199,7 @@ jobs:
         command: yarn build:integration
     - run:
         name: Run Cypress Integration Tests
-        command: yarn test:integration && yarn run codecov -f packages/patternfly-4/react-integration/results/merged-test-results.xml -F patternfly4integration
+        command: yarn test:ci && yarn run codecov -f packages/patternfly-4/react-integration/results/merged-test-results.xml -F patternfly4integration
         no_output_timeout: 180m
     - run: 
         name: Create HTML file of Cypress coverage
