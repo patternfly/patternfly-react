@@ -11,7 +11,7 @@ describe('Chip Group Demo Test', () => {
       .contains('Lemons');
   });
 
-  it('Verify chip is closed on default', () => {
+  xit('Verify chip is closed on default', () => {
     cy.get('.pf-c-chip__text')
       .eq(1)
       .should('not.contain', 'Limes');
@@ -26,14 +26,14 @@ describe('Chip Group Demo Test', () => {
       .should('not.equal', null);
   });
 
-  it('Verify more button works', () => {
+  xit('Verify more button works', () => {
     cy.get('.pf-m-overflow')
       .children('button')
       .click();
     cy.get('.pf-c-chip__text').contains('Show Less');
   });
 
-  it('Verify show less button works', () => {
+  xit('Verify show less button works', () => {
     cy.get('.pf-m-overflow')
       .children('button')
       .click();
