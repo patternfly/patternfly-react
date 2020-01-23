@@ -160,7 +160,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>Add Alert Collection</button>
         </InputGroup>
-        <AlertGroup>
+        <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key, action }) => (
             <Alert
               isToast
@@ -221,7 +221,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
         <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
-              isToast={false}
+              isToast
               variant={AlertVariant[variant]}
               title={title}
               key={key} 
