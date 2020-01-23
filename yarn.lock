@@ -11865,10 +11865,10 @@ gatsby-telemetry@^1.1.41, gatsby-telemetry@^1.1.42:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-patternfly-org@^1.2.9:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-1.2.9.tgz#8906237845c0f7638a5a164344ccc1bb15bca1c0"
-  integrity sha512-MbSBlYa2BHgv9IvJ4E+O3x0Y2W3cptUmB6a4hHxSRHPJntB7vbj7D2sVAhPRq6m2v9IAMsd5ZZr6s/glgEL7+w==
+gatsby-theme-patternfly-org@^1.2.19:
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-1.2.19.tgz#15605ad0ad5a60cb823740de7bd19d75d3a273fa"
+  integrity sha512-Dm/Dir9+xjqQLcTlbGXJYuhkgM/zseXjK0py03L+gDXimgNof51yJZOaKhcUoj0LH9MW/xd3H0D65+kAfWtHnw==
   dependencies:
     "@mdx-js/mdx" "^1.1.5"
     "@mdx-js/react" "^1.1.5"
