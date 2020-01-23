@@ -6,7 +6,7 @@ describe('Donut utilization chart with static thresholds and bottom-aligned lege
   });
 
   it('Verify donut chart', () => {
-    cy.get('.VictoryContainer').should('exist');
+    cy.get('.pf-c-chart').should('exist');
   });
 
   it('Verify legend string', () => {
@@ -14,7 +14,7 @@ describe('Donut utilization chart with static thresholds and bottom-aligned lege
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '675');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '225');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'width', '675');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'height', '225');
   });
 });

@@ -5,20 +5,6 @@ describe('Nav Test', () => {
     cy.url().should('eq', 'http://localhost:3000/nav-demo-nav-link');
   });
 
-  it('Verify Simple Nav', () => {
-    cy.get('#nav-primary-simple .pf-c-nav__link').each((simpleNavLink: JQuery<HTMLAnchorElement>, index: number) => {
-      const isCurrent = simpleNavLink.hasClass('pf-m-current');
-      expect(isCurrent).to.be.equal(index === 0);
-    });
-    cy.get('#simple-link2').then((simpleLink2: JQuery<HTMLAnchorElement>) => {
-      cy.wrap(simpleLink2).click();
-      cy.get('#nav-primary-simple .pf-c-nav__link').each((simpleNavLink: JQuery<HTMLAnchorElement>, index: number) => {
-        const isCurrent = simpleNavLink.hasClass('pf-m-current');
-        expect(isCurrent).to.be.equal(index === 1);
-      });
-    });
-  });
-
   it('Verify Default Nav', () => {
     cy.get('#nav-primary-default .pf-c-nav__link').each((defaultNavLink: JQuery<HTMLAnchorElement>, index: number) => {
       const isCurrent = defaultNavLink.hasClass('pf-m-current');

@@ -36,6 +36,10 @@ describe('OverflowMenu Demo Test', () => {
           .last()
           .click();
         cy.get('#simple-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
+        // close overflow menu again
+        cy.get('#simple-overflow-menu button')
+          .last()
+          .click();
       });
     });
   });

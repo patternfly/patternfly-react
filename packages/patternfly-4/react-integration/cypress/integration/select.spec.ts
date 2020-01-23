@@ -25,7 +25,7 @@ describe('Select Test', () => {
       .should('exist');
   });
 
-  it('Verify Typeahead Select', () => {
+  xit('Verify Typeahead Select', () => {
     cy.get('#typeahead-select').click();
     cy.get('#Florida-2').click();
     cy.get('#select-typeahead').should('have.value', 'Florida');
@@ -33,7 +33,7 @@ describe('Select Test', () => {
     cy.get('#select-typeahead').should('have.value', '');
   });
 
-  it('Verify Creatable Typeahead Select', () => {
+  xit('Verify Creatable Typeahead Select', () => {
     cy.get('#toggle-creatable-typeahead').click();
     cy.get('#toggle-new-typeahead').click();
     cy.get('#typeahead-select').click();
@@ -45,7 +45,7 @@ describe('Select Test', () => {
     cy.get('button.pf-c-select__toggle-clear').click();
   });
 
-  it('Verify Typeahead Multi Select', () => {
+  xit('Verify Typeahead Multi Select', () => {
     cy.get('#typeahead-multi-select').click();
     cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
@@ -80,7 +80,7 @@ describe('Select Test', () => {
     cy.get('.pf-c-chip').should('not.exist');
   });
 
-  it('Verify Custom Typeahead Multi Select', () => {
+  xit('Verify Custom Typeahead Multi Select', () => {
     cy.get('#custom-typeahead-multi-select').click();
     cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
@@ -98,7 +98,7 @@ describe('Select Test', () => {
     cy.get('button.pf-c-select__toggle-clear').click();
   });
 
-  it('Verify Custom Typeahead Plain Multi Select', () => {
+  xit('Verify Custom Typeahead Plain Multi Select', () => {
     cy.get('#custom-typeahead-plain-multi-select').click();
     cy.get('#Florida-2').click();
     cy.get('.pf-c-chip')
