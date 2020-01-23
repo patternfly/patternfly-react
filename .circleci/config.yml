@@ -95,9 +95,12 @@ workflows:
     - test_a11y_pf4:
         requires:
         - build_pf4_docs
-    - build_integration:
+    - test_integration:
         requires:
         - build
+        filters:
+          branches:
+            only: master
     - lint:
         requires:
         - build
@@ -177,7 +180,7 @@ jobs:
     - run:
         name: Other Tests
         command: yarn test:misc --maxWorkers=2 && yarn run codecov -F misc
-  build_integration:
+  test_integration:
     docker:
     - image: circleci/node:10
     steps:
