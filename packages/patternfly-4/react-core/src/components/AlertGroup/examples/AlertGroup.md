@@ -221,7 +221,6 @@ class AsyncAdditiveAlertGroup extends React.Component {
         <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
-              isToast
               variant={AlertVariant[variant]}
               title={title}
               key={key} 

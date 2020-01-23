@@ -44,6 +44,10 @@ class AlertGroup extends React.Component<AlertGroupProps> {
     const alertGroup = (
       <ul
         className={css(styles.alertGroup, className, (isToast ? styles.modifiers.toast : ''))}
+        {...(isToast && {
+          'aria-live': 'polite',
+          'aria-atomic': 'false'
+        })}
         {...rest}>
         {React.Children.toArray(children).map(
           (Alert: React.ReactNode, index: number) => <li className="pf-c-alert-group__item" key={index}>{Alert}</li>

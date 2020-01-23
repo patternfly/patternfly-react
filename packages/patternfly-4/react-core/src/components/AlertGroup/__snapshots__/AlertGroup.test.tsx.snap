@@ -28,6 +28,8 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
   containerInfo={<div />}
 >
   <ul
+    aria-atomic="false"
+    aria-live="polite"
     className="pf-c-alert-group pf-m-toast"
   >
     <li
