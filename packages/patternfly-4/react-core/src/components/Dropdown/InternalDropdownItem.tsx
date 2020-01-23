@@ -66,8 +66,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       keyHandler: () => {},
       sendRef: () => {}
     },
-    id: '',
-    componentID: '',
+    id: undefined,
+    componentID: undefined,
     enterTriggersArrowDown: false
   };
 
