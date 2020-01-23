@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.16.104](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.103...@patternfly/react-docs@4.16.104) (2020-01-23)
+
+
+### Bug Fixes
+
+* **demos:** upped version of gatsby-theme-patternfly-org ([#3562](https://github.com/patternfly/patternfly-react/issues/3562)) ([cf86271](https://github.com/patternfly/patternfly-react/commit/cf862713ef0775a63b3ca3daed041f0c1694f32a))
+
+
+
+
+
 ## [4.16.103](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.102...@patternfly/react-docs@4.16.103) (2020-01-23)
 
 **Note:** Version bump only for package @patternfly/react-docs
