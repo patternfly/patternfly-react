@@ -20,8 +20,8 @@ class StaticAlertGroup extends React.Component {
     return (
       <React.Fragment>
         <AlertGroup>
-          <Alert title="Success Alert" variant={AlertVariant['success']} />
-          <Alert title="Info Alert" variant={AlertVariant['info']} />
+          <Alert title="Success Alert" variant={AlertVariant['success']} isInline />
+          <Alert title="Info Alert" variant={AlertVariant['info']} isInline/>
         </AlertGroup>
       </React.Fragment>
     );
@@ -78,7 +78,7 @@ class ToastAlertGroup extends React.Component {
 }
 ```
 
-```js title=Singular-additive-alert-group
+```js title=Singular-dynamic-alert-group
 import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 class SingularAdditiveAlertGroup extends React.Component {
@@ -97,6 +97,9 @@ class SingularAdditiveAlertGroup extends React.Component {
     const addSuccessAlert = () => { addAlert('Single Success Alert', 'success', getUniqueId()) };
     const addDangerAlert = () => { addAlert('Single Danger Alert', 'danger', getUniqueId()) };
     const addInfoAlert = () => { addAlert('Single Info Alert', 'info', getUniqueId()) };
+    this.removeAlert = key => {
+      this.setState({ alerts: [...this.state.alerts.filter(el => el.key !== key)] });
+    };
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
@@ -110,7 +113,12 @@ class SingularAdditiveAlertGroup extends React.Component {
               isToast
               variant={AlertVariant[variant]}
               title={title}
-              key={key} />
+              key={key} 
+              action={
+                <AlertActionCloseButton
+                  onClose={() => this.removeAlert(key)}
+                />
+              }/>
           ))}
         </AlertGroup>
       </React.Fragment>
@@ -119,7 +127,7 @@ class SingularAdditiveAlertGroup extends React.Component {
 }
 ```
 
-```js title=Multiple-additive-alert-group
+```js title=Multiple-dynamic-alert-group
 import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 class MultipleAdditiveAlertGroup extends React.Component {
@@ -133,7 +141,9 @@ class MultipleAdditiveAlertGroup extends React.Component {
     const addAlerts = (incomingAlerts) => {
       this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
     };
-    const getUniqueId = () => (new Date().getTime());
+    const getUniqueId = () => (
+      (String.fromCharCode(65 + Math.floor(Math.random() * 26))+ Date.now())
+    );
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
     const addAlertCollection = () => {
       addAlerts([
@@ -142,18 +152,26 @@ class MultipleAdditiveAlertGroup extends React.Component {
         { title: 'Third Alert Notification.', variant: 'danger', key: getUniqueId() }
       ])
     };
+    this.removeAlert = key => {
+      this.setState({ alerts: [...this.state.alerts.filter(el => el.key !== key)] });
+    };
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
           <button onClick={addAlertCollection} type="button" className={btnClasses}>Add Alert Collection</button>
         </InputGroup>
         <AlertGroup>
-          {this.state.alerts.map(({ title, variant, key }) => (
+          {this.state.alerts.map(({ title, variant, key, action }) => (
             <Alert
               isToast
               variant={AlertVariant[variant]}
               title={title}
-              key={key} />
+              key={key} 
+              action={
+                <AlertActionCloseButton
+                  onClose={() => this.removeAlert(key)}
+                />
+              }/>
           ))}
         </AlertGroup>
       </React.Fragment>
@@ -162,7 +180,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
 }
 ```
 
-```js title=Async-additive-alert-group
+```js title=Async-alert-group
 import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, InputGroup } from '@patternfly/react-core';
 class AsyncAdditiveAlertGroup extends React.Component {
@@ -179,6 +197,9 @@ class AsyncAdditiveAlertGroup extends React.Component {
     const addAlerts = (incomingAlerts) => { this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] }); };
     const getUniqueId = () => (new Date().getTime());
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+    this.removeAlert = key => {
+      this.setState({ alerts: [...this.state.alerts.filter(el => el.key !== key)] });
+    };
     const startAsyncAlerts = () => {
       let timerValue = setInterval(() => {
         addAlerts([
@@ -197,13 +218,18 @@ class AsyncAdditiveAlertGroup extends React.Component {
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start Async Alerts</button>
           <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop Async Alerts</button>
         </InputGroup>
-        <AlertGroup>
+        <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
-              isToast
+              isToast={false}
               variant={AlertVariant[variant]}
               title={title}
-              key={key} />
+              key={key} 
+              action={
+                <AlertActionCloseButton
+                  onClose={() => this.removeAlert(key)}
+                />
+              }/>
           ))}
         </AlertGroup>
       </React.Fragment>

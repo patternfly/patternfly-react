@@ -131,21 +131,6 @@ Object.values(AlertVariant).forEach(variant => {
       expect(wrapper.find('.pf-c-alert').prop('aria-atomic')).toBe('false');
     });
 
-    test('Toast alert should specify pf-m-live on container', () => {
-      const wrapper = mount(
-        <Alert
-          isToast={true}
-          variant={variant}
-          aria-label={`${variant} toast alert`}
-          title="Some title"
-        >
-          Some toast alert
-        </Alert>
-      );
-      const alert = wrapper.find('div').first();
-      expect(alert.hasClass('pf-m-live')).toBe(true);
-    });
-
     test('Non-toast alerts can have custom live region settings', () => {
       const wrapper = mount(
         <Alert
