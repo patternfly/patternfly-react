@@ -111,7 +111,7 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
   isSeparator?: boolean;
   itemKey?: string;
   title?: string | React.ReactNode;
-  onClick: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
 }
 
 export interface ISeparator extends IAction {
