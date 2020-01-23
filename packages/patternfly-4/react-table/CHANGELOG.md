@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.89](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.88...@patternfly/react-table@2.24.89) (2020-01-23)
+
+
+### Bug Fixes
+
+* **Table:** Make IAction onClick optional ([#3558](https://github.com/patternfly/patternfly-react/issues/3558)) ([e4671f8](https://github.com/patternfly/patternfly-react/commit/e4671f8fcbed37efe7fd1cc71b0e19b796ef0431))
+
+
+
+
+
 ## [2.24.88](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.87...@patternfly/react-table@2.24.88) (2020-01-23)
 
 **Note:** Version bump only for package @patternfly/react-table
