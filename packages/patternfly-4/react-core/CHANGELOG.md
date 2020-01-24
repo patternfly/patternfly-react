@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.133.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.132.3...@patternfly/react-core@3.133.0) (2020-01-24)
+
+
+### Features
+
+* **pf4:** Use absolute import paths for react core in pf4 packages. ([#3525](https://github.com/patternfly/patternfly-react/issues/3525)) ([65d0b3d](https://github.com/patternfly/patternfly-react/commit/65d0b3d1e04610895f122c1313d1442360356f13)), closes [#3155](https://github.com/patternfly/patternfly-react/issues/3155)
+
+
+
+
+
 ## [3.132.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.132.2...@patternfly/react-core@3.132.3) (2020-01-23)
 
 **Note:** Version bump only for package @patternfly/react-core

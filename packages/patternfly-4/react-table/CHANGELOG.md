@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.89...@patternfly/react-table@2.25.0) (2020-01-24)
+
+
+### Bug Fixes
+
+* **ActionsColumn:** fixed import path for DropdownSeparator ([#3578](https://github.com/patternfly/patternfly-react/issues/3578)) ([a1d86c8](https://github.com/patternfly/patternfly-react/commit/a1d86c8388c614579872f5cfcc7c31e147213604))
+
+
+### Features
+
+* **pf4:** Use absolute import paths for react core in pf4 packages. ([#3525](https://github.com/patternfly/patternfly-react/issues/3525)) ([65d0b3d](https://github.com/patternfly/patternfly-react/commit/65d0b3d1e04610895f122c1313d1442360356f13)), closes [#3155](https://github.com/patternfly/patternfly-react/issues/3155)
+
+
+
+
+
 ## [2.24.89](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.88...@patternfly/react-table@2.24.89) (2020-01-23)
 
 
