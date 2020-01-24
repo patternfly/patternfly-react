@@ -1,5 +1,5 @@
 ---
-title: 'Card View'
+title: 'Card view'
 section: 'demos'
 experimentalStage: 'early'
 ---
@@ -62,7 +62,7 @@ This is a demo that showcases Patternfly cards.
 
 ## Examples
 
-```js title=Default-nav isFullscreen
+```js title=Basic isFullscreen
 import React from 'react';
 import {
   Avatar,
