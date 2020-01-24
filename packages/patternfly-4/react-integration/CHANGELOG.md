@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.18.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.18.0...@patternfly/react-integration@3.18.1) (2020-01-24)
+
+
+### Bug Fixes
+
+* **integration:** fixed selector in tablesimpleactions ([#3584](https://github.com/patternfly/patternfly-react/issues/3584)) ([e841e33](https://github.com/patternfly/patternfly-react/commit/e841e333f07a6f24dc383512c670cfd7d8ffc734))
+
+
+
+
+
 # [3.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.17.3...@patternfly/react-integration@3.18.0) (2020-01-24)
 
 
