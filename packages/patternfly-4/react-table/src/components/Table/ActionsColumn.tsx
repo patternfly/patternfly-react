@@ -76,6 +76,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
               <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
             ) : (
               <DropdownItem
+                component="div"
                 onClick={event => this.onSelect(event, onClick)}
                 {...props}
                 key={itemKey || key}
