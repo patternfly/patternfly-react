@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title, TitleLevel, BaseSizes } from '@patternfly/react-core';
+import { Title, TitleLevel } from '@patternfly/react-core/dist/js/components/Title/Title';
+import { BaseSizes } from '@patternfly/react-core';
 import { TopologySideBar } from '@patternfly/react-topology';
 
 export class ItemDetails extends React.Component {
