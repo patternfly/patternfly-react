@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.25.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.25.0...@patternfly/react-table@2.25.1) (2020-01-24)
+
+
+### Bug Fixes
+
+* **Table fix:** Fixes issue 3559, for table we now default to a div instead of a ([#3567](https://github.com/patternfly/patternfly-react/issues/3567)) ([578950b](https://github.com/patternfly/patternfly-react/commit/578950b5f743e476255f03fb0d9dc308214e3fad)), closes [#3559](https://github.com/patternfly/patternfly-react/issues/3559)
+
+
+
+
+
 # [2.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.89...@patternfly/react-table@2.25.0) (2020-01-24)
 
 
