@@ -110,6 +110,7 @@ class SingularAdditiveAlertGroup extends React.Component {
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
               isInline
+              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key} 
@@ -220,6 +221,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
         <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
+              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key} 
