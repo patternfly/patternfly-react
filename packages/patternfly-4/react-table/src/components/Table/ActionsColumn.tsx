@@ -3,7 +3,7 @@ import { Dropdown } from '@patternfly/react-core/dist/js/components/Dropdown/Dro
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 import { KebabToggle } from '@patternfly/react-core/dist/js/components/Dropdown/KebabToggle';
 import { DropdownItem } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
-import { DropdownSeparator } from '@patternfly/react-core/dist/js/components/Dropdown/Separator';
+import { DropdownSeparator } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownSeparator';
 
 import { IAction, IExtraData, IRowData } from './Table';
 
