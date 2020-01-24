@@ -836,7 +836,7 @@ exports[`Alert - danger Title 1`] = `
 exports[`Alert - danger Toast alerts match snapsnot 1`] = `
 <Component
   aria-label="danger toast alert"
-  isToast={true}
+  isLiveRegion={true}
   title="Some title"
   variant="danger"
 >
@@ -846,7 +846,7 @@ exports[`Alert - danger Toast alerts match snapsnot 1`] = `
       Object {
         "aria-label": "danger toast alert",
         "children": "Some toast alert",
-        "isToast": true,
+        "isLiveRegion": true,
         "title": "Some title",
         "variant": "danger",
       }
@@ -855,7 +855,7 @@ exports[`Alert - danger Toast alerts match snapsnot 1`] = `
   >
     <Alert
       aria-label="danger toast alert"
-      isToast={true}
+      isLiveRegion={true}
       ouiaContext={
         Object {
           "isOuia": false,
@@ -1850,7 +1850,7 @@ exports[`Alert - default Title 1`] = `
 exports[`Alert - default Toast alerts match snapsnot 1`] = `
 <Component
   aria-label="default toast alert"
-  isToast={true}
+  isLiveRegion={true}
   title="Some title"
   variant="default"
 >
@@ -1860,7 +1860,7 @@ exports[`Alert - default Toast alerts match snapsnot 1`] = `
       Object {
         "aria-label": "default toast alert",
         "children": "Some toast alert",
-        "isToast": true,
+        "isLiveRegion": true,
         "title": "Some title",
         "variant": "default",
       }
@@ -1869,7 +1869,7 @@ exports[`Alert - default Toast alerts match snapsnot 1`] = `
   >
     <Alert
       aria-label="default toast alert"
-      isToast={true}
+      isLiveRegion={true}
       ouiaContext={
         Object {
           "isOuia": false,
@@ -2864,7 +2864,7 @@ exports[`Alert - info Title 1`] = `
 exports[`Alert - info Toast alerts match snapsnot 1`] = `
 <Component
   aria-label="info toast alert"
-  isToast={true}
+  isLiveRegion={true}
   title="Some title"
   variant="info"
 >
@@ -2874,7 +2874,7 @@ exports[`Alert - info Toast alerts match snapsnot 1`] = `
       Object {
         "aria-label": "info toast alert",
         "children": "Some toast alert",
-        "isToast": true,
+        "isLiveRegion": true,
         "title": "Some title",
         "variant": "info",
       }
@@ -2883,7 +2883,7 @@ exports[`Alert - info Toast alerts match snapsnot 1`] = `
   >
     <Alert
       aria-label="info toast alert"
-      isToast={true}
+      isLiveRegion={true}
       ouiaContext={
         Object {
           "isOuia": false,
@@ -3878,7 +3878,7 @@ exports[`Alert - success Title 1`] = `
 exports[`Alert - success Toast alerts match snapsnot 1`] = `
 <Component
   aria-label="success toast alert"
-  isToast={true}
+  isLiveRegion={true}
   title="Some title"
   variant="success"
 >
@@ -3888,7 +3888,7 @@ exports[`Alert - success Toast alerts match snapsnot 1`] = `
       Object {
         "aria-label": "success toast alert",
         "children": "Some toast alert",
-        "isToast": true,
+        "isLiveRegion": true,
         "title": "Some title",
         "variant": "success",
       }
@@ -3897,7 +3897,7 @@ exports[`Alert - success Toast alerts match snapsnot 1`] = `
   >
     <Alert
       aria-label="success toast alert"
-      isToast={true}
+      isLiveRegion={true}
       ouiaContext={
         Object {
           "isOuia": false,
@@ -4892,7 +4892,7 @@ exports[`Alert - warning Title 1`] = `
 exports[`Alert - warning Toast alerts match snapsnot 1`] = `
 <Component
   aria-label="warning toast alert"
-  isToast={true}
+  isLiveRegion={true}
   title="Some title"
   variant="warning"
 >
@@ -4902,7 +4902,7 @@ exports[`Alert - warning Toast alerts match snapsnot 1`] = `
       Object {
         "aria-label": "warning toast alert",
         "children": "Some toast alert",
-        "isToast": true,
+        "isLiveRegion": true,
         "title": "Some title",
         "variant": "warning",
       }
@@ -4911,7 +4911,7 @@ exports[`Alert - warning Toast alerts match snapsnot 1`] = `
   >
     <Alert
       aria-label="warning toast alert"
-      isToast={true}
+      isLiveRegion={true}
       ouiaContext={
         Object {
           "isOuia": false,
