@@ -1,4 +1,4 @@
-export * from '../../components/DataToolbar';
+export * from './DataToolbar';
 export * from '../../components/Divider';
 export * from './Drawer';
 export * from '../../components/OverflowMenu';

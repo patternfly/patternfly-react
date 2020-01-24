@@ -4,11 +4,11 @@ import { DataToolbar } from './DataToolbar';
 import { DataToolbarContent } from './DataToolbarContent';
 import { DataToolbarGroup } from './DataToolbarGroup';
 import { CloneIcon, EditIcon, FilterIcon } from '@patternfly/react-icons';
-import { Button } from '../Button';
+import { Button } from '../../../components/Button';
 import { DataToolbarItem } from './DataToolbarItem';
 import { DataToolbarChip, DataToolbarFilter } from './DataToolbarFilter';
 import { DataToolbarToggleGroup } from './DataToolbarToggleGroup';
-import { Select, SelectOption, SelectVariant } from '../Select';
+import { Select, SelectOption, SelectVariant } from '../../../components/Select';
 
 describe('data toolbar', () => {
   test('DataToolbarOneContent', () => {

@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { css, getModifier } from '@patternfly/react-styles';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods } from '../../../helpers/util';
 
 export enum DataToolbarItemVariant {
   separator = 'separator',
