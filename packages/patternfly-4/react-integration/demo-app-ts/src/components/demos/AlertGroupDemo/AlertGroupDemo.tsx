@@ -51,7 +51,7 @@ export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
         <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
-              isToast={false}
+              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key} 

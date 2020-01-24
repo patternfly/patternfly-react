@@ -35,7 +35,7 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
         )}
         {alertTwoVisible && (
           <Alert
-            isToast
+            isLiveRegion
             id="info-alert"
             variant="info"
             title="Info alert title"
