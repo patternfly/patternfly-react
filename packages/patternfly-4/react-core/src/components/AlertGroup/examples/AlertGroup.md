@@ -8,7 +8,6 @@ propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLi
 
 import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
-import './alert-group.css';
 
 ## Examples
 ```js title=Static-alert-group
@@ -61,7 +60,7 @@ class ToastAlertGroup extends React.Component {
         <AlertGroup isToast>
           {this.state.alerts.map(({key, variant, title}) => (
             <Alert
-              isToast
+              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               action={
@@ -110,7 +109,7 @@ class SingularAdditiveAlertGroup extends React.Component {
         <AlertGroup>
           {this.state.alerts.map(({ title, variant, key }) => (
             <Alert
-              isToast
+              isInline
               variant={AlertVariant[variant]}
               title={title}
               key={key} 
@@ -163,7 +162,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
         <AlertGroup isToast>
           {this.state.alerts.map(({ title, variant, key, action }) => (
             <Alert
-              isToast
+              isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
               key={key} 
