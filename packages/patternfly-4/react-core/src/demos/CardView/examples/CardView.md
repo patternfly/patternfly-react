@@ -178,6 +178,7 @@ class CardViewDefaultNav extends React.Component {
           icon: swaggerIcon
         }
      ],
+
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
       isLowerToolbarDropdownOpen: false,
@@ -189,6 +190,7 @@ class CardViewDefaultNav extends React.Component {
       page: 1,
       perPage: 20
     };
+
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
       this.setState({
         isUpperToolbarDropdownOpen
@@ -235,12 +237,6 @@ class CardViewDefaultNav extends React.Component {
       this.setState({
         isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
-      this.onFocus();
-    };
-
-    this.onFocus = () => {
-      const element = document.getElementById('toggle-id-6');
-      element.focus();
     };
 
     this.onCardKebabDropdownToggle = (key, isCardKebabDropdownOpen) => {
@@ -268,9 +264,9 @@ class CardViewDefaultNav extends React.Component {
       this.setState({ [name]: value });
     };
 
-    this.deleteItem = (product) => event => {
+    this.deleteItem = (item) => event => {
     const { cardInfo } = this.state;
-    cardInfo.splice(cardInfo.indexOf(product), 1);
+    cardInfo.splice(cardInfo.indexOf(item), 1);
 
     this.setState({
       cardInfo
@@ -403,7 +399,6 @@ class CardViewDefaultNav extends React.Component {
       </DataToolbarItem>
     </React.Fragment>;
 
-
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
         <NavList>
@@ -437,6 +432,7 @@ class CardViewDefaultNav extends React.Component {
       <DropdownItem>Separated Link</DropdownItem>,
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
+
     const PageToolbar = (
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
