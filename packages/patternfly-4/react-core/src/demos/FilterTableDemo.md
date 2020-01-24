@@ -185,7 +185,7 @@ class FilterTableDemo extends React.Component {
           filters: {
             ...prevState.filters,
             ['name']: prevFilters.includes(inputValue)
-              ? prevFilters.filter(value => value !== inputValue)
+              ? prevFilters
               : [...prevFilters, inputValue]
           },
           inputValue: ''
