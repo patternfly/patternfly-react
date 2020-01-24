@@ -352,15 +352,6 @@ class CardViewDefaultNav extends React.Component {
       </DropdownItem>
     ];
 
-    const cardKebabDropdownItems = [
-      <DropdownItem onClick={() => this.deleteItem(product)}>
-        <TrashIcon /> Delete
-      </DropdownItem>,
-      <DropdownItem>
-        <CogIcon /> Settings
-      </DropdownItem>
-    ];
-
     const toolbarItems = <React.Fragment>
       <DataToolbarItem variant="bulk-select">
         <Dropdown
@@ -500,23 +491,23 @@ class CardViewDefaultNav extends React.Component {
     return (
       <React.Fragment>
         <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Projects</Text>
-              <Text component="p">
-                This is a demo that showcases Patternfly Cards.
-              </Text>
-            </TextContent>
-            <DataToolbar id="data-toolbar-group-types">
-              <DataToolbarContent>{toolbarItems}</DataToolbarContent>
-            </DataToolbar>
-          </PageSection>
+            header={Header}
+            sidebar={Sidebar}
+            isManagedSidebar
+            skipToContent={PageSkipToContent}
+            mainContainerId={pageId}
+          >
+            <PageSection variant={PageSectionVariants.light}>
+              <TextContent>
+                <Text component="h1">Projects</Text>
+                <Text component="p">
+                  This is a demo that showcases Patternfly Cards.
+                </Text>
+              </TextContent>
+              <DataToolbar id="data-toolbar-group-types">
+                <DataToolbarContent>{toolbarItems}</DataToolbarContent>
+              </DataToolbar>
+            </PageSection>
           <PageSection>
             <Gallery gutter="md">
               {this.state.cardInfo.map((product, key) => (
@@ -531,11 +522,16 @@ class CardViewDefaultNav extends React.Component {
                                       onSelect={(e) => this.onCardKebabDropdownSelect(key,e)}
                                       toggle={<KebabToggle onToggle={(isCardKebabDropdownOpen) => this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)} />}
                                       isOpen={this.state[key]}
-                                      dropdownItems={cardKebabDropdownItems}
+                                      dropdownItems={[
+                                          <DropdownItem
+                                            onClick={this.deleteItem(product)}
+                                            position="right"
+                                          >
+                                          <TrashIcon />
+                                            Delete
+                                          </DropdownItem>
+                                        ]}
                                     />
-                                     /* <Button basic color="red" onClick={this.deleteItem(product)}>
-                                    Delete
-                                     </Button> */
                                     <input
                                     type="checkbox"
                                     isChecked={this.state.check1}
