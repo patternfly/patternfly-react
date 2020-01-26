@@ -39,3 +39,22 @@ test('card with isCompact applied ', () => {
   const view = shallow(<Card isCompact />);
   expect(view).toMatchSnapshot();
 });
+
+test('card with isSelectable applied ', () => {
+  const view = shallow(<Card isSelectable />);
+  expect(view.prop('className')).toMatch(/selectable/);
+  expect(view.prop('tabIndex')).toBe('0');
+});
+
+test('card with isSelectable and isSelected applied ', () => {
+  const view = shallow(<Card isSelectable isSelected />);
+  expect(view.prop('className')).toMatch(/selectable/);
+  expect(view.prop('className')).toMatch(/selected/);
+  expect(view.prop('tabIndex')).toBe('0');
+});
+
+test('card with only isSelected applied - not change', () => {
+  const view = shallow(<Card isSelected />);
+  expect(view.prop('className')).not.toMatch(/selected/);
+  expect(view.prop('tabIndex')).toBe(undefined);
+});
