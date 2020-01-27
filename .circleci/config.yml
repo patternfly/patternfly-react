@@ -102,10 +102,6 @@ workflows:
     - lint:
         requires:
         - build
-    - upload_docs:
-        requires:
-        - build_pf3_docs
-        - build_pf4_docs
     - deploy_prerelease:
         requires:
         - test_jest_pf4
@@ -248,10 +244,9 @@ jobs:
     - run:
         name: Build PF3 Storybook Static Site
         command: yarn build:storybook
-    - persist_to_workspace:
-        root: ~/project
-        paths:
-        - .out/
+    - run:
+        name: Upload docs to surge.sh
+        command: node .circleci/upload-preview.js .out
   build_pf4_docs:
     machine:
       image: circleci/classic:latest
@@ -265,6 +260,9 @@ jobs:
     - run:
         name: Build patternfly-react docs
         command: ~/.yarn/bin/yarn build:docs
+    - run:
+        name: Upload docs to surge.sh
+        command: node .circleci/upload-preview.js packages/patternfly-4/react-docs/public
     - persist_to_workspace:
         root: ~/project
         paths: *doc_build_cache_paths
@@ -289,17 +287,6 @@ jobs:
         when: always
     - store_artifacts:
         path: packages/patternfly-4/react-docs/coverage/
-  upload_docs:
-    docker:
-    - image: circleci/node:10
-    steps:
-    - *attach_workspace
-    - run:
-        name: Copy to docs folder
-        command: .circleci/copy-docs.sh
-    - run:
-        name: Upload docs to surge.sh
-        command: node .circleci/upload-preview.js docs
   deploy_prerelease:
     docker:
     - image: circleci/node:10

@@ -6,14 +6,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:docs": "yarn build:static && yarn build:ram --prefix-paths",
+    "build:docs": "yarn build:static && yarn build:ram",
     "build:ram": "node --max-old-space-size=4096 ./node_modules/.bin/gatsby build",
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
-    "serve:prefix": "gatsby serve --prefix-paths",
     "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000/patternfly-4 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable"
   },
   "dependencies": {

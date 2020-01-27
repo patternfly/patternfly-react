@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const Octokit = require("@octokit/rest");
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
 const surge = require('surge');
@@ -15,12 +16,19 @@ if (!uploadFolder) {
   process.exit(1);
 }
 
+const uploadFolderName = path.basename(uploadFolder);
 let uploadURL = `${repo}-pr-${prnum || prbranch}`.replace(/[\/|\.]/g, '-');
 
-if (uploadFolder === 'coverage') {
-  fs.copyFileSync('coverage/report.html', 'coverage/index.html');
+if (uploadFolderName === 'coverage') {
+  fs.copyFileSync(
+    path.join(uploadFolder, 'report.html'),
+    path.join(uploadFolder, 'index.html')
+  );
 }
-if (uploadFolder !== 'docs') {
+if (uploadFolderName === '.out') {
+  uploadURL += '-pf3';
+}
+else if (uploadFolderName !== 'public') {
   uploadURL += `-${uploadFolder}`;
 }
 
@@ -57,11 +65,13 @@ if (prnum) {
       }
 
       commentBody += '\n';
-      if (uploadFolder === 'public') {
-        commentBody += tryAddComment(`Preview: https://${uploadURL}`, commentBody);
-      } else if (uploadFolder === 'allure-report') {
-        commentBody += tryAddComment(`Snapshot report: https://${uploadURL}`, commentBody);
-      } else if (uploadFolder === 'coverage') {
+      if (uploadFolderName === '.out') {
+        commentBody += tryAddComment(`PF3 preview: https://${uploadURL}`, commentBody);
+      }
+      else if (uploadFolderName === 'public') {
+        commentBody += tryAddComment(`PF4 preview: https://${uploadURL}`, commentBody);
+      }
+      else if (uploadFolderName === 'coverage') {
         commentBody += tryAddComment(`A11y report: https://${uploadURL}`, commentBody);
       }
 
