@@ -73,7 +73,7 @@ Packages released:
   - Moved extensions to 'Extensions' in side nav category ([#3453](https://github.com/patternfly/patternfly-react/pull/3453))
 - **Integration:**
   - Fixed selector in table simple actions ([#3584](https://github.com/patternfly/patternfly-react/pull/3584))
-- **Linting:** 
+- **Linting:**
   - Made Eslint fixes for *.md file ([#3493](https://github.com/patternfly/patternfly-react/pull/3493))
   - Made initial eslint fixes for react-core-style-system *.md file ([#3505](https://github.com/patternfly/patternfly-react/pull/3505))
   - Made minor updates to TopologyView package, missing imports ([#3510](https://github.com/patternfly/patternfly-react/pull/3510))
@@ -83,7 +83,7 @@ Packages released:
   - Added linting for md charts 3486 ([#3496](https://github.com/patternfly/patternfly-react/pull/3496))
   - Added linting for md code blocks 3469 ([#3474](https://github.com/patternfly/patternfly-react/pull/3474))
   - Fix linting for md react core example md files 3486 ([#3500](https://github.com/patternfly/patternfly-react/pull/3500))
- -  Updated *.md files in demos and verified they were working in code sandbox as well ([#3504](https://github.com/patternfly/patternfly-react/pull/3504))
+  - Updated *.md files in demos and verified they were working in code sandbox as well ([#3504](https://github.com/patternfly/patternfly-react/pull/3504))
 
 ### PF3
   - **Date and time picker:** 
