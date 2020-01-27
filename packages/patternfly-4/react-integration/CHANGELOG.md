@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.18.2...@patternfly/react-integration@3.19.0) (2020-01-27)
+
+
+### Features
+
+* **AlertGroup:** Add alert group component ([#3531](https://github.com/patternfly/patternfly-react/issues/3531)) ([0a6806e](https://github.com/patternfly/patternfly-react/commit/0a6806e0f6be01a022e6ce2a9d578a6d8bd52554))
+
+
+
+
+
 ## [3.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.18.1...@patternfly/react-integration@3.18.2) (2020-01-27)
 
 **Note:** Version bump only for package @patternfly/react-integration
