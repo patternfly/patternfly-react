@@ -106,6 +106,7 @@ workflows:
         requires:
         - test_jest_pf4
         - test_jest_other
+        - test_integration
         - build_pf3_docs
         - build_pf4_docs
         filters:

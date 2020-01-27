@@ -17,7 +17,7 @@ if (!uploadFolder) {
 }
 
 const uploadFolderName = path.basename(uploadFolder);
-let uploadURL = `${repo}-pr-${prnum || prbranch}`.replace(/[\/|\.]/g, '-');
+let uploadURL = `${repo}${prnum ? `-pr-${prnum || prbranch}` : ''}`.replace(/[\/|\.]/g, '-');
 
 if (uploadFolderName === 'coverage') {
   fs.copyFileSync(
@@ -35,8 +35,8 @@ else if (uploadFolderName !== 'public') {
 uploadURL += '.surge.sh';
 
 publishFn({
-  project: uploadFolder,
-  p: uploadFolder,
+  project: uploadFolderName,
+  p: uploadFolderName,
   domain: uploadURL,
   d: uploadURL,
   e: 'https://surge.surge.sh',
