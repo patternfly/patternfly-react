@@ -3021,14 +3021,15 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@patternfly/patternfly-a11y@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-0.0.11.tgz#faa2289536533304b43d4e45b154971ce9c14284"
-  integrity sha512-5lU96M2jwZtbNMlhR/WwaZPRqygSNvz3cMpYvO8Ymu4nTt8iOAiazZhQv94JbIPHXvJAB49dVT4RNCADswFczA==
+"@patternfly/patternfly-a11y@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-0.0.15.tgz#23bb8084395acf66dd46972be662e68b48b18037"
+  integrity sha512-8RWTmT4KbmJDBDrnAi6YfKtJtLJq18KZO8jQ32J8K0CNV4aZIiXX4YrEM6ClRZZ6Psg3xDkEPnik0BCfKSeZlA==
   dependencies:
-    axe-webdriverjs "2.3.0-canary.d657746a"
+    axe-webdriverjs "^2.3.0"
     junit-xml "^1.2.0"
     selenium-webdriver "^4.0.0-alpha.5"
+    xmldoc "^1.1.2"
     yargs "^15.0.2"
 
 "@patternfly/patternfly@2.56.2":
@@ -5190,16 +5191,21 @@ aws4@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
 
+axe-core@^3.3.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.4.1.tgz#e42623918bb85b5ef674633852cb9029db0309c5"
+  integrity sha512-+EhIdwR0hF6aeMx46gFDUy6qyCfsL0DmBrV3Z+LxYbsOd8e1zBaPHa3f9Rbjsz2dEwSBkLw6TwML/CAIIAqRpw==
+
 axe-core@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.4.0.tgz#a57ee620c182d5389aff229586aaae06bc541abe"
 
-axe-webdriverjs@2.3.0-canary.d657746a:
-  version "2.3.0-canary.d657746a"
-  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.3.0-canary.d657746a.tgz#3f46c50e6998c889361e847957da3660920d96d5"
-  integrity sha512-PZa3MvC05C+iKJ+NgXYGMJ28K2eZmQy/n72PKQxIV+0BLM1ljcWSZUjm8QwxLRUDVKPhprARv7QR9vNy4bn2GQ==
+axe-webdriverjs@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.3.0.tgz#92511fbce38624a57e1aa861dd8a3c73c6a3a972"
+  integrity sha512-AuUsX5OFTXOJ6reIKjtGay4O656n5G+m8MzhfL1SC8MHINBFFFn3Taucckn8+UZYJuTtNEobllSfiuPTHyKnSA==
   dependencies:
-    axe-core "^3.3.2"
+    axe-core "^3.3.1"
     babel-runtime "^6.26.0"
     depd "^2.0.0"
 

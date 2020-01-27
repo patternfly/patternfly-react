@@ -60,6 +60,7 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
         return (
           <li
             id={id}
+            role="option"
             className={css(
               styles.dataListItem,
               isExpanded && styles.modifiers.expanded,
@@ -68,7 +69,7 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
               className)}
             aria-labelledby={ariaLabelledBy}
             {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown: onKeyDown })}
-            {...(selectedDataListItemId === id && { 'aria-selected': true })}
+            {...(selectedDataListItemId === id && { 'aria-checked': true })}
             {...props}
           >
             {React.Children.map(
