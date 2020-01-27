@@ -24,6 +24,10 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   sidebar?: React.ReactNode;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
+  /** A flag that specifies whether the value for role is set on the <main> element */
+  isRoleSet?: boolean;
+  /** Sets the value for role on the <main> element */
+  role?: string;
   /** an id to use for the [role="main"] element */
   mainContainerId?: string;
   /**
@@ -63,7 +67,9 @@ export class Page extends React.Component<PageProps, PageState> {
     isManagedSidebar: false,
     defaultManagedSidebarIsOpen: true,
     onPageResize: (): void => null,
-    mainContainerId: null as string
+    mainContainerId: null as string,
+    isRoleSet: false,
+    role: null as string
   };
 
   constructor(props: PageProps) {
@@ -126,6 +132,8 @@ export class Page extends React.Component<PageProps, PageState> {
       header,
       sidebar,
       skipToContent,
+      role,
+      isRoleSet,
       mainContainerId,
       isManagedSidebar,
       defaultManagedSidebarIsOpen,
@@ -147,7 +155,13 @@ export class Page extends React.Component<PageProps, PageState> {
           {skipToContent}
           {header}
           {sidebar}
-          <main role="main" id={mainContainerId} className={css(styles.pageMain)} tabIndex={-1} aria-label={mainAriaLabel}>
+          <main
+            role={isRoleSet ? role : undefined}
+            id={mainContainerId}
+            className={css(styles.pageMain)}
+            tabIndex={-1}
+            aria-label={mainAriaLabel}
+          >
             {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
             {children}
           </main>

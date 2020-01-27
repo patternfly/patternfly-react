@@ -16,8 +16,10 @@ exports[`Check dark page against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isRoleSet={false}
   mainContainerId={null}
   onPageResize={[Function]}
+  role={null}
   sidebar={
     <Unknown
       isNavOpen={true}
@@ -77,7 +79,6 @@ exports[`Check dark page against snapshot 1`] = `
     <main
       className="pf-c-page__main"
       id={null}
-      role="main"
       tabIndex={-1}
     >
       <Component
@@ -137,8 +138,10 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isRoleSet={false}
   mainContainerId={null}
   onPageResize={[Function]}
+  role={null}
   sidebar={
     <Unknown
       isNavOpen={true}
@@ -197,7 +200,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     <main
       className="pf-c-page__main"
       id={null}
-      role="main"
       tabIndex={-1}
     >
       <Component
@@ -257,8 +259,10 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isRoleSet={false}
   mainContainerId={null}
   onPageResize={[Function]}
+  role={null}
   sidebar={
     <Unknown
       isNavOpen={true}
@@ -317,7 +321,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     <main
       className="pf-c-page__main"
       id={null}
-      role="main"
       tabIndex={-1}
     >
       <section
@@ -599,8 +602,10 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   }
   id="PageId"
   isManagedSidebar={false}
+  isRoleSet={false}
   mainContainerId="main-content-page-layout-test-nav"
   onPageResize={[Function]}
+  role={null}
   sidebar={
     <Unknown
       isNavOpen={true}
@@ -681,7 +686,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
     <main
       className="pf-c-page__main"
       id="main-content-page-layout-test-nav"
-      role="main"
       tabIndex={-1}
     >
       <section
@@ -939,8 +943,10 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isRoleSet={false}
   mainContainerId={null}
   onPageResize={[Function]}
+  role={null}
   sidebar={
     <Unknown
       isNavOpen={true}
@@ -998,7 +1004,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <main
       className="pf-c-page__main"
       id={null}
-      role="main"
       tabIndex={-1}
     >
       <Component
