@@ -2,6 +2,7 @@ import '@patternfly/patternfly/patternfly.css';
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
 // Experimental components
+import '@patternfly/patternfly/components/DataToolbar/data-toolbar.css';
 import '@patternfly/patternfly/components/Drawer/drawer.css';
 // React-specific CSS
 import '@patternfly/react-styles/src/css/components/Table/inline-edit.css';
