@@ -383,7 +383,7 @@ class TypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          aria-label="Select a state"
+          ariaLabelTypeAhead="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
@@ -481,7 +481,6 @@ class TypeaheadSelectInput extends React.Component {
       try {
         input = new RegExp(e.target.value, 'i');
       } catch (err) {
-        input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
       let typeaheadFilteredChildren =
         e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
@@ -501,7 +500,7 @@ class TypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          aria-label="Select a state"
+          ariaLabelTypeAhead="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
@@ -600,7 +599,7 @@ class MultiTypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          aria-label="Select a state"
+          ariaLabelTypeAhead="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
@@ -722,7 +721,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          aria-label="Select a state"
+          ariaLabelTypeAhead="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
@@ -802,7 +801,7 @@ class PlainSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          aria-label="Select a state"
+          ariaLabelTypeAhead="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}

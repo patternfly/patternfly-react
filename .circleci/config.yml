@@ -283,7 +283,7 @@ jobs:
         command: yarn test:a11y
     - run:
         name: Upload a11y report
-        command: node .circleci/upload-preview.js coverage
+        command: node .circleci/upload-preview.js packages/patternfly-4/react-docs/coverage
         when: always
     - store_artifacts:
         path: packages/patternfly-4/react-docs/coverage/
