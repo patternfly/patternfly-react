@@ -13,7 +13,7 @@
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
-    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable"
+    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts\/chartbullet|virtualizedtable\/selectable\""
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",

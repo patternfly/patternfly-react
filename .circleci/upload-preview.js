@@ -35,8 +35,8 @@ else if (uploadFolderName !== 'public') {
 uploadURL += '.surge.sh';
 
 publishFn({
-  project: uploadFolderName,
-  p: uploadFolderName,
+  project: uploadFolder,
+  p: uploadFolder,
   domain: uploadURL,
   d: uploadURL,
   e: 'https://surge.surge.sh',
