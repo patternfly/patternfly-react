@@ -14,7 +14,7 @@ export interface LoginMainFooterLinksItemProps extends React.HTMLProps<HTMLLIEle
   /** Component used to render the Footer Link Item */
   linkComponent?: React.ReactNode;
   /** Props for the LinkComponent */
-  linkComponentProps: any;
+  linkComponentProps?: any;
 }
 
 export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLinksItemProps> = ({
