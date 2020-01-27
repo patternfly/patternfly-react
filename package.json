@@ -101,7 +101,7 @@
     "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/tslint --project ./tslint.config.json --config tslint.json",
     "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
     "prettier": "node node_modules/.bin/prettier --write \"storybook/**/*.{js,ts,tsx}\" \"packages/**/*.{js,ts,tsx}\" \"scripts/**/*.{js,ts,tsx}\"",
-    "serve:docs": "lerna run serve:prefix",
+    "serve:docs": "lerna run serve",
     "start": "yarn start:pf3",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
