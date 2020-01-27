@@ -3,12 +3,13 @@ import React from 'react';
 
 interface AlertDemoState {
   alertOneVisible: boolean;
+  alertTwoVisible: boolean;
 }
 
 export class AlertDemo extends React.Component<null, AlertDemoState> {
   constructor(props) {
     super(props);
-    this.state = { alertOneVisible: true };
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
   }
 
   componentDidMount() {
@@ -16,9 +17,10 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
   }
 
   hideAlertOne = () => this.setState({ alertOneVisible: false });
+  hideAlertTwo = () => this.setState({ alertTwoVisible: false });
 
   render() {
-    const { alertOneVisible } = this.state;
+    const { alertOneVisible, alertTwoVisible } = this.state;
     return (
       <React.Fragment>
         {alertOneVisible && (
@@ -27,6 +29,17 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
             variant="info"
             title="Info alert title"
             action={<AlertActionCloseButton id="test-button" onClose={this.hideAlertOne} />}
+          >
+            Info alert description. <a href="#">This is a link.</a>
+          </Alert>
+        )}
+        {alertTwoVisible && (
+          <Alert
+            isLiveRegion
+            id="info-alert"
+            variant="info"
+            title="Info alert title"
+            action={<AlertActionCloseButton id="test-button-2" onClose={this.hideAlertTwo} />}
           >
             Info alert description. <a href="#">This is a link.</a>
           </Alert>

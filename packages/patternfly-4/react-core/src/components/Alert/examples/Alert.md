@@ -299,9 +299,9 @@ class StaticLiveRegionAlert extends React.Component {
       <React.Fragment>
         {alertOneVisible && (
           <Alert
-            isToast
+            isLiveRegion
             variant="info"
-            title="This Alert uses the recommended 'isToast' prop to automatically sets ARIA attributes and CSS classes."
+            title="This Alert uses the recommended 'isLiveRegion' prop to automatically sets ARIA attributes and CSS classes."
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}></Alert>
         )}
         {alertTwoVisible && (
@@ -310,7 +310,7 @@ class StaticLiveRegionAlert extends React.Component {
             aria-relevant="additions text"
             aria-atomic="true"
             variant="info"
-            title={`You can alternatively omit the "isToast" prop to specify ARIA attributes and CSS manually on the containing element.`} 
+            title={`You can alternatively omit the "isLiveRegion" prop to specify ARIA attributes and CSS manually on the containing element.`} 
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
             />
         )}
@@ -339,7 +339,7 @@ class DynamicLiveRegionAlert extends React.Component {
       addAlert({
         title: 'Single Success Alert',
         variant: 'success',
-        isToast: true,
+        isLiveRegion: true,
         key: getUniqueId(),
       })
     };
@@ -371,11 +371,11 @@ class DynamicLiveRegionAlert extends React.Component {
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Single Info Alert</button>
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Single Danger Alert</button>
         </InputGroup>
-        {this.state.alerts.map(({ title, variant, isToast, ariaLive, ariaRelevant, ariaAtomic, key }) => (
+        {this.state.alerts.map(({ title, variant, isLiveRegion, ariaLive, ariaRelevant, ariaAtomic, key }) => (
           <Alert
             variant={variant}
             title={title}
-            isToast={isToast}
+            isLiveRegion={isLiveRegion}
             aria-live={ariaLive}
             aria-relevant={ariaRelevant}
             aria-atomic={ariaAtomic}
@@ -410,7 +410,7 @@ class AsyncLiveRegionAlert extends React.Component {
         addAlert({
           title: `This is a async alert number ${this.state.alerts.length + 1}`,
           variant: 'info',
-          isToast: true,
+          isLiveRegion: true,
           key: getUniqueId()
         });
       }, 1500);
@@ -423,11 +423,11 @@ class AsyncLiveRegionAlert extends React.Component {
           <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start Async Info Alerts</button>
           <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop Async Info Alerts</button>
         </InputGroup>
-        {this.state.alerts.map(({ title, variant, isToast, key }) => (
+        {this.state.alerts.map(({ title, variant, isLiveRegion, key }) => (
           <Alert
             variant={variant}
             title={title}
-            isToast={isToast}
+            isLiveRegion={isLiveRegion}
             key={key} />
         ))}
       </React.Fragment>
