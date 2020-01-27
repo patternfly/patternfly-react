@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.134.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.0...@patternfly/react-core@3.134.1) (2020-01-27)
+
+
+### Bug Fixes
+
+* **dropdown:** do not pass id to dropdown list item if is not set ([#3555](https://github.com/patternfly/patternfly-react/issues/3555)) ([06df46a](https://github.com/patternfly/patternfly-react/commit/06df46a845da13a981239c9f7393258112161acf))
+
+
+
+
+
 # [3.134.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.133.2...@patternfly/react-core@3.134.0) (2020-01-27)
 
 
