@@ -4,10 +4,10 @@ import { css, getModifier } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
-import { Button } from '../Button';
+import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
 import { globalBreakpoints } from './DataToolbarUtils';
-import { PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
