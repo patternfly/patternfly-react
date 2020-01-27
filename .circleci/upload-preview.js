@@ -29,7 +29,7 @@ if (uploadFolderName === '.out') {
   uploadURL += '-pf3';
 }
 else if (uploadFolderName !== 'public') {
-  uploadURL += `-${uploadFolder}`;
+  uploadURL += `-${uploadFolderName}`;
 }
 
 uploadURL += '.surge.sh';
