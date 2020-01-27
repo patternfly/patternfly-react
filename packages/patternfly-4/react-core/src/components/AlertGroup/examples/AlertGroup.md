@@ -1,5 +1,5 @@
 ---
-title: "AlertGroup"
+title: Alert group
 section: components
 cssPrefix: "pf-c-alert-group"
 typescript: true

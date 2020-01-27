@@ -1,9 +1,8 @@
-import styles from '@patternfly/react-styles/css/components/AlertGroup/alert-group';
-import { css } from '@patternfly/react-styles';
-import { canUseDOM } from 'exenv';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { canUseDOM } from 'exenv';
 import { Omit } from '../../helpers/typeUtils';
+import { AlertGroupInline } from './AlertGroupInline';
 
 export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>, 'className'> {
   /** Additional classes added to the AlertGroup */
@@ -16,42 +15,49 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   appendTo?: HTMLElement | (() => HTMLElement);
 }
 
-class AlertGroup extends React.Component<AlertGroupProps> {
-  appendTo?: HTMLDivElement = undefined;
-
-  constructor(props: AlertGroupProps) {
-    super(props);
-  }
-  
-  componentDidMount() {
-    if (this.appendTo) {
-      document.body.appendChild(this.appendTo);
-    }
-  }
-  componentWillUnmount() {
-    if (this.appendTo) {
-      document.body.removeChild(this.appendTo);
-    }
-  }
-  render() {
-    if (!canUseDOM) {
-      return null;
-    }
-    if (!this.appendTo) {
-      this.appendTo = document.createElement('div');
-    }
-    const { className, children, isToast, ...rest } = this.props;
-    const alertGroup = (
-      <ul
-        className={css(styles.alertGroup, className, (isToast ? styles.modifiers.toast : ''))}
-        {...rest}>
-        {React.Children.toArray(children).map(
-          (Alert: React.ReactNode, index: number) => <li className="pf-c-alert-group__item" key={index}>{Alert}</li>
-        )}
-      </ul>
-    );
-    return (isToast) ? ReactDOM.createPortal(alertGroup, this.appendTo) : alertGroup;
-  }
+interface AlertGroupState {
+  container: HTMLElement;
 }
 
-export { AlertGroup };
+export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
+  state = {
+    container: undefined
+  } as AlertGroupState
+
+  componentDidMount() {
+    const container = document.createElement('div');
+    const target: HTMLElement = this.getTargetElement();
+    this.setState({ container });
+    target.appendChild(container);
+  }
+
+  componentWillUnmount() {
+    const target: HTMLElement = this.getTargetElement();
+    if (this.state.container) {
+      target.removeChild(this.state.container);
+    }
+  }
+
+  getTargetElement() {
+    const appendTo = this.props.appendTo;
+    if (typeof appendTo === 'function') {
+      return appendTo();
+    }
+    return appendTo || document.body;
+  };
+
+  render() {
+    const alertGroup = <AlertGroupInline {...this.props} />;
+    if (!this.props.isToast) {
+      return alertGroup;
+    }
+
+    const container = this.state.container;
+
+    if (!canUseDOM || !container) {
+      return null;
+    }
+
+    return ReactDOM.createPortal(alertGroup, container);
+  }
+}

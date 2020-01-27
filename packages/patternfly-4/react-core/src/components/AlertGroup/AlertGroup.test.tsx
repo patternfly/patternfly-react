@@ -1,7 +1,11 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Alert } from '../Alert';
-import { AlertGroup } from '.';
+import { AlertGroup } from '../AlertGroup';
+import { AlertActionCloseButton } from '../../components/Alert/AlertActionCloseButton';
+
+jest.spyOn(document, 'createElement');
+jest.spyOn(document.body, 'addEventListener');
 
 test('Alert Group works with zero children', () => {
   const view = shallow(
@@ -32,27 +36,49 @@ test('Alert Group works with n children', () => {
 });
 
 test('Standard Alert Group is not a toast alert group', () => {
-  const wrapper = shallow(
+  const wrapper = mount(
     <AlertGroup>
       <Alert
         variant="danger"
         title="alert title" />
     </AlertGroup>
   );
-  const hasToastClass = wrapper.find('.pf-c-alert-group').is('.pf-m-toast');
-  expect(hasToastClass).toBeFalsy();
+  expect(wrapper.find('.pf-c-alert-group.pf-m-toast')).toHaveLength(0);
   expect(wrapper).toMatchSnapshot();
 });
 
 test('Toast Alert Group contains expected modifier class', () => {
-  const wrapper = shallow(
+  const wrapper = mount(
     <AlertGroup isToast>
       <Alert
         variant="warning"
         title="alert title" />
     </AlertGroup>
   );
-  const hasToastClass = wrapper.find('.pf-c-alert-group').is('.pf-m-toast');
-  expect(hasToastClass).toBeTruthy();
+  expect(wrapper.find('.pf-c-alert-group.pf-m-toast')).toHaveLength(1);
   expect(wrapper).toMatchSnapshot();
+});
+
+test('Alert Group creates a container element once for div', () => {
+  const view = shallow(<AlertGroup> Test About Modal </AlertGroup>);
+  view.update();
+  expect(document.createElement).toBeCalledWith('div');
+  expect(document.createElement).toHaveBeenCalledTimes(1);
+});
+
+test('alertgroup closes when alerts are closed', () => {
+  const onClose = jest.fn();
+  const wrapper = mount(
+    <AlertGroup isToast appendTo={document.body}>
+      <Alert
+        isLiveRegion
+        title={"Test Alert"}
+        action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
+      />
+    ))}
+  </AlertGroup>
+  )
+  expect(wrapper).toMatchSnapshot();
+  wrapper.find('button[aria-label="Close"]').simulate('click');
+  expect(onClose).toBeCalled();
 });
