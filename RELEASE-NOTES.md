@@ -11,8 +11,6 @@ Packages released:
 ### Components
 - **About modal:** 
   - Added type safety to default props ([#3536](https://github.com/patternfly/patternfly-react/pull/3536))
-- **Actions column:** 
-  -  Fixed import path for DropdownSeparator ([#3578](https://github.com/patternfly/patternfly-react/pull/3578))
 - **Alert:** 
   - Accessibility updates to alert for toast alerts ([#3519](https://github.com/patternfly/patternfly-react/pull/3519))
 - **Alert group:**
@@ -32,7 +30,7 @@ Packages released:
 - **Divider:** 
   - Promote Divider from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
 - **Flex layout:** Allowed string literals to be used for FlexItem modifiers ([#3544](https://github.com/patternfly/patternfly-react/pull/3544))
-- **Over flow menu:** 
+- **Overflow menu:** 
   - Promote OverflowMenu from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
 - **Page:** 
   - Add ability to customize screen reader label ([#3433](https://github.com/patternfly/patternfly-react/pull/3433))
@@ -56,6 +54,7 @@ Packages released:
 ### Table
   - Fixed issue 3559, for table we now default to a div instead of anchor([#3567](https://github.com/patternfly/patternfly-react/pull/3567))
   - Made IAction onClick optional ([#3558](https://github.com/patternfly/patternfly-react/pull/3558))
+  - Fixed ActionsColumn import path for DropdownSeparator ([#3578](https://github.com/patternfly/patternfly-react/pull/3578))
 
 ### Other
 - **Ci:** 
