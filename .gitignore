@@ -28,6 +28,3 @@ lerna-debug.log
 .vscode
 # For vim
 *.swp
-
-# Deploy directory
-public

@@ -78,30 +78,30 @@ workflows:
   build_test_deploy:
     jobs:
     - build
-    - build_pf4_docs:
-        requires:
-        - build
     - build_pf3_docs:
         requires:
         - build
-    - test_jest_pf4:
+    - build_pf4_docs:
         requires:
         - build
     - test_jest_other:
         requires:
         - build
-    - test_a11y_pf4:
+    - test_jest_pf4:
         requires:
-        - build_pf4_docs
+        - build
+    - lint:
+        requires:
+        - build
     - test_integration:
         requires:
         - build
         filters:
           branches:
             only: master
-    - lint:
+    - test_a11y_pf4:
         requires:
-        - build
+        - build_pf4_docs
     - deploy_prerelease:
         requires:
         - test_jest_pf4
