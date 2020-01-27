@@ -15,6 +15,8 @@ Packages released:
   -  Fixed import path for DropdownSeparator ([#3578](https://github.com/patternfly/patternfly-react/pull/3578))
 - **Alert:** 
   - Accessibility updates to alert for toast alerts ([#3519](https://github.com/patternfly/patternfly-react/pull/3519))
+- **Alert group:**
+    - Added alert group component ([#3531](https://github.com/patternfly/patternfly-react/pull/3531))
 - **Chip group:**
   - Added closable chip group ([#3455](https://github.com/patternfly/patternfly-react/pull/3455))
 - **Clipboard copy:** 
