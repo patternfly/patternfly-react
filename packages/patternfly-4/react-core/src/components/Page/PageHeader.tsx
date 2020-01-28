@@ -29,8 +29,6 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
-  /** A flag that specifies whether the value for role is set on the <main> element */
-  isRoleSet?: boolean;
   /** Sets the value for role on the <main> element */
   role?: string;
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
@@ -48,8 +46,7 @@ export const PageHeader = ({
   avatar = null as React.ReactNode,
   topNav = null as React.ReactNode,
   isNavOpen = true,
-  isRoleSet = false,
-  role = null as string,
+  role = undefined as string,
   showNavToggle = false,
   onNavToggle = () => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
@@ -63,7 +60,7 @@ export const PageHeader = ({
         const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
         return (
-          <header role={isRoleSet ? role : undefined} className={css(styles.pageHeader, className)} {...props}>
+          <header role={role} className={css(styles.pageHeader, className)} {...props}>
             {(showNavToggle || logo) && (
               <div className={css(styles.pageHeaderBrand)}>
                 {showNavToggle && (

@@ -24,8 +24,6 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   sidebar?: React.ReactNode;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
-  /** A flag that specifies whether the value for role is set on the <main> element */
-  isRoleSet?: boolean;
   /** Sets the value for role on the <main> element */
   role?: string;
   /** an id to use for the [role="main"] element */
@@ -68,8 +66,7 @@ export class Page extends React.Component<PageProps, PageState> {
     defaultManagedSidebarIsOpen: true,
     onPageResize: (): void => null,
     mainContainerId: null as string,
-    isRoleSet: false,
-    role: null as string
+    role: undefined as string
   };
 
   constructor(props: PageProps) {
@@ -133,7 +130,6 @@ export class Page extends React.Component<PageProps, PageState> {
       sidebar,
       skipToContent,
       role,
-      isRoleSet,
       mainContainerId,
       isManagedSidebar,
       defaultManagedSidebarIsOpen,
@@ -156,7 +152,7 @@ export class Page extends React.Component<PageProps, PageState> {
           {header}
           {sidebar}
           <main
-            role={isRoleSet ? role : undefined}
+            role={role}
             id={mainContainerId}
             className={css(styles.pageMain)}
             tabIndex={-1}
