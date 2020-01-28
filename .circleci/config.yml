@@ -220,8 +220,8 @@ jobs:
         keys:
         - *js_deps_cache_key
     - run:
-        name: TSLint
-        command: yarn lint:ts || true
+        name: ESLint
+        command: yarn lint:ts
     - run:
         name: "@patternfly/patternfly Versions Match"
         command: yarn lint:versions
