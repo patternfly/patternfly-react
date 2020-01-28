@@ -58,10 +58,11 @@ Packages released:
   - Updated so clear button appears with any type ahead input ([#3502](https://github.com/patternfly/patternfly-react/pull/3502))
   - Set a unique id to the select toggle type ahead input ([#3529](https://github.com/patternfly/patternfly-react/pull/3529))
 - **Spinner** 
- - Promote Spinner from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
+  - Promote Spinner from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
 
 ### Catalog view extension
-- **Catalog tile:** Removed truncation fade and fixed length ([#3378](https://github.com/patternfly/patternfly-react/pull/3378))
+- **Catalog tile:** 
+  - Removed truncation fade and fixed length ([#3378](https://github.com/patternfly/patternfly-react/pull/3378))
 
 ### Table
   - Fixed issue 3559, for table we now default to a div instead of anchor([#3567](https://github.com/patternfly/patternfly-react/pull/3567))
