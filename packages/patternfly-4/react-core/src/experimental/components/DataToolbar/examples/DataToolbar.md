@@ -344,7 +344,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
     };
     
     this.clearRiskSelection = () => {
-      this.setState({Edit
+      this.setState({
         riskSelected: null,
         riskIsExpanded: false
       });
