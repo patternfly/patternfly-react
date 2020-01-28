@@ -96,9 +96,6 @@ workflows:
     - test_integration:
         requires:
         - build
-        filters:
-          branches:
-            only: master
     - lint:
         requires:
         - build
