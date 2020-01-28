@@ -6,13 +6,23 @@ releaseNoteTOC: true
 
 ## 2020.01 release notes (2020-01-28)
 Packages released:
-
+- [@patternfly/react-catalog-view-extension@1.2.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension@1.2.5)
+- [@patternfly/react-charts@5.2.21](https://www.npmjs.com/package/@patternfly/react-charts@5.2.21)
+- [@patternfly/react-core@3.134.2](https://www.npmjs.com/package/@patternfly/react-core@3.134.2)
+- [@patternfly/react-inline-edit-extension@2.15.6](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension@2.15.6)
+- [@patternfly/react-styles@3.6.26](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.26)
+- [@patternfly/react-table@2.25.6](https://www.npmjs.com/package/@patternfly/react-table@2.25.6)
+- [@patternfly/react-tokens@2.7.25](https://www.npmjs.com/package/@patternfly/react-tokens@2.7.25
+- [@patternfly/react-topology@2.12.5](https://www.npmjs.com/package/@patternfly/react-topology@2.12.5)
+- [@patternfly/react-virtualized-extension@1.3.93](https://www.npmjs.com/package/@patternfly/react-virtualized-extension@1.3.93)
+- [@patternfly/react-icons@3.14.39](https://www.npmjs.com/package/@patternfly/react-icons@3.14.39)
 
 ### Components
 - **About modal:** 
   - Added type safety to default props ([#3536](https://github.com/patternfly/patternfly-react/pull/3536))
 - **Alert:** 
   - Accessibility updates to alert for toast alerts ([#3519](https://github.com/patternfly/patternfly-react/pull/3519))
+  - Fixed integration test regression ([#3594](https://github.com/patternfly/patternfly-react/pull/3594)
 - **Alert group:**
     - Added alert group component ([#3531](https://github.com/patternfly/patternfly-react/pull/3531))
 - **Chip group:**
@@ -29,6 +39,8 @@ Packages released:
   - Updated example to not exclude previous filtered items. ([#3571](https://github.com/patternfly/patternfly-react/pull/3571))
 - **Divider:** 
   - Promote Divider from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
+- **Dropdown:**
+  - Set a random id for dropdown item if id is not given ([#3555](https://github.com/patternfly/patternfly-react/pull/3555))
 - **Flex layout:** Allowed string literals to be used for FlexItem modifiers ([#3544](https://github.com/patternfly/patternfly-react/pull/3544))
 - **Overflow menu:** 
   - Promote OverflowMenu from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
