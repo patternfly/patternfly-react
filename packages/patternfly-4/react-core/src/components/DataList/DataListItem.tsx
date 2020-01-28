@@ -60,7 +60,6 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
         return (
           <li
             id={id}
-            role="option"
             className={css(
               styles.dataListItem,
               isExpanded && styles.modifiers.expanded,
