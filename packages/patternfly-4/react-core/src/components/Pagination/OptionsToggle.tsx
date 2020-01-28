@@ -37,6 +37,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   onEnter?: () => void;
 }
 
+let toggleId = 0;
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemsTitle = 'items',
   optionsToggle = 'Select',
@@ -82,7 +83,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
             onToggle={onToggle}
             isDisabled={isDisabled || itemCount <= 0}
             isOpen={isOpen}
-            id={`${widgetId}-toggle`}
+            id={`${widgetId}-toggle-${toggleId++}`}
             className={styles.optionsMenuToggleButton}
             parentRef={parentRef}
           ></DropdownToggle>
