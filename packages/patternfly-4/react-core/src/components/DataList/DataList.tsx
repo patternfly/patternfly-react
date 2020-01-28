@@ -49,7 +49,7 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
         updateSelectedDataListItem
       }}
     >
-      <ul className={css(styles.dataList, className)} aria-label={ariaLabel} role="listbox" {...props} >
+      <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props} >
         {children}
       </ul>
     </DataListContext.Provider>
