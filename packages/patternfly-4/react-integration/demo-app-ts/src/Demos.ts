@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertDemo
   },
   {
+    id: 'alert-group-demo',
+    name: 'Alert Group Demo',
+    componentType: Examples.AlertGroupDemo
+  },
+  {
     id: 'application-launcher-demo',
     name: 'Application Launcher Demo',
     componentType: Examples.ApplicationLauncherDemo

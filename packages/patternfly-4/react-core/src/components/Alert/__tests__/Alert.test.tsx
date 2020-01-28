@@ -17,7 +17,7 @@ it('Alert should match snapshot (auto-generated)', () => {
 			className={"''"}
 			aria-label={"string"}
 			variantLabel={"string"}
-			isToast={false}
+			isLiveRegion={false}
     />);
   expect(view).toMatchSnapshot();
 });
@@ -32,7 +32,7 @@ test('default Alert variant is info', () => {
   ).toContain('pf-m-info');
 });
 
-Object.values(['success' as AlertVariant]).forEach(variant => {
+Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(
@@ -108,7 +108,7 @@ Object.values(['success' as AlertVariant]).forEach(variant => {
     test('Toast alerts match snapsnot', () => {
       const view = mount(
         <Alert
-          isToast={true}
+          isLiveRegion={true}
           variant={variant}
           aria-label={`${variant} toast alert`}
           title="Some title"
@@ -122,7 +122,7 @@ Object.values(['success' as AlertVariant]).forEach(variant => {
     test('Toast alerts contain default live region', () => {
       const wrapper = mount(
         <Alert
-          isToast={true}
+          isLiveRegion={true}
           variant={variant}
           aria-label={`${variant} toast alert`}
           title="Some title"
@@ -137,7 +137,7 @@ Object.values(['success' as AlertVariant]).forEach(variant => {
     test('Toast alert live regions are not atomic', () => {
       const wrapper = mount(
         <Alert
-          isToast={true}
+          isLiveRegion={true}
           variant={variant}
           aria-label={`${variant} toast alert`}
           title="Some title"
@@ -146,21 +146,6 @@ Object.values(['success' as AlertVariant]).forEach(variant => {
         </Alert>
       );
       expect(wrapper.find('.pf-c-alert').prop('aria-atomic')).toBe('false');
-    });
-
-    test('Toast alert should specify pf-m-live on container', () => {
-      const wrapper = mount(
-        <Alert
-          isToast={true}
-          variant={variant}
-          aria-label={`${variant} toast alert`}
-          title="Some title"
-        >
-          Some toast alert
-        </Alert>
-      );
-      const alert = wrapper.find('div').first();
-      expect(alert.hasClass('pf-m-live')).toBe(true);
     });
 
     test('Non-toast alerts can have custom live region settings', () => {

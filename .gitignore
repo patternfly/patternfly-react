@@ -31,3 +31,6 @@ lerna-debug.log
 
 # Deploy directory
 docs
+
+.yalc
+yalc.lock
