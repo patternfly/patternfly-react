@@ -94,7 +94,10 @@
         ],
         "prefer-const": "error",
         "prettier/prettier": "error",
-        "radix": "as-needed",
+        "radix": [
+            "error",
+            "as-needed"
+        ],
         "spaced-comment": "error",
         "use-isnan": "error"
     }
