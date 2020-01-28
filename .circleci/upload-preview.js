@@ -61,10 +61,10 @@ if (prnum) {
       let commentBody = '';
       const existingComment = comments.find(comment => comment.user.login === 'patternfly-build');
       if (existingComment) {
-        commentBody += existingComment.body;
+        commentBody += existingComment.body.trim();
+        commentBody += '\n';
       }
 
-      commentBody += '\n';
       if (uploadFolderName === '.out') {
         commentBody += tryAddComment(`PF3 preview: https://${uploadURL}`, commentBody);
       }
