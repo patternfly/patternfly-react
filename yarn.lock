@@ -3077,10 +3077,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@patternfly/patternfly-a11y@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-0.0.16.tgz#b99a6fab43272178ee5540a5e9f8f7c9a032cc53"
-  integrity sha512-5VB6lVdBybsYBan26LABGbJZ2CcPn7SADSPBJH/YYSGii5bGs2FH6Q2FiMJrrw3EteGTXW9jPhFcWGZsqfkrIw==
+"@patternfly/patternfly-a11y@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-0.0.17.tgz#bf029d20ae326c328d2dec5d0df5bad52beec12f"
+  integrity sha512-mDLqeenYxA3Mup6Xis2ntefzP/UfvZoq4pV6fZ3lFrcvZeokN0R4DVsCFPiQHXNbIWmvfOvuWsRVHIylLjPT8g==
   dependencies:
     axe-webdriverjs "^2.3.0"
     junit-xml "^1.2.0"
