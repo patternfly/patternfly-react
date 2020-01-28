@@ -1,0 +1,35 @@
+import * as React from 'react';
+import { shallow } from 'enzyme';
+import { BackgroundImage, BackgroundImageSrc } from '../BackgroundImage';
+// any missing imports can usually be resolved by adding them here
+import {  } from '..';
+
+const images = {
+  [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
+  [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
+  [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
+  [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
+  [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
+  [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg'
+};
+
+it('BackgroundImage should match snapshot (auto-generated)', () => {
+  const view = shallow(
+    <BackgroundImage
+      className={"''"}
+			src={images}
+    />);
+  expect(view).toMatchSnapshot();
+});
+
+Object.values([true, false]).forEach(isRead => {
+  test('BackgroundImage', () => {
+    const view = shallow(<BackgroundImage src={images} />);
+    expect(view).toMatchSnapshot();
+  });
+});
+
+test('allows passing in a single string as the image src', () => {
+  const view = shallow(<BackgroundImage src={images.lg} />);
+  expect(view).toMatchSnapshot();
+});

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About modal container tests About Modal Container Test isOpen 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      aria-describedby="ariaDescribedById"
+      aria-labelledby="ariaLablledbyId"
+      className=""
+    >
+      <Component
+        alt="Brand Image"
+        src="brandImg..."
+      />
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        id="ariaLablledbyId"
+        productName="Product Name"
+      />
+      <Component
+        id="ariaDescribedById"
+        noAboutModalBoxContentContainer={false}
+        title="Test Modal Container title"
+        trademark="Trademark and copyright information here"
+      >
+        This is ModalBox content
+      </Component>
+      <Component
+        backgroundImageSrc="backgroundImageSrc..."
+      />
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`About modal container tests About Modal Container Test simple 1`] = `""`;
+
+exports[`About modal container tests About Modal Container Test with onlose 1`] = `""`;
+
+exports[`AboutModalContainer should match snapshot (auto-generated) 1`] = `""`;

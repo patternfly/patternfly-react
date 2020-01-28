@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Brand should match snapshot (auto-generated) 1`] = `
+<img
+  alt="string"
+  className="pf-c-brand ''"
+  src="''"
+/>
+`;
+
+exports[`simple brand 1`] = `
+<img
+  alt="brand"
+  className="pf-c-brand"
+  src=""
+/>
+`;

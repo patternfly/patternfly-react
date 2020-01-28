@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Content Test isOpen 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`Modal Content Test only body 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`Modal Content Test with footer 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+      <Component
+        isLeftAligned={false}
+      >
+        Testing
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`Modal Content Test with onclose 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={true}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+      <Component
+        isLeftAligned={false}
+      >
+        Testing footer
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`Modal Content test without footer 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`Modal Test with custom footer 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={true}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Custom Footer"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Custom Footer
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+      <Component
+        isLeftAligned={false}
+      >
+        <span
+          id="test-custom-footer"
+        >
+          TEST
+        </span>
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`Modal Test with custom header 1`] = `
+<Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={true}
+      isSmall={false}
+      style={Object {}}
+      title="test-custom-header-modal"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <div
+        className="pf-c-title"
+      >
+        <span
+          id="test-custom-header"
+        >
+          TEST
+        </span>
+      </div>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+      <Component
+        isLeftAligned={false}
+      >
+        Testing footer
+      </Component>
+    </Component>
+  </FocusTrap>
+</Component>
+`;
+
+exports[`ModalContent should match snapshot (auto-generated) 1`] = `""`;

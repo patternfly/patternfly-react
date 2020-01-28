@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage should match snapshot (auto-generated) 1`] = `
+<Fragment>
+  <Component
+    className="''"
+    footer={
+      <Unknown>
+        <p>
+          ''
+        </p>
+        <Unknown />
+      </Unknown>
+    }
+    header={
+      <Unknown
+        headerBrand={
+          <React.Fragment>
+            <Unknown
+              alt="''"
+              src="''"
+            />
+          </React.Fragment>
+        }
+      />
+    }
+  >
+    <Component
+      subtitle="string"
+      title="string"
+    />
+    <Component>
+      ReactNode
+    </Component>
+  </Component>
+</Fragment>
+`;
+
+exports[`check loginpage example against snapshot 1`] = `
+<Fragment>
+  <Component
+    alt="Pf-background"
+    src="Background src"
+  />
+  <Component
+    className=""
+    footer={
+      <Unknown>
+        <p>
+          This is placeholder text only.
+        </p>
+        <Unknown
+          variant="inline"
+        >
+          English
+        </Unknown>
+      </Unknown>
+    }
+    header={
+      <Unknown
+        headerBrand={
+          <React.Fragment>
+            <Unknown
+              alt="Pf-logo"
+              src="Brand src"
+            />
+          </React.Fragment>
+        }
+      />
+    }
+  >
+    <Component
+      title="Log into your account"
+    />
+    <Component />
+    <Component
+      forgotCredentials={null}
+      signUpForAccountMessage={
+        <React.Fragment>
+          Login to your account 
+          <a
+            href="https://www.patternfly.org"
+          >
+            Need an account?
+          </a>
+        </React.Fragment>
+      }
+      socialMediaLoginContent="Footer"
+    />
+  </Component>
+</Fragment>
+`;

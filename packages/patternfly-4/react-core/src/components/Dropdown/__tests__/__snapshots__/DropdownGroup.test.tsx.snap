@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownGroup should match snapshot (auto-generated) 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`dropdown groups basic render 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

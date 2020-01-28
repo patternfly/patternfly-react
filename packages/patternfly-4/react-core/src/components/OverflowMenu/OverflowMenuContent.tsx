@@ -12,7 +12,7 @@ export interface OverflowMenuContentProps extends React.HTMLProps<HTMLDivElement
   isPersistent?: boolean;
 }
 
-export const OverflowMenuContent: React.SFC<OverflowMenuContentProps> = ({ className, children, isPersistent }) => (
+export const OverflowMenuContent: React.SFC<OverflowMenuContentProps> = ({ className, children, isPersistent }: OverflowMenuContentProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (!value.isBelowBreakpoint || isPersistent) && (

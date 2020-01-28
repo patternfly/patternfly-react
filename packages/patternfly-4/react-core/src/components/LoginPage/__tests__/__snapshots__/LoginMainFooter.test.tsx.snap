@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginMainFooter should match snapshot (auto-generated) 1`] = `
+<div
+  className="pf-c-login__main-footer ''"
+>
+  ReactNode
+</div>
+`;
+
+exports[`className is added to the root element 1`] = `"pf-c-login__main-footer extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<div
+  className="pf-c-login__main-footer"
+/>
+`;

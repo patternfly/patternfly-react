@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should match snapshot (auto-generated) 1`] = `
+<span
+  className="pf-c-badge pf-m-unread ''"
+/>
+`;
+
+exports[`false Badge 1`] = `
+<span
+  className="pf-c-badge pf-m-unread"
+>
+  unread
+   Badge
+</span>
+`;
+
+exports[`true Badge 1`] = `
+<span
+  className="pf-c-badge pf-m-read"
+>
+  read
+   Badge
+</span>
+`;

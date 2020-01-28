@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/List/list';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils'
+import { Omit, OneOf } from '../../helpers/typeUtils'
 
 export enum OrderType {
   number = '1',
@@ -26,10 +26,11 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   /** Additional classes added to the list */
   className?: string;
   /** Adds list variant styles */
-  variant?: ListVariant.inline;
+  variant?: ListVariant | 'inline';
   /** Sets the way items are numbered if variant is set to ordered */
-  type?: OrderType;
+  type?: OrderType | '1' | 'a' | 'A' | 'i' | 'I';
   component?: 'ol' | 'ul';
+  ref?: React.LegacyRef<HTMLOListElement | HTMLUListElement>
 }
 
 export const List: React.FunctionComponent<ListProps> = ({
@@ -40,7 +41,7 @@ export const List: React.FunctionComponent<ListProps> = ({
   ref = null,
   component = ListComponent.ul,
   ...props
-}) => {
+}: ListProps) => {
   return component === ListComponent.ol ? (
     <ol ref={ref as React.LegacyRef<HTMLOListElement>} type={type} {...props} className={css(styles.list, variant && getModifier(styles.modifiers, variant), className)}>
       {children}

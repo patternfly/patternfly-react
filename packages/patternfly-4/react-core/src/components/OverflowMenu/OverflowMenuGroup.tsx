@@ -18,9 +18,9 @@ export const OverflowMenuGroup: React.SFC<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,
-  groupType = '',
+  groupType,
   ...props
-}) => (
+}: OverflowMenuGroupProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (isPersistent || !value.isBelowBreakpoint) && (

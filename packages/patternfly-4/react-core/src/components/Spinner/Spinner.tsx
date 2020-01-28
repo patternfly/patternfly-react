@@ -24,7 +24,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   size = 'xl',
   'aria-valuetext': ariaValueText = 'Loading...',
   ...props
-}) => (
+}: SpinnerProps) => (
   <span
     className={css(styles.spinner, getModifier(styles, size))}
     role="progressbar"

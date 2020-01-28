@@ -28,9 +28,9 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   /** Label to indicate what progress is showing. */
   label?: React.ReactNode;
   /** Type of progress status. */
-  variant?: 'danger' | 'success' | 'info';
+  variant?: ProgressVariant | 'danger' | 'success' | 'info';
   /** Location of progress value. */
-  measureLocation?: 'outside' | 'inside' | 'top' | 'none';
+  measureLocation?: ProgressMeasureLocation | 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
   value: number;
 }

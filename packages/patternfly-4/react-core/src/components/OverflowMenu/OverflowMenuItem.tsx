@@ -17,7 +17,7 @@ export const OverflowMenuItem: React.SFC<OverflowMenuItemProps> = ({
   children,
   isPersistent = false,
   ...props
-}) => (
+}: OverflowMenuItemProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (isPersistent || !value.isBelowBreakpoint) && (

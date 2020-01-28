@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match snapshot (auto-generated) 1`] = `
+<article
+  className="pf-c-card ''"
+>
+  ReactNode
+</article>
+`;
+
+exports[`card with isCompact applied  1`] = `
+<article
+  className="pf-c-card pf-m-compact"
+/>
+`;
+
+exports[`card with isHoverable applied  1`] = `
+<article
+  className="pf-c-card pf-m-hoverable"
+/>
+`;
+
+exports[`className is added to the root element 1`] = `"pf-c-card extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<article
+  className="pf-c-card"
+/>
+`;
