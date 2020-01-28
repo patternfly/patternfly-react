@@ -85,7 +85,7 @@
         "prefer-arrow/prefer-arrow-functions": "error",
         "prefer-const": "error",
         "prettier/prettier": "error",
-        "radix": "error",
+        "radix": "as-needed",
         "spaced-comment": "error",
         "use-isnan": "error"
     }
