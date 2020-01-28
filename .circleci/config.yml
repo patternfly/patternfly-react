@@ -100,6 +100,7 @@ jobs:
   build:
     docker:
     - image: circleci/node:10
+    resource_class: xlarge
     steps:
     - checkout
     - persist_to_workspace:
@@ -246,7 +247,7 @@ jobs:
         - *gatsby_cache_key
     - run:
         name: Build patternfly-react docs
-        command: ~/.yarn/bin/yarn build:docs
+        command: yarn build:docs
     - save_cache:
         paths: *gatsby_cache_paths
         key: *gatsby_cache_key
