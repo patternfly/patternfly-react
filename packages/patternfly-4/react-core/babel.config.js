@@ -2,18 +2,21 @@ const envDistMapping = {
   cjs: 'js',
   esm: 'esm',
   umd: 'umd'
-}
+};
 
-const createIconsTransformPlugin = (env) => [
-  "transform-imports",
+const createIconsTransformPlugin = env => [
+  'transform-imports',
   {
-    "@patternfly/react-icons": {
+    '@patternfly/react-icons': {
       transform: (importName, matches) =>
-        `@patternfly/react-icons/dist/${envDistMapping[env]}/icons/${importName.split(/(?=[A-Z])/).join('-').toLowerCase()}`,
+        `@patternfly/react-icons/dist/${envDistMapping[env]}/icons/${importName
+          .split(/(?=[A-Z])/)
+          .join('-')
+          .toLowerCase()}`,
       preventFullImport: true
     }
   }
-]
+];
 
 module.exports = {
   extends: '../.babelrc',
@@ -28,4 +31,4 @@ module.exports = {
       plugins: [createIconsTransformPlugin('umd')]
     }
   }
-}
+};

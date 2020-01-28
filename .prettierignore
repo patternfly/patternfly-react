@@ -1,4 +1,0 @@
-package.json
-packages/**/dist/**/*.js
-packages/**/.cache/**/*.js
-scripts/generators/**/templates/**/*.js
