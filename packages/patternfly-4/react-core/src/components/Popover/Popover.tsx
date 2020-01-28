@@ -70,6 +70,8 @@ export interface PopoverProps {
    * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
    */
   isVisible?: boolean;
+  /** Minimum width of the popover (default 6.25rem) */
+  minWidth?: string;
   /** Maximum width of the popover (default 18.75rem) */
   maxWidth?: string;
   /** Lifecycle function invoked when the popover has fully transitioned out. */
@@ -167,6 +169,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   }
 
   storeTippyInstance = (tip: TippyInstance) => {
+    if(this.props.minWidth) tip.popperChildren.tooltip.style.minWidth = this.props.minWidth;
     tip.popperChildren.tooltip.classList.add(styles.popover);
     this.tip = tip;
   };
@@ -236,6 +239,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       onShown,
       onMount,
       zIndex,
+      minWidth,
       maxWidth,
       closeBtnAriaLabel,
       distance,
