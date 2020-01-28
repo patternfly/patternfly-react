@@ -10,7 +10,7 @@ import { ColumnsType } from './types';
 export function columnsAreEqual(oldColumns: ColumnsType, newColumns: ColumnsType) {
   return isEqualWith(oldColumns, newColumns, (a, b) => {
     if (isFunction(a) && isFunction(b)) {
-      return true;
+      return a === b;
     }
 
     return undefined;
