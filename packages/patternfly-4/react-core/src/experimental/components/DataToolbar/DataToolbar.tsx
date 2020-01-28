@@ -48,9 +48,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     };
   }
 
-  isToggleManaged = () => {
-    return !(this.props.isExpanded || !!this.props.toggleIsExpanded);
-  };
+  isToggleManaged = () => !(this.props.isExpanded || !!this.props.toggleIsExpanded);
 
   toggleIsExpanded = () => {
     this.setState(prevState => ({
@@ -81,13 +79,11 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
     if (!filterInfoToUpdate.hasOwnProperty(categoryName) || filterInfoToUpdate[categoryName] !== numberOfFilters) {
       filterInfoToUpdate[categoryName] = numberOfFilters;
-      this.setState({filterInfo: filterInfoToUpdate});
+      this.setState({ filterInfo: filterInfoToUpdate });
     }
   };
 
-  getNumberOfFilters = () => {
-    return sum(values(this.state.filterInfo));
-  };
+  getNumberOfFilters = () => sum(values(this.state.filterInfo));
 
   render() {
     const {
@@ -116,24 +112,23 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
             toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
             chipGroupContentRef: this.chipGroupContentRef,
             updateNumberFilters: this.updateNumberFilters,
-            numberOfFilters: numberOfFilters
+            numberOfFilters
           }}
         >
-          { React.Children.map(children, (child: any) => {
-              if (React.isValidElement(child)) {
-                return React.cloneElement(child, {
-                  // @ts-ignore
-                  clearAllFilters,
-                  clearFiltersButtonText,
-                  showClearFiltersButton,
-                  isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
-                  toolbarId: id
-                });
-              } else {
-                return child;
-              }
+          {React.Children.map(children, (child: any) => {
+            if (React.isValidElement(child)) {
+              return React.cloneElement(child, {
+                // @ts-ignore
+                clearAllFilters,
+                clearFiltersButtonText,
+                showClearFiltersButton,
+                isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
+                toolbarId: id
+              });
+            } else {
+              return child;
             }
-          )}
+          })}
           <DataToolbarChipGroupContent
             isExpanded={isToggleManaged ? isManagedToggleExpanded : isExpanded}
             chipGroupContentRef={this.chipGroupContentRef}

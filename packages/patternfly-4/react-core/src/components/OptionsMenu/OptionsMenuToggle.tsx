@@ -45,26 +45,24 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
   type,
   'aria-label': ariaLabel = 'Options menu',
   ...props
-}: OptionsMenuToggleProps) => {
-  return (
-    <DropdownContext.Consumer>
-      {({ id: contextId }) => (
-        <DropdownToggle
-          {...((isPlain || hideCaret) && { iconComponent: null })}
-          {...props}
-          isPlain={isPlain}
-          isOpen={isOpen}
-          isDisabled={isDisabled}
-          isHovered={isHovered}
-          isActive={isActive}
-          isFocused={isFocused}
-          id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
-          ariaHasPopup="listbox"
-          aria-label={ariaLabel}
-          aria-expanded={isOpen}
-          {...(toggleTemplate ? { children: toggleTemplate } : {})}
-        />
-      )}
-    </DropdownContext.Consumer>
-  );
-};
+}: OptionsMenuToggleProps) => (
+  <DropdownContext.Consumer>
+    {({ id: contextId }) => (
+      <DropdownToggle
+        {...((isPlain || hideCaret) && { iconComponent: null })}
+        {...props}
+        isPlain={isPlain}
+        isOpen={isOpen}
+        isDisabled={isDisabled}
+        isHovered={isHovered}
+        isActive={isActive}
+        isFocused={isFocused}
+        id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
+        ariaHasPopup="listbox"
+        aria-label={ariaLabel}
+        aria-expanded={isOpen}
+        {...(toggleTemplate ? { children: toggleTemplate } : {})}
+      />
+    )}
+  </DropdownContext.Consumer>
+);

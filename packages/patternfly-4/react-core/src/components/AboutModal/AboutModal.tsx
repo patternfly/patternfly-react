@@ -37,7 +37,7 @@ interface ModalState {
 }
 
 export class AboutModal extends React.Component<AboutModalProps, ModalState> {
-  private static currentId: number = 0;
+  private static currentId = 0;
   private id = AboutModal.currentId++;
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;

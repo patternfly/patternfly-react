@@ -92,10 +92,10 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
                 className
               )}
               ref={this.baseComponentRef}
-              {...ouiaContext.isOuia && {
+              {...(ouiaContext.isOuia && {
                 'data-ouia-component-type': ouiaComponentType,
                 'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-              }}
+              })}
             >
               {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {

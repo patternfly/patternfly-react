@@ -51,18 +51,17 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       clearAllFilters();
     };
 
-    const collapseListedFilters = typeof window !== 'undefined' ?
-      window.innerWidth < globalBreakpoints(collapseListedFiltersBreakpoint) :
-      false;
+    const collapseListedFilters =
+      typeof window !== 'undefined' ? window.innerWidth < globalBreakpoints(collapseListedFiltersBreakpoint) : false;
 
     return (
       <div
         className={css(
           styles.dataToolbarContent,
-          (numberOfFilters === 0 || isExpanded) &&  getModifier(styles, 'hidden'),
+          (numberOfFilters === 0 || isExpanded) && getModifier(styles, 'hidden'),
           className
         )}
-        {...((numberOfFilters === 0 || isExpanded) && {hidden: true})}
+        {...((numberOfFilters === 0 || isExpanded) && { hidden: true })}
         ref={chipGroupContentRef}
         {...props}
       >
@@ -71,24 +70,20 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
-        {
-          collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
-            <DataToolbarGroup className={css(
-              getModifier(styles, 'toggle-group-summary'),
-              'pf-m-filters-applied-message'
-            )}>
-              <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
-            </DataToolbarGroup>
-          )
-        }
-        {
-          showClearFiltersButton && !isExpanded &&
+        {collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
+          <DataToolbarGroup
+            className={css(getModifier(styles, 'toggle-group-summary'), 'pf-m-filters-applied-message')}
+          >
+            <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
+          </DataToolbarGroup>
+        )}
+        {showClearFiltersButton && !isExpanded && (
           <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
             <Button variant="link" onClick={clearChipGroups} isInline>
               {clearFiltersButtonText}
             </Button>
           </DataToolbarItem>
-        }
+        )}
       </div>
     );
   }

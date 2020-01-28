@@ -73,7 +73,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
           tooltip={tooltip}
           tooltipProps={tooltipProps}
           {...(enterTriggersArrowDown === true && { enterTriggersArrowDown })}
-          {...(customChild && { customChild: customChild })}
+          {...(customChild && { customChild })}
           {...(isFavorite !== null && {
             additionalChild: (
               <button

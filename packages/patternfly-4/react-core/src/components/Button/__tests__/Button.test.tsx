@@ -80,7 +80,7 @@ test('aria-disabled is set to true and tabIndex to -1 if component is not a butt
 });
 
 test('setting tab index through props', () => {
-  const view = mount(<Button tabIndex={0} >TabIndex 0 Button</Button>)
-  console.log(view.find('button').debug())
-  expect(view.find('button').props().tabIndex).toBe(0)
-})
+  const view = mount(<Button tabIndex={0}>TabIndex 0 Button</Button>);
+  console.log(view.find('button').debug());
+  expect(view.find('button').props().tabIndex).toBe(0);
+});

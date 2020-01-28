@@ -20,7 +20,7 @@ export const DataToolbarContext = React.createContext<Partial<DataToolbarContext
   toggleIsExpanded: () => {},
   chipGroupContentRef: null,
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => {},
-  numberOfFilters: 0,
+  numberOfFilters: 0
 });
 
 interface DataToolbarContentContextProps {
@@ -32,7 +32,7 @@ interface DataToolbarContentContextProps {
 export const DataToolbarContentContext = React.createContext<Partial<DataToolbarContentContextProps>>({
   expandableContentRef: null,
   expandableContentId: '',
-  chipContainerRef: null,
+  chipContainerRef: null
 });
 
 export interface DataToolbarBreakpointMod {

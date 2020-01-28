@@ -51,7 +51,12 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     isHovered: false
   };
 
-  private calculateToggleText(toggleText: string, toggleTextExpanded: string, toggleTextCollapsed: string, propOrStateIsExpanded: boolean) {
+  private calculateToggleText(
+    toggleText: string,
+    toggleTextExpanded: string,
+    toggleTextCollapsed: string,
+    propOrStateIsExpanded: boolean
+  ) {
     if (propOrStateIsExpanded && toggleTextExpanded !== '') {
       return toggleTextExpanded;
     }
@@ -87,7 +92,12 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       };
     }
 
-    const computedToggleText = this.calculateToggleText(toggleText, toggleTextExpanded, toggleTextCollapsed, propOrStateIsExpanded);
+    const computedToggleText = this.calculateToggleText(
+      toggleText,
+      toggleTextExpanded,
+      toggleTextCollapsed,
+      propOrStateIsExpanded
+    );
 
     return (
       <div {...props} className={css(styles.expandable, propOrStateIsExpanded && styles.modifiers.expanded, className)}>

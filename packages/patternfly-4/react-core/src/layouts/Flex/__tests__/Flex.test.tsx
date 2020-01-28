@@ -38,27 +38,29 @@ test('extra props are spread to the root element', () => {
 describe('flex modifiers', () => {
   Object.values(FlexModifiers).forEach(mod => {
     test(`${mod} is a valid modifier`, () => {
-      const view = mount(<Flex breakpointMods={[{ modifier: mod as keyof typeof FlexModifiers }]}>{mod}</Flex>)
-      expect(view.find('div').prop('className')).not.toMatch(/undefined/)
-    })
-  })
+      const view = mount(<Flex breakpointMods={[{ modifier: mod as keyof typeof FlexModifiers }]}>{mod}</Flex>);
+      expect(view.find('div').prop('className')).not.toMatch(/undefined/);
+    });
+  });
 });
 
 describe('flex item modifiers', () => {
   Object.values(FlexItemModifiers).forEach(mod => {
     test(`${mod} is a valid modifier`, () => {
-      const view = mount(<FlexItem breakpointMods={[{ modifier: mod as keyof typeof FlexItemModifiers }]}>{mod}</FlexItem>)
-      expect(view.find('div').prop('className')).not.toMatch(/undefined/)
-    })
-  })
+      const view = mount(
+        <FlexItem breakpointMods={[{ modifier: mod as keyof typeof FlexItemModifiers }]}>{mod}</FlexItem>
+      );
+      expect(view.find('div').prop('className')).not.toMatch(/undefined/);
+    });
+  });
 });
 
 test('flex modifier as string literal', () => {
-  const view = mount(<Flex breakpointMods={[{ modifier: 'flex-1', breakpoint: 'sm' }]} />)
-  expect(view.find('div').prop('className')).not.toMatch(/undefined/)
+  const view = mount(<Flex breakpointMods={[{ modifier: 'flex-1', breakpoint: 'sm' }]} />);
+  expect(view.find('div').prop('className')).not.toMatch(/undefined/);
 });
 
 test('flex item modifier as string literal', () => {
-  const view = mount(<FlexItem breakpointMods={[{ modifier: 'flex-1', breakpoint: 'sm' }]} />)
-  expect(view.find('div').prop('className')).not.toMatch(/undefined/)
+  const view = mount(<FlexItem breakpointMods={[{ modifier: 'flex-1', breakpoint: 'sm' }]} />);
+  expect(view.find('div').prop('className')).not.toMatch(/undefined/);
 });

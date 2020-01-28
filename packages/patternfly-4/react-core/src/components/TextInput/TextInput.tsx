@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit, withInnerRef } from '../../helpers'
+import { Omit, withInnerRef } from '../../helpers';
 import { ValidatedOptions } from '../../helpers/constants';
 
 export enum TextInputTypes {
@@ -119,5 +119,5 @@ class TextInputBase extends React.Component<TextInputProps> {
   }
 }
 
-const TextInputFR = withInnerRef<HTMLInputElement, TextInputProps>(TextInputBase)
-export { TextInputFR as TextInput, TextInputBase } 
+const TextInputFR = withInnerRef<HTMLInputElement, TextInputProps>(TextInputBase);
+export { TextInputFR as TextInput, TextInputBase };

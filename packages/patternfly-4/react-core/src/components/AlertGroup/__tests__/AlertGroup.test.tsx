@@ -8,28 +8,20 @@ jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');
 
 test('Alert Group works with zero children', () => {
-  const view = shallow(
-    <AlertGroup></AlertGroup>
-  );
+  const view = shallow(<AlertGroup></AlertGroup>);
   expect(view).toBeTruthy();
 });
 
 test('Alert Group should match snapshot', () => {
-  const view = shallow(
-    <AlertGroup></AlertGroup>
-  );
+  const view = shallow(<AlertGroup></AlertGroup>);
   expect(view).toMatchSnapshot();
 });
 
 test('Alert Group works with n children', () => {
   const view = shallow(
     <AlertGroup>
-      <Alert
-        variant="success"
-        title="alert title" />
-      <Alert
-        variant="warning"
-        title="another alert title" />
+      <Alert variant="success" title="alert title" />
+      <Alert variant="warning" title="another alert title" />
     </AlertGroup>
   );
   expect(view).toBeTruthy();
@@ -38,9 +30,7 @@ test('Alert Group works with n children', () => {
 test('Standard Alert Group is not a toast alert group', () => {
   const wrapper = mount(
     <AlertGroup>
-      <Alert
-        variant="danger"
-        title="alert title" />
+      <Alert variant="danger" title="alert title" />
     </AlertGroup>
   );
   expect(wrapper.find('.pf-c-alert-group.pf-m-toast')).toHaveLength(0);
@@ -50,9 +40,7 @@ test('Standard Alert Group is not a toast alert group', () => {
 test('Toast Alert Group contains expected modifier class', () => {
   const wrapper = mount(
     <AlertGroup isToast>
-      <Alert
-        variant="warning"
-        title="alert title" />
+      <Alert variant="warning" title="alert title" />
     </AlertGroup>
   );
   expect(wrapper.find('.pf-c-alert-group.pf-m-toast')).toHaveLength(1);
@@ -72,12 +60,12 @@ test('alertgroup closes when alerts are closed', () => {
     <AlertGroup isToast appendTo={document.body}>
       <Alert
         isLiveRegion
-        title={"Test Alert"}
+        title={'Test Alert'}
         action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
       />
-    ))}
-  </AlertGroup>
-  )
+      ))}
+    </AlertGroup>
+  );
   expect(wrapper).toMatchSnapshot();
   wrapper.find('button[aria-label="Close"]').simulate('click');
   expect(onClose).toBeCalled();

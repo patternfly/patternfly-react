@@ -14,6 +14,9 @@ export interface OuiaContextProps {
   ouiaId?: number | string;
 }
 
+/**
+ * @param WrappedComponent
+ */
 export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R = Omit<P, 'ouiaContext'>>(
   WrappedComponent: React.ComponentClass<P> | React.FunctionComponent<P>
 ): React.FunctionComponent<R> {

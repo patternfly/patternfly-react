@@ -5,7 +5,7 @@ export const isOUIAEnvironment = (): boolean => {
   } catch (exception) {
     return false;
   }
-}
+};
 export const generateOUIAId = (): boolean =>
   (typeof window !== 'undefined' &&
     window.localStorage['ouia-generate-id'] &&

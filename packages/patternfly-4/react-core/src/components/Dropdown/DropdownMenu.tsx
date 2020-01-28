@@ -80,8 +80,9 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   sendRef = (index: number, nodes: any[], isDisabled: boolean, isSeparator: boolean) => {
     this.refsCollection[index] = [];
     nodes.map((node, innerIndex) => {
-      if (!node) this.refsCollection[index][innerIndex] = null;
-      else if (!node.getAttribute) {
+      if (!node) {
+        this.refsCollection[index][innerIndex] = null;
+      } else if (!node.getAttribute) {
         // eslint-disable-line react/no-find-dom-node
         this.refsCollection[index][innerIndex] = ReactDOM.findDOMNode(node) as HTMLElement;
       } else if (isDisabled || isSeparator) {

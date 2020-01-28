@@ -55,29 +55,29 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   onEnter,
   'aria-label': ariaLabel = 'Options menu',
   ...props
-}: OptionsMenuToggleWithTextProps) => {
-  return (
-    <div
-      className={css(
-        styles.optionsMenuToggle,
-        getModifier(styles, 'text'),
-        isPlain && getModifier(styles, 'plain'),
-        isHovered && getModifier(styles, 'hover'),
-        isActive && getModifier(styles, 'active'),
-        isFocused && getModifier(styles, 'focus'),
-        isDisabled && getModifier(styles, 'disabled')
-      )}
-      {...props}
+}: OptionsMenuToggleWithTextProps) => (
+  <div
+    className={css(
+      styles.optionsMenuToggle,
+      getModifier(styles, 'text'),
+      isPlain && getModifier(styles, 'plain'),
+      isHovered && getModifier(styles, 'hover'),
+      isActive && getModifier(styles, 'active'),
+      isFocused && getModifier(styles, 'focus'),
+      isDisabled && getModifier(styles, 'disabled')
+    )}
+    {...props}
+  >
+    <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
+    <button
+      className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
+      id={`${parentId}-toggle`}
+      aria-haspopup="listbox"
+      aria-label={ariaLabel}
+      aria-expanded={isOpen}
+      onClick={() => onToggle(!isOpen)}
     >
-      <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
-      <button className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
-              id={`${parentId}-toggle`}
-              aria-haspopup="listbox"
-              aria-label={ariaLabel}
-              aria-expanded={isOpen}
-              onClick={() => onToggle(!isOpen)}>
-        {toggleButtonContents}
-      </button>
-    </div>
-  );
-};
+      {toggleButtonContents}
+    </button>
+  </div>
+);

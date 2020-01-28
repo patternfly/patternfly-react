@@ -21,12 +21,11 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   hideTitle = false,
   headingLevel = TitleLevel.h1,
   ...props
-}: ModalBoxHeaderProps) => {
-  return hideTitle ? null : (
+}: ModalBoxHeaderProps) =>
+  hideTitle ? null : (
     <React.Fragment>
       <Title size="2xl" headingLevel={headingLevel} className={className} {...props}>
         {children}
       </Title>
     </React.Fragment>
   );
-};

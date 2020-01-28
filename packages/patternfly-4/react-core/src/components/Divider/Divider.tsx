@@ -12,7 +12,7 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes added to the divider */
   className?: string;
   /** The component type to use */
-  component?: 'hr' | 'li' | 'div' ;
+  component?: 'hr' | 'li' | 'div';
 }
 
 export const Divider: React.FunctionComponent<DividerProps> = ({
@@ -23,6 +23,10 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   const Component: any = component;
 
   return (
-    <Component className={css(styles.divider, className)} {...(component != 'hr' && {role : 'separator' })} {...props} />
+    <Component
+      className={css(styles.divider, className)}
+      {...(component != 'hr' && { role: 'separator' })}
+      {...props}
+    />
   );
 };

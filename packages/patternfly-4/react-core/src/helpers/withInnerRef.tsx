@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+/**
+ * @param WrappedComponent
+ */
 export function withInnerRef<R, P extends { innerRef?: React.Ref<R> }>(
   WrappedComponent: React.ComponentType<P>
 ): React.ForwardRefExoticComponent<React.PropsWithoutRef<P> & React.RefAttributes<R>> {
