@@ -27,7 +27,7 @@
     "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test:integration": "node --max-old-space-size=8192 ./node_modules/.bin/cypress run --reporter junit  --reporter-options \"mochaFile=results/my-test-output-[hash].xml,toConsole=true\""
+    "test:integration": "node --max-old-space-size=8192 ./node_modules/.bin/cypress run --record --parallel --reporter junit  --reporter-options \"mochaFile=results/my-test-output-[hash].xml,toConsole=true\""
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^4.0.3",
