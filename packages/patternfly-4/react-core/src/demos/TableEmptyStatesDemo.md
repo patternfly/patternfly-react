@@ -1,5 +1,5 @@
 ---
-title: 'Table Empty States'
+title: Table empty states
 section: 'demos'
 ---
 

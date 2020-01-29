@@ -1,5 +1,5 @@
 ---
-title: 'OverflowMenu'
+title: Overflow menu
 section: components
 cssPrefix: 'pf-c-overflow-menu'
 typescript: true
