@@ -1,6 +1,6 @@
 ---
-title: 'Properties side panel'
-section: 'catalog view'
+title: 'Catalog view properties side panel'
+section: 'extensions'
 typescript: true
 propComponents: ['PropertiesSidePanel', 'PropertyItem']
 ---

@@ -12,10 +12,12 @@ const VncActions = ({
   textDisconnect,
   onCtrlAltDel,
   onDisconnect,
+  additionalButtons,
   portalToolbarTo
 }) => {
   const toolbar = (
     <div>
+      {additionalButtons}
       <Dropdown bsStyle="default" title={textSendShortcut} id="console-send-shortcut" onClick={noop}>
         <MenuItem eventKey="1" onClick={onCtrlAltDel}>
           {textCtrlAltDel}
@@ -43,7 +45,8 @@ VncActions.propTypes = {
   textSendShortcut: PropTypes.string,
   textDisconnect: PropTypes.string,
 
-  portalToolbarTo: PropTypes.string // id of element where VncAction should be inserted
+  portalToolbarTo: PropTypes.string, // id of element where VncAction should be inserted
+  additionalButtons: PropTypes.arrayOf(PropTypes.node)
 };
 
 VncActions.defaultProps = {
@@ -53,7 +56,8 @@ VncActions.defaultProps = {
   textSendShortcut: 'Send Key',
   textDisconnect: 'Disconnect',
 
-  portalToolbarTo: ''
+  portalToolbarTo: '',
+  additionalButtons: []
 };
 
 export default VncActions;

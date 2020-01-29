@@ -6435,7 +6435,7 @@ exports[`component render no items 1`] = `
               <input
                 aria-label="Current page"
                 className="pf-c-form-control"
-                disabled={false}
+                disabled={true}
                 max={0}
                 min={1}
                 onChange={[Function]}
@@ -13491,7 +13491,7 @@ exports[`component render zero results 1`] = `
               <input
                 aria-label="Current page"
                 className="pf-c-form-control"
-                disabled={false}
+                disabled={true}
                 max={0}
                 min={1}
                 onChange={[Function]}

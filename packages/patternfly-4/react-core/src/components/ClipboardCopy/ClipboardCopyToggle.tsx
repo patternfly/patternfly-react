@@ -24,6 +24,7 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
 }: ClipboardCopyToggleProps) => {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={css(styles.clipboardCopyGroupToggle, className)}
       id={id}

@@ -1,7 +1,10 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { InjectedOuiaProps, withOuiaContext, DropdownPosition, DropdownDirection, DropdownItemProps, Omit } from '@patternfly/react-core';
+import { InjectedOuiaProps, withOuiaContext } from '@patternfly/react-core/dist/js/components/withOuia/withOuia';
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants'
+import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem'
+import { Omit } from '@patternfly/react-core/dist/js/helpers/typeUtils'
 import { css, getModifier } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
@@ -111,7 +114,7 @@ export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
   isSeparator?: boolean;
   itemKey?: string;
   title?: string | React.ReactNode;
-  onClick: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
 }
 
 export interface ISeparator extends IAction {

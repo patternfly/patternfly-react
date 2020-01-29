@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropdownItem } from '../../../components/Dropdown';
+import { DropdownItem } from '../Dropdown';
 import { OverflowMenuContext } from './OverflowMenuContext';
 
 export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -11,10 +11,6 @@ export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivEl
 
 export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({ children, isShared = false }) => (
   <OverflowMenuContext.Consumer>
-    {value =>
-      (!isShared || value.isBelowBreakpoint) && (
-        <DropdownItem component="button"> {children} </DropdownItem>
-      )
-    }
+    {value => (!isShared || value.isBelowBreakpoint) && <DropdownItem component="button"> {children} </DropdownItem>}
   </OverflowMenuContext.Consumer>
 );

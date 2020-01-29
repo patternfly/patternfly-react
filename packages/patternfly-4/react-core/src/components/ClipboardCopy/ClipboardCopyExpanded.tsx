@@ -2,13 +2,13 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { ClipboardCopyProps } from './ClipboardCopy';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 
 export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'onChange'> {
   className?: string;
   children: React.ReactNode;
   onChange?: (text: string, e: React.FormEvent<HTMLDivElement>) => void;
-  isReadOnly: boolean;
+  isReadOnly?: boolean;
   isCode?: boolean;
 }
 
@@ -17,7 +17,7 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
     super(props);
   }
 
-  static defaultProps = {
+  static defaultProps: PickOptional<ClipboardCopyExpandedProps> = {
     onChange: (): any => undefined,
     className: '',
     isReadOnly: false,

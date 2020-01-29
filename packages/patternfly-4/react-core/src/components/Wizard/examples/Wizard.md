@@ -424,7 +424,7 @@ class ValidateButtonPressWizard extends React.Component {
 
 ```js title=Progressive-steps
 import React from 'react';
-import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
+import { Button, Radio, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
 import FinishedStep from './examples/FinishedStep';
 

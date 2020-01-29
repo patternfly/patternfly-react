@@ -32,11 +32,14 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   'aria-label'?: string;
   /** Variant label text for screen readers */
   variantLabel?: string;
+  /** Flag to indicate if the Alert is in a live region */
+  isLiveRegion?: boolean;
 }
 
 const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   variant = AlertVariant.info,
   isInline = false,
+  isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   action = null,
@@ -69,6 +72,10 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
       {...(ouiaContext.isOuia && {
         'data-ouia-component-type': 'Alert',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+      })}
+      {...(isLiveRegion && {
+        'aria-live': 'polite',
+        'aria-atomic': 'false'
       })}
     >
       <AlertIcon variant={variant} />

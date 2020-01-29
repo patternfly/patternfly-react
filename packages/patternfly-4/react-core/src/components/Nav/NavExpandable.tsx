@@ -3,9 +3,9 @@ import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
-
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface NavExpandableProps
   extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
@@ -34,7 +34,7 @@ interface NavExpandableState {
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
-  static defaultProps = {
+  static defaultProps: PickOptional<NavExpandableProps> = {
     srText: '',
     isExpanded: false,
     children: '',

@@ -419,7 +419,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 
 ```js title=Consumer-managed-toggle-groups
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core//dist/esm/experimental';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
@@ -581,7 +581,7 @@ import {
     DataToolbarContent,
     DataToolbarFilter,
     DataToolbarToggleGroup,
-    DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+    DataToolbarGroup } from '@patternfly/react-core//dist/esm/experimental';
 import { 
     Button, 
     ButtonVariant,

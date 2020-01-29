@@ -3,6 +3,7 @@ import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ContextSelectorToggleProps {
   /** HTML ID of toggle */
@@ -16,7 +17,7 @@ export interface ContextSelectorToggleProps {
   /** Callback called when toggle is clicked */
   onToggle?: (event: any, value: boolean) => void;
   /** Callback for toggle open on keyboard entry */
-  onEnter: () => void;
+  onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
   /** Forces focus state */
@@ -28,7 +29,7 @@ export interface ContextSelectorToggleProps {
 }
 
 export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<ContextSelectorToggleProps> = {
     className: '',
     toggleText: '',
     isOpen: false,

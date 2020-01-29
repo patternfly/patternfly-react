@@ -40,6 +40,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
     content={<div>{children}</div>}
   >
     <button
+      type="button"
       onClick={onClick}
       className={css(styles.clipboardCopyGroupCopy, className)}
       aria-label={ariaLabel}

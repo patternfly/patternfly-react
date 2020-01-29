@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ToggleProps {
   /** HTML ID of dropdown toggle */
@@ -45,7 +46,7 @@ export interface ToggleProps {
 export class Toggle extends React.Component<ToggleProps> {
   private buttonRef = React.createRef<HTMLButtonElement>();
 
-  static defaultProps = {
+  static defaultProps: PickOptional<ToggleProps> = {
     className: '',
     isOpen: false,
     isFocused: false,
@@ -55,8 +56,8 @@ export class Toggle extends React.Component<ToggleProps> {
     isPlain: false,
     isPrimary: false,
     isSplitButton: false,
-    onToggle: Function.prototype,
-    onEnter: Function.prototype
+    onToggle: () => {},
+    onEnter: () => {}
   };
 
   componentDidMount = () => {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Spinner/spinner';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../../helpers/typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export enum spinnerSize {
   sm = 'sm',

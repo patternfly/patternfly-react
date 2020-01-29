@@ -61,7 +61,7 @@ BasicRightAlignedLegend = (
 
 ```js title=Bottom-aligned-legend
 import React from 'react';
-import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 BottomAlignedLegend = (
   <div style={{ height: '275px', width: '450px' }}>
@@ -239,7 +239,7 @@ StandaloneLegend = (
 
 ```js title=Legend-tooltips
 import React from 'react';
-import { ChartLabel, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
 class TooltipPieChart extends React.Component {
@@ -303,8 +303,10 @@ import {
   ChartArea, 
   ChartAxis, 
   ChartGroup, 
-  ChartLegend, 
-  ChartThemeColor, 
+  ChartLegend,
+  ChartScatter, 
+  ChartThemeColor,
+  ChartVoronoiContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles 
 } from '@patternfly/react-charts';

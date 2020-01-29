@@ -1,6 +1,6 @@
 import { Component, FunctionComponent, MouseEvent } from 'react';
 import { TableBodyProps, IRowData, IExtraRowData } from '@patternfly/react-table';
-import { OneOf } from '@patternfly/react-core';
+import { Omit } from '@patternfly/react-core/dist/js/helpers/typeUtils';
 
 import { TableEditConfirmation } from './constants';
 

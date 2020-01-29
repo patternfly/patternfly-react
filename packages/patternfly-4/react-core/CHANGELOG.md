@@ -3,6 +3,289 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.134.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.1...@patternfly/react-core@3.134.2) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.134.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.0...@patternfly/react-core@3.134.1) (2020-01-27)
+
+
+### Bug Fixes
+
+* **dropdown:** do not pass id to dropdown list item if is not set ([#3555](https://github.com/patternfly/patternfly-react/issues/3555)) ([06df46a](https://github.com/patternfly/patternfly-react/commit/06df46a845da13a981239c9f7393258112161acf))
+
+
+
+
+
+# [3.134.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.133.2...@patternfly/react-core@3.134.0) (2020-01-27)
+
+
+### Features
+
+* **AlertGroup:** Add alert group component ([#3531](https://github.com/patternfly/patternfly-react/issues/3531)) ([0a6806e](https://github.com/patternfly/patternfly-react/commit/0a6806e0f6be01a022e6ce2a9d578a6d8bd52554))
+
+
+
+
+
+## [3.133.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.133.1...@patternfly/react-core@3.133.2) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.133.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.133.0...@patternfly/react-core@3.133.1) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.133.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.132.3...@patternfly/react-core@3.133.0) (2020-01-24)
+
+
+### Features
+
+* **pf4:** Use absolute import paths for react core in pf4 packages. ([#3525](https://github.com/patternfly/patternfly-react/issues/3525)) ([65d0b3d](https://github.com/patternfly/patternfly-react/commit/65d0b3d1e04610895f122c1313d1442360356f13)), closes [#3155](https://github.com/patternfly/patternfly-react/issues/3155)
+
+
+
+
+
+## [3.132.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.132.2...@patternfly/react-core@3.132.3) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.132.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.132.1...@patternfly/react-core@3.132.2) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.132.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.132.0...@patternfly/react-core@3.132.1) (2020-01-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.132.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.5...@patternfly/react-core@3.132.0) (2020-01-22)
+
+
+### Features
+
+* **alert:** Accessibility updates to alert for toast alerts ([#3519](https://github.com/patternfly/patternfly-react/issues/3519)) ([dc57757](https://github.com/patternfly/patternfly-react/commit/dc57757a3aea6f6bd4ad0fd421e6dad8eaf40646))
+
+
+
+
+
+## [3.131.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.4...@patternfly/react-core@3.131.5) (2020-01-22)
+
+
+### Bug Fixes
+
+* **select:** set a unique id to the select toggle typeahead input ([#3529](https://github.com/patternfly/patternfly-react/issues/3529)) ([40dd8f1](https://github.com/patternfly/patternfly-react/commit/40dd8f116996a5273ecb90784063c2db53bc82ba))
+
+
+
+
+
+## [3.131.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.3...@patternfly/react-core@3.131.4) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.131.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.2...@patternfly/react-core@3.131.3) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.131.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.1...@patternfly/react-core@3.131.2) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.131.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.131.0...@patternfly/react-core@3.131.1) (2020-01-20)
+
+
+### Bug Fixes
+
+* **Select:** clear button appears with any typeahead input ([#3502](https://github.com/patternfly/patternfly-react/issues/3502)) ([f506291](https://github.com/patternfly/patternfly-react/commit/f506291228de8ca79eaedfdb700b3b9f87270377))
+
+
+
+
+
+# [3.131.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.10...@patternfly/react-core@3.131.0) (2020-01-17)
+
+
+### Features
+
+* **Select:** allow custom option data comparison ([#3491](https://github.com/patternfly/patternfly-react/issues/3491)) ([79204a5](https://github.com/patternfly/patternfly-react/commit/79204a5f42e531895f667d8f2fcbfce4bdf129f5))
+
+
+
+
+
+## [3.130.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.9...@patternfly/react-core@3.130.10) (2020-01-15)
+
+
+### Bug Fixes
+
+* **PageHeader:** removing redundant role="banner" attribute ([#3499](https://github.com/patternfly/patternfly-react/issues/3499)) ([d9452de](https://github.com/patternfly/patternfly-react/commit/d9452de235963e33178057a24305e2cf365d5097))
+
+
+
+
+
+## [3.130.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.8...@patternfly/react-core@3.130.9) (2020-01-15)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.130.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.7...@patternfly/react-core@3.130.8) (2020-01-15)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.130.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.6...@patternfly/react-core@3.130.7) (2020-01-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.130.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.5...@patternfly/react-core@3.130.6) (2020-01-13)
+
+
+### Bug Fixes
+
+* **select:** Add the type prop to the select toggle button ([#3495](https://github.com/patternfly/patternfly-react/issues/3495)) ([e61c0bd](https://github.com/patternfly/patternfly-react/commit/e61c0bd6894d0fad70e89829fb114766b6e88108))
+
+
+
+
+
+## [3.130.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.4...@patternfly/react-core@3.130.5) (2020-01-13)
+
+
+### Bug Fixes
+
+* **DataToolbar:** add and remove some modifiers to match core ([#3422](https://github.com/patternfly/patternfly-react/issues/3422)) ([034c041](https://github.com/patternfly/patternfly-react/commit/034c041c8237c906778edfc3287c5e2193480a53))
+
+
+
+
+
+## [3.130.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.3...@patternfly/react-core@3.130.4) (2020-01-10)
+
+
+### Bug Fixes
+
+* **pagination:** disable navigation input if page is equal to zero ([#3472](https://github.com/patternfly/patternfly-react/issues/3472)) ([09e1bf3](https://github.com/patternfly/patternfly-react/commit/09e1bf321f488291c2733d3c3c2141592d944c61))
+
+
+
+
+
+## [3.130.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.2...@patternfly/react-core@3.130.3) (2020-01-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.130.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.1...@patternfly/react-core@3.130.2) (2020-01-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.130.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.130.0...@patternfly/react-core@3.130.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* **react-core transform plugin:** Use direct paths to react-icons in prod build ([#3448](https://github.com/patternfly/patternfly-react/issues/3448)) ([49814a7](https://github.com/patternfly/patternfly-react/commit/49814a72fa829de6fa6f34963a21c554fad7b06e))
+
+
+
+
+
+# [3.130.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.6...@patternfly/react-core@3.130.0) (2020-01-08)
+
+
+### Features
+
+* **ChipGroup:** add closable chip-group ([#3455](https://github.com/patternfly/patternfly-react/issues/3455)) ([a11dea1](https://github.com/patternfly/patternfly-react/commit/a11dea19ad9b78b6ed52420021c3f726c918a977))
+
+
+
+
+
+## [3.129.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.5...@patternfly/react-core@3.129.6) (2020-01-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.129.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.4...@patternfly/react-core@3.129.5) (2020-01-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.129.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.3...@patternfly/react-core@3.129.4) (2020-01-07)
+
+
+### Bug Fixes
+
+* **clipboardcopy:** set type of copy and toggle buttons to 'button' ([#3444](https://github.com/patternfly/patternfly-react/issues/3444)) ([e15d44a](https://github.com/patternfly/patternfly-react/commit/e15d44a825937dabea6a5945bb6b1ffb64a87742))
+* **DataList:** properly assign selectable and selected classes ([#3447](https://github.com/patternfly/patternfly-react/issues/3447)) ([1784176](https://github.com/patternfly/patternfly-react/commit/1784176e59ba8f4de54e6d9c4e2ba86026ddcfed))
+
+
+
+
+
 ## [3.129.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.129.2...@patternfly/react-core@3.129.3) (2019-12-19)
 
 

@@ -1,6 +1,6 @@
 ---
-title: 'Vertical tabs'
-section: 'catalog view'
+title: 'Catalog view vertical tabs'
+section: 'extensions'
 propComponents: ['VerticalTabs', 'VerticalTabsTab']
 typescript: true
 ---
@@ -20,6 +20,7 @@ import { VerticalTabs, VerticalTabsTab } from '@patternfly/react-catalog-view-ex
 
 class MockVerticalTabsExample extends React.Component {
   constructor(props) {
+    super(props);
     this.state = { activeTabId: 'all' };
     this.onActivateTab = id => {
       this.setState({ activeTabId: id });

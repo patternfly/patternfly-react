@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 
-export const PopoverArrow: React.FunctionComponent<PopoverArrowProps> = ({ className = '', ...props }) => (
+export const PopoverArrow: React.FunctionComponent<PopoverArrowProps> = ({ className = '', ...props }: PopoverArrowProps) => (
   <div className={css(styles.popoverArrow, className)} {...props} />
 );
 

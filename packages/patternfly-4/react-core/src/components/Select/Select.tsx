@@ -11,7 +11,7 @@ import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 // seed for the aria-labelledby ID
@@ -96,7 +96,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   private parentRef = React.createRef<HTMLDivElement>();
   private refCollection: HTMLElement[] = [];
 
-  static defaultProps = {
+  static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
     className: '',
     direction: SelectDirection.down,
@@ -123,7 +123,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     toggleIcon: null as React.ReactElement,
     onFilter: null,
     customContent: null
-  } as Partial<SelectProps & InjectedOuiaProps>;
+  };
 
   state: SelectState = {
     openedOnEnter: false,
@@ -447,7 +447,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-typeahead"
+                    id={`${selectToggleId}-select-typeahead`}
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText as string}
                     value={
@@ -463,7 +463,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {selections && (
+                {(selections || typeaheadInputValue) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
                     onClick={e => {
@@ -487,7 +487,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-multi-typeahead-typeahead"
+                    id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText as string}
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
@@ -499,7 +499,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {selections && (Array.isArray(selections) && selections.length > 0) && (
+                {(selections && (Array.isArray(selections) && selections.length > 0) || typeaheadInputValue) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
                     onClick={e => {

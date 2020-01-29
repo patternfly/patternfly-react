@@ -52,3 +52,13 @@ describe('flex item modifiers', () => {
     })
   })
 });
+
+test('flex modifier as string literal', () => {
+  const view = mount(<Flex breakpointMods={[{ modifier: 'flex-1', breakpoint: 'sm' }]} />)
+  expect(view.find('div').prop('className')).not.toMatch(/undefined/)
+});
+
+test('flex item modifier as string literal', () => {
+  const view = mount(<FlexItem breakpointMods={[{ modifier: 'flex-1', breakpoint: 'sm' }]} />)
+  expect(view.find('div').prop('className')).not.toMatch(/undefined/)
+});

@@ -1,6 +1,6 @@
 ---
-title: 'Catalog item header'
-section: 'catalog view'
+title: 'Catalog view item header'
+section: 'extensions'
 propComponents: ['CatalogItemHeader']
 typescript: true
 ---

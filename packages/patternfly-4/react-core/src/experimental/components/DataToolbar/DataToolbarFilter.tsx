@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { DataToolbarItem, DataToolbarItemProps } from './DataToolbarItem';
 import { ChipGroup, Chip, ChipGroupToolbarItem } from '../../../components/ChipGroup';
 import { DataToolbarContentContext, DataToolbarContext } from './DataToolbarUtils';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 export interface DataToolbarChip {
   /** A unique key to identify this chip */
@@ -21,7 +22,7 @@ export interface DataToolbarFilterProps extends DataToolbarItemProps {
   /** Unique category name to be used as a label for the chip group */
   categoryName: string;
   /** Flag to show the toolbar item */
-  showToolbarItem: boolean;
+  showToolbarItem?: boolean;
 }
 
 interface DataToolbarFilterState {
@@ -31,7 +32,7 @@ interface DataToolbarFilterState {
 export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
   // @ts-ignore
   static contextType: any = DataToolbarContext;
-  static defaultProps = {
+  static defaultProps: PickOptional<DataToolbarFilterProps> = {
     chips: [] as string[],
     showToolbarItem: true
   };

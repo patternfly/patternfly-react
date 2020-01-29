@@ -21,6 +21,14 @@ SliderStories.addDecorator(
   })
 );
 
+const onSlide = value => {
+  action(`onSlide: ${value}`)();
+};
+
+const onFormatChange = value => {
+  action(`onFormatChange: ${value}`)();
+};
+
 SliderStories.add('Slider', () => (
   <div>
     <p>
@@ -31,7 +39,7 @@ SliderStories.add('Slider', () => (
     <br />
 
     <div className="container">
-      <Slider id="slider-one" min={0} max={100} showBoundaries step={1} value={50} tooltip="show" />
+      <Slider id="slider-one" min={0} max={100} showBoundaries step={1} value={50} tooltip="show" onSlide={onSlide} />
 
       <br />
       <br />
@@ -46,6 +54,7 @@ SliderStories.add('Slider', () => (
         tooltip="show"
         ticks={[1, 2, 3, 4, 5]}
         ticks_labels={['1', '2', '3', '4', '5']}
+        onSlide={onSlide}
       />
 
       <br />
@@ -67,6 +76,7 @@ SliderStories.add('Slider', () => (
               tooltip="show"
               ticks={[1, 2, 3, 4, 5]}
               ticks_labels={['1', '2', '3', '4', '5']}
+              onSlide={onSlide}
             />
           </Col>
         </FormGroup>
@@ -89,7 +99,7 @@ SliderStories.add('Slider', () => (
 
         <FormGroup>
           <Col sm={10}>
-            <Slider label="Size" id="size" min={0} max={100} tooltip="show" showBoundaries input inputFormat="GB" />
+            <Slider label="Size" id="size" min={0} max={100} tooltip="show" showBoundaries input inputFormat="GB" onSlide={onSlide} />
           </Col>
         </FormGroup>
 
@@ -106,13 +116,24 @@ SliderStories.add('Slider', () => (
 
       <br />
 
-      <Slider id="slider-pf" min={0} max={100} tooltip="show" showBoundaries input inputFormat="GB" />
+      <Slider id="slider-pf" min={0} max={100} tooltip="show" showBoundaries input inputFormat="GB" onSlide={onSlide} />
 
       <br />
       <br />
       <br />
 
-      <Slider id="slider-pf" min={0} max={100} tooltip="show" showBoundaries input dropdownList={['MB', 'GB']} dropup />
+      <Slider 
+        id="slider-pf" 
+        min={0} 
+        max={100} 
+        tooltip="show" 
+        showBoundaries 
+        input 
+        dropdownList={['MB', 'GB']} 
+        dropup 
+        onSlide={onSlide}
+        onFormatChange={onFormatChange}
+      />
     </div>
   </div>
 )).add('onSlide function', () => <Slider id="slider-pf" min={0} max={5} onSlide={action('onSlide was called')} />);

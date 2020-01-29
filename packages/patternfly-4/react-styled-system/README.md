@@ -37,7 +37,7 @@ npm install @patternfly/react-styled-system --save
 
 It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
 
-```javascript
+```
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
@@ -45,7 +45,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 ```javascript
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledFlex, StyledText } from '@patternfly/react-styled-system';
 
 class StyledStyles extends React.Component {
   render() {

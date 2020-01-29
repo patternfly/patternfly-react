@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertDemo
   },
   {
+    id: 'alert-group-demo',
+    name: 'Alert Group Demo',
+    componentType: Examples.AlertGroupDemo
+  },
+  {
     id: 'application-launcher-demo',
     name: 'Application Launcher Demo',
     componentType: Examples.ApplicationLauncherDemo
@@ -129,6 +134,11 @@ export const Demos: DemoInterface[] = [
     id: 'chipgroup-default-is-open-demo',
     name: 'ChipGroup Default is Open Demo',
     componentType: Examples.ChipGroupDefaultIsOpenDemo
+  },
+  {
+    id: 'chipgroup-toolbar-demo',
+    name: 'ChipGroup Toolbar Demo',
+    componentType: Examples.ToolbarChipGroupDemo
   },
   {
     id: 'clipboard-copy-demo',

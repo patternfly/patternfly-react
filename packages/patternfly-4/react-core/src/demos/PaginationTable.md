@@ -4,9 +4,6 @@ section: 'demos'
 ---
 
 ## Examples
-```
-  Note: This demo uses the experimental Spinner component while data is loading.
-```
 import { 
   Pagination, 
   PaginationVariant, 
@@ -20,28 +17,28 @@ import {
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 ```js title=Basic
 import React from 'react';
 import {
+  Checkbox,
   Pagination, 
-  PaginationVariant, 
   Title, 
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions,
-  Bullseye,
-  Radio 
+  EmptyStateVariant,
+  Bullseye
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
-import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
+import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner } from '@patternfly/react-core';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       res: [],
       perPage: 0,
@@ -177,11 +174,12 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 
 ```js title=Automated-pagination-table-demo
 import React from 'react';
-import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
+import { Pagination } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
+    super(props);
     this.columns = [
       { title: "First column" },
       { title: "Second column" },
@@ -275,7 +273,7 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   renderPagination(variant = 'top') {
-    const { page, perPage, total } = this.state;
+    const { page, perPage } = this.state;
     return (
       <Pagination
         itemCount={this.defaultRows.length}

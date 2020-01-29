@@ -60,19 +60,14 @@
 .catalog-tile-pf-description {
   margin-top: 0;
 
-  .truncated {
+  span {
+    display: -webkit-box;
     overflow: hidden;
-    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
 
-    &::after {
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
-      bottom: 0;
-      color: transparent;
-      content: ".";
-      position: absolute;
-      right: 0;
-      width: 50%;
-      text-align: right;
-    }
+  .has-footer {
+    -webkit-line-clamp: 1;
   }
 }

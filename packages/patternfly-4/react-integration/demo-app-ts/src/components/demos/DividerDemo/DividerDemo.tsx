@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider } from '@patternfly/react-core/dist/esm/experimental';
+import { Divider } from '@patternfly/react-core';
 
 export class DividerDemo extends React.Component {
   componentDidMount() {

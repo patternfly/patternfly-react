@@ -17,8 +17,9 @@ describe('Alert Demo Test', () => {
     cy.get('#default-alert').should('have.class', 'pf-m-inline');
   });
 
-  it('Verify alert closes', () => {
-    cy.get('#test-button').click();
+  it('Verify alerts close', () => {
+    cy.get('#test-button-1').click();
+    cy.get('#test-button-2').click();
     cy.get('#info-alert').should('not.exist');
   });
 });
