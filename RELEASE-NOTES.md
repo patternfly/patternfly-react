@@ -12,7 +12,7 @@ Packages released:
 - [@patternfly/react-inline-edit-extension@2.15.6](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension@2.15.6)
 - [@patternfly/react-styles@3.6.26](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.26)
 - [@patternfly/react-table@2.25.6](https://www.npmjs.com/package/@patternfly/react-table@2.25.6)
-- [@patternfly/react-tokens@2.7.25](https://www.npmjs.com/package/@patternfly/react-tokens@2.7.25
+- [@patternfly/react-tokens@2.7.25](https://www.npmjs.com/package/@patternfly/react-tokens@2.7.25)
 - [@patternfly/react-topology@2.12.5](https://www.npmjs.com/package/@patternfly/react-topology@2.12.5)
 - [@patternfly/react-virtualized-extension@1.3.93](https://www.npmjs.com/package/@patternfly/react-virtualized-extension@1.3.93)
 - [@patternfly/react-icons@3.14.39](https://www.npmjs.com/package/@patternfly/react-icons@3.14.39)
@@ -22,7 +22,7 @@ Packages released:
   - Added type safety to default props ([#3536](https://github.com/patternfly/patternfly-react/pull/3536))
 - **Alert:** 
   - Accessibility updates to alert for toast alerts ([#3519](https://github.com/patternfly/patternfly-react/pull/3519))
-  - Fixed integration test regression ([#3594](https://github.com/patternfly/patternfly-react/pull/3594)
+  - Fixed integration test regression ([#3594](https://github.com/patternfly/patternfly-react/pull/3594))
 - **Alert group:**
     - Added alert group component ([#3531](https://github.com/patternfly/patternfly-react/pull/3531))
 - **Chip group:**
@@ -36,7 +36,7 @@ Packages released:
 - **Data toolbar:** 
   - Added and removed some modifiers to match core ([#3422](https://github.com/patternfly/patternfly-react/pull/3422))
   - Reverted promotion of DataToolbar from experimental ([#3580](https://github.com/patternfly/patternfly-react/pull/3580))
-  - Updated example to not exclude previous filtered items. ([#3571](https://github.com/patternfly/patternfly-react/pull/3571))
+  - Updated example to not exclude previous filtered items ([#3571](https://github.com/patternfly/patternfly-react/pull/3571))
 - **Divider:** 
   - Promote Divider from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
 - **Dropdown:**
@@ -57,7 +57,7 @@ Packages released:
   - Allowed custom option data comparison ([#3491](https://github.com/patternfly/patternfly-react/pull/3491))
   - Updated so clear button appears with any type ahead input ([#3502](https://github.com/patternfly/patternfly-react/pull/3502))
   - Set a unique id to the select toggle type ahead input ([#3529](https://github.com/patternfly/patternfly-react/pull/3529))
-- **Spinner** 
+- **Spinner:** 
   - Promote Spinner from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
 
 ### Catalog view extension
@@ -65,7 +65,7 @@ Packages released:
   - Removed truncation fade and fixed length ([#3378](https://github.com/patternfly/patternfly-react/pull/3378))
 
 ### Table
-  - Fixed issue 3559, for table we now default to a div instead of anchor([#3567](https://github.com/patternfly/patternfly-react/pull/3567))
+  - Fixed issue [#3559](https://github.com/patternfly/patternfly-react/issues/3559), for table we now default to a div instead of anchor([#3567](https://github.com/patternfly/patternfly-react/pull/3567))
   - Made IAction onClick optional ([#3558](https://github.com/patternfly/patternfly-react/pull/3558))
   - Fixed ActionsColumn import path for DropdownSeparator ([#3578](https://github.com/patternfly/patternfly-react/pull/3578))
 
@@ -90,9 +90,9 @@ Packages released:
   - Made Eslint fixes for *.md file ([#3493](https://github.com/patternfly/patternfly-react/pull/3493))
   - Made initial eslint fixes for react-core-style-system *.md file ([#3505](https://github.com/patternfly/patternfly-react/pull/3505))
   - Made minor updates to TopologyView package, missing imports ([#3510](https://github.com/patternfly/patternfly-react/pull/3510))
-  - Made minor updates to VirtualizedTable examples. ([#3513](https://github.com/patternfly/patternfly-react/pull/3513))
-  - Made minor updates to react-table package. ([#3509](https://github.com/patternfly/patternfly-react/pull/3509))
-  - Turned on errors for markdown code block linting. ([#3515](https://github.com/patternfly/patternfly-react/pull/3515))
+  - Made minor updates to VirtualizedTable examples ([#3513](https://github.com/patternfly/patternfly-react/pull/3513))
+  - Made minor updates to react-table package ([#3509](https://github.com/patternfly/patternfly-react/pull/3509))
+  - Turned on errors for markdown code block linting ([#3515](https://github.com/patternfly/patternfly-react/pull/3515))
   - Added linting for md charts 3486 ([#3496](https://github.com/patternfly/patternfly-react/pull/3496))
   - Added linting for md code blocks 3469 ([#3474](https://github.com/patternfly/patternfly-react/pull/3474))
   - Fix linting for md react core example md files 3486 ([#3500](https://github.com/patternfly/patternfly-react/pull/3500))
@@ -100,7 +100,7 @@ Packages released:
 
 ### PF3
   - **Date and time picker:** 
-    - Tried using toLocaleTimeString ([#3506](https://github.com/patternfly/patternfly-react/pull/3506))
+    - Use toLocaleTimeString to fix year 2020 bug ([#3506](https://github.com/patternfly/patternfly-react/pull/3506))
     - Updated test snapshot due to new year ([#3450](https://github.com/patternfly/patternfly-react/pull/3450))
   - **React console:** 
     - Added `additionalButtons` prop to VncConsole ([#3465](https://github.com/patternfly/patternfly-react/pull/3465))
