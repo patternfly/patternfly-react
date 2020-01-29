@@ -286,9 +286,6 @@ jobs:
     - image: circleci/node:10
     steps:
     - *attach_workspace
-    - restore_cache:
-        keys:
-        - *doc_build_cache_key
     - run:
         name: Copy to docs folder
         command: .circleci/copy-docs.sh
