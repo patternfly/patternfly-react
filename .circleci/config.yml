@@ -223,6 +223,9 @@ jobs:
         name: ESLint
         command: yarn lint:ts
     - run:
+        name: MD Lint
+        command: yarn lint:md
+    - run:
         name: "@patternfly/patternfly Versions Match"
         command: yarn lint:versions
     - run:
