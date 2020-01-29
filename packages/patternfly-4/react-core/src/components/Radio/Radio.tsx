@@ -29,6 +29,8 @@ export interface RadioProps
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Aria label for the radio. */
   'aria-label'?: string;
+  /** Description text of the radio. */
+  description?: React.ReactNode;
 }
 
 export class Radio extends React.Component<RadioProps> {
@@ -64,6 +66,7 @@ export class Radio extends React.Component<RadioProps> {
       isValid,
       label,
       onChange,
+      description,
       ...props
     } = this.props;
 
@@ -90,17 +93,22 @@ export class Radio extends React.Component<RadioProps> {
         {label}
       </label>
     );
+
+    const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
     const childrenRendered = isLabelBeforeButton ? (
       <>
         {labelRendered}
         {inputRendered}
+        {descRender}
       </>
     ) : (
       <>
         {inputRendered}
         {labelRendered}
+        {descRender}
       </>
     );
+
 
     return isLabelWrapped ? (
       <label className={css(styles.radio, className)} htmlFor={props.id}>

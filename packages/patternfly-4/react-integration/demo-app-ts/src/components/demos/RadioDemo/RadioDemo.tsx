@@ -45,6 +45,12 @@ export class RadioDemo extends Component {
     isDisabled: true,
     name: 'disabled-2'
   };
+  myUncheckedDescriptionRadioProps: RadioProps = {
+    id: 'radio-7',
+    label: 'Unchecked radio with description example',
+    description: <span>This is a radio <strong>description</strong></span>,
+    name: 'disabled-2'
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -91,6 +97,12 @@ export class RadioDemo extends Component {
           isDisabled={this.myUncheckedDisabledRadioProps.isDisabled}
           label={this.myUncheckedDisabledRadioProps.label}
           name={this.myUncheckedDisabledRadioProps.name}
+        />
+        <Radio
+          id={this.myUncheckedDescriptionRadioProps.id}
+          label={this.myUncheckedDescriptionRadioProps.label}
+          name={this.myUncheckedDescriptionRadioProps.name}
+          description={this.myUncheckedDescriptionRadioProps.description}
         />
       </React.Fragment>
     );
