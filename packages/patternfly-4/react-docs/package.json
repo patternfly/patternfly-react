@@ -21,6 +21,7 @@
     "@mdx-js/mdx": "^1.1.5",
     "@mdx-js/react": "^1.1.5",
     "@patternfly/patternfly": "2.56.3",
+    "@patternfly/react-catalog-view-extension": "^1.2.5",
     "@patternfly/react-charts": "^5.2.21",
     "@patternfly/react-core": "^3.134.2",
     "@patternfly/react-icons": "^3.14.39",
