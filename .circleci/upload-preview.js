@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Octokit = require("@octokit/rest");
+const Octokit = require('@octokit/rest');
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
 const surge = require('surge');
 const publishFn = surge().publish();
