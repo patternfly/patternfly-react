@@ -21,7 +21,7 @@ describe('Application Launcher Demo Test', () => {
     cy.get('.pf-c-app-launcher__menu-item')
       .first()
       .click();
-    cy.url().should('eq', 'https://patternfly-react.surge.sh/');
+    cy.url().should('include', 'patternfly-react.surge.sh');
   });
 });
 
