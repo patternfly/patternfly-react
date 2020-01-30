@@ -220,7 +220,7 @@ jobs:
         name: Run Cypress Integration Tests
         command: |
             cd packages/patternfly-4/react-integration &&
-            yarn test:integration -s $(circleci tests glob "cypress/integration/*.spec.ts" | circleci tests split --split-by=timings)
+            yarn test:integration -s $(circleci tests glob "cypress/integration/*.spec.ts" | circleci tests split --split-by=timings) || true
     - store_artifacts:
         path: packages/patternfly-4/react-integration/results
     - persist_to_workspace:
@@ -246,6 +246,10 @@ jobs:
     - run:
         name: Upload report
         command: node .circleci/upload-preview.js packages/patternfly-4/react-integration/results
+    - run:
+        name: Fail build if junit report contains errors
+        # TODO: Properly parse JUnit
+        command: ! grep -e "<failure" packages/patternfly-4/react-integration/results
   lint:
     docker:
     - image: circleci/node:10
