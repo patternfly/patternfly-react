@@ -132,6 +132,7 @@ jobs:
   test_jest_pf4:
     docker:
     - image: circleci/node:10
+    resource_class: xlarge
     steps:
     - *attach_workspace
     - restore_cache:
@@ -139,7 +140,7 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF4 Jest Tests
-        command: yarn test:pf4 --maxWorkers=2
+        command: yarn test:pf4 --maxWorkers=4
     - run:
         name: Upload results to codecov
         command: yarn run codecov -F patternfly4
