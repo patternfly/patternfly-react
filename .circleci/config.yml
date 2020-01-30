@@ -83,9 +83,6 @@ workflows:
     - test_integration:
         requires:
         - build_demo_app
-    - report_integration:
-        requires:
-        - test_integration
     - test_a11y_pf4:
         requires:
         - build_pf4_docs
