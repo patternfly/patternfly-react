@@ -19,6 +19,7 @@ class User implements SelectOptionObject {
   }
 
   toString = (): string => `${this.title}: ${this.firstName} ${this.lastName}`;
+  compareTo = (value: string): boolean => this.toString().includes(value);
 }
 
 const selectOptions = [

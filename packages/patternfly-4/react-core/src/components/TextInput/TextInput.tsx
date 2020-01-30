@@ -58,7 +58,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
 }
 
 class TextInputBase extends React.Component<TextInputProps> {
-  static defaultProps = {
+  static defaultProps: TextInputProps = {
     'aria-label': null as string,
     className: '',
     isRequired: false,

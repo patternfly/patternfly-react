@@ -6,7 +6,7 @@ describe('Small donut utilization chart with static thresholds Demo Test', () =>
   });
 
   it('Verify donut chart', () => {
-    cy.get('.VictoryContainer').should('exist');
+    cy.get('.pf-c-chart').should('exist');
   });
 
   it('Verify legend string', () => {
@@ -14,7 +14,7 @@ describe('Small donut utilization chart with static thresholds Demo Test', () =>
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '175');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '175');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'width', '175');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'height', '175');
   });
 });

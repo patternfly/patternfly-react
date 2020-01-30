@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css, getModifier } from '@patternfly/react-styles';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface SkipToContentProps
   extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
@@ -18,7 +19,7 @@ export interface SkipToContentProps
 }
 
 export class SkipToContent extends React.Component<SkipToContentProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<SkipToContentProps> = {
     component: 'a',
     className: '',
     show: false

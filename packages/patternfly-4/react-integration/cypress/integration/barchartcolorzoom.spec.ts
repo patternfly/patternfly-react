@@ -6,7 +6,7 @@ describe('Bar Chart Multicolor with Zoom Demo Test', () => {
   });
 
   it('Verify bar chart', () => {
-    cy.get('.VictoryContainer').should('exist');
+    cy.get('.pf-c-chart').should('exist');
   });
 
   it('Verify legend string', () => {
@@ -14,7 +14,7 @@ describe('Bar Chart Multicolor with Zoom Demo Test', () => {
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '450');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '300');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'width', '450');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'height', '400');
   });
 });

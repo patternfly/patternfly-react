@@ -261,7 +261,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            id=""
                             tabindex="-1"
                             type="button"
                           >
@@ -274,7 +273,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            id=""
                             tabindex="-1"
                             type="button"
                           >
@@ -289,7 +287,6 @@ exports[`optionsMenu expanded 1`] = `
                             aria-disabled="true"
                             class="pf-m-disabled pf-c-options-menu__menu-item"
                             disabled=""
-                            id=""
                             tabindex="-1"
                             type="button"
                           >
@@ -302,7 +299,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            id=""
                             tabindex="-1"
                             type="button"
                           >
@@ -335,7 +331,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            id=""
                             tabindex="-1"
                             type="button"
                           >
@@ -348,7 +343,6 @@ exports[`optionsMenu expanded 1`] = `
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
-                            id=""
                             tabindex="-1"
                             type="button"
                           >
@@ -435,7 +429,6 @@ exports[`optionsMenu expanded 1`] = `
                           >
                             <button
                               class="pf-c-options-menu__menu-item"
-                              id=""
                               tabindex="-1"
                               type="button"
                             >
@@ -448,7 +441,6 @@ exports[`optionsMenu expanded 1`] = `
                           >
                             <button
                               class="pf-c-options-menu__menu-item"
-                              id=""
                               tabindex="-1"
                               type="button"
                             >
@@ -463,7 +455,6 @@ exports[`optionsMenu expanded 1`] = `
                               aria-disabled="true"
                               class="pf-m-disabled pf-c-options-menu__menu-item"
                               disabled=""
-                              id=""
                               tabindex="-1"
                               type="button"
                             >
@@ -476,7 +467,6 @@ exports[`optionsMenu expanded 1`] = `
                           >
                             <button
                               class="pf-c-options-menu__menu-item"
-                              id=""
                               tabindex="-1"
                               type="button"
                             >
@@ -509,7 +499,6 @@ exports[`optionsMenu expanded 1`] = `
                           >
                             <button
                               class="pf-c-options-menu__menu-item"
-                              id=""
                               tabindex="-1"
                               type="button"
                             >
@@ -522,7 +511,6 @@ exports[`optionsMenu expanded 1`] = `
                           >
                             <button
                               class="pf-c-options-menu__menu-item"
-                              id=""
                               tabindex="-1"
                               type="button"
                             >
@@ -613,7 +601,6 @@ exports[`optionsMenu expanded 1`] = `
                             >
                               <button
                                 class="pf-c-options-menu__menu-item"
-                                id=""
                                 tabindex="-1"
                                 type="button"
                               >
@@ -626,7 +613,6 @@ exports[`optionsMenu expanded 1`] = `
                             >
                               <button
                                 class="pf-c-options-menu__menu-item"
-                                id=""
                                 tabindex="-1"
                                 type="button"
                               >
@@ -641,7 +627,6 @@ exports[`optionsMenu expanded 1`] = `
                                 aria-disabled="true"
                                 class="pf-m-disabled pf-c-options-menu__menu-item"
                                 disabled=""
-                                id=""
                                 tabindex="-1"
                                 type="button"
                               >
@@ -654,7 +639,6 @@ exports[`optionsMenu expanded 1`] = `
                             >
                               <button
                                 class="pf-c-options-menu__menu-item"
-                                id=""
                                 tabindex="-1"
                                 type="button"
                               >
@@ -687,7 +671,6 @@ exports[`optionsMenu expanded 1`] = `
                             >
                               <button
                                 class="pf-c-options-menu__menu-item"
-                                id=""
                                 tabindex="-1"
                                 type="button"
                               >
@@ -700,7 +683,6 @@ exports[`optionsMenu expanded 1`] = `
                             >
                               <button
                                 class="pf-c-options-menu__menu-item"
-                                id=""
                                 tabindex="-1"
                                 type="button"
                               >
@@ -810,7 +792,6 @@ exports[`optionsMenu expanded 1`] = `
                         <InternalDropdownItem
                           className=""
                           component="button"
-                          componentID=""
                           context={
                             Object {
                               "keyHandler": [Function],
@@ -824,7 +805,6 @@ exports[`optionsMenu expanded 1`] = `
                           isDisabled={false}
                           isHovered={false}
                           onClick={[Function]}
-                          onSelect={[Function]}
                           role="menuitem"
                           tabIndex={-1}
                           tooltip={null}
@@ -842,8 +822,6 @@ exports[`optionsMenu expanded 1`] = `
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
                               href={null}
-                              id=""
-                              onSelect={[Function]}
                               tabIndex={-1}
                               type="button"
                             >
@@ -864,7 +842,6 @@ exports[`optionsMenu expanded 1`] = `
                         <InternalDropdownItem
                           className=""
                           component="button"
-                          componentID=""
                           context={
                             Object {
                               "keyHandler": [Function],
@@ -878,7 +855,6 @@ exports[`optionsMenu expanded 1`] = `
                           isDisabled={false}
                           isHovered={false}
                           onClick={[Function]}
-                          onSelect={[Function]}
                           role="menuitem"
                           tabIndex={-1}
                           tooltip={null}
@@ -896,8 +872,6 @@ exports[`optionsMenu expanded 1`] = `
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
                               href={null}
-                              id=""
-                              onSelect={[Function]}
                               tabIndex={-1}
                               type="button"
                             >
@@ -922,7 +896,6 @@ exports[`optionsMenu expanded 1`] = `
                           aria-disabled={true}
                           className=""
                           component="button"
-                          componentID=""
                           context={
                             Object {
                               "keyHandler": [Function],
@@ -936,7 +909,6 @@ exports[`optionsMenu expanded 1`] = `
                           isDisabled={true}
                           isHovered={false}
                           onClick={[Function]}
-                          onSelect={[Function]}
                           role="menuitem"
                           tabIndex={-1}
                           tooltip={null}
@@ -955,8 +927,6 @@ exports[`optionsMenu expanded 1`] = `
                               className="pf-m-disabled pf-c-options-menu__menu-item"
                               disabled={true}
                               href={null}
-                              id=""
-                              onSelect={[Function]}
                               tabIndex={-1}
                               type="button"
                             >
@@ -977,7 +947,6 @@ exports[`optionsMenu expanded 1`] = `
                         <InternalDropdownItem
                           className=""
                           component="button"
-                          componentID=""
                           context={
                             Object {
                               "keyHandler": [Function],
@@ -991,7 +960,6 @@ exports[`optionsMenu expanded 1`] = `
                           isDisabled={false}
                           isHovered={false}
                           onClick={[Function]}
-                          onSelect={[Function]}
                           role="menuitem"
                           tabIndex={-1}
                           tooltip={null}
@@ -1009,8 +977,6 @@ exports[`optionsMenu expanded 1`] = `
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
                               href={null}
-                              id=""
-                              onSelect={[Function]}
                               tabIndex={-1}
                               type="button"
                             >
@@ -1063,7 +1029,6 @@ exports[`optionsMenu expanded 1`] = `
                         <InternalDropdownItem
                           className=""
                           component="button"
-                          componentID=""
                           context={
                             Object {
                               "keyHandler": [Function],
@@ -1077,7 +1042,6 @@ exports[`optionsMenu expanded 1`] = `
                           isDisabled={false}
                           isHovered={false}
                           onClick={[Function]}
-                          onSelect={[Function]}
                           role="menuitem"
                           tabIndex={-1}
                           tooltip={null}
@@ -1095,8 +1059,6 @@ exports[`optionsMenu expanded 1`] = `
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
                               href={null}
-                              id=""
-                              onSelect={[Function]}
                               tabIndex={-1}
                               type="button"
                             >
@@ -1117,7 +1079,6 @@ exports[`optionsMenu expanded 1`] = `
                         <InternalDropdownItem
                           className=""
                           component="button"
-                          componentID=""
                           context={
                             Object {
                               "keyHandler": [Function],
@@ -1131,7 +1092,6 @@ exports[`optionsMenu expanded 1`] = `
                           isDisabled={false}
                           isHovered={false}
                           onClick={[Function]}
-                          onSelect={[Function]}
                           role="menuitem"
                           tabIndex={-1}
                           tooltip={null}
@@ -1149,8 +1109,6 @@ exports[`optionsMenu expanded 1`] = `
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
                               href={null}
-                              id=""
-                              onSelect={[Function]}
                               tabIndex={-1}
                               type="button"
                             >

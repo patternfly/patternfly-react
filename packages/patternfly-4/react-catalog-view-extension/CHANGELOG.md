@@ -3,6 +3,137 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.4...@patternfly/react-catalog-view-extension@1.2.5) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.3...@patternfly/react-catalog-view-extension@1.2.4) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.2...@patternfly/react-catalog-view-extension@1.2.3) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.1...@patternfly/react-catalog-view-extension@1.2.2) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.0...@patternfly/react-catalog-view-extension@1.2.1) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+# [1.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.86...@patternfly/react-catalog-view-extension@1.2.0) (2020-01-24)
+
+
+### Features
+
+* **pf4:** Use absolute import paths for react core in pf4 packages. ([#3525](https://github.com/patternfly/patternfly-react/issues/3525)) ([65d0b3d](https://github.com/patternfly/patternfly-react/commit/65d0b3d1e04610895f122c1313d1442360356f13)), closes [#3155](https://github.com/patternfly/patternfly-react/issues/3155)
+
+
+
+
+
+## [1.1.86](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.85...@patternfly/react-catalog-view-extension@1.1.86) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.85](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.84...@patternfly/react-catalog-view-extension@1.1.85) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.84](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.83...@patternfly/react-catalog-view-extension@1.1.84) (2020-01-22)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.82...@patternfly/react-catalog-view-extension@1.1.83) (2020-01-22)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.81...@patternfly/react-catalog-view-extension@1.1.82) (2020-01-22)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.80...@patternfly/react-catalog-view-extension@1.1.81) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.79...@patternfly/react-catalog-view-extension@1.1.80) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.79](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.78...@patternfly/react-catalog-view-extension@1.1.79) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.77...@patternfly/react-catalog-view-extension@1.1.78) (2020-01-20)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.1.77](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.76...@patternfly/react-catalog-view-extension@1.1.77) (2020-01-17)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [1.1.76](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.75...@patternfly/react-catalog-view-extension@1.1.76) (2020-01-15)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

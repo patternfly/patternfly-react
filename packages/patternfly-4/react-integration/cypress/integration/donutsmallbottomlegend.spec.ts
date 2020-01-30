@@ -6,7 +6,7 @@ describe('Donut Small Bottom Legend Demo Test', () => {
   });
 
   it('Verify donut chart', () => {
-    cy.get('.VictoryContainer').should('exist');
+    cy.get('.pf-c-chart').should('exist');
   });
 
   it('Verify legend string', () => {
@@ -14,7 +14,7 @@ describe('Donut Small Bottom Legend Demo Test', () => {
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '300');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '200');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'width', '300');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'height', '200');
   });
 });

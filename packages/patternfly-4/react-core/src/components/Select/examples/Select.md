@@ -2,7 +2,7 @@
 title: 'Select'
 section: components
 cssPrefix: 'pf-c-select'
-propComponents: ['Select', 'SelectOption', 'SelectGroup']
+propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
 typescript: true
 ---
 
@@ -452,7 +452,8 @@ class TypeaheadSelectInput extends React.Component {
 
     this.onToggle = isExpanded => {
       this.setState({
-        isExpanded
+        isExpanded,
+        options: this.options
       });
     };
 
@@ -470,7 +471,8 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false
+        isExpanded: false,
+        options: this.options
       });
     };
 
@@ -650,6 +652,9 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         founded: founded,
         toString: function() {
           return `${this.name} (${this.abbreviation}) - Founded: ${this.founded}`;
+        },
+        compareTo: function(value) {
+          return this.toString().toLowerCase().includes(value.toLowerCase());
         }
       };
     };
@@ -696,15 +701,11 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     };
 
     this.customFilter = e => {
-      let input;
-      try {
-        input = new RegExp(e.target.value.toString(), 'i');
-      } catch (err) {
-        input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-      }
+      console.log(e);
+      const input = e.target.value.toString();
       let typeaheadFilteredChildren =
-        e.target.value.toString() !== ''
-          ? this.options.filter(option => input.test(option.props.value.toString()))
+        input !== ''
+          ? this.options.filter(option => option.props.value.compareTo(input))
           : this.options;
       return typeaheadFilteredChildren;
     };

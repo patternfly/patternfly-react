@@ -51,7 +51,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   ref = React.createRef<HTMLLIElement>();
   additionalRef = React.createRef<any>();
 
-  static defaultProps = {
+  static defaultProps: InternalDropdownItemProps = {
     className: '',
     isHovered: false,
     component: 'a',
@@ -60,15 +60,14 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     isDisabled: false,
     href: '',
     tooltipProps: {},
-    onClick: (event: React.MouseEvent<HTMLAnchorElement>) => undefined as any,
-    onSelect: () => undefined as any,
+    onClick: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => undefined as any,
     index: -1,
     context: {
-      keyHandler: Function.prototype,
-      sendRef: Function.prototype
+      keyHandler: () => {},
+      sendRef: () => {}
     },
-    id: '',
-    componentID: '',
+    id: undefined,
+    componentID: undefined,
     enterTriggersArrowDown: false
   };
 

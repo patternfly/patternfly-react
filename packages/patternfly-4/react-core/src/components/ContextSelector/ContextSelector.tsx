@@ -39,15 +39,15 @@ export interface ContextSelectorProps {
   /** Value in the Search field */
   searchInputValue?: string;
   /** Function callback called when user changes the Search Input */
-  onSearchInputChange?(value: string): void;
+  onSearchInputChange?: (value: string) => void;
   /** Search Input placeholder */
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
-  onSearchButtonClick?(event?: React.SyntheticEvent<HTMLButtonElement>): void;
+  onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps> {
-  static defaultProps = {
+  static defaultProps: ContextSelectorProps = {
     children: null as React.ReactNode,
     className: '',
     isOpen: false,

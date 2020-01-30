@@ -23,7 +23,7 @@ describe('Table Simple Actions Test', () => {
 
   it('Verify dropdown toggle', () => {
     cy.get('.pf-c-dropdown__toggle').should('exist');
-    cy.get('#pf-toggle-id-2.pf-c-dropdown__toggle').click();
+    cy.get('#pf-toggle-id-0.pf-c-dropdown__toggle').click();
     cy.get('.pf-c-dropdown__menu').should('exist');
     cy.get('.pf-c-dropdown__menu-item')
       .first()

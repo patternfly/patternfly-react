@@ -6,7 +6,7 @@ describe('Line Chart Green Zoom Demo Test', () => {
   });
 
   it('Verify line chart', () => {
-    cy.get('.VictoryContainer').should('exist');
+    cy.get('.pf-c-chart').should('exist');
   });
 
   it('Verify legend string', () => {
@@ -14,7 +14,7 @@ describe('Line Chart Green Zoom Demo Test', () => {
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '600');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '250');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'width', '600');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'height', '250');
   });
 });

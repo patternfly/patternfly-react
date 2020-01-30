@@ -13,7 +13,7 @@ export interface TabButtonProps extends React.HTMLProps<HTMLAnchorElement | HTML
 
 const TabButtonWithRef: React.FunctionComponent<TabButtonProps> = ({
   children,
-  className = '',
+  className = '', 
   tabContentRef,
   ...props
 }: TabButtonProps) => {

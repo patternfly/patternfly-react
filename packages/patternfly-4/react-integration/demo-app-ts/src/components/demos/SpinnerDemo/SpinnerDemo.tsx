@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner, SpinnerProps } from '@patternfly/react-core/dist/esm/experimental';
+import { Spinner, SpinnerProps } from '@patternfly/react-core';
 
 export class SpinnerDemo extends React.Component<SpinnerProps> {
   componentDidMount() {

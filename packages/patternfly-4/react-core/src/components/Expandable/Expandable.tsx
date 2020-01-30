@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Expandable/expandable';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ExpandableProps {
   /** Content rendered inside the Expandable Component */
@@ -39,7 +40,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     };
   }
 
-  static defaultProps = {
+  static defaultProps: PickOptional<ExpandableProps> = {
     className: '',
     toggleText: '',
     toggleTextExpanded: '',

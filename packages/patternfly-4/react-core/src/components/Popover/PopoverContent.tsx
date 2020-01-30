@@ -6,7 +6,7 @@ export const PopoverContent: React.FunctionComponent<PopoverContentProps> = ({
   className = null,
   children,
   ...props
-}) => (
+}: PopoverContentProps) => (
   <div className={css(styles.popoverContent, className)} {...props}>
     {children}
   </div>

@@ -7,6 +7,7 @@ import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 import { KEY_CODES } from '../../helpers/constants';
 import { ModalContent } from './ModalContent';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Modal. */
@@ -53,7 +54,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   static currentId = 0;
   id = '';
 
-  static defaultProps = {
+  static defaultProps: PickOptional<ModalProps> = {
     className: '',
     isOpen: false,
     hideTitle: false,

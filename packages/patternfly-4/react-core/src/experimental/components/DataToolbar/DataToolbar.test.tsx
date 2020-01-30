@@ -16,7 +16,7 @@ describe('data toolbar', () => {
   test('DataToolbarOneContent', () => {
     const view = mount(
       <DataToolbar id="data-toolbar" className="DataToolbar-class">
-        <DataToolbarContent className="DataToolbarContent-class"/>
+        <DataToolbarContent className="DataToolbarContent-class" />
       </DataToolbar>
     );
     expect(view).toMatchSnapshot()

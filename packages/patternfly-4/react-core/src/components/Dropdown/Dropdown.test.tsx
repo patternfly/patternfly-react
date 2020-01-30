@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Dropdown } from './Dropdown';
 import { DropdownPosition, DropdownDirection } from './dropdownConstants';
 import { InternalDropdownItem } from './InternalDropdownItem';
-import { DropdownSeparator } from './Separator';
+import { DropdownSeparator } from './DropdownSeparator';
 import { DropdownToggle } from './DropdownToggle';
 import { KebabToggle } from './KebabToggle';
 

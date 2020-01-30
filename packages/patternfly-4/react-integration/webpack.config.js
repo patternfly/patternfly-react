@@ -7,7 +7,10 @@ module.exports = {
       {
         exclude: /node_modules|demo-app-ts/,
         test: /\.ts?$/,
-        use: 'ts-loader'
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true
+        }
       }
     ]
   },

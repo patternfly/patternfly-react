@@ -39,7 +39,7 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   ariaDescribedById: string;
 }
 
-export const AboutModalContainer: React.SFC<AboutModalContainerProps> = ({
+export const AboutModalContainer: React.FunctionComponent<AboutModalContainerProps> = ({
   children,
   className = '',
   isOpen = false,

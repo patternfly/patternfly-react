@@ -12,7 +12,7 @@ describe('Table Headers Wrappable Test', () => {
   it('Check number of rows', () => {
     cy.get('.pf-c-table')
       .find('tr')
-      .should('have.length', 2);
+      .should('have.length', 5);
   });
 
   it('Check number of columns', () => {

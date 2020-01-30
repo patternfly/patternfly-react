@@ -69,7 +69,7 @@ const testCellActions = ({
       .find('.pf-c-dropdown button')
       .first()
       .simulate('click');
-    expect(view.find('.pf-c-dropdown__menu li a')).toHaveLength(expectDisabled ? 0 : 1);
+    expect(view.find('.pf-c-dropdown__menu li div')).toHaveLength(expectDisabled ? 0 : 1);
   }
 };
 

@@ -40,7 +40,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
   }
   span = React.createRef<HTMLSpanElement>();
 
-  static defaultProps = {
+  static defaultProps: ChipProps = {
     closeBtnAriaLabel: 'close',
     className: '',
     isOverflowChip: false,

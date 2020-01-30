@@ -5,7 +5,7 @@ export * from './dropdownConstants';
 export * from './DropdownGroup';
 export * from './DropdownItem';
 export * from './DropdownItemIcon';
-export * from './Separator';
+export * from './DropdownSeparator';
 export * from './KebabToggle';
 export * from './DropdownToggle';
 export * from './DropdownToggleCheckbox';

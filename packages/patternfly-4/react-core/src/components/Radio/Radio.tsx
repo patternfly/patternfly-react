@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'> {
@@ -32,11 +32,11 @@ export interface RadioProps
 }
 
 export class Radio extends React.Component<RadioProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<RadioProps> = {
     className: '',
     isDisabled: false,
     isValid: true,
-    onChange: Function.prototype
+    onChange: () => {}
   };
 
   constructor(props: RadioProps) {

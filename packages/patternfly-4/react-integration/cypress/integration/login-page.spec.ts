@@ -16,7 +16,7 @@ describe('Login Page Demo Test', () => {
   });
 
   it('Verify error is shown on invalid credentials', () => {
-    cy.get('.pf-c-button.pf-m-primary').then((loginButton: JQuery<HTMLButtonElement>) => {
+    cy.get('.pf-c-login__main-body .pf-c-button.pf-m-primary').then((loginButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(loginButton).click();
       cy.get('.pf-c-form__helper-text.pf-m-error').then(errorMessage => {
         expect(errorMessage.length).to.equal(1);

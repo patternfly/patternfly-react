@@ -11,7 +11,7 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
   onClose?: () => void;
 }
 
-export const AboutModalBoxCloseButton: React.SFC<AboutModalBoxCloseButtonProps> = ({
+export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
   className = '',
   onClose = () => undefined as any,
   ...props

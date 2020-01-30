@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-console",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "private": false,
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/src/console/README.md",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-3/react-console/README.md",
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",

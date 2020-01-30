@@ -87,5 +87,68 @@ Object.values(AlertVariant).forEach(variant => {
       );
       expect(view).toMatchSnapshot();
     });
+
+    test('Toast alerts match snapsnot', () => {
+      const view = mount(
+        <Alert
+          isLiveRegion={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
+    test('Toast alerts contain default live region', () => {
+      const wrapper = mount(
+        <Alert
+          isLiveRegion={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      const liveRegion = wrapper.find({ 'aria-live': 'polite' }).length
+      expect (liveRegion).toBe(1)
+    });
+
+    test('Toast alert live regions are not atomic', () => {
+      const wrapper = mount(
+        <Alert
+          isLiveRegion={true}
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some toast alert
+        </Alert>
+      );
+      expect(wrapper.find('.pf-c-alert').prop('aria-atomic')).toBe('false');
+    });
+
+    test('Non-toast alerts can have custom live region settings', () => {
+      const wrapper = mount(
+        <Alert
+          aria-live="assertive"
+          aria-relevant="all"
+          aria-atomic="true"
+          variant={variant}
+          aria-label={`${variant} toast alert`}
+          title="Some title"
+        >
+          Some noisy alert
+        </Alert>
+      );
+      const alert = wrapper.find(Alert);
+
+      expect(alert.prop('aria-live')).toBe('assertive');
+      expect(alert.prop('aria-relevant')).toBe('all');
+      expect(alert.prop('aria-atomic')).toBe('true');
+    });
   });
 });

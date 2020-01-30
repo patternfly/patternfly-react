@@ -5,6 +5,7 @@ import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { AboutModalContainer } from './AboutModalContainer';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface AboutModalProps {
   /** Content rendered inside the about modal  */
@@ -41,7 +42,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;
 
-  static defaultProps = {
+  static defaultProps: PickOptional<AboutModalProps> = {
     className: '',
     isOpen: false,
     onClose: (): any => undefined,
