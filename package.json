@@ -111,7 +111,7 @@
     "test": "jest packages",
     "test:a11y": "lerna run test:a11y --stream",
     "test:current": "jest --watch",
-    "test:integration": "lerna run test:integration --stream",
+    "test:integration": "yarn workspace @patternfly/react-integration test:integration",
     "test:misc": "jest packages/react-*",
     "test:pf3": "jest packages/patternfly-3",
     "test:pf4": "jest packages/patternfly-4",
