@@ -19,7 +19,7 @@ export const DataToolbarContext = React.createContext<Partial<DataToolbarContext
   isExpanded: false,
   toggleIsExpanded: () => {},
   chipGroupContentRef: null,
-  updateNumberFilters: (categoryName: string, numberOfFilters: number) => {},
+  updateNumberFilters: () => {},
   numberOfFilters: 0
 });
 

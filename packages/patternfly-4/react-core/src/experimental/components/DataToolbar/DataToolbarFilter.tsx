@@ -30,7 +30,6 @@ interface DataToolbarFilterState {
 }
 
 export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
-  // @ts-ignore
   static contextType: any = DataToolbarContext;
   static defaultProps: PickOptional<DataToolbarFilterProps> = {
     chips: [] as string[],

@@ -119,7 +119,7 @@ describe('data toolbar', () => {
     const onRiskToggle = () => {};
     const onStatusSelect = () => {};
     const onRiskSelect = () => {};
-    const onDelete = (type = '', id: string | DataToolbarChip = '') => {};
+    const onDelete = () => {};
 
     const view = mount(
       <DataToolbar id="data-toolbar" className="DataToolbar-class" clearAllFilters={onDelete}>

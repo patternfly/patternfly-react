@@ -141,9 +141,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const newId = Wizard.currentId++;
     this.isModal = !props.isInPage;
     if (this.isModal) {
-      if (!props.title) {
-        console.warn('Title is required for modals!');
-      }
       this.titleId = `pf-wizard-title-${newId}`;
       this.descriptionId = `pf-wizard-description-${newId}`;
     }

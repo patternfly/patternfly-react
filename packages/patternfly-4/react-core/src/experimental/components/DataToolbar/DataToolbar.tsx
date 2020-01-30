@@ -118,7 +118,6 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
           {React.Children.map(children, (child: any) => {
             if (React.isValidElement(child)) {
               return React.cloneElement(child, {
-                // @ts-ignore
                 clearAllFilters,
                 clearFiltersButtonText,
                 showClearFiltersButton,

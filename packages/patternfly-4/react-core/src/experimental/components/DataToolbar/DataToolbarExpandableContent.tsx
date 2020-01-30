@@ -27,7 +27,6 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
 }
 
 export class DataToolbarExpandableContent extends React.Component<DataToolbarExpandableContentProps> {
-  // @ts-ignore
   static contextType: any = DataToolbarContext;
   static defaultProps: PickOptional<DataToolbarExpandableContentProps> = {
     isExpanded: false,
