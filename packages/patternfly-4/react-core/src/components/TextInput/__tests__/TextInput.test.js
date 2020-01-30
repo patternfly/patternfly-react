@@ -1,4 +1,5 @@
 import React from 'react';
+import { mount } from 'enzyme';
 import { TextInput,TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
 
@@ -12,6 +13,7 @@ test('input passes value and event to onChange handler', () => {
   const event = {
     target: { value: newValue }
   };
+  const view = mount(<TextInput {...props} aria-label="test input" />);
   view.find('input').simulate('change', event);
   expect(props.onChange.mock.calls[0][0]).toBe(newValue);
   expect(props.onChange.mock.calls[0][1]).toMatchObject(event);
@@ -19,17 +21,17 @@ test('input passes value and event to onChange handler', () => {
 
 test('simple text input', () => {
   const view = mount(<TextInput {...props} aria-label="simple text input" />);
-  expect(view).toMatchSnapshot();
+  expect(view.find('input')).toMatchSnapshot();
 });
 
 test('disabled text input', () => {
   const view = mount(<TextInput isDisabled aria-label="disabled text input" />);
-  expect(view).toMatchSnapshot();
+  expect(view.find('input')).toMatchSnapshot();
 });
 
 test('readonly text input', () => {
   const view = mount(<TextInput isReadOnly value="read only" aria-label="readonly text input" />);
-  expect(view).toMatchSnapshot();
+  expect(view.find('input')).toMatchSnapshot();
 });
 
 test('invalid text input', () => {
@@ -44,7 +46,7 @@ test('validated text input success', () => {
 });
 
 test('validated text input', () => {
-  const view = shallow(<TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />);
+  const view = mount(<TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />);
   expect(view).toMatchSnapshot();
 });
 
