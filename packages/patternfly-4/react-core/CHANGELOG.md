@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.134.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.3...@patternfly/react-core@3.134.4) (2020-01-30)
+
+
+### Bug Fixes
+
+* **a11y:** fix a11y errors and enable a11y in CI ([#3593](https://github.com/patternfly/patternfly-react/issues/3593)) ([d20cab7](https://github.com/patternfly/patternfly-react/commit/d20cab7c9f39f7d1cd195f0a3b50aff3b7c3a0d3))
+* **wizard:** add type to wizard context ([#3572](https://github.com/patternfly/patternfly-react/issues/3572)) ([0063fd2](https://github.com/patternfly/patternfly-react/commit/0063fd29b00a07bb574c6248dc9239b34147d581))
+
+
+
+
+
 ## [3.134.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.2...@patternfly/react-core@3.134.3) (2020-01-30)
 
 **Note:** Version bump only for package @patternfly/react-core

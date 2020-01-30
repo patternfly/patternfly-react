@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.17.7...@patternfly/react-docs@4.18.0) (2020-01-30)
+
+
+### Bug Fixes
+
+* **a11y:** fix a11y errors and enable a11y in CI ([#3593](https://github.com/patternfly/patternfly-react/issues/3593)) ([d20cab7](https://github.com/patternfly/patternfly-react/commit/d20cab7c9f39f7d1cd195f0a3b50aff3b7c3a0d3))
+
+
+### Features
+
+* **cypress:** parallelize tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/issues/3627)) ([aa53124](https://github.com/patternfly/patternfly-react/commit/aa5312464026797e33fb8b3015bb3607e5e497f6))
+
+
+
+
+
 ## [4.17.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.17.6...@patternfly/react-docs@4.17.7) (2020-01-30)
 
 **Note:** Version bump only for package @patternfly/react-docs

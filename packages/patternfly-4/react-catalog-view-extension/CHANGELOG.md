@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.6...@patternfly/react-catalog-view-extension@1.2.7) (2020-01-30)
+
+
+### Bug Fixes
+
+* **a11y:** fix a11y errors and enable a11y in CI ([#3593](https://github.com/patternfly/patternfly-react/issues/3593)) ([d20cab7](https://github.com/patternfly/patternfly-react/commit/d20cab7c9f39f7d1cd195f0a3b50aff3b7c3a0d3))
+* **Catalog Tile:** Adjusted max height of header image ([#3628](https://github.com/patternfly/patternfly-react/issues/3628)) ([0320821](https://github.com/patternfly/patternfly-react/commit/03208217da6f134cfcb49dc244b46b76108c2b3c))
+
+
+
+
+
 ## [1.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.5...@patternfly/react-catalog-view-extension@1.2.6) (2020-01-30)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

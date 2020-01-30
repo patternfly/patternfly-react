@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.19.1...@patternfly/react-integration@3.20.0) (2020-01-30)
+
+
+### Features
+
+* **cypress:** parallelize tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/issues/3627)) ([aa53124](https://github.com/patternfly/patternfly-react/commit/aa5312464026797e33fb8b3015bb3607e5e497f6))
+
+
+
+
+
 ## [3.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.19.0...@patternfly/react-integration@3.19.1) (2020-01-27)
 
 
