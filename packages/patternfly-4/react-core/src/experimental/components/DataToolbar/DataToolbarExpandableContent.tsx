@@ -38,6 +38,7 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
       className,
       expandableContentRef,
       chipContainerRef,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isExpanded,
       clearAllFilters,
       clearFiltersButtonText,

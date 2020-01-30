@@ -54,6 +54,7 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     this.setState({ isOpen });
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelect = (event: MouseEvent) => {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
@@ -64,9 +65,11 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     const {
       children,
       className,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       id,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
 

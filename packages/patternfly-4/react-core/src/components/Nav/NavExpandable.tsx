@@ -88,6 +88,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
     const { expandedState } = this.state;
 

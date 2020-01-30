@@ -26,6 +26,7 @@ export const ChipGroupToolbarItem: React.FunctionComponent<ChipGroupToolbarItemP
   children = null,
   className = '',
   isClosable = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick = (_e: React.MouseEvent) => undefined as any,
   closeBtnAriaLabel = 'Close chip group',
   ...props

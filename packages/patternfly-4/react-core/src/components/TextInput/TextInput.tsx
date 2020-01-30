@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { Omit, withInnerRef } from '../../helpers';
 import { ValidatedOptions } from '../../helpers/constants';
 
@@ -73,7 +73,7 @@ class TextInputBase extends React.Component<TextInputProps> {
   constructor(props: TextInputProps) {
     super(props);
     if (!props.id && !props['aria-label'] && !props['aria-labelledby']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('Text input:', 'Text input requires either an id or aria-label to be specified');
     }
   }
@@ -90,6 +90,7 @@ class TextInputBase extends React.Component<TextInputProps> {
       className,
       type,
       value,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
       isValid,
       validated,

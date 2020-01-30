@@ -11,6 +11,7 @@ const images = {
   [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg'
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 Object.values([true, false]).forEach(isRead => {
   test('BackgroundImage', () => {
     const view = shallow(<BackgroundImage src={images} />);

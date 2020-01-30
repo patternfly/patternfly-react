@@ -17,7 +17,7 @@ import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
-// tslint:disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
 
 export enum PopoverPosition {
@@ -216,6 +216,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       position,
       enableFlip,
@@ -243,6 +244,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       tippyProps,
       ...rest
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
 
     if (!headerContent && !ariaLabel) {
       return new Error('aria-label is required when header is not used');

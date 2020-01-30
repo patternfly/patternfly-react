@@ -17,9 +17,11 @@ export const AboutModalBoxHero: React.FunctionComponent<AboutModalBoxHeroProps> 
 }: AboutModalBoxHeroProps) => (
   <div
     style={
+      /* eslint-disable camelcase */
       backgroundImageSrc !== ''
         ? { [c_about_modal_box__hero_sm_BackgroundImage.name as string]: `url(${backgroundImageSrc})` }
         : {}
+      /* eslint-enable camelcase */
     }
     className={css(styles.aboutModalBoxHero, className)}
     {...props}

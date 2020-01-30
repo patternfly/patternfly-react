@@ -58,6 +58,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
 }
 
 export const ApplicationLauncherContext = React.createContext({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onFavorite: (itemId: string, isFavorite: boolean) => {}
 });
 
@@ -71,8 +72,10 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     onSelect: (_event: any): any => undefined,
     onToggle: (_value: boolean): any => undefined,
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     'aria-label': 'Application launcher',
     isGrouped: false,
     toggleIcon: <ThIcon />,
@@ -155,10 +158,12 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       favorites,
       onFavorite,
       onSearch,
+      items,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       searchPlaceholderText,
       searchProps,
-      items,
       ref,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       favoritesLabel,
       searchNoResultsText,
       ...props

@@ -84,6 +84,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   };
 
   private static parseInteger(input: React.ReactText, lastPage: number): number {
+    // eslint-disable-next-line radix
     let inputPage = Number.parseInt(input as string, 10);
     if (!Number.isNaN(inputPage)) {
       inputPage = inputPage > lastPage ? lastPage : inputPage;
@@ -130,7 +131,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   render() {
     const {
       page,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       perPage,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSetPage,
       isDisabled,
       lastPage,

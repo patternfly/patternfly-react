@@ -84,6 +84,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
   };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       className,
@@ -100,6 +101,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       component,
       ...props
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
     return (
       <SelectConsumer>

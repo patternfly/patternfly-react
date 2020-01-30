@@ -50,9 +50,11 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   isActive = false,
   isFocused = false,
   isDisabled = false,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   ariaHasPopup,
   parentRef,
   onEnter,
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   'aria-label': ariaLabel = 'Options menu',
   ...props
 }: OptionsMenuToggleWithTextProps) => (

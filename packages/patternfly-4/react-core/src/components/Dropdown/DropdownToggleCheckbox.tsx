@@ -43,6 +43,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, onChange, isValid, isDisabled, isChecked, ref, checked, children, ...props } = this.props;
     const text = children && (
       <span className={css(styles.dropdownToggleText, className)} aria-hidden="true" id={`${props.id}-text`}>

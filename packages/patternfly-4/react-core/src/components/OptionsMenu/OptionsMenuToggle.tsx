@@ -41,7 +41,9 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
   parentId = '',
   toggleTemplate = <React.Fragment />,
   hideCaret = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isSplitButton = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type,
   'aria-label': ariaLabel = 'Options menu',
   ...props

@@ -44,7 +44,7 @@ export class Radio extends React.Component<RadioProps> {
   constructor(props: RadioProps) {
     super(props);
     if (!props.label && !props['aria-label']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('Radio:', 'Radio requires an aria-label to be specified');
     }
   }
@@ -65,6 +65,7 @@ export class Radio extends React.Component<RadioProps> {
       isDisabled,
       isValid,
       label,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
       description,
       ...props

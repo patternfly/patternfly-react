@@ -25,7 +25,7 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   return (
     <Component
       className={css(styles.divider, className)}
-      {...(component != 'hr' && { role: 'separator' })}
+      {...(component !== 'hr' && { role: 'separator' })}
       {...props}
     />
   );

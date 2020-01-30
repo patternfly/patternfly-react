@@ -8,7 +8,7 @@ const REACT_ONLY_PROPS = ['children', 'onCreate', 'isVisible', 'isEnabled'];
 
 // Avoid Babel's large '_objectWithoutProperties' helper function.
 /**
- * @param props
+ * @param {object} props - Props object
  */
 function getNativeTippyProps(props) {
   return Object.keys(props).reduce((acc, key) => {

@@ -39,6 +39,7 @@
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": "error",
         "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/camelcase": "off",
         "@typescript-eslint/class-name-casing": "error",
         "@typescript-eslint/consistent-type-assertions": "error",
         "@typescript-eslint/consistent-type-definitions": "error",
@@ -59,6 +60,9 @@
         "@typescript-eslint/no-explicit-any": "off",
         "jsdoc/require-returns": "off",
         "arrow-body-style": "error",
+        "camelcase": ["error", {
+            "ignoreDestructuring": true
+        }],
         "constructor-super": "error",
         "curly": "error",
         "dot-notation": "error",
@@ -86,7 +90,8 @@
         "no-undef-init": "error",
         "no-unsafe-finally": "error",
         "no-unused-expressions": ["error", {
-            "allowTernary": true
+            "allowTernary": true,
+            "allowShortCircuit": true
         }],
         "no-unused-labels": "error",
         "no-var": "error",
@@ -101,6 +106,7 @@
             "error",
             "as-needed"
         ],
+        "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
         "use-isnan": "error"
     }

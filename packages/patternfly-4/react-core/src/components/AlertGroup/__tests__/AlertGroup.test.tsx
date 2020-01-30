@@ -63,7 +63,6 @@ test('alertgroup closes when alerts are closed', () => {
         title={'Test Alert'}
         action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
       />
-      ))}
     </AlertGroup>
   );
   expect(wrapper).toMatchSnapshot();

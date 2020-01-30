@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-// tslint:disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
 
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';

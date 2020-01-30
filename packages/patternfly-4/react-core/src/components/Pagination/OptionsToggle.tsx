@@ -41,12 +41,14 @@ let toggleId = 0;
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemsTitle = 'items',
   optionsToggle = 'Select',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   itemsPerPageTitle = 'Items per page',
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
   widgetId = '',
   showToggle = true,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
   isOpen = false,
   isDisabled = false,

@@ -15,11 +15,12 @@ export interface OuiaContextProps {
 }
 
 /**
- * @param WrappedComponent
+ * @param { React.ComponentClass | React.FunctionComponent } WrappedComponent - React component
  */
 export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R = Omit<P, 'ouiaContext'>>(
   WrappedComponent: React.ComponentClass<P> | React.FunctionComponent<P>
 ): React.FunctionComponent<R> {
+  /* eslint-disable react/display-name */
   return (props: R) => (
     <OuiaContext.Consumer>
       {(value: OuiaContextProps) => (
@@ -27,6 +28,7 @@ export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R 
       )}
     </OuiaContext.Consumer>
   );
+  /* eslint-enable react/display-name */
 }
 
 interface OuiaProps {

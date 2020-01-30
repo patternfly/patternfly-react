@@ -12,6 +12,7 @@ export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement>
 }
 
 export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children = null,
   href = '#',

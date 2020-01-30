@@ -8,7 +8,7 @@ import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 import { Button } from '../../../../components/Button';
 import { DataToolbarItem } from '../DataToolbarItem';
-import { DataToolbarChip, DataToolbarFilter } from '../DataToolbarFilter';
+import { DataToolbarFilter } from '../DataToolbarFilter';
 import { DataToolbarToggleGroup } from '../DataToolbarToggleGroup';
 import { Select, SelectOption, SelectVariant } from '../../../../components/Select';
 

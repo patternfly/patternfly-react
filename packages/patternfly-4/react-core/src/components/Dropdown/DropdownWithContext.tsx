@@ -55,6 +55,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
       isOpen,
       isPlain,
       isGrouped,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSelect,
       position,
       toggle,

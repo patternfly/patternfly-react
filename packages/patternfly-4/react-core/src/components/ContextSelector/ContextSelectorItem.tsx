@@ -40,6 +40,7 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
   }
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, children, isHovered, onClick, isDisabled, index, sendRef, ...props } = this.props;
     return (
       <ContextSelectorContext.Consumer>

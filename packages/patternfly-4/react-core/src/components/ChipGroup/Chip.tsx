@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { ChipButton } from './ChipButton';
-import { OneOf } from '../../helpers/typeUtils';
-import { Tooltip, TooltipPosition } from '../Tooltip';
+import { Tooltip } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
@@ -46,6 +45,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
     isOverflowChip: false,
     isReadOnly: false,
     tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onClick: (_e: React.MouseEvent) => undefined as any,
     component: 'div' as React.ReactNode
   };

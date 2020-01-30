@@ -95,7 +95,9 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
       'aria-label': ariaLabel,
       children,
       className,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSelect,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
       theme,
       ouiaContext,

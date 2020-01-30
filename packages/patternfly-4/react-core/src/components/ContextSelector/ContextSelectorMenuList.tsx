@@ -34,6 +34,7 @@ export class ContextSelectorMenuList extends React.Component<ContextSelectorMenu
   }
 
   render = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, isOpen, children, ...props } = this.props;
     return (
       <ul className={css(styles.contextSelectorMenuList, className)} hidden={!isOpen} role="menu" {...props}>

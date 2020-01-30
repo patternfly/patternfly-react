@@ -5,14 +5,14 @@ import { DataToolbarBreakpointMod } from '../experimental/components/DataToolbar
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
 
 /**
- * @param input
+ * @param {string} input - String to capitalize
  */
 export function capitalize(input: string) {
   return input[0].toUpperCase() + input.substring(1);
 }
 
 /**
- * @param prefix
+ * @param {string} prefix - String to prefix ID with
  */
 export function getUniqueId(prefix = 'pf') {
   const uid =
@@ -24,9 +24,9 @@ export function getUniqueId(prefix = 'pf') {
 }
 
 /**
- * @param this
- * @param func
- * @param wait
+ * @param { any } this - "This" reference
+ * @param { Function } func - Function to debounce
+ * @param { number } wait - Debounce amount
  */
 export function debounce(this: any, func: (...args: any[]) => any, wait: number) {
   let timeout: number;
@@ -43,7 +43,7 @@ export function debounce(this: any, func: (...args: any[]) => any, wait: number)
  * @param {HTMLElement} element    The element to check if it is view
  * @param {boolean} partial   true if partial view is allowed
  *
- * @returns {type} True if the component is in View.
+ * @returns { boolean } True if the component is in View.
  */
 export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean) {
   const containerBounds = container.getBoundingClientRect();
@@ -69,7 +69,7 @@ export function isElementInView(container: HTMLElement, element: HTMLElement, pa
  * @param {HTMLElement} container    The container to check if the element is in view of.
  * @param {HTMLElement} element      The element to check if it is view
  *
- * @returns {type} right if the element is of the right, left if element is off the left or both if it is off on both sides.
+ * @returns {string} right if the element is of the right, left if element is off the left or both if it is off on both sides.
  */
 export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElement): string {
   const containerBounds = container.getBoundingClientRect();
@@ -110,7 +110,7 @@ export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElem
  * @param {object} templateString  The string passed by the consumer
  * @param {object} templateVars The variables passed to the string
  *
- * @returns {type} The template string literal result
+ * @returns {string} The template string literal result
  */
 export function fillTemplate(templateString: string, templateVars: any) {
   const func = new Function(...Object.keys(templateVars), `return \`${templateString}\`;`);
@@ -121,10 +121,10 @@ export function fillTemplate(templateString: string, templateVars: any) {
  * This function allows for keyboard navigation through dropdowns. The custom argument is optional.
  *
  * @param {number} index The index of the element you're on
+ * @param {number} innerIndex Inner index number
  * @param {string} position The orientation of the dropdown
  * @param {string[]} refsCollection Array of refs to the items in the dropdown
  * @param {object[]} kids Array of items in the dropdown
- * @param innerIndex
  * @param {boolean} [custom] Allows for handling of flexible content
  */
 export function keyHandler(
@@ -179,6 +179,7 @@ export function keyHandler(
     if (refsCollection[nextIndex].focus) {
       refsCollection[nextIndex].focus();
     }
+    // eslint-disable-next-line react/no-find-dom-node
     const element = ReactDOM.findDOMNode(refsCollection[nextIndex]) as HTMLElement;
     element.focus();
   } else {

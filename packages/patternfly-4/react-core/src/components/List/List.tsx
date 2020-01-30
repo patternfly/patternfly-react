@@ -40,7 +40,7 @@ export const List: React.FunctionComponent<ListProps> = ({
   ref = null,
   component = ListComponent.ul,
   ...props
-}) =>
+}: ListProps) =>
   component === ListComponent.ol ? (
     <ol
       ref={ref as React.LegacyRef<HTMLOListElement>}
