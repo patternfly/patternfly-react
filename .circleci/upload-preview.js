@@ -77,6 +77,9 @@ if (prnum) {
       else if (uploadFolderName === 'coverage') {
         commentBody += tryAddComment(`A11y report: https://${uploadURL}`, commentBody);
       }
+      else if (uploadFolderName === 'report') {
+        commentBody += tryAddComment(`Cypress report: https://${uploadURL}`, commentBody);
+      }
 
       if (existingComment) {
         octokit.issues.updateComment({
