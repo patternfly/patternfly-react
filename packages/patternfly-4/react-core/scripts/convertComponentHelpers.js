@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /**
- * @param string
- * @param pattern
+ * @param {string} string String
+ * @param {object} pattern - RegExp pattern
  */
 function getMatches(string, pattern) {
   return string
@@ -10,7 +10,7 @@ function getMatches(string, pattern) {
 }
 
 /**
- * @param srcText
+ * @param {string} srcText - Source text
  */
 function fixImports(srcText) {
   // Get where styles are coming from
@@ -26,7 +26,7 @@ function fixImports(srcText) {
 }
 
 /**
- * @param type
+ * @param {string} type - String of type
  */
 function getType(type) {
   switch (type) {
@@ -40,8 +40,8 @@ function getType(type) {
 }
 
 /**
- * @param srcText
- * @param name
+ * @param {string} srcText - Source string
+ * @param {string} name - Props name string
  */
 function fixProps(srcText, name) {
   const propRegex1 = /\/\*\*\s+(.*)\*\/\n\s+([\w']+):\s+PropTypes.([\w.]+)/g;
@@ -69,8 +69,8 @@ function fixProps(srcText, name) {
 }
 
 /**
- * @param srcText
- * @param name
+ * @param {string} srcText - Source text string
+ * @param {string} name - component name
  */
 function fixDefaultProps(srcText, name) {
   const defaultPropRegex = /defaultProps\s*=\s*({[\s\S]*};)/g;
@@ -79,7 +79,7 @@ function fixDefaultProps(srcText, name) {
 }
 
 /**
- * @param srcText
+ * @param {string} srcText - Default export string
  */
 function getComponentName(srcText) {
   const nameRegex = /export default (.*);/g;
@@ -87,8 +87,8 @@ function getComponentName(srcText) {
 }
 
 /**
- * @param srcText
- * @param name
+ * @param {string} srcText - Source text string
+ * @param {string} name - Component name string
  */
 function fixFunctionalComponent(srcText, name) {
   let res = `export const ${name}: React.FunctionComponent<${name}Props> = `;
