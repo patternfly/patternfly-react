@@ -6,16 +6,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:docs": "yarn build:static && yarn build:ram --prefix-paths",
+    "build:docs": "yarn build:static && yarn build:ram",
     "build:ram": "node --max-old-space-size=4096 ./node_modules/.bin/gatsby build",
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
-    "serve:prefix": "gatsby serve --prefix-paths",
-    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000/patternfly-4 --aggregate --noIncomplete",
-    "test:a11y:ci": "start-server-and-test serve:prefix http://localhost:9000/patternfly-4 test:a11y"
+    "test:a11y": "patternfly-a11y --file .cache/fullscreenPages.json --prefix http://localhost:9000 --aggregate --noIncomplete --ignore color-contrast,focusable-content,scrollable-region-focusable --skip \"charts\/chartbullet|virtualizedtable\/selectable\""
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",
@@ -40,7 +38,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "@patternfly/patternfly-a11y": "^0.0.11",
+    "@patternfly/patternfly-a11y": "^0.0.17",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2",
     "start-server-and-test": "^1.5.0"

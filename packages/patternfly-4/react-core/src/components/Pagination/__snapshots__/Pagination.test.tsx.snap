@@ -27,7 +27,7 @@ exports[`component render custom pagination toggle 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-12"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -408,7 +408,7 @@ exports[`component render custom pagination toggle 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-11"
                               type="button"
                             >
                               <svg
@@ -446,7 +446,7 @@ exports[`component render custom pagination toggle 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-11"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -468,7 +468,7 @@ exports[`component render custom pagination toggle 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-11"
                                   type="button"
                                 >
                                   <svg
@@ -495,7 +495,7 @@ exports[`component render custom pagination toggle 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-11"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -523,7 +523,7 @@ exports[`component render custom pagination toggle 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-11"
                                     type="button"
                                   >
                                     <svg
@@ -552,7 +552,7 @@ exports[`component render custom pagination toggle 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-11"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -1032,7 +1032,7 @@ exports[`component render custom perPageOptions 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-7"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -1265,7 +1265,7 @@ exports[`component render custom perPageOptions 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-7"
                               type="button"
                             >
                               <svg
@@ -1320,7 +1320,7 @@ exports[`component render custom perPageOptions 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-7"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -1353,7 +1353,7 @@ exports[`component render custom perPageOptions 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-7"
                                   type="button"
                                 >
                                   <svg
@@ -1380,7 +1380,7 @@ exports[`component render custom perPageOptions 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-7"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -1419,7 +1419,7 @@ exports[`component render custom perPageOptions 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-7"
                                     type="button"
                                   >
                                     <svg
@@ -1448,7 +1448,7 @@ exports[`component render custom perPageOptions 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-7"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -1912,7 +1912,7 @@ exports[`component render custom start end 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-10"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -2304,7 +2304,7 @@ exports[`component render custom start end 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-9"
                               type="button"
                             >
                               <svg
@@ -2359,7 +2359,7 @@ exports[`component render custom start end 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-9"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -2392,7 +2392,7 @@ exports[`component render custom start end 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-9"
                                   type="button"
                                 >
                                   <svg
@@ -2419,7 +2419,7 @@ exports[`component render custom start end 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-9"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -2458,7 +2458,7 @@ exports[`component render custom start end 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-9"
                                     type="button"
                                   >
                                     <svg
@@ -2487,7 +2487,7 @@ exports[`component render custom start end 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-9"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -2948,7 +2948,7 @@ exports[`component render empty per page options 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-8"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -3545,7 +3545,7 @@ exports[`component render last page 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-6"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -3937,7 +3937,7 @@ exports[`component render last page 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-6"
                               type="button"
                             >
                               <svg
@@ -3992,7 +3992,7 @@ exports[`component render last page 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-6"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -4025,7 +4025,7 @@ exports[`component render last page 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-6"
                                   type="button"
                                 >
                                   <svg
@@ -4052,7 +4052,7 @@ exports[`component render last page 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-6"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -4091,7 +4091,7 @@ exports[`component render last page 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-6"
                                     type="button"
                                   >
                                     <svg
@@ -4120,7 +4120,7 @@ exports[`component render last page 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-6"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -4581,7 +4581,7 @@ exports[`component render limited number of pages 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-4"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -4973,7 +4973,7 @@ exports[`component render limited number of pages 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-4"
                               type="button"
                             >
                               <svg
@@ -5028,7 +5028,7 @@ exports[`component render limited number of pages 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-4"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -5061,7 +5061,7 @@ exports[`component render limited number of pages 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-4"
                                   type="button"
                                 >
                                   <svg
@@ -5088,7 +5088,7 @@ exports[`component render limited number of pages 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-4"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -5127,7 +5127,7 @@ exports[`component render limited number of pages 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-4"
                                     type="button"
                                   >
                                     <svg
@@ -5156,7 +5156,7 @@ exports[`component render limited number of pages 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-4"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -5614,7 +5614,7 @@ exports[`component render no items 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-9"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -6007,7 +6007,7 @@ exports[`component render no items 1`] = `
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               disabled=""
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-8"
                               type="button"
                             >
                               <svg
@@ -6062,7 +6062,7 @@ exports[`component render no items 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-8"
                         isDisabled={true}
                         isOpen={false}
                         onEnter={[Function]}
@@ -6096,7 +6096,7 @@ exports[`component render no items 1`] = `
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
                                   disabled=""
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-8"
                                   type="button"
                                 >
                                   <svg
@@ -6123,7 +6123,7 @@ exports[`component render no items 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-8"
                           isActive={false}
                           isDisabled={true}
                           isFocused={false}
@@ -6163,7 +6163,7 @@ exports[`component render no items 1`] = `
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
                                     disabled=""
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-8"
                                     type="button"
                                   >
                                     <svg
@@ -6192,7 +6192,7 @@ exports[`component render no items 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-8"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -6653,7 +6653,7 @@ exports[`component render should render correctly bottom 1`] = `
     >
       <div
         className="pf-c-pagination pf-m-footer"
-        id="pagination-options-menu"
+        id="pagination-options-menu-1"
       >
         <PaginationOptionsMenu
           className=""
@@ -7023,7 +7023,7 @@ exports[`component render should render correctly bottom 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-1"
                               type="button"
                             >
                               <svg
@@ -7078,7 +7078,7 @@ exports[`component render should render correctly bottom 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-1"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -7111,7 +7111,7 @@ exports[`component render should render correctly bottom 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-1"
                                   type="button"
                                 >
                                   <svg
@@ -7138,7 +7138,7 @@ exports[`component render should render correctly bottom 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-1"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -7177,7 +7177,7 @@ exports[`component render should render correctly bottom 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-1"
                                     type="button"
                                   >
                                     <svg
@@ -7206,7 +7206,7 @@ exports[`component render should render correctly bottom 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-1"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -7667,7 +7667,7 @@ exports[`component render should render correctly compact 1`] = `
     >
       <div
         className="pf-c-pagination pf-m-compact"
-        id="pagination-options-menu"
+        id="pagination-options-menu-2"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -8059,7 +8059,7 @@ exports[`component render should render correctly compact 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-2"
                               type="button"
                             >
                               <svg
@@ -8114,7 +8114,7 @@ exports[`component render should render correctly compact 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-2"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -8147,7 +8147,7 @@ exports[`component render should render correctly compact 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-2"
                                   type="button"
                                 >
                                   <svg
@@ -8174,7 +8174,7 @@ exports[`component render should render correctly compact 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-2"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -8213,7 +8213,7 @@ exports[`component render should render correctly compact 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-2"
                                     type="button"
                                   >
                                     <svg
@@ -8242,7 +8242,7 @@ exports[`component render should render correctly compact 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-2"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -8514,7 +8514,7 @@ exports[`component render should render correctly disabled 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-3"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -8907,7 +8907,7 @@ exports[`component render should render correctly disabled 1`] = `
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               disabled=""
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-3"
                               type="button"
                             >
                               <svg
@@ -8962,7 +8962,7 @@ exports[`component render should render correctly disabled 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-3"
                         isDisabled={true}
                         isOpen={false}
                         onEnter={[Function]}
@@ -8996,7 +8996,7 @@ exports[`component render should render correctly disabled 1`] = `
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
                                   disabled=""
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-3"
                                   type="button"
                                 >
                                   <svg
@@ -9023,7 +9023,7 @@ exports[`component render should render correctly disabled 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-3"
                           isActive={false}
                           isDisabled={true}
                           isFocused={false}
@@ -9063,7 +9063,7 @@ exports[`component render should render correctly disabled 1`] = `
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
                                     disabled=""
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-3"
                                     type="button"
                                   >
                                     <svg
@@ -9092,7 +9092,7 @@ exports[`component render should render correctly disabled 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-3"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -9550,7 +9550,7 @@ exports[`component render should render correctly top 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-0"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -9942,7 +9942,7 @@ exports[`component render should render correctly top 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-0"
                               type="button"
                             >
                               <svg
@@ -9997,7 +9997,7 @@ exports[`component render should render correctly top 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-0"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -10030,7 +10030,7 @@ exports[`component render should render correctly top 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-0"
                                   type="button"
                                 >
                                   <svg
@@ -10057,7 +10057,7 @@ exports[`component render should render correctly top 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-0"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -10096,7 +10096,7 @@ exports[`component render should render correctly top 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-0"
                                     type="button"
                                   >
                                     <svg
@@ -10125,7 +10125,7 @@ exports[`component render should render correctly top 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-0"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -10599,7 +10599,7 @@ exports[`component render titles 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-11"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -10992,7 +10992,7 @@ exports[`component render titles 1`] = `
                               aria-expanded="false"
                               aria-label="Select"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-10"
                               type="button"
                             >
                               <svg
@@ -11048,7 +11048,7 @@ exports[`component render titles 1`] = `
                       <Component
                         aria-label="Select"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-10"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -11081,7 +11081,7 @@ exports[`component render titles 1`] = `
                                   aria-expanded="false"
                                   aria-label="Select"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-10"
                                   type="button"
                                 >
                                   <svg
@@ -11108,7 +11108,7 @@ exports[`component render titles 1`] = `
                         <Toggle
                           aria-label="Select"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-10"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -11147,7 +11147,7 @@ exports[`component render titles 1`] = `
                                     aria-expanded="false"
                                     aria-label="Select"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-10"
                                     type="button"
                                   >
                                     <svg
@@ -11176,7 +11176,7 @@ exports[`component render titles 1`] = `
                             aria-label="Select"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-10"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -11637,7 +11637,7 @@ exports[`component render up drop direction 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-13"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -12029,7 +12029,7 @@ exports[`component render up drop direction 1`] = `
                               aria-expanded="false"
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-12"
                               type="button"
                             >
                               <svg
@@ -12084,7 +12084,7 @@ exports[`component render up drop direction 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-12"
                         isDisabled={false}
                         isOpen={false}
                         onEnter={[Function]}
@@ -12117,7 +12117,7 @@ exports[`component render up drop direction 1`] = `
                                   aria-expanded="false"
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-12"
                                   type="button"
                                 >
                                   <svg
@@ -12144,7 +12144,7 @@ exports[`component render up drop direction 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-12"
                           isActive={false}
                           isDisabled={false}
                           isFocused={false}
@@ -12183,7 +12183,7 @@ exports[`component render up drop direction 1`] = `
                                     aria-expanded="false"
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-12"
                                     type="button"
                                   >
                                     <svg
@@ -12212,7 +12212,7 @@ exports[`component render up drop direction 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-12"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -12670,7 +12670,7 @@ exports[`component render zero results 1`] = `
     >
       <div
         className="pf-c-pagination"
-        id="pagination-options-menu"
+        id="pagination-options-menu-5"
       >
         <div
           className="pf-c-pagination__total-items"
@@ -13063,7 +13063,7 @@ exports[`component render zero results 1`] = `
                               aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               disabled=""
-                              id="pagination-options-menu-toggle"
+                              id="pagination-options-menu-toggle-5"
                               type="button"
                             >
                               <svg
@@ -13118,7 +13118,7 @@ exports[`component render zero results 1`] = `
                       <Component
                         aria-label="Items per page"
                         className="pf-c-options-menu__toggle-button"
-                        id="pagination-options-menu-toggle"
+                        id="pagination-options-menu-toggle-5"
                         isDisabled={true}
                         isOpen={false}
                         onEnter={[Function]}
@@ -13152,7 +13152,7 @@ exports[`component render zero results 1`] = `
                                   aria-label="Items per page"
                                   class="  pf-c-options-menu__toggle-button"
                                   disabled=""
-                                  id="pagination-options-menu-toggle"
+                                  id="pagination-options-menu-toggle-5"
                                   type="button"
                                 >
                                   <svg
@@ -13179,7 +13179,7 @@ exports[`component render zero results 1`] = `
                         <Toggle
                           aria-label="Items per page"
                           className="pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
+                          id="pagination-options-menu-toggle-5"
                           isActive={false}
                           isDisabled={true}
                           isFocused={false}
@@ -13219,7 +13219,7 @@ exports[`component render zero results 1`] = `
                                     aria-label="Items per page"
                                     class="  pf-c-options-menu__toggle-button"
                                     disabled=""
-                                    id="pagination-options-menu-toggle"
+                                    id="pagination-options-menu-toggle-5"
                                     type="button"
                                   >
                                     <svg
@@ -13248,7 +13248,7 @@ exports[`component render zero results 1`] = `
                             aria-label="Items per page"
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
-                            id="pagination-options-menu-toggle"
+                            id="pagination-options-menu-toggle-5"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
