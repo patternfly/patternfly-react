@@ -212,7 +212,7 @@ jobs:
         background: true
     - run:
         name: Sleep if not primary node
-        command: if [ $CIRCLE_NODE_INDEX -gt 0 ]; then; sleep 5; fi;
+        command: if [ $CIRCLE_NODE_INDEX -gt 0 ]; then sleep 5; fi;
     - run:
         name: Run Cypress Integration Tests
         command: |
