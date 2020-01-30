@@ -205,11 +205,14 @@ jobs:
         - *cypress_cache_key
     - run:
         name: Install Cypress deps
-        command: sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+        command: sudo apt-get install libnss3 libgtk-3-0 libxss1 libasound2 xvfb
     - run:
         name: Serve React demo-app
         command: yarn serve:integration
         background: true
+    - run:
+        name: Sleep if not primary node
+        command: if [ $CIRCLE_NODE_INDEX -gt 0 ]; then; sleep 5; fi;
     - run:
         name: Run Cypress Integration Tests
         command: |
