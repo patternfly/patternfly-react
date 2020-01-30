@@ -2,9 +2,10 @@
   "chromeWebSecurity": false,
   "video": false,
   "waitForAnimations": false,
+  "screenshotOnRunFailure": false,
   "reporter": "junit",
   "reporterOptions": {
     "mochaFile": "results/my-test-output-[hash].xml",
     "toConsole": true
   }
-} 
+}

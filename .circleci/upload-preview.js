@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Octokit = require("@octokit/rest");
+const Octokit = require('@octokit/rest');
 const octokit = new Octokit({ auth: process.env.GH_PR_TOKEN });
 const surge = require('surge');
 const publishFn = surge().publish();
@@ -27,6 +27,9 @@ if (uploadFolderName === 'coverage') {
 }
 if (uploadFolderName === '.out') {
   uploadURL += '-pf3';
+}
+else if (uploadFolderName === 'results') {
+  uploadURL += `-cypress`;
 }
 else if (uploadFolderName !== 'public') {
   uploadURL += `-${uploadFolderName}`;
@@ -73,6 +76,9 @@ if (prnum) {
       }
       else if (uploadFolderName === 'coverage') {
         commentBody += tryAddComment(`A11y report: https://${uploadURL}`, commentBody);
+      }
+      else if (uploadFolderName === 'report') {
+        commentBody += tryAddComment(`Cypress report: https://${uploadURL}`, commentBody);
       }
 
       if (existingComment) {
