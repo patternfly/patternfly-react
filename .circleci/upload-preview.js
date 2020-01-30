@@ -28,6 +28,9 @@ if (uploadFolderName === 'coverage') {
 if (uploadFolderName === '.out') {
   uploadURL += '-pf3';
 }
+else if (uploadFolderName === 'results') {
+  uploadURL += `-cypress`;
+}
 else if (uploadFolderName !== 'public') {
   uploadURL += `-${uploadFolderName}`;
 }

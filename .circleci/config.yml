@@ -80,9 +80,6 @@ workflows:
     - test_integration:
         requires:
         - build
-        filters:
-          branches:
-            only: master
     - test_a11y_pf4:
         requires:
         - build_pf4_docs
@@ -142,7 +139,11 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF4 Jest Tests
-        command: yarn test:pf4 --maxWorkers=2 && yarn run codecov -F patternfly4
+        command: yarn test:pf4 --maxWorkers=2
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -F patternfly4
+        when: always
   test_jest_other:
     docker:
     - image: circleci/node:10
@@ -153,16 +154,27 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF3 Jest Tests
-        command: yarn test:pf3 --maxWorkers=2 && yarn run codecov -F patternfly3
+        command: yarn test:pf3 --maxWorkers=2
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -F patternfly3
+        when: always
     - run:
         name: Clear Coverage
         command: rm -rf coverage
+        when: always
     - run:
         name: Other Tests
-        command: yarn test:misc --maxWorkers=2 && yarn run codecov -F misc
+        command: yarn test:misc --maxWorkers=2
+        when: always
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -F misc
+        when: always
   test_integration:
     docker:
     - image: circleci/node:10
+    resource_class: xlarge
     steps:
     - *attach_workspace
     - restore_cache:
@@ -175,24 +187,29 @@ jobs:
         name: Install Cypress deps
         command: sudo apt-get install libnss3 libgtk-3-0 libxss1 libasound2
     - run:
-        name: ls ~/.cache/Cypress
-        command: ls ~/.cache/Cypress
-    - run:
-        name: Build Cypress Integration Tests
+        name: Build React demo-app
         command: yarn build:integration
     - run:
+        name: Serve React demo-app
+        command: yarn serve:integration
+        background: true
+    - run:
         name: Run Cypress Integration Tests
-        command: yarn test:ci && yarn run codecov -f packages/patternfly-4/react-integration/results/merged-test-results.xml -F patternfly4integration
-        no_output_timeout: 180m
+        command: yarn test:integration
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -f packages/patternfly-4/react-integration/results/merged-test-results.xml -F patternfly4integration
+        when: always
     - run: 
         name: Create HTML file of Cypress coverage
         command: yarn build:integration:report
-    - persist_to_workspace:
-        root: ~/project
-        paths:
-        - packages/patternfly-4/react-integration/results
+        when: always
+    - run:
+        name: Upload report
+        command: node .circleci/upload-preview.js packages/patternfly-4/react-integration/results
+        when: always
     - store_artifacts:
-          path: /tmp/artifacts
+        path: packages/patternfly-4/react-integration/results
   lint:
     docker:
     - image: circleci/node:10
