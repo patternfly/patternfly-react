@@ -63,7 +63,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
       <Component
         className={css(styles.chip, styles.modifiers.overflow, className)}
         {...ouiaContext.isOuia && {
-          'data-ouia-component-type': 'OverflowChip',
+          'data-ouia-component-type': 'PF4/OverflowChip',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         }}
       >
@@ -92,7 +92,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
           <Component
             className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
             {...ouiaContext.isOuia && {
-              'data-ouia-component-type': 'Chip',
+              'data-ouia-component-type': 'PF4/Chip',
               'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
             }}
           >
@@ -117,7 +117,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
       <Component 
         className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
         {...ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Chip',
+          'data-ouia-component-type': 'PF4/Chip',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         }}
       >

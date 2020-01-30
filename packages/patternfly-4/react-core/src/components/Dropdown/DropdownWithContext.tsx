@@ -24,7 +24,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
     direction: DropdownDirection.down,
     onSelect: (): void => undefined,
     autoFocus: true,
-    ouiaComponentType: 'Dropdown'
+    ouiaComponentType: 'PF4/Dropdown'
   };
 
   constructor(props: DropdownProps & InjectedOuiaProps) {

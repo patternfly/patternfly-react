@@ -215,7 +215,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         isOpen={true}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="Dropdown"
+        ouiaComponentType="PF4/Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -1083,7 +1083,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="Dropdown"
+        ouiaComponentType="PF4/Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -1471,7 +1471,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="Dropdown"
+        ouiaComponentType="PF4/Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -1859,7 +1859,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         isOpen={true}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="Dropdown"
+        ouiaComponentType="PF4/Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -2722,7 +2722,7 @@ exports[`ApplicationLauncher regular 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="Dropdown"
+        ouiaComponentType="PF4/Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -3110,7 +3110,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="Dropdown"
+        ouiaComponentType="PF4/Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,

@@ -142,7 +142,7 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
               : ariaLabel
           }
           {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'Nav',
+            'data-ouia-component-type': 'PF4/Nav',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
           })}
           {...props}

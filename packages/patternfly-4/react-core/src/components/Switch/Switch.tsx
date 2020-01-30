@@ -57,7 +57,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
         className={css(styles.switch, className)}
         htmlFor={this.id}
         {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Switch',
+          'data-ouia-component-type': 'PF4/Switch',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         })}
       >

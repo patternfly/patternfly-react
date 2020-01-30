@@ -105,7 +105,7 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
         )}
         hidden={isExpanded !== undefined && !isExpanded}
         {...ouiaContext.isOuia && {
-          'data-ouia-component-type': 'TableRow',
+          'data-ouia-component-type': 'PF4/TableRow',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         }}
       />

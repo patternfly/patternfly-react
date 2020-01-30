@@ -19,7 +19,7 @@ const { ouiaContext, ouiaId } = this.props;
 	className=""
 	htmlFor=""
 	{...ouiaContext.isOuia && {
-	'data-ouia-component-type':  'Switch',
+	'data-ouia-component-type':  'PF4/Switch',
 	'data-ouia-component-id':  ouiaId || ouiaContext.ouiaId
 	}}
 >my label</label>
@@ -36,20 +36,20 @@ const { ouiaContext, ouiaId } = this.props;
 ```
 <Switch  />
 ```
-> render's ouia attribute **data-ouia-component-type="Switch"**
+> render's ouia attribute **data-ouia-component-type="PF4/Switch"**
 #### Case 3: enable ouia through local storage and generate id
 ##### in local storage _ouia: true_
 ##### in local storage _ouia-generate-id: true_
 ```
 <Switch  />
 ```
-> render's ouia attributes **data-ouia-component-type="Switch" data-ouia-component-id="0"**
+> render's ouia attributes **data-ouia-component-type="PF4/Switch" data-ouia-component-id="0"**
 #### Case 4: enable ouia through local storage and provide id
 ##### in local storage _ouia: true_
 ```
 <Switch ouiaId="my_switch_id" />
 ```
-> render's ouia attributes **data-ouia-component-type="Switch" data-ouia-component-id="my_switch_id"**
+> render's ouia attributes **data-ouia-component-type="PF4/Switch" data-ouia-component-id="my_switch_id"**
 #### Case 5: enable ouia through context and provide id
 ##### Note: If context provided _isOuia_ is true and local storage provided _isOuia_ is false, context will win out. Context will also win if its _isOuia_ is false and local storage's is true. Context > local storage
 ```
@@ -58,4 +58,4 @@ import { OuiaContext } from  '@patternfly/react-core';
 	<Switch ouiaId="my_switch_id" />
 </OuiaContext.Provider>
 ```
-> render's ouia attributes **data-ouia-component-type="Switch" data-ouia-component-id="my_switch_id"**
+> render's ouia attributes **data-ouia-component-type="PF4/Switch" data-ouia-component-id="my_switch_id"**
