@@ -67,6 +67,8 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
         {show && (
           <React.Fragment>
             {onClose && (
+              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+              // @ts-ignore: 'css' property type error
               <Button
                 className="pf-topology-side-bar__dismiss"
                 variant="plain"
