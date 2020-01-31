@@ -1,0 +1,18 @@
+name: Verify PR text
+on:
+  pull_request:
+    types: ['opened', 'edited']
+
+jobs:
+  build:
+    name: Check PR Title/Body
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Echo the PR title
+        run: echo '${{ github.event.pull_request.title }}'
+      - name: Echo the PR text
+        run: echo '${{ github.event.pull_request.body }}'
+      - name: Verify PR title and text
+        run: node .github/workflows/pr-title-check.js '${{ github.event.pull_request.title }}' '${{ github.event.pull_request.body }}'
