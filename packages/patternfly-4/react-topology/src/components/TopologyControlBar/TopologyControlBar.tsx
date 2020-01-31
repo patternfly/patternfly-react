@@ -255,6 +255,8 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
 
   const renderButton = (button: TopologyControlButton): React.ReactNode => {
     const renderedButton = (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore: 'css' property type error
       <Button
         id={button.id}
         className={`pf-topology-control-bar__button${button.disabled ? ' pf-m-disabled' : ''}`}
