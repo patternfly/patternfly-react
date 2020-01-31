@@ -17,6 +17,8 @@ describe('Page Demo Test', () => {
         cy.get('.pf-c-page__sidebar.pf-m-expanded').should('not.exist');
       });
     });
+    cy.get('#page-demo-header').should('not.have.attr', 'role');
+    cy.get('#page-demo main').should('not.have.attr', 'role');
     cy.get('div[class="pf-c-page__header-brand-link"]')
       .invoke('text')
       .should('eq', "Logo that's a <div>");
