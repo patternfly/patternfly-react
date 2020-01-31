@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.21.0...@patternfly/react-integration@3.22.0) (2020-01-31)
+
+
+### Features
+
+* **radio/check:** add support for optional description ([#3621](https://github.com/patternfly/patternfly-react/issues/3621)) ([f4370fe](https://github.com/patternfly/patternfly-react/commit/f4370fed639f386ee2e6037cbf3843eba0871ec1))
+
+
+
+
+
 # [3.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.20.0...@patternfly/react-integration@3.21.0) (2020-01-31)
 
 
