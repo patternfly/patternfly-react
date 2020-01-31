@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
-import { AngleRightIcon } from '@patternfly/react-icons';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { Omit } from '../../helpers/typeUtils';
 import { AccordionContext } from './AccordionContext';
 
