@@ -118,3 +118,12 @@ DisabledCheckbox = () => (
   </React.Fragment>
 );
 ```
+
+```js title=Checkbox-with-description
+import React from 'react';
+import { Checkbox } from '@patternfly/react-core';
+
+DisabledCheckbox = () => (
+  <Checkbox id="check-8" label="CheckBox with description" aria-label="Checkbox with description example" description="Description"/>
+);
+```

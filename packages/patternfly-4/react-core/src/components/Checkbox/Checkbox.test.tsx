@@ -53,6 +53,13 @@ test('passing HTML attribute', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('passing description', () => {
+  const view = shallow(<Checkbox id="check" label="checkbox" description="Text description..." />);
+  const descriptionEl = view.find('div[className="pf-c-check__description"]');
+    expect(descriptionEl.length).toBe(1);
+    expect(descriptionEl.text()).toBe('Text description...');
+});
+
 test('checkbox passes value and event to onChange handler', () => {
   const newValue = true;
   const event = {

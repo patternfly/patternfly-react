@@ -22,6 +22,8 @@ export interface CheckboxProps
   id: string;
   /** Aria-label of the checkbox. */
   'aria-label'?: string;
+  /** Description text of the checkbox. */
+  description?: React.ReactNode;
 }
 
 // tslint:disable-next-line:no-empty
@@ -55,6 +57,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
       label,
       checked,
       defaultChecked,
+      description,
       ...props
     } = this.props;
     const checkedProps: { checked?: boolean; defaultChecked?: boolean } = {};
@@ -89,6 +92,9 @@ export class Checkbox extends React.Component<CheckboxProps> {
           >
             {label}
           </label>
+        )}
+        {description && (
+          <div className={css(styles.checkDescription)}>{description}</div>
         )}
       </div>
     );
