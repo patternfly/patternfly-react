@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { css } from '@patternfly/react-styles';
 import { DataToolbarContext } from './DataToolbarUtils';
 import { DataToolbarChipGroupContent } from './DataToolbarChipGroupContent';
+import { DataToolbarContentProps } from './DataToolbarContent';
 
 export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -117,7 +118,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
         >
           {React.Children.map(children, (child: any) => {
             if (React.isValidElement(child)) {
-              return React.cloneElement(child, {
+              return React.cloneElement<DataToolbarContentProps>(child, {
                 clearAllFilters,
                 clearFiltersButtonText,
                 showClearFiltersButton,
