@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.135.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.4...@patternfly/react-core@3.135.0) (2020-01-31)
+
+
+### Features
+
+* **icons:** use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/issues/3517)) ([897d359](https://github.com/patternfly/patternfly-react/commit/897d359a48ac2ce6ddea68bbdcfe0ae2f05544bd))
+
+
+
+
+
 ## [3.134.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.3...@patternfly/react-core@3.134.4) (2020-01-30)
 
 

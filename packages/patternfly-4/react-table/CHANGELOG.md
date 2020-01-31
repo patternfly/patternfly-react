@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.25.8...@patternfly/react-table@2.26.0) (2020-01-31)
+
+
+### Features
+
+* **icons:** use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/issues/3517)) ([897d359](https://github.com/patternfly/patternfly-react/commit/897d359a48ac2ce6ddea68bbdcfe0ae2f05544bd))
+
+
+
+
+
 ## [2.25.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.25.7...@patternfly/react-table@2.25.8) (2020-01-30)
 
 **Note:** Version bump only for package @patternfly/react-table
