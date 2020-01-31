@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { ModalContent } from './ModalContent';
+import { ModalContent } from '../ModalContent';
 
 test('Modal Content Test only body', () => {
   const view = shallow(

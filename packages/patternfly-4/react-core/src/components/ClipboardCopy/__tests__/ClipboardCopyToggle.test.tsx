@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ClipboardCopyToggle } from './ClipboardCopyToggle';
+import { ClipboardCopyToggle } from '../ClipboardCopyToggle';
 
 const props = {
   id: 'my-id',

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Split } from './Split';
-import { SplitItem } from './SplitItem';
-import { GutterSize } from '../../styles/gutters';
+import { Split } from '../Split';
+import { SplitItem } from '../SplitItem';
+import { GutterSize } from '../../../styles/gutters';
 
 test('isFilled', () => {
   const view = mount(

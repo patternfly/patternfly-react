@@ -1,8 +1,8 @@
 import React from 'react';
-import { FormGroup } from './FormGroup';
-import { Form } from './Form';
+import { FormGroup } from '../FormGroup';
+import { Form } from '../Form';
 import { mount } from 'enzyme';
-import { ValidatedOptions } from '../../helpers/constants';
+import { ValidatedOptions } from '../../../helpers/constants';
 
 describe('FormGroup component', () => {
   const returnFunction = () => <div>label</div>;

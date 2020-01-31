@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Bullseye } from './Bullseye';
+import { Bullseye } from '../Bullseye';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {

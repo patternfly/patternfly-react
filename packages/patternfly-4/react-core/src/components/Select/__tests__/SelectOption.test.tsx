@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { SelectOption, SelectOptionObject } from './SelectOption';
-import { SelectProvider } from './selectConstants';
+import { SelectOption, SelectOptionObject } from '../SelectOption';
+import { SelectProvider } from '../selectConstants';
 
 class User implements SelectOptionObject {
   private firstName: string;

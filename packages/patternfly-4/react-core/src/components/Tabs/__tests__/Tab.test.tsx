@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Tab } from './Tab';
+import { Tab } from '../Tab';
 
 test('should not render anything', () => {
   const view = shallow(

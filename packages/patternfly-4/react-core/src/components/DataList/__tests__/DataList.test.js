@@ -1,16 +1,16 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { DataList } from './DataList';
-import { DataListItem } from './DataListItem';
-import { DataListAction, DataListActionVisibility } from './DataListAction';
-import { DataListCell } from './DataListCell';
-import { DataListToggle } from './DataListToggle';
-import { DataListItemCells } from './DataListItemCells';
-import { DataListItemRow } from './DataListItemRow';
-import { DataListContent } from './DataListContent';
-import { Button } from '../Button';
+import { DataList } from '../DataList';
+import { DataListItem } from '../DataListItem';
+import { DataListAction, DataListActionVisibility } from '../DataListAction';
+import { DataListCell } from '../DataListCell';
+import { DataListToggle } from '../DataListToggle';
+import { DataListItemCells } from '../DataListItemCells';
+import { DataListItemRow } from '../DataListItemRow';
+import { DataListContent } from '../DataListContent';
+import { Button } from '../../Button';
 import { css } from '@patternfly/react-styles';
-import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../Dropdown';
+import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dropdown';
 
 describe('DataList', () => {
   test('List default', () => {

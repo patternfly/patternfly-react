@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Label } from './Label';
+import { Label } from '../Label';
 
 test('label', () => {
   const view = shallow(<Label>Something</Label>);

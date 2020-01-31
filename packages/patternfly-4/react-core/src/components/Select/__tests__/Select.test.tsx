@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Select, SelectProps } from './Select';
-import { SelectOption, SelectOptionObject } from './SelectOption';
-import { CheckboxSelectOption } from './CheckboxSelectOption';
-import { SelectGroup } from './SelectGroup';
-import { CheckboxSelectGroup } from './CheckboxSelectGroup';
-import { SelectVariant, SelectDirection } from './selectConstants';
+import { Select, SelectProps } from '../Select';
+import { SelectOption, SelectOptionObject } from '../SelectOption';
+import { CheckboxSelectOption } from '../CheckboxSelectOption';
+import { SelectGroup } from '../SelectGroup';
+import { CheckboxSelectGroup } from '../CheckboxSelectGroup';
+import { SelectVariant, SelectDirection } from '../selectConstants';
 
 class User implements SelectOptionObject {
   private firstName: string;

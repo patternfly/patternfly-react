@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import { KEY_CODES } from '../../helpers/constants';
-import { css } from '../../../../react-styles/dist/js';
+import { KEY_CODES } from '../../../helpers/constants';
+import { css } from '../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
-import { Modal } from './Modal';
+import { Modal } from '../Modal';
 
 jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');

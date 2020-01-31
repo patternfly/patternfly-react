@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import { DropdownToggleAction } from './DropdownToggleAction';
+import { DropdownToggleAction } from '../DropdownToggleAction';
 
 test('renders with text', () => {
   const view = shallow(<DropdownToggleAction id="action" aria-label="action" />);

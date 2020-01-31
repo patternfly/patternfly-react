@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
+import { ClipboardCopyExpanded } from '../ClipboardCopyExpanded';
 
 const props = {
   className: 'class-1',

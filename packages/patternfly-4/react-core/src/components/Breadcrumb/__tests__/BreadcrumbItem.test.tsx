@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BreadcrumbItem } from './BreadcrumbItem';
+import { BreadcrumbItem } from '../BreadcrumbItem';
 import { shallow } from 'enzyme';
 
 describe('BreadcrumbItem component', () => {

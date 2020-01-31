@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Flex } from './Flex';
-import { FlexItem } from './FlexItem';
+import { Flex } from '../Flex';
+import { FlexItem } from '../FlexItem';
 import { shallow, mount } from 'enzyme';
-import { FlexModifiers, FlexItemModifiers } from './FlexUtils';
+import { FlexModifiers, FlexItemModifiers } from '../FlexUtils';
 
 test('Simple flex with single item', () => {
   const view = shallow(

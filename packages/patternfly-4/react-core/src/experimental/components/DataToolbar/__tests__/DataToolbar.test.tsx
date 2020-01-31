@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { DataToolbar } from './DataToolbar';
-import { DataToolbarContent } from './DataToolbarContent';
-import { DataToolbarGroup } from './DataToolbarGroup';
+import { DataToolbar } from '../DataToolbar';
+import { DataToolbarContent } from '../DataToolbarContent';
+import { DataToolbarGroup } from '../DataToolbarGroup';
 import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import { Button } from '../../../components/Button';
-import { DataToolbarItem } from './DataToolbarItem';
-import { DataToolbarChip, DataToolbarFilter } from './DataToolbarFilter';
-import { DataToolbarToggleGroup } from './DataToolbarToggleGroup';
-import { Select, SelectOption, SelectVariant } from '../../../components/Select';
+import { Button } from '../../../../components/Button';
+import { DataToolbarItem } from '../DataToolbarItem';
+import { DataToolbarChip, DataToolbarFilter } from '../DataToolbarFilter';
+import { DataToolbarToggleGroup } from '../DataToolbarToggleGroup';
+import { Select, SelectOption, SelectVariant } from '../../../../components/Select';
 
 describe('data toolbar', () => {
   test('DataToolbarOneContent', () => {

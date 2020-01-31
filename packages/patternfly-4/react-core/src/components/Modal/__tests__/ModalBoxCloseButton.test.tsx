@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { ModalBoxCloseButton } from './ModalBoxCloseButton';
+import { ModalBoxCloseButton } from '../ModalBoxCloseButton';
 
 test('ModalBoxCloseButton Test', () => {
   const mockfn = jest.fn();

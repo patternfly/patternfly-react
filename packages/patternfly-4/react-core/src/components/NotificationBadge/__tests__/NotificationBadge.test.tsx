@@ -1,4 +1,4 @@
-import { NotificationBadge } from './NotificationBadge';
+import { NotificationBadge } from '../NotificationBadge';
 import React from 'react';
 import { shallow } from 'enzyme';
 

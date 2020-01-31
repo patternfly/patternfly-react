@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { TitleLevel } from '../Title';
-import { ModalBoxHeader } from './ModalBoxHeader';
+import { TitleLevel } from '../../Title';
+import { ModalBoxHeader } from '../ModalBoxHeader';
 
 test('ModalBoxHeader Test', () => {
   const view = shallow(<ModalBoxHeader>This is a ModalBox header</ModalBoxHeader>);

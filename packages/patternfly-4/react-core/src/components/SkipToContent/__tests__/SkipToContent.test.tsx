@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { SkipToContent } from './SkipToContent';
+import { SkipToContent } from '../SkipToContent';
 
 const props = {};
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Spinner } from './Spinner';
+import { Spinner } from '../Spinner';
 
 test('simple spinner', () => {
   const view = shallow(<Spinner />);

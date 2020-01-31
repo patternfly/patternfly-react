@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Tooltip } from './Tooltip';
+import { Tooltip } from '../Tooltip';
 
 test('tooltip renders', () => {
   const view = shallow(

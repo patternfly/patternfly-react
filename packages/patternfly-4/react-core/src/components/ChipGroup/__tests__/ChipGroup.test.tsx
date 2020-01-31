@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from './index';
+import { Chip, ChipGroup, ChipGroupToolbarItem } from '../index';
 
 describe('ChipGroup', () => {
   test('chip group default', () => {

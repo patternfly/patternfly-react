@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Switch } from './Switch';
+import { Switch } from '../Switch';
 
 const props = {
   onChange: jest.fn(),

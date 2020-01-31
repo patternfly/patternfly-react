@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 
-import { Alert, AlertVariant } from './Alert';
-import { AlertActionLink } from './AlertActionLink';
-import { AlertActionCloseButton } from './AlertActionCloseButton';
+import { Alert, AlertVariant } from '../Alert';
+import { AlertActionLink } from '../AlertActionLink';
+import { AlertActionCloseButton } from '../AlertActionCloseButton';
 
 test('default Alert variant is info', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);

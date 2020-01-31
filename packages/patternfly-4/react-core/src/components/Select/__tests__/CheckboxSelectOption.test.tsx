@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { CheckboxSelectOption } from './CheckboxSelectOption';
+import { CheckboxSelectOption } from '../CheckboxSelectOption';
 
 describe('checkbox select options', () => {
   test('renders with value parameter successfully', () => {

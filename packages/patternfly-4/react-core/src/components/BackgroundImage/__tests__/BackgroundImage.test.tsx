@@ -1,4 +1,4 @@
-import { BackgroundImage, BackgroundImageSrc } from './BackgroundImage';
+import { BackgroundImage, BackgroundImageSrc } from '../BackgroundImage';
 import * as React from 'react';
 import { shallow } from 'enzyme';
 

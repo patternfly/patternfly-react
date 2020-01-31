@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { PageSection, PageSectionTypes } from './PageSection';
+import { PageSection, PageSectionTypes } from '../PageSection';
 
-jest.mock('./Page');
+jest.mock('../Page');
 
 test('Check page section with no padding example against snapshot', () => {
   const Section = <PageSection noPadding />;

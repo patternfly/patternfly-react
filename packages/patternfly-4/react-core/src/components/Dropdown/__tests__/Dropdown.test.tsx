@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Dropdown } from './Dropdown';
-import { DropdownPosition, DropdownDirection } from './dropdownConstants';
-import { InternalDropdownItem } from './InternalDropdownItem';
-import { DropdownSeparator } from './DropdownSeparator';
-import { DropdownToggle } from './DropdownToggle';
-import { KebabToggle } from './KebabToggle';
+import { Dropdown } from '../Dropdown';
+import { DropdownPosition, DropdownDirection } from '../dropdownConstants';
+import { InternalDropdownItem } from '../InternalDropdownItem';
+import { DropdownSeparator } from '../DropdownSeparator';
+import { DropdownToggle } from '../DropdownToggle';
+import { KebabToggle } from '../KebabToggle';
 
 const dropdownItems = [
   <InternalDropdownItem key="link">Link</InternalDropdownItem>,

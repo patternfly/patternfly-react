@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { AboutModalContainer } from './AboutModalContainer';
+import { AboutModalContainer } from '../AboutModalContainer';
 
 const props = {
   children: 'modal content',

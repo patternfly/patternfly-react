@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Level } from './Level';
-import { GutterSize } from '../../styles/gutters';
-import { LevelItem } from './LevelItem';
+import { Level } from '../Level';
+import { GutterSize } from '../../../styles/gutters';
+import { LevelItem } from '../LevelItem';
 import { shallow } from 'enzyme';
 
 Object.values(GutterSize).forEach(gutter => {

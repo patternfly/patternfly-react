@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Page } from './Page';
-import { PageHeader } from './PageHeader';
-import { PageSidebar } from './PageSidebar';
-import { PageSection } from './PageSection';
-import { Breadcrumb, BreadcrumbItem } from '../Breadcrumb';
-import { SkipToContent } from '../SkipToContent';
+import { Page } from '../Page';
+import { PageHeader } from '../PageHeader';
+import { PageSidebar } from '../PageSidebar';
+import { PageSection } from '../PageSection';
+import { Breadcrumb, BreadcrumbItem } from '../../Breadcrumb';
+import { SkipToContent } from '../../SkipToContent';
 
 const props = {
   'aria-label': 'Page layout',

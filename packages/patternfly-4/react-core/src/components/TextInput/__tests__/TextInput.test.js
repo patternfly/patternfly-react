@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { TextInput,TextInputBase } from './TextInput';
-import { ValidatedOptions } from '../../helpers/constants';
+import { TextInput,TextInputBase } from '../TextInput';
+import { ValidatedOptions } from '../../../helpers/constants';
 
 const props = {
   onChange: jest.fn(),

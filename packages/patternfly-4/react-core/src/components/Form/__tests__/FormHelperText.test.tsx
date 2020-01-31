@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormHelperText } from './FormHelperText';
+import { FormHelperText } from '../FormHelperText';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {

@@ -1,4 +1,4 @@
-import { Divider } from './Divider';
+import { Divider } from '../Divider';
 import * as React from 'react';
 import { shallow } from 'enzyme';
 

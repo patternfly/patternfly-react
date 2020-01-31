@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { LoginPage } from './LoginPage';
-import { ListVariant } from '../List';
+import { LoginPage } from '../LoginPage';
+import { ListVariant } from '../../List';
 
 const needAccountMesseage = (
   <React.Fragment>

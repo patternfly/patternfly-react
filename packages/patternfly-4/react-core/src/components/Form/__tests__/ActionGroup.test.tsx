@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ActionGroup } from './ActionGroup';
-import { Form } from './Form';
+import { ActionGroup } from '../ActionGroup';
+import { Form } from '../Form';
 
 describe('ActionGroup component', () => {
   test('should render default action group variant', () => {

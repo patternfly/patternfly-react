@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ClipboardCopyButton } from './ClipboardCopyButton';
+import { ClipboardCopyButton } from '../ClipboardCopyButton';
 
 const props = {
   id: 'my-id',

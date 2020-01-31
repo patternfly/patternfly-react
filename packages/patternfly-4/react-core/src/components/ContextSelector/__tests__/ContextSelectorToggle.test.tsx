@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { ContextSelectorToggle } from './ContextSelectorToggle';
+import { ContextSelectorToggle } from '../ContextSelectorToggle';
 
 test('Renders ContextSelectorToggle', () => {
   const view = shallow(<ContextSelectorToggle id="toggle-id" />);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Progress, ProgressSize } from './Progress';
-import { ProgressVariant, ProgressMeasureLocation } from './ProgressContainer';
+import { Progress, ProgressSize } from '../Progress';
+import { ProgressVariant, ProgressMeasureLocation } from '../ProgressContainer';
 
 test('Simple progress', () => {
   const view = mount(<Progress value={33} id="progress-simple-example" />);

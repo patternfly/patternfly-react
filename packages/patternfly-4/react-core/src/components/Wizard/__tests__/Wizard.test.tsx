@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Wizard, WizardStepFunctionType, WizardStep  } from './Wizard';
+import { Wizard, WizardStepFunctionType, WizardStep  } from '../Wizard';
 
 test('Wizard should match snapshot', () => {
   const steps: WizardStep[] = [

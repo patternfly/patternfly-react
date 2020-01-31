@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { LoginForm } from './LoginForm';
+import { LoginForm } from '../LoginForm';
 
 test('should render Login form', () => {
   const view = shallow(<LoginForm />);

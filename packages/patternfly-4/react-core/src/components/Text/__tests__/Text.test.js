@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { TextContent } from './TextContent';
-import { Text, TextVariants } from './Text';
-import { TextList, TextListVariants } from './TextList';
-import { TextListItem, TextListItemVariants } from './TextListItem';
+import { TextContent } from '../TextContent';
+import { Text, TextVariants } from '../Text';
+import { TextList, TextListVariants } from '../TextList';
+import { TextListItem, TextListItemVariants } from '../TextListItem';
 
 test('Text example should match snapshot', () => {
   const view = mount(

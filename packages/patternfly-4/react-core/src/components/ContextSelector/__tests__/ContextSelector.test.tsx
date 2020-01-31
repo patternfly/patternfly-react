@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { ContextSelector } from './ContextSelector';
-import { ContextSelectorItem } from './ContextSelectorItem';
+import { ContextSelector } from '../ContextSelector';
+import { ContextSelectorItem } from '../ContextSelectorItem';
 
 const items = [
   <ContextSelectorItem key="0">My Project</ContextSelectorItem>,

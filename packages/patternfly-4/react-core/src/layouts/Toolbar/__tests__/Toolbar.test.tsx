@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Toolbar } from './Toolbar';
-import { ToolbarGroup } from './ToolbarGroup';
-import { ToolbarItem } from './ToolbarItem';
-import { ToolbarSection } from './ToolbarSection';
+import { Toolbar } from '../Toolbar';
+import { ToolbarGroup } from '../ToolbarGroup';
+import { ToolbarItem } from '../ToolbarItem';
+import { ToolbarSection } from '../ToolbarSection';
 
 test('Simple toolbar with single group', () => {
   const view = mount(

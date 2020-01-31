@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ChipButton } from './ChipButton';
-import { Chip } from './Chip';
+import { ChipButton } from '../ChipButton';
+import { Chip } from '../Chip';
 
 test('ChipButton', () => {
   const view = mount(

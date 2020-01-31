@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
+import { AboutModalBoxCloseButton } from '../AboutModalBoxCloseButton';
 
 test('AboutModalBoxCloseButton Test', () => {
   const view = shallow(<AboutModalBoxCloseButton />);

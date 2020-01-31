@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import AddressBookIcon from '@patternfly/react-icons/dist/js/icons/address-book-icon';
-import { EmptyState, EmptyStateVariant } from './EmptyState';
-import { EmptyStateBody } from './EmptyStateBody';
-import { EmptyStateSecondaryActions } from './EmptyStateSecondaryActions';
-import { EmptyStateIcon } from './EmptyStateIcon';
-import { EmptyStatePrimary } from './EmptyStatePrimary';
-import { Button } from '../Button';
-import { Title } from '../Title';
-import { BaseSizes } from '../../styles/sizes';
+import { EmptyState, EmptyStateVariant } from '../EmptyState';
+import { EmptyStateBody } from '../EmptyStateBody';
+import { EmptyStateSecondaryActions } from '../EmptyStateSecondaryActions';
+import { EmptyStateIcon } from '../EmptyStateIcon';
+import { EmptyStatePrimary } from '../EmptyStatePrimary';
+import { Button } from '../../Button';
+import { Title } from '../../Title';
+import { BaseSizes } from '../../../styles/sizes';
 
 describe('EmptyState', () => {
   test('Main', () => {

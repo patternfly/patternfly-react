@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Accordion } from './Accordion';
-import { AccordionToggle } from './AccordionToggle';
-import { AccordionContent } from './AccordionContent';
-import { AccordionItem } from './AccordionItem';
+import { Accordion } from '../Accordion';
+import { AccordionToggle } from '../AccordionToggle';
+import { AccordionContent } from '../AccordionContent';
+import { AccordionItem } from '../AccordionItem';
 
 describe('Accordion', () => {
   test('Accordion default', () => {

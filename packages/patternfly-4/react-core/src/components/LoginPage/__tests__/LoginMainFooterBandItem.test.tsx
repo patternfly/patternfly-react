@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { LoginMainFooterBandItem } from './LoginMainFooterBandItem';
+import { LoginMainFooterBandItem } from '../LoginMainFooterBandItem';
 
 test('renders with PatternFly Core styles', () => {
   const view = shallow(<LoginMainFooterBandItem />);

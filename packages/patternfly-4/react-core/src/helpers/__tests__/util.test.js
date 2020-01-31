@@ -10,8 +10,8 @@ import {
   fillTemplate,
   pluralize,
   formatBreakpointMods
-} from './util';
-import { KEY_CODES, SIDE } from './constants';
+} from '../util';
+import { KEY_CODES, SIDE } from '../constants';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
 
 const createMockHtmlElement = bounds => ({

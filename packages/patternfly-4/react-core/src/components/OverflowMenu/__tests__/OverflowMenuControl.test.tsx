@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { OverflowMenuControl } from './OverflowMenuControl';
-import { OverflowMenuContext } from './OverflowMenuContext';
+import { OverflowMenuControl } from '../OverflowMenuControl';
+import { OverflowMenuContext } from '../OverflowMenuContext';
 
 describe('OverflowMenuControl', () => {
   test('basic', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardBody } from './CardBody';
+import { CardBody } from '../CardBody';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {

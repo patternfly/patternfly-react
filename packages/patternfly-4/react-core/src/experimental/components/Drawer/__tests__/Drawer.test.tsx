@@ -1,4 +1,4 @@
-import { Drawer, DrawerPanelContent, DrawerContent } from './';
+import { Drawer, DrawerPanelContent, DrawerContent } from '../';
 import React from 'react';
 import { mount } from 'enzyme';
 

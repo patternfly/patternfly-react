@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SelectGroup } from './SelectGroup';
+import { SelectGroup } from '../SelectGroup';
 
 describe('select group', () => {
   test('renders with children successfully', () => {

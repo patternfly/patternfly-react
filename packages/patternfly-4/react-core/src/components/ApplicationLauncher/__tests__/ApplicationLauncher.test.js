@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HelpIcon } from '@patternfly/react-icons';
-import { ApplicationLauncher } from './ApplicationLauncher';
-import { DropdownItem } from '../Dropdown/DropdownItem';
+import { ApplicationLauncher } from '../ApplicationLauncher';
+import { DropdownItem } from '../../Dropdown/DropdownItem';
 
-import { DropdownPosition, DropdownDirection } from '../Dropdown/dropdownConstants';
-import { DropdownSeparator } from '../Dropdown/DropdownSeparator';
+import { DropdownPosition, DropdownDirection } from '../../Dropdown/dropdownConstants';
+import { DropdownSeparator } from '../../Dropdown/DropdownSeparator';
 
 const dropdownItems = [
   <DropdownItem key="link">Link</DropdownItem>,

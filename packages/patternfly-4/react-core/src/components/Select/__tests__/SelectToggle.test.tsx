@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { SelectToggle } from './SelectToggle';
+import { SelectToggle } from '../SelectToggle';
 
 describe('API', () => {
   test('click on closed', () => {

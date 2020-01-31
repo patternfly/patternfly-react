@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { OverflowMenuGroup } from './OverflowMenuGroup';
-import { OverflowMenuContext } from './OverflowMenuContext';
+import { OverflowMenuGroup } from '../OverflowMenuGroup';
+import { OverflowMenuContext } from '../OverflowMenuContext';
 
 describe('OverflowMenuGroup', () => {
   test('isPersistent and below breakpoint should still show', () => {

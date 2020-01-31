@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BreadcrumbHeading } from './BreadcrumbHeading';
+import { BreadcrumbHeading } from '../BreadcrumbHeading';
 import { shallow } from 'enzyme';
 
 describe('BreadcrumbHeading component', () => {

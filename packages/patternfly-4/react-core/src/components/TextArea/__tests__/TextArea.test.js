@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TextArea } from './TextArea';
-import { ValidatedOptions } from '../../helpers/constants';
+import { TextArea } from '../TextArea';
+import { ValidatedOptions } from '../../../helpers/constants';
 
 const props = {
   onChange: jest.fn(),

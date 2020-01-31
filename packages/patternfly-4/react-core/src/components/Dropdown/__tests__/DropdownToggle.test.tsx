@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { DropdownToggle } from './DropdownToggle';
-import { DropdownContext } from './dropdownConstants';
+import { DropdownToggle } from '../DropdownToggle';
+import { DropdownContext } from '../dropdownConstants';
 
 describe('API', () => {
   test('click on closed', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { ContextSelectorItem } from './ContextSelectorItem';
+import { ContextSelectorItem } from '../ContextSelectorItem';
 
 test('Renders ContextSelectorItem', () => {
   const view = shallow(

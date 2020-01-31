@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { DropdownGroup } from './DropdownGroup';
+import { DropdownGroup } from '../DropdownGroup';
 
 describe('dropdown groups', () => {
   test('basic render', () => {

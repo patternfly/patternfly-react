@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { GridItem } from './GridItem';
+import { GridItem } from '../GridItem';
 import { shallow } from 'enzyme';
-import { DeviceSizes } from '../../styles/sizes';
+import { DeviceSizes } from '../../../styles/sizes';
 
 test('adds span class', () => {
   const view = shallow(<GridItem span={4} />);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
-import { Tabs } from './Tabs';
-import { Tab } from './Tab';
+import { Tabs } from '../Tabs';
+import { Tab } from '../Tab';
 
 test('should render simple tabs', () => {
   const view = render(

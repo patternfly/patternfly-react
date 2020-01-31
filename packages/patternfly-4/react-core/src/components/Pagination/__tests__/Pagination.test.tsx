@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Pagination, PaginationVariant } from './index';
+import { Pagination, PaginationVariant } from '../index';
 
 describe('component render', () => {
   test('should render correctly top', () => {

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Stack } from './Stack';
-import { StackItem } from './StackItem';
-import { GutterSize } from '../../styles/gutters';
+import { Stack } from '../Stack';
+import { StackItem } from '../StackItem';
+import { GutterSize } from '../../../styles/gutters';
 
 test('isMain set to true', () => {
   const view = mount(

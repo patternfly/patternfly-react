@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Alert } from '../Alert';
-import { AlertGroup } from '../AlertGroup';
-import { AlertActionCloseButton } from '../../components/Alert/AlertActionCloseButton';
+import { Alert } from '../../Alert';
+import { AlertGroup } from '../../AlertGroup';
+import { AlertActionCloseButton } from '../../../components/Alert/AlertActionCloseButton';
 
 jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');
