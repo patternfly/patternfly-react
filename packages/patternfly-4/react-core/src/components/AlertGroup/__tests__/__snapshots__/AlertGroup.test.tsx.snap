@@ -354,9 +354,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               </div>
             </div>
           </li>
-          <li>
-            ))}
-          </li>
         </ul>
       </div>
     </body>
@@ -430,9 +427,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                 </button>
               </div>
             </div>
-          </li>
-          <li>
-            ))}
           </li>
         </ul>
       </div>
@@ -630,11 +624,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               </Alert>
             </ComponentWithOuia>
           </Component>
-        </li>
-        <li
-          key="1"
-        >
-          ))}
         </li>
       </ul>
     </Component>
