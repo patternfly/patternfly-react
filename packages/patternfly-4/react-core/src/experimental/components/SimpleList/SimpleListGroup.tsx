@@ -22,6 +22,6 @@ export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
 }: SimpleListGroupProps) => (
   <section className={css(styles.simpleListSection)} {...props}>
     <h2 className={css(styles.simpleListTitle, titleClassName)}>{title}</h2>
-    <ul className={css('pf-c-simple-list__list', className)}>{children}</ul>
+    <ul className={css(className)}>{children}</ul>
   </section>
 );

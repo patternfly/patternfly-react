@@ -16,16 +16,22 @@ import React from 'react';
 import { SimpleList, SimpleListItem } from '@patternfly/react-core/dist/esm/experimental';
 
 class SimpleListDemo extends React.Component {
+  onSelect(currentItem) {
+    console.log('new selection', currentItem);
+  }
+
   render() {
     const items = [
       <SimpleListItem key="item1" isCurrent>
         List item 1
       </SimpleListItem>,
-      <SimpleListItem key="item2">List item 2</SimpleListItem>,
+      <SimpleListItem key="item2" component="a">
+        List item 2
+      </SimpleListItem>,
       <SimpleListItem key="item3">List item 3</SimpleListItem>
     ];
 
-    return <SimpleList>{items}</SimpleList>;
+    return <SimpleList onSelect={this.onSelect}>{items}</SimpleList>;
   }
 }
 ```
@@ -35,6 +41,10 @@ import React from 'react';
 import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core/dist/esm/experimental';
 
 class SimpleListGroupDemo extends React.Component {
+  onSelect(currentItem) {
+    console.log('new selection', currentItem);
+  }
+
   render() {
     const group1Items = [
       <SimpleListItem key="item1" isCurrent>
@@ -47,13 +57,17 @@ class SimpleListGroupDemo extends React.Component {
 
     const group2Items = [
       <SimpleListItem key="item5">List item 1</SimpleListItem>,
-      <SimpleListItem key="item6">List item 2</SimpleListItem>,
-      <SimpleListItem key="item7">List item 3</SimpleListItem>,
+      <SimpleListItem key="item6" component="a">
+        List item 2
+      </SimpleListItem>,
+      <SimpleListItem key="item7" component="a">
+        List item 3
+      </SimpleListItem>,
       <SimpleListItem key="item8">List item 4</SimpleListItem>
     ];
 
     return (
-      <SimpleList>
+      <SimpleList onSelect={this.onSelect}>
         <SimpleListGroup title="Group 1">{group1Items}</SimpleListGroup>
         <SimpleListGroup title="Group 2">{group2Items}</SimpleListGroup>
       </SimpleList>

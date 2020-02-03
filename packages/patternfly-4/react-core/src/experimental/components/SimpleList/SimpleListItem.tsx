@@ -19,7 +19,7 @@ export interface SimpleListItemProps {
 }
 
 export class SimpleListItem extends React.Component<SimpleListItemProps> {
-  ref = React.createRef<HTMLButtonElement & HTMLAnchorElement>();
+  ref = React.createRef<any>();
   static defaultProps: SimpleListItemProps = {
     children: null,
     className: '',
@@ -29,19 +29,16 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
     onClick: () => {}
   };
 
-  componentDidMount() {
-    console.log('mounted ref', this.ref);
-  }
   render() {
     const { children, isCurrent, className, listItemClassName, component: Component, onClick, ...props } = this.props;
-    console.log('ref', this.ref);
+
     return (
       <SimpleListContext.Consumer>
         {({ currentRef, updateCurrentRef }) => {
           const isCurrentItem = this.ref && currentRef ? currentRef.current === this.ref.current : isCurrent;
 
           return (
-            <li className={css('pf-c-simple-list__item', listItemClassName)}>
+            <li className={css(listItemClassName)}>
               <Component
                 className={css(styles.simpleListItemLink, isCurrentItem && styles.modifiers.current, className)}
                 onClick={(evt: React.MouseEvent) => {

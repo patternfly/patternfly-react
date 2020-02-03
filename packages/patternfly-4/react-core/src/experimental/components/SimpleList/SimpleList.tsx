@@ -4,22 +4,32 @@ import styles from '@patternfly/react-styles/css/components/SimpleList/simple-li
 import { SimpleListGroup } from './SimpleListGroup';
 
 export interface SimpleListProps {
-  /** Content rendered inside the SimpleList item */
+  /** Content rendered inside the SimpleList */
   children?: React.ReactNode;
   /** Additional classes added to the SimpleList <ul> */
   className?: string;
+  /** Callback when an item is selected */
+  onSelect?: (ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>) => void;
+  /** Id of the SimpleList */
+  id?: string;
+}
+
+export interface SimpleListState {
+  /** Ref of the current SimpleListItem */
+  currentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>;
 }
 
 interface SimpleListContextProps {
-  currentRef: React.RefObject<HTMLButtonElement>;
-  updateCurrentRef: (id: React.RefObject<HTMLButtonElement>) => void;
+  currentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>;
+  updateCurrentRef: (id: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>) => void;
 }
 
 export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
 
-export class SimpleList extends React.Component<SimpleListProps> {
+export class SimpleList extends React.Component<SimpleListProps, SimpleListState> {
+  static hasWarnBeta = false;
   state = {
-    currentRef: { current: null }
+    currentRef: null as React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>
   };
 
   static defaultProps: SimpleListProps = {
@@ -28,16 +38,20 @@ export class SimpleList extends React.Component<SimpleListProps> {
   };
 
   componentDidMount() {
-    //console with debug mode telling user component is in beta
+    if (!SimpleList.hasWarnBeta && process.env.NODE_ENV !== 'production') {
+      console.warn('This component is in beta and subject to change.');
+      SimpleList.hasWarnBeta = true;
+    }
   }
 
-  handleCurrentUpdate = (newCurrentRef: React.RefObject<HTMLButtonElement>) => {
-    console.log('handling update for ', newCurrentRef);
+  handleCurrentUpdate = (newCurrentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>) => {
     this.setState({ currentRef: newCurrentRef });
+    const { onSelect } = this.props;
+    onSelect && onSelect(newCurrentRef);
   };
 
   render() {
-    const { children, className, ...props } = this.props;
+    const { children, className, onSelect, id, ...props } = this.props;
 
     let isGrouped = false;
     if (children) {
@@ -51,9 +65,9 @@ export class SimpleList extends React.Component<SimpleListProps> {
           updateCurrentRef: this.handleCurrentUpdate
         }}
       >
-        <div className={css(styles.simpleList)} {...props}>
+        <div className={css(styles.simpleList)} id={id} {...props}>
           {isGrouped && children}
-          {!isGrouped && <ul className={css('pf-c-simple-list__list')}>{children}</ul>}
+          {!isGrouped && <ul>{children}</ul>}
         </div>
       </SimpleListContext.Provider>
     );
