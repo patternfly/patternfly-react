@@ -118,7 +118,8 @@ class TextInputBase extends React.Component<TextInputProps & InjectedOuiaProps> 
         readOnly={isReadOnly}
         ref={innerRef}
         {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'PF4/TextInput',
+          'data-ouia-component-type': 'TextInput',
+          'data-ouia-component-ns': 'PF4',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         })}
       />
