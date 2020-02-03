@@ -178,7 +178,9 @@ class CardViewDefaultNav extends React.Component {
           icon: swaggerIcon
         }
      ],
-
+      res: [],
+      selectedItems: [],
+      numSelected: 0,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
       isLowerToolbarDropdownOpen: false,
@@ -264,6 +266,41 @@ class CardViewDefaultNav extends React.Component {
       this.setState({ [name]: value });
     };
 
+    this.handleSelectClick = newState => {
+      if (newState === 'none') {
+        this.setState(
+          {
+            selectedItems: []
+          },
+          this.updateSelected
+        );
+      } else if (newState === 'page') {
+        let newRows = [];
+        let rows = this.state.res.map(post => {
+          const isSelected = post.selected;
+          newRows = isSelected ? [...newRows] : [...newRows, post.id];
+          post.selected = true;
+          return post;
+        });
+
+        this.setState((prevState, props) => {
+          return {
+            selectedItems: prevState.selectedItems.concat(newRows)
+          };
+        }, this.updateSelected);
+      } else {
+        let newRows = [];
+        for (var i = 1; i <= 10; i++) newRows = [...newRows, i];
+
+        this.setState(
+          {
+            selectedItems: newRows
+          },
+          this.updateSelected
+        );
+      }
+    };
+
     this.deleteItem = (item) => event => {
     const { cardInfo } = this.state;
     cardInfo.splice(cardInfo.indexOf(item), 1);
@@ -296,8 +333,79 @@ class CardViewDefaultNav extends React.Component {
         splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
       });
     };
+
+    this.onSelect = (event, isSelected, rowId) => {
+      const { selectedItems } = this.state;
+      const rows = [...this.state.res];
+      const id = rows[rowId].id;
+      rows[rowId].selected = isSelected;
+      this.setState((prevState, props) => {
+        return {
+          res: rows,
+          selectedItems: isSelected
+            ? [...prevState.selectedItems, id]
+            : prevState.selectedItems.filter(itemId => itemId !== id)
+        };
+      });
+    };
+    this.updateSelected = () => {
+      const { res, selectedItems } = this.state;
+      let rows = res.map(post => {
+        post.selected = selectedItems.includes(post.id);
+        return post;
+      });
+
+      this.setState({
+        res: rows
+      });
+    };
   }
 
+  buildSelectDropdown() {
+    const { splitButtonDropdownIsOpen, selectedItems } = this.state;
+    const numSelected = selectedItems.length;
+    const allSelected = numSelected === 10;
+    const anySelected = numSelected > 0;
+    const someChecked = anySelected ? null : false;
+    const isChecked = allSelected ? true : someChecked;
+
+    const splitButtonDropdownItems = [
+      <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+        Select none (0 items)
+      </DropdownItem>,
+      <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+        Select page ({this.state.perPage} items)
+      </DropdownItem>,
+      <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>Select all (10 items)</DropdownItem>,
+    ];
+
+    return (
+      <Dropdown
+        onSelect={this.onSplitButtonSelect}
+        position={DropdownPosition.left}
+        toggle={
+          <DropdownToggle
+            splitButtonItems={[
+              <DropdownToggleCheckbox
+                id="example-checkbox-2"
+                key="split-checkbox"
+                aria-label={anySelected ? 'Deselect all' : 'Select all'}
+                isChecked={isChecked}
+                onClick={() => {
+                  anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
+                }}
+              ></DropdownToggleCheckbox>
+            ]}
+            onToggle={this.onSplitButtonToggle}
+          >
+            {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
+          </DropdownToggle>
+        }
+        isOpen={splitButtonDropdownIsOpen}
+        dropdownItems={splitButtonDropdownItems}
+      />
+    );
+  }
   render() {
     const { isUpperToolbarDropdownOpen,
             isLowerToolbarDropdownOpen,
@@ -307,19 +415,6 @@ class CardViewDefaultNav extends React.Component {
             splitButtonDropdownIsOpen,
             cardItems,
             activeItem} = this.state;
-
-    const splitButtonDropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItem>
-    ];
 
     const filterDropdownItems = [
             <DropdownItem key="item-1">Item 1</DropdownItem>,
@@ -349,25 +444,7 @@ class CardViewDefaultNav extends React.Component {
     ];
 
     const toolbarItems = <React.Fragment>
-      <DataToolbarItem variant="bulk-select">
-        <Dropdown
-            onSelect={this.onSplitButtonSelect}
-            toggle={(
-              <DropdownToggle
-                splitButtonItems={[
-                  <DropdownToggleCheckbox
-                    id="example-checkbox-1"
-                    key="split-checkbox"
-                    aria-label="Select all"
-                  />
-                ]}
-                onToggle={this.onSplitButtonToggle}
-              />
-            )}
-            isOpen={splitButtonDropdownIsOpen}
-            dropdownItems={splitButtonDropdownItems}
-          />
-      </DataToolbarItem>
+      <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
       <DataToolbarItem>
       <Dropdown
             onSelect={this.onToolbarDropdownSelect}
@@ -389,7 +466,7 @@ class CardViewDefaultNav extends React.Component {
       </DataToolbarItem>
       <DataToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
         <Pagination
-          itemCount={37}
+          itemCount={10}
           perPage={this.state.perPage}
           page={this.state.page}
           onSetPage={this.onSetPage}
