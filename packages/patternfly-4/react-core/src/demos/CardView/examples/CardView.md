@@ -348,6 +348,16 @@ class CardViewDefaultNav extends React.Component {
         };
       });
     };
+
+    this.onProductSelect = (event, selection) => {
+      this.setState(prevState => {
+        return {
+            ['product']: [selection]
+        };
+      });
+      this.onFilterSelect();
+    };
+
     this.updateSelected = () => {
       const { res, selectedItems } = this.state;
       let rows = res.map(post => {
@@ -406,6 +416,41 @@ class CardViewDefaultNav extends React.Component {
       />
     );
   }
+
+  buildFilterDropdown() {
+    const {isLowerToolbarDropdownOpen} = this.state;
+
+    const filterDropdownItems = [
+            <SelectOption key="patternfly" value="Patternfly" />,
+            <SelectOption key="activemq" value="ActiveMQ" />,
+            <SelectOption key="apachespark" value="Apache Spark" />,
+            <SelectOption key="avro" value="Avro" />,
+            <SelectOption key="azureservices" value="Azure Services" />,
+            <SelectOption key="crypto" value="Crypto" />,
+            <SelectOption key="dropbox" value="DropBox" />,
+            <SelectOption key="jbossdatagrid" value="JBoss Data Grid" />,
+            <SelectOption key="rest" value="REST" />,
+            <SelectOption key="swagger" value="SWAGGER" />
+    ];
+
+  return (
+
+        <DataToolbarFilter
+          categoryName="Products"
+        >
+          <Select
+            aria-label="Products"
+            onToggle={this.onToolbarDropdownToggle}
+            isExpanded={isLowerToolbarDropdownOpen}
+            placeholderText="Creator"
+          >
+            {filterDropdownItems}
+          </Select>
+        </DataToolbarFilter>
+  );
+
+  }
+
   render() {
     const { isUpperToolbarDropdownOpen,
             isLowerToolbarDropdownOpen,
@@ -415,15 +460,6 @@ class CardViewDefaultNav extends React.Component {
             splitButtonDropdownIsOpen,
             cardItems,
             activeItem} = this.state;
-
-    const filterDropdownItems = [
-            <DropdownItem key="item-1">Item 1</DropdownItem>,
-            <DropdownItem key="item-2">Item 2</DropdownItem>,
-            <DropdownItem key="item-3">Item 3</DropdownItem>,
-            <DropdownItem isDisabled key="all">
-                All
-            </DropdownItem>
-    ];
 
     const toolbarKebabDropdownItems = [
      <DropdownItem key="link">Link</DropdownItem>,
@@ -445,14 +481,7 @@ class CardViewDefaultNav extends React.Component {
 
     const toolbarItems = <React.Fragment>
       <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
-      <DataToolbarItem>
-      <Dropdown
-            onSelect={this.onToolbarDropdownSelect}
-            position={DropdownPosition.right}
-            toggle={<DropdownToggle onToggle={this.onToolbarDropdownToggle}>Creator</DropdownToggle>}
-            isOpen={isLowerToolbarDropdownOpen}
-            dropdownItems={filterDropdownItems}
-          />
+      <DataToolbarItem>{this.buildFilterDropdown()}
       </DataToolbarItem>
       <DataToolbarItem><Button variant="primary">Create a Project</Button></DataToolbarItem>
       <DataToolbarItem>
