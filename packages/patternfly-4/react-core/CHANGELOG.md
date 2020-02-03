@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.136.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.0...@patternfly/react-core@3.136.1) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Page & PageHeader:** adds optional "role" prop ([#3595](https://github.com/patternfly/patternfly-react/issues/3595)) ([ed36aaf](https://github.com/patternfly/patternfly-react/commit/ed36aafc09a0494931585241f4eb10fba56c5475))
+
+
+
+
+
 # [3.136.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.135.1...@patternfly/react-core@3.136.0) (2020-01-31)
 
 

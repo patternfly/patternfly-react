@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.22.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.22.0...@patternfly/react-integration@3.22.1) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Page & PageHeader:** adds optional "role" prop ([#3595](https://github.com/patternfly/patternfly-react/issues/3595)) ([ed36aaf](https://github.com/patternfly/patternfly-react/commit/ed36aafc09a0494931585241f4eb10fba56c5475))
+
+
+
+
+
 # [3.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.21.0...@patternfly/react-integration@3.22.0) (2020-01-31)
 
 

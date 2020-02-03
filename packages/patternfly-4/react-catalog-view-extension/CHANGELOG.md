@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.2...@patternfly/react-catalog-view-extension@1.3.3) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Catalog view extension:** Many styles on examples stopped working. This change restores all styles. ([#3635](https://github.com/patternfly/patternfly-react/issues/3635)) ([e1d176a](https://github.com/patternfly/patternfly-react/commit/e1d176aee9b683b0a9ddf163aa31fa44c9e7e4bd)), closes [#3633](https://github.com/patternfly/patternfly-react/issues/3633)
+
+
+
+
+
 ## [1.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.1...@patternfly/react-catalog-view-extension@1.3.2) (2020-01-31)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
