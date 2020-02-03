@@ -3,10 +3,10 @@ title: 'Card'
 section: components
 cssPrefix: 'pf-c-card'
 typescript: true
-propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']
+propComponents: ['Card', 'CardHeadMain', 'CardHeader', 'CardBody', 'CardFooter']
 ---
 
-import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
+import { Brand, Card, CardActions, CardHead, CardHeadMain, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg'; 
 
 ## Examples
@@ -25,7 +25,7 @@ SimpleCard = () => (
 
 ```js title=With-image-and-actions
 import React from 'react'; 
-import { Card, CardHead, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
+import { Brand, Card, CardHead, CardHeadMain, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
 import pfLogo from './pfLogo.svg'; 
 
 class KebabDropdown extends React.Component {
@@ -75,7 +75,9 @@ class KebabDropdown extends React.Component {
     return (
       <Card>
         <CardHead>
-          <img src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
+          <CardHeadMain>
+            <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
+          </CardHeadMain>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -262,12 +264,14 @@ class KebabDropdown extends React.Component {
 
 ```js title=Only-image-in-the-card-head
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHead, CardHeader } from '@patternfly/react-core';
+import { Brand, Card, CardBody, CardFooter, CardHead, CardHeadMain, CardHeader } from '@patternfly/react-core';
 
 ImageCard = () => (
   <Card>
     <CardHead>
-      <img src={pfLogo} alt="PatternFly Logo" style={{ height: '50px' }}/>
+      <CardHeadMain>
+        <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
+      </CardHeadMain>
     </CardHead> 
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>
