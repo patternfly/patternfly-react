@@ -24,6 +24,9 @@
   color: #004080;
   text-decoration: underline;
 }
+.ws-react-e-catalogtile .pf-c-card__actions {
+  padding-left: 5px;
+}
 .ws-react-e-catalogtile .catalog-tile-pf-icon {
   font-size: 40px;
   height: 40px;
@@ -34,6 +37,7 @@
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  margin-left: 10px;
 }
 .ws-react-e-catalogtile .catalog-tile-pf-badge-container .catalog-tile-pf-badge {
   font-size: 16px;
