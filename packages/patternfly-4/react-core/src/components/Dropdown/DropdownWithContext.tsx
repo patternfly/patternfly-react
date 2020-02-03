@@ -24,7 +24,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
     direction: DropdownDirection.down,
     onSelect: (): void => undefined,
     autoFocus: true,
-    ouiaComponentType: 'PF4/Dropdown'
+    ouiaComponentType: 'Dropdown'
   };
 
   constructor(props: DropdownProps & InjectedOuiaProps) {
@@ -94,6 +94,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
               ref={this.baseComponentRef}
               {...ouiaContext.isOuia && {
                 'data-ouia-component-type': ouiaComponentType,
+                'data-ouia-component-ns': 'PF4',
                 'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
               }}
             >

@@ -394,7 +394,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
         ref={this.parentRef}
         style={{ width }}
         {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'PF4/Select',
+          'data-ouia-component-type': 'Select',
+          'data-ouia-component-ns': 'PF4',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         })}
       >

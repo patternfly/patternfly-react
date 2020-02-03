@@ -70,7 +70,8 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
       className={customClassName}
       aria-label={ariaLabel}
       {...(ouiaContext.isOuia && {
-        'data-ouia-component-type': 'PF4/Alert',
+        'data-ouia-component-type': 'Alert',
+        'data-ouia-component-ns': 'PF4',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
       })}
       {...(isLiveRegion && {

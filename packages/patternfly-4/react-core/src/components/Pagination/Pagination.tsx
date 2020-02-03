@@ -192,7 +192,8 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
       )}
       id={widgetId}
       {...(ouiaContext.isOuia && {
-        'data-ouia-component-type': 'PF4/Pagination',
+        'data-ouia-component-type': 'Pagination',
+        'data-ouia-component-ns': 'PF4',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
       })}
       {...props}

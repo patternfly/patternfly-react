@@ -91,7 +91,8 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
       tabIndex={isDisabled && !isButtonElement ? -1 : tabIndex}
       type={isButtonElement ? type : null}
       {...(ouiaContext.isOuia && {
-        'data-ouia-component-type': 'PF4/Button',
+        'data-ouia-component-type': 'Button',
+        'data-ouia-component-ns': 'PF4',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
       })}
     >

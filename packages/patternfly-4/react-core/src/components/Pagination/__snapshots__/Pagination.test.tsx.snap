@@ -347,7 +347,7 @@ exports[`component render custom pagination toggle 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -1193,7 +1193,7 @@ exports[`component render custom perPageOptions 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -2232,7 +2232,7 @@ exports[`component render custom start end 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -3056,7 +3056,7 @@ exports[`component render empty per page options 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -3865,7 +3865,7 @@ exports[`component render last page 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -4901,7 +4901,7 @@ exports[`component render limited number of pages 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -5934,7 +5934,7 @@ exports[`component render no items 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -6951,7 +6951,7 @@ exports[`component render should render correctly bottom 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -7987,7 +7987,7 @@ exports[`component render should render correctly compact 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -8834,7 +8834,7 @@ exports[`component render should render correctly disabled 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -9870,7 +9870,7 @@ exports[`component render should render correctly top 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -10920,7 +10920,7 @@ exports[`component render titles 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -11957,7 +11957,7 @@ exports[`component render up drop direction 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,
@@ -12990,7 +12990,7 @@ exports[`component render zero results 1`] = `
                 isOpen={false}
                 isPlain={true}
                 onSelect={[Function]}
-                ouiaComponentType="PF4/Dropdown"
+                ouiaComponentType="Dropdown"
                 ouiaContext={
                   Object {
                     "isOuia": false,

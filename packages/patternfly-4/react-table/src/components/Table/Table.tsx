@@ -358,7 +358,8 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
             className
           )}
           {...ouiaContext.isOuia && {
-            'data-ouia-component-type': 'PF4/Table',
+            'data-ouia-component-type': 'Table',
+            'data-ouia-component-ns': 'PF4',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
           }}
         >

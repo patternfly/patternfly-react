@@ -25,7 +25,8 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps & InjectedOuiaProps> =
     aria-label={ariaLabel}
     className={css(styles.breadcrumb, className)}
     {...(ouiaContext.isOuia && {
-      'data-ouia-component-type': 'PF4/Breadcrumb',
+      'data-ouia-component-type': 'Breadcrumb',
+      'data-ouia-component-ns': 'PF4',
       'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
     })}
   >

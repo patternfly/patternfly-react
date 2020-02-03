@@ -230,7 +230,8 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             className
           )}
           {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'PF4/Tabs',
+            'data-ouia-component-type': 'Tabs',
+            'data-ouia-component-ns': 'PF4',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
           })}
           id={id && id}

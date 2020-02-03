@@ -179,7 +179,7 @@ exports[`optionsMenu expanded 1`] = `
         isOpen={true}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -1316,7 +1316,7 @@ exports[`optionsMenu isDisabled 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -1718,7 +1718,7 @@ exports[`optionsMenu open up 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -2114,7 +2114,7 @@ exports[`optionsMenu plain 1`] = `
         isOpen={false}
         isPlain={true}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -2429,7 +2429,7 @@ exports[`optionsMenu regular 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -2828,7 +2828,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -3224,7 +3224,7 @@ exports[`optionsMenu right aligned 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
@@ -3632,7 +3632,7 @@ exports[`optionsMenu text 1`] = `
         isOpen={false}
         isPlain={false}
         onSelect={[Function]}
-        ouiaComponentType="PF4/Dropdown"
+        ouiaComponentType="Dropdown"
         ouiaContext={
           Object {
             "isOuia": false,
