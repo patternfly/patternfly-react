@@ -86,7 +86,7 @@ module.exports = {
     },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
     {
-      resolve: path.resolve(__dirname, './plugins/gatsby-transformer-react-docgen-typescript')
+      resolve: 'gatsby-transformer-react-docgen-typescript'
     },
     // Pipe MDX files through this plugin that spits out React components
     {
