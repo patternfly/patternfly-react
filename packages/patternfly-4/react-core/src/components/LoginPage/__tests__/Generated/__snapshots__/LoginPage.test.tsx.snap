@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage should match snapshot (auto-generated) 1`] = `
+<Fragment>
+  <Component
+    className="''"
+    footer={
+      <Unknown>
+        <p>
+          ''
+        </p>
+        <Unknown />
+      </Unknown>
+    }
+    header={
+      <Unknown
+        headerBrand={
+          <React.Fragment>
+            <Unknown
+              alt="''"
+              src="''"
+            />
+          </React.Fragment>
+        }
+      />
+    }
+  >
+    <Component
+      subtitle="string"
+      title="string"
+    />
+    <Component>
+      ReactNode
+    </Component>
+  </Component>
+</Fragment>
+`;

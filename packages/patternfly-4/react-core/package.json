@@ -36,7 +36,9 @@
     "build:babel:umd": "BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
+    "test:generate": "yalc update && DEBUG=generator-react-jest-tests* yo react-jest-tests:test",
+    "test:gen": "yalc update && yo react-jest-tests:test"
   },
   "dependencies": {
     "@patternfly/react-icons": "^3.14.39",
@@ -45,6 +47,7 @@
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1",
+    "pf-generator": "file:.yalc/pf-generator",
     "tippy.js": "5.1.2"
   },
   "devDependencies": {
@@ -67,7 +70,8 @@
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "yo": "^3.1.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

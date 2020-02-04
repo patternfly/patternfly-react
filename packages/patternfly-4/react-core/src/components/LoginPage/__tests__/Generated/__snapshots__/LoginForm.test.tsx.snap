@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm should match snapshot (auto-generated) 1`] = `
+<Component
+  className="''"
+>
+  <Component
+    isError={false}
+    isHidden={true}
+  />
+  <Component
+    fieldId="pf-login-username-id"
+    isRequired={true}
+    isValid={true}
+    label="'Username'"
+  >
+    <ForwardRef
+      autoFocus={true}
+      id="pf-login-username-id"
+      isRequired={true}
+      isValid={true}
+      name="pf-login-username-id"
+      onChange={[Function]}
+      type="text"
+      value="''"
+    />
+  </Component>
+  <Component
+    fieldId="pf-login-password-id"
+    isRequired={true}
+    isValid={true}
+    label="'Password'"
+  >
+    <ForwardRef
+      id="pf-login-password-id"
+      isRequired={true}
+      isValid={true}
+      name="pf-login-password-id"
+      onChange={[Function]}
+      type="password"
+      value="''"
+    />
+  </Component>
+  <Component
+    fieldId="pf-login-remember-me-id"
+  >
+    <Checkbox
+      className=""
+      id="pf-login-remember-me-id"
+      isChecked={false}
+      isDisabled={false}
+      isValid={true}
+      label="''"
+      onChange={[Function]}
+    />
+  </Component>
+  <Component>
+    <Component
+      isBlock={true}
+      isDisabled={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      'Log In'
+    </Component>
+  </Component>
+</Component>
+`;
