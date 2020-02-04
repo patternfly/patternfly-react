@@ -8,9 +8,9 @@ export const GutterSize = {
 
 /**
  * @param {any} styleObj - Style object
- * @param {'"md" | "lg" | "sm"'} size - Size string
+ * @param {'sm' | 'md' | 'lg'} size - Size string 'sm', 'md', or 'lg'
  * @param {any} defaultValue - Default value
  */
-export function getGutterModifier(styleObj: any, size: string, defaultValue: any) {
+export function getGutterModifier(styleObj: any, size: 'sm' | 'md' | 'lg', defaultValue: any) {
   return getModifier(styleObj, `gutter-${size}`, defaultValue);
 }
