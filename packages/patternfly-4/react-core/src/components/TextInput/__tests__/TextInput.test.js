@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { TextInput,TextInputBase } from '../TextInput';
+import { TextInput } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
 
 const props = {
