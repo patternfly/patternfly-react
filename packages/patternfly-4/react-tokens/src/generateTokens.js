@@ -51,4 +51,7 @@ cssFiles.forEach(filePath => {
 readdirSync(templateDir).forEach(templateFile => {
   const template = require(join(templateDir, templateFile));
   outputFileSync(template.getOutputPath({ outDir }), template.getContent({ tokens }));
+  Object.entries(tokens).forEach(([tokenName, tokenValue]) => {
+    outputFileSync(template.getSingleOutputPath({ outDir, tokenName }), template.getSingleContent({ tokenName, tokenValue }));
+  })
 });

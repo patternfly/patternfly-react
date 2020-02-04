@@ -1,10 +1,8 @@
 /* eslint-disable camelcase */
-import {
-  chart_global_FontSize_sm,
-  chart_global_FontSize_2xl,
-  chart_donut_label_subtitle_Fill,
-  chart_donut_label_subtitle_position
-} from '@patternfly/react-tokens';
+import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/js/chart_global_FontSize_sm';
+import chart_global_FontSize_2xl from '@patternfly/react-tokens/dist/js/chart_global_FontSize_2xl';
+import chart_donut_label_subtitle_Fill from '@patternfly/react-tokens/dist/js/chart_donut_label_subtitle_Fill';
+import chart_donut_label_subtitle_position from '@patternfly/react-tokens/dist/js/chart_donut_label_subtitle_position';
 
 // Donut styles
 export const DonutStyles = {

@@ -2,7 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css, getModifier } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
-import { global_breakpoint_md, global_breakpoint_lg, global_breakpoint_xl } from '@patternfly/react-tokens';
+import global_breakpoint_md from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import global_breakpoint_lg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+import global_breakpoint_xl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 import { debounce } from '../../helpers/util';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
