@@ -953,7 +953,7 @@ exports[`ChartTooltip 2`] = `
 exports[`allows tooltip via container component 1`] = `
 <VictoryGroup
   containerComponent={
-    <Unknown
+    <ChartVoronoiContainer
       activateData={true}
       activateLabels={true}
       className="pf-c-chart"
@@ -1892,7 +1892,7 @@ exports[`allows tooltip via container component 1`] = `
   }
   width={200}
 >
-  <Component
+  <ChartArea
     data={
       Array [
         Object {
@@ -1918,7 +1918,7 @@ exports[`allows tooltip via container component 1`] = `
       ]
     }
   />
-  <Component
+  <ChartArea
     data={
       Array [
         Object {

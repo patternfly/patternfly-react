@@ -1372,7 +1372,7 @@ exports[`renders container via ChartLegend 1`] = `
     }
   }
 >
-  <Component
+  <ChartLegend
     data={
       Array [
         Object {

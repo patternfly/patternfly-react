@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About Modal Container Test isOpen 1`] = `
-<Component>
+<Backdrop>
   <FocusTrap
     _createFocusTrap={[Function]}
     active={true}
@@ -14,36 +14,36 @@ exports[`About Modal Container Test isOpen 1`] = `
     paused={false}
     tag="div"
   >
-    <Component
+    <AboutModalBox
       aria-describedby="ariaDescribedById"
       aria-labelledby="ariaLablledbyId"
       className=""
     >
-      <Component
+      <AboutModalBoxBrand
         alt="Brand Image"
         src="brandImg..."
       />
-      <Component
+      <AboutModalBoxCloseButton
         onClose={[Function]}
       />
-      <Component
+      <AboutModalBoxHeader
         id="ariaLablledbyId"
         productName="Product Name"
       />
-      <Component
+      <AboutModalBoxContent
         id="ariaDescribedById"
         noAboutModalBoxContentContainer={false}
         title="Test Modal Container title"
         trademark="Trademark and copyright information here"
       >
         This is ModalBox content
-      </Component>
-      <Component
+      </AboutModalBoxContent>
+      <AboutModalBoxHero
         backgroundImageSrc="backgroundImageSrc..."
       />
-    </Component>
+    </AboutModalBox>
   </FocusTrap>
-</Component>
+</Backdrop>
 `;
 
 exports[`About Modal Container Test simple 1`] = `""`;

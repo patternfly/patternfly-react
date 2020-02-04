@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown toggle 1`] = `
-<Component
+<DropdownToggle
   id="Dropdown Toggle"
 >
   <Toggle
@@ -63,11 +63,11 @@ exports[`Dropdown toggle 1`] = `
       </CaretDownIcon>
     </button>
   </Toggle>
-</Component>
+</DropdownToggle>
 `;
 
 exports[`Kebab toggle 1`] = `
-<Component
+<KebabToggle
   id="Dropdown Toggle"
 >
   <Toggle
@@ -124,5 +124,5 @@ exports[`Kebab toggle 1`] = `
       </EllipsisVIcon>
     </button>
   </Toggle>
-</Component>
+</KebabToggle>
 `;

@@ -10,27 +10,27 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <Tab
             eventKey={0}
             id="tab1"
             title="Tab item 1"
           >
             Tab 1 section
-          </Unknown>,
-          <Unknown
+          </Tab>,
+          <Tab
             eventKey={1}
             id="tab2"
             title="Tab item 2"
           >
             Tab 2 section
-          </Unknown>,
-          <Unknown
+          </Tab>,
+          <Tab
             eventKey={2}
             id="tab3"
             title="Tab item 3"
           >
             Tab 3 section
-          </Unknown>,
+          </Tab>,
         ],
         "id": "handleScrollButtons",
         "isFilled": true,
@@ -240,13 +240,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={0}
             id="tab1"
             title="Tab item 1"
           >
             Tab 1 section
-          </Unknown>
+          </Tab>
         }
         id="tab1"
         key="0/.0"
@@ -254,13 +254,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={0}
               id="tab1"
               title="Tab item 1"
             >
               Tab 1 section
-            </Unknown>
+            </Tab>
           }
           id="tab1"
           innerRef={null}
@@ -280,13 +280,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={1}
             id="tab2"
             title="Tab item 2"
           >
             Tab 2 section
-          </Unknown>
+          </Tab>
         }
         id="tab2"
         key="1/.1"
@@ -294,13 +294,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={1}
               id="tab2"
               title="Tab item 2"
             >
               Tab 2 section
-            </Unknown>
+            </Tab>
           }
           id="tab2"
           innerRef={null}
@@ -320,13 +320,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={2}
             id="tab3"
             title="Tab item 3"
           >
             Tab 3 section
-          </Unknown>
+          </Tab>
         }
         id="tab3"
         key="2/.2"
@@ -334,13 +334,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={2}
               id="tab3"
               title="Tab item 3"
             >
               Tab 3 section
-            </Unknown>
+            </Tab>
           }
           id="tab3"
           innerRef={null}
@@ -372,27 +372,27 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <Tab
             eventKey={0}
             id="tab1"
             title="Tab item 1"
           >
             Tab 1 section
-          </Unknown>,
-          <Unknown
+          </Tab>,
+          <Tab
             eventKey={1}
             id="tab2"
             title="Tab item 2"
           >
             Tab 2 section
-          </Unknown>,
-          <Unknown
+          </Tab>,
+          <Tab
             eventKey={2}
             id="tab3"
             title="Tab item 3"
           >
             Tab 3 section
-          </Unknown>,
+          </Tab>,
         ],
         "id": "scrollLeft",
         "isFilled": true,
@@ -602,13 +602,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={0}
             id="tab1"
             title="Tab item 1"
           >
             Tab 1 section
-          </Unknown>
+          </Tab>
         }
         id="tab1"
         key="0/.0"
@@ -616,13 +616,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={0}
               id="tab1"
               title="Tab item 1"
             >
               Tab 1 section
-            </Unknown>
+            </Tab>
           }
           id="tab1"
           innerRef={null}
@@ -642,13 +642,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={1}
             id="tab2"
             title="Tab item 2"
           >
             Tab 2 section
-          </Unknown>
+          </Tab>
         }
         id="tab2"
         key="1/.1"
@@ -656,13 +656,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={1}
               id="tab2"
               title="Tab item 2"
             >
               Tab 2 section
-            </Unknown>
+            </Tab>
           }
           id="tab2"
           innerRef={null}
@@ -682,13 +682,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={2}
             id="tab3"
             title="Tab item 3"
           >
             Tab 3 section
-          </Unknown>
+          </Tab>
         }
         id="tab3"
         key="2/.2"
@@ -696,13 +696,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={2}
               id="tab3"
               title="Tab item 3"
             >
               Tab 3 section
-            </Unknown>
+            </Tab>
           }
           id="tab3"
           innerRef={null}
@@ -734,27 +734,27 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <Tab
             eventKey={0}
             id="tab1"
             title="Tab item 1"
           >
             Tab 1 section
-          </Unknown>,
-          <Unknown
+          </Tab>,
+          <Tab
             eventKey={1}
             id="tab2"
             title="Tab item 2"
           >
             Tab 2 section
-          </Unknown>,
-          <Unknown
+          </Tab>,
+          <Tab
             eventKey={2}
             id="tab3"
             title="Tab item 3"
           >
             Tab 3 section
-          </Unknown>,
+          </Tab>,
         ],
         "id": "scrollRight",
         "isFilled": true,
@@ -964,13 +964,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={0}
             id="tab1"
             title="Tab item 1"
           >
             Tab 1 section
-          </Unknown>
+          </Tab>
         }
         id="tab1"
         key="0/.0"
@@ -978,13 +978,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={0}
               id="tab1"
               title="Tab item 1"
             >
               Tab 1 section
-            </Unknown>
+            </Tab>
           }
           id="tab1"
           innerRef={null}
@@ -1004,13 +1004,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={1}
             id="tab2"
             title="Tab item 2"
           >
             Tab 2 section
-          </Unknown>
+          </Tab>
         }
         id="tab2"
         key="1/.1"
@@ -1018,13 +1018,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={1}
               id="tab2"
               title="Tab item 2"
             >
               Tab 2 section
-            </Unknown>
+            </Tab>
           }
           id="tab2"
           innerRef={null}
@@ -1044,13 +1044,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       <ForwardRef
         activeKey={0}
         child={
-          <Unknown
+          <Tab
             eventKey={2}
             id="tab3"
             title="Tab item 3"
           >
             Tab 3 section
-          </Unknown>
+          </Tab>
         }
         id="tab3"
         key="2/.2"
@@ -1058,13 +1058,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         <TabContent0
           activeKey={0}
           child={
-            <Unknown
+            <Tab
               eventKey={2}
               id="tab3"
               title="Tab item 3"
             >
               Tab 3 section
-            </Unknown>
+            </Tab>
           }
           id="tab3"
           innerRef={null}

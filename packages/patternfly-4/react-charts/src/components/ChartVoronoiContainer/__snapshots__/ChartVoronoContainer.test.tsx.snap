@@ -1871,7 +1871,7 @@ exports[`ChartVoronoiContainer 2`] = `
 exports[`renders container via ChartGroup 1`] = `
 <VictoryGroup
   containerComponent={
-    <Unknown
+    <ChartVoronoiContainer
       activateData={true}
       activateLabels={true}
       className="pf-c-chart"
@@ -2809,7 +2809,7 @@ exports[`renders container via ChartGroup 1`] = `
   }
   width={200}
 >
-  <Component
+  <ChartArea
     data={
       Array [
         Object {
@@ -2835,7 +2835,7 @@ exports[`renders container via ChartGroup 1`] = `
       ]
     }
   />
-  <Component
+  <ChartArea
     data={
       Array [
         Object {

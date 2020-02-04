@@ -44,7 +44,7 @@ exports[`Chip closable 1`] = `
           >
             Chip
           </span>
-          <Component
+          <ChipButton
             aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
             ariaLabel="close"
             id="remove_pf-random-id-1"
@@ -140,7 +140,7 @@ exports[`Chip closable 1`] = `
                 </Button>
               </ComponentWithOuia>
             </Component>
-          </Component>
+          </ChipButton>
         </div>
       </GenerateId>
     </Chip>
@@ -192,7 +192,7 @@ exports[`Chip closable with tooltip 1`] = `
           >
             1234567890123456789
           </span>
-          <Component
+          <ChipButton
             aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
             ariaLabel="close"
             id="remove_pf-random-id-2"
@@ -288,7 +288,7 @@ exports[`Chip closable with tooltip 1`] = `
                 </Button>
               </ComponentWithOuia>
             </Component>
-          </Component>
+          </ChipButton>
         </div>
       </GenerateId>
     </Chip>
@@ -333,7 +333,7 @@ exports[`Chip overflow 1`] = `
         <div
           className="pf-c-chip pf-m-overflow my-chp-cls"
         >
-          <Component
+          <ChipButton
             onClick={[Function]}
           >
             <Component
@@ -394,7 +394,7 @@ exports[`Chip overflow 1`] = `
                 </Button>
               </ComponentWithOuia>
             </Component>
-          </Component>
+          </ChipButton>
         </div>
       </GenerateId>
     </Chip>
@@ -453,7 +453,7 @@ exports[`Chip readonly 1`] = `
 `;
 
 exports[`ChipButton 1`] = `
-<Component
+<ChipButton
   className="chip-bttn-cls"
   id="my-chip-button"
 >
@@ -510,5 +510,5 @@ exports[`ChipButton 1`] = `
       </Button>
     </ComponentWithOuia>
   </Component>
-</Component>
+</ChipButton>
 `;

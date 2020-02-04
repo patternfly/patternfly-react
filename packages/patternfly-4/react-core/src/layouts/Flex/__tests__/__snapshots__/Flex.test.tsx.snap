@@ -4,11 +4,11 @@ exports[`Nested flex 1`] = `
 <div
   className="pf-l-flex"
 >
-  <Component>
-    <Component>
+  <Flex>
+    <FlexItem>
       Test
-    </Component>
-  </Component>
+    </FlexItem>
+  </Flex>
 </div>
 `;
 
@@ -16,9 +16,9 @@ exports[`Simple flex with single item 1`] = `
 <div
   className="pf-l-flex"
 >
-  <Component>
+  <FlexItem>
     Test
-  </Component>
+  </FlexItem>
 </div>
 `;
 

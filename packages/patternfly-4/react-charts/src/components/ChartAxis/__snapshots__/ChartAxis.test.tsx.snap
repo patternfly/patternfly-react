@@ -20,7 +20,7 @@ exports[`ChartAxis 1`] = `
     />
   }
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -976,7 +976,7 @@ exports[`ChartAxis 2`] = `
     />
   }
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -1915,7 +1915,7 @@ exports[`ChartAxis 2`] = `
 exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -5004,8 +5004,8 @@ exports[`renders component data 1`] = `
   }
   width={300}
 >
-  <Component>
-    <Component
+  <ChartGroup>
+    <ChartLine
       data={
         Array [
           Object {
@@ -5027,7 +5027,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartLine
       data={
         Array [
           Object {
@@ -5049,7 +5049,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartLine
       data={
         Array [
           Object {
@@ -5071,7 +5071,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartLine
       data={
         Array [
           Object {
@@ -5093,8 +5093,8 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </Component>
-  <Component
+  </ChartGroup>
+  <ChartAxis
     tickValues={
       Array [
         2,
@@ -5103,7 +5103,7 @@ exports[`renders component data 1`] = `
       ]
     }
   />
-  <Component
+  <ChartAxis
     dependentAxis={true}
     tickValues={
       Array [

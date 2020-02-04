@@ -7,34 +7,34 @@ exports[`ApplicationLauncher custom icon 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <Unknown>
+      <DropdownItem>
         Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Action
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         isDisabled={true}
       >
         Disabled Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
         isDisabled={true}
       >
         Disabled Action
-      </Unknown>,
-      <Unknown />,
-      <Unknown>
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>
         Separated Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Separated Action
-      </Unknown>,
+      </DropdownItem>,
     ]
   }
   favorites={Array []}
@@ -64,41 +64,41 @@ exports[`ApplicationLauncher custom icon 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <Unknown>
+        <DropdownItem>
           Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Action
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           isDisabled={true}
         >
           Disabled Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </Unknown>,
-        <Unknown />,
-        <Unknown>
+        </DropdownItem>,
+        <DropdownSeparator />,
+        <DropdownItem>
           Separated Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Separated Action
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isGrouped={false}
     isOpen={true}
     position="left"
     toggle={
-      <Unknown
+      <DropdownToggle
         aria-label="Application launcher"
         iconComponent={null}
         isDisabled={false}
@@ -112,7 +112,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
           size="sm"
           title={null}
         />
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -123,39 +123,39 @@ exports[`ApplicationLauncher custom icon 1`] = `
           "className": "",
           "direction": "down",
           "dropdownItems": Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ],
           "isGrouped": false,
           "isOpen": true,
           "position": "left",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -169,7 +169,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -181,34 +181,34 @@ exports[`ApplicationLauncher custom icon 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ]
         }
         isGrouped={false}
@@ -224,7 +224,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -238,14 +238,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-expanded"
         >
-          <Component
+          <DropdownToggle
             aria-label="Application launcher"
             ariaHasPopup={true}
             iconComponent={null}
@@ -548,7 +548,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 </span>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
           <DropdownMenu
             aria-labelledby="pf-toggle-id-5"
             autoFocus={false}
@@ -566,7 +566,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               hidden={false}
               role="menu"
             >
-              <Component
+              <DropdownItem
                 index={0}
                 key=".$link"
               >
@@ -607,8 +607,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </a>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 component="button"
                 index={1}
                 key=".$action"
@@ -651,8 +651,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 index={2}
                 isDisabled={true}
                 key=".$disabled link"
@@ -694,8 +694,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </a>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 component="button"
                 index={3}
                 isDisabled={true}
@@ -739,8 +739,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownSeparator
                 index={4}
                 key=".$separator"
               >
@@ -775,8 +775,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     />
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownSeparator>
+              <DropdownItem
                 index={5}
                 key=".$separated link"
               >
@@ -817,8 +817,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </a>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 component="button"
                 index={6}
                 key=".$separated action"
@@ -861,7 +861,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                 </InternalDropdownItem>
-              </Component>
+              </DropdownItem>
             </ul>
           </DropdownMenu>
         </nav>
@@ -878,34 +878,34 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
   direction="up"
   dropdownItems={
     Array [
-      <Unknown>
+      <DropdownItem>
         Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Action
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         isDisabled={true}
       >
         Disabled Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
         isDisabled={true}
       >
         Disabled Action
-      </Unknown>,
-      <Unknown />,
-      <Unknown>
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>
         Separated Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Separated Action
-      </Unknown>,
+      </DropdownItem>,
     ]
   }
   favorites={Array []}
@@ -934,41 +934,41 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     direction="up"
     dropdownItems={
       Array [
-        <Unknown>
+        <DropdownItem>
           Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Action
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           isDisabled={true}
         >
           Disabled Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </Unknown>,
-        <Unknown />,
-        <Unknown>
+        </DropdownItem>,
+        <DropdownSeparator />,
+        <DropdownItem>
           Separated Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Separated Action
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isGrouped={false}
     isOpen={false}
     position="right"
     toggle={
-      <Unknown
+      <DropdownToggle
         aria-label="Application launcher"
         iconComponent={null}
         isDisabled={false}
@@ -981,7 +981,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           size="sm"
           title={null}
         />
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -992,39 +992,39 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           "className": "",
           "direction": "up",
           "dropdownItems": Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ],
           "isGrouped": false,
           "isOpen": false,
           "position": "right",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -1037,7 +1037,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -1049,34 +1049,34 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         direction="up"
         dropdownItems={
           Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ]
         }
         isGrouped={false}
@@ -1092,7 +1092,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown
+          <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -1105,14 +1105,14 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-top pf-m-align-right"
         >
-          <Component
+          <DropdownToggle
             aria-label="Application launcher"
             ariaHasPopup={true}
             iconComponent={null}
@@ -1251,7 +1251,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 </span>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
@@ -1266,34 +1266,34 @@ exports[`ApplicationLauncher dropup 1`] = `
   direction="up"
   dropdownItems={
     Array [
-      <Unknown>
+      <DropdownItem>
         Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Action
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         isDisabled={true}
       >
         Disabled Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
         isDisabled={true}
       >
         Disabled Action
-      </Unknown>,
-      <Unknown />,
-      <Unknown>
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>
         Separated Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Separated Action
-      </Unknown>,
+      </DropdownItem>,
     ]
   }
   favorites={Array []}
@@ -1322,41 +1322,41 @@ exports[`ApplicationLauncher dropup 1`] = `
     direction="up"
     dropdownItems={
       Array [
-        <Unknown>
+        <DropdownItem>
           Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Action
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           isDisabled={true}
         >
           Disabled Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </Unknown>,
-        <Unknown />,
-        <Unknown>
+        </DropdownItem>,
+        <DropdownSeparator />,
+        <DropdownItem>
           Separated Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Separated Action
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isGrouped={false}
     isOpen={false}
     position="left"
     toggle={
-      <Unknown
+      <DropdownToggle
         aria-label="Application launcher"
         iconComponent={null}
         isDisabled={false}
@@ -1369,7 +1369,7 @@ exports[`ApplicationLauncher dropup 1`] = `
           size="sm"
           title={null}
         />
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -1380,39 +1380,39 @@ exports[`ApplicationLauncher dropup 1`] = `
           "className": "",
           "direction": "up",
           "dropdownItems": Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ],
           "isGrouped": false,
           "isOpen": false,
           "position": "left",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -1425,7 +1425,7 @@ exports[`ApplicationLauncher dropup 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -1437,34 +1437,34 @@ exports[`ApplicationLauncher dropup 1`] = `
         direction="up"
         dropdownItems={
           Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ]
         }
         isGrouped={false}
@@ -1480,7 +1480,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -1493,14 +1493,14 @@ exports[`ApplicationLauncher dropup 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-top"
         >
-          <Component
+          <DropdownToggle
             aria-label="Application launcher"
             ariaHasPopup={true}
             iconComponent={null}
@@ -1639,7 +1639,7 @@ exports[`ApplicationLauncher dropup 1`] = `
                 </span>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
@@ -1654,34 +1654,34 @@ exports[`ApplicationLauncher expanded 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <Unknown>
+      <DropdownItem>
         Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Action
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         isDisabled={true}
       >
         Disabled Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
         isDisabled={true}
       >
         Disabled Action
-      </Unknown>,
-      <Unknown />,
-      <Unknown>
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>
         Separated Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Separated Action
-      </Unknown>,
+      </DropdownItem>,
     ]
   }
   favorites={Array []}
@@ -1710,41 +1710,41 @@ exports[`ApplicationLauncher expanded 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <Unknown>
+        <DropdownItem>
           Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Action
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           isDisabled={true}
         >
           Disabled Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </Unknown>,
-        <Unknown />,
-        <Unknown>
+        </DropdownItem>,
+        <DropdownSeparator />,
+        <DropdownItem>
           Separated Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Separated Action
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isGrouped={false}
     isOpen={true}
     position="left"
     toggle={
-      <Unknown
+      <DropdownToggle
         aria-label="Application launcher"
         iconComponent={null}
         isDisabled={false}
@@ -1757,7 +1757,7 @@ exports[`ApplicationLauncher expanded 1`] = `
           size="sm"
           title={null}
         />
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -1768,39 +1768,39 @@ exports[`ApplicationLauncher expanded 1`] = `
           "className": "",
           "direction": "down",
           "dropdownItems": Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ],
           "isGrouped": false,
           "isOpen": true,
           "position": "left",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -1813,7 +1813,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -1825,34 +1825,34 @@ exports[`ApplicationLauncher expanded 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ]
         }
         isGrouped={false}
@@ -1868,7 +1868,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -1881,14 +1881,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-expanded"
         >
-          <Component
+          <DropdownToggle
             aria-label="Application launcher"
             ariaHasPopup={true}
             iconComponent={null}
@@ -2187,7 +2187,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 </span>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
           <DropdownMenu
             aria-labelledby="pf-toggle-id-4"
             autoFocus={false}
@@ -2205,7 +2205,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               hidden={false}
               role="menu"
             >
-              <Component
+              <DropdownItem
                 index={0}
                 key=".$link"
               >
@@ -2246,8 +2246,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </a>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 component="button"
                 index={1}
                 key=".$action"
@@ -2290,8 +2290,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 index={2}
                 isDisabled={true}
                 key=".$disabled link"
@@ -2333,8 +2333,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </a>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 component="button"
                 index={3}
                 isDisabled={true}
@@ -2378,8 +2378,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownSeparator
                 index={4}
                 key=".$separator"
               >
@@ -2414,8 +2414,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                     />
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownSeparator>
+              <DropdownItem
                 index={5}
                 key=".$separated link"
               >
@@ -2456,8 +2456,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </a>
                   </li>
                 </InternalDropdownItem>
-              </Component>
-              <Component
+              </DropdownItem>
+              <DropdownItem
                 component="button"
                 index={6}
                 key=".$separated action"
@@ -2500,7 +2500,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                 </InternalDropdownItem>
-              </Component>
+              </DropdownItem>
             </ul>
           </DropdownMenu>
         </nav>
@@ -2517,34 +2517,34 @@ exports[`ApplicationLauncher regular 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <Unknown>
+      <DropdownItem>
         Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Action
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         isDisabled={true}
       >
         Disabled Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
         isDisabled={true}
       >
         Disabled Action
-      </Unknown>,
-      <Unknown />,
-      <Unknown>
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>
         Separated Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Separated Action
-      </Unknown>,
+      </DropdownItem>,
     ]
   }
   favorites={Array []}
@@ -2573,41 +2573,41 @@ exports[`ApplicationLauncher regular 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <Unknown>
+        <DropdownItem>
           Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Action
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           isDisabled={true}
         >
           Disabled Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </Unknown>,
-        <Unknown />,
-        <Unknown>
+        </DropdownItem>,
+        <DropdownSeparator />,
+        <DropdownItem>
           Separated Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Separated Action
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isGrouped={false}
     isOpen={false}
     position="left"
     toggle={
-      <Unknown
+      <DropdownToggle
         aria-label="Application launcher"
         iconComponent={null}
         isDisabled={false}
@@ -2620,7 +2620,7 @@ exports[`ApplicationLauncher regular 1`] = `
           size="sm"
           title={null}
         />
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -2631,39 +2631,39 @@ exports[`ApplicationLauncher regular 1`] = `
           "className": "",
           "direction": "down",
           "dropdownItems": Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ],
           "isGrouped": false,
           "isOpen": false,
           "position": "left",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -2676,7 +2676,7 @@ exports[`ApplicationLauncher regular 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -2688,34 +2688,34 @@ exports[`ApplicationLauncher regular 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ]
         }
         isGrouped={false}
@@ -2731,7 +2731,7 @@ exports[`ApplicationLauncher regular 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -2744,14 +2744,14 @@ exports[`ApplicationLauncher regular 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher"
         >
-          <Component
+          <DropdownToggle
             aria-label="Application launcher"
             ariaHasPopup={true}
             iconComponent={null}
@@ -2890,7 +2890,7 @@ exports[`ApplicationLauncher regular 1`] = `
                 </span>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>
@@ -2905,34 +2905,34 @@ exports[`ApplicationLauncher right aligned 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <Unknown>
+      <DropdownItem>
         Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Action
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         isDisabled={true}
       >
         Disabled Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
         isDisabled={true}
       >
         Disabled Action
-      </Unknown>,
-      <Unknown />,
-      <Unknown>
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>
         Separated Link
-      </Unknown>,
-      <Unknown
+      </DropdownItem>,
+      <DropdownItem
         component="button"
       >
         Separated Action
-      </Unknown>,
+      </DropdownItem>,
     ]
   }
   favorites={Array []}
@@ -2961,41 +2961,41 @@ exports[`ApplicationLauncher right aligned 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <Unknown>
+        <DropdownItem>
           Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Action
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           isDisabled={true}
         >
           Disabled Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </Unknown>,
-        <Unknown />,
-        <Unknown>
+        </DropdownItem>,
+        <DropdownSeparator />,
+        <DropdownItem>
           Separated Link
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
         >
           Separated Action
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isGrouped={false}
     isOpen={false}
     position="right"
     toggle={
-      <Unknown
+      <DropdownToggle
         aria-label="Application launcher"
         iconComponent={null}
         isDisabled={false}
@@ -3008,7 +3008,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
           size="sm"
           title={null}
         />
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -3019,39 +3019,39 @@ exports[`ApplicationLauncher right aligned 1`] = `
           "className": "",
           "direction": "down",
           "dropdownItems": Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ],
           "isGrouped": false,
           "isOpen": false,
           "position": "right",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -3064,7 +3064,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -3076,34 +3076,34 @@ exports[`ApplicationLauncher right aligned 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown>
+            <DropdownItem>
               Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Action
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               isDisabled={true}
             >
               Disabled Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
               isDisabled={true}
             >
               Disabled Action
-            </Unknown>,
-            <Unknown />,
-            <Unknown>
+            </DropdownItem>,
+            <DropdownSeparator />,
+            <DropdownItem>
               Separated Link
-            </Unknown>,
-            <Unknown
+            </DropdownItem>,
+            <DropdownItem
               component="button"
             >
               Separated Action
-            </Unknown>,
+            </DropdownItem>,
           ]
         }
         isGrouped={false}
@@ -3119,7 +3119,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown
+          <DropdownToggle
             aria-label="Application launcher"
             iconComponent={null}
             isDisabled={false}
@@ -3132,14 +3132,14 @@ exports[`ApplicationLauncher right aligned 1`] = `
               size="sm"
               title={null}
             />
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <nav
           aria-label="Application launcher"
           className="pf-c-app-launcher pf-m-align-right"
         >
-          <Component
+          <DropdownToggle
             aria-label="Application launcher"
             ariaHasPopup={true}
             iconComponent={null}
@@ -3278,7 +3278,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 </span>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </nav>
       </DropdownWithContext>
     </ComponentWithOuia>

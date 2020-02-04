@@ -143,7 +143,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     deleteChip={[Function]}
                     showToolbarItem={true}
                   >
-                    <Component>
+                    <DataToolbarItem>
                       <div
                         className="pf-c-data-toolbar__item"
                       >
@@ -356,7 +356,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           </ComponentWithOuia>
                         </Component>
                       </div>
-                    </Component>
+                    </DataToolbarItem>
                     <Portal
                       containerInfo={
                         <div
@@ -501,7 +501,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         </div>
                       }
                     >
-                      <Component
+                      <DataToolbarItem
                         variant="chip-group"
                       >
                         <div
@@ -525,7 +525,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               onToggleCollapse={[Function]}
                               withToolbar={true}
                             >
-                              <Component
+                              <ChipGroupToolbarItem
                                 categoryName="Status"
                                 key=".$Status"
                               >
@@ -588,7 +588,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                   >
                                                     New
                                                   </span>
-                                                  <Component
+                                                  <ChipButton
                                                     aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                                                     ariaLabel="close"
                                                     id="remove_pf-random-id-1"
@@ -684,7 +684,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                         </Button>
                                                       </ComponentWithOuia>
                                                     </Component>
-                                                  </Component>
+                                                  </ChipButton>
                                                 </li>
                                               </GenerateId>
                                             </Chip>
@@ -733,7 +733,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                   >
                                                     Pending
                                                   </span>
-                                                  <Component
+                                                  <ChipButton
                                                     aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
                                                     ariaLabel="close"
                                                     id="remove_pf-random-id-2"
@@ -829,7 +829,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                         </Button>
                                                       </ComponentWithOuia>
                                                     </Component>
-                                                  </Component>
+                                                  </ChipButton>
                                                 </li>
                                               </GenerateId>
                                             </Chip>
@@ -839,11 +839,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     </li>
                                   </ul>
                                 </GenerateId>
-                              </Component>
+                              </ChipGroupToolbarItem>
                             </InnerChipGroup>
                           </ChipGroup>
                         </div>
-                      </Component>
+                      </DataToolbarItem>
                     </Portal>
                   </DataToolbarFilter>
                   <DataToolbarFilter
@@ -856,7 +856,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     deleteChip={[Function]}
                     showToolbarItem={true}
                   >
-                    <Component>
+                    <DataToolbarItem>
                       <div
                         className="pf-c-data-toolbar__item"
                       >
@@ -1069,7 +1069,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           </ComponentWithOuia>
                         </Component>
                       </div>
-                    </Component>
+                    </DataToolbarItem>
                     <Portal
                       containerInfo={
                         <div
@@ -1214,7 +1214,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         </div>
                       }
                     >
-                      <Component
+                      <DataToolbarItem
                         variant="chip-group"
                       >
                         <div
@@ -1238,7 +1238,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               onToggleCollapse={[Function]}
                               withToolbar={true}
                             >
-                              <Component
+                              <ChipGroupToolbarItem
                                 categoryName="Risk"
                                 key=".$Risk"
                               >
@@ -1301,7 +1301,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                   >
                                                     Low
                                                   </span>
-                                                  <Component
+                                                  <ChipButton
                                                     aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
                                                     ariaLabel="close"
                                                     id="remove_pf-random-id-4"
@@ -1397,7 +1397,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                         </Button>
                                                       </ComponentWithOuia>
                                                     </Component>
-                                                  </Component>
+                                                  </ChipButton>
                                                 </li>
                                               </GenerateId>
                                             </Chip>
@@ -1407,11 +1407,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     </li>
                                   </ul>
                                 </GenerateId>
-                              </Component>
+                              </ChipGroupToolbarItem>
                             </InnerChipGroup>
                           </ChipGroup>
                         </div>
-                      </Component>
+                      </DataToolbarItem>
                     </Portal>
                   </DataToolbarFilter>
                 </div>
@@ -1503,7 +1503,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       />
                     </DataToolbarGroupWithRef>
                   </ForwardRef>
-                  <Component
+                  <DataToolbarItem
                     className=""
                   >
                     <div
@@ -1552,7 +1552,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         </ComponentWithOuia>
                       </Component>
                     </div>
-                  </Component>
+                  </DataToolbarItem>
                 </div>
               </DataToolbarGroupWithRef>
             </ForwardRef>
@@ -1742,7 +1742,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
-        <Component
+        <DataToolbarItem
           className=""
         >
           <div
@@ -1791,7 +1791,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
               </ComponentWithOuia>
             </Component>
           </div>
-        </Component>
+        </DataToolbarItem>
       </div>
     </DataToolbarChipGroupContent>
   </div>
@@ -1829,7 +1829,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
             <div
               className="pf-c-data-toolbar__group pf-m-icon-button-group"
             >
-              <Component>
+              <DataToolbarItem>
                 <div
                   className="pf-c-data-toolbar__item"
                 >
@@ -1899,8 +1899,8 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                     </ComponentWithOuia>
                   </Component>
                 </div>
-              </Component>
-              <Component>
+              </DataToolbarItem>
+              <DataToolbarItem>
                 <div
                   className="pf-c-data-toolbar__item"
                 >
@@ -1970,7 +1970,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                     </ComponentWithOuia>
                   </Component>
                 </div>
-              </Component>
+              </DataToolbarItem>
             </div>
           </DataToolbarGroupWithRef>
         </ForwardRef>
@@ -2290,7 +2290,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                 <div
                   className="pf-c-data-toolbar__group pf-m-filter-group"
                 >
-                  <Component>
+                  <DataToolbarItem>
                     <div
                       className="pf-c-data-toolbar__item"
                     >
@@ -2503,8 +2503,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                         </ComponentWithOuia>
                       </Component>
                     </div>
-                  </Component>
-                  <Component>
+                  </DataToolbarItem>
+                  <DataToolbarItem>
                     <div
                       className="pf-c-data-toolbar__item"
                     >
@@ -2717,7 +2717,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                         </ComponentWithOuia>
                       </Component>
                     </div>
-                  </Component>
+                  </DataToolbarItem>
                 </div>
               </DataToolbarGroupWithRef>
             </ForwardRef>

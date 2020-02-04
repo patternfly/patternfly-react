@@ -13,8 +13,7 @@ module.exports = {
     'enzyme-to-json/serializer',
   ],
   transform: {
-    '^.+\\.(ts|tsx?)$': 'ts-jest',
-    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.[jt]sx?$': 'babel-jest',
     '\\.(css)$': '<rootDir>/packages/patternfly-4/react-styles/jest-transform.js'
   },
   transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|tippy.js|lodash)'],

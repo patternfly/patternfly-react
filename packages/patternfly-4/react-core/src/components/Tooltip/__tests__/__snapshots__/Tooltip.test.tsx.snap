@@ -12,13 +12,13 @@ exports[`tooltip passes along values to tippy.js 1`] = `
       id=""
       role="tooltip"
     >
-      <Unknown
+      <TooltipContent
         isLeftAligned={false}
       >
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
         </div>
-      </Unknown>
+      </TooltipContent>
     </div>
   }
   delay={
@@ -86,13 +86,13 @@ exports[`tooltip renders 1`] = `
       id=""
       role="tooltip"
     >
-      <Unknown
+      <TooltipContent
         isLeftAligned={false}
       >
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
         </div>
-      </Unknown>
+      </TooltipContent>
     </div>
   }
   delay={

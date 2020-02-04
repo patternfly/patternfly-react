@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletGroupTitle 1`] = `
-<Component
+<ChartContainer
   height={300}
   width={450}
 />
 `;
 
 exports[`ChartBulletGroupTitle 2`] = `
-<Component
+<ChartContainer
   height={300}
   width={450}
 />
 `;
 
 exports[`renders component data 1`] = `
-<Component
+<ChartContainer
   height={300}
   width={450}
 >
-  <Component
+  <ChartLabel
     capHeight={1.1}
     style={
       Array [
@@ -57,5 +57,5 @@ exports[`renders component data 1`] = `
     y1={103.81}
     y2={103.81}
   />
-</Component>
+</ChartContainer>
 `;

@@ -3,7 +3,7 @@
 exports[`ChartBar 1`] = `
 <VictoryBar
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -955,7 +955,7 @@ exports[`ChartBar 1`] = `
 exports[`ChartBar 2`] = `
 <VictoryBar
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -1907,7 +1907,7 @@ exports[`ChartBar 2`] = `
 exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -4996,10 +4996,10 @@ exports[`renders component data 1`] = `
   }
   width={300}
 >
-  <Component
+  <ChartGroup
     offset={11}
   >
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -5021,7 +5021,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -5043,7 +5043,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -5065,7 +5065,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -5087,6 +5087,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </Component>
+  </ChartGroup>
 </VictoryChart>
 `;

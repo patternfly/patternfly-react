@@ -12,20 +12,20 @@ exports[`DataList Cells 1`] = `
 <div
   className="pf-c-data-list__item-content"
 >
-  <Component
+  <DataListCell
     className="data-list-custom"
     id="primary-item"
     key="list-id-1"
   >
     Primary Id
-  </Component>
-  <Component
+  </DataListCell>
+  <DataListCell
     className="data-list-custom"
     id="primary-item"
     key="list-id-2"
   >
     Primary Id 2
-  </Component>
+  </DataListCell>
 </div>
 `;
 
@@ -45,26 +45,26 @@ exports[`DataList DataListAction dropdown 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <Component
+  <Dropdown
     dropdownItems={
       Array [
-        <Unknown
+        <DropdownItem
           component="button"
           onClick={[MockFunction]}
         >
           action-1
-        </Unknown>,
-        <Unknown
+        </DropdownItem>,
+        <DropdownItem
           component="button"
           onClick={[MockFunction]}
         >
           action-2
-        </Unknown>,
+        </DropdownItem>,
       ]
     }
     isPlain={true}
     position="right"
-    toggle={<Unknown />}
+    toggle={<KebabToggle />}
   />
 </div>
 `;

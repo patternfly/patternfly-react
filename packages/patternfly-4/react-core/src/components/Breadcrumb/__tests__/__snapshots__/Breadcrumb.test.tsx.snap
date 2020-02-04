@@ -42,17 +42,17 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <BreadcrumbItem
             to="#"
           >
             Item 1
-          </Unknown>,
+          </BreadcrumbItem>,
           " ",
-          <Unknown
+          <BreadcrumbItem
             to="#"
           >
             Item 1
-          </Unknown>,
+          </BreadcrumbItem>,
         ],
       }
     }
@@ -73,7 +73,7 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
         <ol
           className="pf-c-breadcrumb__list"
         >
-          <Component
+          <BreadcrumbItem
             to="#"
           >
             <li
@@ -117,9 +117,9 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
                 </AngleRightIcon>
               </span>
             </li>
-          </Component>
+          </BreadcrumbItem>
            
-          <Component
+          <BreadcrumbItem
             to="#"
           >
             <li
@@ -163,7 +163,7 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
                 </AngleRightIcon>
               </span>
             </li>
-          </Component>
+          </BreadcrumbItem>
         </ol>
       </nav>
     </Breadcrumb>

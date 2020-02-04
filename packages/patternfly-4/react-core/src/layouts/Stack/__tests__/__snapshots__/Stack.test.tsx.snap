@@ -1,81 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter lg 1`] = `
-<Component
+<Stack
   gutter="lg"
 >
   <div
     className="pf-l-stack pf-m-gutter"
   >
-    <Component>
+    <StackItem>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </Component>
+    </StackItem>
   </div>
-</Component>
+</Stack>
 `;
 
 exports[`Gutter md 1`] = `
-<Component
+<Stack
   gutter="md"
 >
   <div
     className="pf-l-stack pf-m-gutter"
   >
-    <Component>
+    <StackItem>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </Component>
+    </StackItem>
   </div>
-</Component>
+</Stack>
 `;
 
 exports[`Gutter sm 1`] = `
-<Component
+<Stack
   gutter="sm"
 >
   <div
     className="pf-l-stack pf-m-gutter"
   >
-    <Component>
+    <StackItem>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </Component>
+    </StackItem>
   </div>
-</Component>
+</Stack>
 `;
 
 exports[`isMain defaults to false 1`] = `
-<Component>
+<Stack>
   <div
     className="pf-l-stack"
   >
-    <Component>
+    <StackItem>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </Component>
+    </StackItem>
   </div>
-</Component>
+</Stack>
 `;
 
 exports[`isMain set to true 1`] = `
-<Component>
+<Stack>
   <div
     className="pf-l-stack"
   >
-    <Component
+    <StackItem
       isFilled={true}
     >
       <div
@@ -83,7 +83,7 @@ exports[`isMain set to true 1`] = `
       >
         Filled content
       </div>
-    </Component>
+    </StackItem>
   </div>
-</Component>
+</Stack>
 `;

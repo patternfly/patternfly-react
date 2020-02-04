@@ -1,65 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter lg 1`] = `
-<Component
+<Split
   gutter="lg"
 >
   <div
     className="pf-l-split pf-m-gutter"
   >
-    <Component>
+    <SplitItem>
       <div
         className="pf-l-split__item"
       >
         Basic Content
       </div>
-    </Component>
+    </SplitItem>
   </div>
-</Component>
+</Split>
 `;
 
 exports[`Gutter md 1`] = `
-<Component
+<Split
   gutter="md"
 >
   <div
     className="pf-l-split pf-m-gutter"
   >
-    <Component>
+    <SplitItem>
       <div
         className="pf-l-split__item"
       >
         Basic Content
       </div>
-    </Component>
+    </SplitItem>
   </div>
-</Component>
+</Split>
 `;
 
 exports[`Gutter sm 1`] = `
-<Component
+<Split
   gutter="sm"
 >
   <div
     className="pf-l-split pf-m-gutter"
   >
-    <Component>
+    <SplitItem>
       <div
         className="pf-l-split__item"
       >
         Basic Content
       </div>
-    </Component>
+    </SplitItem>
   </div>
-</Component>
+</Split>
 `;
 
 exports[`isFilled 1`] = `
-<Component>
+<Split>
   <div
     className="pf-l-split"
   >
-    <Component
+    <SplitItem
       isFilled={true}
     >
       <div
@@ -67,23 +67,23 @@ exports[`isFilled 1`] = `
       >
         Main content
       </div>
-    </Component>
+    </SplitItem>
   </div>
-</Component>
+</Split>
 `;
 
 exports[`isFilled defaults to false 1`] = `
-<Component>
+<Split>
   <div
     className="pf-l-split"
   >
-    <Component>
+    <SplitItem>
       <div
         className="pf-l-split__item"
       >
         Basic content
       </div>
-    </Component>
+    </SplitItem>
   </div>
-</Component>
+</Split>
 `;

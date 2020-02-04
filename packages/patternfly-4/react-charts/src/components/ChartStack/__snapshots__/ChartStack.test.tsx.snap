@@ -3,7 +3,7 @@
 exports[`ChartStack 1`] = `
 <VictoryStack
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -914,7 +914,7 @@ exports[`ChartStack 1`] = `
 exports[`ChartStack 2`] = `
 <VictoryStack
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -1825,7 +1825,7 @@ exports[`ChartStack 2`] = `
 exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -4914,8 +4914,8 @@ exports[`renders component data 1`] = `
   }
   width={300}
 >
-  <Component>
-    <Component
+  <ChartStack>
+    <ChartBar
       data={
         Array [
           Object {
@@ -4937,7 +4937,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -4959,7 +4959,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -4981,7 +4981,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartBar
       data={
         Array [
           Object {
@@ -5003,6 +5003,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </Component>
+  </ChartStack>
 </VictoryChart>
 `;

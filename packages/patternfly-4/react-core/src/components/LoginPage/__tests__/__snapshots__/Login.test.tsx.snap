@@ -7,19 +7,19 @@ exports[`Check login layout example against snapshot 1`] = `
   <div
     className="pf-c-login__container"
   >
-    <Component
+    <LoginHeader
       headerBrand="HeaderBrand"
     >
       Header Text
-    </Component>
+    </LoginHeader>
     <main
       className="pf-c-login__main"
     >
       Main
     </main>
-    <Component>
+    <LoginFooter>
       Footer
-    </Component>
+    </LoginFooter>
   </div>
 </div>
 `;

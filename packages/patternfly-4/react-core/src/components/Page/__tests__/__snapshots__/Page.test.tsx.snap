@@ -7,7 +7,7 @@ exports[`Check dark page against snapshot 1`] = `
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
   header={
-    <Unknown
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
@@ -19,7 +19,7 @@ exports[`Check dark page against snapshot 1`] = `
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
-    <Unknown
+    <PageSidebar
       isNavOpen={true}
       nav="Navigation"
       theme="dark"
@@ -32,7 +32,7 @@ exports[`Check dark page against snapshot 1`] = `
     className="pf-c-page my-page-class"
     id="PageId"
   >
-    <Component
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
@@ -57,8 +57,8 @@ exports[`Check dark page against snapshot 1`] = `
            | Avatar
         </div>
       </header>
-    </Component>
-    <Component
+    </PageHeader>
+    <PageSidebar
       isNavOpen={true}
       nav="Navigation"
       theme="dark"
@@ -73,13 +73,13 @@ exports[`Check dark page against snapshot 1`] = `
           Navigation
         </div>
       </div>
-    </Component>
+    </PageSidebar>
     <main
       className="pf-c-page__main"
       id={null}
       tabIndex={-1}
     >
-      <Component
+      <PageSection
         variant="default"
       >
         <section
@@ -87,8 +87,8 @@ exports[`Check dark page against snapshot 1`] = `
         >
           Section with default background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="light"
       >
         <section
@@ -96,8 +96,8 @@ exports[`Check dark page against snapshot 1`] = `
         >
           Section with light background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="dark"
       >
         <section
@@ -105,8 +105,8 @@ exports[`Check dark page against snapshot 1`] = `
         >
           Section with dark background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="darker"
       >
         <section
@@ -114,7 +114,7 @@ exports[`Check dark page against snapshot 1`] = `
         >
           Section with darker background
         </section>
-      </Component>
+      </PageSection>
     </main>
   </div>
 </Page>
@@ -127,7 +127,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
   header={
-    <Unknown
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       toolbar="Toolbar"
@@ -139,7 +139,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
-    <Unknown
+    <PageSidebar
       isNavOpen={true}
     />
   }
@@ -150,7 +150,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     className="pf-c-page my-page-class"
     id="PageId"
   >
-    <Component
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       toolbar="Toolbar"
@@ -180,8 +180,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
            | Avatar
         </div>
       </header>
-    </Component>
-    <Component
+    </PageHeader>
+    <PageSidebar
       isNavOpen={true}
     >
       <div
@@ -192,13 +192,13 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
           className="pf-c-page__sidebar-body"
         />
       </div>
-    </Component>
+    </PageSidebar>
     <main
       className="pf-c-page__main"
       id={null}
       tabIndex={-1}
     >
-      <Component
+      <PageSection
         variant="default"
       >
         <section
@@ -206,8 +206,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with default background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="light"
       >
         <section
@@ -215,8 +215,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with light background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="dark"
       >
         <section
@@ -224,8 +224,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with dark background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="darker"
       >
         <section
@@ -233,7 +233,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with darker background
         </section>
-      </Component>
+      </PageSection>
     </main>
   </div>
 </Page>
@@ -246,7 +246,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
   header={
-    <Unknown
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       toolbar="Toolbar"
@@ -258,7 +258,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
-    <Unknown
+    <PageSidebar
       isNavOpen={true}
     />
   }
@@ -269,7 +269,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     className="pf-c-page my-page-class"
     id="PageId"
   >
-    <Component
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       toolbar="Toolbar"
@@ -299,8 +299,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
            | Avatar
         </div>
       </header>
-    </Component>
-    <Component
+    </PageHeader>
+    <PageSidebar
       isNavOpen={true}
     >
       <div
@@ -311,7 +311,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
           className="pf-c-page__sidebar-body"
         />
       </div>
-    </Component>
+    </PageSidebar>
     <main
       className="pf-c-page__main"
       id={null}
@@ -327,25 +327,25 @@ exports[`Check page to verify breadcrumb is created 1`] = `
               componentProps={
                 Object {
                   "children": Array [
-                    <Unknown>
+                    <BreadcrumbItem>
                       Section Home
-                    </Unknown>,
-                    <Unknown
+                    </BreadcrumbItem>,
+                    <BreadcrumbItem
                       to="#"
                     >
                       Section Title
-                    </Unknown>,
-                    <Unknown
+                    </BreadcrumbItem>,
+                    <BreadcrumbItem
                       to="#"
                     >
                       Section Title
-                    </Unknown>,
-                    <Unknown
+                    </BreadcrumbItem>,
+                    <BreadcrumbItem
                       isActive={true}
                       to="#"
                     >
                       Section Landing
-                    </Unknown>,
+                    </BreadcrumbItem>,
                   ],
                 }
               }
@@ -366,7 +366,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                   <ol
                     className="pf-c-breadcrumb__list"
                   >
-                    <Component>
+                    <BreadcrumbItem>
                       <li
                         className="pf-c-breadcrumb__item"
                       >
@@ -402,8 +402,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                           </AngleRightIcon>
                         </span>
                       </li>
-                    </Component>
-                    <Component
+                    </BreadcrumbItem>
+                    <BreadcrumbItem
                       to="#"
                     >
                       <li
@@ -447,8 +447,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                           </AngleRightIcon>
                         </span>
                       </li>
-                    </Component>
-                    <Component
+                    </BreadcrumbItem>
+                    <BreadcrumbItem
                       to="#"
                     >
                       <li
@@ -492,8 +492,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                           </AngleRightIcon>
                         </span>
                       </li>
-                    </Component>
-                    <Component
+                    </BreadcrumbItem>
+                    <BreadcrumbItem
                       isActive={true}
                       to="#"
                     >
@@ -509,7 +509,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                           Section Landing
                         </a>
                       </li>
-                    </Component>
+                    </BreadcrumbItem>
                   </ol>
                 </nav>
               </Breadcrumb>
@@ -517,7 +517,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
           </Component>
         </PageBreadcrumb>
       </section>
-      <Component
+      <PageSection
         variant="default"
       >
         <section
@@ -525,8 +525,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with default background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="light"
       >
         <section
@@ -534,8 +534,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with light background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="dark"
       >
         <section
@@ -543,8 +543,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with dark background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="darker"
       >
         <section
@@ -552,7 +552,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with darker background
         </section>
-      </Component>
+      </PageSection>
     </main>
   </div>
 </Page>
@@ -563,31 +563,31 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   aria-label="Page layout"
   breadcrumb={
     <Unknown>
-      <Unknown>
+      <BreadcrumbItem>
         Section Home
-      </Unknown>
-      <Unknown
+      </BreadcrumbItem>
+      <BreadcrumbItem
         to="#"
       >
         Section Title
-      </Unknown>
-      <Unknown
+      </BreadcrumbItem>
+      <BreadcrumbItem
         to="#"
       >
         Section Title
-      </Unknown>
-      <Unknown
+      </BreadcrumbItem>
+      <BreadcrumbItem
         isActive={true}
         to="#"
       >
         Section Landing
-      </Unknown>
+      </BreadcrumbItem>
     </Unknown>
   }
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
   header={
-    <Unknown
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       toolbar="Toolbar"
@@ -599,7 +599,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   mainContainerId="main-content-page-layout-test-nav"
   onPageResize={[Function]}
   sidebar={
-    <Unknown
+    <PageSidebar
       isNavOpen={true}
     />
   }
@@ -632,7 +632,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         Skip to Content
       </a>
     </SkipToContent>
-    <Component
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       toolbar="Toolbar"
@@ -662,8 +662,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
            | Avatar
         </div>
       </header>
-    </Component>
-    <Component
+    </PageHeader>
+    <PageSidebar
       isNavOpen={true}
     >
       <div
@@ -674,7 +674,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
           className="pf-c-page__sidebar-body"
         />
       </div>
-    </Component>
+    </PageSidebar>
     <main
       className="pf-c-page__main"
       id="main-content-page-layout-test-nav"
@@ -689,25 +689,25 @@ exports[`Check page to verify skip to content points to main content region 1`] 
             componentProps={
               Object {
                 "children": Array [
-                  <Unknown>
+                  <BreadcrumbItem>
                     Section Home
-                  </Unknown>,
-                  <Unknown
+                  </BreadcrumbItem>,
+                  <BreadcrumbItem
                     to="#"
                   >
                     Section Title
-                  </Unknown>,
-                  <Unknown
+                  </BreadcrumbItem>,
+                  <BreadcrumbItem
                     to="#"
                   >
                     Section Title
-                  </Unknown>,
-                  <Unknown
+                  </BreadcrumbItem>,
+                  <BreadcrumbItem
                     isActive={true}
                     to="#"
                   >
                     Section Landing
-                  </Unknown>,
+                  </BreadcrumbItem>,
                 ],
               }
             }
@@ -728,7 +728,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                 <ol
                   className="pf-c-breadcrumb__list"
                 >
-                  <Component>
+                  <BreadcrumbItem>
                     <li
                       className="pf-c-breadcrumb__item"
                     >
@@ -764,8 +764,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                         </AngleRightIcon>
                       </span>
                     </li>
-                  </Component>
-                  <Component
+                  </BreadcrumbItem>
+                  <BreadcrumbItem
                     to="#"
                   >
                     <li
@@ -809,8 +809,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                         </AngleRightIcon>
                       </span>
                     </li>
-                  </Component>
-                  <Component
+                  </BreadcrumbItem>
+                  <BreadcrumbItem
                     to="#"
                   >
                     <li
@@ -854,8 +854,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                         </AngleRightIcon>
                       </span>
                     </li>
-                  </Component>
-                  <Component
+                  </BreadcrumbItem>
+                  <BreadcrumbItem
                     isActive={true}
                     to="#"
                   >
@@ -871,14 +871,14 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                         Section Landing
                       </a>
                     </li>
-                  </Component>
+                  </BreadcrumbItem>
                 </ol>
               </nav>
             </Breadcrumb>
           </ComponentWithOuia>
         </Component>
       </section>
-      <Component
+      <PageSection
         variant="default"
       >
         <section
@@ -886,8 +886,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         >
           Section with default background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="light"
       >
         <section
@@ -895,8 +895,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         >
           Section with light background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="dark"
       >
         <section
@@ -904,8 +904,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         >
           Section with dark background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="darker"
       >
         <section
@@ -913,7 +913,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         >
           Section with darker background
         </section>
-      </Component>
+      </PageSection>
     </main>
   </div>
 </Page>
@@ -926,7 +926,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
   header={
-    <Unknown
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
@@ -938,7 +938,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
-    <Unknown
+    <PageSidebar
       isNavOpen={true}
       nav="Navigation"
     />
@@ -950,7 +950,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     className="pf-c-page my-page-class"
     id="PageId"
   >
-    <Component
+    <PageHeader
       avatar=" | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
@@ -975,8 +975,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
            | Avatar
         </div>
       </header>
-    </Component>
-    <Component
+    </PageHeader>
+    <PageSidebar
       isNavOpen={true}
       nav="Navigation"
     >
@@ -990,13 +990,13 @@ exports[`Check page vertical layout example against snapshot 1`] = `
           Navigation
         </div>
       </div>
-    </Component>
+    </PageSidebar>
     <main
       className="pf-c-page__main"
       id={null}
       tabIndex={-1}
     >
-      <Component
+      <PageSection
         variant="default"
       >
         <section
@@ -1004,8 +1004,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with default background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="light"
       >
         <section
@@ -1013,8 +1013,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with light background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="dark"
       >
         <section
@@ -1022,8 +1022,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with dark background
         </section>
-      </Component>
-      <Component
+      </PageSection>
+      <PageSection
         variant="darker"
       >
         <section
@@ -1031,7 +1031,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with darker background
         </section>
-      </Component>
+      </PageSection>
     </main>
   </div>
 </Page>

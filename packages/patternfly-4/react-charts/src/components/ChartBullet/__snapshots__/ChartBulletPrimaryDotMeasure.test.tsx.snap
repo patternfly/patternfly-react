@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletPrimaryDotMeasure 1`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 />
 `;
 
 exports[`ChartBulletPrimaryDotMeasure 2`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 />
 `;
 
 exports[`renders component data 1`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 >
-  <Component
+  <ChartScatter
     data={
       Array [
         Object {
@@ -46,7 +46,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     key="pf-chart-bullet-primary-dot-measure-0"
     labelComponent={
-      <Unknown
+      <ChartTooltip
         constrainToVisibleArea={false}
         dx={0}
         dy={-6}
@@ -513,7 +513,7 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartScatter
     data={
       Array [
         Object {
@@ -540,7 +540,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     key="pf-chart-bullet-primary-dot-measure-1"
     labelComponent={
-      <Unknown
+      <ChartTooltip
         constrainToVisibleArea={false}
         dx={0}
         dy={-6}
@@ -1007,7 +1007,7 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartScatter
     data={
       Array [
         Object {
@@ -1034,7 +1034,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     key="pf-chart-bullet-primary-dot-measure-2"
     labelComponent={
-      <Unknown
+      <ChartTooltip
         constrainToVisibleArea={false}
         dx={0}
         dy={-6}
@@ -1501,5 +1501,5 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-</Component>
+</ChartContainer>
 `;

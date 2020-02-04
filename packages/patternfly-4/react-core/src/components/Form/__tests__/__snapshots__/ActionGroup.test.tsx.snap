@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ActionGroup component should render default action group variant 1`] = `
-<Component>
+<ActionGroup>
   <div
     className="pf-c-form__group pf-m-action"
   >
@@ -13,18 +13,18 @@ exports[`ActionGroup component should render default action group variant 1`] = 
       </div>
     </div>
   </div>
-</Component>
+</ActionGroup>
 `;
 
 exports[`ActionGroup component should render horizontal form ActionGroup variant 1`] = `
-<Component
+<Form
   isHorizontal={true}
 >
   <form
     className="pf-c-form pf-m-horizontal"
     noValidate={true}
   >
-    <Component>
+    <ActionGroup>
       <div
         className="pf-c-form__group pf-m-action"
       >
@@ -36,7 +36,7 @@ exports[`ActionGroup component should render horizontal form ActionGroup variant
           />
         </div>
       </div>
-    </Component>
+    </ActionGroup>
   </form>
-</Component>
+</Form>
 `;
