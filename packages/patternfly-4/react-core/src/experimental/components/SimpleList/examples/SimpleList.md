@@ -25,7 +25,7 @@ class SimpleListDemo extends React.Component {
       <SimpleListItem key="item1" isCurrent>
         List item 1
       </SimpleListItem>,
-      <SimpleListItem key="item2" component="a">
+      <SimpleListItem key="item2" component="a" href="#">
         List item 2
       </SimpleListItem>,
       <SimpleListItem key="item3">List item 3</SimpleListItem>
@@ -57,10 +57,10 @@ class SimpleListGroupDemo extends React.Component {
 
     const group2Items = [
       <SimpleListItem key="item5">List item 1</SimpleListItem>,
-      <SimpleListItem key="item6" component="a">
+      <SimpleListItem key="item6" component="a" href="#">
         List item 2
       </SimpleListItem>,
-      <SimpleListItem key="item7" component="a">
+      <SimpleListItem key="item7" component="a" href="#">
         List item 3
       </SimpleListItem>,
       <SimpleListItem key="item8">List item 4</SimpleListItem>
@@ -68,8 +68,12 @@ class SimpleListGroupDemo extends React.Component {
 
     return (
       <SimpleList onSelect={this.onSelect}>
-        <SimpleListGroup title="Group 1">{group1Items}</SimpleListGroup>
-        <SimpleListGroup title="Group 2">{group2Items}</SimpleListGroup>
+        <SimpleListGroup title="Group 1" id="group-1">
+          {group1Items}
+        </SimpleListGroup>
+        <SimpleListGroup title="Group 2" id="group-2">
+          {group2Items}
+        </SimpleListGroup>
       </SimpleList>
     );
   }

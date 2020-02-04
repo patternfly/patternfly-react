@@ -10,6 +10,8 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
           Object {
             "current": <a
               class="pf-c-simple-list__item-link pf-m-current"
+              href=""
+              tabindex="0"
             >
               Item 1
             </a>,
@@ -32,17 +34,21 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        href=""
         isCurrent={false}
         key="i1"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
         >
           <a
             className="pf-c-simple-list__item-link pf-m-current"
+            href=""
             onClick={[Function]}
+            tabIndex={0}
           >
             Item 1
           </a>
@@ -51,17 +57,21 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        href=""
         isCurrent={false}
         key="i2"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
         >
           <a
             className="pf-c-simple-list__item-link"
+            href=""
             onClick={[Function]}
+            tabIndex={0}
           >
             Item 2
           </a>
@@ -70,17 +80,21 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        href=""
         isCurrent={false}
         key="i3"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
         >
           <a
             className="pf-c-simple-list__item-link"
+            href=""
             onClick={[Function]}
+            tabIndex={0}
           >
             Item 3
           </a>
@@ -101,6 +115,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
           Object {
             "current": <button
               class="pf-c-simple-list__item-link pf-m-current"
+              type="button"
             >
               Item 1
             </button>,
@@ -123,10 +138,12 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i1"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -134,6 +151,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
           <button
             className="pf-c-simple-list__item-link pf-m-current"
             onClick={[Function]}
+            type="button"
           >
             Item 1
           </button>
@@ -142,10 +160,12 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i2"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -153,6 +173,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 2
           </button>
@@ -161,10 +182,12 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i3"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -172,6 +195,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 3
           </button>
@@ -193,17 +217,21 @@ exports[`SimpleList renders anchor content 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        href=""
         isCurrent={false}
         key="i1"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
         >
           <a
             className="pf-c-simple-list__item-link"
+            href=""
             onClick={[Function]}
+            tabIndex={0}
           >
             Item 1
           </a>
@@ -212,17 +240,21 @@ exports[`SimpleList renders anchor content 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        href=""
         isCurrent={false}
         key="i2"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
         >
           <a
             className="pf-c-simple-list__item-link"
+            href=""
             onClick={[Function]}
+            tabIndex={0}
           >
             Item 2
           </a>
@@ -231,17 +263,21 @@ exports[`SimpleList renders anchor content 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        href=""
         isCurrent={false}
         key="i3"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
         >
           <a
             className="pf-c-simple-list__item-link"
+            href=""
             onClick={[Function]}
+            tabIndex={0}
           >
             Item 3
           </a>
@@ -263,10 +299,12 @@ exports[`SimpleList renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i1"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -274,6 +312,7 @@ exports[`SimpleList renders content 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 1
           </button>
@@ -282,10 +321,12 @@ exports[`SimpleList renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i2"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -293,6 +334,7 @@ exports[`SimpleList renders content 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 2
           </button>
@@ -301,10 +343,12 @@ exports[`SimpleList renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i3"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -312,6 +356,7 @@ exports[`SimpleList renders content 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 3
           </button>
@@ -333,10 +378,12 @@ exports[`SimpleList renders grouped content 1`] = `
       title="Group 1"
     >
       <section
+        aria-labelledby=""
         className="pf-c-simple-list__section"
       >
         <h2
           className="pf-c-simple-list__title"
+          id=""
         >
           Group 1
         </h2>
@@ -346,10 +393,12 @@ exports[`SimpleList renders grouped content 1`] = `
           <SimpleListItem
             className=""
             component="button"
+            href=""
             isCurrent={false}
             key="i1"
             listItemClassName=""
             onClick={[Function]}
+            type="button"
           >
             <li
               className=""
@@ -357,6 +406,7 @@ exports[`SimpleList renders grouped content 1`] = `
               <button
                 className="pf-c-simple-list__item-link"
                 onClick={[Function]}
+                type="button"
               >
                 Item 1
               </button>
@@ -365,10 +415,12 @@ exports[`SimpleList renders grouped content 1`] = `
           <SimpleListItem
             className=""
             component="button"
+            href=""
             isCurrent={false}
             key="i2"
             listItemClassName=""
             onClick={[Function]}
+            type="button"
           >
             <li
               className=""
@@ -376,6 +428,7 @@ exports[`SimpleList renders grouped content 1`] = `
               <button
                 className="pf-c-simple-list__item-link"
                 onClick={[Function]}
+                type="button"
               >
                 Item 2
               </button>
@@ -384,10 +437,12 @@ exports[`SimpleList renders grouped content 1`] = `
           <SimpleListItem
             className=""
             component="button"
+            href=""
             isCurrent={false}
             key="i3"
             listItemClassName=""
             onClick={[Function]}
+            type="button"
           >
             <li
               className=""
@@ -395,6 +450,7 @@ exports[`SimpleList renders grouped content 1`] = `
               <button
                 className="pf-c-simple-list__item-link"
                 onClick={[Function]}
+                type="button"
               >
                 Item 3
               </button>
@@ -412,10 +468,12 @@ exports[`SimpleListGroup renders content 1`] = `
   title="Group 1"
 >
   <section
+    aria-labelledby=""
     className="pf-c-simple-list__section"
   >
     <h2
       className="pf-c-simple-list__title"
+      id=""
     >
       Group 1
     </h2>
@@ -425,10 +483,12 @@ exports[`SimpleListGroup renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i1"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -436,6 +496,7 @@ exports[`SimpleListGroup renders content 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 1
           </button>
@@ -444,10 +505,12 @@ exports[`SimpleListGroup renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i2"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -455,6 +518,7 @@ exports[`SimpleListGroup renders content 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 2
           </button>
@@ -463,10 +527,12 @@ exports[`SimpleListGroup renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        href=""
         isCurrent={false}
         key="i3"
         listItemClassName=""
         onClick={[Function]}
+        type="button"
       >
         <li
           className=""
@@ -474,6 +540,7 @@ exports[`SimpleListGroup renders content 1`] = `
           <button
             className="pf-c-simple-list__item-link"
             onClick={[Function]}
+            type="button"
           >
             Item 3
           </button>
@@ -488,16 +555,20 @@ exports[`SimpleListItem renders anchor 1`] = `
 <SimpleListItem
   className=""
   component="a"
+  href=""
   isCurrent={false}
   listItemClassName=""
   onClick={[Function]}
+  type="button"
 >
   <li
     className=""
   >
     <a
       className="pf-c-simple-list__item-link"
+      href=""
       onClick={[Function]}
+      tabIndex={0}
     >
       Item 1
     </a>
@@ -509,9 +580,11 @@ exports[`SimpleListItem renders content 1`] = `
 <SimpleListItem
   className=""
   component="button"
+  href=""
   isCurrent={false}
   listItemClassName=""
   onClick={[Function]}
+  type="button"
 >
   <li
     className=""
@@ -519,6 +592,7 @@ exports[`SimpleListItem renders content 1`] = `
     <button
       className="pf-c-simple-list__item-link"
       onClick={[Function]}
+      type="button"
     >
       Item 1
     </button>

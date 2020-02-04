@@ -11,6 +11,8 @@ export interface SimpleListGroupProps {
   titleClassName?: string;
   /** Title of the SimpleList group */
   title?: string | React.ReactNode;
+  /** ID of SimpleList group */
+  id?: string;
 }
 
 export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
@@ -18,10 +20,13 @@ export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
   className = '',
   title = '',
   titleClassName = '',
+  id = '',
   ...props
 }: SimpleListGroupProps) => (
-  <section className={css(styles.simpleListSection)} {...props}>
-    <h2 className={css(styles.simpleListTitle, titleClassName)}>{title}</h2>
+  <section className={css(styles.simpleListSection)} aria-labelledby={id} {...props}>
+    <h2 id={id} className={css(styles.simpleListTitle, titleClassName)}>
+      {title}
+    </h2>
     <ul className={css(className)}>{children}</ul>
   </section>
 );

@@ -16,6 +16,10 @@ export interface SimpleListItemProps {
   component?: 'button' | 'a';
   /** OnClick callback for the SimpleList item */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
+  /** Type of button SimpleList item */
+  type?: 'button' | 'submit' | 'reset';
+  /** Default hyperlink location */
+  href?: string;
 }
 
 export class SimpleListItem extends React.Component<SimpleListItemProps> {
@@ -26,16 +30,38 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
     listItemClassName: '',
     isCurrent: false,
     component: 'button',
+    type: 'button',
+    href: '',
     onClick: () => {}
   };
 
   render() {
-    const { children, isCurrent, className, listItemClassName, component: Component, onClick, ...props } = this.props;
+    const {
+      children,
+      isCurrent,
+      className,
+      listItemClassName,
+      component: Component,
+      onClick,
+      type,
+      href,
+      ...props
+    } = this.props;
 
     return (
       <SimpleListContext.Consumer>
         {({ currentRef, updateCurrentRef }) => {
+          const isButton = Component === 'button';
           const isCurrentItem = this.ref && currentRef ? currentRef.current === this.ref.current : isCurrent;
+
+          const componentProps = isButton
+            ? {
+                type: type
+              }
+            : {
+                tabIndex: 0,
+                href: href
+              };
 
           return (
             <li className={css(listItemClassName)}>
@@ -45,8 +71,9 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
                   onClick(evt);
                   updateCurrentRef(this.ref);
                 }}
-                {...props}
                 ref={this.ref}
+                {...componentProps}
+                {...props}
               >
                 {children}
               </Component>
