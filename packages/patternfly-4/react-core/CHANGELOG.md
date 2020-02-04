@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.136.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.1...@patternfly/react-core@3.136.2) (2020-02-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.136.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.0...@patternfly/react-core@3.136.1) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Page & PageHeader:** adds optional "role" prop ([#3595](https://github.com/patternfly/patternfly-react/issues/3595)) ([ed36aaf](https://github.com/patternfly/patternfly-react/commit/ed36aafc09a0494931585241f4eb10fba56c5475))
+
+
+
+
+
+# [3.136.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.135.1...@patternfly/react-core@3.136.0) (2020-01-31)
+
+
+### Features
+
+* **radio/check:** add support for optional description ([#3621](https://github.com/patternfly/patternfly-react/issues/3621)) ([f4370fe](https://github.com/patternfly/patternfly-react/commit/f4370fed639f386ee2e6037cbf3843eba0871ec1))
+
+
+
+
+
+## [3.135.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.135.0...@patternfly/react-core@3.135.1) (2020-01-31)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.135.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.4...@patternfly/react-core@3.135.0) (2020-01-31)
+
+
+### Features
+
+* **icons:** use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/issues/3517)) ([897d359](https://github.com/patternfly/patternfly-react/commit/897d359a48ac2ce6ddea68bbdcfe0ae2f05544bd))
+
+
+
+
+
+## [3.134.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.3...@patternfly/react-core@3.134.4) (2020-01-30)
+
+
+### Bug Fixes
+
+* **a11y:** fix a11y errors and enable a11y in CI ([#3593](https://github.com/patternfly/patternfly-react/issues/3593)) ([d20cab7](https://github.com/patternfly/patternfly-react/commit/d20cab7c9f39f7d1cd195f0a3b50aff3b7c3a0d3))
+* **wizard:** add type to wizard context ([#3572](https://github.com/patternfly/patternfly-react/issues/3572)) ([0063fd2](https://github.com/patternfly/patternfly-react/commit/0063fd29b00a07bb574c6248dc9239b34147d581))
+
+
+
+
+
+## [3.134.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.2...@patternfly/react-core@3.134.3) (2020-01-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.134.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.134.1...@patternfly/react-core@3.134.2) (2020-01-27)
 
 **Note:** Version bump only for package @patternfly/react-core

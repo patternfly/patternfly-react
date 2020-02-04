@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-integration",
   "private": true,
-  "version": "3.19.1",
+  "version": "3.22.1",
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -23,11 +23,12 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build:integration:report": "junit-merge results/* && node scripts/junit2html.js",
+    "build:integration:report": "cd results && junit-merge * && node ../scripts/junit2html.js",
     "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test:integration": "node --max-old-space-size=8192 ./node_modules/.bin/cypress run --reporter junit  --reporter-options \"mochaFile=results/my-test-output-[hash].xml,toConsole=true\""
+    "serve:demo-app": "node scripts/server.js",
+    "test:integration": "node --max-old-space-size=4096 ./node_modules/.bin/cypress run"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^4.0.3",

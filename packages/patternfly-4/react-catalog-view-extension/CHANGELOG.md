@@ -3,6 +3,83 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.4...@patternfly/react-catalog-view-extension@1.3.5) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Catalog tile:** Reduce padding between badge and logo ([#3644](https://github.com/patternfly/patternfly-react/issues/3644)) ([763e55a](https://github.com/patternfly/patternfly-react/commit/763e55add52a8d07fb5a566626030770f7a7cd06))
+
+
+
+
+
+## [1.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.3...@patternfly/react-catalog-view-extension@1.3.4) (2020-02-03)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.2...@patternfly/react-catalog-view-extension@1.3.3) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Catalog view extension:** Many styles on examples stopped working. This change restores all styles. ([#3635](https://github.com/patternfly/patternfly-react/issues/3635)) ([e1d176a](https://github.com/patternfly/patternfly-react/commit/e1d176aee9b683b0a9ddf163aa31fa44c9e7e4bd)), closes [#3633](https://github.com/patternfly/patternfly-react/issues/3633)
+
+
+
+
+
+## [1.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.1...@patternfly/react-catalog-view-extension@1.3.2) (2020-01-31)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [1.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.3.0...@patternfly/react-catalog-view-extension@1.3.1) (2020-01-31)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.7...@patternfly/react-catalog-view-extension@1.3.0) (2020-01-31)
+
+
+### Features
+
+* **icons:** use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/issues/3517)) ([897d359](https://github.com/patternfly/patternfly-react/commit/897d359a48ac2ce6ddea68bbdcfe0ae2f05544bd))
+
+
+
+
+
+## [1.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.6...@patternfly/react-catalog-view-extension@1.2.7) (2020-01-30)
+
+
+### Bug Fixes
+
+* **a11y:** fix a11y errors and enable a11y in CI ([#3593](https://github.com/patternfly/patternfly-react/issues/3593)) ([d20cab7](https://github.com/patternfly/patternfly-react/commit/d20cab7c9f39f7d1cd195f0a3b50aff3b7c3a0d3))
+* **Catalog Tile:** Adjusted max height of header image ([#3628](https://github.com/patternfly/patternfly-react/issues/3628)) ([0320821](https://github.com/patternfly/patternfly-react/commit/03208217da6f134cfcb49dc244b46b76108c2b3c))
+
+
+
+
+
+## [1.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.5...@patternfly/react-catalog-view-extension@1.2.6) (2020-01-30)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [1.2.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.2.4...@patternfly/react-catalog-view-extension@1.2.5) (2020-01-27)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

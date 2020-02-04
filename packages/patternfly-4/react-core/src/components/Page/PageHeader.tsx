@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { BarsIcon } from '@patternfly/react-icons';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Button, ButtonVariant } from '../../components/Button';
 import { PageContextConsumer } from './Page';
 
@@ -29,6 +29,8 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
+  /** Sets the value for role on the <main> element */
+  role?: string;
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
   onNavToggle?: () => void;
   /** Aria Label for the nav toggle button */
@@ -44,6 +46,7 @@ export const PageHeader = ({
   avatar = null as React.ReactNode,
   topNav = null as React.ReactNode,
   isNavOpen = true,
+  role = undefined as string,
   showNavToggle = false,
   onNavToggle = () => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
@@ -57,7 +60,7 @@ export const PageHeader = ({
         const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
         return (
-          <header className={css(styles.pageHeader, className)} {...props}>
+          <header role={role} className={css(styles.pageHeader, className)} {...props}>
             {(showNavToggle || logo) && (
               <div className={css(styles.pageHeaderBrand)}>
                 {showNavToggle && (

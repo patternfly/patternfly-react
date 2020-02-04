@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-check-circle-icon';
 import { shallow, mount } from 'enzyme';
 
 import { CatalogTile } from './CatalogTile';

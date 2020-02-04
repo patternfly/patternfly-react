@@ -11,7 +11,7 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { FilterIcon } from '@patternfly/react-icons';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 export class ViewToolbar extends React.Component {
   state = {

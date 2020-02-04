@@ -16,7 +16,7 @@ import {
   ListItem,
   ListVariant,
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 /**
  * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier

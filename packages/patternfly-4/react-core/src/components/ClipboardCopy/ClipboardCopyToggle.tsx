@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
-import { AngleRightIcon } from '@patternfly/react-icons';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
 export interface ClipboardCopyToggleProps
   extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {

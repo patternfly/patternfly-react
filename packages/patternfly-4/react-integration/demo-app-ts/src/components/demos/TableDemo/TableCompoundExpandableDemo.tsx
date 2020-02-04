@@ -9,7 +9,9 @@ import {
   ICell
 } from '@patternfly/react-table';
 
-import { CodeBranchIcon, CodeIcon, CubeIcon } from '@patternfly/react-icons';
+import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
 
 import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo';
 

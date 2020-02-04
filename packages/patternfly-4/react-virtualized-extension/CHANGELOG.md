@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.100](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.99...@patternfly/react-virtualized-extension@1.3.100) (2020-02-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [1.3.99](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.98...@patternfly/react-virtualized-extension@1.3.99) (2020-02-03)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [1.3.98](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.97...@patternfly/react-virtualized-extension@1.3.98) (2020-01-31)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [1.3.97](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.96...@patternfly/react-virtualized-extension@1.3.97) (2020-01-31)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [1.3.96](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.95...@patternfly/react-virtualized-extension@1.3.96) (2020-01-31)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [1.3.95](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.94...@patternfly/react-virtualized-extension@1.3.95) (2020-01-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [1.3.94](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.93...@patternfly/react-virtualized-extension@1.3.94) (2020-01-30)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
 ## [1.3.93](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.92...@patternfly/react-virtualized-extension@1.3.93) (2020-01-27)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

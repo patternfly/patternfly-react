@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.22.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.22.1...demo-app-ts@3.22.2) (2020-02-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.22.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.22.0...demo-app-ts@3.22.1) (2020-02-03)
+
+
+### Bug Fixes
+
+* **Page & PageHeader:** adds optional "role" prop ([#3595](https://github.com/patternfly/patternfly-react/issues/3595)) ([ed36aaf](https://github.com/patternfly/patternfly-react/commit/ed36aafc09a0494931585241f4eb10fba56c5475))
+
+
+
+
+
+# [3.22.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.21.1...demo-app-ts@3.22.0) (2020-01-31)
+
+
+### Features
+
+* **radio/check:** add support for optional description ([#3621](https://github.com/patternfly/patternfly-react/issues/3621)) ([f4370fe](https://github.com/patternfly/patternfly-react/commit/f4370fed639f386ee2e6037cbf3843eba0871ec1))
+
+
+
+
+
+## [3.21.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.21.0...demo-app-ts@3.21.1) (2020-01-31)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [3.21.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.20.0...demo-app-ts@3.21.0) (2020-01-31)
+
+
+### Features
+
+* **icons:** use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/issues/3517)) ([897d359](https://github.com/patternfly/patternfly-react/commit/897d359a48ac2ce6ddea68bbdcfe0ae2f05544bd))
+
+
+
+
+
+# [3.20.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.19.3...demo-app-ts@3.20.0) (2020-01-30)
+
+
+### Features
+
+* **cypress:** parallelize tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/issues/3627)) ([aa53124](https://github.com/patternfly/patternfly-react/commit/aa5312464026797e33fb8b3015bb3607e5e497f6))
+
+
+
+
+
+## [3.19.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.19.2...demo-app-ts@3.19.3) (2020-01-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.19.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.19.1...demo-app-ts@3.19.2) (2020-01-27)
 
 **Note:** Version bump only for package demo-app-ts

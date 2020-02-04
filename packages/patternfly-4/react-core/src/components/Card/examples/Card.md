@@ -75,7 +75,7 @@ class KebabDropdown extends React.Component {
     return (
       <Card>
         <CardHead>
-          <img src={pfLogo} style={{height: "50px"}}/>
+          <img src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -267,7 +267,7 @@ import { Card, CardBody, CardFooter, CardHead, CardHeader } from '@patternfly/re
 ImageCard = () => (
   <Card>
     <CardHead>
-      <img src={pfLogo} style={{height: "50px"}}/>
+      <img src={pfLogo} alt="PatternFly Logo" style={{ height: '50px' }}/>
     </CardHead> 
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>

@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group';
 import { ChipGroupContext } from './ChipGroup';
 import { ChipButton } from './ChipButton';
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 
 export interface ChipGroupToolbarItemProps extends React.HTMLProps<HTMLUListElement> {

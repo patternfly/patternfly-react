@@ -86,3 +86,12 @@ DisabledRadio = () => (
   </React.Fragment>
 );
 ```
+
+```js title=With-description
+import React from 'react';
+import { Radio } from '@patternfly/react-core';
+
+DisabledRadio = () => (
+  <Radio id="radio-with-description" label="Radio with description example" description="Description" />
+);
+```
