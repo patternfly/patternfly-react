@@ -5,7 +5,8 @@ import { Text } from '@patternfly/react-core/dist/js/components/Text/Text'
 import { Grid } from '@patternfly/react-core/dist/js/layouts/Grid/Grid'
 import { GridItem } from '@patternfly/react-core/dist/js/layouts/Grid/GridItem'
 import { PageSection } from '@patternfly/react-core/dist/js/components/Page/PageSection';
-import { global_spacer_md as spacerMd, global_FontSize_sm as labelFontSize } from '@patternfly/react-tokens';
+import spacerMd from '@patternfly/react-tokens/dist/js/global_spacer_md';
+import labelFontSize from '@patternfly/react-tokens/dist/js/global_FontSize_sm';
 import * as IconsModule from '@patternfly/react-icons';
 import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';
 

@@ -1,11 +1,9 @@
 /* eslint-disable camelcase */
-import {
-  chart_color_cyan_100,
-  chart_color_cyan_200,
-  chart_color_cyan_300,
-  chart_color_cyan_400,
-  chart_color_cyan_500
-} from '@patternfly/react-tokens';
+import chart_color_cyan_100 from '@patternfly/react-tokens/dist/js/chart_color_cyan_100';
+import chart_color_cyan_200 from '@patternfly/react-tokens/dist/js/chart_color_cyan_200';
+import chart_color_cyan_300 from '@patternfly/react-tokens/dist/js/chart_color_cyan_300';
+import chart_color_cyan_400 from '@patternfly/react-tokens/dist/js/chart_color_cyan_400';
+import chart_color_cyan_500 from '@patternfly/react-tokens/dist/js/chart_color_cyan_500';
 import { ColorTheme } from '../color-theme';
 
 // Color scale

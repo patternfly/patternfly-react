@@ -1,4 +1,5 @@
-import { chart_area_Opacity, chart_color_black_500 } from '@patternfly/react-tokens';
+import chart_area_Opacity from '@patternfly/react-tokens/dist/js/chart_area_Opacity';
+import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
 
 interface ChartInteractiveLegendInterface {
   // The names or groups of names associated with each data series

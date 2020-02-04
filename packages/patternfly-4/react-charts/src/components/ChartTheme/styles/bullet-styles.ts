@@ -1,17 +1,15 @@
 /* eslint-disable camelcase */
-import {
-  chart_bullet_axis_tick_count,
-  chart_bullet_comparative_measure_Width,
-  chart_bullet_comparative_measure_error_Width,
-  chart_bullet_comparative_measure_warning_Width,
-  chart_bullet_label_subtitle_Fill,
-  chart_bullet_primary_measure_dot_size,
-  chart_bullet_primary_measure_segmented_Width,
-  chart_bullet_qualitative_range_Width,
-  chart_global_FontSize_2xl,
-  chart_global_FontSize_sm,
-  chart_global_FontSize_lg
-} from '@patternfly/react-tokens';
+import chart_bullet_axis_tick_count from '@patternfly/react-tokens/dist/js/chart_bullet_axis_tick_count';
+import chart_bullet_comparative_measure_Width from '@patternfly/react-tokens/dist/js/chart_bullet_comparative_measure_Width';
+import chart_bullet_comparative_measure_error_Width from '@patternfly/react-tokens/dist/js/chart_bullet_comparative_measure_error_Width';
+import chart_bullet_comparative_measure_warning_Width from '@patternfly/react-tokens/dist/js/chart_bullet_comparative_measure_warning_Width';
+import chart_bullet_label_subtitle_Fill from '@patternfly/react-tokens/dist/js/chart_bullet_label_subtitle_Fill';
+import chart_bullet_primary_measure_dot_size from '@patternfly/react-tokens/dist/js/chart_bullet_primary_measure_dot_size';
+import chart_bullet_primary_measure_segmented_Width from '@patternfly/react-tokens/dist/js/chart_bullet_primary_measure_segmented_Width';
+import chart_bullet_qualitative_range_Width from '@patternfly/react-tokens/dist/js/chart_bullet_qualitative_range_Width';
+import chart_global_FontSize_2xl from '@patternfly/react-tokens/dist/js/chart_global_FontSize_2xl';
+import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/js/chart_global_FontSize_sm';
+import chart_global_FontSize_lg from '@patternfly/react-tokens/dist/js/chart_global_FontSize_lg';
 
 // Bullet styles
 export const BulletStyles = {

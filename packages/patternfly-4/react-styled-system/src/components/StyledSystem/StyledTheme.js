@@ -2,107 +2,106 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';
-import {
-  global_spacer_xs,
-  global_spacer_sm,
-  global_spacer_md,
-  global_spacer_lg,
-  global_spacer_xl,
-  global_spacer_2xl,
-  global_spacer_3xl,
-  global_gutter,
-  global_golden_ratio,
-  global_FontSize_4xl,
-  global_FontSize_3xl,
-  global_FontSize_2xl,
-  global_FontSize_xl,
-  global_FontSize_lg,
-  global_FontSize_md,
-  global_FontSize_sm,
-  global_FontSize_xs,
-  global_FontFamily_sans_serif,
-  global_FontFamily_monospace,
-  global_FontWeight_light,
-  global_FontWeight_normal,
-  global_FontWeight_semi_bold,
-  global_FontWeight_bold,
-  global_link_FontWeight,
-  global_LineHeight_sm,
-  global_LineHeight_md,
-  global_BorderWidth_sm,
-  global_BorderWidth_md,
-  global_BorderWidth_lg,
-  global_BorderRadius_sm,
-  global_BorderRadius_lg,
-  global_BoxShadow_sm,
-  global_BoxShadow_sm_left,
-  global_BoxShadow_sm_right,
-  global_BoxShadow_sm_bottom,
-  global_BoxShadow_sm_top,
-  global_BoxShadow_md,
-  global_BoxShadow_md_left,
-  global_BoxShadow_md_right,
-  global_BoxShadow_md_bottom,
-  global_BoxShadow_md_top,
-  global_BoxShadow_lg,
-  global_BoxShadow_lg_left,
-  global_BoxShadow_lg_right,
-  global_BoxShadow_lg_bottom,
-  global_BoxShadow_lg_top,
-  global_BoxShadow_inset,
-  global_breakpoint_sm,
-  global_breakpoint_md,
-  global_breakpoint_lg,
-  global_breakpoint_xl,
-  global_BackgroundColor_100,
-  global_BackgroundColor_200,
-  global_BackgroundColor_300,
-  global_BackgroundColor_light_100,
-  global_BackgroundColor_light_200,
-  global_BackgroundColor_light_300,
-  global_BackgroundColor_dark_100,
-  global_BackgroundColor_dark_200,
-  global_BackgroundColor_dark_transparent_100,
-  global_BackgroundColor_dark_transparent_200,
-  global_Color_100,
-  global_Color_200,
-  global_Color_light_100,
-  global_Color_light_200,
-  global_Color_dark_100,
-  global_Color_dark_200,
-  global_active_color_100,
-  global_active_color_200,
-  global_active_color_300,
-  global_disabled_color_100,
-  global_disabled_color_200,
-  global_primary_color_100,
-  global_primary_color_200,
-  global_primary_color_light_100,
-  global_primary_color_dark_100,
-  global_secondary_color_100,
-  global_success_color_100,
-  global_success_color_200,
-  global_info_color_100,
-  global_info_color_200,
-  global_warning_color_100,
-  global_warning_color_200,
-  global_danger_color_100,
-  global_danger_color_200,
-  global_danger_color_300,
-  global_link_Color,
-  global_link_Color_hover,
-  global_link_Color_light_hover,
-  global_BorderColor_100,
-  global_BorderColor_300,
-  global_BorderColor_light_100,
-  global_BorderColor_dark_100,
-  global_ZIndex_xs,
-  global_ZIndex_sm,
-  global_ZIndex_md,
-  global_ZIndex_lg,
-  global_ZIndex_xl,
-  global_ZIndex_2xl
-} from '@patternfly/react-tokens';
+import global_spacer_xs from '@patternfly/react-tokens/dist/js/global_spacer_xs';
+import global_spacer_sm from '@patternfly/react-tokens/dist/js/global_spacer_sm';
+import global_spacer_md from '@patternfly/react-tokens/dist/js/global_spacer_md';
+import global_spacer_lg from '@patternfly/react-tokens/dist/js/global_spacer_lg';
+import global_spacer_xl from '@patternfly/react-tokens/dist/js/global_spacer_xl';
+import global_spacer_2xl from '@patternfly/react-tokens/dist/js/global_spacer_2xl';
+import global_spacer_3xl from '@patternfly/react-tokens/dist/js/global_spacer_3xl';
+import global_gutter from '@patternfly/react-tokens/dist/js/global_gutter';
+import global_golden_ratio from '@patternfly/react-tokens/dist/js/global_golden_ratio';
+import global_FontSize_4xl from '@patternfly/react-tokens/dist/js/global_FontSize_4xl';
+import global_FontSize_3xl from '@patternfly/react-tokens/dist/js/global_FontSize_3xl';
+import global_FontSize_2xl from '@patternfly/react-tokens/dist/js/global_FontSize_2xl';
+import global_FontSize_xl from '@patternfly/react-tokens/dist/js/global_FontSize_xl';
+import global_FontSize_lg from '@patternfly/react-tokens/dist/js/global_FontSize_lg';
+import global_FontSize_md from '@patternfly/react-tokens/dist/js/global_FontSize_md';
+import global_FontSize_sm from '@patternfly/react-tokens/dist/js/global_FontSize_sm';
+import global_FontSize_xs from '@patternfly/react-tokens/dist/js/global_FontSize_xs';
+import global_FontFamily_sans_serif from '@patternfly/react-tokens/dist/js/global_FontFamily_sans_serif';
+import global_FontFamily_monospace from '@patternfly/react-tokens/dist/js/global_FontFamily_monospace';
+import global_FontWeight_light from '@patternfly/react-tokens/dist/js/global_FontWeight_light';
+import global_FontWeight_normal from '@patternfly/react-tokens/dist/js/global_FontWeight_normal';
+import global_FontWeight_semi_bold from '@patternfly/react-tokens/dist/js/global_FontWeight_semi_bold';
+import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_FontWeight_bold';
+import global_link_FontWeight from '@patternfly/react-tokens/dist/js/global_link_FontWeight';
+import global_LineHeight_sm from '@patternfly/react-tokens/dist/js/global_LineHeight_sm';
+import global_LineHeight_md from '@patternfly/react-tokens/dist/js/global_LineHeight_md';
+import global_BorderWidth_sm from '@patternfly/react-tokens/dist/js/global_BorderWidth_sm';
+import global_BorderWidth_md from '@patternfly/react-tokens/dist/js/global_BorderWidth_md';
+import global_BorderWidth_lg from '@patternfly/react-tokens/dist/js/global_BorderWidth_lg';
+import global_BorderRadius_sm from '@patternfly/react-tokens/dist/js/global_BorderRadius_sm';
+import global_BorderRadius_lg from '@patternfly/react-tokens/dist/js/global_BorderRadius_lg';
+import global_BoxShadow_sm from '@patternfly/react-tokens/dist/js/global_BoxShadow_sm';
+import global_BoxShadow_sm_left from '@patternfly/react-tokens/dist/js/global_BoxShadow_sm_left';
+import global_BoxShadow_sm_right from '@patternfly/react-tokens/dist/js/global_BoxShadow_sm_right';
+import global_BoxShadow_sm_bottom from '@patternfly/react-tokens/dist/js/global_BoxShadow_sm_bottom';
+import global_BoxShadow_sm_top from '@patternfly/react-tokens/dist/js/global_BoxShadow_sm_top';
+import global_BoxShadow_md from '@patternfly/react-tokens/dist/js/global_BoxShadow_md';
+import global_BoxShadow_md_left from '@patternfly/react-tokens/dist/js/global_BoxShadow_md_left';
+import global_BoxShadow_md_right from '@patternfly/react-tokens/dist/js/global_BoxShadow_md_right';
+import global_BoxShadow_md_bottom from '@patternfly/react-tokens/dist/js/global_BoxShadow_md_bottom';
+import global_BoxShadow_md_top from '@patternfly/react-tokens/dist/js/global_BoxShadow_md_top';
+import global_BoxShadow_lg from '@patternfly/react-tokens/dist/js/global_BoxShadow_lg';
+import global_BoxShadow_lg_left from '@patternfly/react-tokens/dist/js/global_BoxShadow_lg_left';
+import global_BoxShadow_lg_right from '@patternfly/react-tokens/dist/js/global_BoxShadow_lg_right';
+import global_BoxShadow_lg_bottom from '@patternfly/react-tokens/dist/js/global_BoxShadow_lg_bottom';
+import global_BoxShadow_lg_top from '@patternfly/react-tokens/dist/js/global_BoxShadow_lg_top';
+import global_BoxShadow_inset from '@patternfly/react-tokens/dist/js/global_BoxShadow_inset';
+import global_breakpoint_sm from '@patternfly/react-tokens/dist/js/global_breakpoint_sm';
+import global_breakpoint_md from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import global_breakpoint_lg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+import global_breakpoint_xl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
+import global_BackgroundColor_100 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_100';
+import global_BackgroundColor_200 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_200';
+import global_BackgroundColor_300 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_300';
+import global_BackgroundColor_light_100 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_light_100';
+import global_BackgroundColor_light_200 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_light_200';
+import global_BackgroundColor_light_300 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_light_300';
+import global_BackgroundColor_dark_100 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_dark_100';
+import global_BackgroundColor_dark_200 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_dark_200';
+import global_BackgroundColor_dark_transparent_100 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_dark_transparent_100';
+import global_BackgroundColor_dark_transparent_200 from '@patternfly/react-tokens/dist/js/global_BackgroundColor_dark_transparent_200';
+import global_Color_100 from '@patternfly/react-tokens/dist/js/global_Color_100';
+import global_Color_200 from '@patternfly/react-tokens/dist/js/global_Color_200';
+import global_Color_light_100 from '@patternfly/react-tokens/dist/js/global_Color_light_100';
+import global_Color_light_200 from '@patternfly/react-tokens/dist/js/global_Color_light_200';
+import global_Color_dark_100 from '@patternfly/react-tokens/dist/js/global_Color_dark_100';
+import global_Color_dark_200 from '@patternfly/react-tokens/dist/js/global_Color_dark_200';
+import global_active_color_100 from '@patternfly/react-tokens/dist/js/global_active_color_100';
+import global_active_color_200 from '@patternfly/react-tokens/dist/js/global_active_color_200';
+import global_active_color_300 from '@patternfly/react-tokens/dist/js/global_active_color_300';
+import global_disabled_color_100 from '@patternfly/react-tokens/dist/js/global_disabled_color_100';
+import global_disabled_color_200 from '@patternfly/react-tokens/dist/js/global_disabled_color_200';
+import global_primary_color_100 from '@patternfly/react-tokens/dist/js/global_primary_color_100';
+import global_primary_color_200 from '@patternfly/react-tokens/dist/js/global_primary_color_200';
+import global_primary_color_light_100 from '@patternfly/react-tokens/dist/js/global_primary_color_light_100';
+import global_primary_color_dark_100 from '@patternfly/react-tokens/dist/js/global_primary_color_dark_100';
+import global_secondary_color_100 from '@patternfly/react-tokens/dist/js/global_secondary_color_100';
+import global_success_color_100 from '@patternfly/react-tokens/dist/js/global_success_color_100';
+import global_success_color_200 from '@patternfly/react-tokens/dist/js/global_success_color_200';
+import global_info_color_100 from '@patternfly/react-tokens/dist/js/global_info_color_100';
+import global_info_color_200 from '@patternfly/react-tokens/dist/js/global_info_color_200';
+import global_warning_color_100 from '@patternfly/react-tokens/dist/js/global_warning_color_100';
+import global_warning_color_200 from '@patternfly/react-tokens/dist/js/global_warning_color_200';
+import global_danger_color_100 from '@patternfly/react-tokens/dist/js/global_danger_color_100';
+import global_danger_color_200 from '@patternfly/react-tokens/dist/js/global_danger_color_200';
+import global_danger_color_300 from '@patternfly/react-tokens/dist/js/global_danger_color_300';
+import global_link_Color from '@patternfly/react-tokens/dist/js/global_link_Color';
+import global_link_Color_hover from '@patternfly/react-tokens/dist/js/global_link_Color_hover';
+import global_link_Color_light_hover from '@patternfly/react-tokens/dist/js/global_link_Color_light_hover';
+import global_BorderColor_100 from '@patternfly/react-tokens/dist/js/global_BorderColor_100';
+import global_BorderColor_300 from '@patternfly/react-tokens/dist/js/global_BorderColor_300';
+import global_BorderColor_light_100 from '@patternfly/react-tokens/dist/js/global_BorderColor_light_100';
+import global_BorderColor_dark_100 from '@patternfly/react-tokens/dist/js/global_BorderColor_dark_100';
+import global_ZIndex_xs from '@patternfly/react-tokens/dist/js/global_ZIndex_xs';
+import global_ZIndex_sm from '@patternfly/react-tokens/dist/js/global_ZIndex_sm';
+import global_ZIndex_md from '@patternfly/react-tokens/dist/js/global_ZIndex_md';
+import global_ZIndex_lg from '@patternfly/react-tokens/dist/js/global_ZIndex_lg';
+import global_ZIndex_xl from '@patternfly/react-tokens/dist/js/global_ZIndex_xl';
+import global_ZIndex_2xl from '@patternfly/react-tokens/dist/js/global_ZIndex_2xl';
+
 
 /**
  * Maps to keys or array positions in the StyledTheme
