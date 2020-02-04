@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';
+import globalBreakpointMd from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
 import { debounce } from '../../helpers/util';
 
 export enum PageLayouts {

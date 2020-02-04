@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { RefObject } from 'react';
-import {
-  global_breakpoint_md as globalBreakpointMd,
-  global_breakpoint_lg as globalBreakpointLg,
-  global_breakpoint_xl as globalBreakpointXl,
-  global_breakpoint_2xl as globalBreakpoint2xl
-} from '@patternfly/react-tokens';
+
+ import globalBreakpointMd from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+ import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+ import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
+ import globalBreakpoint2xl from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
+
 
 interface DataToolbarContextProps {
   isExpanded: boolean;

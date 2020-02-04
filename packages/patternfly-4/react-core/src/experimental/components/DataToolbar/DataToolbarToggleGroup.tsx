@@ -5,7 +5,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
 import { DataToolbarContext, DataToolbarContentContext } from './DataToolbarUtils';
 import { Button } from '../../../components/Button';
-import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';

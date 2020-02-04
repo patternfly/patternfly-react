@@ -5,13 +5,11 @@ import { css, StyleSheet } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
 
 /* eslint-disable camelcase */
-import {
-  c_background_image_BackgroundImage,
-  c_background_image_BackgroundImage_2x,
-  c_background_image_BackgroundImage_sm,
-  c_background_image_BackgroundImage_sm_2x,
-  c_background_image_BackgroundImage_lg
-} from '@patternfly/react-tokens';
+import c_background_image_BackgroundImage from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage';
+import c_background_image_BackgroundImage_2x from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_2x';
+import c_background_image_BackgroundImage_sm from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm';
+import c_background_image_BackgroundImage_sm_2x from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm_2x';
+import c_background_image_BackgroundImage_lg from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_lg';
 
 export enum BackgroundImageSrc {
   xs = 'xs',
