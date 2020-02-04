@@ -44,7 +44,7 @@ it('Pagination should match snapshot (auto-generated)', () => {
 			widgetId={"'pagination-options-menu'"}
 			dropDirection={'up'}
 			titles={undefined}
-			toggleTemplate={undefined}
+			toggleTemplate={'string'}
 			onSetPage={() => undefined}
 			onFirstClick={() => undefined}
 			onPreviousClick={() => undefined}

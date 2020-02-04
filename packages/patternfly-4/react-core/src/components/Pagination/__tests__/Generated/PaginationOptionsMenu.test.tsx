@@ -5,7 +5,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { PaginationOptionsMenu } from '../../PaginationOptionsMenu';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import { ToggleTemplateProps } from '../..';
 
 it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
   const view = shallow(

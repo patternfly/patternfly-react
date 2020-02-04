@@ -11,7 +11,7 @@ it('BackgroundImage should match snapshot (auto-generated)', () => {
   const view = shallow(
     <BackgroundImage
       className={"''"}
-			src={undefined}
+			src={'string'}
     />);
   expect(view).toMatchSnapshot();
 });

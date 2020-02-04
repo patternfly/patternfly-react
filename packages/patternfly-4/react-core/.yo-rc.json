@@ -1,8 +1,0 @@
-{
-  "pf-generator": {
-    "promptValues": {
-      "COMPONENTS_PATH": "./src",
-      "MAKE_SNIPPETS": true
-    }
-  }
-}

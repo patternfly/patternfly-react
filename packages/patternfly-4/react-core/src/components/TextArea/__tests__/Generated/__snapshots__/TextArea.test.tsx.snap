@@ -7,6 +7,6 @@ exports[`TextArea should match snapshot (auto-generated) 1`] = `
   className="pf-c-form-control ''"
   onChange={[Function]}
   required={false}
-  value={1}
+  value="string"
 />
 `;

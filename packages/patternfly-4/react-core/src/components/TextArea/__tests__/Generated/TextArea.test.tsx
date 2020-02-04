@@ -14,7 +14,7 @@ it('TextArea should match snapshot (auto-generated)', () => {
 			isRequired={false}
 			isValid={true}
 			validated={'default'}
-			value={1}
+			value={'string'}
 			onChange={(value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => undefined as void}
 			resizeOrientation={'both'}
 			aria-label={"null"}

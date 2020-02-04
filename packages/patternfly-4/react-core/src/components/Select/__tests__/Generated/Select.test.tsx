@@ -5,7 +5,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Select } from '../../Select';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import { SelectOptionObject } from '../..';
 
 it('Select should match snapshot (auto-generated)', () => {
   const view = shallow(
@@ -40,7 +40,7 @@ it('Select should match snapshot (auto-generated)', () => {
 			onCreateOption={(_newOptionValue: string) => undefined as void}
 			variant={'single'}
 			width={''}
-			maxHeight={1}
+			maxHeight={'string'}
 			toggleIcon={null}
 			customContent={null}
     />);
