@@ -10,7 +10,7 @@ exports[`ChartPoint 1`] = `
     />
   }
   containerComponent={
-    <Unknown
+    <ChartContainer
       responsive={true}
       theme={
         Object {
@@ -473,7 +473,7 @@ exports[`ChartPoint 1`] = `
       },
     ]
   }
-  dataComponent={<Unknown />}
+  dataComponent={<ChartPoint />}
   groupComponent={<g />}
   labelComponent={
     <VictoryLabel
@@ -956,7 +956,7 @@ exports[`ChartPoint 2`] = `
     />
   }
   containerComponent={
-    <Unknown
+    <ChartContainer
       responsive={true}
       theme={
         Object {
@@ -1419,7 +1419,7 @@ exports[`ChartPoint 2`] = `
       },
     ]
   }
-  dataComponent={<Unknown />}
+  dataComponent={<ChartPoint />}
   groupComponent={<g />}
   labelComponent={
     <VictoryLabel
@@ -1902,7 +1902,7 @@ exports[`renders component data 1`] = `
     />
   }
   containerComponent={
-    <Unknown
+    <ChartContainer
       responsive={true}
       theme={
         Object {
@@ -2368,7 +2368,7 @@ exports[`renders component data 1`] = `
       },
     ]
   }
-  dataComponent={<Unknown />}
+  dataComponent={<ChartPoint />}
   groupComponent={<g />}
   height={50}
   labelComponent={

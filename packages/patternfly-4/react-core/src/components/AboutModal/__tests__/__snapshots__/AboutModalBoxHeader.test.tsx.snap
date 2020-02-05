@@ -4,12 +4,12 @@ exports[`AboutModalBoxHeader Test 1`] = `
 <div
   className="pf-c-about-modal-box__header"
 >
-  <Component
+  <Title
     headingLevel="h1"
     id="id"
     size="4xl"
   >
     Product Name
-  </Component>
+  </Title>
 </div>
 `;

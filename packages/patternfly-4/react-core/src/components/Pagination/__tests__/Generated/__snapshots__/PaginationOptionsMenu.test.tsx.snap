@@ -24,7 +24,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     isOpen={false}
     isPlain={true}
     toggle={
-      <Unknown
+      <OptionsToggle
         firstIndex={0}
         isDisabled={false}
         isOpen={false}

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`KebabToggle basic 1`] = `
-<Component
+<Dropdown
   isOpen={true}
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -12,7 +12,7 @@ exports[`KebabToggle basic 1`] = `
   <Component
     isOpen={true}
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -25,7 +25,7 @@ exports[`KebabToggle basic 1`] = `
             BASIC
           </div>,
           "isOpen": true,
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -50,7 +50,7 @@ exports[`KebabToggle basic 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -58,7 +58,7 @@ exports[`KebabToggle basic 1`] = `
         <div
           className="pf-c-dropdown pf-m-expanded"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={false}
             id="Dropdown Toggle"
             isOpen={true}
@@ -197,7 +197,7 @@ exports[`KebabToggle basic 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
           <DropdownMenu
             aria-labelledby="Dropdown Toggle"
             autoFocus={false}
@@ -224,11 +224,11 @@ exports[`KebabToggle basic 1`] = `
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`KebabToggle dropup + right aligned 1`] = `
-<Component
+<Dropdown
   direction="up"
   dropdownItems={
     Array [
@@ -316,7 +316,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -363,7 +363,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   }
   position="right"
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -456,7 +456,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -503,7 +503,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     }
     position="right"
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -598,7 +598,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -643,7 +643,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             </InternalDropdownItem>,
           ],
           "position": "right",
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -740,7 +740,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -798,7 +798,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -806,7 +806,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         <div
           className="pf-c-dropdown pf-m-top pf-m-align-right"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -931,16 +931,16 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`KebabToggle dropup 1`] = `
-<Component
+<Dropdown
   direction="up"
   dropdownItems={
     Array [
@@ -1028,7 +1028,7 @@ exports[`KebabToggle dropup 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -1074,7 +1074,7 @@ exports[`KebabToggle dropup 1`] = `
     ]
   }
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -1167,7 +1167,7 @@ exports[`KebabToggle dropup 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -1213,7 +1213,7 @@ exports[`KebabToggle dropup 1`] = `
       ]
     }
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -1308,7 +1308,7 @@ exports[`KebabToggle dropup 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -1352,7 +1352,7 @@ exports[`KebabToggle dropup 1`] = `
               Separated Action
             </InternalDropdownItem>,
           ],
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -1449,7 +1449,7 @@ exports[`KebabToggle dropup 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -1507,7 +1507,7 @@ exports[`KebabToggle dropup 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -1515,7 +1515,7 @@ exports[`KebabToggle dropup 1`] = `
         <div
           className="pf-c-dropdown pf-m-top"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -1640,16 +1640,16 @@ exports[`KebabToggle dropup 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`KebabToggle expanded 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -1736,7 +1736,7 @@ exports[`KebabToggle expanded 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -1783,7 +1783,7 @@ exports[`KebabToggle expanded 1`] = `
   }
   isOpen={true}
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -1875,7 +1875,7 @@ exports[`KebabToggle expanded 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -1922,7 +1922,7 @@ exports[`KebabToggle expanded 1`] = `
     }
     isOpen={true}
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -2016,7 +2016,7 @@ exports[`KebabToggle expanded 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -2061,7 +2061,7 @@ exports[`KebabToggle expanded 1`] = `
             </InternalDropdownItem>,
           ],
           "isOpen": true,
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -2158,7 +2158,7 @@ exports[`KebabToggle expanded 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -2216,7 +2216,7 @@ exports[`KebabToggle expanded 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -2224,7 +2224,7 @@ exports[`KebabToggle expanded 1`] = `
         <div
           className="pf-c-dropdown pf-m-expanded"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={true}
@@ -2499,7 +2499,7 @@ exports[`KebabToggle expanded 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
           <DropdownMenu
             aria-labelledby="Dropdown Toggle"
             autoFocus={false}
@@ -2660,7 +2660,7 @@ exports[`KebabToggle expanded 1`] = `
                   </button>
                 </li>
               </InternalDropdownItem>
-              <Component
+              <DropdownSeparator
                 index={4}
                 key=".$separator"
               >
@@ -2695,7 +2695,7 @@ exports[`KebabToggle expanded 1`] = `
                     />
                   </li>
                 </InternalDropdownItem>
-              </Component>
+              </DropdownSeparator>
               <InternalDropdownItem
                 className=""
                 component="a"
@@ -2773,11 +2773,11 @@ exports[`KebabToggle expanded 1`] = `
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`KebabToggle plain 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -2864,7 +2864,7 @@ exports[`KebabToggle plain 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -2911,7 +2911,7 @@ exports[`KebabToggle plain 1`] = `
   }
   isPlain={true}
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -3003,7 +3003,7 @@ exports[`KebabToggle plain 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -3050,7 +3050,7 @@ exports[`KebabToggle plain 1`] = `
     }
     isPlain={true}
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -3144,7 +3144,7 @@ exports[`KebabToggle plain 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -3189,7 +3189,7 @@ exports[`KebabToggle plain 1`] = `
             </InternalDropdownItem>,
           ],
           "isPlain": true,
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -3286,7 +3286,7 @@ exports[`KebabToggle plain 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -3344,7 +3344,7 @@ exports[`KebabToggle plain 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -3352,7 +3352,7 @@ exports[`KebabToggle plain 1`] = `
         <div
           className="pf-c-dropdown"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -3477,16 +3477,16 @@ exports[`KebabToggle plain 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`KebabToggle regular 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -3573,7 +3573,7 @@ exports[`KebabToggle regular 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -3619,7 +3619,7 @@ exports[`KebabToggle regular 1`] = `
     ]
   }
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -3711,7 +3711,7 @@ exports[`KebabToggle regular 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -3757,7 +3757,7 @@ exports[`KebabToggle regular 1`] = `
       ]
     }
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -3851,7 +3851,7 @@ exports[`KebabToggle regular 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -3895,7 +3895,7 @@ exports[`KebabToggle regular 1`] = `
               Separated Action
             </InternalDropdownItem>,
           ],
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -3992,7 +3992,7 @@ exports[`KebabToggle regular 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -4050,7 +4050,7 @@ exports[`KebabToggle regular 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -4058,7 +4058,7 @@ exports[`KebabToggle regular 1`] = `
         <div
           className="pf-c-dropdown"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -4183,16 +4183,16 @@ exports[`KebabToggle regular 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`KebabToggle right aligned 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -4279,7 +4279,7 @@ exports[`KebabToggle right aligned 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -4326,7 +4326,7 @@ exports[`KebabToggle right aligned 1`] = `
   }
   position="right"
   toggle={
-    <Unknown
+    <KebabToggle
       id="Dropdown Toggle"
     />
   }
@@ -4418,7 +4418,7 @@ exports[`KebabToggle right aligned 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -4465,7 +4465,7 @@ exports[`KebabToggle right aligned 1`] = `
     }
     position="right"
     toggle={
-      <Unknown
+      <KebabToggle
         id="Dropdown Toggle"
       />
     }
@@ -4559,7 +4559,7 @@ exports[`KebabToggle right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -4604,7 +4604,7 @@ exports[`KebabToggle right aligned 1`] = `
             </InternalDropdownItem>,
           ],
           "position": "right",
-          "toggle": <Unknown
+          "toggle": <KebabToggle
             id="Dropdown Toggle"
           />,
         }
@@ -4701,7 +4701,7 @@ exports[`KebabToggle right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -4759,7 +4759,7 @@ exports[`KebabToggle right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown
+          <KebabToggle
             id="Dropdown Toggle"
           />
         }
@@ -4767,7 +4767,7 @@ exports[`KebabToggle right aligned 1`] = `
         <div
           className="pf-c-dropdown pf-m-align-right"
         >
-          <Component
+          <KebabToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -4892,33 +4892,33 @@ exports[`KebabToggle right aligned 1`] = `
                 </EllipsisVIcon>
               </button>
             </Toggle>
-          </Component>
+          </KebabToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown basic 1`] = `
-<Component
+<Dropdown
   isOpen={true}
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
     isOpen={true}
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -4929,11 +4929,11 @@ exports[`dropdown basic 1`] = `
             BASIC
           </div>,
           "isOpen": true,
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -4956,17 +4956,17 @@ exports[`dropdown basic 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown pf-m-expanded"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={false}
             id="Dropdown Toggle"
             isOpen={true}
@@ -5120,7 +5120,7 @@ exports[`dropdown basic 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
           <DropdownMenu
             aria-labelledby="Dropdown Toggle"
             autoFocus={false}
@@ -5147,11 +5147,11 @@ exports[`dropdown basic 1`] = `
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown dropup + right aligned 1`] = `
-<Component
+<Dropdown
   direction="up"
   dropdownItems={
     Array [
@@ -5239,7 +5239,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -5286,11 +5286,11 @@ exports[`dropdown dropup + right aligned 1`] = `
   }
   position="right"
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
@@ -5381,7 +5381,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -5428,11 +5428,11 @@ exports[`dropdown dropup + right aligned 1`] = `
     }
     position="right"
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -5525,7 +5525,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -5570,11 +5570,11 @@ exports[`dropdown dropup + right aligned 1`] = `
             </InternalDropdownItem>,
           ],
           "position": "right",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -5669,7 +5669,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -5727,17 +5727,17 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown pf-m-top pf-m-align-right"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -5877,16 +5877,16 @@ exports[`dropdown dropup + right aligned 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown dropup 1`] = `
-<Component
+<Dropdown
   direction="up"
   dropdownItems={
     Array [
@@ -5974,7 +5974,7 @@ exports[`dropdown dropup 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -6020,11 +6020,11 @@ exports[`dropdown dropup 1`] = `
     ]
   }
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
@@ -6115,7 +6115,7 @@ exports[`dropdown dropup 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -6161,11 +6161,11 @@ exports[`dropdown dropup 1`] = `
       ]
     }
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -6258,7 +6258,7 @@ exports[`dropdown dropup 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -6302,11 +6302,11 @@ exports[`dropdown dropup 1`] = `
               Separated Action
             </InternalDropdownItem>,
           ],
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -6401,7 +6401,7 @@ exports[`dropdown dropup 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -6459,17 +6459,17 @@ exports[`dropdown dropup 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown pf-m-top"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -6609,16 +6609,16 @@ exports[`dropdown dropup 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown expanded 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -6705,7 +6705,7 @@ exports[`dropdown expanded 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -6752,11 +6752,11 @@ exports[`dropdown expanded 1`] = `
   }
   isOpen={true}
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
@@ -6846,7 +6846,7 @@ exports[`dropdown expanded 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -6893,11 +6893,11 @@ exports[`dropdown expanded 1`] = `
     }
     isOpen={true}
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -6989,7 +6989,7 @@ exports[`dropdown expanded 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -7034,11 +7034,11 @@ exports[`dropdown expanded 1`] = `
             </InternalDropdownItem>,
           ],
           "isOpen": true,
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -7133,7 +7133,7 @@ exports[`dropdown expanded 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -7191,17 +7191,17 @@ exports[`dropdown expanded 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown pf-m-expanded"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={true}
@@ -7491,7 +7491,7 @@ exports[`dropdown expanded 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
           <DropdownMenu
             aria-labelledby="Dropdown Toggle"
             autoFocus={false}
@@ -7652,7 +7652,7 @@ exports[`dropdown expanded 1`] = `
                   </button>
                 </li>
               </InternalDropdownItem>
-              <Component
+              <DropdownSeparator
                 index={4}
                 key=".$separator"
               >
@@ -7687,7 +7687,7 @@ exports[`dropdown expanded 1`] = `
                     />
                   </li>
                 </InternalDropdownItem>
-              </Component>
+              </DropdownSeparator>
               <InternalDropdownItem
                 className=""
                 component="a"
@@ -7765,11 +7765,11 @@ exports[`dropdown expanded 1`] = `
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown primary 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -7856,7 +7856,7 @@ exports[`dropdown primary 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -7902,12 +7902,12 @@ exports[`dropdown primary 1`] = `
     ]
   }
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
       isPrimary={true}
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
@@ -7997,7 +7997,7 @@ exports[`dropdown primary 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -8043,12 +8043,12 @@ exports[`dropdown primary 1`] = `
       ]
     }
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
         isPrimary={true}
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -8140,7 +8140,7 @@ exports[`dropdown primary 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -8184,12 +8184,12 @@ exports[`dropdown primary 1`] = `
               Separated Action
             </InternalDropdownItem>,
           ],
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
             isPrimary={true}
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -8284,7 +8284,7 @@ exports[`dropdown primary 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -8342,18 +8342,18 @@ exports[`dropdown primary 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
             isPrimary={true}
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -8494,16 +8494,16 @@ exports[`dropdown primary 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown regular 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -8590,7 +8590,7 @@ exports[`dropdown regular 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -8636,11 +8636,11 @@ exports[`dropdown regular 1`] = `
     ]
   }
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
@@ -8730,7 +8730,7 @@ exports[`dropdown regular 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -8776,11 +8776,11 @@ exports[`dropdown regular 1`] = `
       ]
     }
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -8872,7 +8872,7 @@ exports[`dropdown regular 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -8916,11 +8916,11 @@ exports[`dropdown regular 1`] = `
               Separated Action
             </InternalDropdownItem>,
           ],
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -9015,7 +9015,7 @@ exports[`dropdown regular 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -9073,17 +9073,17 @@ exports[`dropdown regular 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -9223,16 +9223,16 @@ exports[`dropdown regular 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;
 
 exports[`dropdown right aligned 1`] = `
-<Component
+<Dropdown
   dropdownItems={
     Array [
       <InternalDropdownItem
@@ -9319,7 +9319,7 @@ exports[`dropdown right aligned 1`] = `
       >
         Disabled Action
       </InternalDropdownItem>,
-      <Unknown />,
+      <DropdownSeparator />,
       <InternalDropdownItem
         className=""
         component="a"
@@ -9366,11 +9366,11 @@ exports[`dropdown right aligned 1`] = `
   }
   position="right"
   toggle={
-    <Unknown
+    <DropdownToggle
       id="Dropdown Toggle"
     >
       Dropdown
-    </Unknown>
+    </DropdownToggle>
   }
 >
   <Component
@@ -9460,7 +9460,7 @@ exports[`dropdown right aligned 1`] = `
         >
           Disabled Action
         </InternalDropdownItem>,
-        <Unknown />,
+        <DropdownSeparator />,
         <InternalDropdownItem
           className=""
           component="a"
@@ -9507,11 +9507,11 @@ exports[`dropdown right aligned 1`] = `
     }
     position="right"
     toggle={
-      <Unknown
+      <DropdownToggle
         id="Dropdown Toggle"
       >
         Dropdown
-      </Unknown>
+      </DropdownToggle>
     }
   >
     <ComponentWithOuia
@@ -9603,7 +9603,7 @@ exports[`dropdown right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -9648,11 +9648,11 @@ exports[`dropdown right aligned 1`] = `
             </InternalDropdownItem>,
           ],
           "position": "right",
-          "toggle": <Unknown
+          "toggle": <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>,
+          </DropdownToggle>,
         }
       }
       consumerContext={null}
@@ -9747,7 +9747,7 @@ exports[`dropdown right aligned 1`] = `
             >
               Disabled Action
             </InternalDropdownItem>,
-            <Unknown />,
+            <DropdownSeparator />,
             <InternalDropdownItem
               className=""
               component="a"
@@ -9805,17 +9805,17 @@ exports[`dropdown right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown
+          <DropdownToggle
             id="Dropdown Toggle"
           >
             Dropdown
-          </Unknown>
+          </DropdownToggle>
         }
       >
         <div
           className="pf-c-dropdown pf-m-align-right"
         >
-          <Component
+          <DropdownToggle
             ariaHasPopup={true}
             id="Dropdown Toggle"
             isOpen={false}
@@ -9955,10 +9955,10 @@ exports[`dropdown right aligned 1`] = `
                 </CaretDownIcon>
               </button>
             </Toggle>
-          </Component>
+          </DropdownToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</Dropdown>
 `;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormGroup component should render correctly when label is not a string with Children = Array 1`] = `
-<Component
+<FormGroup
   fieldId="id"
   label={
     <div>
@@ -32,11 +32,11 @@ exports[`FormGroup component should render correctly when label is not a string 
     />
     <input />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render default form group variant 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperText="this is helper text"
   label="label"
@@ -65,11 +65,11 @@ exports[`FormGroup component should render default form group variant 1`] = `
       this is helper text
     </div>
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group invalid variant 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperTextInvalid="Invalid FormGroup"
   isValid={false}
@@ -99,11 +99,11 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
       Invalid FormGroup
     </div>
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group required variant 1`] = `
-<Component
+<FormGroup
   fieldId="id"
   isRequired={true}
   label="label"
@@ -131,11 +131,11 @@ exports[`FormGroup component should render form group required variant 1`] = `
       id="id"
     />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group validated error variant 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperText="Validated FormGroup"
   label="label"
@@ -158,11 +158,11 @@ exports[`FormGroup component should render form group validated error variant 1`
       id="id"
     />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group validated success variant 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperText="Validated FormGroup"
   label="label"
@@ -192,11 +192,11 @@ exports[`FormGroup component should render form group validated success variant 
       Validated FormGroup
     </div>
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group variant with function helperText 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperText={
     <div>
@@ -231,11 +231,11 @@ exports[`FormGroup component should render form group variant with function help
       </div>
     </div>
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group variant with function label 1`] = `
-<Component
+<FormGroup
   fieldId="id"
   label={
     <div>
@@ -262,11 +262,11 @@ exports[`FormGroup component should render form group variant with function labe
       aria-label="input"
     />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group variant with node helperText 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperText={
     <h1>
@@ -301,11 +301,11 @@ exports[`FormGroup component should render form group variant with node helperTe
       </h1>
     </div>
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group variant with node label 1`] = `
-<Component
+<FormGroup
   fieldId="id"
   label={
     <h1>
@@ -332,11 +332,11 @@ exports[`FormGroup component should render form group variant with node label 1`
       aria-label="input"
     />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group variant with required label 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   isRequired={true}
   label="label"
@@ -364,11 +364,11 @@ exports[`FormGroup component should render form group variant with required labe
       id="label-id"
     />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render form group variant without label 1`] = `
-<Component
+<FormGroup
   fieldId="id"
 >
   <div
@@ -378,18 +378,18 @@ exports[`FormGroup component should render form group variant without label 1`] 
       aria-label="input"
     />
   </div>
-</Component>
+</FormGroup>
 `;
 
 exports[`FormGroup component should render horizontal form group variant 1`] = `
-<Component
+<Form
   isHorizontal={true}
 >
   <form
     className="pf-c-form pf-m-horizontal"
     noValidate={true}
   >
-    <Component
+    <FormGroup
       fieldId="label-id"
       helperText="this is helperText"
       label="label"
@@ -422,13 +422,13 @@ exports[`FormGroup component should render horizontal form group variant 1`] = `
           this is helperText
         </div>
       </div>
-    </Component>
+    </FormGroup>
   </form>
-</Component>
+</Form>
 `;
 
 exports[`FormGroup component should render inline form group variant 1`] = `
-<Component
+<FormGroup
   fieldId="label-id"
   helperText="this is helper text"
   isInline={true}
@@ -458,5 +458,5 @@ exports[`FormGroup component should render inline form group variant 1`] = `
       this is helper text
     </div>
   </div>
-</Component>
+</FormGroup>
 `;

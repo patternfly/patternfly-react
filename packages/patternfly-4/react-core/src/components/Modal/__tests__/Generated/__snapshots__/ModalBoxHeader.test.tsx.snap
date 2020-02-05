@@ -2,12 +2,12 @@
 
 exports[`ModalBoxHeader should match snapshot (auto-generated) 1`] = `
 <Fragment>
-  <Component
+  <Title
     className="''"
     headingLevel="h1"
     size="2xl"
   >
     ReactNode
-  </Component>
+  </Title>
 </Fragment>
 `;

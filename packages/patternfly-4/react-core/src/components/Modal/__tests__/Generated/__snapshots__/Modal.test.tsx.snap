@@ -4,7 +4,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
 <Portal
   containerInfo={<div />}
 >
-  <Component
+  <ModalContent
     actions={Array []}
     ariaDescribedById="''"
     className="''"
@@ -33,6 +33,6 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     <div>
       ReactNode
     </div>
-  </Component>
+  </ModalContent>
 </Portal>
 `;

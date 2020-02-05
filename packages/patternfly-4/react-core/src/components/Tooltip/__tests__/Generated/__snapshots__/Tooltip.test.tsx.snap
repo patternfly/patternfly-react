@@ -12,13 +12,13 @@ exports[`Tooltip should match snapshot (auto-generated) 1`] = `
       id="''"
       role="tooltip"
     >
-      <Unknown
+      <TooltipContent
         isLeftAligned={false}
       >
         <div>
           ReactNode
         </div>
-      </Unknown>
+      </TooltipContent>
     </div>
   }
   delay={

@@ -27,7 +27,7 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
       />
     </span>
   </div>
-  <Component
+  <ProgressBar
     value={42}
   />
 </Fragment>

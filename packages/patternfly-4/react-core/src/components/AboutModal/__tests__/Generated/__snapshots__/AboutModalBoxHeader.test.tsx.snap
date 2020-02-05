@@ -4,12 +4,12 @@ exports[`AboutModalBoxHeader should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-about-modal-box__header ''"
 >
-  <Component
+  <Title
     headingLevel="h1"
     id="string"
     size="4xl"
   >
     ''
-  </Component>
+  </Title>
 </div>
 `;

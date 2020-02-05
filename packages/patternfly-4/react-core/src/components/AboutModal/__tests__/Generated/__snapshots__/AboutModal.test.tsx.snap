@@ -4,7 +4,7 @@ exports[`AboutModal should match snapshot (auto-generated) 1`] = `
 <Portal
   containerInfo={<div />}
 >
-  <Component
+  <AboutModalContainer
     ariaDescribedById="pf-about-modal-content-0"
     ariaLabelledbyId="pf-about-modal-title-0"
     backgroundImageSrc="''"
@@ -20,6 +20,6 @@ exports[`AboutModal should match snapshot (auto-generated) 1`] = `
     <div>
       ReactNode
     </div>
-  </Component>
+  </AboutModalContainer>
 </Portal>
 `;

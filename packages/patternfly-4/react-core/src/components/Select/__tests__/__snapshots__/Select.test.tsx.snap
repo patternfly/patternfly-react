@@ -13,7 +13,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <CheckboxSelectGroup
             label="group 1"
           >
             <CheckboxSelectOption
@@ -56,8 +56,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
               sendRef={[Function]}
               value="Other"
             />
-          </Unknown>,
-          <Unknown
+          </CheckboxSelectGroup>,
+          <CheckboxSelectGroup
             label="group 2"
           >
             <CheckboxSelectOption
@@ -100,7 +100,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
               sendRef={[Function]}
               value="Other"
             />
-          </Unknown>,
+          </CheckboxSelectGroup>,
         ],
         "isExpanded": true,
         "isGrouped": true,
@@ -448,7 +448,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                   aria-labelledby={null}
                   className="pf-c-form__fieldset"
                 >
-                  <Component
+                  <CheckboxSelectGroup
                     key=".0"
                     label="group 1"
                     titleId="group-1"
@@ -589,8 +589,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                         </CheckboxSelectOption>
                       </fieldset>
                     </div>
-                  </Component>
-                  <Component
+                  </CheckboxSelectGroup>
+                  <CheckboxSelectGroup
                     key=".1"
                     label="group 2"
                     titleId="group-2"
@@ -731,7 +731,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                         </CheckboxSelectOption>
                       </fieldset>
                     </div>
-                  </Component>
+                  </CheckboxSelectGroup>
                 </fieldset>
               </div>
             </div>
@@ -756,7 +756,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <SelectGroup
             label="group 1"
           >
             <SelectOption
@@ -815,8 +815,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
               sendRef={[Function]}
               value="Other"
             />
-          </Unknown>,
-          <Unknown
+          </SelectGroup>,
+          <SelectGroup
             label="group 2"
           >
             <SelectOption
@@ -875,7 +875,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
               sendRef={[Function]}
               value="Other"
             />
-          </Unknown>,
+          </SelectGroup>,
         ],
         "isExpanded": true,
         "isGrouped": true,
@@ -1223,7 +1223,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                   aria-labelledby={null}
                   className="pf-c-form__fieldset"
                 >
-                  <Component
+                  <SelectGroup
                     key=".0"
                     label="group 1"
                     titleId="group-1"
@@ -1380,8 +1380,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         </SelectOption>
                       </fieldset>
                     </div>
-                  </Component>
-                  <Component
+                  </SelectGroup>
+                  <SelectGroup
                     key=".1"
                     label="group 2"
                     titleId="group-2"
@@ -1538,7 +1538,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         </SelectOption>
                       </fieldset>
                     </div>
-                  </Component>
+                  </SelectGroup>
                 </fieldset>
               </div>
             </div>
@@ -3850,7 +3850,7 @@ exports[`select renders select groups successfully 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <SelectGroup
             label="group 1"
           >
             <SelectOption
@@ -3909,8 +3909,8 @@ exports[`select renders select groups successfully 1`] = `
               sendRef={[Function]}
               value="Other"
             />
-          </Unknown>,
-          <Unknown
+          </SelectGroup>,
+          <SelectGroup
             label="group 2"
           >
             <SelectOption
@@ -3969,7 +3969,7 @@ exports[`select renders select groups successfully 1`] = `
               sendRef={[Function]}
               value="Other"
             />
-          </Unknown>,
+          </SelectGroup>,
         ],
         "isExpanded": true,
         "isGrouped": true,
@@ -4264,7 +4264,7 @@ exports[`select renders select groups successfully 1`] = `
             className="pf-c-select__menu"
             role="listbox"
           >
-            <Component
+            <SelectGroup
               id="-0"
               index={0}
               isSelected={false}
@@ -4409,8 +4409,8 @@ exports[`select renders select groups successfully 1`] = `
                   </li>
                 </SelectOption>
               </div>
-            </Component>
-            <Component
+            </SelectGroup>
+            <SelectGroup
               id="-1"
               index={1}
               isSelected={false}
@@ -4555,7 +4555,7 @@ exports[`select renders select groups successfully 1`] = `
                   </li>
                 </SelectOption>
               </div>
-            </Component>
+            </SelectGroup>
           </ul>
         </SelectMenu>
       </div>
@@ -7703,7 +7703,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               >
                                 Mr
                               </span>
-                              <Component
+                              <ChipButton
                                 aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                                 ariaLabel="Remove"
                                 id="remove_pf-random-id-0"
@@ -7799,7 +7799,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                     </Button>
                                   </ComponentWithOuia>
                                 </Component>
-                              </Component>
+                              </ChipButton>
                             </li>
                           </GenerateId>
                         </Chip>
@@ -7855,7 +7855,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               >
                                 Mrs
                               </span>
-                              <Component
+                              <ChipButton
                                 aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                                 ariaLabel="Remove"
                                 id="remove_pf-random-id-1"
@@ -7951,7 +7951,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                     </Button>
                                   </ComponentWithOuia>
                                 </Component>
-                              </Component>
+                              </ChipButton>
                             </li>
                           </GenerateId>
                         </Chip>

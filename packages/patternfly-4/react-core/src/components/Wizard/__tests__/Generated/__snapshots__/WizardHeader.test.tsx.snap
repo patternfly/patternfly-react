@@ -18,14 +18,14 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
       title={null}
     />
   </Component>
-  <Component
+  <Title
     aria-label="string"
     className="pf-c-wizard__title"
     id="string"
     size="3xl"
   >
     string
-  </Component>
+  </Title>
   <p
     className="pf-c-wizard__description"
     id="string"

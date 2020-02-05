@@ -78,7 +78,7 @@ exports[`CatalogTile renders properly 1`] = `
   <CatalogTile
     badges={
       Array [
-        <Unknown
+        <CatalogTileBadge
           id="certified"
           title="Certified"
         >
@@ -88,8 +88,8 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
-        <Unknown
+        </CatalogTileBadge>,
+        <CatalogTileBadge
           id="no-title"
         >
           <CogIcon
@@ -98,7 +98,7 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
+        </CatalogTileBadge>,
       ]
     }
     className=""
@@ -154,7 +154,7 @@ exports[`CatalogTile renders properly 1`] = `
                   <span
                     key="badge-0"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="certified"
                       title="Certified"
                     >
@@ -317,12 +317,12 @@ exports[`CatalogTile renders properly 1`] = `
                           </Portal>
                         </PopoverBase>
                       </Tooltip>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                   <span
                     key="badge-1"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="no-title"
                     >
                       <span
@@ -355,7 +355,7 @@ exports[`CatalogTile renders properly 1`] = `
                           </svg>
                         </CogIcon>
                       </span>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                 </div>
               </div>
@@ -410,7 +410,7 @@ exports[`CatalogTile renders properly 1`] = `
   <CatalogTile
     badges={
       Array [
-        <Unknown
+        <CatalogTileBadge
           id="certified"
           title="Certified"
         >
@@ -420,8 +420,8 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
-        <Unknown
+        </CatalogTileBadge>,
+        <CatalogTileBadge
           id="approved"
           title="USDA Approved"
         >
@@ -431,7 +431,7 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
+        </CatalogTileBadge>,
       ]
     }
     className=""
@@ -478,7 +478,7 @@ exports[`CatalogTile renders properly 1`] = `
                   <span
                     key="badge-0"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="certified"
                       title="Certified"
                     >
@@ -641,12 +641,12 @@ exports[`CatalogTile renders properly 1`] = `
                           </Portal>
                         </PopoverBase>
                       </Tooltip>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                   <span
                     key="badge-1"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="approved"
                       title="USDA Approved"
                     >
@@ -809,7 +809,7 @@ exports[`CatalogTile renders properly 1`] = `
                           </Portal>
                         </PopoverBase>
                       </Tooltip>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                 </div>
               </div>
@@ -857,7 +857,7 @@ exports[`CatalogTile renders properly 1`] = `
   <CatalogTile
     badges={
       Array [
-        <Unknown
+        <CatalogTileBadge
           id="certified"
           title="Certified"
         >
@@ -867,7 +867,7 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
+        </CatalogTileBadge>,
       ]
     }
     className=""
@@ -923,7 +923,7 @@ exports[`CatalogTile renders properly 1`] = `
                   <span
                     key="badge-0"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="certified"
                       title="Certified"
                     >
@@ -1086,7 +1086,7 @@ exports[`CatalogTile renders properly 1`] = `
                           </Portal>
                         </PopoverBase>
                       </Tooltip>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                 </div>
               </div>
@@ -1142,7 +1142,7 @@ exports[`CatalogTile renders properly 1`] = `
   <CatalogTile
     badges={
       Array [
-        <Unknown
+        <CatalogTileBadge
           id="approved"
           title="USDA Approved"
         >
@@ -1152,7 +1152,7 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
+        </CatalogTileBadge>,
       ]
     }
     className=""
@@ -1202,7 +1202,7 @@ exports[`CatalogTile renders properly 1`] = `
                   <span
                     key="badge-0"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="approved"
                       title="USDA Approved"
                     >
@@ -1365,7 +1365,7 @@ exports[`CatalogTile renders properly 1`] = `
                           </Portal>
                         </PopoverBase>
                       </Tooltip>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                 </div>
               </div>
@@ -1499,7 +1499,7 @@ exports[`CatalogTile renders properly 1`] = `
   <CatalogTile
     badges={
       Array [
-        <Unknown
+        <CatalogTileBadge
           id="certified"
           title="Certified"
         >
@@ -1509,7 +1509,7 @@ exports[`CatalogTile renders properly 1`] = `
             size="sm"
             title={null}
           />
-        </Unknown>,
+        </CatalogTileBadge>,
       ]
     }
     className=""
@@ -1566,7 +1566,7 @@ exports[`CatalogTile renders properly 1`] = `
                   <span
                     key="badge-0"
                   >
-                    <Component
+                    <CatalogTileBadge
                       id="certified"
                       title="Certified"
                     >
@@ -1729,7 +1729,7 @@ exports[`CatalogTile renders properly 1`] = `
                           </Portal>
                         </PopoverBase>
                       </Tooltip>
-                    </Component>
+                    </CatalogTileBadge>
                   </span>
                 </div>
               </div>

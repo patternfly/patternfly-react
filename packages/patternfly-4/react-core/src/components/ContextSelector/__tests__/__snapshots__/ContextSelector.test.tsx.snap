@@ -54,7 +54,7 @@ exports[`Renders ContextSelector open 1`] = `
       <div
         className="pf-c-context-selector__menu-input"
       >
-        <Component>
+        <InputGroup>
           <ForwardRef
             aria-labelledby="pf-context-selector-search-button-id-0"
             onChange={[Function]}
@@ -77,7 +77,7 @@ exports[`Renders ContextSelector open 1`] = `
               title={null}
             />
           </Component>
-        </Component>
+        </InputGroup>
       </div>
       <ContextProvider
         value={

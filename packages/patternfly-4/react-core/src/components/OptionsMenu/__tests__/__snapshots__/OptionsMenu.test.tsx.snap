@@ -1,92 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`optionsMenu expanded 1`] = `
-<Component
+<OptionsMenu
   id="expanded"
   isOpen={true}
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   toggle={
-    <Unknown>
+    <OptionsMenuToggle>
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
     className=""
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="expanded"
     isGrouped={false}
     isOpen={true}
     toggle={
-      <Unknown>
+      <OptionsMenuToggle>
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -95,43 +95,43 @@ exports[`optionsMenu expanded 1`] = `
         Object {
           "className": "",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "expanded",
           "isGrouped": false,
           "isOpen": true,
-          "toggle": <Unknown>
+          "toggle": <OptionsMenuToggle>
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -142,36 +142,36 @@ exports[`optionsMenu expanded 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="expanded"
@@ -188,16 +188,16 @@ exports[`optionsMenu expanded 1`] = `
         }
         position="left"
         toggle={
-          <Unknown>
+          <OptionsMenuToggle>
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu pf-m-expanded"
           id="expanded"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-4"
             isOpen={true}
@@ -360,7 +360,7 @@ exports[`optionsMenu expanded 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={true}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -744,8 +744,8 @@ exports[`optionsMenu expanded 1`] = `
                   </CaretDownIcon>
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
           <DropdownMenu
             aria-labelledby="expanded-toggle"
             autoFocus={false}
@@ -763,7 +763,7 @@ exports[`optionsMenu expanded 1`] = `
               hidden={false}
               role="menu"
             >
-              <Component
+              <OptionsMenuItemGroup
                 groupTitle="Sort order"
                 index={0}
                 key=".$first group"
@@ -781,10 +781,10 @@ exports[`optionsMenu expanded 1`] = `
                     aria-label=""
                     className=""
                   >
-                    <Component
+                    <OptionsMenuItem
                       key="name"
                     >
-                      <Component
+                      <DropdownItem
                         component="button"
                         id=""
                         onClick={[Function]}
@@ -829,12 +829,12 @@ exports[`optionsMenu expanded 1`] = `
                             </button>
                           </li>
                         </InternalDropdownItem>
-                      </Component>
-                    </Component>
-                    <Component
+                      </DropdownItem>
+                    </OptionsMenuItem>
+                    <OptionsMenuItem
                       key="date"
                     >
-                      <Component
+                      <DropdownItem
                         component="button"
                         id=""
                         onClick={[Function]}
@@ -879,13 +879,13 @@ exports[`optionsMenu expanded 1`] = `
                             </button>
                           </li>
                         </InternalDropdownItem>
-                      </Component>
-                    </Component>
-                    <Component
+                      </DropdownItem>
+                    </OptionsMenuItem>
+                    <OptionsMenuItem
                       isDisabled={true}
                       key="disabled"
                     >
-                      <Component
+                      <DropdownItem
                         aria-disabled={true}
                         component="button"
                         id=""
@@ -934,12 +934,12 @@ exports[`optionsMenu expanded 1`] = `
                             </button>
                           </li>
                         </InternalDropdownItem>
-                      </Component>
-                    </Component>
-                    <Component
+                      </DropdownItem>
+                    </OptionsMenuItem>
+                    <OptionsMenuItem
                       key="size"
                     >
-                      <Component
+                      <DropdownItem
                         component="button"
                         id=""
                         onClick={[Function]}
@@ -984,12 +984,12 @@ exports[`optionsMenu expanded 1`] = `
                             </button>
                           </li>
                         </InternalDropdownItem>
-                      </Component>
-                    </Component>
+                      </DropdownItem>
+                    </OptionsMenuItem>
                   </ul>
                 </section>
-              </Component>
-              <Component
+              </OptionsMenuItemGroup>
+              <OptionsMenuSeparator
                 index={1}
                 key=".$separator"
               >
@@ -998,8 +998,8 @@ exports[`optionsMenu expanded 1`] = `
                   index={1}
                   role="separator"
                 />
-              </Component>
-              <Component
+              </OptionsMenuSeparator>
+              <OptionsMenuItemGroup
                 groupTitle="Sort direction"
                 hasSeparator={true}
                 index={2}
@@ -1018,10 +1018,10 @@ exports[`optionsMenu expanded 1`] = `
                     aria-label=""
                     className=""
                   >
-                    <Component
+                    <OptionsMenuItem
                       key="ascending"
                     >
-                      <Component
+                      <DropdownItem
                         component="button"
                         id=""
                         onClick={[Function]}
@@ -1066,12 +1066,12 @@ exports[`optionsMenu expanded 1`] = `
                             </button>
                           </li>
                         </InternalDropdownItem>
-                      </Component>
-                    </Component>
-                    <Component
+                      </DropdownItem>
+                    </OptionsMenuItem>
+                    <OptionsMenuItem
                       key="descending"
                     >
-                      <Component
+                      <DropdownItem
                         component="button"
                         id=""
                         onClick={[Function]}
@@ -1116,113 +1116,113 @@ exports[`optionsMenu expanded 1`] = `
                             </button>
                           </li>
                         </InternalDropdownItem>
-                      </Component>
-                    </Component>
+                      </DropdownItem>
+                    </OptionsMenuItem>
                     <li
                       className="pf-c-options-menu__separator"
                       role="separator"
                     />
                   </ul>
                 </section>
-              </Component>
+              </OptionsMenuItemGroup>
             </ul>
           </DropdownMenu>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu isDisabled 1`] = `
-<Component
+<OptionsMenu
   id="disabled"
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   toggle={
-    <Unknown
+    <OptionsMenuToggle
       isDisabled={true}
     >
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
     className=""
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="disabled"
     isGrouped={false}
     toggle={
-      <Unknown
+      <OptionsMenuToggle
         isDisabled={true}
       >
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -1231,44 +1231,44 @@ exports[`optionsMenu isDisabled 1`] = `
         Object {
           "className": "",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "disabled",
           "isGrouped": false,
-          "toggle": <Unknown
+          "toggle": <OptionsMenuToggle
             isDisabled={true}
           >
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -1279,36 +1279,36 @@ exports[`optionsMenu isDisabled 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="disabled"
@@ -1325,18 +1325,18 @@ exports[`optionsMenu isDisabled 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <OptionsMenuToggle
             isDisabled={true}
           >
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu"
           id="disabled"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-7"
             isDisabled={true}
@@ -1382,7 +1382,7 @@ exports[`optionsMenu isDisabled 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={false}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -1530,57 +1530,57 @@ exports[`optionsMenu isDisabled 1`] = `
                   </CaretDownIcon>
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu open up 1`] = `
-<Component
+<OptionsMenu
   direction="up"
   id="openUp"
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   toggle={
-    <Unknown>
+    <OptionsMenuToggle>
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
@@ -1588,44 +1588,44 @@ exports[`optionsMenu open up 1`] = `
     direction="up"
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="openUp"
     isGrouped={false}
     toggle={
-      <Unknown>
+      <OptionsMenuToggle>
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -1635,42 +1635,42 @@ exports[`optionsMenu open up 1`] = `
           "className": "",
           "direction": "up",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "openUp",
           "isGrouped": false,
-          "toggle": <Unknown>
+          "toggle": <OptionsMenuToggle>
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -1681,36 +1681,36 @@ exports[`optionsMenu open up 1`] = `
         direction="up"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="openUp"
@@ -1727,16 +1727,16 @@ exports[`optionsMenu open up 1`] = `
         }
         position="left"
         toggle={
-          <Unknown>
+          <OptionsMenuToggle>
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu pf-m-top"
           id="openUp"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-2"
             isOpen={false}
@@ -1780,7 +1780,7 @@ exports[`optionsMenu open up 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={false}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -1926,102 +1926,102 @@ exports[`optionsMenu open up 1`] = `
                   </CaretDownIcon>
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu plain 1`] = `
-<Component
+<OptionsMenu
   id="plain"
   isPlain={true}
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   toggle={
-    <Unknown>
+    <OptionsMenuToggle>
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
     className=""
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="plain"
     isGrouped={false}
     isPlain={true}
     toggle={
-      <Unknown>
+      <OptionsMenuToggle>
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -2030,43 +2030,43 @@ exports[`optionsMenu plain 1`] = `
         Object {
           "className": "",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "plain",
           "isGrouped": false,
           "isPlain": true,
-          "toggle": <Unknown>
+          "toggle": <OptionsMenuToggle>
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -2077,36 +2077,36 @@ exports[`optionsMenu plain 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="plain"
@@ -2123,16 +2123,16 @@ exports[`optionsMenu plain 1`] = `
         }
         position="left"
         toggle={
-          <Unknown>
+          <OptionsMenuToggle>
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu"
           id="plain"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-5"
             isOpen={false}
@@ -2159,7 +2159,7 @@ exports[`optionsMenu plain 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={false}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -2244,100 +2244,100 @@ exports[`optionsMenu plain 1`] = `
                   />
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu regular 1`] = `
-<Component
+<OptionsMenu
   id="regular"
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   toggle={
-    <Unknown>
+    <OptionsMenuToggle>
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
     className=""
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="regular"
     isGrouped={false}
     toggle={
-      <Unknown>
+      <OptionsMenuToggle>
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -2346,42 +2346,42 @@ exports[`optionsMenu regular 1`] = `
         Object {
           "className": "",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "regular",
           "isGrouped": false,
-          "toggle": <Unknown>
+          "toggle": <OptionsMenuToggle>
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -2392,36 +2392,36 @@ exports[`optionsMenu regular 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="regular"
@@ -2438,16 +2438,16 @@ exports[`optionsMenu regular 1`] = `
         }
         position="left"
         toggle={
-          <Unknown>
+          <OptionsMenuToggle>
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu"
           id="regular"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-0"
             isOpen={false}
@@ -2491,7 +2491,7 @@ exports[`optionsMenu regular 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={false}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -2637,58 +2637,58 @@ exports[`optionsMenu regular 1`] = `
                   </CaretDownIcon>
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu right aligned + open up 1`] = `
-<Component
+<OptionsMenu
   direction="up"
   id="rightAlignedOpenUp"
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   position="right"
   toggle={
-    <Unknown>
+    <OptionsMenuToggle>
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
@@ -2696,45 +2696,45 @@ exports[`optionsMenu right aligned + open up 1`] = `
     direction="up"
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="rightAlignedOpenUp"
     isGrouped={false}
     position="right"
     toggle={
-      <Unknown>
+      <OptionsMenuToggle>
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -2744,43 +2744,43 @@ exports[`optionsMenu right aligned + open up 1`] = `
           "className": "",
           "direction": "up",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "rightAlignedOpenUp",
           "isGrouped": false,
           "position": "right",
-          "toggle": <Unknown>
+          "toggle": <OptionsMenuToggle>
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -2791,36 +2791,36 @@ exports[`optionsMenu right aligned + open up 1`] = `
         direction="up"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="rightAlignedOpenUp"
@@ -2837,16 +2837,16 @@ exports[`optionsMenu right aligned + open up 1`] = `
         }
         position="right"
         toggle={
-          <Unknown>
+          <OptionsMenuToggle>
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu pf-m-top pf-m-align-right"
           id="rightAlignedOpenUp"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-3"
             isOpen={false}
@@ -2890,7 +2890,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={false}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -3036,102 +3036,102 @@ exports[`optionsMenu right aligned + open up 1`] = `
                   </CaretDownIcon>
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu right aligned 1`] = `
-<Component
+<OptionsMenu
   id="rightAligned"
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   position="right"
   toggle={
-    <Unknown>
+    <OptionsMenuToggle>
       Options Menu
-    </Unknown>
+    </OptionsMenuToggle>
   }
 >
   <Component
     className=""
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="rightAligned"
     isGrouped={false}
     position="right"
     toggle={
-      <Unknown>
+      <OptionsMenuToggle>
         Options Menu
-      </Unknown>
+      </OptionsMenuToggle>
     }
   >
     <ComponentWithOuia
@@ -3140,43 +3140,43 @@ exports[`optionsMenu right aligned 1`] = `
         Object {
           "className": "",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "rightAligned",
           "isGrouped": false,
           "position": "right",
-          "toggle": <Unknown>
+          "toggle": <OptionsMenuToggle>
             Options Menu
-          </Unknown>,
+          </OptionsMenuToggle>,
         }
       }
       consumerContext={null}
@@ -3187,36 +3187,36 @@ exports[`optionsMenu right aligned 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="rightAligned"
@@ -3233,16 +3233,16 @@ exports[`optionsMenu right aligned 1`] = `
         }
         position="right"
         toggle={
-          <Unknown>
+          <OptionsMenuToggle>
             Options Menu
-          </Unknown>
+          </OptionsMenuToggle>
         }
       >
         <div
           className="pf-c-options-menu pf-m-align-right"
           id="rightAligned"
         >
-          <Component
+          <OptionsMenuToggle
             ariaHasPopup={true}
             id="pf-toggle-id-1"
             isOpen={false}
@@ -3286,7 +3286,7 @@ exports[`optionsMenu right aligned 1`] = `
               }
             }
           >
-            <Component
+            <DropdownToggle
               aria-expanded={false}
               aria-label="Options menu"
               ariaHasPopup="listbox"
@@ -3432,54 +3432,54 @@ exports[`optionsMenu right aligned 1`] = `
                   </CaretDownIcon>
                 </button>
               </Toggle>
-            </Component>
-          </Component>
+            </DropdownToggle>
+          </OptionsMenuToggle>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;
 
 exports[`optionsMenu text 1`] = `
-<Component
+<OptionsMenu
   id="text"
   menuItems={
     Array [
-      <Unknown
+      <OptionsMenuItemGroup
         groupTitle="Sort order"
       >
-        <Unknown>
+        <OptionsMenuItem>
           Name
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Date
-        </Unknown>
-        <Unknown
+        </OptionsMenuItem>
+        <OptionsMenuItem
           isDisabled={true}
         >
           Disabled
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Size
-        </Unknown>
-      </Unknown>,
-      <Unknown />,
-      <Unknown
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
+      <OptionsMenuSeparator />,
+      <OptionsMenuItemGroup
         groupTitle="Sort direction"
         hasSeparator={true}
       >
-        <Unknown>
+        <OptionsMenuItem>
           Ascending
-        </Unknown>
-        <Unknown>
+        </OptionsMenuItem>
+        <OptionsMenuItem>
           Descending
-        </Unknown>
-      </Unknown>,
+        </OptionsMenuItem>
+      </OptionsMenuItemGroup>,
     ]
   }
   toggle={
-    <Unknown
+    <OptionsMenuToggleWithText
       toggleButtonContents={
         <React.Fragment>
           Test
@@ -3493,42 +3493,42 @@ exports[`optionsMenu text 1`] = `
     className=""
     dropdownItems={
       Array [
-        <Unknown
+        <OptionsMenuItemGroup
           groupTitle="Sort order"
         >
-          <Unknown>
+          <OptionsMenuItem>
             Name
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Date
-          </Unknown>
-          <Unknown
+          </OptionsMenuItem>
+          <OptionsMenuItem
             isDisabled={true}
           >
             Disabled
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Size
-          </Unknown>
-        </Unknown>,
-        <Unknown />,
-        <Unknown
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
+        <OptionsMenuSeparator />,
+        <OptionsMenuItemGroup
           groupTitle="Sort direction"
           hasSeparator={true}
         >
-          <Unknown>
+          <OptionsMenuItem>
             Ascending
-          </Unknown>
-          <Unknown>
+          </OptionsMenuItem>
+          <OptionsMenuItem>
             Descending
-          </Unknown>
-        </Unknown>,
+          </OptionsMenuItem>
+        </OptionsMenuItemGroup>,
       ]
     }
     id="text"
     isGrouped={false}
     toggle={
-      <Unknown
+      <OptionsMenuToggleWithText
         toggleButtonContents={
           <React.Fragment>
             Test
@@ -3544,40 +3544,40 @@ exports[`optionsMenu text 1`] = `
         Object {
           "className": "",
           "dropdownItems": Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ],
           "id": "text",
           "isGrouped": false,
-          "toggle": <Unknown
+          "toggle": <OptionsMenuToggleWithText
             toggleButtonContents={
               <React.Fragment>
                 Test
@@ -3595,36 +3595,36 @@ exports[`optionsMenu text 1`] = `
         direction="down"
         dropdownItems={
           Array [
-            <Unknown
+            <OptionsMenuItemGroup
               groupTitle="Sort order"
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Name
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Date
-              </Unknown>
-              <Unknown
+              </OptionsMenuItem>
+              <OptionsMenuItem
                 isDisabled={true}
               >
                 Disabled
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Size
-              </Unknown>
-            </Unknown>,
-            <Unknown />,
-            <Unknown
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
+            <OptionsMenuSeparator />,
+            <OptionsMenuItemGroup
               groupTitle="Sort direction"
               hasSeparator={true}
             >
-              <Unknown>
+              <OptionsMenuItem>
                 Ascending
-              </Unknown>
-              <Unknown>
+              </OptionsMenuItem>
+              <OptionsMenuItem>
                 Descending
-              </Unknown>
-            </Unknown>,
+              </OptionsMenuItem>
+            </OptionsMenuItemGroup>,
           ]
         }
         id="text"
@@ -3641,7 +3641,7 @@ exports[`optionsMenu text 1`] = `
         }
         position="left"
         toggle={
-          <Unknown
+          <OptionsMenuToggleWithText
             toggleButtonContents={
               <React.Fragment>
                 Test
@@ -3655,7 +3655,7 @@ exports[`optionsMenu text 1`] = `
           className="pf-c-options-menu"
           id="text"
         >
-          <Component
+          <OptionsMenuToggleWithText
             ariaHasPopup={true}
             id="pf-toggle-id-6"
             isOpen={false}
@@ -3717,10 +3717,10 @@ exports[`optionsMenu text 1`] = `
                 Test
               </button>
             </div>
-          </Component>
+          </OptionsMenuToggleWithText>
         </div>
       </DropdownWithContext>
     </ComponentWithOuia>
   </Component>
-</Component>
+</OptionsMenu>
 `;

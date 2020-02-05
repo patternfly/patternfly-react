@@ -2,7 +2,7 @@
 
 exports[`ChartDonut 1`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={230}
     theme={
       Object {
@@ -456,7 +456,7 @@ exports[`ChartDonut 1`] = `
     }
     width={230}
   >
-    <Component
+    <ChartPie
       allowTooltip={true}
       height={230}
       innerRadius={86}
@@ -916,13 +916,13 @@ exports[`ChartDonut 1`] = `
       }
       width={230}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;
 
 exports[`ChartDonut 2`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={230}
     theme={
       Object {
@@ -1376,7 +1376,7 @@ exports[`ChartDonut 2`] = `
     }
     width={230}
   >
-    <Component
+    <ChartPie
       allowTooltip={true}
       height={230}
       innerRadius={86}
@@ -1836,13 +1836,13 @@ exports[`ChartDonut 2`] = `
       }
       width={230}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;
 
 exports[`renders component data 1`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={200}
     theme={
       Object {
@@ -2296,7 +2296,7 @@ exports[`renders component data 1`] = `
     }
     width={200}
   >
-    <Component
+    <ChartPie
       allowTooltip={true}
       data={
         Array [
@@ -2772,6 +2772,6 @@ exports[`renders component data 1`] = `
       }
       width={200}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;

@@ -35,13 +35,13 @@ exports[`ChipGroup chip group with closable toolbar 1`] = `
     onToggleCollapse={[Function]}
     withToolbar={true}
   >
-    <Component
+    <ChipGroupToolbarItem
       isClosable={true}
     >
       <Component>
         1.1
       </Component>
-    </Component>
+    </ChipGroupToolbarItem>
   </InnerChipGroup>
 </ContextProvider>
 `;
@@ -60,11 +60,11 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     onToggleCollapse={[Function]}
     withToolbar={true}
   >
-    <Component>
+    <ChipGroupToolbarItem>
       <Component>
         1.1
       </Component>
-    </Component>
+    </ChipGroupToolbarItem>
   </InnerChipGroup>
 </ContextProvider>
 `;

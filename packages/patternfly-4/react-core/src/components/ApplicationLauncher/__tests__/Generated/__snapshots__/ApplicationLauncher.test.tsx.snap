@@ -35,7 +35,7 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
           <div
             className="pf-c-app-launcher__menu-search"
           >
-            <Unknown
+            <ApplicationLauncherItem
               customChild={
                 <input
                   0="a"
@@ -49,18 +49,18 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
               }
             />
           </div>,
-          <Unknown>
-            <Unknown>
+          <ApplicationLauncherGroup>
+            <ApplicationLauncherItem>
               'No results found'
-            </Unknown>
-          </Unknown>,
+            </ApplicationLauncherItem>
+          </ApplicationLauncherGroup>,
         ]
       }
       isGrouped={false}
       isOpen={false}
       position="right"
       toggle={
-        <Unknown
+        <DropdownToggle
           aria-label="'Application launcher'"
           iconComponent={null}
           id="string"
@@ -71,7 +71,7 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
           <div>
             ReactNode
           </div>
-        </Unknown>
+        </DropdownToggle>
       }
     />
   </ContextProvider>

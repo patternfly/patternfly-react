@@ -7,7 +7,7 @@ exports[`Progress should match snapshot (auto-generated) 1`] = `
   id="''"
   role="progressbar"
 >
-  <Component
+  <ProgressContainer
     ariaProps={
       Object {
         "aria-describedby": "''-description",

@@ -2,29 +2,29 @@
 
 exports[`check loginpage example against snapshot 1`] = `
 <Fragment>
-  <Component
+  <BackgroundImage
     alt="Pf-background"
     src="Background src"
   />
-  <Component
+  <Login
     className=""
     footer={
-      <Unknown>
+      <LoginFooter>
         <p>
           This is placeholder text only.
         </p>
-        <Unknown
+        <List
           variant="inline"
         >
           English
-        </Unknown>
-      </Unknown>
+        </List>
+      </LoginFooter>
     }
     header={
-      <Unknown
+      <LoginHeader
         headerBrand={
           <React.Fragment>
-            <Unknown
+            <Brand
               alt="Pf-logo"
               src="Brand src"
             />
@@ -33,11 +33,11 @@ exports[`check loginpage example against snapshot 1`] = `
       />
     }
   >
-    <Component
+    <LoginMainHeader
       title="Log into your account"
     />
-    <Component />
-    <Component
+    <LoginMainBody />
+    <LoginMainFooter
       forgotCredentials={null}
       signUpForAccountMessage={
         <React.Fragment>
@@ -51,6 +51,6 @@ exports[`check loginpage example against snapshot 1`] = `
       }
       socialMediaLoginContent="Footer"
     />
-  </Component>
+  </Login>
 </Fragment>
 `;

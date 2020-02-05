@@ -4,13 +4,13 @@ exports[`AlertGroup should match snapshot (auto-generated) 1`] = `
 <Portal
   containerInfo={<div />}
 >
-  <Component
+  <AlertGroupInline
     className="string"
     isToast={true}
   >
     <div>
       ReactNode
     </div>
-  </Component>
+  </AlertGroupInline>
 </Portal>
 `;

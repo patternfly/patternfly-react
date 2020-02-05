@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm should match snapshot (auto-generated) 1`] = `
-<Component
+<Form
   className="''"
 >
-  <Component
+  <FormHelperText
     isError={false}
     isHidden={true}
   />
-  <Component
+  <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
     isValid={true}
@@ -24,8 +24,8 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
       type="text"
       value="''"
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
     isValid={true}
@@ -40,8 +40,8 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
       type="password"
       value="''"
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
@@ -53,8 +53,8 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
       label="''"
       onChange={[Function]}
     />
-  </Component>
-  <Component>
+  </FormGroup>
+  <ActionGroup>
     <Component
       isBlock={true}
       isDisabled={false}
@@ -64,6 +64,6 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
     >
       'Log In'
     </Component>
-  </Component>
-</Component>
+  </ActionGroup>
+</Form>
 `;

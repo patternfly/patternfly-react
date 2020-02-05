@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletTitle 1`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 >
-  <Component
+  <ChartLabel
     style={
       Array [
         Object {
@@ -22,15 +22,15 @@ exports[`ChartBulletTitle 1`] = `
     x={36}
     y={70}
   />
-</Component>
+</ChartContainer>
 `;
 
 exports[`ChartBulletTitle 2`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 >
-  <Component
+  <ChartLabel
     style={
       Array [
         Object {
@@ -47,15 +47,15 @@ exports[`ChartBulletTitle 2`] = `
     x={36}
     y={70}
   />
-</Component>
+</ChartContainer>
 `;
 
 exports[`renders component data 1`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 >
-  <Component
+  <ChartLabel
     capHeight={1.1}
     style={
       Array [
@@ -79,5 +79,5 @@ exports[`renders component data 1`] = `
     x={36}
     y={70}
   />
-</Component>
+</ChartContainer>
 `;

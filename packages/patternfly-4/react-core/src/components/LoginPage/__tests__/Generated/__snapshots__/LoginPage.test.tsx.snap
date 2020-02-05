@@ -2,21 +2,21 @@
 
 exports[`LoginPage should match snapshot (auto-generated) 1`] = `
 <Fragment>
-  <Component
+  <Login
     className="''"
     footer={
-      <Unknown>
+      <LoginFooter>
         <p>
           ''
         </p>
-        <Unknown />
-      </Unknown>
+        <List />
+      </LoginFooter>
     }
     header={
-      <Unknown
+      <LoginHeader
         headerBrand={
           <React.Fragment>
-            <Unknown
+            <Brand
               alt="''"
               src="''"
             />
@@ -25,13 +25,13 @@ exports[`LoginPage should match snapshot (auto-generated) 1`] = `
       />
     }
   >
-    <Component
+    <LoginMainHeader
       subtitle="string"
       title="string"
     />
-    <Component>
+    <LoginMainBody>
       ReactNode
-    </Component>
-  </Component>
+    </LoginMainBody>
+  </Login>
 </Fragment>
 `;
