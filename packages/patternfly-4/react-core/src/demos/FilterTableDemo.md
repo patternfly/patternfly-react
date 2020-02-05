@@ -15,7 +15,7 @@ DataToolbarItem,
 DataToolbarContent,
 DataToolbarFilter,
 DataToolbarToggleGroup,
-DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+DataToolbarGroup } from '@patternfly/react-core/dist/esm/beta';
 import {
 Title,
 Select,
@@ -39,16 +39,16 @@ import {
   DataToolbarFilter,
   DataToolbarToggleGroup,
   DataToolbarGroup
-} from '@patternfly/react-core/dist/esm/experimental';
+} from '@patternfly/react-core/dist/esm/beta';
 import {
   Button,
   ButtonVariant,
   Bullseye,
-  Dropdown, 
-  DropdownItem, 
+  Dropdown,
+  DropdownItem,
   DropdownPosition,
   DropdownToggle,
-  InputGroup, 
+  InputGroup,
   Title,
   Select,
   SelectOption,

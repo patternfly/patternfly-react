@@ -16,9 +16,3 @@ import '@patternfly/patternfly/patternfly.css';
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
 
-// Experimental components
-import '@patternfly/patternfly/components/Drawer/drawer.css';
-import '@patternfly/patternfly/components/InlineEdit/inline-edit.css';
-import '@patternfly/patternfly/components/NotificationDrawer/notification-drawer.css';
-import '@patternfly/patternfly/components/SimpleList/simple-list.css';
-import '@patternfly/patternfly/components/DataToolbar/data-toolbar.css';
