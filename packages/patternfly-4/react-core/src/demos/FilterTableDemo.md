@@ -280,7 +280,7 @@ class FilterTableDemo extends React.Component {
             <TextInput
               name="nameInput"
               id="nameInput1"
-              type="text"
+              type="search"
               aria-label="name filter"
               onChange={this.onInputChange}
               value={inputValue}
