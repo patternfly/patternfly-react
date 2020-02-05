@@ -93,9 +93,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
             {label}
           </label>
         )}
-        {description && (
-          <div className={css(styles.checkDescription)}>{description}</div>
-        )}
+        {description && <div className={css(styles.checkDescription)}>{description}</div>}
       </div>
     );
   }

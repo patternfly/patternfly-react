@@ -55,42 +55,40 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
   onEnter = null
-}: OptionsToggleProps) => {
-  return (
-    <div
-      className={css(
-        styles.optionsMenuToggle,
-        isDisabled && styles.modifiers.disabled,
-        styles.modifiers.plain,
-        styles.modifiers.text
-      )}
-    >
-      {showToggle && (
-        <React.Fragment>
-          <span className={css(styles.optionsMenuToggleText)}>
-            {typeof ToggleTemplate === 'string' ? (
-              fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
-            ) : (
-              <ToggleTemplate
-                firstIndex={firstIndex}
-                lastIndex={lastIndex}
-                itemCount={itemCount}
-                itemsTitle={itemsTitle}
-              />
-            )}
-          </span>
-          <DropdownToggle
-            onEnter={onEnter}
-            aria-label={optionsToggle}
-            onToggle={onToggle}
-            isDisabled={isDisabled || itemCount <= 0}
-            isOpen={isOpen}
-            id={`${widgetId}-toggle-${toggleId++}`}
-            className={styles.optionsMenuToggleButton}
-            parentRef={parentRef}
-          ></DropdownToggle>
-        </React.Fragment>
-      )}
-    </div>
-  );
-};
+}: OptionsToggleProps) => (
+  <div
+    className={css(
+      styles.optionsMenuToggle,
+      isDisabled && styles.modifiers.disabled,
+      styles.modifiers.plain,
+      styles.modifiers.text
+    )}
+  >
+    {showToggle && (
+      <React.Fragment>
+        <span className={css(styles.optionsMenuToggleText)}>
+          {typeof ToggleTemplate === 'string' ? (
+            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
+          ) : (
+            <ToggleTemplate
+              firstIndex={firstIndex}
+              lastIndex={lastIndex}
+              itemCount={itemCount}
+              itemsTitle={itemsTitle}
+            />
+          )}
+        </span>
+        <DropdownToggle
+          onEnter={onEnter}
+          aria-label={optionsToggle}
+          onToggle={onToggle}
+          isDisabled={isDisabled || itemCount <= 0}
+          isOpen={isOpen}
+          id={`${widgetId}-toggle-${toggleId++}`}
+          className={styles.optionsMenuToggleButton}
+          parentRef={parentRef}
+        ></DropdownToggle>
+      </React.Fragment>
+    )}
+  </div>
+);

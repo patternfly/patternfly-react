@@ -110,7 +110,6 @@ export class Radio extends React.Component<RadioProps> {
       </>
     );
 
-
     return isLabelWrapped ? (
       <label className={css(styles.radio, className)} htmlFor={props.id}>
         {childrenRendered}
