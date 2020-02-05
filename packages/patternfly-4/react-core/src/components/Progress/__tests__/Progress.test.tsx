@@ -51,7 +51,7 @@ test('value scaled between minValue and maxValue', () => {
 describe('Progress size', () => {
   Object.keys(ProgressSize).forEach(oneSize => {
     test(oneSize, () => {
-      const view = mount(<Progress id={`${oneSize}-progress`} value={33} size={oneSize} />);
+      const view = mount(<Progress id={`${oneSize}-progress`} value={33} size={oneSize as ProgressSize} />);
       expect(view).toMatchSnapshot();
     });
   });
@@ -60,7 +60,7 @@ describe('Progress size', () => {
 describe('Progress variant', () => {
   Object.keys(ProgressVariant).forEach(oneVariant => {
     test(oneVariant, () => {
-      const view = mount(<Progress id={`${oneVariant}-progress`} value={33} variant={oneVariant} />);
+      const view = mount(<Progress id={`${oneVariant}-progress`} value={33} variant={oneVariant as ProgressVariant} />);
       expect(view).toMatchSnapshot();
     });
   });
@@ -69,7 +69,7 @@ describe('Progress variant', () => {
 describe('Progress measure location', () => {
   Object.keys(ProgressMeasureLocation).forEach(oneLocation => {
     test(oneLocation, () => {
-      const view = mount(<Progress id={`${oneLocation}-progress`} value={33} measureLocation={oneLocation} />);
+      const view = mount(<Progress id={`${oneLocation}-progress`} value={33} measureLocation={oneLocation as ProgressMeasureLocation} />);
       expect(view).toMatchSnapshot();
     });
   });

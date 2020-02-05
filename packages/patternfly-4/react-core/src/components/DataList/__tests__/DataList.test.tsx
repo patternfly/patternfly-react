@@ -78,11 +78,11 @@ describe('DataList', () => {
 
   test('Cell with width modifier', () => {
     [
-      { width: 1, class: '' },
-      { width: 2, class: 'pf-m-flex-2' },
-      { width: 3, class: 'pf-m-flex-3' },
-      { width: 4, class: 'pf-m-flex-4' },
-      { width: 5, class: 'pf-m-flex-5' }
+      { width: 1 as const, class: '' },
+      { width: 2 as const, class: 'pf-m-flex-2' },
+      { width: 3 as const, class: 'pf-m-flex-3' },
+      { width: 4 as const, class: 'pf-m-flex-4' },
+      { width: 5 as const, class: 'pf-m-flex-5' }
     ].forEach(testCase => {
       const view = shallow(
         <DataListCell width={testCase.width} key="list-id-1" id="primary-item">

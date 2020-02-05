@@ -51,21 +51,21 @@ test('horizontally resizable text area', () => {
 
 test('should throw console error when no aria-label or id is given', () => {
   const myMock = jest.fn();
-  global.console = { error: myMock };
+  global.console = { ...global.console, error: myMock };
   shallow(<TextArea {...props} />);
   expect(myMock).toBeCalled();
 });
 
 test('should not throw console error when id is given but no aria-label', () => {
   const myMock = jest.fn();
-  global.console = { error: myMock };
+  global.console = { ...global.console, error: myMock };
   shallow(<TextArea {...props} id="5" />);
   expect(myMock).not.toBeCalled();
 });
 
 test('should not throw console error when aria-label is given but no id', () => {
   const myMock = jest.fn();
-  global.console = { error: myMock };
+  global.console = { ...global.console, error: myMock };
   shallow(<TextArea {...props} aria-label="test textarea" />);
   expect(myMock).not.toBeCalled();
 });
