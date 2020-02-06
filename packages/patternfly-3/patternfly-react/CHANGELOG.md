@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.14](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.13...patternfly-react@2.39.14) (2020-02-06)
+
+
+### Bug Fixes
+
+* **Slider:** Add limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/issues/3660)) ([124210a](https://github.com/patternfly/patternfly-react/commit/124210a2ab1b4ab405539c078d1213ef250710d3)), closes [#3187](https://github.com/patternfly/patternfly-react/issues/3187)
+
+
+
+
+
 ## [2.39.13](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.12...patternfly-react@2.39.13) (2020-01-14)
 
 
