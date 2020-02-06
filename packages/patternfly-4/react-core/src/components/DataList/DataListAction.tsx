@@ -17,7 +17,21 @@ const visibilityModifiers = pickProperties(styles.modifiers, [
   'visibleOn_2xl'
 ]);
 
-export const DataListActionVisibility = Object.keys(visibilityModifiers)
+interface IDataListActionVisibility {
+  'hidden'?: string;
+  'hiddenOnSm'?: string;
+  'hiddenOnMd'?: string;
+  'hiddenOnLg'?: string;
+  'hiddenOnXl'?: string;
+  'hiddenOn2Xl'?: string;
+  'visibleOnSm'?: string;
+  'visibleOnMd'?: string;
+  'visibleOnLg'?: string;
+  'visibleOnXl'?: string;
+  'visibleOn2Xl'?: string;
+};
+
+export const DataListActionVisibility: IDataListActionVisibility = Object.keys(visibilityModifiers)
   .map(key => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
   .reduce((acc, curr) => ({ ...acc, [curr[0]]: curr[1] }), {});
 

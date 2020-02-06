@@ -21,7 +21,7 @@ export enum ProgressVariant {
 
 export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Properties needed for aria support */
-  ariaProps: AriaProps;
+  ariaProps?: AriaProps;
   /** Progress component DOM ID. */
   parentId: string;
   /** Progress title. */
