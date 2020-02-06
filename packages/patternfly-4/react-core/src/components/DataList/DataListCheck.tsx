@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange'> {
+export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'checked'> {
   /** Additional classes added to the DataList item checkbox */
   className?: string;
   /** Flag to show if the DataList checkbox selection is valid or invalid */
@@ -13,7 +13,7 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
   /** Flag to show if the DataList checkbox is checked */
   isChecked?: boolean;
   /** Alternate Flag to show if the DataList checkbox is checked */
-  checked: boolean;
+  checked?: boolean;
   /** A callback for when the DataList checkbox selection changes */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Aria-labelledby of the DataList checkbox */
