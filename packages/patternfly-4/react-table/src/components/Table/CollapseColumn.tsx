@@ -18,22 +18,20 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   isOpen,
   onToggle,
   ...props
-}: CollapseColumnProps) => {
-  return (
-    <React.Fragment>
-      {isOpen !== undefined && (
-        <Button
-          className={css(className, isOpen && styles.modifiers.expanded)}
-          {...props}
-          variant="plain"
-          aria-label="Details"
-          onClick={onToggle}
-          aria-expanded={isOpen}
-        >
-          <AngleDownIcon />
-        </Button>
-      )}
-      {children}
-    </React.Fragment>
-  );
-};
+}: CollapseColumnProps) => (
+  <React.Fragment>
+    {isOpen !== undefined && (
+      <Button
+        className={css(className, isOpen && styles.modifiers.expanded)}
+        {...props}
+        variant="plain"
+        aria-label="Details"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+      >
+        <AngleDownIcon />
+      </Button>
+    )}
+    {children}
+  </React.Fragment>
+);

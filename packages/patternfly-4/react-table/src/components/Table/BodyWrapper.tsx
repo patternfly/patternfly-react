@@ -21,10 +21,12 @@ export interface BodyWrapperProps {
 
 export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
   mappedRows,
+  tbodyRef,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   rows = [] as IRow[],
   onCollapse,
-  tbodyRef,
   headerRows,
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyWrapperProps) => {
   if (mappedRows && mappedRows.some(row => row.hasOwnProperty('parent'))) {

@@ -23,6 +23,7 @@ export interface BodyRowProps {
 
 export class BodyRow extends React.Component<BodyRowProps, {}> {
   static defaultProps = {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onRow: (...args: any) => Object
   };
 
@@ -63,7 +64,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
         const transformed = evaluateTransforms(transforms, rowData[evaluatedProperty], extraParameters);
 
         if (!transformed) {
-          // tslint:disable-next-line:no-console
+          // eslint-disable-next-line no-console
           console.warn('Table.Body - Failed to receive a transformed result');
         }
 

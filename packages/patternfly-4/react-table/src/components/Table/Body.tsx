@@ -4,6 +4,7 @@ import { RowType, RowKeyType } from './base/types';
 import { TableContext, IRow, IRowCell, IExtraRowData } from './Table';
 import { isRowExpanded } from './utils';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IComputedData {
   isInput: boolean;
   isButton: boolean;
@@ -90,6 +91,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
 
     let mappedRows;
@@ -125,11 +127,14 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 }
 
 export const TableBody = ({
-  onRow = (...args: any) => Object,
   className = '' as string,
   children = null as React.ReactNode,
   rowKey = 'id' as string,
-  onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => undefined as OnRowClick,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  onRow = (...args: any) => Object,
+  onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>
+    /* eslint-enable @typescript-eslint/no-unused-vars */
+    undefined as OnRowClick,
   ...props
 }: TableBodyProps) => (
   <TableContext.Consumer>
@@ -139,6 +144,7 @@ export const TableBody = ({
         rows={rows as IRow[]}
         onRow={onRow}
         className={className}
+        // eslint-disable-next-line react/no-children-prop
         children={children}
         rowKey={rowKey}
         onRowClick={onRowClick}

@@ -66,11 +66,7 @@ test('Sortable table', () => {
 test('Row click table', () => {
   const rowClickHandler = jest.fn();
   const view = mount(
-    <Table
-      aria-label="Row click table"
-      cells={columns}
-      rows={rows}
-    >
+    <Table aria-label="Row click table" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody onRowClick={rowClickHandler} />
     </Table>
@@ -257,12 +253,12 @@ test('Empty state table', () => {
         heightAuto: true,
         cells: [
           {
-            title: (<div>Empty State Component</div>),
+            title: <div>Empty State Component</div>,
             props: { colSpan: '8' }
           }
-      ],
+        ]
       }
-    ],
+    ]
   };
 
   const view = mount(
@@ -272,6 +268,16 @@ test('Empty state table', () => {
     </Table>
   );
 
-  expect(view.find('tr').at(1).prop('className')).toEqual('pf-m-height-auto');
-  expect(view.find('tbody').find('td').prop('colSpan')).toEqual('8');
+  expect(
+    view
+      .find('tr')
+      .at(1)
+      .prop('className')
+  ).toEqual('pf-m-height-auto');
+  expect(
+    view
+      .find('tbody')
+      .find('td')
+      .prop('colSpan')
+  ).toEqual('8');
 });

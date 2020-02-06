@@ -8,6 +8,7 @@ import { isFunction } from 'lodash';
 import { mergeProps } from './merge-props';
 import { transformsType, ExtraParamsType } from './types';
 
+// eslint-disable-next-line jsdoc/require-jsdoc
 export function evaluateTransforms(
   transforms: transformsType = [],
   value: string | object,
