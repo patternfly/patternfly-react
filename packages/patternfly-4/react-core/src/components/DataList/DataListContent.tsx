@@ -26,6 +26,7 @@ export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
   isHidden = false,
   'aria-label': ariaLabel,
   noPadding = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowid = '',
   ...props
 }: DataListContentProps) => (

@@ -26,6 +26,7 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
   isExpanded = false,
   'aria-controls': ariaControls = '',
   'aria-label': ariaLabel = 'Details',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   'aria-labelledby': ariaLabelledBy = '',
   rowid = '',
   id,

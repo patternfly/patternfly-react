@@ -30,7 +30,6 @@ interface DataToolbarFilterState {
 }
 
 export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
-  // @ts-ignore
   static contextType: any = DataToolbarContext;
   static defaultProps: PickOptional<DataToolbarFilterProps> = {
     chips: [] as string[],
@@ -61,8 +60,8 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
       <DataToolbarItem variant="chip-group">
         <ChipGroup withToolbar>
           <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
-            {chips.map(chip => {
-              return typeof chip === 'string' ? (
+            {chips.map(chip =>
+              typeof chip === 'string' ? (
                 <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
                   {chip}
                 </Chip>
@@ -70,8 +69,8 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
                 <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
                   {chip.node}
                 </Chip>
-              );
-            })}
+              )
+            )}
           </ChipGroupToolbarItem>
         </ChipGroup>
       </DataToolbarItem>
@@ -88,14 +87,12 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
 
     return (
       <DataToolbarContentContext.Consumer>
-        {({ chipContainerRef }) => {
-          return (
-            <React.Fragment>
-              {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
-              {chipContainerRef.current && ReactDOM.createPortal(chipGroup, chipContainerRef.current)}
-            </React.Fragment>
-          );
-        }}
+        {({ chipContainerRef }) => (
+          <React.Fragment>
+            {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
+            {chipContainerRef.current && ReactDOM.createPortal(chipGroup, chipContainerRef.current)}
+          </React.Fragment>
+        )}
       </DataToolbarContentContext.Consumer>
     );
   }

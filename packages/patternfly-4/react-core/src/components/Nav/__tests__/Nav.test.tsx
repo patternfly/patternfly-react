@@ -15,6 +15,7 @@ const props = {
   ]
 };
 
+// eslint-disable-next-line no-undef
 beforeEach(() => {
   window.location.hash = '#link1';
 });

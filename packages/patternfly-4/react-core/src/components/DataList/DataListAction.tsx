@@ -17,19 +17,20 @@ const visibilityModifiers = pickProperties(styles.modifiers, [
   'visibleOn_2xl'
 ]);
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface IDataListActionVisibility {
-  'hidden'?: string;
-  'hiddenOnSm'?: string;
-  'hiddenOnMd'?: string;
-  'hiddenOnLg'?: string;
-  'hiddenOnXl'?: string;
-  'hiddenOn2Xl'?: string;
-  'visibleOnSm'?: string;
-  'visibleOnMd'?: string;
-  'visibleOnLg'?: string;
-  'visibleOnXl'?: string;
-  'visibleOn2Xl'?: string;
-};
+  hidden?: string;
+  hiddenOnSm?: string;
+  hiddenOnMd?: string;
+  hiddenOnLg?: string;
+  hiddenOnXl?: string;
+  hiddenOn2Xl?: string;
+  visibleOnSm?: string;
+  visibleOnMd?: string;
+  visibleOnLg?: string;
+  visibleOnXl?: string;
+  visibleOn2Xl?: string;
+}
 
 export const DataListActionVisibility: IDataListActionVisibility = Object.keys(visibilityModifiers)
   .map(key => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
@@ -68,6 +69,7 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     this.setState({ isOpen });
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelect = (event: MouseEvent) => {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
@@ -78,9 +80,11 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     const {
       children,
       className,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       id,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
 

@@ -150,6 +150,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       className,
       children,
@@ -171,6 +172,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       ariaLabelToggle,
       ...props
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
     const toggleProps: {
       id: string;
@@ -200,6 +202,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isPlain && styles.modifiers.plain,
               className
             )}
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={_event => {
               onToggle(!isExpanded);
               if (isExpanded) {
@@ -227,6 +230,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isTypeahead && styles.modifiers.typeahead,
               className
             )}
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={_event => {
               if (!isDisabled) {
                 onToggle(true);

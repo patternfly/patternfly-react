@@ -37,7 +37,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
   constructor(props: FormSelectProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('FormSelect requires either an id or aria-label to be specified');
     }
   }

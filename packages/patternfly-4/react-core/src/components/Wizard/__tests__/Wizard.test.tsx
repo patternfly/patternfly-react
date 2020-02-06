@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Wizard, WizardStepFunctionType, WizardStep  } from '../Wizard';
+import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
 test('Wizard should match snapshot', () => {
   const steps: WizardStep[] = [
@@ -24,6 +24,7 @@ test('Wizard should match snapshot', () => {
     { name: 'D', component: <p>Step 5</p> }
   ];
   const onBack: WizardStepFunctionType = step => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const name = { step };
   };
   const view = mount(

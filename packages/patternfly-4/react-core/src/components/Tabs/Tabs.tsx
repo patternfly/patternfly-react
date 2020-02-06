@@ -7,7 +7,6 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
-import { Tab } from './Tab';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
@@ -90,6 +89,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     this.props.onSelect(event, eventKey);
     // process any tab content sections outside of the component
     if (tabContentRef) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       React.Children.map(this.props.children, (child: any, i) => {
         child.props.tabContentRef.current.hidden = true;
       });

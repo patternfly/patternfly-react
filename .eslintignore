@@ -1,2 +1,34 @@
-**/node_modules/**
-**/dist/**
+# Javascript builds
+node_modules
+dist
+tsc_out
+.out
+.changelog
+.DS_Store
+coverage
+.cache
+.tmp
+**/Generated
+
+# package managers
+yarn-error.log
+lerna-debug.log
+
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9
+*.launch
+.settings
+*.sublime-workspace
+.history
+.vscode
+
+# IDE - VSCode
+.vscode
+# For vim
+*.swp
+
+# Deploy directory
+docs

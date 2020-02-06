@@ -2,9 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css, getModifier } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
+/* eslint-disable camelcase */
 import global_breakpoint_md from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
 import global_breakpoint_lg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 import global_breakpoint_xl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
+/* eslint-enable camelcase */
 import { debounce } from '../../helpers/util';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
@@ -39,9 +41,11 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
 
   handleResize = () => {
     const breakpoints: { [index: string]: { value: string } } = {
+      /* eslint-disable camelcase */
       md: global_breakpoint_md,
       lg: global_breakpoint_lg,
       xl: global_breakpoint_xl
+      /* eslint-enable camelcase */
     };
     const { breakpoint } = this.props;
     let breakpointWidth: string | number = breakpoints[breakpoint].value;

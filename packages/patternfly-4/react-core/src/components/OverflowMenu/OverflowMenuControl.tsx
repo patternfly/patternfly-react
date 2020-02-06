@@ -16,7 +16,7 @@ export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
   className,
   children,
   hasAdditionalOptions
-}) => (
+}: OverflowMenuControlProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (value.isBelowBreakpoint || hasAdditionalOptions) && (

@@ -5,12 +5,9 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { PopoverArrow } from '../../PopoverArrow';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import {} from '../..';
 
 it('PopoverArrow should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <PopoverArrow
-      className={"''"}
-    />);
+  const view = shallow(<PopoverArrow className={"''"} />);
   expect(view).toMatchSnapshot();
 });

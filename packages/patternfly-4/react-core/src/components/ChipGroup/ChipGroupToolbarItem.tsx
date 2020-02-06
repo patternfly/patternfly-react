@@ -26,41 +26,38 @@ export const ChipGroupToolbarItem: React.FunctionComponent<ChipGroupToolbarItemP
   children = null,
   className = '',
   isClosable = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick = (_e: React.MouseEvent) => undefined as any,
   closeBtnAriaLabel = 'Close chip group',
   ...props
 }: ChipGroupToolbarItemProps) => {
   if (React.Children.count(children)) {
-
-    const renderChipGroup = (id: string, HeadingLevel: any) => {
-      return (
-        <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...props}>
-          <li>
-            <HeadingLevel className={css(styles.chipGroupLabel)} id={id}>{categoryName}</HeadingLevel>
-            <ul className={css(styles.chipGroup)}>{children}</ul>
-            {isClosable &&
-              <div className="pf-c-chip-group__close">
-                <ChipButton
-                  aria-label={closeBtnAriaLabel}
-                  onClick={onClick}
-                  id={`remove_group_${id}`}
-                  aria-labelledby={`remove_group_${id} ${id}`}>
-                  <TimesIcon aria-hidden="true" />
-                </ChipButton>
-              </div>
-            }
-          </li>
-        </ul>
-      );
-    };
+    const renderChipGroup = (id: string, HeadingLevel: any) => (
+      <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...props}>
+        <li>
+          <HeadingLevel className={css(styles.chipGroupLabel)} id={id}>
+            {categoryName}
+          </HeadingLevel>
+          <ul className={css(styles.chipGroup)}>{children}</ul>
+          {isClosable && (
+            <div className="pf-c-chip-group__close">
+              <ChipButton
+                aria-label={closeBtnAriaLabel}
+                onClick={onClick}
+                id={`remove_group_${id}`}
+                aria-labelledby={`remove_group_${id} ${id}`}
+              >
+                <TimesIcon aria-hidden="true" />
+              </ChipButton>
+            </div>
+          )}
+        </li>
+      </ul>
+    );
 
     return (
       <ChipGroupContext.Consumer>
-        {(HeadingLevel: any) => {
-          return (
-            <GenerateId>{randomId => (renderChipGroup(randomId, HeadingLevel))}</GenerateId>
-          );
-        }}
+        {(HeadingLevel: any) => <GenerateId>{randomId => renderChipGroup(randomId, HeadingLevel)}</GenerateId>}
       </ChipGroupContext.Consumer>
     );
   }

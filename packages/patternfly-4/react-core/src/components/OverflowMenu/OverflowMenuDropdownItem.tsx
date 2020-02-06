@@ -9,7 +9,10 @@ export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivEl
   isShared?: boolean;
 }
 
-export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({ children, isShared = false }) => (
+export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({
+  children,
+  isShared = false
+}: OverflowMenuDropdownItemProps) => (
   <OverflowMenuContext.Consumer>
     {value => (!isShared || value.isBelowBreakpoint) && <DropdownItem component="button"> {children} </DropdownItem>}
   </OverflowMenuContext.Consumer>

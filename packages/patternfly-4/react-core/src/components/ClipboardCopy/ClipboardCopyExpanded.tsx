@@ -34,7 +34,9 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
         onInput={(e: any) => onChange(e.target.innerText, e)}
         contentEditable={!isReadOnly}
         {...props}
-      >{isCode ? <pre>{children}</pre> : children}</div>
-    )
+      >
+        {isCode ? <pre>{children}</pre> : children}
+      </div>
+    );
   }
 }

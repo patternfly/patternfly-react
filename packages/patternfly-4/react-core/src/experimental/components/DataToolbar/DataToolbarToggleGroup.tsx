@@ -36,50 +36,49 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
 
     return (
       <DataToolbarContext.Consumer>
-        {({ isExpanded, toggleIsExpanded }) => {
-          return (
-            <DataToolbarContentContext.Consumer>
-              {({ expandableContentRef, expandableContentId }) => {
-
-                if (expandableContentRef.current && expandableContentRef.current.classList) {
-                  if (isExpanded) {
-                    expandableContentRef.current.classList.add(getModifier(styles, 'expanded'));
-                  } else {
-                    expandableContentRef.current.classList.remove(getModifier(styles, 'expanded'));
-                  }
+        {({ isExpanded, toggleIsExpanded }) => (
+          <DataToolbarContentContext.Consumer>
+            {({ expandableContentRef, expandableContentId }) => {
+              if (expandableContentRef.current && expandableContentRef.current.classList) {
+                if (isExpanded) {
+                  expandableContentRef.current.classList.add(getModifier(styles, 'expanded'));
+                } else {
+                  expandableContentRef.current.classList.remove(getModifier(styles, 'expanded'));
                 }
+              }
 
-                return (
-                  <div
-                    className={css(
-                      styles.dataToolbarGroup,
-                      variant && getModifier(styles, variant),
-                      formatBreakpointMods(breakpointMods, styles),
-                      getModifier(styles, 'toggle-group'),
-                      getModifier(styles, `show-on-${breakpoint}`),
-                      className
-                    )}
-                    {...props}
-                  >
-                    <div className={css(styles.dataToolbarToggle)}>
-                      <Button
-                        variant="plain"
-                        onClick={toggleIsExpanded}
-                        aria-label="Show Filters"
-                        {...(isExpanded && { 'aria-expanded': true })}
-                        aria-haspopup={isExpanded && this.isContentPopup()}
-                        aria-controls={expandableContentId}
-                      >
-                        {toggleIcon}
-                      </Button>
-                    </div>
-                    {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild) : children}
+              return (
+                <div
+                  className={css(
+                    styles.dataToolbarGroup,
+                    variant && getModifier(styles, variant),
+                    formatBreakpointMods(breakpointMods, styles),
+                    getModifier(styles, 'toggle-group'),
+                    getModifier(styles, `show-on-${breakpoint}`),
+                    className
+                  )}
+                  {...props}
+                >
+                  <div className={css(styles.dataToolbarToggle)}>
+                    <Button
+                      variant="plain"
+                      onClick={toggleIsExpanded}
+                      aria-label="Show Filters"
+                      {...(isExpanded && { 'aria-expanded': true })}
+                      aria-haspopup={isExpanded && this.isContentPopup()}
+                      aria-controls={expandableContentId}
+                    >
+                      {toggleIcon}
+                    </Button>
                   </div>
-                );
-              }}
-            </DataToolbarContentContext.Consumer>
-          );
-        }}
+                  {isExpanded
+                    ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild)
+                    : children}
+                </div>
+              );
+            }}
+          </DataToolbarContentContext.Consumer>
+        )}
       </DataToolbarContext.Consumer>
     );
   }

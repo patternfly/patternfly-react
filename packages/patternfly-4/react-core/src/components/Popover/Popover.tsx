@@ -17,7 +17,7 @@ import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
-// tslint:disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
 
 export enum PopoverPosition {
@@ -154,7 +154,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
       this.hideOrNotify();
     } else if (!this.state.isOpen && event.keyCode === KEY_CODES.ENTER) {
-      this.setState({ focusTrapActive: true })
+      this.setState({ focusTrapActive: true });
     }
   };
 
@@ -213,9 +213,10 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     if (this.state.focusTrapActive) {
       this.setState({ focusTrapActive: false });
     }
-  }
+  };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       position,
       enableFlip,
@@ -243,6 +244,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       tippyProps,
       ...rest
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
 
     if (!headerContent && !ariaLabel) {
       return new Error('aria-label is required when header is not used');
@@ -251,9 +253,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     const content = this.state.isOpen ? (
       <GenerateId>
         {randomId => (
-          <FocusTrap 
-            active={this.state.focusTrapActive} 
-            focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <FocusTrap active={this.state.focusTrapActive} focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div
               className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
               role="dialog"
@@ -274,7 +274,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
           </FocusTrap>
         )}
       </GenerateId>
-    ): <></>;
+    ) : (
+      <></>
+    );
     const handleEvents = isVisible === null;
     const shouldHideOnClick = () => {
       if (handleEvents) {

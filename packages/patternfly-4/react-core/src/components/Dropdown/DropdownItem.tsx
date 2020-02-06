@@ -41,6 +41,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   tooltipProps = {},
   listItemClassName,
   onClick,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   additionalChild,
   customChild,
@@ -52,6 +53,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         context={context}
         role="menuitem"
         tabIndex={-1}
+        // eslint-disable-next-line react/no-children-prop
         children={children}
         className={className}
         component={component}

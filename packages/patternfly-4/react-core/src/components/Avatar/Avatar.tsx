@@ -12,6 +12,9 @@ export interface AvatarProps
   alt: string;
 }
 
-export const Avatar: React.FunctionComponent<AvatarProps> = ({ className = '', src = '', alt, ...props }: AvatarProps) => (
-  <img {...props} src={src} alt={alt} className={css(styles.avatar, className)} />
-);
+export const Avatar: React.FunctionComponent<AvatarProps> = ({
+  className = '',
+  src = '',
+  alt,
+  ...props
+}: AvatarProps) => <img {...props} src={src} alt={alt} className={css(styles.avatar, className)} />;

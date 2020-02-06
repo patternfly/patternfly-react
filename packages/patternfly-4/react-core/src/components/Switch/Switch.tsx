@@ -43,7 +43,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   constructor(props: SwitchProps & InjectedOuiaProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
     this.id = props.id || getUniqueId();

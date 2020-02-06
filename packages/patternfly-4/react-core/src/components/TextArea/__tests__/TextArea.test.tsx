@@ -29,23 +29,35 @@ test('invalid text area', () => {
 });
 
 test('validated text area success', () => {
-  const view = shallow(<TextArea {...props} required  validated={ValidatedOptions.success}  aria-label="validated textarea" />);
+  const view = shallow(
+    <TextArea {...props} required validated={ValidatedOptions.success} aria-label="validated textarea" />
+  );
   expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
   expect(view).toMatchSnapshot();
 });
 
 test('validated text area error', () => {
-  const view = shallow(<TextArea {...props} required  validated={ValidatedOptions.error}  aria-label="validated textarea" />);
+  const view = shallow(
+    <TextArea {...props} required validated={ValidatedOptions.error} aria-label="validated textarea" />
+  );
   expect(view).toMatchSnapshot();
 });
 
 test('vertically resizable text area', () => {
-  const view = shallow(<TextArea resizeOrientation='vertical' {...props} aria-label="vertical resize textarea" />);
+  const view = shallow(<TextArea resizeOrientation="vertical" {...props} aria-label="vertical resize textarea" />);
   expect(view).toMatchSnapshot();
 });
 
 test('horizontally resizable text area', () => {
-  const view = shallow(<TextArea resizeOrientation='horizontal' {...props} required isValid={false} aria-label="horizontal resize textarea" />);
+  const view = shallow(
+    <TextArea
+      resizeOrientation="horizontal"
+      {...props}
+      required
+      isValid={false}
+      aria-label="horizontal resize textarea"
+    />
+  );
   expect(view).toMatchSnapshot();
 });
 

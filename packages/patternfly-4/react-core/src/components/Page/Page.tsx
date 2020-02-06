@@ -100,10 +100,12 @@ export class Page extends React.Component<PageProps, PageState> {
   handleResize = () => {
     const { onPageResize } = this.props;
     const windowSize = window.innerWidth;
+    // eslint-disable-next-line radix
     const mobileView = windowSize < Number.parseInt(globalBreakpointMd.value, 10);
     if (onPageResize) {
       onPageResize({ mobileView, windowSize });
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.setState(prevState => ({
       mobileView
     }));
@@ -132,7 +134,9 @@ export class Page extends React.Component<PageProps, PageState> {
       role,
       mainContainerId,
       isManagedSidebar,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       defaultManagedSidebarIsOpen,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onPageResize,
       mainAriaLabel,
       ...rest

@@ -4,7 +4,6 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { keyHandler } from '../../helpers/util';
 import { DropdownPosition, DropdownArrowContext, DropdownContext } from './dropdownConstants';
-import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 export interface DropdownMenuProps {
   /** Anything which can be rendered as dropdown items */
@@ -80,9 +79,10 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   sendRef = (index: number, nodes: any[], isDisabled: boolean, isSeparator: boolean) => {
     this.refsCollection[index] = [];
     nodes.map((node, innerIndex) => {
-      if (!node) this.refsCollection[index][innerIndex] = null;
-      else if (!node.getAttribute) {
-        // eslint-disable-line react/no-find-dom-node
+      if (!node) {
+        this.refsCollection[index][innerIndex] = null;
+      } else if (!node.getAttribute) {
+        // eslint-disable-next-line react/no-find-dom-node
         this.refsCollection[index][innerIndex] = ReactDOM.findDOMNode(node) as HTMLElement;
       } else if (isDisabled || isSeparator) {
         this.refsCollection[index][innerIndex] = null;
@@ -125,6 +125,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   }
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, isOpen, position, children, component, isGrouped, openedOnEnter, ...props } = this.props;
     return (
       <DropdownArrowContext.Provider

@@ -12,7 +12,7 @@ import { KEY_CODES } from '../../helpers/constants';
 
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
-// tslint:disable-next-line
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const FocusTrap: any = require('focus-trap-react');
 
 // seed for the aria-labelledby ID

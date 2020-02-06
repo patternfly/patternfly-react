@@ -1,6 +1,4 @@
 import * as React from 'react';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import { css } from '@patternfly/react-styles';
 
 import { Title, TitleLevel } from '../Title';
 
@@ -21,12 +19,11 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   hideTitle = false,
   headingLevel = TitleLevel.h1,
   ...props
-}: ModalBoxHeaderProps) => {
-  return hideTitle ? null : (
+}: ModalBoxHeaderProps) =>
+  hideTitle ? null : (
     <React.Fragment>
       <Title size="2xl" headingLevel={headingLevel} className={className} {...props}>
         {children}
       </Title>
     </React.Fragment>
   );
-};

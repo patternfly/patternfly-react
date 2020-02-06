@@ -28,7 +28,7 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
 export class DataToolbarContent extends React.Component<DataToolbarContentProps> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
   private chipContainerRef = React.createRef<HTMLDivElement>();
-  private static currentId: number = 0;
+  private static currentId = 0;
 
   static defaultProps: DataToolbarContentProps = {
     isExpanded: false,

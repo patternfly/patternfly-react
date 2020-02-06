@@ -18,10 +18,8 @@ export const ChipButton: React.FunctionComponent<ChipButtonProps> = ({
   className = '',
   onClick = () => undefined,
   ...props
-}: ChipButtonProps) => {
-  return (
-    <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
-      {children}
-    </Button>
-  );
-};
+}: ChipButtonProps) => (
+  <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
+    {children}
+  </Button>
+);

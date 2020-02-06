@@ -5,15 +5,9 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Drawer } from '../../Drawer';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import {} from '../..';
 
 it('Drawer should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <Drawer
-      className={"''"}
-			children={<div>ReactNode</div>}
-			isExpanded={false}
-			isInline={false}
-    />);
+  const view = shallow(<Drawer className={"''"} children={<div>ReactNode</div>} isExpanded={false} isInline={false} />);
   expect(view).toMatchSnapshot();
 });

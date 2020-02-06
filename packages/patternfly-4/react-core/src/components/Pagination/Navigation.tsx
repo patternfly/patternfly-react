@@ -84,6 +84,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   };
 
   private static parseInteger(input: React.ReactText, lastPage: number): number {
+    // eslint-disable-next-line radix
     let inputPage = Number.parseInt(input as string, 10);
     if (!Number.isNaN(inputPage)) {
       inputPage = inputPage > lastPage ? lastPage : inputPage;
@@ -101,7 +102,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     event: React.KeyboardEvent<HTMLInputElement>,
     page: number | string,
     lastPage: number,
-    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void,
+    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
   ): void {
     if (event.keyCode === KEY_CODES.ENTER) {
       const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
@@ -114,8 +115,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     const { perPage, onSetPage } = this.props;
     const startIdx = (newPage - 1) * perPage;
     const endIdx = newPage * perPage;
-    return onSetPage(_evt, newPage, perPage, startIdx, endIdx); 
-  }
+    return onSetPage(_evt, newPage, perPage, startIdx, endIdx);
+  };
 
   componentDidUpdate(lastState: NavigationProps) {
     if (
@@ -130,7 +131,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   render() {
     const {
       page,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       perPage,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSetPage,
       isDisabled,
       lastPage,

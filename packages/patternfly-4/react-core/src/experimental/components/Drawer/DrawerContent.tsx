@@ -10,6 +10,7 @@ export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DrawerContent: React.SFC<DrawerContentProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   ...props

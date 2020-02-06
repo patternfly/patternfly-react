@@ -167,7 +167,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   if (!page && offset) {
     page = Math.ceil(offset / perPage);
   }
-  
+
   const lastPage = Math.ceil(itemCount / perPage) || 0;
   if (page < firstPage && itemCount > 0) {
     page = firstPage;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { TextInput,TextInputBase } from '../TextInput';
+import { TextInput, TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
 
 const props = {
@@ -39,13 +39,17 @@ test('invalid text input', () => {
 });
 
 test('validated text input success', () => {
-  const view = mount(<TextInput {...props} required validated={ValidatedOptions.success} aria-label="validated text input" />);
+  const view = mount(
+    <TextInput {...props} required validated={ValidatedOptions.success} aria-label="validated text input" />
+  );
   expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
   expect(view).toMatchSnapshot();
 });
 
 test('validated text input', () => {
-  const view = shallow(<TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />);
+  const view = shallow(
+    <TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />
+  );
   expect(view).toMatchSnapshot();
 });
 

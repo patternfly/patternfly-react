@@ -69,7 +69,9 @@ describe('Progress variant', () => {
 describe('Progress measure location', () => {
   Object.keys(ProgressMeasureLocation).forEach(oneLocation => {
     test(oneLocation, () => {
-      const view = mount(<Progress id={`${oneLocation}-progress`} value={33} measureLocation={oneLocation as ProgressMeasureLocation} />);
+      const view = mount(
+        <Progress id={`${oneLocation}-progress`} value={33} measureLocation={oneLocation as ProgressMeasureLocation} />
+      );
       expect(view).toMatchSnapshot();
     });
   });

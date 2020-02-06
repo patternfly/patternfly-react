@@ -33,6 +33,7 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   onSelect,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownProps) => (

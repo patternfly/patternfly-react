@@ -21,19 +21,17 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
   contentId,
   isExpanded = false,
   ...props
-}: ClipboardCopyToggleProps) => {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={css(styles.clipboardCopyGroupToggle, className)}
-      id={id}
-      aria-labelledby={`${id} ${textId}`}
-      aria-controls={`${id} ${contentId}`}
-      aria-expanded={isExpanded}
-      {...props}
-    >
-      <AngleRightIcon aria-hidden="true" className={css(styles.clipboardCopyGroupToggleIcon)} />
-    </button>
-  );
-};
+}: ClipboardCopyToggleProps) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className={css(styles.clipboardCopyGroupToggle, className)}
+    id={id}
+    aria-labelledby={`${id} ${textId}`}
+    aria-controls={`${id} ${contentId}`}
+    aria-expanded={isExpanded}
+    {...props}
+  >
+    <AngleRightIcon aria-hidden="true" className={css(styles.clipboardCopyGroupToggleIcon)} />
+  </button>
+);

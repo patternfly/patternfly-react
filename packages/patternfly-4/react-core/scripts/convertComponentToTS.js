@@ -1,8 +1,9 @@
-/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const glob = require('glob');
 const fse = require('fs-extra');
 const regex = require('./convertComponentHelpers');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 // Usage: node scripts/convertComponentToTS.js src/components/Alert
 const srcDir = process.argv[2];
@@ -34,6 +35,7 @@ const files = glob.sync('*.js', {
 files
   .filter(file => file.indexOf('.docs') === -1)
   .forEach(file => {
+    // eslint-disable-next-line no-console
     console.log('Converting file', file);
     const from = path.join(srcDir, file);
     const sourceText = fse.readFileSync(from).toString();

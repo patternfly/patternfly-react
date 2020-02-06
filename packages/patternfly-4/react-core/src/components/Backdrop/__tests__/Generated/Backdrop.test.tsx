@@ -5,13 +5,9 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Backdrop } from '../../Backdrop';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import {} from '../..';
 
 it('Backdrop should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <Backdrop
-      children={<>ReactNode</>}
-			className={"''"}
-    />);
+  const view = shallow(<Backdrop children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

@@ -95,7 +95,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     // For every initial starting position, there are 3 escape positions
     flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
     tippyProps: {},
-    id: '',
+    id: ''
   };
 
   storeTippyInstance = (tip: TippyInstance) => {

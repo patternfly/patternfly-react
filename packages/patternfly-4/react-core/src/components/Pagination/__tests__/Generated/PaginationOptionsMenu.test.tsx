@@ -11,30 +11,31 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
   const view = shallow(
     <PaginationOptionsMenu
       className={"''"}
-			widgetId={"''"}
-			isDisabled={false}
-			dropDirection={'up'}
-			perPageOptions={[]}
-			itemsPerPageTitle={"'Items per page'"}
-			page={42}
-			perPageSuffix={"'per page'"}
-			itemsTitle={"'items'"}
-			optionsToggle={"'Select'"}
-			itemCount={0}
-			firstIndex={0}
-			lastIndex={0}
-			defaultToFullPage={false}
-			perPage={0}
-			lastPage={42}
-			toggleTemplate={({ firstIndex, lastIndex, itemCount, itemsTitle }: ToggleTemplateProps) => (
-  <React.Fragment>
-    <b>
-      {firstIndex} - {lastIndex}
-    </b>{' '}
-    of<b>{itemCount}</b> {itemsTitle}
-  </React.Fragment>
-)}
-			onPerPageSelect={() => null as any}
-    />);
+      widgetId={"''"}
+      isDisabled={false}
+      dropDirection={'up'}
+      perPageOptions={[]}
+      itemsPerPageTitle={"'Items per page'"}
+      page={42}
+      perPageSuffix={"'per page'"}
+      itemsTitle={"'items'"}
+      optionsToggle={"'Select'"}
+      itemCount={0}
+      firstIndex={0}
+      lastIndex={0}
+      defaultToFullPage={false}
+      perPage={0}
+      lastPage={42}
+      toggleTemplate={({ firstIndex, lastIndex, itemCount, itemsTitle }: ToggleTemplateProps) => (
+        <React.Fragment>
+          <b>
+            {firstIndex} - {lastIndex}
+          </b>{' '}
+          of<b>{itemCount}</b> {itemsTitle}
+        </React.Fragment>
+      )}
+      onPerPageSelect={() => null as any}
+    />
+  );
   expect(view).toMatchSnapshot();
 });

@@ -13,9 +13,11 @@ test('expanded content render', () => {
 });
 
 test('expanded code content render', () => {
-  const view = shallow(<ClipboardCopyExpanded isCode {...props}>{`{
+  const view = shallow(
+    <ClipboardCopyExpanded isCode {...props}>{`{
     "name": "@patternfly/react-core",
     "version": "1.33.2"
-  }`}</ClipboardCopyExpanded>);
+  }`}</ClipboardCopyExpanded>
+  );
   expect(view).toMatchSnapshot();
 });

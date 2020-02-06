@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
-import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
+import { KEYHANDLER_DIRECTION } from '../../helpers/constants';
 import { Tooltip } from '../Tooltip';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 
@@ -60,6 +60,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     isDisabled: false,
     href: '',
     tooltipProps: {},
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onClick: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => undefined as any,
     index: -1,
     context: {
@@ -93,14 +94,14 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     );
   }
 
-  getInnerNode = (node: any) => {
-    return node && node.childNodes && node.childNodes.length ? node.childNodes[0] : node;
-  };
+  getInnerNode = (node: any) => (node && node.childNodes && node.childNodes.length ? node.childNodes[0] : node);
 
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate item can be focused
     const innerIndex = event.target === this.ref.current ? 0 : 1;
-    if (!this.props.customChild) event.preventDefault();
+    if (!this.props.customChild) {
+      event.preventDefault();
+    }
     if (event.key === 'ArrowUp') {
       this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.UP);
     } else if (event.key === 'ArrowDown') {
@@ -125,6 +126,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   }
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       className,
       children,
@@ -147,6 +149,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       enterTriggersArrowDown,
       ...additionalProps
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
     let isComponentReactElement = false;
     let classes: string;

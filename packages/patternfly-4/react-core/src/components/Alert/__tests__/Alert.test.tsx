@@ -90,12 +90,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Toast alerts match snapsnot', () => {
       const view = mount(
-        <Alert
-          isLiveRegion={true}
-          variant={variant}
-          aria-label={`${variant} toast alert`}
-          title="Some title"
-        >
+        <Alert isLiveRegion={true} variant={variant} aria-label={`${variant} toast alert`} title="Some title">
           Some toast alert
         </Alert>
       );
@@ -104,27 +99,17 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Toast alerts contain default live region', () => {
       const wrapper = mount(
-        <Alert
-          isLiveRegion={true}
-          variant={variant}
-          aria-label={`${variant} toast alert`}
-          title="Some title"
-        >
+        <Alert isLiveRegion={true} variant={variant} aria-label={`${variant} toast alert`} title="Some title">
           Some toast alert
         </Alert>
       );
-      const liveRegion = wrapper.find({ 'aria-live': 'polite' }).length
-      expect (liveRegion).toBe(1)
+      const liveRegion = wrapper.find({ 'aria-live': 'polite' }).length;
+      expect(liveRegion).toBe(1);
     });
 
     test('Toast alert live regions are not atomic', () => {
       const wrapper = mount(
-        <Alert
-          isLiveRegion={true}
-          variant={variant}
-          aria-label={`${variant} toast alert`}
-          title="Some title"
-        >
+        <Alert isLiveRegion={true} variant={variant} aria-label={`${variant} toast alert`} title="Some title">
           Some toast alert
         </Alert>
       );

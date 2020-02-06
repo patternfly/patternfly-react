@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Select, SelectProps } from '../Select';
+import { Select } from '../Select';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
 import { CheckboxSelectOption } from '../CheckboxSelectOption';
 import { SelectGroup } from '../SelectGroup';

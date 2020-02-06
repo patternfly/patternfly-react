@@ -97,12 +97,14 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     toggleAriaLabel: 'Show content'
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   componentDidUpdate = (prevProps: ClipboardCopyProps, prevState: ClipboardCopyState) => {
     if (prevProps.children !== this.props.children) {
       this.updateText(this.props.children as string | number);
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
     this.setState(prevState => ({
       expanded: !prevState.expanded
@@ -116,8 +118,11 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
 
   render = () => {
     const {
-      isReadOnly,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       isExpanded,
+      onChange, // Don't pass to <div>
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      isReadOnly,
       isCode,
       exitDelay,
       maxWidth,
@@ -131,7 +136,6 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       variant,
       position,
       className,
-      onChange, // Don't pass to <div>
       ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';

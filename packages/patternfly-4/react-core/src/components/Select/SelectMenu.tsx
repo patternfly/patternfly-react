@@ -6,7 +6,7 @@ import { SelectOptionObject } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import { Omit, PickOptional } from '../../helpers/typeUtils';
 
-// tslint:disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
@@ -124,6 +124,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
   }
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       isCustomContent,
@@ -142,7 +143,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       'aria-labelledby': ariaLabelledBy,
       ...props
     } = this.props;
-    const {} = props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
 
     return (
       <SelectConsumer>

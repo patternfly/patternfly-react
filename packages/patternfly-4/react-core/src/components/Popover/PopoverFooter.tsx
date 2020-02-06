@@ -2,7 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 
-export const PopoverFooter: React.FunctionComponent<PopoverFooterProps> = ({ children, className = '', ...props }: PopoverFooterProps) => (
+export const PopoverFooter: React.FunctionComponent<PopoverFooterProps> = ({
+  children,
+  className = '',
+  ...props
+}: PopoverFooterProps) => (
   <footer className={css(styles.popoverFooter, className)} {...props}>
     {children}
   </footer>

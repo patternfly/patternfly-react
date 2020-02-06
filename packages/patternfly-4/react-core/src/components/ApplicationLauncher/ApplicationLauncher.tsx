@@ -57,7 +57,10 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   toggleId?: string;
 }
 
-export const ApplicationLauncherContext = React.createContext({ onFavorite: (itemId: string, isFavorite: boolean) => {} });
+export const ApplicationLauncherContext = React.createContext({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onFavorite: (itemId: string, isFavorite: boolean) => {}
+});
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
   static defaultProps: ApplicationLauncherProps = {
@@ -69,8 +72,10 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     onSelect: (_event: any): any => undefined,
     onToggle: (_value: boolean): any => undefined,
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     'aria-label': 'Application launcher',
     isGrouped: false,
     toggleIcon: <ThIcon />,
@@ -102,7 +107,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
   createRenderableFavorites = () => {
     const { items, isGrouped, favorites } = this.props;
     if (isGrouped) {
-      let favoriteItems: React.ReactNode[] = [];
+      const favoriteItems: React.ReactNode[] = [];
       (items as React.ReactElement[]).forEach(group =>
         (group.props.children as React.ReactElement[])
           .filter(item => favorites.includes(item.props.id))
@@ -121,7 +126,9 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       return (items as React.ReactElement[]).map(group =>
         React.cloneElement(group, {
           children: React.Children.map(group.props.children as React.ReactElement[], item => {
-            if (item.type === ApplicationLauncherSeparator) return item;
+            if (item.type === ApplicationLauncherSeparator) {
+              return item;
+            }
             return React.cloneElement(item, {
               isFavorite: favorites.some(favoriteId => favoriteId === item.props.id)
             });
@@ -151,10 +158,12 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       favorites,
       onFavorite,
       onSearch,
+      items,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       searchPlaceholderText,
       searchProps,
-      items,
       ref,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       favoritesLabel,
       searchNoResultsText,
       ...props
@@ -173,8 +182,11 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
           </ApplicationLauncherGroup>
         ];
       }
-      if (renderableFavorites.length > 0) renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
-      else renderableItems = this.extendItemsWithFavorite();
+      if (renderableFavorites.length > 0) {
+        renderableItems = favoritesGroup.concat(this.extendItemsWithFavorite());
+      } else {
+        renderableItems = this.extendItemsWithFavorite();
+      }
     } else {
       renderableItems = items;
     }

@@ -55,6 +55,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
       isOpen,
       isPlain,
       isGrouped,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSelect,
       position,
       toggle,
@@ -92,10 +93,10 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
                 className
               )}
               ref={this.baseComponentRef}
-              {...ouiaContext.isOuia && {
+              {...(ouiaContext.isOuia && {
                 'data-ouia-component-type': ouiaComponentType,
                 'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-              }}
+              })}
             >
               {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {

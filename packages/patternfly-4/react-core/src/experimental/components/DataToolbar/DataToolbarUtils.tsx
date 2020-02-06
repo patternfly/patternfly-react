@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { RefObject } from 'react';
 
- import globalBreakpointMd from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
- import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
- import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
- import globalBreakpoint2xl from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
-
+import globalBreakpointMd from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
+import globalBreakpoint2xl from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
 
 interface DataToolbarContextProps {
   isExpanded: boolean;
@@ -19,8 +18,8 @@ export const DataToolbarContext = React.createContext<Partial<DataToolbarContext
   isExpanded: false,
   toggleIsExpanded: () => {},
   chipGroupContentRef: null,
-  updateNumberFilters: (categoryName: string, numberOfFilters: number) => {},
-  numberOfFilters: 0,
+  updateNumberFilters: () => {},
+  numberOfFilters: 0
 });
 
 interface DataToolbarContentContextProps {
@@ -32,7 +31,7 @@ interface DataToolbarContentContextProps {
 export const DataToolbarContentContext = React.createContext<Partial<DataToolbarContentContextProps>>({
   expandableContentRef: null,
   expandableContentId: '',
-  chipContainerRef: null,
+  chipContainerRef: null
 });
 
 export interface DataToolbarBreakpointMod {

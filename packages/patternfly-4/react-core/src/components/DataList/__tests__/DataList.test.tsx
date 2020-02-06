@@ -184,5 +184,4 @@ describe('DataList', () => {
     );
     expect(view).toMatchSnapshot();
   });
-
 });
