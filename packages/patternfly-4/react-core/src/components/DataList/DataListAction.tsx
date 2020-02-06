@@ -17,6 +17,7 @@ const visibilityModifiers = pickProperties(styles.modifiers, [
   'visibleOn_2xl'
 ]);
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface IDataListActionVisibility {
   hidden?: string;
   hiddenOnSm?: string;

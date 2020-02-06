@@ -33,7 +33,9 @@
         "jest": "readonly",
         "expect": "readonly",
         "require": "readonly",
-        "global": "writeable"
+        "global": "writeable",
+        "it": "readonly",
+        "afterEach": "readonly"
     },
     "rules": {
         "@typescript-eslint/adjacent-overload-signatures": "error",
