@@ -98,7 +98,7 @@
     "generate": "yarn plop",
     "lint:md": "yarn eslintpackages/patternfly-4 --ext md --config .eslintrc-md.json",
     "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
-    "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/eslint packages/patternfly-4/react-core --ext js,jsx,ts,tsx",
+    "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/eslint packages/patternfly-4/react-table --ext js,jsx,ts,tsx",
     "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
     "prettier": "node node_modules/.bin/prettier --write \"storybook/**/*.{js,ts,tsx}\" \"packages/**/*.{js,ts,tsx}\" \"scripts/**/*.{js,ts,tsx}\"",
     "serve:docs": "lerna run serve",
