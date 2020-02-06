@@ -14,9 +14,23 @@ it('EmptyStateIcon should match snapshot (auto-generated)', () => {
 			size={'sm'}
 			title={"string"}
 			className={"''"}
-			icon={null}
+			icon={'div'}
 			component={null}
 			variant={'icon'}
+    />);
+  expect(view).toMatchSnapshot();
+});
+
+it('EmptyStateIcon should match snapshot for variant container', () => {
+  const view = shallow(
+    <EmptyStateIcon
+      color={"string"}
+			size={'sm'}
+			title={"string"}
+			className={"''"}
+			icon={'div'}
+			component={null}
+			variant={'container'}
     />);
   expect(view).toMatchSnapshot();
 });

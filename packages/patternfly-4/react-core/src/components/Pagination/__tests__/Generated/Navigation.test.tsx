@@ -5,7 +5,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Navigation } from '../../Navigation';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import { } from '../..';
 
 it('Navigation should match snapshot (auto-generated)', () => {
   const view = shallow(
@@ -24,7 +24,7 @@ it('Navigation should match snapshot (auto-generated)', () => {
 			paginationTitle={"'Pagination'"}
 			page={42}
 			perPage={42}
-			onSetPage={undefined}
+			onSetPage={() => {}}
 			onNextClick={() => undefined as any}
 			onPreviousClick={() => undefined as any}
 			onFirstClick={() => undefined as any}

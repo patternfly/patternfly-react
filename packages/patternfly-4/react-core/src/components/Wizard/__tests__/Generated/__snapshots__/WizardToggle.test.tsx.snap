@@ -15,9 +15,7 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
       >
         <span
           className="pf-c-wizard__toggle-num"
-        >
-          1
-        </span>
+        />
          
       </li>
     </ol>

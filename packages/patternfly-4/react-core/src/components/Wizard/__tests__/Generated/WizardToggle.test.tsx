@@ -11,8 +11,8 @@ it('WizardToggle should match snapshot (auto-generated)', () => {
   const view = shallow(
     <WizardToggle
       nav={(isWizardNavOpen: boolean) => undefined as React.ReactElement}
-			steps={[{ name: '' }]}
-			activeStep={{ name: '' }}
+			steps={[]}
+			activeStep={{ name: 'step'}}
 			children={<div>ReactNode</div>}
 			hasBodyPadding={true}
 			isNavOpen={true}
