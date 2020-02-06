@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartThreshold 1`] = `
-<Component
+<ChartLine
   style={
     Object {
       "data": Object {
@@ -464,7 +464,7 @@ exports[`ChartThreshold 1`] = `
 `;
 
 exports[`ChartThreshold 2`] = `
-<Component
+<ChartLine
   style={
     Object {
       "data": Object {
@@ -929,7 +929,7 @@ exports[`ChartThreshold 2`] = `
 exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -4015,8 +4015,8 @@ exports[`renders component data 1`] = `
   }
   width={200}
 >
-  <Component>
-    <Component
+  <ChartGroup>
+    <ChartThreshold
       data={
         Array [
           Object {
@@ -4042,6 +4042,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </Component>
+  </ChartGroup>
 </VictoryChart>
 `;

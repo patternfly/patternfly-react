@@ -3,7 +3,7 @@
 exports[`ChartArea 1`] = `
 <VictoryArea
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -940,7 +940,7 @@ exports[`ChartArea 1`] = `
 exports[`ChartArea 2`] = `
 <VictoryArea
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -1877,7 +1877,7 @@ exports[`ChartArea 2`] = `
 exports[`renders component data 1`] = `
 <VictoryArea
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {

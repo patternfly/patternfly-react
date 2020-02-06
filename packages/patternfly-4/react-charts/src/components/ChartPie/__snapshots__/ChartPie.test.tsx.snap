@@ -2,7 +2,7 @@
 
 exports[`ChartPie 1`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={230}
     theme={
       Object {
@@ -499,7 +499,7 @@ exports[`ChartPie 1`] = `
       height={230}
       key="pf-chart-pie"
       labelComponent={
-        <Unknown
+        <ChartTooltip
           constrainToVisibleArea={false}
           theme={
             Object {
@@ -1406,13 +1406,13 @@ exports[`ChartPie 1`] = `
       }
       width={230}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;
 
 exports[`ChartPie 2`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={230}
     theme={
       Object {
@@ -1909,7 +1909,7 @@ exports[`ChartPie 2`] = `
       height={230}
       key="pf-chart-pie"
       labelComponent={
-        <Unknown
+        <ChartTooltip
           constrainToVisibleArea={false}
           theme={
             Object {
@@ -2816,13 +2816,13 @@ exports[`ChartPie 2`] = `
       }
       width={230}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;
 
 exports[`renders component data 1`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={200}
     theme={
       Object {
@@ -3311,7 +3311,7 @@ exports[`renders component data 1`] = `
       height={200}
       key="pf-chart-pie"
       labelComponent={
-        <Unknown
+        <ChartTooltip
           constrainToVisibleArea={false}
           theme={
             Object {
@@ -4218,6 +4218,6 @@ exports[`renders component data 1`] = `
       }
       width={200}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;

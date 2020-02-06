@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert Group should match snapshot 1`] = `<Component />`;
+exports[`Alert Group should match snapshot 1`] = `<AlertGroupInline />`;
 
 exports[`Standard Alert Group is not a toast alert group 1`] = `
 <AlertGroup>
-  <Component>
+  <AlertGroupInline>
     <ul
       className="pf-c-alert-group"
     >
@@ -40,7 +40,7 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
                 aria-label="Danger Alert"
                 className="pf-c-alert pf-m-danger"
               >
-                <Component
+                <AlertIcon
                   variant="danger"
                 >
                   <div
@@ -73,7 +73,7 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
                       </svg>
                     </ExclamationCircleIcon>
                   </div>
-                </Component>
+                </AlertIcon>
                 <h4
                   className="pf-c-alert__title"
                 >
@@ -90,7 +90,7 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
         </Component>
       </li>
     </ul>
-  </Component>
+  </AlertGroupInline>
 </AlertGroup>
 `;
 
@@ -144,7 +144,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
       </div>
     }
   >
-    <Component
+    <AlertGroupInline
       isToast={true}
     >
       <ul
@@ -182,7 +182,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
                   aria-label="Warning Alert"
                   className="pf-c-alert pf-m-warning"
                 >
-                  <Component
+                  <AlertIcon
                     variant="warning"
                   >
                     <div
@@ -215,7 +215,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
                         </svg>
                       </ExclamationTriangleIcon>
                     </div>
-                  </Component>
+                  </AlertIcon>
                   <h4
                     className="pf-c-alert__title"
                   >
@@ -232,7 +232,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
           </Component>
         </li>
       </ul>
-    </Component>
+    </AlertGroupInline>
   </Portal>
 </AlertGroup>
 `;
@@ -438,7 +438,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
       </div>
     }
   >
-    <Component
+    <AlertGroupInline
       isToast={true}
     >
       <ul
@@ -449,7 +449,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
         >
           <Component
             action={
-              <Unknown
+              <AlertActionCloseButton
                 aria-label="Close"
                 onClose={[MockFunction]}
               />
@@ -462,7 +462,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               component={[Function]}
               componentProps={
                 Object {
-                  "action": <Unknown
+                  "action": <AlertActionCloseButton
                     aria-label="Close"
                     onClose={[MockFunction]}
                   />,
@@ -474,7 +474,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
             >
               <Alert
                 action={
-                  <Unknown
+                  <AlertActionCloseButton
                     aria-label="Close"
                     onClose={[MockFunction]}
                   />
@@ -494,7 +494,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   aria-live="polite"
                   className="pf-c-alert pf-m-info"
                 >
-                  <Component
+                  <AlertIcon
                     variant="info"
                   >
                     <div
@@ -527,7 +527,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                         </svg>
                       </InfoCircleIcon>
                     </div>
-                  </Component>
+                  </AlertIcon>
                   <h4
                     className="pf-c-alert__title"
                   >
@@ -541,7 +541,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   <div
                     className="pf-c-alert__action"
                   >
-                    <Component
+                    <AlertActionCloseButton
                       aria-label="Close"
                       onClose={[MockFunction]}
                       title="Test Alert"
@@ -624,7 +624,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                           </Button>
                         </ComponentWithOuia>
                       </Component>
-                    </Component>
+                    </AlertActionCloseButton>
                   </div>
                 </div>
               </Alert>
@@ -637,7 +637,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
           ))}
         </li>
       </ul>
-    </Component>
+    </AlertGroupInline>
   </Portal>
 </AlertGroup>
 `;

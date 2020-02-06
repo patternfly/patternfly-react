@@ -2,7 +2,7 @@
 
 exports[`ChartDonutThreshold 1`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={230}
     theme={
       Object {
@@ -456,7 +456,7 @@ exports[`ChartDonutThreshold 1`] = `
     }
     width={230}
   >
-    <Component
+    <ChartDonut
       allowTooltip={true}
       constrainToVisibleArea={false}
       data={
@@ -930,13 +930,13 @@ exports[`ChartDonutThreshold 1`] = `
       }
       width={230}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;
 
 exports[`ChartDonutThreshold 2`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={230}
     theme={
       Object {
@@ -1390,7 +1390,7 @@ exports[`ChartDonutThreshold 2`] = `
     }
     width={230}
   >
-    <Component
+    <ChartDonut
       allowTooltip={true}
       constrainToVisibleArea={false}
       data={
@@ -1864,13 +1864,13 @@ exports[`ChartDonutThreshold 2`] = `
       }
       width={230}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;
 
 exports[`renders component data 1`] = `
 <Fragment>
-  <Component
+  <ChartContainer
     height={200}
     theme={
       Object {
@@ -2324,7 +2324,7 @@ exports[`renders component data 1`] = `
     }
     width={200}
   >
-    <Component
+    <ChartDonut
       allowTooltip={true}
       constrainToVisibleArea={false}
       data={
@@ -2810,6 +2810,6 @@ exports[`renders component data 1`] = `
       }
       width={200}
     />
-  </Component>
+  </ChartContainer>
 </Fragment>
 `;

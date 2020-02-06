@@ -12,7 +12,7 @@ exports[`Disabled FormSelect input  1`] = `
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -32,7 +32,7 @@ exports[`FormSelect input with aria-label does not generate console error 1`] = 
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -52,7 +52,7 @@ exports[`FormSelect input with id does not generate console error 1`] = `
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -71,7 +71,7 @@ exports[`FormSelect input with no aria-label or id generates console error 1`] =
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -91,60 +91,60 @@ exports[`Grouped FormSelect input 1`] = `
   required={false}
   value="2"
 >
-  <Component
+  <FormSelectOptionGroup
     isDisabled={false}
     key="0"
     label="Group1"
   >
-    <Component
+    <FormSelectOption
       isDisabled={false}
       key="0"
       label="The First Option"
       value="1"
     />
-    <Component
+    <FormSelectOption
       isDisabled={false}
       key="1"
       label="Second option is selected by default"
       value="2"
     />
-  </Component>
-  <Component
+  </FormSelectOptionGroup>
+  <FormSelectOptionGroup
     isDisabled={false}
     key="1"
     label="Group2"
   >
-    <Component
+    <FormSelectOption
       isDisabled={false}
       key="0"
       label="The Third Option"
       value="3"
     />
-    <Component
+    <FormSelectOption
       isDisabled={false}
       key="1"
       label="The Fourth option"
       value="4"
     />
-  </Component>
-  <Component
+  </FormSelectOptionGroup>
+  <FormSelectOptionGroup
     isDisabled={true}
     key="2"
     label="Group3"
   >
-    <Component
+    <FormSelectOption
       isDisabled={false}
       key="0"
       label="The Fifth Option"
       value="5"
     />
-    <Component
+    <FormSelectOption
       isDisabled={false}
       key="1"
       label="The Sixth option"
       value="6"
     />
-  </Component>
+  </FormSelectOptionGroup>
 </select>
 `;
 
@@ -160,43 +160,43 @@ exports[`Simple FormSelect input 1`] = `
   required={false}
   value="mrs"
 >
-  <Component
+  <FormSelectOption
     isDisabled={true}
     key="0"
     label="Please Choose"
     value="please choose"
   />
-  <Component
+  <FormSelectOption
     isDisabled={false}
     key="1"
     label="Mr"
     value="mr"
   />
-  <Component
+  <FormSelectOption
     isDisabled={false}
     key="2"
     label="Miss"
     value="miss"
   />
-  <Component
+  <FormSelectOption
     isDisabled={false}
     key="3"
     label="Mrs"
     value="mrs"
   />
-  <Component
+  <FormSelectOption
     isDisabled={false}
     key="4"
     label="Ms"
     value="ms"
   />
-  <Component
+  <FormSelectOption
     isDisabled={false}
     key="5"
     label="Dr"
     value="dr"
   />
-  <Component
+  <FormSelectOption
     isDisabled={true}
     key="6"
     label="Other"
@@ -217,7 +217,7 @@ exports[`invalid FormSelect input 1`] = `
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -237,7 +237,7 @@ exports[`required FormSelect input 1`] = `
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -257,7 +257,7 @@ exports[`validated error FormSelect input 1`] = `
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"
@@ -277,7 +277,7 @@ exports[`validated success FormSelect input 1`] = `
   required={false}
   value=""
 >
-  <Component
+  <FormSelectOption
     key="1"
     label="Mr"
     value="mr"

@@ -3,7 +3,7 @@
 exports[`ChartScatter 1`] = `
 <VictoryScatter
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -931,7 +931,7 @@ exports[`ChartScatter 1`] = `
 exports[`ChartScatter 2`] = `
 <VictoryScatter
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -1859,7 +1859,7 @@ exports[`ChartScatter 2`] = `
 exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -4945,8 +4945,8 @@ exports[`renders component data 1`] = `
   }
   width={200}
 >
-  <Component>
-    <Component
+  <ChartGroup>
+    <ChartScatter
       data={
         Array [
           Object {
@@ -4968,7 +4968,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartScatter
       data={
         Array [
           Object {
@@ -4990,7 +4990,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartScatter
       data={
         Array [
           Object {
@@ -5012,7 +5012,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartScatter
       data={
         Array [
           Object {
@@ -5034,6 +5034,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </Component>
+  </ChartGroup>
 </VictoryChart>
 `;

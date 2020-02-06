@@ -1,184 +1,184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Simple toolbar with single group 1`] = `
-<Component>
+<Toolbar>
   <div
     className="pf-l-toolbar"
   >
-    <Component>
+    <ToolbarGroup>
       <div
         className="pf-l-toolbar__group"
       >
-        <Component>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 1
           </div>
-        </Component>
-        <Component>
+        </ToolbarItem>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 2
           </div>
-        </Component>
+        </ToolbarItem>
       </div>
-    </Component>
+    </ToolbarGroup>
   </div>
-</Component>
+</Toolbar>
 `;
 
 exports[`Toolbar with multiple groups 1`] = `
-<Component>
+<Toolbar>
   <div
     className="pf-l-toolbar"
   >
-    <Component>
+    <ToolbarGroup>
       <div
         className="pf-l-toolbar__group"
       >
-        <Component>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 1
           </div>
-        </Component>
-        <Component>
+        </ToolbarItem>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 2
           </div>
-        </Component>
+        </ToolbarItem>
       </div>
-    </Component>
-    <Component>
+    </ToolbarGroup>
+    <ToolbarGroup>
       <div
         className="pf-l-toolbar__group"
       >
-        <Component>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 3
           </div>
-        </Component>
+        </ToolbarItem>
       </div>
-    </Component>
-    <Component>
+    </ToolbarGroup>
+    <ToolbarGroup>
       <div
         className="pf-l-toolbar__group"
       >
-        <Component>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 4
           </div>
-        </Component>
-        <Component>
+        </ToolbarItem>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 5
           </div>
-        </Component>
-        <Component>
+        </ToolbarItem>
+        <ToolbarItem>
           <div
             className="pf-l-toolbar__item"
           >
             Item 6
           </div>
-        </Component>
+        </ToolbarItem>
       </div>
-    </Component>
+    </ToolbarGroup>
   </div>
-</Component>
+</Toolbar>
 `;
 
 exports[`Toolbar with sections 1`] = `
-<Component>
+<Toolbar>
   <div
     className="pf-l-toolbar"
   >
-    <Component
+    <ToolbarSection
       aria-label="First section"
     >
       <section
         className="pf-l-toolbar__section"
       >
-        <Component>
+        <ToolbarGroup>
           <div
             className="pf-l-toolbar__group"
           >
-            <Component>
+            <ToolbarItem>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 1
               </div>
-            </Component>
-            <Component>
+            </ToolbarItem>
+            <ToolbarItem>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 2
               </div>
-            </Component>
+            </ToolbarItem>
           </div>
-        </Component>
-        <Component>
+        </ToolbarGroup>
+        <ToolbarGroup>
           <div
             className="pf-l-toolbar__group"
           >
-            <Component>
+            <ToolbarItem>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 3
               </div>
-            </Component>
+            </ToolbarItem>
           </div>
-        </Component>
+        </ToolbarGroup>
       </section>
-    </Component>
-    <Component
+    </ToolbarSection>
+    <ToolbarSection
       aria-label="Second section"
     >
       <section
         className="pf-l-toolbar__section"
       >
-        <Component>
+        <ToolbarGroup>
           <div
             className="pf-l-toolbar__group"
           >
-            <Component>
+            <ToolbarItem>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 4
               </div>
-            </Component>
-            <Component>
+            </ToolbarItem>
+            <ToolbarItem>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 5
               </div>
-            </Component>
-            <Component>
+            </ToolbarItem>
+            <ToolbarItem>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 6
               </div>
-            </Component>
+            </ToolbarItem>
           </div>
-        </Component>
+        </ToolbarGroup>
       </section>
-    </Component>
+    </ToolbarSection>
   </div>
-</Component>
+</Toolbar>
 `;

@@ -15,30 +15,30 @@ exports[`Dark Nav List 1`] = `
           className="test-nav-list-class"
           variant="default"
         >
-          <Unknown
+          <NavItem
             className="test-nav-item-class"
             to="#link1"
           >
             Link 1
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             className="test-nav-item-class"
             to="#link2"
           >
             Link 2
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             className="test-nav-item-class"
             to="#link3"
           >
             Link 3
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             className="test-nav-item-class"
             to="#link4"
           >
             Link 4
-          </Unknown>
+          </NavItem>
         </NavList>,
         "className": "test=nav-class",
         "theme": "dark",
@@ -72,7 +72,7 @@ exports[`Dark Nav List 1`] = `
           <ul
             className="pf-c-nav__list test-nav-list-class"
           >
-            <Component
+            <NavItem
               className="test-nav-item-class"
               key="#link1"
               to="#link1"
@@ -89,8 +89,8 @@ exports[`Dark Nav List 1`] = `
                   Link 1
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               className="test-nav-item-class"
               key="#link2"
               to="#link2"
@@ -107,8 +107,8 @@ exports[`Dark Nav List 1`] = `
                   Link 2
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               className="test-nav-item-class"
               key="#link3"
               to="#link3"
@@ -125,8 +125,8 @@ exports[`Dark Nav List 1`] = `
                   Link 3
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               className="test-nav-item-class"
               key="#link4"
               to="#link4"
@@ -143,7 +143,7 @@ exports[`Dark Nav List 1`] = `
                   Link 4
                 </a>
               </li>
-            </Component>
+            </NavItem>
           </ul>
         </NavList>
       </nav>
@@ -164,26 +164,26 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           className=""
           variant="default"
         >
-          <Unknown
+          <NavItem
             to="#link1"
           >
             Link 1
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link2"
           >
             Link 2
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link3"
           >
             Link 3
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link4"
           >
             Link 4
-          </Unknown>
+          </NavItem>
         </NavList>,
       }
     }
@@ -215,7 +215,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           <ul
             className="pf-c-nav__list"
           >
-            <Component
+            <NavItem
               key="#link1"
               to="#link1"
             >
@@ -231,8 +231,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
                   Link 1
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link2"
               to="#link2"
             >
@@ -248,8 +248,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
                   Link 2
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link3"
               to="#link3"
             >
@@ -265,8 +265,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
                   Link 3
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link4"
               to="#link4"
             >
@@ -282,7 +282,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
                   Link 4
                 </a>
               </li>
-            </Component>
+            </NavItem>
           </ul>
         </NavList>
       </nav>
@@ -305,30 +305,30 @@ exports[`Default Nav List 1`] = `
           className="test-nav-list-class"
           variant="default"
         >
-          <Unknown
+          <NavItem
             className="test-nav-item-class"
             to="#link1"
           >
             Link 1
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             className="test-nav-item-class"
             to="#link2"
           >
             Link 2
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             className="test-nav-item-class"
             to="#link3"
           >
             Link 3
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             className="test-nav-item-class"
             to="#link4"
           >
             Link 4
-          </Unknown>
+          </NavItem>
         </NavList>,
         "className": "test=nav-class",
       }
@@ -361,7 +361,7 @@ exports[`Default Nav List 1`] = `
           <ul
             className="pf-c-nav__list test-nav-list-class"
           >
-            <Component
+            <NavItem
               className="test-nav-item-class"
               key="#link1"
               to="#link1"
@@ -378,8 +378,8 @@ exports[`Default Nav List 1`] = `
                   Link 1
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               className="test-nav-item-class"
               key="#link2"
               to="#link2"
@@ -396,8 +396,8 @@ exports[`Default Nav List 1`] = `
                   Link 2
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               className="test-nav-item-class"
               key="#link3"
               to="#link3"
@@ -414,8 +414,8 @@ exports[`Default Nav List 1`] = `
                   Link 3
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               className="test-nav-item-class"
               key="#link4"
               to="#link4"
@@ -432,7 +432,7 @@ exports[`Default Nav List 1`] = `
                   Link 4
                 </a>
               </li>
-            </Component>
+            </NavItem>
           </ul>
         </NavList>
       </nav>
@@ -462,26 +462,26 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
             srText=""
             title="Section 1"
           >
-            <Unknown
+            <NavItem
               to="#link1"
             >
               Link 1
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link2"
             >
               Link 2
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link3"
             >
               Link 3
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link4"
             >
               Link 4
-            </Unknown>
+            </NavItem>
           </NavExpandable>
         </NavList>,
       }
@@ -577,7 +577,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                   <ul
                     className="pf-c-nav__simple-list"
                   >
-                    <Component
+                    <NavItem
                       key="#link1"
                       to="#link1"
                     >
@@ -593,8 +593,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                           Link 1
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link2"
                       to="#link2"
                     >
@@ -610,8 +610,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                           Link 2
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link3"
                       to="#link3"
                     >
@@ -627,8 +627,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                           Link 3
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link4"
                       to="#link4"
                     >
@@ -644,7 +644,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                           Link 4
                         </a>
                       </li>
-                    </Component>
+                    </NavItem>
                   </ul>
                 </section>
               </li>
@@ -678,26 +678,26 @@ exports[`Expandable Nav List 1`] = `
             srText=""
             title="Section 1"
           >
-            <Unknown
+            <NavItem
               to="#link1"
             >
               Link 1
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link2"
             >
               Link 2
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link3"
             >
               Link 3
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link4"
             >
               Link 4
-            </Unknown>
+            </NavItem>
           </NavExpandable>
         </NavList>,
       }
@@ -793,7 +793,7 @@ exports[`Expandable Nav List 1`] = `
                   <ul
                     className="pf-c-nav__simple-list"
                   >
-                    <Component
+                    <NavItem
                       key="#link1"
                       to="#link1"
                     >
@@ -809,8 +809,8 @@ exports[`Expandable Nav List 1`] = `
                           Link 1
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link2"
                       to="#link2"
                     >
@@ -826,8 +826,8 @@ exports[`Expandable Nav List 1`] = `
                           Link 2
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link3"
                       to="#link3"
                     >
@@ -843,8 +843,8 @@ exports[`Expandable Nav List 1`] = `
                           Link 3
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link4"
                       to="#link4"
                     >
@@ -860,7 +860,7 @@ exports[`Expandable Nav List 1`] = `
                           Link 4
                         </a>
                       </li>
-                    </Component>
+                    </NavItem>
                   </ul>
                 </section>
               </li>
@@ -897,26 +897,26 @@ exports[`Expandable Nav List with aria label 1`] = `
             srText="Section 1 - Example sub-navigation"
             title="Section 1"
           >
-            <Unknown
+            <NavItem
               to="#link1"
             >
               Link 1
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link2"
             >
               Link 2
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link3"
             >
               Link 3
-            </Unknown>
-            <Unknown
+            </NavItem>
+            <NavItem
               to="#link4"
             >
               Link 4
-            </Unknown>
+            </NavItem>
           </NavExpandable>
         </NavList>,
       }
@@ -1018,7 +1018,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                   <ul
                     className="pf-c-nav__simple-list"
                   >
-                    <Component
+                    <NavItem
                       key="#link1"
                       to="#link1"
                     >
@@ -1034,8 +1034,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                           Link 1
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link2"
                       to="#link2"
                     >
@@ -1051,8 +1051,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                           Link 2
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link3"
                       to="#link3"
                     >
@@ -1068,8 +1068,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                           Link 3
                         </a>
                       </li>
-                    </Component>
-                    <Component
+                    </NavItem>
+                    <NavItem
                       key="#link4"
                       to="#link4"
                     >
@@ -1085,7 +1085,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                           Link 4
                         </a>
                       </li>
-                    </Component>
+                    </NavItem>
                   </ul>
                 </section>
               </li>
@@ -1110,26 +1110,26 @@ exports[`Horizontal Nav List 1`] = `
           className=""
           variant="horizontal"
         >
-          <Unknown
+          <NavItem
             to="#link1"
           >
             Link 1
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link2"
           >
             Link 2
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link3"
           >
             Link 3
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link4"
           >
             Link 4
-          </Unknown>
+          </NavItem>
         </NavList>,
       }
     }
@@ -1193,7 +1193,7 @@ exports[`Horizontal Nav List 1`] = `
           <ul
             className="pf-c-nav__horizontal-list"
           >
-            <Component
+            <NavItem
               key="#link1"
               to="#link1"
             >
@@ -1209,8 +1209,8 @@ exports[`Horizontal Nav List 1`] = `
                   Link 1
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link2"
               to="#link2"
             >
@@ -1226,8 +1226,8 @@ exports[`Horizontal Nav List 1`] = `
                   Link 2
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link3"
               to="#link3"
             >
@@ -1243,8 +1243,8 @@ exports[`Horizontal Nav List 1`] = `
                   Link 3
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link4"
               to="#link4"
             >
@@ -1260,7 +1260,7 @@ exports[`Horizontal Nav List 1`] = `
                   Link 4
                 </a>
               </li>
-            </Component>
+            </NavItem>
           </ul>
           <button
             aria-label="Scroll right"
@@ -1308,7 +1308,7 @@ exports[`Nav Grouped List 1`] = `
     componentProps={
       Object {
         "children": Array [
-          <Unknown
+          <NavGroup
             id="grp-1"
             title="Section 1"
           >
@@ -1318,29 +1318,29 @@ exports[`Nav Grouped List 1`] = `
               className=""
               variant="default"
             >
-              <Unknown
+              <NavItem
                 to="#link1"
               >
                 Link 1
-              </Unknown>
-              <Unknown
+              </NavItem>
+              <NavItem
                 to="#link2"
               >
                 Link 2
-              </Unknown>
-              <Unknown
+              </NavItem>
+              <NavItem
                 to="#link3"
               >
                 Link 3
-              </Unknown>
-              <Unknown
+              </NavItem>
+              <NavItem
                 to="#link4"
               >
                 Link 4
-              </Unknown>
+              </NavItem>
             </NavList>
-          </Unknown>,
-          <Unknown
+          </NavGroup>,
+          <NavGroup
             id="grp-2"
             title="Section 2"
           >
@@ -1350,28 +1350,28 @@ exports[`Nav Grouped List 1`] = `
               className=""
               variant="default"
             >
-              <Unknown
+              <NavItem
                 to="#link1"
               >
                 Link 1
-              </Unknown>
-              <Unknown
+              </NavItem>
+              <NavItem
                 to="#link2"
               >
                 Link 2
-              </Unknown>
-              <Unknown
+              </NavItem>
+              <NavItem
                 to="#link3"
               >
                 Link 3
-              </Unknown>
-              <Unknown
+              </NavItem>
+              <NavItem
                 to="#link4"
               >
                 Link 4
-              </Unknown>
+              </NavItem>
             </NavList>
-          </Unknown>,
+          </NavGroup>,
         ],
       }
     }
@@ -1394,7 +1394,7 @@ exports[`Nav Grouped List 1`] = `
         aria-label="Global"
         className="pf-c-nav"
       >
-        <Component
+        <NavGroup
           id="grp-1"
           title="Section 1"
         >
@@ -1420,7 +1420,7 @@ exports[`Nav Grouped List 1`] = `
                 <ul
                   className="pf-c-nav__list"
                 >
-                  <Component
+                  <NavItem
                     key="section1_#link1"
                     to="#link1"
                   >
@@ -1436,8 +1436,8 @@ exports[`Nav Grouped List 1`] = `
                         Link 1
                       </a>
                     </li>
-                  </Component>
-                  <Component
+                  </NavItem>
+                  <NavItem
                     key="section1_#link2"
                     to="#link2"
                   >
@@ -1453,8 +1453,8 @@ exports[`Nav Grouped List 1`] = `
                         Link 2
                       </a>
                     </li>
-                  </Component>
-                  <Component
+                  </NavItem>
+                  <NavItem
                     key="section1_#link3"
                     to="#link3"
                   >
@@ -1470,8 +1470,8 @@ exports[`Nav Grouped List 1`] = `
                         Link 3
                       </a>
                     </li>
-                  </Component>
-                  <Component
+                  </NavItem>
+                  <NavItem
                     key="section1_#link4"
                     to="#link4"
                   >
@@ -1487,13 +1487,13 @@ exports[`Nav Grouped List 1`] = `
                         Link 4
                       </a>
                     </li>
-                  </Component>
+                  </NavItem>
                 </ul>
               </NavList>
             </ul>
           </section>
-        </Component>
-        <Component
+        </NavGroup>
+        <NavGroup
           id="grp-2"
           title="Section 2"
         >
@@ -1519,7 +1519,7 @@ exports[`Nav Grouped List 1`] = `
                 <ul
                   className="pf-c-nav__list"
                 >
-                  <Component
+                  <NavItem
                     key="section2_#link1"
                     to="#link1"
                   >
@@ -1535,8 +1535,8 @@ exports[`Nav Grouped List 1`] = `
                         Link 1
                       </a>
                     </li>
-                  </Component>
-                  <Component
+                  </NavItem>
+                  <NavItem
                     key="section2_#link2"
                     to="#link2"
                   >
@@ -1552,8 +1552,8 @@ exports[`Nav Grouped List 1`] = `
                         Link 2
                       </a>
                     </li>
-                  </Component>
-                  <Component
+                  </NavItem>
+                  <NavItem
                     key="section2_#link3"
                     to="#link3"
                   >
@@ -1569,8 +1569,8 @@ exports[`Nav Grouped List 1`] = `
                         Link 3
                       </a>
                     </li>
-                  </Component>
-                  <Component
+                  </NavItem>
+                  <NavItem
                     key="section2_#link4"
                     to="#link4"
                   >
@@ -1586,12 +1586,12 @@ exports[`Nav Grouped List 1`] = `
                         Link 4
                       </a>
                     </li>
-                  </Component>
+                  </NavItem>
                 </ul>
               </NavList>
             </ul>
           </section>
-        </Component>
+        </NavGroup>
       </nav>
     </Nav>
   </ComponentWithOuia>
@@ -1610,7 +1610,7 @@ exports[`Nav List with custom item nodes 1`] = `
           className=""
           variant="tertiary"
         >
-          <Unknown
+          <NavItem
             className="test-nav-item-class"
             to="/components/nav#link1"
           >
@@ -1619,7 +1619,7 @@ exports[`Nav List with custom item nodes 1`] = `
             >
               My custom node
             </div>
-          </Unknown>
+          </NavItem>
         </NavList>,
       }
     }
@@ -1683,7 +1683,7 @@ exports[`Nav List with custom item nodes 1`] = `
           <ul
             className="pf-c-nav__tertiary-list"
           >
-            <Component
+            <NavItem
               className="test-nav-item-class"
               to="/components/nav#link1"
             >
@@ -1698,7 +1698,7 @@ exports[`Nav List with custom item nodes 1`] = `
                   My custom node
                 </div>
               </li>
-            </Component>
+            </NavItem>
           </ul>
           <button
             aria-label="Scroll right"
@@ -1751,26 +1751,26 @@ exports[`Simple Nav List 1`] = `
           className=""
           variant="simple"
         >
-          <Unknown
+          <NavItem
             to="#link1"
           >
             Link 1
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link2"
           >
             Link 2
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link3"
           >
             Link 3
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link4"
           >
             Link 4
-          </Unknown>
+          </NavItem>
         </NavList>,
       }
     }
@@ -1802,7 +1802,7 @@ exports[`Simple Nav List 1`] = `
           <ul
             className="pf-c-nav__simple-list"
           >
-            <Component
+            <NavItem
               key="#link1"
               to="#link1"
             >
@@ -1818,8 +1818,8 @@ exports[`Simple Nav List 1`] = `
                   Link 1
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link2"
               to="#link2"
             >
@@ -1835,8 +1835,8 @@ exports[`Simple Nav List 1`] = `
                   Link 2
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link3"
               to="#link3"
             >
@@ -1852,8 +1852,8 @@ exports[`Simple Nav List 1`] = `
                   Link 3
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link4"
               to="#link4"
             >
@@ -1869,7 +1869,7 @@ exports[`Simple Nav List 1`] = `
                   Link 4
                 </a>
               </li>
-            </Component>
+            </NavItem>
           </ul>
         </NavList>
       </nav>
@@ -1890,26 +1890,26 @@ exports[`Tertiary Nav List 1`] = `
           className=""
           variant="tertiary"
         >
-          <Unknown
+          <NavItem
             to="#link1"
           >
             Link 1
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link2"
           >
             Link 2
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link3"
           >
             Link 3
-          </Unknown>
-          <Unknown
+          </NavItem>
+          <NavItem
             to="#link4"
           >
             Link 4
-          </Unknown>
+          </NavItem>
         </NavList>,
       }
     }
@@ -1973,7 +1973,7 @@ exports[`Tertiary Nav List 1`] = `
           <ul
             className="pf-c-nav__tertiary-list"
           >
-            <Component
+            <NavItem
               key="#link1"
               to="#link1"
             >
@@ -1989,8 +1989,8 @@ exports[`Tertiary Nav List 1`] = `
                   Link 1
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link2"
               to="#link2"
             >
@@ -2006,8 +2006,8 @@ exports[`Tertiary Nav List 1`] = `
                   Link 2
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link3"
               to="#link3"
             >
@@ -2023,8 +2023,8 @@ exports[`Tertiary Nav List 1`] = `
                   Link 3
                 </a>
               </li>
-            </Component>
-            <Component
+            </NavItem>
+            <NavItem
               key="#link4"
               to="#link4"
             >
@@ -2040,7 +2040,7 @@ exports[`Tertiary Nav List 1`] = `
                   Link 4
                 </a>
               </li>
-            </Component>
+            </NavItem>
           </ul>
           <button
             aria-label="Scroll right"

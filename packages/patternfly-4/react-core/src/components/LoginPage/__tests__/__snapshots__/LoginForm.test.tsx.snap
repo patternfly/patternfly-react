@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm with rememberMeLabel 1`] = `
-<Component
+<Form
   className=""
 >
-  <Component
+  <FormHelperText
     isError={false}
     isHidden={true}
   />
-  <Component
+  <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
     isValid={true}
@@ -24,8 +24,8 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       type="text"
       value=""
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
     isValid={true}
@@ -40,8 +40,8 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       type="password"
       value=""
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
@@ -53,8 +53,8 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       label="remember me"
       onChange={[Function]}
     />
-  </Component>
-  <Component>
+  </FormGroup>
+  <ActionGroup>
     <Component
       isBlock={true}
       isDisabled={false}
@@ -64,19 +64,19 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     >
       Log In
     </Component>
-  </Component>
-</Component>
+  </ActionGroup>
+</Form>
 `;
 
 exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the rememberMeAriaLabel 1`] = `
-<Component
+<Form
   className=""
 >
-  <Component
+  <FormHelperText
     isError={false}
     isHidden={true}
   />
-  <Component
+  <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
     isValid={true}
@@ -92,8 +92,8 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
       type="text"
       value=""
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
     isValid={true}
@@ -108,8 +108,8 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
       type="password"
       value=""
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
@@ -121,8 +121,8 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
       label="remember me"
       onChange={[Function]}
     />
-  </Component>
-  <Component>
+  </FormGroup>
+  <ActionGroup>
     <Component
       isBlock={true}
       isDisabled={false}
@@ -132,19 +132,19 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     >
       Log In
     </Component>
-  </Component>
-</Component>
+  </ActionGroup>
+</Form>
 `;
 
 exports[`should render Login form 1`] = `
-<Component
+<Form
   className=""
 >
-  <Component
+  <FormHelperText
     isError={false}
     isHidden={true}
   />
-  <Component
+  <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
     isValid={true}
@@ -160,8 +160,8 @@ exports[`should render Login form 1`] = `
       type="text"
       value=""
     />
-  </Component>
-  <Component
+  </FormGroup>
+  <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
     isValid={true}
@@ -176,8 +176,8 @@ exports[`should render Login form 1`] = `
       type="password"
       value=""
     />
-  </Component>
-  <Component>
+  </FormGroup>
+  <ActionGroup>
     <Component
       isBlock={true}
       isDisabled={false}
@@ -187,6 +187,6 @@ exports[`should render Login form 1`] = `
     >
       Log In
     </Component>
-  </Component>
-</Component>
+  </ActionGroup>
+</Form>
 `;

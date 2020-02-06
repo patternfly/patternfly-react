@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`state active 1`] = `
-<Component
+<DropdownToggle
   id="Dropdown Toggle"
   isActive={true}
   parentRef={<div />}
@@ -65,11 +65,11 @@ exports[`state active 1`] = `
       </CaretDownIcon>
     </button>
   </Toggle>
-</Component>
+</DropdownToggle>
 `;
 
 exports[`state class changes 1`] = `
-<Component
+<DropdownToggle
   id="Dropdown Toggle"
   isFocused={true}
   parentRef={<div />}
@@ -133,11 +133,11 @@ exports[`state class changes 1`] = `
       </CaretDownIcon>
     </button>
   </Toggle>
-</Component>
+</DropdownToggle>
 `;
 
 exports[`state class changes 2`] = `
-<Component
+<DropdownToggle
   id="Dropdown Toggle"
   isFocused={true}
   parentRef={<div />}
@@ -201,11 +201,11 @@ exports[`state class changes 2`] = `
       </CaretDownIcon>
     </button>
   </Toggle>
-</Component>
+</DropdownToggle>
 `;
 
 exports[`state focus 1`] = `
-<Component
+<DropdownToggle
   id="Dropdown Toggle"
   isFocused={true}
   parentRef={<div />}
@@ -269,11 +269,11 @@ exports[`state focus 1`] = `
       </CaretDownIcon>
     </button>
   </Toggle>
-</Component>
+</DropdownToggle>
 `;
 
 exports[`state hover 1`] = `
-<Component
+<DropdownToggle
   id="Dropdown Toggle"
   isHovered={true}
   parentRef={<div />}
@@ -337,5 +337,5 @@ exports[`state hover 1`] = `
       </CaretDownIcon>
     </button>
   </Toggle>
-</Component>
+</DropdownToggle>
 `;
