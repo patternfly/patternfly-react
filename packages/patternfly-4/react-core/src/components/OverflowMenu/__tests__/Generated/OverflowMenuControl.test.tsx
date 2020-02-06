@@ -5,12 +5,9 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { OverflowMenuControl } from '../../OverflowMenuControl';
 // any missing imports can usually be resolved by adding them here
-import {  } from '../..';
+import {} from '../..';
 
 it('OverflowMenuControl should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <OverflowMenuControl
-      
-    />);
+  const view = shallow(<OverflowMenuControl />);
   expect(view).toMatchSnapshot();
 });

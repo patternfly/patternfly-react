@@ -19,9 +19,10 @@ it('DataToolbarFilter should match snapshot (auto-generated)', () => {
         chips={[]}
         deleteChip={(category: string, chip: DataToolbarChip | string) => undefined as void}
         children={<div>ReactNode</div>}
-        categoryName={"string"}
+        categoryName={'string'}
         showToolbarItem={true}
       />
-    </DataToolbarContext.Provider>);
+    </DataToolbarContext.Provider>
+  );
   expect(view).toMatchSnapshot();
 });
