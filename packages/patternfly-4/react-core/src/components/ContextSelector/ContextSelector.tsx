@@ -27,7 +27,7 @@ export interface ContextSelectorProps {
   /** Flag to indicate if Context Selector is opened */
   isOpen?: boolean;
   /** Function callback called when user clicks toggle button */
-  onToggle?: (value: boolean) => void;
+  onToggle?: (event: any, value: boolean) => void;
   /** Function callback called when user selects item */
   onSelect?: (event: any, value: React.ReactNode) => void;
   /** Labels the Context Selector for Screen Readers */
