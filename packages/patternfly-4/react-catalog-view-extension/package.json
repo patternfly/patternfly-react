@@ -40,7 +40,7 @@
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
   "dependencies": {
-    "@patternfly/patternfly": "2.57.2",
+    "@patternfly/patternfly": "2.57.3",
     "@patternfly/react-core": "^3.136.7",
     "@patternfly/react-styles": "^3.6.29",
     "classnames": "^2.2.5",
