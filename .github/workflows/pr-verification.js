@@ -16,8 +16,6 @@ let returnCode = 0;
 
 // This should be consistent with lerna. I haven't thoroughly tested it, though.
 // https://commitlint.js.org/#/reference-api?id=lint
-console.log(CONFIG);
-
 load(CONFIG)
   .then(opts => lint(
     commitMsg,
