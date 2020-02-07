@@ -178,6 +178,9 @@ class CardViewDefaultNav extends React.Component {
           icon: swaggerIcon
         }
      ],
+      filters: {
+          products: []
+      },
       res: [],
       selectedItems: [],
       numSelected: 0,
@@ -190,7 +193,7 @@ class CardViewDefaultNav extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 20
+      perPage: 20,
     };
 
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
@@ -266,41 +269,6 @@ class CardViewDefaultNav extends React.Component {
       this.setState({ [name]: value });
     };
 
-    this.handleSelectClick = newState => {
-      if (newState === 'none') {
-        this.setState(
-          {
-            selectedItems: []
-          },
-          this.updateSelected
-        );
-      } else if (newState === 'page') {
-        let newRows = [];
-        let rows = this.state.res.map(post => {
-          const isSelected = post.selected;
-          newRows = isSelected ? [...newRows] : [...newRows, post.id];
-          post.selected = true;
-          return post;
-        });
-
-        this.setState((prevState, props) => {
-          return {
-            selectedItems: prevState.selectedItems.concat(newRows)
-          };
-        }, this.updateSelected);
-      } else {
-        let newRows = [];
-        for (var i = 1; i <= 10; i++) newRows = [...newRows, i];
-
-        this.setState(
-          {
-            selectedItems: newRows
-          },
-          this.updateSelected
-        );
-      }
-    };
-
     this.deleteItem = (item) => event => {
     const { cardInfo } = this.state;
     cardInfo.splice(cardInfo.indexOf(item), 1);
@@ -334,28 +302,17 @@ class CardViewDefaultNav extends React.Component {
       });
     };
 
-    this.onSelect = (event, isSelected, rowId) => {
-      const { selectedItems } = this.state;
-      const rows = [...this.state.res];
-      const id = rows[rowId].id;
-      rows[rowId].selected = isSelected;
-      this.setState((prevState, props) => {
-        return {
-          res: rows,
-          selectedItems: isSelected
-            ? [...prevState.selectedItems, id]
-            : prevState.selectedItems.filter(itemId => itemId !== id)
-        };
-      });
-    };
-
-    this.onProductSelect = (event, selection) => {
+this.onNameSelect = (event, selection) => {
+      const checked = event.target.checked;
       this.setState(prevState => {
+        const prevSelections = prevState.filters['names'];
         return {
-            ['product']: [selection]
+          filters: {
+            ...prevState.filters,
+            ['names']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+          }
         };
       });
-      this.onFilterSelect();
     };
 
     this.updateSelected = () => {
@@ -369,6 +326,24 @@ class CardViewDefaultNav extends React.Component {
         res: rows
       });
     };
+
+    this.onDelete = (type = '', id = '') => {
+      if (type) {
+        this.setState(prevState => {
+          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+          return {
+            filters: prevState.filters
+          };
+        });
+      } else {
+        this.setState({
+          filters: {
+            products: [],
+          }
+        });
+      }
+    };
+
   }
 
   buildSelectDropdown() {
@@ -418,7 +393,7 @@ class CardViewDefaultNav extends React.Component {
   }
 
   buildFilterDropdown() {
-    const {isLowerToolbarDropdownOpen} = this.state;
+    const {isLowerToolbarDropdownOpen, filters} = this.state;
 
     const filterDropdownItems = [
             <SelectOption key="patternfly" value="Patternfly" />,
@@ -437,13 +412,17 @@ class CardViewDefaultNav extends React.Component {
 
         <DataToolbarFilter
           categoryName="Products"
+          deleteChip={this.onDelete}
         >
           <Select
-            aria-label="Products"
-            onToggle={this.onToolbarDropdownToggle}
-            isExpanded={isLowerToolbarDropdownOpen}
-            placeholderText="Creator"
-          >
+              variant={SelectVariant.checkbox}
+              aria-label="Products"
+              onToggle={this.onToolbarDropdownToggle}
+              onSelect={this.onNameSelect}
+              selections={filters.products}
+              isExpanded={isLowerToolbarDropdownOpen}
+              placeholderText="Creator"
+            >
             {filterDropdownItems}
           </Select>
         </DataToolbarFilter>
@@ -458,8 +437,16 @@ class CardViewDefaultNav extends React.Component {
             isLowerToolbarKebabDropdownOpen,
             isCardKebabDropdownOpen,
             splitButtonDropdownIsOpen,
-            cardItems,
-            activeItem} = this.state;
+            cardInfo,
+            activeItem,
+            filters} = this.state;
+
+    const filtered =
+      filters.products.length > 0 ? cardInfo.filter(card => {
+            return ((filters.products.length === 0 || filters.products.includes(card.name))
+            );
+          })
+        : cardInfo;
 
     const toolbarKebabDropdownItems = [
      <DropdownItem key="link">Link</DropdownItem>,
@@ -480,7 +467,8 @@ class CardViewDefaultNav extends React.Component {
     ];
 
     const toolbarItems = <React.Fragment>
-      <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
+      <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}
+      </DataToolbarItem>
       <DataToolbarItem>{this.buildFilterDropdown()}
       </DataToolbarItem>
       <DataToolbarItem><Button variant="primary">Create a Project</Button></DataToolbarItem>
@@ -606,7 +594,7 @@ class CardViewDefaultNav extends React.Component {
                   This is a demo that showcases Patternfly Cards.
                 </Text>
               </TextContent>
-              <DataToolbar id="data-toolbar-group-types">
+              <DataToolbar id="data-toolbar-group-types" clearAllFilters={this.onDelete}>
                 <DataToolbarContent>{toolbarItems}</DataToolbarContent>
               </DataToolbar>
             </PageSection>
