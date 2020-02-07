@@ -15,4 +15,4 @@ jobs:
       - name: Echo the PR text
         run: echo '${{ github.event.pull_request.body }}'
       - name: Verify PR title and text
-        run: node .github/workflows/pr-title-check.js '${{ github.event.pull_request.title }}' '${{ github.event.pull_request.body }}'
+        run: node .github/workflows/pr-verification.js '${{ github.event.pull_request.title }}' '${{ github.event.pull_request.body }}'
