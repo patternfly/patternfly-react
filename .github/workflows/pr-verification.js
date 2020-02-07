@@ -14,6 +14,8 @@ const prBody = process.argv[3];
 const closeRegex = /(close[sd]?|fix(es|ed)?|resolve[sd]?)\s+(#|https?:\/\/(www.)?github\.com\/patternfly\/[^\/]+\/issues\/)\d+/
 let returnCode = 0;
 
+// This should be consistent with lerna. I haven't thoroughly tested it, though.
+// https://commitlint.js.org/#/reference-api?id=lint
 load(CONFIG)
   .then(opts => lint(
     commitMsg,
@@ -22,7 +24,7 @@ load(CONFIG)
   ))
   .then(report => {
     if (!report.valid) {
-      console.error('Problem with commit message:', commitMsg);
+      console.error(`PR title "${commitMsg}" must be a valid conventional commit message`);
       console.error(report.errors.map(error => error.message).join('\n'))
       returnCode -= 1;
     }
