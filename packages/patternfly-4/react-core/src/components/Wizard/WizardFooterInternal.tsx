@@ -16,7 +16,7 @@ export interface WizardFooterInternalProps {
   cancelButtonText: string;
 }
 
-export const WizardFooterInternal: React.SFC<WizardFooterInternalProps> = ({
+export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalProps> = ({
   onNext,
   onBack,
   onClose,
@@ -26,7 +26,7 @@ export const WizardFooterInternal: React.SFC<WizardFooterInternalProps> = ({
   nextButtonText,
   backButtonText,
   cancelButtonText
-}) => (
+}: WizardFooterInternalProps) => (
   <footer className={css(styles.wizardFooter)}>
     <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
       {nextButtonText}

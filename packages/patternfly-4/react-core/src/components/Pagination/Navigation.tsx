@@ -1,10 +1,13 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
+import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-double-left-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleDoubleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-double-right-icon';
 import { Button, ButtonVariant } from '../Button';
 import { OnSetPage } from './Pagination';
-import { pluralize } from '../../helpers';
+import { pluralize, PickOptional } from '../../helpers';
 import { KEY_CODES } from '../../helpers/constants';
 
 export interface NavigationProps extends React.HTMLProps<HTMLElement> {
@@ -60,7 +63,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     this.state = { userInputPage: this.props.page };
   }
 
-  static defaultProps = {
+  static defaultProps: PickOptional<NavigationProps> = {
     className: '',
     isDisabled: false,
     isCompact: false,
@@ -186,7 +189,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               className={css(styles.formControl)}
               aria-label={currPage}
               type="number"
-              disabled={isDisabled || (page === firstPage && page === lastPage)}
+              disabled={isDisabled || (page === firstPage && page === lastPage) || page === 0}
               min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
               max={lastPage}
               value={userInputPage}

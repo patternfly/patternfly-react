@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 
 export interface CheckboxProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
@@ -28,7 +28,7 @@ export interface CheckboxProps
 const defaultOnChange = () => {};
 
 export class Checkbox extends React.Component<CheckboxProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<CheckboxProps> = {
     className: '',
     isValid: true,
     isDisabled: false,

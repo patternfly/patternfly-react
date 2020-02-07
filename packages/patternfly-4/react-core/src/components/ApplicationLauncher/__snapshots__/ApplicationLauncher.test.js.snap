@@ -294,25 +294,21 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     role="menu"
                   >
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <a
                         aria-disabled="false"
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                       >
                         Link
                       </a>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <button
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                         type="button"
                       >
@@ -320,26 +316,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       </button>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <a
                         aria-disabled="true"
                         class="pf-m-disabled pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                       >
                         Disabled Link
                       </a>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <button
                         class="pf-m-disabled pf-c-app-launcher__menu-item"
                         disabled=""
-                        id=""
                         tabindex="-1"
                         type="button"
                       >
@@ -347,34 +339,28 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       </button>
                     </li>
                     <li
-                      id=""
                       role="separator"
                     >
                       <div
                         class="pf-c-app-launcher__separator"
-                        id=""
                       />
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <a
                         aria-disabled="false"
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                       >
                         Separated Link
                       </a>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <button
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                         type="button"
                       >
@@ -439,25 +425,21 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       role="menu"
                     >
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <a
                           aria-disabled="false"
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                         >
                           Link
                         </a>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <button
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                           type="button"
                         >
@@ -465,26 +447,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                         </button>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <a
                           aria-disabled="true"
                           class="pf-m-disabled pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                         >
                           Disabled Link
                         </a>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <button
                           class="pf-m-disabled pf-c-app-launcher__menu-item"
                           disabled=""
-                          id=""
                           tabindex="-1"
                           type="button"
                         >
@@ -492,34 +470,28 @@ exports[`ApplicationLauncher custom icon 1`] = `
                         </button>
                       </li>
                       <li
-                        id=""
                         role="separator"
                       >
                         <div
                           class="pf-c-app-launcher__separator"
-                          id=""
                         />
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <a
                           aria-disabled="false"
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                         >
                           Separated Link
                         </a>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <button
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                           type="button"
                         >
@@ -601,7 +573,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="a"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -610,12 +581,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={0}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -624,7 +593,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -633,8 +601,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                     >
                       Link
@@ -650,7 +616,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="button"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -659,12 +624,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={1}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -673,7 +636,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -682,8 +644,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                       type="button"
                     >
@@ -700,7 +660,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="a"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -709,12 +668,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={2}
                   isDisabled={true}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -723,7 +680,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -732,8 +688,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       aria-disabled={true}
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                     >
                       Disabled Link
@@ -750,7 +704,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="button"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -759,12 +712,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={3}
                   isDisabled={true}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -773,7 +724,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -782,8 +732,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled={true}
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                       type="button"
                     >
@@ -799,7 +747,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className="pf-c-app-launcher__separator"
                   component="div"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -808,19 +755,16 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={4}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="separator"
                   tooltipProps={Object {}}
                   variant="item"
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="separator"
@@ -828,8 +772,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <div
                       className="pf-c-app-launcher__separator"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                     />
                   </li>
                 </InternalDropdownItem>
@@ -841,7 +783,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="a"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -850,12 +791,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={5}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -864,7 +803,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -873,8 +811,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                     >
                       Separated Link
@@ -890,7 +826,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="button"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -899,12 +834,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={6}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -913,7 +846,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -922,8 +854,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                       type="button"
                     >
@@ -2006,25 +1936,21 @@ exports[`ApplicationLauncher expanded 1`] = `
                     role="menu"
                   >
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <a
                         aria-disabled="false"
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                       >
                         Link
                       </a>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <button
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                         type="button"
                       >
@@ -2032,26 +1958,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <a
                         aria-disabled="true"
                         class="pf-m-disabled pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                       >
                         Disabled Link
                       </a>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <button
                         class="pf-m-disabled pf-c-app-launcher__menu-item"
                         disabled=""
-                        id=""
                         tabindex="-1"
                         type="button"
                       >
@@ -2059,34 +1981,28 @@ exports[`ApplicationLauncher expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      id=""
                       role="separator"
                     >
                       <div
                         class="pf-c-app-launcher__separator"
-                        id=""
                       />
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <a
                         aria-disabled="false"
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                       >
                         Separated Link
                       </a>
                     </li>
                     <li
-                      id=""
                       role="menuitem"
                     >
                       <button
                         class="pf-c-app-launcher__menu-item"
-                        id=""
                         tabindex="-1"
                         type="button"
                       >
@@ -2150,25 +2066,21 @@ exports[`ApplicationLauncher expanded 1`] = `
                       role="menu"
                     >
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <a
                           aria-disabled="false"
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                         >
                           Link
                         </a>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <button
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                           type="button"
                         >
@@ -2176,26 +2088,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <a
                           aria-disabled="true"
                           class="pf-m-disabled pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                         >
                           Disabled Link
                         </a>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <button
                           class="pf-m-disabled pf-c-app-launcher__menu-item"
                           disabled=""
-                          id=""
                           tabindex="-1"
                           type="button"
                         >
@@ -2203,34 +2111,28 @@ exports[`ApplicationLauncher expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        id=""
                         role="separator"
                       >
                         <div
                           class="pf-c-app-launcher__separator"
-                          id=""
                         />
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <a
                           aria-disabled="false"
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                         >
                           Separated Link
                         </a>
                       </li>
                       <li
-                        id=""
                         role="menuitem"
                       >
                         <button
                           class="pf-c-app-launcher__menu-item"
-                          id=""
                           tabindex="-1"
                           type="button"
                         >
@@ -2310,7 +2212,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="a"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2319,12 +2220,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={0}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -2333,7 +2232,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -2342,8 +2240,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                     >
                       Link
@@ -2359,7 +2255,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="button"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2368,12 +2263,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={1}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -2382,7 +2275,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -2391,8 +2283,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                       type="button"
                     >
@@ -2409,7 +2299,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="a"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2418,12 +2307,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={2}
                   isDisabled={true}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -2432,7 +2319,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -2441,8 +2327,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                       aria-disabled={true}
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                     >
                       Disabled Link
@@ -2459,7 +2343,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="button"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2468,12 +2351,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={3}
                   isDisabled={true}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -2482,7 +2363,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -2491,8 +2371,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled={true}
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                       type="button"
                     >
@@ -2508,7 +2386,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className="pf-c-app-launcher__separator"
                   component="div"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2517,19 +2394,16 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={4}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="separator"
                   tooltipProps={Object {}}
                   variant="item"
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="separator"
@@ -2537,8 +2411,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <div
                       className="pf-c-app-launcher__separator"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                     />
                   </li>
                 </InternalDropdownItem>
@@ -2550,7 +2422,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="a"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2559,12 +2430,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={5}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -2573,7 +2442,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -2582,8 +2450,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                     >
                       Separated Link
@@ -2599,7 +2465,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <InternalDropdownItem
                   className=""
                   component="button"
-                  componentID=""
                   context={
                     Object {
                       "keyHandler": [Function],
@@ -2608,12 +2473,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                   enterTriggersArrowDown={false}
                   href=""
-                  id=""
                   index={6}
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
-                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   tooltip={null}
@@ -2622,7 +2485,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <li
                     className={null}
-                    id=""
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     role="menuitem"
@@ -2631,8 +2493,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
                       href={null}
-                      id=""
-                      onSelect={[Function]}
                       tabIndex={-1}
                       type="button"
                     >

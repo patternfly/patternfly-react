@@ -2,12 +2,15 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import { default as checkStyles } from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
-import { CheckIcon } from '@patternfly/react-icons';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionObject {
+  /** Function returns a string to represent the select option object */
   toString(): string;
+  /** Function returns a true if the passed in select option is equal to this select option object, false otherwise */
+  compareTo?(selectOption: any): boolean;
 }
 export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
   /** Optional alternate display for the option */
@@ -18,7 +21,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   index?: number;
   /** Indicates which component will be used as select item */
   component?: React.ReactNode;
-  /** The value for the option, if passing an object you most provide a toString function */
+  /** The value for the option, can be a string or select option object */
   value: string | SelectOptionObject;
   /** Flag indicating if the option is disabled */
   isDisabled?: boolean;
@@ -40,7 +43,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
 
 export class SelectOption extends React.Component<SelectOptionProps> {
   private ref = React.createRef<any>();
-  static defaultProps = {
+  static defaultProps: SelectOptionProps = {
     className: '',
     value: '',
     index: 0,
@@ -50,9 +53,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isChecked: false,
     isFocused: false,
     component: 'button',
-    onClick: Function.prototype,
-    sendRef: Function.prototype,
-    keyHandler: Function.prototype
+    onClick: () => {},
+    sendRef: () => {},
+    keyHandler: () => {}
   };
 
   componentDidMount() {

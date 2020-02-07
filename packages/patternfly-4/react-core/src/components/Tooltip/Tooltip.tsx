@@ -9,6 +9,7 @@ import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
 import { ReactElement } from 'react';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -75,7 +76,7 @@ export interface TooltipProps {
 
 export class Tooltip extends React.Component<TooltipProps> {
   private tip: TippyInstance;
-  static defaultProps = {
+  static defaultProps: PickOptional<TooltipProps> = {
     position: 'top',
     trigger: 'mouseenter focus',
     isVisible: false,

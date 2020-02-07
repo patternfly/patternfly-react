@@ -99,7 +99,9 @@ class DataToolbarSpacers extends React.Component {
 }
 
 ```
+
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
+
 ```js title=Groups
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
@@ -241,9 +243,9 @@ class DataToolbarGroupTypes extends React.Component {
     </React.Fragment>;
     
     const iconButtonGroupItems = <React.Fragment>
-      <DataToolbarItem><Button variant="plain"><EditIcon /></Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
     </React.Fragment>;
     
     const buttonGroupItems = <React.Fragment>
@@ -419,7 +421,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 
 ```js title=Consumer-managed-toggle-groups
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core//dist/esm/experimental';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
@@ -571,8 +573,10 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
   }
 }
 ```
+
 The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
+
 ```js title=Data-toolbar-with-filters
 import React from 'react';
 import { 
@@ -581,7 +585,7 @@ import {
     DataToolbarContent,
     DataToolbarFilter,
     DataToolbarToggleGroup,
-    DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+    DataToolbarGroup } from '@patternfly/react-core//dist/esm/experimental';
 import { 
     Button, 
     ButtonVariant,
@@ -779,9 +783,9 @@ class DataToolbarWithFilterExample extends React.Component {
         {toggleGroupItems}
       </DataToolbarToggleGroup>
       <DataToolbarGroup variant="icon-button-group">
-        <DataToolbarItem><Button variant="plain"><EditIcon /></Button></DataToolbarItem>
-        <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>
-        <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>
+        <DataToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></DataToolbarItem>
+        <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
+        <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
       </DataToolbarGroup>
       <DataToolbarItem>
         <Dropdown
@@ -806,7 +810,9 @@ class DataToolbarWithFilterExample extends React.Component {
 }
 
 ```
+
 There may be situations where all of the required elements simply cannot fit in a single line.
+
 ```js title=Stacked-example
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
@@ -995,8 +1001,8 @@ class DataToolbarStacked extends React.Component {
     </React.Fragment>;
     
     const iconButtonGroupItems = <React.Fragment>
-      <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
     </React.Fragment>;
    
     
@@ -1045,5 +1051,4 @@ class DataToolbarStacked extends React.Component {
     </DataToolbar>;
   }
 }
-
 ```

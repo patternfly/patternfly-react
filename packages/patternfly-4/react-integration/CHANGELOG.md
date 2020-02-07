@@ -3,6 +3,126 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.20.0...@patternfly/react-integration@3.21.0) (2020-01-31)
+
+
+### Features
+
+* **icons:** use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/issues/3517)) ([897d359](https://github.com/patternfly/patternfly-react/commit/897d359a48ac2ce6ddea68bbdcfe0ae2f05544bd))
+
+
+
+
+
+# [3.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.19.1...@patternfly/react-integration@3.20.0) (2020-01-30)
+
+
+### Features
+
+* **cypress:** parallelize tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/issues/3627)) ([aa53124](https://github.com/patternfly/patternfly-react/commit/aa5312464026797e33fb8b3015bb3607e5e497f6))
+
+
+
+
+
+## [3.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.19.0...@patternfly/react-integration@3.19.1) (2020-01-27)
+
+
+### Bug Fixes
+
+* **alert:** fix integration test regression ([#3594](https://github.com/patternfly/patternfly-react/issues/3594)) ([0fd41b1](https://github.com/patternfly/patternfly-react/commit/0fd41b1e945e3f8d46e9337de006b5f986efefa8))
+
+
+
+
+
+# [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.18.2...@patternfly/react-integration@3.19.0) (2020-01-27)
+
+
+### Features
+
+* **AlertGroup:** Add alert group component ([#3531](https://github.com/patternfly/patternfly-react/issues/3531)) ([0a6806e](https://github.com/patternfly/patternfly-react/commit/0a6806e0f6be01a022e6ce2a9d578a6d8bd52554))
+
+
+
+
+
+## [3.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.18.1...@patternfly/react-integration@3.18.2) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [3.18.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.18.0...@patternfly/react-integration@3.18.1) (2020-01-24)
+
+
+### Bug Fixes
+
+* **integration:** fixed selector in tablesimpleactions ([#3584](https://github.com/patternfly/patternfly-react/issues/3584)) ([e841e33](https://github.com/patternfly/patternfly-react/commit/e841e333f07a6f24dc383512c670cfd7d8ffc734))
+
+
+
+
+
+# [3.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.17.3...@patternfly/react-integration@3.18.0) (2020-01-24)
+
+
+### Features
+
+* **pf4:** Use absolute import paths for react core in pf4 packages. ([#3525](https://github.com/patternfly/patternfly-react/issues/3525)) ([65d0b3d](https://github.com/patternfly/patternfly-react/commit/65d0b3d1e04610895f122c1313d1442360356f13)), closes [#3155](https://github.com/patternfly/patternfly-react/issues/3155)
+
+
+
+
+
+## [3.17.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.17.2...@patternfly/react-integration@3.17.3) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [3.17.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.17.1...@patternfly/react-integration@3.17.2) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [3.17.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.17.0...@patternfly/react-integration@3.17.1) (2020-01-13)
+
+
+### Bug Fixes
+
+* **select:** Add the type prop to the select toggle button ([#3495](https://github.com/patternfly/patternfly-react/issues/3495)) ([e61c0bd](https://github.com/patternfly/patternfly-react/commit/e61c0bd6894d0fad70e89829fb114766b6e88108))
+
+
+
+
+
+# [3.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.16.1...@patternfly/react-integration@3.17.0) (2020-01-08)
+
+
+### Features
+
+* **ChipGroup:** add closable chip-group ([#3455](https://github.com/patternfly/patternfly-react/issues/3455)) ([a11dea1](https://github.com/patternfly/patternfly-react/commit/a11dea19ad9b78b6ed52420021c3f726c918a977))
+
+
+
+
+
+## [3.16.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.16.0...@patternfly/react-integration@3.16.1) (2020-01-08)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 # [3.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.15.0...@patternfly/react-integration@3.16.0) (2019-12-17)
 
 

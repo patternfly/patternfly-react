@@ -34,7 +34,8 @@ import {
   ChartLegend,
   ChartGroup,
   ChartThreshold,
-  ChartThemeColor
+  ChartThemeColor,
+  ChartVoronoiContainer
 } from '@patternfly/react-charts';
 import {
   chart_color_blue_300,

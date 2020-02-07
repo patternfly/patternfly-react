@@ -40,7 +40,6 @@ exports[`Check dark page against snapshot 1`] = `
     >
       <header
         className="pf-c-page__header"
-        role="banner"
       >
         <div
           className="pf-c-page__header-brand"
@@ -160,7 +159,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     >
       <header
         className="pf-c-page__header"
-        role="banner"
       >
         <div
           className="pf-c-page__header-brand"
@@ -281,7 +279,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     >
       <header
         className="pf-c-page__header"
-        role="banner"
       >
         <div
           className="pf-c-page__header-brand"
@@ -646,7 +643,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
     >
       <header
         className="pf-c-page__header"
-        role="banner"
       >
         <div
           className="pf-c-page__header-brand"
@@ -966,7 +962,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     >
       <header
         className="pf-c-page__header"
-        role="banner"
       >
         <div
           className="pf-c-page__header-brand"

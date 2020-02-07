@@ -25,7 +25,7 @@ SimpleCard = () => (
 
 ```js title=With-image-and-actions
 import React from 'react'; 
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
+import { Card, CardHead, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
 import pfLogo from './pfLogo.svg'; 
 
 class KebabDropdown extends React.Component {
@@ -75,7 +75,7 @@ class KebabDropdown extends React.Component {
     return (
       <Card>
         <CardHead>
-          <img src={pfLogo} style={{height: "50px"}}/>
+          <img src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -106,7 +106,7 @@ class KebabDropdown extends React.Component {
 
 ```js title=Card-header-in-card-head
  import React from 'react'; 
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
+import { Card, CardHead, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -262,12 +262,12 @@ class KebabDropdown extends React.Component {
 
 ```js title=Only-image-in-the-card-head
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHead, CardHeader } from '@patternfly/react-core';
 
 ImageCard = () => (
   <Card>
     <CardHead>
-      <img src={pfLogo} style={{height: "50px"}}/>
+      <img src={pfLogo} alt="PatternFly Logo" style={{ height: '50px' }}/>
     </CardHead> 
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>

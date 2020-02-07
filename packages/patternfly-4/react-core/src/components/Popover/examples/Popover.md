@@ -62,6 +62,7 @@ class AdvancedPopover extends React.Component {
         <div>
           <span style={{ paddingRight: '10px' }}>Popover Position</span>
           <select
+            aria-label="Popover position"
             onChange={event => {
               this.setState({ position: event.target.value });
             }}

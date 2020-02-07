@@ -21,12 +21,13 @@ describe('Button Demo Test', () => {
     cy.get('.pf-m-tertiary').should('be.disabled');
   });
 
+  it('Link button should be set to tabindex=-1', () => {
+    cy.get('.pf-m-link').should('have.attr', 'tabindex', '-1');
+  });
+
+  // do this last since it leaves the page
   it('Verify primary button clicks', () => {
     cy.get('button.pf-m-primary').click();
     cy.url().should('not.eq', 'http://localhost:3000/button-demo-nav-link');
-  });
-
-  it('Link button should be set to tabindex=-1', () => {
-    cy.get('.pf-m-link').should('have.attr', 'tabindex', '-1');
   });
 });

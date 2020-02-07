@@ -4,7 +4,7 @@ import { default as formStyles } from '@patternfly/react-styles/css/components/F
 import { css } from '@patternfly/react-styles';
 import { SelectOptionObject } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
-import { Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
@@ -17,7 +17,7 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Additional classes added to the SelectMenu control */
   className?: string;
   /** Flag indicating the Select is expanded */
-  isExpanded: boolean;
+  isExpanded?: boolean;
   /** Flag indicating the Select options are grouped */
   isGrouped?: boolean;
   /** Currently selected option (for single, typeahead variants) */
@@ -39,15 +39,15 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
 }
 
 export class SelectMenu extends React.Component<SelectMenuProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<SelectMenuProps> = {
     className: '',
     isExpanded: false,
     isGrouped: false,
     openedOnEnter: false,
     selected: '',
     maxHeight: '',
-    sendRef: Function.prototype,
-    keyHandler: Function.prototype,
+    sendRef: () => {},
+    keyHandler: () => {},
     isCustomContent: false
   };
 

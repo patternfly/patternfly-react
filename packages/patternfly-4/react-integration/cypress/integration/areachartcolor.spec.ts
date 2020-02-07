@@ -6,7 +6,7 @@ describe('Area Chart Color Demo Test', () => {
   });
 
   it('Verify area chart', () => {
-    cy.get('.VictoryContainer').should('exist');
+    cy.get('.pf-c-chart').should('exist');
   });
 
   it('Verify legend string', () => {
@@ -14,7 +14,7 @@ describe('Area Chart Color Demo Test', () => {
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '650');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '225');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'width', '650');
+    cy.get('.pf-c-chart > svg').should('have.attr', 'height', '225');
   });
 });

@@ -1,12 +1,9 @@
 import * as React from 'react';
-import {
-  Dropdown,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle,
-  DropdownItem,
-  DropdownSeparator
-} from '@patternfly/react-core';
+import { Dropdown } from '@patternfly/react-core/dist/js/components/Dropdown/Dropdown';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+import { KebabToggle } from '@patternfly/react-core/dist/js/components/Dropdown/KebabToggle';
+import { DropdownItem } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
+import { DropdownSeparator } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownSeparator';
 
 import { IAction, IExtraData, IRowData } from './Table';
 
@@ -79,6 +76,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
               <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
             ) : (
               <DropdownItem
+                component="div"
                 onClick={event => this.onSelect(event, onClick)}
                 {...props}
                 key={itemKey || key}

@@ -19,10 +19,8 @@ module.exports = {
             { section: 'components' },
             { section: 'demos' },
             { section: 'experimental' },
-            { section: 'inline table' },
+            { section: 'extensions' },
             { section: 'layouts' },
-            { section: 'virtual scroll' },
-            { section: 'catalog view' },
           ]
         },
         topNavItems: [

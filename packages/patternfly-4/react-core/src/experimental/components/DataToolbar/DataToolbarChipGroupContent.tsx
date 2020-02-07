@@ -7,6 +7,7 @@ import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
 import { globalBreakpoints } from './DataToolbarUtils';
+import { PickOptional } from '../../../helpers/typeUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
@@ -28,7 +29,7 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
 }
 
 export class DataToolbarChipGroupContent extends React.Component<DataToolbarChipGroupContentProps> {
-  static defaultProps = {
+  static defaultProps: PickOptional<DataToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
     collapseListedFiltersBreakpoint: 'lg'
   };
@@ -58,15 +59,14 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       <div
         className={css(
           styles.dataToolbarContent,
-          numberOfFilters === 0 &&  getModifier(styles, 'hidden'),
+          (numberOfFilters === 0 || isExpanded) &&  getModifier(styles, 'hidden'),
           className
         )}
-        {...(numberOfFilters === 0 && {hidden: true})}
+        {...((numberOfFilters === 0 || isExpanded) && {hidden: true})}
         ref={chipGroupContentRef}
         {...props}
       >
         <DataToolbarGroup
-          variant="filter-group"
           className={css(collapseListedFilters && getModifier(styles, 'hidden'))}
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}

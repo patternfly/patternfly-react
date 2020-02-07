@@ -5,11 +5,14 @@ import {
   OverflowMenuContent,
   OverflowMenuGroup,
   OverflowMenuItem,
-  OverflowMenuDropdownItem
-} from '@patternfly/react-core/dist/esm/experimental';
-import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
-import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
-
+  OverflowMenuDropdownItem,
+  Dropdown,
+  KebabToggle,
+  Button
+} from '@patternfly/react-core';
+import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon';
+import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
+import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
 export class OverflowMenuDemo extends React.Component {
   state = {
     isSimpleOpen: false,

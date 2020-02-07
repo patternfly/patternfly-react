@@ -220,7 +220,8 @@ class WidthModal extends React.Component {
 
 ```js title=Custom-header-and-footer
 import React from 'react';
-import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
+import { Modal, Button, BaseSizes, Title, TitleLevel } from '@patternfly/react-core';
+import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 class CustomHeaderFooter extends React.Component {
   constructor(props) {

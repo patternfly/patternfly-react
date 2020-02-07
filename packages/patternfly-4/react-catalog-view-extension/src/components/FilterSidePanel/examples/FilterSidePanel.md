@@ -1,6 +1,6 @@
 ---
-title: 'Filter side panel'
-section: 'catalog view'
+title: 'Catalog view filter side panel'
+section: 'extensions'
 typescript: true
 propComponents: ['FilterSidePanel', 'FilterSidePanelCategory', 'FilterSidePanelCategoryItem']
 ---
@@ -110,7 +110,7 @@ class MockFilterSidePanelExample extends React.Component {
      <div style={{ width: '205px', border: '1px solid grey', paddingTop: '20px' }}>   
       <FilterSidePanel id="filter-panel">
         <FilterSidePanelCategory key="cat1"> 
-          <TextInput type="text" id="filter-text-input" placeholder="Filter by name" />
+          <TextInput type="text" id="filter-text-input" placeholder="Filter by name" aria-label="filter text input" />
         </FilterSidePanelCategory>
         <FilterSidePanelCategory
           key="cat2"

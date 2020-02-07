@@ -1,6 +1,6 @@
 ---
-title: 'Window Scroller'
-section: 'virtual scroll'
+title: 'Virtual scroll window scroller'
+section: 'extensions'
 ---
 
 Note: React Virtualized Extension lives in its own package at [`@patternfly/react-virtualized-extension`](https://www.npmjs.com/package/@patternfly/react-virtualized-extension)!
@@ -28,12 +28,13 @@ import * as React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
-import { AutoSizer, VirtualTable, WindowScroller } from '@patternfly/react-virtualized-extension';
+import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import virtualGridStyles from './VirtualGrid.example.css';
 import windowScrollerStyles from './WindowScroller.example.css';
 
 class WindowScrollerExample extends React.Component {
-  constructor(){
+  constructor(props){
+    super(props);
     const rows = [];
     for (let i = 0; i < 100000; i++) {
       const cells = [];
@@ -57,7 +58,7 @@ class WindowScrollerExample extends React.Component {
     this.scrollableElement = React.createRef();
 
     this.state = {
-      scrollToIndex: -1, //can be used to programmatically set current index
+      scrollToIndex: -1, // can be used to programmatically set current index
       scrollableElement: null,
       columns: [
         { title: 'Repositories', props: { className: 'pf-m-6-col-on-sm pf-m-4-col-on-md pf-m-3-col-on-lg pf-m-2-col-on-xl'} },

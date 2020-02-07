@@ -123,8 +123,8 @@ import {
   FormGroup,
   TextInput,
   TextArea,
-  FormSelectionOption,
   FormSelect,
+  FormSelectOption,
   Checkbox,
   ActionGroup,
   Button,
@@ -200,6 +200,7 @@ class HorizontalForm extends React.Component {
             onChange={this.onChange}
             id="horzontal-form-title"
             name="horizontal-form-title"
+            aria-label="Your title"
           >
             {this.options.map((option, index) => (
               <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />

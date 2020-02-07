@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { BarsIcon } from '@patternfly/react-icons';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Button, ButtonVariant } from '../../components/Button';
 import { PageContextConsumer } from './Page';
 
@@ -57,7 +57,7 @@ export const PageHeader = ({
         const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
         return (
-          <header role="banner" className={css(styles.pageHeader, className)} {...props}>
+          <header className={css(styles.pageHeader, className)} {...props}>
             {(showNavToggle || logo) && (
               <div className={css(styles.pageHeaderBrand)}>
                 {showNavToggle && (

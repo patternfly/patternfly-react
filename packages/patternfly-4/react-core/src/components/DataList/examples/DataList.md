@@ -637,7 +637,10 @@ import {
   DataListToggle,
   DataListContent,
   DataListItemCells,
-  DataListItemRow
+  DataListItemRow,
+  Dropdown,
+  DropdownItem,
+  KebabToggle
 } from '@patternfly/react-core';
 
 class ModifiersDataList extends React.Component {
@@ -876,7 +879,7 @@ class SelectableDataList extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <DataList aria-label="selectable data list example " selectedDataListItemId={this.state.selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
+        <DataList aria-label="selectable data list example" selectedDataListItemId={this.state.selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
           {!this.state.isDeleted && (
             <DataListItem aria-labelledby="selectable-action-item1" id="item1">
               <DataListItemRow>

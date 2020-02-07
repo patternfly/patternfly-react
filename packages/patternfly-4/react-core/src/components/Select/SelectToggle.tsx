@@ -2,8 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import { CaretDownIcon } from '@patternfly/react-icons';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import { KeyTypes, SelectVariant } from './selectConstants';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** HTML ID of dropdown toggle */
@@ -47,7 +48,7 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
 export class SelectToggle extends React.Component<SelectToggleProps> {
   private toggle: React.RefObject<HTMLDivElement> | React.RefObject<HTMLButtonElement>;
 
-  static defaultProps = {
+  static defaultProps: PickOptional<SelectToggleProps> = {
     className: '',
     isExpanded: false,
     isFocused: false,
@@ -55,13 +56,13 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isActive: false,
     isPlain: false,
     isDisabled: false,
-    variant: false,
+    variant: 'single',
     ariaLabelledBy: '',
     ariaLabelToggle: '',
     type: 'button',
-    onToggle: Function.prototype,
-    onEnter: Function.prototype,
-    onClose: Function.prototype
+    onToggle: () => {},
+    onEnter: () => {},
+    onClose: () => {}
   };
 
   constructor(props: SelectToggleProps) {
@@ -236,6 +237,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             {children}
             <button
               {...toggleProps}
+              type={type}
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
               aria-label={ariaLabelToggle}
               onClick={_event => {

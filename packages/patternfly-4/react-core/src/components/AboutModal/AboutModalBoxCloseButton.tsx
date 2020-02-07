@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 import { Button } from '../Button';
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the About Modal Close button  */
@@ -11,7 +11,7 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
   onClose?: () => void;
 }
 
-export const AboutModalBoxCloseButton: React.SFC<AboutModalBoxCloseButtonProps> = ({
+export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
   className = '',
   onClose = () => undefined as any,
   ...props

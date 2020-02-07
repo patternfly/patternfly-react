@@ -3,6 +3,113 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.27...@patternfly/react-styled-system@3.7.28) (2020-01-30)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.26...@patternfly/react-styled-system@3.7.27) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.25...@patternfly/react-styled-system@3.7.26) (2020-01-27)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.24...@patternfly/react-styled-system@3.7.25) (2020-01-24)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.23...@patternfly/react-styled-system@3.7.24) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.22...@patternfly/react-styled-system@3.7.23) (2020-01-23)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.21...@patternfly/react-styled-system@3.7.22) (2020-01-21)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.20...@patternfly/react-styled-system@3.7.21) (2020-01-17)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.19...@patternfly/react-styled-system@3.7.20) (2020-01-15)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.18...@patternfly/react-styled-system@3.7.19) (2020-01-15)
+
+
+### Bug Fixes
+
+* **linting:** initial eslint fixes for react-core-style-system *.md f… ([#3505](https://github.com/patternfly/patternfly-react/issues/3505)) ([9a0f90b](https://github.com/patternfly/patternfly-react/commit/9a0f90b9eac926a88e23559d31ebcc9599875406))
+
+
+
+
+
+## [3.7.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.17...@patternfly/react-styled-system@3.7.18) (2020-01-13)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.16...@patternfly/react-styled-system@3.7.17) (2020-01-09)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
+## [3.7.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.15...@patternfly/react-styled-system@3.7.16) (2020-01-09)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
 ## [3.7.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.7.14...@patternfly/react-styled-system@3.7.15) (2019-12-17)
 
 **Note:** Version bump only for package @patternfly/react-styled-system

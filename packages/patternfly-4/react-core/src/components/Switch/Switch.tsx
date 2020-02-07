@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
-import { CheckIcon } from '@patternfly/react-icons';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
@@ -29,7 +29,7 @@ export interface SwitchProps
 class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   id = '';
 
-  static defaultProps = {
+  static defaultProps: SwitchProps = {
     id: '',
     className: '',
     label: '',

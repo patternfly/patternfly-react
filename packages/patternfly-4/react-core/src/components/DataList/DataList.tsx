@@ -31,8 +31,8 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
     children = null,
     className = '',
     'aria-label': ariaLabel,
-    onSelectDataListItem = (id:string) => {},
     selectedDataListItemId = '',
+    onSelectDataListItem,
     ...props
   }: DataListProps) => {
   const isSelectable = !isUndefined(onSelectDataListItem);

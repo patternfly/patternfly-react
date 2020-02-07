@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
-import { OneOf, Omit } from '../../helpers/typeUtils';
+import { Omit, PickOptional } from '../../helpers/typeUtils';
 import { PopoverPosition } from '../Popover';
 import { TextInput } from '../TextInput';
 import { TooltipPosition } from '../Tooltip';
@@ -10,10 +10,10 @@ import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 
-export const clipboardCopyFunc = (event: any, text: string) => {
+export const clipboardCopyFunc = (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => {
   const clipboard = event.currentTarget.parentElement;
   const el = document.createElement('input');
-  el.value = text;
+  el.value = text.toString();
   clipboard.appendChild(el);
   el.select();
   document.execCommand('copy');
@@ -51,7 +51,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Adds Clipboard Copy variant styles. */
   variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion';
   /** Copy button popover position. */
-  position?: OneOf<typeof PopoverPosition, keyof typeof PopoverPosition>;
+  position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
   /** Delay in ms before the tooltip disappears. */
@@ -65,7 +65,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** A function that is triggered on changing the text. */
   onChange?: (text?: string | number) => void;
   /** The text which is copied. */
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
@@ -79,7 +79,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     };
   }
 
-  static defaultProps = {
+  static defaultProps: PickOptional<ClipboardCopyProps> = {
     hoverTip: 'Copy to clipboard',
     clickTip: 'Successfully copied to clipboard!',
     isReadOnly: false,

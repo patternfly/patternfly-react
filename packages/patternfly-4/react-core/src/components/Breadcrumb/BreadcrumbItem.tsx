@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AngleRightIcon } from '@patternfly/react-icons';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css, getModifier } from '@patternfly/react-styles';
 

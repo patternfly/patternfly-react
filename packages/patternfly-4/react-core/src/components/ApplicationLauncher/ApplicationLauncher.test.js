@@ -5,7 +5,7 @@ import { ApplicationLauncher } from './ApplicationLauncher';
 import { DropdownItem } from '../Dropdown/DropdownItem';
 
 import { DropdownPosition, DropdownDirection } from '../Dropdown/dropdownConstants';
-import { DropdownSeparator } from '../Dropdown/Separator';
+import { DropdownSeparator } from '../Dropdown/DropdownSeparator';
 
 const dropdownItems = [
   <DropdownItem key="link">Link</DropdownItem>,

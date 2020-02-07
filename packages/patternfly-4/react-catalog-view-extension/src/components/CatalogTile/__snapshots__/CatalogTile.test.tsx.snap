@@ -33,17 +33,6 @@ exports[`CatalogTile href renders properly 1`] = `
       id="test-href"
       onClick={[Function]}
     >
-      <CardHead>
-        <div
-          className="pf-c-card__head"
-        >
-          <CardActions>
-            <div
-              className="pf-c-card__actions"
-            />
-          </CardActions>
-        </div>
-      </CardHead>
       <CardHeader
         className="catalog-tile-pf-header"
       >
@@ -1139,7 +1128,7 @@ exports[`CatalogTile renders properly 1`] = `
               className="catalog-tile-pf-description"
             >
               <span
-                className="truncated"
+                className=""
               >
                 This is a very long description that should be truncated after 112 characters. 112 is the default but can be 
                 …
@@ -1462,17 +1451,6 @@ exports[`CatalogTile renders properly 1`] = `
         id="test-custom-truncation"
         onClick={[Function]}
       >
-        <CardHead>
-          <div
-            className="pf-c-card__head"
-          >
-            <CardActions>
-              <div
-                className="pf-c-card__actions"
-              />
-            </CardActions>
-          </div>
-        </CardHead>
         <CardHeader
           className="catalog-tile-pf-header"
         >
@@ -1508,7 +1486,7 @@ exports[`CatalogTile renders properly 1`] = `
               className="catalog-tile-pf-description"
             >
               <span
-                className="truncated"
+                className=""
               >
                 truncated
               </span>
@@ -1786,7 +1764,7 @@ exports[`CatalogTile renders properly 1`] = `
               className="catalog-tile-pf-description"
             >
               <span
-                className="truncated"
+                className="has-footer"
               >
                 This is a very long description that should be truncated after 112 characters. 112 is the default but can be 
                 …
@@ -1901,11 +1879,6 @@ exports[`CatalogTile renders properly 1`] = `
                 />
               </svg>
             </span>
-            <CardActions>
-              <div
-                className="pf-c-card__actions"
-              />
-            </CardActions>
           </div>
         </CardHead>
         <CardHeader
@@ -1919,26 +1892,8 @@ exports[`CatalogTile renders properly 1`] = `
             >
               Custom SVG
             </div>
-            <div
-              className="catalog-tile-pf-subtitle"
-            />
           </div>
         </CardHeader>
-        <CardBody
-          className="catalog-tile-pf-body"
-        >
-          <div
-            className="pf-c-card__body catalog-tile-pf-body"
-          >
-            <div
-              className="catalog-tile-pf-description"
-            >
-              <span
-                className=""
-              />
-            </div>
-          </div>
-        </CardBody>
       </a>
     </Card>
   </CatalogTile>

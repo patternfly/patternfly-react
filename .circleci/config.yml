@@ -43,70 +43,54 @@ references:
   - packages/patternfly-4/react-virtualized-extension/dist/
   - packages/patternfly-4/react-catalog-view-extension/dist/
   - packages/react-icons/dist/
-  js_deps_cache_key: &js_deps_cache_key
-    js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
-  build_cache_key: &build_cache_key
-    build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
-  doc_build_cache_key: &doc_build_cache_key
-    doc-build-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
-  doc_build_cache_paths: &doc_build_cache_paths
+  gatsby_cache_paths: &gatsby_cache_paths
   - packages/patternfly-4/react-docs/.cache
   - packages/patternfly-4/react-docs/public
+  js_deps_cache_key: &js_deps_cache_key
+    js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  cypress_cache_key: &cypress_cache_key
+    cypress-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  gatsby_cache_key: &gatsby_cache_key
+    gatsby-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  build_cache_key: &build_cache_key
+    build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   attach_workspace: &attach_workspace
     attach_workspace:
       at: ~/project
-  install_node: &install_node
-    run:
-      name: Install node@10 (need right version for `yarn`)
-      command: |
-        set +e             
-        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-        export NVM_DIR="/opt/circleci/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        nvm install v10
-        nvm alias default v10
-        
-        # Each step uses the same `$BASH_ENV`, so need to modify it
-        echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
-        echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
-  install_yarn: &install_yarn
-    run:
-      name: Install yarn
-      command: curl -o- -L https://yarnpkg.com/install.sh | bash
 workflows:
   version: 2
   build_test_deploy:
     jobs:
     - build
-    - build_pf4_docs:
-        requires:
-        - build
     - build_pf3_docs:
         requires:
         - build
-    - test_jest_pf4:
+    - build_pf4_docs:
         requires:
         - build
     - test_jest_other:
         requires:
         - build
-    - test_a11y_pf4:
-        requires:
-        - build_pf4_docs
-    - build_integration:
+    - test_jest_pf4:
         requires:
         - build
     - lint:
         requires:
         - build
-    - upload_docs:
+    - build_demo_app:
         requires:
-        - build_pf3_docs
+        - build
+    - test_integration:
+        requires:
+        - build_demo_app
+    - test_a11y_pf4:
+        requires:
         - build_pf4_docs
     - deploy_prerelease:
         requires:
         - test_jest_pf4
         - test_jest_other
+        - test_integration
         - build_pf3_docs
         - build_pf4_docs
         filters:
@@ -116,6 +100,7 @@ jobs:
   build:
     docker:
     - image: circleci/node:10
+    resource_class: xlarge
     steps:
     - checkout
     - persist_to_workspace:
@@ -131,6 +116,10 @@ jobs:
     - save_cache:
         paths: *js_deps_paths
         key: *js_deps_cache_key
+    - save_cache:
+        paths:
+          - ~/.cache/Cypress
+        key: *cypress_cache_key
     - restore_cache:
         keys:
         - *build_cache_key
@@ -146,6 +135,7 @@ jobs:
   test_jest_pf4:
     docker:
     - image: circleci/node:10
+    resource_class: xlarge
     steps:
     - *attach_workspace
     - restore_cache:
@@ -153,7 +143,11 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF4 Jest Tests
-        command: yarn test:pf4 --maxWorkers=2 && yarn run codecov -F patternfly4
+        command: yarn test:pf4 --maxWorkers=4
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -F patternfly4
+        when: always
   test_jest_other:
     docker:
     - image: circleci/node:10
@@ -164,14 +158,24 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF3 Jest Tests
-        command: yarn test:pf3 --maxWorkers=2 && yarn run codecov -F patternfly3
+        command: yarn test:pf3 --maxWorkers=2
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -F patternfly3
+        when: always
     - run:
         name: Clear Coverage
         command: rm -rf coverage
+        when: always
     - run:
         name: Other Tests
-        command: yarn test:misc --maxWorkers=2 && yarn run codecov -F misc
-  build_integration:
+        command: yarn test:misc --maxWorkers=2
+        when: always
+    - run:
+        name: Upload results to codecov
+        command: yarn run codecov -F misc
+        when: always
+  build_demo_app:
     docker:
     - image: circleci/node:10
     steps:
@@ -180,8 +184,44 @@ jobs:
         keys:
         - *js_deps_cache_key
     - run:
-        name: Build Cypress Integration Tests
+        name: Build React demo-app
         command: yarn build:integration
+    - persist_to_workspace:
+        root: ~/project
+        paths:
+          - packages/patternfly-4/react-integration/demo-app-ts/build/
+  test_integration:
+    docker:
+    - image: circleci/node:10
+    resource_class: xlarge
+    parallelism: 3
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - restore_cache:
+        keys:
+        - *cypress_cache_key
+    - run:
+        name: Install Cypress deps
+        command: sudo apt-get install libnss3 libgtk-3-0 libxss1 libasound2
+    - run:
+        name: Serve React demo-app
+        command: yarn serve:integration
+        background: true
+    - run:
+        name: Sleep to wait for xvfb
+        command: sleep 5
+    - run:
+        name: Run Cypress Integration Tests
+        # We have to add || true so that we can run our fanned-in report step
+        # Issue: https://ideas.circleci.com/ideas/CCI-I-344
+        command: |
+            cd packages/patternfly-4/react-integration &&
+            yarn test:integration -s $(circleci tests glob "cypress/integration/*.spec.ts" | circleci tests split --split-by=timings)
+    - store_artifacts:
+        path: packages/patternfly-4/react-integration/results
   lint:
     docker:
     - image: circleci/node:10
@@ -219,13 +259,13 @@ jobs:
     - run:
         name: Build PF3 Storybook Static Site
         command: yarn build:storybook
-    - persist_to_workspace:
-        root: ~/project
-        paths:
-        - .out/
+    - run:
+        name: Upload docs to surge.sh
+        command: node .circleci/upload-preview.js .out
   build_pf4_docs:
-    machine:
-      image: circleci/classic:latest
+    docker:
+    - image: circleci/node:10
+    resource_class: xlarge
     steps:
     - *attach_workspace
     - restore_cache:
@@ -233,46 +273,41 @@ jobs:
         - *js_deps_cache_key
     - restore_cache:
         keys:
-        - *doc_build_cache_key
-    - *install_node
-    - *install_yarn
+        - *gatsby_cache_key
     - run:
         name: Build patternfly-react docs
-        command: ~/.yarn/bin/yarn build:docs
+        command: yarn build:docs
     - save_cache:
-        paths: *doc_build_cache_paths
-        key: *doc_build_cache_key
+        paths: *gatsby_cache_paths
+        key: *gatsby_cache_key
+    - run:
+        name: Upload docs to surge.sh
+        command: node .circleci/upload-preview.js packages/patternfly-4/react-docs/public
     - persist_to_workspace:
         root: ~/project
-        paths:
-        - packages/patternfly-4/react-docs/public/
+        paths: *gatsby_cache_paths
   test_a11y_pf4:
     docker:
     - image: circleci/node:10-browsers
+    resource_class: large
     steps:
     - *attach_workspace
     - restore_cache:
         keys:
         - *js_deps_cache_key
-    - restore_cache:
-        keys:
-        - *doc_build_cache_key
+    - run:
+        name: Serve docs
+        command: yarn serve:docs
+        background: true
     - run:
         name: PF4 a11y tests
-        command: yarn test:a11y || true
+        command: yarn test:a11y
+    - run:
+        name: Upload a11y report
+        command: node .circleci/upload-preview.js packages/patternfly-4/react-docs/coverage
+        when: always
     - store_artifacts:
         path: packages/patternfly-4/react-docs/coverage/
-  upload_docs:
-    docker:
-    - image: circleci/node:10
-    steps:
-    - *attach_workspace
-    - run:
-        name: Copy to docs folder
-        command: .circleci/copy-docs.sh
-    - run:
-        name: Upload docs to surge.sh
-        command: .circleci/upload-docs.sh
   deploy_prerelease:
     docker:
     - image: circleci/node:10

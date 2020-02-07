@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button, Title, TitleLevel, BaseSizes } from '@patternfly/react-core';
-import { WarningTriangleIcon } from '@patternfly/react-icons';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 
 interface ModalDemoState {
   isModalOpen: boolean;

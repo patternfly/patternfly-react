@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
-  nav: any;
+  nav: (isWizardNavOpen: boolean) => React.ReactElement;
   /** The wizard steps */
   steps: WizardStep[];
   /** The currently active WizardStep */

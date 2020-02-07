@@ -64,11 +64,10 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
               styles.dataListItem,
               isExpanded && styles.modifiers.expanded,
               isSelectable && styles.modifiers.selectable,
-              selectedDataListItemId === id && styles.modifiers.selected,
+              selectedDataListItemId && selectedDataListItemId === id && styles.modifiers.selected,
               className)}
             aria-labelledby={ariaLabelledBy}
             {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown: onKeyDown })}
-            {...(selectedDataListItemId === id && { 'aria-selected': true })}
             {...props}
           >
             {React.Children.map(

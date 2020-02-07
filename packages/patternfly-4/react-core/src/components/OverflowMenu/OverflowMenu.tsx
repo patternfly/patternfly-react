@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflo
 import { css, getModifier } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
 import { global_breakpoint_md, global_breakpoint_lg, global_breakpoint_xl } from '@patternfly/react-tokens';
-import { debounce } from '../../../helpers/util';
+import { debounce } from '../../helpers/util';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */

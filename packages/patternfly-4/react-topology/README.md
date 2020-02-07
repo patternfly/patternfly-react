@@ -41,7 +41,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 ```javascript
 import React from 'react';
-... TBD
+ // TODO
 ```
 
 ## Contribution

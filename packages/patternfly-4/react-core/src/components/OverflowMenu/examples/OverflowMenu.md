@@ -1,20 +1,19 @@
 ---
-title: 'OverflowMenu'
+title: Overflow menu
+section: components
 cssPrefix: 'pf-c-overflow-menu'
 typescript: true
 propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
-section: 'experimental'
-experimentalStage: 'early'
 ---
 
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 ## Examples
 ```js title=Simple-(responsive)
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle } from '@patternfly/react-core';
 
 class SimpleOverflowMenu extends React.Component {
@@ -72,7 +71,7 @@ class SimpleOverflowMenu extends React.Component {
 
 ```js title=Group-types
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
@@ -162,7 +161,7 @@ class OverflowMenuGroupTypes extends React.Component {
 
 ```js title=Multiple-groups
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
@@ -245,7 +244,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
 
 ```js title=Persistent
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 
 class OverflowMenuPersist extends React.Component {

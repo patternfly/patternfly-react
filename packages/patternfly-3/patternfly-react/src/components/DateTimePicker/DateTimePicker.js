@@ -20,7 +20,7 @@ class DateTimePicker extends React.Component {
 
   formatDate = date => {
     const { locale } = this.props;
-    const options = [{ year: 'numeric', month: 'numeric', day: 'numeric' }, { hour: '2-digit', minute: '2-digit' }];
+    const options = [{ year: 'numeric', month: 'numeric', day: 'numeric' }, { hour: 'numeric', minute: '2-digit' }];
     if (Date.parse(date)) {
       const parsedValue = new Date(date);
       return `${parsedValue.toLocaleString(locale, options[0])} ${parsedValue.toLocaleString(locale, options[1])}`;
