@@ -15,6 +15,6 @@ jobs:
       - name: Echo the PR text
         run: echo '${{ github.event.pull_request.body }}'
       - name: Install packages to lint commits
-        run: npm i -g @commitlint/lint @commitlint/load
+        run: yarn install --frozen-lockfile
       - name: Verify PR title and text
         run: node .github/workflows/pr-verification.js '${{ github.event.pull_request.title }}' '${{ github.event.pull_request.body }}'
