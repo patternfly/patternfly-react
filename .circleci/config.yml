@@ -239,10 +239,6 @@ jobs:
         command: yarn lint:style
         when: always
     - run:
-        name: MDLint
-        command: yarn lint:md
-        when: always
-    - run:
         name: Breaking Change Lint
         # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
         command: |
