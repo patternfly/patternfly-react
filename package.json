@@ -34,6 +34,8 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/lint": "^8.3.5",
     "@octokit/rest": "^16.39.0",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-info": "^5.1.11",
