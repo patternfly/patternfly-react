@@ -221,9 +221,9 @@ class CardViewDefaultNav extends React.Component {
     };
 
     this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
-      this.setState({
+      this.setState((prevState) => ({
         isLowerToolbarDropdownOpen
-      });
+      }));
     };
 
    this.onToolbarDropdownSelect = event => {
@@ -305,11 +305,11 @@ class CardViewDefaultNav extends React.Component {
 this.onNameSelect = (event, selection) => {
       const checked = event.target.checked;
       this.setState(prevState => {
-        const prevSelections = prevState.filters['names'];
+        const prevSelections = prevState.filters['products'];
         return {
           filters: {
             ...prevState.filters,
-            ['names']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+            ['products']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
           }
         };
       });
@@ -441,13 +441,6 @@ this.onNameSelect = (event, selection) => {
             activeItem,
             filters} = this.state;
 
-    const filtered =
-      filters.products.length > 0 ? cardInfo.filter(card => {
-            return ((filters.products.length === 0 || filters.products.includes(card.name))
-            );
-          })
-        : cardInfo;
-
     const toolbarKebabDropdownItems = [
      <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -578,6 +571,13 @@ this.onNameSelect = (event, selection) => {
     const pageId = 'main-content-card-view-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
+    const filtered =
+      filters.products.length > 0 ? cardInfo.filter(card => {
+            return ((filters.products.length === 0 || filters.products.includes(card.name))
+            );
+          })
+        : cardInfo;
+
     return (
       <React.Fragment>
         <Page
@@ -600,7 +600,7 @@ this.onNameSelect = (event, selection) => {
             </PageSection>
           <PageSection>
             <Gallery gutter="md">
-              {this.state.cardInfo.map((product, key) => (
+              {filtered.map((product, key) => (
                <React.Fragment>
                     <Card isHoverable key={key}>
                           <CardHead>
