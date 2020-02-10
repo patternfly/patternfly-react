@@ -6,11 +6,11 @@ import { DataToolbarGroup } from '../DataToolbarGroup';
 import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
 import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import { Button } from '../../../../components/Button';
+import { Button } from '../../../components/Button';
 import { DataToolbarItem } from '../DataToolbarItem';
 import { DataToolbarFilter } from '../DataToolbarFilter';
 import { DataToolbarToggleGroup } from '../DataToolbarToggleGroup';
-import { Select, SelectOption, SelectVariant } from '../../../../components/Select';
+import { Select, SelectOption, SelectVariant } from '../../../components/Select';
 
 describe('data toolbar', () => {
   test('DataToolbarOneContent', () => {

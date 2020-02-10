@@ -3,11 +3,11 @@ title: 'Data toolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
 propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarFilter']
-section: 'experimental'
-experimentalStage: 'early'
+section: 'components'
+beta: true
 ---
 
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core';
 import { Alert, Button, ButtonVariant, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
@@ -15,9 +15,9 @@ import '@patternfly/react-styles/css/components/Divider/divider';
 ## Examples
 Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=Items
+```js title=Items beta
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons'
 
@@ -25,7 +25,7 @@ class DataToolbarItems extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     const items = <React.Fragment>
       <DataToolbarItem>
@@ -40,22 +40,22 @@ class DataToolbarItems extends React.Component {
       <DataToolbarItem variant="separator" />
       <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
     </React.Fragment>;
-    
+
     return <DataToolbar id="data-toolbar"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
 
 ```
-```js title=Adjusting-item-spacers
+```js title=Adjusting-item-spacers beta
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 class DataToolbarSpacers extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     const firstSpacers = [
       {modifier: 'spacer-none'}
@@ -78,7 +78,7 @@ class DataToolbarSpacers extends React.Component {
     const spaceItems = [
       {modifier: 'space-items-lg'}
      ];
-    
+
     const items = <React.Fragment>
           <DataToolbarItem breakpointMods={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem breakpointMods={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
@@ -93,7 +93,7 @@ class DataToolbarSpacers extends React.Component {
             <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
           </DataToolbarGroup>
       </React.Fragment>;
-    
+
     return <DataToolbar id="data-toolbar-spacers"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
@@ -102,37 +102,37 @@ class DataToolbarSpacers extends React.Component {
 
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=Groups
+```js title=Groups beta
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
 class DataToolbarGroupTypes extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.firstOptions = [
       { value: 'Filter 1', disabled: false, isPlaceholder: true },
       { value: 'A', disabled: false },
       { value: 'B', disabled: false },
       { value: 'C', disabled: false },
     ];
-    
+
     this.secondOptions = [
       { value: 'Filter 2', disabled: false, isPlaceholder: true },
       { value: '1', disabled: false },
       { value: '2', disabled: false },
       { value: '3', disabled: false },
     ];
-    
+
     this.thirdOptions = [
       { value: 'Filter 3', disabled: false, isPlaceholder: true },
       { value: 'I', disabled: false },
       { value: 'II', disabled: false },
       { value: 'III', disabled: false },
     ];
-    
+
     this.state = {
       firstIsExpanded: false,
       firstSelected: null,
@@ -141,39 +141,39 @@ class DataToolbarGroupTypes extends React.Component {
       thirdIsExpanded: false,
       thirdSelected: null,
     };
-    
+
     this.onFirstToggle = isExpanded => {
       this.setState({
         firstIsExpanded: isExpanded
       });
     };
-    
+
     this.onFirstSelect = (event, selection) => {
       this.setState({
         firstSelected: selection,
         firstIsExpanded: false
       });
     };
-    
+
     this.onSecondToggle = isExpanded => {
       this.setState({
         secondIsExpanded: isExpanded
       });
     };
-    
+
     this.onSecondSelect = (event, selection) => {
       this.setState({
         secondSelected: selection,
         secondIsExpanded: false
       });
     };
-    
+
     this.onThirdToggle = isExpanded => {
       this.setState({
         thirdIsExpanded: isExpanded
       });
     };
-    
+
     this.onThirdSelect = (event, selection) => {
       this.setState({
         thirdSelected: selection,
@@ -181,10 +181,10 @@ class DataToolbarGroupTypes extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { firstIsExpanded, firstSelected, secondIsExpanded, secondSelected, thirdIsExpanded, thirdSelected } = this.state;
-    
+
     const filterGroupItems = <React.Fragment>
       <DataToolbarItem>
         <Select
@@ -241,25 +241,25 @@ class DataToolbarGroupTypes extends React.Component {
         </Select>
       </DataToolbarItem>
     </React.Fragment>;
-    
+
     const iconButtonGroupItems = <React.Fragment>
       <DataToolbarItem><Button variant="plain" aria-label="edit"><EditIcon /></Button></DataToolbarItem>
       <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
       <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
     </React.Fragment>;
-    
+
     const buttonGroupItems = <React.Fragment>
       <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
       <DataToolbarItem><Button variant="secondary">Secondary</Button></DataToolbarItem>
       <DataToolbarItem><Button variant="tertiary">Tertiary</Button></DataToolbarItem>
     </React.Fragment>;
-    
+
     const items = <React.Fragment>
       <DataToolbarGroup variant="filter-group">{filterGroupItems}</DataToolbarGroup>
       <DataToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
       <DataToolbarGroup variant="button-group">{buttonGroupItems}</DataToolbarGroup>
     </React.Fragment>;
-    
+
     return <DataToolbar id="data-toolbar-group-types"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
@@ -267,14 +267,14 @@ class DataToolbarGroupTypes extends React.Component {
 ```
 
 ## Examples with toggle groups and filters
-A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.  
-  
-The Toggle group can either have the toggle state managed by the consumer, or the component.  
-  
-  - The first Toggle group example below demonstrates a component managed toggle state.  
-```js title=Component-managed-toggle-groups
+A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.
+
+The Toggle group can either have the toggle state managed by the consumer, or the component.
+
+  - The first Toggle group example below demonstrates a component managed toggle state.
+```js title=Component-managed-toggle-groups beta
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
@@ -288,7 +288,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
       riskIsExpanded: false,
       riskSelected: null
     };
-    
+
     this.statusOptions = [
       { value: 'Status', disabled: false, isPlaceholder: true },
       { value: 'New', disabled: false },
@@ -296,24 +296,24 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
       { value: 'Running', disabled: false },
       { value: 'Cancelled', disabled: false },
     ];
-    
+
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
       { value: 'High', disabled: false },
     ];
-    
+
     this.onInputChange = (newValue) => {
          this.setState({inputValue: newValue});
         };
-    
+
     this.onStatusToggle = isExpanded => {
       this.setState({
         statusIsExpanded: isExpanded
       });
     };
-    
+
     this.onStatusSelect = (event, selection, isPlaceholder) => {
       if (isPlaceholder) this.clearStatusSelection();
       this.setState({
@@ -321,20 +321,20 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
         statusIsExpanded: false
       });
     };
-    
+
     this.clearStatusSelection = () => {
       this.setState({
         statusSelected: null,
         statusIsExpanded: false
       });
     };
-    
+
     this.onRiskToggle = isExpanded => {
       this.setState({
         riskIsExpanded: isExpanded
       });
     };
-    
+
     this.onRiskSelect = (event, selection, isPlaceholder) => {
       if (isPlaceholder) this.clearRiskSelection();
       this.setState({
@@ -342,7 +342,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
         riskIsExpanded: false
       });
     };
-    
+
     this.clearRiskSelection = () => {
       this.setState({
         riskSelected: null,
@@ -350,7 +350,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
@@ -402,9 +402,9 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
           </DataToolbarItem>
        </DataToolbarGroup>
     </React.Fragment>;
-    
+
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
-    
+
     return <DataToolbar id="data-toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
       <DataToolbarContent>
         {items}
@@ -413,15 +413,15 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
   }
 }
 ```
-The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:  
-  1. Add a toggleIsExpanded callback to DataToolbar  
-  2. Pass in a boolean into the isExpanded prop to DataToolbar  
-  
-- Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.  
+The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
+  1. Add a toggleIsExpanded callback to DataToolbar
+  2. Pass in a boolean into the isExpanded prop to DataToolbar
 
-```js title=Consumer-managed-toggle-groups
+- Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
+
+```js title=Consumer-managed-toggle-groups beta
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core//dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
@@ -436,13 +436,13 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
       riskIsExpanded: false,
       riskSelected: null
     };
-    
+
     this.toggleIsExpanded = () => {
       this.setState((prevState) => ({
         isExpanded: !prevState.isExpanded
       }));
     };
-    
+
     this.statusOptions = [
       { value: 'Status', disabled: false, isPlaceholder: true },
       { value: 'New', disabled: false },
@@ -450,24 +450,24 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
       { value: 'Running', disabled: false },
       { value: 'Cancelled', disabled: false },
     ];
-    
+
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
       { value: 'Medium', disabled: false },
       { value: 'High', disabled: false },
     ];
-    
+
     this.onInputChange = (newValue) => {
          this.setState({inputValue: newValue});
         };
-    
+
     this.onStatusToggle = isExpanded => {
       this.setState({
         statusIsExpanded: isExpanded
       });
     };
-    
+
     this.onStatusSelect = (event, selection, isPlaceholder) => {
       if (isPlaceholder) this.clearStatusSelection();
       this.setState({
@@ -475,20 +475,20 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
         statusIsExpanded: false
       });
     };
-    
+
     this.clearStatusSelection = () => {
       this.setState({
         statusSelected: null,
         statusIsExpanded: false
       });
     };
-    
+
     this.onRiskToggle = isExpanded => {
       this.setState({
         riskIsExpanded: isExpanded
       });
     };
-    
+
     this.onRiskSelect = (event, selection, isPlaceholder) => {
       if (isPlaceholder) this.clearRiskSelection();
       this.setState({
@@ -496,7 +496,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
         riskIsExpanded: false
       });
     };
-    
+
     this.clearRiskSelection = () => {
       this.setState({
         riskSelected: null,
@@ -504,7 +504,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { isExpanded, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
@@ -556,12 +556,12 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
         </DataToolbarItem>
       </DataToolbarGroup>
     </React.Fragment>;
-    
+
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
-    
+
     return (
-      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups" 
-        isExpanded={isExpanded} 
+      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups"
+        isExpanded={isExpanded}
         className='pf-m-toggle-group-container'
         toggleIsExpanded={this.toggleIsExpanded}
       >
@@ -577,24 +577,24 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
 The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
-```js title=Data-toolbar-with-filters
+```js title=Data-toolbar-with-filters beta
 import React from 'react';
-import { 
+import {
     DataToolbar,
     DataToolbarItem,
     DataToolbarContent,
     DataToolbarFilter,
     DataToolbarToggleGroup,
-    DataToolbarGroup } from '@patternfly/react-core//dist/esm/experimental';
-import { 
-    Button, 
+    DataToolbarGroup } from '@patternfly/react-core';
+import {
+    Button,
     ButtonVariant,
     InputGroup,
     Select,
     SelectOption,
-    Dropdown, 
-    DropdownItem, 
-    DropdownSeparator, 
+    Dropdown,
+    DropdownItem,
+    DropdownSeparator,
     KebabToggle } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
@@ -612,19 +612,19 @@ class DataToolbarWithFilterExample extends React.Component {
       },
       kebabIsOpen: false
     };
-    
+
     this.toggleIsExpanded = () => {
       this.setState((prevState) => ({
         isExpanded: !prevState.isExpanded
       }));
     };
-    
+
     this.closeExpandableContent = () => {
       this.setState(() => ({
         isExpanded: false
       }));
     };
-    
+
     this.onInputChange = (newValue) => {
       this.setState({inputValue: newValue});
     };
@@ -651,7 +651,7 @@ class DataToolbarWithFilterExample extends React.Component {
     this.onRiskSelect = (event, selection) => {
       this.onSelect('risk', event, selection);
     };
-    
+
     this.onDelete = (type = "", id = "") => {
       if (type) {
         this.setState((prevState) => {
@@ -669,41 +669,41 @@ class DataToolbarWithFilterExample extends React.Component {
         })
       }
     };
-    
+
     this.onStatusToggle = isExpanded => {
       this.setState({
         statusIsExpanded: isExpanded
       });
     };
-    
+
     this.onRiskToggle = isExpanded => {
       this.setState({
         riskIsExpanded: isExpanded
       });
     };
-    
+
     this.onKebabToggle = isOpen => {
       this.setState({
         kebabIsOpen: isOpen
       });
     };
-    
+
   }
-  
+
   componentDidMount() {
     window.addEventListener('resize', this.closeExpandableContent);
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.closeExpandableContent);
   }
-  
+
   render() {
-    const { 
-      inputValue, 
+    const {
+      inputValue,
       filters,
-      statusIsExpanded, 
-      riskIsExpanded, 
+      statusIsExpanded,
+      riskIsExpanded,
       kebabIsOpen,
     } = this.state;
 
@@ -758,7 +758,7 @@ class DataToolbarWithFilterExample extends React.Component {
           </DataToolbarFilter>
       </DataToolbarGroup>
     </React.Fragment>;
-    
+
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -778,7 +778,7 @@ class DataToolbarWithFilterExample extends React.Component {
     ];
 
     const toolbarItems = <React.Fragment>
-      <DataToolbarToggleGroup toggleIcon={<FilterIcon />} 
+      <DataToolbarToggleGroup toggleIcon={<FilterIcon />}
         breakpoint='xl'>
         {toggleGroupItems}
       </DataToolbarToggleGroup>
@@ -796,11 +796,11 @@ class DataToolbarWithFilterExample extends React.Component {
         />
       </DataToolbarItem>
     </React.Fragment>;
-    
+
     return (
-      <DataToolbar id="data-toolbar-with-filter" 
+      <DataToolbar id="data-toolbar-with-filter"
         className='pf-m-toggle-group-container'
-        collapseListedFiltersBreakpoint='xl' 
+        collapseListedFiltersBreakpoint='xl'
         clearAllFilters={this.onDelete}
       >
         <DataToolbarContent>{toolbarItems}</DataToolbarContent>
@@ -813,16 +813,16 @@ class DataToolbarWithFilterExample extends React.Component {
 
 There may be situations where all of the required elements simply cannot fit in a single line.
 
-```js title=Stacked-example
+```js title=Stacked-example beta
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem } from '@patternfly/react-core';
 import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
 class DataToolbarStacked extends React.Component {
   constructor(props) {
     super(props);
-    
+
     // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned
     // pagination - right aligned
     this.resourceOptions = [
@@ -830,19 +830,19 @@ class DataToolbarStacked extends React.Component {
       { value: 'Deployment', disabled: false },
       { value: 'Pod', disabled: false },
     ];
-    
+
     this.statusOptions = [
       { value: 'Running', disabled: false, },
       { value: 'New', disabled: false },
       { value: 'Pending', disabled: false },
       { value: 'Cancelled', disabled: false },
     ];
-    
+
     this.typeOptions = [
       { value: 'Any type', disabled: false, isPlaceholder: true },
       { value: 'No type', disabled: false },
     ];
-    
+
     this.state = {
       resourceIsExpanded: false,
       resourceSelected: null,
@@ -854,46 +854,46 @@ class DataToolbarStacked extends React.Component {
       page: 1,
       perPage: 20
     };
-    
+
     this.onResourceToggle = isExpanded => {
       this.setState({
         resourceIsExpanded: isExpanded
       });
     };
-    
+
     this.onResourceSelect = (event, selection) => {
       this.setState({
         resourceSelected: selection,
         resourceIsExpanded: false
       });
     };
-    
+
     this.onStatusToggle = isExpanded => {
       this.setState({
         statusIsExpanded: isExpanded
       });
     };
-    
+
     this.onStatusSelect = (event, selection) => {
       this.setState({
         statusSelected: selection,
         statusIsExpanded: false
       });
     };
-    
+
     this.onTypeToggle = isExpanded => {
       this.setState({
         typeIsExpanded: isExpanded
       });
     };
-    
+
     this.onTypeSelect = (event, selection) => {
       this.setState({
         typeSelected: selection,
         typeIsExpanded: false
       });
     };
-    
+
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
         page: pageNumber
@@ -905,25 +905,25 @@ class DataToolbarStacked extends React.Component {
         perPage
       });
     };
-    
+
     this.onSplitButtonToggle = isOpen => {
       console.log("hm");
       this.setState({
         splitButtonDropdownIsOpen: isOpen
       });
     };
-    
+
     this.onSplitButtonSelect = event => {
       this.setState({
         splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
       });
     };
-    
+
   }
-  
+
   render() {
     const { resourceIsExpanded, resourceSelected, statusIsExpanded, statusSelected, typeIsExpanded, typeSelected, splitButtonDropdownIsOpen } = this.state;
-    
+
     const splitButtonDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -936,7 +936,7 @@ class DataToolbarStacked extends React.Component {
         Disabled Action
       </DropdownItem>
     ];
-    
+
     const toggleGroupItems = <React.Fragment>
       <DataToolbarItem variant="label" id="stacked-example-resource-select">Resource</DataToolbarItem>
       <DataToolbarItem>
@@ -999,19 +999,19 @@ class DataToolbarStacked extends React.Component {
         </Select>
       </DataToolbarItem>
     </React.Fragment>;
-    
+
     const iconButtonGroupItems = <React.Fragment>
       <DataToolbarItem><Button variant="plain" aria-label="clone"><CloneIcon /></Button></DataToolbarItem>
       <DataToolbarItem><Button variant="plain" aria-label="sync"><SyncIcon /></Button></DataToolbarItem>
     </React.Fragment>;
-   
-    
+
+
     const firstRowItems = <React.Fragment>
       <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>
       <DataToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
       <DataToolbarItem variant="overflow-menu">Overflow Menu</DataToolbarItem>
     </React.Fragment>;
-    
+
     const secondRowItems = <React.Fragment>
       <DataToolbarItem variant="bulk-select">
         <Dropdown
@@ -1044,7 +1044,7 @@ class DataToolbarStacked extends React.Component {
         />
       </DataToolbarItem>
     </React.Fragment>;
-    
+
     return <DataToolbar id="data-toolbar-group-types">
       <DataToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</DataToolbarContent>
       <hr className="pf-c-divider"/>

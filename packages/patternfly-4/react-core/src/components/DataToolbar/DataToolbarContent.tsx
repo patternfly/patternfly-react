@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { css } from '@patternfly/react-styles';
 
 import { DataToolbarBreakpointMod, DataToolbarContentContext } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../../helpers/util';
+import { formatBreakpointMods } from '../../helpers/util';
 import { DataToolbarExpandableContent } from './DataToolbarExpandableContent';
 
 export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement> {

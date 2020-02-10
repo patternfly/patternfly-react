@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../../helpers/typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../../helpers/util';
+import { formatBreakpointMods } from '../../helpers/util';
 import { RefObject } from 'react';
 
 export enum DataToolbarGroupVariant {
