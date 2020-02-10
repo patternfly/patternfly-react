@@ -1018,6 +1018,7 @@ class DataToolbarStacked extends React.Component {
             onSelect={this.onSplitButtonSelect}
             toggle={(
               <DropdownToggle
+                id="stacked-example-toggle"
                 splitButtonItems={[
                   <DropdownToggleCheckbox
                     id="example-checkbox-1"

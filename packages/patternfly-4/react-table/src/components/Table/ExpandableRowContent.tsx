@@ -9,10 +9,8 @@ interface ExpandableRowContentProps {
 export const ExpandableRowContent: React.FunctionComponent<ExpandableRowContentProps> = ({
   children = null as React.ReactNode,
   ...props
-}: ExpandableRowContentProps) => {
-  return (
-    <div {...props} className={css(styles.tableExpandableRowContent)}>
-      {children}
-    </div>
-  );
-};
+}: ExpandableRowContentProps) => (
+  <div {...props} className={css(styles.tableExpandableRowContent)}>
+    {children}
+  </div>
+);

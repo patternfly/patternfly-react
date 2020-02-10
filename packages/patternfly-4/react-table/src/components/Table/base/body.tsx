@@ -23,6 +23,7 @@ export interface BodyProps {
 
 class BaseBody extends React.Component<BodyProps, {}> {
   static defaultProps = {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onRow: (...args: any) => Object
   };
 
@@ -49,6 +50,7 @@ class BaseBody extends React.Component<BodyProps, {}> {
   }
 
   omitOnRow = (props: BodyProps) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { onRow, ...ret } = props;
     return ret;
   };

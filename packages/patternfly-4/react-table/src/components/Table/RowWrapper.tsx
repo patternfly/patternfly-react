@@ -82,12 +82,14 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
 
   render() {
     const {
-      trRef,
-      className,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       onScroll,
       onResize,
-      row: { isExpanded, isHeightAuto },
       rowProps,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      trRef,
+      className,
+      row: { isExpanded, isHeightAuto },
       ouiaContext,
       ouiaId,
       ...props
@@ -104,10 +106,10 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
           isHeightAuto && styles.modifiers.heightAuto
         )}
         hidden={isExpanded !== undefined && !isExpanded}
-        {...ouiaContext.isOuia && {
+        {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'TableRow',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        }}
+        })}
       />
     );
   }

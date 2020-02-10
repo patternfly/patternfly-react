@@ -8,6 +8,9 @@
 import { isArray } from 'lodash';
 import { RowType, RowKeyType } from './types';
 
+/**
+ * @param {{rowData: RowType, rowIndex: number, rowKey: RowKeyType}} rowData - row data
+ */
 export function resolveRowKey({
   rowData,
   rowIndex,
@@ -22,7 +25,7 @@ export function resolveRowKey({
   } else if (process.env.NODE_ENV !== 'production') {
     // Arrays cannot have rowKeys by definition so we have to go by index there.
     if (!isArray(rowData) && (rowData as any)[rowKey] === undefined) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.warn('Table.Body - Missing valid rowKey!', rowData, rowKey);
     }
   }

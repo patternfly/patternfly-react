@@ -2,6 +2,7 @@ import { IRow, IRowCell } from '../Table';
 
 const hasCompoundParentsExpanded = (parentId: number, compoundParent: number, rows: IRow[]) => {
   // max rows.length parents
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const i of rows) {
     if (rows[parentId].hasOwnProperty('parent')) {
       parentId = rows[parentId].parent;
@@ -14,6 +15,7 @@ const hasCompoundParentsExpanded = (parentId: number, compoundParent: number, ro
 
 const hasParentsExpanded = (parentId: number, rows: IRow[]) => {
   // max rows.length parents
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   for (const i of rows) {
     if (rows[parentId].hasOwnProperty('parent')) {
       parentId = rows[parentId].parent;

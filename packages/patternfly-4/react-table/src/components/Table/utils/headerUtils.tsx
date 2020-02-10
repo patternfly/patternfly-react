@@ -14,9 +14,10 @@ import { ICell, IRow, IActions, IActionsResolver, IAreActionsDisabled, OnSelect,
 
 /**
  * Generate header with transforms and formatters from custom header object.
+ *
  * @param {*} header with transforms, formatters, columnTransforms, and rest of header object.
  * @param {*} title to be used as label in header config.
- * @return {*} header, label, transforms: Array, formatters: Array.
+ * @returns {*} header, label, transforms: Array, formatters: Array.
  */
 const generateHeader = (
   {
@@ -46,7 +47,9 @@ const generateHeader = (
 
 /**
  * Function to generate cell for header config to change look of each cell.
+ *
  * @param {*} customCell config with cellFormatters, cellTransforms, columnTransforms and rest of cell config.
+ * @param {*} extra - extra
  * @returns {*} cell, transforms: Array, formatters: Array.
  */
 const generateCell = (
@@ -61,6 +64,7 @@ const generateCell = (
     columnTransforms?: ICell['columnTransforms'];
     cell?: ICell;
   },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   extra: any
 ) => ({
   ...cell,
@@ -80,6 +84,7 @@ const generateCell = (
 /**
  * Function to map custom simple object properties to expected format with property, header, cell, extra params
  * and props.
+ *
  * @param {*} column to be shown in header - either string or object with title, transformers and formatters (for cells as well).
  * @param {*} extra additional object with callbacks for specific formatters.
  * @param {*} key cell key to be shown in data-key.
@@ -88,7 +93,11 @@ const generateCell = (
  */
 const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   const title = (column.hasOwnProperty('title') ? column.title : column) as string | ICell;
-  const dataLabel = (column.hasOwnProperty('dataLabel') ? column.dataLabel : typeof title === 'string' ? title : `column-${key}`) as string | ICell;
+  const dataLabel = (column.hasOwnProperty('dataLabel')
+    ? column.dataLabel
+    : typeof title === 'string'
+    ? title
+    : `column-${key}`) as string | ICell;
   return {
     property:
       (typeof title === 'string' &&
@@ -112,6 +121,7 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
 
 /**
  * Function to define select cell in first column.
+ *
  * @param {*} extraObject with onSelect callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
@@ -129,6 +139,7 @@ const selectableTransforms = ({ onSelect, canSelectAll }: { onSelect: OnSelect; 
 
 /**
  * Function to define actions in last column.
+ *
  * @param {*} extraObject with actions array.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
@@ -154,6 +165,7 @@ const actionsTransforms = ({
 
 /**
  * Function to define collapsible in first column.
+ *
  * @param {*}  extraObject with onCollapse callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
@@ -171,6 +183,7 @@ const collapsibleTransfroms = ({ onCollapse }: { onCollapse: OnCollapse }) => [
 
 /**
  * Function to add additional cell transforms to object.
+ *
  * @param {*} cell to be expanded.
  * @param {*} additional thing to be added to cellTransforms.
  * @returns {*} object with title from cell and cellTransforms with additional in.
@@ -182,6 +195,7 @@ const addAdditionalCellTranforms = (cell: ICell, additional: any) => ({
 
 /**
  * Function to change expanded row with additional transforms.
+ *
  * @param {*} header info with cellTransforms.
  * @param {*} extraObject with onCollapse function.
  */
@@ -198,6 +212,7 @@ const expandContent = (header: (ICell | string)[], { onCollapse }: { onCollapse:
 
 /**
  * Function to join parent and their children so they can be rendered in tbody.
+ *
  * @param {*} rows raw data to find out if it's child or parent.
  * @param {*} children data to render (array of react children).
  */
@@ -223,9 +238,10 @@ export const mapOpenedRows = (rows: IRow[], children: any) =>
 /**
  * Function to calculate columns based on custom config.
  * It adds some custom cells for collapse, select, if expanded row and actions.
+ *
  * @param {*} headerRows custom object with described table header cells.
  * @param {*} extra object with custom callbacks.
- * @return {*} expected object for react tabular table.
+ * @returns {*} expected object for react tabular table.
  */
 export const calculateColumns = (headerRows: (ICell | string)[], extra: any) =>
   headerRows &&

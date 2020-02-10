@@ -19,6 +19,9 @@ export const collapsible: IFormatter = (
     property
   };
 
+  /**
+   * @param {React.MouseEvent} event - Mouse event
+   */
   function onToggle(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     // tslint:disable-next-line:no-unused-expression
     onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen, rowData, extraData);

@@ -17,6 +17,9 @@ export const sortable: ITransform = (label: IFormatterValueType, { columnIndex, 
   };
 
   const isSortedBy = sortBy && columnIndex === sortBy.index;
+  /**
+   * @param {React.MouseEvent} event - React mouse event
+   */
   function sortClicked(event: React.MouseEvent) {
     let reversedDirection: SortByDirection;
     if (!isSortedBy) {

@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const glob = require('glob');
 const fse = require('fs-extra');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 const srcDir = path.join('./src');
 const distDir = path.join('./dist/js');
