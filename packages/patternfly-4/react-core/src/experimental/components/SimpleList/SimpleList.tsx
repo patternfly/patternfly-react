@@ -7,7 +7,7 @@ import { SimpleListItemProps } from './SimpleListItem';
 export interface SimpleListProps {
   /** Content rendered inside the SimpleList */
   children?: React.ReactNode;
-  /** Additional classes added to the SimpleList <ul> */
+  /** Additional classes added to the SimpleList container */
   className?: string;
   /** Callback when an item is selected */
   onSelect?: (
@@ -46,6 +46,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
 
   componentDidMount() {
     if (!SimpleList.hasWarnBeta && process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
       console.warn('This component is in beta and subject to change.');
       SimpleList.hasWarnBeta = true;
     }
@@ -75,7 +76,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
           updateCurrentRef: this.handleCurrentUpdate
         }}
       >
-        <div className={css(styles.simpleList)} id={id} {...props}>
+        <div className={css(styles.simpleList, className)} id={id} {...props}>
           {isGrouped && children}
           {!isGrouped && <ul>{children}</ul>}
         </div>

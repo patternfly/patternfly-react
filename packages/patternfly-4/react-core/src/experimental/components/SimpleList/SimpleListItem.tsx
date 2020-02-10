@@ -56,11 +56,11 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
 
           const componentProps = isButton
             ? {
-                type: type
+                type
               }
             : {
                 tabIndex: 0,
-                href: href
+                href
               };
 
           return (
