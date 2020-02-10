@@ -15,8 +15,6 @@ export interface EditableRowWrapperProps extends RowWrapper {
   row: EditableRowWrapperRow;
 }
 
-export interface EditableRowWrapper {
-  (bodyComponent: Component): FunctionComponent<EditableRowWrapperProps>;
-}
+export type EditableRowWrapper = (bodyComponent: Component) => FunctionComponent<EditableRowWrapperProps>;
 
 export default EditableRowWrapper;

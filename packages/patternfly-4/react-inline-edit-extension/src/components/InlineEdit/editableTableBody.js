@@ -24,6 +24,7 @@ const defaultProps = {
 };
 
 const resolveCascadeEditability = rows => {
+  // eslint-disable-next-line no-undef
   const isRowExpandedIndexes = new Set(
     rows.map((row, idx) => (isRowExpanded(row, rows) ? idx : null)).filter(row => row !== null)
   );
@@ -58,6 +59,7 @@ const resolveCascadeEditability = rows => {
 const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) => {
   const { target } = event;
   const cell = target.closest('[data-key]');
+  // eslint-disable-next-line radix
   const cellNumber = parseInt(cell && cell.getAttribute('data-key'), 10);
   const hasCellNumber = !Number.isNaN(cellNumber);
 
