@@ -148,7 +148,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
           <CardBody className="catalog-tile-pf-body">
             <div className="catalog-tile-pf-description">
               <span className={classNames({ 'has-footer': footer })}>
-                {truncateDescription(description, maxDescriptionLength, id)}
+                {truncateDescription(description, maxDescriptionLength)}
               </span>
             </div>
           </CardBody>
