@@ -115,7 +115,7 @@ const editableRowWrapper = RowWrapperComponent => {
       };
     }
 
-    static getDerivedStateFromProps = (props, state) => ({
+    static getDerivedStateFromProps = props => ({
       hasConfirmationButtons: getTableConfirmation(props.row).hasConfirmationButtons(props.row)
     });
 
@@ -147,11 +147,11 @@ const editableRowWrapper = RowWrapperComponent => {
       }
     };
 
-    handleScroll = event => {
+    handleScroll = () => {
       this.updateRowDimensions();
     };
 
-    handleResize = event => {
+    handleResize = () => {
       this.fetchClientDimensions();
       this.updateRowDimensions();
     };

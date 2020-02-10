@@ -1,7 +1,8 @@
-/* eslint-disable no-case-declarations */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { copySync, readFileSync, writeFileSync } = require('fs-extra');
 const { resolve, dirname, join } = require('path');
 const { parse: parseCSS, stringify: stringifyCSS } = require('css');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 const baseCSSFilename = 'patternfly-base.css';
 const stylesDir = resolve(__dirname, '../dist/styles');
@@ -26,6 +27,7 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
     case 'comment':
       return false;
     case 'font-face':
+      // eslint-disable-next-line no-case-declarations
       const fontFamilyDecl = rule.declarations.find(decl => decl.property === 'font-family');
       return !unusedFontFamilyRegEx.test(fontFamilyDecl.value);
     default:

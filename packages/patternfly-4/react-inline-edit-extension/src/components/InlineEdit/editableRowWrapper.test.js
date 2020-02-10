@@ -1,3 +1,4 @@
+/* global beforeEach */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { mount } from 'enzyme/build';
