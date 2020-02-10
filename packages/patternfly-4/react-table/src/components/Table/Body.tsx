@@ -144,13 +144,13 @@ export const TableBody = ({
         rows={rows as IRow[]}
         onRow={onRow}
         className={className}
-        // eslint-disable-next-line react/no-children-prop
-        children={children}
         rowKey={rowKey}
         onRowClick={onRowClick}
         {...props}
         {...rest}
-      />
+      >
+        {children}
+      </ContextBody>
     )}
   </TableContext.Consumer>
 );

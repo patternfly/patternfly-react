@@ -9,7 +9,7 @@ import { isArray } from 'lodash';
 import { RowType, RowKeyType } from './types';
 
 /**
- *
+ * @param {{rowData: RowType, rowIndex: number, rowKey: RowKeyType}} rowData - row data
  */
 export function resolveRowKey({
   rowData,

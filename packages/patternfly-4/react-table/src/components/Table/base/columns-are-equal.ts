@@ -7,7 +7,10 @@
 import { isFunction, isEqualWith } from 'lodash';
 import { ColumnsType } from './types';
 
-// eslint-disable-next-line jsdoc/require-jsdoc
+/**
+ * @param {ColumnsType} oldColumns - previous columns
+ * @param {ColumnsType} newColumns - new columns
+ */
 export function columnsAreEqual(oldColumns: ColumnsType, newColumns: ColumnsType) {
   return isEqualWith(oldColumns, newColumns, (a, b) => {
     if (isFunction(a) && isFunction(b)) {

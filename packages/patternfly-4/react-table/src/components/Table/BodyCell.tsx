@@ -24,7 +24,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   textCenter = false,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   isOpen,
-  ariaControls = '',
+  ariaControls,
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {

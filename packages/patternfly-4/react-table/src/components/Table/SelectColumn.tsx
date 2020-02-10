@@ -9,9 +9,9 @@ export interface SelectColumnProps {
 
 export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   children = null as React.ReactNode,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  className = '',
   onSelect = null as (event: React.ChangeEvent<HTMLInputElement>) => void,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  className,
   ...props
 }: SelectColumnProps) => (
   <React.Fragment>

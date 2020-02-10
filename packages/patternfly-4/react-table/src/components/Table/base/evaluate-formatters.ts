@@ -6,7 +6,9 @@
  */
 import { formattersType, formatterValueType, ExtraParamsType } from './types';
 
-// eslint-disable-next-line jsdoc/require-jsdoc
+/**
+ * @param {formattersType} formatters - formatters type
+ */
 export function evaluateFormatters(formatters: formattersType) {
   return (value: formatterValueType, extra: ExtraParamsType) =>
     formatters.reduce(
