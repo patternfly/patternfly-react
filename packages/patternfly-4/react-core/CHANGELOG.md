@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.136.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.7...@patternfly/react-core@3.136.8) (2020-02-10)
+
+
+### Bug Fixes
+
+* **ContextSelector:** Updated signature for context selector to match what it returns. ([#3697](https://github.com/patternfly/patternfly-react/issues/3697)) ([bfd9958](https://github.com/patternfly/patternfly-react/commit/bfd99585db6720e6ea0d54e226342dc4ef033c92)), closes [#3694](https://github.com/patternfly/patternfly-react/issues/3694)
+
+
+
+
+
 ## [3.136.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.6...@patternfly/react-core@3.136.7) (2020-02-06)
 
 **Note:** Version bump only for package @patternfly/react-core
