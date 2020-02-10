@@ -550,7 +550,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           {variant === SelectVariant.checkbox && isExpanded && !customContent && (
             <SelectMenu
               {...props}
-              checked={selections as string[]}
+              checked={selections ? (selections as string[]) : []}
               aria-label={ariaLabel}
               aria-labelledby={ariaLabelledBy}
               isGrouped={isGrouped}
