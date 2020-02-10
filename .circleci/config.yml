@@ -56,7 +56,7 @@ references:
     gatsby-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
     build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
-  lint_cache_key: &build_cache_key
+  lint_cache_key: &lint_cache_key
     lint-cache-v{{.Environment.CACHE_VERSION}}
   attach_workspace: &attach_workspace
     attach_workspace:
