@@ -255,6 +255,9 @@ jobs:
     - run:
         name: ESLint
         command: yarn lint:ts
+    - run:
+        name: MDLint
+        command: yarn lint:md
     - save_cache:
         paths: *lint_cache_paths
         key: *lint_cache_key
