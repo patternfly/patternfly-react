@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build:docs": "yarn build:static && yarn build:ram",
-    "build:ram": "node --max-old-space-size=4096 ./node_modules/.bin/gatsby build",
+    "build:ram": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build",
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
