@@ -5,9 +5,7 @@ section: 'demos'
 
 ## Examples
 
-```
-  Uses the DataToolbar component to filter results in the table based on user input.
-```
+Uses the DataToolbar component to filter results in the table based on user input.
 
 import {
 DataToolbar,
@@ -168,7 +166,7 @@ class FilterTableDemo extends React.Component {
         return {
           filters: {
             ...prevState.filters,
-            ['status']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+            status: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
           }
         };
       });
