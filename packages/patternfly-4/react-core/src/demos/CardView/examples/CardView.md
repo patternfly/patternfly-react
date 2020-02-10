@@ -15,6 +15,7 @@ import {
   CardActions,
   CardHeader,
   CardBody,
+  Checkbox,
   Dropdown,
   DropdownToggle,
   DropdownItem,
@@ -74,6 +75,7 @@ import {
   CardActions,
   CardHeader,
   CardBody,
+  Checkbox,
   Dropdown,
   DropdownToggle,
   DropdownItem,
@@ -125,54 +127,67 @@ import restIcon from './FuseConnector_Icons_REST.png';
 class CardViewDefaultNav extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
+
     this.state = {
       cardInfo: [
         {
+          id: 1,
           name: "Patternfly",
           description: "PatternFly is a community project that promotes design commonality and improves user experience.",
           icon: pfIcon
         },
         {
+          id: 2,
           name: "ActiveMQ",
           description: "The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed from a JMS Queue or Topic using Apache ActiveMQ.",
           icon: activeMQIcon
         },
         {
+          id: 3,
           name: "Apache Spark",
           description: "This documentation page covers the Apache Spark component for the Apache Camel.",
           icon: sparkIcon
         },
         {
+          id: 4,
           name: "Avro",
           description: "This component provides a dataformat for avro, which allows serialization and deserialization of messages using Apache Avro’s binary dataformat. Moreover, it provides support for Apache Avro’s rpc, by providing producers and consumers endpoint for using avro over netty or http.",
           icon: avroIcon
         },
         {
+          id: 5,
           name: "Azure Services",
           description: "The Camel Components for Windows Azure Services provide connectivity to Azure services from Camel.",
           icon: azureIcon
         },
         {
+          id: 6,
           name: "Crypto",
           description: "For providing flexible endpoints to sign and verify exchanges using the Signature Service of the Java Cryptographic Extension.",
           icon: saxonIcon
         },
         {
+          id: 7,
           name: "DropBox",
           description: "The dropbox component allows you to treat Dropbox remote folders as a producer or consumer of messages.",
           icon: dropBoxIcon
         },
         {
+          id: 8,
           name: "JBoss Data Grid",
           description: "Read or write to a fully-supported distributed cache and data grid for faster integration services.",
           icon: infinispanIcon
         },
         {
+          id: 9,
           name: "REST",
           description: "The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as a client (producer) to call REST services.",
           icon: restIcon
         },
         {
+          id: 10,
           name: "SWAGGER",
           description: "Expose REST services and their APIs using Swagger specification.",
           icon: swaggerIcon
@@ -182,7 +197,12 @@ class CardViewDefaultNav extends React.Component {
           products: []
       },
       res: [],
+      cardChecks: { key1: false, key2: false, key3: false,
+       key4: false, key5: false, key6: false, key7: false,
+      key8: false, key9: false, key10: false }
       selectedItems: [],
+      checkedListAll: [],
+      itemsChecked: false,
       numSelected: 0,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
@@ -250,6 +270,12 @@ class CardViewDefaultNav extends React.Component {
       });
     };
 
+    /* this.isCardChecked = (key, isChecked) => {
+      this.setState({
+        [key]: isChecked
+      });
+    }; */
+
     this.onCardKebabDropdownSelect = (key, event) => {
       this.setState({
         [key]: !this.state[key]
@@ -260,13 +286,6 @@ class CardViewDefaultNav extends React.Component {
       this.setState({
         activeItem: result.itemId
       });
-    };
-
-    this.onClick = (checked, event) => {
-      const target = event.target;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const name = target.name;
-      this.setState({ [name]: value });
     };
 
     this.deleteItem = (item) => event => {
@@ -302,46 +321,18 @@ class CardViewDefaultNav extends React.Component {
       });
     };
 
-this.onNameSelect = (event, selection) => {
-      const checked = event.target.checked;
-      this.setState(prevState => {
-        const prevSelections = prevState.filters['products'];
-        return {
-          filters: {
-            ...prevState.filters,
-            ['products']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
-          }
-        };
-      });
-    };
-
-this.onCheckboxSelect = (event, isSelected, key) => {
-      const { selectedItems } = this.state;
-      const rows = [...this.state.res];
-      const id = rows[key].id;
-      rows[key].selected = isSelected;
-      this.setState((prevState, props) => {
-        return {
-          res: rows,
-          selectedItems: isSelected
-            ? [...prevState.selectedItems, id]
-            : prevState.selectedItems.filter(itemId => itemId !== id)
-        };
-      });
-    };
-
-
-    this.updateSelected = () => {
-      const { res, selectedItems } = this.state;
-      let rows = res.map(post => {
-        post.selected = selectedItems.includes(post.id);
-        return post;
-      });
-
-      this.setState({
-        res: rows
-      });
-    };
+    this.onNameSelect = (event, selection) => {
+        const checked = event.target.checked;
+        this.setState(prevState => {
+          const prevSelections = prevState.filters['products'];
+          return {
+            filters: {
+              ...prevState.filters,
+              ['products']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+            }
+          };
+        });
+      };
 
     this.onDelete = (type = '', id = '') => {
       if (type) {
@@ -369,12 +360,7 @@ this.onCheckboxSelect = (event, isSelected, key) => {
           this.updateSelected
         );
       } else if (newState === 'page') {
-        let newRows = [];
-        let rows = this.state.cardInfo.map(post => {
-          const isSelected = post.selected;
-          newRows = isSelected ? [...newRows] : [...newRows, post.id];
-          post.selected = true;
-          return post;
+          /* iterate through cardChecks and set all to true */
         });
 
         this.setState((prevState, props) => {
@@ -383,8 +369,6 @@ this.onCheckboxSelect = (event, isSelected, key) => {
           };
         }, this.updateSelected);
       } else {
-        let newRows = [];
-        for (var i = 1; i <= 10; i++) newRows = [...newRows, i];
 
         this.setState(
           {
@@ -394,22 +378,6 @@ this.onCheckboxSelect = (event, isSelected, key) => {
         );
       }
     };
-
-    this.onSelect = (event, isSelected, key) => {
-      const { selectedItems } = this.state;
-      const rows = [...this.state.res];
-      const id = rows[key].id;
-      rows[key].selected = isSelected;
-      this.setState((prevState, props) => {
-        return {
-          res: rows,
-          selectedItems: isSelected
-            ? [...prevState.selectedItems, id]
-            : prevState.selectedItems.filter(itemId => itemId !== id)
-        };
-      });
-    };
-
   }
 
   buildSelectDropdown() {
@@ -427,7 +395,7 @@ this.onCheckboxSelect = (event, isSelected, key) => {
       <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
       </DropdownItem>,
-      <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>Select all (10 items)</DropdownItem>,
+      <DropdownItem key="item-3" onClick={this.selectItem.bind(this)}>Select all (10 items)</DropdownItem>,
     ];
 
     return (
@@ -457,6 +425,67 @@ this.onCheckboxSelect = (event, isSelected, key) => {
       />
     );
   }
+
+  selectedItems(e) {
+    const { value, checked } = e.target;
+    let { checkedListAll } = this.state;
+
+    if (checked) {
+      checkedListAll = [...checkedListAll, value];
+    } else {
+      checkedListAll = checkedListAll.filter(el => el !== value);
+      if (this.state.ItemsChecked) {
+        this.setState({
+          ItemsChecked: !this.state.ItemsChecked
+        });
+      }
+    }
+    this.setState({ checkedListAll });
+  }
+  selectItem(e) {
+    const { checked } = e.target;
+    const { cardInfo } = this.state;
+    const collection = [];
+
+    if (checked) {
+      for (const card of cardInfo) {
+        for (const item of card.items) {
+          collection.push(item.id);
+        }
+      }
+    }
+
+    this.setState({
+      checkedListAll: collection,
+      itemsChecked: checked
+    });
+  }
+
+  handleCheckboxClick(e, newState) {
+    const { value, checked } = e.target;
+
+    if (newState === 'page') {
+      this.setState(prevState => ({
+        checkedListAll: [...prevState.checkedListAll, value * 1]
+      }));
+    } else {
+      this.setState(prevState => ({
+        checkedListAll: prevState.checkedListAll.filter(item => item != value)
+      }));
+    }
+  }
+
+  updateSelected() {
+  const { res, selectedItems } = this.state;
+  let rows = res.map(post => {
+    post.selected = selectedItems.includes(post.id);
+    return post;
+  });
+
+  this.setState({
+    res: rows
+  });
+};
 
   buildFilterDropdown() {
     const {isLowerToolbarDropdownOpen, filters} = this.state;
@@ -507,7 +536,10 @@ this.onCheckboxSelect = (event, isSelected, key) => {
             cardInfo,
             activeItem,
             filters,
-            res } = this.state;
+            res,
+            checkedListAll,
+            selectedItems,
+            itemsChecked } = this.state;
 
     const toolbarKebabDropdownItems = [
      <DropdownItem key="link">Link</DropdownItem>,
@@ -681,7 +713,7 @@ this.onCheckboxSelect = (event, isSelected, key) => {
                                     <Dropdown
                                       isPlain
                                       position="right"
-                                      onSelect={(e) => this.onCardKebabDropdownSelect(key,e)}
+                                      onSelect={(e) => this.onCardKebabDropdownSelect(key, e)}
                                       toggle={<KebabToggle onToggle={(isCardKebabDropdownOpen) => this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)} />}
                                       isOpen={this.state[key]}
                                       dropdownItems={[
@@ -694,11 +726,13 @@ this.onCheckboxSelect = (event, isSelected, key) => {
                                           </DropdownItem>
                                         ]}
                                     />
-                                    <input
-                                    type="checkbox"
+                                    <Checkbox
                                     onSelect={this.onCheckboxSelect}
-                                    defaultChecked={this.state.check1}
-                                    onChange={this.onClick}
+                                    selectedItems={selectedItems}
+                                    isChecked={checkedListAll.includes(product.id)}
+                                    handleCheckboxClick={this.props.handleCheckboxClick}
+                                    defaultChecked={this.state.itemsChecked}
+                                    onChange={this.props.handleCheckboxClick}
                                     aria-label="card checkbox example"
                                     id="check-1"
                                     name="check1"
