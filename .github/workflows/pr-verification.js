@@ -5,7 +5,11 @@ const CONFIG = {
   extends: ['@commitlint/config-conventional']
 };
 
-
+const title =
+  github.context.payload &&
+  github.context.payload.pull_request &&
+  github.context.payload.pull_request.title
+core.info(title)
 const commitMsg = process.argv[2];
 const prBody = process.argv[3];
 // This is a fun one.
@@ -24,12 +28,14 @@ load(CONFIG)
   ))
   .then(report => {
     if (!report.valid) {
-      console.error(`PR title "${commitMsg}" must be a valid conventional commit message`);
-      console.error(report.errors.map(error => error.message).join('\n'))
+      core.setFailed(
+        `Pull request title "${title}" must be a valid conventional commit message.`,
+        report.errors.map(error => error.message).join('\n')
+      );
       returnCode -= 1;
     }
     if (!closeRegex.test(prBody)) {
-      console.error('PR description must close an existing issue');
+      core.setFailed('PR description must close an existing issue');
       returnCode -= 1;
     }
 
