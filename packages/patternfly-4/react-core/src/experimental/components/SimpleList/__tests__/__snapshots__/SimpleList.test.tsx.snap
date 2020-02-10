@@ -16,6 +16,16 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
               Item 1
             </a>,
           },
+          Object {
+            "children": "Item 1",
+            "className": "",
+            "component": "a",
+            "href": "",
+            "isCurrent": false,
+            "listItemClassName": "",
+            "onClick": [Function],
+            "type": "button",
+          },
         ],
       ],
       "results": Array [
@@ -119,6 +129,16 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
             >
               Item 1
             </button>,
+          },
+          Object {
+            "children": "Item 1",
+            "className": "",
+            "component": "button",
+            "href": "",
+            "isCurrent": false,
+            "listItemClassName": "",
+            "onClick": [Function],
+            "type": "button",
           },
         ],
       ],
@@ -374,7 +394,7 @@ exports[`SimpleList renders grouped content 1`] = `
   <div
     className="pf-c-simple-list"
   >
-    <Component
+    <SimpleListGroup
       title="Group 1"
     >
       <section
@@ -458,13 +478,13 @@ exports[`SimpleList renders grouped content 1`] = `
           </SimpleListItem>
         </ul>
       </section>
-    </Component>
+    </SimpleListGroup>
   </div>
 </SimpleList>
 `;
 
 exports[`SimpleListGroup renders content 1`] = `
-<Component
+<SimpleListGroup
   title="Group 1"
 >
   <section
@@ -548,7 +568,7 @@ exports[`SimpleListGroup renders content 1`] = `
       </SimpleListItem>
     </ul>
   </section>
-</Component>
+</SimpleListGroup>
 `;
 
 exports[`SimpleListItem renders anchor 1`] = `

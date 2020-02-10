@@ -69,7 +69,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
                 className={css(styles.simpleListItemLink, isCurrentItem && styles.modifiers.current, className)}
                 onClick={(evt: React.MouseEvent) => {
                   onClick(evt);
-                  updateCurrentRef(this.ref);
+                  updateCurrentRef(this.ref, this.props);
                 }}
                 ref={this.ref}
                 {...componentProps}

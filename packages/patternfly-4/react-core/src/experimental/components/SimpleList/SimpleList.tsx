@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListGroup } from './SimpleListGroup';
+import { SimpleListItemProps } from './SimpleListItem';
 
 export interface SimpleListProps {
   /** Content rendered inside the SimpleList */
@@ -9,7 +10,10 @@ export interface SimpleListProps {
   /** Additional classes added to the SimpleList <ul> */
   className?: string;
   /** Callback when an item is selected */
-  onSelect?: (ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>) => void;
+  onSelect?: (
+    ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    props: SimpleListItemProps
+  ) => void;
   /** Id of the SimpleList */
   id?: string;
 }
@@ -21,7 +25,10 @@ export interface SimpleListState {
 
 interface SimpleListContextProps {
   currentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>;
-  updateCurrentRef: (id: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>) => void;
+  updateCurrentRef: (
+    id: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    props: SimpleListItemProps
+  ) => void;
 }
 
 export const SimpleListContext = React.createContext<Partial<SimpleListContextProps>>({});
@@ -44,10 +51,13 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
     }
   }
 
-  handleCurrentUpdate = (newCurrentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>) => {
+  handleCurrentUpdate = (
+    newCurrentRef: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
+    itemProps: SimpleListItemProps
+  ) => {
     this.setState({ currentRef: newCurrentRef });
     const { onSelect } = this.props;
-    onSelect && onSelect(newCurrentRef);
+    onSelect && onSelect(newCurrentRef, itemProps);
   };
 
   render() {

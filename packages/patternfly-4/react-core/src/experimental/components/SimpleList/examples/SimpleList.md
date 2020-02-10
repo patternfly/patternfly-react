@@ -16,8 +16,8 @@ import React from 'react';
 import { SimpleList, SimpleListItem } from '@patternfly/react-core/dist/esm/experimental';
 
 class SimpleListDemo extends React.Component {
-  onSelect(currentItem) {
-    console.log('new selection', currentItem);
+  onSelect(currentItem, currentItemProps) {
+    console.log('new selection', currentItem, currentItemProps);
   }
 
   render() {
@@ -41,8 +41,8 @@ import React from 'react';
 import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core/dist/esm/experimental';
 
 class SimpleListGroupDemo extends React.Component {
-  onSelect(currentItem) {
-    console.log('new selection', currentItem);
+  onSelect(currentItem, currentItemProps) {
+    console.log('new selection', currentItem, currentItemProps);
   }
 
   render() {
@@ -50,7 +50,9 @@ class SimpleListGroupDemo extends React.Component {
       <SimpleListItem key="item1" isCurrent>
         List item 1
       </SimpleListItem>,
-      <SimpleListItem key="item2">List item 2</SimpleListItem>,
+      <SimpleListItem key="item2" id="test 2">
+        List item 2
+      </SimpleListItem>,
       <SimpleListItem key="item3">List item 3</SimpleListItem>,
       <SimpleListItem key="item4">List item 4</SimpleListItem>
     ];

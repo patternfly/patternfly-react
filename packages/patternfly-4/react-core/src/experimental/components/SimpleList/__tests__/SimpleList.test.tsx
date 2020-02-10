@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { SimpleList } from './SimpleList';
-import { SimpleListGroup } from './SimpleListGroup';
-import { SimpleListItem } from './SimpleListItem';
+import { SimpleList } from '../SimpleList';
+import { SimpleListGroup } from '../SimpleListGroup';
+import { SimpleListItem } from '../SimpleListItem';
 
 const items = [
   <SimpleListItem key="i1">Item 1</SimpleListItem>,
