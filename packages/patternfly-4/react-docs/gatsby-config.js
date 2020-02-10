@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 
 module.exports = {
@@ -19,12 +20,10 @@ module.exports = {
             { section: 'components' },
             { section: 'demos' },
             { section: 'extensions' },
-            { section: 'layouts' },
+            { section: 'layouts' }
           ]
         },
-        topNavItems: [
-          { text: 'Icons', path: '/icons' },
-        ],
+        topNavItems: [{ text: 'Icons', path: '/icons' }]
       }
     },
     // Source shared pages from the theme
@@ -95,6 +94,6 @@ module.exports = {
       }
     },
     // The plugin for package.json files (to get version numbers)
-    'gatsby-transformer-json',
+    'gatsby-transformer-json'
   ]
 };

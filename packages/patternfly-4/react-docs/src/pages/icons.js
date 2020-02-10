@@ -1,16 +1,17 @@
 import React from 'react';
-import { Title } from '@patternfly/react-core/dist/js/components/Title/Title'
-import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip'
-import { Text } from '@patternfly/react-core/dist/js/components/Text/Text'
-import { Grid } from '@patternfly/react-core/dist/js/layouts/Grid/Grid'
-import { GridItem } from '@patternfly/react-core/dist/js/layouts/Grid/GridItem'
+import PropTypes from 'prop-types';
+import { Title } from '@patternfly/react-core/dist/js/components/Title/Title';
+import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Text } from '@patternfly/react-core/dist/js/components/Text/Text';
+import { Grid } from '@patternfly/react-core/dist/js/layouts/Grid/Grid';
+import { GridItem } from '@patternfly/react-core/dist/js/layouts/Grid/GridItem';
 import { PageSection } from '@patternfly/react-core/dist/js/components/Page/PageSection';
 import spacerMd from '@patternfly/react-tokens/dist/js/global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/js/global_FontSize_sm';
 import * as IconsModule from '@patternfly/react-icons';
 import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';
 
-export default ({ location }) => {
+const iconsPage = ({ location }) => {
   const allIcons = Object.entries(IconsModule)
     .filter(([name]) => name.endsWith('Icon'))
     .sort(([name1], [name2]) => name1.localeCompare(name2));
@@ -43,10 +44,19 @@ export default ({ location }) => {
   return (
     <SideNavLayout location={location} context="react">
       <PageSection className="ws-section">
-        <Title size="md" className="ws-framework-title">React</Title>
+        <Title size="md" className="ws-framework-title">
+          React
+        </Title>
         <Title size="4xl">Icons</Title>
-        <Text>These are all of the icons available for use in PatternFly React. For recommended icon usage, see our <a href="https://www.patternfly.org/v4/design-guidelines/styles/icons">icon usage guidelines</a>.</Text>
-        <Text>Learn how you can use them in the <a href="https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons">react-icons docs</a>.</Text>
+        <Text>
+          These are all of the icons available for use in PatternFly React. For recommended icon usage, see our{' '}
+          <a href="https://www.patternfly.org/v4/design-guidelines/styles/icons">icon usage guidelines</a>.
+        </Text>
+        <Text>
+          Learn how you can use them in the{' '}
+          <a href="https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons">react-icons docs</a>
+          .
+        </Text>
         <Grid>
           {allIcons.map(([id, Icon]) => (
             <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
@@ -61,3 +71,9 @@ export default ({ location }) => {
     </SideNavLayout>
   );
 };
+
+iconsPage.propTypes = {
+  location: PropTypes.Object
+};
+
+export default iconsPage;

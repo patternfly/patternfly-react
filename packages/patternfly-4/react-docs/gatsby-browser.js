@@ -15,4 +15,3 @@ import '@patternfly/patternfly/patternfly.css';
 
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
-
