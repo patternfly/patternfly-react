@@ -295,7 +295,7 @@ jobs:
     - *install_yarn
     - run:
         name: Build patternfly-react docs
-        command: yarn build:docs
+        command: ~/.yarn/bin/yarn build:docs
     - save_cache:
         paths: *gatsby_cache_paths
         key: *gatsby_cache_key
