@@ -8,7 +8,6 @@ import {
   DomainPropType,
   DomainPaddingPropType,
   EventPropTypeInterface,
-  InterpolationPropType,
   NumberOrCallback,
   PaddingProps,
   ScalePropType,
@@ -35,6 +34,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
+   *
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -59,6 +59,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * This prop should be given as an array of string values, or an object with
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
+   *
    * @example ["dogs", "cats", "mice"]
    */
   categories?: CategoryPropType;
@@ -74,6 +75,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartBar will use the default ChartContainer component.
+   *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -97,6 +99,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * of data points, or an array of arrays of data points for multiple datasets.
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
+   *
    * @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]],
    * [[{x: "a", y: 1}, {x: "b", y: 2}], [{x: "a", y: 2}, {x: "b", y: 3}]]
    */
@@ -117,6 +120,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * or as an object that specifies separate arrays for x and y.
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
+   *
    * @example [-1, 1], {x: [0, 100], y: [0, 1]}
    */
   domain?: DomainPropType;
@@ -146,6 +150,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
+   *
    * @example
    * events={[
    *   {
@@ -212,6 +217,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * If given as an array, the number of elements in the array should be equal to
    * the length of the data array. Labels may also be added directly to the data object
    * like data={[{x: 1, y: 1, label: "first"}]}.
+   *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
   labels?: string[] | ((data: any) => string);
@@ -289,6 +295,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
+   *
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
   scale?:
@@ -341,6 +348,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * will be applied. Height, width, and padding should be specified via the height,
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
+   *
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
    */
   style?: VictoryStyleInterface;
@@ -381,6 +389,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * If given as an array of strings, or a string containing dots or brackets,
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   *
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    */
   x?: DataGetterPropType;
@@ -392,6 +401,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * If given as an array of strings, or a string containing dots or brackets,
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   *
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;
@@ -399,6 +409,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * Use y0 data accessor prop to determine how the component defines the baseline y0 data.
    * This prop is useful for defining custom baselines for components like ChartBar.
    * This prop may be given in a variety of formats.
+   *
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;

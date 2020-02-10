@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { ChartLegend } from './ChartLegend';
 
-Object.values([true, false]).forEach(isRead => {
+Object.values([true, false]).forEach(() => {
   test('ChartLegend', () => {
     const view = shallow(<ChartLegend />);
     expect(view).toMatchSnapshot();

@@ -1,15 +1,11 @@
 import { defaults } from 'lodash';
 import { PaddingProps, VictoryLegend } from 'victory';
 import { Helpers, TextSize } from 'victory-core';
-import {
-  ChartLegendOrientation,
-  ChartLegendPosition,
-  ChartLegendProps
-} from '../ChartLegend';
+import { ChartLegendOrientation, ChartLegendPosition, ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { overpassFontCharacterConstant } from './chart-label';
 import { getPieOrigin } from './chart-origin';
-import * as React from "react";
+import * as React from 'react';
 
 interface ChartLegendInterface {
   allowWrap?: boolean; // Allow legend items to wrap to the next line
@@ -51,80 +47,6 @@ interface ChartLegendTextSizeInterface {
   legendOrientation?: 'horizontal' | 'vertical'; // Orientation of legend
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
-
-// Returns a legend which has been positioned per the given chart properties
-export const getComputedLegend = ({
-  allowWrap = true,
-  chartType = 'chart',
-  dx = 0,
-  dy = 0,
-  height,
-  legendComponent,
-  padding,
-  position = ChartCommonStyles.legend.position as ChartLegendPosition,
-  theme,
-  width,
-
-  // destructure last
-  orientation = theme.legend.orientation as ChartLegendOrientation
-}: ChartLegendInterface) => {
-  // Get the number of legend items per row
-  const legendItemsProps = legendComponent.props ? legendComponent.props : {};
-  const legendItemsPerRow = allowWrap ? getLegendItemsPerRow({
-    chartType,
-    dx,
-    height,
-    legendData: legendItemsProps.data,
-    legendOrientation: legendItemsProps.legendOrientation ? legendItemsProps.legendOrientation : orientation,
-    legendPosition: position,
-    legendProps: legendItemsProps,
-    padding,
-    theme,
-    width
-  }) : undefined;
-
-  // Include new itemsPerRow prop when determining x and y position
-  const legendPositionProps = defaults({}, legendComponent.props, {
-    itemsPerRow: legendItemsPerRow
-  });
-
-  const legendX = getLegendX({
-    chartType,
-    dx,
-    height,
-    legendData: legendPositionProps.data,
-    legendOrientation: legendPositionProps.legendOrientation ? legendPositionProps.legendOrientation : orientation,
-    legendPosition: position,
-    legendProps: legendPositionProps,
-    padding,
-    theme,
-    width
-  });
-
-  const legendY = getLegendY({
-    chartType,
-    dy,
-    height,
-    legendData: legendPositionProps.data,
-    legendOrientation: legendPositionProps.legendOrientation ? legendPositionProps.legendOrientation : orientation,
-    legendProps: legendPositionProps,
-    legendPosition: position,
-    padding,
-    theme,
-    width
-  });
-
-  // Clone legend with updated props
-  const legendProps = defaults({}, legendComponent.props, {
-    itemsPerRow: legendItemsPerRow,
-    orientation,
-    standalone: false,
-    theme,
-    x: legendX > 0 ? legendX : 0,
-    y: legendY > 0 ? legendY : 0
-  });
-  return React.cloneElement(legendComponent, legendProps);
-};
 
 // Returns legend dimensions
 export const getLegendDimensions = ({
@@ -180,7 +102,7 @@ export const doesLegendFit = ({
       occupiedWidth = dx;
       break;
   }
-  return (width - occupiedWidth) > legendDimensions.width;
+  return width - occupiedWidth > legendDimensions.width;
 };
 
 // Returns the number of legend items per row
@@ -205,7 +127,7 @@ export const getLegendItemsPerRow = ({
       legendOrientation,
       legendProps: {
         ...legendProps,
-        itemsPerRow: i,
+        itemsPerRow: i
       },
       padding,
       theme,
@@ -219,58 +141,32 @@ export const getLegendItemsPerRow = ({
   return itemsPerRow;
 };
 
-// Returns x coordinate for legend
-export const getLegendX = ({ chartType, ...rest }: ChartLegendPositionInterface) =>
-  chartType === 'pie' ? getPieLegendX(rest) : getChartLegendX(rest);
-
-// Returns y coordinate for legend
-export const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
-  switch (chartType) {
-    case 'pie':
-      return getPieLegendY(rest);
-    case 'bullet':
-      return getBulletLegendY(rest);
-    default:
-      return getChartLegendY(rest);
+// Returns an approximation of over-sized text width due to growing character count
+//
+// See https://github.com/FormidableLabs/victory/issues/864
+const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
+  const style = theme.legend.style.labels;
+  if (!(legendData && legendData.length)) {
+    return 0;
   }
-};
 
-// Returns y coordinate for bullet legends
-export const getBulletLegendY = ({
-  dy = 0,
-  height,
-  legendPosition,
-  legendData,
-  legendOrientation,
-  legendProps,
-  padding,
-  theme,
-  width
-}: ChartLegendPositionInterface) => {
-  const { left, right } = Helpers.getPadding({ padding });
-  const chartSize = {
-    height, // Fixed size
-    width: width - left - right
-  };
+  // For horizontal legends, account for the growing char count of the last legend item
+  let result = legendData[legendData.length - 1].name;
 
-  switch (legendPosition) {
-    case 'bottom':
-    case 'bottom-left':
-      return chartSize.height + ChartCommonStyles.legend.margin + dy;
-    case 'right': {
-      // Legend height with padding
-      const legendDimensions = getLegendDimensions({
-        legendData,
-        legendOrientation,
-        legendProps,
-        theme
-      });
-      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 17 : 0);
-      return (chartSize.height - legendDimensions.height) / 2 + legendPadding(legendData);
-    }
-    default:
-      return dy;
+  // For vertical legends, account for the growing char count of the longest legend item
+  if (legendOrientation === 'vertical') {
+    legendData.forEach(data => {
+      if (data.name && data.name.length > result.length) {
+        result = data.name;
+      }
+    });
   }
+  const textSize = TextSize.approximateTextSize(result, style);
+  const adjustedTextSize = TextSize.approximateTextSize(result, {
+    ...style,
+    characterConstant: overpassFontCharacterConstant
+  });
+  return Math.abs(textSize.width - adjustedTextSize.width);
 };
 
 // Returns x coordinate for chart legends
@@ -347,7 +243,7 @@ export const getChartLegendY = ({
         theme
       });
       const originX = chartSize.height / 2 + top;
-      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 2 : 0);
+      const legendPadding = (legendDataArr: any[]) => (legendDataArr && legendDataArr.length > 0 ? 2 : 0);
       return originX - legendDimensions.height / 2 + legendPadding(legendData);
     }
     default:
@@ -419,7 +315,7 @@ export const getPieLegendY = ({
         legendProps,
         theme
       });
-      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 2 : 0);
+      const legendPadding = (legendDataArr: any[]) => (legendDataArr && legendDataArr.length > 0 ? 2 : 0);
       return origin.y - legendDimensions.height / 2 + legendPadding(legendData);
     }
     default:
@@ -427,30 +323,132 @@ export const getPieLegendY = ({
   }
 };
 
-// Returns an approximation of over-sized text width due to growing character count
-//
-// See https://github.com/FormidableLabs/victory/issues/864
-const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
-  const style = theme.legend.style.labels;
-  if (!(legendData && legendData.length)) {
-    return 0;
-  }
+// Returns y coordinate for bullet legends
+export const getBulletLegendY = ({
+  dy = 0,
+  height,
+  legendPosition,
+  legendData,
+  legendOrientation,
+  legendProps,
+  padding,
+  theme,
+  width
+}: ChartLegendPositionInterface) => {
+  const { left, right } = Helpers.getPadding({ padding });
+  const chartSize = {
+    height, // Fixed size
+    width: width - left - right
+  };
 
-  // For horizontal legends, account for the growing char count of the last legend item
-  let result = legendData[legendData.length - 1].name;
-
-  // For vertical legends, account for the growing char count of the longest legend item
-  if (legendOrientation === 'vertical') {
-    legendData.forEach(data => {
-      if (data.name && data.name.length > result.length) {
-        result = data.name;
-      }
-    });
+  switch (legendPosition) {
+    case 'bottom':
+    case 'bottom-left':
+      return chartSize.height + ChartCommonStyles.legend.margin + dy;
+    case 'right': {
+      // Legend height with padding
+      const legendDimensions = getLegendDimensions({
+        legendData,
+        legendOrientation,
+        legendProps,
+        theme
+      });
+      const legendPadding = (legendDataArr: any[]) => (legendDataArr && legendDataArr.length > 0 ? 17 : 0);
+      return (chartSize.height - legendDimensions.height) / 2 + legendPadding(legendData);
+    }
+    default:
+      return dy;
   }
-  const textSize = TextSize.approximateTextSize(result, style);
-  const adjustedTextSize = TextSize.approximateTextSize(result, {
-    ...style,
-    characterConstant: overpassFontCharacterConstant
+};
+
+// Returns x coordinate for legend
+export const getLegendX = ({ chartType, ...rest }: ChartLegendPositionInterface) =>
+  chartType === 'pie' ? getPieLegendX(rest) : getChartLegendX(rest);
+
+// Returns y coordinate for legend
+export const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
+  switch (chartType) {
+    case 'pie':
+      return getPieLegendY(rest);
+    case 'bullet':
+      return getBulletLegendY(rest);
+    default:
+      return getChartLegendY(rest);
+  }
+};
+
+// Returns a legend which has been positioned per the given chart properties
+export const getComputedLegend = ({
+  allowWrap = true,
+  chartType = 'chart',
+  dx = 0,
+  dy = 0,
+  height,
+  legendComponent,
+  padding,
+  position = ChartCommonStyles.legend.position as ChartLegendPosition,
+  theme,
+  width,
+
+  // destructure last
+  orientation = theme.legend.orientation as ChartLegendOrientation
+}: ChartLegendInterface) => {
+  // Get the number of legend items per row
+  const legendItemsProps = legendComponent.props ? legendComponent.props : {};
+  const legendItemsPerRow = allowWrap
+    ? getLegendItemsPerRow({
+        chartType,
+        dx,
+        height,
+        legendData: legendItemsProps.data,
+        legendOrientation: legendItemsProps.legendOrientation ? legendItemsProps.legendOrientation : orientation,
+        legendPosition: position,
+        legendProps: legendItemsProps,
+        padding,
+        theme,
+        width
+      })
+    : undefined;
+
+  // Include new itemsPerRow prop when determining x and y position
+  const legendPositionProps = defaults({}, legendComponent.props, {
+    itemsPerRow: legendItemsPerRow
   });
-  return Math.abs(textSize.width - adjustedTextSize.width);
+
+  const legendX = getLegendX({
+    chartType,
+    dx,
+    height,
+    legendData: legendPositionProps.data,
+    legendOrientation: legendPositionProps.legendOrientation ? legendPositionProps.legendOrientation : orientation,
+    legendPosition: position,
+    legendProps: legendPositionProps,
+    padding,
+    theme,
+    width
+  });
+
+  const legendY = getLegendY({
+    chartType,
+    dy,
+    height,
+    legendData: legendPositionProps.data,
+    legendOrientation: legendPositionProps.legendOrientation ? legendPositionProps.legendOrientation : orientation,
+    legendProps: legendPositionProps,
+    legendPosition: position,
+    padding,
+    theme,
+    width
+  });
+
+  // Clone legend with updated props
+  const legendProps = defaults({}, legendComponent.props, {
+    itemsPerRow: legendItemsPerRow,
+    orientation,
+    standalone: false,
+    theme,
+    x: legendX > 0 ? legendX : 0,
+    y: legendY > 0 ? legendY : 0
+  });
+  return React.cloneElement(legendComponent, legendProps);
 };

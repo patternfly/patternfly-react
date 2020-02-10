@@ -119,7 +119,6 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   dividerComponent = <Line />,
   padding,
   standalone = true,
-  subTitleComponent = <ChartLabel />,
   subTitle,
   themeColor,
   themeVariant,
@@ -129,8 +128,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   // destructure last
   theme = getBulletGroupTitleTheme(themeColor, themeVariant),
   height = theme.chart.height,
-  width = theme.chart.width,
-  ...rest
+  width = theme.chart.width
 }: ChartBulletGroupTitleProps) => {
   const defaultPadding = {
     bottom: getPaddingForSide('bottom', padding, theme.chart.padding),

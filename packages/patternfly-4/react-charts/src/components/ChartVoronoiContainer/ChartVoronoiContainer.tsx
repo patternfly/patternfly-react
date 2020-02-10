@@ -88,6 +88,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   /**
    * The responsive prop specifies whether the rendered container should be a responsive container
    * with a viewBox attribute, or a static container with absolute width and height.
+   *
    * @default true
    */
   responsive?: boolean;
@@ -97,7 +98,8 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * and width props, as they are used to calculate the alignment of
    * components within the container. Styles from the child component will
    * also be passed, if any exist.
-   * @examples {border: 1px solid red}
+   *
+   * @example {border: 1px solid red}
    */
   style?: React.CSSProperties;
   /**
@@ -163,8 +165,11 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   });
 
   // Note: theme is required by voronoiContainerMixin, but @types/victory is missing a prop type
-  // @ts-ignore
-  return <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />; // prettier-ignore
+  return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
+  );
 };
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 

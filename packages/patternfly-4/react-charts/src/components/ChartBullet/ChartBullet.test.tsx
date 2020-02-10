@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { ChartBullet } from './ChartBullet';
 
-Object.values([true, false]).forEach(isRead => {
+Object.values([true, false]).forEach(() => {
   test('ChartBulletQualitativeRange', () => {
     const view = shallow(<ChartBullet />);
     expect(view).toMatchSnapshot();

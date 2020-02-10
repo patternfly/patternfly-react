@@ -1,6 +1,6 @@
-const path = require('path');
-const glob = require('glob');
-const fse = require('fs-extra');
+import path from 'path';
+import glob from 'glob';
+import fse from 'fs-extra';
 
 const srcDir = path.join('./src');
 const distDir = path.join('./dist/js');

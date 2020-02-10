@@ -1,5 +1,4 @@
 import * as React from 'react';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Helpers, Path } from 'victory-core';
 import { PathHelpers, PathHelpersInterface } from './path-helpers';
 
@@ -130,7 +129,7 @@ const getPath = (props: ChartPointProps) => {
     threshold: PathHelpers.threshold
   };
   const symbol = Helpers.evaluateProp(props.symbol, props);
-  const key: (keyof PathHelpersInterface) = symbol;
+  const key: keyof PathHelpersInterface = symbol;
   const symbolFunction = typeof pathFunctions[key] === 'function' ? pathFunctions[key] : pathFunctions.square;
   return symbolFunction(x, y, size);
 };

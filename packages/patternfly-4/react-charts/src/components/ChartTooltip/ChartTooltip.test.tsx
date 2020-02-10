@@ -5,7 +5,7 @@ import { ChartGroup } from '../ChartGroup';
 import { ChartVoronoiContainer } from '../ChartVoronoiContainer';
 import { ChartTooltip } from './ChartTooltip';
 
-Object.values([true, false]).forEach(isRead => {
+Object.values([true, false]).forEach(() => {
   test('ChartTooltip', () => {
     const view = shallow(<ChartTooltip text="This is a tooltip" />);
     expect(view).toMatchSnapshot();

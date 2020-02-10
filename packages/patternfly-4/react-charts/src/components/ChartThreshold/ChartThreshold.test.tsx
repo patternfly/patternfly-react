@@ -4,7 +4,7 @@ import { Chart } from '../Chart';
 import { ChartGroup } from '../ChartGroup';
 import { ChartThreshold } from './ChartThreshold';
 
-Object.values([true, false]).forEach(isRead => {
+Object.values([true, false]).forEach(() => {
   test('ChartThreshold', () => {
     const view = shallow(<ChartThreshold />);
     expect(view).toMatchSnapshot();
