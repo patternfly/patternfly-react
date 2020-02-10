@@ -1,7 +1,7 @@
 import * as React from 'react';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-check-circle-icon';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import { CatalogTile } from './CatalogTile';
 import { CatalogTileBadge } from './CatalogTileBadge';
@@ -19,10 +19,10 @@ test('CatalogTile renders properly', () => {
         id="single-badge-test"
         featured
         badges={[
-          <CatalogTileBadge title="Certified" id="certified">
+          <CatalogTileBadge title="Certified" id="certified" key="1">
             <CogIcon />
           </CatalogTileBadge>,
-          <CatalogTileBadge id="no-title">
+          <CatalogTileBadge id="no-title" key="2">
             <CogIcon />
           </CatalogTileBadge>
         ]}
@@ -37,10 +37,10 @@ test('CatalogTile renders properly', () => {
       <CatalogTile
         id="multi-badge-test"
         badges={[
-          <CatalogTileBadge title="Certified" id="certified">
+          <CatalogTileBadge title="Certified" id="certified" key="1">
             <CogIcon />
           </CatalogTileBadge>,
-          <CatalogTileBadge title="USDA Approved" id="approved">
+          <CatalogTileBadge title="USDA Approved" id="approved" key="2">
             <OutlinedCheckCircleIcon />
           </CatalogTileBadge>
         ]}
@@ -52,7 +52,7 @@ test('CatalogTile renders properly', () => {
         id="long-description-test"
         featured
         badges={[
-          <CatalogTileBadge title="Certified" id="certified">
+          <CatalogTileBadge title="Certified" id="certified" key="1">
             <CogIcon />
           </CatalogTileBadge>
         ]}
@@ -73,7 +73,7 @@ test('CatalogTile renders properly', () => {
         id="test-iconClass"
         iconClass="fa fa-codepen"
         badges={[
-          <CatalogTileBadge title="USDA Approved" id="approved">
+          <CatalogTileBadge title="USDA Approved" id="approved" key="1">
             <OutlinedCheckCircleIcon />
           </CatalogTileBadge>
         ]}
@@ -99,7 +99,7 @@ test('CatalogTile renders properly', () => {
         featured
         href="https://github.com/patternfly/patternfly-react"
         badges={[
-          <CatalogTileBadge title="Certified" id="certified">
+          <CatalogTileBadge title="Certified" id="certified" key="1">
             <CogIcon />
           </CatalogTileBadge>
         ]}
