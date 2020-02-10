@@ -297,8 +297,8 @@ class CardViewDefaultNav extends React.Component {
     };
 
     this.onSplitButtonSelect = event => {
-      this.setState({
-        splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
+      this.setState((prevState, props) => {
+        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen
       });
     };
 
@@ -314,6 +314,22 @@ this.onNameSelect = (event, selection) => {
         };
       });
     };
+
+this.onCheckboxSelect = (event, isSelected, key) => {
+      const { selectedItems } = this.state;
+      const rows = [...this.state.res];
+      const id = rows[key].id;
+      rows[key].selected = isSelected;
+      this.setState((prevState, props) => {
+        return {
+          res: rows,
+          selectedItems: isSelected
+            ? [...prevState.selectedItems, id]
+            : prevState.selectedItems.filter(itemId => itemId !== id)
+        };
+      });
+    };
+
 
     this.updateSelected = () => {
       const { res, selectedItems } = this.state;
@@ -342,6 +358,56 @@ this.onNameSelect = (event, selection) => {
           }
         });
       }
+    };
+
+    this.handleSelectClick = newState => {
+      if (newState === 'none') {
+        this.setState(
+          {
+            selectedItems: [],
+          },
+          this.updateSelected
+        );
+      } else if (newState === 'page') {
+        let newRows = [];
+        let rows = this.state.cardInfo.map(post => {
+          const isSelected = post.selected;
+          newRows = isSelected ? [...newRows] : [...newRows, post.id];
+          post.selected = true;
+          return post;
+        });
+
+        this.setState((prevState, props) => {
+          return {
+            selectedItems: prevState.selectedItems.concat(newRows)
+          };
+        }, this.updateSelected);
+      } else {
+        let newRows = [];
+        for (var i = 1; i <= 10; i++) newRows = [...newRows, i];
+
+        this.setState(
+          {
+            selectedItems: newRows
+          },
+          this.updateSelected
+        );
+      }
+    };
+
+    this.onSelect = (event, isSelected, key) => {
+      const { selectedItems } = this.state;
+      const rows = [...this.state.res];
+      const id = rows[key].id;
+      rows[key].selected = isSelected;
+      this.setState((prevState, props) => {
+        return {
+          res: rows,
+          selectedItems: isSelected
+            ? [...prevState.selectedItems, id]
+            : prevState.selectedItems.filter(itemId => itemId !== id)
+        };
+      });
     };
 
   }
@@ -412,6 +478,7 @@ this.onNameSelect = (event, selection) => {
 
         <DataToolbarFilter
           categoryName="Products"
+          chips={filters.products}
           deleteChip={this.onDelete}
         >
           <Select
@@ -439,7 +506,8 @@ this.onNameSelect = (event, selection) => {
             splitButtonDropdownIsOpen,
             cardInfo,
             activeItem,
-            filters} = this.state;
+            filters,
+            res } = this.state;
 
     const toolbarKebabDropdownItems = [
      <DropdownItem key="link">Link</DropdownItem>,
@@ -578,6 +646,10 @@ this.onNameSelect = (event, selection) => {
           })
         : cardInfo;
 
+    const rows = res.map(post => ({
+      selected: post.selected
+    }));
+
     return (
       <React.Fragment>
         <Page
@@ -624,7 +696,8 @@ this.onNameSelect = (event, selection) => {
                                     />
                                     <input
                                     type="checkbox"
-                                    isChecked={this.state.check1}
+                                    onSelect={this.onCheckboxSelect}
+                                    defaultChecked={this.state.check1}
                                     onChange={this.onClick}
                                     aria-label="card checkbox example"
                                     id="check-1"
