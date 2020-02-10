@@ -46,6 +46,8 @@ references:
   gatsby_cache_paths: &gatsby_cache_paths
   - packages/patternfly-4/react-docs/.cache
   - packages/patternfly-4/react-docs/public
+  lint_cache_paths: &lint_cache_paths
+  - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
     js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   cypress_cache_key: &cypress_cache_key
@@ -54,6 +56,8 @@ references:
     gatsby-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
     build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  lint_cache_key: &build_cache_key
+    lint-cache-v{{.Environment.CACHE_VERSION}}
   attach_workspace: &attach_workspace
     attach_workspace:
       at: ~/project
@@ -245,9 +249,15 @@ jobs:
     - restore_cache:
         keys:
         - *js_deps_cache_key
+    - restore_cache:
+        keys:
+        - *lint_cache_key
     - run:
         name: ESLint
         command: yarn lint:ts
+    - save_cache:
+        paths: *lint_cache_paths
+        key: *lint_cache_key
     - run:
         name: "@patternfly/patternfly Versions Match"
         command: yarn lint:versions
