@@ -11,6 +11,7 @@ coverage
 .tmp
 **/Generated
 **/build
+css
 
 # package managers
 yarn-error.log
