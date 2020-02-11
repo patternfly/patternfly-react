@@ -42,7 +42,7 @@ export class ViewToolbar extends React.Component {
     this.setState({ actionKebabOpen: isOpen });
   };
 
-  onActionKebabSelect = (e, action) => {
+  onActionKebabSelect = e => {
     e.preventDefault();
     this.setState({ actionKebabOpen: false });
   };
