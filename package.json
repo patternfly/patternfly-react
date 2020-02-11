@@ -98,7 +98,7 @@
     "clean:build": "shx rm -rf .cache",
     "commit": "git-cz",
     "generate": "yarn plop",
-    "lint:md": "yarn eslint packages/patternfly-4 --ext md --no-eslintrc --config .eslintrc-md.json --cache",
+    "lint:md": "yarn eslint packages/patternfly-4/react-tokens --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
     "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/eslint packages/patternfly-4/react-core packages/patternfly-4/react-table packages/patternfly-4/react-topology packages/patternfly-4/react-catalog-view-extension packages/patternfly-4/react-docs packages/patternfly-4/react-inline-edit-extension packages/patternfly-4/react-charts packages/patternfly-4/react-integration packages/patternfly-4/react-styled-system packages/patternfly-4/react-styles --ext js,jsx,ts,tsx --cache",
     "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
