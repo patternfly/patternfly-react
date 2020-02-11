@@ -1,6 +1,7 @@
-/* eslint-disable no-case-declarations */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { copySync } = require('fs-extra');
 const { resolve, dirname, join } = require('path');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 const toDir = resolve(__dirname, '../css');
 const fromDir = dirname(require.resolve('@patternfly/patternfly/package.json'));
