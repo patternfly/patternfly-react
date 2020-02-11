@@ -7,6 +7,9 @@
 import { mergeWith } from 'lodash';
 import classNames from 'classnames';
 
+/**
+ * @param {any} props - Props
+ */
 export function mergeProps(...props: any) {
   const firstProps = props[0];
   const restProps = props.slice(1);

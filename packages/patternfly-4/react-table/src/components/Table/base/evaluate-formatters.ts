@@ -6,6 +6,9 @@
  */
 import { formattersType, formatterValueType, ExtraParamsType } from './types';
 
+/**
+ * @param {formattersType} formatters - formatters type
+ */
 export function evaluateFormatters(formatters: formattersType) {
   return (value: formatterValueType, extra: ExtraParamsType) =>
     formatters.reduce(

@@ -173,7 +173,10 @@ describe('headerUtils', () => {
       });
 
       describe('custom dataLabel', () => {
-        const cells = [{ title: 'expanded first', dataLabel: 'compact first' }, { title: 'expanded second'}] as ICell[];
+        const cells = [
+          { title: 'expanded first', dataLabel: 'compact first' },
+          { title: 'expanded second' }
+        ] as ICell[];
         const mixed = calculateColumns(cells, {});
         cells.forEach((oneCell: ICell, key) => {
           test(`${oneCell}`, () => {

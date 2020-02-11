@@ -16,7 +16,7 @@ export const Visibility = pickProperties(styles.modifiers, [
   'visibleOn_2xl'
 ]);
 
-// tslint:disable-next-line:no-shadowed-variable
+// eslint-disable-next-line no-shadow
 export const classNames = (...classNames: string[]): ITransform => () => ({
   className: css(...classNames)
 });
