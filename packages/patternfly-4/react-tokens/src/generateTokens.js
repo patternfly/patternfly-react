@@ -1,4 +1,4 @@
-/* eslint-disable global-require,import/no-dynamic-require,no-restricted-globals */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const glob = require('glob');
 const { dirname, resolve, join } = require('path');
 const { parse } = require('css');
@@ -52,6 +52,9 @@ readdirSync(templateDir).forEach(templateFile => {
   const template = require(join(templateDir, templateFile));
   outputFileSync(template.getOutputPath({ outDir }), template.getContent({ tokens }));
   Object.entries(tokens).forEach(([tokenName, tokenValue]) => {
-    outputFileSync(template.getSingleOutputPath({ outDir, tokenName }), template.getSingleContent({ tokenName, tokenValue }));
-  })
+    outputFileSync(
+      template.getSingleOutputPath({ outDir, tokenName }),
+      template.getSingleContent({ tokenName, tokenValue })
+    );
+  });
 });
