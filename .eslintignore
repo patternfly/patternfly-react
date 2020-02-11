@@ -1,6 +1,7 @@
 # Javascript builds
 node_modules
 dist
+__tests__
 tsc_out
 .out
 .changelog
