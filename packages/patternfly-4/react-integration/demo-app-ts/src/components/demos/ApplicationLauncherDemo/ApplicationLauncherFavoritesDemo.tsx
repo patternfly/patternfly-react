@@ -44,7 +44,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component {
       isOpen
     });
   };
-  onSelect = event => {
+  onSelect = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -54,10 +54,11 @@ export class ApplicationLauncherFavoritesDemo extends React.Component {
       this.setState({
         favorites: this.state.favorites.filter(id => id !== itemId)
       });
-    } else
+    } else {
       this.setState({
         favorites: [...this.state.favorites, itemId]
       });
+    }
   };
   onSearch = textInput => {
     if (textInput === '') {
@@ -65,19 +66,22 @@ export class ApplicationLauncherFavoritesDemo extends React.Component {
         filteredItems: null
       });
     } else {
-      let filteredGroups = this.appLauncherItems
+      const filteredGroups = this.appLauncherItems
         .map(group => {
-          let filteredGroup = React.cloneElement(group, {
+          const filteredGroup = React.cloneElement(group, {
             children: group.props.children.filter(item => {
-              if (item.type === ApplicationLauncherSeparator) return item;
+              if (item.type === ApplicationLauncherSeparator) {
+                return item;
+              }
               return item.props.children.toLowerCase().includes(textInput.toLowerCase());
             })
           });
           if (
             filteredGroup.props.children.length > 0 &&
             filteredGroup.props.children[0].type !== ApplicationLauncherSeparator
-          )
+          ) {
             return filteredGroup;
+          }
         })
         .filter(newGroup => newGroup);
 

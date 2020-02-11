@@ -61,9 +61,9 @@ export class TableActionsDemo extends React.Component<TableProps, TableState> {
             } as ISeparator,
             {
               title: 'Third action',
-              // tslint:disable-next-line:no-shadowed-variable
-              onClick: (event, rowId, rowData, extra) =>
-                // tslint:disable-next-line:no-console
+              // eslint-disable-next-line no-shadow
+              onClick: (event, rowId, rowData) =>
+                // eslint-disable-next-line no-console
                 console.log(`clicked on Third action, on row ${rowId} of type ${rowData.type}`)
             }
           ]
@@ -72,16 +72,16 @@ export class TableActionsDemo extends React.Component<TableProps, TableState> {
     return [
       {
         title: 'Some action',
-        // tslint:disable-next-line:no-shadowed-variable
-        onClick: (event, rowId, rowData, extra) =>
-          // tslint:disable-next-line:no-console
+        // eslint-disable-next-line no-shadow
+        onClick: (event, rowId, rowData) =>
+          // eslint-disable-next-line no-console
           console.log(`clicked on Some action, on row ${rowId} of type ${rowData.type}`)
       },
       {
         title: 'Another action',
-        // tslint:disable-next-line:no-shadowed-variable
-        onClick: (event, rowId, rowData, extra) =>
-          // tslint:disable-next-line:no-console
+        // eslint-disable-next-line no-shadow
+        onClick: (event, rowId, rowData) =>
+          // eslint-disable-next-line no-console
           console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`)
       },
       ...thirdAction

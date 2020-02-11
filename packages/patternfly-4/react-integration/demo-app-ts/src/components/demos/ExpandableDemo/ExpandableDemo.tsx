@@ -32,7 +32,9 @@ export class ExpandableDemo extends React.Component<null, ExpandableState> {
         <h1> Uncontrolled Expandable Example: </h1>
         <Expandable toggleText="Show More">This content is visible only when the component is expanded.</Expandable>
         <h1> Uncontrolled Dynamic Expandable Example: </h1>
-        <Expandable toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">This content is visible only when the component is expanded.</Expandable>
+        <Expandable toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+          This content is visible only when the component is expanded.
+        </Expandable>
       </React.Fragment>
     );
   }

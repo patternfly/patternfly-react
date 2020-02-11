@@ -1,12 +1,13 @@
-var xmlDocument = require('xmldoc');
+import { XmlDocument } from 'xmldoc';
 
-// stacked bar chart & execution details data gets captured during input xml parsing 
-var dataSeries = '';
-var testExecInfo = {testStartedOn: undefined, totalTests: 0, passRate: 0.0, execTime: 0.0};
+// stacked bar chart & execution details data gets captured during input xml parsing
+let dataSeries = '';
+const testExecInfo = { testStartedOn: undefined, totalTests: 0, passRate: 0.0, execTime: 0.0 };
 
 // html report file headers
-var reportTitle = '<title>Protractor Test Report</title>';
-var reportCss = '<style> #td-table, tr, td { \
+const reportTitle = '<title>Protractor Test Report</title>';
+const reportCss =
+  '<style> #td-table, tr, td { \
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; \
     text-align: left; \
     border-collapse: collapse; \
@@ -67,9 +68,10 @@ var reportCss = '<style> #td-table, tr, td { \
     font-size: small; \
     padding: 7px; \
   } \
-</style>'
+</style>';
 
-var reportScript = '<script type="text/javascript" src="https://www.google.com/jsapi"></script> \
+let reportScript =
+  '<script type="text/javascript" src="https://www.google.com/jsapi"></script> \
   <script type="text/javascript"> \
     google.load("visualization", "1", {packages:["corechart"]}); \
     google.setOnLoadCallback(drawChart); \
@@ -89,7 +91,10 @@ var reportScript = '<script type="text/javascript" src="https://www.google.com/j
     } \
   </script>';
 
-function entity(str){
+/**
+ * @param {string} str - String
+ */
+function entity(str) {
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt')
@@ -97,105 +102,111 @@ function entity(str){
     .replace(/\\"/g, '"');
 }
 
-var generateTDTable = function (reportXml) {
-  var totalTests = 0;
-  var totalFailures = 0;
-  var totalSkips = 0;
-  var totalExecTime = 0;
-  var testDetailsTable = '<tr><th id="td-table-header">Spec Description</th> \
+const generateTDTable = function(reportXml) {
+  let totalTests = 0;
+  let totalFailures = 0;
+  let totalSkips = 0;
+  let totalExecTime = 0;
+  let testDetailsTable =
+    '<tr><th id="td-table-header">Spec Description</th> \
     <th id="td-table-header">Status</th> \
     <th id="td-table-header">Details</th></tr>';
 
-  var xmlData = reportXml;
-  var testResultXml = new xmlDocument.XmlDocument(xmlData);
-  var testSuites = testResultXml.childrenNamed('testsuite');
-  var testStartedOn = testSuites[0].attr.timestamp;
-  var totalSuites = testSuites.length;
+  const xmlData = reportXml;
+  const testResultXml = new XmlDocument(xmlData);
+  const testSuites = testResultXml.childrenNamed('testsuite');
+  const testStartedOn = testSuites[0].attr.timestamp;
+  const totalSuites = testSuites.length;
 
-  // Capture tessuite execution details   
-  for (var i = 0; i < totalSuites; i++) {
-    var suiteName = testSuites[i].attr.name;
-		var suiteTestErrors = parseInt(testSuites[i].attr.errors);
-		var suiteTotalTests = parseInt(testSuites[i].attr.tests);
-		var suiteTestSkips = parseInt(testSuites[i].attr.skipped);
-		var suiteTestFailures = parseInt(testSuites[i].attr.failures);
-		var suiteTestTime = parseFloat(testSuites[i].attr.time);
-		var suitePassedTests = suiteTotalTests - suiteTestErrors - suiteTestSkips - suiteTestFailures;
-		totalTests += suiteTotalTests;
-		totalFailures += suiteTestFailures;
-		totalSkips += suiteTestSkips;
-		totalExecTime += suiteTestTime;
+  // Capture tessuite execution details
+  for (let i = 0; i < totalSuites; i++) {
+    const suiteName = testSuites[i].attr.name;
+    const suiteTestErrors = parseInt(testSuites[i].attr.errors);
+    const suiteTotalTests = parseInt(testSuites[i].attr.tests);
+    const suiteTestSkips = parseInt(testSuites[i].attr.skipped);
+    const suiteTestFailures = parseInt(testSuites[i].attr.failures);
+    const suiteTestTime = parseFloat(testSuites[i].attr.time);
+    const suitePassedTests = suiteTotalTests - suiteTestErrors - suiteTestSkips - suiteTestFailures;
+    totalTests += suiteTotalTests;
+    totalFailures += suiteTestFailures;
+    totalSkips += suiteTestSkips;
+    totalExecTime += suiteTestTime;
 
     // Capture data for stacked barchart
     dataSeries += '["' + suiteName + '",' + suitePassedTests + ',' + suiteTestFailures + ',';
     dataSeries += suiteTestSkips + ']';
-    dataSeries = (i == totalSuites - 1) ? dataSeries : dataSeries + ',';
+    dataSeries = i === totalSuites - 1 ? dataSeries : dataSeries + ',';
 
-		testDetailsTable += '<tr><td id="td-table-spec" colspan=3>' + suiteName + '</td></tr>';
-		var testcases = testSuites[i].childrenNamed('testcase');
+    testDetailsTable += '<tr><td id="td-table-spec" colspan=3>' + suiteName + '</td></tr>';
+    const testcases = testSuites[i].childrenNamed('testcase');
 
     // Capture tescase execution details for each testsuite
-		for(var j in testcases) {
-		  testDetailsTable += '<tr><td>' + testcases[j].attr.name; + '</td>'
-			var testFailed = testcases[j].childNamed('failure');
-			var testSkipped = testcases[j].childNamed('skipped');
-      var testError = testcases[j].childNamed('error');
-			if(testFailed) {
-				testDetailsTable += '<td id="td-table-test-fail">Failed</td><td><pre>' + entity(testFailed.val) + '</pre></td>';
-			}
-			else if(testSkipped) {
-				testDetailsTable += '<td id="td-table-test-skip">Skipped</td><td><pre>' + entity(testSkipped.val) + '</pre></td>';
-			} 
-      else if(testError) {
-        testDetailsTable += '<td id="td-table-test-fail">Error</td><td><pre>' + entity(testError.val) + '</pre></td>';
+    for (const j in testcases) {
+      if (testcases[j]) {
+        testDetailsTable += '<tr><td>' + testcases[j].attr.name + '</td>';
+        const testFailed = testcases[j].childNamed('failure');
+        const testSkipped = testcases[j].childNamed('skipped');
+        const testError = testcases[j].childNamed('error');
+        if (testFailed) {
+          testDetailsTable +=
+            '<td id="td-table-test-fail">Failed</td><td><pre>' + entity(testFailed.val) + '</pre></td>';
+        } else if (testSkipped) {
+          testDetailsTable +=
+            '<td id="td-table-test-skip">Skipped</td><td><pre>' + entity(testSkipped.val) + '</pre></td>';
+        } else if (testError) {
+          testDetailsTable += '<td id="td-table-test-fail">Error</td><td><pre>' + entity(testError.val) + '</pre></td>';
+        } else {
+          testDetailsTable += '<td id="td-table-test-pass">Passed</td><td></td>';
+        }
+        testDetailsTable += '</tr>';
       }
-      else{
-				testDetailsTable += '<td id="td-table-test-pass">Passed</td><td></td>'
-			}
-			testDetailsTable += '</tr>';
-		}
-	}
-  testExecInfo['testStartedOn'] = testStartedOn;
-  testExecInfo['totalTests'] = totalTests;
-  testExecInfo['passRate'] = ((totalTests - totalFailures - totalSkips) / totalTests).toFixed(3);
-  testExecInfo['execTime'] = totalExecTime.toFixed(3);
+    }
+  }
+  testExecInfo.testStartedOn = testStartedOn;
+  testExecInfo.totalTests = totalTests;
+  testExecInfo.passRate = ((totalTests - totalFailures - totalSkips) / totalTests).toFixed(3);
+  testExecInfo.execTime = totalExecTime.toFixed(3);
   return testDetailsTable;
 };
 
-var generateTSTable = function(testConfig) {
-  var testSummaryTable = '<tr id="tr-ts-table"><th colspan=2><div id="div-ts-table">';
-  var testReportTitle = testConfig['reportTitle'] == undefined ? 'Test Execution Report' : testConfig['reportTitle'];
+const generateTSTable = function(testConfig) {
+  let testSummaryTable = '<tr id="tr-ts-table"><th colspan=2><div id="div-ts-table">';
+  const testReportTitle = testConfig.reportTitle === undefined ? 'Test Execution Report' : testConfig.reportTitle;
   testSummaryTable += testReportTitle + '</div></th></tr>';
   testSummaryTable += '<tr id="tr-ts-table"><td id="td-ts-table"><div>';
-  for (var testConfigParam in testConfig) {
-    if(testConfigParam != 'reportTitle' && testConfigParam != 'outputPath') {
-      testSummaryTable += '<li><b>' + testConfigParam + ' :</b> ' + testConfig[testConfigParam]  + '</li>';
+  for (const testConfigParam in testConfig) {
+    if (testConfigParam !== 'reportTitle' && testConfigParam !== 'outputPath') {
+      testSummaryTable += '<li><b>' + testConfigParam + ' :</b> ' + testConfig[testConfigParam] + '</li>';
     }
   }
-  testSummaryTable += '<li><b>Test Start:</b> ' + testExecInfo['testStartedOn'] + '</li>';
-  testSummaryTable += '<li><b>Total Tests:</b> ' + testExecInfo['totalTests'] + '</li>';
-  testSummaryTable += '<li><b>Pass Rate:</b> ' + testExecInfo['passRate'] * 100 + '% </li>';
-  testSummaryTable += '<li><b>Execution Duration:</b> ' + testExecInfo['execTime'] + ' Secs</li>';
+  testSummaryTable += '<li><b>Test Start:</b> ' + testExecInfo.testStartedOn + '</li>';
+  testSummaryTable += '<li><b>Total Tests:</b> ' + testExecInfo.totalTests + '</li>';
+  testSummaryTable += '<li><b>Pass Rate:</b> ' + testExecInfo.passRate * 100 + '% </li>';
+  testSummaryTable += '<li><b>Execution Duration:</b> ' + testExecInfo.execTime + ' Secs</li>';
   testSummaryTable += '</ul></div></td><td id="td-ts-table" rowspan=2>';
-  testSummaryTable +='<div id="stacked-bar-chart"></div></td></tr>';
+  testSummaryTable += '<div id="stacked-bar-chart"></div></td></tr>';
   return testSummaryTable;
-}
+};
 
+/**
+ * @param {any} reportXml - XML data
+ * @param {object} testConfig - config object
+ */
 function getHTMLReport(reportXml, testConfig) {
-  var testDetails = generateTDTable(reportXml);
-  var testSummary = generateTSTable(testConfig);
+  const testDetails = generateTDTable(reportXml);
+  const testSummary = generateTSTable(testConfig);
 
-  // Feed data to stacked bar chart 
+  // Feed data to stacked bar chart
   reportScript = reportScript.replace('<dataSeries>', dataSeries);
-   
+
   // Prepare for html file content
-  var htmlReport = '<html><head>' + reportTitle + reportCss + reportScript + '</head>';
+  let htmlReport = '<html><head>' + reportTitle + reportCss + reportScript + '</head>';
   htmlReport += '<body>' + '<table id="ts-table">' + testSummary + '</table>';
   htmlReport += '<table id="td-table">' + testDetails + '</table>';
   htmlReport += '</body></html>';
-  
+
   return htmlReport;
 }
 
 // @exports
-module.exports = { getHTMLReport };
+export default { getHTMLReport };

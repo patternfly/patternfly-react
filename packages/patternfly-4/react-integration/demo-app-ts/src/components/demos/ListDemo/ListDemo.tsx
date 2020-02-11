@@ -7,7 +7,7 @@ export class ListDemo extends Component {
 
   myOrderedListProps: ListProps = {
     component: ListComponent.ol
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);

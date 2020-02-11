@@ -43,9 +43,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
 
   onSelect = event => {
     const id = event.currentTarget.id;
-    this.setState(() => {
-      return { selectedOption: id };
-    });
+    this.setState(() => ({ selectedOption: id }));
   };
 
   componentDidMount() {
@@ -93,11 +91,11 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     const myModifiedMenuProps: OptionsMenuProps = {
       id: 'options-menu-modified-example',
       menuItems: [
-        <OptionsMenuItemGroup groupTitle="Second group">
+        <OptionsMenuItemGroup groupTitle="Second group" key="1">
           <OptionsMenuItem onSelect={() => {}}>First Option</OptionsMenuItem>
         </OptionsMenuItemGroup>,
-        <OptionsMenuSeparator />,
-        <OptionsMenuItemGroup groupTitle="First group">
+        <OptionsMenuSeparator key="2" />,
+        <OptionsMenuItemGroup groupTitle="First group" key="3">
           <OptionsMenuItem onSelect={() => {}}>Second Option</OptionsMenuItem>
         </OptionsMenuItemGroup>
       ],

@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
-  wrappable,
-  ICell,
-  IRow
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, wrappable, ICell, IRow } from '@patternfly/react-table';
 
 interface TableState {
   rows: IRow[];

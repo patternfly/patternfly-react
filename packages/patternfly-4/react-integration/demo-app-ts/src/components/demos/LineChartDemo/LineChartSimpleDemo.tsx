@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Chart,
-  ChartAxis,
-  ChartGroup,
-  ChartLine,
-  ChartThemeColor,
-  ChartLegend,
-  ChartVoronoiContainer
-} from '@patternfly/react-charts';
-import { width } from 'styled-system';
+import { Chart, ChartAxis, ChartGroup, ChartLine } from '@patternfly/react-charts';
 
 export class LineChartSimpleDemo extends React.Component {
   componentDidMount() {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChartDonutThreshold, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
 export class DonutUtilizationSimpleBottomDemo extends React.Component {

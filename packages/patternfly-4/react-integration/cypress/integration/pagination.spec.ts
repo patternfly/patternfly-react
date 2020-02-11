@@ -115,7 +115,7 @@ describe('Pagination Demo Test', () => {
           .then(input => expect(input).to.have.value('2'));
       });
 
-      cy.get('.pagination-options-menu-default-fullpage')
+    cy.get('.pagination-options-menu-default-fullpage')
       .find('button[data-action="next"]')
       .then((button: JQuery<HTMLButtonElement>) => {
         cy.wrap(button).click();
@@ -131,7 +131,7 @@ describe('Pagination Demo Test', () => {
         cy.get('.pagination-options-menu-default-fullpage')
           .find('.pf-c-pagination__nav-page-select input')
           .then(input => expect(input).to.have.value('2'));
-        });
+      });
   });
 
   it('Verify defaultToFullPage works correctly', () => {
@@ -155,6 +155,6 @@ describe('Pagination Demo Test', () => {
                 .then(currentPage => expect(currentPage).to.have.value('5'));
             });
           });
-        });
+      });
   });
 });

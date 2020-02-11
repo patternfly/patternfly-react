@@ -31,7 +31,7 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onSimpleSelect = event => {
+  onSimpleSelect = () => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
     });
@@ -87,7 +87,7 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onAdditionalOptionsSelect = event => {
+  onAdditionalOptionsSelect = () => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
     });
@@ -167,7 +167,7 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onPersistSelect = event => {
+  onPersistSelect = () => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
     });

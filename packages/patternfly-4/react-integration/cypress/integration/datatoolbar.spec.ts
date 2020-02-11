@@ -74,5 +74,4 @@ describe('Data Toolbar Demo Test', () => {
       cy.get('.pf-c-data-toolbar__item .pf-c-button').contains('Clear filters');
     });
   });
-
 });

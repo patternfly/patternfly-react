@@ -33,7 +33,9 @@ export class TextDemo extends Component {
       <TextContent>
         <Text component={this.myTextProps.component}>{this.myTextProps.children}</Text>
         <TextList component={this.myTextListProps.component}>
-          <TextListItem children={this.myTextListItemProps.children} component={this.myTextListItemProps.component} />
+          <TextListItem component={this.myTextListItemProps.component}>
+            {this.myTextListItemProps.children}
+          </TextListItem>
         </TextList>
       </TextContent>
     );

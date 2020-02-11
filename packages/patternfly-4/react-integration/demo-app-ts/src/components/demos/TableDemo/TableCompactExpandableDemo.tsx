@@ -10,7 +10,10 @@ import {
   IRow
 } from '@patternfly/react-table';
 
-export class TableCompactExpandableDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+export class TableCompactExpandableDemo extends React.Component<
+  TableProps,
+  { columns: (ICell | string)[]; rows: IRow[] }
+> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

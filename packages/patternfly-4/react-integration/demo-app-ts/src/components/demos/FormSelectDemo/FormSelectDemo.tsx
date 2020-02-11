@@ -52,11 +52,11 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
     ];
   }
 
-  onChange = (value: string, event: any) => {
+  onChange = (value: string) => {
     this.setState({ value });
   };
 
-  onChangeValidatedSelect = (value: string, event: any) => {
+  onChangeValidatedSelect = (value: string) => {
     const validated = value === '3' ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedValue: value, validated });
   };

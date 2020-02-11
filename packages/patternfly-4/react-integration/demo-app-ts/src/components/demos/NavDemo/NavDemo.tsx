@@ -35,12 +35,8 @@ export class NavDemo extends Component {
     this.setState({ defaultActiveItem: result.itemId });
   };
 
-  handleNoNavigateLink = (
-    e: React.FormEvent<HTMLInputElement>,
-    itemId: number | string,
-    groupId: number | string,
-    to: string
-  ): void => {
+  handleNoNavigateLink = (e: React.FormEvent<HTMLInputElement>, itemId: number | string): void => {
+    // eslint-disable-next-line no-console
     console.log(`No Navigate Link clicked: ${itemId}`);
   };
 

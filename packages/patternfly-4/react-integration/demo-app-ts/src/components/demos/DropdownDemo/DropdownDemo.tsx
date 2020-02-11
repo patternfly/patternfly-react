@@ -46,7 +46,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = () => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -62,13 +62,14 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isActionOpen
       });
     };
-    this.onActionSelect = event => {
+    this.onActionSelect = () => {
       this.setState({
         isActionOpen: !this.state.isActionOpen
       });
       this.onActionFocus();
     };
-    this.onActionClick = event => {
+    this.onActionClick = () => {
+      // eslint-disable-next-line no-console
       console.log('Action clicked!');
     };
     this.onActionFocus = () => {
@@ -81,16 +82,18 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isCogOpen
       });
     };
-    this.onCogSelect = event => {
+    this.onCogSelect = () => {
       this.setState({
         isCogOpen: !this.state.isCogOpen
       });
       this.onCogFocus();
     };
-    this.onCogClick = event => {
+    this.onCogClick = () => {
+      // eslint-disable-next-line no-console
       console.log('Action clicked!');
     };
-    this.onCogClick = event => {
+    this.onCogClick = () => {
+      // eslint-disable-next-line no-console
       console.log('Cog clicked!');
     };
     this.onCogFocus = () => {

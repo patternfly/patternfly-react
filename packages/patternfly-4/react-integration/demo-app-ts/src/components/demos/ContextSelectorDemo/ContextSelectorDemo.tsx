@@ -53,7 +53,7 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
       this.setState({ searchValue: value });
     };
 
-    this.onSearchButtonClick = event => {
+    this.onSearchButtonClick = () => {
       const filtered =
         this.state.searchValue === ''
           ? this.items

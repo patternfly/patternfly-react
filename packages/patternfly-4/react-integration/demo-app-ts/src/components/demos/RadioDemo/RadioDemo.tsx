@@ -48,7 +48,11 @@ export class RadioDemo extends Component {
   myUncheckedDescriptionRadioProps: RadioProps = {
     id: 'radio-7',
     label: 'Unchecked radio with description example',
-    description: <span>This is a radio <strong>description</strong></span>,
+    description: (
+      <span>
+        This is a radio <strong>description</strong>
+      </span>
+    ),
     name: 'disabled-2'
   };
 
