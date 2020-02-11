@@ -333,7 +333,7 @@ class SortableTable extends React.Component {
     const { columns, rows, sortBy } = this.state;
 
     return (
-      <Table aria-label="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+      <Table aria-label="Sortable with Wrapping Headers" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
