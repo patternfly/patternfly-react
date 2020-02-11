@@ -46,6 +46,8 @@ references:
   gatsby_cache_paths: &gatsby_cache_paths
   - packages/patternfly-4/react-docs/.cache
   - packages/patternfly-4/react-docs/public
+  lint_cache_paths: &lint_cache_paths
+  - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
     js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   cypress_cache_key: &cypress_cache_key
@@ -54,9 +56,29 @@ references:
     gatsby-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
     build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  lint_cache_key: &lint_cache_key
+    lint-cache-v{{.Environment.CACHE_VERSION}}
   attach_workspace: &attach_workspace
     attach_workspace:
       at: ~/project
+  install_node: &install_node
+    run:
+      name: Install node@10 (need right version for `yarn`)
+      command: |
+        set +e             
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+        export NVM_DIR="/opt/circleci/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        nvm install v10
+        nvm alias default v10
+        
+        # Each step uses the same `$BASH_ENV`, so need to modify it
+        echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
+        echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
+  install_yarn: &install_yarn
+    run:
+      name: Install yarn
+      command: curl -o- -L https://yarnpkg.com/install.sh | bash
 workflows:
   version: 2
   build_test_deploy:
@@ -227,9 +249,18 @@ jobs:
     - restore_cache:
         keys:
         - *js_deps_cache_key
+    - restore_cache:
+        keys:
+        - *lint_cache_key
     - run:
         name: ESLint
         command: yarn lint:ts
+    - run:
+        name: MDLint
+        command: yarn lint:md
+    - save_cache:
+        paths: *lint_cache_paths
+        key: *lint_cache_key
     - run:
         name: "@patternfly/patternfly Versions Match"
         command: yarn lint:versions
@@ -263,9 +294,8 @@ jobs:
         name: Upload docs to surge.sh
         command: node .circleci/upload-preview.js .out
   build_pf4_docs:
-    docker:
-    - image: circleci/node:10
-    resource_class: large
+    machine:
+      image: circleci/classic:latest
     steps:
     - *attach_workspace
     - restore_cache:
@@ -274,9 +304,11 @@ jobs:
     - restore_cache:
         keys:
         - *gatsby_cache_key
+    - *install_node
+    - *install_yarn
     - run:
         name: Build patternfly-react docs
-        command: yarn build:docs
+        command: ~/.yarn/bin/yarn build:docs
     - save_cache:
         paths: *gatsby_cache_paths
         key: *gatsby_cache_key
