@@ -1,13 +1,13 @@
 import React from 'react';
-import { Dropdown } from '@patternfly/react-core/dist/js/components/Dropdown/Dropdown'
-import { DropdownItem } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem'
-import { DropdownToggle } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownToggle'
-import { DropdownPosition } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants'
-import { Stack } from '@patternfly/react-core/dist/js/layouts/Stack/Stack'
-import { StackItem } from '@patternfly/react-core/dist/js/layouts/Stack/StackItem'
-import { Toolbar } from '@patternfly/react-core/dist/js/layouts/Toolbar/Toolbar'
-import { ToolbarGroup } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarGroup'
-import { ToolbarItem } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarItem'
+import { Dropdown } from '@patternfly/react-core/dist/js/components/Dropdown/Dropdown';
+import { DropdownItem } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
+import { DropdownToggle } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownToggle';
+import { DropdownPosition } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+import { Stack } from '@patternfly/react-core/dist/js/layouts/Stack/Stack';
+import { StackItem } from '@patternfly/react-core/dist/js/layouts/Stack/StackItem';
+import { Toolbar } from '@patternfly/react-core/dist/js/layouts/Toolbar/Toolbar';
+import { ToolbarGroup } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarGroup';
+import { ToolbarItem } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarItem';
 
 const projects = [
   { id: 1, name: 'Project 1' },
