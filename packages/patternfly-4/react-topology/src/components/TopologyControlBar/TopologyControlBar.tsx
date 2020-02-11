@@ -284,9 +284,9 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   return (
     <Toolbar className={className} {...props}>
       <ToolbarGroup>
-        {controlButtons.map((button: TopologyControlButton) => {
-          return button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>;
-        })}
+        {controlButtons.map((button: TopologyControlButton) =>
+          button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>
+        )}
         {children}
       </ToolbarGroup>
     </Toolbar>
