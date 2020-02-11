@@ -1,10 +1,12 @@
 /**
  * Helper utility that updates the specified callback whenever any of the specified indices have changed.
+ *
+ * @param {boolean} requireAllKeys - Require all keys
  */
 export default function createCallbackMemoizer(requireAllKeys = true) {
   let cachedIndices: any = {};
 
-  return ({callback, indices }: { callback: any, indices: any}) => {
+  return ({ callback, indices }: { callback: any; indices: any }) => {
     const keys = Object.keys(indices);
     const allInitialized =
       !requireAllKeys ||

@@ -45,6 +45,9 @@ interface Params {
   updateScrollIndexCallback: (index: number) => void;
 }
 
+/**
+ *
+ */
 export default function updateScrollIndexHelper({
   cellSize,
   cellSizeAndPositionManager,

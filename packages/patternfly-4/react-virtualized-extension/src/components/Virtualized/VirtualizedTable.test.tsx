@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
 import clsx from 'clsx';
 import { mount } from 'enzyme';
@@ -8,7 +9,7 @@ import {
 } from '@patternfly/react-table';
 import { VirtualTableBody } from './index';
 import { rows, columns, actions } from '@patternfly/react-table/src/test-helpers/data-sets';
-import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
+import { CellMeasurerCache } from 'react-virtualized';
 
 const measurementCache = new CellMeasurerCache({
   fixedWidth: true,
@@ -17,7 +18,7 @@ const measurementCache = new CellMeasurerCache({
 });
 
 describe('Simple virtualized table', () => {
-  const rowRenderer = ( index: number , isVisible: boolean ) => {
+  const rowRenderer = (index: number, isVisible: boolean) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -67,7 +68,7 @@ describe('Simple virtualized table', () => {
 });
 
 test('Sortable Virtualized Table', () => {
-  const rowRenderer = ( index: number , isVisible: boolean ) => {
+  const rowRenderer = (index: number, isVisible: boolean) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -96,7 +97,7 @@ test('Sortable Virtualized Table', () => {
 });
 
 test('Simple Actions table', () => {
-  const rowRenderer = ( index: number , isVisible: boolean ) => {
+  const rowRenderer = (index: number, isVisible: boolean) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -133,7 +134,7 @@ test('Simple Actions table', () => {
 });
 
 test('Actions virtualized table', () => {
-  const rowRenderer = ( index: number , isVisible: boolean ) => {
+  const rowRenderer = (index: number, isVisible: boolean) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -168,7 +169,7 @@ test('Actions virtualized table', () => {
 });
 
 test('Selectable virtualized table', () => {
-  const rowRenderer = ( index: number , isVisible: boolean ) => {
+  const rowRenderer = (index: number, isVisible: boolean) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -180,7 +181,7 @@ test('Selectable virtualized table', () => {
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
-      {( width: number ) => (
+      {(width: number) => (
         <VirtualTableBody
           height={400}
           rowCount={rows.length}
