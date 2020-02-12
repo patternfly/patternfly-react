@@ -3819,7 +3819,6 @@
 "@patternfly/patternfly@2.61.0":
   version "2.61.0"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.61.0.tgz#4156261001899d6d05296bc8a6f93849340c4704"
-  integrity sha512-oGivL/sudNzQ8ERIfghT1MApQumnixdii/pkHh69fRjyjgo50Np+Ne+j3WAO4NtIqBB5nuSvlI5UnBZegYBB0A==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
