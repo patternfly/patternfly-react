@@ -124,7 +124,6 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
     <div
       className="pf-topology-side-bar__body"
     >
-      &gt;
       <div
         id="test-canvas"
       />

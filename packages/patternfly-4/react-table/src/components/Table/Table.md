@@ -290,6 +290,73 @@ class SortableTable extends React.Component {
 }
 ```
 
+```js title=Sortable-with-wrapping-headers
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  wrappable,
+} from '@patternfly/react-table';
+
+class SortableWrappingHeaders extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {
+          title: 'This is a really long table header that goes on for a long time 1.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 2.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 3.',
+          transforms: [sortable,wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 4.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 5.',
+          transforms: [sortable, wrappable]
+        },
+      ],
+      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      sortBy: {}
+    };
+    this.onSort = this.onSort.bind(this);
+  }
+
+  onSort(_event, index, direction) {
+    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
+    this.setState({
+      sortBy: {
+        index,
+        direction
+      },
+      rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
+    });
+  }
+
+  render() {
+    const { columns, rows, sortBy } = this.state;
+
+    return (
+      <Table aria-label="Sortable with Wrapping Headers" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
 ```js title=Selectable
 import React from 'react';
 import {
