@@ -169,7 +169,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   }
 
   storeTippyInstance = (tip: TippyInstance) => {
-    if(this.props.minWidth) tip.popperChildren.tooltip.style.minWidth = this.props.minWidth;
+    if (this.props.minWidth) {
+      tip.popperChildren.tooltip.style.minWidth = this.props.minWidth;
+    }
     tip.popperChildren.tooltip.classList.add(styles.popover);
     this.tip = tip;
   };
