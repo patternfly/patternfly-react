@@ -24,7 +24,7 @@ export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement
 
 export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   children = null,
-  className ='',
+  className = '',
   title = null,
   wrapStyle = 'wrap',
   active = false,

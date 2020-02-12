@@ -156,6 +156,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="certified"
+                      key="1"
                       title="Certified"
                     >
                       <Tooltip
@@ -324,6 +325,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="no-title"
+                      key="2"
                     >
                       <span
                         className="catalog-tile-pf-badge"
@@ -480,6 +482,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="certified"
+                      key="1"
                       title="Certified"
                     >
                       <Tooltip
@@ -648,6 +651,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="approved"
+                      key="2"
                       title="USDA Approved"
                     >
                       <Tooltip
@@ -925,6 +929,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="certified"
+                      key="1"
                       title="Certified"
                     >
                       <Tooltip
@@ -1204,6 +1209,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="approved"
+                      key="1"
                       title="USDA Approved"
                     >
                       <Tooltip
@@ -1568,6 +1574,7 @@ exports[`CatalogTile renders properly 1`] = `
                   >
                     <CatalogTileBadge
                       id="certified"
+                      key="1"
                       title="Certified"
                     >
                       <Tooltip

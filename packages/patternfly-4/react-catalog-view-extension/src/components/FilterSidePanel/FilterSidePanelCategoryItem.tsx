@@ -38,7 +38,7 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
   );
   return (
     <div className={classes}>
-      <Checkbox onClick={onClick} checked={checked} id={getUniqueId()} label={label} {...props}/>
+      <Checkbox onClick={onClick} checked={checked} id={getUniqueId()} label={label} {...props} />
     </div>
   );
 };

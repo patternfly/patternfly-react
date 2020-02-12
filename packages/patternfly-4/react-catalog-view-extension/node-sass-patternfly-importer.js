@@ -1,5 +1,8 @@
 const path = require('path');
 
+/**
+ * @param {string} url - Url string
+ */
 function importer(url) {
   // Assume yarn hoists these.
   if (url.startsWith('bootstrap')) {

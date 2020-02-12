@@ -3,8 +3,7 @@ import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';
 
-export interface CatalogItemHeaderProps extends
-  Omit<React.HTMLProps<HTMLElement>, 'title'> {
+export interface CatalogItemHeaderProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Additional css classes */
   className?: string;
   /** URL of an image for the item's icon */
@@ -24,15 +23,13 @@ export const CatalogItemHeader: React.FunctionComponent<CatalogItemHeaderProps> 
   title,
   vendor = null,
   ...props
-}: CatalogItemHeaderProps) => {
-  return (
-    <header className={classNames('catalog-item-header-pf', className)} {...props}>
-      {iconImg && <img className="catalog-item-header-pf-icon" src={iconImg} alt="" />}
-      {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
-      <div className="catalog-item-header-pf-text">
-        <h1 className="catalog-item-header-pf-title">{title}</h1>
-        {vendor && <h5 className="catalog-item-header-pf-subtitle">{vendor}</h5>}
-      </div>
-    </header>
-  );
-};
+}: CatalogItemHeaderProps) => (
+  <header className={classNames('catalog-item-header-pf', className)} {...props}>
+    {iconImg && <img className="catalog-item-header-pf-icon" src={iconImg} alt="" />}
+    {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
+    <div className="catalog-item-header-pf-text">
+      <h1 className="catalog-item-header-pf-title">{title}</h1>
+      {vendor && <h5 className="catalog-item-header-pf-subtitle">{vendor}</h5>}
+    </div>
+  </header>
+);
