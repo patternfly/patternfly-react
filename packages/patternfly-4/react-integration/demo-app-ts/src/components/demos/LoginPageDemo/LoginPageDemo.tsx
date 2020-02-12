@@ -1,12 +1,11 @@
 import * as React from 'react';
-/* eslint-disable @typescript-eslint/no-var-requires, camelcase */
+/* eslint-disable camelcase */
 const brandImg = require('./images/brandImgColor.svg') as string;
 const pfbg_1200 = require('./images/pfbg_1200.jpg');
 const pfbg_768 = require('./images/pfbg_768.jpg');
 const pfbg_768_2x = require('./images/pfbg_768@2x.jpg');
 const pfbg_576 = require('./images/pfbg_576.jpg');
 const pfbg_576_2x = require('./images/pfbg_576@2x.jpg');
-/* eslint-enable @typescript-eslint/no-var-requires */
 
 import {
   LoginFooterItem,

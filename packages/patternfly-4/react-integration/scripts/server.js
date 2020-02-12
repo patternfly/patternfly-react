@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const cypress = require('cypress');
 const LocalWebServer = require('local-web-server');
-/* eslint-enable @typescript-eslint/no-var-requires */
 
 const localWebServer = new LocalWebServer();
 const server = localWebServer.listen({
