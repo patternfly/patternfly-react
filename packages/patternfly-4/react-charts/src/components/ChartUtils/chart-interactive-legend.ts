@@ -1,5 +1,6 @@
-import chartAreaOpacity from '@patternfly/react-tokens/dist/js/chart_area_Opacity';
-import chartColorBlack500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
+/* eslint-disable camelcase */
+import chart_area_Opacity from '@patternfly/react-tokens/dist/js/chart_area_Opacity';
+import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
 
 interface ChartInteractiveLegendInterface {
   // The names or groups of names associated with each data series
@@ -32,6 +33,12 @@ const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInter
   return result;
 };
 
+// Returns events for an interactive legend
+export const getInteractiveLegendEvents = (props: ChartInteractiveLegendInterface) => [
+  ...getInteractiveLegendTargetEvents({ ...props, target: 'data' }),
+  ...getInteractiveLegendTargetEvents({ ...props, target: 'labels' })
+];
+
 // Returns legend items, except given ID index
 const getInteractiveLegendItems = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInterface) => {
   const result = [] as any;
@@ -43,6 +50,20 @@ const getInteractiveLegendItems = ({ chartNames, omitIndex }: ChartInteractiveLe
   return result;
 };
 
+// Returns styles for interactive legend items
+export const getInteractiveLegendItemStyles = (hidden = false) =>
+  !hidden
+    ? {}
+    : {
+        labels: {
+          fill: chart_color_black_500.value
+        },
+        symbol: {
+          fill: chart_color_black_500.value,
+          type: 'eyeSlash'
+        }
+      };
+
 // Returns targeted events for legend 'data' or 'labels'
 const getInteractiveLegendTargetEvents = ({
   chartNames,
@@ -52,6 +73,8 @@ const getInteractiveLegendTargetEvents = ({
   target
 }: ChartInteractiveLegendExtInterface) => {
   if (chartNames === undefined || legendName === undefined) {
+    // eslint-disable-next-line no-console
+    console.error('getInteractiveLegendTargetEvents:', 'requires chartNames and legendName to be specified');
     return [];
   }
   return chartNames.map((_, index) => {
@@ -90,7 +113,7 @@ const getInteractiveLegendTargetEvents = ({
                     ({
                       style: {
                         ...props.style,
-                        opacity: chartAreaOpacity.value
+                        opacity: chart_area_Opacity.value
                       }
                     } as any)
                 },
@@ -106,7 +129,7 @@ const getInteractiveLegendTargetEvents = ({
                           // Skip if hidden
                           style: {
                             ...props.style,
-                            opacity: chartAreaOpacity.value
+                            opacity: chart_area_Opacity.value
                           }
                         }
                 },
@@ -123,7 +146,7 @@ const getInteractiveLegendTargetEvents = ({
                           // Skip if hidden
                           style: {
                             ...props.style,
-                            opacity: chartAreaOpacity.value
+                            opacity: chart_area_Opacity.value
                           }
                         };
                   }
@@ -156,23 +179,3 @@ const getInteractiveLegendTargetEvents = ({
     };
   });
 };
-
-// Returns events for an interactive legend
-export const getInteractiveLegendEvents = (props: ChartInteractiveLegendInterface) => [
-  ...getInteractiveLegendTargetEvents({ ...props, target: 'data' }),
-  ...getInteractiveLegendTargetEvents({ ...props, target: 'labels' })
-];
-
-// Returns styles for interactive legend items
-export const getInteractiveLegendItemStyles = (hidden = false) =>
-  !hidden
-    ? {}
-    : {
-        labels: {
-          fill: chartColorBlack500.value
-        },
-        symbol: {
-          fill: chartColorBlack500.value,
-          type: 'eyeSlash'
-        }
-      };

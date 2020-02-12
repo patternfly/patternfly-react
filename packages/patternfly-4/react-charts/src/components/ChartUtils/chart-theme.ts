@@ -40,76 +40,6 @@ import {
   ChartThresholdTheme
 } from '../ChartTheme/ChartTheme';
 
-// Returns dark theme colors
-export const getDarkThemeColors = (themeColor: string) => {
-  switch (themeColor) {
-    case ChartThemeColor.blue:
-      return DarkBlueColorTheme;
-    case ChartThemeColor.cyan:
-      return DarkCyanColorTheme;
-    case ChartThemeColor.gold:
-      return DarkGoldColorTheme;
-    case ChartThemeColor.gray:
-      return DarkGrayColorTheme;
-    case ChartThemeColor.green:
-      return DarkGreenColorTheme;
-    case ChartThemeColor.multi:
-    case ChartThemeColor.multiOrdered:
-      return DarkMultiColorOrderedTheme;
-    case ChartThemeColor.multiUnordered:
-      return DarkMultiColorUnorderedTheme;
-    case ChartThemeColor.orange:
-      return DarkOrangeColorTheme;
-    case ChartThemeColor.purple:
-      return DarkPurpleColorTheme;
-    default:
-      return DarkBlueColorTheme;
-  }
-};
-
-// Returns light theme colors
-export const getLightThemeColors = (themeColor: string) => {
-  switch (themeColor) {
-    case ChartThemeColor.blue:
-      return LightBlueColorTheme;
-    case ChartThemeColor.cyan:
-      return LightCyanColorTheme;
-    case ChartThemeColor.gold:
-      return LightGoldColorTheme;
-    case ChartThemeColor.gray:
-      return LightGrayColorTheme;
-    case ChartThemeColor.green:
-      return LightGreenColorTheme;
-    case ChartThemeColor.multi:
-    case ChartThemeColor.multiOrdered:
-      return LightMultiColorOrderedTheme;
-    case ChartThemeColor.multiUnordered:
-      return LightMultiColorUnorderedTheme;
-    case ChartThemeColor.orange:
-      return LightOrangeColorTheme;
-    case ChartThemeColor.purple:
-      return LightPurpleColorTheme;
-    default:
-      return LightBlueColorTheme;
-  }
-};
-
-// Applies theme color and variant to base theme
-export const getTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
-  // Deep clone
-  const baseTheme = {
-    ...JSON.parse(JSON.stringify(ChartBaseTheme))
-  };
-  switch (themeVariant) {
-    case ChartThemeVariant.dark:
-      return merge(baseTheme, getDarkThemeColors(themeColor));
-    case ChartThemeVariant.light:
-      return merge(baseTheme, getLightThemeColors(themeColor));
-    default:
-      return merge(baseTheme, getLightThemeColors(themeColor));
-  }
-};
-
 // Apply custom properties to base and color themes
 export const getCustomTheme = (
   themeColor: string,
@@ -196,6 +126,76 @@ export const getDonutUtilizationTheme = (themeColor: string, themeVariant: strin
   theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutUtilizationStaticTheme.pie.colorScale];
   theme.legend.colorScale = [theme.legend.colorScale[0], ...ChartDonutUtilizationStaticTheme.legend.colorScale];
   return theme;
+};
+
+// Returns dark theme colors
+export const getDarkThemeColors = (themeColor: string) => {
+  switch (themeColor) {
+    case ChartThemeColor.blue:
+      return DarkBlueColorTheme;
+    case ChartThemeColor.cyan:
+      return DarkCyanColorTheme;
+    case ChartThemeColor.gold:
+      return DarkGoldColorTheme;
+    case ChartThemeColor.gray:
+      return DarkGrayColorTheme;
+    case ChartThemeColor.green:
+      return DarkGreenColorTheme;
+    case ChartThemeColor.multi:
+    case ChartThemeColor.multiOrdered:
+      return DarkMultiColorOrderedTheme;
+    case ChartThemeColor.multiUnordered:
+      return DarkMultiColorUnorderedTheme;
+    case ChartThemeColor.orange:
+      return DarkOrangeColorTheme;
+    case ChartThemeColor.purple:
+      return DarkPurpleColorTheme;
+    default:
+      return DarkBlueColorTheme;
+  }
+};
+
+// Returns light theme colors
+export const getLightThemeColors = (themeColor: string) => {
+  switch (themeColor) {
+    case ChartThemeColor.blue:
+      return LightBlueColorTheme;
+    case ChartThemeColor.cyan:
+      return LightCyanColorTheme;
+    case ChartThemeColor.gold:
+      return LightGoldColorTheme;
+    case ChartThemeColor.gray:
+      return LightGrayColorTheme;
+    case ChartThemeColor.green:
+      return LightGreenColorTheme;
+    case ChartThemeColor.multi:
+    case ChartThemeColor.multiOrdered:
+      return LightMultiColorOrderedTheme;
+    case ChartThemeColor.multiUnordered:
+      return LightMultiColorUnorderedTheme;
+    case ChartThemeColor.orange:
+      return LightOrangeColorTheme;
+    case ChartThemeColor.purple:
+      return LightPurpleColorTheme;
+    default:
+      return LightBlueColorTheme;
+  }
+};
+
+// Applies theme color and variant to base theme
+export const getTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
+  // Deep clone
+  const baseTheme = {
+    ...JSON.parse(JSON.stringify(ChartBaseTheme))
+  };
+  switch (themeVariant) {
+    case ChartThemeVariant.dark:
+      return merge(baseTheme, getDarkThemeColors(themeColor));
+    case ChartThemeVariant.light:
+      return merge(baseTheme, getLightThemeColors(themeColor));
+    default:
+      return merge(baseTheme, getLightThemeColors(themeColor));
+  }
 };
 
 // Returns threshold theme
