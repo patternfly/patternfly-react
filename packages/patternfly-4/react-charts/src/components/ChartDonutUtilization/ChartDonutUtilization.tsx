@@ -494,11 +494,6 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   width = theme.pie.width,
   ...rest
 }: ChartDonutUtilizationProps) => {
-  const getData = () => {
-    const datum = [{ ...data }];
-    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
-  };
-
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
     const datum = getData();
@@ -507,6 +502,11 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       computedData.push({ y: datum[0]._x ? Math.abs(100 - datum[0]._y) : 100 });
     }
     return computedData;
+  };
+
+  const getData = () => {
+    const datum = [{ ...data }];
+    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
   };
 
   // Returns thresholds with default color scale
