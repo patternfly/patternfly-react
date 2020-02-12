@@ -31,17 +31,15 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 ```js title=Basic
 import React from 'react';
 import {
+  Button,
+  ButtonVariant,
+  Bullseye,
   DataToolbar,
   DataToolbarItem,
   DataToolbarContent,
   DataToolbarFilter,
   DataToolbarToggleGroup,
   DataToolbarGroup
-} from '@patternfly/react-core';
-import {
-  Button,
-  ButtonVariant,
-  Bullseye,
   Dropdown,
   DropdownItem,
   DropdownPosition,

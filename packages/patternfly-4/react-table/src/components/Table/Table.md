@@ -301,16 +301,31 @@ import {
   wrappable,
 } from '@patternfly/react-table';
 
-class SortableTable extends React.Component {
+class SortableWrappingHeaders extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       columns: [
-        {title: 'This is a really long table header that goes on for a long time 1.', transforms: [sortable, wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 2.', transforms: [sortable, wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 3.', transforms: [sortable,wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 4.', transforms: [sortable, wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 5.', transforms: [sortable, wrappable]},
+        {
+          title: 'This is a really long table header that goes on for a long time 1.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 2.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 3.',
+          transforms: [sortable,wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 4.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 5.',
+          transforms: [sortable, wrappable]
+        },
       ],
       rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
       sortBy: {}
