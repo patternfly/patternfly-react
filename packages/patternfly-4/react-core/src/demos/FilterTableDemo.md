@@ -180,9 +180,7 @@ class FilterTableDemo extends React.Component {
         return {
           filters: {
             ...prevState.filters,
-            ['name']: prevFilters.includes(inputValue)
-              ? prevFilters
-              : [...prevFilters, inputValue]
+            ['name']: prevFilters.includes(inputValue) ? prevFilters : [...prevFilters, inputValue]
           },
           inputValue: ''
         };
