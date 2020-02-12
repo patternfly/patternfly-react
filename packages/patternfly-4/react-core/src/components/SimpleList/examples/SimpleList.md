@@ -7,13 +7,13 @@ propComponents: ['SimpleList', 'SimpleListGroup', 'SimpleListItem']
 beta: true
 ---
 
-import { SimpleList, SimpleListGroup, SimpleListItem } from '@patternfly/react-core/dist/esm/experimental';
+import { SimpleList, SimpleListGroup, SimpleListItem } from '@patternfly/react-core';
 
 ## Examples
 
 ```js title=Simple-list
 import React from 'react';
-import { SimpleList, SimpleListItem } from '@patternfly/react-core/dist/esm/experimental';
+import { SimpleList, SimpleListItem } from '@patternfly/react-core';
 
 class SimpleListDemo extends React.Component {
   onSelect(currentItem, currentItemProps) {
@@ -38,7 +38,7 @@ class SimpleListDemo extends React.Component {
 
 ```js title=Grouped-list
 import React from 'react';
-import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { SimpleList, SimpleListItem, SimpleListGroup } from '@patternfly/react-core';
 
 class SimpleListGroupDemo extends React.Component {
   onSelect(currentItem, currentItemProps) {
