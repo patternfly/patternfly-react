@@ -6,14 +6,16 @@ import { SimpleListContext } from './SimpleList';
 export interface SimpleListItemProps {
   /** Content rendered inside the SimpleList item */
   children?: React.ReactNode;
-  /** Additional classes added to the SimpleList <button> */
-  className?: string;
   /** Additional classes added to the SimpleList <li> */
-  listItemClassName?: string;
-  /** Indicates if the link is current/highlighted */
-  isCurrent?: boolean;
+  className?: string;
   /** Component type of the SimpleList item */
   component?: 'button' | 'a';
+  /** Additional classes added to the SimpleList <a> or <button> */
+  componentClassName?: string;
+  /** Additional props added to the SimpleList <a> or <button> */
+  componentProps?: any;
+  /** Indicates if the link is current/highlighted */
+  isCurrent?: boolean;
   /** OnClick callback for the SimpleList item */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
   /** Type of button SimpleList item */
@@ -27,9 +29,9 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
   static defaultProps: SimpleListItemProps = {
     children: null,
     className: '',
-    listItemClassName: '',
     isCurrent: false,
     component: 'button',
+    componentClassName: '',
     type: 'button',
     href: '',
     onClick: () => {}
@@ -40,8 +42,9 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
       children,
       isCurrent,
       className,
-      listItemClassName,
       component: Component,
+      componentClassName,
+      componentProps,
       onClick,
       type,
       href,
@@ -54,7 +57,7 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
           const isButton = Component === 'button';
           const isCurrentItem = this.ref && currentRef ? currentRef.current === this.ref.current : isCurrent;
 
-          const componentProps = isButton
+          const additionalComponentProps = isButton
             ? {
                 type
               }
@@ -64,16 +67,20 @@ export class SimpleListItem extends React.Component<SimpleListItemProps> {
               };
 
           return (
-            <li className={css(listItemClassName)}>
+            <li className={css(className)} {...props}>
               <Component
-                className={css(styles.simpleListItemLink, isCurrentItem && styles.modifiers.current, className)}
+                className={css(
+                  styles.simpleListItemLink,
+                  isCurrentItem && styles.modifiers.current,
+                  componentClassName
+                )}
                 onClick={(evt: React.MouseEvent) => {
                   onClick(evt);
                   updateCurrentRef(this.ref, this.props);
                 }}
                 ref={this.ref}
                 {...componentProps}
-                {...props}
+                {...additionalComponentProps}
               >
                 {children}
               </Component>

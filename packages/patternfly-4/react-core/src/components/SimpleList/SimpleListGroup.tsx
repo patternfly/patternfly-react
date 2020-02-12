@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
+import { Omit } from '../../helpers/typeUtils';
 
-export interface SimpleListGroupProps {
+export interface SimpleListGroupProps extends Omit<React.HTMLProps<HTMLTableSectionElement>, 'title'> {
   /** Content rendered inside the SimpleList group */
   children?: React.ReactNode;
   /** Additional classes added to the SimpleList <ul> */
@@ -10,7 +11,7 @@ export interface SimpleListGroupProps {
   /** Additional classes added to the SimpleList group title */
   titleClassName?: string;
   /** Title of the SimpleList group */
-  title?: string | React.ReactNode;
+  title?: React.ReactNode;
   /** ID of SimpleList group */
   id?: string;
 }

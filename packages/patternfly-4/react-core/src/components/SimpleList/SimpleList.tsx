@@ -3,8 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListGroup } from './SimpleListGroup';
 import { SimpleListItemProps } from './SimpleListItem';
+import { Omit } from '../../helpers/typeUtils';
 
-export interface SimpleListProps {
+export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect'> {
   /** Content rendered inside the SimpleList */
   children?: React.ReactNode;
   /** Additional classes added to the SimpleList container */
@@ -14,8 +15,6 @@ export interface SimpleListProps {
     ref: React.RefObject<HTMLButtonElement> | React.RefObject<HTMLAnchorElement>,
     props: SimpleListItemProps
   ) => void;
-  /** Id of the SimpleList */
-  id?: string;
 }
 
 export interface SimpleListState {
@@ -62,7 +61,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
   };
 
   render() {
-    const { children, className, onSelect, id, ...props } = this.props;
+    const { children, className, onSelect, ...props } = this.props;
 
     let isGrouped = false;
     if (children) {
@@ -76,7 +75,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
           updateCurrentRef: this.handleCurrentUpdate
         }}
       >
-        <div className={css(styles.simpleList, className)} id={id} {...props}>
+        <div className={css(styles.simpleList, className)} {...props}>
           {isGrouped && children}
           {!isGrouped && <ul>{children}</ul>}
         </div>

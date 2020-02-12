@@ -20,9 +20,9 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
             "children": "Item 1",
             "className": "",
             "component": "a",
+            "componentClassName": "",
             "href": "",
             "isCurrent": false,
-            "listItemClassName": "",
             "onClick": [Function],
             "type": "button",
           },
@@ -44,10 +44,10 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i1"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -67,10 +67,10 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i2"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -90,10 +90,10 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i3"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -134,9 +134,9 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
             "children": "Item 1",
             "className": "",
             "component": "button",
+            "componentClassName": "",
             "href": "",
             "isCurrent": false,
-            "listItemClassName": "",
             "onClick": [Function],
             "type": "button",
           },
@@ -158,10 +158,10 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i1"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -180,10 +180,10 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i2"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -202,10 +202,10 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i3"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -237,10 +237,10 @@ exports[`SimpleList renders anchor content 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i1"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -260,10 +260,10 @@ exports[`SimpleList renders anchor content 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i2"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -283,10 +283,10 @@ exports[`SimpleList renders anchor content 1`] = `
       <SimpleListItem
         className=""
         component="a"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i3"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -319,10 +319,10 @@ exports[`SimpleList renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i1"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -341,10 +341,10 @@ exports[`SimpleList renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i2"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -363,10 +363,10 @@ exports[`SimpleList renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i3"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -413,10 +413,10 @@ exports[`SimpleList renders grouped content 1`] = `
           <SimpleListItem
             className=""
             component="button"
+            componentClassName=""
             href=""
             isCurrent={false}
             key="i1"
-            listItemClassName=""
             onClick={[Function]}
             type="button"
           >
@@ -435,10 +435,10 @@ exports[`SimpleList renders grouped content 1`] = `
           <SimpleListItem
             className=""
             component="button"
+            componentClassName=""
             href=""
             isCurrent={false}
             key="i2"
-            listItemClassName=""
             onClick={[Function]}
             type="button"
           >
@@ -457,10 +457,10 @@ exports[`SimpleList renders grouped content 1`] = `
           <SimpleListItem
             className=""
             component="button"
+            componentClassName=""
             href=""
             isCurrent={false}
             key="i3"
-            listItemClassName=""
             onClick={[Function]}
             type="button"
           >
@@ -503,10 +503,10 @@ exports[`SimpleListGroup renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i1"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -525,10 +525,10 @@ exports[`SimpleListGroup renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i2"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -547,10 +547,10 @@ exports[`SimpleListGroup renders content 1`] = `
       <SimpleListItem
         className=""
         component="button"
+        componentClassName=""
         href=""
         isCurrent={false}
         key="i3"
-        listItemClassName=""
         onClick={[Function]}
         type="button"
       >
@@ -575,9 +575,9 @@ exports[`SimpleListItem renders anchor 1`] = `
 <SimpleListItem
   className=""
   component="a"
+  componentClassName=""
   href=""
   isCurrent={false}
-  listItemClassName=""
   onClick={[Function]}
   type="button"
 >
@@ -600,9 +600,9 @@ exports[`SimpleListItem renders content 1`] = `
 <SimpleListItem
   className=""
   component="button"
+  componentClassName=""
   href=""
   isCurrent={false}
-  listItemClassName=""
   onClick={[Function]}
   type="button"
 >
