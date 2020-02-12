@@ -8,22 +8,21 @@ section: 'demos'
 Uses the DataToolbar component to filter results in the table based on user input.
 
 import {
+Bullseye,
 DataToolbar,
 DataToolbarItem,
 DataToolbarContent,
 DataToolbarFilter,
+DataToolbarGroup,
 DataToolbarToggleGroup,
-DataToolbarGroup } from '@patternfly/react-core';
-import {
-Title,
-Select,
-SelectOption,
-SelectVariant,
 EmptyState,
 EmptyStateIcon,
 EmptyStateBody,
 EmptyStateSecondaryActions,
-Bullseye
+Select,
+SelectOption,
+SelectVariant,
+Title
 } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
@@ -39,7 +38,7 @@ import {
   DataToolbarContent,
   DataToolbarFilter,
   DataToolbarToggleGroup,
-  DataToolbarGroup
+  DataToolbarGroup,
   Dropdown,
   DropdownItem,
   DropdownPosition,
