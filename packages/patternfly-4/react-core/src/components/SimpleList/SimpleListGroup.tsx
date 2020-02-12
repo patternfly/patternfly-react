@@ -24,10 +24,12 @@ export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
   id = '',
   ...props
 }: SimpleListGroupProps) => (
-  <section className={css(styles.simpleListSection)} aria-labelledby={id} {...props}>
+  <section className={css(styles.simpleListSection)} {...props}>
     <h2 id={id} className={css(styles.simpleListTitle, titleClassName)}>
       {title}
     </h2>
-    <ul className={css(className)}>{children}</ul>
+    <ul className={css(className)} aria-labelledby={id}>
+      {children}
+    </ul>
   </section>
 );

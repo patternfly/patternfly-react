@@ -398,7 +398,6 @@ exports[`SimpleList renders grouped content 1`] = `
       title="Group 1"
     >
       <section
-        aria-labelledby=""
         className="pf-c-simple-list__section"
       >
         <h2
@@ -408,6 +407,7 @@ exports[`SimpleList renders grouped content 1`] = `
           Group 1
         </h2>
         <ul
+          aria-labelledby=""
           className=""
         >
           <SimpleListItem
@@ -488,7 +488,6 @@ exports[`SimpleListGroup renders content 1`] = `
   title="Group 1"
 >
   <section
-    aria-labelledby=""
     className="pf-c-simple-list__section"
   >
     <h2
@@ -498,6 +497,7 @@ exports[`SimpleListGroup renders content 1`] = `
       Group 1
     </h2>
     <ul
+      aria-labelledby=""
       className=""
     >
       <SimpleListItem
