@@ -1,10 +1,10 @@
 ---
 title: 'SimpleList'
-section: experimental
+section: 'components'
 cssPrefix: 'pf-c-simple-list'
 typescript: true
 propComponents: ['SimpleList', 'SimpleListGroup', 'SimpleListItem']
-experimentalStage: 'early'
+beta: true
 ---
 
 import { SimpleList, SimpleListGroup, SimpleListItem } from '@patternfly/react-core/dist/esm/experimental';
