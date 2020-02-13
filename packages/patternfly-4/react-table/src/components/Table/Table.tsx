@@ -207,13 +207,17 @@ export interface IRow extends RowType {
 }
 
 export interface TableProps {
+  /** Adds an accessible name for the Table */
   'aria-label'?: string;
   /** Content rendered inside the Table */
   children?: React.ReactNode;
   /** Additional classes added to the Table  */
   className?: string;
+  /** Style variant for the Table  */
   variant?: 'compact';
+  /** Render borders  */
   borders?: boolean;
+  /** Specifies the grid breakpoints  */
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   /** Specifies the initial sorting pattern for the table - asc/desc and the index of the column to sort by */
   sortBy?: ISortBy;
@@ -223,25 +227,37 @@ export interface TableProps {
   onExpand?: OnExpand;
   /** Function triggered when a row's checkbox is selected. When this is used, one checkbox will be positioned in the first or second cell of a non-expandable row */
   onSelect?: OnSelect;
+  /** Enables or Disables the ability to select all  */
   canSelectAll?: boolean;
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
+  /** Actions to add to the Table */
   actions?: IActions;
+  /** Resolver for the given action  */
   actionResolver?: IActionsResolver;
   /** Specifies if the Kebab for actions is disabled */
   areActionsDisabled?: IAreActionsDisabled;
+  /** Component to place in the header */
   header?: React.ReactNode;
+  /** Component used for caption*/
   caption?: React.ReactNode;
+  /** label for row */
   rowLabeledBy?: string;
+  /** ID for expand */
   expandId?: string;
+  /** ID for content */
   contentId?: string;
   /** The desired position to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownPosition?: 'right' | 'left';
   /** The desired direction to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownDirection?: 'up' | 'down';
+  /** Row data */
   rows: (IRow | string[])[];
+  /** Cell data */
   cells: (ICell | string)[];
+  /** Wrapper for the body  */
   bodyWrapper?: Function;
+  /** Wrapper for the row */
   rowWrapper?: (props: RowWrapperProps) => JSX.Element;
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
