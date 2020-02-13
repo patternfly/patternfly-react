@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.26.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.26.17...@patternfly/react-table@2.26.18) (2020-02-13)
+
+
+### Bug Fixes
+
+* **table:** revert IHeaderRow interface change ([#3746](https://github.com/patternfly/patternfly-react/issues/3746)) ([5230f98](https://github.com/patternfly/patternfly-react/commit/5230f9861b496fbf200ffba24aa9befd80ed89b8))
+
+
+
+
+
 ## [2.26.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.26.16...@patternfly/react-table@2.26.17) (2020-02-13)
 
 **Note:** Version bump only for package @patternfly/react-table
