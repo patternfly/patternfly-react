@@ -64,7 +64,11 @@ export enum SortByDirection {
   desc = 'desc'
 }
 
-export type IHeaderRow = ColumnType;
+// Todo: Update type with next breaking change release
+// export type IHeaderRow = ColumnType;
+
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix, @typescript-eslint/no-empty-interface
+export interface IHeaderRow extends ColumnType {}
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRowData extends IRow {
