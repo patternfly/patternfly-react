@@ -203,7 +203,7 @@ export interface IRow extends RowType {
 }
 
 export interface TableProps {
-  /** Adds accessible text to the Table */
+  /** Adds an accessible name for the Table */
   'aria-label'?: string;
   /** Content rendered inside the Table */
   children?: React.ReactNode;
@@ -227,7 +227,7 @@ export interface TableProps {
   canSelectAll?: boolean;
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
-  /** Action to add to the Table */
+  /** Actions to add to the Table */
   actions?: IActions;
   /** Resolver for the given action  */
   actionResolver?: IActionsResolver;
