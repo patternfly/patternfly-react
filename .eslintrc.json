@@ -33,9 +33,10 @@
         "jest": "readonly",
         "expect": "readonly",
         "require": "readonly",
-        "global": "writeable",
+        "global": "writable",
         "it": "readonly",
-        "afterEach": "readonly"
+        "afterEach": "readonly",
+        "beforeEach": "readonly"
     },
     "rules": {
         "@typescript-eslint/adjacent-overload-signatures": "error",
@@ -49,7 +50,7 @@
         "@typescript-eslint/indent": "off",
         "@typescript-eslint/interface-name-prefix": "error",
         "@typescript-eslint/no-empty-function": "off",
-        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-namespace": "error",
         "@typescript-eslint/no-var-requires": "off",

@@ -1,9 +1,9 @@
 import { Component, FunctionComponent, MouseEvent } from 'react';
 import { TableBodyProps, IRowData, IExtraRowData } from '@patternfly/react-table';
-import { Omit } from '@patternfly/react-core/dist/js/helpers/typeUtils';
 
 import { TableEditConfirmation } from './constants';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IEditedCellData extends IExtraRowData {
   columnIndex: number;
   elementId?: string;
@@ -21,7 +21,9 @@ export interface InlineEditBodyProps extends TableBodyProps {
 }
 
 export interface EditableTableBody {
+  // eslint-disable-next-line @typescript-eslint/prefer-function-type
   (bodyComponent: Component): FunctionComponent<InlineEditBodyProps>;
 }
 
+// eslint-disable-next-line no-undef
 export default EditableTableBody;
