@@ -20,7 +20,10 @@ export interface InlineEditBodyProps extends TableBodyProps {
   editConfig: EditConfig;
 }
 
-export type EditableTableBody = (bodyComponent: Component) => FunctionComponent<InlineEditBodyProps>;
+export interface EditableTableBody {
+  // eslint-disable-next-line @typescript-eslint/prefer-function-type
+  (bodyComponent: Component): FunctionComponent<InlineEditBodyProps>;
+}
 
 // eslint-disable-next-line no-undef
 export default EditableTableBody;

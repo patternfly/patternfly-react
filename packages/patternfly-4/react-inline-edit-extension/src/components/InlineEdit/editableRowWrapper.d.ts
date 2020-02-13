@@ -15,7 +15,10 @@ export interface EditableRowWrapperProps extends RowWrapper {
   row: EditableRowWrapperRow;
 }
 
-export type EditableRowWrapper = (bodyComponent: Component) => FunctionComponent<EditableRowWrapperProps>;
+export interface EditableRowWrapper {
+  // eslint-disable-next-line @typescript-eslint/prefer-function-type
+  (bodyComponent: Component): FunctionComponent<EditableRowWrapperProps>;
+}
 
 /* eslint-disable no-undef */
 export default EditableRowWrapper;

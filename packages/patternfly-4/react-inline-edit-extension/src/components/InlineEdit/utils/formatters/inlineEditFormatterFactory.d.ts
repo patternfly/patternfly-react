@@ -12,7 +12,10 @@ export interface ComputedData {
   activeEditId: string;
 }
 
-export type Formatter = (value: ReactNode, additionalData: AdditionalData) => ReactNode;
+export interface Formatter {
+  // eslint-disable-next-line @typescript-eslint/prefer-function-type
+  (value: ReactNode, additionalData: AdditionalData): ReactNode;
+}
 
 export interface InlineEditFormatterFactoryProps {
   isEditable?(additionalData: AdditionalData): boolean;
@@ -21,7 +24,10 @@ export interface InlineEditFormatterFactoryProps {
   renderEdit?(value: ReactNode, additionalData: AdditionalData, computedData: ComputedData): ReactNode;
 }
 
-export type InlineEditFormatterFactory = (props: InlineEditFormatterFactoryProps) => Formatter;
+export interface InlineEditFormatterFactory {
+  // eslint-disable-next-line @typescript-eslint/prefer-function-type
+  (props: InlineEditFormatterFactoryProps): Formatter;
+}
 
 // eslint-disable-next-line no-undef
 export default InlineEditFormatterFactory;
