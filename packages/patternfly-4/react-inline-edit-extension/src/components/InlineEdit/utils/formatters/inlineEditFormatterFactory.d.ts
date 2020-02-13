@@ -3,8 +3,10 @@ import { ReactNode } from 'react';
 export interface AdditionalData {
   columnIndex: number;
   rowIndex: number;
-  column: Record<string, any>;
-  rowData: Record<string, any>;
+  /* eslint-disable @typescript-eslint/ban-types */
+  column: Object;
+  rowData: Object;
+  /* eslint-enable @typescript-eslint/ban-types */
   rowKey: string;
 }
 
