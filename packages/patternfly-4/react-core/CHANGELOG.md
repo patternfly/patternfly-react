@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.138.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.137.0...@patternfly/react-core@3.138.0) (2020-02-13)
+
+
+### Features
+
+* **Popover:** add min-width override property ([#3601](https://github.com/patternfly/patternfly-react/issues/3601)) ([8c906b8](https://github.com/patternfly/patternfly-react/commit/8c906b8982b39aba1ecbb425961be859803057a3))
+
+
+
+
+
 # [3.137.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.15...@patternfly/react-core@3.137.0) (2020-02-13)
 
 
