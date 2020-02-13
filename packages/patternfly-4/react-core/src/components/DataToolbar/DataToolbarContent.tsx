@@ -63,7 +63,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
             chipContainerRef: this.chipContainerRef
           }}
         >
-          {children}
+          <div className={css(styles.dataToolbarContentSection)}>{children}</div>
           <DataToolbarExpandableContent
             id={expandableContentId}
             isExpanded={isExpanded}
