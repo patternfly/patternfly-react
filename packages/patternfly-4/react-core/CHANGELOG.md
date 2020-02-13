@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.136.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.14...@patternfly/react-core@3.136.15) (2020-02-13)
+
+
+### Bug Fixes
+
+* **Select:** handle undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/issues/3711)) ([12e7ac2](https://github.com/patternfly/patternfly-react/commit/12e7ac2c42ef576f4978cefc527f8a3890d5cde0))
+
+
+
+
+
 ## [3.136.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.136.13...@patternfly/react-core@3.136.14) (2020-02-12)
 
 
