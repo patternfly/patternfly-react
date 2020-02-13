@@ -39,7 +39,6 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    role="list"
   >
     <ul>
       <SimpleListItem
@@ -154,7 +153,6 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    role="list"
   >
     <ul>
       <SimpleListItem
@@ -234,7 +232,6 @@ exports[`SimpleList renders anchor content 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    role="list"
   >
     <ul>
       <SimpleListItem
@@ -317,7 +314,6 @@ exports[`SimpleList renders content 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    role="list"
   >
     <ul>
       <SimpleListItem
