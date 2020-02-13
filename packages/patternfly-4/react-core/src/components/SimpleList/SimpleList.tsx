@@ -75,7 +75,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
           updateCurrentRef: this.handleCurrentUpdate
         }}
       >
-        <div className={css(styles.simpleList, className)} {...props}>
+        <div className={css(styles.simpleList, className)} {...props} role="list">
           {isGrouped && children}
           {!isGrouped && <ul>{children}</ul>}
         </div>

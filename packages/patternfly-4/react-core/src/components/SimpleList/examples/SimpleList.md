@@ -31,7 +31,11 @@ class SimpleListDemo extends React.Component {
       <SimpleListItem key="item3">List item 3</SimpleListItem>
     ];
 
-    return <SimpleList onSelect={this.onSelect}>{items}</SimpleList>;
+    return (
+      <SimpleList onSelect={this.onSelect} aria-label="Simple List Example">
+        {items}
+      </SimpleList>
+    );
   }
 }
 ```
@@ -69,7 +73,7 @@ class SimpleListGroupDemo extends React.Component {
     ];
 
     return (
-      <SimpleList onSelect={this.onSelect}>
+      <SimpleList onSelect={this.onSelect} aria-label="Grouped List Example">
         <SimpleListGroup title="Group 1" id="group-1">
           {group1Items}
         </SimpleListGroup>

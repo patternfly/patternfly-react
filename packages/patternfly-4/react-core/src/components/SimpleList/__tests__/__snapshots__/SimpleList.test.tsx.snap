@@ -39,6 +39,7 @@ exports[`SimpleList onSelect is called when anchor item is selected 1`] = `
 >
   <div
     className="pf-c-simple-list"
+    role="list"
   >
     <ul>
       <SimpleListItem
@@ -153,6 +154,7 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
 >
   <div
     className="pf-c-simple-list"
+    role="list"
   >
     <ul>
       <SimpleListItem
@@ -232,6 +234,7 @@ exports[`SimpleList renders anchor content 1`] = `
 >
   <div
     className="pf-c-simple-list"
+    role="list"
   >
     <ul>
       <SimpleListItem
@@ -314,6 +317,7 @@ exports[`SimpleList renders content 1`] = `
 >
   <div
     className="pf-c-simple-list"
+    role="list"
   >
     <ul>
       <SimpleListItem
@@ -393,6 +397,7 @@ exports[`SimpleList renders grouped content 1`] = `
 >
   <div
     className="pf-c-simple-list"
+    role="list"
   >
     <SimpleListGroup
       title="Group 1"
@@ -401,6 +406,7 @@ exports[`SimpleList renders grouped content 1`] = `
         className="pf-c-simple-list__section"
       >
         <h2
+          aria-hidden="true"
           className="pf-c-simple-list__title"
           id=""
         >
@@ -491,6 +497,7 @@ exports[`SimpleListGroup renders content 1`] = `
     className="pf-c-simple-list__section"
   >
     <h2
+      aria-hidden="true"
       className="pf-c-simple-list__title"
       id=""
     >
