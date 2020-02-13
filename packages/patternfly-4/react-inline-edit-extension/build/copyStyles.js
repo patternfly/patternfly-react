@@ -24,10 +24,10 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
     case 'charset':
     case 'comment':
       return false;
-    case 'font-face':
-      // eslint-disable-next-line no-case-declarations
+    case 'font-face': {
       const fontFamilyDecl = rule.declarations.find(decl => decl.property === 'font-family');
       return !unusedFontFamilyRegEx.test(fontFamilyDecl.value);
+    }
     default:
       return true;
   }

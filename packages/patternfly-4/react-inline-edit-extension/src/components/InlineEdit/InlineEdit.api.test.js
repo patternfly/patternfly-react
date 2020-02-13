@@ -1,4 +1,3 @@
-/* global beforeEach */
 import React from 'react';
 import { mount } from 'enzyme';
 import { Table, TableHeader, TableBody, RowWrapper } from '@patternfly/react-table';
