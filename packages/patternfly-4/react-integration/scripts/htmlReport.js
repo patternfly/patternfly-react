@@ -1,4 +1,4 @@
-const XmlDocument = require('xmldoc');
+const xmlDocument = require('xmldoc');
 
 // stacked bar chart & execution details data gets captured during input xml parsing
 let dataSeries = '';
@@ -113,7 +113,7 @@ const generateTDTable = function(reportXml) {
     <th id="td-table-header">Details</th></tr>';
 
   const xmlData = reportXml;
-  const testResultXml = new XmlDocument(xmlData);
+  const testResultXml = new xmlDocument.XmlDocument(xmlData);
   const testSuites = testResultXml.childrenNamed('testsuite');
   const testStartedOn = testSuites[0].attr.timestamp;
   const totalSuites = testSuites.length;
