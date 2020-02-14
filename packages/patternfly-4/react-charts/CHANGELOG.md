@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.29...@patternfly/react-charts@5.3.0) (2020-02-14)
+
+
+### Features
+
+* **inline-edit:** add row level inline editing feature to Table ([#3581](https://github.com/patternfly/patternfly-react/issues/3581)) ([498d49f](https://github.com/patternfly/patternfly-react/commit/498d49fcc5cc9188197ddc7cd6468907fdd8224d))
+
+
+
+
+
 ## [5.2.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.2.28...@patternfly/react-charts@5.2.29) (2020-02-14)
 
 **Note:** Version bump only for package @patternfly/react-charts
