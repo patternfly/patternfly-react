@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chart, ChartArea, ChartGroup, ChartLabel, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLabel } from '@patternfly/react-charts';
 
 export class SparklineDemo extends React.Component {
   render() {

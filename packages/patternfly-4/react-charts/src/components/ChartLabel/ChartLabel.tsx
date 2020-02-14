@@ -1,13 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { defaults } from 'lodash';
-import {
-  StringOrNumberOrCallback,
-  TextAnchorType,
-  VerticalAnchorType,
-  VictoryLabel,
-  VictoryLabelProps
-} from 'victory';
+import { StringOrNumberOrCallback, TextAnchorType, VerticalAnchorType, VictoryLabel, VictoryLabelProps } from 'victory';
 import { ChartCommonStyles } from '../ChartTheme';
 
 export enum ChartLabelDirection {

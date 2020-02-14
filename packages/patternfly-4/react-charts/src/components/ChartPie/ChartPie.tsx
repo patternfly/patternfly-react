@@ -49,6 +49,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
+   *
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -72,6 +73,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * This prop should be given as an array of string values, or an object with
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
+   *
    * @example ["dogs", "cats", "mice"]
    */
   categories?: CategoryPropType;
@@ -101,6 +103,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartPie will use the default ChartContainer component.
+   *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -115,6 +118,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * Data should be in the form of an array of data points.
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
+   *
    * @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]],
    * [[{x: "a", y: 1}, {x: "b", y: 2}], [{x: "a", y: 2}, {x: "b", y: 3}]]
    */
@@ -153,6 +157,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
+   *
    * @example
    * events={[
    *   {
@@ -241,6 +246,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * If given as an array, the number of elements in the array should be equal to
    * the length of the data array. Labels may also be added directly to the data object
    * like data={[{x: 1, y: 1, label: "first"}]}.
+   *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
   labels?: string[] | ((data: any) => string);
@@ -343,6 +349,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * The style prop specifies styles for your pie. ChartPie relies on Radium,
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
+   *
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
   style?: VictoryStyleInterface;
@@ -387,6 +394,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * If given as an array of strings, or a string containing dots or brackets,
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   *
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    */
   x?: DataGetterPropType;
@@ -398,12 +406,11 @@ export interface ChartPieProps extends VictoryPieProps {
    * If given as an array of strings, or a string containing dots or brackets,
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   *
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;
 }
-
-const someId = 0;
 
 export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   allowTooltip = true,

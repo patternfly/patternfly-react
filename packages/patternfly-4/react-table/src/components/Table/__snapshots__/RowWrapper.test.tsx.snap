@@ -61,6 +61,7 @@ exports[`RowWrapper renders correctly 1`] = `
           }
           row={
             Object {
+              "isEditable": undefined,
               "isExpanded": undefined,
               "isHeightAuto": undefined,
               "isOpen": undefined,

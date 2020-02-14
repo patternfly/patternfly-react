@@ -7,10 +7,20 @@ import {
   collapsible,
   emptyTD,
   expandedRow,
-  parentId
+  parentId,
+  editable
 } from './transformers';
 import { defaultTitle } from './formatters';
-import { ICell, IRow, IActions, IActionsResolver, IAreActionsDisabled, OnSelect, OnCollapse } from '../Table';
+import {
+  ICell,
+  IRow,
+  IActions,
+  IActionsResolver,
+  IAreActionsDisabled,
+  OnSelect,
+  OnCollapse,
+  OnRowEdit
+} from '../Table';
 
 /**
  * Generate header with transforms and formatters from custom header object.
@@ -235,6 +245,17 @@ export const mapOpenedRows = (rows: IRow[], children: any) =>
     return acc;
   }, []) as IRow[];
 
+const rowEditTransforms = ({ onRowEdit }: { onRowEdit: OnRowEdit }) => [
+  ...(onRowEdit
+    ? [
+        {
+          title: '',
+          cellTransforms: [editable]
+        }
+      ]
+    : [])
+];
+
 /**
  * Function to calculate columns based on custom config.
  * It adds some custom cells for collapse, select, if expanded row and actions.
@@ -249,6 +270,7 @@ export const calculateColumns = (headerRows: (ICell | string)[], extra: any) =>
     ...collapsibleTransfroms(extra),
     ...selectableTransforms(extra),
     ...expandContent(headerRows, extra),
+    ...rowEditTransforms(extra),
     ...actionsTransforms(extra)
   ].map((oneCol, key) => ({
     ...mapHeader(oneCol as ICell, extra, key)

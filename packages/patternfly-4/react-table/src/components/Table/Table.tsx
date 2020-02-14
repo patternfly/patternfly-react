@@ -8,6 +8,7 @@ import {
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
 import { Omit } from '@patternfly/react-core/dist/js/helpers/typeUtils';
+import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
@@ -28,6 +29,12 @@ export enum TableGridBreakpoint {
 
 export enum TableVariant {
   compact = 'compact'
+}
+
+export type RowEditType = 'save' | 'cancel' | 'edit';
+
+export interface RowErrors {
+  [name: string]: string[];
 }
 
 export type OnSort = (
@@ -58,6 +65,13 @@ export type OnSelect = (
   rowData: IRowData,
   extraData: IExtraData
 ) => void;
+export type OnRowEdit = (
+  event: React.MouseEvent<HTMLButtonElement>,
+  type: RowEditType,
+  isEditable?: boolean,
+  rowIndex?: number,
+  validationErrors?: RowErrors
+) => void;
 
 export enum SortByDirection {
   asc = 'asc',
@@ -83,6 +97,7 @@ export interface IColumn {
     onCollapse?: OnCollapse;
     onExpand?: OnExpand;
     onSelect?: OnSelect;
+    onRowEdit?: OnRowEdit;
     rowLabeledBy?: string;
     expandId?: string;
     contentId?: string;
@@ -183,16 +198,35 @@ export interface ICell {
   dataLabel?: string;
 }
 
+export type RowCellContent = (value?: string, rowIndex?: number, cellIndex?: number, props?: any) => void;
+
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRowCell {
-  title?: string | React.ReactNode;
+  title?: string | React.ReactNode | RowCellContent;
   props?: any;
+}
+
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+export interface IValidatorDef {
+  validator: (value: string) => boolean;
+  errorText: string;
+  name: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRow extends RowType {
   cells?: (React.ReactNode | IRowCell)[];
   isOpen?: boolean;
+  isEditable?: boolean;
+  isValid?: boolean;
+  /** An array of validation functions to run against every cell for a given row */
+  rowEditValidationRules?: IValidatorDef[];
+  /** Aria label for edit button in inline edit */
+  rowEditBtnAriaLabel?: (idx: number) => string;
+  /** Aria label for save button in inline edit */
+  rowSaveBtnAriaLabel?: (idx: number) => string;
+  /** Aria label for cancel button in inline edit */
+  rowCancelBtnAriaLabel?: (idx: number) => string;
   parent?: number;
   compoundParent?: number;
   props?: any;
@@ -229,6 +263,10 @@ export interface TableProps {
   onSelect?: OnSelect;
   /** Enables or Disables the ability to select all  */
   canSelectAll?: boolean;
+  /* eslint-disable jsdoc/check-tag-names */
+  /** @beta Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
+  onRowEdit?: OnRowEdit;
+  /* eslint-enable jsdoc/check-tag-names */
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
   /** Actions to add to the Table */
@@ -297,6 +335,15 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
     return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
   };
 
+  componentDidMount() {
+    if (this.props.onRowEdit && !process.env.JEST_WORKER_ID) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'You are using a beta component feature (onRowEdit). These api parts are subject to change in the future.'
+      );
+    }
+  }
+
   render() {
     const {
       'aria-label': ariaLabel,
@@ -314,6 +361,7 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
       areActionsDisabled,
       onCollapse,
       onExpand,
+      onRowEdit,
       rowLabeledBy,
       dropdownPosition,
       dropdownDirection,
@@ -346,6 +394,7 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
       actionResolver,
       areActionsDisabled,
       onCollapse,
+      onRowEdit,
       onExpand,
       rowLabeledBy,
       expandId,
@@ -355,7 +404,7 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
       firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
     });
 
-    return (
+    const table = (
       <TableContext.Provider
         value={{
           headerData,
@@ -397,6 +446,12 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
         </Provider>
       </TableContext.Provider>
     );
+
+    if (onRowEdit) {
+      return <form className={css(inlineStyles.inlineEdit)}>{table}</form>;
+    }
+
+    return table;
   }
 }
 

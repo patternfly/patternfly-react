@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Switch, SwitchProps, OuiaContext } from '@patternfly/react-core';
 
 interface SwitchState {

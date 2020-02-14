@@ -1,13 +1,18 @@
 import React from 'react';
-import { DataList, DataListProps, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
+import {
+  DataList,
+  DataListProps,
+  DataListItem,
+  DataListItemRow,
+  DataListItemCells,
+  DataListCell
+} from '@patternfly/react-core';
 
 interface DataListState {
   selectedDataListItemId: string;
 }
 
-
 export class DataListDemo extends React.Component<DataListProps, DataListState> {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +20,7 @@ export class DataListDemo extends React.Component<DataListProps, DataListState> 
     };
   }
 
-  onSelectDataListItem = (id) => {
+  onSelectDataListItem = id => {
     this.setState({ selectedDataListItemId: id });
   };
 

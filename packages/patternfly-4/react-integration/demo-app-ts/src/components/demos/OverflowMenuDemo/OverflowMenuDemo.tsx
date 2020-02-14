@@ -31,7 +31,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onSimpleSelect = event => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onSimpleSelect = _event => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
     });
@@ -87,7 +88,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onAdditionalOptionsSelect = event => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onAdditionalOptionsSelect = _event => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
     });
@@ -167,7 +169,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onPersistSelect = event => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onPersistSelect = _event => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
     });

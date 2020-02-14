@@ -61,6 +61,8 @@
         "@typescript-eslint/unified-signatures": "error",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
         "jsdoc/require-returns": "off",
         "arrow-body-style": "error",
         "camelcase": ["error", {
@@ -109,6 +111,8 @@
             "error",
             "as-needed"
         ],
+        "react/prop-types": 0,
+        "react/display-name": 0,
         "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
         "use-isnan": "error"

@@ -35,7 +35,7 @@ describe('Nav Test', () => {
   it('Verify Expandable Nav', () => {
     // All groups start open
     cy.get('#nav-primary-expandable .pf-c-nav__link[data-component="pf-nav-expandable"]').each(
-      (expandableGroup: JQuery<HTMLAnchorElement>, index: number) => {
+      (expandableGroup: JQuery<HTMLAnchorElement>) => {
         expect(expandableGroup.attr('aria-expanded')).to.be.equal('true');
       }
     );

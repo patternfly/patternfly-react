@@ -9,15 +9,15 @@ export class DividerDemo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Divider/>
+        <Divider />
 
         <ul>
           <li>List item one</li>
-          <Divider component="li"/>
+          <Divider component="li" />
           <li>List item two</li>
         </ul>
 
-        <Divider component="div"/>
+        <Divider component="div" />
       </React.Fragment>
     );
   }

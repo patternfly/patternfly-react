@@ -131,6 +131,6 @@ describe('Select Test', () => {
 
   it('Verify Typeahead Select inside Form', () => {
     cy.get('#form-typeahead-button').click();
-    cy.url().should('match', /select-demo-nav-link/)
+    cy.url().should('match', /select-demo-nav-link/);
   });
 });

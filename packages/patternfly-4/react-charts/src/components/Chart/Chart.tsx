@@ -36,6 +36,7 @@ export interface ChartProps extends VictoryChartProps {
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
+   *
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -70,6 +71,7 @@ export interface ChartProps extends VictoryChartProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartArea will use the default ChartContainer component.
+   *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -79,7 +81,8 @@ export interface ChartProps extends VictoryChartProps {
    * or as an object that specifies separate arrays for x and y.
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
-   * @example: [-1, 1], {x: [0, 100], y: [0, 1]}
+   *
+   * @example [-1, 1], {x: [0, 100], y: [0, 1]}
    */
   domain?: DomainPropType;
   /**
@@ -115,6 +118,7 @@ export interface ChartProps extends VictoryChartProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
+   *
    * @example
    * events={[
    *   {
@@ -276,6 +280,7 @@ export interface ChartProps extends VictoryChartProps {
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
+   *
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
   scale?:
@@ -369,7 +374,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   padding,
-  standalone = true,
   themeColor,
   themeVariant,
 

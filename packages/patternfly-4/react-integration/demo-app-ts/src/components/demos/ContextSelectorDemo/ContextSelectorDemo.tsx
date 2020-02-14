@@ -53,7 +53,8 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
       this.setState({ searchValue: value });
     };
 
-    this.onSearchButtonClick = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onSearchButtonClick = _event => {
       const filtered =
         this.state.searchValue === ''
           ? this.items

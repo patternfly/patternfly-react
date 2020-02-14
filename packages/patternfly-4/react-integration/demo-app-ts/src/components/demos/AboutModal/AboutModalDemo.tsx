@@ -1,6 +1,6 @@
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './brandImg.svg';
+const brandImg = './brandImg.svg';
 
 interface AboutModalState {
   isModalOpen: boolean;

@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Chart,
-  ChartAxis,
-  ChartGroup,
-  ChartLegend,
-  ChartLine,
-  ChartThemeColor,
-  ChartThemeVariant
-} from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 
 export class LineChartColorDemo extends React.Component {

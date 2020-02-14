@@ -46,7 +46,8 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isOpen
       });
     };
-    this.onSelect = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onSelect = _event => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -62,13 +63,16 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isActionOpen
       });
     };
-    this.onActionSelect = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onActionSelect = _event => {
       this.setState({
         isActionOpen: !this.state.isActionOpen
       });
       this.onActionFocus();
     };
-    this.onActionClick = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onActionClick = _event => {
+      // eslint-disable-next-line no-console
       console.log('Action clicked!');
     };
     this.onActionFocus = () => {
@@ -81,16 +85,21 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isCogOpen
       });
     };
-    this.onCogSelect = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onCogSelect = _event => {
       this.setState({
         isCogOpen: !this.state.isCogOpen
       });
       this.onCogFocus();
     };
-    this.onCogClick = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onCogClick = _event => {
+      // eslint-disable-next-line no-console
       console.log('Action clicked!');
     };
-    this.onCogClick = event => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onCogClick = _event => {
+      // eslint-disable-next-line no-console
       console.log('Cog clicked!');
     };
     this.onCogFocus = () => {

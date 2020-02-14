@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.14.0...@patternfly/react-topology@2.14.1) (2020-02-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.13.21...@patternfly/react-topology@2.14.0) (2020-02-14)
+
+
+### Features
+
+* **inline-edit:** add row level inline editing feature to Table ([#3581](https://github.com/patternfly/patternfly-react/issues/3581)) ([498d49f](https://github.com/patternfly/patternfly-react/commit/498d49fcc5cc9188197ddc7cd6468907fdd8224d))
+
+
+
+
+
+## [2.13.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.13.20...@patternfly/react-topology@2.13.21) (2020-02-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [2.13.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.13.19...@patternfly/react-topology@2.13.20) (2020-02-13)
 
 **Note:** Version bump only for package @patternfly/react-topology
