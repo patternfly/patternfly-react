@@ -61,7 +61,8 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
   };
 
   render() {
-    const { children, className, ...props } = this.props;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { children, className, onSelect, ...props } = this.props;
 
     let isGrouped = false;
     if (children) {
