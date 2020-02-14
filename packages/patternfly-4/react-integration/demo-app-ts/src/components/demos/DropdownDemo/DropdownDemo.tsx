@@ -82,7 +82,8 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isCogOpen
       });
     };
-    this.onCogSelect = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onCogSelect = _event => {
       this.setState({
         isCogOpen: !this.state.isCogOpen
       });

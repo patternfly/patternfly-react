@@ -56,7 +56,8 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
     this.setState({ value });
   };
 
-  onChangeValidatedSelect = (value: string) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onChangeValidatedSelect = (value: string, _event: any) => {
     const validated = value === '3' ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedValue: value, validated });
   };
