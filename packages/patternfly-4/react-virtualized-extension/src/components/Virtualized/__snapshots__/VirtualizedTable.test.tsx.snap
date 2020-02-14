@@ -376,6 +376,7 @@ exports[`Actions virtualized table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -419,6 +420,7 @@ exports[`Actions virtualized table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -461,6 +463,7 @@ exports[`Actions virtualized table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -503,6 +506,7 @@ exports[`Actions virtualized table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -545,6 +549,7 @@ exports[`Actions virtualized table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -588,6 +593,7 @@ exports[`Actions virtualized table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -664,6 +670,7 @@ exports[`Actions virtualized table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -707,6 +714,7 @@ exports[`Actions virtualized table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -749,6 +757,7 @@ exports[`Actions virtualized table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -791,6 +800,7 @@ exports[`Actions virtualized table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -833,6 +843,7 @@ exports[`Actions virtualized table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -876,6 +887,7 @@ exports[`Actions virtualized table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -952,6 +964,7 @@ exports[`Actions virtualized table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -995,6 +1008,7 @@ exports[`Actions virtualized table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -1037,6 +1051,7 @@ exports[`Actions virtualized table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -1079,6 +1094,7 @@ exports[`Actions virtualized table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -1121,6 +1137,7 @@ exports[`Actions virtualized table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -1164,6 +1181,7 @@ exports[`Actions virtualized table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -1709,6 +1727,7 @@ exports[`Selectable virtualized table 1`] = `
                 "firstUserColumnIndex": 1,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": [Function],
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -1752,6 +1771,7 @@ exports[`Selectable virtualized table 1`] = `
                 "firstUserColumnIndex": 1,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": [Function],
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -1795,6 +1815,7 @@ exports[`Selectable virtualized table 1`] = `
                 "firstUserColumnIndex": 1,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": [Function],
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -1837,6 +1858,7 @@ exports[`Selectable virtualized table 1`] = `
                 "firstUserColumnIndex": 1,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": [Function],
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -1879,6 +1901,7 @@ exports[`Selectable virtualized table 1`] = `
                 "firstUserColumnIndex": 1,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": [Function],
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -1921,6 +1944,7 @@ exports[`Selectable virtualized table 1`] = `
                 "firstUserColumnIndex": 1,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": [Function],
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -1997,6 +2021,7 @@ exports[`Selectable virtualized table 1`] = `
                           "firstUserColumnIndex": 1,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -2040,6 +2065,7 @@ exports[`Selectable virtualized table 1`] = `
                           "firstUserColumnIndex": 1,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -2083,6 +2109,7 @@ exports[`Selectable virtualized table 1`] = `
                           "firstUserColumnIndex": 1,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -2125,6 +2152,7 @@ exports[`Selectable virtualized table 1`] = `
                           "firstUserColumnIndex": 1,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -2167,6 +2195,7 @@ exports[`Selectable virtualized table 1`] = `
                           "firstUserColumnIndex": 1,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -2209,6 +2238,7 @@ exports[`Selectable virtualized table 1`] = `
                           "firstUserColumnIndex": 1,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -2285,6 +2315,7 @@ exports[`Selectable virtualized table 1`] = `
                               "firstUserColumnIndex": 1,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": [Function],
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -2328,6 +2359,7 @@ exports[`Selectable virtualized table 1`] = `
                               "firstUserColumnIndex": 1,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": [Function],
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -2371,6 +2403,7 @@ exports[`Selectable virtualized table 1`] = `
                               "firstUserColumnIndex": 1,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": [Function],
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -2413,6 +2446,7 @@ exports[`Selectable virtualized table 1`] = `
                               "firstUserColumnIndex": 1,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": [Function],
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -2455,6 +2489,7 @@ exports[`Selectable virtualized table 1`] = `
                               "firstUserColumnIndex": 1,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": [Function],
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -2497,6 +2532,7 @@ exports[`Selectable virtualized table 1`] = `
                               "firstUserColumnIndex": 1,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": [Function],
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -3167,6 +3203,7 @@ exports[`Simple Actions table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -3229,6 +3266,7 @@ exports[`Simple Actions table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -3290,6 +3328,7 @@ exports[`Simple Actions table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -3351,6 +3390,7 @@ exports[`Simple Actions table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -3412,6 +3452,7 @@ exports[`Simple Actions table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -3474,6 +3515,7 @@ exports[`Simple Actions table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -3569,6 +3611,7 @@ exports[`Simple Actions table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -3631,6 +3674,7 @@ exports[`Simple Actions table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -3692,6 +3736,7 @@ exports[`Simple Actions table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -3753,6 +3798,7 @@ exports[`Simple Actions table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -3814,6 +3860,7 @@ exports[`Simple Actions table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -3876,6 +3923,7 @@ exports[`Simple Actions table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -3971,6 +4019,7 @@ exports[`Simple Actions table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -4033,6 +4082,7 @@ exports[`Simple Actions table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -4094,6 +4144,7 @@ exports[`Simple Actions table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -4155,6 +4206,7 @@ exports[`Simple Actions table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -4216,6 +4268,7 @@ exports[`Simple Actions table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -4278,6 +4331,7 @@ exports[`Simple Actions table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -4451,6 +4505,7 @@ exports[`Simple Actions table 1`] = `
 
 exports[`Simple virtualized table aria-label 1`] = `
 <Component
+  aria-label="Virtual Table Test"
   cells={
     Array [
       Object {
@@ -4556,6 +4611,7 @@ exports[`Simple virtualized table aria-label 1`] = `
     component={[Function]}
     componentProps={
       Object {
+        "aria-label": "Virtual Table Test",
         "cells": Array [
           Object {
             "title": "Header cell",
@@ -4661,6 +4717,7 @@ exports[`Simple virtualized table aria-label 1`] = `
     consumerContext={null}
   >
     <Table
+      aria-label="Virtual Table Test"
       borders={true}
       canSelectAll={true}
       cells={
@@ -4780,6 +4837,7 @@ exports[`Simple virtualized table aria-label 1`] = `
       variant={null}
     >
       <Provider
+        aria-label="Virtual Table Test"
         className="pf-c-table pf-m-grid-md"
         columns={
           Array [
@@ -4806,6 +4864,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -4848,6 +4907,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -4890,6 +4950,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -4932,6 +4993,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -4974,6 +5036,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -5010,6 +5073,7 @@ exports[`Simple virtualized table aria-label 1`] = `
         role="grid"
       >
         <table
+          aria-label="Virtual Table Test"
           className="pf-c-table pf-m-grid-md"
           role="grid"
         >
@@ -5048,6 +5112,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -5090,6 +5155,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -5132,6 +5198,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -5174,6 +5241,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -5216,6 +5284,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -5291,6 +5360,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -5333,6 +5403,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -5375,6 +5446,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -5417,6 +5489,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -5459,6 +5532,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -5574,6 +5648,7 @@ exports[`Simple virtualized table aria-label 1`] = `
 
 exports[`Simple virtualized table className 1`] = `
 <Component
+  aria-label="Virtual Table Test"
   cells={
     Array [
       Object {
@@ -5679,6 +5754,7 @@ exports[`Simple virtualized table className 1`] = `
     component={[Function]}
     componentProps={
       Object {
+        "aria-label": "Virtual Table Test",
         "cells": Array [
           Object {
             "title": "Header cell",
@@ -5784,6 +5860,7 @@ exports[`Simple virtualized table className 1`] = `
     consumerContext={null}
   >
     <Table
+      aria-label="Virtual Table Test"
       borders={true}
       canSelectAll={true}
       cells={
@@ -5903,6 +5980,7 @@ exports[`Simple virtualized table className 1`] = `
       variant={null}
     >
       <Provider
+        aria-label="Virtual Table Test"
         className="pf-c-table pf-m-grid-md"
         columns={
           Array [
@@ -5929,6 +6007,7 @@ exports[`Simple virtualized table className 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -5971,6 +6050,7 @@ exports[`Simple virtualized table className 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -6013,6 +6093,7 @@ exports[`Simple virtualized table className 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -6055,6 +6136,7 @@ exports[`Simple virtualized table className 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -6097,6 +6179,7 @@ exports[`Simple virtualized table className 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": undefined,
                 "rowLabeledBy": "simple-node",
@@ -6133,6 +6216,7 @@ exports[`Simple virtualized table className 1`] = `
         role="grid"
       >
         <table
+          aria-label="Virtual Table Test"
           className="pf-c-table pf-m-grid-md"
           role="grid"
         >
@@ -6171,6 +6255,7 @@ exports[`Simple virtualized table className 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -6213,6 +6298,7 @@ exports[`Simple virtualized table className 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -6255,6 +6341,7 @@ exports[`Simple virtualized table className 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -6297,6 +6384,7 @@ exports[`Simple virtualized table className 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -6339,6 +6427,7 @@ exports[`Simple virtualized table className 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
@@ -6414,6 +6503,7 @@ exports[`Simple virtualized table className 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -6456,6 +6546,7 @@ exports[`Simple virtualized table className 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -6498,6 +6589,7 @@ exports[`Simple virtualized table className 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -6540,6 +6632,7 @@ exports[`Simple virtualized table className 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -6582,6 +6675,7 @@ exports[`Simple virtualized table className 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": undefined,
                               "rowLabeledBy": "simple-node",
@@ -7071,6 +7165,7 @@ exports[`Sortable Virtualized Table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": [Function],
                 "rowLabeledBy": "simple-node",
@@ -7114,6 +7209,7 @@ exports[`Sortable Virtualized Table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": [Function],
                 "rowLabeledBy": "simple-node",
@@ -7156,6 +7252,7 @@ exports[`Sortable Virtualized Table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": [Function],
                 "rowLabeledBy": "simple-node",
@@ -7198,6 +7295,7 @@ exports[`Sortable Virtualized Table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": [Function],
                 "rowLabeledBy": "simple-node",
@@ -7240,6 +7338,7 @@ exports[`Sortable Virtualized Table 1`] = `
                 "firstUserColumnIndex": 0,
                 "onCollapse": undefined,
                 "onExpand": undefined,
+                "onRowEdit": undefined,
                 "onSelect": undefined,
                 "onSort": [Function],
                 "rowLabeledBy": "simple-node",
@@ -7315,6 +7414,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
@@ -7358,6 +7458,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
@@ -7400,6 +7501,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
@@ -7442,6 +7544,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
@@ -7484,6 +7587,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "firstUserColumnIndex": 0,
                           "onCollapse": undefined,
                           "onExpand": undefined,
+                          "onRowEdit": undefined,
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
@@ -7559,6 +7663,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": [Function],
                               "rowLabeledBy": "simple-node",
@@ -7602,6 +7707,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": [Function],
                               "rowLabeledBy": "simple-node",
@@ -7644,6 +7750,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": [Function],
                               "rowLabeledBy": "simple-node",
@@ -7686,6 +7793,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": [Function],
                               "rowLabeledBy": "simple-node",
@@ -7728,6 +7836,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               "firstUserColumnIndex": 0,
                               "onCollapse": undefined,
                               "onExpand": undefined,
+                              "onRowEdit": undefined,
                               "onSelect": undefined,
                               "onSort": [Function],
                               "rowLabeledBy": "simple-node",

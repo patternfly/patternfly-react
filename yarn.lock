@@ -3816,9 +3816,10 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@2.61.1":
-  version "2.61.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.61.1.tgz#0beb48510924a80307907f7425bd0f69509181a1"
+"@patternfly/patternfly@2.63.0":
+  version "2.63.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.63.0.tgz#c95618d6e5c802458ddc622433e855cd67df2d44"
+  integrity sha512-LhEm49hAvWc71L5I4jbyMpDfqxDi/oBiEgzisa4pjN+Sthz2WXo66Azb+bMCLAIHyp6/6AIGjljfl83EpSrgCQ==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
@@ -12924,10 +12925,10 @@ gatsby-telemetry@^1.1.49:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-patternfly-org@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-1.3.2.tgz#1fcbe63946b418b959780287116a7369ecb30547"
-  integrity sha512-CMV5E2mMH9DDoiqAEcuLcHlwV8zLYNC+K3DnAcNPamcT23920xCEefEd9sWaSVhU+HMcdwYzSG8fJwfvqLUJ+g==
+gatsby-theme-patternfly-org@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-1.4.0.tgz#a59d666c166fd4c6ce5aa2b294a7fbed46d7e3c7"
+  integrity sha512-7aG0vvIg9Gwc+DtKv+2Y3b5Wlb/PM/+ISAX4sYgARyg95MyDgDAxSqMbt1tMK4hKAwXJje9vXVSVWmbjjwVX0w==
   dependencies:
     "@mdx-js/mdx" "^1.1.5"
     "@mdx-js/react" "^1.1.5"

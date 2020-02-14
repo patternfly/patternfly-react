@@ -15,9 +15,10 @@ import {
   OnCollapse,
   OnExpand,
   OnSelect,
+  OnRowEdit,
   OnSort
 } from './index';
-import { rows, columns, actions } from '../../test-helpers/data-sets';
+import { rows, columns, editableRows, editableColumns, actions } from '../../test-helpers/data-sets';
 import { ColumnsType } from './base';
 
 describe('Simple table', () => {
@@ -49,6 +50,17 @@ describe('Simple table', () => {
     );
     expect(view).toMatchSnapshot();
   });
+});
+
+test('Editable table', () => {
+  const onRowEdit: OnRowEdit = () => undefined;
+  const view = mount(
+    <Table caption="Editable Table" cells={editableColumns} rows={editableRows} onRowEdit={onRowEdit}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
 });
 
 test('Sortable table', () => {
@@ -254,7 +266,7 @@ test('Empty state table', () => {
         cells: [
           {
             title: <div>Empty State Component</div>,
-            props: { colSpan: '8' }
+            props: { colSpan: 8 }
           }
         ]
       }
@@ -279,5 +291,5 @@ test('Empty state table', () => {
       .find('tbody')
       .find('td')
       .prop('colSpan')
-  ).toEqual('8');
+  ).toEqual(8);
 });

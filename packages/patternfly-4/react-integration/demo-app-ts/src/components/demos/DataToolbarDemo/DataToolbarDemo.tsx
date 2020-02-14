@@ -1,16 +1,14 @@
 import React from 'react';
 import {
+  Button,
+  ButtonVariant,
   DataToolbar,
   DataToolbarItem,
   DataToolbarContent,
   DataToolbarFilter,
   DataToolbarToggleGroup,
   DataToolbarGroup,
-  DataToolbarProps
-} from '@patternfly/react-core/dist/esm/experimental';
-import {
-  Button,
-  ButtonVariant,
+  DataToolbarProps,
   InputGroup,
   Select,
   SelectOption,
@@ -42,7 +40,7 @@ interface DataToolbarState {
 }
 
 export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolbarState> {
-  constructor(props) {
+  constructor(props: DataToolbarProps) {
     super(props);
     this.state = {
       isExpanded: false,

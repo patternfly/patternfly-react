@@ -101,6 +101,7 @@ export * from './TableDemo/TableCompactBorderlessRowsDemo';
 export * from './TableDemo/TableCompactDemo';
 export * from './TableDemo/TableCompactExpandableDemo';
 export * from './TableDemo/TableCompoundExpandableDemo';
+export * from './TableDemo/TableEditableDemo';
 export * from './TableDemo/TableFirstCellAsHeaderDemo';
 export * from './TableDemo/TableHeadersWrappableDemo';
 export * from './TableDemo/TableRowWrapperDemo';

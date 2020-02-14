@@ -7,11 +7,16 @@ export interface BodyCellProps {
   className?: string;
   colSpan?: number;
   component?: React.ReactNode;
+  errorText?: string;
   isVisible?: boolean;
   parentId?: number;
   textCenter?: boolean;
   isOpen?: boolean;
   ariaControls?: string;
+  editableValue?: any;
+  value?: any;
+  isValid?: boolean;
+  name?: string;
 }
 
 export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
@@ -23,8 +28,13 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   parentId,
   textCenter = false,
   /* eslint-disable @typescript-eslint/no-unused-vars */
+  errorText,
+  isValid,
   isOpen,
   ariaControls,
+  editableValue,
+  value,
+  name,
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {

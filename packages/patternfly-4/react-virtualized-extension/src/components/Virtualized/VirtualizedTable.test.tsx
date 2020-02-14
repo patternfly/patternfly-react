@@ -4,13 +4,7 @@ import { mount } from 'enzyme';
 import {
   Table,
   TableHeader,
-  TableBody,
-  TableGridBreakpoint,
-  TableVariant,
-  cellWidth,
-  headerCol,
-  sortable,
-  expandable
+  sortable
 } from '@patternfly/react-table';
 import { VirtualTableBody } from './index';
 import { rows, columns, actions } from '@patternfly/react-table/src/test-helpers/data-sets';
@@ -33,7 +27,7 @@ describe('Simple virtualized table', () => {
 
   test('className', () => {
     const view = mount(
-      <Table cells={columns} rows={rows}>
+      <Table aria-label="Virtual Table Test" cells={columns} rows={rows}>
         <TableHeader />
         {({ width }: { width: number }) => (
           <VirtualTableBody
@@ -53,7 +47,7 @@ describe('Simple virtualized table', () => {
 
   test('aria-label', () => {
     const view = mount(
-      <Table cells={columns} rows={rows}>
+      <Table aria-label="Virtual Table Test" cells={columns} rows={rows}>
         <TableHeader />
         {({ width }: { width: number }) => (
           <VirtualTableBody
