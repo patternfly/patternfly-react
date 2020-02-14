@@ -308,6 +308,7 @@ export const TableContext = React.createContext({
 });
 
 class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
+  static hasWarnBeta = false;
   static defaultProps = {
     children: null as React.ReactNode,
     className: '',
@@ -336,11 +337,12 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
   };
 
   componentDidMount() {
-    if (this.props.onRowEdit && !process.env.JEST_WORKER_ID) {
+    if (this.props.onRowEdit && process.env.NODE_ENV !== 'production' && !Table.hasWarnBeta) {
       // eslint-disable-next-line no-console
       console.warn(
         'You are using a beta component feature (onRowEdit). These api parts are subject to change in the future.'
       );
+      Table.hasWarnBeta = true;
     }
   }
 

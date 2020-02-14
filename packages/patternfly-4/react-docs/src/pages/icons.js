@@ -47,7 +47,9 @@ const iconsPage = ({ location }) => {
         <Title size="md" className="ws-framework-title">
           React
         </Title>
-        <Title headingLevel="h2" size="4xl">Icons</Title>
+        <Title headingLevel="h2" size="4xl">
+          Icons
+        </Title>
         <Text>
           These are all of the icons available for use in PatternFly React. For recommended icon usage, see our{' '}
           <a href="https://www.patternfly.org/v4/design-guidelines/styles/icons">icon usage guidelines</a>.
