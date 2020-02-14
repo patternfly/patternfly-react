@@ -16,15 +16,15 @@ exports[`Drawer isExpanded = false and isInline = false 1`] = `
       </div>
     </DrawerContent>
     <DrawerPanelContent>
-      <aside
+      <div
         className="pf-c-drawer__panel"
       >
         <div
-          className="pf-c-drawer__panel-body"
+          className="pf-c-drawer__body"
         >
            drawer-panel 
         </div>
-      </aside>
+      </div>
     </DrawerPanelContent>
   </div>
 </Drawer>
@@ -46,15 +46,15 @@ exports[`Drawer isExpanded = false and isInline = true 1`] = `
       </div>
     </DrawerContent>
     <DrawerPanelContent>
-      <aside
+      <div
         className="pf-c-drawer__panel"
       >
         <div
-          className="pf-c-drawer__panel-body"
+          className="pf-c-drawer__body"
         >
            drawer-panel 
         </div>
-      </aside>
+      </div>
     </DrawerPanelContent>
   </div>
 </Drawer>
@@ -76,15 +76,15 @@ exports[`Drawer isExpanded = true and isInline = false 1`] = `
       </div>
     </DrawerContent>
     <DrawerPanelContent>
-      <aside
+      <div
         className="pf-c-drawer__panel"
       >
         <div
-          className="pf-c-drawer__panel-body"
+          className="pf-c-drawer__body"
         >
            drawer-panel 
         </div>
-      </aside>
+      </div>
     </DrawerPanelContent>
   </div>
 </Drawer>
@@ -106,15 +106,15 @@ exports[`Drawer isExpanded = true and isInline = true 1`] = `
       </div>
     </DrawerContent>
     <DrawerPanelContent>
-      <aside
+      <div
         className="pf-c-drawer__panel"
       >
         <div
-          className="pf-c-drawer__panel-body"
+          className="pf-c-drawer__body"
         >
            drawer-panel 
         </div>
-      </aside>
+      </div>
     </DrawerPanelContent>
   </div>
 </Drawer>
