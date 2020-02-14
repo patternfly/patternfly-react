@@ -61,7 +61,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
   };
 
   render() {
-    const { children, className, onSelect, ...props } = this.props;
+    const { children, className, ...props } = this.props;
 
     let isGrouped = false;
     if (children) {
