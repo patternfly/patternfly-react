@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const glob = require('glob');
 const { dirname, resolve, join } = require('path');
 const { parse } = require('css');
