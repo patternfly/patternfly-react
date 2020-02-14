@@ -4,6 +4,59 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.02 release notes (2020-02-18)
+Packages released:
+-
+
+### Components:
+- **ContextSelector:** Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
+- **DataToolbar:** Updated html structure to match core ([#3701](https://github.com/patternfly/patternfly-react/pull/3710))
+- **Filterable table:** Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
+- **Popover:** Added min-width override property ([#3601](https://github.com/patternfly/patternfly-react/pull/3601))
+- **Radio:** Added support for optional description ([#3621](https://github.com/patternfly/patternfly-react/pull/3621))
+- **Select:** Handled undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/pull/3711))
+- **Slider:** Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
+- **Wizard:** Added typeto wizard context ([#3572](https://github.com/patternfly/patternfly-react/pull/3572))
+
+### Catalog view extension
+- **Catalog tile:** 
+  - Adjusted max width of header image ([#3628](https://github.com/patternfly/patternfly-react/pull/3628))
+  - Reduced padding between badge and logo ([#3644](https://github.com/patternfly/patternfly-react/pull/3644))
+  - Fixed styles that stopped working ([#3635](https://github.com/patternfly/patternfly-react/pull/3635))
+  - Fixed linting errors ([#3714](https://github.com/patternfly/patternfly-react/pull/3714))
+
+### Charts
+- **React charts:** Fixed linting errors ([#3713](https://github.com/patternfly/patternfly-react/pull/3713))
+
+### Table:
+- Reverted IHeaderRow interface change ([#3746](https://github.com/patternfly/patternfly-react/pull/3746))
+- Fixed that column functions are not always equal ([#3612](https://github.com/patternfly/patternfly-react/pull/3612))
+- Added support for truncated column headers ([#3729](https://github.com/patternfly/patternfly-react/pull/3729))
+
+### Other:
+- **Build:**
+  - Updated circleci config for pricing ([#3654](https://github.com/patternfly/patternfly-react/pull/3654))
+  - Made change to use machine instance ([#3712](https://github.com/patternfly/patternfly-react/pull/3712))
+  - Fixed typo, added md lint to circleci ([#3692](https://github.com/patternfly/patternfly-react/pull/3692))
+- **Chore:** 
+  - Phrased non production components as beta ([#3663](https://github.com/patternfly/patternfly-react/pull/3663))
+  - Linted react topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
+- **Cypress:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
+- **Docs:** 
+  - Updated table property descriptions ([#3745](https://github.com/patternfly/patternfly-react/pull/3745))
+  - Updated node version in readme ([#3741](https://github.com/patternfly/patternfly-react/pull/3741))
+  - Bumped gatsby ([#3657](https://github.com/patternfly/patternfly-react/pull/3657))
+  - Merged branch gatsby-theme-patternfly-org ([#3651](https://github.com/patternfly/patternfly-react/pull/3651))
+  - Merged patternfly-org branch ([#3619](https://github.com/patternfly/patternfly-react/pull/3619))
+- **Eslint:** Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
+- **Github:** Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
+- **Icons:** Made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
+- **Linting:** 
+  - Eslint react-table ([#3693](https://github.com/patternfly/patternfly-react/pull/3693))
+  - Fixed linting errors ([#3717](https://github.com/patternfly/patternfly-react/pull/3713))
+  - Resolved existing linting errors ([#3715](https://github.com/patternfly/patternfly-react/pull/3715))
+  
+
 ## 2020.01 release notes (2020-01-28)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.2.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension@1.2.5)
