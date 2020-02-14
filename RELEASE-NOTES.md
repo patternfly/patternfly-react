@@ -15,6 +15,7 @@ Packages released:
 - **Popover:** Added min-width override property ([#3601](https://github.com/patternfly/patternfly-react/pull/3601))
 - **Radio:** Added support for optional description ([#3621](https://github.com/patternfly/patternfly-react/pull/3621))
 - **Select:** Handled undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/pull/3711))
+- **Simple list:** Added Simple list component ([#3645](https://github.com/patternfly/patternfly-react/pull/3645))
 - **Slider:** Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
 - **Wizard:** Added typeto wizard context ([#3572](https://github.com/patternfly/patternfly-react/pull/3572))
 
@@ -29,6 +30,7 @@ Packages released:
 - **React charts:** Fixed linting errors ([#3713](https://github.com/patternfly/patternfly-react/pull/3713))
 
 ### Table:
+- Added inline edit to table ([#3058](https://github.com/patternfly/patternfly-react/issues/3058))
 - Reverted IHeaderRow interface change ([#3746](https://github.com/patternfly/patternfly-react/pull/3746))
 - Fixed that column functions are not always equal ([#3612](https://github.com/patternfly/patternfly-react/pull/3612))
 - Added support for truncated column headers ([#3729](https://github.com/patternfly/patternfly-react/pull/3729))
