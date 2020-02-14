@@ -437,30 +437,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ProgressDemo
   },
   {
-    id: 'stack-blue-demo',
-    name: 'Stack Chart Blue Demo',
-    componentType: Examples.StackBlueDemo
-  },
-  {
-    id: 'stack-gold-bottom-legend-demo',
-    name: 'Stack Chart Gold with Bottom Legend Demo',
-    componentType: Examples.StackGoldBottomLegendDemo
-  },
-  {
-    id: 'stack-color-zoom-demo',
-    name: 'Stack Chart Color Demo',
-    componentType: Examples.StackColorZoomDemo
-  },
-  {
     id: 'radio-demo',
     name: 'Radio Demo',
     componentType: Examples.RadioDemo
   },
-
   {
     id: 'select-demo',
     name: 'Select Demo',
     componentType: Examples.SelectDemo
+  },
+  {
+    id: 'simple-list-demo',
+    name: 'Simple List Demo',
+    componentType: Examples.SimpleListDemo
   },
   {
     id: 'spinner-demo',
@@ -476,6 +465,21 @@ export const Demos: DemoInterface[] = [
     id: 'stack-demo',
     name: 'Stack Demo',
     componentType: Examples.StackDemo
+  },
+  {
+    id: 'stack-blue-demo',
+    name: 'Stack Chart Blue Demo',
+    componentType: Examples.StackBlueDemo
+  },
+  {
+    id: 'stack-gold-bottom-legend-demo',
+    name: 'Stack Chart Gold with Bottom Legend Demo',
+    componentType: Examples.StackGoldBottomLegendDemo
+  },
+  {
+    id: 'stack-color-zoom-demo',
+    name: 'Stack Chart Color Demo',
+    componentType: Examples.StackColorZoomDemo
   },
   {
     id: 'switch-demo',

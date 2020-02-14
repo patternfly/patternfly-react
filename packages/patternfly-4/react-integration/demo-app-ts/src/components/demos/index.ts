@@ -85,6 +85,7 @@ export * from './PopoverDemo/PopoverDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './SelectDemo/SelectDemo';
+export * from './SimpleList/SimpleListDemo';
 export * from './SpinnerDemo/SpinnerDemo';
 export * from './SplitDemo/SplitDemo';
 export * from './StackChartDemo/StackedAreaDemo';
