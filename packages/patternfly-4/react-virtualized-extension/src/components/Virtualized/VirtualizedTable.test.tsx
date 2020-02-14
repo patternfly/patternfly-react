@@ -2,11 +2,7 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import { mount } from 'enzyme';
-import {
-  Table,
-  TableHeader,
-  sortable
-} from '@patternfly/react-table';
+import { Table, TableHeader, sortable } from '@patternfly/react-table';
 import { VirtualTableBody } from './index';
 import { rows, columns, actions } from '@patternfly/react-table/src/test-helpers/data-sets';
 import { CellMeasurerCache } from 'react-virtualized';
