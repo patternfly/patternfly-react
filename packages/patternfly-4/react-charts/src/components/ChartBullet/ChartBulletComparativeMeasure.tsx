@@ -61,6 +61,7 @@ export interface ChartBulletComparativeMeasureProps {
    * or as an object that specifies separate arrays for x and y.
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
+   *
    * @example {x: [0, 2], y: [0, 100]}
    *
    * Note: The x domain is expected to be `x: [0, 2]` in order to position all measures properly
@@ -95,6 +96,7 @@ export interface ChartBulletComparativeMeasureProps {
    * If given as an array, the number of elements in the array should be equal to
    * the length of the data array. Labels may also be added directly to the data object
    * like data={[{y: 1, label: "first"}]}.
+   *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
   labels?: Function | string[] | number[];
@@ -152,6 +154,7 @@ export interface ChartBulletComparativeMeasureProps {
    * If given as an array of strings, or a string containing dots or brackets,
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   *
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    */
   y?: DataGetterPropType;
@@ -178,8 +181,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
   theme = getBulletComparativeMeasureTheme(themeColor, themeVariant),
   height = theme.bar.height,
   width = theme.bar.width,
-  labelComponent = <ChartTooltip />,
-  ...rest
+  labelComponent = <ChartTooltip />
 }: ChartBulletComparativeMeasureProps) => {
   const computedData = getComparativeMeasureData({
     data,
@@ -210,8 +212,8 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
     ...labelComponent.props
   });
 
-  const measure = computedData.map((dataPoint: any, index: number) => {
-    return React.cloneElement(measureComponent, {
+  const measure = computedData.map((dataPoint: any, index: number) =>
+    React.cloneElement(measureComponent, {
       barWidth,
       data: [{ ...dataPoint }],
       domain,
@@ -225,8 +227,8 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
       theme,
       width,
       ...measureComponent.props
-    });
-  });
+    })
+  );
 
   return standalone ? (
     <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>

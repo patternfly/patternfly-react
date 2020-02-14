@@ -30,9 +30,8 @@ interface ChartLabelTextSizeInterface {
 }
 
 // Returns x coordinate for bullet labels
-export const getBulletLabelX = ({ chartWidth, dx = 0, labelPosition }: ChartBulletLabelInterface) => {
-  return labelPosition === 'top' && chartWidth ? Math.round(chartWidth / 2) : dx;
-};
+export const getBulletLabelX = ({ chartWidth, dx = 0, labelPosition }: ChartBulletLabelInterface) =>
+  labelPosition === 'top' && chartWidth ? Math.round(chartWidth / 2) : dx;
 
 // Returns y coordinate for bullet labels
 export const getBulletLabelY = ({ chartHeight, dy = 0, labelPosition }: ChartBulletLabelInterface) => {
