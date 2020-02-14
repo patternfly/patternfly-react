@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.8.1...@patternfly/react-styled-system@3.8.2) (2020-02-14)
+
+**Note:** Version bump only for package @patternfly/react-styled-system
+
+
+
+
+
 ## [3.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.8.0...@patternfly/react-styled-system@3.8.1) (2020-02-14)
 
 **Note:** Version bump only for package @patternfly/react-styled-system
