@@ -18,7 +18,8 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
         isOpen
       });
     };
-    this.onSelect = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onSelect = _event => {
       this.setState(prevState => ({
         isOpen: !prevState.isOpen
       }));

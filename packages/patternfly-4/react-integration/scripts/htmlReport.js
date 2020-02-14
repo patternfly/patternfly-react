@@ -1,4 +1,4 @@
-import { XmlDocument } from 'xmldoc';
+const XmlDocument = require('xmldoc');
 
 // stacked bar chart & execution details data gets captured during input xml parsing
 let dataSeries = '';

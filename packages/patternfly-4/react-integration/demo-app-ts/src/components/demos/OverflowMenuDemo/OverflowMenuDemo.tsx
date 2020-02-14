@@ -167,7 +167,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onPersistSelect = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onPersistSelect = _event => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
     });

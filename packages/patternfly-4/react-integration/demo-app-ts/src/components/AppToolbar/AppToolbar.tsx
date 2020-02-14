@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 
-const isDropdownOpen = false;
+const isDropdownOpen: boolean = false;
 
 const userDropdownItems: ReactNode[] = [];
 
