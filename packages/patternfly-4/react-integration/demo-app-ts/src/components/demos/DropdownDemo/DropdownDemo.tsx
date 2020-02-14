@@ -62,7 +62,8 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isActionOpen
       });
     };
-    this.onActionSelect = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onActionSelect = _event => {
       this.setState({
         isActionOpen: !this.state.isActionOpen
       });

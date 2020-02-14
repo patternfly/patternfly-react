@@ -87,7 +87,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onAdditionalOptionsSelect = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onAdditionalOptionsSelect = _event => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
     });

@@ -79,8 +79,8 @@ export class TableActionsDemo extends React.Component<TableProps, TableState> {
       },
       {
         title: 'Another action',
-        // eslint-disable-next-line no-shadow
-        onClick: (event, rowId, rowData) =>
+        // eslint-disable-next-line no-shadow, @typescript-eslint/no-unused-vars
+        onClick: (event, rowId, rowData, _extra) =>
           // eslint-disable-next-line no-console
           console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`)
       },
