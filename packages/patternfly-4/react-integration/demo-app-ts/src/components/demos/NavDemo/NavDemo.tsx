@@ -35,9 +35,15 @@ export class NavDemo extends Component {
     this.setState({ defaultActiveItem: result.itemId });
   };
 
-  handleNoNavigateLink = (e: React.FormEvent<HTMLInputElement>, itemId: number | string): void => {
-    // eslint-disable-next-line no-console
+  handleNoNavigateLink = (
+    /* eslint-disable @typescript-eslint/no-unused-vars, no-console */
+    e: React.FormEvent<HTMLInputElement>,
+    itemId: number | string,
+    groupId: number | string,
+    to: string
+  ): void => {
     console.log(`No Navigate Link clicked: ${itemId}`);
+    /* eslint-enable @typescript-eslint/no-unused-vars, no-console */
   };
 
   renderDefaultNav() {

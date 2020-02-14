@@ -46,7 +46,8 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isOpen
       });
     };
-    this.onSelect = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onSelect = _event => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -69,7 +70,8 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       });
       this.onActionFocus();
     };
-    this.onActionClick = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onActionClick = _event => {
       // eslint-disable-next-line no-console
       console.log('Action clicked!');
     };
@@ -90,11 +92,13 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       });
       this.onCogFocus();
     };
-    this.onCogClick = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onCogClick = _event => {
       // eslint-disable-next-line no-console
       console.log('Action clicked!');
     };
-    this.onCogClick = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onCogClick = _event => {
       // eslint-disable-next-line no-console
       console.log('Cog clicked!');
     };

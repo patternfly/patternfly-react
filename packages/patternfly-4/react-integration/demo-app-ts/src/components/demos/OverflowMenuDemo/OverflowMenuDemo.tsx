@@ -31,7 +31,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onSimpleSelect = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onSimpleSelect = _event => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
     });
