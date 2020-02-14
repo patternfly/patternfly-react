@@ -4,7 +4,7 @@ import { AppToolbar } from '../AppToolbar/AppToolbar';
 const imgBrand = '../../assets/images/imgBrand.svg';
 const imgAvatar = '../../assets/images/imgAvatar.svg';
 
-const showNavToogle = false;
+const showNavToogle: boolean = false;
 
 export const AppHeader: React.FunctionComponent<any> = () => (
   <PageHeader
