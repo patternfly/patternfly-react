@@ -162,7 +162,8 @@ export interface StyledConstants {
 }
 
 export interface PatternFlyThemeProviderProps extends HTMLProps<HTMLDivElement> {
-  theme?: Record<string, any>;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  theme?: Object;
   children: ReactNode;
 }
 
