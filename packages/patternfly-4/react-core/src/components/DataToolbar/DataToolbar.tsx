@@ -67,6 +67,12 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     if (this.isToggleManaged()) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
+    if (!process.env.JEST_WORKER_ID) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'You are using a beta component (DataToolbar). These api parts are subject to change in the future.'
+      );
+    }
   }
 
   componentWillUnmount() {
