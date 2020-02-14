@@ -14,6 +14,7 @@ import React, { Component } from 'react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/js/icons/cart-arrow-down-icon';
 import { State } from '../../../common/State';
 
+/* eslint-disable no-console */
 export interface SelectDemoState {
   singleIsExpanded: boolean;
   singleSelected: string;
@@ -747,30 +748,34 @@ export class SelectDemo extends Component<SelectDemoState> {
   }
 
   renderTypeaheadSelectInForm() {
-    const { typeaheadOptions } = this.state;
     const titleId = 'typeahead-select-form-id';
     return (
       <StackItem isFilled={false}>
         <Title size="2xl">Typeahead inside a form</Title>
-        <Form onSubmit={(e) => { window.location.href="/404"; e.preventDefault() }}>
-        <span id={titleId} hidden>
-          Select a state
-        </span>
-        <Select
-          toggleId={'form-typeahead-button'}
-          variant={SelectVariant.typeahead}
-          aria-label="Select a state"
-          onToggle={() => null}
-          onSelect={() => null}
-          onClear={() => null}
-          selections={''}
-          isExpanded={false}
-          ariaLabelledBy={titleId}
-          placeholderText="Select a state"
+        <Form
+          onSubmit={e => {
+            window.location.href = '/404';
+            e.preventDefault();
+          }}
         >
+          <span id={titleId} hidden>
+            Select a state
+          </span>
+          <Select
+            toggleId={'form-typeahead-button'}
+            variant={SelectVariant.typeahead}
+            aria-label="Select a state"
+            onToggle={() => null}
+            onSelect={() => null}
+            onClear={() => null}
+            selections={''}
+            isExpanded={false}
+            ariaLabelledBy={titleId}
+            placeholderText="Select a state"
+          >
             <SelectOption value={'option1'} />
             <SelectOption value={'option2'} />
-        </Select>
+          </Select>
         </Form>
       </StackItem>
     );

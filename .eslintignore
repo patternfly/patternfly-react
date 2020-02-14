@@ -10,6 +10,7 @@ coverage
 .cache
 .tmp
 **/Generated
+**/build
 
 # package managers
 yarn-error.log

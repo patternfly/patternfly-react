@@ -76,6 +76,7 @@ export class TabDemo extends Component {
             id="demoTab1Section"
             ref={this.contentRef1}
             aria-label="Tab item 1"
+            // eslint-disable-next-line no-console
             onAuxClick={event => console.log(event)}
           >
             Tab 1 section

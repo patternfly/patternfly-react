@@ -69,7 +69,7 @@ describe('Modal Test', () => {
       cy.get('.pf-c-page').then((page: JQuery<HTMLElement>) => {
         cy.get('.pf-c-modal-box')
           .then(() => {
-            cy.get('.pf-c-modal-box').should('have.css', 'width', `${(page.width() / 2)}px`);
+            cy.get('.pf-c-modal-box').should('have.css', 'width', `${page.width() / 2}px`);
             cy.get('.pf-c-modal-box .pf-c-button[aria-label="Close"]').then(closeButton => {
               cy.wrap(closeButton).click();
               cy.get('.pf-c-modal-box').should('not.exist');

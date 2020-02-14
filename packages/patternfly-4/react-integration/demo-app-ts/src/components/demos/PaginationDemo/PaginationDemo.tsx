@@ -31,8 +31,8 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   onSetDefaultPage = (_event, pageNumber) => {
     this.setState({
       defaultFullPage: pageNumber
-    })
-  }
+    });
+  };
 
   onPerPageSelect = (_event, perPage) => {
     this.setState({
@@ -44,8 +44,8 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     this.setState({
       perPage,
       defaultFullPage: pageNumber
-    })
-  }
+    });
+  };
 
   renderPagination() {
     return (

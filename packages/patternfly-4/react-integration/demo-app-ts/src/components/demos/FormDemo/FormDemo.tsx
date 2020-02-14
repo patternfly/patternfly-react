@@ -48,11 +48,13 @@ export class FormDemo extends Component<FormProps, FormState> {
     if (selected.includes(selection)) {
       this.setState(
         prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+        // eslint-disable-next-line no-console
         () => console.log('selections: ', this.state.selected)
       );
     } else {
       this.setState(
         prevState => ({ selected: [...prevState.selected, selection] }),
+        // eslint-disable-next-line no-console
         () => console.log('selections: ', this.state.selected)
       );
     }

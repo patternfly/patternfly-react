@@ -1,15 +1,7 @@
 import * as React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
-  headerCol,
-  ICell,
-  IRow,
-  IActions
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, headerCol, ICell, IRow, IActions } from '@patternfly/react-table';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 interface ITableState {
   columns: (ICell | string)[];
   rows: IRow[];
@@ -40,6 +32,7 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, ITableSt
         }
       ],
       actions: [
+        /* eslint-disable @typescript-eslint/no-unused-vars, no-console */
         {
           title: 'Some action',
           onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
@@ -56,6 +49,7 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, ITableSt
           title: 'Third action',
           onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
         }
+        /* eslint-enable @typescript-eslint/no-unused-vars, no-console */
       ]
     };
   }

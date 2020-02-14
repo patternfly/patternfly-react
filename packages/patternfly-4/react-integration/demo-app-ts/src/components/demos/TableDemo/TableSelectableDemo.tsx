@@ -1,14 +1,5 @@
 import * as React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
-  headerCol,
-  ICell,
-  IRow,
-  selectable
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, headerCol, ICell, IRow } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
 interface TableState {

@@ -21,6 +21,7 @@ export class PageDemo extends React.Component {
     const pageRole = undefined;
     const logoProps = {
       href: 'https://patternfly.org',
+      // eslint-disable-next-line no-console
       onClick: () => console.log('clicked logo'),
       target: '_blank'
     };

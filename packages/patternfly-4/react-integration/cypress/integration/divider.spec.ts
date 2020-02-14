@@ -6,17 +6,14 @@ describe('Divider Demo Test', () => {
   });
 
   it('Verify divider with hr', () => {
-    cy.get('hr.pf-c-divider')
-      .should('exist');
+    cy.get('hr.pf-c-divider').should('exist');
   });
 
   it('Verify divider with li', () => {
-    cy.get('div.pf-c-divider')
-      .should('have.attr', 'role', 'separator');
+    cy.get('div.pf-c-divider').should('have.attr', 'role', 'separator');
   });
 
   it('Verify divider with div', () => {
-    cy.get('li.pf-c-divider')
-      .should('have.attr', 'role', 'separator');
+    cy.get('li.pf-c-divider').should('have.attr', 'role', 'separator');
   });
 });
