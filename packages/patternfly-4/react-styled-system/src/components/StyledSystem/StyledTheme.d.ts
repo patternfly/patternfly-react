@@ -1,5 +1,6 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
+/* eslint-disable camelcase */
 export interface Space {
   xs: number;
   sm: number;
@@ -161,7 +162,7 @@ export interface StyledConstants {
 }
 
 export interface PatternFlyThemeProviderProps extends HTMLProps<HTMLDivElement> {
-  theme?: Object;
+  theme?: object;
   children: ReactNode;
 }
 

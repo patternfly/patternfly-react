@@ -102,7 +102,6 @@ import global_ZIndex_lg from '@patternfly/react-tokens/dist/js/global_ZIndex_lg'
 import global_ZIndex_xl from '@patternfly/react-tokens/dist/js/global_ZIndex_xl';
 import global_ZIndex_2xl from '@patternfly/react-tokens/dist/js/global_ZIndex_2xl';
 
-
 /**
  * Maps to keys or array positions in the StyledTheme
  */

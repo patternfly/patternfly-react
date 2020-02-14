@@ -1,5 +1,5 @@
+/* eslint-disable no-shadow */
 import * as React from 'react';
-import { TextInput } from '@patternfly/react-core';
 import {
   Table,
   TableHeader,
@@ -44,12 +44,7 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
   constructor(props: TableProps) {
     super(props);
     this.state = {
-      columns: [
-        'Text input col 1',
-        'Disabled text input col 2',
-        'Text input col 3',
-        'Text input col 4'
-      ],
+      columns: ['Text input col 1', 'Disabled text input col 2', 'Text input col 3', 'Text input col 4'],
       rows: [
         {
           isEditable: true,
@@ -63,7 +58,8 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 1 content" />
+                  inputAriaLabel="Row 1 cell 1 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 1 content',
@@ -79,7 +75,8 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   props={props}
                   isDisabled
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 2 content" />
+                  inputAriaLabel="Row 1 cell 2 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 2, disabled content',
@@ -94,7 +91,8 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 3 content" />
+                  inputAriaLabel="Row 1 cell 3 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 3 content',
@@ -109,13 +107,14 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 4 content" />
+                  inputAriaLabel="Row 1 cell 4 content"
+                />
               ),
               props: {
                 value: 'Row 1 cell 4 content',
                 name: 'uniqueIdRow1Cell4'
               }
-            },
+            }
           ]
         },
         {
@@ -132,7 +131,8 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 1 content" />
+                  inputAriaLabel="Row 2 cell 1 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 1 content',
@@ -148,7 +148,8 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   props={props}
                   isDisabled
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 2 content" />
+                  inputAriaLabel="Row 2 cell 2 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 2, disabled content',
@@ -163,7 +164,8 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 3 content" />
+                  inputAriaLabel="Row 2 cell 3 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 3 content',
@@ -178,27 +180,26 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                   cellIndex={cellIndex}
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 4 content" />
+                  inputAriaLabel="Row 2 cell 4 content"
+                />
               ),
               props: {
                 value: 'Row 2 cell 4 content',
                 name: 'uniqueIdRow2Cell4'
               }
-            },
+            }
           ]
-        },
+        }
       ]
     };
-
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   updateEditableRows: OnRowEdit = (evt, type, isEditable, rowIndex, validationErrors) => {
-
-    let newRows = Array.from(this.state.rows);
+    const newRows = Array.from(this.state.rows);
 
     if (validationErrors && Object.keys(validationErrors).length) {
       newRows[rowIndex] = validateCellEdits(newRows[rowIndex], type, validationErrors);
@@ -226,7 +227,7 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
   };
 
   handleTextInputChange = (newValue, evt, rowIndex, cellIndex) => {
-    let newRows = Array.from(this.state.rows);
+    const newRows = Array.from(this.state.rows);
     (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
     this.setState({
       rows: newRows
@@ -243,9 +244,10 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
         aria-label="Editable Table"
         variant={TableVariant.compact}
         cells={columns}
-        rows={rows}>
-          <TableHeader />
-          <TableBody />
+        rows={rows}
+      >
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }
