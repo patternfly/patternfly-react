@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.23.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.22.17...demo-app-ts@3.23.0) (2020-02-14)
+
+
+### Features
+
+* **SimpleList:** add simple list ([#3645](https://github.com/patternfly/patternfly-react/issues/3645)) ([4bba16c](https://github.com/patternfly/patternfly-react/commit/4bba16c3fbe788a74523ddede45293eb48a60009))
+
+
+
+
+
 ## [3.22.17](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.22.16...demo-app-ts@3.22.17) (2020-02-13)
 
 **Note:** Version bump only for package demo-app-ts
