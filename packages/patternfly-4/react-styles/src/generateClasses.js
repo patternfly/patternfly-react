@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-use-before-define */
 const camelcase = require('camel-case');
 
 const glob = require('glob');

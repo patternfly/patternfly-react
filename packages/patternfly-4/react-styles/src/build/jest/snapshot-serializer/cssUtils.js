@@ -61,7 +61,8 @@ function getComputedStyles(classNames, cssStr) {
   for (const key of cs.length) {
     const value = cs
       .getPropertyValue(key)
-      .replace(/rgb\(([\d|,|\s]+)\)/g, (full, match) => rgbToHex(...match.split(',').map(n => parseInt(n))));
+      // eslint-disable-next-line radix
+      .replace(/rgb\(([\d|,|\s]+)\)/g, (full, match) => rgbToHex(...match.split(',').map(n => parseInt(n, 10))));
     values[key] = value;
   }
   return values;
