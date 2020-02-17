@@ -46,9 +46,9 @@ Packages released:
 
 ### Other:
 - **Build:**
-  - Updated Circle CI config for pricing ([#3654](https://github.com/patternfly/patternfly-react/pull/3654))
+  - Updated CircleCi config for pricing ([#3654](https://github.com/patternfly/patternfly-react/pull/3654))
   - Made change to use machine instance ([#3712](https://github.com/patternfly/patternfly-react/pull/3712))
-  - Fixed typo, added md lint to Circle CI ([#3692](https://github.com/patternfly/patternfly-react/pull/3692))
+  - Fixed typo, added md lint to CircleCi ([#3692](https://github.com/patternfly/patternfly-react/pull/3692))
 - **Chore:** 
   - Phrased non production components as beta ([#3663](https://github.com/patternfly/patternfly-react/pull/3663))
   - Linted React topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
