@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.27.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.27.4...@patternfly/react-table@2.27.5) (2020-02-17)
+
+
+### Bug Fixes
+
+* **beta:** beta warning for datatoolbar, cleanup ([#3755](https://github.com/patternfly/patternfly-react/issues/3755)) ([ae708ac](https://github.com/patternfly/patternfly-react/commit/ae708ac2ee1cdf321519d63833c1998b6627d8c1))
+
+
+
+
+
 ## [2.27.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.27.3...@patternfly/react-table@2.27.4) (2020-02-17)
 
 **Note:** Version bump only for package @patternfly/react-table

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.24.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.24.2...@patternfly/react-integration@3.24.3) (2020-02-17)
+
+
+### Bug Fixes
+
+* **beta:** beta warning for datatoolbar, cleanup ([#3755](https://github.com/patternfly/patternfly-react/issues/3755)) ([ae708ac](https://github.com/patternfly/patternfly-react/commit/ae708ac2ee1cdf321519d63833c1998b6627d8c1))
+
+
+
+
+
 ## [3.24.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.24.1...@patternfly/react-integration@3.24.2) (2020-02-14)
 
 **Note:** Version bump only for package @patternfly/react-integration
