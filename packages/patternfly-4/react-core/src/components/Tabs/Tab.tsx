@@ -19,5 +19,5 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
 }
 
 export const Tab: React.FunctionComponent<TabProps> = ({ className = '' }: TabProps) => {
-  return <React.Fragment />;
+  return null;
 };
