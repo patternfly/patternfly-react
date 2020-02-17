@@ -11,21 +11,6 @@ let globSyncMock;
 let outputFileSyncMock;
 let readFileSyncMock;
 
-/**
- *
- */
-function getOutputs() {
-  return outputFileSyncMock.mock.calls.reduce((acc, call) => {
-    const [filePath, content] = call;
-    const splitPath = filePath.split(/[/\\]/);
-    const name = splitPath.slice(-2).join('/');
-    return {
-      ...acc,
-      [name]: content
-    };
-  }, {});
-}
-
 beforeEach(() => {
   jest.resetModules();
   globSyncMock = require('glob').sync;
@@ -66,3 +51,18 @@ test('keeps variable reference if computing fails', () => {
   require('./generateTokens');
   expect(getOutputs()).toMatchSnapshot();
 });
+
+/**
+ *
+ */
+function getOutputs() {
+  return outputFileSyncMock.mock.calls.reduce((acc, call) => {
+    const [filePath, content] = call;
+    const splitPath = filePath.split(/[/\\]/);
+    const name = splitPath.slice(-2).join('/');
+    return {
+      ...acc,
+      [name]: content
+    };
+  }, {});
+}
