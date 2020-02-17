@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.140.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.140.5...@patternfly/react-core@3.140.6) (2020-02-17)
+
+
+### Bug Fixes
+
+* **version:** version updated in react-core for react-icons ([#3760](https://github.com/patternfly/patternfly-react/issues/3760)) ([59544ac](https://github.com/patternfly/patternfly-react/commit/59544ac2cf69b5a460d06b0c9f1af920a68c0dd6))
+
+
+
+
+
 ## [3.140.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.140.4...@patternfly/react-core@3.140.5) (2020-02-17)
 
 
