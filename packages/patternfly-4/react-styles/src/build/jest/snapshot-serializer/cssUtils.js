@@ -1,15 +1,12 @@
+/* eslint-disable jsdoc/require-param-description, jsdoc/require-param-type */
 import * as css from 'css';
 import * as jsdom from 'jsdom';
 
 const { JSDOM } = jsdom;
 
-function getSelectors(nodes) {
-  return nodes.reduce((selectors, node) => {
-    const props = typeof node.props === 'function' ? node.props() : node.props;
-    return [...selectors, getSelectorsFromProps(props)];
-  }, []);
-}
-
+/**
+ * @param props
+ */
 function getSelectorsFromProps(props = {}) {
   const className = props.className || props.class;
   if (className) {
@@ -21,15 +18,37 @@ function getSelectorsFromProps(props = {}) {
   return [];
 }
 
+/**
+ * @param nodes
+ */
+function getSelectors(nodes) {
+  return nodes.reduce((selectors, node) => {
+    const props = typeof node.props === 'function' ? node.props() : node.props;
+    return [...selectors, getSelectorsFromProps(props)];
+  }, []);
+}
+
+/**
+ * @param c
+ */
 function componentToHex(c) {
   const hex = c.toString(16);
   return hex.length === 1 ? `0${hex}` : hex;
 }
 
+/**
+ * @param r
+ * @param g
+ * @param b
+ */
 function rgbToHex(r, g, b) {
   return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
 }
 
+/**
+ * @param classNames
+ * @param cssStr
+ */
 function getComputedStyles(classNames, cssStr) {
   const dom = new JSDOM(
     `<!DOCTYPE html>
@@ -39,16 +58,20 @@ function getComputedStyles(classNames, cssStr) {
   );
   const cs = dom.window.getComputedStyle(dom.window.document.body.children[0]);
   const values = {};
-  for (let i = 0; i < cs.length; i++) {
-    const key = cs[i];
+  for (const key of cs.length) {
     const value = cs
       .getPropertyValue(key)
+      // eslint-disable-next-line radix
       .replace(/rgb\(([\d|,|\s]+)\)/g, (full, match) => rgbToHex(...match.split(',').map(n => parseInt(n, 10))));
     values[key] = value;
   }
   return values;
 }
 
+/**
+ * @param bufferedStyles
+ * @param globalCSS
+ */
 function getStylesAST(bufferedStyles, globalCSS = '') {
   const ast = css.parse(`${globalCSS}\n${bufferedStyles}`);
   const vars = {};
@@ -71,6 +94,10 @@ function getStylesAST(bufferedStyles, globalCSS = '') {
   return ast;
 }
 
+/**
+ * @param nodeSelectors
+ * @param computedStyles
+ */
 function formatComputedStyles(nodeSelectors, computedStyles) {
   const selector = nodeSelectors.join('');
   const cssString = `${selector} {
@@ -81,6 +108,11 @@ function formatComputedStyles(nodeSelectors, computedStyles) {
   return css.stringify(css.parse(cssString));
 }
 
+/**
+ * @param nodeSelectors
+ * @param insertedStyles
+ * @param globalCSS
+ */
 function getStyles(nodeSelectors, insertedStyles, globalCSS) {
   if (!nodeSelectors.length) {
     return '';

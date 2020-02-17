@@ -22,6 +22,9 @@ const properties = [
   'grid-template-rows'
 ];
 
+/**
+ * @param {any} key - Key
+ */
 function createOverride(key) {
   return {
     set(v) {
@@ -35,6 +38,9 @@ function createOverride(key) {
   };
 }
 
+/**
+ *
+ */
 export function addOverrides() {
   const overrides = properties.reduce(
     (acc, property) => ({

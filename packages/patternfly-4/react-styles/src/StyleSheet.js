@@ -54,6 +54,9 @@ export const StyleSheet = {
   }
 };
 
+/**
+ * @param {Array} styles - Array of styles
+ */
 export function css(...styles) {
   const filteredStyles = [];
   styles.forEach(style => {

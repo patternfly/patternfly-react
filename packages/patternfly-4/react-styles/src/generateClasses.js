@@ -1,4 +1,3 @@
-/* eslint-disable global-require,import/no-dynamic-require */
 const camelcase = require('camel-case');
 
 const glob = require('glob');
@@ -38,8 +37,13 @@ inlineCssFiles.forEach(filePath => {
   outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
 });
 
+/**
+ * @param {string} cssString - CSS string
+ * @param {string} cssOutputPath - Path string
+ */
 function cssToJSNew(cssString, cssOutputPath = '') {
   const cssClasses = getCSSClasses(cssString);
+  // eslint-disable-next-line no-undef
   const distinctValues = [...new Set(cssClasses)];
   const classDeclaration = [];
   const modifiersDeclaration = [];
@@ -65,22 +69,38 @@ export default {
 }`;
 }
 
+/**
+ * @param {string} cssString - CSS string
+ */
 function getCSSClasses(cssString) {
   return cssString.match(/(\.)(?!\d)([^\s\.,{\[>+~#:)]*)(?![^{]*})/g); //eslint-disable-line
 }
 
+/**
+ * @param {string} className - Class name
+ */
 function formatClassName(className) {
   return camelcase(className.replace(/pf-((c|l|m|u|is|has)-)?/g, ''));
 }
 
+/**
+ * @param {string} className - Class name
+ */
 function isModifier(className) {
   return Boolean(className && className.startsWith) && className.startsWith('.pf-m-');
 }
 
+/**
+ * @param {any} absFilePath - Absolute file path
+ * @param {any} pathToCSSFile - Path to CSS file
+ */
 function getCSSOutputPath(absFilePath, pathToCSSFile) {
   return join(absFilePath, getFormattedCSSOutputPath(pathToCSSFile));
 }
 
+/**
+ * @param {any} pathToCSSFile - Path to CSS file
+ */
 function getFormattedCSSOutputPath(pathToCSSFile) {
   const { dir, name } = parse(pathToCSSFile);
   let formattedDir = dir;

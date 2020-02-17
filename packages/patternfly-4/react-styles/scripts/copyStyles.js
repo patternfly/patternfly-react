@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 const { copySync } = require('fs-extra');
 const { resolve, dirname, join } = require('path');
 
