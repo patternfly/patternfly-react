@@ -66,6 +66,7 @@ Packages released:
   - Fixed linting errors ([#3717](https://github.com/patternfly/patternfly-react/pull/3713))
   - Resolved existing linting errors ([#3715](https://github.com/patternfly/patternfly-react/pull/3715))
   - Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
+ - **PF3**: Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
   
 
 ## 2020.01 release notes (2020-01-28)
