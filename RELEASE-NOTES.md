@@ -25,7 +25,7 @@ Packages released:
 - **Select:** Handled undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/pull/3711))
 - **Simple list:** Added Simple list component ([#3645](https://github.com/patternfly/patternfly-react/pull/3645))
 - **Slider:** Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
-- **Wizard:** Added typeto wizard context ([#3572](https://github.com/patternfly/patternfly-react/pull/3572))
+- **Wizard:** Added type to wizard context ([#3572](https://github.com/patternfly/patternfly-react/pull/3572))
 
 ### Catalog view extension
 - **Catalog tile:** 
@@ -33,9 +33,6 @@ Packages released:
   - Reduced padding between badge and logo ([#3644](https://github.com/patternfly/patternfly-react/pull/3644))
   - Fixed styles that stopped working ([#3635](https://github.com/patternfly/patternfly-react/pull/3635))
   - Fixed linting errors ([#3714](https://github.com/patternfly/patternfly-react/pull/3714))
-
-### Charts
-- **React charts:** Fixed linting errors ([#3713](https://github.com/patternfly/patternfly-react/pull/3713))
 
 ### Table:
 - Added inline edit to table ([#3058](https://github.com/patternfly/patternfly-react/issues/3058))
@@ -53,7 +50,7 @@ Packages released:
   - Linted React topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
   - For icons made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
   - Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
-- **Cypress:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
+- **Ci:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
 - **Demos:** Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
 - **Docs:** 
   - Updated table property descriptions ([#3745](https://github.com/patternfly/patternfly-react/pull/3745))
@@ -66,6 +63,7 @@ Packages released:
   - Fixed linting errors ([#3717](https://github.com/patternfly/patternfly-react/pull/3713))
   - Resolved existing linting errors ([#3715](https://github.com/patternfly/patternfly-react/pull/3715))
   - Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
+  - Fixed linting errors ([#3713](https://github.com/patternfly/patternfly-react/pull/3713))
  - **PF3**: Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
   
 
