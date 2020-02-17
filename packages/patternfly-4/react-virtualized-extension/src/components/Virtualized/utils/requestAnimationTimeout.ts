@@ -15,10 +15,14 @@ export const cancelAnimationTimeout: any = (frame: { id: any }) => caf(frame.id)
  * When the delay time has been reached the function you're timing out will be called.
  *
  * Credit: Joe Lambert (https://gist.github.com/joelambert/1002116#file-requesttimeout-js)
+ *
+ * @param {any} callback - callback
+ * @param {number} delay - delay number
  */
 export const requestAnimationTimeout = (callback: any, delay: number) => {
   let start: any;
   // wait for end of processing current event handler, because event handler may be long
+  // eslint-disable-next-line no-undef
   Promise.resolve().then(() => {
     start = Date.now();
   });

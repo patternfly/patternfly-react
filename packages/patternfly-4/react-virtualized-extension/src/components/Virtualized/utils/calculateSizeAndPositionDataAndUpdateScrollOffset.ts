@@ -31,6 +31,9 @@ interface Params<T> {
   updateScrollOffsetForScrollToIndex: () => void;
 }
 
+/**
+ *
+ */
 export default function calculateSizeAndPositionDataAndUpdateScrollOffset({
   cellCount,
   cellSize,
