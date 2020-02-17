@@ -53,6 +53,7 @@ Packages released:
   - Phrased non production components as beta ([#3663](https://github.com/patternfly/patternfly-react/pull/3663))
   - Linted React topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
   - For icons made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
+  - Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
 - **Cypress:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
 - **Docs:** 
   - Updated table property descriptions ([#3745](https://github.com/patternfly/patternfly-react/pull/3745))
@@ -60,7 +61,6 @@ Packages released:
   - Bumped Gatsby ([#3657](https://github.com/patternfly/patternfly-react/pull/3657))
   - Merged branch gatsby-theme-patternfly-org ([#3651](https://github.com/patternfly/patternfly-react/pull/3651))
   - Merged patternfly-org branch ([#3619](https://github.com/patternfly/patternfly-react/pull/3619))
-- **Github:** Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
 - **Linting:** 
   - Eslint react-table ([#3693](https://github.com/patternfly/patternfly-react/pull/3693))
   - Fixed linting errors ([#3717](https://github.com/patternfly/patternfly-react/pull/3713))
