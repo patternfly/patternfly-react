@@ -6,11 +6,20 @@ releaseNoteTOC: true
 
 ## 2020.02 release notes (2020-02-18)
 Packages released:
--
+- [@patternfly/react-catalog-view-extension: 1.4.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.5)
+- [@patternfly/react-charts: 5.3.3](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.3)
+- [@patternfly/react-core: 3.140.5](https://www.npmjs.com/package/@patternfly/react-core/v/3.140.5)
+- [@patternfly/react-inline-edit-extension: 2.17.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.5)
+- [@patternfly/react-styles: 3.7.2](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.2)
+- [@patternfly/react-table: 2.27.5](https://www.npmjs.com/package/@patternfly/react-table/v/2.27.5)
+- [@patternfly/react-tokens: 2.8.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.2)
+- [@patternfly/react-topology: 2.14.5](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.5)
+- [@patternfly/react-virtualized-extension: 1.4.6](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.6)
+- [@patternfly/react-icons: 3.15.0](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.0)
 
 ### Components:
-- **ContextSelector:** Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
-- **DataToolbar:** Updated html structure to match core ([#3701](https://github.com/patternfly/patternfly-react/pull/3710))
+- **Context selector:** Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
+- **Data toolbar:** Updated html structure to match core ([#3701](https://github.com/patternfly/patternfly-react/pull/3710))
 - **Filterable table:** Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
 - **Popover:** Added min-width override property ([#3601](https://github.com/patternfly/patternfly-react/pull/3601))
 - **Radio:** Added support for optional description ([#3621](https://github.com/patternfly/patternfly-react/pull/3621))
@@ -37,26 +46,26 @@ Packages released:
 
 ### Other:
 - **Build:**
-  - Updated circleci config for pricing ([#3654](https://github.com/patternfly/patternfly-react/pull/3654))
+  - Updated Circle CI config for pricing ([#3654](https://github.com/patternfly/patternfly-react/pull/3654))
   - Made change to use machine instance ([#3712](https://github.com/patternfly/patternfly-react/pull/3712))
-  - Fixed typo, added md lint to circleci ([#3692](https://github.com/patternfly/patternfly-react/pull/3692))
+  - Fixed typo, added md lint to Circle CI ([#3692](https://github.com/patternfly/patternfly-react/pull/3692))
 - **Chore:** 
   - Phrased non production components as beta ([#3663](https://github.com/patternfly/patternfly-react/pull/3663))
-  - Linted react topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
+  - Linted React topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
+  - For icons made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
 - **Cypress:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
 - **Docs:** 
   - Updated table property descriptions ([#3745](https://github.com/patternfly/patternfly-react/pull/3745))
   - Updated node version in readme ([#3741](https://github.com/patternfly/patternfly-react/pull/3741))
-  - Bumped gatsby ([#3657](https://github.com/patternfly/patternfly-react/pull/3657))
+  - Bumped Gatsby ([#3657](https://github.com/patternfly/patternfly-react/pull/3657))
   - Merged branch gatsby-theme-patternfly-org ([#3651](https://github.com/patternfly/patternfly-react/pull/3651))
   - Merged patternfly-org branch ([#3619](https://github.com/patternfly/patternfly-react/pull/3619))
-- **Eslint:** Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
 - **Github:** Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
-- **Icons:** Made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
 - **Linting:** 
   - Eslint react-table ([#3693](https://github.com/patternfly/patternfly-react/pull/3693))
   - Fixed linting errors ([#3717](https://github.com/patternfly/patternfly-react/pull/3713))
   - Resolved existing linting errors ([#3715](https://github.com/patternfly/patternfly-react/pull/3715))
+  - Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
   
 
 ## 2020.01 release notes (2020-01-28)
