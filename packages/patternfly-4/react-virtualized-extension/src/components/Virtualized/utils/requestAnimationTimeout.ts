@@ -31,7 +31,6 @@ export const requestAnimationTimeout = (callback: any, delay: number) => {
     if (Date.now() - start >= delay) {
       callback.call();
     } else {
-      // eslint-disable-next-line @typescript-eslint/no-use-before-define
       frame.id = raf(timeout);
     }
   };
