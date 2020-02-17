@@ -52,6 +52,9 @@ test('keeps variable reference if computing fails', () => {
   expect(getOutputs()).toMatchSnapshot();
 });
 
+/**
+ *
+ */
 function getOutputs() {
   return outputFileSyncMock.mock.calls.reduce((acc, call) => {
     const [filePath, content] = call;

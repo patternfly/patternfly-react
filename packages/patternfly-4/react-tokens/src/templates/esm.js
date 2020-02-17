@@ -7,4 +7,3 @@ module.exports = {
   getSingleOutputPath: ({ outDir, tokenName }) => join(outDir, `esm/${tokenName}.js`),
   getSingleContent: ({ tokenValue }) => `export default ${JSON.stringify(tokenValue)}\n`
 };
-
