@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "4.20.6",
+  "version": "4.20.7",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
@@ -29,7 +29,7 @@
     "@patternfly/react-table": "^2.27.5",
     "@patternfly/react-tokens": "^2.8.2",
     "@patternfly/react-topology": "^2.14.5",
-    "@patternfly/react-virtualized-extension": "^1.4.5",
+    "@patternfly/react-virtualized-extension": "^1.4.6",
     "gatsby": "2.19.12",
     "gatsby-cli": "2.8.29",
     "gatsby-theme-patternfly-org": "^1.4.0",
