@@ -12,7 +12,7 @@ exports[`BackgroundImage should match snapshot (auto-generated) 1`] = `
   >
     <filter
       id="image_overlay"
-      width=""
+      width="120%"
     >
       <feColorMatrix
         type="matrix"

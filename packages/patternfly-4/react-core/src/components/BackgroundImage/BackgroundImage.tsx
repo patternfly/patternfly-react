@@ -78,7 +78,7 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   return (
     <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
-        <filter id="image_overlay" width="">
+        <filter id="image_overlay" width="120%">
           <feColorMatrix
             type="matrix"
             values="1 0 0 0 0
