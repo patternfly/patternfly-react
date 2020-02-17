@@ -20,7 +20,6 @@ Packages released:
 ### Components:
 - **Context selector:** Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
 - **Data toolbar:** Updated html structure to match core ([#3701](https://github.com/patternfly/patternfly-react/pull/3710))
-- **Filterable table:** Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
 - **Popover:** Added min-width override property ([#3601](https://github.com/patternfly/patternfly-react/pull/3601))
 - **Radio:** Added support for optional description ([#3621](https://github.com/patternfly/patternfly-react/pull/3621))
 - **Select:** Handled undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/pull/3711))
@@ -55,6 +54,7 @@ Packages released:
   - For icons made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
   - Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
 - **Cypress:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
+- **Demos:** Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
 - **Docs:** 
   - Updated table property descriptions ([#3745](https://github.com/patternfly/patternfly-react/pull/3745))
   - Updated node version in readme ([#3741](https://github.com/patternfly/patternfly-react/pull/3741))
