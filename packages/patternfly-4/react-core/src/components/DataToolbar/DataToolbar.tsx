@@ -39,7 +39,7 @@ interface FilterInfo {
 
 export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
   private chipGroupContentRef = React.createRef<HTMLDivElement>();
-
+  static hasWarnBeta = false;
   constructor(props: DataToolbarProps) {
     super(props);
 
@@ -66,6 +66,13 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   componentDidMount() {
     if (this.isToggleManaged()) {
       window.addEventListener('resize', this.closeExpandableContent);
+    }
+    if (process.env.NODE_ENV !== 'production' && !DataToolbar.hasWarnBeta) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'You are using a beta component (DataToolbar). These api parts are subject to change in the future.'
+      );
+      DataToolbar.hasWarnBeta = true;
     }
   }
 

@@ -51,12 +51,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
           rowEditValidationRules: rowLevelValidationRules,
           cells: [
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 1 content"
                 />
@@ -67,12 +67,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   isDisabled
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 2 content"
@@ -84,12 +84,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 3 content"
                 />
@@ -100,12 +100,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 4 content"
                 />
@@ -124,12 +124,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
           rowCancelBtnAriaLabel: idx => `Cancel edits for row ${idx}`,
           cells: [
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 1 content"
                 />
@@ -140,12 +140,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   isDisabled
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 2 content"
@@ -157,12 +157,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 3 content"
                 />
@@ -173,12 +173,12 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               }
             },
             {
-              title: (value: string, rowIndex: number, cellIndex: number, props: any) => (
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
-                  props={props}
+                  props={updatedProps}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 2 cell 4 content"
                 />
@@ -226,7 +226,7 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
     });
   };
 
-  handleTextInputChange = (newValue, evt, rowIndex, cellIndex) => {
+  handleTextInputChange = (newValue: string, evt: React.FormEvent, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
     this.setState({
