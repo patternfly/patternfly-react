@@ -6,26 +6,33 @@ releaseNoteTOC: true
 
 ## 2020.02 release notes (2020-02-18)
 Packages released:
-- [@patternfly/react-catalog-view-extension: 1.4.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.5)
-- [@patternfly/react-charts: 5.3.3](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.3)
-- [@patternfly/react-core: 3.140.5](https://www.npmjs.com/package/@patternfly/react-core/v/3.140.5)
-- [@patternfly/react-inline-edit-extension: 2.17.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.5)
-- [@patternfly/react-styles: 3.7.2](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.2)
-- [@patternfly/react-table: 2.27.5](https://www.npmjs.com/package/@patternfly/react-table/v/2.27.5)
-- [@patternfly/react-tokens: 2.8.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.2)
-- [@patternfly/react-topology: 2.14.5](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.5)
-- [@patternfly/react-virtualized-extension: 1.4.6](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.6)
-- [@patternfly/react-icons: 3.15.0](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.0)
+- [@patternfly/react-catalog-view-extension: 1.4.10](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.10)
+- [@patternfly/react-charts: 5.3.5](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.5)
+- [@patternfly/react-core: 3.140.10](https://www.npmjs.com/package/@patternfly/react-core/v/3.140.10)
+- [@patternfly/react-inline-edit-extension: 2.17.10](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.10)
+- [@patternfly/react-styles: 3.7.4](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.4)
+- [@patternfly/react-table: 2.27.10](https://www.npmjs.com/package/@patternfly/react-table/v/2.27.10)
+- [@patternfly/react-tokens: 2.8.4](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.4)
+- [@patternfly/react-topology: 2.14.10](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.10)
+- [@patternfly/react-virtualized-extension: 1.4.11](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.11)
+- [@patternfly/react-icons: 3.15.3](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.3)
+
 
 ### Components:
-- **Context selector:** Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
-- **Data toolbar:** Updated html structure to match core ([#3701](https://github.com/patternfly/patternfly-react/pull/3710))
-- **Popover:** Added min-width override property ([#3601](https://github.com/patternfly/patternfly-react/pull/3601))
-- **Radio:** Added support for optional description ([#3621](https://github.com/patternfly/patternfly-react/pull/3621))
-- **Select:** Handled undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/pull/3711))
-- **Simple list:** Added Simple list component ([#3645](https://github.com/patternfly/patternfly-react/pull/3645))
-- **Slider:** Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
-- **Wizard:** Added type to wizard context ([#3572](https://github.com/patternfly/patternfly-react/pull/3572))
+- **Context selector:** 
+  - Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
+- **Data toolbar:** 
+  - Updated html structure to match core ([#3701](https://github.com/patternfly/patternfly-react/pull/3710))
+- **Popover:** 
+  - Added min-width override property ([#3601](https://github.com/patternfly/patternfly-react/pull/3601))
+- **Radio:**
+  - Added support for optional description ([#3621](https://github.com/patternfly/patternfly-react/pull/3621))
+- **Select:**
+  - Handled undefined default for checkbox select ([#3711](https://github.com/patternfly/patternfly-react/pull/3711))
+- **Simple list:** 
+  - Added Simple list component ([#3645](https://github.com/patternfly/patternfly-react/pull/3645))
+- **Wizard:** 
+  - Added type to wizard context ([#3572](https://github.com/patternfly/patternfly-react/pull/3572))
 
 ### Catalog view extension
 - **Catalog tile:** 
@@ -50,8 +57,10 @@ Packages released:
   - Linted React topology ([#3721](https://github.com/patternfly/patternfly-react/pull/3721))
   - For icons made change to use absolute import paths ([#3517](https://github.com/patternfly/patternfly-react/pull/3517))
   - Fixed broken link in issue template ([#3634](https://github.com/patternfly/patternfly-react/pull/3634))
-- **Ci:** Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
-- **Demos:** Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
+- **Ci:** 
+  - Parallelized tests and run in PRs ([#3627](https://github.com/patternfly/patternfly-react/pull/3627))
+- **Demos:** 
+  - Fixed the TextInput type in filter table demo ([#3652](https://github.com/patternfly/patternfly-react/pull/3652))
 - **Docs:** 
   - Updated table property descriptions ([#3745](https://github.com/patternfly/patternfly-react/pull/3745))
   - Updated node version in readme ([#3741](https://github.com/patternfly/patternfly-react/pull/3741))
@@ -64,7 +73,10 @@ Packages released:
   - Resolved existing linting errors ([#3715](https://github.com/patternfly/patternfly-react/pull/3715))
   - Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
   - Fixed linting errors ([#3713](https://github.com/patternfly/patternfly-react/pull/3713))
- - **PF3**: Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660))
+
+### PF3:
+- **Slider:**
+  - Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660)) 
   
 
 ## 2020.01 release notes (2020-01-28)
