@@ -35,6 +35,13 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
 }
 
+interface AlertContext {
+  title: React.ReactNode;
+  variantLabel?: string;
+}
+
+export const AlertContext = React.createContext<AlertContext>(null);
+
 const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   variant = AlertVariant.info,
   isInline = false,
@@ -49,7 +56,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   ouiaId = null,
   ...props
 }: AlertProps & InjectedOuiaProps) => {
-  const readerTitle = (
+  const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
       {title}
@@ -78,11 +85,13 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
       })}
     >
       <AlertIcon variant={variant} />
-      <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
+      <h4 className={css(styles.alertTitle)}>{getHeadingContent}</h4>
       {children && <div className={css(styles.alertDescription)}>{children}</div>}
-      {action && (
-        <div className={css(styles.alertAction)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
-      )}
+      <AlertContext.Provider value={{ title, variantLabel }}>
+        {action && (typeof action === 'object' || typeof action === 'string') && (
+          <div className={css(styles.alertAction)}>{action}</div>
+        )}
+      </AlertContext.Provider>
     </div>
   );
 };
