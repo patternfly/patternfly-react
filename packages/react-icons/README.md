@@ -25,7 +25,7 @@ Every icon component has the following props:
 
 Icons for this package are generated from the `@fortawesome/free-solid-svg-icons` package. To add more to what is generated, modify the [icons.js](./build/icons.js) file in the build folder.
 
-If you have some custom icon defined by svg path the best way to add such icon to this repository is to add it's path definition in [pfIcons.js](./build/pfIcons.js) file in the build folder.
+If you have some custom icon defined by svg path the best way to add such icon to this repository is to add its path definition in [pfIcons.js](./build/pfIcons.js) file in the build folder.
 ```JS
 module.exports = {
   pfIcons: {
