@@ -3816,9 +3816,9 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@2.65.0":
-  version "2.65.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.65.0.tgz#f37a26fd9c5bfe585c727f6534a7f074dfee7b1a"
+"@patternfly/patternfly@2.65.2":
+  version "2.65.2"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.65.2.tgz#d59359d8ed45f55ea466b0976328aeb2324cd2de"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
