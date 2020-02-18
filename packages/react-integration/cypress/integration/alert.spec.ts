@@ -22,4 +22,8 @@ describe('Alert Demo Test', () => {
     cy.get('#test-button-2').click();
     cy.get('#info-alert').should('not.exist');
   });
+
+  it('Verify action render prop', () => {
+    cy.get('#custom-action-alert-button').contains('Default alert: Custom action alert');
+  });
 });

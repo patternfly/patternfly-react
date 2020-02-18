@@ -83,6 +83,20 @@ Object.values(AlertVariant).forEach(variant => {
       expect(view).toMatchSnapshot();
     });
 
+    test('Custom action', () => {
+      const view = mount(
+        <Alert
+          variant={variant}
+          aria-label={`Custom aria label for ${variant}`}
+          action={({variantLabel, title}) => (<>{variantLabel} {title}</>)}
+          title="Some title"
+        >
+          Some alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
     test('inline variation', () => {
       const view = mount(
         <Alert variant={variant} isInline title="Some title">

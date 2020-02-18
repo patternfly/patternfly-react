@@ -14,7 +14,7 @@ exports[`Alert - danger Action Close Button 1`] = `
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={15}
+    data-ouia-component-id={16}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -162,7 +162,7 @@ exports[`Alert - danger Action Link 1`] = `
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={14}
+    data-ouia-component-id={15}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -269,7 +269,7 @@ exports[`Alert - danger Action and Title 1`] = `
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={16}
+    data-ouia-component-id={17}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -364,6 +364,92 @@ exports[`Alert - danger Action and Title 1`] = `
 </Alert>
 `;
 
+exports[`Alert - danger Custom action 1`] = `
+<Alert
+  action={[Function]}
+  aria-label="Custom aria label for danger"
+  title="Some title"
+  variant="danger"
+>
+  <div
+    aria-label="Custom aria label for danger"
+    className="pf-c-alert pf-m-danger"
+    data-ouia-component-id={19}
+    data-ouia-component-type="PF4/Alert"
+    data-ouia-safe={true}
+  >
+    <AlertIcon
+      variant="danger"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <ExclamationCircleIcon>
+          <SVGIcon
+            color="currentColor"
+            config={
+              Object {
+                "height": 512,
+                "name": "ExclamationCircleIcon",
+                "svgPath": "M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z",
+                "transform": "",
+                "width": 512,
+                "xOffset": 0,
+                "yOffset": 0,
+              }
+            }
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 512 512"
+              width="1em"
+            >
+              <path
+                d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                transform=""
+              />
+            </svg>
+          </SVGIcon>
+        </ExclamationCircleIcon>
+      </div>
+    </AlertIcon>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Danger alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      Danger alert:
+       
+      Some title
+    </div>
+  </div>
+</Alert>
+`;
+
 exports[`Alert - danger Custom aria label 1`] = `
 <Alert
   action={
@@ -378,7 +464,7 @@ exports[`Alert - danger Custom aria label 1`] = `
   <div
     aria-label="Custom aria label for danger"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={17}
+    data-ouia-component-id={18}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -481,7 +567,7 @@ exports[`Alert - danger Description 1`] = `
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={12}
+    data-ouia-component-id={13}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -557,7 +643,7 @@ exports[`Alert - danger Title 1`] = `
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={13}
+    data-ouia-component-id={14}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -638,7 +724,7 @@ exports[`Alert - danger Toast alerts match snapsnot 1`] = `
     aria-label="danger toast alert"
     aria-live="polite"
     className="pf-c-alert pf-m-danger"
-    data-ouia-component-id={19}
+    data-ouia-component-id={21}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -716,7 +802,7 @@ exports[`Alert - danger inline variation 1`] = `
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-inline pf-m-danger"
-    data-ouia-component-id={18}
+    data-ouia-component-id={20}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -799,7 +885,7 @@ exports[`Alert - default Action Close Button 1`] = `
   <div
     aria-label="Default Alert"
     className="pf-c-alert"
-    data-ouia-component-id={48}
+    data-ouia-component-id={52}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -947,7 +1033,7 @@ exports[`Alert - default Action Link 1`] = `
   <div
     aria-label="Default Alert"
     className="pf-c-alert"
-    data-ouia-component-id={47}
+    data-ouia-component-id={51}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1054,7 +1140,7 @@ exports[`Alert - default Action and Title 1`] = `
   <div
     aria-label="Default Alert"
     className="pf-c-alert"
-    data-ouia-component-id={49}
+    data-ouia-component-id={53}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1149,6 +1235,92 @@ exports[`Alert - default Action and Title 1`] = `
 </Alert>
 `;
 
+exports[`Alert - default Custom action 1`] = `
+<Alert
+  action={[Function]}
+  aria-label="Custom aria label for default"
+  title="Some title"
+  variant="default"
+>
+  <div
+    aria-label="Custom aria label for default"
+    className="pf-c-alert"
+    data-ouia-component-id={55}
+    data-ouia-component-type="PF4/Alert"
+    data-ouia-safe={true}
+  >
+    <AlertIcon
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon>
+          <SVGIcon
+            color="currentColor"
+            config={
+              Object {
+                "height": 512,
+                "name": "BellIcon",
+                "svgPath": "M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z",
+                "transform": "",
+                "width": 448,
+                "xOffset": 0,
+                "yOffset": 0,
+              }
+            }
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 448 512"
+              width="1em"
+            >
+              <path
+                d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+                transform=""
+              />
+            </svg>
+          </SVGIcon>
+        </BellIcon>
+      </div>
+    </AlertIcon>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      Default alert:
+       
+      Some title
+    </div>
+  </div>
+</Alert>
+`;
+
 exports[`Alert - default Custom aria label 1`] = `
 <Alert
   action={
@@ -1163,7 +1335,7 @@ exports[`Alert - default Custom aria label 1`] = `
   <div
     aria-label="Custom aria label for default"
     className="pf-c-alert"
-    data-ouia-component-id={50}
+    data-ouia-component-id={54}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1266,7 +1438,7 @@ exports[`Alert - default Description 1`] = `
   <div
     aria-label="Default Alert"
     className="pf-c-alert"
-    data-ouia-component-id={45}
+    data-ouia-component-id={49}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1342,7 +1514,7 @@ exports[`Alert - default Title 1`] = `
   <div
     aria-label="Default Alert"
     className="pf-c-alert"
-    data-ouia-component-id={46}
+    data-ouia-component-id={50}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1423,7 +1595,7 @@ exports[`Alert - default Toast alerts match snapsnot 1`] = `
     aria-label="default toast alert"
     aria-live="polite"
     className="pf-c-alert"
-    data-ouia-component-id={52}
+    data-ouia-component-id={57}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1501,7 +1673,7 @@ exports[`Alert - default inline variation 1`] = `
   <div
     aria-label="Default Alert"
     className="pf-c-alert pf-m-inline"
-    data-ouia-component-id={51}
+    data-ouia-component-id={56}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1584,7 +1756,7 @@ exports[`Alert - info Action Close Button 1`] = `
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={37}
+    data-ouia-component-id={40}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1732,7 +1904,7 @@ exports[`Alert - info Action Link 1`] = `
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={36}
+    data-ouia-component-id={39}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1839,7 +2011,7 @@ exports[`Alert - info Action and Title 1`] = `
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={38}
+    data-ouia-component-id={41}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -1934,6 +2106,92 @@ exports[`Alert - info Action and Title 1`] = `
 </Alert>
 `;
 
+exports[`Alert - info Custom action 1`] = `
+<Alert
+  action={[Function]}
+  aria-label="Custom aria label for info"
+  title="Some title"
+  variant="info"
+>
+  <div
+    aria-label="Custom aria label for info"
+    className="pf-c-alert pf-m-info"
+    data-ouia-component-id={43}
+    data-ouia-component-type="PF4/Alert"
+    data-ouia-safe={true}
+  >
+    <AlertIcon
+      variant="info"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <InfoCircleIcon>
+          <SVGIcon
+            color="currentColor"
+            config={
+              Object {
+                "height": 512,
+                "name": "InfoCircleIcon",
+                "svgPath": "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z",
+                "transform": "",
+                "width": 512,
+                "xOffset": 0,
+                "yOffset": 0,
+              }
+            }
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 512 512"
+              width="1em"
+            >
+              <path
+                d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                transform=""
+              />
+            </svg>
+          </SVGIcon>
+        </InfoCircleIcon>
+      </div>
+    </AlertIcon>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Info alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      Info alert:
+       
+      Some title
+    </div>
+  </div>
+</Alert>
+`;
+
 exports[`Alert - info Custom aria label 1`] = `
 <Alert
   action={
@@ -1948,7 +2206,7 @@ exports[`Alert - info Custom aria label 1`] = `
   <div
     aria-label="Custom aria label for info"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={39}
+    data-ouia-component-id={42}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -2051,7 +2309,7 @@ exports[`Alert - info Description 1`] = `
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={34}
+    data-ouia-component-id={37}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -2127,7 +2385,7 @@ exports[`Alert - info Title 1`] = `
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={35}
+    data-ouia-component-id={38}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -2208,7 +2466,7 @@ exports[`Alert - info Toast alerts match snapsnot 1`] = `
     aria-label="info toast alert"
     aria-live="polite"
     className="pf-c-alert pf-m-info"
-    data-ouia-component-id={41}
+    data-ouia-component-id={45}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -2286,7 +2544,7 @@ exports[`Alert - info inline variation 1`] = `
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-inline pf-m-info"
-    data-ouia-component-id={40}
+    data-ouia-component-id={44}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -2719,6 +2977,92 @@ exports[`Alert - success Action and Title 1`] = `
 </Alert>
 `;
 
+exports[`Alert - success Custom action 1`] = `
+<Alert
+  action={[Function]}
+  aria-label="Custom aria label for success"
+  title="Some title"
+  variant="success"
+>
+  <div
+    aria-label="Custom aria label for success"
+    className="pf-c-alert pf-m-success"
+    data-ouia-component-id={7}
+    data-ouia-component-type="PF4/Alert"
+    data-ouia-safe={true}
+  >
+    <AlertIcon
+      variant="success"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <CheckCircleIcon>
+          <SVGIcon
+            color="currentColor"
+            config={
+              Object {
+                "height": 512,
+                "name": "CheckCircleIcon",
+                "svgPath": "M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z",
+                "transform": "",
+                "width": 512,
+                "xOffset": 0,
+                "yOffset": 0,
+              }
+            }
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 512 512"
+              width="1em"
+            >
+              <path
+                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                transform=""
+              />
+            </svg>
+          </SVGIcon>
+        </CheckCircleIcon>
+      </div>
+    </AlertIcon>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Success alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      Success alert:
+       
+      Some title
+    </div>
+  </div>
+</Alert>
+`;
+
 exports[`Alert - success Custom aria label 1`] = `
 <Alert
   action={
@@ -2993,7 +3337,7 @@ exports[`Alert - success Toast alerts match snapsnot 1`] = `
     aria-label="success toast alert"
     aria-live="polite"
     className="pf-c-alert pf-m-success"
-    data-ouia-component-id={8}
+    data-ouia-component-id={9}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3071,7 +3415,7 @@ exports[`Alert - success inline variation 1`] = `
   <div
     aria-label="Success Alert"
     className="pf-c-alert pf-m-inline pf-m-success"
-    data-ouia-component-id={7}
+    data-ouia-component-id={8}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3154,7 +3498,7 @@ exports[`Alert - warning Action Close Button 1`] = `
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={26}
+    data-ouia-component-id={28}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3302,7 +3646,7 @@ exports[`Alert - warning Action Link 1`] = `
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={25}
+    data-ouia-component-id={27}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3409,7 +3753,7 @@ exports[`Alert - warning Action and Title 1`] = `
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={27}
+    data-ouia-component-id={29}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3504,6 +3848,92 @@ exports[`Alert - warning Action and Title 1`] = `
 </Alert>
 `;
 
+exports[`Alert - warning Custom action 1`] = `
+<Alert
+  action={[Function]}
+  aria-label="Custom aria label for warning"
+  title="Some title"
+  variant="warning"
+>
+  <div
+    aria-label="Custom aria label for warning"
+    className="pf-c-alert pf-m-warning"
+    data-ouia-component-id={31}
+    data-ouia-component-type="PF4/Alert"
+    data-ouia-safe={true}
+  >
+    <AlertIcon
+      variant="warning"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <ExclamationTriangleIcon>
+          <SVGIcon
+            color="currentColor"
+            config={
+              Object {
+                "height": 512,
+                "name": "ExclamationTriangleIcon",
+                "svgPath": "M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z",
+                "transform": "",
+                "width": 576,
+                "xOffset": 0,
+                "yOffset": 0,
+              }
+            }
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 576 512"
+              width="1em"
+            >
+              <path
+                d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                transform=""
+              />
+            </svg>
+          </SVGIcon>
+        </ExclamationTriangleIcon>
+      </div>
+    </AlertIcon>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Warning alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      Warning alert:
+       
+      Some title
+    </div>
+  </div>
+</Alert>
+`;
+
 exports[`Alert - warning Custom aria label 1`] = `
 <Alert
   action={
@@ -3518,7 +3948,7 @@ exports[`Alert - warning Custom aria label 1`] = `
   <div
     aria-label="Custom aria label for warning"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={28}
+    data-ouia-component-id={30}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3621,7 +4051,7 @@ exports[`Alert - warning Description 1`] = `
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={23}
+    data-ouia-component-id={25}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3697,7 +4127,7 @@ exports[`Alert - warning Title 1`] = `
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={24}
+    data-ouia-component-id={26}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3778,7 +4208,7 @@ exports[`Alert - warning Toast alerts match snapsnot 1`] = `
     aria-label="warning toast alert"
     aria-live="polite"
     className="pf-c-alert pf-m-warning"
-    data-ouia-component-id={30}
+    data-ouia-component-id={33}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >
@@ -3856,7 +4286,7 @@ exports[`Alert - warning inline variation 1`] = `
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-inline pf-m-warning"
-    data-ouia-component-id={29}
+    data-ouia-component-id={32}
     data-ouia-component-type="PF4/Alert"
     data-ouia-safe={true}
   >

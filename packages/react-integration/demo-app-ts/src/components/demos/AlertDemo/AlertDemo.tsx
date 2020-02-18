@@ -1,4 +1,4 @@
-import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
+import { Alert, AlertActionCloseButton, Button } from '@patternfly/react-core';
 import React from 'react';
 
 interface AlertDemoState {
@@ -47,6 +47,15 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
         <Alert id="default-alert" title="Default alert title" isInline>
           Info alert description
         </Alert>
+        <Alert
+          id="custom-action-alert"
+          title="Custom action alert"
+          action={({ variantLabel, title }) => (
+            <Button id="custom-action-alert-button" variant="secondary">
+              {variantLabel} {title}
+            </Button>
+          )}
+        />
       </React.Fragment>
     );
   }

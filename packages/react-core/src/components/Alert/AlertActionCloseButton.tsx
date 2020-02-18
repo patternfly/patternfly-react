@@ -10,8 +10,6 @@ interface AlertActionCloseButtonProps extends ButtonProps {
   onClose?: () => void;
   /** Aria Label for the Close button */
   'aria-label'?: string;
-  /** Variant Label for the Close button */
-  variantLabel?: string;
 }
 
 export const AlertActionCloseButton = ({
@@ -19,7 +17,6 @@ export const AlertActionCloseButton = ({
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = '',
-  variantLabel,
   ...props
 }: AlertActionCloseButtonProps) => (
   <AlertContext.Consumer>
@@ -27,7 +24,7 @@ export const AlertActionCloseButton = ({
       <Button
         variant={ButtonVariant.plain}
         onClick={onClose}
-        aria-label={ariaLabel === '' ? `Close ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
+        aria-label={ariaLabel === '' ? `Close ${alertVariantLabel} alert: ${title}` : ariaLabel}
         {...props}
       >
         <TimesIcon />

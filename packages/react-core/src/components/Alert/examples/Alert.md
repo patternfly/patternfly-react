@@ -239,7 +239,7 @@ class InlineAlert extends React.Component {
 
 ```js title=Inline-variations
 import React from 'react';
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
+import { Alert, AlertActionLink, AlertActionCloseButton, Button } from '@patternfly/react-core';
 
 class InlineAlertVariations extends React.Component {
   constructor(props) {
@@ -278,6 +278,23 @@ class InlineAlertVariations extends React.Component {
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
         <Alert variant="success" isInline title="Success alert example 4" />
+
+        {renderPropsAlertVisible && (
+          <Alert
+            isInline
+            variant="success"
+            title="Success alert example 5"
+            action={({title, variantLabel}) => {
+              return <AlertActionCloseButton aria-label={`Dismiss ${variantLabel}: ${title}`} onClose={this.hideRenderPropsAlertVisible} />
+            }}>This alert uses a customized aria-label for the close button</Alert>
+        )}
+        <Alert
+          isInline
+          variant="success"
+          title="Success alert example 6"
+          action={({title, variantLabel}) => {
+            return <Button variant="secondary" aria-label={`${title}`} onClick={() => {console.log(`Custom action for: ${title}`)}}>Custom Action Button</Button>
+          }}>This alert uses a customized action button</Alert>
       </React.Fragment>
     );
   }

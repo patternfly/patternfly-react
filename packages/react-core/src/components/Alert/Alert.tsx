@@ -14,6 +14,14 @@ export enum AlertVariant {
   default = 'default'
 }
 
+export type AlertActionRenderer = ({
+  title,
+  variantLabel
+}: {
+  title: React.ReactNode;
+  variantLabel: string;
+}) => React.ReactNode;
+
 export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
@@ -21,8 +29,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isInline?: boolean;
   /** Title of the Alert  */
   title: React.ReactNode;
-  /** Action button to put in the Alert. Should be <AlertActionLink> or <AlertActionCloseButton> */
-  action?: React.ReactNode;
+  /** Action button to put in the Alert. Often <AlertActionLink> or <AlertActionCloseButton> */
+  action?: AlertActionRenderer | React.ReactNode;
   /** Content rendered inside the Alert */
   children?: React.ReactNode;
   /** Additional classes added to the Alert  */
@@ -79,6 +87,9 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
       <AlertContext.Provider value={{ title, variantLabel }}>
         {action && (typeof action === 'object' || typeof action === 'string') && (
           <div className={css(styles.alertAction)}>{action}</div>
+        )}
+        {action && typeof action === 'function' && (
+          <div className={css(styles.alertAction)}>{action({ title, variantLabel })}</div>
         )}
       </AlertContext.Provider>
     </div>
