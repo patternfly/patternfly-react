@@ -3,7 +3,7 @@ title: 'Tooltip'
 section: components
 cssPrefix: 'pf-c-tooltip'
 typescript: true
-propComponents: ['Tooltip', 'TooltipContent']
+propComponents: ['Tooltip']
 ---
 
 import { Button, Tooltip, TooltipPosition, TooltipContent, Checkbox } from '@patternfly/react-core';
