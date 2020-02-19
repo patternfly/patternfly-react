@@ -14,7 +14,7 @@ Packages released:
 - [@patternfly/react-table: 2.27.11](https://www.npmjs.com/package/@patternfly/react-table/v/2.27.11)
 - [@patternfly/react-tokens: 2.8.4](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.4)
 - [@patternfly/react-topology: 2.14.11](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.11)
-- [@patternfly/react-virtualized-extension: 1.4.11](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.11)
+- [@patternfly/react-virtualized-extension: 1.4.12](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.12)
 - [@patternfly/react-icons: 3.15.3](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.3)
 
 
