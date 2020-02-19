@@ -11,7 +11,7 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { FilterIcon } from '@patternfly/react-icons';
+import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 export class ViewToolbar extends React.Component {
   state = {
@@ -42,7 +42,7 @@ export class ViewToolbar extends React.Component {
     this.setState({ actionKebabOpen: isOpen });
   };
 
-  onActionKebabSelect = (e, action) => {
+  onActionKebabSelect = e => {
     e.preventDefault();
     this.setState({ actionKebabOpen: false });
   };

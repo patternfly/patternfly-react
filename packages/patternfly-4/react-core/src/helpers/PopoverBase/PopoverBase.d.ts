@@ -1,5 +1,6 @@
 import { ComponentClass } from 'react';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface ITippyProps {
   [_: string]: any;
 }

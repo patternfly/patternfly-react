@@ -12,12 +12,12 @@ import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
-import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
+import popoverMaxWidth from '@patternfly/react-tokens/dist/js/c_popover_MaxWidth';
 import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
-// tslint:disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
 
 export enum PopoverPosition {
@@ -70,6 +70,8 @@ export interface PopoverProps {
    * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
    */
   isVisible?: boolean;
+  /** Minimum width of the popover (default 6.25rem) */
+  minWidth?: string;
   /** Maximum width of the popover (default 18.75rem) */
   maxWidth?: string;
   /** Lifecycle function invoked when the popover has fully transitioned out. */
@@ -154,7 +156,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
       this.hideOrNotify();
     } else if (!this.state.isOpen && event.keyCode === KEY_CODES.ENTER) {
-      this.setState({ focusTrapActive: true })
+      this.setState({ focusTrapActive: true });
     }
   };
 
@@ -167,6 +169,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   }
 
   storeTippyInstance = (tip: TippyInstance) => {
+    if (this.props.minWidth) {
+      tip.popperChildren.tooltip.style.minWidth = this.props.minWidth;
+    }
     tip.popperChildren.tooltip.classList.add(styles.popover);
     this.tip = tip;
   };
@@ -213,9 +218,10 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     if (this.state.focusTrapActive) {
       this.setState({ focusTrapActive: false });
     }
-  }
+  };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       position,
       enableFlip,
@@ -235,6 +241,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       onShown,
       onMount,
       zIndex,
+      minWidth,
       maxWidth,
       closeBtnAriaLabel,
       distance,
@@ -243,6 +250,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       tippyProps,
       ...rest
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
 
     if (!headerContent && !ariaLabel) {
       return new Error('aria-label is required when header is not used');
@@ -251,9 +259,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     const content = this.state.isOpen ? (
       <GenerateId>
         {randomId => (
-          <FocusTrap 
-            active={this.state.focusTrapActive} 
-            focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <FocusTrap active={this.state.focusTrapActive} focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div
               className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
               role="dialog"
@@ -274,7 +280,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
           </FocusTrap>
         )}
       </GenerateId>
-    ): <></>;
+    ) : (
+      <></>
+    );
     const handleEvents = isVisible === null;
     const shouldHideOnClick = () => {
       if (handleEvents) {

@@ -9,6 +9,7 @@ export class PageManagedSidebarClosedDemo extends React.Component {
   render() {
     const logoProps = {
       href: 'https://patternfly.org',
+      // eslint-disable-next-line no-console
       onClick: () => console.log('clicked logo'),
       target: '_blank'
     };

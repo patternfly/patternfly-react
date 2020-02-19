@@ -1,2 +1,3 @@
 export * from './Progress';
-export { ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+export * from './ProgressBar';
+export * from './ProgressContainer';

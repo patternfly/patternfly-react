@@ -14,13 +14,12 @@ export interface OverflowMenuGroupProps extends React.HTMLProps<HTMLDivElement> 
   groupType?: 'button' | 'icon';
 }
 
-export const OverflowMenuGroup: React.SFC<OverflowMenuGroupProps> = ({
+export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,
-  groupType = '',
-  ...props
-}) => (
+  groupType
+}: OverflowMenuGroupProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (isPersistent || !value.isBelowBreakpoint) && (

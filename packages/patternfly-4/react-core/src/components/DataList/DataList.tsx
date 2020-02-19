@@ -12,7 +12,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   /* Adds accessible text to the DataList list */
   'aria-label': string;
   /* Optional callback to make DataList selectable, fired when DataListItem selected */
-  onSelectDataListItem?: (id:string) => void;
+  onSelectDataListItem?: (id: string) => void;
   /* Id of DataList item currently selected */
   selectedDataListItemId?: string;
 }
@@ -24,17 +24,17 @@ interface DataListContextProps {
 }
 
 export const DataListContext = React.createContext<Partial<DataListContextProps>>({
-  isSelectable: false,
+  isSelectable: false
 });
 
 export const DataList: React.FunctionComponent<DataListProps> = ({
-    children = null,
-    className = '',
-    'aria-label': ariaLabel,
-    selectedDataListItemId = '',
-    onSelectDataListItem,
-    ...props
-  }: DataListProps) => {
+  children = null,
+  className = '',
+  'aria-label': ariaLabel,
+  selectedDataListItemId = '',
+  onSelectDataListItem,
+  ...props
+}: DataListProps) => {
   const isSelectable = !isUndefined(onSelectDataListItem);
 
   const updateSelectedDataListItem = (id: string) => {
@@ -44,12 +44,12 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   return (
     <DataListContext.Provider
       value={{
-        isSelectable: isSelectable,
+        isSelectable,
         selectedDataListItemId,
         updateSelectedDataListItem
       }}
     >
-      <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props} >
+      <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props}>
         {children}
       </ul>
     </DataListContext.Provider>

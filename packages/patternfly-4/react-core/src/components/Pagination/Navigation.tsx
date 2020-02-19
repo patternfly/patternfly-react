@@ -1,7 +1,10 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
+import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-double-left-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleDoubleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-double-right-icon';
 import { Button, ButtonVariant } from '../Button';
 import { OnSetPage } from './Pagination';
 import { pluralize, PickOptional } from '../../helpers';
@@ -81,6 +84,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   };
 
   private static parseInteger(input: React.ReactText, lastPage: number): number {
+    // eslint-disable-next-line radix
     let inputPage = Number.parseInt(input as string, 10);
     if (!Number.isNaN(inputPage)) {
       inputPage = inputPage > lastPage ? lastPage : inputPage;
@@ -98,7 +102,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     event: React.KeyboardEvent<HTMLInputElement>,
     page: number | string,
     lastPage: number,
-    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void,
+    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
   ): void {
     if (event.keyCode === KEY_CODES.ENTER) {
       const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
@@ -111,8 +115,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     const { perPage, onSetPage } = this.props;
     const startIdx = (newPage - 1) * perPage;
     const endIdx = newPage * perPage;
-    return onSetPage(_evt, newPage, perPage, startIdx, endIdx); 
-  }
+    return onSetPage(_evt, newPage, perPage, startIdx, endIdx);
+  };
 
   componentDidUpdate(lastState: NavigationProps) {
     if (
@@ -127,7 +131,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   render() {
     const {
       page,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       perPage,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSetPage,
       isDisabled,
       lastPage,

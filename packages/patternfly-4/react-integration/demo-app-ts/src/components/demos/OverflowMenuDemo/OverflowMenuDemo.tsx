@@ -10,8 +10,9 @@ import {
   KebabToggle,
   Button
 } from '@patternfly/react-core';
-import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
-
+import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon';
+import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
+import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
 export class OverflowMenuDemo extends React.Component {
   state = {
     isSimpleOpen: false,
@@ -30,7 +31,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onSimpleSelect = event => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onSimpleSelect = _event => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
     });
@@ -86,7 +88,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onAdditionalOptionsSelect = event => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onAdditionalOptionsSelect = _event => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
     });
@@ -166,7 +169,8 @@ export class OverflowMenuDemo extends React.Component {
     });
   };
 
-  onPersistSelect = event => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onPersistSelect = _event => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
     });

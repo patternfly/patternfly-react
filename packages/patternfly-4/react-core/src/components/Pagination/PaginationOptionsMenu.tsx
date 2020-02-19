@@ -2,8 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import paginationStyles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-import { Dropdown, DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
-import { CheckIcon } from '@patternfly/react-icons';
+import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { OptionsToggle } from './OptionsToggle';
 import { ToggleTemplateProps } from './ToggleTemplate';
 import { PerPageOptions, OnPerPageSelect } from './Pagination';
@@ -91,9 +91,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   };
 
   onSelect = () => {
-    this.setState((prevState: PaginationOptionsMenuState) => {
-      return { isOpen: !prevState.isOpen };
-    });
+    this.setState((prevState: PaginationOptionsMenuState) => ({ isOpen: !prevState.isOpen }));
   };
 
   handleNewPerPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
@@ -106,15 +104,15 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
 
     if (defaultToFullPage) {
       if (itemCount / newPerPage !== newPage) {
-        while (newPage > 1 && (itemCount - (newPerPage * newPage)) < 0) {
+        while (newPage > 1 && itemCount - newPerPage * newPage < 0) {
           newPage--;
         }
       }
     }
     const startIdx = (newPage - 1) * newPerPage;
     const endIdx = newPage * newPerPage;
-    return onPerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx); 
-  }
+    return onPerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx);
+  };
 
   renderItems = () => {
     const { perPageOptions, perPage, perPageSuffix } = this.props;

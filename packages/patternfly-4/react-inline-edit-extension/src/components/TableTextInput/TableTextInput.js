@@ -30,6 +30,7 @@ class TableTextInput extends React.Component {
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { defaultValue, onBlur, autoFocus, value, onChange, ...textInputProps } = this.props;
     return (
       <React.Fragment>

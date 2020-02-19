@@ -5,27 +5,24 @@ section: 'demos'
 
 ## Examples
 
-```
-  Uses the DataToolbar component to filter results in the table based on user input.
-```
+Uses the DataToolbar component to filter results in the table based on user input.
 
 import {
+Title,
+Bullseye,
 DataToolbar,
 DataToolbarItem,
 DataToolbarContent,
 DataToolbarFilter,
+DataToolbarGroup,
 DataToolbarToggleGroup,
-DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
-import {
-Title,
-Select,
-SelectOption,
-SelectVariant,
 EmptyState,
 EmptyStateIcon,
 EmptyStateBody,
 EmptyStateSecondaryActions,
-Bullseye
+Select,
+SelectOption,
+SelectVariant
 } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
@@ -33,22 +30,20 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 ```js title=Basic
 import React from 'react';
 import {
+  Button,
+  ButtonVariant,
+  Bullseye,
   DataToolbar,
   DataToolbarItem,
   DataToolbarContent,
   DataToolbarFilter,
   DataToolbarToggleGroup,
-  DataToolbarGroup
-} from '@patternfly/react-core/dist/esm/experimental';
-import {
-  Button,
-  ButtonVariant,
-  Bullseye,
-  Dropdown, 
-  DropdownItem, 
+  DataToolbarGroup,
+  Dropdown,
+  DropdownItem,
   DropdownPosition,
   DropdownToggle,
-  InputGroup, 
+  InputGroup,
   Title,
   Select,
   SelectOption,
@@ -168,7 +163,7 @@ class FilterTableDemo extends React.Component {
         return {
           filters: {
             ...prevState.filters,
-            ['status']: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+            status: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
           }
         };
       });
@@ -185,9 +180,7 @@ class FilterTableDemo extends React.Component {
         return {
           filters: {
             ...prevState.filters,
-            ['name']: prevFilters.includes(inputValue)
-              ? prevFilters
-              : [...prevFilters, inputValue]
+            ['name']: prevFilters.includes(inputValue) ? prevFilters : [...prevFilters, inputValue]
           },
           inputValue: ''
         };
@@ -280,7 +273,7 @@ class FilterTableDemo extends React.Component {
             <TextInput
               name="nameInput"
               id="nameInput1"
-              type="text"
+              type="search"
               aria-label="name filter"
               onChange={this.onInputChange}
               value={inputValue}

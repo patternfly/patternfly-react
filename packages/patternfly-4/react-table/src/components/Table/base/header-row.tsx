@@ -22,8 +22,8 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
   rowIndex,
   renderers,
   onRow = () => Object
-}) => {
-  return React.createElement(
+}: HeaderRowProps) =>
+  React.createElement(
     renderers.row as createElementType,
     onRow(rowData, { rowIndex }),
     (rowData as []).map((column: ColumnType, columnIndex: number) => {
@@ -52,4 +52,3 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
       );
     })
   );
-};

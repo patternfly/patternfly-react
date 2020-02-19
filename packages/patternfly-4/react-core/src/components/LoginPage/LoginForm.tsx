@@ -66,6 +66,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   rememberMeLabel = '',
   isRememberMeChecked = false,
   onChangeRememberMe = () => undefined as any,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rememberMeAriaLabel = '',
   ...props
 }: LoginFormProps) => (

@@ -121,6 +121,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   onPerPageSelect?: OnPerPageSelect;
 }
 
+let paginationId = 0;
 const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> = ({
   children = null,
   className = '',
@@ -166,7 +167,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   if (!page && offset) {
     page = Math.ceil(offset / perPage);
   }
-  
+
   const lastPage = Math.ceil(itemCount / perPage) || 0;
   if (page < firstPage && itemCount > 0) {
     page = firstPage;
@@ -190,7 +191,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
         isCompact && styles.modifiers.compact,
         className
       )}
-      id={widgetId}
+      id={`${widgetId}-${paginationId++}`}
       {...(ouiaContext.isOuia && {
         'data-ouia-component-type': 'Pagination',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId

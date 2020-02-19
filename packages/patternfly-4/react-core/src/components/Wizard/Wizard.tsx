@@ -15,7 +15,7 @@ import { WizardContextProvider } from './WizardContext';
 import { PickOptional } from '../../helpers/typeUtils';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
-// tslint:disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
 
 export interface WizardStep {
@@ -141,9 +141,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const newId = Wizard.currentId++;
     this.isModal = !props.isInPage;
     if (this.isModal) {
-      if (!props.title) {
-        console.warn('Title is required for modals!');
-      }
       this.titleId = `pf-wizard-title-${newId}`;
       this.descriptionId = `pf-wizard-description-${newId}`;
     }
@@ -341,6 +338,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
     const {
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       isOpen,
       isInPage,
       isFullHeight,
@@ -367,6 +365,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       isCompactNav,
       appendTo,
       ...rest
+      /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();

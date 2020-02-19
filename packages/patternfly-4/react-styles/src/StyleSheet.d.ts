@@ -2,6 +2,7 @@ import { StyleDeclarationStatic } from './utils';
 import { Interpolation } from 'emotion';
 import { ClassNameArg } from 'create-emotion';
 
+// eslint-disable-next-line @typescript-eslint/array-type
 type emotionCss = (...classNames: Array<ClassNameArg | StyleDeclarationStatic>) => string;
 
 export interface StyleSheetStatic {

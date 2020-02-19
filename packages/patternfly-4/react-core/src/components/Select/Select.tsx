@@ -4,7 +4,7 @@ import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import { TimesCircleIcon } from '@patternfly/react-icons';
+import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
@@ -118,8 +118,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     noResultsFoundText: 'No results found',
     variant: SelectVariant.single,
     width: '',
-    onClear: (_e: React.MouseEvent) => undefined as void,
-    onCreateOption: (_newOptionValue: string) => undefined as void,
+    onClear: () => undefined as void,
+    onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
     onFilter: null,
     customContent: null
@@ -192,7 +192,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     if (typeaheadFilteredChildren.length === 0) {
       !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} />);
     }
-    if (isCreatable && e.target.value != '') {
+    if (isCreatable && e.target.value !== '') {
       const newValue = e.target.value;
       typeaheadFilteredChildren.push(
         <SelectOption key={0} value={newValue} onClick={() => onCreateOption && onCreateOption(newValue)}>
@@ -324,6 +324,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       className,
@@ -358,6 +359,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       noResultsFoundText,
       ...props
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
@@ -499,7 +501,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {(selections && (Array.isArray(selections) && selections.length > 0) || typeaheadInputValue) && (
+                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
                     onClick={e => {
@@ -548,7 +550,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           {variant === SelectVariant.checkbox && isExpanded && !customContent && (
             <SelectMenu
               {...props}
-              checked={selections as string[]}
+              checked={selections ? (selections as string[]) : []}
               aria-label={ariaLabel}
               aria-labelledby={ariaLabelledBy}
               isGrouped={isGrouped}

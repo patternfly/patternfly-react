@@ -18,6 +18,35 @@ interface ChartBulletScaleInterface {
   width: number; // The chart width -- not SVG width
 }
 
+const scaleDimensions = ({
+  defaultSize,
+  height,
+  horizontal = true,
+  scale = 1,
+  value,
+  width
+}: ChartBulletScaleInterface) =>
+  horizontal
+    ? height > defaultSize
+      ? value + (height - defaultSize) * scale
+      : value - (defaultSize - height) * scale
+    : width > defaultSize
+    ? value + (width - defaultSize) * scale
+    : value - (defaultSize - width) * scale;
+
+// Scale bar width per the given size properties
+export const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scaleDimensions(props), 0);
+
+// Scale size per the given size properties
+export const scaleSize = ({ value, ...rest }: ChartBulletScaleInterface) =>
+  Math.round(
+    scaleDimensions({
+      scale: 1 / value,
+      value,
+      ...rest
+    })
+  );
+
 interface ChartBulletSizeInterface {
   height: number; // The chart height -- not SVG height
   horizontal?: boolean; // Flag indicating chart is shown horizontally
@@ -135,25 +164,3 @@ export const getQualitativeRangeBarWidth = ({
     value: ChartBulletStyles.qualitativeRangeWidth,
     width
   });
-
-const scale = ({ defaultSize, height, horizontal = true, scale = 1, value, width }: ChartBulletScaleInterface) =>
-  horizontal
-    ? height > defaultSize
-      ? value + (height - defaultSize) * scale
-      : value - (defaultSize - height) * scale
-    : width > defaultSize
-    ? value + (width - defaultSize) * scale
-    : value - (defaultSize - width) * scale;
-
-// Scale bar width per the given size properties
-export const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scale(props), 0);
-
-// Scale size per the given size properties
-export const scaleSize = ({ value, ...rest }: ChartBulletScaleInterface) =>
-  Math.round(
-    scale({
-      scale: 1 / value,
-      value,
-      ...rest
-    })
-  );

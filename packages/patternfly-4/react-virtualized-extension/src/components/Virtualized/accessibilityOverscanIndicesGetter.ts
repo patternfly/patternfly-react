@@ -11,6 +11,9 @@ export const SCROLL_DIRECTION_VERTICAL = 'vertical';
  * This function ensures that overscanning doesn't exceed the available cells.
  */
 
+/**
+ *
+ */
 export default function defaultOverscanIndicesGetter({
   cellCount,
   overscanCellsCount,

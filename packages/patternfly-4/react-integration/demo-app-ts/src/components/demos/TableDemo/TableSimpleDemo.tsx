@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
-  textCenter,
-  ICell,
-  IRow
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, textCenter, ICell, IRow } from '@patternfly/react-table';
 
 export class TableSimpleDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   constructor(props: TableProps) {

@@ -35,6 +35,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * accessibility for screen readers. The more info about the chart provided in
    * the description, the more usable it will be for people using screen readers.
    * This prop defaults to an empty string.
+   *
    * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
    */
@@ -45,6 +46,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * corresponding events as well as scale, style, width, height, and data when
    * applicable. Use the invert method to convert event coordinate information to
    * data. `scale.x.invert(evt.offsetX)`.
+   *
    * @example {{ onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}}
    */
   events?: React.DOMAttributes<any>;
@@ -65,6 +67,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * and width props, as they are used to calculate the alignment of
    * components within the container. Styles from the child component will
    * also be passed, if any exist.
+   *
    * @example {border: 1px solid red}
    */
   style?: React.CSSProperties;
@@ -93,6 +96,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * The title prop specifies the title to be applied to the SVG to assist
    * accessibility for screen readers. The more descriptive this title is, the more
    * useful it will be. If no title prop is passed, it will default to Chart.
+   *
    * @example "Popularity of Dog Breeds by Percentage"
    */
   title?: string;
@@ -116,6 +120,7 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   const chartClassName = getClassName({ className });
 
   // Note: theme is valid, but @types/victory is missing a prop type
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
 };

@@ -7,7 +7,7 @@ import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css, getModifier } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
-import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
+import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';
 
@@ -95,7 +95,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     // For every initial starting position, there are 3 escape positions
     flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
     tippyProps: {},
-    id: '',
+    id: ''
   };
 
   storeTippyInstance = (tip: TippyInstance) => {

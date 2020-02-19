@@ -1,3 +1,7 @@
+/**
+ * @param {any} node - Node
+ * @param {Array} nodes - array of nodes
+ */
 function getNodes(node, nodes = []) {
   if (node.children) {
     const children = typeof node.children === 'function' ? node.children() : node.children;

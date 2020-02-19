@@ -37,7 +37,7 @@ interface ModalState {
 }
 
 export class AboutModal extends React.Component<AboutModalProps, ModalState> {
-  private static currentId: number = 0;
+  private static currentId = 0;
   private id = AboutModal.currentId++;
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;
@@ -60,7 +60,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
       container: undefined
     };
     if (props.brandImageSrc && !props.brandImageAlt) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
     }
   }
@@ -124,6 +124,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   }
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { appendTo, ...props } = this.props;
     const { container } = this.state;
 

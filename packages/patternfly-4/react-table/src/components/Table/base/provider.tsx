@@ -28,7 +28,7 @@ export class Provider extends React.Component<ProviderProps, {}> {
     let finalRenderers = renderers;
 
     if (components) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.warn(
         '`components` have been deprecated in favor of `renderers` and will be removed in the next major version, please rename!'
       );

@@ -15,9 +15,10 @@ import {
   OnCollapse,
   OnExpand,
   OnSelect,
+  OnRowEdit,
   OnSort
 } from './index';
-import { rows, columns, actions } from '../../test-helpers/data-sets';
+import { rows, columns, editableRows, editableColumns, actions } from '../../test-helpers/data-sets';
 import { ColumnsType } from './base';
 
 describe('Simple table', () => {
@@ -51,6 +52,17 @@ describe('Simple table', () => {
   });
 });
 
+test('Editable table', () => {
+  const onRowEdit: OnRowEdit = () => undefined;
+  const view = mount(
+    <Table caption="Editable Table" cells={editableColumns} rows={editableRows} onRowEdit={onRowEdit}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('Sortable table', () => {
   const onSortCall: OnSort = () => undefined;
   columns[0] = { ...(columns[0] as object), transforms: [sortable] };
@@ -66,11 +78,7 @@ test('Sortable table', () => {
 test('Row click table', () => {
   const rowClickHandler = jest.fn();
   const view = mount(
-    <Table
-      aria-label="Row click table"
-      cells={columns}
-      rows={rows}
-    >
+    <Table aria-label="Row click table" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody onRowClick={rowClickHandler} />
     </Table>
@@ -257,12 +265,12 @@ test('Empty state table', () => {
         heightAuto: true,
         cells: [
           {
-            title: (<div>Empty State Component</div>),
-            props: { colSpan: '8' }
+            title: <div>Empty State Component</div>,
+            props: { colSpan: 8 }
           }
-      ],
+        ]
       }
-    ],
+    ]
   };
 
   const view = mount(
@@ -272,6 +280,16 @@ test('Empty state table', () => {
     </Table>
   );
 
-  expect(view.find('tr').at(1).prop('className')).toEqual('pf-m-height-auto');
-  expect(view.find('tbody').find('td').prop('colSpan')).toEqual('8');
+  expect(
+    view
+      .find('tr')
+      .at(1)
+      .prop('className')
+  ).toEqual('pf-m-height-auto');
+  expect(
+    view
+      .find('tbody')
+      .find('td')
+      .prop('colSpan')
+  ).toEqual(8);
 });

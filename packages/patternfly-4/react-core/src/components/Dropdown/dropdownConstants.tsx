@@ -28,6 +28,7 @@ export const DropdownContext = React.createContext<{
   separatorClass?: string;
   menuComponent?: string;
 }>({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelect: (event?: any) => undefined as any,
   id: '',
   toggleIconClass: '',

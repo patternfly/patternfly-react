@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopologyControlBar should accept button options correctly 1`] = `
-<Component
+<TopologyControlBar
   className="default-test-class"
   controlButtons={
     Array [
@@ -730,11 +730,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
       </ToolbarGroup>
     </div>
   </Toolbar>
-</Component>
+</TopologyControlBar>
 `;
 
 exports[`TopologyControlBar should display the default controls correctly 1`] = `
-<Component
+<TopologyControlBar
   className="default-test-class"
   controlButtons={
     Array [
@@ -1791,5 +1791,5 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
       </ToolbarGroup>
     </div>
   </Toolbar>
-</Component>
+</TopologyControlBar>
 `;

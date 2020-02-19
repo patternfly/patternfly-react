@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartLegend, ChartPie } from '@patternfly/react-charts';
+import { ChartPie } from '@patternfly/react-charts';
 
 export class PieBlueDemo extends React.Component {
   componentDidMount() {

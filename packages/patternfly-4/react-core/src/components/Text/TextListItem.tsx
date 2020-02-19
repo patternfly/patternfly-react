@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { OneOf } from '../../helpers/typeUtils';
 
 export enum TextListItemVariants {
   li = 'li',

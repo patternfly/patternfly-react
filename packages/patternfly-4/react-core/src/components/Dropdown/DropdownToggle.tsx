@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CaretDownIcon } from '@patternfly/react-icons';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import { Toggle } from './Toggle';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
@@ -58,11 +58,13 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isDisabled = false,
   isPlain = false,
   isPrimary = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
   splitButtonVariant = 'checkbox',
   ariaHasPopup,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {

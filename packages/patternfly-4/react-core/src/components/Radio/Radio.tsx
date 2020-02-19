@@ -29,6 +29,8 @@ export interface RadioProps
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Aria label for the radio. */
   'aria-label'?: string;
+  /** Description text of the radio. */
+  description?: React.ReactNode;
 }
 
 export class Radio extends React.Component<RadioProps> {
@@ -42,7 +44,7 @@ export class Radio extends React.Component<RadioProps> {
   constructor(props: RadioProps) {
     super(props);
     if (!props.label && !props['aria-label']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('Radio:', 'Radio requires an aria-label to be specified');
     }
   }
@@ -63,7 +65,9 @@ export class Radio extends React.Component<RadioProps> {
       isDisabled,
       isValid,
       label,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
+      description,
       ...props
     } = this.props;
 
@@ -90,15 +94,19 @@ export class Radio extends React.Component<RadioProps> {
         {label}
       </label>
     );
+
+    const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
     const childrenRendered = isLabelBeforeButton ? (
       <>
         {labelRendered}
         {inputRendered}
+        {descRender}
       </>
     ) : (
       <>
         {inputRendered}
         {labelRendered}
+        {descRender}
       </>
     );
 

@@ -1,16 +1,14 @@
 /* eslint-disable camelcase */
-import {
-  chart_donut_threshold_first_Color,
-  chart_donut_threshold_second_Color,
-  chart_donut_threshold_third_Color,
-  chart_donut_threshold_dynamic_pie_Height,
-  chart_donut_threshold_dynamic_pie_Padding,
-  chart_donut_threshold_dynamic_pie_Width,
-  chart_donut_threshold_static_pie_Height,
-  chart_donut_threshold_static_pie_angle_Padding,
-  chart_donut_threshold_static_pie_Padding,
-  chart_donut_threshold_static_pie_Width
-} from '@patternfly/react-tokens';
+import chart_donut_threshold_first_Color from '@patternfly/react-tokens/dist/js/chart_donut_threshold_first_Color';
+import chart_donut_threshold_second_Color from '@patternfly/react-tokens/dist/js/chart_donut_threshold_second_Color';
+import chart_donut_threshold_third_Color from '@patternfly/react-tokens/dist/js/chart_donut_threshold_third_Color';
+import chart_donut_threshold_dynamic_pie_Height from '@patternfly/react-tokens/dist/js/chart_donut_threshold_dynamic_pie_Height';
+import chart_donut_threshold_dynamic_pie_Padding from '@patternfly/react-tokens/dist/js/chart_donut_threshold_dynamic_pie_Padding';
+import chart_donut_threshold_dynamic_pie_Width from '@patternfly/react-tokens/dist/js/chart_donut_threshold_dynamic_pie_Width';
+import chart_donut_threshold_static_pie_Height from '@patternfly/react-tokens/dist/js/chart_donut_threshold_static_pie_Height';
+import chart_donut_threshold_static_pie_angle_Padding from '@patternfly/react-tokens/dist/js/chart_donut_threshold_static_pie_angle_Padding';
+import chart_donut_threshold_static_pie_Padding from '@patternfly/react-tokens/dist/js/chart_donut_threshold_static_pie_Padding';
+import chart_donut_threshold_static_pie_Width from '@patternfly/react-tokens/dist/js/chart_donut_threshold_static_pie_Width';
 
 // Donut threshold dynamic theme
 export const DonutThresholdDynamicTheme = {

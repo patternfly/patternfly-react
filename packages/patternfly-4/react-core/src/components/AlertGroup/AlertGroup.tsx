@@ -22,7 +22,7 @@ interface AlertGroupState {
 export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
   state = {
     container: undefined
-  } as AlertGroupState
+  } as AlertGroupState;
 
   componentDidMount() {
     const container = document.createElement('div');
@@ -44,11 +44,15 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
       return appendTo();
     }
     return appendTo || document.body;
-  };
+  }
 
   render() {
     const { className, children, isToast } = this.props;
-    const alertGroup = <AlertGroupInline className={className} isToast={isToast}>{children}</AlertGroupInline>;
+    const alertGroup = (
+      <AlertGroupInline className={className} isToast={isToast}>
+        {children}
+      </AlertGroupInline>
+    );
     if (!this.props.isToast) {
       return alertGroup;
     }

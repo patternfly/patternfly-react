@@ -8,6 +8,11 @@ import { getCSSClasses, isModifier, formatClassName } from '../utils';
 export const packageName = '@patternfly/react-styles';
 export const styleSheetToken = 'StyleSheet';
 
+/**
+ * @param {string} cssString - CSS string
+ * @param {string} cssOutputPath - CSS output path
+ * @param {boolean} useModules - Boolean
+ */
 export function cssToJS(cssString, cssOutputPath = '', useModules = false) {
   let cssRequire = '';
   let cssImport = '';
@@ -30,6 +35,11 @@ module.exports = ${styleSheetToken}.parse(\`${cssString}\`);
 `;
 }
 
+/**
+ * @param {string} cssString - CSS string
+ * @param {string} cssOutputPath - CSS output path
+ * @param {boolean} useModules - Boolean
+ */
 export function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
   let cssRequire = '';
   let cssImport = '';
@@ -39,6 +49,7 @@ export function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
   }
 
   const cssClasses = getCSSClasses(cssString);
+  // eslint-disable-next-line no-undef
   const distinctValues = [...new Set(cssClasses)];
   const classDeclaration = [];
   const modifiersDeclaration = [];
@@ -78,22 +89,36 @@ module.exports = {
 `;
 }
 
+/**
+ * @param {string | number | Buffer | URL} pathToCSSFile - CSS file path
+ */
 export function getFullCSS(pathToCSSFile) {
   const rawCss = readFileSync(pathToCSSFile, 'utf8').replace('@charset "UTF-8";', '');
   return rawCss;
 }
 
+/**
+ * @param {string | number | Buffer | URL} pathToCSSFile - CSS file path
+ */
 export function getCSS(pathToCSSFile) {
   const rawCss = readFileSync(pathToCSSFile, 'utf8').replace('@charset "UTF-8";', '');
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   return minifyCSS(rawCss);
 }
 
+/**
+ * @param {string} cssString - CSS string
+ */
 export function minifyCSS(cssString) {
   return css.stringify(css.parse(cssString.replace('@charset "UTF-8";', '')), {
     compress: true
   });
 }
 
+/**
+ * @param {any} destinationPath - Path to destination
+ * @param {any} contents - Contents
+ */
 export function writeCSSFile(destinationPath, contents) {
   ensureDir(path.dirname(destinationPath)).then(() => {
     const replacementString = contents.replace(/..\/..\/assets/g, '../../../../../styles/assets');
@@ -101,20 +126,39 @@ export function writeCSSFile(destinationPath, contents) {
   });
 }
 
+/**
+ * @param {any} rootPath - Root path
+ * @param {any} originalPath - Original path
+ * @param {any} destinationPath - Path to destination
+ * @param {any} contents - Contents
+ */
 export function writeCSSJSFile(rootPath, originalPath, destinationPath, contents) {
   outputFileSync(destinationPath, contents);
 }
 
+/**
+ * @param {any} from - From
+ * @param {any} to - To
+ */
 export function getRelativeImportPath(from, to) {
   const parsedTo = path.parse(to);
   const newImportPath = path.normalize(path.join(relative(from, parsedTo.dir), parsedTo.base));
   return newImportPath.startsWith('.') ? newImportPath : `./${newImportPath}`;
 }
 
+/**
+ * @param {any} outDir - Output directory
+ * @param {any} rootPath - Root path
+ * @param {string | number | Buffer | URL} pathToCSSFile - CSS file path
+ */
 export function getCSSOutputPath(outDir, rootPath, pathToCSSFile) {
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   return path.join(path.resolve(rootPath, outDir), getFormattedCSSOutputPath(pathToCSSFile));
 }
 
+/**
+ * @param {string | number | Buffer | URL} pathToCSSFile - CSS file path
+ */
 function getFormattedCSSOutputPath(pathToCSSFile) {
   const { dir, name } = path.parse(pathToCSSFile);
   let formattedDir = dir;

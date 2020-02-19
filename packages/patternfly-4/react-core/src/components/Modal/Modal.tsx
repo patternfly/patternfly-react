@@ -143,6 +143,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { appendTo, ...props } = this.props;
     const { container } = this.state;
 

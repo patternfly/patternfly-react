@@ -36,12 +36,14 @@ export class NavDemo extends Component {
   };
 
   handleNoNavigateLink = (
+    /* eslint-disable @typescript-eslint/no-unused-vars, no-console */
     e: React.FormEvent<HTMLInputElement>,
     itemId: number | string,
     groupId: number | string,
     to: string
   ): void => {
     console.log(`No Navigate Link clicked: ${itemId}`);
+    /* eslint-enable @typescript-eslint/no-unused-vars, no-console */
   };
 
   renderDefaultNav() {

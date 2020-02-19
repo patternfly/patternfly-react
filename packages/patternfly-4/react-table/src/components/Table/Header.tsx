@@ -15,6 +15,7 @@ const ContextHeader: React.FunctionComponent<ContextHeaderProps> = ({
 }: ContextHeaderProps) => <Header {...props} headerRows={headerRows as ColumnsType} className={className} />;
 
 export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
+  /** Additional classes added to the TableHeader  */
   className?: string;
 }
 

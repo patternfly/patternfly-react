@@ -8,7 +8,7 @@ import {
   EmptyStateSecondaryActions,
   Button
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 import React, { Component } from 'react';
 export class EmptyStateDemo extends Component {
   myLargeEmptyStateProps: EmptyStateProps = {
@@ -90,9 +90,9 @@ export class EmptyStateDemo extends Component {
   render() {
     return (
       <React.Fragment>
-        <EmptyState children={this.myLargeEmptyStateProps.children} />
-        <EmptyState children={this.mySmallEmptyStateProps.children} variant={this.mySmallEmptyStateProps.variant} />
-        <EmptyState children={this.myFullEmptyStateProps.children} variant={this.myFullEmptyStateProps.variant} />
+        <EmptyState>{this.myLargeEmptyStateProps.children}</EmptyState>
+        <EmptyState variant={this.mySmallEmptyStateProps.variant}>{this.mySmallEmptyStateProps.children}</EmptyState>
+        <EmptyState variant={this.myFullEmptyStateProps.variant}>{this.myFullEmptyStateProps.children}</EmptyState>
       </React.Fragment>
     );
   }

@@ -46,7 +46,7 @@ export class TextArea extends React.Component<TextAreaProps> {
   constructor(props: TextAreaProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('TextArea: TextArea requires either an id or aria-label to be specified');
     }
   }
@@ -58,6 +58,7 @@ export class TextArea extends React.Component<TextAreaProps> {
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, value, onChange, isValid, validated, isRequired, resizeOrientation, ...props } = this.props;
     const orientation = 'resize' + resizeOrientation.charAt(0).toUpperCase() + resizeOrientation.slice(1);
     return (

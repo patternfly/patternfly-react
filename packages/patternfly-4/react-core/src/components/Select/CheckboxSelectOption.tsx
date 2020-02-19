@@ -62,6 +62,7 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
   };
 
   render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       className,
@@ -74,6 +75,7 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
       index,
       ...props
     } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
     return (
       <SelectConsumer>
         {({ onSelect }) => (

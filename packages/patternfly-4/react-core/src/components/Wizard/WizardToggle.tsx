@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
 
@@ -29,8 +30,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding = true,
-  ...props
+  hasBodyPadding = true
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -41,7 +41,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       activeStepName = steps[i].name;
       break;
     } else if (steps[i].steps) {
-      for (const step of steps[i].steps!) {
+      for (const step of steps[i].steps) {
         if ((activeStep.id && step.id === activeStep.id) || step.name === activeStep.name) {
           activeStepIndex = i + 1;
           activeStepName = steps[i].name;

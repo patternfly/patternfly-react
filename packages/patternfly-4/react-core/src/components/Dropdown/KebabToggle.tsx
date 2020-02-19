@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DropdownToggleProps } from './DropdownToggle';
-import { EllipsisVIcon } from '@patternfly/react-icons';
+import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 import { Toggle } from './Toggle';
 
 export interface KebabToggleProps extends DropdownToggleProps {
@@ -34,6 +34,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
 
 export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   id = '',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   children = null,
   className = '',
   isOpen = false,
@@ -45,6 +46,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   isPlain = false,
   isDisabled = false,
   onToggle = () => undefined as void,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: KebabToggleProps) => (

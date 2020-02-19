@@ -9,9 +9,9 @@ This project will provide a set of React UI components for the [PatternFly proje
 
 ## Getting Started
 
-[Getting Started with PatternFly 3](./packages/patternfly-3/patternfly-react/README.md)
+[Getting Started with PatternFly 3](./packages/patternfly-3/patternfly-react/README.md) ([Docs](https://patternfly-react-pf3.surge.sh))
 
-[Getting Started with PatternFly 4](./packages/patternfly-4/react-core/README.md)
+[Getting Started with PatternFly 4](./packages/patternfly-4/react-core/README.md) ([Docs](https://patternfly-react.surge.sh))
 
 ## Contributing to PatternFly React
 
@@ -22,7 +22,3 @@ This project is governed by the Contributor Covenant version 1.4. All contributo
 ### Contributing Guide
 
 If you are interested in contributing to PatternFly React, please see the [Contributing Guide](./CONTRIBUTING.md).
-
-## Meeting Notes
-
-You can find all PatternFly React Community Meeting notes [here](http://www.patternfly.org/community/monthly-community-meeting/).

@@ -23,6 +23,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
+   *
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -63,6 +64,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartAxis will use the default ChartContainer component.
+   *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -80,6 +82,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The domain prop describes the range of values your axis will include. This prop should be
    * given as a array of the minimum and maximum expected values for your axis.
    * If this value is not given it will be calculated based on the scale or tickValues.
+   *
    * @example [-1, 1]
    */
   domain?: DomainPropType;
@@ -105,6 +108,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * function will be called with the calculated props for the individual selected
    * element (i.e. a single tick), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
+   *
    * @example
    * events={[
    *   {
@@ -254,6 +258,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
+   *
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
   scale?:
@@ -367,6 +372,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The tickFormat prop specifies how tick values should be expressed visually.
    * tickFormat can be given as a function to be applied to every tickValue, or as
    * an array of display values for each tickValue.
+   *
    * @example d3.time.format("%Y"), (x) => x.toPrecision(2), ["first", "second", "third"]
    */
   tickFormat?: any[] | ((tick: any, index: number, ticks: any[]) => string | number);
@@ -382,6 +388,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
   tickLabelComponent?: React.ReactElement<any>;
   /**
    * The tickValues prop explicitly specifies which tick values to draw on the axis.
+   *
    * @example ["apples", "bananas", "oranges"], [2, 4, 6, 8]
    */
   tickValues?: any[];

@@ -58,7 +58,8 @@ module.exports = {
     'airbnb',
     'plugin:jest/recommended',
     'prettier',
-    'prettier/react'
+    'prettier/react',
+    'react-hooks'
   ],
   env: {
     es6: true,

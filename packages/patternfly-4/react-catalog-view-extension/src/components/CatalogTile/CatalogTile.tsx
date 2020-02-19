@@ -8,7 +8,6 @@ import { CardFooter } from '@patternfly/react-core/dist/js/components/Card/CardF
 import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';
-import { CatalogTileBadge } from './CatalogTileBadge';
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
   id?: any;
@@ -63,7 +62,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     footer: null as string | React.ReactNode
   };
 
-  private defaultTruncateDescription = (text: (string | React.ReactNode), max: number, id?: any) => {
+  private defaultTruncateDescription = (text: string | React.ReactNode, max: number) => {
     if (max === -1 || typeof text !== 'string' || text.length <= max) {
       return text;
     }
@@ -118,31 +117,42 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       truncateDescriptionFn,
       maxDescriptionLength,
       footer,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       ref,
       ...props
     } = this.props;
     const truncateDescription = truncateDescriptionFn || this.defaultTruncateDescription;
 
     return (
-      <Card component={href || onClick ? 'a' : 'div'} id={id} href={href || '#'} className={classNames('catalog-tile-pf', { featured }, className)} onClick={e => this.handleClick(e)} isHoverable {...props}>
-        {(badges.length > 0 || iconImg || iconClass || icon) && <CardHead>
-          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
-          {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
-          {badges.length > 0 && <CardActions>
-            {this.renderBadges(badges)}
-          </CardActions>}
-        </CardHead>}
+      <Card
+        component={href || onClick ? 'a' : 'div'}
+        id={id}
+        href={href || '#'}
+        className={classNames('catalog-tile-pf', { featured }, className)}
+        onClick={e => this.handleClick(e)}
+        isHoverable
+        {...props}
+      >
+        {(badges.length > 0 || iconImg || iconClass || icon) && (
+          <CardHead>
+            {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
+            {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
+            {badges.length > 0 && <CardActions>{this.renderBadges(badges)}</CardActions>}
+          </CardHead>
+        )}
         <CardHeader className="catalog-tile-pf-header">
           <div className="catalog-tile-pf-title">{title}</div>
           {vendor && <div className="catalog-tile-pf-subtitle">{vendor}</div>}
         </CardHeader>
-        {description && <CardBody className="catalog-tile-pf-body">
-          <div className="catalog-tile-pf-description">
-            <span className={classNames({'has-footer': footer})}>
-              {truncateDescription(description, maxDescriptionLength, id)}
-            </span>
-          </div>
-        </CardBody>}
+        {description && (
+          <CardBody className="catalog-tile-pf-body">
+            <div className="catalog-tile-pf-description">
+              <span className={classNames({ 'has-footer': footer })}>
+                {truncateDescription(description, maxDescriptionLength)}
+              </span>
+            </div>
+          </CardBody>
+        )}
         {footer && <CardFooter className="catalog-tile-pf-footer">{footer}</CardFooter>}
       </Card>
     );

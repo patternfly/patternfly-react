@@ -76,6 +76,7 @@ class TooltipPositions extends React.Component {
         <div>
           <span style={{ paddingRight: '10px' }}>Tooltip Position</span>
           <select
+            aria-label="Tooltip position"
             onChange={event => {
               this.setState({ position: event.target.value });
             }}

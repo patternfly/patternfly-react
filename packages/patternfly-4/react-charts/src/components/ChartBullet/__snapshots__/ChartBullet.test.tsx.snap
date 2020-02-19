@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletQualitativeRange 1`] = `
-<Component
+<ChartContainer
   height={140}
   theme={
     Object {
@@ -448,7 +448,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
   }
   width={450}
 >
-  <Component
+  <ChartAxis
     dependentAxis={false}
     domain={
       Object {
@@ -475,12 +475,12 @@ exports[`ChartBulletQualitativeRange 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBulletGroupTitle
     height={140}
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletTitle
     height={140}
     horizontal={true}
     legendPosition="bottom"
@@ -930,7 +930,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBulletQualitativeRange
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -950,7 +950,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -1401,7 +1401,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletPrimarySegmentedMeasure
     allowTooltip={true}
     barWidth={9}
     constrainToVisibleArea={false}
@@ -1421,7 +1421,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -1872,7 +1872,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletPrimaryDotMeasure
     allowTooltip={true}
     constrainToVisibleArea={false}
     domain={
@@ -1891,7 +1891,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -2343,7 +2343,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletComparativeErrorMeasure
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -2362,7 +2362,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     height={140}
     horizontal={true}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -2813,7 +2813,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletComparativeWarningMeasure
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -2832,7 +2832,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     height={140}
     horizontal={true}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -3283,7 +3283,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartLegend
     data={Array []}
     orientation="horizontal"
     position="bottom"
@@ -3734,11 +3734,11 @@ exports[`ChartBulletQualitativeRange 1`] = `
     x={225}
     y={131}
   />
-</Component>
+</ChartContainer>
 `;
 
 exports[`ChartBulletQualitativeRange 2`] = `
-<Component
+<ChartContainer
   height={140}
   theme={
     Object {
@@ -4185,7 +4185,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
   }
   width={450}
 >
-  <Component
+  <ChartAxis
     dependentAxis={false}
     domain={
       Object {
@@ -4212,12 +4212,12 @@ exports[`ChartBulletQualitativeRange 2`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBulletGroupTitle
     height={140}
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletTitle
     height={140}
     horizontal={true}
     legendPosition="bottom"
@@ -4667,7 +4667,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBulletQualitativeRange
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -4687,7 +4687,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -5138,7 +5138,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletPrimarySegmentedMeasure
     allowTooltip={true}
     barWidth={9}
     constrainToVisibleArea={false}
@@ -5158,7 +5158,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -5609,7 +5609,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletPrimaryDotMeasure
     allowTooltip={true}
     constrainToVisibleArea={false}
     domain={
@@ -5628,7 +5628,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -6080,7 +6080,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletComparativeErrorMeasure
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -6099,7 +6099,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     height={140}
     horizontal={true}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -6550,7 +6550,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletComparativeWarningMeasure
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -6569,7 +6569,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     height={140}
     horizontal={true}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -7020,7 +7020,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartLegend
     data={Array []}
     orientation="horizontal"
     position="bottom"
@@ -7471,11 +7471,11 @@ exports[`ChartBulletQualitativeRange 2`] = `
     x={225}
     y={131}
   />
-</Component>
+</ChartContainer>
 `;
 
 exports[`renders component data 1`] = `
-<Component
+<ChartContainer
   desc="Storage capacity"
   height={140}
   theme={
@@ -7924,7 +7924,7 @@ exports[`renders component data 1`] = `
   title="Bullet chart example"
   width={450}
 >
-  <Component
+  <ChartAxis
     dependentAxis={false}
     domain={
       Object {
@@ -7955,12 +7955,12 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBulletGroupTitle
     height={140}
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletTitle
     height={140}
     horizontal={true}
     legendPosition="bottom"
@@ -8410,7 +8410,7 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBulletQualitativeRange
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -8442,7 +8442,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -8894,7 +8894,7 @@ exports[`renders component data 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletPrimarySegmentedMeasure
     allowTooltip={true}
     barWidth={9}
     constrainToVisibleArea={false}
@@ -8922,7 +8922,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -9374,7 +9374,7 @@ exports[`renders component data 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletPrimaryDotMeasure
     allowTooltip={true}
     constrainToVisibleArea={false}
     domain={
@@ -9393,7 +9393,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     invert={false}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -9846,7 +9846,7 @@ exports[`renders component data 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletComparativeErrorMeasure
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -9865,7 +9865,7 @@ exports[`renders component data 1`] = `
     height={140}
     horizontal={true}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -10317,7 +10317,7 @@ exports[`renders component data 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartBulletComparativeWarningMeasure
     allowTooltip={true}
     barWidth={30}
     constrainToVisibleArea={false}
@@ -10344,7 +10344,7 @@ exports[`renders component data 1`] = `
     height={140}
     horizontal={true}
     labelComponent={
-      <Unknown
+      <ChartTooltip
         height={140}
         theme={
           Object {
@@ -10796,7 +10796,7 @@ exports[`renders component data 1`] = `
     standalone={false}
     width={450}
   />
-  <Component
+  <ChartLegend
     data={Array []}
     orientation="horizontal"
     position="bottom"
@@ -11247,5 +11247,5 @@ exports[`renders component data 1`] = `
     x={225}
     y={131}
   />
-</Component>
+</ChartContainer>
 `;

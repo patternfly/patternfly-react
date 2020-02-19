@@ -55,6 +55,7 @@ export class Progress extends React.Component<ProgressProps> {
 
   render() {
     const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       id,
       className,
       size,

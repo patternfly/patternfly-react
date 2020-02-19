@@ -27,9 +27,9 @@ interface ChartBulletThemeInterface {
 const getLegendColorScale = (computedData: any, legendData: any) => {
   const colorScale: string[] = [];
   legendData.forEach((data: any, index: number) => {
-    for (let i = 0; i < computedData.length; i++) {
-      if (index === computedData[i]._index) {
-        colorScale.push(computedData[i]._color);
+    for (const i of computedData) {
+      if (index === i._index) {
+        colorScale.push(i._color);
       }
     }
   });

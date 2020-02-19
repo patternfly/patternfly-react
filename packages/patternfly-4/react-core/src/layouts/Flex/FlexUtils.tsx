@@ -1,7 +1,3 @@
-import * as React from 'react';
-import { getModifier } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
-
 export enum FlexModifiers {
   flex = 'flex',
   'inline-flex' = 'inline-flex',

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopologyView should display an empty topology correctly 1`] = `
-<Component
+<TopologyView
   className="my-test-class"
   id="simple-test-id"
 >
@@ -27,11 +27,11 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
       </StackItem>
     </div>
   </Stack>
-</Component>
+</TopologyView>
 `;
 
 exports[`TopologyView should display topology correctly 1`] = `
-<Component
+<TopologyView
   className="my-test-class"
   contextToolbar={
     <div
@@ -105,11 +105,11 @@ exports[`TopologyView should display topology correctly 1`] = `
       </StackItem>
     </div>
   </Stack>
-</Component>
+</TopologyView>
 `;
 
 exports[`TopologyView should display topology sidebar correctly 1`] = `
-<Component
+<TopologyView
   className="my-test-class"
   contextToolbar={
     <div
@@ -192,11 +192,11 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
       </StackItem>
     </div>
   </Stack>
-</Component>
+</TopologyView>
 `;
 
 exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
-<Component
+<TopologyView
   className="my-test-class"
   contextToolbar={
     <div
@@ -279,5 +279,5 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
       </StackItem>
     </div>
   </Stack>
-</Component>
+</TopologyView>
 `;

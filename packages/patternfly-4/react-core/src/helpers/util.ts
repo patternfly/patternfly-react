@@ -1,13 +1,19 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import { getModifier } from '@patternfly/react-styles';
-import { DataToolbarBreakpointMod } from '../experimental/components/DataToolbar/DataToolbarUtils';
+import { DataToolbarBreakpointMod } from '../components/DataToolbar/DataToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
 
+/**
+ * @param {string} input - String to capitalize
+ */
 export function capitalize(input: string) {
   return input[0].toUpperCase() + input.substring(1);
 }
 
+/**
+ * @param {string} prefix - String to prefix ID with
+ */
 export function getUniqueId(prefix = 'pf') {
   const uid =
     new Date().getTime() +
@@ -17,6 +23,11 @@ export function getUniqueId(prefix = 'pf') {
   return `${prefix}-${uid}`;
 }
 
+/**
+ * @param { any } this - "This" reference
+ * @param { Function } func - Function to debounce
+ * @param { number } wait - Debounce amount
+ */
 export function debounce(this: any, func: (...args: any[]) => any, wait: number) {
   let timeout: number;
   return (...args: any[]) => {
@@ -27,11 +38,12 @@ export function debounce(this: any, func: (...args: any[]) => any, wait: number)
 
 /** This function returns whether or not an element is within the viewable area of a container. If partial is true,
  * then this function will return true even if only part of the element is in view.
+ *
  * @param {HTMLElement} container  The container to check if the element is in view of.
  * @param {HTMLElement} element    The element to check if it is view
  * @param {boolean} partial   true if partial view is allowed
  *
- * @return {type} True if the component is in View.
+ * @returns { boolean } True if the component is in View.
  */
 export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean) {
   const containerBounds = container.getBoundingClientRect();
@@ -53,10 +65,11 @@ export function isElementInView(container: HTMLElement, element: HTMLElement, pa
 }
 
 /** This function returns the side the element is out of view on (right, left or both)
+ *
  * @param {HTMLElement} container    The container to check if the element is in view of.
  * @param {HTMLElement} element      The element to check if it is view
  *
- * @return {type} right if the element is of the right, left if element is off the left or both if it is off on both sides.
+ * @returns {string} right if the element is of the right, left if element is off the left or both if it is off on both sides.
  */
 export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElement): string {
   const containerBounds = container.getBoundingClientRect();
@@ -93,21 +106,25 @@ export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElem
  *    };
  *    const result = fillTemplate(templateString, templateVars);
  *    // "My name is Jon Dough"
- * @param {Object} templateString  The string passed by the consumer
- * @param {Object} templateVars The variables passed to the string
  *
- * @return {type} The template string literal result
+ * @param {object} templateString  The string passed by the consumer
+ * @param {object} templateVars The variables passed to the string
+ *
+ * @returns {string} The template string literal result
  */
 export function fillTemplate(templateString: string, templateVars: any) {
   const func = new Function(...Object.keys(templateVars), `return \`${templateString}\`;`);
   return func(...Object.values(templateVars));
 }
 
-/** This function allows for keyboard navigation through dropdowns. The custom argument is optional.
+/**
+ * This function allows for keyboard navigation through dropdowns. The custom argument is optional.
+ *
  * @param {number} index The index of the element you're on
+ * @param {number} innerIndex Inner index number
  * @param {string} position The orientation of the dropdown
  * @param {string[]} refsCollection Array of refs to the items in the dropdown
- * @param {Object[]} kids Array of items in the dropdown
+ * @param {object[]} kids Array of items in the dropdown
  * @param {boolean} [custom] Allows for handling of flexible content
  */
 export function keyHandler(
@@ -162,15 +179,20 @@ export function keyHandler(
     if (refsCollection[nextIndex].focus) {
       refsCollection[nextIndex].focus();
     }
+    // eslint-disable-next-line react/no-find-dom-node
     const element = ReactDOM.findDOMNode(refsCollection[nextIndex]) as HTMLElement;
     element.focus();
   } else {
-    if (isMultiDimensional) refsCollection[nextIndex][nextInnerIndex].focus();
-    else refsCollection[nextIndex].focus();
+    if (isMultiDimensional) {
+      refsCollection[nextIndex][nextInnerIndex].focus();
+    } else {
+      refsCollection[nextIndex].focus();
+    }
   }
 }
 
 /** This function is a helper for keyboard navigation through dropdowns.
+ *
  * @param {number} index The index of the element you're on
  * @param {string} position The orientation of the dropdown
  * @param {string[]} collection Array of refs to the items in the dropdown
@@ -198,6 +220,7 @@ export function getNextIndex(index: number, position: string, collection: any[])
 }
 
 /** This function is a helper for pluralizing strings.
+ *
  * @param {number} i The quantity of the string you want to pluralize
  * @param {string} singular The singular version of the string
  * @param {string} plural The change to the string that should occur if the quantity is not equal to 1.
@@ -211,16 +234,16 @@ export function pluralize(i: number, singular: string, plural?: string) {
 }
 
 /** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
+ *
  * @param {(DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[]} breakpointMods The modifiers object
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
   breakpointMods: (DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[],
   styles: any
-) => {
-  return breakpointMods.reduce(
+) =>
+  breakpointMods.reduce(
     (acc: string, curr: DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod) =>
       `${acc}${acc && ' '}${getModifier(styles, `${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`)}`,
     ''
   );
-};

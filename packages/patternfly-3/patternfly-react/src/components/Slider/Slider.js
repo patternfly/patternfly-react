@@ -24,7 +24,8 @@ class Slider extends React.Component {
   }
 
   onSlide = value => {
-    this.setState({ value }, () => this.props.onSlide(value));
+    const newValue = value < this.props.min ? this.props.min : value;
+    this.setState({ value: newValue }, () => this.props.onSlide(newValue));
   };
 
   onInputChange = event => {

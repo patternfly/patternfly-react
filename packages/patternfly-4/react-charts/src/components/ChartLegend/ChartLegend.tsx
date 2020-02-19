@@ -86,6 +86,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartLegend will use the default ChartContainer component.
+   *
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -212,6 +213,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The style prop specifies styles for your pie. ChartLegend relies on Radium,
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
+   *
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
   style?: VictoryStyleInterface;
@@ -307,18 +309,22 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
-ChartLegend.getBaseProps = (props) => {
+ChartLegend.getBaseProps = props => {
   const theme = getTheme(null, null);
-  return (VictoryLegend as any).getBaseProps({
-    titleComponent: <ChartLabel />, // Workaround for getBaseProps error
-    ...props
-  }, {
-    height: theme.chart.height,
-    orientation: theme.legend.orientation,
-    titleOrientation: theme.legend.titleOrientation,
-    x: 0,
-    y: 0,
-    width: theme.chart.width
-  });
-}
+  return (VictoryLegend as any).getBaseProps(
+    {
+      titleComponent: <ChartLabel />, // Workaround for getBaseProps error
+      ...props
+    },
+    {
+      height: theme.chart.height,
+      orientation: theme.legend.orientation,
+      titleOrientation: theme.legend.titleOrientation,
+      x: 0,
+      y: 0,
+      width: theme.chart.width
+    }
+  );
+};

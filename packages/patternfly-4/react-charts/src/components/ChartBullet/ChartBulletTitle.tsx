@@ -127,7 +127,6 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   legendPosition = 'bottom' as ChartLegendPosition,
   padding,
   standalone = true,
-  subTitleComponent = <ChartLabel />,
   subTitle,
   themeColor,
   themeVariant,
@@ -138,8 +137,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   // destructure last
   theme = getBulletTheme(themeColor, themeVariant),
   height = horizontal ? theme.chart.height : theme.chart.width,
-  width = horizontal ? theme.chart.width : theme.chart.height,
-  ...rest
+  width = horizontal ? theme.chart.width : theme.chart.height
 }: ChartBulletTitleProps) => {
   const chartSize = {
     height: horizontal ? theme.chart.height : height,

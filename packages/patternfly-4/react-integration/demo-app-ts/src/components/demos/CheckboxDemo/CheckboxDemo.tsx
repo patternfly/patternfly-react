@@ -40,6 +40,7 @@ export class CheckboxDemo extends React.Component<{}, CheckboxState> {
           aria-label="controlled checkbox example"
           id="check-1"
           name="check1"
+          description="This is the description of checkbox #1"
         />
         <Checkbox
           label="Controlled CheckBox"

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
-import { ExpandIcon, ExpandArrowsAltIcon, SearchPlusIcon, SearchMinusIcon } from '@patternfly/react-icons';
+import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
+import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/js/icons/expand-arrows-alt-icon';
+import SearchPlusIcon from '@patternfly/react-icons/dist/js/icons/search-plus-icon';
+import SearchMinusIcon from '@patternfly/react-icons/dist/js/icons/search-minus-icon';
 import '@patternfly/react-styles/css/components/Topology/topology-controlbar.css';
 
 /* ID's for common control buttons */
@@ -252,6 +255,8 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
 
   const renderButton = (button: TopologyControlButton): React.ReactNode => {
     const renderedButton = (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore: 'css' property type error
       <Button
         id={button.id}
         className={`pf-topology-control-bar__button${button.disabled ? ' pf-m-disabled' : ''}`}
@@ -279,9 +284,9 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   return (
     <Toolbar className={className} {...props}>
       <ToolbarGroup>
-        {controlButtons.map((button: TopologyControlButton) => {
-          return button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>;
-        })}
+        {controlButtons.map((button: TopologyControlButton) =>
+          button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>
+        )}
         {children}
       </ToolbarGroup>
     </Toolbar>

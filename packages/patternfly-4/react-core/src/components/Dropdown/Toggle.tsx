@@ -126,7 +126,9 @@ export class Toggle extends React.Component<ToggleProps> {
       isSplitButton,
       ariaHasPopup,
       onToggle,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onEnter,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       parentRef,
       id,
       type,

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 interface AlertActionCloseButtonProps extends ButtonProps {
   /** Additional classes added to the AlertActionCloseButton */
@@ -14,6 +14,7 @@ interface AlertActionCloseButtonProps extends ButtonProps {
 }
 
 export const AlertActionCloseButton = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = '',

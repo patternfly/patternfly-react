@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
-import { CheckIcon } from '@patternfly/react-icons';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
@@ -43,7 +43,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   constructor(props: SwitchProps & InjectedOuiaProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
-      // tslint:disable-next-line:no-console
+      // eslint-disable-next-line no-console
       console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
     this.id = props.id || getUniqueId();

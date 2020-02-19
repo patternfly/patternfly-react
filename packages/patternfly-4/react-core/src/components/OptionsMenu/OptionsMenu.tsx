@@ -45,6 +45,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   isText = false,
   isGrouped = false,
   id,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref,
   ...props
 }: OptionsMenuProps) => (

@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { IExtra, IFormatterValueType, ITransform } from '../../Table';
 
-export const headerCol = (id: string = 'simple-node') => {
-  // tslint:disable-next-line:no-shadowed-variable
-  const headerCol: ITransform = (value: IFormatterValueType, { rowIndex }: IExtra = {}) => {
+export const headerCol = (id = 'simple-node') => {
+  const headerColObj: ITransform = (value: IFormatterValueType, { rowIndex }: IExtra = {}) => {
     const result = typeof value === 'object' ? value.title : value;
     return {
       component: 'th',
@@ -11,5 +10,5 @@ export const headerCol = (id: string = 'simple-node') => {
     };
   };
 
-  return headerCol;
+  return headerColObj;
 };

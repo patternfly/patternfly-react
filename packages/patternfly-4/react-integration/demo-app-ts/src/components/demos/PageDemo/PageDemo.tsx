@@ -17,14 +17,18 @@ export class PageDemo extends React.Component {
 
   render() {
     const { isNavOpen } = this.state;
-
+    const headerRole = undefined;
+    const pageRole = undefined;
     const logoProps = {
       href: 'https://patternfly.org',
+      // eslint-disable-next-line no-console
       onClick: () => console.log('clicked logo'),
       target: '_blank'
     };
     const Header = (
       <PageHeader
+        role={headerRole}
+        id="page-demo-header"
         logo="Logo that's a <div>"
         logoProps={logoProps}
         toolbar="Toolbar"
@@ -40,7 +44,15 @@ export class PageDemo extends React.Component {
     const Sidebar = <PageSidebar id="page-demo-sidebar" nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
-      <Page id="page-demo" header={Header} sidebar={Sidebar} mainContainerId={pageId} skipToContent={PageSkipToContent} mainAriaLabel="page demo">
+      <Page
+        role={pageRole}
+        id="page-demo"
+        header={Header}
+        sidebar={Sidebar}
+        mainContainerId={pageId}
+        skipToContent={PageSkipToContent}
+        mainAriaLabel="page demo"
+      >
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>

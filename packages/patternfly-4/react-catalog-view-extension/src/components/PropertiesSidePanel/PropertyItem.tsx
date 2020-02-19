@@ -17,7 +17,6 @@ export const PropertyItem: React.FunctionComponent<PropertyItemProps> = ({
   className = '',
   label,
   value = null,
-  children,
   ...props
 }: PropertyItemProps) => {
   const classes = classNames('properties-side-panel-pf-property', className);

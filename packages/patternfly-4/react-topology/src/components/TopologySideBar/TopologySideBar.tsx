@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { TimesIcon } from '@patternfly/react-icons';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import { Button } from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 
@@ -67,6 +67,8 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
         {show && (
           <React.Fragment>
             {onClose && (
+              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+              // @ts-ignore: 'css' property type error
               <Button
                 className="pf-topology-side-bar__dismiss"
                 variant="plain"

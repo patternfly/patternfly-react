@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.3...@patternfly/react-styles@3.7.4) (2020-02-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.2...@patternfly/react-styles@3.7.3) (2020-02-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.1...@patternfly/react-styles@3.7.2) (2020-02-17)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.0...@patternfly/react-styles@3.7.1) (2020-02-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# [3.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.31...@patternfly/react-styles@3.7.0) (2020-02-14)
+
+
+### Features
+
+* **inline-edit:** add row level inline editing feature to Table ([#3581](https://github.com/patternfly/patternfly-react/issues/3581)) ([498d49f](https://github.com/patternfly/patternfly-react/commit/498d49fcc5cc9188197ddc7cd6468907fdd8224d))
+
+
+
+
+
+## [3.6.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.30...@patternfly/react-styles@3.6.31) (2020-02-12)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.29...@patternfly/react-styles@3.6.30) (2020-02-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.28...@patternfly/react-styles@3.6.29) (2020-02-06)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.27...@patternfly/react-styles@3.6.28) (2020-02-06)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.26...@patternfly/react-styles@3.6.27) (2020-01-30)
+
+
+### Bug Fixes
+
+* **react-styles:** move deps to dev deps ([#3630](https://github.com/patternfly/patternfly-react/issues/3630)) ([39fbc47](https://github.com/patternfly/patternfly-react/commit/39fbc4715d68e0a544de43ad0e8c0ed56ff8ea00))
+
+
+
+
+
 ## [3.6.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.25...@patternfly/react-styles@3.6.26) (2020-01-27)
 
 **Note:** Version bump only for package @patternfly/react-styles

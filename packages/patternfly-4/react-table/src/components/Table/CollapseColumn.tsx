@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AngleDownIcon } from '@patternfly/react-icons';
+import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -18,22 +18,20 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   isOpen,
   onToggle,
   ...props
-}: CollapseColumnProps) => {
-  return (
-    <React.Fragment>
-      {isOpen !== undefined && (
-        <Button
-          className={css(className, isOpen && styles.modifiers.expanded)}
-          {...props}
-          variant="plain"
-          aria-label="Details"
-          onClick={onToggle}
-          aria-expanded={isOpen}
-        >
-          <AngleDownIcon />
-        </Button>
-      )}
-      {children}
-    </React.Fragment>
-  );
-};
+}: CollapseColumnProps) => (
+  <React.Fragment>
+    {isOpen !== undefined && (
+      <Button
+        className={css(className, isOpen && styles.modifiers.expanded)}
+        {...props}
+        variant="plain"
+        aria-label="Details"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+      >
+        <AngleDownIcon />
+      </Button>
+    )}
+    {children}
+  </React.Fragment>
+);

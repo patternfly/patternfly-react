@@ -1,11 +1,9 @@
 /* eslint-disable camelcase */
-import {
-  chart_color_green_100,
-  chart_color_green_200,
-  chart_color_green_300,
-  chart_color_green_400,
-  chart_color_green_500
-} from '@patternfly/react-tokens';
+import chart_color_green_100 from '@patternfly/react-tokens/dist/js/chart_color_green_100';
+import chart_color_green_200 from '@patternfly/react-tokens/dist/js/chart_color_green_200';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
+import chart_color_green_400 from '@patternfly/react-tokens/dist/js/chart_color_green_400';
+import chart_color_green_500 from '@patternfly/react-tokens/dist/js/chart_color_green_500';
 import { ColorTheme } from '../color-theme';
 
 // Color scale

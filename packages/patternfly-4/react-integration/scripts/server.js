@@ -7,4 +7,5 @@ const server = localWebServer.listen({
   port: 3000,
   spa: 'index.html'
 });
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 cypress.run().then(results => server.close());

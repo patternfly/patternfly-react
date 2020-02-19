@@ -22,6 +22,9 @@ export const compoundExpand: ITransform = (
     property
   };
 
+  /**
+   * @param {React.MouseEvent} event - Mouse event
+   */
   function onToggle(event: React.MouseEvent) {
     // tslint:disable-next-line:no-unused-expression
     onExpand && onExpand(event, rowIndex, columnIndex, props.isOpen, rowData, extraData);

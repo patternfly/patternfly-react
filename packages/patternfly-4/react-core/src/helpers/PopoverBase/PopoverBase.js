@@ -7,6 +7,9 @@ import tippy from 'tippy.js';
 const REACT_ONLY_PROPS = ['children', 'onCreate', 'isVisible', 'isEnabled'];
 
 // Avoid Babel's large '_objectWithoutProperties' helper function.
+/**
+ * @param {object} props - Props object
+ */
 function getNativeTippyProps(props) {
   return Object.keys(props).reduce((acc, key) => {
     if (REACT_ONLY_PROPS.indexOf(key) === -1) {
@@ -29,7 +32,7 @@ class PopoverBase extends React.Component {
     isVisible: PropTypes.bool,
     onCreate: PropTypes.func,
     trigger: PropTypes.string,
-    hideOnClick: PropTypes.bool,
+    hideOnClick: PropTypes.bool
   };
 
   static defaultProps = {

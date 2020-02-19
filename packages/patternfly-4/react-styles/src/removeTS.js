@@ -1,4 +1,3 @@
-/* eslint-disable global-require,import/no-dynamic-require */
 const glob = require('glob');
 const fs = require('fs');
 

@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
-  textCenter,
-  IRow,
-  ICell,
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, IRow, ICell } from '@patternfly/react-table';
 import {
   EmptyState,
   EmptyStateBody,
@@ -17,8 +9,9 @@ import {
   Title,
   Button
 } from '@patternfly/react-core';
-import { CubesIcon } from '@patternfly/react-icons';
-class EmptyStateTable extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+
+export class EmptyStateTable extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

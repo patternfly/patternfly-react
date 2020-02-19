@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletPrimarySegmentedMeasure 1`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 />
 `;
 
 exports[`ChartBulletPrimarySegmentedMeasure 2`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 />
 `;
 
 exports[`renders component data 1`] = `
-<Component
+<ChartContainer
   height={140}
   width={450}
 >
-  <Component
+  <ChartBar
     barWidth={9}
     data={
       Array [
@@ -45,7 +45,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     key="pf-chart-bullet-primary-segmented-measure-0"
     labelComponent={
-      <Unknown
+      <ChartTooltip
         constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
@@ -511,7 +511,7 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBar
     barWidth={9}
     data={
       Array [
@@ -537,7 +537,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     key="pf-chart-bullet-primary-segmented-measure-1"
     labelComponent={
-      <Unknown
+      <ChartTooltip
         constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
@@ -1003,7 +1003,7 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-  <Component
+  <ChartBar
     barWidth={9}
     data={
       Array [
@@ -1029,7 +1029,7 @@ exports[`renders component data 1`] = `
     horizontal={true}
     key="pf-chart-bullet-primary-segmented-measure-2"
     labelComponent={
-      <Unknown
+      <ChartTooltip
         constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
@@ -1495,5 +1495,5 @@ exports[`renders component data 1`] = `
     }
     width={450}
   />
-</Component>
+</ChartContainer>
 `;

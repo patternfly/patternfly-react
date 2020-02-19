@@ -20,11 +20,12 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
 }
 
 export const Spinner: React.FunctionComponent<SpinnerProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   size = 'xl',
   'aria-valuetext': ariaValueText = 'Loading...',
   ...props
-}) => (
+}: SpinnerProps) => (
   <span
     className={css(styles.spinner, getModifier(styles, size))}
     role="progressbar"

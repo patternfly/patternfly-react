@@ -16,13 +16,11 @@ export const ToggleTemplate = ({
   lastIndex = 0,
   itemCount = 0,
   itemsTitle = 'items'
-}: ToggleTemplateProps) => {
-  return (
-    <React.Fragment>
-      <b>
-        {firstIndex} - {lastIndex}
-      </b>{' '}
-      of <b>{itemCount}</b> {itemsTitle}
-    </React.Fragment>
-  );
-};
+}: ToggleTemplateProps) => (
+  <React.Fragment>
+    <b>
+      {firstIndex} - {lastIndex}
+    </b>{' '}
+    of <b>{itemCount}</b> {itemsTitle}
+  </React.Fragment>
+);

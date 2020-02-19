@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
-import { SearchIcon } from '@patternfly/react-icons';
+import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 import { ContextSelectorToggle } from './ContextSelectorToggle';
 import { ContextSelectorMenuList } from './ContextSelectorMenuList';
 import { ContextSelectorContext } from './contextSelectorConstants';
@@ -12,7 +12,7 @@ import { KEY_CODES } from '../../helpers/constants';
 
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
-// tslint:disable-next-line
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const FocusTrap: any = require('focus-trap-react');
 
 // seed for the aria-labelledby ID
@@ -27,7 +27,7 @@ export interface ContextSelectorProps {
   /** Flag to indicate if Context Selector is opened */
   isOpen?: boolean;
   /** Function callback called when user clicks toggle button */
-  onToggle?: (value: boolean) => void;
+  onToggle?: (event: any, value: boolean) => void;
   /** Function callback called when user selects item */
   onSelect?: (event: any, value: React.ReactNode) => void;
   /** Labels the Context Selector for Screen Readers */

@@ -5,10 +5,8 @@ import {
   ChartGroup,
   ChartLine,
   ChartThemeColor,
-  ChartLegend,
   ChartVoronoiContainer
 } from '@patternfly/react-charts';
-import { width } from 'styled-system';
 
 export class LineChartGreenDemo extends React.Component {
   componentDidMount() {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CaretDownIcon } from '@patternfly/react-icons';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
@@ -38,6 +38,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     isFocused: false,
     isHovered: false,
     isActive: false,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onToggle: (event: any, value: boolean) => undefined as any
   };
 
@@ -98,9 +99,11 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       isActive,
       isHovered,
       onToggle,
+      id,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       onEnter,
       parentRef,
-      id,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
     return (

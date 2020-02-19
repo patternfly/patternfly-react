@@ -1,18 +1,5 @@
 import * as React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableProps,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
-  ICell,
-  IRow
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableProps, headerCol, ICell, IRow } from '@patternfly/react-table';
 
 interface TableState {
   columns: (ICell | string)[];

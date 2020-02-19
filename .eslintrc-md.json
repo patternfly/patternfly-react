@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "markdown",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "16.4.0"
+    }
+  },
+  "rules": {
+    "eol-last": 2,
+    "spaced-comment": 2,
+    "no-unused-vars": 0,
+    "no-this-before-super": 2,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-unknown-property": 2,
+    "react/jsx-no-undef": 2
+  }
+}

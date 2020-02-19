@@ -11,8 +11,8 @@ This project currently supports Node [Active LTS](https://github.com/nodejs/Rele
 For example, to develop with Node 8, use the following:
 
 ```
-nvm install 8
-nvm use 8
+nvm install 10
+nvm use 10
 ```
 
 This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).
@@ -49,7 +49,7 @@ export default <Button variant="primary">Button</Button>;
 
 All css related to each component is provided within it. There is no component level CSS to import.
 
-# Applying Red Hat Fonts (Optional) 
+# Applying Red Hat Fonts (Optional)
 If you would like to use Red Hat fonts instead of Overpass, simply add the class `.pf-m-redhat-font` to an element that wraps your application (ideally `<html>` or `<body>`) to adopt the CSS changes that introduce the Red Hat fonts into PatternFly.
 
 
@@ -130,7 +130,7 @@ To enable tree shaking with named imports for CJS modules, utilize [babel-plugin
 ```JS
 require.extensions['.css'] = () => undefined;
 const components = require('@patternfly/react-core/dist/js/components');
-const experimental = require('@patternfly/react-core/dist/js/experimental');
+const beta = require('@patternfly/react-core/dist/js/beta');
 const layouts = require('@patternfly/react-core/dist/js/layouts');
 
 module.exports = {
@@ -144,14 +144,14 @@ module.exports = {
             let res = '@patternfly/react-core/dist/js/';
             if (components[importName]) {
               res += 'components';
-            } else if (experimental[importName]) {
-              res += 'experimental';
+            } else if (beta[importName]) {
+              res += 'beta';
             } else if (layouts[importName]) {
               res += 'layouts';
             }
 
             res += `/${importName}/${importName}.js`;
-            return res; 
+            return res;
           },
           preventFullImport: true,
           skipDefaultConversion: true

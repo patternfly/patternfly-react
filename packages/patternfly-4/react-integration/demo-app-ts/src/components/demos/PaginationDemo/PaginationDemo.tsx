@@ -31,8 +31,8 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   onSetDefaultPage = (_event, pageNumber) => {
     this.setState({
       defaultFullPage: pageNumber
-    })
-  }
+    });
+  };
 
   onPerPageSelect = (_event, perPage) => {
     this.setState({
@@ -44,8 +44,8 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     this.setState({
       perPage,
       defaultFullPage: pageNumber
-    })
-  }
+    });
+  };
 
   renderPagination() {
     return (
@@ -58,30 +58,23 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             page={this.state.topPage}
             onSetPage={this.onSetTopPage}
             widgetId="pagination-options-menu-top"
+            className="pagination-options-menu-top"
             onPerPageSelect={this.onPerPageSelect}
           />
           <Pagination
             itemCount={523}
             widgetId="pagination-options-menu-bottom"
+            className="pagination-options-menu-bottom"
             perPage={this.state.perPage}
             page={this.state.bottomPage}
             variant={PaginationVariant.bottom}
             onSetPage={this.onSetBottomPage}
             onPerPageSelect={this.onPerPageSelect}
-          />
-          <Pagination
-            itemCount={523}
-            widgetId="pagination-options-menu-bottom"
-            perPage={this.state.perPage}
-            page={this.state.bottomPage}
-            variant={PaginationVariant.bottom}
-            onSetPage={this.onSetBottomPage}
-            onPerPageSelect={this.onPerPageSelect}
-            isCompact
           />
           <Pagination
             itemCount={523}
             widgetId="pagination-options-menu-default-fullpage"
+            className="pagination-options-menu-default-fullpage"
             perPage={this.state.perPage}
             page={this.state.defaultFullPage}
             variant={PaginationVariant.bottom}
@@ -105,6 +98,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             page={this.state.topPage}
             onSetPage={this.onSetTopPage}
             widgetId="pagination-options-menu-disabled"
+            className="pagination-options-menu-disabled"
             onPerPageSelect={this.onPerPageSelect}
             isDisabled
           />

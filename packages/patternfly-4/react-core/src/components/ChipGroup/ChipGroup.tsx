@@ -96,9 +96,9 @@ const InnerChipGroup = (props: InnerChipGroupProps) => {
     const child = c as React.ReactElement<any>;
     if (withToolbar) {
       return React.cloneElement(child, {
-        children: React.Children.toArray(child.props.children).map((chip: any) => {
-          return React.cloneElement(chip, { component: 'li' });
-        })
+        children: React.Children.toArray(child.props.children).map((chip: any) =>
+          React.cloneElement(chip, { component: 'li' })
+        )
       });
     }
     return React.cloneElement(child, {

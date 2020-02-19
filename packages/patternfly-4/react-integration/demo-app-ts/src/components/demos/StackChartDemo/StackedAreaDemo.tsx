@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Chart,
   ChartArea,
-  ChartGroup,
   ChartStack,
   ChartAxis,
   ChartThemeColor,

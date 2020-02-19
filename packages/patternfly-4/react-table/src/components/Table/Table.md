@@ -22,7 +22,12 @@ import {
   textCenter,
   wrappable,
   classNames,
-  Visibility
+  Visibility,
+  getErrorTextByValidator,
+  cancelCellEdits,
+  validateCellEdits,
+  applyCellEdits,
+  EditableTextCell
 } from '@patternfly/react-table';
 
 import {
@@ -116,7 +121,7 @@ class SimpleTable extends React.Component {
 ```
 
 
-```js title=Row-Click-Handler
+```js title=Row-click-handler
 import React from 'react';
 import {
   Table,
@@ -164,7 +169,7 @@ class RowClickTable extends React.Component {
 }
 ```
 
-```js title=Custom-Row-Wrapper
+```js title=Custom-row-wrapper
 import React from 'react';
 import {
   Table,
@@ -282,6 +287,73 @@ class SortableTable extends React.Component {
 
     return (
       <Table aria-label="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+```js title=Sortable-with-wrapping-headers
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  wrappable,
+} from '@patternfly/react-table';
+
+class SortableWrappingHeaders extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {
+          title: 'This is a really long table header that goes on for a long time 1.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 2.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 3.',
+          transforms: [sortable,wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 4.',
+          transforms: [sortable, wrappable]
+        },
+        {
+          title: 'This is a really long table header that goes on for a long time 5.',
+          transforms: [sortable, wrappable]
+        },
+      ],
+      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      sortBy: {}
+    };
+    this.onSort = this.onSort.bind(this);
+  }
+
+  onSort(_event, index, direction) {
+    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
+    this.setState({
+      sortBy: {
+        index,
+        direction
+      },
+      rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
+    });
+  }
+
+  render() {
+    const { columns, rows, sortBy } = this.state;
+
+    return (
+      <Table aria-label="Sortable with Wrapping Headers" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -1200,5 +1272,314 @@ EmptyStateTable = () => {
       <TableBody />
     </Table>
   );
+}
+```
+
+```js title=Editable-rows isBeta
+import React from 'react';
+import { TextInput } from '@patternfly/react-core';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableVariant,
+  getErrorTextByValidator,
+  cancelCellEdits,
+  validateCellEdits,
+  applyCellEdits,
+  EditableTextCell
+} from '@patternfly/react-table';
+
+class EditableRowsTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        'Text input col 1',
+        'Disabled text input col 2',
+        'Text input col 3',
+        'Text input col 4'
+      ],
+      actions: [{
+        title: 'Some action',
+        onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+      }],
+      rows: [
+        {
+          rowEditBtnAriaLabel: idx => `Edit row ${idx}`,
+          rowSaveBtnAriaLabel: idx => `Save edits for row ${idx}`,
+          rowCancelBtnAriaLabel: idx => `Cancel edits for row ${idx}`,
+          rowEditValidationRules: [
+            {
+              name: 'required',
+              validator: value => value.trim() !== '',
+              errorText: 'This field is required'
+            }
+          ],
+          cells: [
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 1 cell 1 content" />
+              ),
+              props: {
+                value: 'Row 1 cell 1 content',
+                name: 'uniqueIdRow1Cell1'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  isDisabled
+                  inputAriaLabel="Row 1 cell 2 content" />
+              ),
+              props: {
+                value: 'Row 1 cell 2, disabled content',
+                name: 'uniqueIdRow1Cell2'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 1 cell 3 content" />
+              ),
+              props: {
+                value: 'Row 1 cell 3 content',
+                name: 'uniqueIdRow1Cell3'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 1 cell 4 content" />
+              ),
+              props: {
+                value: 'Row 1 cell 4 content',
+                name: 'uniqueIdRow1Cell4'
+              }
+            },
+          ]
+        },
+        {
+          cells: [
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 2 cell 1 content" />
+              ),
+              props: {
+                value: 'Row 2 cell 1 content',
+                name: 'uniqueIdRow2Cell1'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  isDisabled
+                  inputAriaLabel="Row 2 cell 2 content" />
+              ),
+              props: {
+                value: 'Row 2 cell 2, disabled content',
+                name: 'uniqueIdRow2Cell2'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 2 cell 3 content" />
+              ),
+              props: {
+                value: 'Row 2 cell 3 content',
+                name: 'uniqueIdRow2Cell3'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 2 cell 4 content" />
+              ),
+              props: {
+                value: 'Row 2 cell 4 content',
+                name: 'uniqueIdRow2Cell4'
+              }
+            },
+          ]
+        },
+        {
+          rowEditValidationRules: [
+            {
+              name: 'required',
+              validator: value => value.trim() !== '',
+              errorText: 'This field is required'
+            },
+            {
+              name: 'notFoo',
+              validator: value => value.trim().toLowerCase() !== 'foo',
+              errorText: 'Value cannot be "foo"'
+            },
+            {
+              name: 'minLength',
+              validator: value => value.trim().length >= 7,
+              errorText: 'Value must be at least 7 characters'
+            },
+            {
+              name: 'notXyz',
+              validator: value => value.trim().toLowerCase() !== 'xyz',
+              errorText: 'Value cannot be xyz'
+            }
+          ],
+          cells: [
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 3 cell 1 content" />
+              ),
+              props: {
+                value: 'Row 3 cell 1 content',
+                name: 'uniqueIdRow3Cell1'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  isDisabled
+                  inputAriaLabel="Row 3 cell 2 content" />
+              ),
+              props: {
+                value: 'Row 3 cell 2, disabled content',
+                name: 'uniqueIdRow3Cell2'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 3 cell 3 content" />
+              ),
+              props: {
+                value: 'Row 3 cell 3 content',
+                name: 'uniqueIdRow3Cell3'
+              }
+            },
+            {
+              title: (value, rowIndex, cellIndex, props) => (
+                <EditableTextCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={props}
+                  handleTextInputChange={this.handleTextInputChange}
+                  inputAriaLabel="Row 3 cell 4 content" />
+              ),
+              props: {
+                value: 'Row 3 cell 4 content',
+                name: 'uniqueIdRow3Cell4'
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    this.updateEditableRows = (evt, type, isEditable, rowIndex, validationErrors) => {
+
+      let newRows = Array.from(this.state.rows);
+
+      if (validationErrors && Object.keys(validationErrors).length) {
+        newRows[rowIndex] = validateCellEdits(newRows[rowIndex], type, validationErrors);
+        this.setState({ rows: newRows });
+        return;
+      }
+
+      if (type === 'cancel') {
+        newRows[rowIndex] = cancelCellEdits(newRows[rowIndex]);
+        this.setState({ rows: newRows });
+        return;
+      }
+
+      newRows[rowIndex] = applyCellEdits(newRows[rowIndex], type);
+
+      this.setState({ rows: newRows });
+    };
+
+    this.handleTextInputChange = (newValue, evt, rowIndex, cellIndex) => {
+      let newRows = Array.from(this.state.rows);
+      newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
+      this.setState({
+        rows: newRows
+      });
+    };
+  }
+
+  render() {
+    const { columns, rows, actions } = this.state;
+
+    return (
+      <Table
+        actions={actions}
+        onRowEdit={this.updateEditableRows}
+        aria-label="Editable Rows Table"
+        variant={TableVariant.compact}
+        cells={columns}
+        rows={rows}>
+          <TableHeader />
+          <TableBody />
+      </Table>
+    );
+  }
 }
 ```

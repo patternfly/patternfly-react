@@ -3,7 +3,7 @@
 exports[`ChartLine 1`] = `
 <VictoryLine
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -939,7 +939,7 @@ exports[`ChartLine 1`] = `
 exports[`ChartLine 2`] = `
 <VictoryLine
   containerComponent={
-    <Unknown
+    <ChartContainer
       theme={
         Object {
           "area": Object {
@@ -1875,7 +1875,7 @@ exports[`ChartLine 2`] = `
 exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
-    <Unknown
+    <ChartContainer
       className="pf-c-chart"
       theme={
         Object {
@@ -4961,8 +4961,8 @@ exports[`renders component data 1`] = `
   }
   width={200}
 >
-  <Component>
-    <Component
+  <ChartGroup>
+    <ChartLine
       data={
         Array [
           Object {
@@ -4984,7 +4984,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartLine
       data={
         Array [
           Object {
@@ -5006,7 +5006,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartLine
       data={
         Array [
           Object {
@@ -5028,7 +5028,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <Component
+    <ChartLine
       data={
         Array [
           Object {
@@ -5050,6 +5050,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </Component>
+  </ChartGroup>
 </VictoryChart>
 `;

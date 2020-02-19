@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
-import { AngleRightIcon } from '@patternfly/react-icons';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 
 export interface ClipboardCopyToggleProps
   extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
@@ -21,19 +21,17 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
   contentId,
   isExpanded = false,
   ...props
-}: ClipboardCopyToggleProps) => {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={css(styles.clipboardCopyGroupToggle, className)}
-      id={id}
-      aria-labelledby={`${id} ${textId}`}
-      aria-controls={`${id} ${contentId}`}
-      aria-expanded={isExpanded}
-      {...props}
-    >
-      <AngleRightIcon aria-hidden="true" className={css(styles.clipboardCopyGroupToggleIcon)} />
-    </button>
-  );
-};
+}: ClipboardCopyToggleProps) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className={css(styles.clipboardCopyGroupToggle, className)}
+    id={id}
+    aria-labelledby={`${id} ${textId}`}
+    aria-controls={`${id} ${contentId}`}
+    aria-expanded={isExpanded}
+    {...props}
+  >
+    <AngleRightIcon aria-hidden="true" className={css(styles.clipboardCopyGroupToggleIcon)} />
+  </button>
+);

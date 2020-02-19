@@ -15,10 +15,12 @@ export interface HeaderCellProps {
 export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   className = '',
   component = 'th',
-  isVisible,
   scope = '',
   textCenter = false,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  isVisible,
   dataLabel = '',
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: HeaderCellProps) => {
   const Component = component as any;

@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
-import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  ExclamationTriangleIcon,
-  InfoCircleIcon,
-  BellIcon
-} from '@patternfly/react-icons';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 export const variantIcons = {
   success: CheckCircleIcon,

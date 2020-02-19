@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 const { copySync, readFileSync, writeFileSync } = require('fs-extra');
 const { resolve, dirname, join } = require('path');
 const { parse: parseCSS, stringify: stringifyCSS } = require('css');
@@ -25,9 +24,10 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
     case 'charset':
     case 'comment':
       return false;
-    case 'font-face':
+    case 'font-face': {
       const fontFamilyDecl = rule.declarations.find(decl => decl.property === 'font-family');
       return !unusedFontFamilyRegEx.test(fontFamilyDecl.value);
+    }
     default:
       return true;
   }

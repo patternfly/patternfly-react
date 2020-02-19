@@ -13,10 +13,8 @@ export const EmptyStatePrimary: React.FunctionComponent<EmptyStatePrimaryProps> 
   children,
   className = '',
   ...props
-}: EmptyStatePrimaryProps) => {
-  return (
-    <div className={css(styles.emptyStatePrimary, className)} {...props}>
-      {children}
-    </div>
-  );
-};
+}: EmptyStatePrimaryProps) => (
+  <div className={css(styles.emptyStatePrimary, className)} {...props}>
+    {children}
+  </div>
+);
