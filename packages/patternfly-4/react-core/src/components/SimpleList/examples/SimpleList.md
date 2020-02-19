@@ -1,5 +1,5 @@
 ---
-title: 'SimpleList'
+title: 'Simple list'
 section: 'components'
 cssPrefix: 'pf-c-simple-list'
 typescript: true
