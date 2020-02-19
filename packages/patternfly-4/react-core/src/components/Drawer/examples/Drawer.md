@@ -10,7 +10,7 @@ import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-cor
 import { Alert } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic isBeta
+```js title=Basic
 import React, { ReactFragment } from 'react';
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
@@ -47,7 +47,7 @@ class SimpleDrawer extends React.Component {
 }
 ```
 
-```js title=Basic-inline isBeta
+```js title=Basic-inline
 import React, { ReactFragment } from 'react';
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
