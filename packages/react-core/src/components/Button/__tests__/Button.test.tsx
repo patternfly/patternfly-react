@@ -39,13 +39,13 @@ test('isDisabled', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('isFocus', () => {
-  const view = mount(<Button isFocus>Focused Button</Button>);
+test('isAriaDisabled button', () => {
+  const view = mount(<Button isAriaDisabled>Disabled yet focusable button</Button>);
   expect(view).toMatchSnapshot();
 });
 
-test('isHover', () => {
-  const view = mount(<Button isHover>Hovered Button</Button>);
+test('isAriaDisabled link button', () => {
+  const view = mount(<Button isAriaDisabled component="a">Disabled yet focusable button</Button>);
   expect(view).toMatchSnapshot();
 });
 

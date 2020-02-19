@@ -74,7 +74,7 @@ exports[`Alert - danger Action Close Button 1`] = `
           variant="plain"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label="Close"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
@@ -82,7 +82,6 @@ exports[`Alert - danger Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
-            tabIndex={null}
             type="button"
           >
             <TimesIcon
@@ -199,14 +198,13 @@ exports[`Alert - danger Action Link 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -295,14 +293,13 @@ exports[`Alert - danger Action and Title 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -392,14 +389,13 @@ exports[`Alert - danger Custom aria label 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -745,7 +741,7 @@ exports[`Alert - default Action Close Button 1`] = `
           variant="plain"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label="Close"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
@@ -753,7 +749,6 @@ exports[`Alert - default Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
-            tabIndex={null}
             type="button"
           >
             <TimesIcon
@@ -870,14 +865,13 @@ exports[`Alert - default Action Link 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -966,14 +960,13 @@ exports[`Alert - default Action and Title 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -1063,14 +1056,13 @@ exports[`Alert - default Custom aria label 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -1416,7 +1408,7 @@ exports[`Alert - info Action Close Button 1`] = `
           variant="plain"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label="Close"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
@@ -1424,7 +1416,6 @@ exports[`Alert - info Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
-            tabIndex={null}
             type="button"
           >
             <TimesIcon
@@ -1541,14 +1532,13 @@ exports[`Alert - info Action Link 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -1637,14 +1627,13 @@ exports[`Alert - info Action and Title 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -1734,14 +1723,13 @@ exports[`Alert - info Custom aria label 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -2087,7 +2075,7 @@ exports[`Alert - success Action Close Button 1`] = `
           variant="plain"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label="Close"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
@@ -2095,7 +2083,6 @@ exports[`Alert - success Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
-            tabIndex={null}
             type="button"
           >
             <TimesIcon
@@ -2212,14 +2199,13 @@ exports[`Alert - success Action Link 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -2308,14 +2294,13 @@ exports[`Alert - success Action and Title 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -2405,14 +2390,13 @@ exports[`Alert - success Custom aria label 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -2758,7 +2742,7 @@ exports[`Alert - warning Action Close Button 1`] = `
           variant="plain"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label="Close"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
@@ -2766,7 +2750,6 @@ exports[`Alert - warning Action Close Button 1`] = `
             data-ouia-safe={true}
             disabled={false}
             onClick={[MockFunction]}
-            tabIndex={null}
             type="button"
           >
             <TimesIcon
@@ -2883,14 +2866,13 @@ exports[`Alert - warning Action Link 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -2979,14 +2961,13 @@ exports[`Alert - warning Action and Title 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test
@@ -3076,14 +3057,13 @@ exports[`Alert - warning Custom aria label 1`] = `
           variant="link"
         >
           <button
-            aria-disabled={null}
+            aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            tabIndex={null}
             type="button"
           >
             test

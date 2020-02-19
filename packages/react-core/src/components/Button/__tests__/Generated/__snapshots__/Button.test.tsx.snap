@@ -2,16 +2,13 @@
 
 exports[`Button should match snapshot (auto-generated) 1`] = `
 <button
-  aria-disabled={null}
+  aria-disabled={false}
   aria-label="null"
   className="pf-c-button pf-m-primary ''"
   data-ouia-component-id={null}
   data-ouia-component-type="PF4/Button"
   data-ouia-safe={true}
   disabled={false}
-  isFocus={false}
-  isHover={false}
-  tabIndex={null}
   type="button"
 >
   ReactNode

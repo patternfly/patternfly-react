@@ -30,8 +30,12 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   isActive?: boolean;
   /** Adds block styling to button */
   isBlock?: boolean;
-  /** Disables the button and adds disabled styling */
+  /** Adds disabled styling and disables the button using the disabled html attribute */
   isDisabled?: boolean;
+  /** @beta Adds disabled styling and communicates that the button is disabled using the aria-disabled html attribute */
+  isAriaDisabled?: boolean;
+  /** @beta Events to prevent when the button is in an aria-disabled state */
+  inoperableEvents?: string[];
   /** Adds inline styling to a link button */
   isInline?: boolean;
   /** Sets button type */
@@ -44,7 +48,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   'aria-label'?: string;
   /** Icon for the button. Usable by all variants except for plain. */
   icon?: React.ReactNode | null;
-  /** Set button tab index unless component is not a button and is disabled */
+  /** Sets the button tabindex. */
   tabIndex?: number;
 }
 
@@ -55,6 +59,8 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
   isActive = false,
   isBlock = false,
   isDisabled = false,
+  isAriaDisabled = false,
+  inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
@@ -62,27 +68,55 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
   'aria-label': ariaLabel = null,
   icon = null,
   ouiaId = null,
-  tabIndex = null as number,
+  tabIndex = null,
   ...props
 }: ButtonProps & OUIAProps) => {
   const Component = component as any;
   const isButtonElement = Component === 'button';
+
+  if (isAriaDisabled && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'You are using a beta component feature (isAriaDisabled). These api parts are subject to change in the future.'
+    );
+  }
+
+  const preventedEvents = inoperableEvents.reduce(
+    (handlers, eventToPrevent) => ({
+      ...handlers,
+      [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+      }
+    }),
+    {}
+  );
+
+  const getDefaultTabIdx = () => {
+    if (isDisabled) {
+      return isButtonElement ? null : -1;
+    } else if (isAriaDisabled) {
+      return null;
+    }
+  };
+
   return (
     <Component
       {...props}
-      aria-disabled={isButtonElement ? null : isDisabled}
+      {...(isAriaDisabled ? preventedEvents : null)}
+      aria-disabled={isDisabled || isAriaDisabled}
       aria-label={ariaLabel}
       className={css(
         styles.button,
         styles.modifiers[variant],
         isBlock && styles.modifiers.block,
-        isDisabled && !isButtonElement && styles.modifiers.disabled,
+        isDisabled && styles.modifiers.disabled,
+        isAriaDisabled && styles.modifiers.ariaDisabled,
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
-      tabIndex={isDisabled && !isButtonElement ? -1 : tabIndex}
+      tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement ? type : null}
       {...getOUIAProps('Button', ouiaId)}
     >

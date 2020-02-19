@@ -7519,6 +7519,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             Mr
                           </span>
                           <button
+                            aria-disabled="false"
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                             class="pf-c-button pf-m-plain"
@@ -7560,6 +7561,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             Mrs
                           </span>
                           <button
+                            aria-disabled="false"
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                             class="pf-c-button pf-m-plain"
@@ -7808,7 +7810,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               variant="plain"
                             >
                               <button
-                                aria-disabled={null}
+                                aria-disabled={false}
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                                 className="pf-c-button pf-m-plain"
@@ -7818,7 +7820,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 disabled={false}
                                 id="remove_pf-random-id-24"
                                 onClick={[Function]}
-                                tabIndex={null}
                                 type="button"
                               >
                                 <TimesIcon
@@ -7890,7 +7891,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               variant="plain"
                             >
                               <button
-                                aria-disabled={null}
+                                aria-disabled={false}
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                                 className="pf-c-button pf-m-plain"
@@ -7900,7 +7901,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                                 disabled={false}
                                 id="remove_pf-random-id-25"
                                 onClick={[Function]}
-                                tabIndex={null}
                                 type="button"
                               >
                                 <TimesIcon

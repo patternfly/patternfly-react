@@ -71,7 +71,7 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
                                 variant="plain"
                               >
                                 <button
-                                  aria-disabled={null}
+                                  aria-disabled={false}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
                                   data-ouia-component-id={null}
@@ -79,7 +79,6 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
-                                  tabIndex={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -204,7 +203,7 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
                                 variant="plain"
                               >
                                 <button
-                                  aria-disabled={null}
+                                  aria-disabled={false}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
                                   data-ouia-component-id={null}
@@ -212,7 +211,6 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
-                                  tabIndex={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -337,7 +335,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                                 variant="plain"
                               >
                                 <button
-                                  aria-disabled={null}
+                                  aria-disabled={false}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
                                   data-ouia-component-id={null}
@@ -345,7 +343,6 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
-                                  tabIndex={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -470,7 +467,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                                 variant="plain"
                               >
                                 <button
-                                  aria-disabled={null}
+                                  aria-disabled={false}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
                                   data-ouia-component-id={null}
@@ -478,7 +475,6 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
-                                  tabIndex={null}
                                   type="button"
                                 >
                                   <TimesIcon
@@ -603,7 +599,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                                 variant="plain"
                               >
                                 <button
-                                  aria-disabled={null}
+                                  aria-disabled={false}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
                                   data-ouia-component-id={null}
@@ -611,7 +607,6 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
-                                  tabIndex={null}
                                   type="button"
                                 >
                                   <TimesIcon

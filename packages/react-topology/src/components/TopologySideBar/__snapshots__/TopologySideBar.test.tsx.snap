@@ -53,7 +53,7 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
       variant="plain"
     >
       <button
-        aria-disabled={null}
+        aria-disabled={false}
         aria-label="Close"
         className="pf-c-button pf-m-plain pf-topology-side-bar__dismiss"
         data-ouia-component-id={null}
@@ -61,7 +61,6 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
         data-ouia-safe={true}
         disabled={false}
         onClick={[MockFunction]}
-        tabIndex={null}
         type="button"
       >
         <TimesIcon

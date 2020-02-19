@@ -34,7 +34,7 @@ exports[`Chip closable 1`] = `
         variant="plain"
       >
         <button
-          aria-disabled={null}
+          aria-disabled={false}
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
@@ -44,7 +44,6 @@ exports[`Chip closable 1`] = `
           disabled={false}
           id="remove_chip_one"
           onClick={[Function]}
-          tabIndex={null}
           type="button"
         >
           <TimesIcon
@@ -114,7 +113,7 @@ exports[`Chip closable with tooltip 1`] = `
         variant="plain"
       >
         <button
-          aria-disabled={null}
+          aria-disabled={false}
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
@@ -124,7 +123,6 @@ exports[`Chip closable with tooltip 1`] = `
           disabled={false}
           id="remove_chip_one"
           onClick={[Function]}
-          tabIndex={null}
           type="button"
         >
           <TimesIcon
