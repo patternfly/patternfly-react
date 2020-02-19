@@ -15,6 +15,8 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   onSelectDataListItem?: (id: string) => void;
   /* Id of DataList item currently selected */
   selectedDataListItemId?: string;
+  /** Flag indicating if DataList is compact */
+  isCompact?: boolean;
 }
 
 interface DataListContextProps {
@@ -33,6 +35,7 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   'aria-label': ariaLabel,
   selectedDataListItemId = '',
   onSelectDataListItem,
+  isCompact = false,
   ...props
 }: DataListProps) => {
   const isSelectable = !isUndefined(onSelectDataListItem);
@@ -49,7 +52,11 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
         updateSelectedDataListItem
       }}
     >
-      <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props}>
+      <ul
+        className={css(styles.dataList, isCompact && styles.modifiers.compact, className)}
+        aria-label={ariaLabel}
+        {...props}
+      >
         {children}
       </ul>
     </DataListContext.Provider>
