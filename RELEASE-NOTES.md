@@ -6,14 +6,14 @@ releaseNoteTOC: true
 
 ## 2020.02 release notes (2020-02-18)
 Packages released:
-- [@patternfly/react-catalog-view-extension: 1.4.10](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.10)
+- [@patternfly/react-catalog-view-extension: 1.4.11](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.11)
 - [@patternfly/react-charts: 5.3.5](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.5)
-- [@patternfly/react-core: 3.140.10](https://www.npmjs.com/package/@patternfly/react-core/v/3.140.10)
-- [@patternfly/react-inline-edit-extension: 2.17.10](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.10)
+- [@patternfly/react-core: 3.140.11](https://www.npmjs.com/package/@patternfly/react-core/v/3.140.11)
+- [@patternfly/react-inline-edit-extension: 2.17.11](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.11)
 - [@patternfly/react-styles: 3.7.4](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.4)
-- [@patternfly/react-table: 2.27.10](https://www.npmjs.com/package/@patternfly/react-table/v/2.27.10)
+- [@patternfly/react-table: 2.27.11](https://www.npmjs.com/package/@patternfly/react-table/v/2.27.11)
 - [@patternfly/react-tokens: 2.8.4](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.4)
-- [@patternfly/react-topology: 2.14.10](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.10)
+- [@patternfly/react-topology: 2.14.11](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.11)
 - [@patternfly/react-virtualized-extension: 1.4.11](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.11)
 - [@patternfly/react-icons: 3.15.3](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.3)
 
