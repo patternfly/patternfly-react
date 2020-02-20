@@ -15,7 +15,7 @@ export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   onSelectDataListItem?: (id: string) => void;
   /* Id of DataList item currently selected */
   selectedDataListItemId?: string;
-  /** Flag indicating if DataList is compact */
+  /** Flag indicating if DataList should have compact styling */
   isCompact?: boolean;
 }
 
