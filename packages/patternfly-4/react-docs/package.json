@@ -32,8 +32,8 @@
     "@patternfly/react-virtualized-extension": "^1.4.12",
     "gatsby": "2.19.12",
     "gatsby-cli": "2.8.29",
-    "gatsby-theme-patternfly-org": "^1.4.0",
-    "gatsby-transformer-react-docgen-typescript": "^0.2.4",
+    "gatsby-theme-patternfly-org": "^1.4.1",
+    "gatsby-transformer-react-docgen-typescript": "^0.2.5",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"
