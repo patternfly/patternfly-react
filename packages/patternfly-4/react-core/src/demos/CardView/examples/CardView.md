@@ -433,6 +433,23 @@ class CardViewDefaultNav extends React.Component {
     return collection;
     };
 
+  selectedItems(e) {
+    const { value, checked } = e.target;
+    let { selectedItems } = this.state;
+
+    if (checked) {
+      selectedItems = [...selectedItems, value];
+    } else {
+      selectedItems = selectedItems.filter(el => el !== value);
+      if (this.state.areAllSelected) {
+        this.setState({
+          areAllSelected: !this.state.areAllSelected
+        });
+      }
+    }
+    this.setState({ selectedItems });
+  }
+
   selectAll(e) {
     const { checked } = e.target;
     let collection = [];
@@ -451,6 +468,15 @@ class CardViewDefaultNav extends React.Component {
     );
   };
 
+  selectNone() {
+      this.setState(
+          {
+            selectedItems: []
+          },
+          this.updateSelected
+        );
+  };
+
 
   buildSelectDropdown() {
     const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
@@ -459,15 +485,14 @@ class CardViewDefaultNav extends React.Component {
     const anySelected = numSelected > 0;
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
-
     const splitButtonDropdownItems = [
-      /* <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+      <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
         Select none (0 items)
-      </DropdownItem>, */
+      </DropdownItem>,
       /* <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
       </DropdownItem>, */
-      <DropdownItem key="item-3" onClick={() => this.selectAll.bind(this)}>Select all (10 items)</DropdownItem>,
+      <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>Select all (10 items)</DropdownItem>,
     ];
 
     return (
@@ -560,7 +585,8 @@ class CardViewDefaultNav extends React.Component {
             res,
             cardChecks,
             selectedItems,
-            itemsChecked } = this.state;
+            itemsChecked,
+            isChecked } = this.state;
 
     const toolbarKebabDropdownItems = [
      <DropdownItem key="link">Link</DropdownItem>,
@@ -705,6 +731,7 @@ class CardViewDefaultNav extends React.Component {
 
     return (
       <React.Fragment>
+      <div>{<pre>Selected List: {JSON.stringify(selectedItems, null, 2)}</pre>}</div>
         <Page
             header={Header}
             sidebar={Sidebar}
@@ -748,12 +775,10 @@ class CardViewDefaultNav extends React.Component {
                                         ]}
                                     />
                                     <Checkbox
-                                    onSelect={this.onCheckboxSelect}
                                     selectedItems={selectedItems}
-                                    isChecked={false}
-                                    handleCheckboxClick={this.props.handleCheckboxClick}
+                                    isChecked={selectedItems.includes(product.id)}
                                     defaultChecked={this.state.itemsChecked}
-                                    onChange={this.props.handleCheckboxClick}
+                                    onChange={() => this.props.handleCheckboxClick}
                                     aria-label="card checkbox example"
                                     id="check-1"
                                     name="check1"
