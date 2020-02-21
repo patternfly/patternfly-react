@@ -319,8 +319,8 @@ class CardViewDefaultNav extends React.Component {
     };
 
     this.onSplitButtonSelect = event => {
-      this.setState({
-        splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
+      this.setState((prevState, props) => {
+        return { splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen };
       });
     };
 
@@ -467,18 +467,18 @@ class CardViewDefaultNav extends React.Component {
       /* <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
       </DropdownItem>, */
-      <DropdownItem key="item-3" checked="areAllSelected" onClick={() => this.selectAll.bind(this)}>Select all (10 items)</DropdownItem>,
+      <DropdownItem key="item-3" onClick={() => this.selectAll.bind(this)}>Select all (10 items)</DropdownItem>,
     ];
 
     return (
       <Dropdown
         position={DropdownPosition.left}
+        onSelect={this.onSplitButtonSelect}
         toggle={
           <DropdownToggle
             splitButtonItems={[
               <DropdownToggleCheckbox
                 id="example-checkbox-2"
-                onSelect={this.onSplitButtonSelect}
                 key="split-checkbox"
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={isChecked}
