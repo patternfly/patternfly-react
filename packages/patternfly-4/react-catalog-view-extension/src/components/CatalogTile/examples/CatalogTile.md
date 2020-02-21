@@ -37,7 +37,6 @@ Basic = () => (
       ]}
       title="Patternfly-React"
       vendor="provided by Red Hat"
-      maxDescriptionLength={-1}
       description={
         'This is a very, very long description that should be truncated after three lines. ' +
         'Three lines is the default for cards without a footer. Cards with a footer are truncated after one line. Truncation function use is deprecated; please pass in a maxDescriptionLength of -1 to override it. ' +
@@ -67,7 +66,6 @@ SimpleFooter = () => (
       ]}
       title="Patternfly-React"
       vendor="provided by Red Hat"
-      maxDescriptionLength={-1}
       description={
         'This is a very, very long description that should be truncated after one line. ' +
         'Three lines is the default for cards without a footer. Cards with a footer are truncated after one line. Truncation function use is deprecated; please pass in a maxDescriptionLength of -1 to override it. ' +
@@ -103,7 +101,6 @@ Link = () => (
       href="http://patternfly.org/v4"
       title="Patternfly-React"
       vendor="provided by Red Hat"
-      maxDescriptionLength={-1}
       description={
         'This is a very, very long description that should be truncated after three lines. ' +
         'Three lines is the default for cards without a footer. Cards with a footer are truncated after one line. Truncation function use is deprecated; please pass in a maxDescriptionLength of -1 to override it. ' +
@@ -136,7 +133,6 @@ MultiIcon = () => (
       ]}
       title="Patternfly-React"
       vendor={<React.Fragment>provided by <a href="http://redhat.com">Red Hat</a></React.Fragment>}
-      maxDescriptionLength={-1}
       description={
         'This is a very, very long description that should be truncated after three lines. ' +
         'Three lines is the default for cards without a footer. Cards with a footer are truncated after one line. Truncation function use is deprecated; please pass in a maxDescriptionLength of -1 to override it. ' +
@@ -163,7 +159,6 @@ TextBadge = () => (
       ]}
       title="Patternfly-React"
       vendor={<React.Fragment>provided by <a href="http://redhat.com">Red Hat</a></React.Fragment>}
-      maxDescriptionLength={-1}
       description={
         'This is a very, very long description that should be truncated after three lines. ' +
         'Three lines is the default for cards without a footer. Cards with a footer are truncated after one line. Truncation function use is deprecated; please pass in a maxDescriptionLength of -1 to override it. ' +

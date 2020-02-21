@@ -13,10 +13,8 @@ exports[`CatalogTile href renders properly 1`] = `
   iconClass=""
   iconImg={null}
   id="test-href"
-  maxDescriptionLength={112}
   onClick={null}
   title="Patternfly"
-  truncateDescriptionFn={null}
   vendor="Provided by Red Hat"
 >
   <Card
@@ -111,10 +109,8 @@ exports[`CatalogTile renders properly 1`] = `
     iconClass=""
     iconImg={null}
     id="single-badge-test"
-    maxDescriptionLength={112}
     onClick={null}
     title="Patternfly"
-    truncateDescriptionFn={null}
     vendor={
       <span>
         Provided by 
@@ -446,10 +442,8 @@ exports[`CatalogTile renders properly 1`] = `
     iconClass=""
     iconImg={null}
     id="multi-badge-test"
-    maxDescriptionLength={112}
     onClick={null}
     title="GitHub Desktop"
-    truncateDescriptionFn={null}
     vendor="provided by GitHub"
   >
     <Card
@@ -862,292 +856,6 @@ exports[`CatalogTile renders properly 1`] = `
     badges={
       Array [
         <CatalogTileBadge
-          id="certified"
-          title="Certified"
-        >
-          <CogIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          />
-        </CatalogTileBadge>,
-      ]
-    }
-    className=""
-    description="This is a very long description that should be truncated after 112 characters. 112 is the default but can be overridden if need be. You can also provide a custom truncation function to truncate the description how you see fit. It will be passed the description and max length."
-    featured={true}
-    footer={null}
-    href={null}
-    icon={null}
-    iconAlt=""
-    iconClass=""
-    iconImg={null}
-    id="long-description-test"
-    maxDescriptionLength={112}
-    onClick={null}
-    title="Patternfly"
-    truncateDescriptionFn={null}
-    vendor={
-      <span>
-        Provided by 
-        <a
-          href="redhat.com"
-        >
-          Red Hat
-        </a>
-      </span>
-    }
-  >
-    <Card
-      className="catalog-tile-pf featured"
-      component="div"
-      href="#"
-      id="long-description-test"
-      isHoverable={true}
-      onClick={[Function]}
-    >
-      <div
-        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
-        href="#"
-        id="long-description-test"
-        onClick={[Function]}
-      >
-        <CardHead>
-          <div
-            className="pf-c-card__head"
-          >
-            <CardActions>
-              <div
-                className="pf-c-card__actions"
-              >
-                <div
-                  className="catalog-tile-pf-badge-container"
-                >
-                  <span
-                    key="badge-0"
-                  >
-                    <CatalogTileBadge
-                      id="certified"
-                      key="1"
-                      title="Certified"
-                    >
-                      <Tooltip
-                        appendTo={[Function]}
-                        aria="describedby"
-                        boundary="window"
-                        className=""
-                        content="Certified"
-                        distance={15}
-                        enableFlip={true}
-                        entryDelay={500}
-                        exitDelay={500}
-                        flipBehavior={
-                          Array [
-                            "top",
-                            "right",
-                            "bottom",
-                            "left",
-                            "top",
-                            "right",
-                            "bottom",
-                          ]
-                        }
-                        id="certified"
-                        isAppLauncher={false}
-                        isContentLeftAligned={false}
-                        isVisible={false}
-                        maxWidth="18.75rem"
-                        position="top"
-                        tippyProps={Object {}}
-                        trigger="mouseenter focus"
-                        zIndex={9999}
-                      >
-                        <PopoverBase
-                          appendTo={[Function]}
-                          aria="describedby"
-                          arrow={true}
-                          boundary="window"
-                          content={
-                            <div
-                              className=""
-                              id="certified"
-                              role="tooltip"
-                            >
-                              <TooltipContent
-                                isLeftAligned={false}
-                              >
-                                Certified
-                              </TooltipContent>
-                            </div>
-                          }
-                          delay={
-                            Array [
-                              500,
-                              500,
-                            ]
-                          }
-                          distance={15}
-                          flip={true}
-                          flipBehavior={
-                            Array [
-                              "top",
-                              "right",
-                              "bottom",
-                              "left",
-                              "top",
-                              "right",
-                              "bottom",
-                            ]
-                          }
-                          isVisible={false}
-                          lazy={true}
-                          maxWidth="18.75rem"
-                          onCreate={[Function]}
-                          placement="top"
-                          popperOptions={
-                            Object {
-                              "modifiers": Object {
-                                "hide": Object {
-                                  "enabled": true,
-                                },
-                                "preventOverflow": Object {
-                                  "enabled": true,
-                                },
-                              },
-                            }
-                          }
-                          theme="pf-tooltip"
-                          trigger="mouseenter focus"
-                          zIndex={9999}
-                        >
-                          <span
-                            className="catalog-tile-pf-badge"
-                          >
-                            <CogIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            >
-                              <svg
-                                aria-hidden={true}
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
-                                  transform=""
-                                />
-                              </svg>
-                            </CogIcon>
-                            <span
-                              className="sr-only"
-                            >
-                              Certified
-                            </span>
-                          </span>
-                          <Portal
-                            containerInfo={
-                              <div>
-                                <div
-                                  class=""
-                                  id="certified"
-                                  role="tooltip"
-                                >
-                                  <div
-                                    class="pf-c-tooltip__content"
-                                  >
-                                    Certified
-                                  </div>
-                                </div>
-                              </div>
-                            }
-                          >
-                            <div
-                              className=""
-                              id="certified"
-                              role="tooltip"
-                            >
-                              <TooltipContent
-                                isLeftAligned={false}
-                              >
-                                <div
-                                  className="pf-c-tooltip__content"
-                                >
-                                  Certified
-                                </div>
-                              </TooltipContent>
-                            </div>
-                          </Portal>
-                        </PopoverBase>
-                      </Tooltip>
-                    </CatalogTileBadge>
-                  </span>
-                </div>
-              </div>
-            </CardActions>
-          </div>
-        </CardHead>
-        <CardHeader
-          className="catalog-tile-pf-header"
-        >
-          <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
-          >
-            <div
-              className="catalog-tile-pf-title"
-            >
-              Patternfly
-            </div>
-            <div
-              className="catalog-tile-pf-subtitle"
-            >
-              <span>
-                Provided by 
-                <a
-                  href="redhat.com"
-                >
-                  Red Hat
-                </a>
-              </span>
-            </div>
-          </div>
-        </CardHeader>
-        <CardBody
-          className="catalog-tile-pf-body"
-        >
-          <div
-            className="pf-c-card__body catalog-tile-pf-body"
-          >
-            <div
-              className="catalog-tile-pf-description"
-            >
-              <span
-                className=""
-              >
-                This is a very long description that should be truncated after 112 characters. 112 is the default but can be 
-                …
-              </span>
-            </div>
-          </div>
-        </CardBody>
-      </div>
-    </Card>
-  </CatalogTile>
-  <CatalogTile
-    badges={
-      Array [
-        <CatalogTileBadge
           id="approved"
           title="USDA Approved"
         >
@@ -1170,10 +878,8 @@ exports[`CatalogTile renders properly 1`] = `
     iconClass="fa fa-codepen"
     iconImg={null}
     id="test-iconClass"
-    maxDescriptionLength={112}
     onClick={null}
     title="CodePen"
-    truncateDescriptionFn={null}
     vendor="provided by CodePen"
   >
     <Card
@@ -1417,92 +1123,6 @@ exports[`CatalogTile renders properly 1`] = `
     </Card>
   </CatalogTile>
   <CatalogTile
-    badges={Array []}
-    className=""
-    description="1234567890123"
-    featured={true}
-    footer={null}
-    href={null}
-    icon={null}
-    iconAlt=""
-    iconClass=""
-    iconImg={null}
-    id="test-custom-truncation"
-    maxDescriptionLength={10}
-    onClick={null}
-    title="Patternfly"
-    truncateDescriptionFn={[Function]}
-    vendor={
-      <span>
-        Provided by 
-        <a
-          href="redhat.com"
-        >
-          Red Hat
-        </a>
-      </span>
-    }
-  >
-    <Card
-      className="catalog-tile-pf featured"
-      component="div"
-      href="#"
-      id="test-custom-truncation"
-      isHoverable={true}
-      onClick={[Function]}
-    >
-      <div
-        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
-        href="#"
-        id="test-custom-truncation"
-        onClick={[Function]}
-      >
-        <CardHeader
-          className="catalog-tile-pf-header"
-        >
-          <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
-          >
-            <div
-              className="catalog-tile-pf-title"
-            >
-              Patternfly
-            </div>
-            <div
-              className="catalog-tile-pf-subtitle"
-            >
-              <span>
-                Provided by 
-                <a
-                  href="redhat.com"
-                >
-                  Red Hat
-                </a>
-              </span>
-            </div>
-          </div>
-        </CardHeader>
-        <CardBody
-          className="catalog-tile-pf-body"
-        >
-          <div
-            className="pf-c-card__body catalog-tile-pf-body"
-          >
-            <div
-              className="catalog-tile-pf-description"
-            >
-              <span
-                className=""
-              >
-                truncated
-              </span>
-            </div>
-          </div>
-        </CardBody>
-      </div>
-    </Card>
-  </CatalogTile>
-  <CatalogTile
     badges={
       Array [
         <CatalogTileBadge
@@ -1519,7 +1139,7 @@ exports[`CatalogTile renders properly 1`] = `
       ]
     }
     className=""
-    description="This is a very long description that should be truncated after 112 characters. 112 is the default but can be overridden if need be. You can also provide a custom truncation function to truncate the description how you see fit. It will be passed the description, max length, and id."
+    description="1234567890123"
     featured={true}
     footer={
       <span>
@@ -1538,10 +1158,8 @@ exports[`CatalogTile renders properly 1`] = `
     iconClass=""
     iconImg={null}
     id="tile-footer-test"
-    maxDescriptionLength={112}
     onClick={null}
     title="Patternfly-React"
-    truncateDescriptionFn={null}
     vendor="provided by Red Hat"
   >
     <Card
@@ -1773,8 +1391,7 @@ exports[`CatalogTile renders properly 1`] = `
               <span
                 className="has-footer"
               >
-                This is a very long description that should be truncated after 112 characters. 112 is the default but can be 
-                …
+                1234567890123
               </span>
             </div>
           </div>
@@ -1845,10 +1462,8 @@ exports[`CatalogTile renders properly 1`] = `
     iconClass=""
     iconImg={null}
     id="custom-icon-svg-test"
-    maxDescriptionLength={112}
     onClick={null}
     title="Custom SVG"
-    truncateDescriptionFn={null}
     vendor={null}
   >
     <Card

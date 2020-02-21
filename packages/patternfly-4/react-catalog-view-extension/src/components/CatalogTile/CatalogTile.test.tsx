@@ -7,12 +7,6 @@ import { CatalogTile } from './CatalogTile';
 import { CatalogTileBadge } from './CatalogTileBadge';
 
 test('CatalogTile renders properly', () => {
-  const testTruncationFunction = (text: React.ReactNode | string, max: number) => {
-    expect(text).toBe('1234567890123');
-    expect(max).toBe(10);
-    return 'truncated';
-  };
-
   const component = mount(
     <div>
       <CatalogTile
@@ -49,27 +43,6 @@ test('CatalogTile renders properly', () => {
         description="Simple collaboration from your desktop."
       />
       <CatalogTile
-        id="long-description-test"
-        featured
-        badges={[
-          <CatalogTileBadge title="Certified" id="certified" key="1">
-            <CogIcon />
-          </CatalogTileBadge>
-        ]}
-        title="Patternfly"
-        vendor={
-          <span>
-            Provided by <a href="redhat.com">Red Hat</a>
-          </span>
-        }
-        description={
-          'This is a very long description that should be truncated after 112 characters. ' +
-          '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
-          'to truncate the description how you see fit. It will be passed the description and max length.'
-        }
-        maxDescriptionLength={112}
-      />
-      <CatalogTile
         id="test-iconClass"
         iconClass="fa fa-codepen"
         badges={[
@@ -82,19 +55,6 @@ test('CatalogTile renders properly', () => {
         description="An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets."
       />
       <CatalogTile
-        id="test-custom-truncation"
-        featured
-        title="Patternfly"
-        vendor={
-          <span>
-            Provided by <a href="redhat.com">Red Hat</a>
-          </span>
-        }
-        description="1234567890123"
-        maxDescriptionLength={10}
-        truncateDescriptionFn={testTruncationFunction}
-      />
-      <CatalogTile
         id="tile-footer-test"
         featured
         href="https://github.com/patternfly/patternfly-react"
@@ -105,11 +65,7 @@ test('CatalogTile renders properly', () => {
         ]}
         title="Patternfly-React"
         vendor="provided by Red Hat"
-        description={
-          'This is a very long description that should be truncated after 112 characters. ' +
-          '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
-          'to truncate the description how you see fit. It will be passed the description, max length, and id.'
-        }
+        description="1234567890123"
         footer={
           <span>
             <OutlinedCheckCircleIcon /> Enabled
