@@ -4,6 +4,7 @@ exports[`Radio should match snapshot (auto-generated) 1`] = `
 <label
   className="pf-c-radio ''"
   htmlFor="string"
+  tabIndex={null}
 >
   <span
     className="pf-c-radio__label"
@@ -13,6 +14,7 @@ exports[`Radio should match snapshot (auto-generated) 1`] = `
     </div>
   </span>
   <input
+    aria-disabled={null}
     aria-invalid={false}
     checked={true}
     className="pf-c-radio__input"
@@ -20,6 +22,7 @@ exports[`Radio should match snapshot (auto-generated) 1`] = `
     id="string"
     name="string"
     onChange={[Function]}
+    tabIndex={null}
     type="radio"
   />
   <div

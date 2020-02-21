@@ -6,7 +6,7 @@ interface DemoInterface {
   /** The name of the demo */
   name: string;
   /** Demo component associated with the demo  */
-  componentType: any;
+  componentType: React.ComponentType;
 }
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [

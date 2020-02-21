@@ -22,6 +22,13 @@ describe('Radio check component', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('isInoperable', () => {
+    const view = shallow(
+      <Radio id="inoperable-check" isInoperable aria-label="check" name="inoperable-check" />
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('isLabelBeforeButton', () => {
     const view = shallow(<Radio id="check" isLabelBeforeButton label="Radio label" aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();

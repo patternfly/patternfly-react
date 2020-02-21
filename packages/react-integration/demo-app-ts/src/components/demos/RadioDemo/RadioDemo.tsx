@@ -1,4 +1,4 @@
-import { Radio, RadioProps } from '@patternfly/react-core';
+import { Radio, RadioProps, Tooltip } from '@patternfly/react-core';
 import React, { Component } from 'react';
 export class RadioDemo extends Component {
   state = {
@@ -55,6 +55,9 @@ export class RadioDemo extends Component {
     ),
     name: 'disabled-2'
   };
+  interactiveEventHandler = () => {
+    window.location.href = 'https://github.com/patternfly/patternfly-react';
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -108,6 +111,119 @@ export class RadioDemo extends Component {
           name={this.myUncheckedDescriptionRadioProps.name}
           description={this.myUncheckedDescriptionRadioProps.description}
         />
+
+        <Radio
+          id="inoperable-radio-1"
+          name="inoperable-1"
+          description="A basic inoperable radio input"
+          isInoperable
+          label="Inoperable radio example 1"
+          onChange={this.interactiveEventHandler}
+          onClick={this.interactiveEventHandler}
+          onKeyPress={this.interactiveEventHandler}
+        />
+
+        <Tooltip content="This tooltip content wraps the entire component">
+          <Radio
+            id="inoperable-radio-2"
+            name="inoperable-2"
+            isInoperable
+            label="Inoperable radio example 2"
+            description="This radio is inoperable and is encased within a Tooltip component"
+            onChange={this.interactiveEventHandler}
+            onClick={this.interactiveEventHandler}
+            onKeyPress={this.interactiveEventHandler}
+          />
+        </Tooltip>
+
+        <Radio
+          id="inoperable-radio-3"
+          name="inoperable-3"
+          isInoperable
+          label="Inoperable radio example 3"
+          onChange={this.interactiveEventHandler}
+          onClick={this.interactiveEventHandler}
+          onKeyPress={this.interactiveEventHandler}
+          description="This radio is inoperable and label wrapped"
+          isLabelWrapped
+        />
+
+        <Tooltip content="This tooltip content wraps the entire component">
+          <Radio
+            id="inoperable-radio-4"
+            name="inoperable-4"
+            isInoperable
+            isLabelWrapped
+            label="Inoperable radio example 4"
+            description="This radio is inoperable and label wrapped and is encased within a Tooltip component"
+            onChange={this.interactiveEventHandler}
+            onClick={this.interactiveEventHandler}
+            onKeyPress={this.interactiveEventHandler}
+          />
+        </Tooltip>
+
+        <Radio
+          id="inoperable-radio-5"
+          name="inoperable-5"
+          isLabelWrapped
+          isInoperable
+          tooltip={{
+            component: Tooltip,
+            props: {
+              children: null,
+              content: 'This tooltip content wraps only the radio input element',
+              position: 'left'
+            }
+          }}
+          label="Inoperable radio example 5"
+          description="This Radio is inoperable and label wrapped with a nested tooltip"
+        />
+
+        <Radio
+          id="inoperable-radio-6"
+          name="inoperable-6"
+          isInoperable
+          tooltip={{
+            component: Tooltip,
+            props: {
+              children: null,
+              content: 'This tooltip content wraps only the radio input element',
+              position: 'left'
+            }
+          }}
+          label="Inoperable radio example 6"
+          description="This Radio is inoperable with a nested tooltip"
+        />
+
+        <Radio
+          id="inoperable-radio-7"
+          name="inoperable-7"
+          isInoperable
+          isLabelWrapped
+          tabIndex={6}
+          tooltip={{
+            component: Tooltip,
+            props: {
+              children: null,
+              content:
+                'This tooltip content wraps only the radio input element and is explicitly focused as the second element of the page',
+              position: 'left'
+            }
+          }}
+          label="Inoperable radio example 7"
+          description="This Radio is inoperable and label wrapped with positive tabindex"
+        />
+
+        <Tooltip content="This tooltip content wraps the entire Radio component and is explicitly focused as the first element of the page">
+          <Radio
+            id="inoperable-radio-8"
+            name="inoperable-8"
+            isInoperable
+            tabIndex={3}
+            label="Inoperable radio example 8"
+            description="This Radio is inoperable with positive tabindex"
+          />
+        </Tooltip>
       </React.Fragment>
     );
   }

@@ -7,7 +7,7 @@ propComponents: ['Card', 'CardHeadMain', 'CardHeader', 'CardBody', 'CardFooter']
 ---
 
 import { Brand, Card, CardActions, CardHead, CardHeadMain, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
-import pfLogo from './pfLogo.svg'; 
+import pfLogo from './pfLogo.svg';
 
 ## Examples
 ```js title=Basic
@@ -24,9 +24,9 @@ SimpleCard = () => (
 ```
 
 ```js title=With-image-and-actions
-import React from 'react'; 
-import { Brand, Card, CardHead, CardHeadMain, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
-import pfLogo from './pfLogo.svg'; 
+import React from 'react';
+import { Brand, Card, CardHead, CardHeadMain, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core';
+import pfLogo from './pfLogo.svg';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -46,11 +46,11 @@ class KebabDropdown extends React.Component {
       });
     };
     this.onClick = (checked, event) => {
-      const target = event.target; 
-      const value = target.type === 'checkbox' ? target.checked : target.value; 
-      const name = target.name; 
-      this.setState({ [name]: value }); 
-    }; 
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+      this.setState({ [name]: value });
+    };
   }
 
   render() {
@@ -88,7 +88,7 @@ class KebabDropdown extends React.Component {
               position={'right'}
             />
             <input
-              type="checkbox" 
+              type="checkbox"
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
@@ -107,15 +107,15 @@ class KebabDropdown extends React.Component {
 ```
 
 ```js title=Card-header-in-card-head
- import React from 'react'; 
-import { Card, CardHead, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
+ import React from 'react';
+import { Card, CardHead, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
-      check1: false
+      check2: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -128,11 +128,11 @@ class KebabDropdown extends React.Component {
       });
     };
     this.onClick = (checked, event) => {
-      const target = event.target; 
-      const value = target.type === 'checkbox' ? target.checked : target.value; 
-      const name = target.name; 
-      this.setState({ [name]: value }); 
-    }; 
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+      this.setState({ [name]: value });
+    };
   }
 
   render() {
@@ -167,12 +167,12 @@ class KebabDropdown extends React.Component {
               position={'right'}
             />
             <input
-              type="checkbox" 
-              isChecked={this.state.check1}
+              type="checkbox"
+              isChecked={this.state.check2}
               onChange={this.onClick}
               aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
+              id="check-2"
+              name="check2"
             />
           </CardActions>
         <CardHeader>This is a really really really really really really really really really really long header</CardHeader>
@@ -186,15 +186,15 @@ class KebabDropdown extends React.Component {
 ```
 
 ```js title=Only-actions-in-card-head-(no-header/footer)
- import React from 'react'; 
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
+ import React from 'react';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
-      check1: false
+      check3: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -207,11 +207,11 @@ class KebabDropdown extends React.Component {
       });
     };
     this.onClick = (checked, event) => {
-      const target = event.target; 
-      const value = target.type === 'checkbox' ? target.checked : target.value; 
-      const name = target.name; 
-      this.setState({ [name]: value }); 
-    }; 
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+      this.setState({ [name]: value });
+    };
   }
 
   render() {
@@ -246,12 +246,12 @@ class KebabDropdown extends React.Component {
               position={'right'}
             />
             <input
-              type="checkbox" 
-              isChecked={this.state.check1}
+              type="checkbox"
+              isChecked={this.state.check3}
               onChange={this.onClick}
               aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
+              id="check-3"
+              name="check3"
             />
           </CardActions>
         </CardHead>
@@ -272,7 +272,7 @@ ImageCard = () => (
       <CardHeadMain>
         <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
       </CardHeadMain>
-    </CardHead> 
+    </CardHead>
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
@@ -373,7 +373,7 @@ HoverableCard = () => (
 
 ```js title=Selectable-and-selected
 import React from 'react';
-import { Card, CardHead, CardActions, CardHeader, CardBody, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
+import { Card, CardHead, CardActions, CardHeader, CardBody, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core';
 
 class SelectableCard extends React.Component {
   constructor(props) {
@@ -397,7 +397,7 @@ class SelectableCard extends React.Component {
       this.setState({
         selected: newSelected
       })
-    }; 
+    };
     this.onToggle = (isOpen, event) => {
       event.stopPropagation()
       this.setState({

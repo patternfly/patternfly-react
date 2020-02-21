@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-radio'
 typescript: true
 propComponents: ['Radio']
 ---
-import { Radio } from '@patternfly/react-core';
+import { Radio, Tooltip } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Controlled
@@ -75,6 +75,15 @@ LabelWrapsInputRadio = () => (
 );
 ```
 
+```js title=With-description
+import React from 'react';
+import { Radio } from '@patternfly/react-core';
+
+WithDescriptionRadio = () => (
+  <Radio id="radio-with-description" label="Radio with description example" description="Description" name="radio-5" />
+);
+```
+
 ```js title=Disabled
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
@@ -87,11 +96,22 @@ DisabledRadio = () => (
 );
 ```
 
-```js title=With-description
+```js title=Inoperable-with-wrapping-tooltip
 import React from 'react';
-import { Radio } from '@patternfly/react-core';
+import { Radio, Tooltip } from '@patternfly/react-core';
 
-DisabledRadio = () => (
-  <Radio id="radio-with-description" label="Radio with description example" description="Description" />
+InoperableRadioWithTooltip = () => (
+  <Tooltip content={<div>Radio <strong>component</strong> tooltip content</div>}>
+    <Radio isInoperable id="radio-inoperable-tooltip-label-wrapped" label="Option 1" description="This Radio is inoperable that's nested within a containing Tooltip component" name="radio-7" />
+  </Tooltip>
+);
+```
+
+```js title=Inoperable-with-nested-tooltip
+import React from 'react';
+import { Radio, Tooltip } from '@patternfly/react-core';
+
+InoperableRadioWithInputTooltip = () => (
+    <Radio tooltip={{component: Tooltip, props: {children: null, content: <div>Radio <strong>input</strong> tooltip content</div>, position: 'left'}}} isInoperable id="radio-inoperable-input-tooltip" label="Option 1" description="This Radio is inoperable with a nested tooltip" name="radio-8" />
 );
 ```

@@ -490,6 +490,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             />
           )}
           <WizardToggle
+            stepButtonAriaHidden={isInPage || null}
             isNavOpen={this.state.isNavOpen}
             onNavToggle={isNavOpen => this.setState({ isNavOpen })}
             nav={nav}

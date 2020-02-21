@@ -21,6 +21,8 @@ export interface WizardToggleProps {
   isNavOpen: boolean;
   /** Callback function for when the nav is toggled */
   onNavToggle: (isOpen: boolean) => void;
+  /** If the steps button is aria-hidden */
+  stepButtonAriaHidden?: boolean;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -30,7 +32,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding = true
+  hasBodyPadding = true,
+  stepButtonAriaHidden,
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -54,6 +57,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   return (
     <>
       <button
+        aria-hidden={stepButtonAriaHidden}
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
         aria-expanded={isNavOpen}
