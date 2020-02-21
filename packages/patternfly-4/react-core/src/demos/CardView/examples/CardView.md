@@ -440,11 +440,15 @@ class CardViewDefaultNav extends React.Component {
     if (checked) {
       collection = this.getAllItems();
     }
+    console.log(collection);
 
-    this.setState({
+    this.setState(
+      {
       selectedItems: collection,
       areAllSelected: checked
-    });
+      },
+    this.updateSelected
+    );
   };
 
 
@@ -493,7 +497,7 @@ class CardViewDefaultNav extends React.Component {
   }
 
   updateSelected() {
-  /* const { res, selectedItems } = this.state;
+  const { res, selectedItems } = this.state;
   let rows = res.map(post => {
     post.selected = selectedItems.includes(post.id);
     return post;
@@ -501,7 +505,7 @@ class CardViewDefaultNav extends React.Component {
 
   this.setState({
     res: rows
-  }); */
+  });
 };
 
   buildFilterDropdown() {
