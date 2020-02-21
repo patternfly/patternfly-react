@@ -129,6 +129,8 @@ class CardViewDefaultNav extends React.Component {
     super(props);
 
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
+    this.handleSelectClick = this.handleSelectClick.bind(this);
+
 
     this.state = {
       cardInfo: [
@@ -199,9 +201,10 @@ class CardViewDefaultNav extends React.Component {
       res: [],
       cardChecks: { key1: false, key2: false, key3: false,
        key4: false, key5: false, key6: false, key7: false,
-      key8: false, key9: false, key10: false }
+      key8: false, key9: false, key10: false },
       selectedItems: [],
-      checkedListAll: [],
+      areAllSelected: false,
+      /* checkedListAll: [], */
       itemsChecked: false,
       numSelected: 0,
       isUpperToolbarDropdownOpen: false,
@@ -316,8 +319,8 @@ class CardViewDefaultNav extends React.Component {
     };
 
     this.onSplitButtonSelect = event => {
-      this.setState((prevState, props) => {
-        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen
+      this.setState({
+        splitButtonDropdownIsOpen: !this.state.splitButtonDropdownIsOpen
       });
     };
 
@@ -350,40 +353,105 @@ class CardViewDefaultNav extends React.Component {
         });
       }
     };
+  }
 
-    this.handleSelectClick = newState => {
+    handleSelectClick(e, newState) {
+      const { value, checked } = e.target;
+      const { cardChecks } = this.state;
+      const { collection } = [];
+      let { selectedItems } = this.state;
       if (newState === 'none') {
+
+        console.log(cardChecks);
+        console.log(collection);
+
         this.setState(
           {
-            selectedItems: [],
+            cardChecks: Object.keys(cardChecks).forEach(key => cardChecks[key] = false),
+            selectedItems: collection,
+
+            /* ItemsChecked: checked */
           },
-          this.updateSelected
+          /* this.updateSelected */
         );
-      } else if (newState === 'page') {
-          /* iterate through cardChecks and set all to true */
-        });
+      }
+      /* else if (newState === 'page') {
+
+        };
 
         this.setState((prevState, props) => {
           return {
             selectedItems: prevState.selectedItems.concat(newRows)
           };
-        }, this.updateSelected);
-      } else {
+        }, this.updateSelected); */
+       else {
+        console.log(cardChecks)
+
+        this.getAllItems();
 
         this.setState(
           {
-            selectedItems: newRows
+            cardChecks: Object.keys(cardChecks).forEach(key => cardChecks[key] = true),
+            areAllSelected: checked,
+            selectedItems: collection
+
+            /* selectedItems: Object.keys(cardInfo).forEach(function(key) {
+              console.log(key, obj[key]);
+              }); */
           },
-          this.updateSelected
+          /* this.updateSelected */
         );
       }
     };
-  }
+
+  handleCheckboxClick(e) {
+    /* e.preventDefault(); */
+
+    const { value, checked } = e.target;
+
+    if (checked) {
+      const collection = this.getAllItems();
+      this.setState(prevState => ({
+        selectedItems: [...prevState.selectedItems, value * 1],
+        areAllSelected: collection.length === prevState.selectedItems.length + 1
+      }));
+    } else {
+      this.setState(prevState => ({
+        selectedItems: prevState.selectedItems.filter(item => item != value),
+        areAllSelected: false
+      }));
+    }
+  };
+
+  getAllItems() {
+    const { cardInfo } = this.state;
+    const collection = [];
+      for (const items of cardInfo) {
+        collection.push(items.id);
+      }
+
+    return collection;
+    };
+
+  selectAll(e) {
+    const { checked } = e.target;
+    let collection = [];
+
+    if (checked) {
+      collection = this.getAllItems();
+    }
+
+    this.setState({
+      selectedItems: collection,
+      areAllSelected: checked
+    });
+  };
+
 
   buildSelectDropdown() {
-    const { splitButtonDropdownIsOpen, selectedItems } = this.state;
+    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
     const numSelected = selectedItems.length;
-    const allSelected = numSelected === 10;
+    const allSelected = areAllSelected;
     const anySelected = numSelected > 0;
     const someChecked = anySelected ? null : false;
     const isChecked = allSelected ? true : someChecked;
@@ -392,26 +460,26 @@ class CardViewDefaultNav extends React.Component {
       <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
         Select none (0 items)
       </DropdownItem>,
-      <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+      /* <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={this.selectItem.bind(this)}>Select all (10 items)</DropdownItem>,
+      </DropdownItem>, */
+      <DropdownItem key="item-3" checked="areAllSelected" onClick={() => this.selectAll.bind(this)}>Select all (10 items)</DropdownItem>,
     ];
 
     return (
       <Dropdown
-        onSelect={this.onSplitButtonSelect}
         position={DropdownPosition.left}
         toggle={
           <DropdownToggle
             splitButtonItems={[
               <DropdownToggleCheckbox
                 id="example-checkbox-2"
+                onSelect={this.onSplitButtonSelect}
                 key="split-checkbox"
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={isChecked}
                 onClick={() => {
-                  anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
+                  anySelected ? this.handleSelectClick('none') : this.selectAll.bind(this);
                 }}
               ></DropdownToggleCheckbox>
             ]}
@@ -426,57 +494,8 @@ class CardViewDefaultNav extends React.Component {
     );
   }
 
-  selectedItems(e) {
-    const { value, checked } = e.target;
-    let { checkedListAll } = this.state;
-
-    if (checked) {
-      checkedListAll = [...checkedListAll, value];
-    } else {
-      checkedListAll = checkedListAll.filter(el => el !== value);
-      if (this.state.ItemsChecked) {
-        this.setState({
-          ItemsChecked: !this.state.ItemsChecked
-        });
-      }
-    }
-    this.setState({ checkedListAll });
-  }
-  selectItem(e) {
-    const { checked } = e.target;
-    const { cardInfo } = this.state;
-    const collection = [];
-
-    if (checked) {
-      for (const card of cardInfo) {
-        for (const item of card.items) {
-          collection.push(item.id);
-        }
-      }
-    }
-
-    this.setState({
-      checkedListAll: collection,
-      itemsChecked: checked
-    });
-  }
-
-  handleCheckboxClick(e, newState) {
-    const { value, checked } = e.target;
-
-    if (newState === 'page') {
-      this.setState(prevState => ({
-        checkedListAll: [...prevState.checkedListAll, value * 1]
-      }));
-    } else {
-      this.setState(prevState => ({
-        checkedListAll: prevState.checkedListAll.filter(item => item != value)
-      }));
-    }
-  }
-
   updateSelected() {
-  const { res, selectedItems } = this.state;
+  /* const { res, selectedItems } = this.state;
   let rows = res.map(post => {
     post.selected = selectedItems.includes(post.id);
     return post;
@@ -484,7 +503,7 @@ class CardViewDefaultNav extends React.Component {
 
   this.setState({
     res: rows
-  });
+  }); */
 };
 
   buildFilterDropdown() {
@@ -537,7 +556,7 @@ class CardViewDefaultNav extends React.Component {
             activeItem,
             filters,
             res,
-            checkedListAll,
+            cardChecks,
             selectedItems,
             itemsChecked } = this.state;
 
@@ -729,7 +748,7 @@ class CardViewDefaultNav extends React.Component {
                                     <Checkbox
                                     onSelect={this.onCheckboxSelect}
                                     selectedItems={selectedItems}
-                                    isChecked={checkedListAll.includes(product.id)}
+                                    isChecked={false}
                                     handleCheckboxClick={this.props.handleCheckboxClick}
                                     defaultChecked={this.state.itemsChecked}
                                     onChange={this.props.handleCheckboxClick}
