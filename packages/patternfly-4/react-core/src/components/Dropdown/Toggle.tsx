@@ -41,6 +41,8 @@ export interface ToggleProps {
   isSplitButton?: boolean;
   /** Flag for aria popup */
   ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
+  /** Allows selecting toggle to select parent */
+  bubbleEvent?: boolean;
 }
 
 export class Toggle extends React.Component<ToggleProps> {
@@ -57,7 +59,8 @@ export class Toggle extends React.Component<ToggleProps> {
     isPrimary: false,
     isSplitButton: false,
     onToggle: () => {},
-    onEnter: () => {}
+    onEnter: () => {}, 
+    bubbleEvent: false
   };
 
   componentDidMount = () => {
@@ -102,6 +105,9 @@ export class Toggle extends React.Component<ToggleProps> {
   onKeyDown = (event: React.KeyboardEvent<any>) => {
     if (event.key === 'Tab' && !this.props.isOpen) {
       return;
+    }
+    if (!this.props.bubbleEvent) {
+      event.stopPropagation();
     }
     event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
