@@ -129,7 +129,7 @@ class CardViewDefaultNav extends React.Component {
     super(props);
 
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-    this.handleSelectClick = this.handleSelectClick.bind(this);
+    /* this.handleSelectClick = this.handleSelectClick.bind(this); */
 
 
     this.state = {
@@ -355,7 +355,7 @@ class CardViewDefaultNav extends React.Component {
     };
   }
 
-    handleSelectClick(e, newState) {
+    /* handleSelectClick(e, newState) {
       const { value, checked } = e.target;
       const { cardChecks } = this.state;
       const { collection } = [];
@@ -368,13 +368,13 @@ class CardViewDefaultNav extends React.Component {
         this.setState(
           {
             cardChecks: Object.keys(cardChecks).forEach(key => cardChecks[key] = false),
-            selectedItems: collection,
+            selectedItems: collection, */
 
             /* ItemsChecked: checked */
-          },
+          /* }, */
           /* this.updateSelected */
-        );
-      }
+        /* );
+      } */
       /* else if (newState === 'page') {
 
         };
@@ -384,7 +384,7 @@ class CardViewDefaultNav extends React.Component {
             selectedItems: prevState.selectedItems.concat(newRows)
           };
         }, this.updateSelected); */
-       else {
+       /* else {
         console.log(cardChecks)
 
         this.getAllItems();
@@ -393,16 +393,16 @@ class CardViewDefaultNav extends React.Component {
           {
             cardChecks: Object.keys(cardChecks).forEach(key => cardChecks[key] = true),
             areAllSelected: checked,
-            selectedItems: collection
+            selectedItems: collection */
 
             /* selectedItems: Object.keys(cardInfo).forEach(function(key) {
               console.log(key, obj[key]);
               }); */
-          },
+          /* }, */
           /* this.updateSelected */
-        );
+        /* );
       }
-    };
+    }; */
 
   handleCheckboxClick(e) {
     /* e.preventDefault(); */
@@ -457,9 +457,9 @@ class CardViewDefaultNav extends React.Component {
     const isChecked = allSelected ? true : someChecked;
 
     const splitButtonDropdownItems = [
-      <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+      /* <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
         Select none (0 items)
-      </DropdownItem>,
+      </DropdownItem>, */
       /* <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
         Select page ({this.state.perPage} items)
       </DropdownItem>, */
@@ -478,9 +478,7 @@ class CardViewDefaultNav extends React.Component {
                 key="split-checkbox"
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={isChecked}
-                onClick={() => {
-                  anySelected ? this.handleSelectClick('none') : this.selectAll.bind(this);
-                }}
+                onClick={this.selectAll.bind(this)}
               ></DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
