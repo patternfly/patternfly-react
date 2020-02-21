@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Tooltip']
 ---
 
-import { Button, Tooltip, TooltipPosition, TooltipContent, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
