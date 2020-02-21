@@ -3,6 +3,7 @@
 exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
 <Toggle
   aria-label="'Actions'"
+  bubbleEvent={false}
   className="''"
   id="''"
   isActive={false}

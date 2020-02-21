@@ -59,7 +59,7 @@ export class Toggle extends React.Component<ToggleProps> {
     isPrimary: false,
     isSplitButton: false,
     onToggle: () => {},
-    onEnter: () => {}, 
+    onEnter: () => {},
     bubbleEvent: false
   };
 
