@@ -16,10 +16,11 @@ import { Level, LevelItem } from '@patternfly/react-core';
 
 LevelBasicExample = () => (
   <Level>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-</Level>
+    <LevelItem>Level Item</LevelItem>
+    <LevelItem>Level Item</LevelItem>
+    <LevelItem>Level Item</LevelItem>
+  </Level>
+);
 ```
 
 ```js title=With-gutters
