@@ -883,17 +883,17 @@ class SingleSelectInput extends React.Component {
           label="isDisabled"
           isChecked={this.state.isDisabled}
           onChange={this.toggleDisabled}
-          aria-label="disabled checkbox"
-          id="toggle-disabled"
-          name="toggle-disabled"
+          aria-label="disabled checkbox panel"
+          id="toggle-disabled-panel"
+          name="toggle-disabled-panel"
         />
         <Checkbox
           label="Expands up"
           isChecked={direction === SelectDirection.up}
           onChange={this.toggleDirection}
-          aria-label="direction checkbox"
-          id="toggle-direction"
-          name="toggle-direction"
+          aria-label="direction checkbox panel"
+          id="toggle-direction-panel"
+          name="toggle-direction-panel"
         />
       </div>
     );
