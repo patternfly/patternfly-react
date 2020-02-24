@@ -109,7 +109,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
           {description}
         </div>
       )}
-      <ModalBoxBody {...props} {...(!description && { id: id })}>
+      <ModalBoxBody {...props} {...(!description && { id })}>
         {children}
       </ModalBoxBody>
       {modalBoxFooter}
