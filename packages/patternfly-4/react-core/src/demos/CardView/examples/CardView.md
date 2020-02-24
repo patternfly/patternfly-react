@@ -404,6 +404,55 @@ class CardViewDefaultNav extends React.Component {
       }
     }; */
 
+  selectedItems(e) {
+    const { value, checked } = e.target;
+    let { selectedItems } = this.state;
+
+    if (checked) {
+      selectedItems = [...selectedItems, value];
+    } else {
+      selectedItems = selectedItems.filter(el => el !== value);
+      if (this.state.areAllSelected) {
+        this.setState({
+          areAllSelected: !this.state.areAllSelected
+        });
+      }
+    }
+    this.setState({ selectedItems });
+  }
+
+
+  selectAll(e) {
+    const { checked } = e.target;
+    const { isChecked } = this.state;
+    let collection = [];
+
+    if(checked) {
+    collection = this.getAllItems();
+    }
+  
+    console.log(collection);
+
+    this.setState(
+      {
+      selectedItems: collection,
+      isChecked: isChecked,
+      areAllSelected: checked
+      },
+    this.updateSelected
+    );
+  };
+
+  getAllItems() {
+    const { cardInfo } = this.state;
+    const collection = [];
+      for (const items of cardInfo) {
+        collection.push(items.id);
+      }
+
+    return collection;
+    };
+
   handleCheckboxClick(e) {
     /* e.preventDefault(); */
 
@@ -423,55 +472,14 @@ class CardViewDefaultNav extends React.Component {
     }
   };
 
-  getAllItems() {
-    const { cardInfo } = this.state;
-    const collection = [];
-      for (const items of cardInfo) {
-        collection.push(items.id);
-      }
-
-    return collection;
-    };
-
-  selectedItems(e) {
-    const { value, checked } = e.target;
-    let { selectedItems } = this.state;
-
-    if (checked) {
-      selectedItems = [...selectedItems, value];
-    } else {
-      selectedItems = selectedItems.filter(el => el !== value);
-      if (this.state.areAllSelected) {
-        this.setState({
-          areAllSelected: !this.state.areAllSelected
-        });
-      }
-    }
-    this.setState({ selectedItems });
-  }
-
-  selectAll(e) {
+  selectNone(e) {
     const { checked } = e.target;
-    let collection = [];
-
-    if (checked) {
-      collection = this.getAllItems();
-    }
-    console.log(collection);
-
-    this.setState(
-      {
-      selectedItems: collection,
-      areAllSelected: checked
-      },
-    this.updateSelected
-    );
-  };
-
-  selectNone() {
+    const {isChecked, selectedItems} = this.state;
       this.setState(
           {
-            selectedItems: []
+            selectedItems: [],
+            isChecked: isChecked,
+            areAllSelected: checked
           },
           this.updateSelected
         );
