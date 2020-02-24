@@ -1,5 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Modal Content Test description 1`] = `
+<Backdrop>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <ModalBox
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <ModalBoxCloseButton
+        onClose={[Function]}
+      />
+      <ModalBoxHeader
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </ModalBoxHeader>
+      <div
+        className="pf-c-modal-box__description"
+        id="id"
+      >
+        This is a test description.
+      </div>
+      <ModalBoxBody>
+        This is a ModalBox header
+      </ModalBoxBody>
+    </ModalBox>
+  </FocusTrap>
+</Backdrop>
+`;
+
 exports[`Modal Content Test isOpen 1`] = `
 <Backdrop>
   <FocusTrap
