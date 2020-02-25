@@ -15,7 +15,7 @@ import '@patternfly/react-styles/css/components/Divider/divider';
 ## Examples
 Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=Items isBeta
+```js title=Items
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
@@ -46,7 +46,7 @@ class DataToolbarItems extends React.Component {
 }
 
 ```
-```js title=Adjusting-item-spacers isBeta
+```js title=Adjusting-item-spacers
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
@@ -102,7 +102,7 @@ class DataToolbarSpacers extends React.Component {
 
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=Groups isBeta
+```js title=Groups
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
