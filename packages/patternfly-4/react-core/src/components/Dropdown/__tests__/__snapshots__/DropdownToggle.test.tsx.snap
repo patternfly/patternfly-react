@@ -7,6 +7,7 @@ exports[`state active 1`] = `
   parentRef={<div />}
 >
   <Toggle
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={true}
@@ -23,6 +24,7 @@ exports[`state active 1`] = `
   >
     <button
       aria-expanded={false}
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle pf-m-active"
       disabled={false}
       id="Dropdown Toggle"
@@ -75,6 +77,7 @@ exports[`state class changes 1`] = `
   parentRef={<div />}
 >
   <Toggle
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -91,6 +94,7 @@ exports[`state class changes 1`] = `
   >
     <button
       aria-expanded={false}
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle pf-m-focus"
       disabled={false}
       id="Dropdown Toggle"
@@ -143,6 +147,7 @@ exports[`state class changes 2`] = `
   parentRef={<div />}
 >
   <Toggle
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -159,6 +164,7 @@ exports[`state class changes 2`] = `
   >
     <button
       aria-expanded={false}
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle pf-m-focus"
       disabled={false}
       id="Dropdown Toggle"
@@ -211,6 +217,7 @@ exports[`state focus 1`] = `
   parentRef={<div />}
 >
   <Toggle
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -227,6 +234,7 @@ exports[`state focus 1`] = `
   >
     <button
       aria-expanded={false}
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle pf-m-focus"
       disabled={false}
       id="Dropdown Toggle"
@@ -279,6 +287,7 @@ exports[`state hover 1`] = `
   parentRef={<div />}
 >
   <Toggle
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -295,6 +304,7 @@ exports[`state hover 1`] = `
   >
     <button
       aria-expanded={false}
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle pf-m-hover"
       disabled={false}
       id="Dropdown Toggle"

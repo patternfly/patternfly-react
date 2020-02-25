@@ -5,6 +5,7 @@ exports[`Dropdown toggle 1`] = `
   id="Dropdown Toggle"
 >
   <Toggle
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -21,6 +22,7 @@ exports[`Dropdown toggle 1`] = `
   >
     <button
       aria-expanded={false}
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle"
       disabled={false}
       id="Dropdown Toggle"
@@ -72,6 +74,7 @@ exports[`Kebab toggle 1`] = `
 >
   <Toggle
     aria-label="Actions"
+    bubbleEvent={false}
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -89,6 +92,7 @@ exports[`Kebab toggle 1`] = `
     <button
       aria-expanded={false}
       aria-label="Actions"
+      bubbleEvent={false}
       className="pf-c-dropdown__toggle"
       disabled={false}
       id="Dropdown Toggle"

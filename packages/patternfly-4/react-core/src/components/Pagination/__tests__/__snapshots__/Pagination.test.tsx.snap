@@ -494,6 +494,7 @@ exports[`component render custom pagination toggle 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-11"
                           isActive={false}
@@ -550,6 +551,7 @@ exports[`component render custom pagination toggle 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-11"
@@ -1379,6 +1381,7 @@ exports[`component render custom perPageOptions 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-7"
                           isActive={false}
@@ -1446,6 +1449,7 @@ exports[`component render custom perPageOptions 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-7"
@@ -2418,6 +2422,7 @@ exports[`component render custom start end 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-9"
                           isActive={false}
@@ -2485,6 +2490,7 @@ exports[`component render custom start end 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-9"
@@ -4051,6 +4057,7 @@ exports[`component render last page 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-6"
                           isActive={false}
@@ -4118,6 +4125,7 @@ exports[`component render last page 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-6"
@@ -5087,6 +5095,7 @@ exports[`component render limited number of pages 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-4"
                           isActive={false}
@@ -5154,6 +5163,7 @@ exports[`component render limited number of pages 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-4"
@@ -6122,6 +6132,7 @@ exports[`component render no items 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-8"
                           isActive={false}
@@ -6190,6 +6201,7 @@ exports[`component render no items 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle-8"
@@ -7137,6 +7149,7 @@ exports[`component render should render correctly bottom 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-1"
                           isActive={false}
@@ -7204,6 +7217,7 @@ exports[`component render should render correctly bottom 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-1"
@@ -8173,6 +8187,7 @@ exports[`component render should render correctly compact 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-2"
                           isActive={false}
@@ -8240,6 +8255,7 @@ exports[`component render should render correctly compact 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-2"
@@ -9022,6 +9038,7 @@ exports[`component render should render correctly disabled 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-3"
                           isActive={false}
@@ -9090,6 +9107,7 @@ exports[`component render should render correctly disabled 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle-3"
@@ -10056,6 +10074,7 @@ exports[`component render should render correctly top 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-0"
                           isActive={false}
@@ -10123,6 +10142,7 @@ exports[`component render should render correctly top 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-0"
@@ -11107,6 +11127,7 @@ exports[`component render titles 1`] = `
                       >
                         <Toggle
                           aria-label="Select"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-10"
                           isActive={false}
@@ -11174,6 +11195,7 @@ exports[`component render titles 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Select"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-10"
@@ -12143,6 +12165,7 @@ exports[`component render up drop direction 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-12"
                           isActive={false}
@@ -12210,6 +12233,7 @@ exports[`component render up drop direction 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-12"
@@ -13178,6 +13202,7 @@ exports[`component render zero results 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-5"
                           isActive={false}
@@ -13246,6 +13271,7 @@ exports[`component render zero results 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle-5"
