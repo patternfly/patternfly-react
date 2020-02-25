@@ -15,47 +15,53 @@ import './flex.css';
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+BasicFlexExample = () => (
+  <Flex>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Nesting
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex>
+NestingFlexExample = () => (
   <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Nested-with-items
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex>
+NestedItemsFlexExample = () => (
   <Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
     <FlexItem>Flex item</FlexItem>
     <FlexItem>Flex item</FlexItem>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ### Flex Spacing
@@ -63,42 +69,48 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-none"]}]}>Item - none</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-xs"]}]}>Item - xs</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-sm"]}]}>Item -sm</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-md"]}]}>Item - md</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-lg"]}]}>Item - lg</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-xl"]}]}>Item - xl</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-2xl"]}]}>Item - 2xl</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-3xl"]}]}>Item - 3xl</FlexItem>
-</Flex>
+FlexSpacingExample = () => (
+  <Flex>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-none"]}]}>Item - none</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-xs"]}]}>Item - xs</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-sm"]}]}>Item -sm</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-md"]}]}>Item - md</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-lg"]}]}>Item - lg</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-xl"]}]}>Item - xl</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-2xl"]}]}>Item - 2xl</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["spacer-3xl"]}]}>Item - 3xl</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Spacing-xl
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex breakpointMods={[{modifier: FlexModifiers["space-items-xl"]}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexSpacingXlExample = () => (
+  <Flex breakpointMods={[{modifier: FlexModifiers["space-items-xl"]}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
-```js title=Spacin-none
+```js title=Spacing-none
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex breakpointMods={[{modifier: FlexModifiers["space-items-none"]}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexSpacingNoneExample = () => (
+  <Flex breakpointMods={[{modifier: FlexModifiers["space-items-none"]}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ### Flex layout modifiers
@@ -107,86 +119,96 @@ import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex className="example-border">
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexLayoutModifiersExample = () => (
+  <Flex className="example-border">
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Inline
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["inline-flex"]}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexInlineExample = () => (
+  <Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["inline-flex"]}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Using-canGrow
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers.grow}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
+FlexUsingCanGrowExample = () => (
   <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+    <Flex breakpointMods={[{modifier: FlexModifiers.grow}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Adjusting-width
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
-    <FlexItem>Flex item</FlexItem>
+FlexAdjustingWidthExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Specifying-column-widths
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
-    <FlexItem>Flex item</FlexItem>
+FlexSpecifyingColumnWidthsExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-2"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-3"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-2"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-3"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ### Column layout modifiers
@@ -195,48 +217,54 @@ import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexColumnLayoutExample = () => (
+  <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Stacking-elements
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexStackingElementsExample = () => (
+  <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Nesting-elements-in-columns
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexNestingElementsInColumnsExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ### Responsive layout modifiers
@@ -245,34 +273,38 @@ import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers, FlexBreakpoints } from '@patternfly/react-core';
 
-<Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["row"], breakpoint: FlexBreakpoints.lg}]}>
-  <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexSwitchingBetweenDirectionColumnAndRowExample = () => (
+  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["row"], breakpoint: FlexBreakpoints.lg}]}>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: "column"}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: "column"}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Controlling-width-of-text
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["row"], breakpoint: FlexModifiers["lg"]}]}>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.</FlexItem>
+FlexControllingWidthOfTextExample = () => (
+  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["row"], breakpoint: FlexModifiers["lg"]}]}>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ### Flex alignment
@@ -281,129 +313,145 @@ import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex className="example-border">
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexAligningRightExample = () => (
+  <Flex className="example-border">
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Align-right-on-single-item
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex className="example-border">
-  <FlexItem breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexAligningRightOnSingleItemExample = () => (
+  <Flex className="example-border">
+    <FlexItem breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Align-right-on-multiple-groups
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
+FlexAlignRightOnMultipleGroupsExample = () => (
   <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["align-right"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Align-adjacent-content
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
+FlexAlignAdjacentContentExample = () => (
   <Flex>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+    <Flex breakpointMods={[{modifier: FlexModifiers["flex-1"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-</Flex>
+);
 ```
 
 ```js title=Align-self-flex-end
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexAlignSelfFlexEndExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-flex-end"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-flex-end"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Align-self-center
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexAlignSelfCenterExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-center"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-center"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Align-self-baseline
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexAlignSelfBaselineExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-baseline"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-baseline"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ```js title=Align-self-stretch
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
+FlexAlignSelfStretchExample = () => (
+  <Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
+    <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-stretch"]}]}>
+      <FlexItem>Flex item</FlexItem>
+      <FlexItem>Flex item</FlexItem>
+    </Flex>
   </Flex>
-  <Flex breakpointMods={[{modifier: FlexModifiers["column"]}, {modifier: FlexModifiers["align-self-stretch"]}]}>
-    <FlexItem>Flex item</FlexItem>
-    <FlexItem>Flex item</FlexItem>
-  </Flex>
-</Flex>
+);
 ```
 
 ### Flex justification
@@ -412,32 +460,38 @@ import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["justify-content-flex-end"]}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexJustifyContentFlexEndExample = () => (
+  <Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["justify-content-flex-end"]}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Justify-content-space-between
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers  } from '@patternfly/react-core';
 
-<Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["justify-content-space-between"]}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexJustifyContentSpaceBetweenExample = () => (
+  <Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["justify-content-space-between"]}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```
 
 ```js title=Justify-content-flex-start
 import React from 'react';
 import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
 
-<Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["justify-content-flex-start"]}]}>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-  <FlexItem>Flex item</FlexItem>
-</Flex>
+FlexJustifyContentFlexStartExample = () => (
+  <Flex className="example-border" breakpointMods={[{modifier: FlexModifiers["justify-content-flex-start"]}]}>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+    <FlexItem>Flex item</FlexItem>
+  </Flex>
+);
 ```

@@ -14,20 +14,24 @@ import './split.css';
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-<Split>
-  <SplitItem>content</SplitItem>
-  <SplitItem isFilled>pf-m-fill</SplitItem>
-  <SplitItem>content</SplitItem>
-</Split>
+SplitBasicExample = () => (
+  <Split>
+    <SplitItem>content</SplitItem>
+    <SplitItem isFilled>pf-m-fill</SplitItem>
+    <SplitItem>content</SplitItem>
+  </Split>
+);
 ```
 
 ```js title=With-gutter
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-<Split gutter="md">
-  <SplitItem>content</SplitItem>
-  <SplitItem isFilled>pf-m-fill</SplitItem>
-  <SplitItem>content</SplitItem>
-</Split>
+SplitWithGutterExample = () => (
+  <Split gutter="md">
+    <SplitItem>content</SplitItem>
+    <SplitItem isFilled>pf-m-fill</SplitItem>
+    <SplitItem>content</SplitItem>
+  </Split>
+);
 ```

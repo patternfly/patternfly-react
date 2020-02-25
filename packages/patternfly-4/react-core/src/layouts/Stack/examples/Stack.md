@@ -14,20 +14,24 @@ import './stack.css';
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
-<Stack>
-  <StackItem>content</StackItem>
-  <StackItem isFilled>pf-m-fill</StackItem>
-  <StackItem>content</StackItem>
-</Stack>
+StackBasicExample = () => (
+  <Stack>
+    <StackItem>content</StackItem>
+    <StackItem isFilled>pf-m-fill</StackItem>
+    <StackItem>content</StackItem>
+  </Stack>
+);
 ```
 
 ```js title=With-gutter
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
-<Stack gutter="md">
-  <StackItem>content</StackItem>
-  <StackItem isFilled>pf-m-fill</StackItem>
-  <StackItem>content</StackItem>
-</Stack>
+StackWithGutterExample = () => (
+  <Stack gutter="md">
+    <StackItem>content</StackItem>
+    <StackItem isFilled>pf-m-fill</StackItem>
+    <StackItem>content</StackItem>
+  </Stack>
+);
 ```
