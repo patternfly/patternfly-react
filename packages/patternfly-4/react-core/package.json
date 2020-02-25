@@ -36,7 +36,8 @@
     "build:babel:umd": "BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
+    "gen:tests": "yo tsx-docgen"
   },
   "dependencies": {
     "@patternfly/react-icons": "^3.15.3",
@@ -65,9 +66,11 @@
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
+    "generator-tsx-docgen": "^0.1.0",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "yo": "^3.1.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
