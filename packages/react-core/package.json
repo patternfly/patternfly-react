@@ -46,6 +46,7 @@
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1",
+    "react-dropzone": "9.0.0",
     "tippy.js": "5.1.2"
   },
   "devDependencies": {
