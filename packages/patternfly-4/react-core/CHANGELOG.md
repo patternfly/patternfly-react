@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.141.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.140.11...@patternfly/react-core@3.141.0) (2020-02-25)
+
+
+### Bug Fixes
+
+* **Tabs:** update tabs with nav examples + add Tab component to props docs ([#3527](https://github.com/patternfly/patternfly-react/issues/3527)) ([a97c226](https://github.com/patternfly/patternfly-react/commit/a97c22622b429a87cf8c7cb1bfd212526b403f58))
+
+
+### Features
+
+* **card:** add selectable and selected variation ([#3587](https://github.com/patternfly/patternfly-react/issues/3587)) ([166aa09](https://github.com/patternfly/patternfly-react/commit/166aa097ae08f5da216c9f59a1094e032da49054))
+
+
+
+
+
 ## [3.140.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.140.10...@patternfly/react-core@3.140.11) (2020-02-18)
 
 
