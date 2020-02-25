@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.141.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.1...@patternfly/react-core@3.141.2) (2020-02-25)
+
+
+### Bug Fixes
+
+* **dropdown:** Keyboard selection of toggle causes selection of parent ([#3816](https://github.com/patternfly/patternfly-react/issues/3816)) ([2563ce6](https://github.com/patternfly/patternfly-react/commit/2563ce695046b5f934693bc025122e29b00209cf))
+
+
+
+
+
 ## [3.141.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.0...@patternfly/react-core@3.141.1) (2020-02-25)
 
 

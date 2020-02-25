@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.27.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.27.13...@patternfly/react-table@2.27.14) (2020-02-25)
+
+
+### Bug Fixes
+
+* **dropdown:** Keyboard selection of toggle causes selection of parent ([#3816](https://github.com/patternfly/patternfly-react/issues/3816)) ([2563ce6](https://github.com/patternfly/patternfly-react/commit/2563ce695046b5f934693bc025122e29b00209cf))
+
+
+
+
+
 ## [2.27.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.27.12...@patternfly/react-table@2.27.13) (2020-02-25)
 
 **Note:** Version bump only for package @patternfly/react-table
