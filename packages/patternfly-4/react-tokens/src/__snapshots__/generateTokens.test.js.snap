@@ -66,18 +66,18 @@ export default global_BackgroundColor_100
 
 exports[`keeps variable reference if computing fails 1`] = `
 Object {
-  "esm/c_button_BackgroundColor.js": "export default {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\"}
+  "esm/c_button_BackgroundColor.js": "export default {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\",\\"global\\":\\"var(--pf-global--BackgroundColor--100)\\"}
 ",
-  "esm/index.js": "export const c_button_BackgroundColor = {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\"}
+  "esm/index.js": "export const c_button_BackgroundColor = {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\",\\"global\\":\\"var(--pf-global--BackgroundColor--100)\\"}
 ",
-  "js/c_button_BackgroundColor.d.ts": "const c_button_BackgroundColor: {\\"name\\": \\"--pf-c-button--BackgroundColor\\"; \\"value\\": \\"var(--pf-global--BackgroundColor--100)\\"; \\"var\\": \\"var(--pf-c-button--BackgroundColor)\\";}
+  "js/c_button_BackgroundColor.d.ts": "const c_button_BackgroundColor: {\\"name\\": \\"--pf-c-button--BackgroundColor\\"; \\"value\\": \\"var(--pf-global--BackgroundColor--100)\\"; \\"var\\": \\"var(--pf-c-button--BackgroundColor)\\"; \\"global\\": \\"var(--pf-global--BackgroundColor--100)\\";}
 export default c_button_BackgroundColor
 ",
-  "js/c_button_BackgroundColor.js": "module.exports = {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\"}
+  "js/c_button_BackgroundColor.js": "module.exports = {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\",\\"global\\":\\"var(--pf-global--BackgroundColor--100)\\"}
 ",
-  "js/index.d.ts": "export const c_button_BackgroundColor: { \\"name\\": \\"--pf-c-button--BackgroundColor\\"; \\"value\\": \\"var(--pf-global--BackgroundColor--100)\\"; \\"var\\": \\"var(--pf-c-button--BackgroundColor)\\"; }
+  "js/index.d.ts": "export const c_button_BackgroundColor: { \\"name\\": \\"--pf-c-button--BackgroundColor\\"; \\"value\\": \\"var(--pf-global--BackgroundColor--100)\\"; \\"var\\": \\"var(--pf-c-button--BackgroundColor)\\"; \\"global\\": \\"var(--pf-global--BackgroundColor--100)\\"; }
 ",
-  "js/index.js": "module.exports.c_button_BackgroundColor = {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\"}
+  "js/index.js": "module.exports.c_button_BackgroundColor = {\\"name\\":\\"--pf-c-button--BackgroundColor\\",\\"value\\":\\"var(--pf-global--BackgroundColor--100)\\",\\"var\\":\\"var(--pf-c-button--BackgroundColor)\\",\\"global\\":\\"var(--pf-global--BackgroundColor--100)\\"}
 ",
 }
 `;

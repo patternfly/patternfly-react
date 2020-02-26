@@ -37,11 +37,17 @@ cssFiles.forEach(filePath => {
         });
         // Avoid stringifying numeric chart values
         const chartNum = decl.property.startsWith('--pf-chart-') && !isNaN(populatedValue);
+        const calculatedValue = chartNum ? Number(populatedValue).valueOf() : populatedValue;
         tokens[key] = {
+          ...tokens[key],
           name: property,
-          value: chartNum ? Number(populatedValue).valueOf() : populatedValue,
+          value: calculatedValue,
           var: `var(${property})`
         };
+        const isGlobal = populatedValue.indexOf('--pf-global') > -1;
+        if (isGlobal) {
+          tokens[key].global = calculatedValue;
+        }
       }
     });
   });
