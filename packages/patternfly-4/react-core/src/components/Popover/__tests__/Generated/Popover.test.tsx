@@ -24,6 +24,7 @@ it('Popover should match snapshot (auto-generated)', () => {
       headerContent={null}
       hideOnOutsideClick={true}
       isVisible={null}
+      minWidth={'string'}
       maxWidth={'string'}
       onHidden={(): void => null}
       onHide={(): void => null}
