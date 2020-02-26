@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.141.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.3...@patternfly/react-core@3.141.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* **switch:** avoid switch id override by props ([#3706](https://github.com/patternfly/patternfly-react/issues/3706)) ([0952774](https://github.com/patternfly/patternfly-react/commit/0952774d3dbcf6a7d66d4463277fab181bfd6c28))
+
+
+
+
+
 ## [3.141.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.2...@patternfly/react-core@3.141.3) (2020-02-26)
 
 **Note:** Version bump only for package @patternfly/react-core
