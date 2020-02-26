@@ -124,7 +124,7 @@ import swaggerIcon from './camel-swagger-java_200x150.png';
 import azureIcon from './FuseConnector_Icons_AzureServices.png';
 import restIcon from './FuseConnector_Icons_REST.png';
 
-class CardViewDefaultNav extends React.Component {
+class CardViewBasic extends React.Component {
   constructor(props) {
     super(props);
 
@@ -355,55 +355,6 @@ class CardViewDefaultNav extends React.Component {
     };
   }
 
-    /* handleSelectClick(e, newState) {
-      const { value, checked } = e.target;
-      const { cardChecks } = this.state;
-      const { collection } = [];
-      let { selectedItems } = this.state;
-      if (newState === 'none') {
-
-        console.log(cardChecks);
-        console.log(collection);
-
-        this.setState(
-          {
-            cardChecks: Object.keys(cardChecks).forEach(key => cardChecks[key] = false),
-            selectedItems: collection, */
-
-            /* ItemsChecked: checked */
-          /* }, */
-          /* this.updateSelected */
-        /* );
-      } */
-      /* else if (newState === 'page') {
-
-        };
-
-        this.setState((prevState, props) => {
-          return {
-            selectedItems: prevState.selectedItems.concat(newRows)
-          };
-        }, this.updateSelected); */
-       /* else {
-        console.log(cardChecks)
-
-        this.getAllItems();
-
-        this.setState(
-          {
-            cardChecks: Object.keys(cardChecks).forEach(key => cardChecks[key] = true),
-            areAllSelected: checked,
-            selectedItems: collection */
-
-            /* selectedItems: Object.keys(cardInfo).forEach(function(key) {
-              console.log(key, obj[key]);
-              }); */
-          /* }, */
-          /* this.updateSelected */
-        /* );
-      }
-    }; */
-
   selectedItems(e) {
     const { value, checked } = e.target;
     let { selectedItems } = this.state;
@@ -421,16 +372,15 @@ class CardViewDefaultNav extends React.Component {
     this.setState({ selectedItems });
   }
 
-
-  selectAll(e) {
+    splitCheckboxSelectAll(e) {
     const { checked } = e.target;
     const { isChecked } = this.state;
     let collection = [];
 
-    if(checked) {
+    if (checked) {
     collection = this.getAllItems();
     }
-  
+
     console.log(collection);
 
     this.setState(
@@ -438,6 +388,26 @@ class CardViewDefaultNav extends React.Component {
       selectedItems: collection,
       isChecked: isChecked,
       areAllSelected: checked
+      },
+    this.updateSelected
+    );
+  };
+
+
+  selectAll(e) {
+    const { checked } = e.target;
+    const { isChecked } = this.state;
+    let collection = [];
+
+    collection = this.getAllItems();
+  
+    console.log(collection);
+
+    this.setState(
+      {
+      selectedItems: collection,
+      isChecked: true,
+      areAllSelected: true
       },
     this.updateSelected
     );
@@ -470,6 +440,7 @@ class CardViewDefaultNav extends React.Component {
         areAllSelected: false
       }));
     }
+    console.log(collection);
   };
 
   selectNone(e) {
@@ -478,11 +449,23 @@ class CardViewDefaultNav extends React.Component {
       this.setState(
           {
             selectedItems: [],
-            isChecked: isChecked,
-            areAllSelected: checked
+            isChecked: false,
+            areAllSelected: false
           },
           this.updateSelected
         );
+  };
+
+  updateSelected() {
+    const { res, selectedItems } = this.state;
+    let rows = res.map(post => {
+      post.selected = selectedItems.includes(post.id);
+      return post;
+    });
+
+    this.setState({
+      res: rows
+    });
   };
 
 
@@ -514,8 +497,8 @@ class CardViewDefaultNav extends React.Component {
                 id="example-checkbox-2"
                 key="split-checkbox"
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
-                isChecked={isChecked}
-                onClick={this.selectAll.bind(this)}
+                isChecked={areAllSelected}
+                onClick={this.splitCheckboxSelectAll.bind(this)}
               ></DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
@@ -528,18 +511,6 @@ class CardViewDefaultNav extends React.Component {
       />
     );
   }
-
-  updateSelected() {
-  const { res, selectedItems } = this.state;
-  let rows = res.map(post => {
-    post.selected = selectedItems.includes(post.id);
-    return post;
-  });
-
-  this.setState({
-    res: rows
-  });
-};
 
   buildFilterDropdown() {
     const {isLowerToolbarDropdownOpen, filters} = this.state;
@@ -783,10 +754,11 @@ class CardViewDefaultNav extends React.Component {
                                         ]}
                                     />
                                     <Checkbox
+                                    selectedItems={this.selectedItems.bind(this)}
                                     selectedItems={selectedItems}
                                     isChecked={selectedItems.includes(product.id)}
                                     defaultChecked={this.state.itemsChecked}
-                                    onChange={() => this.props.handleCheckboxClick}
+                                    handleCheckboxClick={this.props.handleCheckboxClick}
                                     aria-label="card checkbox example"
                                     id="check-1"
                                     name="check1"
