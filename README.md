@@ -62,11 +62,11 @@ If you want to start with your existing project, skip to [Install and configure 
   * TypeScript: [Fork and clone the PatternFly React Seed project](https://github.com/patternfly/patternfly-react-seed).
   * JavaScript: [Fork and clone the JavaScript branch of the PatternFly React Seed project](https://github.com/patternfly/patternfly-react-seed/tree/javascript).
 
-  For more information about how to fork and clone a repo, [view GitHub Help](https://help.github.com/articles/fork-a-repo/).
+    For more information about how to fork and clone a repo, [view GitHub Help](https://help.github.com/articles/fork-a-repo/).
 
 2. **Install the project**
 
-  Follow the steps outlined in the [PatternFly React Seed README](https://github.com/patternfly/patternfly-react-seed#quick-start) to install.
+    Follow the steps outlined in the [PatternFly React Seed README](https://github.com/patternfly/patternfly-react-seed#quick-start) to install.
 
 #### Install and configure PatternFly React
 * Using npm, run the following command to install:
@@ -81,7 +81,7 @@ If you want to start with your existing project, skip to [Install and configure 
   yarn add @patternfly/react-core
   ```
   
-Once the library is installed, use the specific [setup instructions](#library-packages) for that library to access the components it contains.  
+    Once the library is installed, use the specific [setup instructions](#library-packages) for that library to access the components it contains.  
 
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/v4/contribute/about). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/master/CONTRIBUTING.md) to make React contributions.
