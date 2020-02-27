@@ -6,6 +6,8 @@ import { css } from '@patternfly/react-styles';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { c_pagination__nav_page_select_c_form_control_width_chars as widthChars } from '@patternfly/react-tokens';
+import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
   top = 'top',
@@ -121,137 +123,201 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   onPerPageSelect?: OnPerPageSelect;
 }
 
-let paginationId = 0;
-const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> = ({
-  children = null,
-  className = '',
-  variant = PaginationVariant.top,
-  isDisabled = false,
-  isCompact = false,
-  perPage = defaultPerPageOptions[0].value,
-  titles = {
-    items: '',
-    page: '',
-    itemsPerPage: 'Items per page',
-    perPageSuffix: 'per page',
-    toFirstPage: 'Go to first page',
-    toPreviousPage: 'Go to previous page',
-    toLastPage: 'Go to last page',
-    toNextPage: 'Go to next page',
-    optionsToggle: 'Items per page',
-    currPage: 'Current page',
-    paginationTitle: 'Pagination'
-  },
-  firstPage = 1,
-  page = 0,
-  offset = 0,
-  defaultToFullPage = false,
-  itemCount,
-  itemsStart = null,
-  itemsEnd = null,
-  perPageOptions = defaultPerPageOptions,
-  dropDirection = DropdownDirection.down,
-  widgetId = 'pagination-options-menu',
-  toggleTemplate = ToggleTemplate,
-  onSetPage = () => undefined,
-  onPerPageSelect = () => undefined,
-  onFirstClick = () => undefined,
-  onPreviousClick = () => undefined,
-  onNextClick = () => undefined,
-  onPageInput = () => undefined,
-  onLastClick = () => undefined,
-  ouiaContext = null,
-  ouiaId = null,
-  ...props
-}: PaginationProps & InjectedOuiaProps) => {
-  if (!page && offset) {
-    page = Math.ceil(offset / perPage);
+const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
+  if (!node) {
+    return;
   }
-
-  const lastPage = Math.ceil(itemCount / perPage) || 0;
-  if (page < firstPage && itemCount > 0) {
-    page = firstPage;
-  } else if (page > lastPage) {
-    page = lastPage;
-  }
-
-  const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
-  let lastIndex;
-  if (itemCount <= 0) {
-    lastIndex = 0;
+  const len = String(lastPage).length;
+  if (len >= 3) {
+    node.style.setProperty(widthChars.name, `${len}`);
   } else {
-    lastIndex = page === lastPage ? itemCount : page * perPage;
+    node.style.setProperty(widthChars.name, '2');
+  }
+};
+
+let paginationId = 0;
+class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
+  paginationRef = React.createRef<HTMLDivElement>();
+  static defaultProps: PickOptional<PaginationProps & InjectedOuiaProps> = {
+    children: null,
+    className: '',
+    variant: PaginationVariant.top,
+    isDisabled: false,
+    isCompact: false,
+    perPage: defaultPerPageOptions[0].value,
+    titles: {
+      items: '',
+      page: '',
+      itemsPerPage: 'Items per page',
+      perPageSuffix: 'per page',
+      toFirstPage: 'Go to first page',
+      toPreviousPage: 'Go to previous page',
+      toLastPage: 'Go to last page',
+      toNextPage: 'Go to next page',
+      optionsToggle: 'Items per page',
+      currPage: 'Current page',
+      paginationTitle: 'Pagination'
+    },
+    firstPage: 1,
+    page: 0,
+    offset: 0,
+    defaultToFullPage: false,
+    itemsStart: null,
+    itemsEnd: null,
+    perPageOptions: defaultPerPageOptions,
+    dropDirection: DropdownDirection.down,
+    widgetId: 'pagination-options-menu',
+    toggleTemplate: ToggleTemplate,
+    onSetPage: () => undefined,
+    onPerPageSelect: () => undefined,
+    onFirstClick: () => undefined,
+    onPreviousClick: () => undefined,
+    onNextClick: () => undefined,
+    onPageInput: () => undefined,
+    onLastClick: () => undefined,
+    ouiaContext: null,
+    ouiaId: null
+  };
+
+  getLastPage() {
+    const { itemCount, perPage } = this.props;
+    return Math.ceil(itemCount / perPage) || 0;
   }
 
-  return (
-    <div
-      className={css(
-        styles.pagination,
-        variant === PaginationVariant.bottom && styles.modifiers.footer,
-        isCompact && styles.modifiers.compact,
-        className
-      )}
-      id={`${widgetId}-${paginationId++}`}
-      {...(ouiaContext.isOuia && {
-        'data-ouia-component-type': 'Pagination',
-        'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-      })}
-      {...props}
-    >
-      {variant === PaginationVariant.top && (
-        <div className={css(styles.paginationTotalItems)}>
-          <ToggleTemplate
-            firstIndex={firstIndex}
-            lastIndex={lastIndex}
-            itemCount={itemCount}
-            itemsTitle={titles.items}
-          />
-        </div>
-      )}
-      <PaginationOptionsMenu
-        itemsPerPageTitle={titles.itemsPerPage}
-        perPageSuffix={titles.perPageSuffix}
-        itemsTitle={isCompact ? '' : titles.items}
-        optionsToggle={titles.optionsToggle}
-        perPageOptions={perPageOptions}
-        firstIndex={itemsStart !== null ? itemsStart : firstIndex}
-        lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
-        defaultToFullPage={defaultToFullPage}
-        itemCount={itemCount}
-        page={page}
-        perPage={perPage}
-        lastPage={lastPage}
-        onPerPageSelect={onPerPageSelect}
-        dropDirection={dropDirection}
-        widgetId={widgetId}
-        toggleTemplate={toggleTemplate}
-        isDisabled={isDisabled}
-      />
-      <Navigation
-        pagesTitle={titles.page}
-        toLastPage={titles.toLastPage}
-        toPreviousPage={titles.toPreviousPage}
-        toNextPage={titles.toNextPage}
-        toFirstPage={titles.toFirstPage}
-        currPage={titles.currPage}
-        paginationTitle={titles.paginationTitle}
-        page={itemCount <= 0 ? 0 : page}
-        perPage={perPage}
-        firstPage={itemsStart !== null ? itemsStart : 1}
-        lastPage={lastPage}
-        onSetPage={onSetPage}
-        onFirstClick={onFirstClick}
-        onPreviousClick={onPreviousClick}
-        onNextClick={onNextClick}
-        onLastClick={onLastClick}
-        onPageInput={onPageInput}
-        isDisabled={isDisabled}
-        isCompact={isCompact}
-      />
-      {children}
-    </div>
-  );
-};
+  componentDidMount() {
+    const node = this.paginationRef.current;
+    handleInputWidth(this.getLastPage(), node);
+  }
+
+  componentDidUpdate(prevProps: PaginationProps & InjectedOuiaProps) {
+    const node = this.paginationRef.current;
+    if (prevProps.perPage !== this.props.perPage || prevProps.itemCount !== this.props.itemCount) {
+      handleInputWidth(this.getLastPage(), node);
+    }
+  }
+  render() {
+    const {
+      children,
+      className,
+      variant,
+      isDisabled,
+      isCompact,
+      perPage,
+      titles,
+      firstPage,
+      page: propPage,
+      offset,
+      defaultToFullPage,
+      itemCount,
+      itemsStart,
+      itemsEnd,
+      perPageOptions,
+      dropDirection,
+      widgetId,
+      toggleTemplate,
+      onSetPage,
+      onPerPageSelect,
+      onFirstClick,
+      onPreviousClick,
+      onNextClick,
+      onPageInput,
+      onLastClick,
+      ouiaContext,
+      ouiaId,
+      ...props
+    } = this.props;
+
+    let page = propPage;
+    if (!page && offset) {
+      page = Math.ceil(offset / perPage);
+    }
+
+    const lastPage = this.getLastPage();
+    if (page < firstPage && itemCount > 0) {
+      page = firstPage;
+    } else if (page > lastPage) {
+      page = lastPage;
+    }
+
+    const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
+    let lastIndex;
+    if (itemCount <= 0) {
+      lastIndex = 0;
+    } else {
+      lastIndex = page === lastPage ? itemCount : page * perPage;
+    }
+
+    return (
+      <div
+        ref={this.paginationRef}
+        className={css(
+          styles.pagination,
+          variant === PaginationVariant.bottom && styles.modifiers.footer,
+          isCompact && styles.modifiers.compact,
+          className
+        )}
+        id={`${widgetId}-${paginationId++}`}
+        {...(ouiaContext.isOuia && {
+          'data-ouia-component-type': 'Pagination',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        })}
+        {...props}
+      >
+        {variant === PaginationVariant.top && (
+          <div className={css(styles.paginationTotalItems)}>
+            <ToggleTemplate
+              firstIndex={firstIndex}
+              lastIndex={lastIndex}
+              itemCount={itemCount}
+              itemsTitle={titles.items}
+            />
+          </div>
+        )}
+        <PaginationOptionsMenu
+          itemsPerPageTitle={titles.itemsPerPage}
+          perPageSuffix={titles.perPageSuffix}
+          itemsTitle={isCompact ? '' : titles.items}
+          optionsToggle={titles.optionsToggle}
+          perPageOptions={perPageOptions}
+          firstIndex={itemsStart !== null ? itemsStart : firstIndex}
+          lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
+          defaultToFullPage={defaultToFullPage}
+          itemCount={itemCount}
+          page={page}
+          perPage={perPage}
+          lastPage={lastPage}
+          onPerPageSelect={onPerPageSelect}
+          dropDirection={dropDirection}
+          widgetId={widgetId}
+          toggleTemplate={toggleTemplate}
+          isDisabled={isDisabled}
+        />
+        <Navigation
+          pagesTitle={titles.page}
+          toLastPage={titles.toLastPage}
+          toPreviousPage={titles.toPreviousPage}
+          toNextPage={titles.toNextPage}
+          toFirstPage={titles.toFirstPage}
+          currPage={titles.currPage}
+          paginationTitle={titles.paginationTitle}
+          page={itemCount <= 0 ? 0 : page}
+          perPage={perPage}
+          firstPage={itemsStart !== null ? itemsStart : 1}
+          lastPage={lastPage}
+          onSetPage={onSetPage}
+          onFirstClick={onFirstClick}
+          onPreviousClick={onPreviousClick}
+          onNextClick={onNextClick}
+          onLastClick={onLastClick}
+          onPageInput={onPageInput}
+          isDisabled={isDisabled}
+          isCompact={isCompact}
+        />
+        {children}
+      </div>
+    );
+  }
+}
 
 const PaginationWithOuiaContext = withOuiaContext(Pagination);
 export { PaginationWithOuiaContext as Pagination };
