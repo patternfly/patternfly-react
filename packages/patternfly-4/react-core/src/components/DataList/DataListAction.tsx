@@ -38,7 +38,7 @@ export const DataListActionVisibility: IDataListActionVisibility = Object.keys(v
 
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Additional classes added to the DataList Action */
   className?: string;
   /** Identify the DataList toggle number */
