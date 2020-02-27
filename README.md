@@ -51,7 +51,7 @@ Install a package manager before using the PatternFly libraries.
 * [Use Yarn](https://yarnpkg.com/en/docs/getting-started)
 
 
-#### Start with PatternFly React Seed
+#### Start with PatternFly React seed
 If you want to start with your existing project, skip to [Install and configure PatternFly React](#install-and-configure-patternfly-react).
 
 [PatternFly React seed](https://github.com/patternfly/patternfly-react-seed) is an open source build scaffolding utility. It gives developers a jump-start when creating new projects that will use PatternFly.
@@ -88,4 +88,3 @@ All React contributors must first be [PatternFly community contributors](https:/
 
 ### License
 PatternFly React is licensed under the [MIT License](https://github.com/patternfly/patternfly-react/tree/master/LICENSE).
-
