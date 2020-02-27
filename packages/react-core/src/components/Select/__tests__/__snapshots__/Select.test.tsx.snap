@@ -7414,6 +7414,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     >
                       <li
                         class="pf-c-chip"
+                        tabindex="0"
                       >
                         <span
                           class="pf-c-chip__text"
@@ -7446,6 +7447,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       </li>
                       <li
                         class="pf-c-chip"
+                        tabindex="0"
                       >
                         <span
                           class="pf-c-chip__text"
@@ -7696,6 +7698,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                           >
                             <li
                               className="pf-c-chip"
+                              tabIndex="0"
                             >
                               <span
                                 className="pf-c-chip__text"
@@ -7848,6 +7851,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                           >
                             <li
                               className="pf-c-chip"
+                              tabIndex="0"
                             >
                               <span
                                 className="pf-c-chip__text"

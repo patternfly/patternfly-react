@@ -76,7 +76,7 @@ export class ChipGroupToolbarItem extends React.Component<ChipGroupToolbarItemPr
             <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...rest}>
               <li>
                 <Tooltip position={tooltipPosition} content={categoryName}>
-                  <HeadingLevel ref={this.heading} className={css(styles.chipGroupLabel)} id={id}>
+                  <HeadingLevel tabIndex="0" ref={this.heading} className={css(styles.chipGroupLabel)} id={id}>
                     {categoryName}
                   </HeadingLevel>
                 </Tooltip>
