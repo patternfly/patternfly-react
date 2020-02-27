@@ -91,6 +91,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
         <Tooltip position={tooltipPosition} content={children}>
           <Component
             className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
+            tabIndex="0"
             {...(ouiaContext.isOuia && {
               'data-ouia-component-type': 'Chip',
               'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
@@ -116,7 +117,6 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
     return (
       <Component
         className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
-        tabIndex="0"
         {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'Chip',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId

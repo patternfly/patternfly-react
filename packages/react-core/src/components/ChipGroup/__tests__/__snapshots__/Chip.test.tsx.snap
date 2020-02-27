@@ -37,7 +37,6 @@ exports[`Chip closable 1`] = `
       >
         <div
           className="pf-c-chip my-chp-cls"
-          tabIndex="0"
         >
           <span
             className="pf-c-chip__text"
@@ -186,7 +185,6 @@ exports[`Chip closable with tooltip 1`] = `
       >
         <div
           className="pf-c-chip my-chp-cls"
-          tabIndex="0"
         >
           <span
             className="pf-c-chip__text"
@@ -440,7 +438,6 @@ exports[`Chip readonly 1`] = `
       >
         <div
           className="pf-c-chip pf-m-read-only my-chp-cls"
-          tabIndex="0"
         >
           <span
             className="pf-c-chip__text"
