@@ -292,8 +292,15 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       return;
     }
 
-    const { children } = this.props;
-    const item = children.filter(child => child.props.value.toString() === value.toString())[0];
+    const { children, isGrouped } = this.props;
+    let item = children.filter(
+      child => child.props.value !== undefined && child.props.value.toString() === value.toString()
+    )[0];
+    if (isGrouped) {
+      item = children
+        .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
+        .filter(child => child.props.value.toString() === value.toString())[0];
+    }
     if (item) {
       if (item && item.props.children) {
         if (type === 'node') {
@@ -536,6 +543,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           {variant === SelectVariant.single && isExpanded && !customContent && (
             <SelectMenu
               {...props}
+              isGrouped={isGrouped}
               selected={selections}
               openedOnEnter={openedOnEnter}
               aria-label={ariaLabel}
