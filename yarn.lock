@@ -3816,16 +3816,9 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
-<<<<<<< HEAD
-"@patternfly/patternfly@2.65.2":
-  version "2.65.2"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.65.2.tgz#d59359d8ed45f55ea466b0976328aeb2324cd2de"
-
-=======
 "@patternfly/patternfly@2.65.3":
   version "2.65.3"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.65.3.tgz#0856d6ca13d971f18b1d7889a60a73eb78cad3c8"
->>>>>>> chore(package): Bump @patternfly/patternfly versions to 2.65.3
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
