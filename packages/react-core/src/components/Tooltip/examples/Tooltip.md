@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Tooltip']
 ---
 
-import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition, Checkbox, Focusable } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -52,6 +52,18 @@ import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
     <OutlinedQuestionCircleIcon />
   </Tooltip>
 </div>
+```
+
+```js title=On-disabled-element
+import React from 'react';
+import { Tooltip, TooltipPosition, Button, Focusable } from '@patternfly/react-core';
+import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
+
+<Tooltip content="Tooltip content">
+  <Focusable withContainer component="span">
+    <Button isDisabled>Button text</Button>
+  </Focusable>
+</Tooltip>
 ```
 
 ```js title=Positions

@@ -20,6 +20,7 @@ export * from './DataList';
 export * from './Dropdown';
 export * from './EmptyState';
 export * from './Expandable';
+export * from './Focusable';
 export * from './Form';
 export * from './FormSelect';
 export * from './InputGroup';

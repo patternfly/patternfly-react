@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Focus disabled button 1`] = `
+<span
+  className=""
+  tabIndex={0}
+>
+  <Component
+    isDisabled={true}
+  >
+    Button text
+  </Component>
+</span>
+`;
+
+exports[`Focus non-interactive component 1`] = `
+<Card
+  aria-label="Example focusable Card with positive tabIndex"
+  className=""
+  tabIndex={2}
+>
+  Card element
+</Card>
+`;
+
+exports[`Focus non-interactive html 1`] = `
+<article
+  aria-label="Example focusable article"
+  className=""
+  tabIndex={0}
+>
+  Article element
+</article>
+`;
+
+exports[`Focusable 1`] = `
+<div
+  className=""
+  tabIndex={0}
+>
+  test
+</div>
+`;

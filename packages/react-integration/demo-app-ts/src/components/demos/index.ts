@@ -56,6 +56,7 @@ export * from './DrawerDemo/DrawerDemo';
 export * from './DropdownDemo/DropdownDemo';
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './ExpandableDemo/ExpandableDemo';
+export * from './FocusableDemo/FocusableDemo';
 export * from './FlexDemo/FlexDemo';
 export * from './FormDemo/FormDemo';
 export * from './FormSelectDemo/FormSelectDemo';
