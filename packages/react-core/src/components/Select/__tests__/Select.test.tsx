@@ -170,6 +170,15 @@ describe('checkbox select', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders expanded with filtering successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded hasInlineFilter>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('renders expanded successfully with custom objects', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
