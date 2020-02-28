@@ -53,7 +53,7 @@ workflows:
     - build_pf3_docs:
         requires:
         - build
-    - test_jest_other:
+    - test_jest_pf3:
         requires:
         - build
     - lint:
@@ -61,8 +61,7 @@ workflows:
         - build
     - deploy_prerelease:
         requires:
-        - test_jest_other
-        - test_integration
+        - test_jest_pf3
         - build_pf3_docs
         filters:
           branches:
@@ -98,7 +97,7 @@ jobs:
     - persist_to_workspace:
         root: ~/project
         paths: *build_cache_paths
-  test_jest_other:
+  test_jest_pf3:
     docker:
     - image: circleci/node:10
     steps:
@@ -116,10 +115,6 @@ jobs:
     - run:
         name: Clear Coverage
         command: rm -rf coverage
-        when: always
-    - run:
-        name: Other Tests
-        command: yarn test:misc --maxWorkers=2
         when: always
     - run:
         name: Upload results to codecov
