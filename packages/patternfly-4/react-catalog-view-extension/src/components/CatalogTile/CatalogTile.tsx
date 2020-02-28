@@ -126,9 +126,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         {description && (
           <CardBody className="catalog-tile-pf-body">
             <div className="catalog-tile-pf-description">
-              <span className={classNames({ 'has-footer': footer })}>
-                {description}
-              </span>
+              <span className={classNames({ 'has-footer': footer })}>{description}</span>
             </div>
           </CardBody>
         )}
