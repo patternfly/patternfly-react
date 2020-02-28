@@ -27,8 +27,9 @@
   "scripts": {
     "build": "yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
-    "build:babel:cjs": "babel src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel src --out-dir dist/esm"
+    "build:babel:cjs": "babel src --env-name cjs --out-dir dist/js",
+    "build:babel:esm": "babel src --env-name esm --out-dir dist/esm",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "react-wooden-tree": "^2.0.1"

@@ -3,7 +3,7 @@ const { pascalCase } = require('change-case');
 const { ADD_TO_BARREL_FILE } = require('../actionTypes');
 
 const templatesDir = resolve(__dirname, './templates');
-const patternflyReactRoot = resolve(__dirname, '../../../packages/patternfly-3/patternfly-react');
+const patternflyReactRoot = resolve(__dirname, '../../../packages/patternfly-react');
 
 function setPF3Generators(plop) {
   plop.setGenerator('PatternFly 3 Component', {

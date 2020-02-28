@@ -34,7 +34,7 @@ exports[`Enable autoFit for SerialConsole 1`] = `
             ],
             "results": Array [
               Object {
-                "isThrow": false,
+                "type": "return",
                 "value": undefined,
               },
             ],
@@ -159,7 +159,7 @@ exports[`SerialConsole in the CONNECTED state 1`] = `
             ],
             "results": Array [
               Object {
-                "isThrow": false,
+                "type": "return",
                 "value": undefined,
               },
             ],
@@ -230,7 +230,7 @@ exports[`SerialConsole in the DISCONNECTED state 1`] = `
                 ],
                 "results": Array [
                   Object {
-                    "isThrow": false,
+                    "type": "return",
                     "value": undefined,
                   },
                 ],

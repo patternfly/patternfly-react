@@ -16,7 +16,9 @@ module.exports = {
   transform: {
     '^.+\\.[jt]sx?$': 'babel-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|tippy.js|lodash)'],
+  transformIgnorePatterns: [
+    'node_modules/(?!|@novnc)'
+  ],
   coveragePathIgnorePatterns: [
     '/dist/'
   ]

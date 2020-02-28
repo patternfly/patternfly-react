@@ -18,7 +18,7 @@ const packageConfigs = {
   [packageTypes.pf3]: {
     name: 'PatternFly 3',
     value: packageTypes.pf3,
-    location: join(packagesRoot, '/patternfly-3')
+    location: packagesRoot
   }
 };
 

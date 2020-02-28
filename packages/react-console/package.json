@@ -22,12 +22,12 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-3/react-console/README.md",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/react-console/README.md",
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
-    "build:babel:cjs": "babel src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel src --out-dir dist/esm",
+    "build:babel:cjs": "babel src --env-name cjs --out-dir dist/js",
+    "build:babel:esm": "babel src --env-name esm --out-dir dist/esm",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
     "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/* dist/sass && node-sass --output-style compressed --importer=../node-sass-patternfly-importer.js -o dist/css sass/console.scss",
     "clean": "rimraf dist"

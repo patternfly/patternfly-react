@@ -5,7 +5,7 @@ import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { name } from '../../package.json';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
 
-import { noop } from 'patternfly-react';
+import { noop } from 'patternfly-react/common/helpers';
 import { AccessConsoles, VncConsole } from '../index';
 import { SerialConsoleConnector } from '../SerialConsole/SerialConsole.stories'; // contains mock backend
 import constants from '../common/constants';

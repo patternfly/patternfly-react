@@ -24,7 +24,7 @@ exports[`Masthead renders properly: Masthead snapshot 1`] = `
           ],
           "results": Array [
             Object {
-              "isThrow": false,
+              "type": "return",
               "value": undefined,
             },
           ],

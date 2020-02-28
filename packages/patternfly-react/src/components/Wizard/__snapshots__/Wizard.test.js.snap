@@ -184,7 +184,7 @@ exports[`Wizard header renders properly: Wizard header snapshot 1`] = `
         ],
         "results": Array [
           Object {
-            "isThrow": false,
+            "type": "return",
             "value": undefined,
           },
         ],
@@ -342,7 +342,7 @@ exports[`Wizard review step renders properly: Wizard review step snapshot 1`] = 
         ],
         "results": Array [
           Object {
-            "isThrow": false,
+            "type": "return",
             "value": undefined,
           },
         ],
@@ -383,7 +383,7 @@ exports[`Wizard review sub step renders properly: Wizard review sub step snapsho
         ],
         "results": Array [
           Object {
-            "isThrow": false,
+            "type": "return",
             "value": undefined,
           },
         ],
