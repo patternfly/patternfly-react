@@ -393,6 +393,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
           onFilter={this.onFilter}
+          onClear={this.clearSelection}
           isGrouped
           hasInlineFilter
         >

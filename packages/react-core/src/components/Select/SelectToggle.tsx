@@ -43,6 +43,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   ariaLabelToggle?: string;
   /** Flag for variant, determines toggle rules and interaction */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
+  /** Flag indicating if select should have an inline text input for filtering */
+  hasInlineFilter?: boolean;
 }
 
 export class SelectToggle extends React.Component<SelectToggleProps> {
@@ -56,6 +58,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isActive: false,
     isPlain: false,
     isDisabled: false,
+    hasInlineFilter: false,
     variant: 'single',
     ariaLabelledBy: '',
     ariaLabelToggle: '',
@@ -168,12 +171,14 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       parentRef,
       id,
       type,
+      hasInlineFilter,
       ariaLabelledBy,
       ariaLabelToggle,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
-    const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
+    const isTypeahead =
+      variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti || hasInlineFilter;
     const toggleProps: {
       id: string;
       'aria-labelledby': string;

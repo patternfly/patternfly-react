@@ -140,7 +140,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   };
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
-    if (this.props.hasInlineFilter) this.refCollection[0] = this.filterRef.current;
+    if (this.props.hasInlineFilter) {
+      this.refCollection[0] = this.filterRef.current;
+    }
 
     if (!prevState.openedOnEnter && this.state.openedOnEnter) {
       this.refCollection[0].focus();
@@ -455,6 +457,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
             ariaLabelToggle={ariaLabelToggle}
             handleTypeaheadKeys={this.handleTypeaheadKeys}
             isDisabled={isDisabled}
+            hasInlineFilter={hasInlineFilter}
           >
             {customContent && (
               <div className={css(styles.selectToggleWrapper)}>
@@ -481,6 +484,22 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     </div>
                   )}
                 </div>
+                {hasInlineFilter &&
+                  onClear !== Select.defaultProps.onClear &&
+                  (selections && (Array.isArray(selections) && selections.length > 0)) && (
+                    <button
+                      className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
+                      onClick={e => {
+                        this.clearSelection(e);
+                        onClear(e);
+                      }}
+                      aria-label={ariaLabelClear}
+                      type="button"
+                      disabled={isDisabled}
+                    >
+                      <TimesCircleIcon aria-hidden />
+                    </button>
+                  )}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeahead && !customContent && (

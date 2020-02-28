@@ -160,6 +160,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
           ariaLabelledBy=" pf-toggle-id-15"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-15"
           isActive={false}
           isDisabled={false}
@@ -945,6 +946,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-14"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-14"
           isActive={false}
           isDisabled={false}
@@ -1678,6 +1680,7 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
           ariaLabelledBy=" pf-toggle-id-9"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-9"
           isActive={false}
           isDisabled={false}
@@ -1912,6 +1915,7 @@ exports[`checkbox select renders closed successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-8"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-8"
           isActive={false}
           isDisabled={false}
@@ -2128,6 +2132,7 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
           ariaLabelledBy=" pf-toggle-id-11"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-11"
           isActive={false}
           isDisabled={false}
@@ -2591,6 +2596,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-10"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-10"
           isActive={false}
           isDisabled={false}
@@ -3083,6 +3089,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           ariaLabelledBy=" pf-toggle-id-13"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-13"
           isActive={false}
           isDisabled={false}
@@ -3543,6 +3550,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-12"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={true}
           id="pf-toggle-id-12"
           isActive={false}
           isDisabled={false}
@@ -3558,12 +3566,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
               "current": <div
                 class="pf-c-select pf-m-expanded"
               >
-                <button
-                  aria-expanded="true"
-                  aria-labelledby=" pf-toggle-id-12"
-                  class="pf-c-select__toggle"
-                  id="pf-toggle-id-12"
-                  type="button"
+                <div
+                  class="pf-c-select__toggle pf-m-typeahead"
                 >
                   <div
                     class="pf-c-select__toggle-wrapper"
@@ -3573,22 +3577,31 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                     />
                     
                   </div>
-                  <svg
-                    aria-hidden="true"
-                    class="pf-c-select__toggle-arrow"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
+                  <button
+                    aria-expanded="true"
+                    aria-label="Options menu"
+                    aria-labelledby=" pf-toggle-id-12"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
+                    id="pf-toggle-id-12"
+                    type="button"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-select__toggle-arrow"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                </div>
                 <div>
                   <div
                     class="pf-c-select__menu"
@@ -3674,16 +3687,10 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           type="button"
           variant="checkbox"
         >
-          <button
-            aria-expanded={true}
-            aria-haspopup={null}
-            aria-labelledby=" pf-toggle-id-12"
-            className="pf-c-select__toggle"
-            disabled={false}
-            id="pf-toggle-id-12"
+          <div
+            className="pf-c-select__toggle pf-m-typeahead"
             onClick={[Function]}
             onKeyDown={[Function]}
-            type="button"
           >
             <div
               className="pf-c-select__toggle-wrapper"
@@ -3692,35 +3699,47 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 className="pf-c-select__toggle-text"
               />
             </div>
-            <CaretDownIcon
-              className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
+            <button
+              aria-expanded={true}
+              aria-haspopup={null}
+              aria-label="Options menu"
+              aria-labelledby=" pf-toggle-id-12"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
+              disabled={false}
+              id="pf-toggle-id-12"
+              onClick={[Function]}
+              type="button"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <CaretDownIcon
                 className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </CaretDownIcon>
-          </button>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-select__toggle-arrow"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </div>
         </SelectToggle>
         <SelectMenu
           aria-label=""
@@ -4060,6 +4079,7 @@ exports[`select custom select filter filters properly 1`] = `
           ariaLabelledBy=" pf-toggle-id-6"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-6"
           isActive={false}
           isDisabled={false}
@@ -4609,6 +4629,7 @@ exports[`select renders select groups successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-7"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-7"
           isActive={false}
           isDisabled={false}
@@ -5284,6 +5305,7 @@ exports[`select renders up drection successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-4"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-4"
           isActive={false}
           isDisabled={false}
@@ -5522,6 +5544,7 @@ exports[`select single select renders closed successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-0"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-0"
           isActive={false}
           isDisabled={false}
@@ -5762,6 +5785,7 @@ exports[`select single select renders disabled successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-1"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-1"
           isActive={false}
           isDisabled={true}
@@ -6003,6 +6027,7 @@ exports[`select single select renders expanded successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-2"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-2"
           isActive={false}
           isDisabled={false}
@@ -6457,6 +6482,7 @@ exports[`select single select renders expanded successfully with custom objects 
           ariaLabelledBy=" pf-toggle-id-3"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-3"
           isActive={false}
           isDisabled={false}
@@ -6814,6 +6840,7 @@ exports[`select with custom content renders closed successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-35"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-35"
           isActive={false}
           isDisabled={false}
@@ -6985,6 +7012,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-36"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-36"
           isActive={false}
           isDisabled={false}
@@ -7284,6 +7312,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-23"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-23"
           isActive={false}
           isDisabled={false}
@@ -7549,6 +7578,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-24"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-24"
           isActive={false}
           isDisabled={false}
@@ -8034,6 +8064,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-25"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-25"
           isActive={false}
           isDisabled={false}
@@ -9051,6 +9082,7 @@ exports[`typeahead multi select test onChange 1`] = `
           ariaLabelledBy=" pf-toggle-id-27"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-27"
           isActive={false}
           isDisabled={false}
@@ -9438,6 +9470,7 @@ exports[`typeahead select renders closed successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-16"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-16"
           isActive={false}
           isDisabled={false}
@@ -9702,6 +9735,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-17"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-17"
           isActive={false}
           isDisabled={false}
@@ -10173,6 +10207,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           ariaLabelledBy=" pf-toggle-id-18"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-18"
           isActive={false}
           isDisabled={false}
@@ -10741,6 +10776,7 @@ exports[`typeahead select test creatable option 1`] = `
           ariaLabelledBy=" pf-toggle-id-22"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-22"
           isActive={false}
           isDisabled={false}
@@ -11138,6 +11174,7 @@ exports[`typeahead select test onChange 1`] = `
           ariaLabelledBy=" pf-toggle-id-20"
           className=""
           handleTypeaheadKeys={[Function]}
+          hasInlineFilter={false}
           id="pf-toggle-id-20"
           isActive={false}
           isDisabled={false}

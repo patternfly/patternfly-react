@@ -91,7 +91,9 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
       return React.Children.map(children, (group: React.ReactElement) => {
-        if (group.type === SelectOption) return group;
+        if (group.type === SelectOption) {
+          return group;
+        }
         return React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
           children: (
