@@ -763,6 +763,7 @@ class CardViewBasic extends React.Component {
                                         ]}
                                     />
                                     <Checkbox
+                                    checked={isChecked}
                                     value={product.id}
                                     selectedItems={selectedItems}
                                     areAllSelected={areAllSelected}
