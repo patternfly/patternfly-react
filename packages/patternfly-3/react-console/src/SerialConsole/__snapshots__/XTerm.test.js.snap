@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Render empty XTerm component 1`] = `
-<div
-  class="console-pf"
-/>
-`;
