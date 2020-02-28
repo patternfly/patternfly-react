@@ -13,42 +13,18 @@ if (fs.existsSync(cacheFile)) {
 }
 const yarnLockHash = hashDir('yarn.lock');
 
-// Package filtering
-const isPf3 = process.argv.length > 2 && process.argv[2] === 'pf3';
-const isPf4 = process.argv.length > 2 && process.argv[2] === 'pf4';
-
-const commonPackages = ['@patternfly/react-icons'];
-
-// Assume src directory gets made into dist
-const getSrcDirs = packageName => {
-  switch (packageName) {
-    case '@patternfly/react-icons':
-      return ['build', 'src'];
-    case '@patternfly/react-catalog-view-extension':
-      return ['sass', 'src'];
-    default:
-      return ['src'];
-  }
-};
-
-const hashPackageSrc = (packageLoc, packageName) => {
-  let hash = 0;
-  for (let srcDir of getSrcDirs(packageName)) {
-    hash += hashDir(`${packageLoc}/${srcDir}`);
-  }
-
-  return hash;
+const hashPackageSrc = (packageLoc) => {
+  // Assume src directory gets made into dist
+  return hashDir(`${packageLoc}/src`);
 };
 
 // These are packages we need to rebuild
 async function getInvalidPackages() {
   const packages = (await new Project(__dirname).getPackages())
     .filter(p => p.scripts.build) // Only packages that have a build target
-    .filter(p => (isPf3 ? p.location.indexOf('patternfly-3') > 0 || commonPackages.indexOf(p.name) >= 0 : true)) // Based off argv
-    .filter(p => (isPf4 ? p.location.indexOf('patternfly-4') > 0 || commonPackages.indexOf(p.name) >= 0 : true)); // Based off argv
 
   for (let p of packages) {
-    p.hash = hashPackageSrc(p.location, p.name);
+    p.hash = hashPackageSrc(p.location);
     p.valid = cache && cache[p.name] === p.hash;
     if (p.valid) {
       console.info('Skipping', p.name, '(already built).');

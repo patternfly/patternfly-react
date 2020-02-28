@@ -6,8 +6,7 @@ const packagesRoot = resolve(__dirname, '../../../packages');
 
 const packageTypes = {
   general: 0,
-  pf3: 3,
-  pf4: 4
+  pf3: 3
 };
 
 const packageConfigs = {
@@ -20,11 +19,6 @@ const packageConfigs = {
     name: 'PatternFly 3',
     value: packageTypes.pf3,
     location: join(packagesRoot, '/patternfly-3')
-  },
-  [packageTypes.pf4]: {
-    name: 'PatternFly 4',
-    value: packageTypes.pf4,
-    location: join(packagesRoot, '/patternfly-4')
   }
 };
 

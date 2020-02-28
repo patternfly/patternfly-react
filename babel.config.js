@@ -1,4 +1,4 @@
 module.exports = {
-  extends: './packages/patternfly-4/.babelrc',
+  extends: './packages/babel.config.js',
   presets: [['@babel/env', {'modules': 'commonjs'}], '@babel/react'],
 };
