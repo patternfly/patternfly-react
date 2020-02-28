@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { storybookPackageName, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { HintBlock } from './index';
 import { name } from '../../../package.json';
-import { defaultTemplate } from '../../../../../../storybook/decorators/storyTemplates';
+import { defaultTemplate } from '../../../../../storybook/decorators/storyTemplates';
 
 const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.COMMUNICATION}/HintBlock`, module);
 
