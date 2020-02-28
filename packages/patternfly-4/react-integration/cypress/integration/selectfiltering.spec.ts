@@ -8,7 +8,7 @@ describe('Select with Filtering Test', () => {
   it('Verify Checkbox Select with filtering', () => {
     cy.get('#filter-select').click();
     cy.get('#Running').click();
-    cy.get('#filter-select')
+    cy.get('.pf-c-select__toggle')
       .contains('1')
       .should('exist');
   });
@@ -21,7 +21,7 @@ describe('Select with Filtering Test', () => {
     cy.get('#Running').should('not.exist');
     cy.get('#Degraded').should('exist');
     cy.get('#Degraded').click();
-    cy.get('#filter-select')
+    cy.get('.pf-c-select__toggle')
       .contains('2')
       .should('exist');
   });
