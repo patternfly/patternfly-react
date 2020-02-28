@@ -107,7 +107,7 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF3 Jest Tests
-        command: yarn test:pf3 --maxWorkers=2
+        command: yarn test --maxWorkers=2
     - run:
         name: Upload results to codecov
         command: yarn run codecov -F patternfly3
@@ -131,7 +131,7 @@ jobs:
     - run:
         name: StyleLint
         command: yarn lint:style
-        when: always
+        when: alwayss
     - run:
         name: Breaking Change Lint
         # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
