@@ -310,7 +310,6 @@ class FilteringCheckboxSelectInput extends React.Component {
 
     this.state = {
       isExpanded: false,
-      filteredOptions: null,
       selected: []
     };
 
@@ -353,9 +352,6 @@ class FilteringCheckboxSelectInput extends React.Component {
     this.onFilter = evt => {
       const textInput = evt.target.value;
       if (textInput === '') {
-        this.setState({
-          filteredOptions: null
-        });
         return this.options;
       } else {
         let filteredGroups = this.options
@@ -368,10 +364,6 @@ class FilteringCheckboxSelectInput extends React.Component {
             if (filteredGroup.props.children.length > 0) return filteredGroup;
           })
           .filter(newGroup => newGroup);
-
-        this.setState({
-          filteredOptions: filteredGroups
-        });
         return filteredGroups;
       }
     };
