@@ -125,12 +125,9 @@ jobs:
     - image: circleci/node:10
     steps:
     - *attach_workspace
-    - restore_cache:
-        keys:
-        - *js_deps_cache_key
     - run:
         name: StyleLint
-        command: yarn lint:style
+        command: npx stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"
         when: always
     - run:
         name: Breaking Change Lint

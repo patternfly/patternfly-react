@@ -29,7 +29,7 @@ module.exports = api => {
   }
   const ignore = ['**/__snapshots__'];
   if (api.env('esm') || api.env('cjs')) {
-    // ignore.push('**/*.test.*', '**/*.stories.js', '**/Stories');
+    ignore.push('**/*.test.*', '**/*.stories.js', '**/Stories');
   }
   return {
     ignore,
