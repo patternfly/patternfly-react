@@ -205,7 +205,7 @@ class CardViewBasic extends React.Component {
       selectedItems: [],
       areAllSelected: false,
       /* checkedListAll: [], */
-      itemsChecked: false,
+      itemsCheckedByDefault: false,
       numSelected: 0,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
@@ -354,7 +354,7 @@ class CardViewBasic extends React.Component {
       }
     };
   }
-
+  
   selectedItems(e) {
     const { value, checked } = e.target;
     let { selectedItems } = this.state;
@@ -423,16 +423,23 @@ class CardViewBasic extends React.Component {
     return collection;
     };
 
-  handleCheckboxClick(e) {
+  handleCheckboxClick(checked, e) {
     /* e.preventDefault(); */
 
-    const { value, checked } = e.target;
+    const {isChecked} = this.state;
+
+    const { value } = e.target;
+    checked = e.target;
+    /* const { isChecked } = checked; */
+
 
     if (checked) {
       const collection = this.getAllItems();
       this.setState(prevState => ({
         selectedItems: [...prevState.selectedItems, value * 1],
-        areAllSelected: collection.length === prevState.selectedItems.length + 1
+        areAllSelected: collection.length === prevState.selectedItems.length + 1,
+        /* why doesn't this trigger anything */
+        isChecked: true 
       }));
     } else {
       this.setState(prevState => ({
@@ -440,7 +447,7 @@ class CardViewBasic extends React.Component {
         areAllSelected: false
       }));
     }
-    console.log(collection);
+    /* console.log(collection); */
   };
 
   selectNone(e) {
@@ -562,9 +569,11 @@ class CardViewBasic extends React.Component {
             activeItem,
             filters,
             res,
+            checked,
             cardChecks,
             selectedItems,
-            itemsChecked,
+            itemsCheckedByDefault,
+            areAllSelected,
             isChecked } = this.state;
 
     const toolbarKebabDropdownItems = [
@@ -754,11 +763,11 @@ class CardViewBasic extends React.Component {
                                         ]}
                                     />
                                     <Checkbox
-                                    selectedItems={this.selectedItems.bind(this)}
                                     selectedItems={selectedItems}
+                                    areAllSelected={areAllSelected}
+                                    onChange={this.handleCheckboxClick}
                                     isChecked={selectedItems.includes(product.id)}
-                                    defaultChecked={this.state.itemsChecked}
-                                    handleCheckboxClick={this.props.handleCheckboxClick}
+                                    defaultChecked={this.state.itemsCheckedByDefault}
                                     aria-label="card checkbox example"
                                     id="check-1"
                                     name="check1"
