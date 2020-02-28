@@ -426,7 +426,7 @@ class CardViewBasic extends React.Component {
   handleCheckboxClick(checked, e) {
     /* e.preventDefault(); */
 
-    const {isChecked} = this.state;
+    /* const {isChecked} = this.state; */
 
     const { value } = e.target;
     checked = e.target;
@@ -436,18 +436,18 @@ class CardViewBasic extends React.Component {
     if (checked) {
       const collection = this.getAllItems();
       this.setState(prevState => ({
-        selectedItems: [...prevState.selectedItems, value * 1],
+        selectedItems: [...prevState.selectedItems, value*1],
         areAllSelected: collection.length === prevState.selectedItems.length + 1,
         /* why doesn't this trigger anything */
-        isChecked: true 
+        /* isChecked: checked */
       }));
     } else {
       this.setState(prevState => ({
         selectedItems: prevState.selectedItems.filter(item => item != value),
-        areAllSelected: false
+        areAllSelected: false,
+        /* isChecked: checked */
       }));
     }
-    /* console.log(collection); */
   };
 
   selectNone(e) {
@@ -763,6 +763,7 @@ class CardViewBasic extends React.Component {
                                         ]}
                                     />
                                     <Checkbox
+                                    value={product.id}
                                     selectedItems={selectedItems}
                                     areAllSelected={areAllSelected}
                                     onChange={this.handleCheckboxClick}
