@@ -5,17 +5,17 @@ version: 2
 references:
   js_deps_paths: &js_deps_paths
   - node_modules/
-  - packages/patternfly-3/patternfly-react-extensions/node_modules/
-  - packages/patternfly-3/patternfly-react-wooden-tree/node_modules/
-  - packages/patternfly-3/patternfly-react/node_modules/
-  - packages/patternfly-3/react-console/node_modules/
+  - packages/patternfly-react-extensions/node_modules/
+  - packages/patternfly-react-wooden-tree/node_modules/
+  - packages/patternfly-react/node_modules/
+  - packages/react-console/node_modules/
   - packages/react-codemods/node_modules/
   build_cache_paths: &build_cache_paths
   - .cache/
-  - packages/patternfly-3/patternfly-react-extensions/dist/
-  - packages/patternfly-3/patternfly-react-wooden-tree/dist/
-  - packages/patternfly-3/patternfly-react/dist/
-  - packages/patternfly-3/react-console/dist/
+  - packages/patternfly-react-extensions/dist/
+  - packages/patternfly-react-wooden-tree/dist/
+  - packages/patternfly-react/dist/
+  - packages/react-console/dist/
   lint_cache_paths: &lint_cache_paths
   - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
@@ -86,10 +86,6 @@ jobs:
     - save_cache:
         paths: *js_deps_paths
         key: *js_deps_cache_key
-    - save_cache:
-        paths:
-          - ~/.cache/Cypress
-        key: *cypress_cache_key
     - restore_cache:
         keys:
         - *build_cache_key
