@@ -1,21 +1,14 @@
 # Packages
 
-## patternfly-3
+## patternfly-react
 
-This package provides Core PatternFly React components for PatternFly 3.
+This package provides PatternFly React components for PatternFly 3.
 
-## patternfly-4
+## patternfly-react-extensions
 
-This package provides Core PatternFly components for PatternFly 4.  
+This package provides components based on PatternFly 3 which do not The yet have associated patterns found on [PatternFly.org](https://www.patternfly.org/).
+.  
 
-## eslint-plugin-patterngly-react
+## @patternfly/react-console
 
-This package provides PatternFly React all ESLint rules bundled together for use in PatternFly React and downstream applications.
-
-## react-codemods
-
-This package contains a collection of codemod scripts for use with JSCodeshift that help update Patternfly React projects.
-
-## react-icons
-
-PatternFly 4 Icons as React Components.
+This package provides VncConsole and SerialConsole React components for Patternfly 3.
