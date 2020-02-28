@@ -3,7 +3,7 @@ title: 'Grid'
 cssPrefix: 'pf-l-grid'
 section: 'layouts'
 propComponents: ['Grid', 'GridItem']
-typescript: true 
+typescript: true
 ---
 import { Grid, GridItem } from '@patternfly/react-core';
 import './grid.css';
@@ -64,7 +64,6 @@ GridWithGuttersExample = () => (
 ```js title=With-overrides
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
-import ItemControl from './ItemControl';
 
 GridWithOverridesExample = () => (
   <Grid sm={6} md={4} lg={3} xl2={1}>
