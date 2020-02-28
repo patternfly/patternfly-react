@@ -128,22 +128,6 @@ jobs:
     - restore_cache:
         keys:
         - *js_deps_cache_key
-    - restore_cache:
-        keys:
-        - *lint_cache_key
-    - run:
-        name: ESLint
-        command: yarn lint:ts
-    - run:
-        name: MDLint
-        command: yarn lint:md
-    - save_cache:
-        paths: *lint_cache_paths
-        key: *lint_cache_key
-    - run:
-        name: "@patternfly/patternfly Versions Match"
-        command: yarn lint:versions
-        when: always
     - run:
         name: StyleLint
         command: yarn lint:style
