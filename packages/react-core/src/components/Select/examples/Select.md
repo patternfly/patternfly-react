@@ -302,7 +302,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 
 ```js title=Grouped-checkbox-input-with-filtering
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
 
 class FilteringCheckboxSelectInput extends React.Component {
   constructor(props) {
