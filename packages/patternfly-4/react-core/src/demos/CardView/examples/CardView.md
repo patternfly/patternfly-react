@@ -193,6 +193,46 @@ class CardViewBasic extends React.Component {
           name: "SWAGGER",
           description: "Expose REST services and their APIs using Swagger specification.",
           icon: swaggerIcon
+        },
+        {
+          id: 11,
+          name: "a",
+        },
+        {
+          id: 12,
+          name: "b",
+        },
+        {
+          id: 13,
+          name: "c",
+        },
+        {
+          id: 14,
+          name: "d",
+        },
+        {
+          id: 15,
+          name: "e",
+        },
+        {
+          id: 16,
+          name: "f",
+        },
+        {
+          id: 17,
+          name: "g",
+        },
+        {
+          id: 18,
+          name: "h",
+        },
+        {
+          id: 19,
+          name: "i",
+        },
+        {
+          id: 20,
+          name: "j",
         }
      ],
       filters: {
@@ -216,7 +256,7 @@ class CardViewBasic extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 20,
+      perPage: 10,
     };
 
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
@@ -354,7 +394,15 @@ class CardViewBasic extends React.Component {
       }
     };
   }
-  
+          /* <Pagination
+          itemCount={10}
+          perPage={this.state.perPage}
+          page={this.state.page}
+          onSetPage={this.onSetPage}
+          widgetId="pagination-options-menu-top"
+          onPerPageSelect={this.onPerPageSelect}
+        /> */
+
   selectedItems(e) {
     const { value, checked } = e.target;
     let { selectedItems } = this.state;
@@ -381,7 +429,7 @@ class CardViewBasic extends React.Component {
     collection = this.getAllItems();
     }
 
-    console.log(collection);
+    /* console.log(collection); */
 
     this.setState(
       {
@@ -393,7 +441,6 @@ class CardViewBasic extends React.Component {
     );
   };
 
-
   selectAll(e) {
     const { checked } = e.target;
     const { isChecked } = this.state;
@@ -401,7 +448,7 @@ class CardViewBasic extends React.Component {
 
     collection = this.getAllItems();
   
-    console.log(collection);
+    /* console.log(collection); */
 
     this.setState(
       {
@@ -413,42 +460,9 @@ class CardViewBasic extends React.Component {
     );
   };
 
-  getAllItems() {
-    const { cardInfo } = this.state;
-    const collection = [];
-      for (const items of cardInfo) {
-        collection.push(items.id);
-      }
+  selectPage(e) {
 
-    return collection;
-    };
-
-  handleCheckboxClick(checked, e) {
-    /* e.preventDefault(); */
-
-    /* const {isChecked} = this.state; */
-
-    const { value } = e.target;
-    checked = e.target;
-    /* const { isChecked } = checked; */
-
-
-    if (checked) {
-      const collection = this.getAllItems();
-      this.setState(prevState => ({
-        selectedItems: [...prevState.selectedItems, value*1],
-        areAllSelected: collection.length === prevState.selectedItems.length + 1,
-        /* why doesn't this trigger anything */
-        /* isChecked: checked */
-      }));
-    } else {
-      this.setState(prevState => ({
-        selectedItems: prevState.selectedItems.filter(item => item != value),
-        areAllSelected: false,
-        /* isChecked: checked */
-      }));
-    }
-  };
+  }
 
   selectNone(e) {
     const { checked } = e.target;
@@ -463,6 +477,34 @@ class CardViewBasic extends React.Component {
         );
   };
 
+  getAllItems() {
+    const { cardInfo } = this.state;
+    const collection = [];
+      for (const items of cardInfo) {
+        collection.push(items.id);
+      }
+
+    return collection;
+    };
+
+  handleCheckboxClick(checked, e) {
+
+    const { value } = e.target;
+
+    if (checked) {
+      const collection = this.getAllItems();
+      this.setState(prevState => ({
+        selectedItems: [...prevState.selectedItems, value*1],
+        areAllSelected: collection.length === prevState.selectedItems.length + 1,
+      }));
+    } else {
+      this.setState(prevState => ({
+        selectedItems: prevState.selectedItems.filter(item => item != value),
+        areAllSelected: false,
+      }));
+    }
+  };
+
   updateSelected() {
     const { res, selectedItems } = this.state;
     let rows = res.map(post => {
@@ -474,6 +516,37 @@ class CardViewBasic extends React.Component {
       res: rows
     });
   };
+
+  fetch(page, perPage) {
+    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ res: resp, perPage, page}))
+      .then(() => this.updateSelected())
+      .catch(err => this.setState({ error: err }));
+  }
+
+  componentDidMount() {
+    this.fetch(this.state.page, this.state.perPage);
+    /* console.log(this.fetch(this.state.page, this.state.perPage)) */
+  }
+
+  renderPagination() {
+    const { page, perPage } = this.state;
+    return (
+      <Pagination
+        itemCount={20}
+        page={page}
+        perPage={perPage}
+        onSetPage={(_evt, value) => {
+          this.fetch(value, perPage);
+        }}
+        onPerPageSelect={(_evt, value) => {
+          this.fetch(1, value);
+        }}
+        variant="top"
+      />
+    );
+  }
 
 
   buildSelectDropdown() {
@@ -487,9 +560,9 @@ class CardViewBasic extends React.Component {
       <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
         Select none (0 items)
       </DropdownItem>,
-      /* <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+      <DropdownItem key="item-2" onClick={() => this.selectPage.bind(this)}>
         Select page ({this.state.perPage} items)
-      </DropdownItem>, */
+      </DropdownItem>,
       <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>Select all (10 items)</DropdownItem>,
     ];
 
@@ -609,15 +682,7 @@ class CardViewBasic extends React.Component {
           dropdownItems={toolbarKebabDropdownItems}
         />
       </DataToolbarItem>
-      <DataToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
-        <Pagination
-          itemCount={10}
-          perPage={this.state.perPage}
-          page={this.state.page}
-          onSetPage={this.onSetPage}
-          widgetId="pagination-options-menu-top"
-          onPerPageSelect={this.onPerPageSelect}
-        />
+      <DataToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>{this.renderPagination()}
       </DataToolbarItem>
     </React.Fragment>;
 
@@ -786,6 +851,7 @@ class CardViewBasic extends React.Component {
             </Gallery>
           </PageSection>
         </Page>
+        {this.renderPagination()}
       </React.Fragment>
     );
   }
