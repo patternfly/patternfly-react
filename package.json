@@ -84,6 +84,7 @@
     "start:pf4": "yarn start",
     "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",
+    "test:pf4": "yarn test",
     "test:a11y": "lerna run test:a11y --stream",
     "test:current": "jest --watch",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",

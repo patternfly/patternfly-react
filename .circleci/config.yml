@@ -147,7 +147,7 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF4 Jest Tests
-        command: yarn test:pf4 --maxWorkers=2
+        command: yarn test --maxWorkers=2
     - run:
         name: Upload results to codecov
         command: yarn run codecov -F patternfly4
