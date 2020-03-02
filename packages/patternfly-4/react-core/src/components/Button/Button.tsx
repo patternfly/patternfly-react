@@ -43,7 +43,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Adds button variant styles */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' | 'control';
   /** Sets position of the link icon */
-  linkPosition?: 'left' | 'right';
+  iconPosition?: 'left' | 'right';
   /** Adds accessible text to the button. */
   'aria-label'?: string;
   /** Icon for the button if variant is a link */
@@ -64,7 +64,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   isInline = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
-  linkPosition = 'left',
+  iconPosition = 'left',
   'aria-label': ariaLabel = null,
   icon = null,
   ouiaContext = null,
@@ -98,12 +98,12 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
       })}
     >
-      {icon && variant === ButtonVariant.link && linkPosition === 'left' && (
+      {icon && variant === ButtonVariant.link && iconPosition === 'left' && (
         <span className="pf-c-button__icon">{icon}</span>
       )}
       {variant === ButtonVariant.link && <span className={css(styles.buttonText)}>{children}</span>}
       {variant !== ButtonVariant.link && children}
-      {icon && variant === ButtonVariant.link && linkPosition === 'right' && (
+      {icon && variant === ButtonVariant.link && iconPosition === 'right' && (
         <span className="pf-c-button__icon">{icon}</span>
       )}
     </Component>
