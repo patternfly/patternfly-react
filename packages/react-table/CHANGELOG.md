@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.27.18...@patternfly/react-table@2.28.0) (2020-03-02)
+
+
+### Features
+
+* **Button:** add link icon position for link buttons ([#3798](https://github.com/patternfly/patternfly-react/issues/3798)) ([33739b5](https://github.com/patternfly/patternfly-react/commit/33739b5544b9b2ac564389cc8ffc626620df78d9))
+
+
+
+
+
 ## [2.27.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.27.17...@patternfly/react-table@2.27.18) (2020-02-28)
 
 **Note:** Version bump only for package @patternfly/react-table
