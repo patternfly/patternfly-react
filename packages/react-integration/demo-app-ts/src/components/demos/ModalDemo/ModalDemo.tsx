@@ -4,6 +4,7 @@ import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-t
 
 interface ModalDemoState {
   isModalOpen: boolean;
+  isModalDescriptionOpen: boolean;
   isSmallModalOpen: boolean;
   isLargeModalOpen: boolean;
   isHalfWidthModalOpen: boolean;
@@ -14,6 +15,7 @@ interface ModalDemoState {
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
   state = {
     isModalOpen: false,
+    isModalDescriptionOpen: false,
     isSmallModalOpen: false,
     isLargeModalOpen: false,
     isHalfWidthModalOpen: false,
@@ -24,6 +26,12 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   handleModalToggle = () => {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
+    }));
+  };
+
+  handleModalDescriptionToggle = () => {
+    this.setState(({ isModalDescriptionOpen }) => ({
+      isModalDescriptionOpen: !isModalDescriptionOpen
     }));
   };
 
@@ -74,6 +82,35 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             Cancel
           </Button>,
           <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+            Confirm
+          </Button>
+        ]}
+        isFooterLeftAligned
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </Modal>
+    );
+  }
+
+  renderModalWithDescription() {
+    const { isModalDescriptionOpen } = this.state;
+
+    return (
+      <Modal
+        title="Modal Header"
+        isOpen={isModalDescriptionOpen}
+        onClose={this.handleModalDescriptionToggle}
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua."
+        actions={[
+          <Button key="cancel" variant="secondary" onClick={this.handleModalDescriptionToggle}>
+            Cancel
+          </Button>,
+          <Button key="confirm" variant="primary" onClick={this.handleModalDescriptionToggle}>
             Confirm
           </Button>
         ]}
@@ -283,6 +320,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           >
             Show No Header Modal
           </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleModalDescriptionToggle}
+            id="showDescriptionModalButton"
+          >
+            Show Modal with Description
+          </Button>
         </div>
         {this.renderModal()}
         {this.renderSmallModal()}
@@ -290,6 +335,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         {this.renderHalfWidthModal()}
         {this.renderCustomHeaderFooterModal()}
         {this.renderNoHeaderModal()}
+        {this.renderModalWithDescription()}
       </React.Fragment>
     );
   }
