@@ -30,7 +30,7 @@ export interface ModalContentProps {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
-  /** Description */
+  /** Description of the modal */
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
