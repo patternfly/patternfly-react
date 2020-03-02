@@ -1,5 +1,5 @@
 /* eslint-disable no-console, import/no-extraneous-dependencies */
-const helpers = require('../../scripts/lernaHelpers');
+const helpers = require('./lernaHelpers');
 
 const versions = new Map();
 const corePackageName = '@patternfly/patternfly';

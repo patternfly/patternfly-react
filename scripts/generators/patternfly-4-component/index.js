@@ -3,7 +3,7 @@ const { pascalCase } = require('change-case');
 const { ADD_TO_BARREL_FILE } = require('../actionTypes');
 
 const templatesDir = resolve(__dirname, './templates');
-const reactCoreRoot = resolve(__dirname, '../../../packages/patternfly-4/react-core');
+const reactCoreRoot = resolve(__dirname, '../../../packages/react-core');
 
 const componentTypes = new Map([['component', 'components'], ['layout', 'layouts'], ['internal', 'internal']]);
 
