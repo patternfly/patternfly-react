@@ -8,14 +8,15 @@ const outDir = resolve(__dirname, '../dist');
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 const templateDir = resolve(__dirname, './templates');
 
-// const cssFiles = glob.sync('**/*.css', {
-//   cwd: pfStylesDir,
-//   ignore: ['assets/**']
-// });
 const cssFiles = glob.sync('**/{components,layouts}/**/*.css', {
   cwd: pfStylesDir,
   ignore: ['assets/**']
 });
+
+const formatCustomPropertyName = filePath => {
+  const filePathArr = filePath.split('/');
+  return `${filePathArr[0] === 'components' ? 'c_' : 'l_'}${filePathArr[1]}`;
+};
 
 // need 2 lookup tables
 // first lookup table (cssVarsMap): global variable -> variable, e.g. (Global variable): --pf-global--BackgroundColor--100 --> (Variable): $pf-global--BackgroundColor--100
@@ -63,8 +64,6 @@ while ((matches = allVariablesRegex.exec(allVariables))) {
   allVariablesMap[matches[1]] = matches[2].trim();
 }
 
-const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, '_');
-
 const getGlobalVar = (tokenObj, value, property) => {
   // check if the value starts with --pf-global
   const innerValueMatch = /var\(([\w|-]*)\)/g.exec(value);
@@ -92,14 +91,14 @@ const getGlobalVar = (tokenObj, value, property) => {
       console.log(`${key}: ${cssVariable}`);
     }
   }
-  return globalVar ? allVariablesMap[globalVar] : value;
+  tokenObj.computedValue = globalVar ? allVariablesMap[globalVar] : value;
 };
 
 const tokens = {};
 cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssAst = parse(readFileSync(absFilePath, 'utf8'));
-  // keeps a mapping of the locally used variables
+  console.log(filePath);
   const localVarsMap = {};
   cssAst.stylesheet.rules.forEach(node => {
     if (node.type !== 'rule' || node.selectors.indexOf('.pf-t-dark') !== -1) {
@@ -112,92 +111,86 @@ cssFiles.forEach(filePath => {
       }
       const { property, value, parent } = decl;
       if (decl.property.startsWith('--') && !decl.property.startsWith('--pf-global')) {
-        const key = formatCustomPropertyName(property);
+        // parse variables
+        // each token we create will have the form of:
+        /*
+        [{
+          selector: '.pf-c-about-modal-box',
+          properties: [{
+            name: '--pf-global--Color--100',
+            value: 'var(--pf-global--Color--light-100)'
+          }]
+        }, {
+          selector: '.pf-c-about-modal-box .button',
+          properties: [{
+            name: '--pf-c-button--m-primary--Color',
+            value: 'var(--pf-global--primary-color--dark-100)'
+          }, {
+            name: '--pf-c-button--m-primary--hover--Color',
+            value: 'var(--pf-global--primary-color--dark-100)'
+          }]
+        }]
+        */
+
+        // key is the root of the selector, e.g. c_about_modal_box
+        const key = formatCustomPropertyName(filePath);
         localVarsMap[property] = value;
+        let newSelector;
         let computedValueObjects = [];
         const computedValue = value.replace(/var\(([\w|-]*)\)/g, (full, match) => {
           let valueObj = {};
-          let populatedValue;
           if (match.startsWith('--pf-global')) {
-            populatedValue = getGlobalVar(valueObj, `var(${match})`);
+            getGlobalVar(valueObj, `var(${match})`);
           } else {
-            populatedValue = localVarsMap[match];
-            if (populatedValue) {
-              if (populatedValue.startsWith('var(--pf-global')) {
-                populatedValue = getGlobalVar(valueObj, populatedValue);
+            const computedValue = localVarsMap[match];
+            if (computedValue) {
+              if (computedValue.startsWith('var(--pf-global')) {
+                getGlobalVar(valueObj, computedValue);
+              } else {
+                valueObj.computedValue = computedValue;
               }
               valueObj.localVar = match;
             }
           }
-          const checkedForNumValue = !isNaN(populatedValue) ? Number(populatedValue).valueOf() : populatedValue;
           computedValueObjects.push(valueObj);
-          return populatedValue || full;
+          return (valueObj && valueObj.computedValue) || full;
         });
-        // Avoid stringifying numeric chart values
-        const chartNum = decl.property.startsWith('--pf-chart-') && !isNaN(computedValue);
-        const checkedValue = chartNum ? Number(computedValue).valueOf() : computedValue;
-
-        // if the token already exists, it means that we are pushing the variable again but in a different context (different CSS selectors)
-        // we need to keep a list of the values
-
-        let newValue;
         if (tokens[key]) {
-          newValue = {
-            selector: parent.selectors[0],
-            value: checkedValue
-          };
-          if (computedValueObjects.length === 1) {
-            newValue = {
-              ...newValue,
-              ...computedValueObjects[0]
-            }
+          // check if selector exists
+          const index = tokens[key].findIndex(item => item.selector === parent.selectors[0]);
+          if (index >= 0) {
+            let newProperty = {
+              name: property,
+              value,
+              computedValue,
+              computedValueObjects
+            };
+            tokens[key][index].properties.push(newProperty);
           } else {
-            newValue.computedValueObjects = computedValueObjects;
+            newSelector = {
+              selector: parent.selectors[0],
+              properties: [{
+                name: property,
+                value,
+                computedValue,
+                computedValueObjects
+              }]
+            };
+            tokens[key].push(newSelector);
           }
-          tokens[key].values.push(newValue);
         } else {
-          newValue = {
+          newSelector = {
             selector: parent.selectors[0],
-            value: checkedValue
+            properties: [{
+              name: property,
+              value,
+              computedValue,
+              computedValueObjects
+            }]
           };
-          if (computedValueObjects.length === 1) {
-            newValue = {
-              ...newValue,
-              ...computedValueObjects[0]
-            }
-          } else {
-            newValue.computedValueObjects = computedValueObjects;
-          }
-          tokens[key] = {
-            name: property,
-            value: checkedValue,
-            var: `var(${property})`,
-            values: [newValue]
-          };
+          tokens[key] = [newSelector]
         }
       }
     });
-  });
-});
-
-Object.entries(allVariablesMap).forEach(globalVar => {
-  const key = formatCustomPropertyName(globalVar[0]);
-  const variable = globalVar[0];
-  const value = globalVar[1];
-  tokens[key] = {
-    name: variable,
-    var: `var(${variable})`,
-    value
-  };
-});
-
-readdirSync(templateDir).forEach(templateFile => {
-  const template = require(join(templateDir, templateFile));
-  outputFileSync(template.getOutputPath({ outDir }), template.getContent({ tokens }));
-  Object.entries(tokens).forEach(([tokenName, tokenValue]) => {
-    outputFileSync(
-      template.getSingleOutputPath({ outDir, tokenName }),
-      template.getSingleContent({ tokenName, tokenValue })
-    );
   });
 });
