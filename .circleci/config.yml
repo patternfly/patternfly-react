@@ -59,13 +59,13 @@ workflows:
     - lint:
         requires:
         - build
-    - deploy_prerelease:
-        requires:
-        - test_jest_pf3
-        - build_pf3_docs
-        filters:
-          branches:
-            only: master
+    # - deploy_prerelease:
+    #     requires:
+    #     - test_jest_pf3
+    #     - build_pf3_docs
+    #     filters:
+    #       branches:
+    #         only: master
 jobs:
   build:
     docker:
@@ -124,10 +124,10 @@ jobs:
     docker:
     - image: circleci/node:10
     steps:
-    - *attach_workspace
+    - checkout
     - run:
         name: StyleLint
-        command: npx stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"
+        command: npx stylelint \"**/sass/**/*.scss\"
         when: always
     - run:
         name: Breaking Change Lint
