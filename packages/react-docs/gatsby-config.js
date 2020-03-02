@@ -70,7 +70,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'react', // This goes in URLs
-        path: path.resolve(__dirname, '../../../RELEASE-NOTES.md')
+        path: path.resolve(__dirname, '../../RELEASE-NOTES.md')
       }
     },
     // Source training

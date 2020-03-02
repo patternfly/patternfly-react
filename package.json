@@ -74,7 +74,7 @@
     "generate": "yarn plop",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/eslint packages/react-core packages/react-table packages/react-topology packages/react-catalog-view-extension packages/react-docs packages/react-inline-edit-extension packages/react-charts packages/react-integration packages/react-styled-system packages/react-styles packages/react-tokens packages/react-virtualized-extension --ext js,jsx,ts,tsx --cache",
-    "lint:versions": "node ./packages/verifyCoreVersions.js",
+    "lint:versions": "node ./scripts/verifyCoreVersions.js",
     "prettier": "node node_modules/.bin/prettier --write \"storybook/**/*.{js,ts,tsx}\" \"packages/**/*.{js,ts,tsx}\" \"scripts/**/*.{js,ts,tsx}\"",
     "serve:docs": "lerna run serve",
     "serve:integration": "lerna run serve:demo-app",
