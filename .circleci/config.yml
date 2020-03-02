@@ -124,10 +124,13 @@ jobs:
     docker:
     - image: circleci/node:10
     steps:
-    - checkout
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
     - run:
         name: StyleLint
-        command: npx stylelint \"**/sass/**/*.scss\"
+        command: yarn lint:style
         when: always
     - run:
         name: Breaking Change Lint

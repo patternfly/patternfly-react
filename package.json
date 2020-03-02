@@ -73,7 +73,7 @@
     "clean:build": "rimraf .cache",
     "commit": "git-cz",
     "generate": "yarn plop",
-    "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
+    "lint:style": "stylelint \"packages/**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
     "prettier": "node node_modules/.bin/prettier --write \"storybook/**/*.{js,ts,tsx}\" \"packages/**/*.{js,ts,tsx}\" \"scripts/**/*.{js,ts,tsx}\"",
     "start": "yarn start:pf3",
     "start:cypress": "lerna run cypress:open",
