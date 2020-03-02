@@ -25,4 +25,14 @@ describe('Switch Demo Test', () => {
     cy.get('#disabled-switch-off').click({ force: true });
     cy.get('#disabled-switch-off').should('not.be.checked');
   });
+
+  it('regression test: Github #3662', () => {
+    cy.get('button#showAll').click();
+    cy.get('#id1').should('not.be.checked');
+    cy.get('#id1').click({ force: true });
+    cy.get('#id1').should('be.checked');
+    cy.get('button#showAll').click();
+    cy.get('#id1').should('not.be.checked');
+    cy.get('#id2').should('be.checked');
+  });
 });

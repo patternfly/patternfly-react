@@ -50,7 +50,20 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   }
 
   render() {
-    const { className, label, labelOff, isChecked, isDisabled, onChange, ouiaContext, ouiaId, ...props } = this.props;
+    const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      id,
+      className,
+      label,
+      labelOff,
+      isChecked,
+      isDisabled,
+      onChange,
+      ouiaContext,
+      ouiaId,
+      ...props
+    } = this.props;
+
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
       <label

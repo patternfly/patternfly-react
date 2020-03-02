@@ -3,6 +3,101 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.142.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.142.0...@patternfly/react-core@3.142.1) (2020-03-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.142.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.6...@patternfly/react-core@3.142.0) (2020-03-02)
+
+
+### Features
+
+* **Button:** add link icon position for link buttons ([#3798](https://github.com/patternfly/patternfly-react/issues/3798)) ([33739b5](https://github.com/patternfly/patternfly-react/commit/33739b5544b9b2ac564389cc8ffc626620df78d9))
+
+
+
+
+
+## [3.141.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.5...@patternfly/react-core@3.141.6) (2020-02-28)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.141.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.4...@patternfly/react-core@3.141.5) (2020-02-27)
+
+
+### Bug Fixes
+
+* **pagination:** update navigation input according to page number ([#3534](https://github.com/patternfly/patternfly-react/issues/3534)) ([0d50607](https://github.com/patternfly/patternfly-react/commit/0d506074e4084f8dadd3ffdfafb04dde7d13ed7c))
+
+
+
+
+
+## [3.141.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.3...@patternfly/react-core@3.141.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* **switch:** avoid switch id override by props ([#3706](https://github.com/patternfly/patternfly-react/issues/3706)) ([0952774](https://github.com/patternfly/patternfly-react/commit/0952774d3dbcf6a7d66d4463277fab181bfd6c28))
+
+
+
+
+
+## [3.141.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.2...@patternfly/react-core@3.141.3) (2020-02-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.141.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.1...@patternfly/react-core@3.141.2) (2020-02-25)
+
+
+### Bug Fixes
+
+* **dropdown:** Keyboard selection of toggle causes selection of parent ([#3816](https://github.com/patternfly/patternfly-react/issues/3816)) ([2563ce6](https://github.com/patternfly/patternfly-react/commit/2563ce695046b5f934693bc025122e29b00209cf))
+
+
+
+
+
+## [3.141.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.141.0...@patternfly/react-core@3.141.1) (2020-02-25)
+
+
+### Bug Fixes
+
+* **layouts:** wrapped examples to fix codesandbox ([#3818](https://github.com/patternfly/patternfly-react/issues/3818)) ([81791eb](https://github.com/patternfly/patternfly-react/commit/81791eb0e25e49f9d1317ce12d6ce5a16d313a5f))
+
+
+
+
+
+# [3.141.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.140.11...@patternfly/react-core@3.141.0) (2020-02-25)
+
+
+### Bug Fixes
+
+* **Tabs:** update tabs with nav examples + add Tab component to props docs ([#3527](https://github.com/patternfly/patternfly-react/issues/3527)) ([a97c226](https://github.com/patternfly/patternfly-react/commit/a97c22622b429a87cf8c7cb1bfd212526b403f58))
+
+
+### Features
+
+* **card:** add selectable and selected variation ([#3587](https://github.com/patternfly/patternfly-react/issues/3587)) ([166aa09](https://github.com/patternfly/patternfly-react/commit/166aa097ae08f5da216c9f59a1094e032da49054))
+
+
+
+
+
 ## [3.140.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.140.10...@patternfly/react-core@3.140.11) (2020-02-18)
 
 

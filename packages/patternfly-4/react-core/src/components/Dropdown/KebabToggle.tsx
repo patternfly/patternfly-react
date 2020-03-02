@@ -30,6 +30,8 @@ export interface KebabToggleProps extends DropdownToggleProps {
   isPlain?: boolean;
   /** Type to put on the button */
   type?: 'button' | 'submit' | 'reset';
+  /** Allows selecting toggle to select parent */
+  bubbleEvent?: boolean;
 }
 
 export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
@@ -45,6 +47,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   isActive = false,
   isPlain = false,
   isDisabled = false,
+  bubbleEvent = false,
   onToggle = () => undefined as void,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
@@ -62,6 +65,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
     isPlain={isPlain}
     isDisabled={isDisabled}
     onToggle={onToggle}
+    bubbleEvent={bubbleEvent}
     {...props}
   >
     <EllipsisVIcon />

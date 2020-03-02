@@ -14,20 +14,24 @@ import './level.css';
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
-<Level>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-</Level>
+LevelBasicExample = () => (
+  <Level>
+    <LevelItem>Level Item</LevelItem>
+    <LevelItem>Level Item</LevelItem>
+    <LevelItem>Level Item</LevelItem>
+  </Level>
+);
 ```
 
 ```js title=With-gutters
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
-<Level gutter="md">
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-  <LevelItem>Level Item</LevelItem>
-</Level>
+LevelWithGuttersExample = () => (
+  <Level gutter="md">
+    <LevelItem>Level Item</LevelItem>
+    <LevelItem>Level Item</LevelItem>
+    <LevelItem>Level Item</LevelItem>
+  </Level>
+);
 ```

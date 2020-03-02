@@ -8,6 +8,6 @@ import { OverflowMenuContent } from '../../OverflowMenuContent';
 import {} from '../..';
 
 it('OverflowMenuContent should match snapshot (auto-generated)', () => {
-  const view = shallow(<OverflowMenuContent />);
+  const view = shallow(<OverflowMenuContent children={'any'} className={'string'} isPersistent={true} />);
   expect(view).toMatchSnapshot();
 });

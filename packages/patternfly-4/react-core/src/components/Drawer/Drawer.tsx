@@ -13,22 +13,35 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isInline?: boolean;
 }
 
-export const Drawer: React.SFC<DrawerProps> = ({
-  className = '',
-  children,
-  isExpanded = false,
-  isInline = false,
-  ...props
-}: DrawerProps) => (
-  <div
-    {...props}
-    className={css(
-      styles.drawer,
-      isExpanded && styles.modifiers.expanded,
-      isInline && styles.modifiers.inline,
-      className
-    )}
-  >
-    {children}
-  </div>
-);
+export class Drawer extends React.Component<DrawerProps> {
+  static hasWarnBeta = false;
+  constructor(props: DrawerProps) {
+    super(props);
+  }
+
+  componentDidMount() {
+    if (!Drawer.hasWarnBeta && process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn('This component is in beta and subject to change.');
+      Drawer.hasWarnBeta = true;
+    }
+  }
+
+  render() {
+    const { className = '', children, isExpanded = false, isInline = false, ...props } = this.props;
+
+    return (
+      <div
+        {...props}
+        className={css(
+          styles.drawer,
+          isExpanded && styles.modifiers.expanded,
+          isInline && styles.modifiers.inline,
+          className
+        )}
+      >
+        {children}
+      </div>
+    );
+  }
+}

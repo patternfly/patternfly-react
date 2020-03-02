@@ -20,6 +20,12 @@ export class CardDemo extends React.Component {
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
+        <br></br>
+        <Card isSelectable isSelected>
+          <CardHeader>Header</CardHeader>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
       </React.Fragment>
     );
   }

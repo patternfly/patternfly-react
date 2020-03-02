@@ -35,10 +35,6 @@ export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'ti
   vendor?: string | React.ReactNode;
   /** Description of the catalog item */
   description?: string | React.ReactNode;
-  /** Max description length before applying truncation (when description is a string), -1 for no truncation */
-  maxDescriptionLength?: number;
-  /** Truncation function(description, max, id) used to truncate description when necessary (defaults to using ellipses) */
-  truncateDescriptionFn: (description: string | React.ReactNode, max: number, id?: any) => string;
   /** Footer for the tile */
   footer?: string | React.ReactNode;
 }
@@ -57,21 +53,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     badges: [] as React.ReactNode[],
     vendor: null as string | React.ReactNode,
     description: null as string | React.ReactNode,
-    maxDescriptionLength: 112,
-    truncateDescriptionFn: null as (description: string | React.ReactNode, max: number, id?: any) => string,
     footer: null as string | React.ReactNode
-  };
-
-  private defaultTruncateDescription = (text: string | React.ReactNode, max: number) => {
-    if (max === -1 || typeof text !== 'string' || text.length <= max) {
-      return text;
-    }
-    return (
-      <React.Fragment>
-        {text.substring(0, max - 3)}
-        &hellip;
-      </React.Fragment>
-    );
   };
 
   private handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
@@ -114,14 +96,11 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       title,
       vendor,
       description,
-      truncateDescriptionFn,
-      maxDescriptionLength,
       footer,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       ref,
       ...props
     } = this.props;
-    const truncateDescription = truncateDescriptionFn || this.defaultTruncateDescription;
 
     return (
       <Card
@@ -147,9 +126,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         {description && (
           <CardBody className="catalog-tile-pf-body">
             <div className="catalog-tile-pf-description">
-              <span className={classNames({ 'has-footer': footer })}>
-                {truncateDescription(description, maxDescriptionLength)}
-              </span>
+              <span className={classNames({ 'has-footer': footer })}>{description}</span>
             </div>
           </CardBody>
         )}

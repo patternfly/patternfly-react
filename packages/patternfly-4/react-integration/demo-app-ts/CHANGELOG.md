@@ -3,6 +3,84 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.25.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.7...demo-app-ts@3.25.8) (2020-03-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.25.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.6...demo-app-ts@3.25.7) (2020-03-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.25.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.5...demo-app-ts@3.25.6) (2020-02-28)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.25.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.4...demo-app-ts@3.25.5) (2020-02-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.25.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.3...demo-app-ts@3.25.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* **switch:** avoid switch id override by props ([#3706](https://github.com/patternfly/patternfly-react/issues/3706)) ([0952774](https://github.com/patternfly/patternfly-react/commit/0952774d3dbcf6a7d66d4463277fab181bfd6c28))
+
+
+
+
+
+## [3.25.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.2...demo-app-ts@3.25.3) (2020-02-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.25.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.1...demo-app-ts@3.25.2) (2020-02-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.25.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.0...demo-app-ts@3.25.1) (2020-02-25)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [3.25.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.24.12...demo-app-ts@3.25.0) (2020-02-25)
+
+
+### Features
+
+* **card:** add selectable and selected variation ([#3587](https://github.com/patternfly/patternfly-react/issues/3587)) ([166aa09](https://github.com/patternfly/patternfly-react/commit/166aa097ae08f5da216c9f59a1094e032da49054))
+
+
+
+
+
 ## [3.24.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.24.11...demo-app-ts@3.24.12) (2020-02-18)
 
 **Note:** Version bump only for package demo-app-ts

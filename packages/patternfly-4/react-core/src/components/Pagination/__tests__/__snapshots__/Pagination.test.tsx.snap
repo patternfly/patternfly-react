@@ -16,14 +16,70 @@ exports[`component render custom pagination toggle 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={40}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
       toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -494,6 +550,7 @@ exports[`component render custom pagination toggle 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-11"
                           isActive={false}
@@ -550,6 +607,7 @@ exports[`component render custom pagination toggle 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-11"
@@ -1014,13 +1072,32 @@ exports[`component render custom perPageOptions 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={40}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
       perPageOptions={
         Array [
           Object {
@@ -1029,6 +1106,24 @@ exports[`component render custom perPageOptions 1`] = `
           },
         ]
       }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -1379,6 +1474,7 @@ exports[`component render custom perPageOptions 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-7"
                           isActive={false}
@@ -1446,6 +1542,7 @@ exports[`component render custom perPageOptions 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-7"
@@ -1900,15 +1997,70 @@ exports[`component render custom start end 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={40}
       itemsEnd={15}
       itemsStart={5}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -2418,6 +2570,7 @@ exports[`component render custom start end 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-9"
                           isActive={false}
@@ -2485,6 +2638,7 @@ exports[`component render custom start end 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-9"
@@ -2937,14 +3091,51 @@ exports[`component render empty per page options 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={40}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
       perPageOptions={Array []}
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -3533,15 +3724,70 @@ exports[`component render last page 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={20}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
       page={2}
       perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -4051,6 +4297,7 @@ exports[`component render last page 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-6"
                           isActive={false}
@@ -4118,6 +4365,7 @@ exports[`component render last page 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-6"
@@ -4570,14 +4818,70 @@ exports[`component render limited number of pages 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={20}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
       perPage={20}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -5087,6 +5391,7 @@ exports[`component render limited number of pages 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-4"
                           isActive={false}
@@ -5154,6 +5459,7 @@ exports[`component render limited number of pages 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-4"
@@ -5604,13 +5910,70 @@ exports[`component render no items 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={0}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -6122,6 +6485,7 @@ exports[`component render no items 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-8"
                           isActive={false}
@@ -6190,6 +6554,7 @@ exports[`component render no items 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle-8"
@@ -6642,14 +7007,70 @@ exports[`component render should render correctly bottom 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={20}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
       variant="bottom"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination pf-m-footer"
@@ -7137,6 +7558,7 @@ exports[`component render should render correctly bottom 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-1"
                           isActive={false}
@@ -7204,6 +7626,7 @@ exports[`component render should render correctly bottom 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-1"
@@ -7656,14 +8079,70 @@ exports[`component render should render correctly compact 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
       isCompact={true}
+      isDisabled={false}
       itemCount={20}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination pf-m-compact"
@@ -8173,6 +8652,7 @@ exports[`component render should render correctly compact 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-2"
                           isActive={false}
@@ -8240,6 +8720,7 @@ exports[`component render should render correctly compact 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-2"
@@ -8503,14 +8984,70 @@ exports[`component render should render correctly disabled 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
       isDisabled={true}
       itemCount={20}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -9022,6 +9559,7 @@ exports[`component render should render correctly disabled 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-3"
                           isActive={false}
@@ -9090,6 +9628,7 @@ exports[`component render should render correctly disabled 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle-3"
@@ -9540,13 +10079,70 @@ exports[`component render should render correctly top 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={20}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -10056,6 +10652,7 @@ exports[`component render should render correctly top 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-0"
                           isActive={false}
@@ -10123,6 +10720,7 @@ exports[`component render should render correctly top 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-0"
@@ -10583,12 +11181,51 @@ exports[`component render titles 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={40}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
+      }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
       }
       titles={
         Object {
@@ -10596,6 +11233,9 @@ exports[`component render titles 1`] = `
           "page": "books",
         }
       }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -11107,6 +11747,7 @@ exports[`component render titles 1`] = `
                       >
                         <Toggle
                           aria-label="Select"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-10"
                           isActive={false}
@@ -11174,6 +11815,7 @@ exports[`component render titles 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Select"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-10"
@@ -11626,14 +12268,70 @@ exports[`component render up drop direction 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
       dropDirection="up"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={40}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -12143,6 +12841,7 @@ exports[`component render up drop direction 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-12"
                           isActive={false}
@@ -12210,6 +12909,7 @@ exports[`component render up drop direction 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={false}
                             id="pagination-options-menu-toggle-12"
@@ -12660,13 +13360,70 @@ exports[`component render zero results 1`] = `
     consumerContext={null}
   >
     <Pagination
+      className=""
+      defaultToFullPage={false}
+      dropDirection="down"
+      firstPage={1}
+      isCompact={false}
+      isDisabled={false}
       itemCount={0}
+      itemsEnd={null}
+      itemsStart={null}
+      offset={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPerPageSelect={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
       ouiaContext={
         Object {
           "isOuia": false,
           "ouiaId": null,
         }
       }
+      ouiaId={null}
+      page={0}
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      titles={
+        Object {
+          "currPage": "Current page",
+          "items": "",
+          "itemsPerPage": "Items per page",
+          "optionsToggle": "Items per page",
+          "page": "",
+          "paginationTitle": "Pagination",
+          "perPageSuffix": "per page",
+          "toFirstPage": "Go to first page",
+          "toLastPage": "Go to last page",
+          "toNextPage": "Go to next page",
+          "toPreviousPage": "Go to previous page",
+        }
+      }
+      toggleTemplate={[Function]}
+      variant="top"
+      widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-pagination"
@@ -13178,6 +13935,7 @@ exports[`component render zero results 1`] = `
                       >
                         <Toggle
                           aria-label="Items per page"
+                          bubbleEvent={false}
                           className="pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-5"
                           isActive={false}
@@ -13246,6 +14004,7 @@ exports[`component render zero results 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Items per page"
+                            bubbleEvent={false}
                             className="  pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle-5"

@@ -13,6 +13,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement> {
   isHoverable?: boolean;
   /** Modifies the card to include compact styling */
   isCompact?: boolean;
+  /** Modifies the card to include selectable styling */
+  isSelectable?: boolean;
+  /** Modifies the card to include selected styling */
+  isSelected?: boolean;
 }
 
 export const Card: React.FunctionComponent<CardProps> = ({
@@ -21,6 +25,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   component = 'article',
   isHoverable = false,
   isCompact = false,
+  isSelectable = false,
+  isSelected = false,
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -30,8 +36,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
         styles.card,
         isHoverable && styles.modifiers.hoverable,
         isCompact && styles.modifiers.compact,
+        isSelectable && styles.modifiers.selectable,
+        isSelected && isSelectable && styles.modifiers.selected,
         className
       )}
+      tabIndex={isSelectable ? '0' : undefined}
       {...props}
     >
       {children}

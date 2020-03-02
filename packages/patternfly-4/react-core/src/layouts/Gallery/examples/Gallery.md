@@ -14,28 +14,32 @@ import './gallery.css';
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
-<Gallery>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>
+GalleryBasicExample = () => (
+  <Gallery>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+  </Gallery>
+);
 ```
 
 ```js title=With-gutters
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
-<Gallery gutter="md">
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-  <GalleryItem>Gallery Item</GalleryItem>
-</Gallery>
+GalleryWithGuttersExample = () => (
+  <Gallery gutter="md">
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+    <GalleryItem>Gallery Item</GalleryItem>
+  </Gallery>
+);
 ```
