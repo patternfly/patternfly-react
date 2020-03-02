@@ -75,19 +75,19 @@ workflows:
   version: 2
   build_test_deploy:
     jobs:
-    - build
+    - build_pf4
     - build_docs_pf4:
         requires:
-        - build
+        - build_pf4
     - test_jest_pf4:
         requires:
-        - build
+        - build_pf4
     - lint:
         requires:
-        - build
+        - build_pf4
     - build_demo_app:
         requires:
-        - build
+        - build_pf4
     - test_integration:
         requires:
         - build_demo_app
@@ -103,7 +103,7 @@ workflows:
           branches:
             only: master
 jobs:
-  build:
+  build_pf4:
     docker:
     - image: circleci/node:10
     steps:
