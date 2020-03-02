@@ -332,7 +332,11 @@ exports[`Alert - danger Action Link 1`] = `
                     type="button"
                     variantLabel="Danger alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -490,7 +494,11 @@ exports[`Alert - danger Action and Title 1`] = `
                     type="button"
                     variantLabel="Danger alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -651,7 +659,11 @@ exports[`Alert - danger Custom aria label 1`] = `
                     type="button"
                     variantLabel="Danger alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -1346,7 +1358,11 @@ exports[`Alert - default Action Link 1`] = `
                     type="button"
                     variantLabel="Default alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -1504,7 +1520,11 @@ exports[`Alert - default Action and Title 1`] = `
                     type="button"
                     variantLabel="Default alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -1665,7 +1685,11 @@ exports[`Alert - default Custom aria label 1`] = `
                     type="button"
                     variantLabel="Default alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -2360,7 +2384,11 @@ exports[`Alert - info Action Link 1`] = `
                     type="button"
                     variantLabel="Info alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -2518,7 +2546,11 @@ exports[`Alert - info Action and Title 1`] = `
                     type="button"
                     variantLabel="Info alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -2679,7 +2711,11 @@ exports[`Alert - info Custom aria label 1`] = `
                     type="button"
                     variantLabel="Info alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -3374,7 +3410,11 @@ exports[`Alert - success Action Link 1`] = `
                     type="button"
                     variantLabel="Success alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -3532,7 +3572,11 @@ exports[`Alert - success Action and Title 1`] = `
                     type="button"
                     variantLabel="Success alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -3693,7 +3737,11 @@ exports[`Alert - success Custom aria label 1`] = `
                     type="button"
                     variantLabel="Success alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -4388,7 +4436,11 @@ exports[`Alert - warning Action Link 1`] = `
                     type="button"
                     variantLabel="Warning alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -4546,7 +4598,11 @@ exports[`Alert - warning Action and Title 1`] = `
                     type="button"
                     variantLabel="Warning alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>
@@ -4707,7 +4763,11 @@ exports[`Alert - warning Custom aria label 1`] = `
                     type="button"
                     variantLabel="Warning alert:"
                   >
-                    test
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      test
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>

@@ -340,7 +340,11 @@ exports[`Wizard should match snapshot 1`] = `
                     class="pf-c-button pf-m-link"
                     type="button"
                   >
-                    Cancel
+                    <span
+                      class="pf-c-button__text"
+                    >
+                      Cancel
+                    </span>
                   </button>
                 </footer>
               </div>
@@ -550,7 +554,11 @@ exports[`Wizard should match snapshot 1`] = `
                     class="pf-c-button pf-m-link"
                     type="button"
                   >
-                    Cancel
+                    <span
+                      class="pf-c-button__text"
+                    >
+                      Cancel
+                    </span>
                   </button>
                 </footer>
               </div>

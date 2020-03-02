@@ -1455,7 +1455,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       class="pf-c-button pf-m-link pf-m-inline"
                       type="button"
                     >
-                      Clear all filters
+                      <span
+                        class="pf-c-button__text"
+                      >
+                        Clear all filters
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -1550,7 +1554,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               tabIndex={null}
                               type="button"
                             >
-                              Clear all filters
+                              <span
+                                className="pf-c-button__text"
+                              >
+                                Clear all filters
+                              </span>
                             </button>
                           </Button>
                         </ComponentWithOuia>
@@ -1717,7 +1725,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 class="pf-c-button pf-m-link pf-m-inline"
                 type="button"
               >
-                Clear all filters
+                <span
+                  class="pf-c-button__text"
+                >
+                  Clear all filters
+                </span>
               </button>
             </div>
           </div>,
@@ -1789,7 +1801,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     tabIndex={null}
                     type="button"
                   >
-                    Clear all filters
+                    <span
+                      className="pf-c-button__text"
+                    >
+                      Clear all filters
+                    </span>
                   </button>
                 </Button>
               </ComponentWithOuia>

@@ -5,10 +5,12 @@ cssPrefix: 'pf-c-button'
 typescript: true
 propComponents: ['Button']
 ---
+
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
+import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 
 ## Examples
+
 ```js title=Block-level
 import React from 'react';
 import { Button } from '@patternfly/react-core';
@@ -20,7 +22,7 @@ BlockButton = () => <Button isBlock>Block level button</Button>;
 ```js title=Variations
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
+import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 
 ButtonVariants = () => (
   <React.Fragment>
@@ -28,6 +30,9 @@ ButtonVariants = () => (
     <Button variant="tertiary">Tertiary</Button> <Button variant="danger">Danger</Button>{' '}
     <Button variant="control">Control</Button>{' '}
     <Button variant="link" icon={<PlusCircleIcon />}>
+      Link button
+    </Button>{' '}
+    <Button variant="link" icon={<ExternalLinkSquareAltIcon />} iconPosition="right">
       Link button
     </Button>{' '}
     <Button variant="plain" aria-label="Action">
@@ -57,7 +62,7 @@ LinkButton = () => (
       Tertiary Link to Core Docs
     </Button>
     <Button component="a" href="https://pf4.patternfly.org/contribution/#modifiers" variant="link">
-     Jump to modifiers in contribution guidelines
+      Jump to modifiers in contribution guidelines
     </Button>
   </React.Fragment>
 );
