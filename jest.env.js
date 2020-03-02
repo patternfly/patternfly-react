@@ -1,7 +1,7 @@
-import 'raf/polyfill';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import MutationObserver from 'mutation-observer';
+require('raf/polyfill');
+const { configure } = require('enzyme');
+const Adapter = require('enzyme-adapter-react-16');
+const MutationObserver = require('mutation-observer');
 
 configure({ adapter: new Adapter() });
 

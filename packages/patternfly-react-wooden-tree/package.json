@@ -1,19 +1,10 @@
 {
-  "name": "{{name}}",
-  "version": "1.0.0",
-  "description": "{{description}}",
-  {{#if buildsWithBabel }}
+  "name": "patternfly-react-wooden-tree",
+  "version": "2.0.5",
+  "description": "Reexport react-wooden-tree with Patternfly design.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  {{#if includeTypings}}
   "types": "dist/js/index.d.ts",
-  {{/if}}
-  {{else}}
-  "main": "lib/index.js",
-  {{#if includeTypings}}
-  "types": "lib/index.d.ts",
-  {{/if}}
-  {{/if}}
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
@@ -24,29 +15,36 @@
   },
   "keywords": [
     "react",
-    "patternfly"
+    "patternfly",
+    "treeview"
   ],
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-react-wooden-tree/README.md",
   "scripts": {
-    {{#if buildsWithBabel}}
     "build": "yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
-    "build:babel:cjs": "babel src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel src --out-dir dist/esm",
-    {{/if}}
+    "build:babel:cjs": "babel src --env-name cjs --out-dir dist/js",
+    "build:babel:esm": "babel src --env-name esm --out-dir dist/esm",
+    "clean": "rimraf dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-wooden-tree": "^2.0.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-plugin-transform-imports": "^2.0.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }

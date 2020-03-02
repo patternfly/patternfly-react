@@ -1,0 +1,569 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wizard Pattern renders properly: Wizard pattern snapshot 1`] = `
+<Wizard
+  className=""
+  dialogClassName=""
+  onClose={[Function]}
+  onExited={[MockFunction]}
+  onHide={[Function]}
+  show={true}
+>
+  <WizardHeader
+    onClose={[Function]}
+    title="Wizard Pattern Example"
+  />
+  <WizardBody
+    className=""
+  >
+    <WizardPatternBody
+      activeStepIndex={0}
+      activeStepStr="1"
+      goToStep={[Function]}
+      loading={false}
+      loadingMessage="This may take a minute."
+      loadingTitle="Loading..."
+      nextStepDisabled={false}
+      stepButtonsDisabled={false}
+      steps={
+        Array [
+          Object {
+            "render": [Function],
+            "title": "General",
+          },
+          Object {
+            "render": [Function],
+            "title": "Step Two",
+          },
+          Object {
+            "render": [Function],
+            "title": "Step Three",
+          },
+        ]
+      }
+    />
+  </WizardBody>
+  <WizardFooter
+    className=""
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      className="btn-cancel"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Cancel
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={true}
+      onClick={[Function]}
+    >
+      <Icon
+        name="angle-left"
+        type="fa"
+      />
+      Back
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Next
+      <Icon
+        name="angle-right"
+        type="fa"
+      />
+    </Button>
+  </WizardFooter>
+</Wizard>
+`;
+
+exports[`Wizard Stateful Pattern renders properly: Wizard stateful pattern snapshot 1`] = `
+<WizardPattern
+  activeStepIndex={0}
+  backText="Back"
+  bodyHeader={null}
+  cancelButtonDisabled={false}
+  cancelText="Cancel"
+  closeText="Close"
+  loading={false}
+  loadingMessage="This may take a minute."
+  loadingTitle="Loading..."
+  nextButtonRef={[Function]}
+  nextStepDisabled={false}
+  nextText="Next"
+  onBack={[Function]}
+  onExited={[MockFunction]}
+  onHide={[MockFunction]}
+  onNext={[Function]}
+  onStepChanged={[Function]}
+  previousStepDisabled={false}
+  show={true}
+  stepButtonsDisabled={false}
+  steps={
+    Array [
+      Object {
+        "render": [Function],
+        "title": "General",
+      },
+      Object {
+        "render": [Function],
+        "title": "Step Two",
+      },
+      Object {
+        "render": [Function],
+        "title": "Step Three",
+      },
+    ]
+  }
+  title="Wizard Pattern Stateful Example"
+/>
+`;
+
+exports[`Wizard body renders properly: Wizard body snapshot 1`] = `
+<ModalBody
+  bsClass="modal-body"
+  className="wizard-pf-body clearfix someAdditionalClass"
+  componentClass="div"
+>
+  Some Children
+</ModalBody>
+`;
+
+exports[`Wizard contents renders hidden class when not active: Wizard contents hidden snapshot 1`] = `
+<div
+  className="wizard-pf-contents hidden someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard contents renders properly: Wizard contents snapshot 1`] = `
+<div
+  className="wizard-pf-contents someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard footer renders properly: Wizard footer snapshot 1`] = `
+<ModalFooter
+  bsClass="modal-footer"
+  className="wizard-pf-footer someAdditionalClass"
+  componentClass="div"
+>
+  Some Children
+</ModalFooter>
+`;
+
+exports[`Wizard header renders properly: Wizard header snapshot 1`] = `
+<ModalHeader
+  bsClass="modal-header"
+  closeButton={false}
+  closeLabel="Close"
+>
+  <button
+    aria-hidden="true"
+    aria-label="Close"
+    className="close"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <Icon
+      name="close"
+      type="pf"
+    />
+  </button>
+  <ModalTitle
+    bsClass="modal-title"
+    componentClass="h4"
+  >
+    Wizard Title
+  </ModalTitle>
+</ModalHeader>
+`;
+
+exports[`Wizard main renders properly: Wizard main snapshot 1`] = `
+<div
+  className="wizard-pf-main someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard pattern body renders active step: Wizard pattern body renders active step snapshot 1`] = `
+<Fragment>
+  <WizardSteps
+    className=""
+    steps={
+      Array [
+        <WizardStep
+          activeStep="1"
+          className=""
+          label="1"
+          onClick={[Function]}
+          step="1"
+          stepIndex={0}
+          title="General"
+        />,
+        <WizardStep
+          activeStep="1"
+          className=""
+          label="2"
+          onClick={[Function]}
+          step="2"
+          stepIndex={1}
+          title="Step Two"
+        />,
+        <WizardStep
+          activeStep="1"
+          className=""
+          label="3"
+          onClick={[Function]}
+          step="3"
+          stepIndex={2}
+          title="Step Three"
+        />,
+      ]
+    }
+  />
+  <WizardRow
+    className=""
+  >
+    <WizardMain
+      className=""
+    >
+      <WizardContents
+        activeStepIndex={0}
+        activeSubStepIndex={null}
+        className=""
+        stepIndex={0}
+        subStepIndex={null}
+      >
+        <p>
+          General
+        </p>
+      </WizardContents>
+    </WizardMain>
+  </WizardRow>
+</Fragment>
+`;
+
+exports[`Wizard pattern body renders empty if no steps and not loading: Wizard pattern body renders empty snapshot 1`] = `""`;
+
+exports[`Wizard pattern body renders properly while loading: Wizard pattern body loading snapshot 1`] = `
+<WizardRow
+  className=""
+>
+  <WizardMain
+    className=""
+  >
+    <EmptyState
+      className=""
+    >
+      <Spinner
+        className="blank-slate-pf-icon"
+        inline={false}
+        inverse={false}
+        loading={true}
+        size="lg"
+      />
+      <EmptyStateAction
+        className=""
+        secondary={false}
+      >
+        <h3>
+          Wizard Title
+        </h3>
+      </EmptyStateAction>
+      <EmptyStateAction
+        className=""
+        secondary={true}
+      >
+        <p>
+          Wizard loading...
+        </p>
+      </EmptyStateAction>
+    </EmptyState>
+  </WizardMain>
+</WizardRow>
+`;
+
+exports[`Wizard review content renders properly: Wizard review content snapshot 1`] = `
+<div
+  className="wizard-pf-review-content collapse someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard review item renders properly: Wizard review item snapshot 1`] = `
+<div
+  className="wizard-pf-review-item someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard review step renders properly: Wizard review step snapshot 1`] = `
+<ListGroupItem
+  bsClass="list-group-item"
+  listItem={true}
+>
+  <a
+    className="collapsed"
+    href="#"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    Step One
+  </a>
+  Some Children
+</ListGroupItem>
+`;
+
+exports[`Wizard review steps renders properly: Wizard review steps snapshot 1`] = `
+<div
+  className="wizard-pf-review-steps someAdditionalClass"
+>
+  <ListGroup
+    bsClass="list-group"
+    componentClass="ul"
+  >
+    Some Children
+  </ListGroup>
+</div>
+`;
+
+exports[`Wizard review sub step renders properly: Wizard review sub step snapshot 1`] = `
+<ListGroupItem
+  bsClass="list-group-item"
+  listItem={true}
+>
+  <a
+    className="collapsed"
+    href="#"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <span
+      className="wizard-pf-substep-number"
+    >
+      1.1
+    </span>
+    <span
+      className="wizard-pf-substep-title"
+    >
+      1.1
+    </span>
+  </a>
+  Some Children
+</ListGroupItem>
+`;
+
+exports[`Wizard review sub steps renders properly: Wizard review sub steps snapshot 1`] = `
+<div
+  className="wizard-pf-review-substeps collapse someAdditionalClass"
+>
+  <ListGroup
+    bsClass="list-group"
+    componentClass="ul"
+  >
+    Some Children
+  </ListGroup>
+</div>
+`;
+
+exports[`Wizard row renders properly: Wizard row snapshot 1`] = `
+<section
+  className="wizard-pf-row someAdditionalClass"
+>
+  Some Children
+</section>
+`;
+
+exports[`Wizard sidebar group item renders properly: Wizard sidebar group item snapshot 1`] = `
+<ListGroupItem
+  bsClass="list-group-item"
+  className="active wizard-sidebar-group-item"
+  listItem={true}
+>
+  <a
+    href="#"
+    onClick={[Function]}
+  >
+    <span
+      className="wizard-pf-substep-number"
+    >
+      1A.
+    </span>
+    <span
+      className="wizard-pf-substep-title"
+    >
+      Details
+    </span>
+  </a>
+</ListGroupItem>
+`;
+
+exports[`Wizard sidebar group renders properly: Wizard sidebar group snapshot 1`] = `
+<ListGroup
+  bsClass="list-group"
+  className="someAdditionalClass"
+  componentClass="ul"
+>
+  Some Children
+</ListGroup>
+`;
+
+exports[`Wizard sidebar renders properly: Wizard sidebar snapshot 1`] = `
+<div
+  className="wizard-pf-sidebar someAdditionalClass"
+>
+  item1
+  item2
+</div>
+`;
+
+exports[`Wizard step renders properly: Wizard step snapshot 1`] = `
+<li
+  className="wizard-pf-step active"
+>
+  <a
+    href="#"
+    onClick={[Function]}
+  >
+    <span
+      className="wizard-pf-step-number"
+    >
+      Step 1
+    </span>
+    <span
+      className="wizard-pf-step-title"
+    >
+      Step 1
+    </span>
+    <WizardSubStep
+      activeSubStep={0}
+      className=""
+      subStep="1.1"
+      title="Step 1.1"
+    />
+    <WizardSubStep
+      activeSubStep={0}
+      className=""
+      subStep="1.2"
+      title="Step 1.2"
+    />
+  </a>
+</li>
+`;
+
+exports[`Wizard steps renders properly: Wizard steps snapshot 1`] = `
+<div
+  className="wizard-pf-steps someAdditionalClass"
+>
+  <ul
+    className="wizard-pf-steps-indicator"
+  >
+    <WizardStep
+      activeStep={0}
+      className=""
+      key="0"
+      label="Step 1"
+      onClick={[MockFunction]}
+      step={0}
+      stepIndex={0}
+      title="Step 1"
+    >
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="1.1"
+        title="Step 1.1"
+      />
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="1.2"
+        title="Step 1.2"
+      />
+    </WizardStep>
+    <WizardStep
+      activeStep={0}
+      className=""
+      key="1"
+      label="Step 2"
+      onClick={[MockFunction]}
+      step={1}
+      stepIndex={1}
+      title="Step 2"
+    >
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="2.1"
+        title="Step 2.1"
+      />
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="2.2"
+        title="Step 2.2"
+      />
+    </WizardStep>
+  </ul>
+</div>
+`;
+
+exports[`Wizard sub step renders properly: Wizard sub step snapshot 1`] = `
+<span
+  className="wizard-pf-step-title-substep"
+>
+  Step 1.1
+</span>
+`;

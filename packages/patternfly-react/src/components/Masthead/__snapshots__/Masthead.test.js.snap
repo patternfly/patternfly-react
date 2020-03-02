@@ -1,0 +1,366 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomMastheadDropdown renders properly: CustomMastheadDropdown snapshot 1`] = `
+<li
+  className="dropdown"
+>
+  children
+</li>
+`;
+
+exports[`Masthead renders properly: Masthead snapshot 1`] = `
+<nav
+  className="navbar navbar-pf-vertical"
+>
+  <div
+    className="navbar-header"
+  >
+    <button
+      className="navbar-toggle"
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      <span
+        className="sr-only"
+      >
+        Toggle navigation
+      </span>
+      <span
+        aria-hidden="true"
+        className="icon-bar"
+      />
+      <span
+        aria-hidden="true"
+        className="icon-bar"
+      />
+      <span
+        aria-hidden="true"
+        className="icon-bar"
+      />
+    </button>
+    <a
+      className="navbar-brand"
+      href="#"
+      onClick={[Function]}
+      role="button"
+    >
+      <img
+        alt=""
+        className="navbar-brand-icon"
+        src="Fake Logo"
+      />
+      <img
+        alt="Patternfly React"
+        className="navbar-brand-name"
+        src="Fake Brand"
+      />
+    </a>
+  </div>
+  <MastheadCollapse
+    className=""
+  >
+    <MastheadDropdown
+      className=""
+      id="app-help-dropdown"
+      noCaret={false}
+      title={
+        <span
+          className="pficon pficon-help"
+          title="Help"
+        />
+      }
+    >
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="1"
+        header={false}
+      >
+        Help
+      </MenuItem>
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="2"
+        header={false}
+      >
+        About
+      </MenuItem>
+    </MastheadDropdown>
+    <MastheadDropdown
+      className=""
+      id="app-user-dropdown"
+      noCaret={false}
+      title={
+        <span>
+          <span
+            className="pficon pficon-user"
+            title="Help"
+          />
+          <span
+            className="dropdown-title"
+          >
+             Brian Johnson
+          </span>
+        </span>
+      }
+    >
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="1"
+        header={false}
+      >
+        Preferences
+      </MenuItem>
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="2"
+        header={false}
+      >
+        Logout
+      </MenuItem>
+    </MastheadDropdown>
+  </MastheadCollapse>
+</nav>
+`;
+
+exports[`Masthead without nav toggle renders properly: Masthead without nav toggle snapshot 1`] = `
+<nav
+  className="navbar navbar-pf-vertical"
+>
+  <div
+    className="navbar-header"
+  >
+    <a
+      className="navbar-brand"
+      href="#"
+      onClick={[Function]}
+      role="button"
+    >
+      <img
+        alt=""
+        className="navbar-brand-icon"
+        src="Fake Logo"
+      />
+      <img
+        alt="Patternfly React"
+        className="navbar-brand-name"
+        src="Fake Brand"
+      />
+    </a>
+  </div>
+  <MastheadCollapse
+    className=""
+  >
+    <MastheadDropdown
+      className=""
+      id="app-help-dropdown"
+      noCaret={false}
+      title={
+        <span
+          className="pficon pficon-help"
+          title="Help"
+        />
+      }
+    >
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="1"
+        header={false}
+      >
+        Help
+      </MenuItem>
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="2"
+        header={false}
+      >
+        About
+      </MenuItem>
+    </MastheadDropdown>
+    <MastheadDropdown
+      className=""
+      id="app-user-dropdown"
+      noCaret={false}
+      title={
+        <span>
+          <span
+            className="pficon pficon-user"
+            title="Help"
+          />
+          <span
+            className="dropdown-title"
+          >
+             Brian Johnson
+          </span>
+        </span>
+      }
+    >
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="1"
+        header={false}
+      >
+        Preferences
+      </MenuItem>
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="2"
+        header={false}
+      >
+        Logout
+      </MenuItem>
+    </MastheadDropdown>
+  </MastheadCollapse>
+</nav>
+`;
+
+exports[`MastheadCollapse renders properly: MastheadCollapse snapshot 1`] = `
+<nav
+  className="collapse navbar-collapse"
+>
+  <ul
+    className="nav navbar-nav navbar-right navbar-iconic navbar-utility"
+  >
+    <MastheadDropdown
+      className=""
+      id="app-help-dropdown"
+      noCaret={false}
+      title={
+        <span
+          className="pficon pficon-help"
+          title="Help"
+        />
+      }
+    >
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="1"
+        header={false}
+      >
+        Help
+      </MenuItem>
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="2"
+        header={false}
+      >
+        About
+      </MenuItem>
+    </MastheadDropdown>
+    <MastheadDropdown
+      className=""
+      id="app-user-dropdown"
+      noCaret={false}
+      title={
+        <span>
+          <span
+            className="pficon pficon-user"
+            title="Help"
+          />
+          <span
+            className="dropdown-title"
+          >
+             Brian Johnson
+          </span>
+        </span>
+      }
+    >
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="1"
+        header={false}
+      >
+        Preferences
+      </MenuItem>
+      <MenuItem
+        bsClass="dropdown"
+        disabled={false}
+        divider={false}
+        eventKey="2"
+        header={false}
+      >
+        Logout
+      </MenuItem>
+    </MastheadDropdown>
+  </ul>
+</nav>
+`;
+
+exports[`MastheadDropdown renders properly: MastheadDropdown snapshot 1`] = `
+<ForwardRef
+  className=""
+  componentClass={[Function]}
+  id="app-help-dropdown"
+>
+  <DropdownToggle
+    bsClass="dropdown-toggle"
+    bsRole="toggle"
+    bsStyle="link"
+    className="nav-item-iconic"
+    noCaret={false}
+    open={false}
+    useAnchor={false}
+  >
+    <span
+      className="pficon pficon-help"
+      title="Help"
+    />
+  </DropdownToggle>
+  <DropdownMenu
+    bsClass="dropdown-menu"
+    bsRole="menu"
+    pullRight={false}
+  >
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="1"
+      header={false}
+    >
+      Help
+    </MenuItem>
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="2"
+      header={false}
+    >
+      About
+    </MenuItem>
+  </DropdownMenu>
+</ForwardRef>
+`;

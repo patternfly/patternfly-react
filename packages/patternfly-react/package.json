@@ -1,0 +1,77 @@
+{
+  "name": "patternfly-react",
+  "version": "2.39.14",
+  "private": false,
+  "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "dependencies": {
+    "bootstrap-slider-without-jquery": "^10.0.0",
+    "breakjs": "^1.0.0",
+    "classnames": "^2.2.5",
+    "css-element-queries": "^1.0.1",
+    "lodash": "^4.17.15",
+    "patternfly": "^3.59.4",
+    "react-bootstrap": "^0.33.0",
+    "react-bootstrap-switch": "^15.5.3",
+    "react-bootstrap-typeahead": "^3.4.1",
+    "react-c3js": "^0.1.20",
+    "react-click-outside": "^3.0.1",
+    "react-collapse": "^4.0.3",
+    "react-debounce-input": "^3.2.0",
+    "react-ellipsis-with-tooltip": "^1.0.8",
+    "react-fontawesome": "^1.6.1",
+    "react-motion": "^0.5.2",
+    "reactabular-table": "^8.14.0",
+    "recompose": "^0.26.0",
+    "uuid": "^3.3.2"
+  },
+  "optionalDependencies": {
+    "sortabular": "^1.5.1",
+    "table-resolver": "^3.2.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.3.2",
+    "react-dom": "^15.6.2 || ^16.2.0"
+  },
+  "scripts": {
+    "build": "yarn build:sass && yarn build:less && yarn build:babel",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "babel src --env-name cjs --out-dir dist/js",
+    "build:babel:esm": "babel src --env-name esm --out-dir dist/esm",
+    "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --importer=../node-sass-patternfly-importer.js -o dist/css sass/patternfly-react.scss && cleancss -o dist/css/patternfly-react.css dist/css/patternfly-react.css",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "clean-css-cli": "^4.2.1",
+    "react-diff-view": "^1.8.1",
+    "rimraf": "^2.6.2",
+    "shx": "^0.3.2"
+  }
+}
