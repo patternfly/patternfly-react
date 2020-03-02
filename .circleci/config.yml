@@ -56,7 +56,7 @@ workflows:
     - test_jest_pf3:
         requires:
         - build_pf3
-    - lint:
+    - lint_pf3:
         requires:
         - build_pf3
     # - deploy_prerelease:
@@ -120,7 +120,7 @@ jobs:
         name: Upload results to codecov
         command: yarn run codecov -F misc
         when: always
-  lint:
+  lint_pf3:
     docker:
     - image: circleci/node:10
     steps:
