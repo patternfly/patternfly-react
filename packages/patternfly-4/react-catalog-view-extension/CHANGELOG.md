@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.4.19...@patternfly/react-catalog-view-extension@1.4.20) (2020-03-02)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Removed truncation and maxLength props ([#3830](https://github.com/patternfly/patternfly-react/issues/3830)) ([e0402d0](https://github.com/patternfly/patternfly-react/commit/e0402d02a2af703e7520f521da91ca39ef1a8a64)), closes [#3471](https://github.com/patternfly/patternfly-react/issues/3471)
+
+
+
+
+
 ## [1.4.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.4.18...@patternfly/react-catalog-view-extension@1.4.19) (2020-03-02)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
