@@ -50,7 +50,7 @@ workflows:
   build_test_deploy:
     jobs:
     - build
-    - build_pf3_docs:
+    - build_docs_pf3:
         requires:
         - build
     - test_jest_pf3:
@@ -62,7 +62,7 @@ workflows:
     # - deploy_prerelease:
     #     requires:
     #     - test_jest_pf3
-    #     - build_pf3_docs
+    #     - build_docs_pf3
     #     filters:
     #       branches:
     #         only: master
@@ -142,7 +142,7 @@ jobs:
                 exit 1
             fi
         when: always
-  build_pf3_docs:
+  build_docs_pf3:
     docker:
     - image: circleci/node:10
     steps:

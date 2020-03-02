@@ -11,8 +11,8 @@ This project currently supports Node [Active LTS](https://github.com/nodejs/Rele
 For example, to develop with Node 8, use the following:
 
 ```
-nvm install 8
-nvm use 8
+nvm install 10
+nvm use 10
 ```
 
 This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).
@@ -62,7 +62,7 @@ Note the build scripts for this are located in the root package.json under `yarn
 Testing is done at the root of this repo. To only run the patternfly-react tests:
 
 ```
-yarn test packages/patternfly-3/patternfly-react
+yarn test packages/patternfly-react
 ```
 
 ### Publishing
@@ -80,26 +80,4 @@ How to use Storybook locally:
 ```
 yarn install
 yarn start
-```
-
-How to deploy storybook to github pages in your fork:
-
-```
-yarn storybook:build
-yarn storybook:deploy
-```
-
-To deploy Storybook to a remote other than `origin`, pass a `--remote` flag to `yarn storybook:deploy`.
-For example, to deploy to your `upstream` remote:
-
-```
-yarn storybook:deploy --remote=upstream
-```
-
-To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag to `yarn storybook:deploy`. This will create a new branch to serve your Storybook (and will be useful if you have multiple open pull requests).
-
-For example, say you have `feature-branch`, you can deploy the storybook to a rawgit branch with:
-
-```
-yarn storybook:deploy --branch=feature-branch-storybook
 ```
