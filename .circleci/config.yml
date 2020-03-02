@@ -82,7 +82,7 @@ workflows:
     - test_jest_pf4:
         requires:
         - build_pf4
-    - lint:
+    - lint_pf4:
         requires:
         - build_pf4
     - build_demo_app:
@@ -196,7 +196,7 @@ jobs:
             yarn test:integration -s $(circleci tests glob "cypress/integration/*.spec.ts" | circleci tests split --split-by=timings)
     - store_artifacts:
         path: packages/react-integration/results
-  lint:
+  lint_pf4:
     docker:
     - image: circleci/node:10
     steps:
