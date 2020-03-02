@@ -5,18 +5,15 @@ const Project = require('@lerna/project');
 // Reverse engineered `npm dist-tag ls` a little bit
 async function fetchTags(spec) {
   spec = npa(spec);
-  const data = await regFetch.json(
-    `/-/package/${spec.escapedName}/dist-tags`,
-    {
-      'prefer-online': true,
-      spec
-    }
-  );
-  if (data && typeof data === 'object') delete data._etag
+  const data = await regFetch.json(`/-/package/${spec.escapedName}/dist-tags`, {
+    'prefer-online': true,
+    spec
+  });
+  if (data && typeof data === 'object') delete data._etag;
   if (!data || !Object.keys(data).length) {
-    throw new Error('No dist-tags found for ' + spec.name)
+    throw new Error('No dist-tags found for ' + spec.name);
   }
-  return data
+  return data;
 }
 
 async function getPrereleasePackages() {

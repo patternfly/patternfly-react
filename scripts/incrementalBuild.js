@@ -36,8 +36,7 @@ const hashPackageSrc = (packageLoc, packageName) => {
 
 // These are packages we need to rebuild
 async function getInvalidPackages() {
-  const packages = (await new Project(__dirname).getPackages())
-    .filter(p => p.scripts.build) // Only packages that have a build target
+  const packages = (await new Project(__dirname).getPackages()).filter(p => p.scripts.build); // Only packages that have a build target
 
   for (let p of packages) {
     p.hash = hashPackageSrc(p.location, p.name);
