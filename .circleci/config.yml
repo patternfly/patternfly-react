@@ -59,13 +59,13 @@ workflows:
     - lint_pf3:
         requires:
         - build_pf3
-    # - deploy_prerelease:
-    #     requires:
-    #     - test_jest_pf3
-    #     - build_docs_pf3
-    #     filters:
-    #       branches:
-    #         only: master
+    - deploy_prerelease:
+        requires:
+        - test_jest_pf3
+        - build_docs_pf3
+        filters:
+          branches:
+            only: patternfly-3
 jobs:
   build_pf3:
     docker:
