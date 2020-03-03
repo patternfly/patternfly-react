@@ -22,23 +22,23 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 | Package link | Description |
 | --- | --- |
 | **:blue_heart: Core packages** |
-| &nbsp;&nbsp;[@patternfly/react-core](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-core) | Core set of components |
-| &nbsp;&nbsp;[@patternfly/react-table](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-table) | Table components | 
-| &nbsp;&nbsp;[@patternfly/react-charts](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-charts) | Chart components
-| &nbsp;&nbsp;[@patternfly/react-icons](https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons) | Icon components |
-| &nbsp;&nbsp;[@patternfly/react-styles](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-styles) | PatternFly CSS styles |
-| &nbsp;&nbsp;[@patternfly/react-tokens](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-tokens) | PatternFly CSS variable tokens |
-| &nbsp;&nbsp;[@patternfly/react-topology](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-topology) | Topology components |
+| &nbsp;&nbsp;[@patternfly/react-core](./packages/react-core/README.md) | Core set of components |
+| &nbsp;&nbsp;[@patternfly/react-table](./packages/react-table/README.md) | Table components | 
+| &nbsp;&nbsp;[@patternfly/react-charts](./packages/react-charts/README.md) | Chart components
+| &nbsp;&nbsp;[@patternfly/react-icons](https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons/README.md) | Icon components |
+| &nbsp;&nbsp;[@patternfly/react-styles](./packages/react-styles/README.md) | PatternFly CSS styles |
+| &nbsp;&nbsp;[@patternfly/react-tokens](./packages/react-tokens/README.md) | PatternFly CSS variable tokens |
+| &nbsp;&nbsp;[@patternfly/react-topology](./packages/react-topology/README.md) | Topology components |
 | **:open_file_folder: Supporting packages** |
-| &nbsp;&nbsp;[@patternfly/react-docs](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-docs) | Gatsby documentation site for components |
-| &nbsp;&nbsp;[@patternfly/react-integration](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration) | Cypress integration tests |
+| &nbsp;&nbsp;[@patternfly/react-docs](./packages/react-docs/README.md) | Gatsby documentation site for components |
+| &nbsp;&nbsp;[@patternfly/react-integration](./packages/react-integration/README.md) | Cypress integration tests |
 | **:family: Extension packages** *community supported* | 
-| &nbsp;&nbsp;[@patternfly/react-catalog-view-extension](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-catalog-view-extension) | Catalog view extension |
-| &nbsp;&nbsp;[@patternfly/react-virtualized-extension](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-virtualized-extension) | Table and list row virtualization extension |
+| &nbsp;&nbsp;[@patternfly/react-catalog-view-extension](./packages/react-catalog-view-extension/README.md) | Catalog view extension |
+| &nbsp;&nbsp;[@patternfly/react-virtualized-extension](./packages/react-virtualized-extension/README.md) | Table and list row virtualization extension |
 | **:x: Deprecated packages** |
-| &nbsp;&nbsp;[@patternfly/react-inline-edit-extension](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-inline-edit-extension) | Table inline edit extension |
-| &nbsp;&nbsp;[@patternfly/react-styled-system](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-styled-system) | Styled system component prototype |
-| &nbsp;&nbsp;[@patternfly/react-codemods](https://github.com/patternfly/patternfly-react/tree/master/packages/react-codemods) | Codemods for upgrading PatternFly 3 components |
+| &nbsp;&nbsp;[@patternfly/react-inline-edit-extension](./packages/react-inline-edit-extension/README.md) | Table inline edit extension |
+| &nbsp;&nbsp;[@patternfly/react-styled-system](./packages/react-styled-system/README.md) | Styled system component prototype |
+| &nbsp;&nbsp;[@patternfly/react-codemods](./packages/react-codemods/README.md) | Codemods for upgrading PatternFly 3 components |
 
 ### Setup
 
