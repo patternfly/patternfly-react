@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react-wooden-tree@2.0.5...patternfly-react-wooden-tree@2.0.6) (2020-03-03)
+
+**Note:** Version bump only for package patternfly-react-wooden-tree
+
+
+
+
+
 ## [2.0.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react-wooden-tree@2.0.4...patternfly-react-wooden-tree@2.0.5) (2019-10-02)
 
 **Note:** Version bump only for package patternfly-react-wooden-tree
