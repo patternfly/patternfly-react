@@ -64,7 +64,7 @@ class SimpleModal extends React.Component {
 }
 ```
 
-```js title=Basic-with-description
+```js title=With-description
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -93,7 +93,7 @@ class SimpleModal extends React.Component {
           title="Modal Header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="A description is used when you want to provide more info about the modal than the title is able to describe. The content in the description is static and will not scroll with the rest of the modal body."
           actions={[
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
