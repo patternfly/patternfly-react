@@ -101,7 +101,7 @@ workflows:
         - build_docs_pf4
         filters:
           branches:
-            only: master
+            only: v4
 jobs:
   build_pf4:
     docker:
