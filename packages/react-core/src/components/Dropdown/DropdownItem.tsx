@@ -12,7 +12,7 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode;
   /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
-  variant?: 'item' | 'icon';
+  variant?: 'item' | 'icon' | 'interactive';
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
   /** Forces display of the hover state of the element */

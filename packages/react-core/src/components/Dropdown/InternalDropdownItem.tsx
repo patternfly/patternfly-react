@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEYHANDLER_DIRECTION } from '../../helpers/constants';
@@ -15,7 +16,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
   /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
-  variant?: 'item' | 'icon';
+  variant?: 'item' | 'icon' | 'interactive';
   /** Role for the item */
   role?: string;
   /** Render dropdown item as disabled option */
@@ -125,6 +126,14 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     });
   }
 
+  extendChildClass(children: React.ReactNode, itemClass: string) {
+    return React.Children.map(children as React.ReactElement<any>, child =>
+      React.cloneElement(child, {
+        className: classNames(child.props.className, itemClass)
+      })
+    );
+  }
+
   render() {
     /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
@@ -214,12 +223,12 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                     ref={this.ref}
                     className={css(
                       classes,
-                      this.props.role !== 'separator' && itemClass,
+                      this.props.role !== 'separator' && variant !== 'interactive' && itemClass,
                       variant === 'icon' && styles.modifiers.icon
                     )}
                     id={componentID}
                   >
-                    {children}
+                    {variant === 'interactive' ? this.extendChildClass(children, itemClass) : children}
                   </Component>
                 )
               )}
