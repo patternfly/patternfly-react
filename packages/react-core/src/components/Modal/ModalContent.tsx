@@ -7,6 +7,7 @@ const FocusTrap: any = require('focus-trap-react');
 
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
+import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 
 import { Backdrop } from '../Backdrop/Backdrop';
@@ -29,6 +30,8 @@ export interface ModalContentProps {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
+  /** Description of the modal */
+  description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to show the title (ignored for custom headers) */
@@ -58,6 +61,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   className = '',
   isOpen = false,
   header = null,
+  description = null,
   title,
   hideTitle = false,
   showClose = true,
@@ -100,7 +104,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}
-      <ModalBoxBody {...props} id={id}>
+      {description && (
+        <div className={css(modalStyles.modalBoxDescription)} id={id}>
+          {description}
+        </div>
+      )}
+      <ModalBoxBody {...props} {...(!description && { id })}>
         {children}
       </ModalBoxBody>
       {modalBoxFooter}
