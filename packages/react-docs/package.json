@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "4.20.25",
+  "version": "4.20.27",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
