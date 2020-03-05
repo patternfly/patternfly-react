@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { sum, values } from 'lodash';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
 import { DataToolbarContext } from './DataToolbarUtils';
@@ -91,7 +90,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     }
   };
 
-  getNumberOfFilters = () => sum(values(this.state.filterInfo));
+  getNumberOfFilters = () => Object.values(this.state.filterInfo).reduce((acc, cur) => acc + cur, 0);
 
   render() {
     const {

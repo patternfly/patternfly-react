@@ -247,3 +247,9 @@ export const formatBreakpointMods = (
       `${acc}${acc && ' '}${getModifier(styles, `${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`)}`,
     ''
   );
+
+export const canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
