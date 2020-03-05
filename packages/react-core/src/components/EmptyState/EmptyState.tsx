@@ -3,14 +3,14 @@ import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 export enum EmptyStateVariant {
-  extraLarge = 'extraLarge',
+  'xl' = 'xl',
   large = 'large',
   small = 'small',
   full = 'full'
 }
 
 const maxWidthModifiers: { [variant in keyof typeof EmptyStateVariant]: string } = {
-  extraLarge: 'xl',
+  xl: 'xl',
   large: 'lg',
   small: 'sm',
   full: ''
@@ -22,7 +22,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the EmptyState */
   children: React.ReactNode;
   /** Modifies EmptyState max-width */
-  variant?: 'small' | 'large' | 'full' | 'extraLarge';
+  variant?: 'small' | 'large' | 'full' | 'xl';
 }
 
 export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
