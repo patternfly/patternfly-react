@@ -27,6 +27,7 @@ export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyExpandedDemo';
 export * from './DataListDemo/DataListDemo';
+export * from './DataListDemo/DataListCompactDemo';
 export * from './DataToolbarDemo/DataToolbarDemo';
 export * from './DividerDemo/DividerDemo';
 export * from './DonutChartDemo/DonutBottomAlignedLegendDemo';

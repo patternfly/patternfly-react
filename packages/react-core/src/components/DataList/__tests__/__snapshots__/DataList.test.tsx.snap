@@ -128,6 +128,23 @@ exports[`DataList List 1`] = `
 </ContextProvider>
 `;
 
+exports[`DataList List compact 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "isSelectable": false,
+      "selectedDataListItemId": "",
+      "updateSelectedDataListItem": [Function],
+    }
+  }
+>
+  <ul
+    aria-label="this is a simple list"
+    className="pf-c-data-list pf-m-compact"
+  />
+</ContextProvider>
+`;
+
 exports[`DataList List default 1`] = `
 <ContextProvider
   value={

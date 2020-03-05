@@ -2,30 +2,43 @@
 title: 'Data list'
 section: components
 cssPrefix: 'pf-c-data-list'
-propComponents: ['DataList', 'DataListAction', 'DataListCell', 'DataListCheck', 'DataListItem', 'DataListItemCells', 'DataListItemRow', 'DataListToggle', 'DataListContent']
+propComponents:
+  [
+    'DataList',
+    'DataListAction',
+    'DataListCell',
+    'DataListCheck',
+    'DataListItem',
+    'DataListItemCells',
+    'DataListItemRow',
+    'DataListToggle',
+    'DataListContent',
+  ]
 typescript: true
 ---
+
 import {
-  Button,
-  DataList,
-  DataListItem,
-  DataListItemCells,
-  DataListItemRow,
-  DataListCell,
-  DataListCheck,
-  DataListAction,
-  DataListActionVisibility,
-  DataListToggle,
-  DataListContent,
-  Dropdown,
-  DropdownPosition,
-  KebabToggle,
-  DropdownItem
+Button,
+DataList,
+DataListItem,
+DataListItemCells,
+DataListItemRow,
+DataListCell,
+DataListCheck,
+DataListAction,
+DataListActionVisibility,
+DataListToggle,
+DataListContent,
+Dropdown,
+DropdownPosition,
+KebabToggle,
+DropdownItem
 } from '@patternfly/react-core';
 import { CodeBranchIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 
 ## Examples
+
 ```js title=Basic
 import React from 'react';
 import {
@@ -46,6 +59,56 @@ import {
 
 SimpleDataList = () => (
   <DataList aria-label="Simple data list example">
+    <DataListItem aria-labelledby="simple-item1">
+      <DataListItemRow>
+        <DataListItemCells
+          dataListCells={[
+            <DataListCell key="primary content">
+              <span id="simple-item1">Primary content</span>
+            </DataListCell>,
+            <DataListCell key="secondary content">Secondary content</DataListCell>
+          ]}
+        />
+      </DataListItemRow>
+    </DataListItem>
+    <DataListItem aria-labelledby="simple-item2">
+      <DataListItemRow>
+        <DataListItemCells
+          dataListCells={[
+            <DataListCell isFilled={false} key="secondary content fill">
+              <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
+            </DataListCell>,
+            <DataListCell isFilled={false} alignRight key="secondary content align">
+              Secondary content (pf-m-align-right pf-m-no-fill)
+            </DataListCell>
+          ]}
+        />
+      </DataListItemRow>
+    </DataListItem>
+  </DataList>
+);
+```
+
+```js title=Compact
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListItemRow,
+  DataListItemCells,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+
+SimpleDataList = () => (
+  <DataList aria-label="Compact data list example" isCompact>
     <DataListItem aria-labelledby="simple-item1">
       <DataListItemRow>
         <DataListItemCells
@@ -206,8 +269,12 @@ class CheckboxActionDataList extends React.Component {
                 onSelect={this.onSelect2}
                 toggle={<KebabToggle onToggle={this.onToggle2} />}
                 dropdownItems={[
-                  <DropdownItem key="pri-action2" component="button">Primary</DropdownItem>,
-                  <DropdownItem key="sec-action2" component="button">Secondary</DropdownItem>,
+                  <DropdownItem key="pri-action2" component="button">
+                    Primary
+                  </DropdownItem>,
+                  <DropdownItem key="sec-action2" component="button">
+                    Secondary
+                  </DropdownItem>
                 ]}
               />
             </DataListAction>
@@ -249,10 +316,18 @@ class CheckboxActionDataList extends React.Component {
                 onSelect={this.onSelect3}
                 toggle={<KebabToggle onToggle={this.onToggle3} />}
                 dropdownItems={[
-                  <DropdownItem key="pri-action3" component="button">Primary</DropdownItem>,
-                  <DropdownItem key="sec1-action3" component="button">Secondary</DropdownItem>,
-                  <DropdownItem key="sec2-action3" component="button">Secondary</DropdownItem>,
-                  <DropdownItem key="sec3-action3" component="button">Secondary</DropdownItem>,
+                  <DropdownItem key="pri-action3" component="button">
+                    Primary
+                  </DropdownItem>,
+                  <DropdownItem key="sec1-action3" component="button">
+                    Secondary
+                  </DropdownItem>,
+                  <DropdownItem key="sec2-action3" component="button">
+                    Secondary
+                  </DropdownItem>,
+                  <DropdownItem key="sec3-action3" component="button">
+                    Secondary
+                  </DropdownItem>
                 ]}
               />
             </DataListAction>
@@ -825,6 +900,7 @@ class ModifiersDataList extends React.Component {
   }
 }
 ```
+
 ```js title=Selectable-rows
 import React from 'react';
 import {
@@ -845,17 +921,17 @@ import {
 class SelectableDataList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       isOpen1: false,
       isOpen2: false,
       selectedDataListItemId: ''
     };
 
-    this.onToggle1 = isOpen1  => {
+    this.onToggle1 = isOpen1 => {
       this.setState({ isOpen1 });
     };
-    
-    this.onToggle2 = isOpen2  => {
+
+    this.onToggle2 = isOpen2 => {
       this.setState({ isOpen2 });
     };
 
@@ -864,22 +940,26 @@ class SelectableDataList extends React.Component {
         isOpen1: !prevState.isOpen1
       }));
     };
-    
+
     this.onSelect2 = event => {
       this.setState(prevState => ({
         isOpen2: !prevState.isOpen2
       }));
     };
-    
-    this.onSelectDataListItem = (id) => {
+
+    this.onSelectDataListItem = id => {
       this.setState({ selectedDataListItemId: id });
-    }
+    };
   }
 
   render() {
     return (
       <React.Fragment>
-        <DataList aria-label="selectable data list example" selectedDataListItemId={this.state.selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
+        <DataList
+          aria-label="selectable data list example"
+          selectedDataListItemId={this.state.selectedDataListItemId}
+          onSelectDataListItem={this.onSelectDataListItem}
+        >
           {!this.state.isDeleted && (
             <DataListItem aria-labelledby="selectable-action-item1" id="item1">
               <DataListItemRow>
