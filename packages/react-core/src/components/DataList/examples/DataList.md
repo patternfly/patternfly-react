@@ -108,7 +108,7 @@ import {
 } from '@patternfly/react-core';
 
 SimpleDataList = () => (
-  <DataList aria-label="Simple data list example" isCompact>
+  <DataList aria-label="Compact data list example" isCompact>
     <DataListItem aria-labelledby="simple-item1">
       <DataListItemRow>
         <DataListItemCells
