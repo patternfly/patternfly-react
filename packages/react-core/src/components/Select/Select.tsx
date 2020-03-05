@@ -384,6 +384,25 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
+
+    const hasOnClear = onClear !== Select.defaultProps.onClear;
+    const hasAnySelections =
+      selections && (Array.isArray(selections) ? (selections.length > 0 ? true : false) : selections !== '');
+    const clearBtn = (
+      <button
+        className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
+        onClick={e => {
+          this.clearSelection(e);
+          onClear(e);
+        }}
+        aria-label={ariaLabelClear}
+        type="button"
+        disabled={isDisabled}
+      >
+        <TimesCircleIcon aria-hidden />
+      </button>
+    );
+
     let selectedChips = null;
     if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
@@ -457,7 +476,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
             ariaLabelToggle={ariaLabelToggle}
             handleTypeaheadKeys={this.handleTypeaheadKeys}
             isDisabled={isDisabled}
-            hasInlineFilter={hasInlineFilter}
+            hasClearButton={hasOnClear}
           >
             {customContent && (
               <div className={css(styles.selectToggleWrapper)}>
@@ -471,6 +490,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <span className={css(styles.selectToggleText)}>
                   {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
                 </span>
+                {hasOnClear && hasAnySelections && clearBtn}
               </div>
             )}
             {variant === SelectVariant.checkbox && !customContent && (
@@ -484,22 +504,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     </div>
                   )}
                 </div>
-                {hasInlineFilter &&
-                  onClear !== Select.defaultProps.onClear &&
-                  (selections && (Array.isArray(selections) && selections.length > 0)) && (
-                    <button
-                      className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                      onClick={e => {
-                        this.clearSelection(e);
-                        onClear(e);
-                      }}
-                      aria-label={ariaLabelClear}
-                      type="button"
-                      disabled={isDisabled}
-                    >
-                      <TimesCircleIcon aria-hidden />
-                    </button>
-                  )}
+                {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeahead && !customContent && (
@@ -525,20 +530,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {(selections || typeaheadInputValue) && (
-                  <button
-                    className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                    onClick={e => {
-                      this.clearSelection(e);
-                      onClear(e);
-                    }}
-                    aria-label={ariaLabelClear}
-                    type="button"
-                    disabled={isDisabled}
-                  >
-                    <TimesCircleIcon aria-hidden />
-                  </button>
-                )}
+                {(selections || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -561,20 +553,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) && (
-                  <button
-                    className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                    onClick={e => {
-                      this.clearSelection(e);
-                      onClear(e);
-                    }}
-                    aria-label={ariaLabelClear}
-                    type="button"
-                    disabled={isDisabled}
-                  >
-                    <TimesCircleIcon aria-hidden />
-                  </button>
-                )}
+                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) &&
+                  clearBtn}
               </React.Fragment>
             )}
           </SelectToggle>

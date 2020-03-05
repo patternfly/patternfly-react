@@ -172,7 +172,14 @@ describe('checkbox select', () => {
 
   test('renders expanded with filtering successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded hasInlineFilter>
+      <Select
+        variant={SelectVariant.checkbox}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        onClear={jest.fn()}
+        isExpanded
+        hasInlineFilter
+      >
         {selectOptions}
       </Select>
     );
