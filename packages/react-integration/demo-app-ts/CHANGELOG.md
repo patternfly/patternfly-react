@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.27.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.26.0...demo-app-ts@3.27.0) (2020-03-06)
+
+
+### Features
+
+* **ChipGroup:** Added a tooltip to the Chipgroup label ([#3826](https://github.com/patternfly/patternfly-react/issues/3826)) ([d25c80b](https://github.com/patternfly/patternfly-react/commit/d25c80b68795c44d46eaf261b335c5f088d71e96)), closes [#3490](https://github.com/patternfly/patternfly-react/issues/3490)
+
+
+
+
+
 # [3.26.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.9...demo-app-ts@3.26.0) (2020-03-06)
 
 
