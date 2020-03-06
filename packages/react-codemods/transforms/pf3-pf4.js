@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console,jsdoc/require-jsdoc */
 const colors = require('colors');
 const componentConfigs = require('../componentConfig');
 

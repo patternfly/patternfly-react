@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { isOUIAEnvironment, getUniqueId, generateOUIAId } from './ouia';
-import { Omit } from '../../helpers/typeUtils';
 
 export const OuiaContext = React.createContext<OuiaContextProps | null>(null);
 
