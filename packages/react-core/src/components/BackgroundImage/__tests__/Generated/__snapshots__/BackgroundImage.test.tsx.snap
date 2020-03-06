@@ -2,7 +2,8 @@
 
 exports[`BackgroundImage should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-c-background-image css-1gixqsx ''"
+  className="pf-c-background-image ''"
+  src="string"
 >
   <svg
     className="pf-c-background-image__filter"

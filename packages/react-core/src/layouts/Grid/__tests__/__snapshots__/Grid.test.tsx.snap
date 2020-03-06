@@ -5,21 +5,3 @@ exports[`gutter 1`] = `
   className="pf-l-grid pf-m-gutter"
 />
 `;
-
-exports[`gutter lg 1`] = `
-<div
-  className="pf-l-grid pf-m-gutter"
-/>
-`;
-
-exports[`gutter md 1`] = `
-<div
-  className="pf-l-grid pf-m-gutter"
-/>
-`;
-
-exports[`gutter sm 1`] = `
-<div
-  className="pf-l-grid pf-m-gutter"
-/>
-`;
