@@ -30,8 +30,8 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
     "@patternfly/patternfly": "4.0.4",
-    "@patternfly/react-styles": "^3.7.6",
-    "@patternfly/react-tokens": "^2.8.6",
+    "@patternfly/react-styles": "^4.0.2",
+    "@patternfly/react-tokens": "^4.0.2",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.15",
     "victory": "^33.0.5",

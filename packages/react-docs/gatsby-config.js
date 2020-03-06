@@ -52,6 +52,7 @@ module.exports = {
           '**/public',
           '**/test-helpers',
           /.*react-styles.*/,
+          /.*react-styled-system.*/,
           /.*react-docs.*/,
           /.*react-integration.*/,
           '**/\\..*', // dotfiles
