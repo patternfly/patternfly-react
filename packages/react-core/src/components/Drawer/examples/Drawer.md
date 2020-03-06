@@ -315,7 +315,7 @@ class DrawerModifiedContentPadding extends React.Component {
             <Button onClick={this.onClick}>Toggle Drawer</Button>
             <Drawer isExpanded={isExpanded}>
               <DrawerContent  panelContent={panelContent}>
-                <DrawerContentBody hasPadding><b>Drawer content padding.</b>&nbsp;{drawerContent}</DrawerContentBody>
+                <DrawerContentBody hasPadding><b>Drawer content padding.</b> {drawerContent}</DrawerContentBody>
               </DrawerContent>
             </Drawer>
         </React.Fragment>);
