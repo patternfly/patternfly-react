@@ -5,7 +5,7 @@ exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
   className="pf-c-drawer__panel ''"
 >
   <div
-    className="pf-c-drawer__panel-body"
+    className="pf-c-drawer__body"
   >
     <div>
       ReactNode

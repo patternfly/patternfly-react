@@ -5,6 +5,7 @@
       "es2017",
       "dom"
     ],
+    "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "skipLibCheck": true,
