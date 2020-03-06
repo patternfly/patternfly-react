@@ -52,10 +52,11 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
     }
   }
   return (
-    <>
+    <React.Fragment>
       <button
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
+        aria-label="Wizard toggle"
         aria-expanded={isNavOpen}
       >
         <ol className={css(styles.wizardToggleList)}>
@@ -74,6 +75,6 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         </div>
         {children}
       </div>
-    </>
+    </React.Fragment>
   );
 };
