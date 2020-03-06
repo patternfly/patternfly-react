@@ -258,3 +258,8 @@ const camelize = (s: string) =>
  * @param s {string} string to make camelCased
  */
 export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
+
+/**
+ * Copied from exenv
+ */
+export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
