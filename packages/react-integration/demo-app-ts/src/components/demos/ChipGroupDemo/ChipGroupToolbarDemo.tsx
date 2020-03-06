@@ -25,7 +25,7 @@ export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
           chips: ['Chip 3', 'Chip 4']
         },
         {
-          category: 'Category 3',
+          category: 'Category 3 has a very long name',
           chips: ['Chip 5', 'Chip 6', 'Chip 7', 'Chip 8']
         }
       ]
@@ -70,6 +70,7 @@ export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
             isClosable
             onClick={() => this.deleteCategory(currentGroup.category)}
             closeBtnAriaLabel="Close category demo"
+            tooltipPosition="bottom"
           >
             {currentGroup.chips.map(chip => (
               <Chip key={chip} onClick={() => this.deleteItem(chip)}>
