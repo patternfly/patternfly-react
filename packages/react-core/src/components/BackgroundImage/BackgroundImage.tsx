@@ -40,22 +40,16 @@ export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElemen
 
 let filterCounter = 0;
 
-export const BackgroundImage = ({
-  className,
-  src,
-  filter = defaultFilter, 
-  ...props
-}: BackgroundImageProps) => {
+export const BackgroundImage = ({ className, src, filter = defaultFilter, ...props }: BackgroundImageProps) => {
   const getUrlValue = (size: keyof BackgroundImageSrcMap) => {
     if (typeof src === 'string') {
       return `url(${src})`;
-    }
-    else if (typeof src === 'object') {
+    } else if (typeof src === 'object') {
       return `url(${src[size]})`;
     }
-    
+
     return '';
-  }
+  };
 
   const filterId = `patternfly-background-image-filter-overlay${filterCounter++}`;
   const style = {
@@ -73,5 +67,5 @@ export const BackgroundImage = ({
         {React.cloneElement(filter, { id: filterId })}
       </svg>
     </div>
-  )
-}
+  );
+};

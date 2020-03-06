@@ -255,7 +255,7 @@ const camelize = (s: string) =>
     .replace('_', '');
 /**
  *
- * @param s {string} string to make camelCased
+ * @param {string} s string to make camelCased
  */
 export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
 
