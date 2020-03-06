@@ -27,6 +27,6 @@ getCorePackages().then(packages =>
       json.devDependencies['@patternfly/patternfly'] = process.argv[2];
     }
 
-    fs.writeFileSync(package.manifestLocation, JSON.stringify(json, null, 2));
+    fs.writeFileSync(package.manifestLocation, JSON.stringify(json, null, 2) + '\n');
   })
 );

@@ -17,7 +17,7 @@ if (!uploadFolder) {
 }
 
 const uploadFolderName = path.basename(uploadFolder);
-let uploadURL = `${repo}${prnum ? `-pr-${prnum || prbranch}` : ''}`.replace(/[\/|\.]/g, '-');
+let uploadURL = `${repo}-${prnum ? `pr-${prnum}` : prbranch}`.replace(/[\/|\.]/g, '-');
 
 if (uploadFolderName === 'coverage') {
   fs.copyFileSync(
