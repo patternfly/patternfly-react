@@ -70,56 +70,36 @@ export class ChipGroupToolbarItem extends React.Component<ChipGroupToolbarItemPr
     } = this.props;
 
     if (React.Children.count(children)) {
-      const renderChipGroup = (id: string, HeadingLevel: any) => {
-        if (this.state.isTooltipVisible) {
-          return (
-            <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...rest}>
-              <li>
-                <Tooltip position={tooltipPosition} content={categoryName}>
-                  <HeadingLevel tabIndex="0" ref={this.heading} className={css(styles.chipGroupLabel)} id={id}>
-                    {categoryName}
-                  </HeadingLevel>
-                </Tooltip>
-                <ul className={css(styles.chipGroup)}>{children}</ul>
-                {isClosable && (
-                  <div className="pf-c-chip-group__close">
-                    <ChipButton
-                      aria-label={closeBtnAriaLabel}
-                      onClick={onClick}
-                      id={`remove_group_${id}`}
-                      aria-labelledby={`remove_group_${id} ${id}`}
-                    >
-                      <TimesIcon aria-hidden="true" />
-                    </ChipButton>
-                  </div>
-                )}
-              </li>
-            </ul>
-          );
-        }
-        return (
-          <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...rest}>
-            <li>
+      const renderChipGroup = (id: string, HeadingLevel: any) => (
+        <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...rest}>
+          <li>
+            {this.state.isTooltipVisible ? (
+              <Tooltip position={tooltipPosition} content={categoryName}>
+                <HeadingLevel tabIndex="0" ref={this.heading} className={css(styles.chipGroupLabel)} id={id}>
+                  {categoryName}
+                </HeadingLevel>
+              </Tooltip>
+            ) : (
               <HeadingLevel ref={this.heading} className={css(styles.chipGroupLabel)} id={id}>
                 {categoryName}
               </HeadingLevel>
-              <ul className={css(styles.chipGroup)}>{children}</ul>
-              {isClosable && (
-                <div className="pf-c-chip-group__close">
-                  <ChipButton
-                    aria-label={closeBtnAriaLabel}
-                    onClick={onClick}
-                    id={`remove_group_${id}`}
-                    aria-labelledby={`remove_group_${id} ${id}`}
-                  >
-                    <TimesIcon aria-hidden="true" />
-                  </ChipButton>
-                </div>
-              )}
-            </li>
-          </ul>
-        );
-      };
+            )}
+            <ul className={css(styles.chipGroup)}>{children}</ul>
+            {isClosable && (
+              <div className="pf-c-chip-group__close">
+                <ChipButton
+                  aria-label={closeBtnAriaLabel}
+                  onClick={onClick}
+                  id={`remove_group_${id}`}
+                  aria-labelledby={`remove_group_${id} ${id}`}
+                >
+                  <TimesIcon aria-hidden="true" />
+                </ChipButton>
+              </div>
+            )}
+          </li>
+        </ul>
+      );
 
       return (
         <ChipGroupContext.Consumer>
