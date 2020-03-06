@@ -6,7 +6,7 @@ import { DrawerMain } from './DrawerMain';
 export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
   className?: string;
-  /** Content to rendered in the drawer */
+  /** Content to be rendered in the drawer */
   children?: React.ReactNode;
   /** Content rendered in drawer the panel */
   panelContent: React.ReactNode;
@@ -20,7 +20,7 @@ export const DrawerContent: React.SFC<DrawerContentProps> = ({
   ...props
 }: DrawerContentProps) => (
   <DrawerMain>
-    <div className={css(styles.drawerContent)} {...props}>
+    <div className={css(styles.drawerContent, className)} {...props}>
       {children}
     </div>
     {panelContent}

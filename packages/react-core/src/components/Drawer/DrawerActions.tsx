@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface DrawerActionsProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer actions button. */
   className?: string;
-  /** Actions to rendered in the panel head. */
+  /** Actions to be rendered in the panel head. */
   children?: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ export const DrawerActions: React.SFC<DrawerActionsProps> = ({
   children,
   ...props
 }: DrawerActionsProps) => (
-  <div className={css(styles.drawerActions)} {...props}>
+  <div className={css(styles.drawerActions, className)} {...props}>
     {children}
   </div>
 );

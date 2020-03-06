@@ -20,7 +20,7 @@ export const DrawerCloseButton: React.SFC<DrawerCloseButtonProps> = ({
   'aria-label': ariaLabel = 'Close drawer panel',
   ...props
 }: DrawerCloseButtonProps) => (
-  <div className={css(styles.drawerClose)} {...props}>
+  <div className={css(styles.drawerClose, className)} {...props}>
     <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
       <TimesIcon />
     </Button>

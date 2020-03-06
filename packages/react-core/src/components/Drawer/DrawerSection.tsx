@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer section. */
   className?: string;
-  /** Content to rendered in the drawer section. */
+  /** Content to be rendered in the drawer section. */
   children?: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ export const DrawerSection: React.SFC<DrawerSectionProps> = ({
   children,
   ...props
 }: DrawerSectionProps) => (
-  <div className={css(styles.drawerSection)} {...props}>
+  <div className={css(styles.drawerSection, className)} {...props}>
     {children}
   </div>
 );

@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface DrawerMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer main wrapper. */
   className?: string;
-  /** Content to rendered in the drawer main wrapper*/
+  /** Content to be rendered in the drawer main wrapper*/
   children?: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ export const DrawerMain: React.SFC<DrawerMainProps> = ({
   children,
   ...props
 }: DrawerMainProps) => (
-  <div className={css(styles.drawerMain)} {...props}>
+  <div className={css(styles.drawerMain, className)} {...props}>
     {children}
   </div>
 );

@@ -4,11 +4,11 @@ import { css } from '@patternfly/react-styles';
 import { DrawerContext } from './Drawer';
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the Drawer. */
+  /** Additional classes added to the drawer. */
   className?: string;
-  /** Content to rendered in the drawer */
+  /** Content to be rendered in the drawer panel. */
   children?: React.ReactNode;
-  /* Flag indicating that the drawer panel should have a border */
+  /* Flag indicating that the drawer panel should have a border. */
   hasBorder?: boolean;
 }
 
