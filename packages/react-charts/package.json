@@ -61,6 +61,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/hoist-non-react-statics": "^3.3.0",
     "@types/lodash": "^4.14.138",
     "@types/victory": "^31.0.22",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
