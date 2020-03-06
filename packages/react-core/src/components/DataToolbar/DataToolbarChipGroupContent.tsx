@@ -51,10 +51,8 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       clearAllFilters();
     };
 
-    console.log(window.innerWidth, globalBreakpoints(collapseListedFiltersBreakpoint));
     const collapseListedFilters =
       typeof window !== 'undefined' ? window.innerWidth < globalBreakpoints(collapseListedFiltersBreakpoint) : false;
-    console.log(collapseListedFilters, numberOfFilters > 0, !isExpanded);
 
     return (
       <div
