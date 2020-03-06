@@ -18,8 +18,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export interface DrawerContextProps {
-  isExpanded: boolean
-};
+  isExpanded: boolean;
+}
 
 export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isExpanded: false
@@ -34,7 +34,7 @@ export const Drawer: React.SFC<DrawerProps> = ({
   position = 'right',
   ...props
 }: DrawerProps) => (
-  <DrawerContext.Provider value ={{isExpanded}}>
+  <DrawerContext.Provider value={{ isExpanded }}>
     <div
       className={css(
         styles.drawer,
@@ -42,7 +42,7 @@ export const Drawer: React.SFC<DrawerProps> = ({
         isInline && styles.modifiers.inline,
         isStatic && styles.modifiers.static,
         position === 'left' && styles.modifiers.panelLeft,
-        className,
+        className
       )}
       {...props}
     >

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
-import { DrawerMain } from './DrawerMain'
+import { DrawerMain } from './DrawerMain';
 
 export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
@@ -19,10 +19,10 @@ export const DrawerContent: React.SFC<DrawerContentProps> = ({
   panelContent,
   ...props
 }: DrawerContentProps) => (
-<DrawerMain>
-  <div className={css(styles.drawerContent)} {...props}>
-    {children}
-  </div>
-  {panelContent}
-</DrawerMain>
+  <DrawerMain>
+    <div className={css(styles.drawerContent)} {...props}>
+      {children}
+    </div>
+    {panelContent}
+  </DrawerMain>
 );

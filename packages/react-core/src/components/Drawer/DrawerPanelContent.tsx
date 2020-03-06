@@ -19,10 +19,16 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
-    {({ isExpanded }) => 
-      <div className={css(styles.drawerPanel, hasBorder && styles.modifiers.border, className)} hidden={!isExpanded} aria-hidden={!isExpanded} aria-expanded={isExpanded} {...props} >
+    {({ isExpanded }) => (
+      <div
+        className={css(styles.drawerPanel, hasBorder && styles.modifiers.border, className)}
+        hidden={!isExpanded}
+        aria-hidden={!isExpanded}
+        aria-expanded={isExpanded}
+        {...props}
+      >
         {children}
       </div>
-      }
+    )}
   </DrawerContext.Consumer>
 );
