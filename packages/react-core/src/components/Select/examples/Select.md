@@ -377,7 +377,7 @@ class FilteringCheckboxSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected, filteredOptions } = this.state;
-    const titleId = 'checkbox-select-id';
+    const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -385,7 +385,6 @@ class FilteringCheckboxSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.checkbox}
-          aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
