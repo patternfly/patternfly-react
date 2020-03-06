@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
-import { DrawerPanelBody} from './DrawerPanelBody'
+import { DrawerPanelBody } from './DrawerPanelBody';
 
 export interface DrawerHeadProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer head. */
