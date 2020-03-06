@@ -5,6 +5,7 @@ import cssVarName2x from '@patternfly/react-tokens/dist/js/c_background_image_Ba
 import cssVarNameSm from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm';
 import cssVarNameSm2x from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm_2x';
 import cssVarNameLg from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_lg';
+import cssVarNameFilter from '@patternfly/react-tokens/dist/js/c_background_image_Filter';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';
 
@@ -37,6 +38,8 @@ export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElemen
   src: string | BackgroundImageSrcMap;
 }
 
+let filterCounter = 0;
+
 export const BackgroundImage = ({
   className,
   src,
@@ -54,18 +57,20 @@ export const BackgroundImage = ({
     return '';
   }
 
+  const filterId = `patternfly-background-image-filter-overlay${filterCounter++}`;
   const style = {
     [cssVar.name]: getUrlValue('xs'),
     [cssVarName2x.name]: getUrlValue('xs2x'),
     [cssVarNameSm.name]: getUrlValue('sm'),
     [cssVarNameSm2x.name]: getUrlValue('sm2x'),
     [cssVarNameLg.name]: getUrlValue('lg'),
+    [cssVarNameFilter.name]: `url(#${filterId})`
   } as React.CSSProperties;
 
   return (
     <div className={css(styles.backgroundImage, className)} style={style} {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
-        {React.cloneElement(filter, { id: 'image-overlay' })}
+        {React.cloneElement(filter, { id: filterId })}
       </svg>
     </div>
   )
