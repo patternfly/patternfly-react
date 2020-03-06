@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { isUndefined } from 'lodash';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
@@ -38,7 +37,7 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   isCompact = false,
   ...props
 }: DataListProps) => {
-  const isSelectable = !isUndefined(onSelectDataListItem);
+  const isSelectable = onSelectDataListItem !== undefined;
 
   const updateSelectedDataListItem = (id: string) => {
     onSelectDataListItem(id);

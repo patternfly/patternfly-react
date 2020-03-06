@@ -18,4 +18,4 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tabContentRef?: React.RefObject<any>;
 }
 
-export const Tab: React.FunctionComponent<TabProps> = ({ className = '' }: TabProps) => null;
+export const Tab: React.FunctionComponent<TabProps> = (_props: TabProps) => null;

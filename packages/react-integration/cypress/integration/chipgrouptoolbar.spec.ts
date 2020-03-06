@@ -18,4 +18,18 @@ describe('Chip Group Toolbar Demo Test', () => {
     chipGroupButton.click();
     chipGroup.should('not.exist');
   });
+
+  it('Displays Tooltip', () => {
+    cy.get('.pf-c-chip-group__label')
+      .last()
+      .then((tooltipLink: JQuery<HTMLHeadingElement>) => {
+        cy.get('.tippy-popper').should('not.exist');
+        cy.wrap(tooltipLink)
+          .trigger('mouseenter')
+          .get('.tippy-popper')
+          .should('exist')
+          .get('.tippy-popper')
+          .contains('Category 3 has a very long name');
+      });
+  });
 });

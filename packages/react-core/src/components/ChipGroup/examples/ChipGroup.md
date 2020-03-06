@@ -85,7 +85,7 @@ class ToolbarChipGroup extends React.Component {
     this.state = {
       chipGroups: [
         {
-          category: 'Category 1',
+          category: 'Category 1 has a very long name',
           chips: ['Chip 1', 'Chip 2']
         },
         {
