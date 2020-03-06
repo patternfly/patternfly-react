@@ -14,7 +14,7 @@ Object.values([
       <DrawerHead>
         <span>drawer-panel</span>
         <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick}/>
+            <DrawerCloseButton/>
         </DrawerActions>
       </DrawerHead>
       <DrawerPanelBody>drawer-panel</DrawerPanelBody> 

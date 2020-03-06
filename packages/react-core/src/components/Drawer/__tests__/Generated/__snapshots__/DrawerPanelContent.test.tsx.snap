@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
-<aside
-  className="pf-c-drawer__panel ''"
->
-  <div
-    className="pf-c-drawer__panel-body"
-  >
-    <div>
-      ReactNode
-    </div>
-  </div>
-</aside>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

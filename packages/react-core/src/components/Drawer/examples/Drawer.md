@@ -63,7 +63,7 @@ class SimpleDrawer extends React.Component {
 
 ```js title=Panel-on-left
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class SimpleDrawerPanelLeft extends React.Component {
 
@@ -115,7 +115,7 @@ class SimpleDrawerPanelLeft extends React.Component {
 
 ```js title=Basic-inline
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class SimpleDrawerInlineContent extends React.Component {
 
@@ -167,7 +167,7 @@ class SimpleDrawerInlineContent extends React.Component {
 
 ```js title=-Inline-panel-on-left
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class DrawerInlineContentPanelLeft extends React.Component {
 
@@ -219,7 +219,7 @@ class DrawerInlineContentPanelLeft extends React.Component {
 
 ```js title=Stacked-content-body-elements
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class DrawerStackedContentBodyElements extends React.Component {
 
@@ -273,7 +273,7 @@ class DrawerStackedContentBodyElements extends React.Component {
 
 ```js title=Modified-content-padding
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class DrawerModifiedContentPadding extends React.Component {
 
@@ -325,7 +325,7 @@ class DrawerModifiedContentPadding extends React.Component {
 
 ```js title=Modified-panel-padding
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class DrawerModifiedPanelPadding extends React.Component {
 
@@ -377,7 +377,7 @@ class DrawerModifiedPanelPadding extends React.Component {
 
 ```js title=Modified-panel-border
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
 
 class DrawerPanelBorder extends React.Component {
 
@@ -429,7 +429,7 @@ class DrawerPanelBorder extends React.Component {
 
 ```js title=Additional-section-above-drawer-content
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerSection, Button } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, DrawerSection, Button } from '@patternfly/react-core';
 
 class DrawerWithSection extends React.Component {
 
@@ -482,7 +482,7 @@ class DrawerWithSection extends React.Component {
 
 ```js title=Static-drawer
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody } from '@patternfly/react-core';
+import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton } from '@patternfly/react-core';
 
 StaticDrawer = () => {
   const panelContent = (
