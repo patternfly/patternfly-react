@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { canUseDOM } from 'exenv';
+import { canUseDOM } from '../../helpers';
 import { Omit } from '../../helpers/typeUtils';
 import { AlertGroupInline } from './AlertGroupInline';
 
