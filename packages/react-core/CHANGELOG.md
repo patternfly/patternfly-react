@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.143.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.142.2...@patternfly/react-core@3.143.0) (2020-03-06)
+
+
+### Bug Fixes
+
+* **ouia:** don't omit ouiaContext ([#3872](https://github.com/patternfly/patternfly-react/issues/3872)) ([23cf7fc](https://github.com/patternfly/patternfly-react/commit/23cf7fca4764178e91dc4e054677a316d2e44f8e))
+* **wizard:** use patternfly-styles to set the no padding modifier ([#3871](https://github.com/patternfly/patternfly-react/issues/3871)) ([0295597](https://github.com/patternfly/patternfly-react/commit/0295597a091def71d979ec4db7ade8e493d421f3))
+
+
+### Features
+
+* **DataList:** add compact data list ([#3807](https://github.com/patternfly/patternfly-react/issues/3807)) ([18d9b7b](https://github.com/patternfly/patternfly-react/commit/18d9b7b756e985304864e52b09f5f1d1789791f8))
+* **Modal:** add description property ([#3821](https://github.com/patternfly/patternfly-react/issues/3821)) ([c7bfe03](https://github.com/patternfly/patternfly-react/commit/c7bfe03c54caf2ffcc215ab359c98cf0359c035e))
+
+
+
+
+
 ## [3.142.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.142.1...@patternfly/react-core@3.142.2) (2020-03-03)
 
 **Note:** Version bump only for package @patternfly/react-core

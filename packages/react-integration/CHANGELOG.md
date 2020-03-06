@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.25.2...@patternfly/react-integration@3.26.0) (2020-03-06)
+
+
+### Features
+
+* **DataList:** add compact data list ([#3807](https://github.com/patternfly/patternfly-react/issues/3807)) ([18d9b7b](https://github.com/patternfly/patternfly-react/commit/18d9b7b756e985304864e52b09f5f1d1789791f8))
+* **Modal:** add description property ([#3821](https://github.com/patternfly/patternfly-react/issues/3821)) ([c7bfe03](https://github.com/patternfly/patternfly-react/commit/c7bfe03c54caf2ffcc215ab359c98cf0359c035e))
+
+
+
+
+
 ## [3.25.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.25.1...@patternfly/react-integration@3.25.2) (2020-03-03)
 
 **Note:** Version bump only for package @patternfly/react-integration
