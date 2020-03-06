@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
 import { DataToolbarGroup } from './DataToolbarGroup';
@@ -55,10 +55,10 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
       <div className={css(styles.dataToolbarExpandableContent, className)} ref={expandableContentRef} {...props}>
         <DataToolbarGroup />
         {numberOfFilters > 0 && (
-          <DataToolbarGroup className={getModifier(styles, 'chip-container')}>
+          <DataToolbarGroup className={styles.modifiers.chipContainer}>
             <DataToolbarGroup ref={chipContainerRef} />
             {showClearFiltersButton && (
-              <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+              <DataToolbarItem>
                 <Button variant="link" onClick={clearChipGroups} isInline>
                   {clearFiltersButtonText}
                 </Button>

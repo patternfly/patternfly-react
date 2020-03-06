@@ -1,6 +1,5 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
-import { getModifier } from '@patternfly/react-styles';
 import { DataToolbarBreakpointMod } from '../components/DataToolbar/DataToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
 
@@ -244,6 +243,9 @@ export const formatBreakpointMods = (
 ) =>
   breakpointMods.reduce(
     (acc: string, curr: DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod) =>
-      `${acc}${acc && ' '}${getModifier(styles, `${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`)}`,
+      `${acc}${acc && ' '}${styles.modifiers[`${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`]}`,
     ''
   );
+
+const camelize = (s: string) => s.toUpperCase().replace('-', '').replace('_', '');
+export const toCamel = (s: string) => s.replace(/([-_][a-z])/ig, camelize);

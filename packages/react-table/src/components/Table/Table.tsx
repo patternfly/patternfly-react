@@ -9,12 +9,13 @@ import {
 import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
 import { Omit } from '@patternfly/react-core/dist/js/helpers/typeUtils';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';
 import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
+import { toCamel } from './utils';
 import { calculateColumns } from './utils/headerUtils';
 import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
 
@@ -432,8 +433,8 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
           role={role}
           className={css(
             styles.table,
-            gridBreakPoint && getModifier(stylesGrid, gridBreakPoint),
-            getModifier(styles, variant),
+            gridBreakPoint && stylesGrid.modifiers[toCamel(gridBreakPoint).replace('2Xl', '_2Xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'],
+            styles.modifiers[variant],
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Check/check';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { Omit, PickOptional } from '../../helpers/typeUtils';
 
 export interface CheckboxProps
@@ -87,7 +87,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
         />
         {label && (
           <label
-            className={css(styles.checkLabel, isDisabled ? getModifier(styles, 'disabled') : '')}
+            className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)}
             htmlFor={props.id}
           >
             {label}

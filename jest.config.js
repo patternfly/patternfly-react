@@ -14,8 +14,7 @@ module.exports = {
     'enzyme-to-json/serializer',
   ],
   transform: {
-    '^.+\\.[jt]sx?$': 'babel-jest',
-    '\\.(css)$': '<rootDir>/packages/react-styles/jest-transform.js'
+    '^.+\\.[jt]sx?$': 'babel-jest'
   },
   transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|tippy.js|lodash)'],
   testPathIgnorePatterns: [

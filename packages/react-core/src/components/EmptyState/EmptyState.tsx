@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 export enum EmptyStateVariant {
@@ -7,12 +7,6 @@ export enum EmptyStateVariant {
   small = 'small',
   full = 'full'
 }
-
-const maxWidthModifiers: { [variant in keyof typeof EmptyStateVariant]: string } = {
-  large: 'lg',
-  small: 'sm',
-  full: ''
-};
 
 export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the EmptyState */
@@ -28,11 +22,13 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
   className = '',
   variant = EmptyStateVariant.large,
   ...props
-}: EmptyStateProps) => {
-  const maxWidthModifier = maxWidthModifiers[variant];
-  return (
-    <div className={css(styles.emptyState, getModifier(styles, maxWidthModifier, null), className)} {...props}>
-      {children}
-    </div>
-  );
-};
+}: EmptyStateProps) => (
+  <div className={css(
+      styles.emptyState,
+      variant === 'large' && styles.modifiers.lg,
+      variant === 'small' && styles.modifiers.sm,
+      className
+    )} {...props}>
+    {children}
+  </div>
+);

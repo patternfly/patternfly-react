@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum ButtonVariant {
@@ -81,7 +81,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
       aria-label={ariaLabel}
       className={css(
         styles.button,
-        getModifier(styles.modifiers, variant),
+        styles.modifiers[variant],
         isBlock && styles.modifiers.block,
         isDisabled && !isButtonElement && styles.modifiers.disabled,
         isActive && styles.modifiers.active,

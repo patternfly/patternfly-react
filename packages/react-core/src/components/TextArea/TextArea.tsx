@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
+import { capitalize } from '../../helpers';
 import { Omit } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
 
@@ -58,15 +59,14 @@ export class TextArea extends React.Component<TextAreaProps> {
   };
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, value, onChange, isValid, validated, isRequired, resizeOrientation, ...props } = this.props;
-    const orientation = 'resize' + resizeOrientation.charAt(0).toUpperCase() + resizeOrientation.slice(1);
+    const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
     return (
       <textarea
         className={css(
           styles.formControl,
           className,
-          resizeOrientation !== TextAreResizeOrientation.both && getModifier(styles, orientation),
+          resizeOrientation !== TextAreResizeOrientation.both && styles.modifiers[orientation],
           validated === ValidatedOptions.success && styles.modifiers.success
         )}
         onChange={this.handleChange}

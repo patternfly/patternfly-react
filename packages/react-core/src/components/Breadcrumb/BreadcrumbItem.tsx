@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the breadcrumb item. */
@@ -34,7 +34,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
         <Component
           href={to}
           target={target}
-          className={css(styles.breadcrumbLink, isActive ? getModifier(styles, 'current') : '')}
+          className={css(styles.breadcrumbLink, isActive && styles.modifiers.current)}
           aria-current={isActive ? 'page' : undefined}
         >
           {children}

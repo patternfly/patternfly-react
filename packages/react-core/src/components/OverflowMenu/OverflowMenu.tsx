@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
 /* eslint-disable camelcase */
 import global_breakpoint_md from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
 import global_breakpoint_lg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 import global_breakpoint_xl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 /* eslint-enable camelcase */
-import { debounce } from '../../helpers/util';
+import { debounce, capitalize } from '../../helpers/util';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -59,7 +59,7 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
     return (
       <div
         {...props}
-        className={css(styles.overflowMenu, getModifier(styles.modifiers, `showOn ${breakpoint}`), className)}
+        className={css(styles.overflowMenu, className)}
       >
         <OverflowMenuContext.Provider value={{ isBelowBreakpoint: this.state.isBelowBreakpoint }}>
           {children}
