@@ -15,7 +15,7 @@ const visibilityModifiers = [
   'visibleOnLg',
   'visibleOnXl',
   'visibleOn_2xl'
-] as Array<keyof typeof styles.modifiers>;
+] as (keyof typeof styles.modifiers)[];
 
 interface DataListActionVisibility {
   hidden?: string;
@@ -33,11 +33,14 @@ interface DataListActionVisibility {
 
 export const DataListActionVisibility: DataListActionVisibility = visibilityModifiers
   .filter(key => styles.modifiers[key])
-  .reduce((acc, curr) => {
-    const key2 = curr.replace('_2xl', '2Xl') as keyof typeof DataListActionVisibility;
-    acc[key2] = styles.modifiers[curr];
-    return acc;
-  }, {} as DataListActionVisibility);
+  .reduce(
+    (acc, curr) => {
+      const key2 = curr.replace('_2xl', '2Xl') as keyof typeof DataListActionVisibility;
+      acc[key2] = styles.modifiers[curr];
+      return acc;
+    },
+    {} as DataListActionVisibility
+  );
 
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
@@ -72,7 +75,7 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     this.setState({ isOpen });
   };
 
-  onSelect = (_event: MouseEvent) => {
+  onSelect = () => {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
     }));

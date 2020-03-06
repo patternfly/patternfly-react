@@ -71,9 +71,7 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
         {collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
-          <DataToolbarGroup
-            className={css(styles.modifiers.toggleGroup, 'pf-m-filters-applied-message')}
-          >
+          <DataToolbarGroup className={css(styles.modifiers.toggleGroup, 'pf-m-filters-applied-message')}>
             <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
           </DataToolbarGroup>
         )}

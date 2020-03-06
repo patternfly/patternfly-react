@@ -22,10 +22,7 @@ export const Stack: React.FunctionComponent<StackProps> = ({
 }: StackProps) => {
   const Component = component as any;
   return (
-    <Component
-      {...props}
-      className={css(styles.stack, gutter && styles.modifiers.gutter, className)}
-    >
+    <Component {...props} className={css(styles.stack, gutter && styles.modifiers.gutter, className)}>
       {children}
     </Component>
   );

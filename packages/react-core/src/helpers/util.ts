@@ -240,12 +240,20 @@ export function pluralize(i: number, singular: string, plural?: string) {
 export const formatBreakpointMods = (
   breakpointMods: (DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[],
   styles: any
-) =>
-  breakpointMods.reduce(
-    (acc: string, curr: DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod) =>
-      `${acc}${acc && ' '}${styles.modifiers[`${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`]}`,
-    ''
-  );
+) => breakpointMods
+  .map(mod => `${mod.modifier}${mod.breakpoint ? `-on-${mod.breakpoint}` : ''}`)
+  .map(toCamel)
+  .map(modifierKey => styles.modifiers[modifierKey])
+  .filter(Boolean)
+  .join(' ');
 
-const camelize = (s: string) => s.toUpperCase().replace('-', '').replace('_', '');
-export const toCamel = (s: string) => s.replace(/([-_][a-z])/ig, camelize);
+const camelize = (s: string) =>
+  s
+    .toUpperCase()
+    .replace('-', '')
+    .replace('_', '');
+/**
+ * 
+ * @param s string to make camelCased
+ */
+export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);

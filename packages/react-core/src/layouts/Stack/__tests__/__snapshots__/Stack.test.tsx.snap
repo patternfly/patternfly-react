@@ -54,6 +54,24 @@ exports[`Gutter sm 1`] = `
 </Stack>
 `;
 
+exports[`gutter 1`] = `
+<Stack
+  gutter="md"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <StackItem>
+      <div
+        className="pf-l-stack__item"
+      >
+        Basic content
+      </div>
+    </StackItem>
+  </div>
+</Stack>
+`;
+
 exports[`isMain defaults to false 1`] = `
 <Stack>
   <div

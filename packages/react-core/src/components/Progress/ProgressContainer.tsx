@@ -15,7 +15,7 @@ export enum ProgressMeasureLocation {
 
 export enum ProgressVariant {
   danger = 'danger',
-  success = 'success',
+  success = 'success'
 }
 
 export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {

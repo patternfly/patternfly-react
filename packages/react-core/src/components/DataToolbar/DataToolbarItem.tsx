@@ -50,7 +50,17 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
     <div
       className={css(
         styles.dataToolbarItem,
-        variant && styles.modifiers[toCamel(variant) as 'separator' | 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'],
+        variant &&
+          styles.modifiers[
+            toCamel(variant) as
+              | 'separator'
+              | 'bulkSelect'
+              | 'overflowMenu'
+              | 'pagination'
+              | 'searchFilter'
+              | 'label'
+              | 'chipGroup'
+          ],
         formatBreakpointMods(breakpointMods, styles),
         className
       )}

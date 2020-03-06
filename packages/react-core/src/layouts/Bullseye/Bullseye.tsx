@@ -8,7 +8,7 @@ export interface BullseyeProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Bullseye layout */
   className?: string;
   /** Sets the base component to render. defaults to div */
-  component?: keyof JSX.IntrinsicElements;
+  component?: React.ReactNode;
 }
 
 export const Bullseye: React.FunctionComponent<BullseyeProps> = ({

@@ -17,10 +17,7 @@ export const Level: React.FunctionComponent<LevelProps> = ({
   children = null,
   ...props
 }: LevelProps) => (
-  <div
-    {...props}
-    className={css(styles.level, gutter && styles.modifiers.gutter, className)}
-  >
+  <div {...props} className={css(styles.level, gutter && styles.modifiers.gutter, className)}>
     {children}
   </div>
 );

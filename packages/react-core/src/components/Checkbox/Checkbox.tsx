@@ -86,10 +86,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
           {...checkedProps}
         />
         {label && (
-          <label
-            className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)}
-            htmlFor={props.id}
-          >
+          <label className={css(styles.checkLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
             {label}
           </label>
         )}

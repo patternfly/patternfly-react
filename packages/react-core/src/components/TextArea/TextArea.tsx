@@ -59,6 +59,7 @@ export class TextArea extends React.Component<TextAreaProps> {
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, value, onChange, isValid, validated, isRequired, resizeOrientation, ...props } = this.props;
     const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
     return (

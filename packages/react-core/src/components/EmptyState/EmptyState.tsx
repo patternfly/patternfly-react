@@ -23,12 +23,15 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
   variant = EmptyStateVariant.large,
   ...props
 }: EmptyStateProps) => (
-  <div className={css(
+  <div
+    className={css(
       styles.emptyState,
       variant === 'large' && styles.modifiers.lg,
       variant === 'small' && styles.modifiers.sm,
       className
-    )} {...props}>
+    )}
+    {...props}
+  >
     {children}
   </div>
 );

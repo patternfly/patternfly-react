@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
-import { ProgressContainer, ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
@@ -55,10 +55,11 @@ export class Progress extends React.Component<ProgressProps> {
 
   render() {
     const {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       id,
-      className,
       size,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      className,
       value,
       title,
       label,

@@ -261,7 +261,11 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         {randomId => (
           <FocusTrap active={this.state.focusTrapActive} focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div
-              className={css(!enableFlip && (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top), className)}
+              className={css(
+                !enableFlip &&
+                  (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top),
+                className
+              )}
               role="dialog"
               aria-modal="true"
               aria-label={headerContent ? undefined : ariaLabel}

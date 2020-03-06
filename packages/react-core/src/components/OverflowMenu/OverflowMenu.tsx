@@ -7,7 +7,7 @@ import global_breakpoint_md from '@patternfly/react-tokens/dist/js/global_breakp
 import global_breakpoint_lg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 import global_breakpoint_xl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 /* eslint-enable camelcase */
-import { debounce, capitalize } from '../../helpers/util';
+import { debounce } from '../../helpers/util';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -55,12 +55,10 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   };
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, breakpoint, children, ...props } = this.props;
     return (
-      <div
-        {...props}
-        className={css(styles.overflowMenu, className)}
-      >
+      <div {...props} className={css(styles.overflowMenu, className)}>
         <OverflowMenuContext.Provider value={{ isBelowBreakpoint: this.state.isBelowBreakpoint }}>
           {children}
         </OverflowMenuContext.Provider>

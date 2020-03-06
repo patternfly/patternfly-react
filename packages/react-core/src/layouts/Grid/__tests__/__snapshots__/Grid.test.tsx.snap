@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`gutter 1`] = `
+<div
+  className="pf-l-grid pf-m-gutter"
+/>
+`;
+
 exports[`gutter lg 1`] = `
 <div
   className="pf-l-grid pf-m-gutter"

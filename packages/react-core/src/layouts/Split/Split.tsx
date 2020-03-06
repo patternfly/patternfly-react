@@ -22,10 +22,7 @@ export const Split: React.FunctionComponent<SplitProps> = ({
 }: SplitProps) => {
   const Component = component as any;
   return (
-    <Component
-      {...props}
-      className={css(styles.split, gutter && styles.modifiers.gutter, className)}
-    >
+    <Component {...props} className={css(styles.split, gutter && styles.modifiers.gutter, className)}>
       {children}
     </Component>
   );

@@ -87,10 +87,7 @@ export class Radio extends React.Component<RadioProps> {
     const labelRendered = !label ? null : isLabelWrapped ? (
       <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>
     ) : (
-      <label
-        className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}
-        htmlFor={props.id}
-      >
+      <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
         {label}
       </label>
     );
