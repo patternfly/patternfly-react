@@ -13,7 +13,10 @@ import { WizardNav } from './WizardNav';
 import { WizardNavItem } from './WizardNavItem';
 import { WizardContextProvider } from './WizardContext';
 import { PickOptional } from '../../helpers/typeUtils';
-import { FocusTrap } from '../../helpers';
+// Can't use ES6 imports :(
+// The types for it are also wrong, we should probably ditch this dependency.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const FocusTrap: any = require('focus-trap-react');
 
 export interface WizardStep {
   /** Optional identifier */
