@@ -13,11 +13,11 @@ export class BackgroundImageDemo extends React.Component {
      * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
      */
     src: {
-      'lg': pfbg_1200,
-      'sm': pfbg_768,
-      'sm2x': pfbg_768_2x,
-      'xs': pfbg_576,
-      'xs2x': pfbg_576_2x
+      lg: pfbg_1200,
+      sm: pfbg_768,
+      sm2x: pfbg_768_2x,
+      xs: pfbg_576,
+      xs2x: pfbg_576_2x
     }
   };
 

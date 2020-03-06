@@ -23,11 +23,11 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
  */
 
 const images = {
-  'lg': pfbg_1200,
-  'sm': pfbg_768,
-  'sm2x': pfbg_768_2x,
-  'xs': pfbg_576,
-  'xs2x': pfbg_576_2x
+  lg: pfbg_1200,
+  sm: pfbg_768,
+  sm2x: pfbg_768_2x,
+  xs: pfbg_576,
+  xs2x: pfbg_576_2x
 };
 
 export interface LoginPageDemoState {

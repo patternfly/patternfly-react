@@ -433,7 +433,10 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
           role={role}
           className={css(
             styles.table,
-            gridBreakPoint && stylesGrid.modifiers[toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'],
+            gridBreakPoint &&
+              stylesGrid.modifiers[
+                toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
+              ],
             styles.modifiers[variant],
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
