@@ -1,0 +1,1523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatalogTile href renders properly 1`] = `
+<CatalogTile
+  badges={Array []}
+  className=""
+  description="1234567890123"
+  featured={true}
+  footer={null}
+  href="http://patternfly.org"
+  icon={null}
+  iconAlt=""
+  iconClass=""
+  iconImg={null}
+  id="test-href"
+  onClick={null}
+  title="Patternfly"
+  vendor="Provided by Red Hat"
+>
+  <Card
+    className="catalog-tile-pf featured"
+    component="a"
+    href="http://patternfly.org"
+    id="test-href"
+    isHoverable={true}
+    onClick={[Function]}
+  >
+    <a
+      className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+      href="http://patternfly.org"
+      id="test-href"
+      onClick={[Function]}
+    >
+      <CardHeader
+        className="catalog-tile-pf-header"
+      >
+        <div
+          className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+        >
+          <div
+            className="catalog-tile-pf-title"
+          >
+            Patternfly
+          </div>
+          <div
+            className="catalog-tile-pf-subtitle"
+          >
+            Provided by Red Hat
+          </div>
+        </div>
+      </CardHeader>
+      <CardBody
+        className="catalog-tile-pf-body"
+      >
+        <div
+          className="pf-c-card__body catalog-tile-pf-body"
+        >
+          <div
+            className="catalog-tile-pf-description"
+          >
+            <span
+              className=""
+            >
+              1234567890123
+            </span>
+          </div>
+        </div>
+      </CardBody>
+    </a>
+  </Card>
+</CatalogTile>
+`;
+
+exports[`CatalogTile renders properly 1`] = `
+<div>
+  <CatalogTile
+    badges={
+      Array [
+        <CatalogTileBadge
+          id="certified"
+          title="Certified"
+        >
+          <CogIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          />
+        </CatalogTileBadge>,
+        <CatalogTileBadge
+          id="no-title"
+        >
+          <CogIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          />
+        </CatalogTileBadge>,
+      ]
+    }
+    className=""
+    description="A community of designers and developers collaborating to build a UI framework for enterprise web applications."
+    featured={true}
+    footer={null}
+    href={null}
+    icon={null}
+    iconAlt=""
+    iconClass=""
+    iconImg={null}
+    id="single-badge-test"
+    onClick={null}
+    title="Patternfly"
+    vendor={
+      <span>
+        Provided by 
+        <a
+          href="redhat.com"
+        >
+          Red Hat
+        </a>
+      </span>
+    }
+  >
+    <Card
+      className="catalog-tile-pf featured"
+      component="div"
+      href="#"
+      id="single-badge-test"
+      isHoverable={true}
+      onClick={[Function]}
+    >
+      <div
+        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        href="#"
+        id="single-badge-test"
+        onClick={[Function]}
+      >
+        <CardHead>
+          <div
+            className="pf-c-card__head"
+          >
+            <CardActions>
+              <div
+                className="pf-c-card__actions"
+              >
+                <div
+                  className="catalog-tile-pf-badge-container"
+                >
+                  <span
+                    key="badge-0"
+                  >
+                    <CatalogTileBadge
+                      id="certified"
+                      key="1"
+                      title="Certified"
+                    >
+                      <Tooltip
+                        appendTo={[Function]}
+                        aria="describedby"
+                        boundary="window"
+                        className=""
+                        content="Certified"
+                        distance={15}
+                        enableFlip={true}
+                        entryDelay={500}
+                        exitDelay={500}
+                        flipBehavior={
+                          Array [
+                            "top",
+                            "right",
+                            "bottom",
+                            "left",
+                            "top",
+                            "right",
+                            "bottom",
+                          ]
+                        }
+                        id="certified"
+                        isAppLauncher={false}
+                        isContentLeftAligned={false}
+                        isVisible={false}
+                        maxWidth="18.75rem"
+                        position="top"
+                        tippyProps={Object {}}
+                        trigger="mouseenter focus"
+                        zIndex={9999}
+                      >
+                        <PopoverBase
+                          appendTo={[Function]}
+                          aria="describedby"
+                          arrow={true}
+                          boundary="window"
+                          content={
+                            <div
+                              className=""
+                              id="certified"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                Certified
+                              </TooltipContent>
+                            </div>
+                          }
+                          delay={
+                            Array [
+                              500,
+                              500,
+                            ]
+                          }
+                          distance={15}
+                          flip={true}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          isVisible={false}
+                          lazy={true}
+                          maxWidth="18.75rem"
+                          onCreate={[Function]}
+                          placement="top"
+                          popperOptions={
+                            Object {
+                              "modifiers": Object {
+                                "hide": Object {
+                                  "enabled": true,
+                                },
+                                "preventOverflow": Object {
+                                  "enabled": true,
+                                },
+                              },
+                            }
+                          }
+                          theme="pf-tooltip"
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <span
+                            className="catalog-tile-pf-badge"
+                          >
+                            <CogIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CogIcon>
+                            <span
+                              className="sr-only"
+                            >
+                              Certified
+                            </span>
+                          </span>
+                          <Portal
+                            containerInfo={
+                              <div>
+                                <div
+                                  class=""
+                                  id="certified"
+                                  role="tooltip"
+                                >
+                                  <div
+                                    class="pf-c-tooltip__content"
+                                  >
+                                    Certified
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                          >
+                            <div
+                              className=""
+                              id="certified"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                <div
+                                  className="pf-c-tooltip__content"
+                                >
+                                  Certified
+                                </div>
+                              </TooltipContent>
+                            </div>
+                          </Portal>
+                        </PopoverBase>
+                      </Tooltip>
+                    </CatalogTileBadge>
+                  </span>
+                  <span
+                    key="badge-1"
+                  >
+                    <CatalogTileBadge
+                      id="no-title"
+                      key="2"
+                    >
+                      <span
+                        className="catalog-tile-pf-badge"
+                      >
+                        <CogIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                          title={null}
+                        >
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                              transform=""
+                            />
+                          </svg>
+                        </CogIcon>
+                      </span>
+                    </CatalogTileBadge>
+                  </span>
+                </div>
+              </div>
+            </CardActions>
+          </div>
+        </CardHead>
+        <CardHeader
+          className="catalog-tile-pf-header"
+        >
+          <div
+            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+          >
+            <div
+              className="catalog-tile-pf-title"
+            >
+              Patternfly
+            </div>
+            <div
+              className="catalog-tile-pf-subtitle"
+            >
+              <span>
+                Provided by 
+                <a
+                  href="redhat.com"
+                >
+                  Red Hat
+                </a>
+              </span>
+            </div>
+          </div>
+        </CardHeader>
+        <CardBody
+          className="catalog-tile-pf-body"
+        >
+          <div
+            className="pf-c-card__body catalog-tile-pf-body"
+          >
+            <div
+              className="catalog-tile-pf-description"
+            >
+              <span
+                className=""
+              >
+                A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+              </span>
+            </div>
+          </div>
+        </CardBody>
+      </div>
+    </Card>
+  </CatalogTile>
+  <CatalogTile
+    badges={
+      Array [
+        <CatalogTileBadge
+          id="certified"
+          title="Certified"
+        >
+          <CogIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          />
+        </CatalogTileBadge>,
+        <CatalogTileBadge
+          id="approved"
+          title="USDA Approved"
+        >
+          <OutlinedCheckCircleIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          />
+        </CatalogTileBadge>,
+      ]
+    }
+    className=""
+    description="Simple collaboration from your desktop."
+    featured={false}
+    footer={null}
+    href={null}
+    icon={null}
+    iconAlt=""
+    iconClass=""
+    iconImg={null}
+    id="multi-badge-test"
+    onClick={null}
+    title="GitHub Desktop"
+    vendor="provided by GitHub"
+  >
+    <Card
+      className="catalog-tile-pf"
+      component="div"
+      href="#"
+      id="multi-badge-test"
+      isHoverable={true}
+      onClick={[Function]}
+    >
+      <div
+        className="pf-c-card pf-m-hoverable catalog-tile-pf"
+        href="#"
+        id="multi-badge-test"
+        onClick={[Function]}
+      >
+        <CardHead>
+          <div
+            className="pf-c-card__head"
+          >
+            <CardActions>
+              <div
+                className="pf-c-card__actions"
+              >
+                <div
+                  className="catalog-tile-pf-badge-container"
+                >
+                  <span
+                    key="badge-0"
+                  >
+                    <CatalogTileBadge
+                      id="certified"
+                      key="1"
+                      title="Certified"
+                    >
+                      <Tooltip
+                        appendTo={[Function]}
+                        aria="describedby"
+                        boundary="window"
+                        className=""
+                        content="Certified"
+                        distance={15}
+                        enableFlip={true}
+                        entryDelay={500}
+                        exitDelay={500}
+                        flipBehavior={
+                          Array [
+                            "top",
+                            "right",
+                            "bottom",
+                            "left",
+                            "top",
+                            "right",
+                            "bottom",
+                          ]
+                        }
+                        id="certified"
+                        isAppLauncher={false}
+                        isContentLeftAligned={false}
+                        isVisible={false}
+                        maxWidth="18.75rem"
+                        position="top"
+                        tippyProps={Object {}}
+                        trigger="mouseenter focus"
+                        zIndex={9999}
+                      >
+                        <PopoverBase
+                          appendTo={[Function]}
+                          aria="describedby"
+                          arrow={true}
+                          boundary="window"
+                          content={
+                            <div
+                              className=""
+                              id="certified"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                Certified
+                              </TooltipContent>
+                            </div>
+                          }
+                          delay={
+                            Array [
+                              500,
+                              500,
+                            ]
+                          }
+                          distance={15}
+                          flip={true}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          isVisible={false}
+                          lazy={true}
+                          maxWidth="18.75rem"
+                          onCreate={[Function]}
+                          placement="top"
+                          popperOptions={
+                            Object {
+                              "modifiers": Object {
+                                "hide": Object {
+                                  "enabled": true,
+                                },
+                                "preventOverflow": Object {
+                                  "enabled": true,
+                                },
+                              },
+                            }
+                          }
+                          theme="pf-tooltip"
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <span
+                            className="catalog-tile-pf-badge"
+                          >
+                            <CogIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CogIcon>
+                            <span
+                              className="sr-only"
+                            >
+                              Certified
+                            </span>
+                          </span>
+                          <Portal
+                            containerInfo={
+                              <div>
+                                <div
+                                  class=""
+                                  id="certified"
+                                  role="tooltip"
+                                >
+                                  <div
+                                    class="pf-c-tooltip__content"
+                                  >
+                                    Certified
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                          >
+                            <div
+                              className=""
+                              id="certified"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                <div
+                                  className="pf-c-tooltip__content"
+                                >
+                                  Certified
+                                </div>
+                              </TooltipContent>
+                            </div>
+                          </Portal>
+                        </PopoverBase>
+                      </Tooltip>
+                    </CatalogTileBadge>
+                  </span>
+                  <span
+                    key="badge-1"
+                  >
+                    <CatalogTileBadge
+                      id="approved"
+                      key="2"
+                      title="USDA Approved"
+                    >
+                      <Tooltip
+                        appendTo={[Function]}
+                        aria="describedby"
+                        boundary="window"
+                        className=""
+                        content="USDA Approved"
+                        distance={15}
+                        enableFlip={true}
+                        entryDelay={500}
+                        exitDelay={500}
+                        flipBehavior={
+                          Array [
+                            "top",
+                            "right",
+                            "bottom",
+                            "left",
+                            "top",
+                            "right",
+                            "bottom",
+                          ]
+                        }
+                        id="approved"
+                        isAppLauncher={false}
+                        isContentLeftAligned={false}
+                        isVisible={false}
+                        maxWidth="18.75rem"
+                        position="top"
+                        tippyProps={Object {}}
+                        trigger="mouseenter focus"
+                        zIndex={9999}
+                      >
+                        <PopoverBase
+                          appendTo={[Function]}
+                          aria="describedby"
+                          arrow={true}
+                          boundary="window"
+                          content={
+                            <div
+                              className=""
+                              id="approved"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                USDA Approved
+                              </TooltipContent>
+                            </div>
+                          }
+                          delay={
+                            Array [
+                              500,
+                              500,
+                            ]
+                          }
+                          distance={15}
+                          flip={true}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          isVisible={false}
+                          lazy={true}
+                          maxWidth="18.75rem"
+                          onCreate={[Function]}
+                          placement="top"
+                          popperOptions={
+                            Object {
+                              "modifiers": Object {
+                                "hide": Object {
+                                  "enabled": true,
+                                },
+                                "preventOverflow": Object {
+                                  "enabled": true,
+                                },
+                              },
+                            }
+                          }
+                          theme="pf-tooltip"
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <span
+                            className="catalog-tile-pf-badge"
+                          >
+                            <OutlinedCheckCircleIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
+                                  transform=""
+                                />
+                              </svg>
+                            </OutlinedCheckCircleIcon>
+                            <span
+                              className="sr-only"
+                            >
+                              USDA Approved
+                            </span>
+                          </span>
+                          <Portal
+                            containerInfo={
+                              <div>
+                                <div
+                                  class=""
+                                  id="approved"
+                                  role="tooltip"
+                                >
+                                  <div
+                                    class="pf-c-tooltip__content"
+                                  >
+                                    USDA Approved
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                          >
+                            <div
+                              className=""
+                              id="approved"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                <div
+                                  className="pf-c-tooltip__content"
+                                >
+                                  USDA Approved
+                                </div>
+                              </TooltipContent>
+                            </div>
+                          </Portal>
+                        </PopoverBase>
+                      </Tooltip>
+                    </CatalogTileBadge>
+                  </span>
+                </div>
+              </div>
+            </CardActions>
+          </div>
+        </CardHead>
+        <CardHeader
+          className="catalog-tile-pf-header"
+        >
+          <div
+            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+          >
+            <div
+              className="catalog-tile-pf-title"
+            >
+              GitHub Desktop
+            </div>
+            <div
+              className="catalog-tile-pf-subtitle"
+            >
+              provided by GitHub
+            </div>
+          </div>
+        </CardHeader>
+        <CardBody
+          className="catalog-tile-pf-body"
+        >
+          <div
+            className="pf-c-card__body catalog-tile-pf-body"
+          >
+            <div
+              className="catalog-tile-pf-description"
+            >
+              <span
+                className=""
+              >
+                Simple collaboration from your desktop.
+              </span>
+            </div>
+          </div>
+        </CardBody>
+      </div>
+    </Card>
+  </CatalogTile>
+  <CatalogTile
+    badges={
+      Array [
+        <CatalogTileBadge
+          id="approved"
+          title="USDA Approved"
+        >
+          <OutlinedCheckCircleIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          />
+        </CatalogTileBadge>,
+      ]
+    }
+    className=""
+    description="An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets."
+    featured={false}
+    footer={null}
+    href={null}
+    icon={null}
+    iconAlt=""
+    iconClass="fa fa-codepen"
+    iconImg={null}
+    id="test-iconClass"
+    onClick={null}
+    title="CodePen"
+    vendor="provided by CodePen"
+  >
+    <Card
+      className="catalog-tile-pf"
+      component="div"
+      href="#"
+      id="test-iconClass"
+      isHoverable={true}
+      onClick={[Function]}
+    >
+      <div
+        className="pf-c-card pf-m-hoverable catalog-tile-pf"
+        href="#"
+        id="test-iconClass"
+        onClick={[Function]}
+      >
+        <CardHead>
+          <div
+            className="pf-c-card__head"
+          >
+            <span
+              className="catalog-tile-pf-icon fa fa-codepen"
+            />
+            <CardActions>
+              <div
+                className="pf-c-card__actions"
+              >
+                <div
+                  className="catalog-tile-pf-badge-container"
+                >
+                  <span
+                    key="badge-0"
+                  >
+                    <CatalogTileBadge
+                      id="approved"
+                      key="1"
+                      title="USDA Approved"
+                    >
+                      <Tooltip
+                        appendTo={[Function]}
+                        aria="describedby"
+                        boundary="window"
+                        className=""
+                        content="USDA Approved"
+                        distance={15}
+                        enableFlip={true}
+                        entryDelay={500}
+                        exitDelay={500}
+                        flipBehavior={
+                          Array [
+                            "top",
+                            "right",
+                            "bottom",
+                            "left",
+                            "top",
+                            "right",
+                            "bottom",
+                          ]
+                        }
+                        id="approved"
+                        isAppLauncher={false}
+                        isContentLeftAligned={false}
+                        isVisible={false}
+                        maxWidth="18.75rem"
+                        position="top"
+                        tippyProps={Object {}}
+                        trigger="mouseenter focus"
+                        zIndex={9999}
+                      >
+                        <PopoverBase
+                          appendTo={[Function]}
+                          aria="describedby"
+                          arrow={true}
+                          boundary="window"
+                          content={
+                            <div
+                              className=""
+                              id="approved"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                USDA Approved
+                              </TooltipContent>
+                            </div>
+                          }
+                          delay={
+                            Array [
+                              500,
+                              500,
+                            ]
+                          }
+                          distance={15}
+                          flip={true}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          isVisible={false}
+                          lazy={true}
+                          maxWidth="18.75rem"
+                          onCreate={[Function]}
+                          placement="top"
+                          popperOptions={
+                            Object {
+                              "modifiers": Object {
+                                "hide": Object {
+                                  "enabled": true,
+                                },
+                                "preventOverflow": Object {
+                                  "enabled": true,
+                                },
+                              },
+                            }
+                          }
+                          theme="pf-tooltip"
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <span
+                            className="catalog-tile-pf-badge"
+                          >
+                            <OutlinedCheckCircleIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
+                                  transform=""
+                                />
+                              </svg>
+                            </OutlinedCheckCircleIcon>
+                            <span
+                              className="sr-only"
+                            >
+                              USDA Approved
+                            </span>
+                          </span>
+                          <Portal
+                            containerInfo={
+                              <div>
+                                <div
+                                  class=""
+                                  id="approved"
+                                  role="tooltip"
+                                >
+                                  <div
+                                    class="pf-c-tooltip__content"
+                                  >
+                                    USDA Approved
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                          >
+                            <div
+                              className=""
+                              id="approved"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                <div
+                                  className="pf-c-tooltip__content"
+                                >
+                                  USDA Approved
+                                </div>
+                              </TooltipContent>
+                            </div>
+                          </Portal>
+                        </PopoverBase>
+                      </Tooltip>
+                    </CatalogTileBadge>
+                  </span>
+                </div>
+              </div>
+            </CardActions>
+          </div>
+        </CardHead>
+        <CardHeader
+          className="catalog-tile-pf-header"
+        >
+          <div
+            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+          >
+            <div
+              className="catalog-tile-pf-title"
+            >
+              CodePen
+            </div>
+            <div
+              className="catalog-tile-pf-subtitle"
+            >
+              provided by CodePen
+            </div>
+          </div>
+        </CardHeader>
+        <CardBody
+          className="catalog-tile-pf-body"
+        >
+          <div
+            className="pf-c-card__body catalog-tile-pf-body"
+          >
+            <div
+              className="catalog-tile-pf-description"
+            >
+              <span
+                className=""
+              >
+                An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets.
+              </span>
+            </div>
+          </div>
+        </CardBody>
+      </div>
+    </Card>
+  </CatalogTile>
+  <CatalogTile
+    badges={
+      Array [
+        <CatalogTileBadge
+          id="certified"
+          title="Certified"
+        >
+          <CogIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          />
+        </CatalogTileBadge>,
+      ]
+    }
+    className=""
+    description="1234567890123"
+    featured={true}
+    footer={
+      <span>
+        <OutlinedCheckCircleIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        />
+         Enabled
+      </span>
+    }
+    href="https://github.com/patternfly/patternfly-react"
+    icon={null}
+    iconAlt=""
+    iconClass=""
+    iconImg={null}
+    id="tile-footer-test"
+    onClick={null}
+    title="Patternfly-React"
+    vendor="provided by Red Hat"
+  >
+    <Card
+      className="catalog-tile-pf featured"
+      component="a"
+      href="https://github.com/patternfly/patternfly-react"
+      id="tile-footer-test"
+      isHoverable={true}
+      onClick={[Function]}
+    >
+      <a
+        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        href="https://github.com/patternfly/patternfly-react"
+        id="tile-footer-test"
+        onClick={[Function]}
+      >
+        <CardHead>
+          <div
+            className="pf-c-card__head"
+          >
+            <CardActions>
+              <div
+                className="pf-c-card__actions"
+              >
+                <div
+                  className="catalog-tile-pf-badge-container"
+                >
+                  <span
+                    key="badge-0"
+                  >
+                    <CatalogTileBadge
+                      id="certified"
+                      key="1"
+                      title="Certified"
+                    >
+                      <Tooltip
+                        appendTo={[Function]}
+                        aria="describedby"
+                        boundary="window"
+                        className=""
+                        content="Certified"
+                        distance={15}
+                        enableFlip={true}
+                        entryDelay={500}
+                        exitDelay={500}
+                        flipBehavior={
+                          Array [
+                            "top",
+                            "right",
+                            "bottom",
+                            "left",
+                            "top",
+                            "right",
+                            "bottom",
+                          ]
+                        }
+                        id="certified"
+                        isAppLauncher={false}
+                        isContentLeftAligned={false}
+                        isVisible={false}
+                        maxWidth="18.75rem"
+                        position="top"
+                        tippyProps={Object {}}
+                        trigger="mouseenter focus"
+                        zIndex={9999}
+                      >
+                        <PopoverBase
+                          appendTo={[Function]}
+                          aria="describedby"
+                          arrow={true}
+                          boundary="window"
+                          content={
+                            <div
+                              className=""
+                              id="certified"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                Certified
+                              </TooltipContent>
+                            </div>
+                          }
+                          delay={
+                            Array [
+                              500,
+                              500,
+                            ]
+                          }
+                          distance={15}
+                          flip={true}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          isVisible={false}
+                          lazy={true}
+                          maxWidth="18.75rem"
+                          onCreate={[Function]}
+                          placement="top"
+                          popperOptions={
+                            Object {
+                              "modifiers": Object {
+                                "hide": Object {
+                                  "enabled": true,
+                                },
+                                "preventOverflow": Object {
+                                  "enabled": true,
+                                },
+                              },
+                            }
+                          }
+                          theme="pf-tooltip"
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <span
+                            className="catalog-tile-pf-badge"
+                          >
+                            <CogIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CogIcon>
+                            <span
+                              className="sr-only"
+                            >
+                              Certified
+                            </span>
+                          </span>
+                          <Portal
+                            containerInfo={
+                              <div>
+                                <div
+                                  class=""
+                                  id="certified"
+                                  role="tooltip"
+                                >
+                                  <div
+                                    class="pf-c-tooltip__content"
+                                  >
+                                    Certified
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                          >
+                            <div
+                              className=""
+                              id="certified"
+                              role="tooltip"
+                            >
+                              <TooltipContent
+                                isLeftAligned={false}
+                              >
+                                <div
+                                  className="pf-c-tooltip__content"
+                                >
+                                  Certified
+                                </div>
+                              </TooltipContent>
+                            </div>
+                          </Portal>
+                        </PopoverBase>
+                      </Tooltip>
+                    </CatalogTileBadge>
+                  </span>
+                </div>
+              </div>
+            </CardActions>
+          </div>
+        </CardHead>
+        <CardHeader
+          className="catalog-tile-pf-header"
+        >
+          <div
+            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+          >
+            <div
+              className="catalog-tile-pf-title"
+            >
+              Patternfly-React
+            </div>
+            <div
+              className="catalog-tile-pf-subtitle"
+            >
+              provided by Red Hat
+            </div>
+          </div>
+        </CardHeader>
+        <CardBody
+          className="catalog-tile-pf-body"
+        >
+          <div
+            className="pf-c-card__body catalog-tile-pf-body"
+          >
+            <div
+              className="catalog-tile-pf-description"
+            >
+              <span
+                className="has-footer"
+              >
+                1234567890123
+              </span>
+            </div>
+          </div>
+        </CardBody>
+        <CardFooter
+          className="catalog-tile-pf-footer"
+        >
+          <div
+            className="pf-c-card__footer catalog-tile-pf-footer"
+          >
+            <span>
+              <OutlinedCheckCircleIcon
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                  width="1em"
+                >
+                  <path
+                    d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
+                    transform=""
+                  />
+                </svg>
+              </OutlinedCheckCircleIcon>
+               Enabled
+            </span>
+          </div>
+        </CardFooter>
+      </a>
+    </Card>
+  </CatalogTile>
+  <CatalogTile
+    badges={Array []}
+    className=""
+    description={null}
+    featured={true}
+    footer={null}
+    href="https://github.com/patternfly/patternfly-react"
+    icon={
+      <svg
+        height="100"
+        width="100"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          fill="red"
+          r="40"
+          stroke="black"
+          strokeWidth="3"
+        />
+      </svg>
+    }
+    iconAlt=""
+    iconClass=""
+    iconImg={null}
+    id="custom-icon-svg-test"
+    onClick={null}
+    title="Custom SVG"
+    vendor={null}
+  >
+    <Card
+      className="catalog-tile-pf featured"
+      component="a"
+      href="https://github.com/patternfly/patternfly-react"
+      id="custom-icon-svg-test"
+      isHoverable={true}
+      onClick={[Function]}
+    >
+      <a
+        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        href="https://github.com/patternfly/patternfly-react"
+        id="custom-icon-svg-test"
+        onClick={[Function]}
+      >
+        <CardHead>
+          <div
+            className="pf-c-card__head"
+          >
+            <span
+              className="catalog-tile-pf-icon "
+            >
+              <svg
+                height="100"
+                width="100"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  fill="red"
+                  r="40"
+                  stroke="black"
+                  strokeWidth="3"
+                />
+              </svg>
+            </span>
+          </div>
+        </CardHead>
+        <CardHeader
+          className="catalog-tile-pf-header"
+        >
+          <div
+            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+          >
+            <div
+              className="catalog-tile-pf-title"
+            >
+              Custom SVG
+            </div>
+          </div>
+        </CardHeader>
+      </a>
+    </Card>
+  </CatalogTile>
+</div>
+`;

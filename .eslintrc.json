@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "es6": true
     },
     "plugins": [
         "@typescript-eslint",
@@ -16,7 +17,7 @@
         "plugin:jsdoc/recommended"
     ],
     "parserOptions": {
-        "project": "packages/patternfly-4/tsconfig.base.json",
+        "project": "packages/tsconfig.base.json",
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true

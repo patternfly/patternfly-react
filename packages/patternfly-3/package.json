@@ -1,7 +1,0 @@
-{
-  "name": "patternfly3-react-lerna-root",
-  "private": true,
-  "config": {
-    "access": "private"
-  }
-}

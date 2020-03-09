@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`defaults props 1`] = `
-<Label
-  onRemoveClick={[Function]}
-  type="default"
-/>
-`;

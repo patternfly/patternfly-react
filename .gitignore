@@ -24,6 +24,7 @@ lerna-debug.log
 *.sublime-workspace
 .history
 .vscode
+.yo-rc.json
 
 # IDE - VSCode
 .vscode
