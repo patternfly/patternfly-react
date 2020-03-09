@@ -7,41 +7,46 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Content rendered in the left hand panel */
   children?: React.ReactNode;
-  /** Indicate if the drawer is expanded */
+  /** Indicates if the drawer is expanded */
   isExpanded?: boolean;
   /** Indicates if the content element and panel element are displayed side by side. */
   isInline?: boolean;
+  /* Indicates if the drawer will always show both content and panel. */
+  isStatic?: boolean;
+  /* Position of the drawer panel */
+  position?: 'left' | 'right';
 }
 
-export class Drawer extends React.Component<DrawerProps> {
-  static hasWarnBeta = false;
-  constructor(props: DrawerProps) {
-    super(props);
-  }
-
-  componentDidMount() {
-    if (!Drawer.hasWarnBeta && process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
-      console.warn('This component is in beta and subject to change.');
-      Drawer.hasWarnBeta = true;
-    }
-  }
-
-  render() {
-    const { className = '', children, isExpanded = false, isInline = false, ...props } = this.props;
-
-    return (
-      <div
-        {...props}
-        className={css(
-          styles.drawer,
-          isExpanded && styles.modifiers.expanded,
-          isInline && styles.modifiers.inline,
-          className
-        )}
-      >
-        {children}
-      </div>
-    );
-  }
+export interface DrawerContextProps {
+  isExpanded: boolean;
 }
+
+export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
+  isExpanded: false
+});
+
+export const Drawer: React.SFC<DrawerProps> = ({
+  className = '',
+  children,
+  isExpanded = false,
+  isInline = false,
+  isStatic = false,
+  position = 'right',
+  ...props
+}: DrawerProps) => (
+  <DrawerContext.Provider value={{ isExpanded }}>
+    <div
+      className={css(
+        styles.drawer,
+        isExpanded && styles.modifiers.expanded,
+        isInline && styles.modifiers.inline,
+        isStatic && styles.modifiers.static,
+        position === 'left' && styles.modifiers.panelLeft,
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  </DrawerContext.Provider>
+);

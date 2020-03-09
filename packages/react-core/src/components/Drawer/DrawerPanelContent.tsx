@@ -1,23 +1,34 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
+import { DrawerContext } from './Drawer';
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the Drawer. */
+  /** Additional classes added to the drawer. */
   className?: string;
-  /** Content to rendered in the drawer */
+  /** Content to be rendered in the drawer panel. */
   children?: React.ReactNode;
-  /** Indicates if there should be padding around the drawer */
-  noPadding?: boolean;
+  /* Flag indicating that the drawer panel should have a border. */
+  hasBorder?: boolean;
 }
 
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
-  noPadding = false,
+  hasBorder = false,
   ...props
 }: DrawerPanelContentProps) => (
-  <aside className={css(styles.drawerPanel, className)} {...props}>
-    <div className={css(styles.drawerPanelBody, noPadding && styles.modifiers.noPadding)}>{children}</div>
-  </aside>
+  <DrawerContext.Consumer>
+    {({ isExpanded }) => (
+      <div
+        className={css(styles.drawerPanel, hasBorder && styles.modifiers.border, className)}
+        hidden={!isExpanded}
+        aria-hidden={!isExpanded}
+        aria-expanded={isExpanded}
+        {...props}
+      >
+        {children}
+      </div>
+    )}
+  </DrawerContext.Consumer>
 );
