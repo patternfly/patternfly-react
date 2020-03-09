@@ -135,135 +135,12 @@ class CardViewBasic extends React.Component {
     super(props);
 
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-    /* this.handleSelectClick = this.handleSelectClick.bind(this); */
 
     this.state = {
-      cardInfo: [
-        {
-          id: 1,
-          name: 'Patternfly',
-          description:
-            'PatternFly is a community project that promotes design commonality and improves user experience.',
-          icon: pfIcon
-        },
-        {
-          id: 2,
-          name: 'ActiveMQ',
-          description:
-            'The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed from a JMS Queue or Topic using Apache ActiveMQ.',
-          icon: activeMQIcon
-        },
-        {
-          id: 3,
-          name: 'Apache Spark',
-          description: 'This documentation page covers the Apache Spark component for the Apache Camel.',
-          icon: sparkIcon
-        },
-        {
-          id: 4,
-          name: 'Avro',
-          description:
-            'This component provides a dataformat for avro, which allows serialization and deserialization of messages using Apache Avro’s binary dataformat. Moreover, it provides support for Apache Avro’s rpc, by providing producers and consumers endpoint for using avro over netty or http.',
-          icon: avroIcon
-        },
-        {
-          id: 5,
-          name: 'Azure Services',
-          description:
-            'The Camel Components for Windows Azure Services provide connectivity to Azure services from Camel.',
-          icon: azureIcon
-        },
-        {
-          id: 6,
-          name: 'Crypto',
-          description:
-            'For providing flexible endpoints to sign and verify exchanges using the Signature Service of the Java Cryptographic Extension.',
-          icon: saxonIcon
-        },
-        {
-          id: 7,
-          name: 'DropBox',
-          description:
-            'The dropbox component allows you to treat Dropbox remote folders as a producer or consumer of messages.',
-          icon: dropBoxIcon
-        },
-        {
-          id: 8,
-          name: 'JBoss Data Grid',
-          description:
-            'Read or write to a fully-supported distributed cache and data grid for faster integration services.',
-          icon: infinispanIcon
-        },
-        {
-          id: 9,
-          name: 'REST',
-          description:
-            'The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as a client (producer) to call REST services.',
-          icon: restIcon
-        },
-        {
-          id: 10,
-          name: 'SWAGGER',
-          description: 'Expose REST services and their APIs using Swagger specification.',
-          icon: swaggerIcon
-        },
-        {
-          id: 11,
-          name: 'a'
-        },
-        {
-          id: 12,
-          name: 'b'
-        },
-        {
-          id: 13,
-          name: 'c'
-        },
-        {
-          id: 14,
-          name: 'd'
-        },
-        {
-          id: 15,
-          name: 'e'
-        },
-        {
-          id: 16,
-          name: 'f'
-        },
-        {
-          id: 17,
-          name: 'g'
-        },
-        {
-          id: 18,
-          name: 'h'
-        },
-        {
-          id: 19,
-          name: 'i'
-        },
-        {
-          id: 20,
-          name: 'j'
-        }
-      ],
       filters: {
         products: []
       },
       res: [],
-      cardChecks: {
-        key1: false,
-        key2: false,
-        key3: false,
-        key4: false,
-        key5: false,
-        key6: false,
-        key7: false,
-        key8: false,
-        key9: false,
-        key10: false
-      },
       selectedItems: [],
       areAllSelected: false,
       /* checkedListAll: [], */
@@ -278,7 +155,7 @@ class CardViewBasic extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 100
+      perPage: 10
     };
 
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
@@ -354,11 +231,11 @@ class CardViewBasic extends React.Component {
     };
 
     this.deleteItem = item => event => {
-      const { cardInfo } = this.state;
-      cardInfo.splice(cardInfo.indexOf(item), 1);
+      const { res } = this.state;
+      res.splice(res.indexOf(item), 1);
 
       this.setState({
-        cardInfo
+        res
       });
     };
 
@@ -435,7 +312,7 @@ class CardViewBasic extends React.Component {
       selectedItems = selectedItems.filter(el => el !== value);
       if (this.state.areAllSelected) {
         this.setState({
-          areAllSelected: !this.state.areAllSelected
+          areAllSelected: !this.state.areAllSelected,
         });
       }
     }
@@ -454,14 +331,14 @@ class CardViewBasic extends React.Component {
     this.setState(
       {
         selectedItems: collection,
-        isChecked: isChecked,
-        areAllSelected: checked
+        isChecked: checked,
+        areAllSelected: true,
       },
       this.updateSelected
     );
   }
 
-  selectAll(e) {
+  selectPage(e) {
     const { checked } = e.target;
     const { isChecked } = this.state;
     let collection = [];
@@ -471,14 +348,29 @@ class CardViewBasic extends React.Component {
     this.setState(
       {
         selectedItems: collection,
-        isChecked: true,
-        areAllSelected: true
+        isChecked: checked,
+        areAllSelected: checked
       },
       this.updateSelected
     );
   }
 
-  selectPage(e) {}
+  selectAll(e) {
+    const {checked} = e.target;
+    const { isChecked } = this.state;
+
+    let collection = [];
+    for (var i = 0; i <= 19; i++) collection = [...collection, i];
+
+        this.setState(
+          {
+            selectedItems: collection,
+            isChecked: true,
+            areAllSelected: true
+          },
+          this.updateSelected
+        );
+  }
 
   selectNone(e) {
     const { checked } = e.target;
@@ -494,9 +386,9 @@ class CardViewBasic extends React.Component {
   }
 
   getAllItems() {
-    const { cardInfo } = this.state;
+    const { res } = this.state;
     const collection = [];
-    for (const items of cardInfo) {
+    for (const items of res) {
       collection.push(items.id);
     }
 
@@ -510,7 +402,7 @@ class CardViewBasic extends React.Component {
       const collection = this.getAllItems();
       this.setState(prevState => ({
         selectedItems: [...prevState.selectedItems, value * 1],
-        areAllSelected: collection.length === prevState.selectedItems.length + 1
+        areAllSelected: collection.length === prevState.selectedItems.length + 1,
       }));
     } else {
       this.setState(prevState => ({
@@ -536,6 +428,8 @@ class CardViewBasic extends React.Component {
     fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ res: resp, perPage, page }))
+      .then(() => console.log("type of res", typeof res))
+      .then(() => console.log("res:", res))
       .then(() => this.updateSelected())
       .catch(err => this.setState({ error: err }));
   }
@@ -562,7 +456,7 @@ class CardViewBasic extends React.Component {
       />
     );
   }
-
+  
   buildSelectDropdown() {
     const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
     const numSelected = selectedItems.length;
@@ -574,11 +468,11 @@ class CardViewBasic extends React.Component {
       <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
         Select none (0 items)
       </DropdownItem>,
-      <DropdownItem key="item-2" onClick={() => this.selectPage.bind(this)}>
+      <DropdownItem key="item-2" onClick={this.selectPage.bind(this)}>
         Select page ({this.state.perPage} items)
       </DropdownItem>,
       <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
-        Select all (10 items)
+        Select all (20 items)
       </DropdownItem>
     ];
 
@@ -594,7 +488,7 @@ class CardViewBasic extends React.Component {
                 key="split-checkbox"
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={areAllSelected}
-                onClick={this.splitCheckboxSelectAll.bind(this)}
+                onClick={this.selectAll.bind(this)}
               ></DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
@@ -649,24 +543,19 @@ class CardViewBasic extends React.Component {
       isLowerToolbarKebabDropdownOpen,
       isCardKebabDropdownOpen,
       splitButtonDropdownIsOpen,
-      cardInfo,
       activeItem,
       filters,
       res,
       checked,
-      cardChecks,
       selectedItems,
       itemsCheckedByDefault,
       areAllSelected,
       isChecked
     } = this.state;
 
-    const rows = res.map(post => ({
-      cells: [post.name, post.description],
-      /* selected: post.selected */
-    }));
-
-    console.log("rows", rows);
+    /* const rows = Object.keys(res).map((key) => res[key]); */
+    /* console.log("res is", res); */
+    /* console.log("here", rows); */
 
     const toolbarKebabDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -795,10 +684,12 @@ class CardViewBasic extends React.Component {
 
     const filtered =
       filters.products.length > 0
-        ? cardInfo.filter(card => {
+        ? res.filter(card => {
             return filters.products.length === 0 || filters.products.includes(card.name);
           })
-        : cardInfo;
+        : res;
+
+    const icons = {pfIcon, activeMQIcon, sparkIcon, avroIcon, azureIcon, saxonIcon, dropBoxIcon, infinispanIcon, restIcon, swaggerIcon}
 
     return (
       <React.Fragment>
@@ -825,7 +716,7 @@ class CardViewBasic extends React.Component {
                 <React.Fragment>
                   <Card isHoverable key={key}>
                     <CardHead>
-                      <img src={product.icon} style={{ height: '50px' }} />
+                      <img src={icons[product.icon]} style={{ height: '50px' }} />
                       <CardActions>
                         <Dropdown
                           isPlain
@@ -861,7 +752,7 @@ class CardViewBasic extends React.Component {
                       </CardActions>
                     </CardHead>
                     <CardHeader>{product.name}</CardHeader>
-                    <CardBody>{rows}</CardBody>
+                    <CardBody key={key}>{product.description}</CardBody>
                   </Card>
                 </React.Fragment>
               ))}
