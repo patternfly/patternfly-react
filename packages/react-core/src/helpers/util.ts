@@ -138,7 +138,7 @@ export function keyHandler(
   if (!Array.isArray(kids)) {
     return;
   }
-  const isMultiDimensional = refsCollection[0].constructor === Array;
+  const isMultiDimensional = refsCollection.filter(ref => ref)[0].constructor === Array;
   let nextIndex = index;
   let nextInnerIndex = innerIndex;
   if (position === 'up') {
