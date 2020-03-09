@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.145.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.144.1...@patternfly/react-core@3.145.0) (2020-03-09)
+
+
+### Features
+
+* **Select:** add inline filtering to checkbox select ([#3843](https://github.com/patternfly/patternfly-react/issues/3843)) ([2263de8](https://github.com/patternfly/patternfly-react/commit/2263de8361b196f4421a3adcbb01b4b2dd410d4a))
+
+
+
+
+
 ## [3.144.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.144.0...@patternfly/react-core@3.144.1) (2020-03-06)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.27.0...@patternfly/react-integration@3.28.0) (2020-03-09)
+
+
+### Features
+
+* **Select:** add inline filtering to checkbox select ([#3843](https://github.com/patternfly/patternfly-react/issues/3843)) ([2263de8](https://github.com/patternfly/patternfly-react/commit/2263de8361b196f4421a3adcbb01b4b2dd410d4a))
+
+
+
+
+
 # [3.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.26.0...@patternfly/react-integration@3.27.0) (2020-03-06)
 
 
