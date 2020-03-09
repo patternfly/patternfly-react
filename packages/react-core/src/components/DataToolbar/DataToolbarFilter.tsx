@@ -51,12 +51,14 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
   }
 
   componentDidMount() {
-    this.context.updateNumberFilters(this.props.categoryName, this.props.chips.length);
+    const { categoryName, chips } = this.props;
+    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
     this.setState({ isMounted: true });
   }
 
   componentDidUpdate() {
-    this.context.updateNumberFilters(this.props.categoryName, this.props.chips.length);
+    const { categoryName, chips } = this.props;
+    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
   }
 
   render() {
