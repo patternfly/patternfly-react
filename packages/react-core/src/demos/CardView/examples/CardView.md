@@ -108,6 +108,7 @@ import {
 import {
   DataToolbar,
   DataToolbarContent,
+  DataToolbarFilter,
   DataToolbarToggleGroup,
   DataToolbarGroup,
   DataToolbarItem
