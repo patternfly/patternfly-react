@@ -142,7 +142,7 @@ import { CubesIcon } from '@patternfly/react-icons';
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.xl}>
     <EmptyStateIcon icon={CubesIcon} />
-    <Title headingLevel="h5" size="xl">
+    <Title headingLevel="h5" size="4xl">
       Empty State
     </Title>
     <EmptyStateBody>
