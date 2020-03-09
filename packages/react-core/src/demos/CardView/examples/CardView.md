@@ -143,7 +143,6 @@ class CardViewBasic extends React.Component {
       res: [],
       selectedItems: [],
       areAllSelected: false,
-      /* checkedListAll: [], */
       itemsCheckedByDefault: false,
       numSelected: 0,
       isUpperToolbarDropdownOpen: false,
@@ -151,7 +150,6 @@ class CardViewBasic extends React.Component {
       isLowerToolbarDropdownOpen: false,
       isLowerToolbarKebabDropdownOpen: false,
       isCardKebabDropdownOpen: false,
-      check1: false,
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
@@ -211,12 +209,6 @@ class CardViewBasic extends React.Component {
         [key]: isCardKebabDropdownOpen
       });
     };
-
-    /* this.isCardChecked = (key, isChecked) => {
-      this.setState({
-        [key]: isChecked
-      });
-    }; */
 
     this.onCardKebabDropdownSelect = (key, event) => {
       this.setState({
@@ -293,14 +285,6 @@ class CardViewBasic extends React.Component {
       }
     };
   }
-  /* <Pagination
-          itemCount={10}
-          perPage={this.state.perPage}
-          page={this.state.page}
-          onSetPage={this.onSetPage}
-          widgetId="pagination-options-menu-top"
-          onPerPageSelect={this.onPerPageSelect}
-        /> */
 
   selectedItems(e) {
     const { value, checked } = e.target;
@@ -312,7 +296,7 @@ class CardViewBasic extends React.Component {
       selectedItems = selectedItems.filter(el => el !== value);
       if (this.state.areAllSelected) {
         this.setState({
-          areAllSelected: !this.state.areAllSelected,
+          areAllSelected: !this.state.areAllSelected
         });
       }
     }
@@ -325,14 +309,14 @@ class CardViewBasic extends React.Component {
     let collection = [];
 
     if (checked) {
-      collection = this.getAllItems();
+      for (var i = 0; i <= 19; i++) collection = [...collection, i];
     }
 
     this.setState(
       {
         selectedItems: collection,
-        isChecked: checked,
-        areAllSelected: true,
+        isChecked: isChecked,
+        areAllSelected: checked
       },
       this.updateSelected
     );
@@ -349,27 +333,27 @@ class CardViewBasic extends React.Component {
       {
         selectedItems: collection,
         isChecked: checked,
-        areAllSelected: checked
+        areAllSelected: false
       },
       this.updateSelected
     );
   }
 
   selectAll(e) {
-    const {checked} = e.target;
+    const { checked } = e.target;
     const { isChecked } = this.state;
 
     let collection = [];
     for (var i = 0; i <= 19; i++) collection = [...collection, i];
 
-        this.setState(
-          {
-            selectedItems: collection,
-            isChecked: true,
-            areAllSelected: true
-          },
-          this.updateSelected
-        );
+    this.setState(
+      {
+        selectedItems: collection,
+        isChecked: true,
+        areAllSelected: true
+      },
+      this.updateSelected
+    );
   }
 
   selectNone(e) {
@@ -402,7 +386,7 @@ class CardViewBasic extends React.Component {
       const collection = this.getAllItems();
       this.setState(prevState => ({
         selectedItems: [...prevState.selectedItems, value * 1],
-        areAllSelected: collection.length === prevState.selectedItems.length + 1,
+        areAllSelected: collection.length === prevState.selectedItems.length + 1
       }));
     } else {
       this.setState(prevState => ({
@@ -428,8 +412,8 @@ class CardViewBasic extends React.Component {
     fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ res: resp, perPage, page }))
-      .then(() => console.log("type of res", typeof res))
-      .then(() => console.log("res:", res))
+      .then(() => console.log('type of res', typeof res))
+      .then(() => console.log('res:', res))
       .then(() => this.updateSelected())
       .catch(err => this.setState({ error: err }));
   }
@@ -456,7 +440,7 @@ class CardViewBasic extends React.Component {
       />
     );
   }
-  
+
   buildSelectDropdown() {
     const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
     const numSelected = selectedItems.length;
@@ -488,7 +472,7 @@ class CardViewBasic extends React.Component {
                 key="split-checkbox"
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={areAllSelected}
-                onClick={this.selectAll.bind(this)}
+                onClick={this.splitCheckboxSelectAll.bind(this)}
               ></DropdownToggleCheckbox>
             ]}
             onToggle={this.onSplitButtonToggle}
@@ -552,10 +536,6 @@ class CardViewBasic extends React.Component {
       areAllSelected,
       isChecked
     } = this.state;
-
-    /* const rows = Object.keys(res).map((key) => res[key]); */
-    /* console.log("res is", res); */
-    /* console.log("here", rows); */
 
     const toolbarKebabDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -689,11 +669,21 @@ class CardViewBasic extends React.Component {
           })
         : res;
 
-    const icons = {pfIcon, activeMQIcon, sparkIcon, avroIcon, azureIcon, saxonIcon, dropBoxIcon, infinispanIcon, restIcon, swaggerIcon}
+    const icons = {
+      pfIcon,
+      activeMQIcon,
+      sparkIcon,
+      avroIcon,
+      azureIcon,
+      saxonIcon,
+      dropBoxIcon,
+      infinispanIcon,
+      restIcon,
+      swaggerIcon
+    };
 
     return (
       <React.Fragment>
-        <div>{<pre>Selected List: {JSON.stringify(selectedItems, null, 2)}</pre>}</div>
         <Page
           header={Header}
           sidebar={Sidebar}
@@ -747,12 +737,11 @@ class CardViewBasic extends React.Component {
                           defaultChecked={this.state.itemsCheckedByDefault}
                           aria-label="card checkbox example"
                           id="check-1"
-                          name="check1"
                         />
                       </CardActions>
                     </CardHead>
                     <CardHeader>{product.name}</CardHeader>
-                    <CardBody key={key}>{product.description}</CardBody>
+                    <CardBody>{product.description}</CardBody>
                   </Card>
                 </React.Fragment>
               ))}
