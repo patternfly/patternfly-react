@@ -38,26 +38,28 @@ Packages released:
 - **Dropdown:** 
   - Fixed keyboard selection of toggle causing selection of parent ([#3816](https://github.com/patternfly/patternfly-react/pull/3816))
 - **File upload:** 
-  - Add new beta file upload component ([#3865](https://github.com/patternfly/patternfly-react/pull/3865))
+  - Added new beta file upload component ([#3865](https://github.com/patternfly/patternfly-react/pull/3865))
 - **Input group:** 
   - Updated docs to be more readable ([#3839](https://github.com/patternfly/patternfly-react/pull/3839))
-- **Modal:** Add description property ([#3821](https://github.com/patternfly/patternfly-react/pull/3821))
+- **Modal:** 
+  - Added description property ([#3821](https://github.com/patternfly/patternfly-react/pull/3821))
 - **Pagination:** 
-  - Calculate navigation input according to last page ([#3534](https://github.com/patternfly/patternfly-react/pull/3534))
+  - Updated to calculate navigation input according to last page ([#3534](https://github.com/patternfly/patternfly-react/pull/3534))
 - **Select:** 
   - Added inline filtering to checkbox select ([#3843](https://github.com/patternfly/patternfly-react/pull/3843))
   - Fix panel checkbox labels ([#3820](https://github.com/patternfly/patternfly-react/pull/3820))
 - **Switch:** 
-  - Avoid switch id override by props ([#3706](https://github.com/patternfly/patternfly-react/pull/3706))
+  - Updated to avoid switch id override by props ([#3706](https://github.com/patternfly/patternfly-react/pull/3706))
 - **Tabs:** 
-  - Update tabs with nav examples + add Tab component to props docs ([#3527](https://github.com/patternfly/patternfly-react/pull/3527))
+  - Updated tabs with nav examples + add Tab component to props docs ([#3527](https://github.com/patternfly/patternfly-react/pull/3527))
 - **Tooltip:** 
-  - Remove TooltipContent from propComponents ([#3800](https://github.com/patternfly/patternfly-react/pull/3800))
+  - Removed TooltipContent from propComponents ([#3800](https://github.com/patternfly/patternfly-react/pull/3800))
 - **Wizard:** 
-  - Use patternfly-styles to set the no padding modifier ([#3871](https://github.com/patternfly/patternfly-react/pull/3871))
+  - Used patternfly-styles to set the no padding modifier ([#3871](https://github.com/patternfly/patternfly-react/pull/3871))
 
 ### Catalog view extension
-  - **Catalog tile:** Removed truncation and maxLength props ([#3830](https://github.com/patternfly/patternfly-react/pull/3830))
+- **Catalog tile:** 
+  - Removed truncation and maxLength props ([#3830](https://github.com/patternfly/patternfly-react/pull/3830))
 
 ### Other:
 - **Chore:**
@@ -81,14 +83,15 @@ Packages released:
   - Fixed eslint recommendations ([#3858](https://github.com/patternfly/patternfly-react/pull/3858))
   - Added linting to react styles ([#3723](https://github.com/patternfly/patternfly-react/pull/3723))
   - Added linting react tokens ([#3725](https://github.com/patternfly/patternfly-react/pull/3725))
-- **Ouia:** Updated to not omit ouiaContext ([#3872](https://github.com/patternfly/patternfly-react/pull/3872))
+- **Ouia:** 
+  - Updated to not omit ouiaContext ([#3872](https://github.com/patternfly/patternfly-react/pull/3872))
 
 ### Virtualized extension
 - Resolved linter errors ([#3726](https://github.com/patternfly/patternfly-react/pull/3726))
 
 ### PF3:
 - **Chore:**
-  - Enableed releasing patternfly 3 ([#3863](https://github.com/patternfly/patternfly-react/pull/3863))
+  - Enabled releasing patternfly 3 ([#3863](https://github.com/patternfly/patternfly-react/pull/3863))
   - Removed patternfly-3 packages ([#3852](https://github.com/patternfly/patternfly-react/pull/3852))
   - Created patternfly-3 branch ([#3846](https://github.com/patternfly/patternfly-react/pull/3846))
 
