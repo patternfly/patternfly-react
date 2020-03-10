@@ -20,7 +20,7 @@ const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, 
 const varsRegex = /(--.*):\s*#{(\$pf-[^\s]+)}/g;
 const variables = readFileSync(require.resolve('@patternfly/patternfly/_variables.scss'), 'utf8');
 let matches;
-let cssGlobalsToScssVarsMap = {};
+const cssGlobalsToScssVarsMap = {};
 while ((matches = varsRegex.exec(variables))) {
   cssGlobalsToScssVarsMap[matches[1]] = matches[2];
 }
@@ -32,7 +32,7 @@ const scssVariables = readFileSync(
   'utf8'
 );
 matches = null;
-let scssVarsMap = {};
+const scssVarsMap = {};
 while ((matches = scssVarsRegex.exec(scssVariables))) {
   scssVarsMap[matches[1]] = matches[2].trim();
 }
@@ -41,7 +41,7 @@ const colorsRegex = /(\$.*):\s*([^;^!]+)/g;
 // contains default values and mappings to colors.scss for color values
 const scssColorVariables = readFileSync(require.resolve('@patternfly/patternfly/sass-utilities/colors.scss'), 'utf8');
 matches = null;
-let scssColorsMap = {};
+const scssColorsMap = {};
 while ((matches = colorsRegex.exec(scssColorVariables))) {
   scssColorsMap[matches[1]] = matches[2].trim();
 }
@@ -50,7 +50,7 @@ const cssGlobalVariablesRegex = /(--.*):\s*(.*);/g;
 // contains default values and mappings to colors.scss for color values
 const cssGlobalVariables = readFileSync(require.resolve('@patternfly/patternfly/patternfly-variables.css'), 'utf8');
 matches = null;
-let cssGlobalVariablesMap = {};
+const cssGlobalVariablesMap = {};
 while ((matches = cssGlobalVariablesRegex.exec(cssGlobalVariables))) {
   cssGlobalVariablesMap[matches[1]] = matches[2].trim();
 }
@@ -75,7 +75,7 @@ const formatFilePathToName = filePath => {
 // --pf-c-chip-group--MarginBottom: calc(var(--pf-c-chip-group--c-chip--MarginBottom) * -1);
 // then we need to find:
 // --pf-c-chip-group--c-chip--MarginBottom: var(--pf-global--spacer--xs);
-let localVarsMap = {};
+const localVarsMap = {};
 cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssAst = parse(readFileSync(absFilePath, 'utf8'));
@@ -112,32 +112,36 @@ const getFromLocalMap = (match, selector) => {
       // find the nearest parent selector and return its value
       let bestMatch = '';
       let bestValue = '';
-      for (let key in localVarsMap[match]) {
-        // remove trailing * from key to compare
-        let sanitizedKey = key.replace(/\*$/, '').trim();
-        sanitizedKey = sanitizedKey.replace(/\>$/, '').trim();
-        sanitizedKey = sanitizedKey.replace(/\[.*\]$/, '').trim();
-        // is key a parent of selector?
-        if (selector.indexOf(sanitizedKey) > -1) {
-          if (sanitizedKey.length > bestMatch.length) {
-            // longest matching key is the winner
-            bestMatch = key;
-            bestValue = localVarsMap[match][key];
+      for (const key in localVarsMap[match]) {
+        if (localVarsMap[match].hasOwnProperty(key)) {
+          // remove trailing * from key to compare
+          let sanitizedKey = key.replace(/\*$/, '').trim();
+          sanitizedKey = sanitizedKey.replace(/>$/, '').trim();
+          sanitizedKey = sanitizedKey.replace(/\[.*\]$/, '').trim();
+          // is key a parent of selector?
+          if (selector.indexOf(sanitizedKey) > -1) {
+            if (sanitizedKey.length > bestMatch.length) {
+              // longest matching key is the winner
+              bestMatch = key;
+              bestValue = localVarsMap[match][key];
+            }
           }
         }
       }
       if (!bestMatch) {
+        // eslint-disable-next-line no-console
         console.error(`no matching selector found for ${match} in localVarsMap`);
       }
       return bestValue;
     }
   } else {
+    // eslint-disable-next-line no-console
     console.error(`no matching property found for ${match} in localVarsMap`);
   }
 };
 
-const getComputedCssVarValue = (value, selector) => {
-  return value.replace(/var\(([\w|-]*)\)/g, (full, match) => {
+const getComputedCssVarValue = (value, selector) =>
+  value.replace(/var\(([\w|-]*)\)/g, (full, match) => {
     if (match.startsWith('--pf-global')) {
       if (cssGlobalsToScssVarsMap[match]) {
         return cssGlobalsToScssVarsMap[match];
@@ -150,10 +154,9 @@ const getComputedCssVarValue = (value, selector) => {
       }
     }
   });
-};
 
-const getFinalValue = (value, selector) => {
-  return value.replace(/var\(([\w|-]*)\)/g, (full, match) => {
+const getFinalValue = (value, selector) =>
+  value.replace(/var\(([\w|-]*)\)/g, (full, match) => {
     if (match.startsWith('--pf-global')) {
       if (cssGlobalVariablesMap[match]) {
         return cssGlobalVariablesMap[match];
@@ -166,18 +169,15 @@ const getFinalValue = (value, selector) => {
       }
     }
   });
-};
 
-const getComputedScssVarValue = value => {
-  return value.replace(/\$pf[^,)\s\*\/]*/g, match => {
+const getComputedScssVarValue = value =>
+  value.replace(/\$pf[^,)\s*/]*/g, match => {
     if (combinedScssVarsColorsMap[match]) {
       return combinedScssVarsColorsMap[match];
     } else {
-      debugger;
       return match;
     }
   });
-};
 
 const getVarsMap = (value, selector) => {
   // evaluate the value and follow the variable chain
@@ -208,8 +208,8 @@ const getVarsMap = (value, selector) => {
   // all values should not be boxed by var()
   varsMap = varsMap.map(variable => variable.replace(/var\(([\w|-]*)\)/g, (full, match) => match));
 
-  return varsMap
-}
+  return varsMap;
+};
 
 const tokens = {};
 cssFiles.forEach(filePath => {
@@ -229,11 +229,10 @@ cssFiles.forEach(filePath => {
       }
       const { property, value, parent } = decl;
       if (property.startsWith('--pf')) {
-
         const selector = parent.selectors[0];
 
         const varsMap = getVarsMap(value, selector);
-        let propertyObj = {
+        const propertyObj = {
           property,
           value: varsMap[varsMap.length - 1],
           token: formatCustomPropertyName(property)
@@ -244,14 +243,14 @@ cssFiles.forEach(filePath => {
 
         if (tokens[key]) {
           if (tokens[key][selector]) {
-            tokens[key][selector].push(propertyObj)
+            tokens[key][selector].push(propertyObj);
           } else {
-            tokens[key][selector] = [propertyObj]
+            tokens[key][selector] = [propertyObj];
           }
         } else {
           tokens[key] = {
             [selector]: [propertyObj]
-          }
+          };
         }
       }
     });
