@@ -32,12 +32,11 @@ exports[`Modal Content Test description 1`] = `
         Test Modal Content title
          
       </ModalBoxHeader>
-      <div
-        className="pf-c-modal-box__description"
+      <ModalBoxDescription
         id="id"
       >
         This is a test description.
-      </div>
+      </ModalBoxDescription>
       <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
