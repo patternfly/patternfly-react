@@ -6,15 +6,15 @@ releaseNoteTOC: true
 
 ## 2020.03 release notes (2020-03-10)
 Packages released:
-- [@patternfly/react-catalog-view-extension: 1.4.27](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.27)
+- [@patternfly/react-catalog-view-extension: 1.4.29](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.29)
 - [@patternfly/react-charts: 5.3.12](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.12)
-- [@patternfly/react-core: 3.145.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.145.2)
-- [@patternfly/react-inline-edit-extension: 2.17.27](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.27)
+- [@patternfly/react-core: 3.146.0](https://www.npmjs.com/package/@patternfly/react-core/v/3.146.0)
+- [@patternfly/react-inline-edit-extension: 2.17.29](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.29)
 - [@patternfly/react-styles: 3.7.8](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.8)
-- [@patternfly/react-table: 2.28.8](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.8)
+- [@patternfly/react-table: 2.28.10](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.10)
 - [@patternfly/react-tokens: 2.8.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.8)
 - [@patternfly/react-topology: 2.14.27](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.27)
-- [@patternfly/react-virtualized-extension: 1.4.28](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.28)
+- [@patternfly/react-virtualized-extension: 1.4.29](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.29)
 - [@patternfly/react-icons: 3.15.11](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.11)
 
 ### Components:
@@ -25,6 +25,8 @@ Packages released:
 - **Drawer:**
   - Added console warning to Drawer beta component ([#3856](https://github.com/patternfly/patternfly-react/pull/3856))
   - Updated drawer for Master/Detail support ([#3884](https://github.com/patternfly/patternfly-react/pull/3884))
+- **Dropdown**
+  - Updated to Destructure bubbleEvent from props to avoid it passing to button el ([#3894](https://github.com/patternfly/patternfly-react/pull/3894)) 
 - **Button:** 
   - Added link icon position for link buttons ([#3798](https://github.com/patternfly/patternfly-react/pull/3798))
 - **Card:** 
