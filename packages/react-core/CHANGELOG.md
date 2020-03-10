@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.146.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.145.3...@patternfly/react-core@3.146.0) (2020-03-10)
+
+
+### Features
+
+* **Modal:** move description to separate component ([#3897](https://github.com/patternfly/patternfly-react/issues/3897)) ([97eb9d8](https://github.com/patternfly/patternfly-react/commit/97eb9d8766febf5dd97424c4c7868f80441b8386))
+
+
+
+
+
 ## [3.145.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.145.2...@patternfly/react-core@3.145.3) (2020-03-09)
 
 **Note:** Version bump only for package @patternfly/react-core
