@@ -1,6 +1,6 @@
 # @patternfly/react-icons
 
-PatternFly 4 Icons as React Components. test
+PatternFly 4 Icons as React Components.
 
 ## Usage
 
