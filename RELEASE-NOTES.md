@@ -45,7 +45,7 @@ Packages released:
   - Updated docs to be more readable ([#3839](https://github.com/patternfly/patternfly-react/pull/3839))
 - **Modal:** 
   - Added description property ([#3897](https://github.com/patternfly/patternfly-react/pull/3821))
-  - Move description to separate component ([#3821](https://github.com/patternfly/patternfly-react/pull/3897))
+  - Moved description to separate component ([#3821](https://github.com/patternfly/patternfly-react/pull/3897))
 - **Pagination:** 
   - Updated to calculate navigation input according to last page ([#3534](https://github.com/patternfly/patternfly-react/pull/3534))
 - **Select:** 
