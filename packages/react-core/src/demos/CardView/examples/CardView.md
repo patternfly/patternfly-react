@@ -145,7 +145,6 @@ class CardViewBasic extends React.Component {
       selectedItems: [],
       areAllSelected: false,
       itemsCheckedByDefault: false,
-      numSelected: 0,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
       isLowerToolbarDropdownOpen: false,
@@ -154,7 +153,8 @@ class CardViewBasic extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 10
+      perPage: 10,
+      totalItemCount: 10
     };
 
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
@@ -224,8 +224,9 @@ class CardViewBasic extends React.Component {
     };
 
     this.deleteItem = item => event => {
-      const { res } = this.state;
+      const { res, selectedItems } = this.state;
       res.splice(res.indexOf(item), 1);
+      selectedItems.length -= 1;
 
       this.setState({
         res
@@ -310,7 +311,7 @@ class CardViewBasic extends React.Component {
     let collection = [];
 
     if (checked) {
-      for (var i = 0; i <= 19; i++) collection = [...collection, i];
+      for (var i = 0; i <= 9; i++) collection = [...collection, i];
     }
 
     this.setState(
@@ -345,7 +346,7 @@ class CardViewBasic extends React.Component {
     const { isChecked } = this.state;
 
     let collection = [];
-    for (var i = 0; i <= 19; i++) collection = [...collection, i];
+    for (var i = 0; i <= 9; i++) collection = [...collection, i];
 
     this.setState(
       {
@@ -382,12 +383,13 @@ class CardViewBasic extends React.Component {
 
   handleCheckboxClick(checked, e) {
     const { value } = e.target;
+    const { totalItemCount } = this.state;
 
     if (checked) {
       const collection = this.getAllItems();
       this.setState(prevState => ({
         selectedItems: [...prevState.selectedItems, value * 1],
-        areAllSelected: collection.length === prevState.selectedItems.length + 1
+        areAllSelected: totalItemCount === prevState.selectedItems.length + 1
       }));
     } else {
       this.setState(prevState => ({
@@ -413,22 +415,19 @@ class CardViewBasic extends React.Component {
     fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ res: resp, perPage, page }))
-      .then(() => console.log('type of res', typeof res))
-      .then(() => console.log('res:', res))
       .then(() => this.updateSelected())
       .catch(err => this.setState({ error: err }));
   }
 
   componentDidMount() {
     this.fetch(this.state.page, this.state.perPage);
-    /* console.log(this.fetch(this.state.page, this.state.perPage)) */
   }
 
   renderPagination() {
-    const { page, perPage } = this.state;
+    const { page, perPage, totalItemCount } = this.state;
     return (
       <Pagination
-        itemCount={20}
+        itemCount={totalItemCount}
         page={page}
         perPage={perPage}
         onSetPage={(_evt, value) => {
@@ -457,7 +456,7 @@ class CardViewBasic extends React.Component {
         Select page ({this.state.perPage} items)
       </DropdownItem>,
       <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
-        Select all (20 items)
+        Select all ({this.state.totalItemCount} items)
       </DropdownItem>
     ];
 
