@@ -683,7 +683,6 @@ class CardViewBasic extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <pre>selected items: {JSON.stringify(selectedItems)}</pre>
         </div>
         <Page
           header={Header}
