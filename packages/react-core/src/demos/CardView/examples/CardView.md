@@ -224,14 +224,14 @@ class CardViewBasic extends React.Component {
     };
 
     this.deleteItem = item => event => {
-      const { res, selectedItems } = this.state;
-      res.splice(res.indexOf(item), 1);
-      selectedItems.length -= 1;
-
+      const filter = getter => val => getter(val) !== item.id
       this.setState({
-        res
-      });
-    };
+        res: this.state.res.filter(filter(({id})=>id)),
+        selectedItems: this.state.selectedItems.filter(
+          filter(id=>id)
+        )
+      })
+    }
 
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
@@ -307,7 +307,7 @@ class CardViewBasic extends React.Component {
 
   splitCheckboxSelectAll(e) {
     const { checked } = e.target;
-    const { isChecked } = this.state;
+    const { isChecked, res } = this.state;
     let collection = [];
 
     if (checked) {
@@ -682,8 +682,13 @@ class CardViewBasic extends React.Component {
       swaggerIcon
     };
 
+    console.log("res", res);
+    console.log("selecteditems", JSON.stringify(selectedItems))
+
+
     return (
       <React.Fragment>
+      <div><pre>selected items: {JSON.stringify(selectedItems)}</pre></div>
         <Page
           header={Header}
           sidebar={Sidebar}
