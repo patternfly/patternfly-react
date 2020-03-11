@@ -224,14 +224,12 @@ class CardViewBasic extends React.Component {
     };
 
     this.deleteItem = item => event => {
-      const filter = getter => val => getter(val) !== item.id
+      const filter = getter => val => getter(val) !== item.id;
       this.setState({
-        res: this.state.res.filter(filter(({id})=>id)),
-        selectedItems: this.state.selectedItems.filter(
-          filter(id=>id)
-        )
-      })
-    }
+        res: this.state.res.filter(filter(({ id }) => id)),
+        selectedItems: this.state.selectedItems.filter(filter(id => id))
+      });
+    };
 
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
@@ -682,13 +680,11 @@ class CardViewBasic extends React.Component {
       swaggerIcon
     };
 
-    console.log("res", res);
-    console.log("selecteditems", JSON.stringify(selectedItems))
-
-
     return (
       <React.Fragment>
-      <div><pre>selected items: {JSON.stringify(selectedItems)}</pre></div>
+        <div>
+          <pre>selected items: {JSON.stringify(selectedItems)}</pre>
+        </div>
         <Page
           header={Header}
           sidebar={Sidebar}
