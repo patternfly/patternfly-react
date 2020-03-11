@@ -13,8 +13,8 @@ Packages released:
 - [@patternfly/react-styles: 3.7.8](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.8)
 - [@patternfly/react-table: 2.28.10](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.10)
 - [@patternfly/react-tokens: 2.8.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.8)
-- [@patternfly/react-topology: 2.14.27](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.27)
-- [@patternfly/react-virtualized-extension: 1.4.29](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.29)
+- [@patternfly/react-topology: 2.14.29](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.27)
+- [@patternfly/react-virtualized-extension: 1.4.30](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.30)
 - [@patternfly/react-icons: 3.15.11](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.11)
 
 ### Components:
@@ -44,7 +44,8 @@ Packages released:
 - **Input group:** 
   - Updated docs to be more readable ([#3839](https://github.com/patternfly/patternfly-react/pull/3839))
 - **Modal:** 
-  - Added description property ([#3821](https://github.com/patternfly/patternfly-react/pull/3821))
+  - Added description property ([#3897](https://github.com/patternfly/patternfly-react/pull/3821))
+  - Move description to separate component ([#3821](https://github.com/patternfly/patternfly-react/pull/3897))
 - **Pagination:** 
   - Updated to calculate navigation input according to last page ([#3534](https://github.com/patternfly/patternfly-react/pull/3534))
 - **Select:** 
