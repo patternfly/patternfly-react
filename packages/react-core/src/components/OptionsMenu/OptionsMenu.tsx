@@ -30,8 +30,6 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
   isText?: boolean;
   /** Flag to indicate if menu is groupped */
   isGrouped?: boolean;
-  /** Provides an accessible name for the options menu */
-  ariaLabelMenu?: string;
   /** Indicates where menu will be aligned horizontally */
   position?: 'right' | 'left';
   /** Menu will open up or open down from the options menu toggle */

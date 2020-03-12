@@ -88,7 +88,7 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
             {!isReadOnly && (
               <ChipButton
                 onClick={onClick}
-                ariaLabel={closeBtnAriaLabel}
+                aria-label={closeBtnAriaLabel}
                 id={`remove_${randomId}`}
                 aria-labelledby={`remove_${randomId} ${randomId}`}
               >
@@ -110,7 +110,7 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
         {!isReadOnly && (
           <ChipButton
             onClick={onClick}
-            ariaLabel={closeBtnAriaLabel}
+            aria-label={closeBtnAriaLabel}
             id={`remove_${randomId}`}
             aria-labelledby={`remove_${randomId} ${randomId}`}
           >

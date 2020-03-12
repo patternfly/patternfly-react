@@ -60,7 +60,7 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
         isActive={isActive}
         isFocused={isFocused}
         id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
-        ariaHasPopup="listbox"
+        aria-haspopup="listbox"
         aria-label={ariaLabel}
         aria-expanded={isOpen}
         {...(toggleTemplate ? { children: toggleTemplate } : {})}

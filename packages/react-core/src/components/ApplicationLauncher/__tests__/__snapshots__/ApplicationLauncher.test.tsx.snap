@@ -127,8 +127,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
+        aria-haspopup={true}
         aria-label="Application launcher"
-        ariaHasPopup={true}
         iconComponent={null}
         id="pf-toggle-id-5"
         isDisabled={false}
@@ -257,8 +257,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Application launcher"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="pf-toggle-id-5"
@@ -882,8 +882,8 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
+        aria-haspopup={true}
         aria-label="Application launcher"
-        ariaHasPopup={true}
         iconComponent={null}
         id="pf-toggle-id-3"
         isDisabled={false}
@@ -931,8 +931,8 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Application launcher"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="pf-toggle-id-3"
@@ -1158,8 +1158,8 @@ exports[`ApplicationLauncher dropup 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
+        aria-haspopup={true}
         aria-label="Application launcher"
-        ariaHasPopup={true}
         iconComponent={null}
         id="pf-toggle-id-2"
         isDisabled={false}
@@ -1207,8 +1207,8 @@ exports[`ApplicationLauncher dropup 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Application launcher"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="pf-toggle-id-2"
@@ -1434,8 +1434,8 @@ exports[`ApplicationLauncher expanded 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
+        aria-haspopup={true}
         aria-label="Application launcher"
-        ariaHasPopup={true}
         iconComponent={null}
         id="pf-toggle-id-4"
         isDisabled={false}
@@ -1563,8 +1563,8 @@ exports[`ApplicationLauncher expanded 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Application launcher"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="pf-toggle-id-4"
@@ -2185,8 +2185,8 @@ exports[`ApplicationLauncher regular 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
+        aria-haspopup={true}
         aria-label="Application launcher"
-        ariaHasPopup={true}
         iconComponent={null}
         id="pf-toggle-id-0"
         isDisabled={false}
@@ -2234,8 +2234,8 @@ exports[`ApplicationLauncher regular 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Application launcher"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="pf-toggle-id-0"
@@ -2461,8 +2461,8 @@ exports[`ApplicationLauncher right aligned 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
+        aria-haspopup={true}
         aria-label="Application launcher"
-        ariaHasPopup={true}
         iconComponent={null}
         id="pf-toggle-id-1"
         isDisabled={false}
@@ -2510,8 +2510,8 @@ exports[`ApplicationLauncher right aligned 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Application launcher"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="pf-toggle-id-1"

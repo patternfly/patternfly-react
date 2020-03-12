@@ -22,8 +22,8 @@ exports[`Select should match snapshot (auto-generated) 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="'Options menu'"
-      ariaLabelledBy="'' null"
+      aria-label="'Options menu'"
+      aria-labelledby="'' null"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}

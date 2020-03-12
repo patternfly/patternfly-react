@@ -101,7 +101,7 @@ class SingleSelectInput extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
         >
@@ -209,7 +209,7 @@ class CheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options}
         </Select>
@@ -289,7 +289,7 @@ class GroupedCheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isGrouped
         >
           {this.options}
@@ -390,7 +390,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           onFilter={this.onFilter}
           onClear={this.clearSelection}
           isGrouped
@@ -487,13 +487,13 @@ class TypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
@@ -603,14 +603,14 @@ class TypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           onFilter={this.customFilter}
           selections={selected}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
         >
           {options}
@@ -702,13 +702,13 @@ class MultiTypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
           isCreatable={isCreatable}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
@@ -824,14 +824,14 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           onFilter={this.customFilter}
           selections={selected}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
         >
           {this.options}
@@ -904,14 +904,14 @@ class PlainSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
           isExpanded={isExpanded}
           isPlain={isPlain}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
@@ -976,7 +976,7 @@ class SingleSelectInput extends React.Component {
           aria-label="Select Input"
           onToggle={this.onToggle}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
           customContent="[Panel contents here]"

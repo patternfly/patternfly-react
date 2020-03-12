@@ -19,7 +19,6 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
   }
 >
   <DropdownWithContext
-    ariaLabelMenu="string"
     autoFocus={true}
     className="''"
     direction="up"

@@ -8,7 +8,7 @@ export interface OptionsMenuItemGroupProps extends React.HTMLProps<HTMLElement> 
   /** Classes applied to root element of the options menu items group */
   className?: string;
   /** Provides an accessible name for the options menu items group */
-  ariaLabel?: string;
+  'aria-label'?: string;
   /** Optional title for the options menu items group */
   groupTitle?: string | React.ReactNode;
   /** Flag indicating this options menu items group will be followed by a horizontal separator */
@@ -17,7 +17,7 @@ export interface OptionsMenuItemGroupProps extends React.HTMLProps<HTMLElement> 
 
 export const OptionsMenuItemGroup: React.FunctionComponent<OptionsMenuItemGroupProps> = ({
   className = '',
-  ariaLabel = '',
+  'aria-label': ariaLabel = '',
   groupTitle = '',
   children = null,
   hasSeparator = false,

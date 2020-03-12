@@ -380,7 +380,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onSelect={this.singleOnSelect}
             selections={singleSelected}
             isExpanded={singleIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             direction={this.state.direction}
             maxHeight={200}
           >
@@ -424,7 +424,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onSelect={this.disabledSingleOnSelect}
             selections={disabledSingleSelected}
             isExpanded={disabledSingleIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             isDisabled
           >
             {this.singleOptions.map((option, index) => (
@@ -459,7 +459,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onSelect={this.customSingleOnSelect}
             selections={customSingleSelected}
             isExpanded={customSingleIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
           >
             <SelectOption key={0} value="Choose..." isPlaceholder>
               Choose...
@@ -514,7 +514,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             selections={checkSelected}
             isExpanded={checkIsExpanded}
             placeholderText="Filter by status"
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
           >
             {this.checkboxOptions}
           </Select>
@@ -548,7 +548,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onClear={this.clearSelection}
             selections={typeaheadSelected}
             isExpanded={typeaheadIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
             onCreateOption={(typeaheadNewOptions && this.typeaheadCreateNew) || undefined}
@@ -600,7 +600,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onClear={this.clearSelection}
             selections={typeaheadMultiSelected}
             isExpanded={typeaheadMultiIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             placeholderText="Select a state"
           >
             {this.state.typeaheadOptions.map((option, index) => (
@@ -632,7 +632,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onClear={this.clearSelection}
             selections={cdtypeaheadMultiSelected}
             isExpanded={cdtypeaheadMultiIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             placeholderText="Select a state"
           >
             {this.customTypeaheadOptions.map((option, index) => (
@@ -664,7 +664,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onClear={this.clearSelection}
             selections={customTypeaheadMultiSelected}
             isExpanded={customTypeaheadMultiIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             placeholderText="Select a state"
           >
             {this.state.typeaheadOptions.map((option, index) => (
@@ -703,7 +703,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             selections={plainTypeaheadMultiSelected}
             isExpanded={plainTypeaheadMultiIsExpanded}
             isPlain={plainTypeaheadMultiIsPlain}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             placeholderText="Select a state"
           >
             {this.state.typeaheadOptions.map((option, index) => (
@@ -737,7 +737,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.customContentOnToggle}
             isExpanded={customContentIsExpanded}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             direction={this.state.direction}
             maxHeight={200}
             placeholderText="Custom Content..."
@@ -770,7 +770,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onClear={() => null}
             selections={''}
             isExpanded={false}
-            ariaLabelledBy={titleId}
+            aria-labelledby={titleId}
             placeholderText="Select a state"
           >
             <SelectOption value={'option1'} />

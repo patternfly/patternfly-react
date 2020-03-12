@@ -13,7 +13,7 @@ it('WizardHeader should match snapshot (auto-generated)', () => {
       onClose={() => undefined}
       title={'string'}
       description={'string'}
-      ariaLabelCloseButton={'string'}
+      closeButtonAriaLabel={'string'}
       titleId={'string'}
       descriptionId={'string'}
     />

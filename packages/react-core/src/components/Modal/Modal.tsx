@@ -24,8 +24,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   hideTitle?: boolean;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
-  /** Id to use for Modal Box description */
-  ariaDescribedById?: string;
+  /** Id to use for Modal Box descriptor */
+  modalContentAriaDescribedById?: string;
   /** Custom footer */
   footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
@@ -61,7 +61,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     isOpen: false,
     hideTitle: false,
     showClose: true,
-    ariaDescribedById: '',
+    modalContentAriaDescribedById: '',
     actions: [] as any[],
     isFooterLeftAligned: false,
     onClose: () => undefined as any,
@@ -158,7 +158,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         {...props}
         title={this.props.title}
         id={this.id}
-        ariaDescribedById={this.props.ariaDescribedById}
+        modalBoxAriaDescribedById={this.props.modalContentAriaDescribedById}
       />,
       container
     );

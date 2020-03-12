@@ -2,8 +2,8 @@
 
 exports[`state active 1`] = `
 <SelectToggle
-  ariaLabelToggle=""
-  ariaLabelledBy=""
+  aria-label=""
+  aria-labelledby=""
   className=""
   hasClearButton={false}
   id="Select Toggle"
@@ -70,8 +70,8 @@ exports[`state active 1`] = `
 
 exports[`state focus 1`] = `
 <SelectToggle
-  ariaLabelToggle=""
-  ariaLabelledBy=""
+  aria-label=""
+  aria-labelledby=""
   className=""
   hasClearButton={false}
   id="Select Toggle"
@@ -138,8 +138,8 @@ exports[`state focus 1`] = `
 
 exports[`state hover 1`] = `
 <SelectToggle
-  ariaLabelToggle=""
-  ariaLabelledBy=""
+  aria-label=""
+  aria-labelledby=""
   className=""
   hasClearButton={false}
   id="Select Toggle"

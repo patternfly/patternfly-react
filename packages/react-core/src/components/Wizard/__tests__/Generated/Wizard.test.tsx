@@ -24,7 +24,7 @@ it('Wizard should match snapshot (auto-generated)', () => {
       className={"''"}
       steps={[]}
       startAtStep={1}
-      ariaLabelNav={"'Steps'"}
+      navAriaLabel={"'Steps'"}
       hasBodyPadding={true}
       footer={null}
       onSave={() => undefined as void}
@@ -33,7 +33,7 @@ it('Wizard should match snapshot (auto-generated)', () => {
       nextButtonText={"'Next'"}
       backButtonText={"'Back'"}
       cancelButtonText={"'Cancel'"}
-      ariaLabelCloseButton={"'Close'"}
+      closeButtonAriaLabel={"'Close'"}
       appendTo={null}
     />
   );

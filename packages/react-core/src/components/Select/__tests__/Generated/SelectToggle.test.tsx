@@ -25,8 +25,8 @@ it('SelectToggle should match snapshot (auto-generated)', () => {
       isPlain={false}
       isDisabled={false}
       type={'button'}
-      ariaLabelledBy={"''"}
-      ariaLabelToggle={"''"}
+      aria-labelledby={"''"}
+      aria-label={"''"}
       variant={'single'}
     />
   );

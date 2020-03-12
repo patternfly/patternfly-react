@@ -33,7 +33,7 @@ exports[`KebabToggle basic 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={false}
+        aria-haspopup={false}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -82,8 +82,8 @@ exports[`KebabToggle basic 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={false}
           aria-label="Actions"
-          ariaHasPopup={false}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -501,7 +501,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -543,8 +543,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Actions"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -932,7 +932,7 @@ exports[`KebabToggle dropup 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -974,8 +974,8 @@ exports[`KebabToggle dropup 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Actions"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -1363,7 +1363,7 @@ exports[`KebabToggle expanded 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -1480,8 +1480,8 @@ exports[`KebabToggle expanded 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Actions"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -2213,7 +2213,7 @@ exports[`KebabToggle plain 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={true}
@@ -2255,8 +2255,8 @@ exports[`KebabToggle plain 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Actions"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -2643,7 +2643,7 @@ exports[`KebabToggle regular 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -2685,8 +2685,8 @@ exports[`KebabToggle regular 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Actions"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -3074,7 +3074,7 @@ exports[`KebabToggle right aligned 1`] = `
       data-ouia-safe={true}
     >
       <KebabToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -3116,8 +3116,8 @@ exports[`KebabToggle right aligned 1`] = `
         }
       >
         <Toggle
+          aria-haspopup={true}
           aria-label="Actions"
-          ariaHasPopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -3248,7 +3248,7 @@ exports[`dropdown basic 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={false}
+        aria-haspopup={false}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -3302,7 +3302,7 @@ exports[`dropdown basic 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={false}
+          aria-haspopup={false}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -3735,7 +3735,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -3782,7 +3782,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={true}
+          aria-haspopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -4185,7 +4185,7 @@ exports[`dropdown dropup 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -4232,7 +4232,7 @@ exports[`dropdown dropup 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={true}
+          aria-haspopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -4635,7 +4635,7 @@ exports[`dropdown expanded 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -4757,7 +4757,7 @@ exports[`dropdown expanded 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={true}
+          aria-haspopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -5505,7 +5505,7 @@ exports[`dropdown primary 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -5553,7 +5553,7 @@ exports[`dropdown primary 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={true}
+          aria-haspopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -5955,7 +5955,7 @@ exports[`dropdown regular 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -6002,7 +6002,7 @@ exports[`dropdown regular 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={true}
+          aria-haspopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"
@@ -6405,7 +6405,7 @@ exports[`dropdown right aligned 1`] = `
       data-ouia-safe={true}
     >
       <DropdownToggle
-        ariaHasPopup={true}
+        aria-haspopup={true}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -6452,7 +6452,7 @@ exports[`dropdown right aligned 1`] = `
         }
       >
         <Toggle
-          ariaHasPopup={true}
+          aria-haspopup={true}
           bubbleEvent={false}
           className=""
           id="Dropdown Toggle"

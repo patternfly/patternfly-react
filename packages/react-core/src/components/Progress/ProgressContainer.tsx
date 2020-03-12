@@ -20,7 +20,7 @@ export enum ProgressVariant {
 
 export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Properties needed for aria support */
-  ariaProps?: AriaProps;
+  progressBarAriaProps?: AriaProps;
   /** Progress component DOM ID. */
   parentId: string;
   /** Progress title. */
@@ -41,7 +41,7 @@ const variantToIcon: { [k: string]: React.FunctionComponent } = {
 };
 
 export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({
-  ariaProps,
+  progressBarAriaProps,
   value,
   title = '',
   parentId,
@@ -65,7 +65,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
           </span>
         )}
       </div>
-      <ProgressBar ariaProps={ariaProps} value={value}>
+      <ProgressBar progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
     </React.Fragment>
