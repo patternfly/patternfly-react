@@ -31,6 +31,12 @@ export enum TableVariant {
   compact = 'compact'
 }
 
+export enum SelectedRowsAmount {
+  all = 'all',
+  some = 'some',
+  none = 'none'
+}
+
 export type RowEditType = 'save' | 'cancel' | 'edit';
 
 export interface RowErrors {
@@ -103,7 +109,7 @@ export interface IColumn {
     contentId?: string;
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
-    allRowsSelected?: boolean;
+    selectedRowsAmount?: SelectedRowsAmount;
   };
 }
 
@@ -333,11 +339,17 @@ export class Table extends React.Component<TableProps & OUIAProps, {}> {
 
   isSelected = (row: IRow) => row.selected === true;
 
-  areAllRowsSelected = (rows: IRow[]) => {
+  howManyRowsSelected = (rows: IRow[]) => {
     if (rows === undefined || rows.length === 0) {
-      return false;
+      return SelectedRowsAmount.none;
     }
-    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+    const selectableRows = rows.filter(row => !(row.hasOwnProperty('parent') && !row.showSelect));
+    const count = selectableRows.filter(row => this.isSelected(row)).length;
+    return count === 0
+      ? SelectedRowsAmount.none
+      : count === selectableRows.length
+      ? SelectedRowsAmount.all
+      : SelectedRowsAmount.some;
   };
 
   componentDidMount() {
@@ -394,7 +406,7 @@ export class Table extends React.Component<TableProps & OUIAProps, {}> {
       onSort,
       onSelect,
       canSelectAll,
-      allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
+      selectedRowsAmount: onSelect ? this.howManyRowsSelected(rows as IRow[]) : SelectedRowsAmount.none,
       actions,
       actionResolver,
       areActionsDisabled,

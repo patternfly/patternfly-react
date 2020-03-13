@@ -22,7 +22,8 @@ import {
   truncate,
   breakWord,
   fitContent,
-  ICell
+  ICell,
+  SelectedRowsAmount
 } from './index';
 import { rows, columns, editableRows, editableColumns, actions } from '../../test-helpers/data-sets';
 import { ColumnsType } from './base';
@@ -278,7 +279,7 @@ test('Selectable table with selected expandable row', () => {
     </Table>
   );
 
-  expect(view.find('input[name="check-all"]').prop('checked')).toEqual(true);
+  expect(view.find('input[name="check-all"]').prop('data-selectedrowsamount')).toEqual(SelectedRowsAmount.all);
 });
 
 test('Empty state table', () => {

@@ -138,7 +138,6 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -152,6 +151,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -182,7 +182,6 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -196,6 +195,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -225,7 +225,6 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -239,6 +238,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -268,7 +268,6 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -282,6 +281,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -311,7 +311,6 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -325,6 +324,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -355,7 +355,6 @@ exports[`Actions virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": [Function],
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": [Function],
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -369,6 +368,7 @@ exports[`Actions virtualized table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -438,7 +438,6 @@ exports[`Actions virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": [Function],
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": [Function],
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -452,6 +451,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -482,7 +482,6 @@ exports[`Actions virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": [Function],
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": [Function],
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -496,6 +495,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -525,7 +525,6 @@ exports[`Actions virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": [Function],
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": [Function],
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -539,6 +538,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -568,7 +568,6 @@ exports[`Actions virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": [Function],
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": [Function],
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -582,6 +581,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -611,7 +611,6 @@ exports[`Actions virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": [Function],
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": [Function],
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -625,6 +624,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -655,7 +655,6 @@ exports[`Actions virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": [Function],
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": [Function],
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -669,6 +668,7 @@ exports[`Actions virtualized table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -732,7 +732,6 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -746,6 +745,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -776,7 +776,6 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -790,6 +789,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -819,7 +819,6 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -833,6 +832,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -862,7 +862,6 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -876,6 +875,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -905,7 +905,6 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -919,6 +918,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -949,7 +949,6 @@ exports[`Actions virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": [Function],
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": [Function],
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -963,6 +962,7 @@ exports[`Actions virtualized table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -1283,7 +1283,6 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -1297,6 +1296,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1327,7 +1327,6 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -1341,6 +1340,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1371,7 +1371,6 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -1385,6 +1384,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1414,7 +1414,6 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -1428,6 +1427,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1457,7 +1457,6 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -1471,6 +1470,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1500,7 +1500,6 @@ exports[`Selectable virtualized table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -1514,6 +1513,7 @@ exports[`Selectable virtualized table 1`] = `
             "onSelect": [Function],
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -1583,7 +1583,6 @@ exports[`Selectable virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -1597,6 +1596,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1627,7 +1627,6 @@ exports[`Selectable virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -1641,6 +1640,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1671,7 +1671,6 @@ exports[`Selectable virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -1685,6 +1684,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1714,7 +1714,6 @@ exports[`Selectable virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -1728,6 +1727,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1757,7 +1757,6 @@ exports[`Selectable virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -1771,6 +1770,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1800,7 +1800,6 @@ exports[`Selectable virtualized table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -1814,6 +1813,7 @@ exports[`Selectable virtualized table 1`] = `
                       "onSelect": [Function],
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -1877,7 +1877,6 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -1891,6 +1890,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -1921,7 +1921,6 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -1935,6 +1934,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -1965,7 +1965,6 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -1979,6 +1978,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2008,7 +2008,6 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -2022,6 +2021,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2051,7 +2051,6 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -2065,6 +2064,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2094,7 +2094,6 @@ exports[`Selectable virtualized table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -2108,6 +2107,7 @@ exports[`Selectable virtualized table 1`] = `
                           "onSelect": [Function],
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -2146,13 +2146,13 @@ exports[`Selectable virtualized table 1`] = `
                       >
                         <SelectColumn
                           aria-label="Select all rows"
-                          checked={false}
+                          data-selectedrowsamount="none"
                           name="check-all"
                           onSelect={[Function]}
                         >
                           <input
                             aria-label="Select all rows"
-                            checked={false}
+                            data-selectedrowsamount="none"
                             name="check-all"
                             onChange={[Function]}
                             type="checkbox"
@@ -2493,7 +2493,6 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -2507,6 +2506,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2556,7 +2556,6 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -2570,6 +2569,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2618,7 +2618,6 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -2632,6 +2631,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2680,7 +2680,6 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -2694,6 +2693,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2742,7 +2742,6 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -2756,6 +2755,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2805,7 +2805,6 @@ exports[`Simple Actions table 1`] = `
                 "title": "Third action",
               },
             ],
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -2819,6 +2818,7 @@ exports[`Simple Actions table 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -2907,7 +2907,6 @@ exports[`Simple Actions table 1`] = `
                           "title": "Third action",
                         },
                       ],
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -2921,6 +2920,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -2970,7 +2970,6 @@ exports[`Simple Actions table 1`] = `
                           "title": "Third action",
                         },
                       ],
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -2984,6 +2983,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3032,7 +3032,6 @@ exports[`Simple Actions table 1`] = `
                           "title": "Third action",
                         },
                       ],
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -3046,6 +3045,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3094,7 +3094,6 @@ exports[`Simple Actions table 1`] = `
                           "title": "Third action",
                         },
                       ],
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -3108,6 +3107,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3156,7 +3156,6 @@ exports[`Simple Actions table 1`] = `
                           "title": "Third action",
                         },
                       ],
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -3170,6 +3169,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3219,7 +3219,6 @@ exports[`Simple Actions table 1`] = `
                           "title": "Third action",
                         },
                       ],
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -3233,6 +3232,7 @@ exports[`Simple Actions table 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -3315,7 +3315,6 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -3329,6 +3328,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3378,7 +3378,6 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -3392,6 +3391,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3440,7 +3440,6 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -3454,6 +3453,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3502,7 +3502,6 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -3516,6 +3515,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3564,7 +3564,6 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -3578,6 +3577,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3627,7 +3627,6 @@ exports[`Simple Actions table 1`] = `
                               "title": "Third action",
                             },
                           ],
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -3641,6 +3640,7 @@ exports[`Simple Actions table 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -3956,7 +3956,6 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -3970,6 +3969,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -3999,7 +3999,6 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4013,6 +4012,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4042,7 +4042,6 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4056,6 +4055,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4085,7 +4085,6 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4099,6 +4098,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4128,7 +4128,6 @@ exports[`Simple virtualized table aria-label 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4142,6 +4141,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4210,7 +4210,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -4224,6 +4223,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4253,7 +4253,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -4267,6 +4266,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4296,7 +4296,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -4310,6 +4309,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4339,7 +4339,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -4353,6 +4352,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4382,7 +4382,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -4396,6 +4395,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -4458,7 +4458,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -4472,6 +4471,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4501,7 +4501,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -4515,6 +4514,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4544,7 +4544,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -4558,6 +4557,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4587,7 +4587,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -4601,6 +4600,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4630,7 +4630,6 @@ exports[`Simple virtualized table aria-label 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -4644,6 +4643,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -4890,7 +4890,6 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4904,6 +4903,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4933,7 +4933,6 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4947,6 +4946,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -4976,7 +4976,6 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -4990,6 +4989,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -5019,7 +5019,6 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -5033,6 +5032,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -5062,7 +5062,6 @@ exports[`Simple virtualized table className 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -5076,6 +5075,7 @@ exports[`Simple virtualized table className 1`] = `
             "onSelect": undefined,
             "onSort": undefined,
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": undefined,
           },
           "header": Object {
@@ -5144,7 +5144,6 @@ exports[`Simple virtualized table className 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -5158,6 +5157,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5187,7 +5187,6 @@ exports[`Simple virtualized table className 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -5201,6 +5200,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5230,7 +5230,6 @@ exports[`Simple virtualized table className 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -5244,6 +5243,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5273,7 +5273,6 @@ exports[`Simple virtualized table className 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -5287,6 +5286,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5316,7 +5316,6 @@ exports[`Simple virtualized table className 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -5330,6 +5329,7 @@ exports[`Simple virtualized table className 1`] = `
                       "onSelect": undefined,
                       "onSort": undefined,
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": undefined,
                     },
                     "header": Object {
@@ -5392,7 +5392,6 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -5406,6 +5405,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5435,7 +5435,6 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -5449,6 +5448,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5478,7 +5478,6 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -5492,6 +5491,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5521,7 +5521,6 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -5535,6 +5534,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5564,7 +5564,6 @@ exports[`Simple virtualized table className 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -5578,6 +5577,7 @@ exports[`Simple virtualized table className 1`] = `
                           "onSelect": undefined,
                           "onSort": undefined,
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": undefined,
                         },
                         "header": Object {
@@ -5829,7 +5829,6 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -5843,6 +5842,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": Object {},
           },
           "header": Object {
@@ -5873,7 +5873,6 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -5887,6 +5886,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": Object {},
           },
           "header": Object {
@@ -5916,7 +5916,6 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -5930,6 +5929,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": Object {},
           },
           "header": Object {
@@ -5959,7 +5959,6 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -5973,6 +5972,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": Object {},
           },
           "header": Object {
@@ -6002,7 +6002,6 @@ exports[`Sortable Virtualized Table 1`] = `
           "extraParams": Object {
             "actionResolver": undefined,
             "actions": undefined,
-            "allRowsSelected": false,
             "areActionsDisabled": undefined,
             "canSelectAll": true,
             "contentId": "expanded-content",
@@ -6016,6 +6015,7 @@ exports[`Sortable Virtualized Table 1`] = `
             "onSelect": undefined,
             "onSort": [Function],
             "rowLabeledBy": "simple-node",
+            "selectedRowsAmount": "none",
             "sortBy": Object {},
           },
           "header": Object {
@@ -6084,7 +6084,6 @@ exports[`Sortable Virtualized Table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -6098,6 +6097,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6128,7 +6128,6 @@ exports[`Sortable Virtualized Table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -6142,6 +6141,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6171,7 +6171,6 @@ exports[`Sortable Virtualized Table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -6185,6 +6184,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6214,7 +6214,6 @@ exports[`Sortable Virtualized Table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -6228,6 +6227,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6257,7 +6257,6 @@ exports[`Sortable Virtualized Table 1`] = `
                     "extraParams": Object {
                       "actionResolver": undefined,
                       "actions": undefined,
-                      "allRowsSelected": false,
                       "areActionsDisabled": undefined,
                       "canSelectAll": true,
                       "contentId": "expanded-content",
@@ -6271,6 +6270,7 @@ exports[`Sortable Virtualized Table 1`] = `
                       "onSelect": undefined,
                       "onSort": [Function],
                       "rowLabeledBy": "simple-node",
+                      "selectedRowsAmount": "none",
                       "sortBy": Object {},
                     },
                     "header": Object {
@@ -6333,7 +6333,6 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -6347,6 +6346,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6377,7 +6377,6 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -6391,6 +6390,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6420,7 +6420,6 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -6434,6 +6433,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6463,7 +6463,6 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -6477,6 +6476,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": Object {},
                         },
                         "header": Object {
@@ -6506,7 +6506,6 @@ exports[`Sortable Virtualized Table 1`] = `
                         "extraParams": Object {
                           "actionResolver": undefined,
                           "actions": undefined,
-                          "allRowsSelected": false,
                           "areActionsDisabled": undefined,
                           "canSelectAll": true,
                           "contentId": "expanded-content",
@@ -6520,6 +6519,7 @@ exports[`Sortable Virtualized Table 1`] = `
                           "onSelect": undefined,
                           "onSort": [Function],
                           "rowLabeledBy": "simple-node",
+                          "selectedRowsAmount": "none",
                           "sortBy": Object {},
                         },
                         "header": Object {

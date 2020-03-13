@@ -10,7 +10,7 @@ export const selectable: ITransform = (
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
   const {
-    extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
+    extraParams: { onSelect, selectedRowsAmount, rowLabeledBy = 'simple-node' }
   } = column;
   const extraData = {
     rowIndex,
@@ -42,8 +42,8 @@ export const selectable: ITransform = (
           'aria-labelledby': rowLabeledBy + rowIndex
         }
       : {
-          checked: allRowsSelected,
-          'aria-label': 'Select all rows'
+          'aria-label': 'Select all rows',
+          'data-selectedrowsamount': selectedRowsAmount
         }),
     ...(rowData &&
       rowData.disableCheckbox && {
