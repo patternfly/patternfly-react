@@ -153,7 +153,7 @@ class CardViewBasic extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 10,
+      perPage: 1,
       totalItemCount: 10
     };
 
@@ -324,7 +324,7 @@ class CardViewBasic extends React.Component {
 
   selectPage(e) {
     const { checked } = e.target;
-    const { isChecked } = this.state;
+    const { isChecked, totalItemCount, perPage } = this.state;
     let collection = [];
 
     collection = this.getAllItems();
@@ -333,7 +333,7 @@ class CardViewBasic extends React.Component {
       {
         selectedItems: collection,
         isChecked: checked,
-        areAllSelected: false
+        areAllSelected: totalItemCount === perPage ? true : false
       },
       this.updateSelected
     );
@@ -423,11 +423,28 @@ class CardViewBasic extends React.Component {
 
   renderPagination() {
     const { page, perPage, totalItemCount } = this.state;
+
+    const defaultPerPageOptions = [
+      {
+        title: '1',
+        value: 1
+      },
+      {
+        title: '5',
+        value: 5
+      },
+      {
+        title: '10',
+        value: 10
+      }
+    ];
+
     return (
       <Pagination
         itemCount={totalItemCount}
         page={page}
         perPage={perPage}
+        perPageOptions={defaultPerPageOptions}
         onSetPage={(_evt, value) => {
           this.fetch(value, perPage);
         }}
@@ -682,8 +699,7 @@ class CardViewBasic extends React.Component {
 
     return (
       <React.Fragment>
-        <div>
-        </div>
+        <div></div>
         <Page
           header={Header}
           sidebar={Sidebar}
