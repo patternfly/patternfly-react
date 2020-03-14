@@ -153,7 +153,7 @@ class CardViewBasic extends React.Component {
       activeItem: 0,
       splitButtonDropdownIsOpen: false,
       page: 1,
-      perPage: 1,
+      perPage: 10,
       totalItemCount: 10
     };
 
@@ -699,7 +699,6 @@ class CardViewBasic extends React.Component {
 
     return (
       <React.Fragment>
-        <div></div>
         <Page
           header={Header}
           sidebar={Sidebar}
