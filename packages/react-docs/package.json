@@ -24,7 +24,6 @@
     "@patternfly/react-core": "^3.146.2",
     "@patternfly/react-icons": "^3.15.11",
     "@patternfly/react-inline-edit-extension": "^2.17.31",
-    "@patternfly/react-styled-system": "^3.8.10",
     "@patternfly/react-styles": "^3.7.8",
     "@patternfly/react-table": "^2.28.12",
     "@patternfly/react-tokens": "^2.8.8",

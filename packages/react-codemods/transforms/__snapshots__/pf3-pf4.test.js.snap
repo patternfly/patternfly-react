@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`throws error for components that are not supported 1`] = `"UnsupportedComponent is not a supported component"`;
