@@ -7,5 +7,6 @@ declare module 'victory-core' {
 }
 
 declare module 'hoist-non-react-statics' {
-  export default any;
+  const hoist: any;
+  export default hoist;
 }
