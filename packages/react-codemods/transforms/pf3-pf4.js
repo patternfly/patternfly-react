@@ -13,6 +13,9 @@ try {
 const oldPackage = 'patternfly-react';
 const newPackage = '@patternfly/react-core';
 
+/**
+ * @param {string} specifiedComponents glob of specified components
+ */
 function getFilteredComponentConfig(specifiedComponents = '*') {
   if (specifiedComponents === '*') {
     return componentConfigs;
@@ -37,6 +40,10 @@ module.exports = (file, api, options) => {
   const root = j(file.source);
   const filteredConfig = getFilteredComponentConfig(options.components);
 
+  /**
+   * @param {string} importName import name
+   * @param {string} localName local name
+   */
   function addComponentToReactCoreImport(importName, localName) {
     const reactCoreImport = getReactCoreImport();
     if (reactCoreImport.length > 0) {
@@ -66,6 +73,9 @@ module.exports = (file, api, options) => {
     }
   }
 
+  /**
+   * @returns {string} import after react core
+   */
   function findImportAfterReactCore() {
     let target;
     let targetName;
@@ -81,18 +91,28 @@ module.exports = (file, api, options) => {
     return target;
   }
 
+  /**
+   * @returns {object} @patternfly/react-core import
+   */
   function getReactCoreImport() {
     return root.find(j.ImportDeclaration, {
       source: { value: newPackage }
     });
   }
 
+  /**
+   * @returns {object} patternfly-react import
+   */
   function getPatternflyReactImport() {
     return root.find(j.ImportDeclaration, {
       source: { value: oldPackage }
     });
   }
 
+  /**
+   * @param {object[]} jsxElements array of JSX Elements
+   * @param {object[]} unsupportedProps deprecated props
+   */
   function verifyNoUnsupportedPropReferences(jsxElements, unsupportedProps) {
     let hasSupportedPropReferences = false;
     jsxElements.find(j.JSXAttribute).forEach(attrPath => {
@@ -106,11 +126,20 @@ module.exports = (file, api, options) => {
     return hasSupportedPropReferences;
   }
 
+  /**
+   * @param {object} componentConfig component config
+   * @param {string} propName prop name
+   */
   function getConfigForProp(componentConfig, propName) {
     const propConfig = componentConfig.props[propName];
     return typeof propConfig === 'string' ? { name: propConfig } : propConfig;
   }
 
+  /**
+   * @param {string} prop property
+   * @param {string} jsxElementPath element path
+   * @param {object} propConfig property config
+   */
   function transformProp(prop, jsxElementPath, propConfig) {
     const propInstances = j(jsxElementPath).find(j.JSXAttribute, {
       name: { name: prop }
@@ -133,6 +162,9 @@ module.exports = (file, api, options) => {
     });
   }
 
+  /**
+   * Removes patternfly-react import
+   */
   function removePatternflyReactImport() {
     getPatternflyReactImport().forEach(path => {
       if (path.node.specifiers.length === 0) {
@@ -141,6 +173,9 @@ module.exports = (file, api, options) => {
     });
   }
 
+  /**
+   * @returns {string} pretty babel'ed version of source
+   */
   function getPrettySource() {
     const transformedSource = root.toSource({
       quote: 'auto',

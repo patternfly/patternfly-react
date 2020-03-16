@@ -1,4 +1,3 @@
-import { EOL as SYSTEM_EOL } from 'os';
 import prettier from 'prettier';
 import { defineInlineTest, runInlineTest } from 'jscodeshift/dist/testUtils';
 import transform from './pf3-pf4';
