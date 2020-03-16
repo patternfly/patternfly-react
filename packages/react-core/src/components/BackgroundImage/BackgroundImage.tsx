@@ -18,7 +18,7 @@ export interface BackgroundImageSrcMap {
 }
 
 const defaultFilter = (
-  <filter className="test123">
+  <filter>
     <feColorMatrix type="matrix" values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"></feColorMatrix>
     <feComponentTransfer colorInterpolationFilters="sRGB" result="duotone">
       <feFuncR type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncR>

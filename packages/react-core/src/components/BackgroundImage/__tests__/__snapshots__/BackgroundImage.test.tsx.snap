@@ -21,7 +21,6 @@ exports[`BackgroundImage 1`] = `
     xmlns="http://www.w3.org/2000/svg"
   >
     <filter
-      className="test123"
       id="patternfly-background-image-filter-overlay0"
     >
       <feColorMatrix
@@ -75,7 +74,6 @@ exports[`allows passing in a single string as the image src 1`] = `
     xmlns="http://www.w3.org/2000/svg"
   >
     <filter
-      className="test123"
       id="patternfly-background-image-filter-overlay1"
     >
       <feColorMatrix
