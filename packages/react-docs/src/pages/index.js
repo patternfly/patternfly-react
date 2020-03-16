@@ -81,12 +81,6 @@ export const pageQuery = graphql`
         version
       }
     }
-    allReactStyledSystemJson {
-      nodes {
-        name
-        version
-      }
-    }
     allReactInlineEditExtensionJson {
       nodes {
         name
