@@ -30,7 +30,7 @@ export interface AboutModalProps {
   noAboutModalBoxContentContainer?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** set aria label to the close button */
+  /** Set aria label to the close button */
   closeButtonAriaLabel?: string;
 }
 
