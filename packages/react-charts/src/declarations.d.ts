@@ -5,3 +5,7 @@ declare module 'victory-core' {
   export const Path: any;
   export const TextSize: any;
 }
+
+declare module 'hoist-non-react-statics' {
+  export default any;
+}
