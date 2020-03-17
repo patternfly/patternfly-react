@@ -19,7 +19,7 @@ const createIcon = iconDefinition => {
     id = `icon-title-${currentId++}`;
 
     render() {
-      const { size, color, title, noStyle, noVerticalAlign, ...props } = this.props;
+      const { size, color, title, noVerticalAlign, ...props } = this.props;
 
       const hasTitle = Boolean(title);
       const heightWidth = getSize(size);

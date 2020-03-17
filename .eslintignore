@@ -12,6 +12,8 @@ coverage
 **/Generated
 **/build
 css
+packages/react-icons/src/index.js
+packages/react-icons/src/icons
 
 # package managers
 yarn-error.log
