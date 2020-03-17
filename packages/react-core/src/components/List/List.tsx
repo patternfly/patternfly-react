@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/List/list';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
 
 export enum OrderType {
   number = '1',
@@ -51,11 +50,11 @@ export const List: React.FunctionComponent<ListProps> = ({
       {children}
     </ol>
   ) : (
-    <ul
-      ref={ref as React.LegacyRef<HTMLUListElement>}
-      {...props}
-      className={css(styles.list, variant && getModifier(styles.modifiers, variant), className)}
-    >
-      {children}
-    </ul>
-  );
+      <ul
+        ref={ref as React.LegacyRef<HTMLUListElement>}
+        {...props}
+        className={css(styles.list, variant && getModifier(styles.modifiers, variant), className)}
+      >
+        {children}
+      </ul>
+    );

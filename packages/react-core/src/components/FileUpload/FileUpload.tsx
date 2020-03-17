@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
-import { Omit } from '../../helpers';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
 
 export interface FileUploadProps
   extends Omit<
-    FileUploadFieldProps,
-    'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
+  FileUploadFieldProps,
+  'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
   > {
   /** Unique id for the TextArea, also used to generate ids for accessible labels. */
   id: string;
@@ -81,10 +80,10 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   value = type === fileReaderType.text || type === fileReaderType.dataURL ? '' : null,
   filename = '',
   children = null,
-  onChange = () => {},
-  onReadStarted = () => {},
-  onReadFinished = () => {},
-  onReadFailed = () => {},
+  onChange = () => { },
+  onReadStarted = () => { },
+  onReadFinished = () => { },
+  onReadFailed = () => { },
   dropzoneProps = {},
   ...props
 }: FileUploadProps) => {

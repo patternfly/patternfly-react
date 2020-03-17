@@ -3,7 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownItem } from '../Dropdown';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface OptionsMenuItemProps
   extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'> {
@@ -29,15 +28,15 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
   isDisabled,
   ...props
 }: OptionsMenuItemProps) => (
-  <DropdownItem
-    id={id}
-    component="button"
-    isDisabled={isDisabled}
-    onClick={(event: any) => onSelect(event)}
-    {...(isDisabled && { 'aria-disabled': true })}
-    {...props}
-  >
-    {children}
-    {isSelected && <CheckIcon className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={isSelected} />}
-  </DropdownItem>
-);
+    <DropdownItem
+      id={id}
+      component="button"
+      isDisabled={isDisabled}
+      onClick={(event: any) => onSelect(event)}
+      {...(isDisabled && { 'aria-disabled': true })}
+      {...props}
+    >
+      {children}
+      {isSelected && <CheckIcon className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={isSelected} />}
+    </DropdownItem>
+  );

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionElement>, 'disabled'> {
   /** additional classes added to the Select Option */
@@ -19,7 +18,7 @@ export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = 
   label,
   ...props
 }: FormSelectOptionProps) => (
-  <option {...props} className={className} value={value} disabled={isDisabled}>
-    {label}
-  </option>
-);
+    <option {...props} className={className} value={value} disabled={isDisabled}>
+      {label}
+    </option>
+  );

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import { Omit } from '../../helpers/typeUtils';
 import { AccordionContext } from './AccordionContext';
 
 export interface AccordionToggleProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'type'> {
@@ -26,22 +25,22 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
   component,
   ...props
 }: AccordionToggleProps) => (
-  <AccordionContext.Consumer>
-    {({ ToggleContainer }) => {
-      const Container = component || ToggleContainer;
-      return (
-        <Container>
-          <button
-            id={id}
-            className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
-            {...props}
-            aria-expanded={isExpanded}
-          >
-            <span className={css(styles.accordionToggleText)}>{children}</span>
-            <AngleRightIcon className={css(styles.accordionToggleIcon)} />
-          </button>
-        </Container>
-      );
-    }}
-  </AccordionContext.Consumer>
-);
+    <AccordionContext.Consumer>
+      {({ ToggleContainer }) => {
+        const Container = component || ToggleContainer;
+        return (
+          <Container>
+            <button
+              id={id}
+              className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
+              {...props}
+              aria-expanded={isExpanded}
+            >
+              <span className={css(styles.accordionToggleText)}>{children}</span>
+              <AngleRightIcon className={css(styles.accordionToggleIcon)} />
+            </button>
+          </Container>
+        );
+      }}
+    </AccordionContext.Consumer>
+  );

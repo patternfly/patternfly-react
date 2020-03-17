@@ -1,8 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { Omit } from '../../helpers/typeUtils';
-
 export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement>, 'title'> {
   /** Child tab nodes (VerticalTabsTab's) */
   children?: React.ReactNode;

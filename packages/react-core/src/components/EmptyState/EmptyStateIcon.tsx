@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
-import { Omit } from '../../helpers/typeUtils';
 
 export enum IconSize {
   sm = 'sm',
@@ -41,8 +40,8 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   return variant === 'icon' ? (
     <IconComponent className={classNames} {...props} aria-hidden="true" />
   ) : (
-    <div className={classNames}>
-      <AnyComponent />
-    </div>
-  );
+      <div className={classNames}>
+        <AnyComponent />
+      </div>
+    );
 };

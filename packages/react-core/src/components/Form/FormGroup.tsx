@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { FormContext } from './FormContext';
@@ -81,8 +80,8 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
           {(!isValid || validated === ValidatedOptions.error) && helperTextInvalid
             ? inValidHelperText
             : validated !== ValidatedOptions.error && helperText
-            ? validHelperText
-            : ''}
+              ? validHelperText
+              : ''}
         </div>
       )}
     </FormContext.Consumer>

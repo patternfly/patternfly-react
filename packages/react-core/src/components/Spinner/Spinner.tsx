@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Spinner/spinner';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
 
 export enum spinnerSize {
   sm = 'sm',
@@ -26,14 +25,14 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   'aria-valuetext': ariaValueText = 'Loading...',
   ...props
 }: SpinnerProps) => (
-  <span
-    className={css(styles.spinner, getModifier(styles, size))}
-    role="progressbar"
-    aria-valuetext={ariaValueText}
-    {...props}
-  >
-    <span className={css(styles.spinnerClipper)} />
-    <span className={css(styles.spinnerLeadBall)} />
-    <span className={css(styles.spinnerTailBall)} />
-  </span>
-);
+    <span
+      className={css(styles.spinner, getModifier(styles, size))}
+      role="progressbar"
+      aria-valuetext={ariaValueText}
+      {...props}
+    >
+      <span className={css(styles.spinnerClipper)} />
+      <span className={css(styles.spinnerLeadBall)} />
+      <span className={css(styles.spinnerTailBall)} />
+    </span>
+  );

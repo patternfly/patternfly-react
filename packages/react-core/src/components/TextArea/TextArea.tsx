@@ -2,7 +2,6 @@ import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
 
 export enum TextAreResizeOrientation {

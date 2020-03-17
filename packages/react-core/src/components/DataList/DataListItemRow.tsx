@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface DataListItemRowProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   children: React.ReactNode;
@@ -15,14 +14,14 @@ export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({
   rowid = '',
   ...props
 }: DataListItemRowProps) => (
-  <div className={css(styles.dataListItemRow, className)} {...props}>
-    {React.Children.map(
-      children,
-      child =>
-        React.isValidElement(child) &&
-        React.cloneElement(child as React.ReactElement<any>, {
-          rowid
-        })
-    )}
-  </div>
-);
+    <div className={css(styles.dataListItemRow, className)} {...props}>
+      {React.Children.map(
+        children,
+        child =>
+          React.isValidElement(child) &&
+          React.cloneElement(child as React.ReactElement<any>, {
+            rowid
+          })
+      )}
+    </div>
+  );

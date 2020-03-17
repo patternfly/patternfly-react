@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/react-styles/css/components/Title/title';
 import { BaseSizes } from '../../styles/sizes';
 
@@ -31,7 +30,7 @@ export const Title: React.FunctionComponent<TitleProps> = ({
   headingLevel: HeadingLevel = 'h1',
   ...props
 }: TitleProps) => (
-  <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
-    {children}
-  </HeadingLevel>
-);
+    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
+      {children}
+    </HeadingLevel>
+  );

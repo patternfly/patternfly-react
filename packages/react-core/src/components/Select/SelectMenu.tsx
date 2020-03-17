@@ -4,7 +4,7 @@ import { default as formStyles } from '@patternfly/react-styles/css/components/F
 import { css } from '@patternfly/react-styles';
 import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const FocusTrap: any = require('focus-trap-react');
@@ -48,8 +48,8 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     openedOnEnter: false,
     selected: '',
     maxHeight: '',
-    sendRef: () => {},
-    keyHandler: () => {},
+    sendRef: () => { },
+    keyHandler: () => { },
     isCustomContent: false,
     hasInlineFilter: false
   };

@@ -1,4 +1,3 @@
-import { OneOf, Omit } from './typeUtils';
 import { HTMLProps } from 'react';
 
 export const IconSize: {
@@ -10,7 +9,7 @@ export const IconSize: {
 
 export interface IconProps extends Omit<HTMLProps<SVGElement>, 'size'> {
   color?: string;
-  size?: OneOf<typeof IconSize, keyof typeof IconSize>;
+  size?: typeof IconSize | keyof typeof IconSize;
   title?: string;
   noVerticalAlign?: boolean;
 }

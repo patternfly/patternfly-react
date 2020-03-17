@@ -4,7 +4,6 @@ import { default as checkStyles } from '@patternfly/react-styles/css/components/
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */
@@ -56,9 +55,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isFocused: false,
     isNoResultsOption: false,
     component: 'button',
-    onClick: () => {},
-    sendRef: () => {},
-    keyHandler: () => {}
+    onClick: () => { },
+    sendRef: () => { },
+    keyHandler: () => { }
   };
 
   componentDidMount() {

@@ -7,7 +7,6 @@ import {
   DropdownPosition
 } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
 import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
-import { Omit } from '@patternfly/react-core/dist/js/helpers/typeUtils';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Provider } from './base';
@@ -82,7 +81,7 @@ export enum SortByDirection {
 // export type IHeaderRow = ColumnType;
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix, @typescript-eslint/no-empty-interface
-export interface IHeaderRow extends ColumnType {}
+export interface IHeaderRow extends ColumnType { }
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IRowData extends IRow {
@@ -121,7 +120,7 @@ export interface IExtraColumnData {
 }
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IExtraData extends IExtraColumnData, IExtraRowData {}
+export interface IExtraData extends IExtraColumnData, IExtraRowData { }
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IExtra extends IExtraData {
