@@ -161,6 +161,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListDemo
   },
   {
+    id: 'data-list-compact-demo',
+    name: 'Data List Compact Demo',
+    componentType: Examples.DataListCompactDemo
+  },
+  {
     id: 'data-toolbar-demo',
     name: 'Data Toolbar Demo',
     componentType: Examples.DataToolbarDemo
@@ -445,6 +450,11 @@ export const Demos: DemoInterface[] = [
     id: 'select-demo',
     name: 'Select Demo',
     componentType: Examples.SelectDemo
+  },
+  {
+    id: 'select-demo-filtering',
+    name: 'Select Demo with Filtering',
+    componentType: Examples.FilteringSelectDemo
   },
   {
     id: 'simple-list-demo',

@@ -18,6 +18,11 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('List compact', () => {
+    const view = shallow(<DataList aria-label="this is a simple list" isCompact />);
+    expect(view).toMatchSnapshot();
+  });
+
   test('List', () => {
     const view = shallow(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
     expect(view).toMatchSnapshot();

@@ -8,11 +8,12 @@ import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
-import { SelectContext, SelectVariant, SelectDirection } from './selectConstants';
+import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { Omit, PickOptional } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { Divider } from '../Divider';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -81,6 +82,8 @@ export interface SelectProps
   toggleIcon?: React.ReactElement;
   /** Custom content to render in the select menu.  If this prop is defined, the variant prop will be ignored and the select will render with a single select toggle */
   customContent?: React.ReactNode;
+  /** Flag indicating if select should have an inline text input for filtering */
+  hasInlineFilter?: boolean;
 }
 
 export interface SelectState {
@@ -94,6 +97,7 @@ export interface SelectState {
 
 class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
+  private filterRef = React.createRef<HTMLInputElement>();
   private refCollection: HTMLElement[] = [];
 
   static defaultProps: PickOptional<SelectProps> = {
@@ -122,7 +126,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     onCreateOption: () => undefined as void,
     toggleIcon: null as React.ReactElement,
     onFilter: null,
-    customContent: null
+    customContent: null,
+    hasInlineFilter: false
   };
 
   state: SelectState = {
@@ -135,6 +140,10 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   };
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
+    if (this.props.hasInlineFilter) {
+      this.refCollection[0] = this.filterRef.current;
+    }
+
     if (!prevState.openedOnEnter && this.state.openedOnEnter) {
       this.refCollection[0].focus();
     }
@@ -190,7 +199,10 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       typeaheadFilteredChildren = [];
     }
     if (typeaheadFilteredChildren.length === 0) {
-      !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} />);
+      !isCreatable &&
+        typeaheadFilteredChildren.push(
+          <SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />
+        );
     }
     if (isCreatable && e.target.value !== '') {
       const newValue = e.target.value;
@@ -357,10 +369,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       ouiaId,
       createText,
       noResultsFoundText,
+      hasInlineFilter,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
-    const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
+    const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!customContent) {
@@ -371,6 +384,25 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
+
+    const hasOnClear = onClear !== Select.defaultProps.onClear;
+    const hasAnySelections =
+      selections && (Array.isArray(selections) ? (selections.length > 0 ? true : false) : selections !== '');
+    const clearBtn = (
+      <button
+        className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
+        onClick={e => {
+          this.clearSelection(e);
+          onClear(e);
+        }}
+        aria-label={ariaLabelClear}
+        type="button"
+        disabled={isDisabled}
+      >
+        <TimesCircleIcon aria-hidden />
+      </button>
+    );
+
     let selectedChips = null;
     if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
@@ -382,6 +414,36 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               </Chip>
             ))}
         </ChipGroup>
+      );
+    }
+
+    let filterWithChildren = children;
+    if (hasInlineFilter) {
+      const filterBox = (
+        <React.Fragment>
+          <div key="inline-filter" className={css(styles.selectMenuInput)}>
+            <input
+              key="inline-filter-input"
+              type="search"
+              className={css(formStyles.formControl, formStyles.modifiers.search)}
+              onChange={this.onChange}
+              onKeyDown={event => {
+                if (event.key === KeyTypes.ArrowUp) {
+                  this.handleArrowKeys(0, 'up');
+                } else if (event.key === KeyTypes.ArrowDown) {
+                  this.handleArrowKeys(0, 'down');
+                }
+              }}
+              ref={this.filterRef}
+              autoComplete="off"
+            ></input>
+          </div>
+          <Divider key="inline-filter-divider" />
+        </React.Fragment>
+      );
+      this.refCollection[0] = this.filterRef.current;
+      filterWithChildren = [filterBox, ...(typeaheadFilteredChildren as React.ReactElement[])].map((option, index) =>
+        React.cloneElement(option, { key: index })
       );
     }
 
@@ -414,6 +476,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
             ariaLabelToggle={ariaLabelToggle}
             handleTypeaheadKeys={this.handleTypeaheadKeys}
             isDisabled={isDisabled}
+            hasClearButton={hasOnClear}
           >
             {customContent && (
               <div className={css(styles.selectToggleWrapper)}>
@@ -427,6 +490,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <span className={css(styles.selectToggleText)}>
                   {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
                 </span>
+                {hasOnClear && hasAnySelections && clearBtn}
               </div>
             )}
             {variant === SelectVariant.checkbox && !customContent && (
@@ -440,6 +504,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     </div>
                   )}
                 </div>
+                {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeahead && !customContent && (
@@ -465,20 +530,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {(selections || typeaheadInputValue) && (
-                  <button
-                    className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                    onClick={e => {
-                      this.clearSelection(e);
-                      onClear(e);
-                    }}
-                    aria-label={ariaLabelClear}
-                    type="button"
-                    disabled={isDisabled}
-                  >
-                    <TimesCircleIcon aria-hidden />
-                  </button>
-                )}
+                {(selections || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -501,20 +553,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) && (
-                  <button
-                    className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                    onClick={e => {
-                      this.clearSelection(e);
-                      onClear(e);
-                    }}
-                    aria-label={ariaLabelClear}
-                    type="button"
-                    disabled={isDisabled}
-                  >
-                    <TimesCircleIcon aria-hidden />
-                  </button>
-                )}
+                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) &&
+                  clearBtn}
               </React.Fragment>
             )}
           </SelectToggle>
@@ -557,8 +597,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               sendRef={this.sendRef}
               keyHandler={this.handleArrowKeys}
               maxHeight={maxHeight}
+              hasInlineFilter={hasInlineFilter}
             >
-              {children}
+              {filterWithChildren}
             </SelectMenu>
           )}
           {(variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) &&

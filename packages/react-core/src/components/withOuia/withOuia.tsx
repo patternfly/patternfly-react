@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { isOUIAEnvironment, getUniqueId, generateOUIAId } from './ouia';
-import { Omit } from '../../helpers/typeUtils';
 
 export const OuiaContext = React.createContext<OuiaContextProps | null>(null);
 
@@ -17,11 +16,11 @@ export interface OuiaContextProps {
 /**
  * @param { React.ComponentClass | React.FunctionComponent } WrappedComponent - React component
  */
-export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R = Omit<P, 'ouiaContext'>>(
+export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }>(
   WrappedComponent: React.ComponentClass<P> | React.FunctionComponent<P>
-): React.FunctionComponent<R> {
+): React.FunctionComponent<P> {
   /* eslint-disable react/display-name */
-  return (props: R) => (
+  return (props: P) => (
     <OuiaContext.Consumer>
       {(value: OuiaContextProps) => (
         <ComponentWithOuia consumerContext={value} component={WrappedComponent} componentProps={props} />

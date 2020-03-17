@@ -15,6 +15,7 @@ import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
+import { ModalBoxDescription } from './ModalBoxDescription';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -29,6 +30,8 @@ export interface ModalContentProps {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
+  /** Description of the modal */
+  description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to show the title (ignored for custom headers) */
@@ -58,6 +61,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   className = '',
   isOpen = false,
   header = null,
+  description = null,
   title,
   hideTitle = false,
   showClose = true,
@@ -100,7 +104,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}
-      <ModalBoxBody {...props} id={id}>
+      {description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
+      <ModalBoxBody {...props} {...(!description && { id })}>
         {children}
       </ModalBoxBody>
       {modalBoxFooter}

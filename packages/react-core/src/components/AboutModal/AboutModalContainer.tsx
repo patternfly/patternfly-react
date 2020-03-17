@@ -37,6 +37,8 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   ariaLabelledbyId: string;
   /** id to use for About Modal Box aria described by  */
   ariaDescribedById: string;
+  /** Set close button aria label */
+  closeButtonAriaLabel?: string;
 }
 
 export const AboutModalContainer: React.FunctionComponent<AboutModalContainerProps> = ({
@@ -51,6 +53,7 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   backgroundImageSrc,
   ariaLabelledbyId,
   ariaDescribedById,
+  closeButtonAriaLabel,
   ...props
 }: AboutModalContainerProps) => {
   if (!isOpen) {
@@ -61,7 +64,7 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
       <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
         <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
-          <AboutModalBoxCloseButton onClose={onClose} />
+          <AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} onClose={onClose} />
           {productName && <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />}
           <AboutModalBoxContent
             trademark={trademark}

@@ -14,6 +14,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
   isChecked={false}
   isDisabled={true}
   isFocused={false}
+  isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
   keyHandler={[Function]}
@@ -22,13 +23,7 @@ exports[`select options disabled renders disabled successfully 1`] = `
     [MockFunction] {
       "calls": Array [
         Array [
-          <button
-            class="pf-c-select__menu-item pf-m-disabled"
-            role="option"
-            type="button"
-          >
-            test
-          </button>,
+          null,
           0,
         ],
       ],
@@ -73,6 +68,7 @@ exports[`select options renders custom component 1`] = `
   isChecked={false}
   isDisabled={false}
   isFocused={false}
+  isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
   keyHandler={[Function]}
@@ -137,6 +133,7 @@ exports[`select options renders with custom display and custom user object succe
   isChecked={false}
   isDisabled={false}
   isFocused={false}
+  isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
   keyHandler={[Function]}
@@ -201,6 +198,7 @@ exports[`select options renders with custom display successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFocused={false}
+  isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
   keyHandler={[Function]}
@@ -258,6 +256,7 @@ exports[`select options renders with custom user object successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFocused={false}
+  isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
   keyHandler={[Function]}
@@ -318,6 +317,7 @@ exports[`select options renders with value parameter successfully 1`] = `
   isChecked={false}
   isDisabled={false}
   isFocused={false}
+  isNoResultsOption={false}
   isPlaceholder={false}
   isSelected={false}
   keyHandler={[Function]}
