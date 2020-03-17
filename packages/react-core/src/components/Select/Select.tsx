@@ -415,11 +415,20 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       selectedChips = (
         <ChipGroup>
           {selections &&
-            (selections as string[]).map(item => (
-              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
-                {this.getDisplay(item, 'node')}
-              </Chip>
-            ))}
+            (selections as string[]).map(item => {
+              const isItemDisabled = React.Children.toArray(children.filter(child => child.props.value === item))[0]
+                .props.isDisabled;
+              return (
+                <Chip
+                  key={item}
+                  onClick={e => onSelect(e, item)}
+                  closeBtnAriaLabel={ariaLabelRemove}
+                  {...(isItemDisabled && { isReadOnly: true })}
+                >
+                  {this.getDisplay(item, 'node')}
+                </Chip>
+              );
+            })}
         </ChipGroup>
       );
     }
