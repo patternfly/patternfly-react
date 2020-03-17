@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.27.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.27.0...demo-app-ts@3.27.1) (2020-03-06)
+## [4.0.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.10...demo-app-ts@4.0.1) (2020-03-17)
 
 **Note:** Version bump only for package demo-app-ts
 
@@ -11,24 +11,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [3.27.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.26.0...demo-app-ts@3.27.0) (2020-03-06)
+## [3.25.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.9...demo-app-ts@3.25.10) (2020-03-17)
 
-
-### Features
-
-* **ChipGroup:** Added a tooltip to the Chipgroup label ([#3826](https://github.com/patternfly/patternfly-react/issues/3826)) ([d25c80b](https://github.com/patternfly/patternfly-react/commit/d25c80b68795c44d46eaf261b335c5f088d71e96)), closes [#3490](https://github.com/patternfly/patternfly-react/issues/3490)
-
-
-
-
-
-# [3.26.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.25.9...demo-app-ts@3.26.0) (2020-03-06)
-
-
-### Features
-
-* **DataList:** add compact data list ([#3807](https://github.com/patternfly/patternfly-react/issues/3807)) ([18d9b7b](https://github.com/patternfly/patternfly-react/commit/18d9b7b756e985304864e52b09f5f1d1789791f8))
-* **Modal:** add description property ([#3821](https://github.com/patternfly/patternfly-react/issues/3821)) ([c7bfe03](https://github.com/patternfly/patternfly-react/commit/c7bfe03c54caf2ffcc215ab359c98cf0359c035e))
+**Note:** Version bump only for package demo-app-ts
 
 
 

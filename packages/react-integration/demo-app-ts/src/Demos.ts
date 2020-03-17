@@ -452,6 +452,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectDemo
   },
   {
+    id: 'select-demo-filtering',
+    name: 'Select Demo with Filtering',
+    componentType: Examples.FilteringSelectDemo
+  },
+  {
     id: 'simple-list-demo',
     name: 'Simple List Demo',
     componentType: Examples.SimpleListDemo

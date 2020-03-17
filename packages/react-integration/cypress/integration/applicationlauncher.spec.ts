@@ -20,8 +20,7 @@ describe('Application Launcher Demo Test', () => {
     cy.get('#toggle').click();
     cy.get('.pf-c-app-launcher__menu-item')
       .first()
-      .click();
-    cy.url().should('include', 'patternfly-react.surge.sh');
+      .should('have.attr', 'href', 'https://www.google.com');
   });
 });
 

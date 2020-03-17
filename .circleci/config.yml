@@ -12,7 +12,6 @@ references:
   - packages/react-inline-edit-extension/node_modules/
   - packages/react-integration/demo-app-ts/node_modules/
   - packages/react-integration/node_modules/
-  - packages/react-styled-system/node_modules/
   - packages/react-styles/node_modules/
   - packages/react-table/node_modules/
   - packages/react-tokens/node_modules/
@@ -26,7 +25,6 @@ references:
   - packages/react-charts/dist/
   - packages/react-core/dist/
   - packages/react-inline-edit-extension/dist/
-  - packages/react-styled-system/dist/
   - packages/react-styles/css/
   - packages/react-styles/dist/
   - packages/react-table/dist/
@@ -289,4 +287,4 @@ jobs:
         command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
     - run:
         name: Deploy to NPM and Github
-        command: .circleci/release.sh
+        command: if [[ -z $CIRCLE_PULL_REQUEST ]]; then .circleci/release.sh; fi;

@@ -127,8 +127,7 @@ describe('Dropdown Demo Test', () => {
   it('Verify menu selection/link works', () => {
     cy.get('.pf-c-dropdown__menu-item')
       .first()
-      .click();
-    cy.url().should('eq', 'https://patternfly-react.surge.sh/patternfly-4/');
+      .should('have.attr', 'href', 'https://www.google.com');
   });
 });
 
