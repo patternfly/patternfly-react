@@ -140,8 +140,6 @@ export class Toggle extends React.Component<ToggleProps> {
       parentRef,
       id,
       type,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      bubbleEvent,
       ...props
     } = this.props;
     return (
