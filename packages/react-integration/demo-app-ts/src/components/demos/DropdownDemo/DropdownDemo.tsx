@@ -112,7 +112,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     const { isOpen } = this.state;
 
     const dropdownItems = [
-      <DropdownItem key="link" href="https://patternfly-react.surge.sh/patternfly-4/">
+      <DropdownItem key="link" href="https://www.google.com">
         Link
       </DropdownItem>,
       <DropdownItem key="action" component="button">
