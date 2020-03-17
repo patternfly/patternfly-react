@@ -150,7 +150,7 @@ EmptyStateSpinner = () => {
   return (
     <EmptyState>
       <EmptyStateIcon variant="container" component={Spinner} />
-      <Title size="lg">
+      <Title size="lg" headingLevel="h5">
         Loading
       </Title>
     </EmptyState>
@@ -177,7 +177,7 @@ NoMatchEmptyState = () => {
   return (
     <EmptyState>
       <EmptyStateIcon icon={SearchIcon} />
-      <Title size="lg">
+      <Title size="lg" headingLevel="h5">
         No results found
       </Title>
       <EmptyStateBody>

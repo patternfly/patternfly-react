@@ -57,7 +57,9 @@ export class NavDemo extends Component {
     const { defaultActiveItem } = this.state;
     return (
       <StackItem isFilled>
-        <Title size="2xl">Default Nav</Title>
+        <Title headingLevel="h2" size="2xl">
+          Default Nav
+        </Title>
         <div className="example" style={{ border: '1px solid rgb(114, 118, 123)', backgroundColor: '#fff' }}>
           <Nav onSelect={this.onDefaultSelect} id="nav-primary-default">
             <NavList>
@@ -120,7 +122,9 @@ export class NavDemo extends Component {
     const { expandableActiveGroup, expandableActiveItem, expandableClickedGroup, expandableClickedItem } = this.state;
     return (
       <StackItem isFilled>
-        <Title size="2xl">Expandable Nav</Title>
+        <Title headingLevel="h2" size="2xl">
+          Expandable Nav
+        </Title>
         <div className="example" style={{ border: '1px solid rgb(114, 118, 123)', backgroundColor: '#fff' }}>
           <Nav onSelect={this.onExpandableSelect} id="nav-primary-expandable">
             <NavList>
@@ -238,7 +242,9 @@ export class NavDemo extends Component {
 
     return (
       <StackItem isFilled>
-        <Title size="2xl">Horizontal Nav</Title>
+        <Title headingLevel="h2" size="2xl">
+          Horizontal Nav
+        </Title>
         <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
           <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal">
             <NavList variant={NavVariants.horizontal}>

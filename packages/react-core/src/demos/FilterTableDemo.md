@@ -381,7 +381,7 @@ class FilterTableDemo extends React.Component {
         )}
         {loading && (
           <center>
-            <Title size="3xl">Please wait while loading data</Title>
+            <Title headingLevel="h2" size="3xl">Please wait while loading data</Title>
           </center>
         )}
       </React.Fragment>

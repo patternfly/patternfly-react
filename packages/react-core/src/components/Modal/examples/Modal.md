@@ -8,7 +8,7 @@ propComponents:
 optIn: In a future breaking-change release, the modal footer buttons will default to be left aligned. You can opt into this now by setting the Modal isFooterLeftAligned prop to true.
 ---
 
-import { Modal, ModalVariant, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
+import { Modal, ModalVariant, TitleSizes, Button, Title } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -274,7 +274,7 @@ class WidthModal extends React.Component {
 
 ```js title=Custom-header-and-footer
 import React from 'react';
-import { Modal, ModalVariant, Button, BaseSizes, Title, TitleLevel } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, Title } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 class CustomHeaderFooter extends React.Component {
@@ -295,7 +295,7 @@ class CustomHeaderFooter extends React.Component {
 
     const header = (
       <React.Fragment>
-        <Title headingLevel={TitleLevel.h1} size={BaseSizes['2xl']}>
+        <Title headingLevel="h1" size={TitleSizes['2xl']}>
           Custom Modal Header/Footer
         </Title>
         <p className="pf-u-pt-sm">Allows for custom content in the header and/or footer by passing components.</p>
@@ -303,7 +303,7 @@ class CustomHeaderFooter extends React.Component {
     );
 
     const footer = (
-      <Title headingLevel={TitleLevel.h4} size={BaseSizes.sm}>
+      <Title headingLevel="h4" size={TitleSizes.sm}>
         <WarningTriangleIcon />
         <span className="pf-u-pl-sm">Custom modal footer.</span>
       </Title>

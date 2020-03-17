@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Title, TitleSize, TitleLevel } from '..';
+import { Title, TitleSizes } from '..';
 
-Object.values(TitleSize).forEach(size => {
+Object.values(TitleSizes).forEach(size => {
   test(`${size} Title`, () => {
     const view = shallow(
-      <Title size={size} headingLevel={TitleLevel.h1}>
+      <Title size={size} headingLevel="h1">
         {size} Title
       </Title>
     );
@@ -15,7 +15,7 @@ Object.values(TitleSize).forEach(size => {
 
 test('Heading level can be set using a string value', () => {
   const view = shallow(
-    <Title size="lg" headingLevel={TitleLevel.h3}>
+    <Title size="lg" headingLevel="h3">
       H3 Heading
     </Title>
   );

@@ -44,7 +44,7 @@ const iconsPage = ({ location }) => {
   return (
     <SideNavLayout location={location} context="react" showGdprBanner={true} pageTitle="React icons">
       <PageSection className="ws-section">
-        <Title size="md" className="ws-framework-title">
+        <Title headingLevel="h1" size="md" className="ws-framework-title">
           React
         </Title>
         <Title headingLevel="h2" size="4xl">
