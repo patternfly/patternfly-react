@@ -17,7 +17,8 @@ exports[`ModalBox Test isLarge 1`] = `
   aria-describedby="boxId"
   aria-label="Test Modal Box"
   aria-modal="true"
-  className="pf-c-modal-box pf-m-lg"
+  className="pf-c-modal-box"
+  isLarge={true}
   role="dialog"
 >
   This is a ModalBox
@@ -29,7 +30,8 @@ exports[`ModalBox Test isSmall 1`] = `
   aria-describedby="boxId"
   aria-label="Test Modal Box"
   aria-modal="true"
-  className="pf-c-modal-box pf-m-sm"
+  className="pf-c-modal-box"
+  isSmall={true}
   role="dialog"
 >
   This is a ModalBox
