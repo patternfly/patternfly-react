@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.148.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.147.1...@patternfly/react-core@3.148.0) (2020-03-17)
+
+
+### Features
+
+* **Select:** add logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/issues/3895)) ([8f060a2](https://github.com/patternfly/patternfly-react/commit/8f060a2e80c7617b0578611b60ec29d503745e8d))
+
+
+
+
+
 ## [3.147.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.147.0...@patternfly/react-core@3.147.1) (2020-03-17)
 
 
