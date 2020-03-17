@@ -289,4 +289,4 @@ jobs:
         command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
     - run:
         name: Deploy to NPM and Github
-        command: .circleci/release.sh
+        command: if [[ -z $CIRCLE_PULL_REQUEST ]]; then .circleci/release.sh; fi;
