@@ -144,6 +144,79 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
+```js title=Grouped-single
+import React from 'react';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+
+class GroupedSingleSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false,
+      selected: null
+    };
+
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      this.setState({
+        selected: selection,
+        isExpanded: false
+      })
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null
+      });
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+  }
+
+  render() {
+    const { isExpanded, selected } = this.state;
+    const titleId = 'grouped-single-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Grouped Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isExpanded={isExpanded}
+          placeholderText="Filter by status/vendor"
+          ariaLabelledBy={titleId}
+          isGrouped
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
 ```js title=Checkbox-input
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
