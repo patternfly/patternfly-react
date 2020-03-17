@@ -54,4 +54,15 @@ describe('ChipGroup', () => {
     const view = shallow(<ChipGroup />);
     expect(view.html()).toBeNull();
   });
+
+  test('chip group with toolbar and tooltip', () => {
+    const view = shallow(
+      <ChipGroup withToolbar>
+        <ChipGroupToolbarItem categoryName="A very long category name" tooltipPosition="bottom">
+          <Chip>1.1</Chip>
+        </ChipGroupToolbarItem>
+      </ChipGroup>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });

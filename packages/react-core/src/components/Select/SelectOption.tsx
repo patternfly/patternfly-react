@@ -27,6 +27,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isDisabled?: boolean;
   /** Flag indicating if the option acts as a placeholder */
   isPlaceholder?: boolean;
+  /** Flad indicating if the option acts as a "no results" indicator */
+  isNoResultsOption?: boolean;
   /** Internal flag indicating if the option is selected */
   isSelected?: boolean;
   /** Internal flag indicating if the option is checked */
@@ -52,6 +54,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isSelected: false,
     isChecked: false,
     isFocused: false,
+    isNoResultsOption: false,
     component: 'button',
     onClick: () => {},
     sendRef: () => {},
@@ -59,11 +62,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
   };
 
   componentDidMount() {
-    this.props.sendRef(this.ref.current, this.props.index);
+    this.props.sendRef(this.props.isDisabled ? null : this.ref.current, this.props.index);
   }
 
   componentDidUpdate() {
-    this.props.sendRef(this.ref.current, this.props.index);
+    this.props.sendRef(this.props.isDisabled ? null : this.ref.current, this.props.index);
   }
 
   onKeyDown = (event: React.KeyboardEvent) => {
@@ -92,6 +95,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       onClick,
       isDisabled,
       isPlaceholder,
+      isNoResultsOption,
       isSelected,
       isChecked,
       isFocused,
@@ -136,7 +140,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 </Component>
               </li>
             )}
-            {variant === SelectVariant.checkbox && (
+            {variant === SelectVariant.checkbox && !isNoResultsOption && (
               <label
                 {...props}
                 className={css(
@@ -165,6 +169,27 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   {children || value.toString()}
                 </span>
               </label>
+            )}
+            {variant === SelectVariant.checkbox && isNoResultsOption && (
+              <div>
+                <Component
+                  {...props}
+                  className={css(
+                    styles.selectMenuItem,
+                    isSelected && styles.modifiers.selected,
+                    isDisabled && styles.modifiers.disabled,
+                    isFocused && styles.modifiers.focus,
+                    className
+                  )}
+                  role="option"
+                  aria-selected={isSelected || null}
+                  ref={this.ref}
+                  onKeyDown={this.onKeyDown}
+                  type="button"
+                >
+                  {children || value.toString()}
+                </Component>
+              </div>
             )}
           </React.Fragment>
         )}

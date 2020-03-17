@@ -185,7 +185,8 @@ describe('API', () => {
   });
 
   test('dropdownItems and children console error ', () => {
-    expect(() =>
+      const myMock = jest.fn();
+      global.console = { error: myMock } as any;
       mount(
         <Dropdown
           dropdownItems={dropdownItems}
@@ -195,7 +196,7 @@ describe('API', () => {
           <div>Children items</div>
         </Dropdown>
       )
-    ).toThrowError();
+     expect(myMock).toBeCalledWith('Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered');
   });
 
   test('dropdownItems only, no console error ', () => {

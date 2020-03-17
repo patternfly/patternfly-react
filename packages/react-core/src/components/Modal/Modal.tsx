@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { canUseDOM } from 'exenv';
+import { canUseDOM } from '../../helpers';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
@@ -44,6 +44,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
+  /** Description of the modal */
+  description?: React.ReactNode;
 }
 
 interface ModalState {

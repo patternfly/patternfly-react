@@ -30,8 +30,9 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
   constructor(props: DropdownProps & InjectedOuiaProps) {
     super(props);
     if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
-      throw new Error(
-        'Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered '
+      // eslint-disable-next-line no-console
+      console.error(
+        'Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered'
       );
     }
   }

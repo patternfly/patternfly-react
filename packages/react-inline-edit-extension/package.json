@@ -51,7 +51,7 @@
     "postbuild": "node ./build/copyStyles.js"
   },
   "optionalDependencies": {
-    "@patternfly/react-tokens": "^2.8.6"
+    "@patternfly/react-tokens": "^2.8.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
-import { canUseDOM } from 'exenv';
+import { canUseDOM } from '../../helpers';
 import { KEY_CODES } from '../../helpers/constants';
 import { AboutModalContainer } from './AboutModalContainer';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -30,6 +30,8 @@ export interface AboutModalProps {
   noAboutModalBoxContentContainer?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Set aria label to the close button */
+  closeButtonAriaLabel?: string;
 }
 
 interface ModalState {

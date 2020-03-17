@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import { default as formStyles } from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import { SelectOptionObject } from './SelectOption';
+import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import { Omit, PickOptional } from '../../helpers/typeUtils';
 
@@ -36,6 +36,8 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   sendRef?: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
   keyHandler?: (index: number, position: string) => void;
+  /** Flag indicating select has an inline text input for filtering */
+  hasInlineFilter?: boolean;
 }
 
 export class SelectMenu extends React.Component<SelectMenuProps> {
@@ -48,7 +50,8 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     maxHeight: '',
     sendRef: () => {},
     keyHandler: () => {},
-    isCustomContent: false
+    isCustomContent: false,
+    hasInlineFilter: false
   };
 
   extendChildren() {
@@ -83,13 +86,15 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     });
   }
 
-  extendCheckboxChildren() {
-    const { children, isGrouped, checked, sendRef, keyHandler } = this.props;
-    const childrenArray = children as React.ReactElement[];
+  extendCheckboxChildren(children: React.ReactElement[]) {
+    const { isGrouped, checked, sendRef, keyHandler, hasInlineFilter } = this.props;
+    let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
-      let index = 0;
-      return React.Children.map(childrenArray, (group: React.ReactElement) =>
-        React.cloneElement(group, {
+      return React.Children.map(children, (group: React.ReactElement) => {
+        if (group.type === SelectOption) {
+          return group;
+        }
+        return React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
           children: (
             <fieldset
@@ -106,20 +111,16 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
               )}
             </fieldset>
           )
-        })
-      );
+        });
+      });
     }
-    return (
-      <React.Fragment>
-        {React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
-          React.cloneElement(child, {
-            isChecked: checked && checked.includes(child.props.value),
-            sendRef,
-            keyHandler,
-            index
-          })
-        )}
-      </React.Fragment>
+    return React.Children.map(children, (child: React.ReactElement) =>
+      React.cloneElement(child, {
+        isChecked: checked && checked.includes(child.props.value),
+        sendRef,
+        keyHandler,
+        index: index++
+      })
     );
   }
 
@@ -141,10 +142,10 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       createText,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      hasInlineFilter,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
-
     return (
       <SelectConsumer>
         {({ variant }) => (
@@ -180,7 +181,11 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
                     aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
                     className={css(formStyles.formFieldset)}
                   >
-                    {this.extendCheckboxChildren()}
+                    {hasInlineFilter && [
+                      (children as React.ReactElement[]).shift(),
+                      ...this.extendCheckboxChildren(children as React.ReactElement[])
+                    ]}
+                    {!hasInlineFilter && this.extendCheckboxChildren(children as React.ReactElement[])}
                   </fieldset>
                 </div>
               </FocusTrap>

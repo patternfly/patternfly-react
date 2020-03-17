@@ -5,6 +5,13 @@ import { ChipGroup, Chip, ChipGroupToolbarItem } from '../../components/ChipGrou
 import { DataToolbarContentContext, DataToolbarContext } from './DataToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
+export interface DataToolbarChipGroup {
+  /** A unique key to identify this chip group category */
+  key: string;
+  /** The category name to display for the chip group */
+  name: string;
+}
+
 export interface DataToolbarChip {
   /** A unique key to identify this chip */
   key: string;
@@ -16,11 +23,11 @@ export interface DataToolbarFilterProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
   chips?: (string | DataToolbarChip)[];
   /** Callback passed by consumer used to delete a chip from the chips[] */
-  deleteChip?: (category: string, chip: DataToolbarChip | string) => void;
+  deleteChip?: (category: string | DataToolbarChipGroup, chip: DataToolbarChip | string) => void;
   /** Content to be rendered inside the data toolbar item associated with the chip group */
   children: React.ReactNode;
   /** Unique category name to be used as a label for the chip group */
-  categoryName: string;
+  categoryName: string | DataToolbarChipGroup;
   /** Flag to show the toolbar item */
   showToolbarItem?: boolean;
 }
@@ -32,7 +39,7 @@ interface DataToolbarFilterState {
 export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
   static contextType: any = DataToolbarContext;
   static defaultProps: PickOptional<DataToolbarFilterProps> = {
-    chips: [] as string[],
+    chips: [] as (string | DataToolbarChip)[],
     showToolbarItem: true
   };
 
@@ -44,12 +51,14 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
   }
 
   componentDidMount() {
-    this.context.updateNumberFilters(this.props.categoryName, this.props.chips.length);
+    const { categoryName, chips } = this.props;
+    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
     this.setState({ isMounted: true });
   }
 
   componentDidUpdate() {
-    this.context.updateNumberFilters(this.props.categoryName, this.props.chips.length);
+    const { categoryName, chips } = this.props;
+    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
   }
 
   render() {
@@ -59,7 +68,10 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     const chipGroup = chips.length ? (
       <DataToolbarItem variant="chip-group">
         <ChipGroup withToolbar>
-          <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
+          <ChipGroupToolbarItem
+            key={typeof categoryName === 'string' ? categoryName : categoryName.key}
+            categoryName={typeof categoryName === 'string' ? categoryName : categoryName.name}
+          >
             {chips.map(chip =>
               typeof chip === 'string' ? (
                 <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>

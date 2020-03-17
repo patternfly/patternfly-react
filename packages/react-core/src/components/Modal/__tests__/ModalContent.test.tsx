@@ -21,6 +21,15 @@ test('Modal Content Test isOpen', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Modal Content Test description', () => {
+  const view = shallow(
+    <ModalContent title="Test Modal Content title" id="id" isOpen description="This is a test description.">
+      This is a ModalBox header
+    </ModalContent>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('Modal Content Test with footer', () => {
   const view = shallow(
     <ModalContent title="Test Modal Content title" id="id" isOpen actions={['Testing']}>
