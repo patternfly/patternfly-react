@@ -27,6 +27,8 @@ describe('Button Demo Test', () => {
 
   // do this last since it leaves the page
   it('Verify primary button clicks', () => {
-    cy.get('button.pf-m-primary').parent().should('have.attr', 'href', 'https://www.google.com');
+    cy.get('button.pf-m-primary')
+      .parent()
+      .should('have.attr', 'href', 'https://www.google.com');
   });
 });
