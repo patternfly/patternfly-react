@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Title, TitleSize } from '../Title';
-import { Omit } from '../../helpers/typeUtils';
 
 export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
   children,

@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
-import { Omit } from '../../helpers/typeUtils';
 
 export type NavSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,

@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css, getModifier } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
 import { getUniqueId } from '../../helpers/util';
-import { Omit } from '../../helpers/typeUtils';
 
 export enum ProgressSize {
   sm = 'sm',

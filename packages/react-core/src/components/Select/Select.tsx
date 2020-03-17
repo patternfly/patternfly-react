@@ -11,7 +11,7 @@ import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 import { Divider } from '../Divider';
 

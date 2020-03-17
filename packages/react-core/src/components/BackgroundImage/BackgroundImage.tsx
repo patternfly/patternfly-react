@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 
 import { css, StyleSheet } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/BackgroundImage/background-image';

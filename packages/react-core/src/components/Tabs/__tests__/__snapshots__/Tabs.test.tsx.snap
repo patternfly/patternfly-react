@@ -108,29 +108,22 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               id="pf-tab-0-tab1"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-0-tab1"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-0-tab1"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-0-tab1"
                   className="pf-c-tabs__button"
                   id="pf-tab-0-tab1"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-0-tab1"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-0-tab1"
-                    onClick={[Function]}
-                  >
-                    Tab item 1
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 1
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
           <li
@@ -143,29 +136,22 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               id="pf-tab-1-tab2"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-1-tab2"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-1-tab2"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-1-tab2"
                   className="pf-c-tabs__button"
                   id="pf-tab-1-tab2"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-1-tab2"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-1-tab2"
-                    onClick={[Function]}
-                  >
-                    Tab item 2
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 2
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
           <li
@@ -178,29 +164,22 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               id="pf-tab-2-tab3"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-2-tab3"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-2-tab3"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-2-tab3"
                   className="pf-c-tabs__button"
                   id="pf-tab-2-tab3"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-2-tab3"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-2-tab3"
-                    onClick={[Function]}
-                  >
-                    Tab item 3
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 3
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
         </ul>
@@ -251,7 +230,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         id="tab1"
         key="0/.0"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -275,7 +254,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
           >
             Tab 1 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
       <ForwardRef
         activeKey={0}
@@ -291,7 +270,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         id="tab2"
         key="1/.1"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -315,7 +294,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
           >
             Tab 2 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
       <ForwardRef
         activeKey={0}
@@ -331,7 +310,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         id="tab3"
         key="2/.2"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -355,7 +334,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
           >
             Tab 3 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
     </Tabs>
   </ComponentWithOuia>
@@ -470,29 +449,22 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               id="pf-tab-0-tab1"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-0-tab1"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-0-tab1"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-0-tab1"
                   className="pf-c-tabs__button"
                   id="pf-tab-0-tab1"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-0-tab1"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-0-tab1"
-                    onClick={[Function]}
-                  >
-                    Tab item 1
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 1
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
           <li
@@ -505,29 +477,22 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               id="pf-tab-1-tab2"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-1-tab2"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-1-tab2"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-1-tab2"
                   className="pf-c-tabs__button"
                   id="pf-tab-1-tab2"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-1-tab2"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-1-tab2"
-                    onClick={[Function]}
-                  >
-                    Tab item 2
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 2
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
           <li
@@ -540,29 +505,22 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               id="pf-tab-2-tab3"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-2-tab3"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-2-tab3"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-2-tab3"
                   className="pf-c-tabs__button"
                   id="pf-tab-2-tab3"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-2-tab3"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-2-tab3"
-                    onClick={[Function]}
-                  >
-                    Tab item 3
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 3
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
         </ul>
@@ -613,7 +571,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         id="tab1"
         key="0/.0"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -637,7 +595,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
           >
             Tab 1 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
       <ForwardRef
         activeKey={0}
@@ -653,7 +611,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         id="tab2"
         key="1/.1"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -677,7 +635,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
           >
             Tab 2 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
       <ForwardRef
         activeKey={0}
@@ -693,7 +651,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         id="tab3"
         key="2/.2"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -717,7 +675,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
           >
             Tab 3 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
     </Tabs>
   </ComponentWithOuia>
@@ -832,29 +790,22 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               id="pf-tab-0-tab1"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-0-tab1"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-0-tab1"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-0-tab1"
                   className="pf-c-tabs__button"
                   id="pf-tab-0-tab1"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-0-tab1"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-0-tab1"
-                    onClick={[Function]}
-                  >
-                    Tab item 1
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 1
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
           <li
@@ -867,29 +818,22 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               id="pf-tab-1-tab2"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-1-tab2"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-1-tab2"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-1-tab2"
                   className="pf-c-tabs__button"
                   id="pf-tab-1-tab2"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-1-tab2"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-1-tab2"
-                    onClick={[Function]}
-                  >
-                    Tab item 2
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 2
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
           <li
@@ -902,29 +846,22 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               id="pf-tab-2-tab3"
               onClick={[Function]}
             >
-              <TabContainer
+              <TabButtonBase
                 aria-controls="pf-tab-section-2-tab3"
                 className="pf-c-tabs__button"
-                forwardRef={null}
                 id="pf-tab-2-tab3"
                 onClick={[Function]}
+                tabContentRef={null}
               >
-                <TabButtonWithRef
+                <button
                   aria-controls="pf-tab-section-2-tab3"
                   className="pf-c-tabs__button"
                   id="pf-tab-2-tab3"
                   onClick={[Function]}
                 >
-                  <button
-                    aria-controls="pf-tab-section-2-tab3"
-                    className="pf-c-tabs__button"
-                    id="pf-tab-2-tab3"
-                    onClick={[Function]}
-                  >
-                    Tab item 3
-                  </button>
-                </TabButtonWithRef>
-              </TabContainer>
+                  Tab item 3
+                </button>
+              </TabButtonBase>
             </ForwardRef>
           </li>
         </ul>
@@ -975,7 +912,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         id="tab1"
         key="0/.0"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -999,7 +936,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
           >
             Tab 1 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
       <ForwardRef
         activeKey={0}
@@ -1015,7 +952,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         id="tab2"
         key="1/.1"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -1039,7 +976,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
           >
             Tab 2 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
       <ForwardRef
         activeKey={0}
@@ -1055,7 +992,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         id="tab3"
         key="2/.2"
       >
-        <TabContent0
+        <TabContentBase
           activeKey={0}
           child={
             <Tab
@@ -1079,7 +1016,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
           >
             Tab 3 section
           </section>
-        </TabContent0>
+        </TabContentBase>
       </ForwardRef>
     </Tabs>
   </ComponentWithOuia>
