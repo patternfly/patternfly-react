@@ -80,8 +80,8 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
           {(!isValid || validated === ValidatedOptions.error) && helperTextInvalid
             ? inValidHelperText
             : validated !== ValidatedOptions.error && helperText
-              ? validHelperText
-              : ''}
+            ? validHelperText
+            : ''}
         </div>
       )}
     </FormContext.Consumer>

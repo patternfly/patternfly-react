@@ -25,8 +25,10 @@ const TabButtonBase: React.FunctionComponent<TabButtonProps> = ({
   );
 };
 
-export const TabButton = React.forwardRef((props: TabButtonProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
-  <TabButtonBase {...props} tabContentRef={ref} />
-));
+export const TabButton = React.forwardRef(
+  (props: TabButtonProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
+    <TabButtonBase {...props} tabContentRef={ref} />
+  )
+);
 
 // export const TabButton = withForwardedRef(TabButtonWithRef);

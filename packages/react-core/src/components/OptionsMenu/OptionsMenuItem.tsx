@@ -28,15 +28,15 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
   isDisabled,
   ...props
 }: OptionsMenuItemProps) => (
-    <DropdownItem
-      id={id}
-      component="button"
-      isDisabled={isDisabled}
-      onClick={(event: any) => onSelect(event)}
-      {...(isDisabled && { 'aria-disabled': true })}
-      {...props}
-    >
-      {children}
-      {isSelected && <CheckIcon className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={isSelected} />}
-    </DropdownItem>
-  );
+  <DropdownItem
+    id={id}
+    component="button"
+    isDisabled={isDisabled}
+    onClick={(event: any) => onSelect(event)}
+    {...(isDisabled && { 'aria-disabled': true })}
+    {...props}
+  >
+    {children}
+    {isSelected && <CheckIcon className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={isSelected} />}
+  </DropdownItem>
+);

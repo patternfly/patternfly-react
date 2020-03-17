@@ -36,17 +36,18 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   /** A callback for when the input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Type that the input accepts. */
-  type?: 'text'
-  | 'date'
-  | 'datetime-local'
-  | 'email'
-  | 'month'
-  | 'number'
-  | 'password'
-  | 'search'
-  | 'tel'
-  | 'time'
-  | 'url';
+  type?:
+    | 'text'
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'time'
+    | 'url';
   /** Value of the input. */
   value?: string | number;
   /** Aria-label. The input requires an associated id or aria-label. */

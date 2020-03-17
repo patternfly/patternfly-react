@@ -48,8 +48,8 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     openedOnEnter: false,
     selected: '',
     maxHeight: '',
-    sendRef: () => { },
-    keyHandler: () => { },
+    sendRef: () => {},
+    keyHandler: () => {},
     isCustomContent: false,
     hasInlineFilter: false
   };

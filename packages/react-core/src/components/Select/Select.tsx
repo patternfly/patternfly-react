@@ -190,9 +190,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       typeaheadFilteredChildren =
         e.target.value.toString() !== ''
           ? React.Children.toArray(this.props.children).filter(
-            (child: React.ReactNode) =>
-              this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
-          )
+              (child: React.ReactNode) =>
+                this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
+            )
           : React.Children.toArray(this.props.children);
     }
     if (!typeaheadFilteredChildren) {

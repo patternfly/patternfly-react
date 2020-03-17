@@ -40,8 +40,8 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   return variant === 'icon' ? (
     <IconComponent className={classNames} {...props} aria-hidden="true" />
   ) : (
-      <div className={classNames}>
-        <AnyComponent />
-      </div>
-    );
+    <div className={classNames}>
+      <AnyComponent />
+    </div>
+  );
 };

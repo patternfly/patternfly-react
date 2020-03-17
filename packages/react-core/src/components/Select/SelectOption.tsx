@@ -55,9 +55,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isFocused: false,
     isNoResultsOption: false,
     component: 'button',
-    onClick: () => { },
-    sendRef: () => { },
-    keyHandler: () => { }
+    onClick: () => {},
+    sendRef: () => {},
+    keyHandler: () => {}
   };
 
   componentDidMount() {

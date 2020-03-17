@@ -27,7 +27,7 @@ export interface CheckboxProps
 }
 
 // tslint:disable-next-line:no-empty
-const defaultOnChange = () => { };
+const defaultOnChange = () => {};
 
 export class Checkbox extends React.Component<CheckboxProps> {
   static defaultProps: PickOptional<CheckboxProps> = {

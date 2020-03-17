@@ -18,7 +18,7 @@ export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = 
   label,
   ...props
 }: FormSelectOptionProps) => (
-    <option {...props} className={className} value={value} disabled={isDisabled}>
-      {label}
-    </option>
-  );
+  <option {...props} className={className} value={value} disabled={isDisabled}>
+    {label}
+  </option>
+);

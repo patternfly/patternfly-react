@@ -16,19 +16,19 @@ export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
   className = '',
   label = ''
 }: DropdownGroupProps) => (
-    <DropdownContext.Consumer>
-      {({ sectionClass, sectionTitleClass, sectionComponent }) => {
-        const SectionComponent = sectionComponent as any;
-        return (
-          <SectionComponent className={css(sectionClass, className)}>
-            {label && (
-              <h1 className={css(sectionTitleClass)} aria-hidden>
-                {label}
-              </h1>
-            )}
-            <ul role="none">{children}</ul>
-          </SectionComponent>
-        );
-      }}
-    </DropdownContext.Consumer>
-  );
+  <DropdownContext.Consumer>
+    {({ sectionClass, sectionTitleClass, sectionComponent }) => {
+      const SectionComponent = sectionComponent as any;
+      return (
+        <SectionComponent className={css(sectionClass, className)}>
+          {label && (
+            <h1 className={css(sectionTitleClass)} aria-hidden>
+              {label}
+            </h1>
+          )}
+          <ul role="none">{children}</ul>
+        </SectionComponent>
+      );
+    }}
+  </DropdownContext.Consumer>
+);

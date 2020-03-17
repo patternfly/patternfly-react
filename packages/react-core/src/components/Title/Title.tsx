@@ -30,7 +30,7 @@ export const Title: React.FunctionComponent<TitleProps> = ({
   headingLevel: HeadingLevel = 'h1',
   ...props
 }: TitleProps) => (
-    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
-      {children}
-    </HeadingLevel>
-  );
+  <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
+    {children}
+  </HeadingLevel>
+);

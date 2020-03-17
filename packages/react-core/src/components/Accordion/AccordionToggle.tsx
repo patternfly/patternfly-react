@@ -25,22 +25,22 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
   component,
   ...props
 }: AccordionToggleProps) => (
-    <AccordionContext.Consumer>
-      {({ ToggleContainer }) => {
-        const Container = component || ToggleContainer;
-        return (
-          <Container>
-            <button
-              id={id}
-              className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
-              {...props}
-              aria-expanded={isExpanded}
-            >
-              <span className={css(styles.accordionToggleText)}>{children}</span>
-              <AngleRightIcon className={css(styles.accordionToggleIcon)} />
-            </button>
-          </Container>
-        );
-      }}
-    </AccordionContext.Consumer>
-  );
+  <AccordionContext.Consumer>
+    {({ ToggleContainer }) => {
+      const Container = component || ToggleContainer;
+      return (
+        <Container>
+          <button
+            id={id}
+            className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
+            {...props}
+            aria-expanded={isExpanded}
+          >
+            <span className={css(styles.accordionToggleText)}>{children}</span>
+            <AngleRightIcon className={css(styles.accordionToggleIcon)} />
+          </button>
+        </Container>
+      );
+    }}
+  </AccordionContext.Consumer>
+);

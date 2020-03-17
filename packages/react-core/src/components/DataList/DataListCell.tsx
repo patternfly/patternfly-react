@@ -26,17 +26,17 @@ export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
   isIcon = false,
   ...props
 }: DataListCellProps) => (
-    <div
-      className={css(
-        styles.dataListCell,
-        width > 1 && getModifier(styles, `flex_${width}`, ''),
-        !isFilled && styles.modifiers.noFill,
-        alignRight && styles.modifiers.alignRight,
-        isIcon && styles.modifiers.icon,
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
+  <div
+    className={css(
+      styles.dataListCell,
+      width > 1 && getModifier(styles, `flex_${width}`, ''),
+      !isFilled && styles.modifiers.noFill,
+      alignRight && styles.modifiers.alignRight,
+      isIcon && styles.modifiers.icon,
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+);

@@ -50,11 +50,11 @@ export const List: React.FunctionComponent<ListProps> = ({
       {children}
     </ol>
   ) : (
-      <ul
-        ref={ref as React.LegacyRef<HTMLUListElement>}
-        {...props}
-        className={css(styles.list, variant && getModifier(styles.modifiers, variant), className)}
-      >
-        {children}
-      </ul>
-    );
+    <ul
+      ref={ref as React.LegacyRef<HTMLUListElement>}
+      {...props}
+      className={css(styles.list, variant && getModifier(styles.modifiers, variant), className)}
+    >
+      {children}
+    </ul>
+  );

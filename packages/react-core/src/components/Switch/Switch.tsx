@@ -120,12 +120,12 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
             </span>
           </React.Fragment>
         ) : (
-              <span className={css(styles.switchToggle)}>
-                <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-                  <CheckIcon noVerticalAlign />
-                </div>
-              </span>
-            )}
+          <span className={css(styles.switchToggle)}>
+            <div className={css(styles.switchToggleIcon)} aria-hidden="true">
+              <CheckIcon noVerticalAlign />
+            </div>
+          </span>
+        )}
       </label>
     );
   }

@@ -18,7 +18,7 @@ export const FormSelectOptionGroup: React.FunctionComponent<FormSelectOptionGrou
   label,
   ...props
 }: FormSelectOptionGroupProps) => (
-    <optgroup {...props} disabled={!!isDisabled} className={className} label={label}>
-      {children}
-    </optgroup>
-  );
+  <optgroup {...props} disabled={!!isDisabled} className={className} label={label}>
+    {children}
+  </optgroup>
+);

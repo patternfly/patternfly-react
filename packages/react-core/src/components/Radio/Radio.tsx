@@ -38,7 +38,7 @@ export class Radio extends React.Component<RadioProps> {
     className: '',
     isDisabled: false,
     isValid: true,
-    onChange: () => { }
+    onChange: () => {}
   };
 
   constructor(props: RadioProps) {
@@ -87,13 +87,13 @@ export class Radio extends React.Component<RadioProps> {
     const labelRendered = !label ? null : isLabelWrapped ? (
       <span className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}>{label}</span>
     ) : (
-        <label
-          className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}
-          htmlFor={props.id}
-        >
-          {label}
-        </label>
-      );
+      <label
+        className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}
+        htmlFor={props.id}
+      >
+        {label}
+      </label>
+    );
 
     const descRender = description ? <div className={css(styles.radioDescription)}>{description}</div> : null;
     const childrenRendered = isLabelBeforeButton ? (
@@ -103,19 +103,19 @@ export class Radio extends React.Component<RadioProps> {
         {descRender}
       </>
     ) : (
-        <>
-          {inputRendered}
-          {labelRendered}
-          {descRender}
-        </>
-      );
+      <>
+        {inputRendered}
+        {labelRendered}
+        {descRender}
+      </>
+    );
 
     return isLabelWrapped ? (
       <label className={css(styles.radio, className)} htmlFor={props.id}>
         {childrenRendered}
       </label>
     ) : (
-        <div className={css(styles.radio, className)}>{childrenRendered}</div>
-      );
+      <div className={css(styles.radio, className)}>{childrenRendered}</div>
+    );
   }
 }
