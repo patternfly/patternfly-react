@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.147.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.147.0...@patternfly/react-core@3.147.1) (2020-03-17)
+
+
+### Bug Fixes
+
+* **select:** fix group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/issues/3838)) ([f8f87b8](https://github.com/patternfly/patternfly-react/commit/f8f87b8000cb6cd7f9c230fba888512293300be9))
+
+
+
+
+
 # [3.147.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.146.2...@patternfly/react-core@3.147.0) (2020-03-17)
 
 
