@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.147.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.146.2...@patternfly/react-core@3.147.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **aboutmodal:** set a customize aria-label to the close button ([#3877](https://github.com/patternfly/patternfly-react/issues/3877)) ([f824828](https://github.com/patternfly/patternfly-react/commit/f824828fa5b6a0879e9aa419fe8f0ff7b94db348))
+* **core,table:** forward ref types ([#3919](https://github.com/patternfly/patternfly-react/issues/3919)) ([2210ec2](https://github.com/patternfly/patternfly-react/commit/2210ec2c142a385f85de8b0bac9c61a61521186d))
+* **dropdown:** clean console errors in Dropdown.test.tsx ([#3861](https://github.com/patternfly/patternfly-react/issues/3861)) ([7cbeb75](https://github.com/patternfly/patternfly-react/commit/7cbeb750adf5f57698a8f69c83b92d51b2ab5a45))
+* **dropdown:** remove duplicate prop ([#3923](https://github.com/patternfly/patternfly-react/issues/3923)) ([55dc272](https://github.com/patternfly/patternfly-react/commit/55dc27201cc536f87fb3aef9af5d4d5440c54267))
+
+
+### Features
+
+* **EmptyState:** Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/issues/3844)) ([d4ea57f](https://github.com/patternfly/patternfly-react/commit/d4ea57f47eab89b8cdedc792ebe078b746176679))
+
+
+
+
+
 ## [3.146.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.146.0...@patternfly/react-core@3.146.2) (2020-03-13)
 
 

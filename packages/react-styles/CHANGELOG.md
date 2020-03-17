@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.8...@patternfly/react-styles@3.7.9) (2020-03-17)
+
+
+### Bug Fixes
+
+* **core,table:** forward ref types ([#3919](https://github.com/patternfly/patternfly-react/issues/3919)) ([2210ec2](https://github.com/patternfly/patternfly-react/commit/2210ec2c142a385f85de8b0bac9c61a61521186d))
+
+
+
+
+
 ## [3.7.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.7...@patternfly/react-styles@3.7.8) (2020-03-09)
 
 **Note:** Version bump only for package @patternfly/react-styles
