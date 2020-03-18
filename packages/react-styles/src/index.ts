@@ -1,8 +1,9 @@
-// https://github.com/JedWatson/classnames/blob/master/index.js
 /** Joins args into a className string
+ *
  * @param {any} args list of objects, string, or arrays to reduce
  */
 export function css(...args: any): string {
+  // Adapted from https://github.com/JedWatson/classnames/blob/master/index.js
   const classes = [] as string[];
   const hasOwn = {}.hasOwnProperty;
 

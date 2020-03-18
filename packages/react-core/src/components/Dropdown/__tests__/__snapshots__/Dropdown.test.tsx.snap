@@ -28,8 +28,8 @@ exports[`KebabToggle basic 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
+      data-ouia-component-id={13}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={13}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -43,8 +43,8 @@ exports[`KebabToggle basic 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-expanded"
+              data-ouia-component-id="13"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="13"
               data-ouia-safe="true"
             >
               <button
@@ -101,8 +101,8 @@ exports[`KebabToggle basic 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-expanded"
+                data-ouia-component-id="13"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="13"
                 data-ouia-safe="true"
               >
                 <button
@@ -496,8 +496,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-top pf-m-align-right"
+      data-ouia-component-id={10}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={10}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -511,8 +511,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-top pf-m-align-right"
+              data-ouia-component-id="10"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="10"
               data-ouia-safe="true"
             >
               <button
@@ -562,8 +562,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-top pf-m-align-right"
+                data-ouia-component-id="10"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="10"
                 data-ouia-safe="true"
               >
                 <button
@@ -927,8 +927,8 @@ exports[`KebabToggle dropup 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-top"
+      data-ouia-component-id={9}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={9}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -942,8 +942,8 @@ exports[`KebabToggle dropup 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-top"
+              data-ouia-component-id="9"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="9"
               data-ouia-safe="true"
             >
               <button
@@ -993,8 +993,8 @@ exports[`KebabToggle dropup 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-top"
+                data-ouia-component-id="9"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="9"
                 data-ouia-safe="true"
               >
                 <button
@@ -1358,8 +1358,8 @@ exports[`KebabToggle expanded 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
+      data-ouia-component-id={11}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={11}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -1373,8 +1373,8 @@ exports[`KebabToggle expanded 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-expanded"
+              data-ouia-component-id="11"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="11"
               data-ouia-safe="true"
             >
               <button
@@ -1499,8 +1499,8 @@ exports[`KebabToggle expanded 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-expanded"
+                data-ouia-component-id="11"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="11"
                 data-ouia-safe="true"
               >
                 <button
@@ -2208,8 +2208,8 @@ exports[`KebabToggle plain 1`] = `
   >
     <div
       className="pf-c-dropdown"
+      data-ouia-component-id={12}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={12}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -2223,8 +2223,8 @@ exports[`KebabToggle plain 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown"
+              data-ouia-component-id="12"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="12"
               data-ouia-safe="true"
             >
               <button
@@ -2274,8 +2274,8 @@ exports[`KebabToggle plain 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown"
+                data-ouia-component-id="12"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="12"
                 data-ouia-safe="true"
               >
                 <button
@@ -2638,8 +2638,8 @@ exports[`KebabToggle regular 1`] = `
   >
     <div
       className="pf-c-dropdown"
+      data-ouia-component-id={7}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={7}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -2653,8 +2653,8 @@ exports[`KebabToggle regular 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown"
+              data-ouia-component-id="7"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="7"
               data-ouia-safe="true"
             >
               <button
@@ -2704,8 +2704,8 @@ exports[`KebabToggle regular 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown"
+                data-ouia-component-id="7"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="7"
                 data-ouia-safe="true"
               >
                 <button
@@ -3069,8 +3069,8 @@ exports[`KebabToggle right aligned 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-align-right"
+      data-ouia-component-id={8}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={8}
       data-ouia-safe={true}
     >
       <KebabToggle
@@ -3084,8 +3084,8 @@ exports[`KebabToggle right aligned 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-align-right"
+              data-ouia-component-id="8"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="8"
               data-ouia-safe="true"
             >
               <button
@@ -3135,8 +3135,8 @@ exports[`KebabToggle right aligned 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-align-right"
+                data-ouia-component-id="8"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="8"
                 data-ouia-safe="true"
               >
                 <button
@@ -3243,8 +3243,8 @@ exports[`dropdown basic 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
+      data-ouia-component-id={6}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={6}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -3258,8 +3258,8 @@ exports[`dropdown basic 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-expanded"
+              data-ouia-component-id="6"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="6"
               data-ouia-safe="true"
             >
               <button
@@ -3320,8 +3320,8 @@ exports[`dropdown basic 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-expanded"
+                data-ouia-component-id="6"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="6"
                 data-ouia-safe="true"
               >
                 <button
@@ -3730,8 +3730,8 @@ exports[`dropdown dropup + right aligned 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-top pf-m-align-right"
+      data-ouia-component-id={3}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={3}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -3745,8 +3745,8 @@ exports[`dropdown dropup + right aligned 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-top pf-m-align-right"
+              data-ouia-component-id="3"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="3"
               data-ouia-safe="true"
             >
               <button
@@ -3800,8 +3800,8 @@ exports[`dropdown dropup + right aligned 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-top pf-m-align-right"
+                data-ouia-component-id="3"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="3"
                 data-ouia-safe="true"
               >
                 <button
@@ -4180,8 +4180,8 @@ exports[`dropdown dropup 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-top"
+      data-ouia-component-id={2}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={2}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -4195,8 +4195,8 @@ exports[`dropdown dropup 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-top"
+              data-ouia-component-id="2"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="2"
               data-ouia-safe="true"
             >
               <button
@@ -4250,8 +4250,8 @@ exports[`dropdown dropup 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-top"
+                data-ouia-component-id="2"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="2"
                 data-ouia-safe="true"
               >
                 <button
@@ -4630,8 +4630,8 @@ exports[`dropdown expanded 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
+      data-ouia-component-id={4}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={4}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -4645,8 +4645,8 @@ exports[`dropdown expanded 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-expanded"
+              data-ouia-component-id="4"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="4"
               data-ouia-safe="true"
             >
               <button
@@ -4775,8 +4775,8 @@ exports[`dropdown expanded 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-expanded"
+                data-ouia-component-id="4"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="4"
                 data-ouia-safe="true"
               >
                 <button
@@ -5500,8 +5500,8 @@ exports[`dropdown primary 1`] = `
   >
     <div
       className="pf-c-dropdown"
+      data-ouia-component-id={5}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={5}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -5516,8 +5516,8 @@ exports[`dropdown primary 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown"
+              data-ouia-component-id="5"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="5"
               data-ouia-safe="true"
             >
               <button
@@ -5571,8 +5571,8 @@ exports[`dropdown primary 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown"
+                data-ouia-component-id="5"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="5"
                 data-ouia-safe="true"
               >
                 <button
@@ -5950,8 +5950,8 @@ exports[`dropdown regular 1`] = `
   >
     <div
       className="pf-c-dropdown"
+      data-ouia-component-id={0}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={0}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -5965,8 +5965,8 @@ exports[`dropdown regular 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown"
+              data-ouia-component-id="0"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="0"
               data-ouia-safe="true"
             >
               <button
@@ -6020,8 +6020,8 @@ exports[`dropdown regular 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown"
+                data-ouia-component-id="0"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="0"
                 data-ouia-safe="true"
               >
                 <button
@@ -6400,8 +6400,8 @@ exports[`dropdown right aligned 1`] = `
   >
     <div
       className="pf-c-dropdown pf-m-align-right"
+      data-ouia-component-id={1}
       data-ouia-component-type="PF4/Dropdown"
-      data-ouia-id={1}
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -6415,8 +6415,8 @@ exports[`dropdown right aligned 1`] = `
           Object {
             "current": <div
               class="pf-c-dropdown pf-m-align-right"
+              data-ouia-component-id="1"
               data-ouia-component-type="PF4/Dropdown"
-              data-ouia-id="1"
               data-ouia-safe="true"
             >
               <button
@@ -6470,8 +6470,8 @@ exports[`dropdown right aligned 1`] = `
             Object {
               "current": <div
                 class="pf-c-dropdown pf-m-align-right"
+                data-ouia-component-id="1"
                 data-ouia-component-type="PF4/Dropdown"
-                data-ouia-id="1"
                 data-ouia-safe="true"
               >
                 <button

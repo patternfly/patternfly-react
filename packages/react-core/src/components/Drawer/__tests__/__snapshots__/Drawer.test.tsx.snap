@@ -76,8 +76,8 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id={null}
                                   data-ouia-component-type="PF4/Button"
-                                  data-ouia-id={null}
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
@@ -212,8 +212,8 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id={null}
                                   data-ouia-component-type="PF4/Button"
-                                  data-ouia-id={null}
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
@@ -348,8 +348,8 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id={null}
                                   data-ouia-component-type="PF4/Button"
-                                  data-ouia-id={null}
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
@@ -484,8 +484,8 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id={null}
                                   data-ouia-component-type="PF4/Button"
-                                  data-ouia-id={null}
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}
@@ -620,8 +620,8 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
                                   className="pf-c-button pf-m-plain"
+                                  data-ouia-component-id={null}
                                   data-ouia-component-type="PF4/Button"
-                                  data-ouia-id={null}
                                   data-ouia-safe={true}
                                   disabled={false}
                                   onClick={[Function]}

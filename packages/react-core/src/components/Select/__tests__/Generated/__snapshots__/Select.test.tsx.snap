@@ -3,8 +3,8 @@
 exports[`Select should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-select pf-m-top ''"
+  data-ouia-component-id={0}
   data-ouia-component-type="PF4/Select"
-  data-ouia-id={0}
   data-ouia-safe={true}
   style={
     Object {

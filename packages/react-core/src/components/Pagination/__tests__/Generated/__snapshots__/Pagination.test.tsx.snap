@@ -3,8 +3,8 @@
 exports[`Pagination should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-pagination ''"
+  data-ouia-component-id={null}
   data-ouia-component-type="PF4/Pagination"
-  data-ouia-id={null}
   data-ouia-safe={true}
   id="'pagination-options-menu'-0"
 >

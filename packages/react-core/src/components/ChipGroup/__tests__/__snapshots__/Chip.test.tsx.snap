@@ -16,8 +16,8 @@ exports[`Chip closable 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
+      data-ouia-component-id={3}
       data-ouia-component-type="PF4/Chip"
-      data-ouia-id={3}
       data-ouia-safe={true}
     >
       <span
@@ -45,8 +45,8 @@ exports[`Chip closable 1`] = `
             aria-label="close"
             aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
             className="pf-c-button pf-m-plain"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             id="remove_pf-random-id-1"
@@ -105,8 +105,8 @@ exports[`Chip closable with tooltip 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
+      data-ouia-component-id={5}
       data-ouia-component-type="PF4/Chip"
-      data-ouia-id={5}
       data-ouia-safe={true}
     >
       <span
@@ -134,8 +134,8 @@ exports[`Chip closable with tooltip 1`] = `
             aria-label="close"
             aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
             className="pf-c-button pf-m-plain"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             id="remove_pf-random-id-2"
@@ -193,8 +193,8 @@ exports[`Chip overflow 1`] = `
   >
     <div
       className="pf-c-chip pf-m-overflow my-chp-cls"
+      data-ouia-component-id={1}
       data-ouia-component-type="PF4/OverflowChip"
-      data-ouia-id={1}
       data-ouia-safe={true}
     >
       <ChipButton
@@ -210,8 +210,8 @@ exports[`Chip overflow 1`] = `
             aria-disabled={null}
             aria-label="close"
             className="pf-c-button pf-m-plain"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -246,8 +246,8 @@ exports[`Chip readonly 1`] = `
   >
     <div
       className="pf-c-chip pf-m-read-only my-chp-cls"
+      data-ouia-component-id={7}
       data-ouia-component-type="PF4/Chip"
-      data-ouia-id={7}
       data-ouia-safe={true}
     >
       <span
@@ -277,8 +277,8 @@ exports[`ChipButton 1`] = `
       aria-disabled={null}
       aria-label="close"
       className="pf-c-button pf-m-plain chip-bttn-cls"
+      data-ouia-component-id={null}
       data-ouia-component-type="PF4/Button"
-      data-ouia-id={null}
       data-ouia-safe={true}
       disabled={false}
       id="my-chip-button"

@@ -72,15 +72,7 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
   };
 
   renderChip = (randomId: string) => {
-    const {
-      children,
-      closeBtnAriaLabel,
-      tooltipPosition,
-      className,
-      onClick,
-      isReadOnly,
-      ouiaId
-    } = this.props;
+    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick, isReadOnly, ouiaId } = this.props;
     const Component = this.props.component as any;
     if (this.state.isTooltipVisible) {
       return (

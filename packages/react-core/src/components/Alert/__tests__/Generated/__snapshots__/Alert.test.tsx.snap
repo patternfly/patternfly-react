@@ -4,8 +4,8 @@ exports[`Alert should match snapshot (auto-generated) 1`] = `
 <div
   aria-label="string"
   className="pf-c-alert pf-m-success ''"
+  data-ouia-component-id={0}
   data-ouia-component-type="PF4/Alert"
-  data-ouia-id={0}
   data-ouia-safe={true}
 >
   <AlertIcon

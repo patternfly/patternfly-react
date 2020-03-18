@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
-import { capitalize, getOUIAProps, getUniqueId, OUIAProps } from '../../helpers';
+import { capitalize, getOUIAProps, OUIAProps } from '../../helpers';
 import { Omit } from '../../helpers/typeUtils';
 
 export enum AlertVariant {

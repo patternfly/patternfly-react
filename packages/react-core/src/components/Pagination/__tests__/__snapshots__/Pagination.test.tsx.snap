@@ -63,8 +63,8 @@ exports[`component render custom pagination toggle 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-12"
   >
@@ -225,8 +225,8 @@ exports[`component render custom pagination toggle 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={12}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={12}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -248,8 +248,8 @@ exports[`component render custom pagination toggle 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="12"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="12"
                   data-ouia-safe="true"
                 >
                   <div
@@ -311,8 +311,8 @@ exports[`component render custom pagination toggle 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="12"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="12"
                       data-ouia-safe="true"
                     >
                       <div
@@ -370,8 +370,8 @@ exports[`component render custom pagination toggle 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="12"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="12"
                         data-ouia-safe="true"
                       >
                         <div
@@ -494,8 +494,8 @@ exports[`component render custom pagination toggle 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -542,8 +542,8 @@ exports[`component render custom pagination toggle 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -611,8 +611,8 @@ exports[`component render custom pagination toggle 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -659,8 +659,8 @@ exports[`component render custom pagination toggle 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -752,8 +752,8 @@ exports[`component render custom perPageOptions 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-7"
   >
@@ -853,8 +853,8 @@ exports[`component render custom perPageOptions 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={7}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={7}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -876,8 +876,8 @@ exports[`component render custom perPageOptions 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="7"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="7"
                   data-ouia-safe="true"
                 >
                   <div
@@ -967,8 +967,8 @@ exports[`component render custom perPageOptions 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="7"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="7"
                       data-ouia-safe="true"
                     >
                       <div
@@ -1037,8 +1037,8 @@ exports[`component render custom perPageOptions 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="7"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="7"
                         data-ouia-safe="true"
                       >
                         <div
@@ -1172,8 +1172,8 @@ exports[`component render custom perPageOptions 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -1220,8 +1220,8 @@ exports[`component render custom perPageOptions 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -1289,8 +1289,8 @@ exports[`component render custom perPageOptions 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -1337,8 +1337,8 @@ exports[`component render custom perPageOptions 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -1442,8 +1442,8 @@ exports[`component render custom start end 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-10"
   >
@@ -1604,8 +1604,8 @@ exports[`component render custom start end 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={10}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={10}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -1627,8 +1627,8 @@ exports[`component render custom start end 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="10"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="10"
                   data-ouia-safe="true"
                 >
                   <div
@@ -1718,8 +1718,8 @@ exports[`component render custom start end 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="10"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="10"
                       data-ouia-safe="true"
                     >
                       <div
@@ -1788,8 +1788,8 @@ exports[`component render custom start end 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="10"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="10"
                         data-ouia-safe="true"
                       >
                         <div
@@ -1923,8 +1923,8 @@ exports[`component render custom start end 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -1971,8 +1971,8 @@ exports[`component render custom start end 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -2040,8 +2040,8 @@ exports[`component render custom start end 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -2088,8 +2088,8 @@ exports[`component render custom start end 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -2174,8 +2174,8 @@ exports[`component render empty per page options 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-8"
   >
@@ -2252,8 +2252,8 @@ exports[`component render empty per page options 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={8}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={8}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -2275,8 +2275,8 @@ exports[`component render empty per page options 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="8"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="8"
                   data-ouia-safe="true"
                 >
                   <div
@@ -2334,8 +2334,8 @@ exports[`component render empty per page options 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -2382,8 +2382,8 @@ exports[`component render empty per page options 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -2451,8 +2451,8 @@ exports[`component render empty per page options 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -2499,8 +2499,8 @@ exports[`component render empty per page options 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -2604,8 +2604,8 @@ exports[`component render last page 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-6"
   >
@@ -2766,8 +2766,8 @@ exports[`component render last page 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={6}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={6}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -2789,8 +2789,8 @@ exports[`component render last page 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="6"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="6"
                   data-ouia-safe="true"
                 >
                   <div
@@ -2880,8 +2880,8 @@ exports[`component render last page 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="6"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="6"
                       data-ouia-safe="true"
                     >
                       <div
@@ -2950,8 +2950,8 @@ exports[`component render last page 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="6"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="6"
                         data-ouia-safe="true"
                       >
                         <div
@@ -3085,8 +3085,8 @@ exports[`component render last page 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -3133,8 +3133,8 @@ exports[`component render last page 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -3202,8 +3202,8 @@ exports[`component render last page 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -3250,8 +3250,8 @@ exports[`component render last page 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -3355,8 +3355,8 @@ exports[`component render limited number of pages 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-4"
   >
@@ -3517,8 +3517,8 @@ exports[`component render limited number of pages 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={4}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={4}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -3540,8 +3540,8 @@ exports[`component render limited number of pages 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="4"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="4"
                   data-ouia-safe="true"
                 >
                   <div
@@ -3631,8 +3631,8 @@ exports[`component render limited number of pages 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="4"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="4"
                       data-ouia-safe="true"
                     >
                       <div
@@ -3701,8 +3701,8 @@ exports[`component render limited number of pages 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="4"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="4"
                         data-ouia-safe="true"
                       >
                         <div
@@ -3836,8 +3836,8 @@ exports[`component render limited number of pages 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -3884,8 +3884,8 @@ exports[`component render limited number of pages 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -3953,8 +3953,8 @@ exports[`component render limited number of pages 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -4001,8 +4001,8 @@ exports[`component render limited number of pages 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -4106,8 +4106,8 @@ exports[`component render no items 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-9"
   >
@@ -4268,8 +4268,8 @@ exports[`component render no items 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={9}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={9}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -4291,8 +4291,8 @@ exports[`component render no items 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="9"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="9"
                   data-ouia-safe="true"
                 >
                   <div
@@ -4383,8 +4383,8 @@ exports[`component render no items 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="9"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="9"
                       data-ouia-safe="true"
                     >
                       <div
@@ -4454,8 +4454,8 @@ exports[`component render no items 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="9"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="9"
                         data-ouia-safe="true"
                       >
                         <div
@@ -4590,8 +4590,8 @@ exports[`component render no items 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -4638,8 +4638,8 @@ exports[`component render no items 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -4707,8 +4707,8 @@ exports[`component render no items 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -4755,8 +4755,8 @@ exports[`component render no items 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -4860,8 +4860,8 @@ exports[`component render should render correctly bottom 1`] = `
 >
   <div
     className="pf-c-pagination pf-m-footer"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-1"
   >
@@ -5000,8 +5000,8 @@ exports[`component render should render correctly bottom 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={1}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={1}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -5023,8 +5023,8 @@ exports[`component render should render correctly bottom 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="1"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="1"
                   data-ouia-safe="true"
                 >
                   <div
@@ -5114,8 +5114,8 @@ exports[`component render should render correctly bottom 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="1"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="1"
                       data-ouia-safe="true"
                     >
                       <div
@@ -5184,8 +5184,8 @@ exports[`component render should render correctly bottom 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="1"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="1"
                         data-ouia-safe="true"
                       >
                         <div
@@ -5319,8 +5319,8 @@ exports[`component render should render correctly bottom 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -5367,8 +5367,8 @@ exports[`component render should render correctly bottom 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -5436,8 +5436,8 @@ exports[`component render should render correctly bottom 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -5484,8 +5484,8 @@ exports[`component render should render correctly bottom 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -5589,8 +5589,8 @@ exports[`component render should render correctly compact 1`] = `
 >
   <div
     className="pf-c-pagination pf-m-compact"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-2"
   >
@@ -5751,8 +5751,8 @@ exports[`component render should render correctly compact 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={2}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={2}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -5774,8 +5774,8 @@ exports[`component render should render correctly compact 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="2"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="2"
                   data-ouia-safe="true"
                 >
                   <div
@@ -5865,8 +5865,8 @@ exports[`component render should render correctly compact 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="2"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="2"
                       data-ouia-safe="true"
                     >
                       <div
@@ -5935,8 +5935,8 @@ exports[`component render should render correctly compact 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="2"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="2"
                         data-ouia-safe="true"
                       >
                         <div
@@ -6070,8 +6070,8 @@ exports[`component render should render correctly compact 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -6118,8 +6118,8 @@ exports[`component render should render correctly compact 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -6223,8 +6223,8 @@ exports[`component render should render correctly disabled 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-3"
   >
@@ -6385,8 +6385,8 @@ exports[`component render should render correctly disabled 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={3}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={3}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -6408,8 +6408,8 @@ exports[`component render should render correctly disabled 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="3"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="3"
                   data-ouia-safe="true"
                 >
                   <div
@@ -6500,8 +6500,8 @@ exports[`component render should render correctly disabled 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="3"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="3"
                       data-ouia-safe="true"
                     >
                       <div
@@ -6571,8 +6571,8 @@ exports[`component render should render correctly disabled 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="3"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="3"
                         data-ouia-safe="true"
                       >
                         <div
@@ -6707,8 +6707,8 @@ exports[`component render should render correctly disabled 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -6755,8 +6755,8 @@ exports[`component render should render correctly disabled 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -6824,8 +6824,8 @@ exports[`component render should render correctly disabled 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -6872,8 +6872,8 @@ exports[`component render should render correctly disabled 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -6977,8 +6977,8 @@ exports[`component render should render correctly top 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-0"
   >
@@ -7139,8 +7139,8 @@ exports[`component render should render correctly top 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={0}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={0}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -7162,8 +7162,8 @@ exports[`component render should render correctly top 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="0"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="0"
                   data-ouia-safe="true"
                 >
                   <div
@@ -7253,8 +7253,8 @@ exports[`component render should render correctly top 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="0"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="0"
                       data-ouia-safe="true"
                     >
                       <div
@@ -7323,8 +7323,8 @@ exports[`component render should render correctly top 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="0"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="0"
                         data-ouia-safe="true"
                       >
                         <div
@@ -7458,8 +7458,8 @@ exports[`component render should render correctly top 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -7506,8 +7506,8 @@ exports[`component render should render correctly top 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -7575,8 +7575,8 @@ exports[`component render should render correctly top 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -7623,8 +7623,8 @@ exports[`component render should render correctly top 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -7719,8 +7719,8 @@ exports[`component render titles 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-11"
   >
@@ -7882,8 +7882,8 @@ exports[`component render titles 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={11}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={11}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -7905,8 +7905,8 @@ exports[`component render titles 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="11"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="11"
                   data-ouia-safe="true"
                 >
                   <div
@@ -7997,8 +7997,8 @@ exports[`component render titles 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="11"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="11"
                       data-ouia-safe="true"
                     >
                       <div
@@ -8067,8 +8067,8 @@ exports[`component render titles 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="11"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="11"
                         data-ouia-safe="true"
                       >
                         <div
@@ -8202,8 +8202,8 @@ exports[`component render titles 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -8250,8 +8250,8 @@ exports[`component render titles 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -8319,8 +8319,8 @@ exports[`component render titles 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -8367,8 +8367,8 @@ exports[`component render titles 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -8472,8 +8472,8 @@ exports[`component render up drop direction 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-13"
   >
@@ -8634,8 +8634,8 @@ exports[`component render up drop direction 1`] = `
       >
         <div
           className="pf-c-options-menu pf-m-top"
+          data-ouia-component-id={13}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={13}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -8657,8 +8657,8 @@ exports[`component render up drop direction 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu pf-m-top"
+                  data-ouia-component-id="13"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="13"
                   data-ouia-safe="true"
                 >
                   <div
@@ -8748,8 +8748,8 @@ exports[`component render up drop direction 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu pf-m-top"
+                      data-ouia-component-id="13"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="13"
                       data-ouia-safe="true"
                     >
                       <div
@@ -8818,8 +8818,8 @@ exports[`component render up drop direction 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu pf-m-top"
+                        data-ouia-component-id="13"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="13"
                         data-ouia-safe="true"
                       >
                         <div
@@ -8953,8 +8953,8 @@ exports[`component render up drop direction 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -9001,8 +9001,8 @@ exports[`component render up drop direction 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -9070,8 +9070,8 @@ exports[`component render up drop direction 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -9118,8 +9118,8 @@ exports[`component render up drop direction 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={false}
             onClick={[Function]}
@@ -9223,8 +9223,8 @@ exports[`component render zero results 1`] = `
 >
   <div
     className="pf-c-pagination"
+    data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
-    data-ouia-id={null}
     data-ouia-safe={true}
     id="pagination-options-menu-5"
   >
@@ -9385,8 +9385,8 @@ exports[`component render zero results 1`] = `
       >
         <div
           className="pf-c-options-menu"
+          data-ouia-component-id={5}
           data-ouia-component-type="PF4/Dropdown"
-          data-ouia-id={5}
           data-ouia-safe={true}
         >
           <OptionsToggle
@@ -9408,8 +9408,8 @@ exports[`component render zero results 1`] = `
               Object {
                 "current": <div
                   class="pf-c-options-menu"
+                  data-ouia-component-id="5"
                   data-ouia-component-type="PF4/Dropdown"
-                  data-ouia-id="5"
                   data-ouia-safe="true"
                 >
                   <div
@@ -9500,8 +9500,8 @@ exports[`component render zero results 1`] = `
                   Object {
                     "current": <div
                       class="pf-c-options-menu"
+                      data-ouia-component-id="5"
                       data-ouia-component-type="PF4/Dropdown"
-                      data-ouia-id="5"
                       data-ouia-safe="true"
                     >
                       <div
@@ -9571,8 +9571,8 @@ exports[`component render zero results 1`] = `
                     Object {
                       "current": <div
                         class="pf-c-options-menu"
+                        data-ouia-component-id="5"
                         data-ouia-component-type="PF4/Dropdown"
-                        data-ouia-id="5"
                         data-ouia-safe="true"
                       >
                         <div
@@ -9707,8 +9707,8 @@ exports[`component render zero results 1`] = `
             aria-label="Go to first page"
             className="pf-c-button pf-m-plain"
             data-action="first"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -9755,8 +9755,8 @@ exports[`component render zero results 1`] = `
             aria-label="Go to previous page"
             className="pf-c-button pf-m-plain"
             data-action="previous"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -9824,8 +9824,8 @@ exports[`component render zero results 1`] = `
             aria-label="Go to next page"
             className="pf-c-button pf-m-plain"
             data-action="next"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}
@@ -9872,8 +9872,8 @@ exports[`component render zero results 1`] = `
             aria-label="Go to last page"
             className="pf-c-button pf-m-plain"
             data-action="last"
+            data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
-            data-ouia-id={null}
             data-ouia-safe={true}
             disabled={true}
             onClick={[Function]}

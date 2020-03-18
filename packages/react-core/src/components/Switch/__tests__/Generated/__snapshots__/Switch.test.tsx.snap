@@ -3,8 +3,8 @@
 exports[`Switch should match snapshot (auto-generated) 1`] = `
 <label
   className="pf-c-switch ''"
+  data-ouia-component-id={0}
   data-ouia-component-type="PF4/Switch"
-  data-ouia-id={0}
   data-ouia-safe={true}
   htmlFor="''"
 >

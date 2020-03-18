@@ -5,14 +5,20 @@ export interface OUIAProps {
   // If there is only one instance of the component on the page at once, it is OPTIONAL
   ouiaId?: OuiaId;
   // False if in animation
-  ouiaSafe?: Boolean;
+  ouiaSafe?: boolean;
 }
 
 let uid = 0;
-export function getOUIAProps(componentName: string, id: OuiaId | undefined, ouiaSafe: Boolean = true) {
+/** Get props to conform to OUIA spec
+ * 
+ * @param componentType OUIA component type
+ * @param id OUIA component id
+ * @param ouiaSafe false if in animation
+ */
+export function getOUIAProps(componentType: string, id: OuiaId | undefined, ouiaSafe: boolean = true) {
   return {
-    'data-ouia-component-type': `PF4/${componentName}`,
+    'data-ouia-component-type': `PF4/${componentType}`,
     'data-ouia-safe': ouiaSafe,
-    'data-ouia-id': id === undefined ? uid++ : id
+    'data-ouia-component-id': id === undefined ? uid++ : id
   };
 }

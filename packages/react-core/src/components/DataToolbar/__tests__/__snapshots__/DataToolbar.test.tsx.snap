@@ -56,8 +56,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     aria-haspopup={false}
                     aria-label="Show Filters"
                     className="pf-c-button pf-m-plain"
+                    data-ouia-component-id={null}
                     data-ouia-component-type="PF4/Button"
-                    data-ouia-id={null}
                     data-ouia-safe={true}
                     disabled={false}
                     onClick={[Function]}
@@ -151,8 +151,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           >
                             <div
                               className="pf-c-select"
+                              data-ouia-component-id={4}
                               data-ouia-component-type="PF4/Select"
-                              data-ouia-id={4}
                               data-ouia-safe={true}
                               style={
                                 Object {
@@ -180,8 +180,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   Object {
                                     "current": <div
                                       class="pf-c-select"
+                                      data-ouia-component-id="4"
                                       data-ouia-component-type="PF4/Select"
-                                      data-ouia-id="4"
                                       data-ouia-safe="true"
                                     >
                                       <button
@@ -300,8 +300,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="9"
                                       data-ouia-component-type="PF4/Chip"
-                                      data-ouia-id="9"
                                       data-ouia-safe="true"
                                     >
                                       <span
@@ -337,8 +337,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     </li>
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="10"
                                       data-ouia-component-type="PF4/Chip"
-                                      data-ouia-id="10"
                                       data-ouia-safe="true"
                                     >
                                       <span
@@ -394,8 +394,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="11"
                                       data-ouia-component-type="PF4/Chip"
-                                      data-ouia-id="11"
                                       data-ouia-safe="true"
                                     >
                                       <span
@@ -500,8 +500,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                             >
                                               <li
                                                 className="pf-c-chip"
+                                                data-ouia-component-id={9}
                                                 data-ouia-component-type="PF4/Chip"
-                                                data-ouia-id={9}
                                                 data-ouia-safe={true}
                                               >
                                                 <span
@@ -529,8 +529,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                                                       className="pf-c-button pf-m-plain"
+                                                      data-ouia-component-id={null}
                                                       data-ouia-component-type="PF4/Button"
-                                                      data-ouia-id={null}
                                                       data-ouia-safe={true}
                                                       disabled={false}
                                                       id="remove_pf-random-id-1"
@@ -586,8 +586,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                             >
                                               <li
                                                 className="pf-c-chip"
+                                                data-ouia-component-id={10}
                                                 data-ouia-component-type="PF4/Chip"
-                                                data-ouia-id={10}
                                                 data-ouia-safe={true}
                                               >
                                                 <span
@@ -615,8 +615,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
                                                       className="pf-c-button pf-m-plain"
+                                                      data-ouia-component-id={null}
                                                       data-ouia-component-type="PF4/Button"
-                                                      data-ouia-id={null}
                                                       data-ouia-safe={true}
                                                       disabled={false}
                                                       id="remove_pf-random-id-2"
@@ -714,8 +714,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           >
                             <div
                               className="pf-c-select"
+                              data-ouia-component-id={7}
                               data-ouia-component-type="PF4/Select"
-                              data-ouia-id={7}
                               data-ouia-safe={true}
                               style={
                                 Object {
@@ -743,8 +743,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   Object {
                                     "current": <div
                                       class="pf-c-select"
+                                      data-ouia-component-id="7"
                                       data-ouia-component-type="PF4/Select"
-                                      data-ouia-id="7"
                                       data-ouia-safe="true"
                                     >
                                       <button
@@ -863,8 +863,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="9"
                                       data-ouia-component-type="PF4/Chip"
-                                      data-ouia-id="9"
                                       data-ouia-safe="true"
                                     >
                                       <span
@@ -900,8 +900,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     </li>
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="10"
                                       data-ouia-component-type="PF4/Chip"
-                                      data-ouia-id="10"
                                       data-ouia-safe="true"
                                     >
                                       <span
@@ -957,8 +957,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="11"
                                       data-ouia-component-type="PF4/Chip"
-                                      data-ouia-id="11"
                                       data-ouia-safe="true"
                                     >
                                       <span
@@ -1063,8 +1063,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                             >
                                               <li
                                                 className="pf-c-chip"
+                                                data-ouia-component-id={11}
                                                 data-ouia-component-type="PF4/Chip"
-                                                data-ouia-id={11}
                                                 data-ouia-safe={true}
                                               >
                                                 <span
@@ -1092,8 +1092,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                       aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
                                                       className="pf-c-button pf-m-plain"
+                                                      data-ouia-component-id={null}
                                                       data-ouia-component-type="PF4/Button"
-                                                      data-ouia-id={null}
                                                       data-ouia-safe={true}
                                                       disabled={false}
                                                       id="remove_pf-random-id-4"
@@ -1254,8 +1254,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           aria-disabled={null}
                           aria-label={null}
                           className="pf-c-button pf-m-link pf-m-inline"
+                          data-ouia-component-id={null}
                           data-ouia-component-type="PF4/Button"
-                          data-ouia-id={null}
                           data-ouia-safe={true}
                           disabled={false}
                           onClick={[Function]}
@@ -1305,8 +1305,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     >
                       <li
                         class="pf-c-chip"
+                        data-ouia-component-id="9"
                         data-ouia-component-type="PF4/Chip"
-                        data-ouia-id="9"
                         data-ouia-safe="true"
                       >
                         <span
@@ -1342,8 +1342,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       </li>
                       <li
                         class="pf-c-chip"
+                        data-ouia-component-id="10"
                         data-ouia-component-type="PF4/Chip"
-                        data-ouia-id="10"
                         data-ouia-safe="true"
                       >
                         <span
@@ -1399,8 +1399,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     >
                       <li
                         class="pf-c-chip"
+                        data-ouia-component-id="11"
                         data-ouia-component-type="PF4/Chip"
-                        data-ouia-id="11"
                         data-ouia-safe="true"
                       >
                         <span
@@ -1494,8 +1494,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 aria-disabled={null}
                 aria-label={null}
                 className="pf-c-button pf-m-link pf-m-inline"
+                data-ouia-component-id={null}
                 data-ouia-component-type="PF4/Button"
-                data-ouia-id={null}
                 data-ouia-safe={true}
                 disabled={false}
                 onClick={[Function]}
@@ -1562,8 +1562,8 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                         aria-disabled={null}
                         aria-label={null}
                         className="pf-c-button pf-m-plain"
+                        data-ouia-component-id={null}
                         data-ouia-component-type="PF4/Button"
-                        data-ouia-id={null}
                         data-ouia-safe={true}
                         disabled={false}
                         tabIndex={null}
@@ -1610,8 +1610,8 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                         aria-disabled={null}
                         aria-label={null}
                         className="pf-c-button pf-m-plain"
+                        data-ouia-component-id={null}
                         data-ouia-component-type="PF4/Button"
-                        data-ouia-id={null}
                         data-ouia-safe={true}
                         disabled={false}
                         tabIndex={null}
@@ -1894,8 +1894,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                     aria-haspopup={false}
                     aria-label="Show Filters"
                     className="pf-c-button pf-m-plain"
+                    data-ouia-component-id={null}
                     data-ouia-component-type="PF4/Button"
-                    data-ouia-id={null}
                     data-ouia-safe={true}
                     disabled={false}
                     onClick={[Function]}
@@ -1978,8 +1978,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                         >
                           <div
                             className="pf-c-select"
+                            data-ouia-component-id={0}
                             data-ouia-component-type="PF4/Select"
-                            data-ouia-id={0}
                             data-ouia-safe={true}
                             style={
                               Object {
@@ -2007,8 +2007,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                                 Object {
                                   "current": <div
                                     class="pf-c-select"
+                                    data-ouia-component-id="0"
                                     data-ouia-component-type="PF4/Select"
-                                    data-ouia-id="0"
                                     data-ouia-safe="true"
                                   >
                                     <button
@@ -2140,8 +2140,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                         >
                           <div
                             className="pf-c-select"
+                            data-ouia-component-id={1}
                             data-ouia-component-type="PF4/Select"
-                            data-ouia-id={1}
                             data-ouia-safe={true}
                             style={
                               Object {
@@ -2169,8 +2169,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                                 Object {
                                   "current": <div
                                     class="pf-c-select"
+                                    data-ouia-component-id="1"
                                     data-ouia-component-type="PF4/Select"
-                                    data-ouia-id="1"
                                     data-ouia-safe="true"
                                   >
                                     <button

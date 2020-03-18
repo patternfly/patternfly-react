@@ -56,8 +56,8 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
         aria-disabled={null}
         aria-label="Close"
         className="pf-c-button pf-m-plain pf-topology-side-bar__dismiss"
+        data-ouia-component-id={null}
         data-ouia-component-type="PF4/Button"
-        data-ouia-id={null}
         data-ouia-safe={true}
         disabled={false}
         onClick={[MockFunction]}

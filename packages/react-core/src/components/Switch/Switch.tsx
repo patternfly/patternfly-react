@@ -65,11 +65,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps> {
 
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
-      <label
-        className={css(styles.switch, className)}
-        htmlFor={this.id}
-        {...getOUIAProps('Switch', ouiaId)}
-      >
+      <label className={css(styles.switch, className)} htmlFor={this.id} {...getOUIAProps('Switch', ouiaId)}>
         <input
           id={this.id}
           className={css(styles.switchInput)}

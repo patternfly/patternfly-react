@@ -16,8 +16,8 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 >
   <div
     className="pf-c-tabs pf-m-fill"
+    data-ouia-component-id={10}
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id={10}
     data-ouia-safe={true}
     id="handleScrollButtons"
     onSelect={[Function]}
@@ -336,8 +336,8 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
 >
   <div
     className="pf-c-tabs pf-m-fill"
+    data-ouia-component-id={6}
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id={6}
     data-ouia-safe={true}
     id="scrollLeft"
     onSelect={[Function]}
@@ -656,8 +656,8 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 >
   <div
     className="pf-c-tabs pf-m-fill"
+    data-ouia-component-id={8}
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id={8}
     data-ouia-safe={true}
     id="scrollRight"
     onSelect={[Function]}
@@ -965,8 +965,8 @@ Array [
   <nav
     aria-label="accessible Tabs example"
     class="pf-c-tabs"
+    data-ouia-component-id="1"
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id="1"
     data-ouia-safe="true"
     id="accessibleTabs"
   >
@@ -1085,8 +1085,8 @@ exports[`should render filled tabs 1`] = `
 Array [
   <div
     class="pf-c-tabs pf-m-fill"
+    data-ouia-component-id="2"
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id="2"
     data-ouia-safe="true"
     id="filledTabs"
   >
@@ -1202,8 +1202,8 @@ exports[`should render secondary tabs 1`] = `
 Array [
   <div
     class="pf-c-tabs"
+    data-ouia-component-id="3"
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id="3"
     data-ouia-safe="true"
     id="primarieTabs"
   >
@@ -1292,8 +1292,8 @@ Array [
   >
     <div
       class="pf-c-tabs"
+      data-ouia-component-id="4"
       data-ouia-component-type="PF4/Tabs"
-      data-ouia-id="4"
       data-ouia-safe="true"
       id="secondaryTabs"
     >
@@ -1431,8 +1431,8 @@ exports[`should render simple tabs 1`] = `
 Array [
   <div
     class="pf-c-tabs"
+    data-ouia-component-id="0"
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id="0"
     data-ouia-safe="true"
     id="simpleTabs"
   >
@@ -1574,8 +1574,8 @@ exports[`should render tabs with eventKey Strings 1`] = `
 Array [
   <div
     class="pf-c-tabs"
+    data-ouia-component-id="11"
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id="11"
     data-ouia-safe="true"
     id="eventKeyTabs"
   >

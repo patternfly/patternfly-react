@@ -4,8 +4,8 @@ exports[`Breadcrumb should match snapshot (auto-generated) 1`] = `
 <nav
   aria-label="'Breadcrumb'"
   className="pf-c-breadcrumb ''"
+  data-ouia-component-id={0}
   data-ouia-component-type="PF4/Breadcrumb"
-  data-ouia-id={0}
   data-ouia-safe={true}
 >
   <ol

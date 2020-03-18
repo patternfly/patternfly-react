@@ -5,8 +5,8 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
   <div
     aria-label="string"
     className="pf-c-tabs ''"
+    data-ouia-component-id={0}
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-id={0}
     data-ouia-safe={true}
     id="string"
     onSelect={[Function]}

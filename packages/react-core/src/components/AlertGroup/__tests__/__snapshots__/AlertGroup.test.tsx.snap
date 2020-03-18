@@ -19,8 +19,8 @@ exports[`Standard Alert Group is not a toast alert group 1`] = `
           <div
             aria-label="Danger Alert"
             className="pf-c-alert pf-m-danger"
+            data-ouia-component-id={0}
             data-ouia-component-type="PF4/Alert"
-            data-ouia-id={0}
             data-ouia-safe={true}
           >
             <AlertIcon
@@ -89,8 +89,8 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             <div
               aria-label="Warning Alert"
               class="pf-c-alert pf-m-warning"
+              data-ouia-component-id="1"
               data-ouia-component-type="PF4/Alert"
-              data-ouia-id="1"
               data-ouia-safe="true"
             >
               <div
@@ -145,8 +145,8 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             <div
               aria-label="Warning Alert"
               className="pf-c-alert pf-m-warning"
+              data-ouia-component-id={1}
               data-ouia-component-type="PF4/Alert"
-              data-ouia-id={1}
               data-ouia-safe={true}
             >
               <AlertIcon
@@ -218,8 +218,8 @@ exports[`alertgroup closes when alerts are closed 1`] = `
             <div
               aria-label="Warning Alert"
               class="pf-c-alert pf-m-warning"
+              data-ouia-component-id="1"
               data-ouia-component-type="PF4/Alert"
-              data-ouia-id="1"
               data-ouia-safe="true"
             >
               <div
@@ -266,8 +266,8 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               aria-label="Info Alert"
               aria-live="polite"
               class="pf-c-alert pf-m-info"
+              data-ouia-component-id="2"
               data-ouia-component-type="PF4/Alert"
-              data-ouia-id="2"
               data-ouia-safe="true"
             >
               <div
@@ -345,8 +345,8 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               aria-label="Info Alert"
               aria-live="polite"
               class="pf-c-alert pf-m-info"
+              data-ouia-component-id="2"
               data-ouia-component-type="PF4/Alert"
-              data-ouia-id="2"
               data-ouia-safe="true"
             >
               <div
@@ -435,8 +435,8 @@ exports[`alertgroup closes when alerts are closed 1`] = `
               aria-label="Info Alert"
               aria-live="polite"
               className="pf-c-alert pf-m-info"
+              data-ouia-component-id={2}
               data-ouia-component-type="PF4/Alert"
-              data-ouia-id={2}
               data-ouia-safe={true}
             >
               <AlertIcon
@@ -501,8 +501,8 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                       aria-disabled={null}
                       aria-label="Close"
                       className="pf-c-button pf-m-plain"
+                      data-ouia-component-id={null}
                       data-ouia-component-type="PF4/Button"
-                      data-ouia-id={null}
                       data-ouia-safe={true}
                       disabled={false}
                       onClick={[MockFunction]}
