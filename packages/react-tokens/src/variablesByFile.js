@@ -15,45 +15,34 @@ const cssFiles = glob.sync('{**/{components,layouts}/**/*.css,**/patternfly-char
 
 const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, '_');
 
+const getRegexMatches = (string, regex) => {
+  const res = {};
+  let matches;
+  while ((matches = regex.exec(string))) {
+    res[matches[1]] = matches[2].trim();
+  }
+  return res;
+};
+
 // various lookup tables to resolve variables
 
-const varsRegex = /(--.*):\s*#{(\$pf-[^\s]+)}/g;
 const variables = readFileSync(require.resolve('@patternfly/patternfly/_variables.scss'), 'utf8');
-let matches;
-const cssGlobalsToScssVarsMap = {};
-while ((matches = varsRegex.exec(variables))) {
-  cssGlobalsToScssVarsMap[matches[1]] = matches[2];
-}
+const cssGlobalsToScssVarsMap = getRegexMatches(variables, /(--pf-.*):\s*(?:#{)?(\$?pf-[\w- _]+)}?;/g);
 
-const scssVarsRegex = /(\$.*):\s*([^;^!]+)/g;
 // contains default values and mappings to colors.scss for color values
 const scssVariables = readFileSync(
   require.resolve('@patternfly/patternfly/sass-utilities/scss-variables.scss'),
   'utf8'
 );
-matches = null;
-const scssVarsMap = {};
-while ((matches = scssVarsRegex.exec(scssVariables))) {
-  scssVarsMap[matches[1]] = matches[2].trim();
-}
+const scssVarsMap = getRegexMatches(scssVariables, /(\$.*):\s*([^;^!]+)/g);
 
-const colorsRegex = /(\$.*):\s*([^;^!]+)/g;
 // contains default values and mappings to colors.scss for color values
 const scssColorVariables = readFileSync(require.resolve('@patternfly/patternfly/sass-utilities/colors.scss'), 'utf8');
-matches = null;
-const scssColorsMap = {};
-while ((matches = colorsRegex.exec(scssColorVariables))) {
-  scssColorsMap[matches[1]] = matches[2].trim();
-}
+const scssColorsMap = getRegexMatches(scssColorVariables, /(\$.*):\s*([^\s]+)\s*(?:!default);/g);
 
-const cssGlobalVariablesRegex = /(--.*):\s*(.*);/g;
 // contains default values and mappings to colors.scss for color values
 const cssGlobalVariables = readFileSync(require.resolve('@patternfly/patternfly/patternfly-variables.css'), 'utf8');
-matches = null;
-const cssGlobalVariablesMap = {};
-while ((matches = cssGlobalVariablesRegex.exec(cssGlobalVariables))) {
-  cssGlobalVariablesMap[matches[1]] = matches[2].trim();
-}
+const cssGlobalVariablesMap = getRegexMatches(cssGlobalVariables, /(--pf-[\w-]*):\s*([\w -_]+);/g);
 
 const combinedScssVarsColorsMap = {
   ...scssVarsMap,
@@ -80,24 +69,21 @@ cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssAst = parse(readFileSync(absFilePath, 'utf8'));
 
-  cssAst.stylesheet.rules.forEach(node => {
-    if (node.type !== 'rule' || node.selectors.indexOf('.pf-t-dark') !== -1) {
-      return;
-    }
-
-    node.declarations.forEach(decl => {
-      if (decl.type !== 'declaration') {
-        return;
-      }
-      const { property, value, parent } = decl;
-      if (property.startsWith('--pf')) {
-        localVarsMap[property] = {
-          ...localVarsMap[property],
-          [parent.selectors[0]]: value
-        };
-      }
+  cssAst.stylesheet.rules
+    .filter(node => node.type === 'rule' && node.selectors.indexOf('.pf-t-dark') === -1)
+    .forEach(node => {
+      node.declarations
+        .filter(decl => decl.type === 'declaration')
+        .forEach(decl => {
+          const { property, value, parent } = decl;
+          if (property.startsWith('--pf')) {
+            localVarsMap[property] = {
+              ...localVarsMap[property],
+              [parent.selectors[0]]: value
+            };
+          }
+        });
     });
-  });
 });
 
 const getFromLocalMap = (match, selector) => {
@@ -218,43 +204,40 @@ cssFiles.forEach(filePath => {
   // key is the formatted file name, e.g. c_about_modal_box
   const key = formatFilePathToName(filePath);
 
-  cssAst.stylesheet.rules.forEach(node => {
-    if (node.type !== 'rule' || node.selectors.indexOf('.pf-t-dark') !== -1) {
-      return;
-    }
+  cssAst.stylesheet.rules
+    .filter(node => node.type === 'rule' && node.selectors.indexOf('.pf-t-dark') === -1)
+    .forEach(node => {
+      node.declarations
+        .filter(decl => decl.type === 'declaration')
+        .forEach(decl => {
+          const { property, value, parent } = decl;
+          if (property.startsWith('--pf')) {
+            const selector = parent.selectors[0];
 
-    node.declarations.forEach(decl => {
-      if (decl.type !== 'declaration') {
-        return;
-      }
-      const { property, value, parent } = decl;
-      if (property.startsWith('--pf')) {
-        const selector = parent.selectors[0];
+            const varsMap = getVarsMap(value, selector);
+            const propertyObj = {
+              property,
+              value: varsMap[varsMap.length - 1],
+              token: formatCustomPropertyName(property)
+            };
+            if (varsMap.length > 1) {
+              propertyObj.values = varsMap;
+            }
 
-        const varsMap = getVarsMap(value, selector);
-        const propertyObj = {
-          property,
-          value: varsMap[varsMap.length - 1],
-          token: formatCustomPropertyName(property)
-        };
-        if (varsMap.length > 1) {
-          propertyObj.values = varsMap;
-        }
-
-        if (tokens[key]) {
-          if (tokens[key][selector]) {
-            tokens[key][selector].push(propertyObj);
-          } else {
-            tokens[key][selector] = [propertyObj];
+            if (tokens[key]) {
+              if (tokens[key][selector]) {
+                tokens[key][selector].push(propertyObj);
+              } else {
+                tokens[key][selector] = [propertyObj];
+              }
+            } else {
+              tokens[key] = {
+                [selector]: [propertyObj]
+              };
+            }
           }
-        } else {
-          tokens[key] = {
-            [selector]: [propertyObj]
-          };
-        }
-      }
+        });
     });
-  });
 });
 
 readdirSync(templateDir).forEach(templateFile => {
