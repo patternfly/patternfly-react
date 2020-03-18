@@ -5,44 +5,43 @@ exports[`ApplicationLauncher custom icon 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem>
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        isDisabled={true}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-        isDisabled={true}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
   favorites={Array []}
   favoritesLabel="Favorites"
   isDisabled={false}
   isGrouped={false}
   isOpen={true}
-  items={Array []}
+  items={
+    Array [
+      <ApplicationLauncherItem>
+        Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        isDisabled={true}
+      >
+        Disabled Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+        isDisabled={true}
+      >
+        Disabled Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherSeparator />,
+      <ApplicationLauncherItem>
+        Separated Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Separated Action
+      </ApplicationLauncherItem>,
+    ]
+  }
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -65,34 +64,34 @@ exports[`ApplicationLauncher custom icon 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem>
+        <ApplicationLauncherItem>
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           isDisabled={true}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </DropdownItem>,
-        <DropdownSeparator />,
-        <DropdownItem>
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherSeparator />,
+        <ApplicationLauncherItem>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Separated Action
-        </DropdownItem>,
+        </ApplicationLauncherItem>,
       ]
     }
     isGrouped={false}
@@ -119,19 +118,103 @@ exports[`ApplicationLauncher custom icon 1`] = `
       </DropdownToggle>
     }
   >
-    <nav
-      aria-label="Application launcher"
-      className="pf-c-app-launcher pf-m-expanded"
-      data-ouia-component-id={5}
-      data-ouia-component-type="PF4/Dropdown"
-      data-ouia-safe={true}
+    <ComponentWithOuia
+      component={[Function]}
+      componentProps={
+        Object {
+          "aria-label": "Application launcher",
+          "className": "",
+          "direction": "down",
+          "dropdownItems": Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ],
+          "isGrouped": false,
+          "isOpen": true,
+          "position": "left",
+          "toggle": <DropdownToggle
+            aria-label="Application launcher"
+            iconComponent={null}
+            isDisabled={false}
+            isOpen={true}
+            onToggle={[Function]}
+          >
+            <HelpIcon
+              color="currentColor"
+              id="test-icon"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            />
+          </DropdownToggle>,
+        }
+      }
+      consumerContext={null}
     >
       <DropdownToggle
         aria-label="Application launcher"
-        ariaHasPopup={true}
-        iconComponent={null}
-        id="pf-toggle-id-5"
-        isDisabled={false}
+        autoFocus={true}
+        className=""
+        direction="down"
+        dropdownItems={
+          Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ]
+        }
+        isGrouped={false}
         isOpen={true}
         isPlain={false}
         key=".0"
@@ -305,455 +388,414 @@ exports[`ApplicationLauncher custom icon 1`] = `
                         transform="rotate(180 0 512) scale(-1 1)"
                       />
                     </svg>
-                  </span>
-                </button>
-                <ul
-                  aria-labelledby="pf-toggle-id-5"
-                  class="pf-c-app-launcher__menu"
-                  role="menu"
-                >
-                  <li
-                    role="menuitem"
-                  >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Link
-                    </a>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Action
-                    </button>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <a
-                      aria-disabled="true"
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Disabled Link
-                    </a>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <button
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Disabled Action
-                    </button>
-                  </li>
-                  <li
-                    role="separator"
-                  >
-                    <div
-                      class="pf-c-app-launcher__separator"
-                    />
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Separated Link
-                    </a>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Separated Action
-                    </button>
-                  </li>
-                </ul>
-              </nav>,
-            }
-          }
-        >
-          <button
-            aria-expanded={true}
-            aria-haspopup={true}
-            aria-label="Application launcher"
-            className="pf-c-app-launcher__toggle"
-            disabled={false}
-            id="pf-toggle-id-5"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+                  </HelpIcon>
+                </span>
+              </button>
+            </Toggle>
+          </DropdownToggle>
+          <DropdownMenu
+            aria-labelledby="pf-toggle-id-5"
+            autoFocus={false}
+            className=""
+            component="ul"
+            isGrouped={false}
+            isOpen={true}
+            openedOnEnter={false}
+            position="left"
           >
-            <span
-              className={null}
+            <ul
+              aria-labelledby="pf-toggle-id-5"
+              autoFocus={false}
+              className="pf-c-app-launcher__menu"
+              hidden={false}
+              role="menu"
             >
-              <HelpIcon
-                color="currentColor"
-                id="test-icon"
-                noVerticalAlign={false}
-                size="sm"
-                title={null}
+              <ApplicationLauncherItem
+                index={0}
+                key=".$link"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  id="test-icon"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
+                <DropdownItem
+                  className=""
+                  component="a"
+                  href={null}
+                  index={0}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
+                >
+                  <InternalDropdownItem
+                    className=""
+                    component="a"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
                     }
-                  }
-                  viewBox="0 64 1024 1024"
-                  width="1em"
-                >
-                  <path
-                    d="M512.059-73.143c-282.338 0-512.059 229.673-512.059 512.025 0 282.235 229.721 511.975 512.059 511.975 282.281 0 511.941-229.735 511.941-511.975 0.005-282.352-229.659-512.025-511.941-512.025zM512.059 826.523c-213.826 0-387.728-173.856-387.728-387.643 0-213.89 173.904-387.694 387.728-387.694 213.717 0 387.671 173.803 387.671 387.694 0.005 213.785-173.957 387.643-387.671 387.643zM585.143 164.571v109.714c0 4.951-1.808 9.237-5.429 12.857s-7.906 5.429-12.857 5.429h-109.714c-4.953 0-9.239-1.808-12.857-5.429s-5.429-7.906-5.429-12.857v-109.714c0-4.951 1.81-9.237 5.429-12.857s7.904-5.429 12.857-5.429h109.714c4.951 0 9.237 1.808 12.857 5.429s5.429 7.906 5.429 12.857zM521.616 365.714c118.343 0 214.286 88.965 214.286 187.429s-95.943 178.286-214.286 178.286c-173.045 0-208.091-93.714-213.963-171.113 0-7.936 6.729-9.838 15.872-9.838s108.073 0 113.143 0c6.096 0 14.475 0.633 17.554 10.571 0 48.857 135.968 54.953 135.968-7.904 0-31.506-29.717-63.817-68.571-66.194s-82.286-7.607-82.286-54.199c0-13.022 0-25.673 0-44.693 0-19.015 9.717-22.343 27.431-22.343s54.853-0.002 54.853-0.002z"
-                    transform="rotate(180 0 512) scale(-1 1)"
-                  />
-                </svg>
-              </HelpIcon>
-            </span>
-          </button>
-        </Toggle>
-      </DropdownToggle>
-      <DropdownMenu
-        aria-labelledby="pf-toggle-id-5"
-        autoFocus={false}
-        className=""
-        component="ul"
-        isGrouped={false}
-        isOpen={true}
-        openedOnEnter={false}
-        position="left"
-      >
-        <ul
-          aria-labelledby="pf-toggle-id-5"
-          autoFocus={false}
-          className="pf-c-app-launcher__menu"
-          hidden={false}
-          role="menu"
-        >
-          <DropdownItem
-            index={0}
-            key=".$link"
-          >
-            <InternalDropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={0}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={0}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <a
+                        aria-disabled={false}
+                        className="pf-c-app-launcher__menu-item"
+                        href={null}
+                        tabIndex={-1}
+                      >
+                        <ApplicationLauncherContent>
+                          Link
+                        </ApplicationLauncherContent>
+                      </a>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                component="button"
+                index={1}
+                key=".$action"
               >
-                <a
-                  aria-disabled={false}
-                  className="pf-c-app-launcher__menu-item"
+                <DropdownItem
+                  className=""
+                  component="button"
                   href={null}
-                  tabIndex={-1}
+                  index={1}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Link
-                </a>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            component="button"
-            index={1}
-            key=".$action"
-          >
-            <InternalDropdownItem
-              className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={1}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="button"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={1}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <button
+                        className="pf-c-app-launcher__menu-item"
+                        disabled={false}
+                        href={null}
+                        tabIndex={-1}
+                        type="button"
+                      >
+                        <ApplicationLauncherContent>
+                          Action
+                        </ApplicationLauncherContent>
+                      </button>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                index={2}
+                isDisabled={true}
+                key=".$disabled link"
               >
-                <button
-                  className="pf-c-app-launcher__menu-item"
-                  disabled={false}
+                <DropdownItem
+                  className=""
+                  component="a"
                   href={null}
-                  tabIndex={-1}
-                  type="button"
+                  index={2}
+                  isDisabled={true}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Action
-                </button>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            index={2}
-            isDisabled={true}
-            key=".$disabled link"
-          >
-            <InternalDropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={2}
-              isDisabled={true}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="a"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={2}
+                    isDisabled={true}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <a
+                        aria-disabled={true}
+                        className="pf-m-disabled pf-c-app-launcher__menu-item"
+                        href={null}
+                        tabIndex={-1}
+                      >
+                        <ApplicationLauncherContent>
+                          Disabled Link
+                        </ApplicationLauncherContent>
+                      </a>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                component="button"
+                index={3}
+                isDisabled={true}
+                key=".$disabled action"
               >
-                <a
-                  aria-disabled={true}
-                  className="pf-m-disabled pf-c-app-launcher__menu-item"
+                <DropdownItem
+                  className=""
+                  component="button"
                   href={null}
-                  tabIndex={-1}
+                  index={3}
+                  isDisabled={true}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Disabled Link
-                </a>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            component="button"
-            index={3}
-            isDisabled={true}
-            key=".$disabled action"
-          >
-            <InternalDropdownItem
-              className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={3}
-              isDisabled={true}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="button"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={3}
+                    isDisabled={true}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <button
+                        className="pf-m-disabled pf-c-app-launcher__menu-item"
+                        disabled={true}
+                        href={null}
+                        tabIndex={-1}
+                        type="button"
+                      >
+                        <ApplicationLauncherContent>
+                          Disabled Action
+                        </ApplicationLauncherContent>
+                      </button>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherSeparator
+                index={4}
+                key=".$separator"
               >
-                <button
-                  className="pf-m-disabled pf-c-app-launcher__menu-item"
-                  disabled={true}
-                  href={null}
-                  tabIndex={-1}
-                  type="button"
+                <DropdownSeparator
+                  index={4}
                 >
-                  Disabled Action
-                </button>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownSeparator
-            index={4}
-            key=".$separator"
-          >
-            <InternalDropdownItem
-              className="pf-c-app-launcher__separator"
-              component="div"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={4}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="separator"
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="separator"
+                  <InternalDropdownItem
+                    className="pf-c-app-launcher__separator"
+                    component="div"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href=""
+                    index={4}
+                    isDisabled={false}
+                    isHovered={false}
+                    onClick={[Function]}
+                    role="separator"
+                    tooltipProps={Object {}}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="separator"
+                    >
+                      <div
+                        className="pf-c-app-launcher__separator"
+                        href={null}
+                      />
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownSeparator>
+              </ApplicationLauncherSeparator>
+              <ApplicationLauncherItem
+                index={5}
+                key=".$separated link"
               >
-                <div
-                  className="pf-c-app-launcher__separator"
+                <DropdownItem
+                  className=""
+                  component="a"
                   href={null}
-                />
-              </li>
-            </InternalDropdownItem>
-          </DropdownSeparator>
-          <DropdownItem
-            index={5}
-            key=".$separated link"
-          >
-            <InternalDropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={5}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={false}
-                  className="pf-c-app-launcher__menu-item"
-                  href={null}
-                  tabIndex={-1}
+                  index={5}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Separated Link
-                </a>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            component="button"
-            index={6}
-            key=".$separated action"
-          >
-            <InternalDropdownItem
-              className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={6}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="a"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={5}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <a
+                        aria-disabled={false}
+                        className="pf-c-app-launcher__menu-item"
+                        href={null}
+                        tabIndex={-1}
+                      >
+                        <ApplicationLauncherContent>
+                          Separated Link
+                        </ApplicationLauncherContent>
+                      </a>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                component="button"
+                index={6}
+                key=".$separated action"
               >
-                <button
-                  className="pf-c-app-launcher__menu-item"
-                  disabled={false}
+                <DropdownItem
+                  className=""
+                  component="button"
                   href={null}
-                  tabIndex={-1}
-                  type="button"
+                  index={6}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Separated Action
-                </button>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-        </ul>
-      </DropdownMenu>
-    </nav>
-  </DropdownWithContext>
+                  <InternalDropdownItem
+                    className=""
+                    component="button"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={6}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <button
+                        className="pf-c-app-launcher__menu-item"
+                        disabled={false}
+                        href={null}
+                        tabIndex={-1}
+                        type="button"
+                      >
+                        <ApplicationLauncherContent>
+                          Separated Action
+                        </ApplicationLauncherContent>
+                      </button>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+            </ul>
+          </DropdownMenu>
+        </nav>
+      </DropdownWithContext>
+    </ComponentWithOuia>
+  </Component>
 </ApplicationLauncher>
 `;
 
@@ -762,44 +804,43 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
   aria-label="Application launcher"
   className=""
   direction="up"
-  dropdownItems={
-    Array [
-      <DropdownItem>
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        isDisabled={true}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-        isDisabled={true}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
   favorites={Array []}
   favoritesLabel="Favorites"
   isDisabled={false}
   isGrouped={false}
   isOpen={false}
-  items={Array []}
+  items={
+    Array [
+      <ApplicationLauncherItem>
+        Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        isDisabled={true}
+      >
+        Disabled Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+        isDisabled={true}
+      >
+        Disabled Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherSeparator />,
+      <ApplicationLauncherItem>
+        Separated Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Separated Action
+      </ApplicationLauncherItem>,
+    ]
+  }
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
@@ -821,34 +862,34 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem>
+        <ApplicationLauncherItem>
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           isDisabled={true}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </DropdownItem>,
-        <DropdownSeparator />,
-        <DropdownItem>
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherSeparator />,
+        <ApplicationLauncherItem>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Separated Action
-        </DropdownItem>,
+        </ApplicationLauncherItem>,
       ]
     }
     isGrouped={false}
@@ -874,19 +915,102 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       </DropdownToggle>
     }
   >
-    <nav
-      aria-label="Application launcher"
-      className="pf-c-app-launcher pf-m-top pf-m-align-right"
-      data-ouia-component-id={3}
-      data-ouia-component-type="PF4/Dropdown"
-      data-ouia-safe={true}
+    <ComponentWithOuia
+      component={[Function]}
+      componentProps={
+        Object {
+          "aria-label": "Application launcher",
+          "className": "",
+          "direction": "up",
+          "dropdownItems": Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ],
+          "isGrouped": false,
+          "isOpen": false,
+          "position": "right",
+          "toggle": <DropdownToggle
+            aria-label="Application launcher"
+            iconComponent={null}
+            isDisabled={false}
+            isOpen={false}
+            onToggle={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            />
+          </DropdownToggle>,
+        }
+      }
+      consumerContext={null}
     >
       <DropdownToggle
         aria-label="Application launcher"
-        ariaHasPopup={true}
-        iconComponent={null}
-        id="pf-toggle-id-3"
-        isDisabled={false}
+        autoFocus={true}
+        className=""
+        direction="up"
+        dropdownItems={
+          Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ]
+        }
+        isGrouped={false}
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -1038,44 +1162,43 @@ exports[`ApplicationLauncher dropup 1`] = `
   aria-label="Application launcher"
   className=""
   direction="up"
-  dropdownItems={
-    Array [
-      <DropdownItem>
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        isDisabled={true}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-        isDisabled={true}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
   favorites={Array []}
   favoritesLabel="Favorites"
   isDisabled={false}
   isGrouped={false}
   isOpen={false}
-  items={Array []}
+  items={
+    Array [
+      <ApplicationLauncherItem>
+        Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        isDisabled={true}
+      >
+        Disabled Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+        isDisabled={true}
+      >
+        Disabled Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherSeparator />,
+      <ApplicationLauncherItem>
+        Separated Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Separated Action
+      </ApplicationLauncherItem>,
+    ]
+  }
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -1097,34 +1220,34 @@ exports[`ApplicationLauncher dropup 1`] = `
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem>
+        <ApplicationLauncherItem>
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           isDisabled={true}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </DropdownItem>,
-        <DropdownSeparator />,
-        <DropdownItem>
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherSeparator />,
+        <ApplicationLauncherItem>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Separated Action
-        </DropdownItem>,
+        </ApplicationLauncherItem>,
       ]
     }
     isGrouped={false}
@@ -1150,19 +1273,102 @@ exports[`ApplicationLauncher dropup 1`] = `
       </DropdownToggle>
     }
   >
-    <nav
-      aria-label="Application launcher"
-      className="pf-c-app-launcher pf-m-top"
-      data-ouia-component-id={2}
-      data-ouia-component-type="PF4/Dropdown"
-      data-ouia-safe={true}
+    <ComponentWithOuia
+      component={[Function]}
+      componentProps={
+        Object {
+          "aria-label": "Application launcher",
+          "className": "",
+          "direction": "up",
+          "dropdownItems": Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ],
+          "isGrouped": false,
+          "isOpen": false,
+          "position": "left",
+          "toggle": <DropdownToggle
+            aria-label="Application launcher"
+            iconComponent={null}
+            isDisabled={false}
+            isOpen={false}
+            onToggle={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            />
+          </DropdownToggle>,
+        }
+      }
+      consumerContext={null}
     >
       <DropdownToggle
         aria-label="Application launcher"
-        ariaHasPopup={true}
-        iconComponent={null}
-        id="pf-toggle-id-2"
-        isDisabled={false}
+        autoFocus={true}
+        className=""
+        direction="up"
+        dropdownItems={
+          Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ]
+        }
+        isGrouped={false}
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -1314,44 +1520,43 @@ exports[`ApplicationLauncher expanded 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem>
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        isDisabled={true}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-        isDisabled={true}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
   favorites={Array []}
   favoritesLabel="Favorites"
   isDisabled={false}
   isGrouped={false}
   isOpen={true}
-  items={Array []}
+  items={
+    Array [
+      <ApplicationLauncherItem>
+        Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        isDisabled={true}
+      >
+        Disabled Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+        isDisabled={true}
+      >
+        Disabled Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherSeparator />,
+      <ApplicationLauncherItem>
+        Separated Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Separated Action
+      </ApplicationLauncherItem>,
+    ]
+  }
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -1373,34 +1578,34 @@ exports[`ApplicationLauncher expanded 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem>
+        <ApplicationLauncherItem>
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           isDisabled={true}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </DropdownItem>,
-        <DropdownSeparator />,
-        <DropdownItem>
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherSeparator />,
+        <ApplicationLauncherItem>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Separated Action
-        </DropdownItem>,
+        </ApplicationLauncherItem>,
       ]
     }
     isGrouped={false}
@@ -1426,19 +1631,102 @@ exports[`ApplicationLauncher expanded 1`] = `
       </DropdownToggle>
     }
   >
-    <nav
-      aria-label="Application launcher"
-      className="pf-c-app-launcher pf-m-expanded"
-      data-ouia-component-id={4}
-      data-ouia-component-type="PF4/Dropdown"
-      data-ouia-safe={true}
+    <ComponentWithOuia
+      component={[Function]}
+      componentProps={
+        Object {
+          "aria-label": "Application launcher",
+          "className": "",
+          "direction": "down",
+          "dropdownItems": Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ],
+          "isGrouped": false,
+          "isOpen": true,
+          "position": "left",
+          "toggle": <DropdownToggle
+            aria-label="Application launcher"
+            iconComponent={null}
+            isDisabled={false}
+            isOpen={true}
+            onToggle={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            />
+          </DropdownToggle>,
+        }
+      }
+      consumerContext={null}
     >
       <DropdownToggle
         aria-label="Application launcher"
-        ariaHasPopup={true}
-        iconComponent={null}
-        id="pf-toggle-id-4"
-        isDisabled={false}
+        autoFocus={true}
+        className=""
+        direction="down"
+        dropdownItems={
+          Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ]
+        }
+        isGrouped={false}
         isOpen={true}
         isPlain={false}
         key=".0"
@@ -1610,453 +1898,414 @@ exports[`ApplicationLauncher expanded 1`] = `
                         transform=""
                       />
                     </svg>
-                  </span>
-                </button>
-                <ul
-                  aria-labelledby="pf-toggle-id-4"
-                  class="pf-c-app-launcher__menu"
-                  role="menu"
-                >
-                  <li
-                    role="menuitem"
-                  >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Link
-                    </a>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Action
-                    </button>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <a
-                      aria-disabled="true"
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Disabled Link
-                    </a>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <button
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Disabled Action
-                    </button>
-                  </li>
-                  <li
-                    role="separator"
-                  >
-                    <div
-                      class="pf-c-app-launcher__separator"
-                    />
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Separated Link
-                    </a>
-                  </li>
-                  <li
-                    role="menuitem"
-                  >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Separated Action
-                    </button>
-                  </li>
-                </ul>
-              </nav>,
-            }
-          }
-        >
-          <button
-            aria-expanded={true}
-            aria-haspopup={true}
-            aria-label="Application launcher"
-            className="pf-c-app-launcher__toggle"
-            disabled={false}
-            id="pf-toggle-id-4"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            type="button"
+                  </ThIcon>
+                </span>
+              </button>
+            </Toggle>
+          </DropdownToggle>
+          <DropdownMenu
+            aria-labelledby="pf-toggle-id-4"
+            autoFocus={false}
+            className=""
+            component="ul"
+            isGrouped={false}
+            isOpen={true}
+            openedOnEnter={false}
+            position="left"
           >
-            <span
-              className={null}
+            <ul
+              aria-labelledby="pf-toggle-id-4"
+              autoFocus={false}
+              className="pf-c-app-launcher__menu"
+              hidden={false}
+              role="menu"
             >
-              <ThIcon
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-                title={null}
+              <ApplicationLauncherItem
+                index={0}
+                key=".$link"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
+                <DropdownItem
+                  className=""
+                  component="a"
+                  href={null}
+                  index={0}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
+                >
+                  <InternalDropdownItem
+                    className=""
+                    component="a"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
                     }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
-                    transform=""
-                  />
-                </svg>
-              </ThIcon>
-            </span>
-          </button>
-        </Toggle>
-      </DropdownToggle>
-      <DropdownMenu
-        aria-labelledby="pf-toggle-id-4"
-        autoFocus={false}
-        className=""
-        component="ul"
-        isGrouped={false}
-        isOpen={true}
-        openedOnEnter={false}
-        position="left"
-      >
-        <ul
-          aria-labelledby="pf-toggle-id-4"
-          autoFocus={false}
-          className="pf-c-app-launcher__menu"
-          hidden={false}
-          role="menu"
-        >
-          <DropdownItem
-            index={0}
-            key=".$link"
-          >
-            <InternalDropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={0}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={0}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <a
+                        aria-disabled={false}
+                        className="pf-c-app-launcher__menu-item"
+                        href={null}
+                        tabIndex={-1}
+                      >
+                        <ApplicationLauncherContent>
+                          Link
+                        </ApplicationLauncherContent>
+                      </a>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                component="button"
+                index={1}
+                key=".$action"
               >
-                <a
-                  aria-disabled={false}
-                  className="pf-c-app-launcher__menu-item"
+                <DropdownItem
+                  className=""
+                  component="button"
                   href={null}
-                  tabIndex={-1}
+                  index={1}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Link
-                </a>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            component="button"
-            index={1}
-            key=".$action"
-          >
-            <InternalDropdownItem
-              className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={1}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="button"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={1}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <button
+                        className="pf-c-app-launcher__menu-item"
+                        disabled={false}
+                        href={null}
+                        tabIndex={-1}
+                        type="button"
+                      >
+                        <ApplicationLauncherContent>
+                          Action
+                        </ApplicationLauncherContent>
+                      </button>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                index={2}
+                isDisabled={true}
+                key=".$disabled link"
               >
-                <button
-                  className="pf-c-app-launcher__menu-item"
-                  disabled={false}
+                <DropdownItem
+                  className=""
+                  component="a"
                   href={null}
-                  tabIndex={-1}
-                  type="button"
+                  index={2}
+                  isDisabled={true}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Action
-                </button>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            index={2}
-            isDisabled={true}
-            key=".$disabled link"
-          >
-            <InternalDropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={2}
-              isDisabled={true}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="a"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={2}
+                    isDisabled={true}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <a
+                        aria-disabled={true}
+                        className="pf-m-disabled pf-c-app-launcher__menu-item"
+                        href={null}
+                        tabIndex={-1}
+                      >
+                        <ApplicationLauncherContent>
+                          Disabled Link
+                        </ApplicationLauncherContent>
+                      </a>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                component="button"
+                index={3}
+                isDisabled={true}
+                key=".$disabled action"
               >
-                <a
-                  aria-disabled={true}
-                  className="pf-m-disabled pf-c-app-launcher__menu-item"
+                <DropdownItem
+                  className=""
+                  component="button"
                   href={null}
-                  tabIndex={-1}
+                  index={3}
+                  isDisabled={true}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Disabled Link
-                </a>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            component="button"
-            index={3}
-            isDisabled={true}
-            key=".$disabled action"
-          >
-            <InternalDropdownItem
-              className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={3}
-              isDisabled={true}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="button"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={3}
+                    isDisabled={true}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <button
+                        className="pf-m-disabled pf-c-app-launcher__menu-item"
+                        disabled={true}
+                        href={null}
+                        tabIndex={-1}
+                        type="button"
+                      >
+                        <ApplicationLauncherContent>
+                          Disabled Action
+                        </ApplicationLauncherContent>
+                      </button>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherSeparator
+                index={4}
+                key=".$separator"
               >
-                <button
-                  className="pf-m-disabled pf-c-app-launcher__menu-item"
-                  disabled={true}
-                  href={null}
-                  tabIndex={-1}
-                  type="button"
+                <DropdownSeparator
+                  index={4}
                 >
-                  Disabled Action
-                </button>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownSeparator
-            index={4}
-            key=".$separator"
-          >
-            <InternalDropdownItem
-              className="pf-c-app-launcher__separator"
-              component="div"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={4}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="separator"
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="separator"
+                  <InternalDropdownItem
+                    className="pf-c-app-launcher__separator"
+                    component="div"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href=""
+                    index={4}
+                    isDisabled={false}
+                    isHovered={false}
+                    onClick={[Function]}
+                    role="separator"
+                    tooltipProps={Object {}}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="separator"
+                    >
+                      <div
+                        className="pf-c-app-launcher__separator"
+                        href={null}
+                      />
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownSeparator>
+              </ApplicationLauncherSeparator>
+              <ApplicationLauncherItem
+                index={5}
+                key=".$separated link"
               >
-                <div
-                  className="pf-c-app-launcher__separator"
+                <DropdownItem
+                  className=""
+                  component="a"
                   href={null}
-                />
-              </li>
-            </InternalDropdownItem>
-          </DropdownSeparator>
-          <DropdownItem
-            index={5}
-            key=".$separated link"
-          >
-            <InternalDropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={5}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={false}
-                  className="pf-c-app-launcher__menu-item"
-                  href={null}
-                  tabIndex={-1}
+                  index={5}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Separated Link
-                </a>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            component="button"
-            index={6}
-            key=".$separated action"
-          >
-            <InternalDropdownItem
-              className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
-              enterTriggersArrowDown={false}
-              href=""
-              index={6}
-              isDisabled={false}
-              isHovered={false}
-              onClick={[Function]}
-              role="menuitem"
-              tabIndex={-1}
-              tooltip={null}
-              tooltipProps={Object {}}
-              variant="item"
-            >
-              <li
-                className={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
+                  <InternalDropdownItem
+                    className=""
+                    component="a"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={5}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <a
+                        aria-disabled={false}
+                        className="pf-c-app-launcher__menu-item"
+                        href={null}
+                        tabIndex={-1}
+                      >
+                        <ApplicationLauncherContent>
+                          Separated Link
+                        </ApplicationLauncherContent>
+                      </a>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+              <ApplicationLauncherItem
+                component="button"
+                index={6}
+                key=".$separated action"
               >
-                <button
-                  className="pf-c-app-launcher__menu-item"
-                  disabled={false}
+                <DropdownItem
+                  className=""
+                  component="button"
                   href={null}
-                  tabIndex={-1}
-                  type="button"
+                  index={6}
+                  listItemClassName=""
+                  tooltip={null}
+                  tooltipProps={null}
                 >
-                  Separated Action
-                </button>
-              </li>
-            </InternalDropdownItem>
-          </DropdownItem>
-        </ul>
-      </DropdownMenu>
-    </nav>
-  </DropdownWithContext>
+                  <InternalDropdownItem
+                    className=""
+                    component="button"
+                    context={
+                      Object {
+                        "keyHandler": [Function],
+                        "sendRef": [Function],
+                      }
+                    }
+                    enterTriggersArrowDown={false}
+                    href={null}
+                    index={6}
+                    isDisabled={false}
+                    isHovered={false}
+                    listItemClassName=""
+                    onClick={[Function]}
+                    role="menuitem"
+                    tabIndex={-1}
+                    tooltip={null}
+                    tooltipProps={null}
+                    variant="item"
+                  >
+                    <li
+                      className={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                    >
+                      <button
+                        className="pf-c-app-launcher__menu-item"
+                        disabled={false}
+                        href={null}
+                        tabIndex={-1}
+                        type="button"
+                      >
+                        <ApplicationLauncherContent>
+                          Separated Action
+                        </ApplicationLauncherContent>
+                      </button>
+                    </li>
+                  </InternalDropdownItem>
+                </DropdownItem>
+              </ApplicationLauncherItem>
+            </ul>
+          </DropdownMenu>
+        </nav>
+      </DropdownWithContext>
+    </ComponentWithOuia>
+  </Component>
 </ApplicationLauncher>
 `;
 
@@ -2065,44 +2314,43 @@ exports[`ApplicationLauncher regular 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem>
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        isDisabled={true}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-        isDisabled={true}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
   favorites={Array []}
   favoritesLabel="Favorites"
   isDisabled={false}
   isGrouped={false}
   isOpen={false}
-  items={Array []}
+  items={
+    Array [
+      <ApplicationLauncherItem>
+        Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        isDisabled={true}
+      >
+        Disabled Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+        isDisabled={true}
+      >
+        Disabled Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherSeparator />,
+      <ApplicationLauncherItem>
+        Separated Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Separated Action
+      </ApplicationLauncherItem>,
+    ]
+  }
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -2124,34 +2372,34 @@ exports[`ApplicationLauncher regular 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem>
+        <ApplicationLauncherItem>
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           isDisabled={true}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </DropdownItem>,
-        <DropdownSeparator />,
-        <DropdownItem>
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherSeparator />,
+        <ApplicationLauncherItem>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Separated Action
-        </DropdownItem>,
+        </ApplicationLauncherItem>,
       ]
     }
     isGrouped={false}
@@ -2177,19 +2425,102 @@ exports[`ApplicationLauncher regular 1`] = `
       </DropdownToggle>
     }
   >
-    <nav
-      aria-label="Application launcher"
-      className="pf-c-app-launcher"
-      data-ouia-component-id={0}
-      data-ouia-component-type="PF4/Dropdown"
-      data-ouia-safe={true}
+    <ComponentWithOuia
+      component={[Function]}
+      componentProps={
+        Object {
+          "aria-label": "Application launcher",
+          "className": "",
+          "direction": "down",
+          "dropdownItems": Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ],
+          "isGrouped": false,
+          "isOpen": false,
+          "position": "left",
+          "toggle": <DropdownToggle
+            aria-label="Application launcher"
+            iconComponent={null}
+            isDisabled={false}
+            isOpen={false}
+            onToggle={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            />
+          </DropdownToggle>,
+        }
+      }
+      consumerContext={null}
     >
       <DropdownToggle
         aria-label="Application launcher"
-        ariaHasPopup={true}
-        iconComponent={null}
-        id="pf-toggle-id-0"
-        isDisabled={false}
+        autoFocus={true}
+        className=""
+        direction="down"
+        dropdownItems={
+          Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ]
+        }
+        isGrouped={false}
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -2341,44 +2672,43 @@ exports[`ApplicationLauncher right aligned 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem>
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        isDisabled={true}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-        isDisabled={true}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        component="button"
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
   favorites={Array []}
   favoritesLabel="Favorites"
   isDisabled={false}
   isGrouped={false}
   isOpen={false}
-  items={Array []}
+  items={
+    Array [
+      <ApplicationLauncherItem>
+        Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        isDisabled={true}
+      >
+        Disabled Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+        isDisabled={true}
+      >
+        Disabled Action
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherSeparator />,
+      <ApplicationLauncherItem>
+        Separated Link
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem
+        component="button"
+      >
+        Separated Action
+      </ApplicationLauncherItem>,
+    ]
+  }
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
@@ -2400,34 +2730,34 @@ exports[`ApplicationLauncher right aligned 1`] = `
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem>
+        <ApplicationLauncherItem>
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           isDisabled={true}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
           isDisabled={true}
         >
           Disabled Action
-        </DropdownItem>,
-        <DropdownSeparator />,
-        <DropdownItem>
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherSeparator />,
+        <ApplicationLauncherItem>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </ApplicationLauncherItem>,
+        <ApplicationLauncherItem
           component="button"
         >
           Separated Action
-        </DropdownItem>,
+        </ApplicationLauncherItem>,
       ]
     }
     isGrouped={false}
@@ -2453,19 +2783,102 @@ exports[`ApplicationLauncher right aligned 1`] = `
       </DropdownToggle>
     }
   >
-    <nav
-      aria-label="Application launcher"
-      className="pf-c-app-launcher pf-m-align-right"
-      data-ouia-component-id={1}
-      data-ouia-component-type="PF4/Dropdown"
-      data-ouia-safe={true}
+    <ComponentWithOuia
+      component={[Function]}
+      componentProps={
+        Object {
+          "aria-label": "Application launcher",
+          "className": "",
+          "direction": "down",
+          "dropdownItems": Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ],
+          "isGrouped": false,
+          "isOpen": false,
+          "position": "right",
+          "toggle": <DropdownToggle
+            aria-label="Application launcher"
+            iconComponent={null}
+            isDisabled={false}
+            isOpen={false}
+            onToggle={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            />
+          </DropdownToggle>,
+        }
+      }
+      consumerContext={null}
     >
       <DropdownToggle
         aria-label="Application launcher"
-        ariaHasPopup={true}
-        iconComponent={null}
-        id="pf-toggle-id-1"
-        isDisabled={false}
+        autoFocus={true}
+        className=""
+        direction="down"
+        dropdownItems={
+          Array [
+            <ApplicationLauncherItem>
+              Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              isDisabled={true}
+            >
+              Disabled Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+              isDisabled={true}
+            >
+              Disabled Action
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherSeparator />,
+            <ApplicationLauncherItem>
+              Separated Link
+            </ApplicationLauncherItem>,
+            <ApplicationLauncherItem
+              component="button"
+            >
+              Separated Action
+            </ApplicationLauncherItem>,
+          ]
+        }
+        isGrouped={false}
         isOpen={false}
         isPlain={false}
         key=".0"
