@@ -10,10 +10,10 @@ export interface OUIAProps {
 
 let uid = 0;
 /** Get props to conform to OUIA spec
- * 
- * @param componentType OUIA component type
- * @param id OUIA component id
- * @param ouiaSafe false if in animation
+ *
+ * @param {string} componentType OUIA component type
+ * @param {number|string} id OUIA component id
+ * @param {boolean} ouiaSafe false if in animation
  */
 export function getOUIAProps(componentType: string, id: OuiaId | undefined, ouiaSafe: boolean = true) {
   return {
