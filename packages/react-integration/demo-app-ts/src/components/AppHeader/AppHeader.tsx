@@ -1,8 +1,8 @@
 import React from 'react';
 import { Avatar, Brand, PageHeader } from '@patternfly/react-core';
 import { AppToolbar } from '../AppToolbar/AppToolbar';
-const imgBrand = '../../assets/images/imgBrand.svg';
-const imgAvatar = '../../assets/images/imgAvatar.svg';
+const imgBrand = require('../../assets/images/imgBrand.svg');
+const imgAvatar = require('../../assets/images/imgAvatar.svg');
 
 const showNavToogle: boolean = false;
 

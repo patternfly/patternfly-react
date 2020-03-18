@@ -1,6 +1,6 @@
 import React from 'react';
 import { Brand } from '@patternfly/react-core';
-const pfLogo = './images/pfLogo.svg';
+const pfLogo = require('./images/pfLogo.svg');
 
 export class BrandDemo extends React.Component {
   componentDidMount() {
