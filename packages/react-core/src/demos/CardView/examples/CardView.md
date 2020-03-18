@@ -763,7 +763,6 @@ class CardViewBasic extends React.Component {
             </Gallery>
           </PageSection>
         </Page>
-        {this.renderPagination()}
       </React.Fragment>
     );
   }
