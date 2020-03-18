@@ -1,7 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  className="pf-c-select pf-m-top ''"
+  data-ouia-component-type="PF4/Select"
+  data-ouia-id={0}
+  data-ouia-safe={true}
+  style={
+    Object {
+      "width": "",
+    }
+  }
+>
+  <ContextProvider
+    value={
+      Object {
+        "onClose": [Function],
+        "onSelect": [Function],
+        "variant": "single",
+      }
+    }
+  >
+    <SelectToggle
+      ariaLabelToggle="'Options menu'"
+      ariaLabelledBy="'' null"
+      className=""
+      handleTypeaheadKeys={[Function]}
+      hasClearButton={true}
+      id="null"
+      isActive={false}
+      isDisabled={false}
+      isExpanded={false}
+      isFocused={false}
+      isHovered={false}
+      isPlain={false}
+      onClose={[Function]}
+      onEnter={[Function]}
+      onToggle={[Function]}
+      parentRef={
+        Object {
+          "current": null,
+        }
+      }
+      type="button"
+      variant="single"
+    >
+      <div
+        className="pf-c-select__toggle-wrapper"
+      >
+        <span
+          className="pf-c-select__toggle-text"
+        />
+      </div>
+    </SelectToggle>
+  </ContextProvider>
+</div>
 `;

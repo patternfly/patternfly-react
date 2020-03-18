@@ -55,7 +55,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     />
   </FormGroup>
   <ActionGroup>
-    <Component
+    <Button
       isBlock={true}
       isDisabled={false}
       onClick={[Function]}
@@ -63,7 +63,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       variant="primary"
     >
       Log In
-    </Component>
+    </Button>
   </ActionGroup>
 </Form>
 `;
@@ -123,7 +123,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     />
   </FormGroup>
   <ActionGroup>
-    <Component
+    <Button
       isBlock={true}
       isDisabled={false}
       onClick={[Function]}
@@ -131,7 +131,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
       variant="primary"
     >
       Log In
-    </Component>
+    </Button>
   </ActionGroup>
 </Form>
 `;
@@ -178,7 +178,7 @@ exports[`should render Login form 1`] = `
     />
   </FormGroup>
   <ActionGroup>
-    <Component
+    <Button
       isBlock={true}
       isDisabled={false}
       onClick={[Function]}
@@ -186,7 +186,7 @@ exports[`should render Login form 1`] = `
       variant="primary"
     >
       Log In
-    </Component>
+    </Button>
   </ActionGroup>
 </Form>
 `;

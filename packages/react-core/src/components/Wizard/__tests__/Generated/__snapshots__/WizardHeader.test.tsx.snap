@@ -4,7 +4,7 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-wizard__header"
 >
-  <Component
+  <Button
     aria-label="string"
     className="pf-c-wizard__close"
     onClick={[Function]}
@@ -17,7 +17,7 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
       size="sm"
       title={null}
     />
-  </Component>
+  </Button>
   <Title
     aria-label="string"
     className="pf-c-wizard__title"

@@ -12,7 +12,7 @@ import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selec
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { Omit, PickOptional } from '../../helpers/typeUtils';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 import { Divider } from '../Divider';
 
 // seed for the aria-labelledby ID
@@ -95,7 +95,7 @@ export interface SelectState {
   creatableValue: string;
 }
 
-class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectState> {
+export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private refCollection: HTMLElement[] = [];
@@ -365,7 +365,6 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       width,
       maxHeight,
       toggleIcon,
-      ouiaContext,
       ouiaId,
       createText,
       noResultsFoundText,
@@ -457,10 +456,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
         )}
         ref={this.parentRef}
         style={{ width }}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Select',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('Select', ouiaId)}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
           <SelectToggle
@@ -623,7 +619,3 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     );
   }
 }
-
-const SelectWithOuiaContext = withOuiaContext(Select);
-
-export { SelectWithOuiaContext as Select };

@@ -7,7 +7,7 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
   <div
     className="pf-c-data-list__toggle"
   >
-    <Component
+    <Button
       aria-controls="''"
       aria-expanded={false}
       aria-label="'Details'"
@@ -21,7 +21,7 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
         size="sm"
         title={null}
       />
-    </Component>
+    </Button>
   </div>
 </div>
 `;

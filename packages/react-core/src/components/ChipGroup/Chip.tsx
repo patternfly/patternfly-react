@@ -5,7 +5,7 @@ import { Tooltip } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the chip text */
@@ -30,8 +30,8 @@ interface ChipState {
   isTooltipVisible: boolean;
 }
 
-class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
-  constructor(props: ChipProps & InjectedOuiaProps) {
+export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
+  constructor(props: ChipProps & OUIAProps) {
     super(props);
     this.state = {
       isTooltipVisible: false
@@ -57,15 +57,12 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
   }
 
   renderOverflowChip = () => {
-    const { children, className, onClick, ouiaContext, ouiaId } = this.props;
+    const { children, className, onClick, ouiaId } = this.props;
     const Component = this.props.component as any;
     return (
       <Component
         className={css(styles.chip, styles.modifiers.overflow, className)}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'OverflowChip',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('OverflowChip', ouiaId)}
       >
         <ChipButton onClick={onClick}>
           <span className={css(styles.chipText)}>{children}</span>
@@ -82,7 +79,6 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
       className,
       onClick,
       isReadOnly,
-      ouiaContext,
       ouiaId
     } = this.props;
     const Component = this.props.component as any;
@@ -92,10 +88,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
           <Component
             className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
             tabIndex="0"
-            {...(ouiaContext.isOuia && {
-              'data-ouia-component-type': 'Chip',
-              'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-            })}
+            {...getOUIAProps('Chip', ouiaId)}
           >
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
@@ -117,10 +110,7 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
     return (
       <Component
         className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Chip',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('Chip', ouiaId)}
       >
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
@@ -146,6 +136,3 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
     );
   }
 }
-
-const ChipWithOuiaContext = withOuiaContext(Chip);
-export { ChipWithOuiaContext as Chip };

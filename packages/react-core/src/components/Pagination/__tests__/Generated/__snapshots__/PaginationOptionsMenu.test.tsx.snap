@@ -18,11 +18,17 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     }
   }
 >
-  <Component
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
     direction="up"
     dropdownItems={Array []}
+    isGrouped={false}
     isOpen={false}
     isPlain={true}
+    onSelect={[Function]}
+    ouiaComponentType="Dropdown"
+    position="left"
     toggle={
       <OptionsToggle
         firstIndex={0}

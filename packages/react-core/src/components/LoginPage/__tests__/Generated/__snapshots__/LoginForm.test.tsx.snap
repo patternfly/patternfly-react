@@ -55,7 +55,7 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
     />
   </FormGroup>
   <ActionGroup>
-    <Component
+    <Button
       isBlock={true}
       isDisabled={false}
       onClick={[Function]}
@@ -63,7 +63,7 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
       variant="primary"
     >
       'Log In'
-    </Component>
+    </Button>
   </ActionGroup>
 </Form>
 `;

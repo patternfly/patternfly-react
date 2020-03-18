@@ -5,7 +5,7 @@ import styles from '@patternfly/react-styles/css/components/Pagination/paginatio
 import { css } from '@patternfly/react-styles';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 import { c_pagination__nav_page_select_c_form_control_width_chars as widthChars } from '@patternfly/react-tokens';
 import { PickOptional } from '../../helpers';
 
@@ -136,9 +136,9 @@ const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
 };
 
 let paginationId = 0;
-class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
+export class Pagination extends React.Component<PaginationProps & OUIAProps> {
   paginationRef = React.createRef<HTMLDivElement>();
-  static defaultProps: PickOptional<PaginationProps & InjectedOuiaProps> = {
+  static defaultProps: PickOptional<PaginationProps & OUIAProps> = {
     children: null,
     className: '',
     variant: PaginationVariant.top,
@@ -175,7 +175,6 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     onNextClick: () => undefined,
     onPageInput: () => undefined,
     onLastClick: () => undefined,
-    ouiaContext: null,
     ouiaId: null
   };
 
@@ -189,7 +188,7 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     handleInputWidth(this.getLastPage(), node);
   }
 
-  componentDidUpdate(prevProps: PaginationProps & InjectedOuiaProps) {
+  componentDidUpdate(prevProps: PaginationProps & OUIAProps) {
     const node = this.paginationRef.current;
     if (prevProps.perPage !== this.props.perPage || prevProps.itemCount !== this.props.itemCount) {
       handleInputWidth(this.getLastPage(), node);
@@ -222,7 +221,6 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
       onNextClick,
       onPageInput,
       onLastClick,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
@@ -257,10 +255,7 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
           className
         )}
         id={`${widgetId}-${paginationId++}`}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Pagination',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('Pagination', ouiaId)}
         {...props}
       >
         {variant === PaginationVariant.top && (
@@ -318,6 +313,3 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     );
   }
 }
-
-const PaginationWithOuiaContext = withOuiaContext(Pagination);
-export { PaginationWithOuiaContext as Pagination };

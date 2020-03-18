@@ -3,9 +3,8 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
-import { capitalize } from '../../helpers/util';
+import { capitalize, getOUIAProps, getUniqueId, OUIAProps } from '../../helpers';
 import { Omit } from '../../helpers/typeUtils';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum AlertVariant {
   success = 'success',
@@ -36,7 +35,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
 }
 
-const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
+export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
   variant = AlertVariant.info,
   isInline = false,
   isLiveRegion = false,
@@ -46,10 +45,9 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   title,
   children = '',
   className = '',
-  ouiaContext = null,
-  ouiaId = null,
+  ouiaId,
   ...props
-}: AlertProps & InjectedOuiaProps) => {
+}: AlertProps & OUIAProps) => {
   const readerTitle = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
@@ -69,10 +67,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
       {...props}
       className={customClassName}
       aria-label={ariaLabel}
-      {...(ouiaContext.isOuia && {
-        'data-ouia-component-type': 'Alert',
-        'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-      })}
+      {...getOUIAProps('Alert', ouiaId)}
       {...(isLiveRegion && {
         'aria-live': 'polite',
         'aria-atomic': 'false'
@@ -87,6 +82,3 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
     </div>
   );
 };
-
-const AlertWithOuiaContext = withOuiaContext(Alert);
-export { AlertWithOuiaContext as Alert };

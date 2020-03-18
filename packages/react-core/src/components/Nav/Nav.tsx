@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 import { Omit } from '../../helpers/typeUtils';
 
 export type NavSelectClickHandler = (
@@ -38,7 +38,7 @@ export interface NavProps
 
 export const NavContext = React.createContext({});
 
-class Nav extends React.Component<NavProps & InjectedOuiaProps> {
+export class Nav extends React.Component<NavProps & OUIAProps> {
   static defaultProps: NavProps = {
     'aria-label': '',
     children: null,
@@ -100,7 +100,6 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
       theme,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
@@ -143,10 +142,7 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
                 : 'Global'
               : ariaLabel
           }
-          {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'Nav',
-            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          })}
+          {...getOUIAProps('Nav', ouiaId)}
           {...props}
         >
           {children}
@@ -155,6 +151,3 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
     );
   }
 }
-
-const NavWithOuiaContext = withOuiaContext(Nav);
-export { NavWithOuiaContext as Nav };
