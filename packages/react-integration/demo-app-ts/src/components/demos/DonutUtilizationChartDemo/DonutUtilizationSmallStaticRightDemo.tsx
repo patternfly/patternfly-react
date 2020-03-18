@@ -3,7 +3,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 export class DonutUtilizationSmallStaticRightDemo extends React.Component<{}, { used: number }> {
   interval: any;
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       used: 0

@@ -3,7 +3,7 @@ import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patt
 
 export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { used: number; spacer: string }> {
   interval: any;
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       spacer: '',

@@ -4,7 +4,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 export class DonutUtilizationSimpleRightDemo extends React.Component<{}, { used: number; spacer: string }> {
   interval: any;
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       spacer: '',

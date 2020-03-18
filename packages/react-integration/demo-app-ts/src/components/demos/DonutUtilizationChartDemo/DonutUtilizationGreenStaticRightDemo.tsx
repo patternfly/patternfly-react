@@ -8,7 +8,7 @@ import {
 
 export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { used: number }> {
   interval: any;
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       used: 0
