@@ -54,7 +54,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
     });
   }
 
-  toggleSelect = checked => {
+  toggleSelect = (checked: boolean) => {
     this.setState({
       canSelectAll: checked
     });

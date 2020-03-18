@@ -11,7 +11,7 @@ export class TabDemo extends Component {
   private contentRef2: any;
   private contentRef3: any;
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.contentRef1 = React.createRef<HTMLDivElement>();
@@ -27,14 +27,14 @@ export class TabDemo extends Component {
   };
 
   // Toggle currently active tab
-  private handleTabClick2 = (event, tabIndex) => {
+  private handleTabClick2 = (event: any, tabIndex: number) => {
     this.setState({
       activeTabKey2: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick3 = (event, tabIndex) => {
+  private handleTabClick3 = (event: any, tabIndex: number) => {
     this.setState({
       activeTabKey3: tabIndex
     });

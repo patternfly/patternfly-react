@@ -4,9 +4,13 @@ import { AppHeader, AppSidebar } from './components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Demos from './Demos';
 
-class App extends React.Component {
-  state = {
-    activeItem: null
+interface AppState {
+  activeItem: number | string;
+}
+
+class App extends React.Component<{}, AppState> {
+  state: AppState = {
+    activeItem: ''
   };
 
   private onNavSelect = (selectedItem: { itemId: number | string }) => {

@@ -10,7 +10,7 @@ export class TabsStringEventKeyDemo extends Component {
   private contentRefTwo: any;
   private contentRefThree: any;
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.contentRefOne = React.createRef<HTMLDivElement>();

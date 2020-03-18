@@ -4,7 +4,7 @@ import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } f
 interface AlertGroupDemoState {
   alerts: {
     title: string;
-    variant: string;
+    variant: keyof typeof AlertVariant;
     key: any;
   }[];
   timer: number;

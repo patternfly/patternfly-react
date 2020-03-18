@@ -21,14 +21,14 @@ export interface SelectDemoState {
   disabledSingleIsExpanded: boolean;
   disabledSingleSelected: string;
   customSingleIsExpanded: boolean;
-  customSingleSelected: string;
+  customSingleSelected: string | SelectOptionObject | (string | SelectOptionObject)[];
   checkIsExpanded: boolean;
   checkSelected: string[];
   typeaheadIsExpanded: boolean;
-  typeaheadSelected: string;
+  typeaheadSelected: string | SelectOptionObject | (string | SelectOptionObject)[];
   typeaheadMultiIsExpanded: boolean;
   typeaheadMultiSelected: string[];
-  cdtypeaheadMultiIsExpanded: false;
+  cdtypeaheadMultiIsExpanded: boolean;
   cdtypeaheadMultiSelected: string[];
   plainTypeaheadMultiIsExpanded: boolean;
   plainTypeaheadMultiSelected: string[];
@@ -37,32 +37,32 @@ export interface SelectDemoState {
   customTypeaheadMultiSelected: string[];
   direction: SelectDirection.up | SelectDirection.down;
   typeaheadOptions: any[];
-  typeaheadCreateNew: () => void;
   typeaheadNewOptions: boolean;
   customContentIsExpanded: boolean;
+  typeaheadIsCreatable: boolean;
 }
 
-export class SelectDemo extends Component<SelectDemoState> {
+export class SelectDemo extends Component<{}, SelectDemoState> {
   state = {
     singleIsExpanded: false,
-    singleSelected: null,
-    disabledSingleIsExpanded: null,
-    disabledSingleSelected: false,
+    singleSelected: '',
+    disabledSingleIsExpanded: false,
+    disabledSingleSelected: '',
     customSingleIsExpanded: false,
-    customSingleSelected: null,
+    customSingleSelected: '',
     checkIsExpanded: false,
-    checkSelected: [],
+    checkSelected: [''],
     typeaheadIsExpanded: false,
-    typeaheadSelected: null,
+    typeaheadSelected: '',
     typeaheadMultiIsExpanded: false,
-    typeaheadMultiSelected: [],
+    typeaheadMultiSelected: [''],
     cdtypeaheadMultiIsExpanded: false,
-    cdtypeaheadMultiSelected: [],
+    cdtypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsExpanded: false,
-    plainTypeaheadMultiSelected: [],
+    plainTypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsPlain: true,
     customTypeaheadMultiIsExpanded: false,
-    customTypeaheadMultiSelected: [],
+    customTypeaheadMultiSelected: [''],
     direction: SelectDirection.down,
     typeaheadOptions: [
       { value: 'Alabama', disabled: false },
@@ -71,9 +71,9 @@ export class SelectDemo extends Component<SelectDemoState> {
       { value: 'New Jersey', disabled: false },
       { value: 'Texas', disabled: false }
     ],
-    typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
-    customContentIsExpanded: false
+    customContentIsExpanded: false,
+    typeaheadIsCreatable: false
   };
 
   singleOptions = [
@@ -124,13 +124,13 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  toggleCreatable = checked => {
+  toggleCreatable = (checked: boolean) => {
     this.setState({
       typeaheadIsCreatable: checked
     });
   };
 
-  toggleNew = checked => {
+  toggleNew = (checked: boolean) => {
     this.setState({
       typeaheadNewOptions: checked
     });
@@ -220,7 +220,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  customSingleOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
+  customSingleOnSelect = (
+    event: any,
+    selection: string | SelectOptionObject | (string | SelectOptionObject)[],
+    isPlaceholder: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -247,7 +251,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
+  typeaheadOnSelect = (
+    event: any,
+    selection: string | SelectOptionObject | (string | SelectOptionObject)[],
+    isPlaceholder: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -259,7 +267,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadMultiOnSelect = (event: any, selection: string | object) => {
+  typeaheadMultiOnSelect = (event: any, selection: string) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -276,7 +284,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  cdtypeaheadMultiOnSelect = (event: any, selection: string | object) => {
+  cdtypeaheadMultiOnSelect = (event: any, selection: string) => {
     const { cdtypeaheadMultiSelected } = this.state;
     if (cdtypeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -344,7 +352,7 @@ export class SelectDemo extends Component<SelectDemoState> {
       singleSelected: null,
       singleIsExpanded: false,
       disabledSingleIsExpanded: null,
-      disabledSingleSelected: false,
+      disabledSingleSelected: '',
       customSingleSelected: null,
       customSingleIsExpanded: false,
       checkSelected: [],

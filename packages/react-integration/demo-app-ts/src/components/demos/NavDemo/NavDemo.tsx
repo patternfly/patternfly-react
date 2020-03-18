@@ -12,6 +12,13 @@ import {
   Title
 } from '@patternfly/react-core';
 
+interface SelectedItem {
+  groupId: number | string;
+  itemId: number | string;
+  to: string;
+  event: React.FormEvent<HTMLInputElement>;
+}
+
 export class NavDemo extends Component {
   state = {
     simpleActiveItem: 0,
@@ -23,7 +30,7 @@ export class NavDemo extends Component {
     expandableClickedItem: ''
   };
 
-  onSimpleSelect = result => {
+  onSimpleSelect = (result: SelectedItem) => {
     this.setState({ simpleActiveItem: result.itemId });
   };
 
@@ -31,7 +38,7 @@ export class NavDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  onDefaultSelect = result => {
+  onDefaultSelect = (result: SelectedItem) => {
     this.setState({ defaultActiveItem: result.itemId });
   };
 
@@ -91,7 +98,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onExpandableSelect = result => {
+  onExpandableSelect = (result: SelectedItem) => {
     this.setState({
       expandableActiveGroup: result.groupId,
       expandableActiveItem: result.itemId
@@ -222,7 +229,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onHorizontalSelect = result => {
+  onHorizontalSelect = (result: SelectedItem) => {
     this.setState({ horizontalActiveItem: result.itemId });
   };
 

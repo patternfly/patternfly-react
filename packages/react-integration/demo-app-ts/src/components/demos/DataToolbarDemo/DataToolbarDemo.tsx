@@ -28,6 +28,7 @@ import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 interface Filter {
   risk: string[];
   status: string[];
+  [key: string]: string[];
 }
 
 interface DataToolbarState {

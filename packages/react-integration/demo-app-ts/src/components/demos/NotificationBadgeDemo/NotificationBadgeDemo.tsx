@@ -7,7 +7,7 @@ interface NotificationBadgeDemoState {
 }
 
 export class NotificationBadgeDemo extends React.Component<NotificationBadgeProps, NotificationBadgeDemoState> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       isRead: false
