@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface TabButtonProps extends React.HTMLProps<HTMLAnchorElement | HTMLButtonElement> {
+export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'ref'> {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode;
   /** additional classes added to the Tab */
@@ -8,10 +8,10 @@ export interface TabButtonProps extends React.HTMLProps<HTMLAnchorElement | HTML
   /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button>. A Tab inside a <Tabs variant="nav"> should have an href. */
   href?: string;
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef?: React.RefObject<any>;
+  tabContentRef?: React.Ref<any>;
 }
 
-const TabButtonWithRef: React.FunctionComponent<TabButtonProps> = ({
+const TabButtonBase: React.FunctionComponent<TabButtonProps> = ({
   children,
   className = '',
   tabContentRef,
@@ -25,18 +25,10 @@ const TabButtonWithRef: React.FunctionComponent<TabButtonProps> = ({
   );
 };
 
-interface ForwardedRefProps extends TabButtonProps {
-  forwardRef?: React.Ref<any>;
-}
+export const TabButton = React.forwardRef(
+  (props: TabButtonProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
+    <TabButtonBase {...props} tabContentRef={ref} />
+  )
+);
 
-const withForwardedRef = (Component: any) => {
-  class TabContainer extends React.Component<ForwardedRefProps> {
-    render() {
-      const { forwardRef, ...rest } = this.props;
-      return <Component ref={forwardRef} {...rest} />;
-    }
-  }
-  return React.forwardRef((props: any, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
-};
-
-export const TabButton = withForwardedRef(TabButtonWithRef);
+// export const TabButton = withForwardedRef(TabButtonWithRef);

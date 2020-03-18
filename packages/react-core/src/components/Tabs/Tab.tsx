@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'> {
   /** content rendered inside the Tab content area. */
@@ -18,4 +17,4 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tabContentRef?: React.RefObject<any>;
 }
 
-export const Tab: React.FunctionComponent<TabProps> = (_props: TabProps) => null;
+export const Tab: React.FunctionComponent<TabProps> = () => null;

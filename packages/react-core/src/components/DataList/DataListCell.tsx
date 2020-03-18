@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>, 'width'> {
   /** Content rendered inside the DataList cell */

@@ -4685,13 +4685,11 @@ exports[`select renders select groups successfully 1`] = `
                 >
                   <div
                     class="pf-c-select__menu-group"
-                    id="-0"
-                    index="0"
                   >
                     <div
                       aria-hidden="true"
                       class="pf-c-select__menu-group-title"
-                      id=""
+                      id="group-1"
                     >
                       group 1
                     </div>
@@ -4700,6 +4698,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Mr-0"
                         role="option"
                         type="button"
                       >
@@ -4711,6 +4710,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Mrs-1"
                         role="option"
                         type="button"
                       >
@@ -4722,6 +4722,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Ms-2"
                         role="option"
                         type="button"
                       >
@@ -4733,6 +4734,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Other-3"
                         role="option"
                         type="button"
                       >
@@ -4742,13 +4744,11 @@ exports[`select renders select groups successfully 1`] = `
                   </div>
                   <div
                     class="pf-c-select__menu-group"
-                    id="-1"
-                    index="1"
                   >
                     <div
                       aria-hidden="true"
                       class="pf-c-select__menu-group-title"
-                      id=""
+                      id="group-2"
                     >
                       group 2
                     </div>
@@ -4757,6 +4757,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Mr-4"
                         role="option"
                         type="button"
                       >
@@ -4768,6 +4769,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Mrs-5"
                         role="option"
                         type="button"
                       >
@@ -4779,6 +4781,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Ms-6"
                         role="option"
                         type="button"
                       >
@@ -4790,6 +4793,7 @@ exports[`select renders select groups successfully 1`] = `
                     >
                       <button
                         class="pf-c-select__menu-item"
+                        id="Other-7"
                         role="option"
                         type="button"
                       >
@@ -4859,7 +4863,7 @@ exports[`select renders select groups successfully 1`] = `
           hasInlineFilter={false}
           isCustomContent={false}
           isExpanded={false}
-          isGrouped={false}
+          isGrouped={true}
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
@@ -4871,32 +4875,24 @@ exports[`select renders select groups successfully 1`] = `
             role="listbox"
           >
             <SelectGroup
-              id="-0"
-              index={0}
-              isSelected={false}
               key=".0"
-              keyHandler={[Function]}
               label="group 1"
-              sendRef={[Function]}
+              titleId="group-1"
             >
               <div
                 className="pf-c-select__menu-group"
-                id="-0"
-                index={0}
-                isSelected={false}
-                keyHandler={[Function]}
-                sendRef={[Function]}
               >
                 <div
                   aria-hidden={true}
                   className="pf-c-select__menu-group-title"
-                  id=""
+                  id="group-1"
                 >
                   group 1
                 </div>
                 <SelectOption
                   className=""
                   component="button"
+                  id="Mr-0"
                   index={0}
                   isChecked={false}
                   isDisabled={false}
@@ -4916,6 +4912,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Mr-0"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -4928,7 +4925,8 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Mrs-1"
+                  index={1}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -4947,6 +4945,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Mrs-1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -4959,7 +4958,8 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Ms-2"
+                  index={2}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -4978,6 +4978,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Ms-2"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -4990,7 +4991,8 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Other-3"
+                  index={3}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -5009,6 +5011,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Other-3"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5021,33 +5024,25 @@ exports[`select renders select groups successfully 1`] = `
               </div>
             </SelectGroup>
             <SelectGroup
-              id="-1"
-              index={1}
-              isSelected={false}
               key=".1"
-              keyHandler={[Function]}
               label="group 2"
-              sendRef={[Function]}
+              titleId="group-2"
             >
               <div
                 className="pf-c-select__menu-group"
-                id="-1"
-                index={1}
-                isSelected={false}
-                keyHandler={[Function]}
-                sendRef={[Function]}
               >
                 <div
                   aria-hidden={true}
                   className="pf-c-select__menu-group-title"
-                  id=""
+                  id="group-2"
                 >
                   group 2
                 </div>
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Mr-4"
+                  index={4}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -5066,6 +5061,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Mr-4"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5078,7 +5074,8 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Mrs-5"
+                  index={5}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -5097,6 +5094,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Mrs-5"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5109,7 +5107,8 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Ms-6"
+                  index={6}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -5128,6 +5127,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Ms-6"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"
@@ -5140,7 +5140,8 @@ exports[`select renders select groups successfully 1`] = `
                 <SelectOption
                   className=""
                   component="button"
-                  index={0}
+                  id="Other-7"
+                  index={7}
                   isChecked={false}
                   isDisabled={false}
                   isFocused={false}
@@ -5159,6 +5160,7 @@ exports[`select renders select groups successfully 1`] = `
                     <button
                       aria-selected={null}
                       className="pf-c-select__menu-item"
+                      id="Other-7"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="option"

@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.8...demo-app-ts@3.28.9) (2020-03-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.28.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.7...demo-app-ts@3.28.8) (2020-03-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.28.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.6...demo-app-ts@3.28.7) (2020-03-17)
+
+
+### Bug Fixes
+
+* **core,table:** forward ref types ([#3919](https://github.com/patternfly/patternfly-react/issues/3919)) ([2210ec2](https://github.com/patternfly/patternfly-react/commit/2210ec2c142a385f85de8b0bac9c61a61521186d))
+
+
+
+
+
+## [3.28.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.4...demo-app-ts@3.28.6) (2020-03-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.28.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.4...demo-app-ts@3.28.5) (2020-03-12)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.28.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.3...demo-app-ts@3.28.4) (2020-03-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.28.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.2...demo-app-ts@3.28.3) (2020-03-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.28.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.1...demo-app-ts@3.28.2) (2020-03-09)
 
 **Note:** Version bump only for package demo-app-ts

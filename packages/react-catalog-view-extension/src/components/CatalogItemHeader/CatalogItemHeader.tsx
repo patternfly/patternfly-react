@@ -1,8 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { Omit } from '../../helpers/typeUtils';
-
 export interface CatalogItemHeaderProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Additional css classes */
   className?: string;

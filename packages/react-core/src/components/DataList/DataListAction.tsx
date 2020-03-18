@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css, pickProperties } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 
 const visibilityModifiers = pickProperties(styles.modifiers, [
   'hidden',

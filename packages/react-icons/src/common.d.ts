@@ -1,4 +1,3 @@
-import { OneOf, Omit } from './typeUtils';
 import { HTMLProps } from 'react';
 
 export const IconSize: {
@@ -10,7 +9,7 @@ export const IconSize: {
 
 export interface IconProps extends Omit<HTMLProps<SVGElement>, 'size'> {
   color?: string;
-  size?: OneOf<typeof IconSize, keyof typeof IconSize>;
+  size?: keyof typeof IconSize;
   title?: string;
   noVerticalAlign?: boolean;
 }
@@ -19,4 +18,4 @@ export const propTypes: Record<'size' | 'color', any>;
 
 export const defaultProps: typeof propTypes;
 
-export const getSize: (size: OneOf<typeof IconSize, keyof typeof IconSize>) => string;
+export const getSize: (size: keyof typeof IconSize) => string;

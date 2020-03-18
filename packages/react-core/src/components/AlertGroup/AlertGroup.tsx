@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM } from '../../helpers';
-import { Omit } from '../../helpers/typeUtils';
 import { AlertGroupInline } from './AlertGroupInline';
 
 export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>, 'className'> {

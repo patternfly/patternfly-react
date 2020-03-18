@@ -7,7 +7,6 @@ import { CardBody } from '@patternfly/react-core/dist/js/components/Card/CardBod
 import { CardFooter } from '@patternfly/react-core/dist/js/components/Card/CardFooter';
 import classNames from 'classnames';
 
-import { Omit } from '../../helpers/typeUtils';
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
   /** Id */
   id?: any;

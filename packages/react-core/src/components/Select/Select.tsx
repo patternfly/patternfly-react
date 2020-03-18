@@ -11,7 +11,7 @@ import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 import { Divider } from '../Divider';
 
@@ -304,8 +304,15 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       return;
     }
 
-    const { children } = this.props;
-    const item = children.filter(child => child.props.value.toString() === value.toString())[0];
+    const { children, isGrouped } = this.props;
+    let item = children.filter(
+      child => child.props.value !== undefined && child.props.value.toString() === value.toString()
+    )[0];
+    if (isGrouped) {
+      item = children
+        .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
+        .filter(child => child.props.value.toString() === value.toString())[0];
+    }
     if (item) {
       if (item && item.props.children) {
         if (type === 'node') {
@@ -408,11 +415,20 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       selectedChips = (
         <ChipGroup>
           {selections &&
-            (selections as string[]).map(item => (
-              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
-                {this.getDisplay(item, 'node')}
-              </Chip>
-            ))}
+            (selections as string[]).map(item => {
+              const isItemDisabled = React.Children.toArray(children.filter(child => child.props.value === item))[0]
+                .props.isDisabled;
+              return (
+                <Chip
+                  key={item}
+                  onClick={e => onSelect(e, item)}
+                  closeBtnAriaLabel={ariaLabelRemove}
+                  {...(isItemDisabled && { isReadOnly: true })}
+                >
+                  {this.getDisplay(item, 'node')}
+                </Chip>
+              );
+            })}
         </ChipGroup>
       );
     }
@@ -576,6 +592,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           {variant === SelectVariant.single && isExpanded && !customContent && (
             <SelectMenu
               {...props}
+              isGrouped={isGrouped}
               selected={selections}
               openedOnEnter={openedOnEnter}
               aria-label={ariaLabel}

@@ -3,6 +3,88 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.148.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.147.1...@patternfly/react-core@3.148.0) (2020-03-17)
+
+
+### Features
+
+* **Select:** add logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/issues/3895)) ([8f060a2](https://github.com/patternfly/patternfly-react/commit/8f060a2e80c7617b0578611b60ec29d503745e8d))
+
+
+
+
+
+## [3.147.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.147.0...@patternfly/react-core@3.147.1) (2020-03-17)
+
+
+### Bug Fixes
+
+* **select:** fix group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/issues/3838)) ([f8f87b8](https://github.com/patternfly/patternfly-react/commit/f8f87b8000cb6cd7f9c230fba888512293300be9))
+
+
+
+
+
+# [3.147.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.146.2...@patternfly/react-core@3.147.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **aboutmodal:** set a customize aria-label to the close button ([#3877](https://github.com/patternfly/patternfly-react/issues/3877)) ([f824828](https://github.com/patternfly/patternfly-react/commit/f824828fa5b6a0879e9aa419fe8f0ff7b94db348))
+* **core,table:** forward ref types ([#3919](https://github.com/patternfly/patternfly-react/issues/3919)) ([2210ec2](https://github.com/patternfly/patternfly-react/commit/2210ec2c142a385f85de8b0bac9c61a61521186d))
+* **dropdown:** clean console errors in Dropdown.test.tsx ([#3861](https://github.com/patternfly/patternfly-react/issues/3861)) ([7cbeb75](https://github.com/patternfly/patternfly-react/commit/7cbeb750adf5f57698a8f69c83b92d51b2ab5a45))
+* **dropdown:** remove duplicate prop ([#3923](https://github.com/patternfly/patternfly-react/issues/3923)) ([55dc272](https://github.com/patternfly/patternfly-react/commit/55dc27201cc536f87fb3aef9af5d4d5440c54267))
+
+
+### Features
+
+* **EmptyState:** Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/issues/3844)) ([d4ea57f](https://github.com/patternfly/patternfly-react/commit/d4ea57f47eab89b8cdedc792ebe078b746176679))
+
+
+
+
+
+## [3.146.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.146.0...@patternfly/react-core@3.146.2) (2020-03-13)
+
+
+### Bug Fixes
+
+* **nothing:** bumping to release 2020.03 release notes ([#3908](https://github.com/patternfly/patternfly-react/issues/3908)) ([468511a](https://github.com/patternfly/patternfly-react/commit/468511aae16c0c5ec3e4a3e0efbeeaffa1695c5b))
+
+
+
+
+
+## [3.146.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.146.0...@patternfly/react-core@3.146.1) (2020-03-12)
+
+
+### Bug Fixes
+
+* **nothing:** bumping to release 2020.03 release notes ([#3908](https://github.com/patternfly/patternfly-react/issues/3908)) ([468511a](https://github.com/patternfly/patternfly-react/commit/468511aae16c0c5ec3e4a3e0efbeeaffa1695c5b))
+
+
+
+
+
+# [3.146.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.145.3...@patternfly/react-core@3.146.0) (2020-03-10)
+
+
+### Features
+
+* **Modal:** move description to separate component ([#3897](https://github.com/patternfly/patternfly-react/issues/3897)) ([97eb9d8](https://github.com/patternfly/patternfly-react/commit/97eb9d8766febf5dd97424c4c7868f80441b8386))
+
+
+
+
+
+## [3.145.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.145.2...@patternfly/react-core@3.145.3) (2020-03-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.145.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.145.1...@patternfly/react-core@3.145.2) (2020-03-09)
 
 **Note:** Version bump only for package @patternfly/react-core

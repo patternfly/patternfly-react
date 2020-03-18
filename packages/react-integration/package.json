@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-integration",
   "private": true,
-  "version": "3.28.0",
+  "version": "3.28.2",
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -38,7 +38,7 @@
     "local-web-server": "^2.6.1",
     "rimraf": "^2.6.2",
     "ts-loader": "^5.3.3",
-    "typescript": "3.4.5",
+    "typescript": "^3.8.3",
     "webpack": "^4.25.1"
   }
 }

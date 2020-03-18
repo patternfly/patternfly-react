@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-virtualized-extension",
-  "version": "1.4.28",
+  "version": "1.4.35",
   "description": "This library provides efficient rendering extensions for PatternFly 4 React tables and lists.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -28,9 +28,9 @@
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-virtualized-extension/",
   "dependencies": {
     "@patternfly/patternfly": "2.68.3",
-    "@patternfly/react-core": "^3.145.2",
-    "@patternfly/react-icons": "^3.15.11",
-    "@patternfly/react-styles": "^3.7.8",
+    "@patternfly/react-core": "^3.148.0",
+    "@patternfly/react-icons": "^3.15.12",
+    "@patternfly/react-styles": "^3.7.9",
     "@types/react-virtualized": "^9.21.5",
     "clsx": "^1.0.1",
     "dom-helpers": "^2.4.0 || ^3.0.0",

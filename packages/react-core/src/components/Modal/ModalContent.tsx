@@ -7,7 +7,6 @@ const FocusTrap: any = require('focus-trap-react');
 
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
-import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 
 import { Backdrop } from '../Backdrop/Backdrop';
@@ -16,6 +15,7 @@ import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
+import { ModalBoxDescription } from './ModalBoxDescription';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -104,11 +104,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}
-      {description && (
-        <div className={css(modalStyles.modalBoxDescription)} id={id}>
-          {description}
-        </div>
-      )}
+      {description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
       <ModalBoxBody {...props} {...(!description && { id })}>
         {children}
       </ModalBoxBody>
