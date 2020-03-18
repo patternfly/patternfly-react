@@ -5,7 +5,6 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
-import { string } from 'locutus/python';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
