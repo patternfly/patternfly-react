@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { css, pickProperties } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Omit, PickOptional } from '../../helpers/typeUtils';
 
-const visibilityModifiers = pickProperties(styles.modifiers, [
+const visibilityModifiers = [
   'hidden',
   'hiddenOnSm',
   'hiddenOnMd',
@@ -15,10 +15,9 @@ const visibilityModifiers = pickProperties(styles.modifiers, [
   'visibleOnLg',
   'visibleOnXl',
   'visibleOn_2xl'
-]);
+] as (keyof typeof styles.modifiers)[];
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-interface IDataListActionVisibility {
+interface DataListActionVisibility {
   hidden?: string;
   hiddenOnSm?: string;
   hiddenOnMd?: string;
@@ -32,9 +31,16 @@ interface IDataListActionVisibility {
   visibleOn2Xl?: string;
 }
 
-export const DataListActionVisibility: IDataListActionVisibility = Object.keys(visibilityModifiers)
-  .map(key => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
-  .reduce((acc, curr) => ({ ...acc, [curr[0]]: curr[1] }), {});
+export const DataListActionVisibility: DataListActionVisibility = visibilityModifiers
+  .filter(key => styles.modifiers[key])
+  .reduce(
+    (acc, curr) => {
+      const key2 = curr.replace('_2xl', '2Xl') as keyof typeof DataListActionVisibility;
+      acc[key2] = styles.modifiers[curr];
+      return acc;
+    },
+    {} as DataListActionVisibility
+  );
 
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
@@ -69,8 +75,7 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     this.setState({ isOpen });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSelect = (event: MouseEvent) => {
+  onSelect = () => {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
     }));

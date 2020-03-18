@@ -12,7 +12,7 @@ exports[`Progress measure location inside 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="inside-progress-description"
@@ -34,7 +34,7 @@ exports[`Progress measure location inside 1`] = `
       parentId="inside-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -94,7 +94,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="large-progress-description"
@@ -116,7 +116,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
       parentId="large-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -176,7 +176,7 @@ exports[`Progress measure location none 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="none-progress-description"
@@ -198,7 +198,7 @@ exports[`Progress measure location none 1`] = `
       parentId="none-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -256,7 +256,7 @@ exports[`Progress measure location outside 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="outside-progress-description"
@@ -278,7 +278,7 @@ exports[`Progress measure location outside 1`] = `
       parentId="outside-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -342,7 +342,7 @@ exports[`Progress measure location top 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="top-progress-description"
@@ -364,7 +364,7 @@ exports[`Progress measure location top 1`] = `
       parentId="top-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -428,7 +428,7 @@ exports[`Progress size lg 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="lg-progress-description"
@@ -450,7 +450,7 @@ exports[`Progress size lg 1`] = `
       parentId="lg-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -514,7 +514,7 @@ exports[`Progress size md 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="md-progress-description"
@@ -536,7 +536,7 @@ exports[`Progress size md 1`] = `
       parentId="md-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -600,7 +600,7 @@ exports[`Progress size sm 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="sm-progress-description"
@@ -622,7 +622,7 @@ exports[`Progress size sm 1`] = `
       parentId="sm-progress"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -790,92 +790,6 @@ exports[`Progress variant danger 1`] = `
 </Progress>
 `;
 
-exports[`Progress variant info 1`] = `
-<Progress
-  className=""
-  id="info-progress"
-  label={null}
-  max={100}
-  measureLocation="top"
-  min={0}
-  size={null}
-  title=""
-  value={33}
-  valueText={null}
-  variant="info"
->
-  <div
-    aria-describedby="info-progress-description"
-    className="pf-c-progress pf-m-singleline"
-    id="info-progress"
-    role="progressbar"
-  >
-    <ProgressContainer
-      ariaProps={
-        Object {
-          "aria-describedby": "info-progress-description",
-          "aria-valuemax": 100,
-          "aria-valuemin": 0,
-          "aria-valuenow": 33,
-        }
-      }
-      label={null}
-      measureLocation="top"
-      parentId="info-progress"
-      title=""
-      value={33}
-      variant="info"
-    >
-      <div
-        className="pf-c-progress__description"
-        id="info-progress-description"
-      />
-      <div
-        className="pf-c-progress__status"
-      >
-        <span
-          className="pf-c-progress__measure"
-        >
-          33%
-        </span>
-      </div>
-      <ProgressBar
-        ariaProps={
-          Object {
-            "aria-describedby": "info-progress-description",
-            "aria-valuemax": 100,
-            "aria-valuemin": 0,
-            "aria-valuenow": 33,
-          }
-        }
-        value={33}
-      >
-        <div
-          aria-describedby="info-progress-description"
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={33}
-          className="pf-c-progress__bar"
-        >
-          <div
-            className="pf-c-progress__indicator"
-            style={
-              Object {
-                "width": "33%",
-              }
-            }
-          >
-            <span
-              className="pf-c-progress__measure"
-            />
-          </div>
-        </div>
-      </ProgressBar>
-    </ProgressContainer>
-  </div>
-</Progress>
-`;
-
 exports[`Progress variant success 1`] = `
 <Progress
   className=""
@@ -1004,7 +918,7 @@ exports[`Progress with aria-valuetext 1`] = `
   title=""
   value={33}
   valueText="Descriptive text here"
-  variant="info"
+  variant={null}
 >
   <div
     aria-valuetext="Descriptive text here"
@@ -1027,7 +941,7 @@ exports[`Progress with aria-valuetext 1`] = `
       parentId="progress-aria-valuetext"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1093,7 +1007,7 @@ exports[`Simple progress 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="progress-simple-example-description"
@@ -1115,7 +1029,7 @@ exports[`Simple progress 1`] = `
       parentId="progress-simple-example"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1179,7 +1093,7 @@ exports[`additional label 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="additional-label-description"
@@ -1201,7 +1115,7 @@ exports[`additional label 1`] = `
       parentId="additional-label"
       title=""
       value={33}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1265,7 +1179,7 @@ exports[`no value specified 1`] = `
   title=""
   value={0}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="no-value-description"
@@ -1287,7 +1201,7 @@ exports[`no value specified 1`] = `
       parentId="no-value"
       title=""
       value={0}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1351,7 +1265,7 @@ exports[`value higher than maxValue 1`] = `
   title=""
   value={77}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="higher-max-value-description"
@@ -1373,7 +1287,7 @@ exports[`value higher than maxValue 1`] = `
       parentId="higher-max-value"
       title=""
       value={100}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1437,7 +1351,7 @@ exports[`value lower than minValue 1`] = `
   title=""
   value={33}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="lower-min-value-description"
@@ -1459,7 +1373,7 @@ exports[`value lower than minValue 1`] = `
       parentId="lower-min-value"
       title=""
       value={0}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1523,7 +1437,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
   title=""
   value={50}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="scaled-range-value-description"
@@ -1545,7 +1459,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
       parentId="scaled-range-value"
       title=""
       value={57}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1609,7 +1523,7 @@ exports[`value scaled with maxValue 1`] = `
   title=""
   value={50}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="scaled-max-value-description"
@@ -1631,7 +1545,7 @@ exports[`value scaled with maxValue 1`] = `
       parentId="scaled-max-value"
       title=""
       value={62}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"
@@ -1695,7 +1609,7 @@ exports[`value scaled with minValue 1`] = `
   title=""
   value={50}
   valueText={null}
-  variant="info"
+  variant={null}
 >
   <div
     aria-describedby="scaled-min-value-description"
@@ -1717,7 +1631,7 @@ exports[`value scaled with minValue 1`] = `
       parentId="scaled-min-value"
       title=""
       value={44}
-      variant="info"
+      variant={null}
     >
       <div
         className="pf-c-progress__description"

@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
 import { DataToolbarContext, DataToolbarContentContext } from './DataToolbarUtils';
 import { Button } from '../../components/Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, capitalize, toCamel } from '../../helpers/util';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
@@ -41,9 +41,9 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
             {({ expandableContentRef, expandableContentId }) => {
               if (expandableContentRef.current && expandableContentRef.current.classList) {
                 if (isExpanded) {
-                  expandableContentRef.current.classList.add(getModifier(styles, 'expanded'));
+                  expandableContentRef.current.classList.add(styles.modifiers.expanded);
                 } else {
-                  expandableContentRef.current.classList.remove(getModifier(styles, 'expanded'));
+                  expandableContentRef.current.classList.remove(styles.modifiers.expanded);
                 }
               }
 
@@ -51,10 +51,10 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                 <div
                   className={css(
                     styles.dataToolbarGroup,
-                    variant && getModifier(styles, variant),
+                    variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
                     formatBreakpointMods(breakpointMods, styles),
-                    getModifier(styles, 'toggle-group'),
-                    getModifier(styles, `show-on-${breakpoint}`),
+                    styles.modifiers.toggleGroup,
+                    styles.modifiers[`showOn${capitalize(breakpoint)}` as 'showOnMd' | 'showOnLg' | 'showOnXl'],
                     className
                   )}
                   {...props}

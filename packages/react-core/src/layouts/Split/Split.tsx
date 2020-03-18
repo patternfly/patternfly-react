@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Split/split';
-import { getGutterModifier } from '../../styles/gutters';
 import { css } from '@patternfly/react-styles';
 
 export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
@@ -23,10 +22,7 @@ export const Split: React.FunctionComponent<SplitProps> = ({
 }: SplitProps) => {
   const Component = component as any;
   return (
-    <Component
-      {...props}
-      className={css(styles.split, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
-    >
+    <Component {...props} className={css(styles.split, gutter && styles.modifiers.gutter, className)}>
       {children}
     </Component>
   );

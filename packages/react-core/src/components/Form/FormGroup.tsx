@@ -3,7 +3,7 @@ import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { FormContext } from './FormContext';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
@@ -63,10 +63,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   return (
     <FormContext.Consumer>
       {({ isHorizontal }: { isHorizontal: boolean }) => (
-        <div
-          {...props}
-          className={css(styles.formGroup, isInline ? getModifier(styles, 'inline', className) : className)}
-        >
+        <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
           {label && (
             <label className={css(styles.formLabel)} htmlFor={fieldId}>
               <span className={css(styles.formLabelText)}>{label}</span>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 export const PopoverPosition = {
   top: 'top',
@@ -16,7 +16,7 @@ export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
   ...props
 }: PopoverDialogProps) => (
   <div
-    className={css(styles.popover, getModifier(styles, position, styles.modifiers.top), className)}
+    className={css(styles.popover, styles.modifiers[position] || styles.modifiers.top, className)}
     role="dialog"
     aria-modal="true"
     {...props}

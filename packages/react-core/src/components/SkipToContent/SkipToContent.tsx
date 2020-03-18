@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface SkipToContentProps
@@ -33,9 +33,9 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
         {...rest}
         className={css(
           buttonStyles.button,
-          getModifier(buttonStyles.modifiers, 'primary'),
+          buttonStyles.modifiers.primary,
           styles.skipToContent,
-          show && getModifier(styles, 'focus'),
+          show && styles.modifiers.focus,
           className
         )}
         href={href}

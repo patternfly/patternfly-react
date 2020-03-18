@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../helpers/util';
-import { RefObject } from 'react';
+import { formatBreakpointMods, toCamel } from '../../helpers/util';
 
 export enum DataToolbarGroupVariant {
   'filter-group' = 'filter-group',
@@ -36,7 +36,7 @@ class DataToolbarGroupWithRef extends React.Component<DataToolbarGroupProps> {
       <div
         className={css(
           styles.dataToolbarGroup,
-          variant && getModifier(styles, variant),
+          variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
           formatBreakpointMods(breakpointMods, styles),
           className
         )}

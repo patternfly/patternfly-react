@@ -1529,9 +1529,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       />
                     </DataToolbarGroupWithRef>
                   </ForwardRef>
-                  <DataToolbarItem
-                    className=""
-                  >
+                  <DataToolbarItem>
                     <div
                       className="pf-c-data-toolbar__item"
                     >
@@ -1776,9 +1774,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             />
           </DataToolbarGroupWithRef>
         </ForwardRef>
-        <DataToolbarItem
-          className=""
-        >
+        <DataToolbarItem>
           <div
             className="pf-c-data-toolbar__item"
           >

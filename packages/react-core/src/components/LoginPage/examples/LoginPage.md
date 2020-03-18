@@ -13,7 +13,6 @@ import {
   LoginMainFooterBandItem,
   LoginMainFooterLinksItem,
   LoginPage,
-  BackgroundImageSrc,
   ListItem
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
@@ -148,11 +147,11 @@ class SimpleLoginPage extends React.Component {
     );
 
     const images = {
-      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
-      [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
-      [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-      [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
-      [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
+      'lg': '/assets/images/pfbg_1200.jpg',
+      'sm': '/assets/images/pfbg_768.jpg',
+      'sm2x': '/assets/images/pfbg_768@2x.jpg',
+      'xs': '/assets/images/pfbg_576.jpg',
+      'xs2x': '/assets/images/pfbg_576@2x.jpg',
     };
 
     return (

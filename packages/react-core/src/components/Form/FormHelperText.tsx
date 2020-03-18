@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 
 export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
@@ -23,8 +23,8 @@ export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
   <p
     className={css(
       styles.formHelperText,
-      isError ? getModifier(styles, 'error') : '',
-      isHidden ? getModifier(styles, 'hidden') : '',
+      isError && styles.modifiers.error,
+      isHidden && styles.modifiers.hidden,
       className
     )}
     {...props}

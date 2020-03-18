@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, toCamel } from '../../helpers/util';
 
 export enum DataToolbarItemVariant {
   separator = 'separator',
@@ -50,7 +50,17 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
     <div
       className={css(
         styles.dataToolbarItem,
-        variant && getModifier(styles, variant),
+        variant &&
+          styles.modifiers[
+            toCamel(variant) as
+              | 'separator'
+              | 'bulkSelect'
+              | 'overflowMenu'
+              | 'pagination'
+              | 'searchFilter'
+              | 'label'
+              | 'chipGroup'
+          ],
         formatBreakpointMods(breakpointMods, styles),
         className
       )}

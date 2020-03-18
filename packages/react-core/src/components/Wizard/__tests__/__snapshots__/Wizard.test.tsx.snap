@@ -191,6 +191,7 @@ exports[`Wizard should match snapshot 1`] = `
               </div>
               <button
                 aria-expanded="false"
+                aria-label="Wizard Toggle"
                 class="pf-c-wizard__toggle"
               >
                 <ol
@@ -405,6 +406,7 @@ exports[`Wizard should match snapshot 1`] = `
               </div>
               <button
                 aria-expanded="false"
+                aria-label="Wizard Toggle"
                 class="pf-c-wizard__toggle"
               >
                 <ol

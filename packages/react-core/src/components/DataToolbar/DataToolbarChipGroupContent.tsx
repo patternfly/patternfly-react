@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
@@ -58,7 +58,7 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       <div
         className={css(
           styles.dataToolbarContent,
-          (numberOfFilters === 0 || isExpanded) && getModifier(styles, 'hidden'),
+          (numberOfFilters === 0 || isExpanded) && styles.modifiers.hidden,
           className
         )}
         {...((numberOfFilters === 0 || isExpanded) && { hidden: true })}
@@ -66,19 +66,17 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
         {...props}
       >
         <DataToolbarGroup
-          className={css(collapseListedFilters && getModifier(styles, 'hidden'))}
+          className={css(collapseListedFilters && styles.modifiers.hidden)}
           {...(collapseListedFilters && { hidden: true })}
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
         {collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
-          <DataToolbarGroup
-            className={css(getModifier(styles, 'toggle-group-summary'), 'pf-m-filters-applied-message')}
-          >
+          <DataToolbarGroup>
             <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
           </DataToolbarGroup>
         )}
         {showClearFiltersButton && !isExpanded && (
-          <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+          <DataToolbarItem>
             <Button variant="link" onClick={clearChipGroups} isInline>
               {clearFiltersButtonText}
             </Button>

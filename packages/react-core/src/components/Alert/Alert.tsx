@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
@@ -60,7 +60,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   const customClassName = css(
     styles.alert,
     isInline && styles.modifiers.inline,
-    variant !== AlertVariant.default && getModifier(styles, variant, styles.modifiers.info),
+    variant !== AlertVariant.default && styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
     className
   );
 

@@ -15,21 +15,18 @@
     "tag": "prerelease-v4"
   },
   "scripts": {
-    "build": "yarn build:babel && node ./scripts/copyTS.js && yarn build:css && node ./scripts/copyStyles.js",
+    "build": "yarn build:babel && yarn build:types && yarn build:css && node ./scripts/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/preset-env",
     "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:types": "tsc -p tsconfig.gen-dts.json",
     "build:css": "node src/generateClasses.js && tsc && node src/removeTS.js",
     "clean": "rimraf dist css",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
-    "camel-case": "^3.0.0",
-    "css": "^2.2.3",
-    "cssstyle": "^0.3.1",
-    "emotion": "^9.2.9",
-    "emotion-server": "^9.2.9"
+    "camel-case": "^3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -45,6 +42,8 @@
     "@patternfly/patternfly": "4.0.4",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
+    "css": "^2.2.3",
+    "cssstyle": "^0.3.1",
     "fbjs-scripts": "^0.8.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

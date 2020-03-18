@@ -5,7 +5,7 @@ import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody } from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
@@ -261,7 +261,11 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         {randomId => (
           <FocusTrap active={this.state.focusTrapActive} focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div
-              className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
+              className={css(
+                !enableFlip &&
+                  (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top),
+                className
+              )}
               role="dialog"
               aria-modal="true"
               aria-label={headerContent ? undefined : ariaLabel}

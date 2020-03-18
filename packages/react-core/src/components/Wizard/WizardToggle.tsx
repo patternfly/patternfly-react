@@ -21,6 +21,8 @@ export interface WizardToggleProps {
   isNavOpen: boolean;
   /** Callback function for when the nav is toggled */
   onNavToggle: (isOpen: boolean) => void;
+  /** The button's aria-label */
+  'aria-label'?: string;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -30,7 +32,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding = true
+  hasBodyPadding = true,
+  'aria-label': ariaLabel = 'Wizard Toggle'
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -52,10 +55,11 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
     }
   }
   return (
-    <>
+    <React.Fragment>
       <button
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
+        aria-label={ariaLabel}
         aria-expanded={isNavOpen}
       >
         <ol className={css(styles.wizardToggleList)}>
@@ -74,6 +78,6 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         </div>
         {children}
       </div>
-    </>
+    </React.Fragment>
   );
 };

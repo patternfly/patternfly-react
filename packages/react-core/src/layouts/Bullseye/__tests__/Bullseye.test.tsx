@@ -25,7 +25,7 @@ test('allows passing in a string as the component', () => {
 });
 
 test('allows passing in a React Component as the component', () => {
-  const Component = () => null as any;
+  const Component: React.FunctionComponent = () => null;
   const view = shallow(<Bullseye component={Component} />);
   expect(view.type()).toBe(Component);
 });

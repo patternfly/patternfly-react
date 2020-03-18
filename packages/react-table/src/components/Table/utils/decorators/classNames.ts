@@ -1,8 +1,8 @@
-import { css, pickProperties } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { ITransform } from '../../Table';
 
-export const Visibility = pickProperties(styles.modifiers, [
+const visibilityModifiers = [
   'hidden',
   'hiddenOnSm',
   'hiddenOnMd',
@@ -14,9 +14,33 @@ export const Visibility = pickProperties(styles.modifiers, [
   'visibleOnLg',
   'visibleOnXl',
   'visibleOn_2xl'
-]);
+] as (keyof typeof styles.modifiers)[];
 
-// eslint-disable-next-line no-shadow
-export const classNames = (...classNames: string[]): ITransform => () => ({
-  className: css(...classNames)
+interface Visibility {
+  hidden?: string;
+  hiddenOnSm?: string;
+  hiddenOnMd?: string;
+  hiddenOnLg?: string;
+  hiddenOnXl?: string;
+  hiddenOn2Xl?: string;
+  visibleOnSm?: string;
+  visibleOnMd?: string;
+  visibleOnLg?: string;
+  visibleOnXl?: string;
+  visibleOn2Xl?: string;
+}
+
+export const Visibility = visibilityModifiers
+  .filter(key => styles.modifiers[key])
+  .reduce(
+    (acc, curr) => {
+      const key2 = curr.replace('_2xl', '2Xl') as keyof typeof Visibility;
+      acc[key2] = styles.modifiers[curr];
+      return acc;
+    },
+    {} as Visibility
+  );
+
+export const classNames = (...classes: string[]): ITransform => () => ({
+  className: css(...classes)
 });

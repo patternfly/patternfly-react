@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
-import { css, getModifier } from '@patternfly/react-styles';
-import { ProgressContainer, ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+import { css } from '@patternfly/react-styles';
+import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
@@ -19,7 +19,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Where the measure percent will be located. */
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Status variant of progress. */
-  variant?: 'danger' | 'success' | 'info';
+  variant?: 'danger' | 'success';
   /** Title above progress. */
   title?: string;
   /** Text description of current progress value to display instead of percentage. */
@@ -40,7 +40,7 @@ export class Progress extends React.Component<ProgressProps> {
   static defaultProps: ProgressProps = {
     className: '',
     measureLocation: ProgressMeasureLocation.top,
-    variant: ProgressVariant.info,
+    variant: null,
     id: '',
     title: '',
     min: 0,
@@ -55,10 +55,11 @@ export class Progress extends React.Component<ProgressProps> {
 
   render() {
     const {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       id,
-      className,
       size,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      className,
       value,
       title,
       label,
@@ -91,10 +92,10 @@ export class Progress extends React.Component<ProgressProps> {
         {...additionalProps}
         className={css(
           styles.progress,
-          getModifier(styles, variant, ''),
-          getModifier(styles, measureLocation, ''),
-          getModifier(styles, measureLocation === ProgressMeasureLocation.inside ? ProgressSize.lg : size, ''),
-          !title && getModifier(styles, 'singleline', ''),
+          styles.modifiers[variant],
+          ['inside', 'outside'].includes(measureLocation) && styles.modifiers[measureLocation as 'inside' | 'outside'],
+          measureLocation === 'inside' ? styles.modifiers[ProgressSize.lg] : styles.modifiers[size as 'sm' | 'lg'],
+          !title && styles.modifiers.singleline,
           className
         )}
         id={this.id}

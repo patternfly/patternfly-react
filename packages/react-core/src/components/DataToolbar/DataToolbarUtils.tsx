@@ -53,12 +53,11 @@ export interface DataToolbarBreakpointMod {
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
 }
 
-export const globalBreakpoints = (breakpoint: string) => {
-  const breakpoints: { [key: string]: number } = {
-    md: parseInt(globalBreakpointMd.value),
-    lg: parseInt(globalBreakpointLg.value),
-    xl: parseInt(globalBreakpointXl.value),
-    '2xl': parseInt(globalBreakpoint2xl.value)
-  };
-  return breakpoints[breakpoint];
+const breakpoints = {
+  md: parseInt(globalBreakpointMd.value),
+  lg: parseInt(globalBreakpointLg.value),
+  xl: parseInt(globalBreakpointXl.value),
+  '2xl': parseInt(globalBreakpoint2xl.value)
 };
+
+export const globalBreakpoints = (breakpoint: keyof typeof breakpoints) => breakpoints[breakpoint];

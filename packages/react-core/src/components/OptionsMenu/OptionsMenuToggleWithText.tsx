@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
@@ -61,12 +61,12 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   <div
     className={css(
       styles.optionsMenuToggle,
-      getModifier(styles, 'text'),
-      isPlain && getModifier(styles, 'plain'),
-      isHovered && getModifier(styles, 'hover'),
-      isActive && getModifier(styles, 'active'),
-      isFocused && getModifier(styles, 'focus'),
-      isDisabled && getModifier(styles, 'disabled')
+      styles.modifiers.text,
+      isPlain && styles.modifiers.plain,
+      isHovered && styles.modifiers.hover,
+      isActive && styles.modifiers.active,
+      isFocused && styles.modifiers.focus,
+      isDisabled && styles.modifiers.disabled
     )}
     {...props}
   >

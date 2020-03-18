@@ -1,6 +1,5 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
-import { getModifier } from '@patternfly/react-styles';
 import { DataToolbarBreakpointMod } from '../components/DataToolbar/DataToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
 
@@ -242,10 +241,25 @@ export const formatBreakpointMods = (
   breakpointMods: (DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[],
   styles: any
 ) =>
-  breakpointMods.reduce(
-    (acc: string, curr: DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod) =>
-      `${acc}${acc && ' '}${getModifier(styles, `${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`)}`,
-    ''
-  );
+  breakpointMods
+    .map(mod => `${mod.modifier}${mod.breakpoint ? `-on-${mod.breakpoint}` : ''}`)
+    .map(toCamel)
+    .map(modifierKey => styles.modifiers[modifierKey])
+    .filter(Boolean)
+    .join(' ');
 
+const camelize = (s: string) =>
+  s
+    .toUpperCase()
+    .replace('-', '')
+    .replace('_', '');
+/**
+ *
+ * @param {string} s string to make camelCased
+ */
+export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
+
+/**
+ * Copied from exenv
+ */
 export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
