@@ -14,7 +14,7 @@ export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
   stopAsyncAlerts: () => void;
   removeAlert: (key: any) => void;
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       alerts: [],
@@ -28,7 +28,7 @@ export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
     this.stopAsyncAlerts();
   }
   render() {
-    const addAlerts = incomingAlerts => {
+    const addAlerts = (incomingAlerts: any[]) => {
       this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
     };
     const getUniqueId = () => new Date().getTime();

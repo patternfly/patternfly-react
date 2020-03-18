@@ -13,14 +13,14 @@ interface DataListState {
 }
 
 export class DataListDemo extends React.Component<DataListProps, DataListState> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       selectedDataListItemId: ''
     };
   }
 
-  onSelectDataListItem = id => {
+  onSelectDataListItem = (id: string) => {
     this.setState({ selectedDataListItemId: id });
   };
 

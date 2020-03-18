@@ -7,7 +7,7 @@ interface AboutModalState {
 }
 
 export class AboutModalDemo extends React.Component<null, AboutModalState> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       isModalOpen: false

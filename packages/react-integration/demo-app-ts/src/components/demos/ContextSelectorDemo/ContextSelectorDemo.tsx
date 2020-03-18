@@ -14,7 +14,7 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
   onSelect: (event: any, value: string) => void;
   onSearchInputChange: (value: string) => void;
   onSearchButtonClick: (event: any) => void;
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.items = [
       'My Project',

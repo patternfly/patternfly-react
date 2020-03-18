@@ -33,10 +33,10 @@ interface Filter {
 interface DataToolbarState {
   isExpanded: boolean;
   inputValue: string;
-  statusIsExpanded: false;
-  riskIsExpanded: false;
+  statusIsExpanded: boolean;
+  riskIsExpanded: boolean;
   filters: Filter;
-  kebabIsOpen: false;
+  kebabIsOpen: boolean;
 }
 
 export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolbarState> {
@@ -67,35 +67,35 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }));
   };
 
-  onInputChange = newValue => {
+  onInputChange = (newValue: string) => {
     this.setState({ inputValue: newValue });
   };
 
-  onSelect = (type, event, selection) => {
+  onSelect = (type: any, event: React.SyntheticEvent, selection: any) => {
     const checked = event.target.checked;
     this.setState(prevState => {
       const prevSelections = prevState.filters[type];
       return {
         filters: {
           ...prevState.filters,
-          [type]: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+          [type]: checked ? [...prevSelections, selection] : prevSelections.filter((value: any) => value !== selection)
         }
       };
     });
   };
 
-  onStatusSelect = (event, selection) => {
+  onStatusSelect = (event: React.SyntheticEvent, selection: any) => {
     this.onSelect('status', event, selection);
   };
 
-  onRiskSelect = (event, selection) => {
+  onRiskSelect = (event: React.SyntheticEvent, selection: any) => {
     this.onSelect('risk', event, selection);
   };
 
   onDelete = (type = '', id = '') => {
     if (type) {
       this.setState(prevState => {
-        prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+        prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter((s: string) => s !== id);
         return {
           filters: prevState.filters
         };
@@ -110,19 +110,19 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }
   };
 
-  onStatusToggle = isExpanded => {
+  onStatusToggle = (isExpanded: boolean) => {
     this.setState({
       statusIsExpanded: isExpanded
     });
   };
 
-  onRiskToggle = isExpanded => {
+  onRiskToggle = (isExpanded: boolean) => {
     this.setState({
       riskIsExpanded: isExpanded
     });
   };
 
-  onKebabToggle = isOpen => {
+  onKebabToggle = (isOpen: boolean) => {
     this.setState({
       kebabIsOpen: isOpen
     });
