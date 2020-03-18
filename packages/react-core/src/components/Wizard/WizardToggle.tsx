@@ -5,6 +5,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-ic
 import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
+import { string } from 'locutus/python';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
@@ -21,6 +22,8 @@ export interface WizardToggleProps {
   isNavOpen: boolean;
   /** Callback function for when the nav is toggled */
   onNavToggle: (isOpen: boolean) => void;
+  /** The button's aria-label */
+  'aria-label'?: string;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -30,7 +33,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding = true
+  hasBodyPadding = true,
+  'aria-label': ariaLabel = 'Wizard Toggle'
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -56,7 +60,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       <button
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
-        aria-label="Wizard toggle"
+        aria-label={ariaLabel}
         aria-expanded={isNavOpen}
       >
         <ol className={css(styles.wizardToggleList)}>

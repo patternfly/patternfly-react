@@ -94,7 +94,7 @@ export class Progress extends React.Component<ProgressProps> {
           styles.progress,
           styles.modifiers[variant],
           ['inside', 'outside'].includes(measureLocation) && styles.modifiers[measureLocation as 'inside' | 'outside'],
-          measureLocation === 'inside' && styles.modifiers[ProgressSize.lg],
+          measureLocation === 'inside' ? styles.modifiers[ProgressSize.lg] : styles.modifiers[size as 'sm' | 'lg'],
           !title && styles.modifiers.singleline,
           className
         )}

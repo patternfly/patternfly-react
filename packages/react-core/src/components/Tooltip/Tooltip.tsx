@@ -150,7 +150,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     const content = (
       <div
         className={css(
-          !enableFlip && (styles.modifiers[position as keyof typeof styles.modifiers] || styles.modifiers.top),
+          !enableFlip && (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top),
           className
         )}
         role="tooltip"
