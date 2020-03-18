@@ -17,8 +17,8 @@ export class PageDemo extends React.Component {
 
   render() {
     const { isNavOpen } = this.state;
-    const headerRole: string = null;
-    const pageRole: string = null;
+    const headerRole: string = undefined;
+    const pageRole: string = undefined;
     const logoProps = {
       href: 'https://patternfly.org',
       // eslint-disable-next-line no-console

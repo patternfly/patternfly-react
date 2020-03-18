@@ -43,17 +43,17 @@ export interface SelectDemoState {
 }
 
 export class SelectDemo extends Component<{}, SelectDemoState> {
-  state = {
+  state: SelectDemoState = {
     singleIsExpanded: false,
-    singleSelected: '',
-    disabledSingleIsExpanded: false,
-    disabledSingleSelected: '',
+    singleSelected: null,
+    disabledSingleIsExpanded: null,
+    disabledSingleSelected: undefined,
     customSingleIsExpanded: false,
-    customSingleSelected: '',
+    customSingleSelected: null,
     checkIsExpanded: false,
     checkSelected: [''],
     typeaheadIsExpanded: false,
-    typeaheadSelected: '',
+    typeaheadSelected: null,
     typeaheadMultiIsExpanded: false,
     typeaheadMultiSelected: [''],
     cdtypeaheadMultiIsExpanded: false,
@@ -71,9 +71,9 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
       { value: 'New Jersey', disabled: false },
       { value: 'Texas', disabled: false }
     ],
+    typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
-    customContentIsExpanded: false,
-    typeaheadIsCreatable: false
+    customContentIsExpanded: false
   };
 
   singleOptions = [

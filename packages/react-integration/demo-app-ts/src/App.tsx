@@ -10,7 +10,7 @@ interface AppState {
 
 class App extends React.Component<{}, AppState> {
   state: AppState = {
-    activeItem: ''
+    activeItem: null
   };
 
   private onNavSelect = (selectedItem: { itemId: number | string }) => {
