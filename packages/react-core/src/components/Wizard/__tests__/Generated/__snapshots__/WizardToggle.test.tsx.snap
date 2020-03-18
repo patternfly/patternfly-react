@@ -4,7 +4,7 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
 <Fragment>
   <button
     aria-expanded={true}
-    aria-label="Wizard toggle"
+    aria-label="Wizard Toggle"
     className="pf-c-wizard__toggle pf-m-expanded"
     onClick={[Function]}
   >

@@ -432,7 +432,7 @@ exports[`Progress size lg 1`] = `
 >
   <div
     aria-describedby="lg-progress-description"
-    className="pf-c-progress pf-m-singleline"
+    className="pf-c-progress pf-m-lg pf-m-singleline"
     id="lg-progress"
     role="progressbar"
   >
@@ -604,7 +604,7 @@ exports[`Progress size sm 1`] = `
 >
   <div
     aria-describedby="sm-progress-description"
-    className="pf-c-progress pf-m-singleline"
+    className="pf-c-progress pf-m-sm pf-m-singleline"
     id="sm-progress"
     role="progressbar"
   >
