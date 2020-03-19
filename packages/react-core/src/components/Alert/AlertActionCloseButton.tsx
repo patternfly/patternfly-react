@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import { AlertContext } from '..';
 
 interface AlertActionCloseButtonProps extends ButtonProps {
   /** Additional classes added to the AlertActionCloseButton */
@@ -18,16 +19,19 @@ export const AlertActionCloseButton = ({
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = '',
-  title,
-  variantLabel = '',
+  variantLabel,
   ...props
 }: AlertActionCloseButtonProps) => (
-  <Button
-    variant={ButtonVariant.plain}
-    onClick={onClose}
-    aria-label={ariaLabel === '' ? `Close ${variantLabel} alert: ${title}` : ariaLabel}
-    {...props}
-  >
-    <TimesIcon />
-  </Button>
+  <AlertContext.Consumer>
+    {({ title, variantLabel: alertVariantLabel }) => (
+      <Button
+        variant={ButtonVariant.plain}
+        onClick={onClose}
+        aria-label={ariaLabel === '' ? `Close ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
+        {...props}
+      >
+        <TimesIcon />
+      </Button>
+    )}
+  </AlertContext.Consumer>
 );

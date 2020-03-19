@@ -8,7 +8,7 @@ exports[`Alert - danger Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample danger alert"
   variant="danger"
 >
   <ComponentWithOuia
@@ -20,7 +20,7 @@ exports[`Alert - danger Action Close Button 1`] = `
           onClose={[MockFunction]}
         />,
         "children": "Some alert",
-        "title": "",
+        "title": "Sample danger alert",
         "variant": "danger",
       }
     }
@@ -39,7 +39,7 @@ exports[`Alert - danger Action Close Button 1`] = `
           "ouiaId": null,
         }
       }
-      title=""
+      title="Sample danger alert"
       variant="danger"
     >
       <div
@@ -88,6 +88,7 @@ exports[`Alert - danger Action Close Button 1`] = `
           >
             Danger alert:
           </span>
+          Sample danger alert
         </h4>
         <div
           className="pf-c-alert__description"
@@ -100,8 +101,6 @@ exports[`Alert - danger Action Close Button 1`] = `
           <AlertActionCloseButton
             aria-label="Close"
             onClose={[MockFunction]}
-            title=""
-            variantLabel="Danger alert:"
           >
             <Component
               aria-label="Close"
@@ -282,15 +281,10 @@ exports[`Alert - danger Action Link 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title=""
-            variantLabel="Danger alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title=""
               variant="link"
-              variantLabel="Danger alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -298,9 +292,7 @@ exports[`Alert - danger Action Link 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "",
                     "variant": "link",
-                    "variantLabel": "Danger alert:",
                   }
                 }
                 consumerContext={
@@ -318,9 +310,7 @@ exports[`Alert - danger Action Link 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title=""
                   variant="link"
-                  variantLabel="Danger alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -328,9 +318,7 @@ exports[`Alert - danger Action Link 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title=""
                     type="button"
-                    variantLabel="Danger alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -444,15 +432,10 @@ exports[`Alert - danger Action and Title 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Danger alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Danger alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -460,9 +443,7 @@ exports[`Alert - danger Action and Title 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Danger alert:",
                   }
                 }
                 consumerContext={
@@ -480,9 +461,7 @@ exports[`Alert - danger Action and Title 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Danger alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -490,9 +469,7 @@ exports[`Alert - danger Action and Title 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Danger alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -609,15 +586,10 @@ exports[`Alert - danger Custom aria label 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Danger alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Danger alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -625,9 +597,7 @@ exports[`Alert - danger Custom aria label 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Danger alert:",
                   }
                 }
                 consumerContext={
@@ -645,9 +615,7 @@ exports[`Alert - danger Custom aria label 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Danger alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -655,9 +623,7 @@ exports[`Alert - danger Custom aria label 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Danger alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -1034,7 +1000,7 @@ exports[`Alert - default Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample default alert"
   variant="default"
 >
   <ComponentWithOuia
@@ -1046,7 +1012,7 @@ exports[`Alert - default Action Close Button 1`] = `
           onClose={[MockFunction]}
         />,
         "children": "Some alert",
-        "title": "",
+        "title": "Sample default alert",
         "variant": "default",
       }
     }
@@ -1065,7 +1031,7 @@ exports[`Alert - default Action Close Button 1`] = `
           "ouiaId": null,
         }
       }
-      title=""
+      title="Sample default alert"
       variant="default"
     >
       <div
@@ -1114,6 +1080,7 @@ exports[`Alert - default Action Close Button 1`] = `
           >
             Default alert:
           </span>
+          Sample default alert
         </h4>
         <div
           className="pf-c-alert__description"
@@ -1126,8 +1093,6 @@ exports[`Alert - default Action Close Button 1`] = `
           <AlertActionCloseButton
             aria-label="Close"
             onClose={[MockFunction]}
-            title=""
-            variantLabel="Default alert:"
           >
             <Component
               aria-label="Close"
@@ -1308,15 +1273,10 @@ exports[`Alert - default Action Link 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title=""
-            variantLabel="Default alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title=""
               variant="link"
-              variantLabel="Default alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -1324,9 +1284,7 @@ exports[`Alert - default Action Link 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "",
                     "variant": "link",
-                    "variantLabel": "Default alert:",
                   }
                 }
                 consumerContext={
@@ -1344,9 +1302,7 @@ exports[`Alert - default Action Link 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title=""
                   variant="link"
-                  variantLabel="Default alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -1354,9 +1310,7 @@ exports[`Alert - default Action Link 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title=""
                     type="button"
-                    variantLabel="Default alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -1470,15 +1424,10 @@ exports[`Alert - default Action and Title 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Default alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Default alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -1486,9 +1435,7 @@ exports[`Alert - default Action and Title 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Default alert:",
                   }
                 }
                 consumerContext={
@@ -1506,9 +1453,7 @@ exports[`Alert - default Action and Title 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Default alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -1516,9 +1461,7 @@ exports[`Alert - default Action and Title 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Default alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -1635,15 +1578,10 @@ exports[`Alert - default Custom aria label 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Default alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Default alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -1651,9 +1589,7 @@ exports[`Alert - default Custom aria label 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Default alert:",
                   }
                 }
                 consumerContext={
@@ -1671,9 +1607,7 @@ exports[`Alert - default Custom aria label 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Default alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -1681,9 +1615,7 @@ exports[`Alert - default Custom aria label 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Default alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -2060,7 +1992,7 @@ exports[`Alert - info Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample info alert"
   variant="info"
 >
   <ComponentWithOuia
@@ -2072,7 +2004,7 @@ exports[`Alert - info Action Close Button 1`] = `
           onClose={[MockFunction]}
         />,
         "children": "Some alert",
-        "title": "",
+        "title": "Sample info alert",
         "variant": "info",
       }
     }
@@ -2091,7 +2023,7 @@ exports[`Alert - info Action Close Button 1`] = `
           "ouiaId": null,
         }
       }
-      title=""
+      title="Sample info alert"
       variant="info"
     >
       <div
@@ -2140,6 +2072,7 @@ exports[`Alert - info Action Close Button 1`] = `
           >
             Info alert:
           </span>
+          Sample info alert
         </h4>
         <div
           className="pf-c-alert__description"
@@ -2152,8 +2085,6 @@ exports[`Alert - info Action Close Button 1`] = `
           <AlertActionCloseButton
             aria-label="Close"
             onClose={[MockFunction]}
-            title=""
-            variantLabel="Info alert:"
           >
             <Component
               aria-label="Close"
@@ -2334,15 +2265,10 @@ exports[`Alert - info Action Link 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title=""
-            variantLabel="Info alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title=""
               variant="link"
-              variantLabel="Info alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -2350,9 +2276,7 @@ exports[`Alert - info Action Link 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "",
                     "variant": "link",
-                    "variantLabel": "Info alert:",
                   }
                 }
                 consumerContext={
@@ -2370,9 +2294,7 @@ exports[`Alert - info Action Link 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title=""
                   variant="link"
-                  variantLabel="Info alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -2380,9 +2302,7 @@ exports[`Alert - info Action Link 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title=""
                     type="button"
-                    variantLabel="Info alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -2496,15 +2416,10 @@ exports[`Alert - info Action and Title 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Info alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Info alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -2512,9 +2427,7 @@ exports[`Alert - info Action and Title 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Info alert:",
                   }
                 }
                 consumerContext={
@@ -2532,9 +2445,7 @@ exports[`Alert - info Action and Title 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Info alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -2542,9 +2453,7 @@ exports[`Alert - info Action and Title 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Info alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -2661,15 +2570,10 @@ exports[`Alert - info Custom aria label 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Info alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Info alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -2677,9 +2581,7 @@ exports[`Alert - info Custom aria label 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Info alert:",
                   }
                 }
                 consumerContext={
@@ -2697,9 +2599,7 @@ exports[`Alert - info Custom aria label 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Info alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -2707,9 +2607,7 @@ exports[`Alert - info Custom aria label 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Info alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -3086,7 +2984,7 @@ exports[`Alert - success Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample success alert"
   variant="success"
 >
   <ComponentWithOuia
@@ -3098,7 +2996,7 @@ exports[`Alert - success Action Close Button 1`] = `
           onClose={[MockFunction]}
         />,
         "children": "Some alert",
-        "title": "",
+        "title": "Sample success alert",
         "variant": "success",
       }
     }
@@ -3117,7 +3015,7 @@ exports[`Alert - success Action Close Button 1`] = `
           "ouiaId": null,
         }
       }
-      title=""
+      title="Sample success alert"
       variant="success"
     >
       <div
@@ -3166,6 +3064,7 @@ exports[`Alert - success Action Close Button 1`] = `
           >
             Success alert:
           </span>
+          Sample success alert
         </h4>
         <div
           className="pf-c-alert__description"
@@ -3178,8 +3077,6 @@ exports[`Alert - success Action Close Button 1`] = `
           <AlertActionCloseButton
             aria-label="Close"
             onClose={[MockFunction]}
-            title=""
-            variantLabel="Success alert:"
           >
             <Component
               aria-label="Close"
@@ -3360,15 +3257,10 @@ exports[`Alert - success Action Link 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title=""
-            variantLabel="Success alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title=""
               variant="link"
-              variantLabel="Success alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -3376,9 +3268,7 @@ exports[`Alert - success Action Link 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "",
                     "variant": "link",
-                    "variantLabel": "Success alert:",
                   }
                 }
                 consumerContext={
@@ -3396,9 +3286,7 @@ exports[`Alert - success Action Link 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title=""
                   variant="link"
-                  variantLabel="Success alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -3406,9 +3294,7 @@ exports[`Alert - success Action Link 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title=""
                     type="button"
-                    variantLabel="Success alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -3522,15 +3408,10 @@ exports[`Alert - success Action and Title 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Success alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Success alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -3538,9 +3419,7 @@ exports[`Alert - success Action and Title 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Success alert:",
                   }
                 }
                 consumerContext={
@@ -3558,9 +3437,7 @@ exports[`Alert - success Action and Title 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Success alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -3568,9 +3445,7 @@ exports[`Alert - success Action and Title 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Success alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -3687,15 +3562,10 @@ exports[`Alert - success Custom aria label 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Success alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Success alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -3703,9 +3573,7 @@ exports[`Alert - success Custom aria label 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Success alert:",
                   }
                 }
                 consumerContext={
@@ -3723,9 +3591,7 @@ exports[`Alert - success Custom aria label 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Success alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -3733,9 +3599,7 @@ exports[`Alert - success Custom aria label 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Success alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -4112,7 +3976,7 @@ exports[`Alert - warning Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample warning alert"
   variant="warning"
 >
   <ComponentWithOuia
@@ -4124,7 +3988,7 @@ exports[`Alert - warning Action Close Button 1`] = `
           onClose={[MockFunction]}
         />,
         "children": "Some alert",
-        "title": "",
+        "title": "Sample warning alert",
         "variant": "warning",
       }
     }
@@ -4143,7 +4007,7 @@ exports[`Alert - warning Action Close Button 1`] = `
           "ouiaId": null,
         }
       }
-      title=""
+      title="Sample warning alert"
       variant="warning"
     >
       <div
@@ -4192,6 +4056,7 @@ exports[`Alert - warning Action Close Button 1`] = `
           >
             Warning alert:
           </span>
+          Sample warning alert
         </h4>
         <div
           className="pf-c-alert__description"
@@ -4204,8 +4069,6 @@ exports[`Alert - warning Action Close Button 1`] = `
           <AlertActionCloseButton
             aria-label="Close"
             onClose={[MockFunction]}
-            title=""
-            variantLabel="Warning alert:"
           >
             <Component
               aria-label="Close"
@@ -4386,15 +4249,10 @@ exports[`Alert - warning Action Link 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title=""
-            variantLabel="Warning alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title=""
               variant="link"
-              variantLabel="Warning alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -4402,9 +4260,7 @@ exports[`Alert - warning Action Link 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "",
                     "variant": "link",
-                    "variantLabel": "Warning alert:",
                   }
                 }
                 consumerContext={
@@ -4422,9 +4278,7 @@ exports[`Alert - warning Action Link 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title=""
                   variant="link"
-                  variantLabel="Warning alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -4432,9 +4286,7 @@ exports[`Alert - warning Action Link 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title=""
                     type="button"
-                    variantLabel="Warning alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -4548,15 +4400,10 @@ exports[`Alert - warning Action and Title 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Warning alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Warning alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -4564,9 +4411,7 @@ exports[`Alert - warning Action and Title 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Warning alert:",
                   }
                 }
                 consumerContext={
@@ -4584,9 +4429,7 @@ exports[`Alert - warning Action and Title 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Warning alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -4594,9 +4437,7 @@ exports[`Alert - warning Action and Title 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Warning alert:"
                   >
                     <span
                       className="pf-c-button__text"
@@ -4713,15 +4554,10 @@ exports[`Alert - warning Custom aria label 1`] = `
         <div
           className="pf-c-alert__action"
         >
-          <AlertActionLink
-            title="Some title"
-            variantLabel="Warning alert:"
-          >
+          <AlertActionLink>
             <Component
               className=""
-              title="Some title"
               variant="link"
-              variantLabel="Warning alert:"
             >
               <ComponentWithOuia
                 component={[Function]}
@@ -4729,9 +4565,7 @@ exports[`Alert - warning Custom aria label 1`] = `
                   Object {
                     "children": "test",
                     "className": "",
-                    "title": "Some title",
                     "variant": "link",
-                    "variantLabel": "Warning alert:",
                   }
                 }
                 consumerContext={
@@ -4749,9 +4583,7 @@ exports[`Alert - warning Custom aria label 1`] = `
                       "ouiaId": null,
                     }
                   }
-                  title="Some title"
                   variant="link"
-                  variantLabel="Warning alert:"
                 >
                   <button
                     aria-disabled={null}
@@ -4759,9 +4591,7 @@ exports[`Alert - warning Custom aria label 1`] = `
                     className="pf-c-button pf-m-link"
                     disabled={false}
                     tabIndex={null}
-                    title="Some title"
                     type="button"
-                    variantLabel="Warning alert:"
                   >
                     <span
                       className="pf-c-button__text"

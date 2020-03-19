@@ -28,7 +28,7 @@ class DefaultAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="default"
-            title="Default alert title"
+            title="Default alert title 1"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Info alert description. <a href="#">This is a link.</a>
@@ -37,12 +37,16 @@ class DefaultAlert extends React.Component {
         {alertTwoVisible && (
           <Alert
             variant="default"
-            title="Default alert title"
+            title="Default alert title 2"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
-        <Alert variant="default" title="Default alert title" action={<AlertActionLink>Action Button</AlertActionLink>} />
-        <Alert variant="default" title="Default alert title" />
+        <Alert
+          variant="default"
+          title="Default alert title 3"
+          action={<AlertActionLink onClick={() => {console.log('Default alert title 3')}}>Action Button</AlertActionLink>}
+          />
+        <Alert variant="default" title="Default alert title 4" />
       </React.Fragment>
     );
   }
@@ -68,7 +72,7 @@ class InfoAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="info"
-            title="Info alert title"
+            title="Info alert title 1"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Info alert description. <a href="#">This is a link.</a>
@@ -77,12 +81,12 @@ class InfoAlert extends React.Component {
         {alertTwoVisible && (
           <Alert
             variant="info"
-            title="Info alert title"
+            title="Info alert title 2"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
-        <Alert variant="info" title="Info alert title" action={<AlertActionLink>Action Button</AlertActionLink>} />
-        <Alert variant="info" title="Info alert title" />
+        <Alert variant="info" title="Info alert title 3" action={<AlertActionLink>Action Button</AlertActionLink>} />
+        <Alert variant="info" title="Info alert title 4" />
       </React.Fragment>
     );
   }
@@ -107,7 +111,7 @@ class SuccessAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="success"
-            title="Success alert title"
+            title="Success alert title 1"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Success alert description. <a href="#">This is a link.</a>
@@ -116,16 +120,16 @@ class SuccessAlert extends React.Component {
         {alertTwoVisible && (
           <Alert
             variant="success"
-            title="Success alert title"
+            title="Success alert title 2"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="success"
-          title="Success alert title"
+          title="Success alert title 3"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="success" title="Success alert title" />
+        <Alert variant="success" title="Success alert title 4" />
       </React.Fragment>
     );
   }
@@ -150,7 +154,7 @@ class WarningAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="warning"
-            title="Warning alert title"
+            title="Warning alert title 1"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Warning alert description. <a href="#">This is a link.</a>
@@ -159,16 +163,16 @@ class WarningAlert extends React.Component {
         {alertTwoVisible && (
           <Alert
             variant="warning"
-            title="Warning alert title"
+            title="Warning alert title 2"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="warning"
-          title="Warning alert title"
+          title="Warning alert title 3"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="warning" title="Warning alert title" />
+        <Alert variant="warning" title="Warning alert title 4" />
       </React.Fragment>
     );
   }
@@ -193,7 +197,7 @@ class DangerAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="danger"
-            title="Danger alert title"
+            title="Danger alert title 1"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Danger alert description. <a href="#">This is a link.</a>
@@ -202,12 +206,12 @@ class DangerAlert extends React.Component {
         {alertTwoVisible && (
           <Alert
             variant="danger"
-            title="Danger alert title"
+            title="Danger alert title 2"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
-        <Alert variant="danger" title="Danger alert title" action={<AlertActionLink>Action Button</AlertActionLink>} />
-        <Alert variant="danger" title="Danger alert title" />
+        <Alert variant="danger" title="Danger alert title 3" action={<AlertActionLink>Action Button</AlertActionLink>} />
+        <Alert variant="danger" title="Danger alert title 4" />
       </React.Fragment>
     );
   }
@@ -240,19 +244,20 @@ import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/reac
 class InlineAlertVariations extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.state = { alertOneVisible: true, alertTwoVisible: true, renderPropsAlertVisible: true };
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+    this.hideRenderPropsAlertVisible = () => this.setState({ renderPropsAlertVisible: false });
   }
   render() {
-    const { alertOneVisible, alertTwoVisible } = this.state;
+    const { alertOneVisible, alertTwoVisible, renderPropsAlertVisible } = this.state;
     return (
       <React.Fragment>
         {alertOneVisible && (
           <Alert
             variant="success"
             isInline
-            title="Success alert title"
+            title="Success alert example 1"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Success alert description. <a href="#">This is a link.</a>
@@ -262,17 +267,17 @@ class InlineAlertVariations extends React.Component {
           <Alert
             variant="success"
             isInline
-            title="Success alert title"
+            title="Success alert example 2"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="success"
           isInline
-          title="Success alert title"
+          title="Success alert example 3"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="success" isInline title="Success alert title" />
+        <Alert variant="success" isInline title="Success alert example 4" />
       </React.Fragment>
     );
   }
@@ -289,7 +294,6 @@ class StaticLiveRegionAlert extends React.Component {
     this.state = { alertOneVisible: true, alertTwoVisible: true };
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
-
   }
 
   render() {
@@ -301,8 +305,10 @@ class StaticLiveRegionAlert extends React.Component {
           <Alert
             isLiveRegion
             variant="info"
-            title="This Alert uses the recommended 'isLiveRegion' prop to automatically sets ARIA attributes and CSS classes."
-            action={<AlertActionCloseButton onClose={this.hideAlertOne} />}></Alert>
+            title="Default live region configuration"
+            action={<AlertActionCloseButton onClose={this.hideAlertOne} />}>
+            This Alert uses the recommended <code>isLiveRegion</code> prop to automatically sets ARIA attributes and CSS classes.
+          </Alert>
         )}
         {alertTwoVisible && (
           <Alert
@@ -310,9 +316,10 @@ class StaticLiveRegionAlert extends React.Component {
             aria-relevant="additions text"
             aria-atomic="true"
             variant="info"
-            title={`You can alternatively omit the "isLiveRegion" prop to specify ARIA attributes and CSS manually on the containing element.`} 
-            action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
-            />
+            title="Customized live region"
+            action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}>
+            You can alternatively omit the <code>isLiveRegion</code> prop to specify ARIA attributes and CSS manually on the containing element.
+          </Alert>
         )}
       </React.Fragment>
     );
@@ -379,7 +386,7 @@ class DynamicLiveRegionAlert extends React.Component {
             aria-live={ariaLive}
             aria-relevant={ariaRelevant}
             aria-atomic={ariaAtomic}
-            key={key} 
+            key={key}
             />
         ))}
       </React.Fragment>

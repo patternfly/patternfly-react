@@ -538,8 +538,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                     <AlertActionCloseButton
                       aria-label="Close"
                       onClose={[MockFunction]}
-                      title="Test Alert"
-                      variantLabel="Info alert:"
                     >
                       <Component
                         aria-label="Close"
