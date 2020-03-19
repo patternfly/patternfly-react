@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.4...@patternfly/react-integration@4.0.5) (2020-03-19)
+
+
+### Performance Improvements
+
+* **ouia:** make ouia functional, add namespace ([#3927](https://github.com/patternfly/patternfly-react/issues/3927)) ([05bee77](https://github.com/patternfly/patternfly-react/commit/05bee779ce9d67cbca2177ab98aba432bdc74509))
+
+
+
+
+
 ## [4.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.3...@patternfly/react-integration@4.0.4) (2020-03-18)
 
 
