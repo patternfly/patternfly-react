@@ -29,14 +29,14 @@ exports[`EmptyState Main 1`] = `
 </div>
 `;
 
-exports[`EmptyState Main variant regular 1`] = `
+exports[`EmptyState Main variant large 1`] = `
 <div
-  className="pf-c-empty-state"
+  className="pf-c-empty-state pf-m-lg"
 >
   <Title
     size="md"
   >
-    EmptyState full
+    EmptyState large
   </Title>
 </div>
 `;

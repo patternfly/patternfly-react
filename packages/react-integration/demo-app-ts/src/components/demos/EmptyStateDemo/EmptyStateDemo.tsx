@@ -33,7 +33,7 @@ export class EmptyStateDemo extends Component {
         </EmptyStateSecondaryActions>
       </React.Fragment>
     ),
-    variant: EmptyStateVariant.large
+    variant: EmptyStateVariant.lg
   };
   mySmallEmptyStateProps: EmptyStateProps = {
     children: (
@@ -57,7 +57,7 @@ export class EmptyStateDemo extends Component {
         </EmptyStateSecondaryActions>
       </React.Fragment>
     ),
-    variant: EmptyStateVariant.small
+    variant: EmptyStateVariant.sm
   };
   myFullEmptyStateProps: EmptyStateProps = {
     children: (
