@@ -36,3 +36,5 @@ export const KeyTypes = {
   ArrowUp: 'ArrowUp',
   ArrowDown: 'ArrowDown'
 };
+
+export type SelectionsType = string | SelectOptionObject | (string | SelectOptionObject)[];

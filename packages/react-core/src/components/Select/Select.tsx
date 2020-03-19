@@ -8,7 +8,7 @@ import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
-import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
+import { SelectContext, SelectVariant, SelectDirection, KeyTypes, SelectionsType } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { PickOptional } from '../../helpers/typeUtils';
@@ -43,7 +43,7 @@ export interface SelectProps
   /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
   /** Selected item for single select variant.  Array of selected items for multi select variants. */
-  selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
+  selections?: SelectionsType;
   /** Id for select toggle element */
   toggleId?: string;
   /** Adds accessible text to Select */
