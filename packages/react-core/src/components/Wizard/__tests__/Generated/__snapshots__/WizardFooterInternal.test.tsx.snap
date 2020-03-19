@@ -4,26 +4,26 @@ exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
 <footer
   className="pf-c-wizard__footer"
 >
-  <Component
+  <Button
     isDisabled={false}
     onClick="any"
     type="submit"
     variant="primary"
   >
     string
-  </Component>
-  <Component
+  </Button>
+  <Button
     className="pf-m-disabled"
     onClick="any"
     variant="secondary"
   >
     string
-  </Component>
-  <Component
+  </Button>
+  <Button
     onClick="any"
     variant="link"
   >
     string
-  </Component>
+  </Button>
 </footer>
 `;

@@ -18,8 +18,9 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
     }
   }
 >
-  <Component
+  <DropdownWithContext
     ariaLabelMenu="string"
+    autoFocus={true}
     className="''"
     direction="up"
     dropdownItems={Array []}
@@ -27,6 +28,8 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={true}
+    onSelect={[Function]}
+    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <p>

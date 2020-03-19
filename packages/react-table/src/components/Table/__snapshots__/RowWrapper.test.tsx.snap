@@ -3,15 +3,28 @@
 exports[`RowWrapper renders correctly 1`] = `
 <table>
   <tbody>
-    <Component
+    <RowWrapper
+      className=""
       onResize={[MockFunction]}
       onScroll={[MockFunction]}
+      row={
+        Object {
+          "isEditable": undefined,
+          "isExpanded": undefined,
+          "isHeightAuto": undefined,
+          "isOpen": undefined,
+        }
+      }
+      rowProps={null}
       trRef={
         [MockFunction] {
           "calls": Array [
             Array [
               <tr
                 class=""
+                data-ouia-component-id="0"
+                data-ouia-component-type="PF4/TableRow"
+                data-ouia-safe="true"
               />,
             ],
           ],
@@ -24,75 +37,14 @@ exports[`RowWrapper renders correctly 1`] = `
         }
       }
     >
-      <ComponentWithOuia
-        component={[Function]}
-        componentProps={
-          Object {
-            "onResize": [MockFunction],
-            "onScroll": [MockFunction],
-            "trRef": [MockFunction] {
-              "calls": Array [
-                Array [
-                  <tr
-                    class=""
-                  />,
-                ],
-              ],
-              "results": Array [
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-              ],
-            },
-          }
-        }
-        consumerContext={null}
-      >
-        <RowWrapper
-          className=""
-          onResize={[MockFunction]}
-          onScroll={[MockFunction]}
-          ouiaContext={
-            Object {
-              "isOuia": false,
-              "ouiaId": null,
-            }
-          }
-          row={
-            Object {
-              "isEditable": undefined,
-              "isExpanded": undefined,
-              "isHeightAuto": undefined,
-              "isOpen": undefined,
-            }
-          }
-          rowProps={null}
-          trRef={
-            [MockFunction] {
-              "calls": Array [
-                Array [
-                  <tr
-                    class=""
-                  />,
-                ],
-              ],
-              "results": Array [
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-              ],
-            }
-          }
-        >
-          <tr
-            className=""
-            hidden={false}
-          />
-        </RowWrapper>
-      </ComponentWithOuia>
-    </Component>
+      <tr
+        className=""
+        data-ouia-component-id={0}
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe={true}
+        hidden={false}
+      />
+    </RowWrapper>
   </tbody>
 </table>
 `;
@@ -100,46 +52,23 @@ exports[`RowWrapper renders correctly 1`] = `
 exports[`RowWrapper renders expanded correctly 1`] = `
 <table>
   <tbody>
-    <Component
+    <RowWrapper
+      className=""
       row={
         Object {
           "isExpanded": true,
         }
       }
+      rowProps={null}
     >
-      <ComponentWithOuia
-        component={[Function]}
-        componentProps={
-          Object {
-            "row": Object {
-              "isExpanded": true,
-            },
-          }
-        }
-        consumerContext={null}
-      >
-        <RowWrapper
-          className=""
-          ouiaContext={
-            Object {
-              "isOuia": false,
-              "ouiaId": null,
-            }
-          }
-          row={
-            Object {
-              "isExpanded": true,
-            }
-          }
-          rowProps={null}
-        >
-          <tr
-            className="pf-c-table__expandable-row pf-m-expanded"
-            hidden={false}
-          />
-        </RowWrapper>
-      </ComponentWithOuia>
-    </Component>
+      <tr
+        className="pf-c-table__expandable-row pf-m-expanded"
+        data-ouia-component-id={1}
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe={true}
+        hidden={false}
+      />
+    </RowWrapper>
   </tbody>
 </table>
 `;

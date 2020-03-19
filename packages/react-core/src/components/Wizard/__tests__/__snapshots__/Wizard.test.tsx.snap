@@ -158,6 +158,8 @@ exports[`Wizard should match snapshot 1`] = `
                 <button
                   aria-label="Close"
                   class="pf-c-button pf-m-plain pf-c-wizard__close"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
                   type="button"
                 >
                   <svg
@@ -327,18 +329,24 @@ exports[`Wizard should match snapshot 1`] = `
                 >
                   <button
                     class="pf-c-button pf-m-primary"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
                     type="submit"
                   >
                     Next
                   </button>
                   <button
                     class="pf-c-button pf-m-secondary pf-m-disabled"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
                     type="button"
                   >
                     Back
                   </button>
                   <button
                     class="pf-c-button pf-m-link"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
                     type="button"
                   >
                     <span
@@ -373,6 +381,8 @@ exports[`Wizard should match snapshot 1`] = `
                 <button
                   aria-label="Close"
                   class="pf-c-button pf-m-plain pf-c-wizard__close"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
                   type="button"
                 >
                   <svg
@@ -542,18 +552,24 @@ exports[`Wizard should match snapshot 1`] = `
                 >
                   <button
                     class="pf-c-button pf-m-primary"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
                     type="submit"
                   >
                     Next
                   </button>
                   <button
                     class="pf-c-button pf-m-secondary pf-m-disabled"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
                     type="button"
                   >
                     Back
                   </button>
                   <button
                     class="pf-c-button pf-m-link"
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe="true"
                     type="button"
                   >
                     <span

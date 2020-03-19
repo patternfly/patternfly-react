@@ -21,7 +21,7 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     }
   }
 >
-  <Component
+  <DropdownWithContext
     autoFocus={true}
     className="string"
     direction="up"
@@ -29,6 +29,8 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     isGrouped={true}
     isOpen={true}
     isPlain={true}
+    onSelect={[Function]}
+    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <p>
@@ -39,6 +41,6 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     <div>
       ReactNode
     </div>
-  </Component>
+  </DropdownWithContext>
 </ContextProvider>
 `;

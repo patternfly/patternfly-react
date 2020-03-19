@@ -26,8 +26,9 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
       }
     }
   >
-    <Component
+    <DropdownWithContext
       aria-label="'Application launcher'"
+      autoFocus={true}
       className="''"
       direction="up"
       dropdownItems={
@@ -58,6 +59,9 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
       }
       isGrouped={false}
       isOpen={false}
+      isPlain={false}
+      onSelect={[Function]}
+      ouiaComponentType="Dropdown"
       position="right"
       toggle={
         <DropdownToggle

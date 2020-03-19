@@ -9,7 +9,7 @@ import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../help
 import { SIDE } from '../../helpers/constants';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export enum TabsVariant {
   div = 'div',
@@ -53,9 +53,9 @@ export interface TabsState {
   shownKeys: (string | number)[];
 }
 
-class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
+export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   tabList = React.createRef<HTMLUListElement>();
-  constructor(props: TabsProps & InjectedOuiaProps) {
+  constructor(props: TabsProps & OUIAProps) {
     super(props);
     this.state = {
       showLeftScrollButton: false,
@@ -199,7 +199,6 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
       variant,
-      ouiaContext,
       ouiaId,
       mountOnEnter,
       unmountOnExit,
@@ -230,10 +229,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             highlightRightScrollButton && styles.modifiers.endCurrent,
             className
           )}
-          {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'Tabs',
-            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          })}
+          {...getOUIAProps('Tabs', ouiaId)}
           id={id && id}
           {...props}
         >
@@ -291,7 +287,3 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     );
   }
 }
-
-const TabsWithOuiaContext = withOuiaContext(Tabs);
-
-export { TabsWithOuiaContext as Tabs };

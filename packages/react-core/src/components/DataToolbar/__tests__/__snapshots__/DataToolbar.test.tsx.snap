@@ -43,86 +43,55 @@ exports[`data toolbar DataToolbarFilter 1`] = `
               <div
                 className="pf-c-data-toolbar__toggle"
               >
-                <Component
+                <Button
                   aria-controls="data-toolbar-expandable-content-7"
                   aria-haspopup={false}
                   aria-label="Show Filters"
                   onClick={[Function]}
                   variant="plain"
                 >
-                  <ComponentWithOuia
-                    component={[Function]}
-                    componentProps={
-                      Object {
-                        "aria-controls": "data-toolbar-expandable-content-7",
-                        "aria-haspopup": false,
-                        "aria-label": "Show Filters",
-                        "children": <FilterIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        />,
-                        "onClick": [Function],
-                        "variant": "plain",
-                      }
-                    }
-                    consumerContext={null}
+                  <button
+                    aria-controls="data-toolbar-expandable-content-7"
+                    aria-disabled={null}
+                    aria-haspopup={false}
+                    aria-label="Show Filters"
+                    className="pf-c-button pf-m-plain"
+                    data-ouia-component-id={null}
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe={true}
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={null}
+                    type="button"
                   >
-                    <Button
-                      aria-controls="data-toolbar-expandable-content-7"
-                      aria-haspopup={false}
-                      aria-label="Show Filters"
-                      onClick={[Function]}
-                      ouiaContext={
-                        Object {
-                          "isOuia": false,
-                          "ouiaId": null,
-                        }
-                      }
-                      variant="plain"
+                    <FilterIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
                     >
-                      <button
-                        aria-controls="data-toolbar-expandable-content-7"
-                        aria-disabled={null}
-                        aria-haspopup={false}
-                        aria-label="Show Filters"
-                        className="pf-c-button pf-m-plain"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={null}
-                        type="button"
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
                       >
-                        <FilterIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 512 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </FilterIcon>
-                      </button>
-                    </Button>
-                  </ComponentWithOuia>
-                </Component>
+                        <path
+                          d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </FilterIcon>
+                  </button>
+                </Button>
               </div>
               <ForwardRef
                 variant="filter-group"
@@ -150,203 +119,95 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         <div
                           className="pf-c-data-toolbar__item"
                         >
-                          <Component
+                          <Select
                             aria-label="Select Input"
+                            ariaLabelClear="Clear all"
+                            ariaLabelRemove="Remove"
+                            ariaLabelToggle="Options menu"
+                            ariaLabelTypeAhead=""
+                            ariaLabelledBy=""
+                            className=""
+                            createText="Create"
+                            customContent={null}
+                            direction="down"
+                            hasInlineFilter={false}
+                            isCreatable={false}
+                            isDisabled={false}
                             isExpanded={false}
+                            isGrouped={false}
+                            isPlain={false}
+                            noResultsFoundText="No results found"
+                            onClear={[Function]}
+                            onCreateOption={[Function]}
+                            onFilter={null}
                             onSelect={[Function]}
                             onToggle={[Function]}
+                            placeholderText=""
                             selections="Running"
+                            toggleIcon={null}
+                            toggleId={null}
                             variant="single"
+                            width=""
                           >
-                            <ComponentWithOuia
-                              component={[Function]}
-                              componentProps={
+                            <div
+                              className="pf-c-select"
+                              data-ouia-component-id={4}
+                              data-ouia-component-type="PF4/Select"
+                              data-ouia-safe={true}
+                              style={
                                 Object {
-                                  "aria-label": "Select Input",
-                                  "children": Array [
-                                    <SelectOption
-                                      className=""
-                                      component="button"
-                                      index={0}
-                                      isChecked={false}
-                                      isDisabled={false}
-                                      isFocused={false}
-                                      isNoResultsOption={false}
-                                      isPlaceholder={false}
-                                      isSelected={false}
-                                      keyHandler={[Function]}
-                                      onClick={[Function]}
-                                      sendRef={[Function]}
-                                      value="Running"
-                                    />,
-                                    <SelectOption
-                                      className=""
-                                      component="button"
-                                      index={0}
-                                      isChecked={false}
-                                      isDisabled={false}
-                                      isFocused={false}
-                                      isNoResultsOption={false}
-                                      isPlaceholder={false}
-                                      isSelected={false}
-                                      keyHandler={[Function]}
-                                      onClick={[Function]}
-                                      sendRef={[Function]}
-                                      value="Cancelled"
-                                    />,
-                                  ],
-                                  "isExpanded": false,
-                                  "onSelect": [Function],
-                                  "onToggle": [Function],
-                                  "selections": "Running",
-                                  "variant": "single",
+                                  "width": "",
                                 }
                               }
-                              consumerContext={null}
                             >
-                              <Select
-                                aria-label="Select Input"
-                                ariaLabelClear="Clear all"
-                                ariaLabelRemove="Remove"
+                              <SelectToggle
                                 ariaLabelToggle="Options menu"
-                                ariaLabelTypeAhead=""
-                                ariaLabelledBy=""
+                                ariaLabelledBy=" pf-toggle-id-4"
                                 className=""
-                                createText="Create"
-                                customContent={null}
-                                direction="down"
-                                hasInlineFilter={false}
-                                isCreatable={false}
+                                handleTypeaheadKeys={[Function]}
+                                hasClearButton={false}
+                                id="pf-toggle-id-4"
+                                isActive={false}
                                 isDisabled={false}
                                 isExpanded={false}
-                                isGrouped={false}
+                                isFocused={false}
+                                isHovered={false}
                                 isPlain={false}
-                                noResultsFoundText="No results found"
-                                onClear={[Function]}
-                                onCreateOption={[Function]}
-                                onFilter={null}
-                                onSelect={[Function]}
+                                onClose={[Function]}
+                                onEnter={[Function]}
                                 onToggle={[Function]}
-                                ouiaContext={
+                                parentRef={
                                   Object {
-                                    "isOuia": false,
-                                    "ouiaId": null,
-                                  }
-                                }
-                                placeholderText=""
-                                selections="Running"
-                                toggleIcon={null}
-                                toggleId={null}
-                                variant="single"
-                                width=""
-                              >
-                                <div
-                                  className="pf-c-select"
-                                  style={
-                                    Object {
-                                      "width": "",
-                                    }
-                                  }
-                                >
-                                  <SelectToggle
-                                    ariaLabelToggle="Options menu"
-                                    ariaLabelledBy=" pf-toggle-id-4"
-                                    className=""
-                                    handleTypeaheadKeys={[Function]}
-                                    hasClearButton={false}
-                                    id="pf-toggle-id-4"
-                                    isActive={false}
-                                    isDisabled={false}
-                                    isExpanded={false}
-                                    isFocused={false}
-                                    isHovered={false}
-                                    isPlain={false}
-                                    onClose={[Function]}
-                                    onEnter={[Function]}
-                                    onToggle={[Function]}
-                                    parentRef={
-                                      Object {
-                                        "current": <div
-                                          class="pf-c-select"
-                                        >
-                                          <button
-                                            aria-expanded="false"
-                                            aria-haspopup="listbox"
-                                            aria-labelledby=" pf-toggle-id-4"
-                                            class="pf-c-select__toggle"
-                                            id="pf-toggle-id-4"
-                                            type="button"
-                                          >
-                                            <div
-                                              class="pf-c-select__toggle-wrapper"
-                                            >
-                                              <span
-                                                class="pf-c-select__toggle-text"
-                                              >
-                                                Running
-                                              </span>
-                                            </div>
-                                            <svg
-                                              aria-hidden="true"
-                                              class="pf-c-select__toggle-arrow"
-                                              fill="currentColor"
-                                              height="1em"
-                                              role="img"
-                                              style="vertical-align: -0.125em;"
-                                              viewBox="0 0 320 512"
-                                              width="1em"
-                                            >
-                                              <path
-                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                                                transform=""
-                                              />
-                                            </svg>
-                                          </button>
-                                        </div>,
-                                      }
-                                    }
-                                    type="button"
-                                    variant="single"
-                                  >
-                                    <button
-                                      aria-expanded={false}
-                                      aria-haspopup="listbox"
-                                      aria-labelledby=" pf-toggle-id-4"
-                                      className="pf-c-select__toggle"
-                                      disabled={false}
-                                      id="pf-toggle-id-4"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      type="button"
+                                    "current": <div
+                                      class="pf-c-select"
+                                      data-ouia-component-id="4"
+                                      data-ouia-component-type="PF4/Select"
+                                      data-ouia-safe="true"
                                     >
-                                      <div
-                                        className="pf-c-select__toggle-wrapper"
+                                      <button
+                                        aria-expanded="false"
+                                        aria-haspopup="listbox"
+                                        aria-labelledby=" pf-toggle-id-4"
+                                        class="pf-c-select__toggle"
+                                        id="pf-toggle-id-4"
+                                        type="button"
                                       >
-                                        <span
-                                          className="pf-c-select__toggle-text"
+                                        <div
+                                          class="pf-c-select__toggle-wrapper"
                                         >
-                                          Running
-                                        </span>
-                                      </div>
-                                      <CaretDownIcon
-                                        className="pf-c-select__toggle-arrow"
-                                        color="currentColor"
-                                        noVerticalAlign={false}
-                                        size="sm"
-                                        title={null}
-                                      >
+                                          <span
+                                            class="pf-c-select__toggle-text"
+                                          >
+                                            Running
+                                          </span>
+                                        </div>
                                         <svg
-                                          aria-hidden={true}
-                                          aria-labelledby={null}
-                                          className="pf-c-select__toggle-arrow"
+                                          aria-hidden="true"
+                                          class="pf-c-select__toggle-arrow"
                                           fill="currentColor"
                                           height="1em"
                                           role="img"
-                                          style={
-                                            Object {
-                                              "verticalAlign": "-0.125em",
-                                            }
-                                          }
+                                          style="vertical-align: -0.125em;"
                                           viewBox="0 0 320 512"
                                           width="1em"
                                         >
@@ -355,13 +216,65 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                             transform=""
                                           />
                                         </svg>
-                                      </CaretDownIcon>
-                                    </button>
-                                  </SelectToggle>
-                                </div>
-                              </Select>
-                            </ComponentWithOuia>
-                          </Component>
+                                      </button>
+                                    </div>,
+                                  }
+                                }
+                                type="button"
+                                variant="single"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup="listbox"
+                                  aria-labelledby=" pf-toggle-id-4"
+                                  className="pf-c-select__toggle"
+                                  disabled={false}
+                                  id="pf-toggle-id-4"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  type="button"
+                                >
+                                  <div
+                                    className="pf-c-select__toggle-wrapper"
+                                  >
+                                    <span
+                                      className="pf-c-select__toggle-text"
+                                    >
+                                      Running
+                                    </span>
+                                  </div>
+                                  <CaretDownIcon
+                                    className="pf-c-select__toggle-arrow"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                    title={null}
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      aria-labelledby={null}
+                                      className="pf-c-select__toggle-arrow"
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 320 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                        transform=""
+                                      />
+                                    </svg>
+                                  </CaretDownIcon>
+                                </button>
+                              </SelectToggle>
+                            </div>
+                          </Select>
                         </div>
                       </DataToolbarItem>
                       <Portal
@@ -387,6 +300,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="9"
+                                      data-ouia-component-type="PF4/Chip"
+                                      data-ouia-safe="true"
                                     >
                                       <span
                                         class="pf-c-chip__text"
@@ -398,6 +314,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         aria-label="close"
                                         aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                                         class="pf-c-button pf-m-plain"
+                                        data-ouia-component-type="PF4/Button"
+                                        data-ouia-safe="true"
                                         id="remove_pf-random-id-1"
                                         type="button"
                                       >
@@ -419,6 +337,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     </li>
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="10"
+                                      data-ouia-component-type="PF4/Chip"
+                                      data-ouia-safe="true"
                                     >
                                       <span
                                         class="pf-c-chip__text"
@@ -430,6 +351,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         aria-label="close"
                                         aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
                                         class="pf-c-button pf-m-plain"
+                                        data-ouia-component-type="PF4/Button"
+                                        data-ouia-safe="true"
                                         id="remove_pf-random-id-2"
                                         type="button"
                                       >
@@ -471,6 +394,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="11"
+                                      data-ouia-component-type="PF4/Chip"
+                                      data-ouia-safe="true"
                                     >
                                       <span
                                         class="pf-c-chip__text"
@@ -482,6 +408,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         aria-label="close"
                                         aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
                                         class="pf-c-button pf-m-plain"
+                                        data-ouia-component-type="PF4/Button"
+                                        data-ouia-safe="true"
                                         id="remove_pf-random-id-4"
                                         type="button"
                                       >
@@ -557,296 +485,178 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         <ul
                                           className="pf-c-chip-group"
                                         >
-                                          <Component
+                                          <Chip
+                                            className=""
+                                            closeBtnAriaLabel="close"
                                             component="li"
+                                            isOverflowChip={false}
+                                            isReadOnly={false}
                                             key=".$New"
                                             onClick={[Function]}
+                                            tooltipPosition="top"
                                           >
-                                            <ComponentWithOuia
-                                              component={[Function]}
-                                              componentProps={
-                                                Object {
-                                                  "children": "New",
-                                                  "component": "li",
-                                                  "onClick": [Function],
-                                                }
-                                              }
-                                              consumerContext={null}
+                                            <GenerateId
+                                              prefix="pf-random-id-"
                                             >
-                                              <Chip
-                                                className=""
-                                                closeBtnAriaLabel="close"
-                                                component="li"
-                                                isOverflowChip={false}
-                                                isReadOnly={false}
-                                                onClick={[Function]}
-                                                ouiaContext={
-                                                  Object {
-                                                    "isOuia": false,
-                                                    "ouiaId": null,
-                                                  }
-                                                }
-                                                tooltipPosition="top"
+                                              <li
+                                                className="pf-c-chip"
+                                                data-ouia-component-id={9}
+                                                data-ouia-component-type="PF4/Chip"
+                                                data-ouia-safe={true}
                                               >
-                                                <GenerateId
-                                                  prefix="pf-random-id-"
+                                                <span
+                                                  className="pf-c-chip__text"
+                                                  id="pf-random-id-1"
                                                 >
-                                                  <li
-                                                    className="pf-c-chip"
+                                                  New
+                                                </span>
+                                                <ChipButton
+                                                  aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
+                                                  ariaLabel="close"
+                                                  id="remove_pf-random-id-1"
+                                                  onClick={[Function]}
+                                                >
+                                                  <Button
+                                                    aria-label="close"
+                                                    aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
+                                                    className=""
+                                                    id="remove_pf-random-id-1"
+                                                    onClick={[Function]}
+                                                    variant="plain"
                                                   >
-                                                    <span
-                                                      className="pf-c-chip__text"
-                                                      id="pf-random-id-1"
-                                                    >
-                                                      New
-                                                    </span>
-                                                    <ChipButton
+                                                    <button
+                                                      aria-disabled={null}
+                                                      aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                                                      ariaLabel="close"
+                                                      className="pf-c-button pf-m-plain"
+                                                      data-ouia-component-id={null}
+                                                      data-ouia-component-type="PF4/Button"
+                                                      data-ouia-safe={true}
+                                                      disabled={false}
                                                       id="remove_pf-random-id-1"
                                                       onClick={[Function]}
+                                                      tabIndex={null}
+                                                      type="button"
                                                     >
-                                                      <Component
-                                                        aria-label="close"
-                                                        aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                                                        className=""
-                                                        id="remove_pf-random-id-1"
-                                                        onClick={[Function]}
-                                                        variant="plain"
+                                                      <TimesCircleIcon
+                                                        aria-hidden="true"
+                                                        color="currentColor"
+                                                        noVerticalAlign={false}
+                                                        size="sm"
+                                                        title={null}
                                                       >
-                                                        <ComponentWithOuia
-                                                          component={[Function]}
-                                                          componentProps={
+                                                        <svg
+                                                          aria-hidden="true"
+                                                          aria-labelledby={null}
+                                                          fill="currentColor"
+                                                          height="1em"
+                                                          role="img"
+                                                          style={
                                                             Object {
-                                                              "aria-label": "close",
-                                                              "aria-labelledby": "remove_pf-random-id-1 pf-random-id-1",
-                                                              "children": <TimesCircleIcon
-                                                                aria-hidden="true"
-                                                                color="currentColor"
-                                                                noVerticalAlign={false}
-                                                                size="sm"
-                                                                title={null}
-                                                              />,
-                                                              "className": "",
-                                                              "id": "remove_pf-random-id-1",
-                                                              "onClick": [Function],
-                                                              "variant": "plain",
+                                                              "verticalAlign": "-0.125em",
                                                             }
                                                           }
-                                                          consumerContext={
-                                                            Object {
-                                                              "isOuia": false,
-                                                              "ouiaId": null,
-                                                            }
-                                                          }
+                                                          viewBox="0 0 512 512"
+                                                          width="1em"
                                                         >
-                                                          <Button
-                                                            aria-label="close"
-                                                            aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                                                            className=""
-                                                            id="remove_pf-random-id-1"
-                                                            onClick={[Function]}
-                                                            ouiaContext={
-                                                              Object {
-                                                                "isOuia": false,
-                                                                "ouiaId": null,
-                                                              }
-                                                            }
-                                                            variant="plain"
-                                                          >
-                                                            <button
-                                                              aria-disabled={null}
-                                                              aria-label="close"
-                                                              aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                                                              className="pf-c-button pf-m-plain"
-                                                              disabled={false}
-                                                              id="remove_pf-random-id-1"
-                                                              onClick={[Function]}
-                                                              tabIndex={null}
-                                                              type="button"
-                                                            >
-                                                              <TimesCircleIcon
-                                                                aria-hidden="true"
-                                                                color="currentColor"
-                                                                noVerticalAlign={false}
-                                                                size="sm"
-                                                                title={null}
-                                                              >
-                                                                <svg
-                                                                  aria-hidden="true"
-                                                                  aria-labelledby={null}
-                                                                  fill="currentColor"
-                                                                  height="1em"
-                                                                  role="img"
-                                                                  style={
-                                                                    Object {
-                                                                      "verticalAlign": "-0.125em",
-                                                                    }
-                                                                  }
-                                                                  viewBox="0 0 512 512"
-                                                                  width="1em"
-                                                                >
-                                                                  <path
-                                                                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                                                                    transform=""
-                                                                  />
-                                                                </svg>
-                                                              </TimesCircleIcon>
-                                                            </button>
-                                                          </Button>
-                                                        </ComponentWithOuia>
-                                                      </Component>
-                                                    </ChipButton>
-                                                  </li>
-                                                </GenerateId>
-                                              </Chip>
-                                            </ComponentWithOuia>
-                                          </Component>
-                                          <Component
+                                                          <path
+                                                            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                                                            transform=""
+                                                          />
+                                                        </svg>
+                                                      </TimesCircleIcon>
+                                                    </button>
+                                                  </Button>
+                                                </ChipButton>
+                                              </li>
+                                            </GenerateId>
+                                          </Chip>
+                                          <Chip
+                                            className=""
+                                            closeBtnAriaLabel="close"
                                             component="li"
+                                            isOverflowChip={false}
+                                            isReadOnly={false}
                                             key=".$Pending"
                                             onClick={[Function]}
+                                            tooltipPosition="top"
                                           >
-                                            <ComponentWithOuia
-                                              component={[Function]}
-                                              componentProps={
-                                                Object {
-                                                  "children": "Pending",
-                                                  "component": "li",
-                                                  "onClick": [Function],
-                                                }
-                                              }
-                                              consumerContext={null}
+                                            <GenerateId
+                                              prefix="pf-random-id-"
                                             >
-                                              <Chip
-                                                className=""
-                                                closeBtnAriaLabel="close"
-                                                component="li"
-                                                isOverflowChip={false}
-                                                isReadOnly={false}
-                                                onClick={[Function]}
-                                                ouiaContext={
-                                                  Object {
-                                                    "isOuia": false,
-                                                    "ouiaId": null,
-                                                  }
-                                                }
-                                                tooltipPosition="top"
+                                              <li
+                                                className="pf-c-chip"
+                                                data-ouia-component-id={10}
+                                                data-ouia-component-type="PF4/Chip"
+                                                data-ouia-safe={true}
                                               >
-                                                <GenerateId
-                                                  prefix="pf-random-id-"
+                                                <span
+                                                  className="pf-c-chip__text"
+                                                  id="pf-random-id-2"
                                                 >
-                                                  <li
-                                                    className="pf-c-chip"
+                                                  Pending
+                                                </span>
+                                                <ChipButton
+                                                  aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
+                                                  ariaLabel="close"
+                                                  id="remove_pf-random-id-2"
+                                                  onClick={[Function]}
+                                                >
+                                                  <Button
+                                                    aria-label="close"
+                                                    aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
+                                                    className=""
+                                                    id="remove_pf-random-id-2"
+                                                    onClick={[Function]}
+                                                    variant="plain"
                                                   >
-                                                    <span
-                                                      className="pf-c-chip__text"
-                                                      id="pf-random-id-2"
-                                                    >
-                                                      Pending
-                                                    </span>
-                                                    <ChipButton
+                                                    <button
+                                                      aria-disabled={null}
+                                                      aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-                                                      ariaLabel="close"
+                                                      className="pf-c-button pf-m-plain"
+                                                      data-ouia-component-id={null}
+                                                      data-ouia-component-type="PF4/Button"
+                                                      data-ouia-safe={true}
+                                                      disabled={false}
                                                       id="remove_pf-random-id-2"
                                                       onClick={[Function]}
+                                                      tabIndex={null}
+                                                      type="button"
                                                     >
-                                                      <Component
-                                                        aria-label="close"
-                                                        aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-                                                        className=""
-                                                        id="remove_pf-random-id-2"
-                                                        onClick={[Function]}
-                                                        variant="plain"
+                                                      <TimesCircleIcon
+                                                        aria-hidden="true"
+                                                        color="currentColor"
+                                                        noVerticalAlign={false}
+                                                        size="sm"
+                                                        title={null}
                                                       >
-                                                        <ComponentWithOuia
-                                                          component={[Function]}
-                                                          componentProps={
+                                                        <svg
+                                                          aria-hidden="true"
+                                                          aria-labelledby={null}
+                                                          fill="currentColor"
+                                                          height="1em"
+                                                          role="img"
+                                                          style={
                                                             Object {
-                                                              "aria-label": "close",
-                                                              "aria-labelledby": "remove_pf-random-id-2 pf-random-id-2",
-                                                              "children": <TimesCircleIcon
-                                                                aria-hidden="true"
-                                                                color="currentColor"
-                                                                noVerticalAlign={false}
-                                                                size="sm"
-                                                                title={null}
-                                                              />,
-                                                              "className": "",
-                                                              "id": "remove_pf-random-id-2",
-                                                              "onClick": [Function],
-                                                              "variant": "plain",
+                                                              "verticalAlign": "-0.125em",
                                                             }
                                                           }
-                                                          consumerContext={
-                                                            Object {
-                                                              "isOuia": false,
-                                                              "ouiaId": null,
-                                                            }
-                                                          }
+                                                          viewBox="0 0 512 512"
+                                                          width="1em"
                                                         >
-                                                          <Button
-                                                            aria-label="close"
-                                                            aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-                                                            className=""
-                                                            id="remove_pf-random-id-2"
-                                                            onClick={[Function]}
-                                                            ouiaContext={
-                                                              Object {
-                                                                "isOuia": false,
-                                                                "ouiaId": null,
-                                                              }
-                                                            }
-                                                            variant="plain"
-                                                          >
-                                                            <button
-                                                              aria-disabled={null}
-                                                              aria-label="close"
-                                                              aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-                                                              className="pf-c-button pf-m-plain"
-                                                              disabled={false}
-                                                              id="remove_pf-random-id-2"
-                                                              onClick={[Function]}
-                                                              tabIndex={null}
-                                                              type="button"
-                                                            >
-                                                              <TimesCircleIcon
-                                                                aria-hidden="true"
-                                                                color="currentColor"
-                                                                noVerticalAlign={false}
-                                                                size="sm"
-                                                                title={null}
-                                                              >
-                                                                <svg
-                                                                  aria-hidden="true"
-                                                                  aria-labelledby={null}
-                                                                  fill="currentColor"
-                                                                  height="1em"
-                                                                  role="img"
-                                                                  style={
-                                                                    Object {
-                                                                      "verticalAlign": "-0.125em",
-                                                                    }
-                                                                  }
-                                                                  viewBox="0 0 512 512"
-                                                                  width="1em"
-                                                                >
-                                                                  <path
-                                                                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                                                                    transform=""
-                                                                  />
-                                                                </svg>
-                                                              </TimesCircleIcon>
-                                                            </button>
-                                                          </Button>
-                                                        </ComponentWithOuia>
-                                                      </Component>
-                                                    </ChipButton>
-                                                  </li>
-                                                </GenerateId>
-                                              </Chip>
-                                            </ComponentWithOuia>
-                                          </Component>
+                                                          <path
+                                                            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                                                            transform=""
+                                                          />
+                                                        </svg>
+                                                      </TimesCircleIcon>
+                                                    </button>
+                                                  </Button>
+                                                </ChipButton>
+                                              </li>
+                                            </GenerateId>
+                                          </Chip>
                                         </ul>
                                       </li>
                                     </ul>
@@ -872,203 +682,95 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         <div
                           className="pf-c-data-toolbar__item"
                         >
-                          <Component
+                          <Select
                             aria-label="Select Input"
+                            ariaLabelClear="Clear all"
+                            ariaLabelRemove="Remove"
+                            ariaLabelToggle="Options menu"
+                            ariaLabelTypeAhead=""
+                            ariaLabelledBy=""
+                            className=""
+                            createText="Create"
+                            customContent={null}
+                            direction="down"
+                            hasInlineFilter={false}
+                            isCreatable={false}
+                            isDisabled={false}
                             isExpanded={false}
+                            isGrouped={false}
+                            isPlain={false}
+                            noResultsFoundText="No results found"
+                            onClear={[Function]}
+                            onCreateOption={[Function]}
+                            onFilter={null}
                             onSelect={[Function]}
                             onToggle={[Function]}
+                            placeholderText=""
                             selections="Low"
+                            toggleIcon={null}
+                            toggleId={null}
                             variant="single"
+                            width=""
                           >
-                            <ComponentWithOuia
-                              component={[Function]}
-                              componentProps={
+                            <div
+                              className="pf-c-select"
+                              data-ouia-component-id={7}
+                              data-ouia-component-type="PF4/Select"
+                              data-ouia-safe={true}
+                              style={
                                 Object {
-                                  "aria-label": "Select Input",
-                                  "children": Array [
-                                    <SelectOption
-                                      className=""
-                                      component="button"
-                                      index={0}
-                                      isChecked={false}
-                                      isDisabled={false}
-                                      isFocused={false}
-                                      isNoResultsOption={false}
-                                      isPlaceholder={false}
-                                      isSelected={false}
-                                      keyHandler={[Function]}
-                                      onClick={[Function]}
-                                      sendRef={[Function]}
-                                      value="Low"
-                                    />,
-                                    <SelectOption
-                                      className=""
-                                      component="button"
-                                      index={0}
-                                      isChecked={false}
-                                      isDisabled={false}
-                                      isFocused={false}
-                                      isNoResultsOption={false}
-                                      isPlaceholder={false}
-                                      isSelected={false}
-                                      keyHandler={[Function]}
-                                      onClick={[Function]}
-                                      sendRef={[Function]}
-                                      value="High"
-                                    />,
-                                  ],
-                                  "isExpanded": false,
-                                  "onSelect": [Function],
-                                  "onToggle": [Function],
-                                  "selections": "Low",
-                                  "variant": "single",
+                                  "width": "",
                                 }
                               }
-                              consumerContext={null}
                             >
-                              <Select
-                                aria-label="Select Input"
-                                ariaLabelClear="Clear all"
-                                ariaLabelRemove="Remove"
+                              <SelectToggle
                                 ariaLabelToggle="Options menu"
-                                ariaLabelTypeAhead=""
-                                ariaLabelledBy=""
+                                ariaLabelledBy=" pf-toggle-id-5"
                                 className=""
-                                createText="Create"
-                                customContent={null}
-                                direction="down"
-                                hasInlineFilter={false}
-                                isCreatable={false}
+                                handleTypeaheadKeys={[Function]}
+                                hasClearButton={false}
+                                id="pf-toggle-id-5"
+                                isActive={false}
                                 isDisabled={false}
                                 isExpanded={false}
-                                isGrouped={false}
+                                isFocused={false}
+                                isHovered={false}
                                 isPlain={false}
-                                noResultsFoundText="No results found"
-                                onClear={[Function]}
-                                onCreateOption={[Function]}
-                                onFilter={null}
-                                onSelect={[Function]}
+                                onClose={[Function]}
+                                onEnter={[Function]}
                                 onToggle={[Function]}
-                                ouiaContext={
+                                parentRef={
                                   Object {
-                                    "isOuia": false,
-                                    "ouiaId": null,
-                                  }
-                                }
-                                placeholderText=""
-                                selections="Low"
-                                toggleIcon={null}
-                                toggleId={null}
-                                variant="single"
-                                width=""
-                              >
-                                <div
-                                  className="pf-c-select"
-                                  style={
-                                    Object {
-                                      "width": "",
-                                    }
-                                  }
-                                >
-                                  <SelectToggle
-                                    ariaLabelToggle="Options menu"
-                                    ariaLabelledBy=" pf-toggle-id-5"
-                                    className=""
-                                    handleTypeaheadKeys={[Function]}
-                                    hasClearButton={false}
-                                    id="pf-toggle-id-5"
-                                    isActive={false}
-                                    isDisabled={false}
-                                    isExpanded={false}
-                                    isFocused={false}
-                                    isHovered={false}
-                                    isPlain={false}
-                                    onClose={[Function]}
-                                    onEnter={[Function]}
-                                    onToggle={[Function]}
-                                    parentRef={
-                                      Object {
-                                        "current": <div
-                                          class="pf-c-select"
-                                        >
-                                          <button
-                                            aria-expanded="false"
-                                            aria-haspopup="listbox"
-                                            aria-labelledby=" pf-toggle-id-5"
-                                            class="pf-c-select__toggle"
-                                            id="pf-toggle-id-5"
-                                            type="button"
-                                          >
-                                            <div
-                                              class="pf-c-select__toggle-wrapper"
-                                            >
-                                              <span
-                                                class="pf-c-select__toggle-text"
-                                              >
-                                                Low
-                                              </span>
-                                            </div>
-                                            <svg
-                                              aria-hidden="true"
-                                              class="pf-c-select__toggle-arrow"
-                                              fill="currentColor"
-                                              height="1em"
-                                              role="img"
-                                              style="vertical-align: -0.125em;"
-                                              viewBox="0 0 320 512"
-                                              width="1em"
-                                            >
-                                              <path
-                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                                                transform=""
-                                              />
-                                            </svg>
-                                          </button>
-                                        </div>,
-                                      }
-                                    }
-                                    type="button"
-                                    variant="single"
-                                  >
-                                    <button
-                                      aria-expanded={false}
-                                      aria-haspopup="listbox"
-                                      aria-labelledby=" pf-toggle-id-5"
-                                      className="pf-c-select__toggle"
-                                      disabled={false}
-                                      id="pf-toggle-id-5"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      type="button"
+                                    "current": <div
+                                      class="pf-c-select"
+                                      data-ouia-component-id="7"
+                                      data-ouia-component-type="PF4/Select"
+                                      data-ouia-safe="true"
                                     >
-                                      <div
-                                        className="pf-c-select__toggle-wrapper"
+                                      <button
+                                        aria-expanded="false"
+                                        aria-haspopup="listbox"
+                                        aria-labelledby=" pf-toggle-id-5"
+                                        class="pf-c-select__toggle"
+                                        id="pf-toggle-id-5"
+                                        type="button"
                                       >
-                                        <span
-                                          className="pf-c-select__toggle-text"
+                                        <div
+                                          class="pf-c-select__toggle-wrapper"
                                         >
-                                          Low
-                                        </span>
-                                      </div>
-                                      <CaretDownIcon
-                                        className="pf-c-select__toggle-arrow"
-                                        color="currentColor"
-                                        noVerticalAlign={false}
-                                        size="sm"
-                                        title={null}
-                                      >
+                                          <span
+                                            class="pf-c-select__toggle-text"
+                                          >
+                                            Low
+                                          </span>
+                                        </div>
                                         <svg
-                                          aria-hidden={true}
-                                          aria-labelledby={null}
-                                          className="pf-c-select__toggle-arrow"
+                                          aria-hidden="true"
+                                          class="pf-c-select__toggle-arrow"
                                           fill="currentColor"
                                           height="1em"
                                           role="img"
-                                          style={
-                                            Object {
-                                              "verticalAlign": "-0.125em",
-                                            }
-                                          }
+                                          style="vertical-align: -0.125em;"
                                           viewBox="0 0 320 512"
                                           width="1em"
                                         >
@@ -1077,13 +779,65 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                             transform=""
                                           />
                                         </svg>
-                                      </CaretDownIcon>
-                                    </button>
-                                  </SelectToggle>
-                                </div>
-                              </Select>
-                            </ComponentWithOuia>
-                          </Component>
+                                      </button>
+                                    </div>,
+                                  }
+                                }
+                                type="button"
+                                variant="single"
+                              >
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup="listbox"
+                                  aria-labelledby=" pf-toggle-id-5"
+                                  className="pf-c-select__toggle"
+                                  disabled={false}
+                                  id="pf-toggle-id-5"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  type="button"
+                                >
+                                  <div
+                                    className="pf-c-select__toggle-wrapper"
+                                  >
+                                    <span
+                                      className="pf-c-select__toggle-text"
+                                    >
+                                      Low
+                                    </span>
+                                  </div>
+                                  <CaretDownIcon
+                                    className="pf-c-select__toggle-arrow"
+                                    color="currentColor"
+                                    noVerticalAlign={false}
+                                    size="sm"
+                                    title={null}
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      aria-labelledby={null}
+                                      className="pf-c-select__toggle-arrow"
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style={
+                                        Object {
+                                          "verticalAlign": "-0.125em",
+                                        }
+                                      }
+                                      viewBox="0 0 320 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                        transform=""
+                                      />
+                                    </svg>
+                                  </CaretDownIcon>
+                                </button>
+                              </SelectToggle>
+                            </div>
+                          </Select>
                         </div>
                       </DataToolbarItem>
                       <Portal
@@ -1109,6 +863,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="9"
+                                      data-ouia-component-type="PF4/Chip"
+                                      data-ouia-safe="true"
                                     >
                                       <span
                                         class="pf-c-chip__text"
@@ -1120,6 +877,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         aria-label="close"
                                         aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                                         class="pf-c-button pf-m-plain"
+                                        data-ouia-component-type="PF4/Button"
+                                        data-ouia-safe="true"
                                         id="remove_pf-random-id-1"
                                         type="button"
                                       >
@@ -1141,6 +900,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     </li>
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="10"
+                                      data-ouia-component-type="PF4/Chip"
+                                      data-ouia-safe="true"
                                     >
                                       <span
                                         class="pf-c-chip__text"
@@ -1152,6 +914,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         aria-label="close"
                                         aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
                                         class="pf-c-button pf-m-plain"
+                                        data-ouia-component-type="PF4/Button"
+                                        data-ouia-safe="true"
                                         id="remove_pf-random-id-2"
                                         type="button"
                                       >
@@ -1193,6 +957,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                   >
                                     <li
                                       class="pf-c-chip"
+                                      data-ouia-component-id="11"
+                                      data-ouia-component-type="PF4/Chip"
+                                      data-ouia-safe="true"
                                     >
                                       <span
                                         class="pf-c-chip__text"
@@ -1204,6 +971,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         aria-label="close"
                                         aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
                                         class="pf-c-button pf-m-plain"
+                                        data-ouia-component-type="PF4/Button"
+                                        data-ouia-safe="true"
                                         id="remove_pf-random-id-4"
                                         type="button"
                                       >
@@ -1279,151 +1048,92 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                         <ul
                                           className="pf-c-chip-group"
                                         >
-                                          <Component
+                                          <Chip
+                                            className=""
+                                            closeBtnAriaLabel="close"
                                             component="li"
+                                            isOverflowChip={false}
+                                            isReadOnly={false}
                                             key=".$Low"
                                             onClick={[Function]}
+                                            tooltipPosition="top"
                                           >
-                                            <ComponentWithOuia
-                                              component={[Function]}
-                                              componentProps={
-                                                Object {
-                                                  "children": "Low",
-                                                  "component": "li",
-                                                  "onClick": [Function],
-                                                }
-                                              }
-                                              consumerContext={null}
+                                            <GenerateId
+                                              prefix="pf-random-id-"
                                             >
-                                              <Chip
-                                                className=""
-                                                closeBtnAriaLabel="close"
-                                                component="li"
-                                                isOverflowChip={false}
-                                                isReadOnly={false}
-                                                onClick={[Function]}
-                                                ouiaContext={
-                                                  Object {
-                                                    "isOuia": false,
-                                                    "ouiaId": null,
-                                                  }
-                                                }
-                                                tooltipPosition="top"
+                                              <li
+                                                className="pf-c-chip"
+                                                data-ouia-component-id={11}
+                                                data-ouia-component-type="PF4/Chip"
+                                                data-ouia-safe={true}
                                               >
-                                                <GenerateId
-                                                  prefix="pf-random-id-"
+                                                <span
+                                                  className="pf-c-chip__text"
+                                                  id="pf-random-id-4"
                                                 >
-                                                  <li
-                                                    className="pf-c-chip"
+                                                  Low
+                                                </span>
+                                                <ChipButton
+                                                  aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
+                                                  ariaLabel="close"
+                                                  id="remove_pf-random-id-4"
+                                                  onClick={[Function]}
+                                                >
+                                                  <Button
+                                                    aria-label="close"
+                                                    aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
+                                                    className=""
+                                                    id="remove_pf-random-id-4"
+                                                    onClick={[Function]}
+                                                    variant="plain"
                                                   >
-                                                    <span
-                                                      className="pf-c-chip__text"
-                                                      id="pf-random-id-4"
-                                                    >
-                                                      Low
-                                                    </span>
-                                                    <ChipButton
+                                                    <button
+                                                      aria-disabled={null}
+                                                      aria-label="close"
                                                       aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
-                                                      ariaLabel="close"
+                                                      className="pf-c-button pf-m-plain"
+                                                      data-ouia-component-id={null}
+                                                      data-ouia-component-type="PF4/Button"
+                                                      data-ouia-safe={true}
+                                                      disabled={false}
                                                       id="remove_pf-random-id-4"
                                                       onClick={[Function]}
+                                                      tabIndex={null}
+                                                      type="button"
                                                     >
-                                                      <Component
-                                                        aria-label="close"
-                                                        aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
-                                                        className=""
-                                                        id="remove_pf-random-id-4"
-                                                        onClick={[Function]}
-                                                        variant="plain"
+                                                      <TimesCircleIcon
+                                                        aria-hidden="true"
+                                                        color="currentColor"
+                                                        noVerticalAlign={false}
+                                                        size="sm"
+                                                        title={null}
                                                       >
-                                                        <ComponentWithOuia
-                                                          component={[Function]}
-                                                          componentProps={
+                                                        <svg
+                                                          aria-hidden="true"
+                                                          aria-labelledby={null}
+                                                          fill="currentColor"
+                                                          height="1em"
+                                                          role="img"
+                                                          style={
                                                             Object {
-                                                              "aria-label": "close",
-                                                              "aria-labelledby": "remove_pf-random-id-4 pf-random-id-4",
-                                                              "children": <TimesCircleIcon
-                                                                aria-hidden="true"
-                                                                color="currentColor"
-                                                                noVerticalAlign={false}
-                                                                size="sm"
-                                                                title={null}
-                                                              />,
-                                                              "className": "",
-                                                              "id": "remove_pf-random-id-4",
-                                                              "onClick": [Function],
-                                                              "variant": "plain",
+                                                              "verticalAlign": "-0.125em",
                                                             }
                                                           }
-                                                          consumerContext={
-                                                            Object {
-                                                              "isOuia": false,
-                                                              "ouiaId": null,
-                                                            }
-                                                          }
+                                                          viewBox="0 0 512 512"
+                                                          width="1em"
                                                         >
-                                                          <Button
-                                                            aria-label="close"
-                                                            aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
-                                                            className=""
-                                                            id="remove_pf-random-id-4"
-                                                            onClick={[Function]}
-                                                            ouiaContext={
-                                                              Object {
-                                                                "isOuia": false,
-                                                                "ouiaId": null,
-                                                              }
-                                                            }
-                                                            variant="plain"
-                                                          >
-                                                            <button
-                                                              aria-disabled={null}
-                                                              aria-label="close"
-                                                              aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
-                                                              className="pf-c-button pf-m-plain"
-                                                              disabled={false}
-                                                              id="remove_pf-random-id-4"
-                                                              onClick={[Function]}
-                                                              tabIndex={null}
-                                                              type="button"
-                                                            >
-                                                              <TimesCircleIcon
-                                                                aria-hidden="true"
-                                                                color="currentColor"
-                                                                noVerticalAlign={false}
-                                                                size="sm"
-                                                                title={null}
-                                                              >
-                                                                <svg
-                                                                  aria-hidden="true"
-                                                                  aria-labelledby={null}
-                                                                  fill="currentColor"
-                                                                  height="1em"
-                                                                  role="img"
-                                                                  style={
-                                                                    Object {
-                                                                      "verticalAlign": "-0.125em",
-                                                                    }
-                                                                  }
-                                                                  viewBox="0 0 512 512"
-                                                                  width="1em"
-                                                                >
-                                                                  <path
-                                                                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                                                                    transform=""
-                                                                  />
-                                                                </svg>
-                                                              </TimesCircleIcon>
-                                                            </button>
-                                                          </Button>
-                                                        </ComponentWithOuia>
-                                                      </Component>
-                                                    </ChipButton>
-                                                  </li>
-                                                </GenerateId>
-                                              </Chip>
-                                            </ComponentWithOuia>
-                                          </Component>
+                                                          <path
+                                                            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                                                            transform=""
+                                                          />
+                                                        </svg>
+                                                      </TimesCircleIcon>
+                                                    </button>
+                                                  </Button>
+                                                </ChipButton>
+                                              </li>
+                                            </GenerateId>
+                                          </Chip>
                                         </ul>
                                       </li>
                                     </ul>
@@ -1471,6 +1181,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                   >
                     <button
                       class="pf-c-button pf-m-link pf-m-inline"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
                       type="button"
                     >
                       <span
@@ -1533,52 +1245,30 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     <div
                       className="pf-c-data-toolbar__item"
                     >
-                      <Component
+                      <Button
                         isInline={true}
                         onClick={[Function]}
                         variant="link"
                       >
-                        <ComponentWithOuia
-                          component={[Function]}
-                          componentProps={
-                            Object {
-                              "children": "Clear all filters",
-                              "isInline": true,
-                              "onClick": [Function],
-                              "variant": "link",
-                            }
-                          }
-                          consumerContext={null}
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-link pf-m-inline"
+                          data-ouia-component-id={null}
+                          data-ouia-component-type="PF4/Button"
+                          data-ouia-safe={true}
+                          disabled={false}
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
                         >
-                          <Button
-                            isInline={true}
-                            onClick={[Function]}
-                            ouiaContext={
-                              Object {
-                                "isOuia": false,
-                                "ouiaId": null,
-                              }
-                            }
-                            variant="link"
+                          <span
+                            className="pf-c-button__text"
                           >
-                            <button
-                              aria-disabled={null}
-                              aria-label={null}
-                              className="pf-c-button pf-m-link pf-m-inline"
-                              disabled={false}
-                              onClick={[Function]}
-                              tabIndex={null}
-                              type="button"
-                            >
-                              <span
-                                className="pf-c-button__text"
-                              >
-                                Clear all filters
-                              </span>
-                            </button>
-                          </Button>
-                        </ComponentWithOuia>
-                      </Component>
+                            Clear all filters
+                          </span>
+                        </button>
+                      </Button>
                     </div>
                   </DataToolbarItem>
                 </div>
@@ -1615,6 +1305,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     >
                       <li
                         class="pf-c-chip"
+                        data-ouia-component-id="9"
+                        data-ouia-component-type="PF4/Chip"
+                        data-ouia-safe="true"
                       >
                         <span
                           class="pf-c-chip__text"
@@ -1626,6 +1319,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           aria-label="close"
                           aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
                           class="pf-c-button pf-m-plain"
+                          data-ouia-component-type="PF4/Button"
+                          data-ouia-safe="true"
                           id="remove_pf-random-id-1"
                           type="button"
                         >
@@ -1647,6 +1342,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       </li>
                       <li
                         class="pf-c-chip"
+                        data-ouia-component-id="10"
+                        data-ouia-component-type="PF4/Chip"
+                        data-ouia-safe="true"
                       >
                         <span
                           class="pf-c-chip__text"
@@ -1658,6 +1356,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           aria-label="close"
                           aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
                           class="pf-c-button pf-m-plain"
+                          data-ouia-component-type="PF4/Button"
+                          data-ouia-safe="true"
                           id="remove_pf-random-id-2"
                           type="button"
                         >
@@ -1699,6 +1399,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     >
                       <li
                         class="pf-c-chip"
+                        data-ouia-component-id="11"
+                        data-ouia-component-type="PF4/Chip"
+                        data-ouia-safe="true"
                       >
                         <span
                           class="pf-c-chip__text"
@@ -1710,6 +1413,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           aria-label="close"
                           aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
                           class="pf-c-button pf-m-plain"
+                          data-ouia-component-type="PF4/Button"
+                          data-ouia-safe="true"
                           id="remove_pf-random-id-4"
                           type="button"
                         >
@@ -1739,6 +1444,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             >
               <button
                 class="pf-c-button pf-m-link pf-m-inline"
+                data-ouia-component-type="PF4/Button"
+                data-ouia-safe="true"
                 type="button"
               >
                 <span
@@ -1778,52 +1485,30 @@ exports[`data toolbar DataToolbarFilter 1`] = `
           <div
             className="pf-c-data-toolbar__item"
           >
-            <Component
+            <Button
               isInline={true}
               onClick={[Function]}
               variant="link"
             >
-              <ComponentWithOuia
-                component={[Function]}
-                componentProps={
-                  Object {
-                    "children": "Clear all filters",
-                    "isInline": true,
-                    "onClick": [Function],
-                    "variant": "link",
-                  }
-                }
-                consumerContext={null}
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link pf-m-inline"
+                data-ouia-component-id={null}
+                data-ouia-component-type="PF4/Button"
+                data-ouia-safe={true}
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={null}
+                type="button"
               >
-                <Button
-                  isInline={true}
-                  onClick={[Function]}
-                  ouiaContext={
-                    Object {
-                      "isOuia": false,
-                      "ouiaId": null,
-                    }
-                  }
-                  variant="link"
+                <span
+                  className="pf-c-button__text"
                 >
-                  <button
-                    aria-disabled={null}
-                    aria-label={null}
-                    className="pf-c-button pf-m-link pf-m-inline"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={null}
-                    type="button"
-                  >
-                    <span
-                      className="pf-c-button__text"
-                    >
-                      Clear all filters
-                    </span>
-                  </button>
-                </Button>
-              </ComponentWithOuia>
-            </Component>
+                  Clear all filters
+                </span>
+              </button>
+            </Button>
           </div>
         </DataToolbarItem>
       </div>
@@ -1870,142 +1555,96 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                   <div
                     className="pf-c-data-toolbar__item"
                   >
-                    <Component
+                    <Button
                       variant="plain"
                     >
-                      <ComponentWithOuia
-                        component={[Function]}
-                        componentProps={
-                          Object {
-                            "children": <EditIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            "variant": "plain",
-                          }
-                        }
-                        consumerContext={null}
+                      <button
+                        aria-disabled={null}
+                        aria-label={null}
+                        className="pf-c-button pf-m-plain"
+                        data-ouia-component-id={null}
+                        data-ouia-component-type="PF4/Button"
+                        data-ouia-safe={true}
+                        disabled={false}
+                        tabIndex={null}
+                        type="button"
                       >
-                        <Button
-                          ouiaContext={
-                            Object {
-                              "isOuia": false,
-                              "ouiaId": null,
-                            }
-                          }
-                          variant="plain"
+                        <EditIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                          title={null}
                         >
-                          <button
-                            aria-disabled={null}
-                            aria-label={null}
-                            className="pf-c-button pf-m-plain"
-                            disabled={false}
-                            tabIndex={null}
-                            type="button"
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 576 512"
+                            width="1em"
                           >
-                            <EditIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            >
-                              <svg
-                                aria-hidden={true}
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 576 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
-                                  transform=""
-                                />
-                              </svg>
-                            </EditIcon>
-                          </button>
-                        </Button>
-                      </ComponentWithOuia>
-                    </Component>
+                            <path
+                              d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+                              transform=""
+                            />
+                          </svg>
+                        </EditIcon>
+                      </button>
+                    </Button>
                   </div>
                 </DataToolbarItem>
                 <DataToolbarItem>
                   <div
                     className="pf-c-data-toolbar__item"
                   >
-                    <Component
+                    <Button
                       variant="plain"
                     >
-                      <ComponentWithOuia
-                        component={[Function]}
-                        componentProps={
-                          Object {
-                            "children": <CloneIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            "variant": "plain",
-                          }
-                        }
-                        consumerContext={null}
+                      <button
+                        aria-disabled={null}
+                        aria-label={null}
+                        className="pf-c-button pf-m-plain"
+                        data-ouia-component-id={null}
+                        data-ouia-component-type="PF4/Button"
+                        data-ouia-safe={true}
+                        disabled={false}
+                        tabIndex={null}
+                        type="button"
                       >
-                        <Button
-                          ouiaContext={
-                            Object {
-                              "isOuia": false,
-                              "ouiaId": null,
-                            }
-                          }
-                          variant="plain"
+                        <CloneIcon
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                          title={null}
                         >
-                          <button
-                            aria-disabled={null}
-                            aria-label={null}
-                            className="pf-c-button pf-m-plain"
-                            disabled={false}
-                            tabIndex={null}
-                            type="button"
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 512 512"
+                            width="1em"
                           >
-                            <CloneIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            >
-                              <svg
-                                aria-hidden={true}
-                                aria-labelledby={null}
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style={
-                                  Object {
-                                    "verticalAlign": "-0.125em",
-                                  }
-                                }
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M464 0c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48H176c-26.51 0-48-21.49-48-48V48c0-26.51 21.49-48 48-48h288M176 416c-44.112 0-80-35.888-80-80V128H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48v-48H176z"
-                                  transform=""
-                                />
-                              </svg>
-                            </CloneIcon>
-                          </button>
-                        </Button>
-                      </ComponentWithOuia>
-                    </Component>
+                            <path
+                              d="M464 0c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48H176c-26.51 0-48-21.49-48-48V48c0-26.51 21.49-48 48-48h288M176 416c-44.112 0-80-35.888-80-80V128H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48v-48H176z"
+                              transform=""
+                            />
+                          </svg>
+                        </CloneIcon>
+                      </button>
+                    </Button>
                   </div>
                 </DataToolbarItem>
               </div>
@@ -2242,86 +1881,55 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
               <div
                 className="pf-c-data-toolbar__toggle"
               >
-                <Component
+                <Button
                   aria-controls="data-toolbar-expandable-content-4"
                   aria-haspopup={false}
                   aria-label="Show Filters"
                   onClick={[Function]}
                   variant="plain"
                 >
-                  <ComponentWithOuia
-                    component={[Function]}
-                    componentProps={
-                      Object {
-                        "aria-controls": "data-toolbar-expandable-content-4",
-                        "aria-haspopup": false,
-                        "aria-label": "Show Filters",
-                        "children": <FilterIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        />,
-                        "onClick": [Function],
-                        "variant": "plain",
-                      }
-                    }
-                    consumerContext={null}
+                  <button
+                    aria-controls="data-toolbar-expandable-content-4"
+                    aria-disabled={null}
+                    aria-haspopup={false}
+                    aria-label="Show Filters"
+                    className="pf-c-button pf-m-plain"
+                    data-ouia-component-id={null}
+                    data-ouia-component-type="PF4/Button"
+                    data-ouia-safe={true}
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={null}
+                    type="button"
                   >
-                    <Button
-                      aria-controls="data-toolbar-expandable-content-4"
-                      aria-haspopup={false}
-                      aria-label="Show Filters"
-                      onClick={[Function]}
-                      ouiaContext={
-                        Object {
-                          "isOuia": false,
-                          "ouiaId": null,
-                        }
-                      }
-                      variant="plain"
+                    <FilterIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
                     >
-                      <button
-                        aria-controls="data-toolbar-expandable-content-4"
-                        aria-disabled={null}
-                        aria-haspopup={false}
-                        aria-label="Show Filters"
-                        className="pf-c-button pf-m-plain"
-                        disabled={false}
-                        onClick={[Function]}
-                        tabIndex={null}
-                        type="button"
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
                       >
-                        <FilterIcon
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 512 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
-                              transform=""
-                            />
-                          </svg>
-                        </FilterIcon>
-                      </button>
-                    </Button>
-                  </ComponentWithOuia>
-                </Component>
+                        <path
+                          d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
+                          transform=""
+                        />
+                      </svg>
+                    </FilterIcon>
+                  </button>
+                </Button>
               </div>
               <ForwardRef
                 variant="filter-group"
@@ -2338,203 +1946,95 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                       <div
                         className="pf-c-data-toolbar__item"
                       >
-                        <Component
+                        <Select
                           aria-label="Select Input"
+                          ariaLabelClear="Clear all"
+                          ariaLabelRemove="Remove"
+                          ariaLabelToggle="Options menu"
+                          ariaLabelTypeAhead=""
+                          ariaLabelledBy=""
+                          className=""
+                          createText="Create"
+                          customContent={null}
+                          direction="down"
+                          hasInlineFilter={false}
+                          isCreatable={false}
+                          isDisabled={false}
                           isExpanded={false}
+                          isGrouped={false}
+                          isPlain={false}
+                          noResultsFoundText="No results found"
+                          onClear={[Function]}
+                          onCreateOption={[Function]}
+                          onFilter={null}
                           onSelect={[Function]}
                           onToggle={[Function]}
+                          placeholderText=""
                           selections="Running"
+                          toggleIcon={null}
+                          toggleId={null}
                           variant="single"
+                          width=""
                         >
-                          <ComponentWithOuia
-                            component={[Function]}
-                            componentProps={
+                          <div
+                            className="pf-c-select"
+                            data-ouia-component-id={0}
+                            data-ouia-component-type="PF4/Select"
+                            data-ouia-safe={true}
+                            style={
                               Object {
-                                "aria-label": "Select Input",
-                                "children": Array [
-                                  <SelectOption
-                                    className=""
-                                    component="button"
-                                    index={0}
-                                    isChecked={false}
-                                    isDisabled={false}
-                                    isFocused={false}
-                                    isNoResultsOption={false}
-                                    isPlaceholder={false}
-                                    isSelected={false}
-                                    keyHandler={[Function]}
-                                    onClick={[Function]}
-                                    sendRef={[Function]}
-                                    value="Running"
-                                  />,
-                                  <SelectOption
-                                    className=""
-                                    component="button"
-                                    index={0}
-                                    isChecked={false}
-                                    isDisabled={false}
-                                    isFocused={false}
-                                    isNoResultsOption={false}
-                                    isPlaceholder={false}
-                                    isSelected={false}
-                                    keyHandler={[Function]}
-                                    onClick={[Function]}
-                                    sendRef={[Function]}
-                                    value="Cancelled"
-                                  />,
-                                ],
-                                "isExpanded": false,
-                                "onSelect": [Function],
-                                "onToggle": [Function],
-                                "selections": "Running",
-                                "variant": "single",
+                                "width": "",
                               }
                             }
-                            consumerContext={null}
                           >
-                            <Select
-                              aria-label="Select Input"
-                              ariaLabelClear="Clear all"
-                              ariaLabelRemove="Remove"
+                            <SelectToggle
                               ariaLabelToggle="Options menu"
-                              ariaLabelTypeAhead=""
-                              ariaLabelledBy=""
+                              ariaLabelledBy=" pf-toggle-id-0"
                               className=""
-                              createText="Create"
-                              customContent={null}
-                              direction="down"
-                              hasInlineFilter={false}
-                              isCreatable={false}
+                              handleTypeaheadKeys={[Function]}
+                              hasClearButton={false}
+                              id="pf-toggle-id-0"
+                              isActive={false}
                               isDisabled={false}
                               isExpanded={false}
-                              isGrouped={false}
+                              isFocused={false}
+                              isHovered={false}
                               isPlain={false}
-                              noResultsFoundText="No results found"
-                              onClear={[Function]}
-                              onCreateOption={[Function]}
-                              onFilter={null}
-                              onSelect={[Function]}
+                              onClose={[Function]}
+                              onEnter={[Function]}
                               onToggle={[Function]}
-                              ouiaContext={
+                              parentRef={
                                 Object {
-                                  "isOuia": false,
-                                  "ouiaId": null,
-                                }
-                              }
-                              placeholderText=""
-                              selections="Running"
-                              toggleIcon={null}
-                              toggleId={null}
-                              variant="single"
-                              width=""
-                            >
-                              <div
-                                className="pf-c-select"
-                                style={
-                                  Object {
-                                    "width": "",
-                                  }
-                                }
-                              >
-                                <SelectToggle
-                                  ariaLabelToggle="Options menu"
-                                  ariaLabelledBy=" pf-toggle-id-0"
-                                  className=""
-                                  handleTypeaheadKeys={[Function]}
-                                  hasClearButton={false}
-                                  id="pf-toggle-id-0"
-                                  isActive={false}
-                                  isDisabled={false}
-                                  isExpanded={false}
-                                  isFocused={false}
-                                  isHovered={false}
-                                  isPlain={false}
-                                  onClose={[Function]}
-                                  onEnter={[Function]}
-                                  onToggle={[Function]}
-                                  parentRef={
-                                    Object {
-                                      "current": <div
-                                        class="pf-c-select"
-                                      >
-                                        <button
-                                          aria-expanded="false"
-                                          aria-haspopup="listbox"
-                                          aria-labelledby=" pf-toggle-id-0"
-                                          class="pf-c-select__toggle"
-                                          id="pf-toggle-id-0"
-                                          type="button"
-                                        >
-                                          <div
-                                            class="pf-c-select__toggle-wrapper"
-                                          >
-                                            <span
-                                              class="pf-c-select__toggle-text"
-                                            >
-                                              Running
-                                            </span>
-                                          </div>
-                                          <svg
-                                            aria-hidden="true"
-                                            class="pf-c-select__toggle-arrow"
-                                            fill="currentColor"
-                                            height="1em"
-                                            role="img"
-                                            style="vertical-align: -0.125em;"
-                                            viewBox="0 0 320 512"
-                                            width="1em"
-                                          >
-                                            <path
-                                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                                              transform=""
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>,
-                                    }
-                                  }
-                                  type="button"
-                                  variant="single"
-                                >
-                                  <button
-                                    aria-expanded={false}
-                                    aria-haspopup="listbox"
-                                    aria-labelledby=" pf-toggle-id-0"
-                                    className="pf-c-select__toggle"
-                                    disabled={false}
-                                    id="pf-toggle-id-0"
-                                    onClick={[Function]}
-                                    onKeyDown={[Function]}
-                                    type="button"
+                                  "current": <div
+                                    class="pf-c-select"
+                                    data-ouia-component-id="0"
+                                    data-ouia-component-type="PF4/Select"
+                                    data-ouia-safe="true"
                                   >
-                                    <div
-                                      className="pf-c-select__toggle-wrapper"
+                                    <button
+                                      aria-expanded="false"
+                                      aria-haspopup="listbox"
+                                      aria-labelledby=" pf-toggle-id-0"
+                                      class="pf-c-select__toggle"
+                                      id="pf-toggle-id-0"
+                                      type="button"
                                     >
-                                      <span
-                                        className="pf-c-select__toggle-text"
+                                      <div
+                                        class="pf-c-select__toggle-wrapper"
                                       >
-                                        Running
-                                      </span>
-                                    </div>
-                                    <CaretDownIcon
-                                      className="pf-c-select__toggle-arrow"
-                                      color="currentColor"
-                                      noVerticalAlign={false}
-                                      size="sm"
-                                      title={null}
-                                    >
+                                        <span
+                                          class="pf-c-select__toggle-text"
+                                        >
+                                          Running
+                                        </span>
+                                      </div>
                                       <svg
-                                        aria-hidden={true}
-                                        aria-labelledby={null}
-                                        className="pf-c-select__toggle-arrow"
+                                        aria-hidden="true"
+                                        class="pf-c-select__toggle-arrow"
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
-                                        style={
-                                          Object {
-                                            "verticalAlign": "-0.125em",
-                                          }
-                                        }
+                                        style="vertical-align: -0.125em;"
                                         viewBox="0 0 320 512"
                                         width="1em"
                                       >
@@ -2543,216 +2043,160 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                                           transform=""
                                         />
                                       </svg>
-                                    </CaretDownIcon>
-                                  </button>
-                                </SelectToggle>
-                              </div>
-                            </Select>
-                          </ComponentWithOuia>
-                        </Component>
+                                    </button>
+                                  </div>,
+                                }
+                              }
+                              type="button"
+                              variant="single"
+                            >
+                              <button
+                                aria-expanded={false}
+                                aria-haspopup="listbox"
+                                aria-labelledby=" pf-toggle-id-0"
+                                className="pf-c-select__toggle"
+                                disabled={false}
+                                id="pf-toggle-id-0"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="pf-c-select__toggle-wrapper"
+                                >
+                                  <span
+                                    className="pf-c-select__toggle-text"
+                                  >
+                                    Running
+                                  </span>
+                                </div>
+                                <CaretDownIcon
+                                  className="pf-c-select__toggle-arrow"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                  title={null}
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    className="pf-c-select__toggle-arrow"
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 320 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </CaretDownIcon>
+                              </button>
+                            </SelectToggle>
+                          </div>
+                        </Select>
                       </div>
                     </DataToolbarItem>
                     <DataToolbarItem>
                       <div
                         className="pf-c-data-toolbar__item"
                       >
-                        <Component
+                        <Select
                           aria-label="Select Input"
+                          ariaLabelClear="Clear all"
+                          ariaLabelRemove="Remove"
+                          ariaLabelToggle="Options menu"
+                          ariaLabelTypeAhead=""
+                          ariaLabelledBy=""
+                          className=""
+                          createText="Create"
+                          customContent={null}
+                          direction="down"
+                          hasInlineFilter={false}
+                          isCreatable={false}
+                          isDisabled={false}
                           isExpanded={false}
+                          isGrouped={false}
+                          isPlain={false}
+                          noResultsFoundText="No results found"
+                          onClear={[Function]}
+                          onCreateOption={[Function]}
+                          onFilter={null}
                           onSelect={[Function]}
                           onToggle={[Function]}
+                          placeholderText=""
                           selections="Low"
+                          toggleIcon={null}
+                          toggleId={null}
                           variant="single"
+                          width=""
                         >
-                          <ComponentWithOuia
-                            component={[Function]}
-                            componentProps={
+                          <div
+                            className="pf-c-select"
+                            data-ouia-component-id={1}
+                            data-ouia-component-type="PF4/Select"
+                            data-ouia-safe={true}
+                            style={
                               Object {
-                                "aria-label": "Select Input",
-                                "children": Array [
-                                  <SelectOption
-                                    className=""
-                                    component="button"
-                                    index={0}
-                                    isChecked={false}
-                                    isDisabled={false}
-                                    isFocused={false}
-                                    isNoResultsOption={false}
-                                    isPlaceholder={false}
-                                    isSelected={false}
-                                    keyHandler={[Function]}
-                                    onClick={[Function]}
-                                    sendRef={[Function]}
-                                    value="Low"
-                                  />,
-                                  <SelectOption
-                                    className=""
-                                    component="button"
-                                    index={0}
-                                    isChecked={false}
-                                    isDisabled={false}
-                                    isFocused={false}
-                                    isNoResultsOption={false}
-                                    isPlaceholder={false}
-                                    isSelected={false}
-                                    keyHandler={[Function]}
-                                    onClick={[Function]}
-                                    sendRef={[Function]}
-                                    value="High"
-                                  />,
-                                ],
-                                "isExpanded": false,
-                                "onSelect": [Function],
-                                "onToggle": [Function],
-                                "selections": "Low",
-                                "variant": "single",
+                                "width": "",
                               }
                             }
-                            consumerContext={null}
                           >
-                            <Select
-                              aria-label="Select Input"
-                              ariaLabelClear="Clear all"
-                              ariaLabelRemove="Remove"
+                            <SelectToggle
                               ariaLabelToggle="Options menu"
-                              ariaLabelTypeAhead=""
-                              ariaLabelledBy=""
+                              ariaLabelledBy=" pf-toggle-id-1"
                               className=""
-                              createText="Create"
-                              customContent={null}
-                              direction="down"
-                              hasInlineFilter={false}
-                              isCreatable={false}
+                              handleTypeaheadKeys={[Function]}
+                              hasClearButton={false}
+                              id="pf-toggle-id-1"
+                              isActive={false}
                               isDisabled={false}
                               isExpanded={false}
-                              isGrouped={false}
+                              isFocused={false}
+                              isHovered={false}
                               isPlain={false}
-                              noResultsFoundText="No results found"
-                              onClear={[Function]}
-                              onCreateOption={[Function]}
-                              onFilter={null}
-                              onSelect={[Function]}
+                              onClose={[Function]}
+                              onEnter={[Function]}
                               onToggle={[Function]}
-                              ouiaContext={
+                              parentRef={
                                 Object {
-                                  "isOuia": false,
-                                  "ouiaId": null,
-                                }
-                              }
-                              placeholderText=""
-                              selections="Low"
-                              toggleIcon={null}
-                              toggleId={null}
-                              variant="single"
-                              width=""
-                            >
-                              <div
-                                className="pf-c-select"
-                                style={
-                                  Object {
-                                    "width": "",
-                                  }
-                                }
-                              >
-                                <SelectToggle
-                                  ariaLabelToggle="Options menu"
-                                  ariaLabelledBy=" pf-toggle-id-1"
-                                  className=""
-                                  handleTypeaheadKeys={[Function]}
-                                  hasClearButton={false}
-                                  id="pf-toggle-id-1"
-                                  isActive={false}
-                                  isDisabled={false}
-                                  isExpanded={false}
-                                  isFocused={false}
-                                  isHovered={false}
-                                  isPlain={false}
-                                  onClose={[Function]}
-                                  onEnter={[Function]}
-                                  onToggle={[Function]}
-                                  parentRef={
-                                    Object {
-                                      "current": <div
-                                        class="pf-c-select"
-                                      >
-                                        <button
-                                          aria-expanded="false"
-                                          aria-haspopup="listbox"
-                                          aria-labelledby=" pf-toggle-id-1"
-                                          class="pf-c-select__toggle"
-                                          id="pf-toggle-id-1"
-                                          type="button"
-                                        >
-                                          <div
-                                            class="pf-c-select__toggle-wrapper"
-                                          >
-                                            <span
-                                              class="pf-c-select__toggle-text"
-                                            >
-                                              Low
-                                            </span>
-                                          </div>
-                                          <svg
-                                            aria-hidden="true"
-                                            class="pf-c-select__toggle-arrow"
-                                            fill="currentColor"
-                                            height="1em"
-                                            role="img"
-                                            style="vertical-align: -0.125em;"
-                                            viewBox="0 0 320 512"
-                                            width="1em"
-                                          >
-                                            <path
-                                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                                              transform=""
-                                            />
-                                          </svg>
-                                        </button>
-                                      </div>,
-                                    }
-                                  }
-                                  type="button"
-                                  variant="single"
-                                >
-                                  <button
-                                    aria-expanded={false}
-                                    aria-haspopup="listbox"
-                                    aria-labelledby=" pf-toggle-id-1"
-                                    className="pf-c-select__toggle"
-                                    disabled={false}
-                                    id="pf-toggle-id-1"
-                                    onClick={[Function]}
-                                    onKeyDown={[Function]}
-                                    type="button"
+                                  "current": <div
+                                    class="pf-c-select"
+                                    data-ouia-component-id="1"
+                                    data-ouia-component-type="PF4/Select"
+                                    data-ouia-safe="true"
                                   >
-                                    <div
-                                      className="pf-c-select__toggle-wrapper"
+                                    <button
+                                      aria-expanded="false"
+                                      aria-haspopup="listbox"
+                                      aria-labelledby=" pf-toggle-id-1"
+                                      class="pf-c-select__toggle"
+                                      id="pf-toggle-id-1"
+                                      type="button"
                                     >
-                                      <span
-                                        className="pf-c-select__toggle-text"
+                                      <div
+                                        class="pf-c-select__toggle-wrapper"
                                       >
-                                        Low
-                                      </span>
-                                    </div>
-                                    <CaretDownIcon
-                                      className="pf-c-select__toggle-arrow"
-                                      color="currentColor"
-                                      noVerticalAlign={false}
-                                      size="sm"
-                                      title={null}
-                                    >
+                                        <span
+                                          class="pf-c-select__toggle-text"
+                                        >
+                                          Low
+                                        </span>
+                                      </div>
                                       <svg
-                                        aria-hidden={true}
-                                        aria-labelledby={null}
-                                        className="pf-c-select__toggle-arrow"
+                                        aria-hidden="true"
+                                        class="pf-c-select__toggle-arrow"
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
-                                        style={
-                                          Object {
-                                            "verticalAlign": "-0.125em",
-                                          }
-                                        }
+                                        style="vertical-align: -0.125em;"
                                         viewBox="0 0 320 512"
                                         width="1em"
                                       >
@@ -2761,13 +2205,65 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                                           transform=""
                                         />
                                       </svg>
-                                    </CaretDownIcon>
-                                  </button>
-                                </SelectToggle>
-                              </div>
-                            </Select>
-                          </ComponentWithOuia>
-                        </Component>
+                                    </button>
+                                  </div>,
+                                }
+                              }
+                              type="button"
+                              variant="single"
+                            >
+                              <button
+                                aria-expanded={false}
+                                aria-haspopup="listbox"
+                                aria-labelledby=" pf-toggle-id-1"
+                                className="pf-c-select__toggle"
+                                disabled={false}
+                                id="pf-toggle-id-1"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="pf-c-select__toggle-wrapper"
+                                >
+                                  <span
+                                    className="pf-c-select__toggle-text"
+                                  >
+                                    Low
+                                  </span>
+                                </div>
+                                <CaretDownIcon
+                                  className="pf-c-select__toggle-arrow"
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                  title={null}
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    className="pf-c-select__toggle-arrow"
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 320 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </CaretDownIcon>
+                              </button>
+                            </SelectToggle>
+                          </div>
+                        </Select>
                       </div>
                     </DataToolbarItem>
                   </div>

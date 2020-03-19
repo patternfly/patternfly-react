@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface SwitchProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
@@ -26,7 +26,7 @@ export interface SwitchProps
   'aria-label'?: string;
 }
 
-class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
+export class Switch extends React.Component<SwitchProps & OUIAProps> {
   id = '';
 
   static defaultProps: SwitchProps = {
@@ -40,7 +40,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
     onChange: () => undefined as any
   };
 
-  constructor(props: SwitchProps & InjectedOuiaProps) {
+  constructor(props: SwitchProps & OUIAProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
       // eslint-disable-next-line no-console
@@ -59,21 +59,13 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
       isChecked,
       isDisabled,
       onChange,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
 
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
-      <label
-        className={css(styles.switch, className)}
-        htmlFor={this.id}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Switch',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
-      >
+      <label className={css(styles.switch, className)} htmlFor={this.id} {...getOUIAProps('Switch', ouiaId)}>
         <input
           id={this.id}
           className={css(styles.switchInput)}
@@ -131,7 +123,3 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
     );
   }
 }
-
-const SwitchWithOuiaContext = withOuiaContext(Switch);
-
-export { SwitchWithOuiaContext as Switch };

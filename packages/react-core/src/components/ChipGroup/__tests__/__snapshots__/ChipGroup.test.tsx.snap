@@ -14,9 +14,17 @@ exports[`ChipGroup chip group default 1`] = `
     onToggleCollapse={[Function]}
     withToolbar={false}
   >
-    <Component>
+    <Chip
+      className=""
+      closeBtnAriaLabel="close"
+      component="div"
+      isOverflowChip={false}
+      isReadOnly={false}
+      onClick={[Function]}
+      tooltipPosition="top"
+    >
       1.1
-    </Component>
+    </Chip>
   </InnerChipGroup>
 </ul>
 `;
@@ -43,9 +51,17 @@ exports[`ChipGroup chip group with closable toolbar 1`] = `
       onClick={[Function]}
       tooltipPosition="top"
     >
-      <Component>
+      <Chip
+        className=""
+        closeBtnAriaLabel="close"
+        component="div"
+        isOverflowChip={false}
+        isReadOnly={false}
+        onClick={[Function]}
+        tooltipPosition="top"
+      >
         1.1
-      </Component>
+      </Chip>
     </ChipGroupToolbarItem>
   </InnerChipGroup>
 </ContextProvider>
@@ -73,9 +89,17 @@ exports[`ChipGroup chip group with toolbar 1`] = `
       onClick={[Function]}
       tooltipPosition="top"
     >
-      <Component>
+      <Chip
+        className=""
+        closeBtnAriaLabel="close"
+        component="div"
+        isOverflowChip={false}
+        isReadOnly={false}
+        onClick={[Function]}
+        tooltipPosition="top"
+      >
         1.1
-      </Component>
+      </Chip>
     </ChipGroupToolbarItem>
   </InnerChipGroup>
 </ContextProvider>
@@ -103,9 +127,17 @@ exports[`ChipGroup chip group with toolbar and tooltip 1`] = `
       onClick={[Function]}
       tooltipPosition="bottom"
     >
-      <Component>
+      <Chip
+        className=""
+        closeBtnAriaLabel="close"
+        component="div"
+        isOverflowChip={false}
+        isReadOnly={false}
+        onClick={[Function]}
+        tooltipPosition="top"
+      >
         1.1
-      </Component>
+      </Chip>
     </ChipGroupToolbarItem>
   </InnerChipGroup>
 </ContextProvider>
