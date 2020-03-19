@@ -3,7 +3,7 @@ import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
 interface ContextSelectorState {
   isOpen: boolean;
-  selected: string;
+  selected: React.ReactNode;
   searchValue: string;
   filteredItems: string[];
 }
@@ -11,7 +11,7 @@ interface ContextSelectorState {
 export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
   items: string[];
   onToggle: (event: any, isOpen: any) => void;
-  onSelect: (event: any, value: string) => void;
+  onSelect: (event: any, value: React.ReactNode) => void;
   onSearchInputChange: (value: string) => void;
   onSearchButtonClick: (event: any) => void;
   constructor(props: any) {
@@ -72,7 +72,7 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
     const { isOpen, selected, searchValue, filteredItems } = this.state;
     return (
       <ContextSelector
-        toggleText={selected}
+        toggleText={selected.toString()}
         onSearchInputChange={this.onSearchInputChange}
         isOpen={isOpen}
         searchInputValue={searchValue}
