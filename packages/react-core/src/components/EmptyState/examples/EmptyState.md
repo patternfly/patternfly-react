@@ -32,7 +32,7 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 SimpleEmptyState = () => (
-  <EmptyState variant={EmptyStateVariant.full}>
+  <EmptyState>
     <EmptyStateIcon icon={CubesIcon} />
     <Title headingLevel="h5" size="lg">
       Empty State

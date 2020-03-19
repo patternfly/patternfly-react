@@ -2,7 +2,7 @@
 
 exports[`EmptyState Main 1`] = `
 <div
-  className="pf-c-empty-state pf-m-lg"
+  className="pf-c-empty-state"
 >
   <Title
     headingLevel="h5"

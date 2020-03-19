@@ -20,7 +20,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
 export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
   children,
   className = '',
-  variant = EmptyStateVariant.large,
+  variant = EmptyStateVariant.full,
   ...props
 }: EmptyStateProps) => (
   <div
