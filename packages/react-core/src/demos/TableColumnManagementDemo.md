@@ -5,7 +5,6 @@ section: 'demos'
 
 ## Examples
 
-import React from 'react';
 import {
   Button,
   Checkbox,

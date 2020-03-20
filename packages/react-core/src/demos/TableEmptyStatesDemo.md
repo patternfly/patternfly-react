@@ -5,7 +5,6 @@ section: 'demos'
 
 ## Examples
 
-import React from 'react';
 import {
   EmptyState,
   EmptyStateIcon,
@@ -14,7 +13,7 @@ import {
   Bullseye
 } from '@patternfly/react-core';
 import { SearchIcon } from '@patternfly/react-icons';
-import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 ```js title=Empty
 import React from 'react';

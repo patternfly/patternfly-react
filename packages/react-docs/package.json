@@ -28,10 +28,11 @@
     "@patternfly/react-tokens": "^2.8.10",
     "@patternfly/react-topology": "^2.14.42",
     "@patternfly/react-virtualized-extension": "^1.4.43",
-    "gatsby": "2.19.12",
-    "gatsby-cli": "2.8.29",
+    "gatsby": "2.20.2",
+    "gatsby-cli": "2.11.0",
     "gatsby-theme-patternfly-org": "^1.4.1",
     "gatsby-transformer-react-docgen-typescript": "^0.2.5",
+    "null-loader": "^3.0.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"
