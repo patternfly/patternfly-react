@@ -1,5 +1,4 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEYHANDLER_DIRECTION } from '../../helpers/constants';
@@ -16,7 +15,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
   /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
-  variant?: 'item' | 'icon' | 'routerLink';
+  variant?: 'item' | 'icon';
   /** Role for the item */
   role?: string;
   /** Render dropdown item as disabled option */
@@ -46,6 +45,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   customChild?: React.ReactNode;
   /** Flag indicating if hitting enter on an item also triggers an arrow down key press */
   enterTriggersArrowDown?: boolean;
+  /** Flag indicating if the item is a router link */
+  isRouterLink?: boolean;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -135,7 +136,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   ) {
     return React.Children.map(children as React.ReactElement<any>, child =>
       React.cloneElement(child, {
-        className: classNames(child.props.className, itemClass),
+        className: css(child.props.className, itemClass),
         ref,
         id,
         ...additionalProps
@@ -165,13 +166,14 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       additionalChild,
       customChild,
       enterTriggersArrowDown,
+      isRouterLink,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
     let isComponentReactElement = false;
     let classes: string;
-    if (Component === 'a' || variant === 'routerLink') {
+    if (Component === 'a' || isRouterLink) {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (Component === 'button') {
@@ -225,7 +227,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                     ...additionalProps,
                     className: css(classes, itemClass, variant === 'icon' && styles.modifiers.icon)
                   })
-                ) : variant === 'routerLink' ? (
+                ) : isRouterLink ? (
                   this.extendChildClass(children, itemClass, this.ref, id, { ...additionalProps })
                 ) : (
                   <Component

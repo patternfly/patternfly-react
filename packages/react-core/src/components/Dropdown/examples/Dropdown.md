@@ -1147,7 +1147,7 @@ class RouterDropdown extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="routerlink" variant="routerLink">
+      <DropdownItem key="routerlink" isRouterLink>
         <Link to="/">Link</Link>
       </DropdownItem>
     ];
