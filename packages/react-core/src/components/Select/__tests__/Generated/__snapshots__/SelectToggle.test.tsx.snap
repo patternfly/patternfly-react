@@ -9,6 +9,7 @@ exports[`SelectToggle should match snapshot (auto-generated) 1`] = `
     className="pf-c-select__toggle ''"
     disabled={false}
     id="string"
+    isExpanded={false}
     onClick={[Function]}
     onKeyDown={[Function]}
     type="button"

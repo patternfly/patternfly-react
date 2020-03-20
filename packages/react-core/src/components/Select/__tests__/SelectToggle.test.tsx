@@ -24,7 +24,7 @@ describe('API', () => {
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
-        isExpanded
+        isOpen
         parentRef={{ current: document.createElement('div') }}
       >
         Select
@@ -48,7 +48,7 @@ describe('API', () => {
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
-        isExpanded
+        isOpen
         parentRef={{ current: document.createElement('div') }}
       >
         Select
@@ -69,7 +69,7 @@ describe('API', () => {
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
-        isExpanded
+        isOpen
         parentRef={{ current: document.createElement('div') }}
       >
         Select
@@ -95,7 +95,7 @@ describe('API', () => {
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
-        isExpanded
+        isOpen
         parentRef={{ current: document.createElement('div') }}
       >
         Select
@@ -122,7 +122,7 @@ describe('API', () => {
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
-        isExpanded
+        isOpen
         parentRef={{ current: document.createElement('div') }}
       >
         Select
