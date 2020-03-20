@@ -1,44 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import tippy from 'tippy.js';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import tippy, { Instance, Props, Content } from 'tippy.js';
+
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+export interface ITippyProps {
+  /** Props for tippy */
+  [_: string]: any;
+}
+
+interface PopoverBaseProps extends ITippyProps {
+  children: React.ReactNode;
+  content: React.ReactNode;
+  isEnabled?: boolean;
+  isVisible?: boolean;
+  onCreate?: (tippy: Instance<Props>) => void;
+  trigger?: string;
+}
 
 // These props are not native to `tippy.js` and are specific to React only.
 const REACT_ONLY_PROPS = ['children', 'onCreate', 'isVisible', 'isEnabled'];
-
-// Avoid Babel's large '_objectWithoutProperties' helper function.
-/**
+/** Avoid Babel's large '_objectWithoutProperties' helper function.
+ *
  * @param {object} props - Props object
  */
-function getNativeTippyProps(props) {
-  return Object.keys(props).reduce((acc, key) => {
-    if (REACT_ONLY_PROPS.indexOf(key) === -1) {
-      acc[key] = props[key];
-    }
-    return acc;
-  }, {});
+function getNativeTippyProps(props: ITippyProps) {
+  return Object.keys(props)
+    .filter(prop => !REACT_ONLY_PROPS.includes(prop))
+    .reduce(
+      (acc, key) => {
+        acc[key] = props[key];
+        return acc;
+      },
+      {} as ITippyProps
+    );
 }
 
-class PopoverBase extends React.Component {
-  /* eslint-disable-next-line */
+interface PopoverBaseState {
+  isMounted: boolean;
+}
+
+class PopoverBase extends React.Component<PopoverBaseProps, PopoverBaseState> {
   state = { isMounted: false };
-
   container = typeof document !== 'undefined' && document.createElement('div');
-
-  static propTypes = {
-    children: PropTypes.element.isRequired,
-    content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    isEnabled: PropTypes.bool,
-    isVisible: PropTypes.bool,
-    onCreate: PropTypes.func,
-    trigger: PropTypes.string,
-    hideOnClick: PropTypes.bool
-  };
+  tip: Instance<Props>;
 
   static defaultProps = {
-    isEnabled: undefined,
-    isVisible: undefined,
-    onCreate: undefined,
     trigger: 'mouseenter focus'
   };
 
@@ -49,7 +55,7 @@ class PopoverBase extends React.Component {
   get options() {
     return {
       ...getNativeTippyProps(this.props),
-      content: this.isReactElementContent ? this.container : this.props.content
+      content: this.isReactElementContent ? this.container : (this.props.content as Content)
     };
   }
 
@@ -58,11 +64,10 @@ class PopoverBase extends React.Component {
   }
 
   componentDidMount() {
-    /* eslint-disable-next-line */
     this.setState({ isMounted: true });
 
     /* eslint-disable-next-line */
-    this.tip = tippy(ReactDOM.findDOMNode(this), this.options);
+    this.tip = tippy(ReactDOM.findDOMNode(this) as HTMLElement, this.options);
 
     const { onCreate, isEnabled, isVisible } = this.props;
 

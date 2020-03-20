@@ -1,7 +1,7 @@
 /** This Component can be used to wrap a functional component in order to generate a random ID
  * Example of how to use this component
  *
- * const Component = ({id}) => (
+ * const Component = ({id}: {id: string}) => (
  *  <GenerateId>{randomId => (
  *     <div id={id || randomId}>
  *       div with random ID
@@ -9,29 +9,23 @@
  *   )}
  *  </GenerateId>
  *  );
- *
- * Component.propTypes = {
- *  id: PropTypes.string
- * }
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
 let currentId = 0;
 
-const propTypes = {
+interface GenerateIdProps {
   /** String to prefix the random id with */
-  prefix: PropTypes.string,
+  prefix?: string;
   /** Component to be rendered with the generated id */
-  children: PropTypes.func.isRequired
-};
+  children(id: string): React.ReactNode;
+}
 
-class GenerateId extends React.Component {
+class GenerateId extends React.Component<GenerateIdProps, {}> {
   static defaultProps = {
     prefix: 'pf-random-id-'
   };
-  static propTypes = propTypes;
   id = `${this.props.prefix}${currentId++}`;
 
   render() {
