@@ -42,7 +42,7 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
+    "build": "yarn build:babel && yarn build:types && node ./build/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
     "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",

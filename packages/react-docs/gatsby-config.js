@@ -53,6 +53,7 @@ module.exports = {
           '**/test-helpers',
           /.*react-styles.*/,
           /.*react-docs.*/,
+          /.*react-tokens.*/,
           /.*react-integration.*/,
           '**/\\..*', // dotfiles
           '**/*.d.ts',
