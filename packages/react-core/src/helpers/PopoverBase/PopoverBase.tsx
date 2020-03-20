@@ -20,15 +20,19 @@ interface PopoverBaseProps extends ITippyProps {
 // These props are not native to `tippy.js` and are specific to React only.
 const REACT_ONLY_PROPS = ['children', 'onCreate', 'isVisible', 'isEnabled'];
 /** Avoid Babel's large '_objectWithoutProperties' helper function.
+ *
  * @param {object} props - Props object
  */
 function getNativeTippyProps(props: ITippyProps) {
   return Object.keys(props)
     .filter(prop => !REACT_ONLY_PROPS.includes(prop))
-    .reduce((acc, key) => {
-      acc[key] = props[key];
-      return acc;
-    }, {} as ITippyProps);
+    .reduce(
+      (acc, key) => {
+        acc[key] = props[key];
+        return acc;
+      },
+      {} as ITippyProps
+    );
 }
 
 interface PopoverBaseState {
@@ -51,7 +55,7 @@ class PopoverBase extends React.Component<PopoverBaseProps, PopoverBaseState> {
   get options() {
     return {
       ...getNativeTippyProps(this.props),
-      content: this.isReactElementContent ? this.container : this.props.content as Content
+      content: this.isReactElementContent ? this.container : (this.props.content as Content)
     };
   }
 

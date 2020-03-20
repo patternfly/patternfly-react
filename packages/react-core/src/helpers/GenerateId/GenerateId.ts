@@ -20,7 +20,7 @@ interface GenerateIdProps {
   prefix?: string;
   /** Component to be rendered with the generated id */
   children(id: string): React.ReactNode;
-};
+}
 
 class GenerateId extends React.Component<GenerateIdProps, {}> {
   static defaultProps = {
