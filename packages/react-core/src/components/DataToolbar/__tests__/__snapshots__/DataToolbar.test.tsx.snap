@@ -132,6 +132,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             isDisabled={false}
                             isExpanded={false}
                             isGrouped={false}
+                            isOpen={false}
                             isPlain={false}
                             noResultsFoundText="No results found"
                             onClear={[Function]}
@@ -140,7 +141,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             onSelect={[Function]}
                             onToggle={[Function]}
                             placeholderText=""
+<<<<<<< HEAD
                             removeSelectionAriaLabel="Remove"
+=======
+                            selection=""
+>>>>>>> feat(Misc): update snapshots after rebase
                             selections="Running"
                             toggleAriaLabel="Options menu"
                             toggleIcon={null}
@@ -169,14 +174,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 id="pf-toggle-id-4"
                                 isActive={false}
                                 isDisabled={false}
-                                isExpanded={false}
-<<<<<<< HEAD
                                 isFocused={false}
                                 isHovered={false}
-=======
-                                isGrouped={false}
                                 isOpen={false}
->>>>>>> feat(Select): change isExpanded to isOpen, split selections prop, remove old CheckboxSelect
                                 isPlain={false}
                                 onClose={[Function]}
                                 onEnter={[Function]}
@@ -700,6 +700,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             isDisabled={false}
                             isExpanded={false}
                             isGrouped={false}
+                            isOpen={false}
                             isPlain={false}
                             noResultsFoundText="No results found"
                             onClear={[Function]}
@@ -708,7 +709,11 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             onSelect={[Function]}
                             onToggle={[Function]}
                             placeholderText=""
+<<<<<<< HEAD
                             removeSelectionAriaLabel="Remove"
+=======
+                            selection=""
+>>>>>>> feat(Misc): update snapshots after rebase
                             selections="Low"
                             toggleAriaLabel="Options menu"
                             toggleIcon={null}
@@ -737,14 +742,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 id="pf-toggle-id-5"
                                 isActive={false}
                                 isDisabled={false}
-                                isExpanded={false}
-<<<<<<< HEAD
                                 isFocused={false}
                                 isHovered={false}
-=======
-                                isGrouped={false}
                                 isOpen={false}
->>>>>>> feat(Select): change isExpanded to isOpen, split selections prop, remove old CheckboxSelect
                                 isPlain={false}
                                 onClose={[Function]}
                                 onEnter={[Function]}
@@ -1969,6 +1969,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           isDisabled={false}
                           isExpanded={false}
                           isGrouped={false}
+                          isOpen={false}
                           isPlain={false}
                           noResultsFoundText="No results found"
                           onClear={[Function]}
@@ -1977,7 +1978,11 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           onSelect={[Function]}
                           onToggle={[Function]}
                           placeholderText=""
+<<<<<<< HEAD
                           removeSelectionAriaLabel="Remove"
+=======
+                          selection=""
+>>>>>>> feat(Misc): update snapshots after rebase
                           selections="Running"
                           toggleAriaLabel="Options menu"
                           toggleIcon={null}
@@ -2006,14 +2011,9 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               id="pf-toggle-id-0"
                               isActive={false}
                               isDisabled={false}
-                              isExpanded={false}
-<<<<<<< HEAD
                               isFocused={false}
                               isHovered={false}
-=======
-                              isGrouped={false}
                               isOpen={false}
->>>>>>> feat(Select): change isExpanded to isOpen, split selections prop, remove old CheckboxSelect
                               isPlain={false}
                               onClose={[Function]}
                               onEnter={[Function]}
@@ -2136,6 +2136,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           isDisabled={false}
                           isExpanded={false}
                           isGrouped={false}
+                          isOpen={false}
                           isPlain={false}
                           noResultsFoundText="No results found"
                           onClear={[Function]}
@@ -2144,7 +2145,11 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           onSelect={[Function]}
                           onToggle={[Function]}
                           placeholderText=""
+<<<<<<< HEAD
                           removeSelectionAriaLabel="Remove"
+=======
+                          selection=""
+>>>>>>> feat(Misc): update snapshots after rebase
                           selections="Low"
                           toggleAriaLabel="Options menu"
                           toggleIcon={null}
@@ -2173,9 +2178,9 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               id="pf-toggle-id-1"
                               isActive={false}
                               isDisabled={false}
-                              isExpanded={false}
                               isFocused={false}
                               isHovered={false}
+                              isOpen={false}
                               isPlain={false}
                               onClose={[Function]}
                               onEnter={[Function]}
