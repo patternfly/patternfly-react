@@ -30,15 +30,15 @@ class SingleSelectInput extends React.Component {
 
     this.state = {
       isToggleIcon: false,
-      isExpanded: false,
+      isOpen: false,
       selected: null,
       isDisabled: false,
       direction: SelectDirection.down
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -47,7 +47,7 @@ class SingleSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isExpanded: false
+          isOpen: false
         });
         console.log('selected:', selection);
       }
@@ -56,7 +56,7 @@ class SingleSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -86,7 +86,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id';
     return (
       <div>
@@ -99,8 +99,8 @@ class SingleSelectInput extends React.Component {
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
-          selections={selected}
-          isExpanded={isExpanded}
+          selection={selected}
+          isOpen={isOpen}
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
@@ -153,13 +153,13 @@ class CheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -194,7 +194,7 @@ class CheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <div>
@@ -207,7 +207,7 @@ class CheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
         >
@@ -227,13 +227,13 @@ class GroupedCheckboxSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -275,7 +275,7 @@ class GroupedCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'grouped-checkbox-select-id';
     return (
       <div>
@@ -287,7 +287,7 @@ class GroupedCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
           isGrouped
@@ -309,7 +309,7 @@ class FilteringCheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
@@ -328,9 +328,9 @@ class FilteringCheckboxSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -376,7 +376,7 @@ class FilteringCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, filteredOptions } = this.state;
+    const { isOpen, selected, filteredOptions } = this.state;
     const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
@@ -388,7 +388,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
           onFilter={this.onFilter}
@@ -421,16 +421,16 @@ class TypeaheadSelectInput extends React.Component {
         { value: 'New York' },
         { value: 'North Carolina' }
       ],
-      isExpanded: false,
+      isOpen: false,
       selected: null,
       isDisabled: false,
       isCreatable: false,
       hasOnCreateOption: false
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -439,7 +439,7 @@ class TypeaheadSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isExpanded: false
+          isOpen: false
         });
         console.log('selected:', selection);
       }
@@ -454,7 +454,7 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -478,7 +478,7 @@ class TypeaheadSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <div>
@@ -491,8 +491,8 @@ class TypeaheadSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
-          selections={selected}
-          isExpanded={isExpanded}
+          selection={selected}
+          isOpen={isOpen}
           aria-labelledby={titleId}
           placeholderText="Select a state"
           isDisabled={isDisabled}
@@ -549,14 +549,14 @@ class TypeaheadSelectInput extends React.Component {
       <SelectOption key={5} value="North Carolina" />
     ];
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: null,
       options: this.options
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded,
+        isOpen,
         options: this.options
       });
     };
@@ -566,7 +566,7 @@ class TypeaheadSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isExpanded: false
+          isOpen: false
         });
         console.log('selected:', selection);
       }
@@ -575,7 +575,7 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false,
+        isOpen: false,
         options: this.options
       });
     };
@@ -594,7 +594,7 @@ class TypeaheadSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, options } = this.state;
+    const { isOpen, selected, options } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <div>
@@ -608,8 +608,8 @@ class TypeaheadSelectInput extends React.Component {
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           onFilter={this.customFilter}
-          selections={selected}
-          isExpanded={isExpanded}
+          selection={selected}
+          isOpen={isOpen}
           aria-labelledby={titleId}
           placeholderText="Select a state"
         >
@@ -638,7 +638,7 @@ class MultiTypeaheadSelectInput extends React.Component {
         { value: 'New York', disabled: false },
         { value: 'North Carolina', disabled: false }
       ],
-      isExpanded: false,
+      isOpen: false,
       selected: [],
       isCreatable: false,
       hasOnCreateOption: false
@@ -650,9 +650,9 @@ class MultiTypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -674,7 +674,7 @@ class MultiTypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -692,7 +692,7 @@ class MultiTypeaheadSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isCreatable, hasOnCreateOption } = this.state;
+    const { isOpen, selected, isCreatable, hasOnCreateOption } = this.state;
     const titleId = 'multi-typeahead-select-id';
 
     return (
@@ -707,7 +707,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           aria-labelledby={titleId}
           placeholderText="Select a state"
           isCreatable={isCreatable}
@@ -772,13 +772,13 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     ];
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -800,7 +800,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -814,7 +814,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'multi-typeahead-select-id';
 
     return (
@@ -830,7 +830,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
           onClear={this.clearSelection}
           onFilter={this.customFilter}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           aria-labelledby={titleId}
           placeholderText="Select a state"
         >
@@ -859,14 +859,14 @@ class PlainSelectInput extends React.Component {
     ];
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       isPlain: true,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -888,13 +888,13 @@ class PlainSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false
+        isOpen: false
       });
     };
   }
 
   render() {
-    const { isExpanded, isPlain, selected } = this.state;
+    const { isOpen, isPlain, selected } = this.state;
     const titleId = 'plain-typeahead-select-id';
 
     return (
@@ -909,7 +909,7 @@ class PlainSelectInput extends React.Component {
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           isPlain={isPlain}
           aria-labelledby={titleId}
           placeholderText="Select a state"
@@ -933,14 +933,14 @@ class SingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       isDisabled: false,
       direction: SelectDirection.down
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -964,7 +964,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, direction } = this.state;
+    const { isOpen, selected, isDisabled, direction } = this.state;
     const titleId = 'title-id';
     return (
       <div>
@@ -975,7 +975,7 @@ class SingleSelectInput extends React.Component {
           variant={SelectVariant.panel}
           aria-label="Select Input"
           onToggle={this.onToggle}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}

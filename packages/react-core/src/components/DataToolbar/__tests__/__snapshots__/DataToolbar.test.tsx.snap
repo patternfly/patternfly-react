@@ -170,8 +170,13 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 isActive={false}
                                 isDisabled={false}
                                 isExpanded={false}
+<<<<<<< HEAD
                                 isFocused={false}
                                 isHovered={false}
+=======
+                                isGrouped={false}
+                                isOpen={false}
+>>>>>>> feat(Select): change isExpanded to isOpen, split selections prop, remove old CheckboxSelect
                                 isPlain={false}
                                 onClose={[Function]}
                                 onEnter={[Function]}
@@ -733,8 +738,13 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 isActive={false}
                                 isDisabled={false}
                                 isExpanded={false}
+<<<<<<< HEAD
                                 isFocused={false}
                                 isHovered={false}
+=======
+                                isGrouped={false}
+                                isOpen={false}
+>>>>>>> feat(Select): change isExpanded to isOpen, split selections prop, remove old CheckboxSelect
                                 isPlain={false}
                                 onClose={[Function]}
                                 onEnter={[Function]}
@@ -1997,8 +2007,13 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               isActive={false}
                               isDisabled={false}
                               isExpanded={false}
+<<<<<<< HEAD
                               isFocused={false}
                               isHovered={false}
+=======
+                              isGrouped={false}
+                              isOpen={false}
+>>>>>>> feat(Select): change isExpanded to isOpen, split selections prop, remove old CheckboxSelect
                               isPlain={false}
                               onClose={[Function]}
                               onEnter={[Function]}
