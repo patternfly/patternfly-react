@@ -21,52 +21,51 @@ interface TypeAheadOption {
 }
 
 export interface SelectDemoState {
-  singleIsExpanded: boolean;
+  singleisOpen: boolean;
   singleSelected: string;
-  disabledSingleIsExpanded: boolean;
+  disabledSingleisOpen: boolean;
   disabledSingleSelected: string;
-  customSingleIsExpanded: boolean;
-  customSingleSelected: string | SelectOptionObject | (string | SelectOptionObject)[];
-  checkIsExpanded: boolean;
+  customSingleisOpen: boolean;
+  customSingleSelected: string | SelectOptionObject;
+  checkisOpen: boolean;
   checkSelected: string[];
-  typeaheadIsExpanded: boolean;
-  typeaheadSelected: string | SelectOptionObject | (string | SelectOptionObject)[];
-  typeaheadMultiIsExpanded: boolean;
+  typeaheadisOpen: boolean;
+  typeaheadSelected: string | SelectOptionObject;
+  typeaheadMultiisOpen: boolean;
   typeaheadMultiSelected: string[];
-  cdtypeaheadMultiIsExpanded: boolean;
+  cdtypeaheadMultiisOpen: boolean;
   cdtypeaheadMultiSelected: string[];
-  plainTypeaheadMultiIsExpanded: boolean;
+  plainTypeaheadMultiisOpen: boolean;
   plainTypeaheadMultiSelected: string[];
   plainTypeaheadMultiIsPlain: boolean;
-  customTypeaheadMultiIsExpanded: boolean;
+  customTypeaheadMultiisOpen: boolean;
   customTypeaheadMultiSelected: string[];
   direction: SelectDirection.up | SelectDirection.down;
   typeaheadOptions: TypeAheadOption[];
   typeaheadNewOptions: boolean;
-  customContentIsExpanded: boolean;
-  typeaheadIsCreatable: boolean;
+  customContentisOpen: boolean;
 }
 
-export class SelectDemo extends Component<{}, SelectDemoState> {
-  state: SelectDemoState = {
-    singleIsExpanded: false,
+export class SelectDemo extends Component<SelectDemoState> {
+  state = {
+    singleisOpen: false,
     singleSelected: null,
-    disabledSingleIsExpanded: null,
-    disabledSingleSelected: undefined,
-    customSingleIsExpanded: false,
+    disabledSingleisOpen: null,
+    disabledSingleSelected: '',
+    customSingleisOpen: false,
     customSingleSelected: null,
-    checkIsExpanded: false,
+    checkisOpen: false,
     checkSelected: [],
-    typeaheadIsExpanded: false,
+    typeaheadisOpen: false,
     typeaheadSelected: null,
-    typeaheadMultiIsExpanded: false,
+    typeaheadMultiisOpen: false,
     typeaheadMultiSelected: [],
-    cdtypeaheadMultiIsExpanded: false,
+    cdtypeaheadMultiisOpen: false,
     cdtypeaheadMultiSelected: [],
-    plainTypeaheadMultiIsExpanded: false,
+    plainTypeaheadMultiisOpen: false,
     plainTypeaheadMultiSelected: [],
     plainTypeaheadMultiIsPlain: true,
-    customTypeaheadMultiIsExpanded: false,
+    customTypeaheadMultiisOpen: false,
     customTypeaheadMultiSelected: [],
     direction: SelectDirection.down,
     typeaheadOptions: [
@@ -78,7 +77,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
-    customContentIsExpanded: false
+    customContentisOpen: false
   };
 
   singleOptions = [
@@ -141,63 +140,63 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
     });
   };
 
-  singleOnToggle = (singleIsExpanded: boolean) => {
+  singleOnToggle = (singleisOpen: boolean) => {
     this.setState({
-      singleIsExpanded
+      singleisOpen
     });
   };
 
-  disabledSingleOnToggle = (disabledSingleIsExpanded: boolean) => {
+  disabledSingleOnToggle = (disabledSingleisOpen: boolean) => {
     this.setState({
-      disabledSingleIsExpanded
+      disabledSingleisOpen
     });
   };
 
-  customSingleOnToggle = (customSingleIsExpanded: boolean) => {
+  customSingleOnToggle = (customSingleisOpen: boolean) => {
     this.setState({
-      customSingleIsExpanded
+      customSingleisOpen
     });
   };
 
-  checkOnToggle = (checkIsExpanded: boolean) => {
+  checkOnToggle = (checkisOpen: boolean) => {
     this.setState({
-      checkIsExpanded
+      checkisOpen
     });
   };
 
-  typeaheadOnToggle = (typeaheadIsExpanded: boolean) => {
+  typeaheadOnToggle = (typeaheadisOpen: boolean) => {
     this.setState({
-      typeaheadIsExpanded
+      typeaheadisOpen
     });
   };
 
-  typeaheadMultiOnToggle = (typeaheadMultiIsExpanded: boolean) => {
+  typeaheadMultiOnToggle = (typeaheadMultiisOpen: boolean) => {
     this.setState({
-      typeaheadMultiIsExpanded
+      typeaheadMultiisOpen
     });
   };
 
-  cdtypeaheadMultiOnToggle = (cdtypeaheadMultiIsExpanded: boolean) => {
+  cdtypeaheadMultiOnToggle = (cdtypeaheadMultiisOpen: boolean) => {
     this.setState({
-      cdtypeaheadMultiIsExpanded
+      cdtypeaheadMultiisOpen
     });
   };
 
-  plainTypeaheadMultiOnToggle = (plainTypeaheadMultiIsExpanded: boolean) => {
+  plainTypeaheadMultiOnToggle = (plainTypeaheadMultiisOpen: boolean) => {
     this.setState({
-      plainTypeaheadMultiIsExpanded
+      plainTypeaheadMultiisOpen
     });
   };
 
-  customTypeaheadMultiOnToggle = (customTypeaheadMultiIsExpanded: boolean) => {
+  customTypeaheadMultiOnToggle = (customTypeaheadMultiisOpen: boolean) => {
     this.setState({
-      customTypeaheadMultiIsExpanded
+      customTypeaheadMultiisOpen
     });
   };
 
-  customContentOnToggle = (customContentIsExpanded: boolean) => {
+  customContentOnToggle = (customContentisOpen: boolean) => {
     this.setState({
-      customContentIsExpanded
+      customContentisOpen
     });
   };
 
@@ -207,7 +206,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
     } else {
       this.setState({
         singleSelected: selection,
-        singleIsExpanded: false
+        singleisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -223,7 +222,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
     } else {
       this.setState({
         disabledSingleSelected: selection,
-        disabledSingleIsExpanded: false
+        disabledSingleisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -239,7 +238,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
     } else {
       this.setState({
         customSingleSelected: selection,
-        customSingleIsExpanded: false
+        customSingleisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -270,7 +269,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
     } else {
       this.setState({
         typeaheadSelected: selection,
-        typeaheadIsExpanded: false
+        typeaheadisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -359,28 +358,28 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   clearSelection = () => {
     this.setState({
       singleSelected: null,
-      singleIsExpanded: false,
-      disabledSingleIsExpanded: null,
+      singleisOpen: false,
+      disabledSingleisOpen: null,
       disabledSingleSelected: '',
       customSingleSelected: null,
-      customSingleIsExpanded: false,
+      customSingleisOpen: false,
       checkSelected: [],
-      checkIsExpanded: false,
+      checkisOpen: false,
       typeaheadSelected: null,
-      typeaheadIsExpanded: false,
+      typeaheadisOpen: false,
       typeaheadMultiSelected: [],
-      typeaheadMultiIsExpanded: false,
-      cdtypeaheadMultiIsExpanded: false,
+      typeaheadMultiisOpen: false,
+      cdtypeaheadMultiisOpen: false,
       cdtypeaheadMultiSelected: [],
       plainTypeaheadMultiSelected: [],
-      plainTypeaheadMultiIsExpanded: false,
+      plainTypeaheadMultiisOpen: false,
       customTypeaheadMultiSelected: [],
-      customTypeaheadMultiIsExpanded: false
+      customTypeaheadMultiisOpen: false
     });
   };
 
   renderSingleSelect() {
-    const { singleIsExpanded, singleSelected } = this.state;
+    const { singleisOpen, singleSelected } = this.state;
     const titleId = 'title-id';
     return (
       <StackItem isFilled={false}>
@@ -395,8 +394,8 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.singleOnToggle}
             onSelect={this.singleOnSelect}
-            selections={singleSelected}
-            isExpanded={singleIsExpanded}
+            selection={singleSelected}
+            isOpen={singleisOpen}
             aria-labelledby={titleId}
             direction={this.state.direction}
             maxHeight={200}
@@ -424,7 +423,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderDisabledSingleSelect() {
-    const { disabledSingleIsExpanded, disabledSingleSelected } = this.state;
+    const { disabledSingleisOpen, disabledSingleSelected } = this.state;
     const titleId = 'title-id';
     return (
       <StackItem isFilled={false}>
@@ -439,8 +438,8 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.disabledSingleOnToggle}
             onSelect={this.disabledSingleOnSelect}
-            selections={disabledSingleSelected}
-            isExpanded={disabledSingleIsExpanded}
+            selection={disabledSingleSelected}
+            isOpen={disabledSingleisOpen}
             aria-labelledby={titleId}
             isDisabled
           >
@@ -459,7 +458,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderCustomSingleSelect() {
-    const { customSingleIsExpanded, customSingleSelected } = this.state;
+    const { customSingleisOpen, customSingleSelected } = this.state;
     const titleId = 'title-id';
     return (
       <StackItem isFilled={false}>
@@ -474,8 +473,8 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             aria-label="CustomSelect Input"
             onToggle={this.customSingleOnToggle}
             onSelect={this.customSingleOnSelect}
-            selections={customSingleSelected}
-            isExpanded={customSingleIsExpanded}
+            selection={customSingleSelected}
+            isOpen={customSingleisOpen}
             aria-labelledby={titleId}
           >
             <SelectOption key={0} value="Choose..." isPlaceholder>
@@ -513,7 +512,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderCheckboxSelect() {
-    const { checkIsExpanded, checkSelected } = this.state;
+    const { checkisOpen, checkSelected } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <StackItem isFilled={false}>
@@ -529,7 +528,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onToggle={this.checkOnToggle}
             onSelect={this.checkOnSelect}
             selections={checkSelected}
-            isExpanded={checkIsExpanded}
+            isOpen={checkisOpen}
             placeholderText="Filter by status"
             aria-labelledby={titleId}
           >
@@ -543,7 +542,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   renderTypeaheadSelect() {
     const {
       typeaheadOptions,
-      typeaheadIsExpanded,
+      typeaheadisOpen,
       typeaheadSelected,
       typeaheadIsCreatable,
       typeaheadNewOptions
@@ -563,8 +562,8 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onToggle={this.typeaheadOnToggle}
             onSelect={this.typeaheadOnSelect}
             onClear={this.clearSelection}
-            selections={typeaheadSelected}
-            isExpanded={typeaheadIsExpanded}
+            selection={typeaheadSelected}
+            isOpen={typeaheadisOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
@@ -598,7 +597,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderTypeaheadMultiSelect() {
-    const { typeaheadMultiIsExpanded, typeaheadMultiSelected } = this.state;
+    const { typeaheadMultiisOpen, typeaheadMultiSelected } = this.state;
     const titleId = 'multi-typeahead-select-id';
 
     return (
@@ -616,7 +615,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onSelect={this.typeaheadMultiOnSelect}
             onClear={this.clearSelection}
             selections={typeaheadMultiSelected}
-            isExpanded={typeaheadMultiIsExpanded}
+            isOpen={typeaheadMultiisOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
           >
@@ -630,7 +629,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderCustomDataTypeaheadMultiSelect() {
-    const { cdtypeaheadMultiIsExpanded, cdtypeaheadMultiSelected } = this.state;
+    const { cdtypeaheadMultiisOpen, cdtypeaheadMultiSelected } = this.state;
     const titleId = 'multi-typeahead-select-id';
 
     return (
@@ -648,7 +647,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onSelect={this.cdtypeaheadMultiOnSelect}
             onClear={this.clearSelection}
             selections={cdtypeaheadMultiSelected}
-            isExpanded={cdtypeaheadMultiIsExpanded}
+            isOpen={cdtypeaheadMultiisOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
           >
@@ -662,7 +661,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderCustomTypeaheadMultiSelect() {
-    const { customTypeaheadMultiIsExpanded, customTypeaheadMultiSelected } = this.state;
+    const { customTypeaheadMultiisOpen, customTypeaheadMultiSelected } = this.state;
     const titleId = 'custom-multi-typeahead-select-id';
 
     return (
@@ -680,7 +679,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onSelect={this.customTypeaheadMultiOnSelect}
             onClear={this.clearSelection}
             selections={customTypeaheadMultiSelected}
-            isExpanded={customTypeaheadMultiIsExpanded}
+            isOpen={customTypeaheadMultiisOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
           >
@@ -700,7 +699,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderPlainTypeaheadMultiSelect() {
-    const { plainTypeaheadMultiIsExpanded, plainTypeaheadMultiSelected, plainTypeaheadMultiIsPlain } = this.state;
+    const { plainTypeaheadMultiisOpen, plainTypeaheadMultiSelected, plainTypeaheadMultiIsPlain } = this.state;
     const titleId = 'multi-typeahead-plain-id';
 
     return (
@@ -718,7 +717,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onSelect={this.plainTypeaheadMultiOnSelect}
             onClear={this.clearSelection}
             selections={plainTypeaheadMultiSelected}
-            isExpanded={plainTypeaheadMultiIsExpanded}
+            isOpen={plainTypeaheadMultiisOpen}
             isPlain={plainTypeaheadMultiIsPlain}
             aria-labelledby={titleId}
             placeholderText="Select a state"
@@ -739,7 +738,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
   }
 
   renderSelectCustomContent() {
-    const { customContentIsExpanded } = this.state;
+    const { customContentisOpen } = this.state;
     const titleId = 'custom-content-title-id';
     return (
       <StackItem isFilled={false}>
@@ -753,7 +752,7 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             toggleId="custom-content-select"
             aria-label="Select Input"
             onToggle={this.customContentOnToggle}
-            isExpanded={customContentIsExpanded}
+            isOpen={customContentisOpen}
             aria-labelledby={titleId}
             direction={this.state.direction}
             maxHeight={200}
@@ -785,8 +784,8 @@ export class SelectDemo extends Component<{}, SelectDemoState> {
             onToggle={() => null}
             onSelect={() => null}
             onClear={() => null}
-            selections={''}
-            isExpanded={false}
+            selection=""
+            isOpen={false}
             aria-labelledby={titleId}
             placeholderText="Select a state"
           >

@@ -257,7 +257,7 @@ class FilterTableDemo extends React.Component {
             onToggle={this.onFilterToggle}
             onSelect={this.onLocationSelect}
             selections={filters.location[0]}
-            isExpanded={isFilterDropdownOpen}
+            isOpen={isFilterDropdownOpen}
             placeholderText="Any"
           >
             {locationMenuItems}
@@ -301,7 +301,7 @@ class FilterTableDemo extends React.Component {
             onToggle={this.onFilterToggle}
             onSelect={this.onStatusSelect}
             selections={filters.status}
-            isExpanded={isFilterDropdownOpen}
+            isOpen={isFilterDropdownOpen}
             placeholderText="Filter by status"
           >
             {statusMenuItems}

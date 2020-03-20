@@ -13,7 +13,7 @@ import {
 export interface FormState {
   value: string;
   isValid: boolean;
-  isExpanded: boolean;
+  isOpen: boolean;
   selected: string[];
   validatedValue: string;
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
@@ -25,7 +25,7 @@ export class FormDemo extends Component<FormProps, FormState> {
     this.state = {
       value: 'Five',
       isValid: false,
-      isExpanded: false,
+      isOpen: false,
       selected: [],
       validatedValue: '',
       validated: ValidatedOptions.default
@@ -38,9 +38,9 @@ export class FormDemo extends Component<FormProps, FormState> {
     const validated = /^\d+$/.test(value) ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedValue: value, validated });
   };
-  onToggle = (isExpanded: boolean) => {
+  onToggle = (isOpen: boolean) => {
     this.setState({
-      isExpanded
+      isOpen
     });
   };
   onSelect = (event: React.SyntheticEvent, selection: string) => {
@@ -62,7 +62,7 @@ export class FormDemo extends Component<FormProps, FormState> {
   clearSelection = () => {
     this.setState({
       selected: [],
-      isExpanded: false
+      isOpen: false
     });
   };
 
@@ -71,7 +71,7 @@ export class FormDemo extends Component<FormProps, FormState> {
   }
 
   render() {
-    const { value, isValid, isExpanded, selected, validatedValue, validated } = this.state;
+    const { value, isValid, isOpen, selected, validatedValue, validated } = this.state;
     const titleId = 'multi-typeahead-select-id';
     const options = [
       { value: 'Alabama', disabled: false },
@@ -116,7 +116,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                 onSelect={this.onSelect}
                 onClear={this.clearSelection}
                 selections={selected}
-                isExpanded={isExpanded}
+                isOpen={isOpen}
                 aria-labelledby={titleId}
                 placeholderText="Select a state"
               >

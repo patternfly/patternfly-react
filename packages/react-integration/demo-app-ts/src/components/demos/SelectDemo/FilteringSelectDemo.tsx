@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 
 /* eslint-disable no-console */
 export interface FilteringSelectDemoState {
-  isExpanded: boolean;
+  isOpen: boolean;
   selections: string[];
 }
 
 export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
-  state: FilteringSelectDemoState = {
-    isExpanded: false,
+  state = {
+    isOpen: false,
     selections: []
   };
 
@@ -28,9 +28,9 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
     </SelectGroup>
   ];
 
-  onToggle = (isExpanded: boolean) => {
+  onToggle = (isOpen: boolean) => {
     this.setState({
-      isExpanded
+      isOpen
     });
   };
 
@@ -78,7 +78,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
   };
 
   render() {
-    const { isExpanded, selections } = this.state;
+    const { isOpen, selections } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <div>
@@ -92,7 +92,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selections}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
           onFilter={this.onFilter}
