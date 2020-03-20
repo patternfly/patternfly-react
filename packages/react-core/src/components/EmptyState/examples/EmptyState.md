@@ -18,7 +18,7 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Single
+```js title=Basic
 import React from 'react';
 import {
   Title,
