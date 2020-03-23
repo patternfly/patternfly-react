@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.149.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.148.3...@patternfly/react-core@3.149.0) (2020-03-23)
+
+
+### Features
+
+* **card view:** Adds Card View to demos ([#3441](https://github.com/patternfly/patternfly-react/issues/3441)) ([802e7e3](https://github.com/patternfly/patternfly-react/commit/802e7e3a4c73493e43fb97ca6b2dc1542e81a858))
+
+
+
+
+
 ## [3.148.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.148.2...@patternfly/react-core@3.148.3) (2020-03-20)
 
 **Note:** Version bump only for package @patternfly/react-core
