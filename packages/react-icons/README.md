@@ -11,7 +11,7 @@ import { TimesIcon } from '@patternfly/react-icons';
 const closeIcon = <TimesIcon />;
 ```
 
-For a list of the available icons please refer to the [PatternFly React Docs](https://patternfly-react.surge.sh/patternfly-4/icons/)
+For a list of the available icons please refer to the [PatternFly React Docs](https://patternfly-react.surge.sh/icons/)
 
 Every icon component has the following props:
 
