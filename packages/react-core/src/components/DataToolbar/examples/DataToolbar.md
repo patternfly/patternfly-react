@@ -656,7 +656,7 @@ class DataToolbarWithFilterExample extends React.Component {
       if (type) {
         this.setState((prevState) => {
           const newState = Object.assign(prevState);
-          newState.filters[type.toLowerCase()] = newState.filters[type.toLowerCase()].filter((s: string) => s !== id);
+          newState.filters[type.toLowerCase()] = newState.filters[type.toLowerCase()].filter(s => s !== id);
           return {
             filters: newState.filters
           };
