@@ -10,8 +10,8 @@ interface ContextSelectorState {
 
 export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
   items: string[];
-  onToggle: (event: any, isOpen: boolean) => void;
-  onSelect: (event: any, value: string) => void;
+  onToggle: (event, isOpen: boolean) => void;
+  onSelect: (event, value: string) => void;
   onSearchInputChange: (value: string) => void;
   onSearchButtonClick: (event: React.SyntheticEvent<HTMLButtonElement, Event>) => void;
   constructor(props: {}) {
