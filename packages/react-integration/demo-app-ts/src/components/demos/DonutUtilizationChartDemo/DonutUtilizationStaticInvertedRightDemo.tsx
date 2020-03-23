@@ -2,9 +2,9 @@ import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
 export class DonutUtilizationStaticInvertedRightDemo extends React.Component<{}, { used: number; spacer: string }> {
-  interval: any;
-  constructor(props: any) {
-    super(props);
+  interval: number;
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       spacer: '',
       used: 100
@@ -14,7 +14,7 @@ export class DonutUtilizationStaticInvertedRightDemo extends React.Component<{},
   componentDidMount() {
     window.scrollTo(0, 0);
 
-    this.interval = setInterval(() => {
+    this.interval = window.setInterval(() => {
       const { used } = this.state;
       const val = (((used - 10) % 100) + 100) % 100;
       this.setState({

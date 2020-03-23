@@ -13,8 +13,8 @@ interface DataListState {
 }
 
 export class DataListCompactDemo extends React.Component<DataListProps, DataListState> {
-  constructor(props: any) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       selectedDataListItemId: ''
     };

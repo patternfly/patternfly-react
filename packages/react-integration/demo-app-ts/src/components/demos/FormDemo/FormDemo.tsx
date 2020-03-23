@@ -20,8 +20,8 @@ export interface FormState {
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
-  constructor(props: any) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       value: 'Five',
       isValid: false,

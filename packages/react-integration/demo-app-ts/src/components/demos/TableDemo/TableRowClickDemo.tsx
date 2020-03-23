@@ -18,8 +18,8 @@ interface ITableRowClickDemoState {
 
 export class TableRowClickDemo extends React.Component<TableProps, ITableRowClickDemoState> {
   rowClickHandler: (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => void;
-  constructor(props: any) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces'],
       rows: [

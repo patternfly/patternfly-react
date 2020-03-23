@@ -7,9 +7,9 @@ import {
 } from '@patternfly/react-charts';
 
 export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { used: number }> {
-  interval: any;
-  constructor(props: any) {
-    super(props);
+  interval: number;
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       used: 0
     };
@@ -18,7 +18,7 @@ export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { 
   componentDidMount() {
     window.scrollTo(0, 0);
 
-    this.interval = setInterval(() => {
+    this.interval = window.setInterval(() => {
       const { used } = this.state;
       this.setState({ used: (used + 10) % 100 });
     }, 1000);

@@ -8,8 +8,8 @@ import {
 
 interface ApplicationLauncherFavoritesDemoState {
   isOpen: boolean;
-  favorites: any[];
-  filteredItems: any[];
+  favorites: string[];
+  filteredItems: JSX.Element[];
 }
 
 export class ApplicationLauncherFavoritesDemo extends React.Component<null, ApplicationLauncherFavoritesDemoState> {
@@ -56,7 +56,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       isOpen: !this.state.isOpen
     });
   };
-  onFavorite = (itemId: any, isFavorite: boolean) => {
+  onFavorite = (itemId: string, isFavorite: boolean) => {
     if (isFavorite) {
       this.setState({
         favorites: this.state.favorites.filter(id => id !== itemId)
@@ -76,7 +76,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       const filteredGroups = this.appLauncherItems
         .map(group => {
           const filteredGroup = React.cloneElement(group, {
-            children: group.props.children.filter((item: any) => {
+            children: group.props.children.filter((item: JSX.Element) => {
               if (item.type === ApplicationLauncherSeparator) {
                 return item;
               }
@@ -95,7 +95,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
       if (filteredGroups.length > 0) {
         let lastGroup = filteredGroups.pop();
         lastGroup = React.cloneElement(lastGroup, {
-          children: lastGroup.props.children.filter((item: any) => item.type !== ApplicationLauncherSeparator)
+          children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
         });
         filteredGroups.push(lastGroup);
       }

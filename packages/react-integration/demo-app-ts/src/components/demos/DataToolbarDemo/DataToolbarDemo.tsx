@@ -12,6 +12,7 @@ import {
   InputGroup,
   Select,
   SelectOption,
+  SelectOptionObject,
   SelectVariant,
   Dropdown,
   DropdownItem,
@@ -72,24 +73,26 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     this.setState({ inputValue: newValue });
   };
 
-  onSelect = (type: any, event: any, selection: any) => {
+  onSelect = (type: string, event: any, selection: string | SelectOptionObject) => {
     const checked = event.target.checked;
     this.setState(prevState => {
       const prevSelections = prevState.filters[type];
       return {
         filters: {
           ...prevState.filters,
-          [type]: checked ? [...prevSelections, selection] : prevSelections.filter((value: any) => value !== selection)
+          [type]: checked
+            ? [...prevSelections, selection.toString()]
+            : prevSelections.filter((value: string) => value !== selection.toString())
         }
       };
     });
   };
 
-  onStatusSelect = (event: React.SyntheticEvent, selection: any) => {
+  onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.onSelect('status', event, selection);
   };
 
-  onRiskSelect = (event: React.SyntheticEvent, selection: any) => {
+  onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.onSelect('risk', event, selection);
   };
 

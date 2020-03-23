@@ -20,10 +20,10 @@ interface FormSelectGroup {
 }
 
 export class FormSelectDemo extends Component<{}, FormSelectState> {
-  groups: any[];
-  validatedSelectOptions: any[];
-  constructor(props: any) {
-    super(props);
+  groups: FormSelectGroup[];
+  validatedSelectOptions: FormSelectOption[];
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       value: '2',
       validatedValue: '',
