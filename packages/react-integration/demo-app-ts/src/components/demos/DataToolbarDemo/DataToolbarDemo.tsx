@@ -29,7 +29,7 @@ import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 interface Filter {
   risk: string[];
   status: string[];
-  [key: string]: string[];
+  key?: string[];
 }
 
 interface DataToolbarState {
@@ -99,9 +99,10 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
   onDelete = (type = '', id = '') => {
     if (type) {
       this.setState(prevState => {
-        prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter((s: string) => s !== id);
+        const newState = Object.assign(prevState);
+        newState.filters[type.toLowerCase()] = newState.filters[type.toLowerCase()].filter((s: string) => s !== id);
         return {
-          filters: prevState.filters
+          filters: newState.filters
         };
       });
     } else {
