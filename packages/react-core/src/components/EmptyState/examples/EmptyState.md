@@ -32,7 +32,7 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 SimpleEmptyState = () => (
-  <EmptyState variant={EmptyStateVariant.full}>
+  <EmptyState>
     <EmptyStateIcon icon={CubesIcon} />
     <Title headingLevel="h5" size="lg">
       Empty State
@@ -68,7 +68,7 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 SimpleEmptyState = () => (
-  <EmptyState variant={EmptyStateVariant.small}>
+  <EmptyState variant={EmptyStateVariant.sm}>
     <EmptyStateIcon icon={CubesIcon} />
     <Title headingLevel="h5" size="lg">
       Empty State
@@ -104,7 +104,7 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 SimpleEmptyState = () => (
-  <EmptyState variant={EmptyStateVariant.large}>
+  <EmptyState variant={EmptyStateVariant.lg}>
     <EmptyStateIcon icon={CubesIcon} />
     <Title headingLevel="h5" size="lg">
       Empty State

@@ -32,7 +32,8 @@ export class EmptyStateDemo extends Component {
           <Button variant="link">Action area</Button>
         </EmptyStateSecondaryActions>
       </React.Fragment>
-    )
+    ),
+    variant: EmptyStateVariant.lg
   };
   mySmallEmptyStateProps: EmptyStateProps = {
     children: (
@@ -56,7 +57,7 @@ export class EmptyStateDemo extends Component {
         </EmptyStateSecondaryActions>
       </React.Fragment>
     ),
-    variant: EmptyStateVariant.small
+    variant: EmptyStateVariant.sm
   };
   myFullEmptyStateProps: EmptyStateProps = {
     children: (
@@ -79,8 +80,7 @@ export class EmptyStateDemo extends Component {
           <Button variant="link">Action area</Button>
         </EmptyStateSecondaryActions>
       </React.Fragment>
-    ),
-    variant: EmptyStateVariant.full
+    )
   };
 
   componentDidMount() {
@@ -90,9 +90,9 @@ export class EmptyStateDemo extends Component {
   render() {
     return (
       <React.Fragment>
-        <EmptyState>{this.myLargeEmptyStateProps.children}</EmptyState>
+        <EmptyState variant={this.myLargeEmptyStateProps.variant}>{this.myLargeEmptyStateProps.children}</EmptyState>
         <EmptyState variant={this.mySmallEmptyStateProps.variant}>{this.mySmallEmptyStateProps.children}</EmptyState>
-        <EmptyState variant={this.myFullEmptyStateProps.variant}>{this.myFullEmptyStateProps.children}</EmptyState>
+        <EmptyState>{this.myFullEmptyStateProps.children}</EmptyState>
       </React.Fragment>
     );
   }
