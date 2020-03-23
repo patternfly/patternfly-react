@@ -8,11 +8,11 @@ export class TextInputDemo extends Component {
     validated: ValidatedOptions.default
   };
 
-  handleTextInputChange = value => {
+  handleTextInputChange = (value: string) => {
     this.setState({ value });
   };
 
-  handleValidatedTextInputChange = value => {
+  handleValidatedTextInputChange = (value: string) => {
     // If the text input contains less than 5 characters, set validated to error
     const validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedTexInputValue: value, validated });

@@ -4,8 +4,12 @@ import { AppHeader, AppSidebar } from './components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Demos from './Demos';
 
-class App extends React.Component {
-  state = {
+interface AppState {
+  activeItem: number | string;
+}
+
+class App extends React.Component<{}, AppState> {
+  state: AppState = {
     activeItem: null
   };
 

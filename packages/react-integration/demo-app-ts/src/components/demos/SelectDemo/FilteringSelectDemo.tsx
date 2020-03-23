@@ -8,7 +8,7 @@ export interface FilteringSelectDemoState {
 }
 
 export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
-  state = {
+  state: FilteringSelectDemoState = {
     isExpanded: false,
     selections: []
   };

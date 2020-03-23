@@ -1,5 +1,5 @@
 import { Tabs, Tab, TabContent } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 
 export class TabDemo extends Component {
   state = {
@@ -7,12 +7,12 @@ export class TabDemo extends Component {
     activeTabKey2: 0,
     activeTabKey3: 0
   };
-  private contentRef1: any;
-  private contentRef2: any;
-  private contentRef3: any;
+  private contentRef1: RefObject<HTMLDivElement>;
+  private contentRef2: RefObject<HTMLDivElement>;
+  private contentRef3: RefObject<HTMLDivElement>;
 
-  constructor(props) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
 
     this.contentRef1 = React.createRef<HTMLDivElement>();
     this.contentRef2 = React.createRef<HTMLDivElement>();
@@ -20,21 +20,21 @@ export class TabDemo extends Component {
   }
 
   // Toggle currently active tab
-  private handleTabClick = (event: any, tabIndex: number) => {
+  private handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick2 = (event, tabIndex) => {
+  private handleTabClick2 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey2: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick3 = (event, tabIndex) => {
+  private handleTabClick3 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey3: tabIndex
     });

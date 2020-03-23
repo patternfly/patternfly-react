@@ -2,9 +2,9 @@ import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { used: number; spacer: string }> {
-  interval: any;
-  constructor(props) {
-    super(props);
+  interval: number;
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       spacer: '',
       used: 0
@@ -14,7 +14,7 @@ export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { 
   componentDidMount() {
     window.scrollTo(0, 0);
 
-    this.interval = setInterval(() => {
+    this.interval = window.setInterval(() => {
       const { used } = this.state;
       const val = (used + 10) % 100;
       this.setState({

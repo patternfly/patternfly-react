@@ -6,7 +6,7 @@ interface AccordionDemoState {
 }
 
 export class AccordionDemo extends React.Component<null, AccordionDemoState> {
-  state = {
+  state: AccordionDemoState = {
     expanded: null
   };
 

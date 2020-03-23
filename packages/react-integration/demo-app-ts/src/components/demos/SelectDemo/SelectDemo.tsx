@@ -15,20 +15,25 @@ import CartArrowDownIcon from '@patternfly/react-icons/dist/js/icons/cart-arrow-
 import { State } from '../../../common/State';
 
 /* eslint-disable no-console */
+interface TypeAheadOption {
+  value?: string;
+  disabled?: boolean;
+}
+
 export interface SelectDemoState {
   singleIsExpanded: boolean;
   singleSelected: string;
   disabledSingleIsExpanded: boolean;
   disabledSingleSelected: string;
   customSingleIsExpanded: boolean;
-  customSingleSelected: string;
+  customSingleSelected: string | SelectOptionObject | (string | SelectOptionObject)[];
   checkIsExpanded: boolean;
   checkSelected: string[];
   typeaheadIsExpanded: boolean;
-  typeaheadSelected: string;
+  typeaheadSelected: string | SelectOptionObject | (string | SelectOptionObject)[];
   typeaheadMultiIsExpanded: boolean;
   typeaheadMultiSelected: string[];
-  cdtypeaheadMultiIsExpanded: false;
+  cdtypeaheadMultiIsExpanded: boolean;
   cdtypeaheadMultiSelected: string[];
   plainTypeaheadMultiIsExpanded: boolean;
   plainTypeaheadMultiSelected: string[];
@@ -36,18 +41,18 @@ export interface SelectDemoState {
   customTypeaheadMultiIsExpanded: boolean;
   customTypeaheadMultiSelected: string[];
   direction: SelectDirection.up | SelectDirection.down;
-  typeaheadOptions: any[];
-  typeaheadCreateNew: () => void;
+  typeaheadOptions: TypeAheadOption[];
   typeaheadNewOptions: boolean;
   customContentIsExpanded: boolean;
+  typeaheadIsCreatable: boolean;
 }
 
-export class SelectDemo extends Component<SelectDemoState> {
-  state = {
+export class SelectDemo extends Component<{}, SelectDemoState> {
+  state: SelectDemoState = {
     singleIsExpanded: false,
     singleSelected: null,
     disabledSingleIsExpanded: null,
-    disabledSingleSelected: false,
+    disabledSingleSelected: undefined,
     customSingleIsExpanded: false,
     customSingleSelected: null,
     checkIsExpanded: false,
@@ -124,13 +129,13 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  toggleCreatable = checked => {
+  toggleCreatable = (checked: boolean) => {
     this.setState({
       typeaheadIsCreatable: checked
     });
   };
 
-  toggleNew = checked => {
+  toggleNew = (checked: boolean) => {
     this.setState({
       typeaheadNewOptions: checked
     });
@@ -196,7 +201,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
-  singleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+  singleOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -208,7 +213,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  disabledSingleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+  disabledSingleOnSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string,
+    isPlaceholder: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -220,7 +229,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  customSingleOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
+  customSingleOnSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject | (string | SelectOptionObject)[],
+    isPlaceholder: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -232,7 +245,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  checkOnSelect = (event: any, selection: string) => {
+  checkOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const { checkSelected } = this.state;
     if (checkSelected.includes(selection)) {
       this.setState(
@@ -247,7 +260,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
+  typeaheadOnSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject | (string | SelectOptionObject)[],
+    isPlaceholder: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -259,7 +276,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadMultiOnSelect = (event: any, selection: string | object) => {
+  typeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -276,7 +293,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  cdtypeaheadMultiOnSelect = (event: any, selection: string | object) => {
+  cdtypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const { cdtypeaheadMultiSelected } = this.state;
     if (cdtypeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -295,7 +312,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  plainTypeaheadMultiOnSelect = (event: any, selection: string) => {
+  plainTypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const { plainTypeaheadMultiSelected } = this.state;
     if (plainTypeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -314,7 +331,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  customTypeaheadMultiOnSelect = (event: any, selection: string) => {
+  customTypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
     const { customTypeaheadMultiSelected } = this.state;
     if (customTypeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -344,7 +361,7 @@ export class SelectDemo extends Component<SelectDemoState> {
       singleSelected: null,
       singleIsExpanded: false,
       disabledSingleIsExpanded: null,
-      disabledSingleSelected: false,
+      disabledSingleSelected: '',
       customSingleSelected: null,
       customSingleIsExpanded: false,
       checkSelected: [],

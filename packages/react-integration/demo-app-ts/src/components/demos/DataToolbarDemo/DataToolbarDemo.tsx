@@ -12,6 +12,7 @@ import {
   InputGroup,
   Select,
   SelectOption,
+  SelectOptionObject,
   SelectVariant,
   Dropdown,
   DropdownItem,
@@ -28,15 +29,16 @@ import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 interface Filter {
   risk: string[];
   status: string[];
+  key?: string[];
 }
 
 interface DataToolbarState {
   isExpanded: boolean;
   inputValue: string;
-  statusIsExpanded: false;
-  riskIsExpanded: false;
+  statusIsExpanded: boolean;
+  riskIsExpanded: boolean;
   filters: Filter;
-  kebabIsOpen: false;
+  kebabIsOpen: boolean;
 }
 
 export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolbarState> {
@@ -67,37 +69,40 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }));
   };
 
-  onInputChange = newValue => {
+  onInputChange = (newValue: string) => {
     this.setState({ inputValue: newValue });
   };
 
-  onSelect = (type, event, selection) => {
+  onSelect = (type: string, event, selection: string | SelectOptionObject) => {
     const checked = event.target.checked;
     this.setState(prevState => {
       const prevSelections = prevState.filters[type];
       return {
         filters: {
           ...prevState.filters,
-          [type]: checked ? [...prevSelections, selection] : prevSelections.filter(value => value !== selection)
+          [type]: checked
+            ? [...prevSelections, selection.toString()]
+            : prevSelections.filter((value: string) => value !== selection.toString())
         }
       };
     });
   };
 
-  onStatusSelect = (event, selection) => {
+  onStatusSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.onSelect('status', event, selection);
   };
 
-  onRiskSelect = (event, selection) => {
+  onRiskSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     this.onSelect('risk', event, selection);
   };
 
   onDelete = (type = '', id = '') => {
     if (type) {
       this.setState(prevState => {
-        prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+        const newState = Object.assign(prevState);
+        newState.filters[type.toLowerCase()] = newState.filters[type.toLowerCase()].filter((s: string) => s !== id);
         return {
-          filters: prevState.filters
+          filters: newState.filters
         };
       });
     } else {
@@ -110,19 +115,19 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }
   };
 
-  onStatusToggle = isExpanded => {
+  onStatusToggle = (isExpanded: boolean) => {
     this.setState({
       statusIsExpanded: isExpanded
     });
   };
 
-  onRiskToggle = isExpanded => {
+  onRiskToggle = (isExpanded: boolean) => {
     this.setState({
       riskIsExpanded: isExpanded
     });
   };
 
-  onKebabToggle = isOpen => {
+  onKebabToggle = (isOpen: boolean) => {
     this.setState({
       kebabIsOpen: isOpen
     });

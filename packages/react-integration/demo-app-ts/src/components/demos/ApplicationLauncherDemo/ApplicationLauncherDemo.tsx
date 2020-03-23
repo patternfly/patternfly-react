@@ -8,8 +8,8 @@ interface ApplicationLauncherState {
 export class ApplicationLauncherDemo extends React.Component<null, ApplicationLauncherState> {
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
-  constructor(props) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       isOpen: false
     };

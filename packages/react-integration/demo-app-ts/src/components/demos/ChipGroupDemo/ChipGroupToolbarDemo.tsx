@@ -12,8 +12,8 @@ export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
   deleteItem: (id: string) => void;
   deleteCategory: (category: string) => void;
 
-  constructor(props) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       chipGroups: [
         {

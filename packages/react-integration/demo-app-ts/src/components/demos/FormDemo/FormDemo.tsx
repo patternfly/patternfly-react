@@ -20,8 +20,8 @@ export interface FormState {
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
-  constructor(props) {
-    super(props);
+  constructor(props: {}) {
+    super(props as null);
     this.state = {
       value: 'Five',
       isValid: false,
@@ -38,12 +38,12 @@ export class FormDemo extends Component<FormProps, FormState> {
     const validated = /^\d+$/.test(value) ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedValue: value, validated });
   };
-  onToggle = isExpanded => {
+  onToggle = (isExpanded: boolean) => {
     this.setState({
       isExpanded
     });
   };
-  onSelect = (event, selection) => {
+  onSelect = (event: React.SyntheticEvent, selection: string) => {
     const { selected } = this.state;
     if (selected.includes(selection)) {
       this.setState(

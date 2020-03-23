@@ -16,31 +16,35 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     perPage: 20
   };
 
-  onSetTopPage = (_event, pageNumber) => {
+  onSetTopPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       topPage: pageNumber
     });
   };
 
-  onSetBottomPage = (_event, pageNumber) => {
+  onSetBottomPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       bottomPage: pageNumber
     });
   };
 
-  onSetDefaultPage = (_event, pageNumber) => {
+  onSetDefaultPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       defaultFullPage: pageNumber
     });
   };
 
-  onPerPageSelect = (_event, perPage) => {
+  onPerPageSelect = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => {
     this.setState({
       perPage
     });
   };
 
-  onDefaultToFullPerPageSelect = (_event, perPage, pageNumber) => {
+  onDefaultToFullPerPageSelect = (
+    _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    perPage: number,
+    pageNumber: number
+  ) => {
     this.setState({
       perPage,
       defaultFullPage: pageNumber

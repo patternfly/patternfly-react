@@ -23,11 +23,11 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     }
   };
 
-  handleChangeSimple = isChecked => {
+  handleChangeSimple = (isChecked: boolean) => {
     this.setState({ simple: { isChecked } });
   };
 
-  handleChangeTable = id => isChecked => {
+  handleChangeTable = (id: string) => (isChecked: boolean) => {
     this.setState({
       table: {
         ...this.state.table,

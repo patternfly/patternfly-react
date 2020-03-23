@@ -655,10 +655,11 @@ class DataToolbarWithFilterExample extends React.Component {
     this.onDelete = (type = "", id = "") => {
       if (type) {
         this.setState((prevState) => {
-          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+          const newState = Object.assign(prevState);
+          newState.filters[type.toLowerCase()] = newState.filters[type.toLowerCase()].filter(s => s !== id);
           return {
-            filters: prevState.filters,
-          }
+            filters: newState.filters
+          };
         });
       } else {
         this.setState({

@@ -5,7 +5,7 @@ export class RadioDemo extends Component {
     value: '4'
   };
 
-  handleChange = (_, event) => {
+  handleChange = (_checked: boolean, event: React.FormEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
     this.setState({ value });
   };

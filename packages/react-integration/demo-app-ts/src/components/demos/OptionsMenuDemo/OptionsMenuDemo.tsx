@@ -41,7 +41,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     this.setState({ disabledOptionsIsOpen: !this.state.disabledOptionsIsOpen });
   };
 
-  onSelect = event => {
+  onSelect = (event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent) => {
     const id = event.currentTarget.id;
     this.setState(() => ({ selectedOption: id }));
   };
