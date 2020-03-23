@@ -145,25 +145,27 @@ describe('Modal Test', () => {
         });
     });
   });
-  //Accessibility Tests
+  // Accessibility Tests
   it('Verify that elements inside modal are keyboard accessible by tabbing', () => {
-    cy.get('#showDefaultModalButton').click()
+    cy.get('#showDefaultModalButton').click();
     cy.get('.pf-c-modal-box').within(() => {
-      cy.get('button').first()
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      .tab().tab()
-      .focused()
-      .contains('Confirm')
+      cy.get('button')
+        .first()
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        .tab()
+        .tab()
+        .focused()
+        .contains('Confirm');
     });
   });
 
   it('Verify that shift tab sends focus correctly', () => {
     cy.get('#confirm')
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    .tab({shift: true})
-    .focused()
-    .should('have.attr', 'id', 'cancel')
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      .tab({ shift: true })
+      .focused()
+      .should('have.attr', 'id', 'cancel');
   });
 });
