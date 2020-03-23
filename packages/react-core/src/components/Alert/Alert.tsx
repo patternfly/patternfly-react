@@ -36,7 +36,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
 }
 
 export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
-  variant = AlertVariant.info,
+  variant = AlertVariant.default,
   isInline = false,
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
