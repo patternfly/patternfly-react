@@ -3,7 +3,7 @@ import { Button, ButtonProps } from '@patternfly/react-core';
 
 export class ButtonDemo extends React.Component {
   myButtonProps: ButtonProps = {
-    component: 'button',
+    component: 'a',
     href: 'https://github.com/patternfly/patternfly-next',
     target: '_blank'
   };
@@ -15,32 +15,31 @@ export class ButtonDemo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <a href="https://github.com/patternfly/patternfly-next">
-          <Button
-            component={this.myButtonProps.component}
-            href={this.myButtonProps.href}
-            target={this.myButtonProps.target}
-            variant="primary"
-          >
-            Link to Core Docs
-          </Button>{' '}
-        </a>
-        <a href="https://github.com/patternfly/patternfly-next">
-          <Button
-            component={this.myButtonProps.component}
-            href={this.myButtonProps.href}
-            target={this.myButtonProps.target}
-            variant="secondary"
-          >
-            Secondary Link to Core Docs
-          </Button>{' '}
-        </a>
+        <Button
+          component={this.myButtonProps.component}
+          href={this.myButtonProps.href}
+          target={this.myButtonProps.target}
+          variant="primary"
+          id="primary-button"
+        >
+          Link to Core Docs
+        </Button>{' '}
+        <Button
+          component={this.myButtonProps.component}
+          href={this.myButtonProps.href}
+          target={this.myButtonProps.target}
+          variant="secondary"
+          id="secondary-button"
+        >
+          Secondary Link to Core Docs
+        </Button>{' '}
         <Button
           component={this.myButtonProps.component}
           isDisabled
           href={this.myButtonProps.href}
           target={this.myButtonProps.target}
           variant="tertiary"
+          id="tertiary-button"
         >
           Tertiary Link to Core Docs
         </Button>
@@ -49,6 +48,7 @@ export class ButtonDemo extends React.Component {
           href={this.myButtonProps.href}
           target={this.myButtonProps.target}
           variant="control"
+          id="control-button"
         >
           Control Button
         </Button>

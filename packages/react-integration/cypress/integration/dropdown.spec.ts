@@ -41,7 +41,7 @@ describe('Dropdown Demo Test', () => {
   });
 
   // Panel - Escape User action
-  it('Esc closes planel, places focus on the toggle', () => {
+  it('Esc closes panel, places focus on the toggle', () => {
     cy.get('#dropdown > button').click();
     cy.get('#toggle-id').trigger('keydown', { keyCode: 27 });
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');

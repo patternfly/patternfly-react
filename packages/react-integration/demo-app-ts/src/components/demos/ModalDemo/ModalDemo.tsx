@@ -78,10 +78,10 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isModalOpen}
         onClose={this.handleModalToggle}
         actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+          <Button id="cancel" key="cancel" variant="secondary" onClick={this.handleModalToggle}>
             Cancel
           </Button>,
-          <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+          <Button id="confirm" key="confirm" variant="primary" onClick={this.handleModalToggle}>
             Confirm
           </Button>
         ]}

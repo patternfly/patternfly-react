@@ -50,4 +50,27 @@ describe('Form Demo Test', () => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
   });
+
+  //Accessibility Test
+  it('Checks that form is keyboard accessible by tabbing', () => {
+    cy.get('input')
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore  
+      .tab().tab()
+      .focused()
+      .should('have.class', 'pf-c-button')
+    .tab()
+      .focused()
+      .should('have.id', 'age-validated')
+      .type('37')
+      .should('have.class', 'pf-m-success')
+  });
+  it('Checks that shift tab sends focus correctly', () => {
+    cy.get('.pf-c-form-control').last()
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    .tab({shift: true}).tab({shift: true})
+    .focused()
+    .should('have.attr', 'class', 'pf-c-form-control pf-c-select__toggle-typeahead')
+  })
 });

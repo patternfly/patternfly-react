@@ -21,9 +21,10 @@ export class CardDemo extends React.Component {
           <CardFooter>Footer</CardFooter>
         </Card>
         <br></br>
+        <a href="#" id="random-link">Random Link</a>
         <Card isSelectable isSelected>
           <CardHeader>Header</CardHeader>
-          <CardBody>Body</CardBody>
+          <CardBody>Body<a href="#" id="inside-link">Link inside card</a></CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
       </React.Fragment>
