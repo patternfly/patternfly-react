@@ -41,7 +41,6 @@ exports[`Renders ContextSelector open 1`] = `
     className="pf-c-context-selector__menu"
   >
     <FocusTrap
-      _createFocusTrap={[Function]}
       active={true}
       focusTrapOptions={
         Object {
@@ -49,7 +48,6 @@ exports[`Renders ContextSelector open 1`] = `
         }
       }
       paused={false}
-      tag="div"
     >
       <div
         className="pf-c-context-selector__menu-input"

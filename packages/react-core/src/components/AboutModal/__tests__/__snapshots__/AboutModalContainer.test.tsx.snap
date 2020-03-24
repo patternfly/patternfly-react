@@ -3,7 +3,6 @@
 exports[`About Modal Container Test isOpen 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -12,7 +11,6 @@ exports[`About Modal Container Test isOpen 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <AboutModalBox
       aria-describedby="ariaDescribedById"

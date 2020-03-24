@@ -5,7 +5,6 @@ exports[`Wizard should match snapshot 1`] = `
   Object {
     "$$typeof": Symbol(react.portal),
     "children": <FocusTrap
-      _createFocusTrap={[Function]}
       active={true}
       focusTrapOptions={
         Object {
@@ -13,7 +12,6 @@ exports[`Wizard should match snapshot 1`] = `
         }
       }
       paused={false}
-      tag="div"
     >
       <Backdrop>
         <Bullseye>
