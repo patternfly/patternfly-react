@@ -6,40 +6,40 @@ experimentalStage: 'early'
 
 import React from 'react';
 import {
-Avatar,
-Brand,
-Button,
-ButtonVariant,
-Card,
-CardHead,
-CardActions,
-CardHeader,
-CardBody,
-Checkbox,
-Dropdown,
-DropdownToggle,
-DropdownItem,
-DropdownSeparator,
-DropdownPosition,
-DropdownDirection,
-Gallery,
-GalleryItem,
-KebabToggle,
-Nav,
-NavItem,
-NavList,
-NavVariants,
-Page,
-PageHeader,
-PageSection,
-PageSectionVariants,
-PageSidebar,
-SkipToContent,
-TextContent,
-Text,
-Toolbar,
-ToolbarGroup,
-ToolbarItem
+  Avatar,
+  Brand,
+  Button,
+  ButtonVariant,
+  Card,
+  CardHead,
+  CardActions,
+  CardHeader,
+  CardBody,
+  Checkbox,
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownDirection,
+  Gallery,
+  GalleryItem,
+  KebabToggle,
+  Nav,
+  NavItem,
+  NavList,
+  NavVariants,
+  Page,
+  PageHeader,
+  PageSection,
+  PageSectionVariants,
+  PageSidebar,
+  SkipToContent,
+  TextContent,
+  Text,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem
 } from '@patternfly/react-core';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -720,7 +720,7 @@ class CardViewBasic extends React.Component {
                 <React.Fragment>
                   <Card isHoverable key={key}>
                     <CardHead>
-                      <img src={icons[product.icon]} style={{ height: '50px' }} />
+                      <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
                       <CardActions>
                         <Dropdown
                           isPlain
