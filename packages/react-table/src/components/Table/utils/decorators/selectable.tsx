@@ -27,13 +27,12 @@ export const selectable: ITransform = (
   const rowId = rowIndex !== undefined ? rowIndex : -1;
 
   /**
-   * @param {React.ChangeEvent} event - React change event
+   * @param {React.FormEvent} event - React form event
    */
-  function selectClick(event: React.ChangeEvent<HTMLInputElement>) {
-    const selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
-    // todo: change event type to React.FormEvent<HTMLInputElement> in the future, breaking change a.t.m.
+  function selectClick(event: React.FormEvent<HTMLInputElement>) {
+    const selected = rowIndex === undefined ? event.currentTarget.checked : rowData && !rowData.selected;
     // tslint:disable-next-line:no-unused-expression
-    onSelect && onSelect((event as unknown) as React.MouseEvent, selected, rowId, rowData, extraData);
+    onSelect && onSelect(event, selected, rowId, rowData, extraData);
   }
   const customProps = {
     ...(rowId !== -1

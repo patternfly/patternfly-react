@@ -50,7 +50,7 @@ export class TableActionsDemo extends React.Component<TableProps, TableState> {
 
   actionResolver(rowData: IRowData, { rowIndex }: IExtra) {
     if (rowIndex === 1) {
-      return null;
+      return [];
     }
 
     const thirdAction: IActions =

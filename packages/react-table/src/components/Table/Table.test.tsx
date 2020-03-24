@@ -244,7 +244,7 @@ test('Selectable table with selected expandable row', () => {
         parent: 0
       }
     ],
-    onSelect: (e: React.MouseEvent) => e
+    onSelect: (e: React.FormEvent<HTMLInputElement>) => e
   };
 
   const view = mount(

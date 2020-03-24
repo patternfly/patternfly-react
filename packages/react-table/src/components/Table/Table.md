@@ -430,22 +430,28 @@ class SelectableTable extends React.Component {
   }
 
   render() {
-    const { columns, rows } = this.state;
+    const { columns, rows, canSelectAll } = this.state;
 
     return (
       <div>
-      <Table aria-label="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows} canSelectAll={this.state.canSelectAll}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-      <Checkbox
-        label="canSelectAll"
-        isChecked={this.state.canSelectAll}
-        onChange={this.toggleSelect}
-        aria-label="toggle select all checkbox"
-        id="toggle-select-all"
-        name="toggle-select-all"
-      />
+        <Checkbox
+          label="Can select all"
+          className="pf-u-mb-lg"
+          isChecked={canSelectAll}
+          onChange={this.toggleSelect}
+          aria-label="toggle select all checkbox"
+          id="toggle-select-all"
+          name="toggle-select-all"
+          />
+        <Table
+          onSelect={this.onSelect}
+          canSelectAll={canSelectAll}
+          aria-label="Selectable Table"
+          cells={columns}
+          rows={rows}>
+          <TableHeader />
+          <TableBody />
+        </Table>
       </div>
     );
   }
