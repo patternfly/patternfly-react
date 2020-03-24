@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.149.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.149.0...@patternfly/react-core@3.149.1) (2020-03-24)
+
+
+### Bug Fixes
+
+* **card:** add wrapper to image to resize it properly ([#3642](https://github.com/patternfly/patternfly-react/issues/3642)) ([a3ea2ba](https://github.com/patternfly/patternfly-react/commit/a3ea2bacc87fd68ba7d342d96a0ab6b40191e3d5))
+
+
+
+
+
 # [3.149.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.148.3...@patternfly/react-core@3.149.0) (2020-03-23)
 
 
