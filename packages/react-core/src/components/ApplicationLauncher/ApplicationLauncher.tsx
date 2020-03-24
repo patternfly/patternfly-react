@@ -14,13 +14,6 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   className?: string;
   /** Display menu above or below dropdown toggle */
   direction?: DropdownDirection | 'up' | 'down';
-  /**
-   * @deprecated
-   * Use the items prop instead
-   *
-   * Array of DropdownItem nodes that will be rendered in the dropdown Menu list
-   */
-  dropdownItems?: React.ReactNode[];
   /** Array of application launcher items */
   items?: React.ReactNode[];
   /** Render Application launcher toggle as disabled icon */
@@ -67,9 +60,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     className: '',
     isDisabled: false,
     direction: DropdownDirection.down,
-    dropdownItems: [] as React.ReactNode[],
     favorites: [] as string[],
-    items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
     /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -154,7 +145,6 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       isDisabled,
       className,
       isGrouped,
-      dropdownItems,
       favorites,
       onFavorite,
       onSearch,
@@ -190,7 +180,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     } else {
       renderableItems = items;
     }
-    if (items.length === 0 && dropdownItems.length === 0) {
+    if (items.length === 0) {
       renderableItems = [
         <ApplicationLauncherGroup key="no-results-group">
           <ApplicationLauncherItem key="no-results">{searchNoResultsText}</ApplicationLauncherItem>
@@ -221,7 +211,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
         >
           <DropdownWithContext
             {...props}
-            dropdownItems={renderableItems.length ? renderableItems : dropdownItems}
+            dropdownItems={renderableItems}
             isOpen={isOpen}
             className={className}
             aria-label={ariaLabel}
