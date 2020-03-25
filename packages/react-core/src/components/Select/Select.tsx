@@ -306,10 +306,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (!value) {
       return;
     }
-
-    const { children } = this.props;
-    const item = React.Children.toArray(children).filter(
-      (child: React.ReactElement) => child.props.value.toString() === value.toString()
+    const item = React.Children.toArray(this.props.children).filter(
+      (child: React.ReactNode) => (child as React.ReactElement).props.value.toString() === value.toString()
     )[0] as React.ReactElement;
     if (item) {
       if (item && item.props.children) {
@@ -384,10 +382,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (!customContent) {
       if (!selection && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
-          (child: React.ReactElement) => child.props.isPlaceholder === true
-        ) as React.ReactElement[];
+          (child: React.ReactNode) => (child as React.ReactElement).props.isPlaceholder === true
+        );
         childPlaceholderText =
-          (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
+          (childPlaceholder[0] && this.getDisplay((childPlaceholder[0] as React.ReactElement).props.value, 'node')) ||
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
