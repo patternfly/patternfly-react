@@ -1,12 +1,7 @@
 import * as React from 'react';
-
-// Can't use ES6 imports :(
-// The types for it are also wrong, we should probably ditch this dependency.
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const FocusTrap: any = require('focus-trap-react');
-
-import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import { FocusTrap } from '../../helpers';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
+import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
 
 import { Backdrop } from '../Backdrop/Backdrop';

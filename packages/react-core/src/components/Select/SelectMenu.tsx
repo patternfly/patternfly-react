@@ -6,8 +6,7 @@ import { SelectOptionObject, SelectOption } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const FocusTrap: any = require('focus-trap-react');
+import { FocusTrap } from '../../helpers';
 
 export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */

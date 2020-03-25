@@ -14,7 +14,7 @@ test('AboutModalBoxCloseButton Test onclose', () => {
 });
 
 test('AboutModalBoxCloseButton Test close button aria label', () => {
-  const closeButtonAriaLabel = 'Klose Daylok'
+  const closeButtonAriaLabel = 'Klose Daylok';
   const view = shallow(<AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} />);
   expect(view).toMatchSnapshot();
 });

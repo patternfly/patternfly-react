@@ -432,7 +432,6 @@ exports[`checkbox select renders checkbox select groups successfully - old class
           sendRef={[Function]}
         >
           <FocusTrap
-            _createFocusTrap={[Function]}
             active={true}
             focusTrapOptions={
               Object {
@@ -440,7 +439,6 @@ exports[`checkbox select renders checkbox select groups successfully - old class
               }
             }
             paused={false}
-            tag="div"
           >
             <div>
               <div
@@ -1218,7 +1216,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           sendRef={[Function]}
         >
           <FocusTrap
-            _createFocusTrap={[Function]}
             active={true}
             focusTrapOptions={
               Object {
@@ -1226,7 +1223,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
               }
             }
             paused={false}
-            tag="div"
           >
             <div>
               <div
@@ -2316,7 +2312,6 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
           sendRef={[Function]}
         >
           <FocusTrap
-            _createFocusTrap={[Function]}
             active={true}
             focusTrapOptions={
               Object {
@@ -2324,7 +2319,6 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
               }
             }
             paused={false}
-            tag="div"
           >
             <div>
               <div
@@ -2780,7 +2774,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
           sendRef={[Function]}
         >
           <FocusTrap
-            _createFocusTrap={[Function]}
             active={true}
             focusTrapOptions={
               Object {
@@ -2788,7 +2781,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
               }
             }
             paused={false}
-            tag="div"
           >
             <div>
               <div
@@ -3259,7 +3251,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           sendRef={[Function]}
         >
           <FocusTrap
-            _createFocusTrap={[Function]}
             active={true}
             focusTrapOptions={
               Object {
@@ -3267,7 +3258,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
               }
             }
             paused={false}
-            tag="div"
           >
             <div>
               <div
@@ -3760,7 +3750,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           sendRef={[Function]}
         >
           <FocusTrap
-            _createFocusTrap={[Function]}
             active={true}
             focusTrapOptions={
               Object {
@@ -3768,7 +3757,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
               }
             }
             paused={false}
-            tag="div"
           >
             <div>
               <div
