@@ -5,14 +5,14 @@ import { Alert, AlertVariant } from '../Alert';
 import { AlertActionLink } from '../AlertActionLink';
 import { AlertActionCloseButton } from '../AlertActionCloseButton';
 
-test('default Alert variant is info', () => {
+test('default Alert variant is default', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);
   expect(
     view
       .find('Alert')
       .childAt(0)
       .prop('className')
-  ).toContain('pf-m-info');
+  ).toContain('pf-c-alert');
 });
 
 Object.values(AlertVariant).forEach(variant => {
