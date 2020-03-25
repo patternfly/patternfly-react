@@ -7,8 +7,7 @@ import { EmptyStateSecondaryActions } from '../EmptyStateSecondaryActions';
 import { EmptyStateIcon } from '../EmptyStateIcon';
 import { EmptyStatePrimary } from '../EmptyStatePrimary';
 import { Button } from '../../Button';
-import { Title } from '../../Title';
-import { BaseSizes } from '../../../styles/sizes';
+import { Title, TitleSizes } from '../../Title';
 
 describe('EmptyState', () => {
   test('Main', () => {
@@ -34,7 +33,7 @@ describe('EmptyState', () => {
   test('Main variant large', () => {
     const view = shallow(
       <EmptyState variant={EmptyStateVariant.lg}>
-        <Title headingLevel="h3" size={BaseSizes.md}>EmptyState large</Title>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();
@@ -43,7 +42,7 @@ describe('EmptyState', () => {
   test('Main variant small', () => {
     const view = shallow(
       <EmptyState variant={EmptyStateVariant.sm}>
-        <Title headingLevel="h3" size={BaseSizes.md}>EmptyState small</Title>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();

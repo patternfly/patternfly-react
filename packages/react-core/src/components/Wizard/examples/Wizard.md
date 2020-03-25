@@ -10,7 +10,7 @@ import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@pat
 import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
-### Examples
+## Examples
 ```js title=Basic
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -360,8 +360,8 @@ class ValidateButtonPressWizard extends React.Component {
     const steps = [
       { name: 'Step 1', component: <p>Step 1</p> },
       { name: 'Step 2', component: <p>Step 2</p> },
-      { 
-        name: 'Final Step', 
+      {
+        name: 'Final Step',
         component: (
           <>
             {stepsValid === 1 && <div style={{padding: '15px 0'}}><Alert variant="warning" title="Validation failed, please try again" /></div>}
@@ -449,19 +449,19 @@ class ProgressiveWizard extends React.Component {
     this.onGoToStep = ({ id, name }, { prevId, prevName }) => {
       // Remove steps after the currently clicked step
       if (name === 'Get Started') {
-        this.setState({ 
+        this.setState({
           showReviewStep: false,
           showOptionsStep: false,
           showCreateStep: false,
           showUpdateStep: false
         });
       } else if (name === 'Create Options' || name === 'Update Options') {
-        this.setState({ 
+        this.setState({
           showReviewStep: false,
           showOptionsStep: false
         });
       } else if (name.indexOf('Substep') > -1) {
-        this.setState({ 
+        this.setState({
           showReviewStep: false
         });
       }
@@ -469,7 +469,7 @@ class ProgressiveWizard extends React.Component {
     this.getNextStep = (activeStep, callback) => {
       if (activeStep.name === 'Get Started') {
         if (this.state.getStartedStepRadio === 'Create') {
-          this.setState({ 
+          this.setState({
             showCreateStep: true,
             showUpdateStep: false,
             showOptionsStep: false,
@@ -478,7 +478,7 @@ class ProgressiveWizard extends React.Component {
             callback();
           });
         } else {
-          this.setState({ 
+          this.setState({
             showCreateStep: false,
             showUpdateStep: true,
             showOptionsStep: false,
@@ -488,15 +488,15 @@ class ProgressiveWizard extends React.Component {
           });
         }
       } else if (activeStep.name === 'Create Options' || activeStep.name === 'Update Options') {
-        this.setState({ 
+        this.setState({
           showOptionsStep: true,
           showReviewStep: false
         }, () => {
           callback();
         });
       } else if (activeStep.name === 'Substep 3') {
-        this.setState({ 
-          showReviewStep: true 
+        this.setState({
+          showReviewStep: true
         }, () => {
           callback();
         });
@@ -506,25 +506,25 @@ class ProgressiveWizard extends React.Component {
     };
     this.getPreviousStep = (activeStep, callback) => {
       if (activeStep.name === 'Review') {
-        this.setState({ 
+        this.setState({
           showReviewStep: false
         }, () => {
           callback();
         });
       } else if (activeStep.name === 'Substep 1') {
-        this.setState({ 
+        this.setState({
           showOptionsStep: false
         }, () => {
           callback();
         });
       } else if (activeStep.name === 'Create Options') {
-        this.setState({ 
+        this.setState({
           showCreateStep: false
         }, () => {
           callback();
         });
       } else if (activeStep.name === 'Update Options') {
-        this.setState({ 
+        this.setState({
           showUpdateStep: false
         }, () => {
           callback();
@@ -536,11 +536,11 @@ class ProgressiveWizard extends React.Component {
   }
 
   render() {
-    const { 
-      isOpen, 
-      stepsValid, 
-      getStartedStepRadio, 
-      createStepRadio, 
+    const {
+      isOpen,
+      stepsValid,
+      getStartedStepRadio,
+      createStepRadio,
       updateStepRadio,
       showCreateStep,
       showUpdateStep,
@@ -548,8 +548,8 @@ class ProgressiveWizard extends React.Component {
       showReviewStep
     } = this.state;
 
-    const getStartedStep = { 
-      name: 'Get Started', 
+    const getStartedStep = {
+      name: 'Get Started',
       component: (
         <div>
           <Radio
@@ -637,7 +637,7 @@ class ProgressiveWizard extends React.Component {
         }
       ]
     };
-    
+
     const reviewStep = {
       name: 'Review',
       component: (
@@ -648,7 +648,7 @@ class ProgressiveWizard extends React.Component {
       )
     };
 
-    const steps = [ 
+    const steps = [
       getStartedStep,
       ...(showCreateStep ? [createStep] : []),
       ...(showUpdateStep ? [updateStep] : []),

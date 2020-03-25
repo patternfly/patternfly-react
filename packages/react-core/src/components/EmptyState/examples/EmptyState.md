@@ -34,7 +34,7 @@ import { CubesIcon } from '@patternfly/react-icons';
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.sm}>
     <EmptyStateIcon icon={CubesIcon} />
-    <Title headingLevel="h5" size="lg">
+    <Title headingLevel="h4" size="lg">
       Empty State
     </Title>
     <EmptyStateBody>
@@ -70,7 +70,7 @@ import { CubesIcon } from '@patternfly/react-icons';
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.lg}>
     <EmptyStateIcon icon={CubesIcon} />
-    <Title headingLevel="h5" size="lg">
+    <Title headingLevel="h4" size="lg">
       Empty State
     </Title>
     <EmptyStateBody>
@@ -106,7 +106,7 @@ import { CubesIcon } from '@patternfly/react-icons';
 SimpleEmptyState = () => (
   <EmptyState>
     <EmptyStateIcon icon={CubesIcon} />
-    <Title headingLevel="h5" size="lg">
+    <Title headingLevel="h4" size="lg">
       Empty State
     </Title>
     <EmptyStateBody>
@@ -150,7 +150,7 @@ EmptyStateSpinner = () => {
   return (
     <EmptyState>
       <EmptyStateIcon variant="container" component={Spinner} />
-      <Title size="lg" headingLevel="h5">
+      <Title size="lg" headingLevel="h4">
         Loading
       </Title>
     </EmptyState>
@@ -177,7 +177,7 @@ NoMatchEmptyState = () => {
   return (
     <EmptyState>
       <EmptyStateIcon icon={SearchIcon} />
-      <Title size="lg" headingLevel="h5">
+      <Title size="lg" headingLevel="h4">
         No results found
       </Title>
       <EmptyStateBody>
