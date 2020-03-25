@@ -5,6 +5,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import { AlertIcon } from './AlertIcon';
 import { capitalize } from '../../helpers/util';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { AlertContext } from './AlertContext';
 
 export enum AlertVariant {
   success = 'success',
@@ -34,13 +35,6 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   /** Flag to indicate if the Alert is in a live region */
   isLiveRegion?: boolean;
 }
-
-interface AlertContext {
-  title: React.ReactNode;
-  variantLabel?: string;
-}
-
-export const AlertContext = React.createContext<AlertContext>(null);
 
 const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   variant = AlertVariant.info,
