@@ -1,5 +1,6 @@
 import * as React from 'react';
 
 export const ApplicationLauncherContext = React.createContext({
-  onFavorite: (_itemId: string, _isFavorite: boolean) => {}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onFavorite: (itemId: string, isFavorite: boolean) => {}
 });

@@ -2,7 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import scss from 'rollup-plugin-scss';
 import replace from '@rollup/plugin-replace';
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 
 const isProduction = process.env.IS_PRODUCTION;
 
@@ -13,7 +13,7 @@ module.exports = {
     format: 'umd',
     name: 'PatternFlyReact',
     globals: {
-      'react': 'React',
+      react: 'React',
       'react-dom': 'ReactDOM',
       'prop-types': 'PropTypes'
     }
@@ -27,5 +27,5 @@ module.exports = {
     commonjs(),
     scss(),
     isProduction && terser()
-  ],
+  ]
 };
