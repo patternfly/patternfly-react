@@ -38,9 +38,9 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** Type of the toggle button, defaults to 'button' */
   type?: 'reset' | 'button' | 'submit' | undefined;
   /** Id of label for the Select aria-labelledby */
-  ariaLabelledBy?: string;
+  'aria-labelledby'?: string;
   /** Label for toggle of select variants */
-  ariaLabelToggle?: string;
+  'aria-label'?: string;
   /** Flag for variant, determines toggle rules and interaction */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Flag indicating if select toggle has an clear button */
@@ -60,8 +60,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isDisabled: false,
     hasClearButton: false,
     variant: 'single',
-    ariaLabelledBy: '',
-    ariaLabelToggle: '',
+    'aria-labelledby': '',
+    'aria-label': '',
     type: 'button',
     onToggle: () => {},
     onEnter: () => {},
@@ -172,8 +172,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       id,
       type,
       hasClearButton,
-      ariaLabelledBy,
-      ariaLabelToggle,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-label': ariaLabel,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -248,7 +248,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               {...toggleProps}
               type={type}
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
-              aria-label={ariaLabelToggle}
+              aria-label={ariaLabel}
               onClick={_event => {
                 _event.stopPropagation();
                 onToggle(!isExpanded);

@@ -24,7 +24,7 @@ it('OptionsMenuToggleWithText should match snapshot (auto-generated)', () => {
       isActive={false}
       isDisabled={false}
       parentRef={document.body}
-      ariaHasPopup={true}
+      aria-haspopup={true}
       aria-label={"'Options menu'"}
     />
   );

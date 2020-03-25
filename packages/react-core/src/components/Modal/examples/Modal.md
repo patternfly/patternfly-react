@@ -319,7 +319,7 @@ class CustomHeaderFooter extends React.Component {
           isOpen={isModalOpen}
           header={header}
           title="custom header example"
-          ariaDescribedById="custom-header-example"
+          modalContentAriaDescribedBy="custom-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
           isFooterLeftAligned
@@ -372,7 +372,7 @@ class NoHeader extends React.Component {
           hideTitle={true}
           title="no header example"
           showClose={true}
-          ariaDescribedById="no-header-example"
+          modalContentAriaDescribedBy="no-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
           isFooterLeftAligned

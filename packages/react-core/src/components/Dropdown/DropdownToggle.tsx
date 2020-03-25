@@ -39,7 +39,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   /** Accessible label for the dropdown toggle button */
   'aria-label'?: string;
   /** Accessibility property to indicate correct has popup */
-  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
+  'aria-haspopup'?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'tree';
   /** Type to put on the button */
   type?: 'button' | 'submit' | 'reset';
   /** Callback called when the Enter key is pressed */
@@ -63,7 +63,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
   splitButtonVariant = 'checkbox',
-  ariaHasPopup,
+  'aria-haspopup': ariaHasPopup,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
@@ -84,7 +84,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isPlain={isPlain}
           isPrimary={isPrimary}
           onToggle={onToggle}
-          ariaHasPopup={ariaHasPopup}
+          aria-haspopup={ariaHasPopup}
           {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
         >
           {children && <span className={IconComponent && css(toggleTextClass)}>{children}</span>}

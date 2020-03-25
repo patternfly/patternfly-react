@@ -5,8 +5,8 @@ exports[`AboutModal should match snapshot (auto-generated) 1`] = `
   containerInfo={<div />}
 >
   <AboutModalContainer
-    ariaDescribedById="pf-about-modal-content-0"
-    ariaLabelledbyId="pf-about-modal-title-0"
+    aboutModalBoxContentId="pf-about-modal-content-0"
+    aboutModalBoxHeaderId="pf-about-modal-title-0"
     backgroundImageSrc="''"
     brandImageAlt="string"
     brandImageSrc="string"

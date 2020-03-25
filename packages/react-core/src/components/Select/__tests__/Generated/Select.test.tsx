@@ -24,11 +24,11 @@ it('Select should match snapshot (auto-generated)', () => {
       selections={''}
       toggleId={'null'}
       aria-label={"''"}
-      ariaLabelledBy={"''"}
-      ariaLabelTypeAhead={"''"}
-      ariaLabelClear={"'Clear all'"}
-      ariaLabelToggle={"'Options menu'"}
-      ariaLabelRemove={"'Remove'"}
+      aria-labelledby={"''"}
+      typeAheadAriaLabel={"''"}
+      clearSelectionsAriaLabel={"'Clear all'"}
+      toggleAriaLabel={"'Options menu'"}
+      removeSelectionAriaLabel={"'Remove'"}
       onSelect={(
         event: React.MouseEvent | React.ChangeEvent,
         value: string | SelectOptionObject,

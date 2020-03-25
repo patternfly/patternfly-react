@@ -9,8 +9,8 @@ const props = {
   brandImageSrc: 'brandImg...',
   brandImageAlt: 'Brand Image',
   backgroundImageSrc: 'backgroundImageSrc...',
-  ariaLabelledbyId: 'ariaLablledbyId',
-  ariaDescribedById: 'ariaDescribedById'
+  'aria-labelledby': 'ariaLablledbyId',
+  'aria-describedby': 'ariaDescribedById'
 };
 test('About Modal Container Test simple', () => {
   const view = shallow(<AboutModalContainer {...props}>This is ModalBox content</AboutModalContainer>);

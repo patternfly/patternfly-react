@@ -117,7 +117,7 @@ export class FormDemo extends Component<FormProps, FormState> {
                 onClear={this.clearSelection}
                 selections={selected}
                 isExpanded={isExpanded}
-                ariaLabelledBy={titleId}
+                aria-labelledby={titleId}
                 placeholderText="Select a state"
               >
                 {options.map((option, index) => (

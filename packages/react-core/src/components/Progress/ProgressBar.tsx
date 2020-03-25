@@ -18,17 +18,17 @@ export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   /** Actual progress value. */
   value: number;
   /** Minimal value of progress. */
-  ariaProps?: AriaProps;
+  progressBarAriaProps?: AriaProps;
 }
 
 export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
-  ariaProps,
+  progressBarAriaProps,
   className = '',
   children = null,
   value,
   ...props
 }: ProgressBarProps) => (
-  <div {...props} className={css(styles.progressBar, className)} {...ariaProps}>
+  <div {...props} className={css(styles.progressBar, className)} {...progressBarAriaProps}>
     <div className={css(styles.progressIndicator)} style={{ width: `${value}%` }}>
       <span className={css(styles.progressMeasure)}>{children}</span>
     </div>

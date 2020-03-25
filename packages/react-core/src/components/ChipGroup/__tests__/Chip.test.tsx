@@ -49,3 +49,4 @@ describe('Chip', () => {
     expect(view).toMatchSnapshot();
   });
 });
+

@@ -15,9 +15,9 @@ export interface NavListProps
   className?: string;
   /** Indicates the list type. */
   variant?: 'default' | 'simple' | 'horizontal' | 'tertiary';
-  /** aria-label for the left scroll button */
+  /** Aria-label for the left scroll button */
   ariaLeftScroll?: string;
-  /** aria-label for the right scroll button */
+  /** Aria-label for the right scroll button */
   ariaRightScroll?: string;
 }
 

@@ -75,8 +75,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   steps: WizardStep[];
   /** The current step the wizard is on (1 or higher) */
   startAtStep?: number;
-  /** aria-label for the Nav */
-  ariaLabelNav?: string;
+  /** Aria-label for the Nav */
+  navAriaLabel?: string;
   /** Can remove the default padding around the main body content by setting this to false */
   hasBodyPadding?: boolean;
   /** (Use to control the footer) Passing in a footer component lets you control the buttons yourself */
@@ -94,7 +94,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** (Unused if footer is controlled) The Cancel button text */
   cancelButtonText?: string;
   /** (Unused if footer is controlled) aria-label for the close button */
-  ariaLabelCloseButton?: string;
+  closeButtonAriaLabel?: string;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
 }
@@ -119,8 +119,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     nextButtonText: 'Next',
     backButtonText: 'Back',
     cancelButtonText: 'Cancel',
-    ariaLabelCloseButton: 'Close',
-    ariaLabelNav: 'Steps',
+    closeButtonAriaLabel: 'Close',
+    navAriaLabel: 'Steps',
     hasBodyPadding: true,
     onBack: null as WizardStepFunctionType,
     onNext: null as WizardStepFunctionType,
@@ -358,8 +358,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       nextButtonText = 'Next',
       backButtonText = 'Back',
       cancelButtonText = 'Cancel',
-      ariaLabelCloseButton = 'Close',
-      ariaLabelNav,
+      closeButtonAriaLabel = 'Close',
+      navAriaLabel,
       hasBodyPadding,
       footer,
       isCompactNav,
@@ -378,7 +378,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const setFullHeight = isFullHeight || height;
 
     const nav = (isWizardNavOpen: boolean) => (
-      <WizardNav isOpen={isWizardNavOpen} ariaLabel={ariaLabelNav}>
+      <WizardNav isOpen={isWizardNavOpen} aria-label={navAriaLabel}>
         {computedSteps.map((step, index) => {
           if (step.isFinishedStep) {
             // Don't show finished step in the side nav
@@ -487,7 +487,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               onClose={onClose}
               title={title}
               description={description}
-              ariaLabelCloseButton={ariaLabelCloseButton}
+              closeButtonAriaLabel={closeButtonAriaLabel}
             />
           )}
           <WizardToggle

@@ -102,7 +102,7 @@ describe('DataList', () => {
 
   test('Toggle default with aria label', () => {
     const view = shallow(
-      <DataListToggle aria-label="Toggle details for" aria-labelledby="ex-toggle2 ex-item2" id="ex-toggle2" />
+      <DataListToggle aria-label="Toggle details for" id="ex-toggle2" />
     );
 
     expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');

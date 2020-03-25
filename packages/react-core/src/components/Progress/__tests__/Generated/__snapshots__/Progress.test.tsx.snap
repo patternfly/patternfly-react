@@ -8,7 +8,10 @@ exports[`Progress should match snapshot (auto-generated) 1`] = `
   role="progressbar"
 >
   <ProgressContainer
-    ariaProps={
+    label={null}
+    measureLocation="outside"
+    parentId="''"
+    progressBarAriaProps={
       Object {
         "aria-describedby": "''-description",
         "aria-valuemax": 100,
@@ -17,9 +20,6 @@ exports[`Progress should match snapshot (auto-generated) 1`] = `
         "aria-valuetext": "null",
       }
     }
-    label={null}
-    measureLocation="outside"
-    parentId="''"
     title="''"
     value={0}
     variant="danger"

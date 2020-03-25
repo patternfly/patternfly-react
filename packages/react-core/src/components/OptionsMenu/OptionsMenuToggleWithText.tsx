@@ -32,7 +32,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Internal parent reference */
   parentRef?: HTMLElement;
   /** Indicates that the element has a popup context menu or sub-level menu */
-  ariaHasPopup?: boolean | 'dialog' | 'menu' | 'false' | 'true' | 'listbox' | 'tree' | 'grid';
+  'aria-haspopup'?: boolean | 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid';
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
 }
@@ -51,7 +51,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   isFocused = false,
   isDisabled = false,
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  ariaHasPopup,
+  'aria-haspopup': ariaHasPopup,
   parentRef,
   onEnter,
   /* eslint-enable @typescript-eslint/no-unused-vars */

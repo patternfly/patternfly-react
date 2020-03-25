@@ -43,7 +43,7 @@ exports[`Wizard should match snapshot 1`] = `
               role="dialog"
             >
               <WizardHeader
-                ariaLabelCloseButton="Close"
+                closeButtonAriaLabel="Close"
                 description="Description here"
                 descriptionId="pf-wizard-description-0"
                 onClose={[Function]}

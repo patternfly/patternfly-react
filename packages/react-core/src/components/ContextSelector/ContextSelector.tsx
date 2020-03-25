@@ -34,7 +34,7 @@ export interface ContextSelectorProps {
   screenReaderLabel?: string;
   /** Text that appears in the Context Selector Toggle */
   toggleText?: string;
-  /** aria-label for the Context Selector Search Button */
+  /** Aria-label for the Context Selector Search Button */
   searchButtonAriaLabel?: string;
   /** Value in the Search field */
   searchInputValue?: string;

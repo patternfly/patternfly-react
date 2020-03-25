@@ -121,12 +121,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         >
                           <Select
                             aria-label="Select Input"
-                            ariaLabelClear="Clear all"
-                            ariaLabelRemove="Remove"
-                            ariaLabelToggle="Options menu"
-                            ariaLabelTypeAhead=""
-                            ariaLabelledBy=""
+                            aria-labelledby=""
                             className=""
+                            clearSelectionsAriaLabel="Clear all"
                             createText="Create"
                             customContent={null}
                             direction="down"
@@ -143,9 +140,12 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             onSelect={[Function]}
                             onToggle={[Function]}
                             placeholderText=""
+                            removeSelectionAriaLabel="Remove"
                             selections="Running"
+                            toggleAriaLabel="Options menu"
                             toggleIcon={null}
                             toggleId={null}
+                            typeAheadAriaLabel=""
                             variant="single"
                             width=""
                           >
@@ -161,8 +161,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               }
                             >
                               <SelectToggle
-                                ariaLabelToggle="Options menu"
-                                ariaLabelledBy=" pf-toggle-id-4"
+                                aria-label="Options menu"
+                                aria-labelledby=" pf-toggle-id-4"
                                 className=""
                                 handleTypeaheadKeys={[Function]}
                                 hasClearButton={false}
@@ -511,8 +511,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                   New
                                                 </span>
                                                 <ChipButton
+                                                  aria-label="close"
                                                   aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                                                  ariaLabel="close"
                                                   id="remove_pf-random-id-1"
                                                   onClick={[Function]}
                                                 >
@@ -597,8 +597,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                   Pending
                                                 </span>
                                                 <ChipButton
+                                                  aria-label="close"
                                                   aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-                                                  ariaLabel="close"
                                                   id="remove_pf-random-id-2"
                                                   onClick={[Function]}
                                                 >
@@ -684,12 +684,9 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                         >
                           <Select
                             aria-label="Select Input"
-                            ariaLabelClear="Clear all"
-                            ariaLabelRemove="Remove"
-                            ariaLabelToggle="Options menu"
-                            ariaLabelTypeAhead=""
-                            ariaLabelledBy=""
+                            aria-labelledby=""
                             className=""
+                            clearSelectionsAriaLabel="Clear all"
                             createText="Create"
                             customContent={null}
                             direction="down"
@@ -706,9 +703,12 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             onSelect={[Function]}
                             onToggle={[Function]}
                             placeholderText=""
+                            removeSelectionAriaLabel="Remove"
                             selections="Low"
+                            toggleAriaLabel="Options menu"
                             toggleIcon={null}
                             toggleId={null}
+                            typeAheadAriaLabel=""
                             variant="single"
                             width=""
                           >
@@ -724,8 +724,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               }
                             >
                               <SelectToggle
-                                ariaLabelToggle="Options menu"
-                                ariaLabelledBy=" pf-toggle-id-5"
+                                aria-label="Options menu"
+                                aria-labelledby=" pf-toggle-id-5"
                                 className=""
                                 handleTypeaheadKeys={[Function]}
                                 hasClearButton={false}
@@ -1074,8 +1074,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                                   Low
                                                 </span>
                                                 <ChipButton
+                                                  aria-label="close"
                                                   aria-labelledby="remove_pf-random-id-4 pf-random-id-4"
-                                                  ariaLabel="close"
                                                   id="remove_pf-random-id-4"
                                                   onClick={[Function]}
                                                 >
@@ -1948,12 +1948,9 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                       >
                         <Select
                           aria-label="Select Input"
-                          ariaLabelClear="Clear all"
-                          ariaLabelRemove="Remove"
-                          ariaLabelToggle="Options menu"
-                          ariaLabelTypeAhead=""
-                          ariaLabelledBy=""
+                          aria-labelledby=""
                           className=""
+                          clearSelectionsAriaLabel="Clear all"
                           createText="Create"
                           customContent={null}
                           direction="down"
@@ -1970,9 +1967,12 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           onSelect={[Function]}
                           onToggle={[Function]}
                           placeholderText=""
+                          removeSelectionAriaLabel="Remove"
                           selections="Running"
+                          toggleAriaLabel="Options menu"
                           toggleIcon={null}
                           toggleId={null}
+                          typeAheadAriaLabel=""
                           variant="single"
                           width=""
                         >
@@ -1988,8 +1988,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                             }
                           >
                             <SelectToggle
-                              ariaLabelToggle="Options menu"
-                              ariaLabelledBy=" pf-toggle-id-0"
+                              aria-label="Options menu"
+                              aria-labelledby=" pf-toggle-id-0"
                               className=""
                               handleTypeaheadKeys={[Function]}
                               hasClearButton={false}
@@ -2110,12 +2110,9 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                       >
                         <Select
                           aria-label="Select Input"
-                          ariaLabelClear="Clear all"
-                          ariaLabelRemove="Remove"
-                          ariaLabelToggle="Options menu"
-                          ariaLabelTypeAhead=""
-                          ariaLabelledBy=""
+                          aria-labelledby=""
                           className=""
+                          clearSelectionsAriaLabel="Clear all"
                           createText="Create"
                           customContent={null}
                           direction="down"
@@ -2132,9 +2129,12 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           onSelect={[Function]}
                           onToggle={[Function]}
                           placeholderText=""
+                          removeSelectionAriaLabel="Remove"
                           selections="Low"
+                          toggleAriaLabel="Options menu"
                           toggleIcon={null}
                           toggleId={null}
+                          typeAheadAriaLabel=""
                           variant="single"
                           width=""
                         >
@@ -2150,8 +2150,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                             }
                           >
                             <SelectToggle
-                              ariaLabelToggle="Options menu"
-                              ariaLabelledBy=" pf-toggle-id-1"
+                              aria-label="Options menu"
+                              aria-labelledby=" pf-toggle-id-1"
                               className=""
                               handleTypeaheadKeys={[Function]}
                               hasClearButton={false}

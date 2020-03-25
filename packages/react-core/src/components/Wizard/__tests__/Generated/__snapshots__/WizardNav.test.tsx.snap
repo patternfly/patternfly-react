@@ -2,7 +2,6 @@
 
 exports[`WizardNav should match snapshot (auto-generated) 1`] = `
 <nav
-  aria-label="string"
   className="pf-c-wizard__nav"
 >
   <ol

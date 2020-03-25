@@ -101,7 +101,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                   isOpen,
                   id,
                   isPlain,
-                  ariaHasPopup,
+                  'aria-haspopup': ariaHasPopup,
                   onEnter: () => this.onEnter()
                 })
               )}

@@ -136,8 +136,8 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
 
     return ReactDOM.createPortal(
       <AboutModalContainer
-        ariaLabelledbyId={this.ariaLabelledBy}
-        ariaDescribedById={this.ariaDescribedBy}
+        aboutModalBoxHeaderId={this.ariaLabelledBy}
+        aboutModalBoxContentId={this.ariaDescribedBy}
         {...props}
       />,
       container

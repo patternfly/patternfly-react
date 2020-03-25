@@ -48,8 +48,8 @@ export interface ModalContentProps {
   isFooterLeftAligned?: boolean;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
-  /** Id to use for Modal Box description */
-  ariaDescribedById?: string;
+  /** Id to use for Modal Box descriptor */
+  modalBoxAriaDescribedById?: string;
   /** Id of the ModalBoxBody */
   id: string;
   /** Flag to disable focus trap */
@@ -72,7 +72,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   isLarge = false,
   isSmall = false,
   width = -1,
-  ariaDescribedById = '',
+  modalBoxAriaDescribedById = '',
   id = '',
   disableFocusTrap = false,
   ...props
@@ -100,7 +100,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       isLarge={isLarge}
       isSmall={isSmall}
       title={title}
-      id={ariaDescribedById || id}
+      id={modalBoxAriaDescribedById || id}
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}

@@ -5,8 +5,8 @@ import { css } from '@patternfly/react-styles';
 export interface WizardNavProps {
   /** children should be WizardNavItem components */
   children?: any;
-  /** aria-label applied to the nav element */
-  ariaLabel?: string;
+  /** Aria-label applied to the nav element */
+  'aria-label'?: string;
   /** Whether the nav is expanded */
   isOpen?: boolean;
   /** True to return the inner list without the wrapping nav element */
@@ -15,7 +15,7 @@ export interface WizardNavProps {
 
 export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   children,
-  ariaLabel,
+  'aria-label': ariaLabel,
   isOpen = false,
   returnList = false
 }: WizardNavProps) => {

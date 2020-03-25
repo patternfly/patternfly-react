@@ -94,7 +94,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
           selections={selections}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           onFilter={this.onFilter}
           isGrouped
           hasInlineFilter

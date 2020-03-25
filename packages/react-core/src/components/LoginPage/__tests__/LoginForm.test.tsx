@@ -33,8 +33,3 @@ test('LoginForm with rememberMeLabel', () => {
   const view = shallow(<LoginForm rememberMeLabel="remember me" />);
   expect(view).toMatchSnapshot();
 });
-
-test('LoginForm with rememberMeLabel and rememberMeAriaLabel uses the rememberMeAriaLabel', () => {
-  const view = shallow(<LoginForm rememberMeAriaLabel="ARIA remember me" rememberMeLabel="remember me" />);
-  expect(view).toMatchSnapshot();
-});

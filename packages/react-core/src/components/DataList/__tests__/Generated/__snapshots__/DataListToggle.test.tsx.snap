@@ -2,6 +2,7 @@
 
 exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
 <div
+  aria-labelledby="''"
   className="pf-c-data-list__item-control ''"
 >
   <div

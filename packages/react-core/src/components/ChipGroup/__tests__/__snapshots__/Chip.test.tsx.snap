@@ -27,8 +27,8 @@ exports[`Chip closable 1`] = `
         Chip
       </span>
       <ChipButton
+        aria-label="close"
         aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-        ariaLabel="close"
         id="remove_pf-random-id-1"
         onClick={[Function]}
       >
@@ -116,8 +116,8 @@ exports[`Chip closable with tooltip 1`] = `
         1234567890123456789
       </span>
       <ChipButton
+        aria-label="close"
         aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-        ariaLabel="close"
         id="remove_pf-random-id-2"
         onClick={[Function]}
       >

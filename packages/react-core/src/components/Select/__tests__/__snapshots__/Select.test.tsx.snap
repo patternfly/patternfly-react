@@ -3,12 +3,9 @@
 exports[`checkbox select renders checkbox select groups successfully - old classes 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -25,9 +22,12 @@ exports[`checkbox select renders checkbox select groups successfully - old class
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -43,8 +43,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-15"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-15"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -637,12 +637,9 @@ exports[`checkbox select renders checkbox select groups successfully - old class
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -659,9 +656,12 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -677,8 +677,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-14"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-14"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -1311,12 +1311,9 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 exports[`checkbox select renders closed successfully - old classes 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -1333,9 +1330,12 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -1351,8 +1351,8 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-9"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-9"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -1466,12 +1466,9 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -1488,9 +1485,12 @@ exports[`checkbox select renders closed successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -1506,8 +1506,8 @@ exports[`checkbox select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-8"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-8"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -1621,12 +1621,9 @@ exports[`checkbox select renders closed successfully 1`] = `
 exports[`checkbox select renders expanded successfully - old classes 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -1643,9 +1640,12 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -1661,8 +1661,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-11"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-11"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -2003,12 +2003,9 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -2025,9 +2022,12 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -2043,8 +2043,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-10"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-10"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -2405,12 +2405,9 @@ exports[`checkbox select renders expanded successfully 1`] = `
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -2427,9 +2424,12 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -2445,8 +2445,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-13"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-13"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -2782,12 +2782,9 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
 exports[`checkbox select renders expanded with filtering successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -2804,9 +2801,12 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="checkbox"
   width=""
 >
@@ -2822,8 +2822,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-12"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-12"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}
@@ -3228,12 +3228,9 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
 exports[`select custom select filter filters properly 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -3250,9 +3247,12 @@ exports[`select custom select filter filters properly 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -3268,8 +3268,8 @@ exports[`select custom select filter filters properly 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-6"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-6"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -3626,12 +3626,9 @@ exports[`select custom select filter filters properly 1`] = `
 exports[`select renders select groups successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -3648,9 +3645,12 @@ exports[`select renders select groups successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -3666,8 +3666,8 @@ exports[`select renders select groups successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-7"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-7"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -4220,12 +4220,9 @@ exports[`select renders select groups successfully 1`] = `
 exports[`select renders up drection successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="up"
@@ -4242,9 +4239,12 @@ exports[`select renders up drection successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -4260,8 +4260,8 @@ exports[`select renders up drection successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-4"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-4"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -4379,12 +4379,9 @@ exports[`select renders up drection successfully 1`] = `
 exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -4401,9 +4398,12 @@ exports[`select single select renders closed successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -4419,8 +4419,8 @@ exports[`select single select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-0"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-0"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -4538,12 +4538,9 @@ exports[`select single select renders closed successfully 1`] = `
 exports[`select single select renders disabled successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -4560,9 +4557,12 @@ exports[`select single select renders disabled successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -4578,8 +4578,8 @@ exports[`select single select renders disabled successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-1"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-1"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -4698,12 +4698,9 @@ exports[`select single select renders disabled successfully 1`] = `
 exports[`select single select renders expanded successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -4720,9 +4717,12 @@ exports[`select single select renders expanded successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -4738,8 +4738,8 @@ exports[`select single select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-2"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-2"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -5062,12 +5062,9 @@ exports[`select single select renders expanded successfully 1`] = `
 exports[`select single select renders expanded successfully with custom objects 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -5084,9 +5081,12 @@ exports[`select single select renders expanded successfully with custom objects 
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -5102,8 +5102,8 @@ exports[`select single select renders expanded successfully with custom objects 
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-3"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-3"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -5405,12 +5405,9 @@ exports[`select single select renders expanded successfully with custom objects 
 exports[`select with custom content renders closed successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent="testing custom"
   direction="down"
@@ -5426,9 +5423,12 @@ exports[`select with custom content renders closed successfully 1`] = `
   onFilter={null}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -5444,8 +5444,8 @@ exports[`select with custom content renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-35"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-35"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -5559,12 +5559,9 @@ exports[`select with custom content renders closed successfully 1`] = `
 exports[`select with custom content renders expanded successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent="testing custom"
   direction="down"
@@ -5580,9 +5577,12 @@ exports[`select with custom content renders expanded successfully 1`] = `
   onFilter={null}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="single"
   width=""
 >
@@ -5598,8 +5598,8 @@ exports[`select with custom content renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-36"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-36"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -5778,12 +5778,9 @@ exports[`toggle icon typeahead select 1`] = `
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -5800,9 +5797,12 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeaheadmulti"
   width=""
 >
@@ -5818,8 +5818,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-23"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-23"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -5962,12 +5962,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -5984,9 +5981,12 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeaheadmulti"
   width=""
 >
@@ -6002,8 +6002,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-24"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-24"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -6351,12 +6351,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -6373,14 +6370,17 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections={
     Array [
       "Mr",
       "Mrs",
     ]
   }
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeaheadmulti"
   width=""
 >
@@ -6396,8 +6396,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-25"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-25"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -6705,8 +6705,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         Mr
                       </span>
                       <ChipButton
+                        aria-label="Remove"
                         aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
-                        ariaLabel="Remove"
                         id="remove_pf-random-id-0"
                         onClick={[Function]}
                       >
@@ -6791,8 +6791,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         Mrs
                       </span>
                       <ChipButton
+                        aria-label="Remove"
                         aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                        ariaLabel="Remove"
                         id="remove_pf-random-id-1"
                         onClick={[Function]}
                       >
@@ -7168,12 +7168,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 exports[`typeahead multi select test onChange 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -7190,9 +7187,12 @@ exports[`typeahead multi select test onChange 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -7208,8 +7208,8 @@ exports[`typeahead multi select test onChange 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-27"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-27"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}
@@ -7476,12 +7476,9 @@ exports[`typeahead multi select test onChange 1`] = `
 exports[`typeahead select renders closed successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -7498,9 +7495,12 @@ exports[`typeahead select renders closed successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -7516,8 +7516,8 @@ exports[`typeahead select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-16"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-16"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -7659,12 +7659,9 @@ exports[`typeahead select renders closed successfully 1`] = `
 exports[`typeahead select renders expanded successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -7681,9 +7678,12 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -7699,8 +7699,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-17"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-17"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -8047,12 +8047,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
 exports[`typeahead select renders selected successfully 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -8069,9 +8066,12 @@ exports[`typeahead select renders selected successfully 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections="Mr"
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -8087,8 +8087,8 @@ exports[`typeahead select renders selected successfully 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-18"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-18"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -8535,12 +8535,9 @@ exports[`typeahead select renders selected successfully 1`] = `
 exports[`typeahead select test creatable option 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -8556,9 +8553,12 @@ exports[`typeahead select test creatable option 1`] = `
   onFilter={null}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -8574,8 +8574,8 @@ exports[`typeahead select test creatable option 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-22"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-22"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
@@ -8848,12 +8848,9 @@ exports[`typeahead select test creatable option 1`] = `
 exports[`typeahead select test onChange 1`] = `
 <Select
   aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
+  aria-labelledby=""
   className=""
+  clearSelectionsAriaLabel="Clear all"
   createText="Create"
   customContent={null}
   direction="down"
@@ -8870,9 +8867,12 @@ exports[`typeahead select test onChange 1`] = `
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
   placeholderText=""
+  removeSelectionAriaLabel="Remove"
   selections=""
+  toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
+  typeAheadAriaLabel=""
   variant="typeahead"
   width=""
 >
@@ -8888,8 +8888,8 @@ exports[`typeahead select test onChange 1`] = `
     }
   >
     <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-20"
+      aria-label="Options menu"
+      aria-labelledby=" pf-toggle-id-20"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}

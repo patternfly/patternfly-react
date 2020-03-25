@@ -230,7 +230,7 @@ exports[`component render custom pagination toggle 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-12"
             isDisabled={false}
@@ -858,7 +858,7 @@ exports[`component render custom perPageOptions 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-7"
             isDisabled={false}
@@ -1609,7 +1609,7 @@ exports[`component render custom start end 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={5}
             id="pf-toggle-id-10"
             isDisabled={false}
@@ -2257,7 +2257,7 @@ exports[`component render empty per page options 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={false}
+            aria-haspopup={false}
             firstIndex={1}
             id="pf-toggle-id-8"
             isDisabled={false}
@@ -2771,7 +2771,7 @@ exports[`component render last page 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={11}
             id="pf-toggle-id-6"
             isDisabled={false}
@@ -3522,7 +3522,7 @@ exports[`component render limited number of pages 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-4"
             isDisabled={false}
@@ -4273,7 +4273,7 @@ exports[`component render no items 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={0}
             id="pf-toggle-id-9"
             isDisabled={false}
@@ -5005,7 +5005,7 @@ exports[`component render should render correctly bottom 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-1"
             isDisabled={false}
@@ -5756,7 +5756,7 @@ exports[`component render should render correctly compact 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-2"
             isDisabled={false}
@@ -6390,7 +6390,7 @@ exports[`component render should render correctly disabled 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-3"
             isDisabled={true}
@@ -7144,7 +7144,7 @@ exports[`component render should render correctly top 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-0"
             isDisabled={false}
@@ -7887,7 +7887,7 @@ exports[`component render titles 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-11"
             isDisabled={false}
@@ -8639,7 +8639,7 @@ exports[`component render up drop direction 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={1}
             id="pf-toggle-id-13"
             isDisabled={false}
@@ -9390,7 +9390,7 @@ exports[`component render zero results 1`] = `
           data-ouia-safe={true}
         >
           <OptionsToggle
-            ariaHasPopup={true}
+            aria-haspopup={true}
             firstIndex={0}
             id="pf-toggle-id-5"
             isDisabled={false}

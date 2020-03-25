@@ -38,9 +38,9 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   hoverTip?: string;
   /** Tooltip message to display when clicking the copy button */
   clickTip?: string;
-  /** Custom flag to show that the input requires an associated id or aria-label. */
+  /** Aria-label to use on the TextInput. */
   textAriaLabel?: string;
-  /** Custom flag to show that the toggle button requires an associated id or aria-label. */
+  /** Aria-label to use on the ClipboardCopyToggle. */
   toggleAriaLabel?: string;
   /** Flag to show if the input is read only. */
   isReadOnly?: boolean;
