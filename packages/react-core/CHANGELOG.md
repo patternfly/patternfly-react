@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.0.10...@patternfly/react-core@4.1.0) (2020-03-25)
+
+
+### Features
+
+* **Alert:** change default alert variant to default ([#3903](https://github.com/patternfly/patternfly-react/issues/3903)) ([4a88fc0](https://github.com/patternfly/patternfly-react/commit/4a88fc060cf87a55c9b48c20e76dc5f67a39e727))
+* **Page:** make mainContainerId required ([#3904](https://github.com/patternfly/patternfly-react/issues/3904)) ([ee54a45](https://github.com/patternfly/patternfly-react/commit/ee54a4500da778f0af3cde803a55b9ad20f3a7ed))
+
+
+
+
+
 ## [4.0.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.0.9...@patternfly/react-core@4.0.10) (2020-03-24)
 
 **Note:** Version bump only for package @patternfly/react-core
