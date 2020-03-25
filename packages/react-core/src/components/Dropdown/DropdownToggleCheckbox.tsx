@@ -21,7 +21,7 @@ export interface DropdownToggleCheckboxProps
   children?: React.ReactNode;
   /** Id of the checkbox */
   id: string;
-  /** aria-label of the checkbox */
+  /** Aria-label of the checkbox */
   'aria-label': string;
 }
 

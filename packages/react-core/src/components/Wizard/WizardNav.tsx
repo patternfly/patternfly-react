@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface WizardNavProps {
   /** children should be WizardNavItem components */
   children?: any;
-  /** aria-label applied to the nav element */
+  /** Aria-label applied to the nav element */
   'aria-label'?: string;
   /** Whether the nav is expanded */
   isOpen?: boolean;

@@ -12,7 +12,7 @@ export interface WizardHeaderProps {
   title: string;
   /** Description of the wizard */
   description?: string;
-  /** aria-label applied to the X (Close) button */
+  /** Aria-label applied to the X (Close) button */
   closeButtonAriaLabel?: string;
   /** id for the title */
   titleId?: string;

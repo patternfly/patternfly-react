@@ -75,7 +75,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   steps: WizardStep[];
   /** The current step the wizard is on (1 or higher) */
   startAtStep?: number;
-  /** aria-label for the Nav */
+  /** Aria-label for the Nav */
   navAriaLabel?: string;
   /** Can remove the default padding around the main body content by setting this to false */
   hasBodyPadding?: boolean;

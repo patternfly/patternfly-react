@@ -31,9 +31,9 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isFilled?: boolean;
   /** enables Secondary Tab styling */
   isSecondary?: boolean;
-  /** aria-label for the left Scroll Button */
+  /** Aria-label for the left Scroll Button */
   leftScrollAriaLabel?: string;
-  /** aria-label for the right Scroll Button */
+  /** Aria-label for the right Scroll Button */
   rightScrollAriaLabel?: string;
   /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
   variant?: 'div' | 'nav';
