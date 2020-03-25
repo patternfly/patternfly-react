@@ -550,14 +550,12 @@ class TypeaheadSelectInput extends React.Component {
     ];
     this.state = {
       isOpen: false,
-      selected: null,
-      options: this.options
+      selected: null
     };
 
     this.onToggle = isOpen => {
       this.setState({
-        isOpen,
-        options: this.options
+        isOpen
       });
     };
 
@@ -575,8 +573,7 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isOpen: false,
-        options: this.options
+        isOpen: false
       });
     };
 
@@ -585,16 +582,12 @@ class TypeaheadSelectInput extends React.Component {
       try {
         input = new RegExp(e.target.value, 'i');
       } catch (err) {}
-      let typeaheadFilteredChildren =
-        e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
-      this.setState({
-        options: typeaheadFilteredChildren
-      });
+      return e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
     };
   }
 
   render() {
-    const { isOpen, selected, options } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <div>
@@ -613,7 +606,7 @@ class TypeaheadSelectInput extends React.Component {
           aria-labelledby={titleId}
           placeholderText="Select a state"
         >
-          {options}
+          {this.options}
         </Select>
       </div>
     );
