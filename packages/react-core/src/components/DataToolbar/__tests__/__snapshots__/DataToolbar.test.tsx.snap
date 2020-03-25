@@ -141,11 +141,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             onSelect={[Function]}
                             onToggle={[Function]}
                             placeholderText=""
-<<<<<<< HEAD
                             removeSelectionAriaLabel="Remove"
-=======
                             selection=""
->>>>>>> feat(Misc): update snapshots after rebase
                             selections="Running"
                             toggleAriaLabel="Options menu"
                             toggleIcon={null}
@@ -709,11 +706,8 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                             onSelect={[Function]}
                             onToggle={[Function]}
                             placeholderText=""
-<<<<<<< HEAD
                             removeSelectionAriaLabel="Remove"
-=======
                             selection=""
->>>>>>> feat(Misc): update snapshots after rebase
                             selections="Low"
                             toggleAriaLabel="Options menu"
                             toggleIcon={null}
@@ -1978,11 +1972,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           onSelect={[Function]}
                           onToggle={[Function]}
                           placeholderText=""
-<<<<<<< HEAD
                           removeSelectionAriaLabel="Remove"
-=======
                           selection=""
->>>>>>> feat(Misc): update snapshots after rebase
                           selections="Running"
                           toggleAriaLabel="Options menu"
                           toggleIcon={null}
@@ -2145,11 +2136,8 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                           onSelect={[Function]}
                           onToggle={[Function]}
                           placeholderText=""
-<<<<<<< HEAD
                           removeSelectionAriaLabel="Remove"
-=======
                           selection=""
->>>>>>> feat(Misc): update snapshots after rebase
                           selections="Low"
                           toggleAriaLabel="Options menu"
                           toggleIcon={null}
