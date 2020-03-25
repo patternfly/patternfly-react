@@ -1,26 +1,31 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import scss from 'rollup-plugin-scss';
+import replace from '@rollup/plugin-replace';
+import { terser } from "rollup-plugin-terser";
+
+const isProduction = process.env.IS_PRODUCTION;
 
 module.exports = {
   input: 'dist/esm/index.js',
   output: {
-    file: 'react-core.umd.js',
+    file: `dist/umd/react-core${isProduction ? '.min' : ''}.js`,
     format: 'umd',
-    name: 'react-core',
+    name: 'PatternFlyReact',
     globals: {
       'react': 'React',
-      'react-dom': 'ReactDOM'
+      'react-dom': 'ReactDOM',
+      'prop-types': 'PropTypes'
     }
   },
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'prop-types'],
   plugins: [
-    resolve(),
-    commonjs({
-      // include: [
-      //   /node_modules/
-      // ]
+    replace({
+      'process.env.NODE_ENV': `'${isProduction ? 'production' : 'development'}'`
     }),
-    scss()
+    resolve(),
+    commonjs(),
+    scss(),
+    isProduction && terser()
   ],
 };
