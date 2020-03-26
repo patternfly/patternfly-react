@@ -45,13 +45,15 @@ export const ${jsName}Config = {
   transform: '${stringify(icon.transform)}'
 };
 
-export const ${jsName}: React.FunctionComponent<SVGIconProps> = (
-  props: SVGIconProps
+export const ${jsName}: React.FunctionComponent<Omit<SVGIconProps, 'config'>> = (
+  props
 ) => {
-  // Avoid spread operator helper.
-  props.config = ${jsName}Config;
-  return React.createElement(SVGIcon, props);
-};\n`
+  const newProps = props as SVGIconProps;
+  newProps.config = ${jsName}Config;
+  return React.createElement(SVGIcon, newProps);
+};
+
+export default ${jsName};\n`
     );
 
     index.push(path.basename(fname, '.tsx'));

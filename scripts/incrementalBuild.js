@@ -17,9 +17,9 @@ const yarnLockHash = hashDir('yarn.lock');
 const getSrcDirs = packageName => {
   switch (packageName) {
     case '@patternfly/react-icons':
-      return ['build', 'src'];
+      return ['src', 'scripts'];
     case '@patternfly/react-catalog-view-extension':
-      return ['sass', 'src'];
+      return ['src', 'sass'];
     default:
       return ['src'];
   }
