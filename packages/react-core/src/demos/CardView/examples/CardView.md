@@ -750,7 +750,7 @@ class CardViewBasic extends React.Component {
                           isChecked={selectedItems.includes(product.id)}
                           defaultChecked={this.state.itemsCheckedByDefault}
                           aria-label="card checkbox example"
-                          id="check-1"
+                          id={`check-${product.id}`}
                         />
                       </CardActions>
                     </CardHead>

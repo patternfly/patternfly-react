@@ -12,6 +12,7 @@ coverage
 **/Generated
 **/build
 css
+packages/react-docs/static
 
 # package managers
 yarn-error.log
