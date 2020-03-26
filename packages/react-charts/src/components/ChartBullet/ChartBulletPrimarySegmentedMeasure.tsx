@@ -224,14 +224,14 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
       if (horizontal) {
         return 0;
       }
-      const result = typeof barWidth === 'function' ? barWidth(data, false) : barWidth;
+      const result = typeof barWidth === 'function' ? barWidth(data as any) : barWidth;
       return result / 2;
     },
     dy: () => {
       if (!horizontal) {
         return 0;
       }
-      const result = typeof barWidth === 'function' ? barWidth(data, false) : barWidth;
+      const result = typeof barWidth === 'function' ? barWidth(data as any) : barWidth;
       return -(result / 2);
     },
     orientation: 'top',

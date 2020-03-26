@@ -446,7 +446,10 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     });
   };
 
+  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     <VictoryChart
       containerComponent={container}
       height={height}
