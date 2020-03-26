@@ -48,8 +48,7 @@ export const ${jsName}Config = {
 export const ${jsName}: React.FunctionComponent<Omit<SVGIconProps, 'config'>> = (
   props
 ) => {
-  const newProps = props as SVGIconProps;
-  newProps.config = ${jsName}Config;
+  const newProps = Object.assign({ config: ${jsName}Config }, props) as SVGIconProps;
   return React.createElement(SVGIcon, newProps);
 };
 

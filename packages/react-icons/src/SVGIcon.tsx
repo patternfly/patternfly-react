@@ -25,13 +25,13 @@ export const getSize = (size: IconSize | keyof typeof IconSize) => {
 };
 
 export interface IconDefinition {
-  height: number;
-  name: string;
-  svgPath: string;
+  name?: string;
   width: number;
-  xOffset: number;
-  yOffset: number;
-  transform: string;
+  height: number;
+  svgPath: string;
+  xOffset?: number;
+  yOffset?: number;
+  transform?: string;
 }
 
 export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' | 'ref'> {
@@ -73,7 +73,7 @@ export class SVGIcon extends React.Component<SVGIconProps> {
         {...props}
       >
         {hasTitle && <title id={this.id}>{title}</title>}
-        <path d={config.svgPath} transform={config.transform} />
+        <path d={config.svgPath} transform={config.transform || ''} />
       </svg>
     );
   }

@@ -16,12 +16,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleLeftIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <AngleLeftIcon />
     </button>
     <ul
       className="pf-c-tabs__list"
@@ -44,12 +39,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleRightIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <AngleRightIcon />
     </button>
   </div>
   <ForwardRef

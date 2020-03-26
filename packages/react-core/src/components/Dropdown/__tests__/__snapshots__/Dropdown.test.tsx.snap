@@ -150,31 +150,43 @@ exports[`KebabToggle basic 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -604,31 +616,43 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -1035,31 +1059,43 @@ exports[`KebabToggle dropup 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -1616,31 +1652,43 @@ exports[`KebabToggle expanded 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -2316,31 +2364,43 @@ exports[`KebabToggle plain 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -2746,31 +2806,43 @@ exports[`KebabToggle regular 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -3177,31 +3249,43 @@ exports[`KebabToggle right aligned 1`] = `
             onKeyDown={[Function]}
             type="button"
           >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <EllipsisVIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "EllipsisVIcon",
+                    "svgPath": "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z",
+                    "transform": "",
+                    "width": 192,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 192 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </EllipsisVIcon>
           </button>
         </Toggle>
@@ -3380,31 +3464,45 @@ exports[`dropdown basic 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>
@@ -3853,31 +3951,45 @@ exports[`dropdown dropup + right aligned 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>
@@ -4303,31 +4415,45 @@ exports[`dropdown dropup 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>
@@ -4903,31 +5029,45 @@ exports[`dropdown expanded 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>
@@ -5624,31 +5764,45 @@ exports[`dropdown primary 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>
@@ -6073,31 +6227,45 @@ exports[`dropdown regular 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>
@@ -6523,31 +6691,45 @@ exports[`dropdown right aligned 1`] = `
             </span>
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
+              <SVGIcon
                 className="pf-c-dropdown__toggle-icon"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "CaretDownIcon",
+                    "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                    "transform": "",
+                    "width": 320,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 320 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </CaretDownIcon>
           </button>
         </Toggle>

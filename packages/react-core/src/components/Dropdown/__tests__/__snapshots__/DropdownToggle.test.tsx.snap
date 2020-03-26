@@ -38,31 +38,45 @@ exports[`state active 1`] = `
       </span>
       <CaretDownIcon
         className=""
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
+        <SVGIcon
           className=""
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
+          color="currentColor"
+          config={
             Object {
-              "verticalAlign": "-0.125em",
+              "height": 512,
+              "name": "CaretDownIcon",
+              "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+              "transform": "",
+              "width": 320,
+              "xOffset": 0,
+              "yOffset": 0,
             }
           }
-          viewBox="0 0 320 512"
-          width="1em"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className=""
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </SVGIcon>
       </CaretDownIcon>
     </button>
   </Toggle>
@@ -107,31 +121,45 @@ exports[`state class changes 1`] = `
       </span>
       <CaretDownIcon
         className="another-test-class"
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
+        <SVGIcon
           className="another-test-class"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
+          color="currentColor"
+          config={
             Object {
-              "verticalAlign": "-0.125em",
+              "height": 512,
+              "name": "CaretDownIcon",
+              "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+              "transform": "",
+              "width": 320,
+              "xOffset": 0,
+              "yOffset": 0,
             }
           }
-          viewBox="0 0 320 512"
-          width="1em"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="another-test-class"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </SVGIcon>
       </CaretDownIcon>
     </button>
   </Toggle>
@@ -176,31 +204,45 @@ exports[`state class changes 2`] = `
       </span>
       <CaretDownIcon
         className="another-test-class"
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
+        <SVGIcon
           className="another-test-class"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
+          color="currentColor"
+          config={
             Object {
-              "verticalAlign": "-0.125em",
+              "height": 512,
+              "name": "CaretDownIcon",
+              "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+              "transform": "",
+              "width": 320,
+              "xOffset": 0,
+              "yOffset": 0,
             }
           }
-          viewBox="0 0 320 512"
-          width="1em"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="another-test-class"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </SVGIcon>
       </CaretDownIcon>
     </button>
   </Toggle>
@@ -245,31 +287,45 @@ exports[`state focus 1`] = `
       </span>
       <CaretDownIcon
         className=""
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
+        <SVGIcon
           className=""
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
+          color="currentColor"
+          config={
             Object {
-              "verticalAlign": "-0.125em",
+              "height": 512,
+              "name": "CaretDownIcon",
+              "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+              "transform": "",
+              "width": 320,
+              "xOffset": 0,
+              "yOffset": 0,
             }
           }
-          viewBox="0 0 320 512"
-          width="1em"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className=""
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </SVGIcon>
       </CaretDownIcon>
     </button>
   </Toggle>
@@ -314,31 +370,45 @@ exports[`state hover 1`] = `
       </span>
       <CaretDownIcon
         className=""
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
+        <SVGIcon
           className=""
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
+          color="currentColor"
+          config={
             Object {
-              "verticalAlign": "-0.125em",
+              "height": 512,
+              "name": "CaretDownIcon",
+              "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+              "transform": "",
+              "width": 320,
+              "xOffset": 0,
+              "yOffset": 0,
             }
           }
-          viewBox="0 0 320 512"
-          width="1em"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className=""
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </SVGIcon>
       </CaretDownIcon>
     </button>
   </Toggle>

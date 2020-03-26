@@ -4,11 +4,6 @@ exports[`AlertIcon should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-alert__icon ''"
 >
-  <CheckCircleIcon
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-    title={null}
-  />
+  <CheckCircleIcon />
 </div>
 `;

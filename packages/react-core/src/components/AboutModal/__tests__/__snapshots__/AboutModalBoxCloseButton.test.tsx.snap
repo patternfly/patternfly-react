@@ -9,12 +9,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
     onClick={[Function]}
     variant="plain"
   >
-    <TimesIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <TimesIcon />
   </Button>
 </div>
 `;
@@ -28,12 +23,7 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
     onClick={[Function]}
     variant="plain"
   >
-    <TimesIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <TimesIcon />
   </Button>
 </div>
 `;
@@ -47,12 +37,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
     onClick={[MockFunction]}
     variant="plain"
   >
-    <TimesIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <TimesIcon />
   </Button>
 </div>
 `;

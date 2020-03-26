@@ -340,31 +340,43 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     <span
                       className="pf-c-breadcrumb__item-divider"
                     >
-                      <AngleRightIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
+                      <AngleRightIcon>
+                        <SVGIcon
+                          color="currentColor"
+                          config={
                             Object {
-                              "verticalAlign": "-0.125em",
+                              "height": 512,
+                              "name": "AngleRightIcon",
+                              "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                              "transform": "",
+                              "width": 256,
+                              "xOffset": 0,
+                              "yOffset": 0,
                             }
                           }
-                          viewBox="0 0 256 512"
-                          width="1em"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                            transform=""
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              transform=""
+                            />
+                          </svg>
+                        </SVGIcon>
                       </AngleRightIcon>
                     </span>
                   </li>
@@ -385,31 +397,43 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     <span
                       className="pf-c-breadcrumb__item-divider"
                     >
-                      <AngleRightIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
+                      <AngleRightIcon>
+                        <SVGIcon
+                          color="currentColor"
+                          config={
                             Object {
-                              "verticalAlign": "-0.125em",
+                              "height": 512,
+                              "name": "AngleRightIcon",
+                              "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                              "transform": "",
+                              "width": 256,
+                              "xOffset": 0,
+                              "yOffset": 0,
                             }
                           }
-                          viewBox="0 0 256 512"
-                          width="1em"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                            transform=""
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              transform=""
+                            />
+                          </svg>
+                        </SVGIcon>
                       </AngleRightIcon>
                     </span>
                   </li>
@@ -430,31 +454,43 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     <span
                       className="pf-c-breadcrumb__item-divider"
                     >
-                      <AngleRightIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
+                      <AngleRightIcon>
+                        <SVGIcon
+                          color="currentColor"
+                          config={
                             Object {
-                              "verticalAlign": "-0.125em",
+                              "height": 512,
+                              "name": "AngleRightIcon",
+                              "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                              "transform": "",
+                              "width": 256,
+                              "xOffset": 0,
+                              "yOffset": 0,
                             }
                           }
-                          viewBox="0 0 256 512"
-                          width="1em"
+                          noVerticalAlign={false}
+                          size="sm"
                         >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                            transform=""
-                          />
-                        </svg>
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 256 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                              transform=""
+                            />
+                          </svg>
+                        </SVGIcon>
                       </AngleRightIcon>
                     </span>
                   </li>
@@ -666,31 +702,43 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   <span
                     className="pf-c-breadcrumb__item-divider"
                   >
-                    <AngleRightIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                    <AngleRightIcon>
+                      <SVGIcon
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "AngleRightIcon",
+                            "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                            "transform": "",
+                            "width": 256,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 256 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </AngleRightIcon>
                   </span>
                 </li>
@@ -711,31 +759,43 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   <span
                     className="pf-c-breadcrumb__item-divider"
                   >
-                    <AngleRightIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                    <AngleRightIcon>
+                      <SVGIcon
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "AngleRightIcon",
+                            "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                            "transform": "",
+                            "width": 256,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 256 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </AngleRightIcon>
                   </span>
                 </li>
@@ -756,31 +816,43 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   <span
                     className="pf-c-breadcrumb__item-divider"
                   >
-                    <AngleRightIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                    <AngleRightIcon>
+                      <SVGIcon
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "AngleRightIcon",
+                            "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                            "transform": "",
+                            "width": 256,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 256 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </AngleRightIcon>
                   </span>
                 </li>

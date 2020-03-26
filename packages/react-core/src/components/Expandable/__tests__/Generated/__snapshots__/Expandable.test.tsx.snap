@@ -13,10 +13,6 @@ exports[`Expandable should match snapshot (auto-generated) 1`] = `
     <AngleRightIcon
       aria-hidden={true}
       className="pf-c-expandable__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     />
     <span>
       ''

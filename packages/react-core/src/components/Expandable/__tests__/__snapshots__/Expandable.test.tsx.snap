@@ -12,10 +12,6 @@ exports[`Expandable 1`] = `
     <AngleRightIcon
       aria-hidden={true}
       className="pf-c-expandable__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     />
     <span />
   </button>
@@ -41,10 +37,6 @@ exports[`Renders Expandable expanded 1`] = `
     <AngleRightIcon
       aria-hidden={true}
       className="pf-c-expandable__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     />
     <span />
   </button>
@@ -69,10 +61,6 @@ exports[`Renders Uncontrolled Expandable 1`] = `
     <AngleRightIcon
       aria-hidden={true}
       className="pf-c-expandable__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     />
     <span>
       Show More

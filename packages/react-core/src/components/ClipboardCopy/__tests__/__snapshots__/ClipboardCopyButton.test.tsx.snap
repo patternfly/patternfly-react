@@ -44,12 +44,7 @@ exports[`copy button render 1`] = `
     onClick={[MockFunction]}
     type="button"
   >
-    <CopyIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <CopyIcon />
   </button>
 </Tooltip>
 `;

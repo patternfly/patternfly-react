@@ -14,12 +14,7 @@ exports[`BreadcrumbItem should match snapshot (auto-generated) 1`] = `
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <AngleRightIcon />
   </span>
 </li>
 `;
