@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 ---
 
-import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';
 
 ## Examples
 
@@ -90,7 +90,7 @@ class FormSelectInputInvalid extends React.Component {
 
 ```js title=Validated
 import React from 'react';
-import { Form, FormGroup, FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+import { Form, FormGroup, FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';
 
 class FormSelectInputInvalid extends React.Component {
   constructor(props) {
@@ -98,7 +98,7 @@ class FormSelectInputInvalid extends React.Component {
     this.state = {
       value: '',
       invalidText: 'You must choose something',
-      validated: 'default',
+      validated: ValidatedOptions.default,
       helperText: 'Make a selection'
     };
 
@@ -108,12 +108,12 @@ class FormSelectInputInvalid extends React.Component {
 
     this.onChange = (value, event) => {
       this.setState(
-        { value, validated: 'default', helperText: 'Validating...' },
+        { value, validated: ValidatedOptions.default, helperText: 'Validating...' },
         this.simulateNetworkCall(() => {
           if (value === '3') {
-            this.setState({ validated: 'success', helperText: 'You chose wisely' });
+            this.setState({ validated: ValidatedOptions.success, helperText: 'You chose wisely' });
           } else {
-            this.setState({ validated: 'error', invalidText: 'You must chose Three (thought that was obvious)' });
+            this.setState({ validated: ValidatedOptions.error, invalidText: 'You must chose Three (thought that was obvious)' });
           }
         })
       );
