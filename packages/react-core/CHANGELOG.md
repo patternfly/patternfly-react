@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.150.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.149.3...@patternfly/react-core@3.150.0) (2020-03-26)
+
+
+### Features
+
+* **rollup:** create unified react-core dist ([#3971](https://github.com/patternfly/patternfly-react/issues/3971)) ([506ea20](https://github.com/patternfly/patternfly-react/commit/506ea2084e37c8dd2887391747db62056086c69b))
+
+
+
+
+
 ## [3.149.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.149.2...@patternfly/react-core@3.149.3) (2020-03-25)
 
 **Note:** Version bump only for package @patternfly/react-core

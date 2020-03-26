@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.20.47...@patternfly/react-docs@4.21.0) (2020-03-26)
+
+
+### Features
+
+* **rollup:** create unified react-core dist ([#3971](https://github.com/patternfly/patternfly-react/issues/3971)) ([506ea20](https://github.com/patternfly/patternfly-react/commit/506ea2084e37c8dd2887391747db62056086c69b))
+
+
+
+
+
 ## [4.20.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.20.46...@patternfly/react-docs@4.20.47) (2020-03-25)
 
 **Note:** Version bump only for package @patternfly/react-docs
