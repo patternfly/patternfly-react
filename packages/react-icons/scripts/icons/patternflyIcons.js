@@ -1,43 +1,36 @@
-const {
-  save,
-  'folder-open': folderOpen,
-  edit,
-  print,
-  spinner,
-  home,
-  history,
-  memory,
-  server,
-  user,
-  users,
-  info,
-  filter,
-  key,
-  ...rest
-} = require('@patternfly/patternfly/icons/pf-icons.json');
+const pfIcons = require('@patternfly/patternfly/icons/pf-icons.json');
 
-function getPfIcon(icon) {
+function convertIcon(icon) {
+  icon.xOffset = 0;
   icon.yOffset = 64;
   icon.transform = `rotate(180 0 ${icon.height / 2}) scale(-1 1)`;
-  return icon;
 }
 
-Object.values(rest).forEach(getPfIcon);
+const renaming = {
+  save: 'save-alt',
+  'folder-open': 'folder-open-alt',
+  edit: 'edit-alt',
+  print: 'print-alt',
+  spinner: 'spinner-alt',
+  home: 'home-alt',
+  memory: 'memory-alt',
+  server: 'server-alt',
+  user: 'user-sec',
+  users: 'users-alt',
+  info: 'info-alt',
+  filter: 'filter-alt'
+};
 
-module.exports = {
-  'save-alt': getPfIcon(save),
-  'folder-open-alt': getPfIcon(folderOpen),
-  'edit-alt': getPfIcon(edit),
-  'print-alt': getPfIcon(print),
-  'spinner-alt': getPfIcon(spinner),
-  'home-alt': getPfIcon(home),
-  'memory-alt': getPfIcon(memory),
-  'server-alt': getPfIcon(server),
-  'user-sec': getPfIcon(user),
-  'users-alt': getPfIcon(users),
-  'info-alt': getPfIcon(info),
-  'filter-alt': getPfIcon(filter),
-  ...rest
+function convertIcons(icons) {
+  delete icons['history'];
+
+  Object.values(icons).forEach(convertIcon);
+  Object.entries(renaming).forEach(([oldKey, newKey]) => {
+    icons[newKey] = icons[oldKey];
+    delete icons[oldKey];
+  });
+
+  return icons;
 }
 
-console.log(module.exports);
+module.exports = convertIcons(pfIcons);

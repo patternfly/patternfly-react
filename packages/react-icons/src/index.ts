@@ -1,2 +1,2 @@
-export { IconSize } from './common';
+export { IconSize } from './SVGIcon';
 export * from './icons';

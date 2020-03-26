@@ -2,14 +2,14 @@ import * as React from 'react';
 
 let currentId = 0;
 
-export const IconSize = {
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg',
-  xl: 'xl'
+export enum IconSize {
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg',
+  xl = 'xl'
 };
 
-export const getSize = size => {
+export const getSize = (size: IconSize | keyof typeof IconSize) => {
   switch (size) {
     case IconSize.sm:
       return '1em';
@@ -34,20 +34,18 @@ export interface IconDefinition {
   transform: string;
 }
 
-interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' | 'ref'> {
+export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' | 'ref'> {
   config: IconDefinition;
   color?: string;
-  size?: typeof IconSize | keyof typeof IconSize;
+  size?: IconSize | keyof typeof IconSize;
   title?: string;
   noVerticalAlign?: boolean;
 }
 
 export class SVGIcon extends React.Component<SVGIconProps> {
-  displayName = this.props.config.name;
   static defaultProps = {
     color: 'currentColor',
     size: IconSize.sm,
-    title: null,
     noVerticalAlign: false
   };
 

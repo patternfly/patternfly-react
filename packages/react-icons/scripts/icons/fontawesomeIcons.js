@@ -2,32 +2,45 @@ const { fas } = require('@fortawesome/free-solid-svg-icons');
 const { far } = require('@fortawesome/free-regular-svg-icons');
 const { fab } = require('@fortawesome/free-brands-svg-icons');
 
-function getFontAwesomeIcon(icon, prefix = '') {
-  console.log('icon', icon);
-  icon.id = `${prefix}${icon.title || icon.substr(2)}`; // remove fa
-  icon.name = icon.id;
+function convertIcon(icon) {
+  const [ width, height, ligatures, unicode, svgPathData ] = icon.icon;
 
-  return icon;
+  return {
+    xOffset: 0,
+    yOffset: 0,
+    width,
+    height,
+    svgPathData
+  };
 }
 
-Object.values(fas).forEach(getFontAwesomeIcon);
-delete fab['faFontAwesomeLogoFull'];
-// .map(icon => {
-//   if (icon.includes('500')) {
-//     return {
-//       title: 'fiveHundredPx',
-//       name: 'fa500px'
-//     };
-//   }
-//   return icon;
-// })
-Object.values(fab).forEach(getFontAwesomeIcon);
-Object.values(far).forEach(icon => getFontAwesomeIcon(icon, 'outlined'));
+function getIconName(icon) {
+  if (icon.iconName == '500px') {
+    return 'five-hundred-px';
+  }
+  if (icon.prefix === 'far') {
+    return `outlined-${icon.iconName}`;
+  }
+
+  return icon.iconName;
+}
+
+function convertIcons(icons) {
+  delete icons['faFontAwesomeLogoFull'];
+
+  return Object.values(icons)
+    .map(icon => ({
+      name: getIconName(icon),
+      data: convertIcon(icon)
+    }))
+    .reduce((acc, cur) => {
+      acc[cur.name] = cur.data;
+      return acc;
+    }, {});
+}
 
 module.exports = {
-  ...fas,
-  ...fab,
-  ...far
+  ...convertIcons(fas),
+  ...convertIcons(fab),
+  ...convertIcons(far)
 }
-
-console.log(module.exports)
