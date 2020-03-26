@@ -329,31 +329,17 @@ class ColumnManagementAction extends React.Component {
     this.onSelect = this.onSelect.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
     this.renderModal = this.renderModal.bind(this);
-    this.matchLongCheckboxNameToShort = (name) => {
-      switch (name) {
-        case 'table-column-management-check-action-check1':
-          return 'check1';
-        case 'table-column-management-check-action-check2':
-          return 'check2';
-        case 'table-column-management-check-action-check3':
-          return 'check3';
-        case 'table-column-management-check-action-check4':
-          return 'check4';
-        case 'table-column-management-check-action-check5':
-          return 'check5';
-      }
-    };
     this.matchCheckboxNameToColumn = (name) => {
       switch (name) {
-        case 'table-column-management-check-action-check1':
+        case 'check1':
           return 'Repositories';
-        case 'table-column-management-check-action-check2':
+        case 'check2':
           return 'Branches';
-        case 'table-column-management-check-action-check3':
+        case 'check3':
           return 'Pull requests';
-        case 'table-column-management-check-action-check4':
+        case 'check4':
           return 'Workspaces';
-        case 'table-column-management-check-action-check5':
+        case 'check5':
           return 'Last commit';
       }
     };
@@ -390,10 +376,9 @@ class ColumnManagementAction extends React.Component {
     this.handleChange = (checked, event) => {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
-      const checkboxName = this.matchLongCheckboxNameToShort(target.name);
       this.filterData(checked, this.matchCheckboxNameToColumn(target.name));
       this.setState({
-        [checkboxName]: value,
+        [target.name]: value,
       });
     };
     this.handleModalToggle = () => {
@@ -451,9 +436,9 @@ class ColumnManagementAction extends React.Component {
       description={
         <TextContent>
           <Text component={TextVariants.p}>
-            Checked categories will be displayed in the table.
+            Selected categories will be displayed in the table.
           </Text>
-          <Button isInline onClick={this.selectAllColumns} variant="link">Select all columns</Button>
+          <Button isInline onClick={this.selectAllColumns} variant="link">Select all</Button>
         </TextContent>
       }
       onClose={this.handleModalToggle}
@@ -470,7 +455,7 @@ class ColumnManagementAction extends React.Component {
       <DataList aria-label="Table column management" id="table-column-management" isCompact>
         <DataListItem aria-labelledby="table-column-management-item1">
           <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item1" isChecked={this.state.check1} name="table-column-management-check-action-check1" onChange={this.handleChange} />
+            <DataListCheck aria-labelledby="table-column-management-item1" isChecked={this.state.check1} name="check1" onChange={this.handleChange} />
             <DataListItemCells
               dataListCells={[
                 <DataListCell id="table-column-management-item1" key="table-column-management-item1">
@@ -482,7 +467,7 @@ class ColumnManagementAction extends React.Component {
         </DataListItem>
         <DataListItem aria-labelledby="table-column-management-item2">
           <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item2" isChecked={this.state.check2} name="table-column-management-check-action-check2" onChange={this.handleChange} />
+            <DataListCheck aria-labelledby="table-column-management-item2" isChecked={this.state.check2} name="check2" onChange={this.handleChange} />
             <DataListItemCells
               dataListCells={[
                 <DataListCell id="table-column-management-item2" key="table-column-management-item2">
@@ -494,7 +479,7 @@ class ColumnManagementAction extends React.Component {
         </DataListItem>
         <DataListItem aria-labelledby="table-column-management-item3">
           <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item3" isChecked={this.state.check3} name="table-column-management-check-action-check3" onChange={this.handleChange} />
+            <DataListCheck aria-labelledby="table-column-management-item3" isChecked={this.state.check3} name="check3" onChange={this.handleChange} />
             <DataListItemCells
               dataListCells={[
                 <DataListCell id="table-column-management-item3" key="table-column-management-item3">
@@ -506,7 +491,7 @@ class ColumnManagementAction extends React.Component {
         </DataListItem>
         <DataListItem aria-labelledby="table-column-management-item4">
           <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item4" isChecked={this.state.check4} name="table-column-management-check-action-check4" onChange={this.handleChange} />
+            <DataListCheck aria-labelledby="table-column-management-item4" isChecked={this.state.check4} name="check4" onChange={this.handleChange} />
             <DataListItemCells
               dataListCells={[
                 <DataListCell id="table-column-management-item4" key="table-column-management-item4">
@@ -518,7 +503,7 @@ class ColumnManagementAction extends React.Component {
         </DataListItem>
         <DataListItem aria-labelledby="table-column-management-item5">
           <DataListItemRow>
-            <DataListCheck aria-labelledby="table-column-management-item5" isChecked={this.state.check5} name="table-column-management-check-action-check5" onChange={this.handleChange} />
+            <DataListCheck aria-labelledby="table-column-management-item5" isChecked={this.state.check5} name="check5" onChange={this.handleChange} />
             <DataListItemCells
               dataListCells={[
                 <DataListCell id="table-column-management-item5" key="table-column-management-item5">
