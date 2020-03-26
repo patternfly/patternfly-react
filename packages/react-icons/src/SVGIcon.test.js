@@ -9,7 +9,6 @@ const iconDef = {
   svgPath: 'svgPath'
 };
 
-
 test('sets correct viewBox', () => {
   const view = shallow(<SVGIcon config={iconDef} />);
   expect(view.find('svg').prop('viewBox')).toBe(`0 0 ${iconDef.width} ${iconDef.height}`);
