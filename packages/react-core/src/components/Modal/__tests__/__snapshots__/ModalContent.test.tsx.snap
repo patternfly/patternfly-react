@@ -17,10 +17,9 @@ exports[`Modal Content Test description 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={false}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Content title"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -62,10 +61,9 @@ exports[`Modal Content Test isOpen 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={false}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Content title"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -104,10 +102,9 @@ exports[`Modal Content Test only body 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={false}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Content title"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -146,10 +143,9 @@ exports[`Modal Content Test with footer 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={false}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Content title"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -193,10 +189,9 @@ exports[`Modal Content Test with onclose 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={true}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Content title"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -210,6 +205,7 @@ exports[`Modal Content Test with onclose 1`] = `
       </ModalBoxHeader>
       <ModalBoxBody
         id="id"
+        isLarge={true}
       >
         This is a ModalBox header
       </ModalBoxBody>
@@ -240,10 +236,9 @@ exports[`Modal Content test without footer 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={false}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Content title"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -282,10 +277,9 @@ exports[`Modal Test with custom footer 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={true}
-      isSmall={false}
       style={Object {}}
       title="Test Modal Custom Footer"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -299,6 +293,7 @@ exports[`Modal Test with custom footer 1`] = `
       </ModalBoxHeader>
       <ModalBoxBody
         id="id"
+        isLarge={true}
       >
         This is a ModalBox header
       </ModalBoxBody>
@@ -333,10 +328,9 @@ exports[`Modal Test with custom header 1`] = `
     <ModalBox
       className=""
       id="id"
-      isLarge={true}
-      isSmall={false}
       style={Object {}}
       title="test-custom-header-modal"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -352,6 +346,7 @@ exports[`Modal Test with custom header 1`] = `
       </div>
       <ModalBoxBody
         id="id"
+        isLarge={true}
       >
         This is a ModalBox header
       </ModalBoxBody>

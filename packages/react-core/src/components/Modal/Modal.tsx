@@ -36,16 +36,20 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   onClose?: () => void;
   /** Default width of the Modal. */
   width?: number | string;
-  /** Creates a large version of the Modal */
-  isLarge?: boolean;
-  /** Creates a small version of the Modal */
-  isSmall?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
   /** Description of the modal */
   description?: React.ReactNode;
+  /** Variant of the modal */
+  variant?: 'small' | 'large' | 'default';
+}
+
+export enum ModalVariant {
+  small = 'small',
+  large = 'large',
+  default = 'default'
 }
 
 interface ModalState {
@@ -65,8 +69,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     actions: [] as any[],
     isFooterLeftAligned: false,
     onClose: () => undefined as any,
-    isLarge: false,
-    isSmall: false,
+    variant: 'default',
     appendTo: (typeof document !== 'undefined' && document.body) || null
   };
 

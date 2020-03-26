@@ -8,7 +8,7 @@ propComponents:
 optIn: In a future breaking-change release, the modal footer buttons will default to be left aligned. You can opt into this now by setting the Modal isFooterLeftAligned prop to true.
 ---
 
-import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -118,7 +118,7 @@ class SimpleModal extends React.Component {
 
 ```js title=Small
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class SmallModal extends React.Component {
   constructor(props) {
@@ -142,7 +142,7 @@ class SmallModal extends React.Component {
           Show Small Modal
         </Button>
         <Modal
-          isSmall
+          variant={ModalVariant.small}
           title="Modal Header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
@@ -170,7 +170,7 @@ class SmallModal extends React.Component {
 
 ```js title=Large
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class LargeModal extends React.Component {
   constructor(props) {
@@ -194,7 +194,7 @@ class LargeModal extends React.Component {
           Show Large Modal
         </Button>
         <Modal
-          isLarge
+          size={ModalVariant.large}
           title="Modal Header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
@@ -274,7 +274,7 @@ class WidthModal extends React.Component {
 
 ```js title=Custom-header-and-footer
 import React from 'react';
-import { Modal, Button, BaseSizes, Title, TitleLevel } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, BaseSizes, Title, TitleLevel } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 class CustomHeaderFooter extends React.Component {
@@ -315,7 +315,7 @@ class CustomHeaderFooter extends React.Component {
           Show Custom Header/Footer Modal
         </Button>
         <Modal
-          isLarge
+          variant={ModalVariant.large}
           isOpen={isModalOpen}
           header={header}
           title="custom header example"
@@ -342,7 +342,7 @@ class CustomHeaderFooter extends React.Component {
 
 ```js title=No-header
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class NoHeader extends React.Component {
   constructor(props) {
@@ -367,7 +367,7 @@ class NoHeader extends React.Component {
           Show No Header Modal
         </Button>
         <Modal
-          isLarge
+          variant={ModalVariant.large}
           isOpen={isModalOpen}
           hideTitle={true}
           title="no header example"
