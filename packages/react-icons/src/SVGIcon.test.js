@@ -1,5 +1,5 @@
 import React from 'react';
-import createIcon from './createIcon';
+import createIcon from './SVGIcon';
 import { shallow } from 'enzyme';
 import { IconSize } from './common';
 
@@ -10,7 +10,7 @@ const iconDef = {
   svgPath: 'svgPath'
 };
 
-const Icon = createIcon(iconDef);
+const Icon = <SVGIcon config={iconDef} />;
 
 test('sets correct viewBox', () => {
   const view = shallow(<Icon />);
