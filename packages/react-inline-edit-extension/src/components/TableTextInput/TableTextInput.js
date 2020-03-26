@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
+import { TextInput } from '@patternfly/react-core';
 import PropTypes from 'prop-types';
 
 const textInputProptypes = { ...TextInput.propTypes };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Toolbar } from '@patternfly/react-core/dist/js/layouts/Toolbar/Toolbar';
-import { ToolbarGroup } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarGroup';
-import { ToolbarItem } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarItem';
+import { Toolbar } from '@patternfly/react-core';
+import { ToolbarGroup } from '@patternfly/react-core';
+import { ToolbarItem } from '@patternfly/react-core';
 
 class SimpleToolbar extends React.Component {
   render() {

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from '@patternfly/react-core/dist/js/components/Form/Form';
-import { FormGroup } from '@patternfly/react-core/dist/js/components/Form/FormGroup';
-import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
+import { Form } from '@patternfly/react-core';
+import { FormGroup } from '@patternfly/react-core';
+import { TextInput } from '@patternfly/react-core';
 
 const propTypes = {
   formValue: PropTypes.string,

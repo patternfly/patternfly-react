@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Checkbox } from '@patternfly/react-core/dist/js/components/Checkbox/Checkbox';
+import { Checkbox } from '@patternfly/react-core';
 
 import { getUniqueId } from '../../helpers/util';
 

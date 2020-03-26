@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Card } from '@patternfly/react-core/dist/js/components/Card/Card';
-import { CardActions } from '@patternfly/react-core/dist/js/components/Card/CardActions';
-import { CardHead } from '@patternfly/react-core/dist/js/components/Card/CardHead';
-import { CardHeader } from '@patternfly/react-core/dist/js/components/Card/CardHeader';
-import { CardBody } from '@patternfly/react-core/dist/js/components/Card/CardBody';
-import { CardFooter } from '@patternfly/react-core/dist/js/components/Card/CardFooter';
+import { Card } from '@patternfly/react-core';
+import { CardActions } from '@patternfly/react-core';
+import { CardHead } from '@patternfly/react-core';
+import { CardHeader } from '@patternfly/react-core';
+import { CardBody } from '@patternfly/react-core';
+import { CardFooter } from '@patternfly/react-core';
 import classNames from 'classnames';
 
 import { Omit } from '../../helpers/typeUtils';

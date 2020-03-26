@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
-import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
+import { Button } from '@patternfly/react-core';
 
 const ConfirmButton = props => (
   <Button {...props}>

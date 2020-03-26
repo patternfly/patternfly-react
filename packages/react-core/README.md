@@ -141,7 +141,7 @@ module.exports = {
       {
         "@patternfly/react-core": {
           transform: (importName, matches) => {
-            let res = '@patternfly/react-core/dist/js/';
+            let res = '@patternfly/react-core';
             if (components[importName]) {
               res += 'components';
             } else if (beta[importName]) {
