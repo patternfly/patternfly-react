@@ -7,7 +7,7 @@ export enum IconSize {
   md = 'md',
   lg = 'lg',
   xl = 'xl'
-};
+}
 
 export const getSize = (size: IconSize | keyof typeof IconSize) => {
   switch (size) {
@@ -58,13 +58,8 @@ export class SVGIcon extends React.Component<SVGIconProps> {
     const heightWidth = getSize(size);
     const baseAlign = -0.125 * Number.parseFloat(heightWidth);
     const style = noVerticalAlign ? null : { verticalAlign: `${baseAlign}em` };
-    const viewBox = [
-      config.xOffset || 0,
-      config.yOffset || 0,
-      config.width,
-      config.height
-    ].join(' ');
-    
+    const viewBox = [config.xOffset || 0, config.yOffset || 0, config.width, config.height].join(' ');
+
     return (
       <svg
         style={style}

@@ -4,13 +4,23 @@ const icons = require('./icons');
 
 const destDir = path.join(__dirname, '../src/icons');
 
-const removeSnake = s => s.toUpperCase().replace('-', '').replace('_', '');
-const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])/ig, removeSnake)}`;
+const removeSnake = s =>
+  s
+    .toUpperCase()
+    .replace('-', '')
+    .replace('_', '');
+const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])/gi, removeSnake)}`;
 
+/**
+ * @param {string} val possibly undefined value to transform into a string
+ */
 function stringify(val) {
-  return Boolean(val) ? val : '';
+  return val ? val : '';
 }
 
+/**
+ * Generates src/icons/*.tsx files
+ */
 function generateSrc() {
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir);
@@ -20,8 +30,9 @@ function generateSrc() {
   Object.entries(icons).forEach(([iconName, icon]) => {
     const fname = `${iconName}-icon.tsx`;
     const jsName = `${toCamel(iconName)}Icon`;
-    fs.writeFileSync(path.join(destDir, fname),
-`import * as React from 'react';
+    fs.writeFileSync(
+      path.join(destDir, fname),
+      `import * as React from 'react';
 import { SVGIcon, SVGIconProps } from '../SVGIcon';
 
 export const ${jsName}Config = {
@@ -40,16 +51,21 @@ export const ${jsName}: React.FunctionComponent<SVGIconProps> = (
   // Avoid spread operator helper.
   props.config = ${jsName}Config;
   return React.createElement(SVGIcon, props);
-};\n`);
-  
+};\n`
+    );
+
     index.push(path.basename(fname, '.tsx'));
   });
-  
+
   fs.writeFileSync(
     path.join(destDir, 'index.ts'),
-    `${index.sort().map(fname => `export * from './${fname}';`).join('\n')}\n`
+    `${index
+      .sort()
+      .map(fname => `export * from './${fname}';`)
+      .join('\n')}\n`
   );
 
+  // eslint-disable-next-line no-console
   console.log('Generated', index.length, 'icons.');
 }
 

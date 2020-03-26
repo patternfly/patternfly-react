@@ -1,7 +1,9 @@
 const pfIcons = require('@patternfly/patternfly/icons/pf-icons.json');
 
+/**
+ * @param {object} icon PatternFly core icon to convert
+ */
 function convertIcon(icon) {
-  icon.xOffset = 0;
   icon.yOffset = 64;
   icon.transform = `rotate(180 0 ${icon.height / 2}) scale(-1 1)`;
 }
@@ -21,8 +23,11 @@ const renaming = {
   filter: 'filter-alt'
 };
 
+/**
+ * @param {object} icons Icons like { screen: { "width": 1024, "height": 1024, "svgPathData": "" } }
+ */
 function convertIcons(icons) {
-  delete icons['history'];
+  delete icons.history;
 
   Object.values(icons).forEach(convertIcon);
   Object.entries(renaming).forEach(([oldKey, newKey]) => {

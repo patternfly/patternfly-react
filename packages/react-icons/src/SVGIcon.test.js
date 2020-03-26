@@ -1,5 +1,5 @@
 import React from 'react';
-import createIcon from './SVGIcon';
+import { SVGIcon } from './SVGIcon';
 import { shallow } from 'enzyme';
 import { IconSize } from './common';
 
