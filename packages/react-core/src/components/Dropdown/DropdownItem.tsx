@@ -27,8 +27,6 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   additionalChild?: React.ReactNode;
   /** Custom item rendering that receives the DropdownContext */
   customChild?: React.ReactNode;
-  /** Flag indicating if the dropdown item is a router link */
-  isRouterLink?: boolean;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({

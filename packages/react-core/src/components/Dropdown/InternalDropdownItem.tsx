@@ -45,8 +45,6 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   customChild?: React.ReactNode;
   /** Flag indicating if hitting enter on an item also triggers an arrow down key press */
   enterTriggersArrowDown?: boolean;
-  /** Flag indicating if the item is a router link */
-  isRouterLink?: boolean;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -127,23 +125,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     });
   }
 
-  extendChildClass(
-    children: React.ReactNode,
-    itemClass: string,
-    ref: React.ReactNode,
-    id: string,
-    additionalProps: any
-  ) {
-    return React.Children.map(children as React.ReactElement<any>, child =>
-      React.cloneElement(child, {
-        className: css(child.props.className, itemClass),
-        ref,
-        id,
-        ...additionalProps
-      })
-    );
-  }
-
   render() {
     /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
@@ -166,23 +147,19 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       additionalChild,
       customChild,
       enterTriggersArrowDown,
-      isRouterLink,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
-    let isComponentReactElement = false;
     let classes: string;
-    if (Component === 'a' || isRouterLink) {
+    const isChildReactElement = React.isValidElement(children);
+
+    if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (Component === 'button') {
       additionalProps.disabled = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
-    } else if (React.isValidElement(Component)) {
-      // Render a custom wrapper component, for example router Link component
-      // instead of our wrapper
-      isComponentReactElement = true;
     }
 
     const renderWithTooltip = (childNode: React.ReactNode) =>
@@ -222,13 +199,13 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               id={id}
             >
               {renderWithTooltip(
-                isComponentReactElement ? (
-                  React.cloneElement(Component as React.ReactHTMLElement<any>, {
+                isChildReactElement ? (
+                  React.cloneElement(children as React.ReactElement<any>, {
                     ...additionalProps,
+                    ref: this.ref,
+                    id,
                     className: css(classes, itemClass, variant === 'icon' && styles.modifiers.icon)
                   })
-                ) : isRouterLink ? (
-                  this.extendChildClass(children, itemClass, this.ref, id, { ...additionalProps })
                 ) : (
                   <Component
                     {...additionalProps}
