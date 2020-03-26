@@ -466,7 +466,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       standalone={false}
       theme={theme}
       width={width}
-      {...rest}
+      {...(rest as any)} // @types/victory has a type mismatch with colorScale
     />
   );
 

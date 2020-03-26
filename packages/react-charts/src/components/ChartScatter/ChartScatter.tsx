@@ -417,7 +417,13 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
     theme,
     ...containerComponent.props
   });
-  return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
+
+  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />
+  );
 };
 
 // Note: VictoryLine.role must be hoisted

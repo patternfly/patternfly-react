@@ -303,7 +303,13 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     theme,
     ...containerComponent.props
   });
-  return <VictoryLegend containerComponent={container} dataComponent={dataComponent} theme={theme} {...rest} />;
+
+  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    <VictoryLegend containerComponent={container} dataComponent={dataComponent} theme={theme} {...rest} />
+  );
 };
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
