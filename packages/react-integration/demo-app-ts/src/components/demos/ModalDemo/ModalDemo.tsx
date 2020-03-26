@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Title, TitleLevel, BaseSizes } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, Title, TitleLevel, BaseSizes } from '@patternfly/react-core';
 import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
 
 interface ModalDemoState {
@@ -130,7 +130,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        isSmall
+        variant={ModalVariant.small}
         title="Modal Header"
         isOpen={isSmallModalOpen}
         onClose={this.handleSmallModalToggle}
@@ -157,7 +157,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        isLarge
+        variant={ModalVariant.large}
         title="Modal Header"
         isOpen={isLargeModalOpen}
         onClose={this.handleLargeModalToggle}
@@ -229,7 +229,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        isLarge
+        variant={ModalVariant.large}
         isOpen={isCustomHeaderFooterModalOpen}
         header={header}
         title="custom header example"
@@ -255,7 +255,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
 
     return (
       <Modal
-        isLarge
+        variant={ModalVariant.large}
         title="Modal Header"
         isOpen={isNoHeaderModalOpen}
         hideTitle

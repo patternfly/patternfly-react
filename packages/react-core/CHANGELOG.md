@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.1.1...@patternfly/react-core@4.2.0) (2020-03-26)
+
+
+### Features
+
+* **Select:** change isExpanded to isOpen, split selections prop, rem… ([#3945](https://github.com/patternfly/patternfly-react/issues/3945)) ([1ba0e3c](https://github.com/patternfly/patternfly-react/commit/1ba0e3c693268422c29441e20b7a615218a803ab))
+
+
+
+
+
+## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.1.0...@patternfly/react-core@4.1.1) (2020-03-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.0.10...@patternfly/react-core@4.1.0) (2020-03-25)
 
 

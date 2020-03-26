@@ -193,7 +193,7 @@ class DataToolbarGroupTypes extends React.Component {
           onToggle={this.onFirstToggle}
           onSelect={this.onFirstSelect}
           selections={firstSelected}
-          isExpanded={firstIsExpanded}
+          isOpen={firstIsExpanded}
         >
           {this.firstOptions.map((option, index) => (
             <SelectOption
@@ -211,7 +211,7 @@ class DataToolbarGroupTypes extends React.Component {
           onToggle={this.onSecondToggle}
           onSelect={this.onSecondSelect}
           selections={secondSelected}
-          isExpanded={secondIsExpanded}
+          isOpen={secondIsExpanded}
         >
           {this.secondOptions.map((option, index) => (
            <SelectOption
@@ -229,7 +229,7 @@ class DataToolbarGroupTypes extends React.Component {
           onToggle={this.onThirdToggle}
           onSelect={this.onThirdSelect}
           selections={thirdSelected}
-          isExpanded={thirdIsExpanded}
+          isOpen={thirdIsExpanded}
         >
           {this.thirdOptions.map((option, index) => (
             <SelectOption
@@ -371,7 +371,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
               onToggle={this.onStatusToggle}
               onSelect={this.onStatusSelect}
               selections={statusSelected}
-              isExpanded={statusIsExpanded}
+              isOpen={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
                <SelectOption
@@ -389,7 +389,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
               onToggle={this.onRiskToggle}
               onSelect={this.onRiskSelect}
               selections={riskSelected}
-              isExpanded={riskIsExpanded}
+              isOpen={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
                 <SelectOption
@@ -525,7 +525,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
               onToggle={this.onStatusToggle}
               onSelect={this.onStatusSelect}
               selections={statusSelected}
-              isExpanded={statusIsExpanded}
+              isOpen={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
                <SelectOption
@@ -543,7 +543,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
               onToggle={this.onRiskToggle}
               onSelect={this.onRiskSelect}
               selections={riskSelected}
-              isExpanded={riskIsExpanded}
+              isOpen={riskIsExpanded}
             >
               {this.riskOptions.map((option, index) => (
                 <SelectOption
@@ -738,7 +738,7 @@ class DataToolbarWithFilterExample extends React.Component {
               onToggle={this.onStatusToggle}
               onSelect={this.onStatusSelect}
               selections={filters.status}
-              isExpanded={statusIsExpanded}
+              isOpen={statusIsExpanded}
               placeholderText="Status"
             >
               {statusMenuItems}
@@ -751,7 +751,7 @@ class DataToolbarWithFilterExample extends React.Component {
               onToggle={this.onRiskToggle}
               onSelect={this.onRiskSelect}
               selections={filters.risk}
-              isExpanded={riskIsExpanded}
+              isOpen={riskIsExpanded}
               placeholderText="Risk"
             >
               {riskMenuItems}
@@ -947,7 +947,7 @@ class DataToolbarStacked extends React.Component {
           onToggle={this.onResourceToggle}
           onSelect={this.onResourceSelect}
           selections={resourceSelected}
-          isExpanded={resourceIsExpanded}
+          isOpen={resourceIsExpanded}
           ariaLabelledBy="stacked-example-resource-select"
         >
           {this.resourceOptions.map((option, index) => (
@@ -967,7 +967,7 @@ class DataToolbarStacked extends React.Component {
           onToggle={this.onStatusToggle}
           onSelect={this.onStatusSelect}
           selections={statusSelected}
-          isExpanded={statusIsExpanded}
+          isOpen={statusIsExpanded}
           ariaLabelledBy="stacked-example-status-select"
         >
         {this.statusOptions.map((option, index) => (
@@ -987,7 +987,7 @@ class DataToolbarStacked extends React.Component {
           onToggle={this.onTypeToggle}
           onSelect={this.onTypeSelect}
           selections={typeSelected}
-          isExpanded={typeIsExpanded}
+          isOpen={typeIsExpanded}
           ariaLabelledBy="stacked-example-type-select"
         >
           {this.typeOptions.map((option, index) => (

@@ -22,10 +22,8 @@ export interface ModalContentProps {
   children: React.ReactNode;
   /** Additional classes added to the button */
   className?: string;
-  /** Creates a large version of the Modal */
-  isLarge?: boolean;
-  /** Creates a small version of the Modal */
-  isSmall?: boolean;
+  /** Variant of the modal */
+  variant?: 'small' | 'large' | 'default';
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
@@ -69,8 +67,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   actions = [],
   isFooterLeftAligned = false,
   onClose = () => undefined as any,
-  isLarge = false,
-  isSmall = false,
+  variant = 'default',
   width = -1,
   modalBoxAriaDescribedById = '',
   id = '',
@@ -97,8 +94,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBox
       style={boxStyle}
       className={className}
-      isLarge={isLarge}
-      isSmall={isSmall}
+      variant={variant}
       title={title}
       id={modalBoxAriaDescribedById || id}
     >
