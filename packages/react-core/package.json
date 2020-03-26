@@ -29,12 +29,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./scripts/copyStyles.js",
-    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
-    "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
-    "build:types": "tsc -p tsconfig.gen-dts.json",
+    "build": "yarn build:js && node ./scripts/copyTS.js && node ./scripts/copyStyles.js",
+    "build:js": "concurrently \"yarn build:cjs\" \"yarn build:esm\" \"yarn build:umd\"",
+    "build:cjs": "tsc --module commonjs --outDir dist/js --declaration",
+    "build:esm": "tsc --module      es6 --outDir dist/esm",
+    "build:umd": "tsc --module      umd --outDir dist/umd",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
     "gen:tests": "yo tsx-docgen"

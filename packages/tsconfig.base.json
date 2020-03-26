@@ -6,11 +6,12 @@
       "dom"
     ],
     "esModuleInterop": true,
-    "module": "commonjs",
+    "module": "es6",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": false,
-    "target": "es5"
+    "target": "es5",
+    "composite": true
   }
 }
