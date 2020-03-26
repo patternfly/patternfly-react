@@ -1,639 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkbox select renders checkbox select groups successfully - old classes 1`] = `
-<Select
-  aria-label=""
-  aria-labelledby=""
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customContent={null}
-  direction="down"
-  hasInlineFilter={false}
-  isCreatable={false}
-  isDisabled={false}
-  isExpanded={true}
-  isGrouped={true}
-  isPlain={false}
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFilter={null}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  placeholderText=""
-  removeSelectionAriaLabel="Remove"
-  selections=""
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId={null}
-  typeAheadAriaLabel=""
-  variant="checkbox"
-  width=""
->
-  <div
-    className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={15}
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe={true}
-    style={
-      Object {
-        "width": "",
-      }
-    }
-  >
-    <SelectToggle
-      aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-15"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      hasClearButton={false}
-      id="pf-toggle-id-15"
-      isActive={false}
-      isDisabled={false}
-      isExpanded={true}
-      isFocused={false}
-      isHovered={false}
-      isPlain={false}
-      onClose={[Function]}
-      onEnter={[Function]}
-      onToggle={[MockFunction]}
-      parentRef={
-        Object {
-          "current": <div
-            class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="15"
-            data-ouia-component-type="PF4/Select"
-            data-ouia-safe="true"
-          >
-            <button
-              aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-15"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-15"
-              type="button"
-            >
-              <div
-                class="pf-c-select__toggle-wrapper"
-              >
-                <span
-                  class="pf-c-select__toggle-text"
-                />
-                
-              </div>
-              <svg
-                aria-hidden="true"
-                class="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </button>
-            <div>
-              <div
-                class="pf-c-select__menu"
-              >
-                <fieldset
-                  aria-label=""
-                  class="pf-c-form__fieldset"
-                >
-                  <div
-                    class="pf-c-select__menu-group"
-                  >
-                    <div
-                      aria-hidden="true"
-                      class="pf-c-select__menu-group-title"
-                      id="group-1"
-                    >
-                      group 1
-                    </div>
-                    <fieldset
-                      aria-labelledby="group-1"
-                      class="pf-c-select__menu-fieldset"
-                    >
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Mr"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Mr
-                        </span>
-                      </label>
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Mrs"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Mrs
-                        </span>
-                      </label>
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Ms"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Ms
-                        </span>
-                      </label>
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Other"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Other
-                        </span>
-                      </label>
-                    </fieldset>
-                  </div>
-                  <div
-                    class="pf-c-select__menu-group"
-                  >
-                    <div
-                      aria-hidden="true"
-                      class="pf-c-select__menu-group-title"
-                      id="group-2"
-                    >
-                      group 2
-                    </div>
-                    <fieldset
-                      aria-labelledby="group-2"
-                      class="pf-c-select__menu-fieldset"
-                    >
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Mr"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Mr
-                        </span>
-                      </label>
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Mrs"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Mrs
-                        </span>
-                      </label>
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Ms"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Ms
-                        </span>
-                      </label>
-                      <label
-                        class="pf-c-check pf-c-select__menu-item"
-                      >
-                        <input
-                          class="pf-c-check__input"
-                          id="Other"
-                          type="checkbox"
-                        />
-                        <span
-                          class="pf-c-check__label"
-                        >
-                          Other
-                        </span>
-                      </label>
-                    </fieldset>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-          </div>,
-        }
-      }
-      type="button"
-      variant="checkbox"
-    >
-      <button
-        aria-expanded={true}
-        aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-15"
-        className="pf-c-select__toggle"
-        disabled={false}
-        id="pf-toggle-id-15"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        type="button"
-      >
-        <div
-          className="pf-c-select__toggle-wrapper"
-        >
-          <span
-            className="pf-c-select__toggle-text"
-          />
-        </div>
-        <CaretDownIcon
-          className="pf-c-select__toggle-arrow"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-select__toggle-arrow"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </SelectToggle>
-    <SelectMenu
-      aria-label=""
-      aria-labelledby=""
-      checked={Array []}
-      className=""
-      hasInlineFilter={false}
-      isCustomContent={false}
-      isExpanded={false}
-      isGrouped={true}
-      keyHandler={[Function]}
-      maxHeight=""
-      openedOnEnter={false}
-      selected=""
-      sendRef={[Function]}
-    >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-          }
-        }
-        paused={false}
-        tag="div"
-      >
-        <div>
-          <div
-            className="pf-c-select__menu"
-          >
-            <fieldset
-              aria-label=""
-              aria-labelledby={null}
-              className="pf-c-form__fieldset"
-            >
-              <CheckboxSelectGroup
-                key=".0"
-                label="group 1"
-                titleId="group-1"
-              >
-                <div
-                  className="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden={true}
-                    className="pf-c-select__menu-group-title"
-                    id="group-1"
-                  >
-                    group 1
-                  </div>
-                  <fieldset
-                    aria-labelledby="group-1"
-                    className="pf-c-select__menu-fieldset"
-                  >
-                    <CheckboxSelectOption
-                      className=""
-                      index={0}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="0"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Mr"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Mr"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Mr
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                    <CheckboxSelectOption
-                      className=""
-                      index={1}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="1"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Mrs"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Mrs"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Mrs
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                    <CheckboxSelectOption
-                      className=""
-                      index={2}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="2"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Ms"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Ms"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Ms
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                    <CheckboxSelectOption
-                      className=""
-                      index={3}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="3"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Other"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Other"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Other
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                  </fieldset>
-                </div>
-              </CheckboxSelectGroup>
-              <CheckboxSelectGroup
-                key=".1"
-                label="group 2"
-                titleId="group-2"
-              >
-                <div
-                  className="pf-c-select__menu-group"
-                >
-                  <div
-                    aria-hidden={true}
-                    className="pf-c-select__menu-group-title"
-                    id="group-2"
-                  >
-                    group 2
-                  </div>
-                  <fieldset
-                    aria-labelledby="group-2"
-                    className="pf-c-select__menu-fieldset"
-                  >
-                    <CheckboxSelectOption
-                      className=""
-                      index={4}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="0"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Mr"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Mr"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Mr
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                    <CheckboxSelectOption
-                      className=""
-                      index={5}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="1"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Mrs"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Mrs"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Mrs
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                    <CheckboxSelectOption
-                      className=""
-                      index={6}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="2"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Ms"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Ms"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Ms
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                    <CheckboxSelectOption
-                      className=""
-                      index={7}
-                      isChecked={false}
-                      isDisabled={false}
-                      key="3"
-                      keyHandler={[Function]}
-                      onClick={[Function]}
-                      sendRef={[Function]}
-                      value="Other"
-                    >
-                      <label
-                        className="pf-c-check pf-c-select__menu-item"
-                        onKeyDown={[Function]}
-                      >
-                        <input
-                          checked={false}
-                          className="pf-c-check__input"
-                          disabled={false}
-                          id="Other"
-                          onChange={[Function]}
-                          type="checkbox"
-                        />
-                        <span
-                          className="pf-c-check__label"
-                        >
-                          Other
-                        </span>
-                      </label>
-                    </CheckboxSelectOption>
-                  </fieldset>
-                </div>
-              </CheckboxSelectGroup>
-            </fieldset>
-          </div>
-        </div>
-      </FocusTrap>
-    </SelectMenu>
-  </div>
-</Select>
-`;
-
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label=""
@@ -646,8 +12,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={true}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -657,7 +23,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -667,7 +34,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={14}
+    data-ouia-component-id={12}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -678,16 +45,16 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-14"
+      aria-labelledby=" pf-toggle-id-12"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-14"
+      id="pf-toggle-id-12"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -696,15 +63,15 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="14"
+            data-ouia-component-id="12"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
             <button
               aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-14"
+              aria-labelledby=" pf-toggle-id-12"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-14"
+              id="pf-toggle-id-12"
               type="button"
             >
               <div
@@ -713,7 +80,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
-                
               </div>
               <svg
                 aria-hidden="true"
@@ -895,10 +261,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-14"
+        aria-labelledby=" pf-toggle-id-12"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-14"
+        id="pf-toggle-id-12"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -1304,161 +670,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         </div>
       </FocusTrap>
     </SelectMenu>
-  </div>
-</Select>
-`;
-
-exports[`checkbox select renders closed successfully - old classes 1`] = `
-<Select
-  aria-label=""
-  aria-labelledby=""
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customContent={null}
-  direction="down"
-  hasInlineFilter={false}
-  isCreatable={false}
-  isDisabled={false}
-  isExpanded={false}
-  isGrouped={false}
-  isPlain={false}
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFilter={null}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  placeholderText=""
-  removeSelectionAriaLabel="Remove"
-  selections=""
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId={null}
-  typeAheadAriaLabel=""
-  variant="checkbox"
-  width=""
->
-  <div
-    className="pf-c-select"
-    data-ouia-component-id={9}
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe={true}
-    style={
-      Object {
-        "width": "",
-      }
-    }
-  >
-    <SelectToggle
-      aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-9"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      hasClearButton={false}
-      id="pf-toggle-id-9"
-      isActive={false}
-      isDisabled={false}
-      isExpanded={false}
-      isFocused={false}
-      isHovered={false}
-      isPlain={false}
-      onClose={[Function]}
-      onEnter={[Function]}
-      onToggle={[MockFunction]}
-      parentRef={
-        Object {
-          "current": <div
-            class="pf-c-select"
-            data-ouia-component-id="9"
-            data-ouia-component-type="PF4/Select"
-            data-ouia-safe="true"
-          >
-            <button
-              aria-expanded="false"
-              aria-labelledby=" pf-toggle-id-9"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-9"
-              type="button"
-            >
-              <div
-                class="pf-c-select__toggle-wrapper"
-              >
-                <span
-                  class="pf-c-select__toggle-text"
-                />
-                
-              </div>
-              <svg
-                aria-hidden="true"
-                class="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </button>
-          </div>,
-        }
-      }
-      type="button"
-      variant="checkbox"
-    >
-      <button
-        aria-expanded={false}
-        aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-9"
-        className="pf-c-select__toggle"
-        disabled={false}
-        id="pf-toggle-id-9"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        type="button"
-      >
-        <div
-          className="pf-c-select__toggle-wrapper"
-        >
-          <span
-            className="pf-c-select__toggle-text"
-          />
-        </div>
-        <CaretDownIcon
-          className="pf-c-select__toggle-arrow"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-select__toggle-arrow"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </SelectToggle>
   </div>
 </Select>
 `;
@@ -1475,8 +686,8 @@ exports[`checkbox select renders closed successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -1486,7 +697,8 @@ exports[`checkbox select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -1514,9 +726,9 @@ exports[`checkbox select renders closed successfully 1`] = `
       id="pf-toggle-id-8"
       isActive={false}
       isDisabled={false}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -1542,7 +754,6 @@ exports[`checkbox select renders closed successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
-                
               </div>
               <svg
                 aria-hidden="true"
@@ -1618,388 +829,6 @@ exports[`checkbox select renders closed successfully 1`] = `
 </Select>
 `;
 
-exports[`checkbox select renders expanded successfully - old classes 1`] = `
-<Select
-  aria-label=""
-  aria-labelledby=""
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customContent={null}
-  direction="down"
-  hasInlineFilter={false}
-  isCreatable={false}
-  isDisabled={false}
-  isExpanded={true}
-  isGrouped={false}
-  isPlain={false}
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFilter={null}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  placeholderText=""
-  removeSelectionAriaLabel="Remove"
-  selections=""
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId={null}
-  typeAheadAriaLabel=""
-  variant="checkbox"
-  width=""
->
-  <div
-    className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={11}
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe={true}
-    style={
-      Object {
-        "width": "",
-      }
-    }
-  >
-    <SelectToggle
-      aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-11"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      hasClearButton={false}
-      id="pf-toggle-id-11"
-      isActive={false}
-      isDisabled={false}
-      isExpanded={true}
-      isFocused={false}
-      isHovered={false}
-      isPlain={false}
-      onClose={[Function]}
-      onEnter={[Function]}
-      onToggle={[MockFunction]}
-      parentRef={
-        Object {
-          "current": <div
-            class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="11"
-            data-ouia-component-type="PF4/Select"
-            data-ouia-safe="true"
-          >
-            <button
-              aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-11"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-11"
-              type="button"
-            >
-              <div
-                class="pf-c-select__toggle-wrapper"
-              >
-                <span
-                  class="pf-c-select__toggle-text"
-                />
-                
-              </div>
-              <svg
-                aria-hidden="true"
-                class="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </button>
-            <div>
-              <div
-                class="pf-c-select__menu"
-              >
-                <fieldset
-                  aria-label=""
-                  class="pf-c-form__fieldset"
-                >
-                  <label
-                    class="pf-c-check pf-c-select__menu-item"
-                  >
-                    <input
-                      class="pf-c-check__input"
-                      id="Mr"
-                      type="checkbox"
-                    />
-                    <span
-                      class="pf-c-check__label"
-                    >
-                      Mr
-                    </span>
-                  </label>
-                  <label
-                    class="pf-c-check pf-c-select__menu-item"
-                  >
-                    <input
-                      class="pf-c-check__input"
-                      id="Mrs"
-                      type="checkbox"
-                    />
-                    <span
-                      class="pf-c-check__label"
-                    >
-                      Mrs
-                    </span>
-                  </label>
-                  <label
-                    class="pf-c-check pf-c-select__menu-item"
-                  >
-                    <input
-                      class="pf-c-check__input"
-                      id="Ms"
-                      type="checkbox"
-                    />
-                    <span
-                      class="pf-c-check__label"
-                    >
-                      Ms
-                    </span>
-                  </label>
-                  <label
-                    class="pf-c-check pf-c-select__menu-item"
-                  >
-                    <input
-                      class="pf-c-check__input"
-                      id="Other"
-                      type="checkbox"
-                    />
-                    <span
-                      class="pf-c-check__label"
-                    >
-                      Other
-                    </span>
-                  </label>
-                </fieldset>
-              </div>
-            </div>
-          </div>,
-        }
-      }
-      type="button"
-      variant="checkbox"
-    >
-      <button
-        aria-expanded={true}
-        aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-11"
-        className="pf-c-select__toggle"
-        disabled={false}
-        id="pf-toggle-id-11"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        type="button"
-      >
-        <div
-          className="pf-c-select__toggle-wrapper"
-        >
-          <span
-            className="pf-c-select__toggle-text"
-          />
-        </div>
-        <CaretDownIcon
-          className="pf-c-select__toggle-arrow"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-select__toggle-arrow"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </SelectToggle>
-    <SelectMenu
-      aria-label=""
-      aria-labelledby=""
-      checked={Array []}
-      className=""
-      hasInlineFilter={false}
-      isCustomContent={false}
-      isExpanded={false}
-      isGrouped={false}
-      keyHandler={[Function]}
-      maxHeight=""
-      openedOnEnter={false}
-      selected=""
-      sendRef={[Function]}
-    >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-          }
-        }
-        paused={false}
-        tag="div"
-      >
-        <div>
-          <div
-            className="pf-c-select__menu"
-          >
-            <fieldset
-              aria-label=""
-              aria-labelledby={null}
-              className="pf-c-form__fieldset"
-            >
-              <CheckboxSelectOption
-                className=""
-                index={0}
-                isChecked={false}
-                isDisabled={false}
-                key=".$0"
-                keyHandler={[Function]}
-                onClick={[Function]}
-                sendRef={[Function]}
-                value="Mr"
-              >
-                <label
-                  className="pf-c-check pf-c-select__menu-item"
-                  onKeyDown={[Function]}
-                >
-                  <input
-                    checked={false}
-                    className="pf-c-check__input"
-                    disabled={false}
-                    id="Mr"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <span
-                    className="pf-c-check__label"
-                  >
-                    Mr
-                  </span>
-                </label>
-              </CheckboxSelectOption>
-              <CheckboxSelectOption
-                className=""
-                index={1}
-                isChecked={false}
-                isDisabled={false}
-                key=".$1"
-                keyHandler={[Function]}
-                onClick={[Function]}
-                sendRef={[Function]}
-                value="Mrs"
-              >
-                <label
-                  className="pf-c-check pf-c-select__menu-item"
-                  onKeyDown={[Function]}
-                >
-                  <input
-                    checked={false}
-                    className="pf-c-check__input"
-                    disabled={false}
-                    id="Mrs"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <span
-                    className="pf-c-check__label"
-                  >
-                    Mrs
-                  </span>
-                </label>
-              </CheckboxSelectOption>
-              <CheckboxSelectOption
-                className=""
-                index={2}
-                isChecked={false}
-                isDisabled={false}
-                key=".$2"
-                keyHandler={[Function]}
-                onClick={[Function]}
-                sendRef={[Function]}
-                value="Ms"
-              >
-                <label
-                  className="pf-c-check pf-c-select__menu-item"
-                  onKeyDown={[Function]}
-                >
-                  <input
-                    checked={false}
-                    className="pf-c-check__input"
-                    disabled={false}
-                    id="Ms"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <span
-                    className="pf-c-check__label"
-                  >
-                    Ms
-                  </span>
-                </label>
-              </CheckboxSelectOption>
-              <CheckboxSelectOption
-                className=""
-                index={3}
-                isChecked={false}
-                isDisabled={false}
-                key=".$3"
-                keyHandler={[Function]}
-                onClick={[Function]}
-                sendRef={[Function]}
-                value="Other"
-              >
-                <label
-                  className="pf-c-check pf-c-select__menu-item"
-                  onKeyDown={[Function]}
-                >
-                  <input
-                    checked={false}
-                    className="pf-c-check__input"
-                    disabled={false}
-                    id="Other"
-                    onChange={[Function]}
-                    type="checkbox"
-                  />
-                  <span
-                    className="pf-c-check__label"
-                  >
-                    Other
-                  </span>
-                </label>
-              </CheckboxSelectOption>
-            </fieldset>
-          </div>
-        </div>
-      </FocusTrap>
-    </SelectMenu>
-  </div>
-</Select>
-`;
-
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label=""
@@ -2012,8 +841,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -2023,7 +852,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -2033,7 +863,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={10}
+    data-ouia-component-id={9}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -2044,16 +874,16 @@ exports[`checkbox select renders expanded successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-10"
+      aria-labelledby=" pf-toggle-id-9"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-10"
+      id="pf-toggle-id-9"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -2062,15 +892,15 @@ exports[`checkbox select renders expanded successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="10"
+            data-ouia-component-id="9"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
             <button
               aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-10"
+              aria-labelledby=" pf-toggle-id-9"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-10"
+              id="pf-toggle-id-9"
               type="button"
             >
               <div
@@ -2079,7 +909,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
-                
               </div>
               <svg
                 aria-hidden="true"
@@ -2173,10 +1002,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-10"
+        aria-labelledby=" pf-toggle-id-9"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-10"
+        id="pf-toggle-id-9"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -2414,8 +1243,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -2425,7 +1254,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -2435,7 +1265,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={13}
+    data-ouia-component-id={11}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -2446,16 +1276,16 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-13"
+      aria-labelledby=" pf-toggle-id-11"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-13"
+      id="pf-toggle-id-11"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -2464,15 +1294,15 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="13"
+            data-ouia-component-id="11"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
             <button
               aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-13"
+              aria-labelledby=" pf-toggle-id-11"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-13"
+              id="pf-toggle-id-11"
               type="button"
             >
               <div
@@ -2481,7 +1311,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 <span
                   class="pf-c-select__toggle-text"
                 />
-                
               </div>
               <svg
                 aria-hidden="true"
@@ -2561,10 +1390,10 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       <button
         aria-expanded={true}
         aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-13"
+        aria-labelledby=" pf-toggle-id-11"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-13"
+        id="pf-toggle-id-11"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -2791,8 +1620,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   hasInlineFilter={true}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[MockFunction]}
@@ -2802,7 +1631,8 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -2812,7 +1642,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={12}
+    data-ouia-component-id={10}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -2823,16 +1653,16 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-12"
+      aria-labelledby=" pf-toggle-id-10"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}
-      id="pf-toggle-id-12"
+      id="pf-toggle-id-10"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -2841,7 +1671,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="12"
+            data-ouia-component-id="10"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -2854,15 +1684,14 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
-                
               </div>
               
               <button
                 aria-expanded="true"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-12"
+                aria-labelledby=" pf-toggle-id-10"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-12"
+                id="pf-toggle-id-10"
                 type="button"
               >
                 <svg
@@ -2983,10 +1812,10 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           aria-expanded={true}
           aria-haspopup={null}
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-12"
+          aria-labelledby=" pf-toggle-id-10"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-12"
+          id="pf-toggle-id-10"
           onClick={[Function]}
           type="button"
         >
@@ -3237,8 +2066,8 @@ exports[`select custom select filter filters properly 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -3248,7 +2077,8 @@ exports[`select custom select filter filters properly 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -3276,9 +2106,9 @@ exports[`select custom select filter filters properly 1`] = `
       id="pf-toggle-id-6"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -3635,8 +2465,8 @@ exports[`select renders select groups successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={true}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -3646,7 +2476,8 @@ exports[`select renders select groups successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -3674,9 +2505,9 @@ exports[`select renders select groups successfully 1`] = `
       id="pf-toggle-id-7"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -4229,8 +3060,8 @@ exports[`select renders up drection successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -4240,7 +3071,8 @@ exports[`select renders up drection successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -4268,9 +3100,9 @@ exports[`select renders up drection successfully 1`] = `
       id="pf-toggle-id-4"
       isActive={false}
       isDisabled={false}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -4388,8 +3220,8 @@ exports[`select single select renders closed successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -4399,7 +3231,8 @@ exports[`select single select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -4427,9 +3260,9 @@ exports[`select single select renders closed successfully 1`] = `
       id="pf-toggle-id-0"
       isActive={false}
       isDisabled={false}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -4547,8 +3380,8 @@ exports[`select single select renders disabled successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={true}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -4558,7 +3391,8 @@ exports[`select single select renders disabled successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -4586,9 +3420,9 @@ exports[`select single select renders disabled successfully 1`] = `
       id="pf-toggle-id-1"
       isActive={false}
       isDisabled={true}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -4707,8 +3541,8 @@ exports[`select single select renders expanded successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -4718,7 +3552,8 @@ exports[`select single select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -4746,9 +3581,9 @@ exports[`select single select renders expanded successfully 1`] = `
       id="pf-toggle-id-2"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -5071,8 +3906,8 @@ exports[`select single select renders expanded successfully with custom objects 
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -5082,7 +3917,8 @@ exports[`select single select renders expanded successfully with custom objects 
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5110,9 +3946,9 @@ exports[`select single select renders expanded successfully with custom objects 
       id="pf-toggle-id-3"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -5414,8 +4250,8 @@ exports[`select with custom content renders closed successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -5424,7 +4260,8 @@ exports[`select with custom content renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5434,7 +4271,7 @@ exports[`select with custom content renders closed successfully 1`] = `
 >
   <div
     className="pf-c-select"
-    data-ouia-component-id={39}
+    data-ouia-component-id={36}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -5445,16 +4282,16 @@ exports[`select with custom content renders closed successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-35"
+      aria-labelledby=" pf-toggle-id-32"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-35"
+      id="pf-toggle-id-32"
       isActive={false}
       isDisabled={false}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -5463,16 +4300,16 @@ exports[`select with custom content renders closed successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select"
-            data-ouia-component-id="39"
+            data-ouia-component-id="36"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
             <button
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby=" pf-toggle-id-35"
+              aria-labelledby=" pf-toggle-id-32"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-35"
+              id="pf-toggle-id-32"
               type="button"
             >
               <div
@@ -5507,10 +4344,10 @@ exports[`select with custom content renders closed successfully 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup="listbox"
-        aria-labelledby=" pf-toggle-id-35"
+        aria-labelledby=" pf-toggle-id-32"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-35"
+        id="pf-toggle-id-32"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -5568,8 +4405,8 @@ exports[`select with custom content renders expanded successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -5578,7 +4415,8 @@ exports[`select with custom content renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5588,7 +4426,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={40}
+    data-ouia-component-id={37}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -5599,16 +4437,16 @@ exports[`select with custom content renders expanded successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-36"
+      aria-labelledby=" pf-toggle-id-33"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-36"
+      id="pf-toggle-id-33"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -5617,16 +4455,16 @@ exports[`select with custom content renders expanded successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="40"
+            data-ouia-component-id="37"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
             <button
               aria-expanded="true"
               aria-haspopup="listbox"
-              aria-labelledby=" pf-toggle-id-36"
+              aria-labelledby=" pf-toggle-id-33"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-36"
+              id="pf-toggle-id-33"
               type="button"
             >
               <div
@@ -5666,10 +4504,10 @@ exports[`select with custom content renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup="listbox"
-        aria-labelledby=" pf-toggle-id-36"
+        aria-labelledby=" pf-toggle-id-33"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-36"
+        id="pf-toggle-id-33"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -5722,7 +4560,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
       keyHandler={[Function]}
       maxHeight=""
       openedOnEnter={false}
-      selected=""
+      selected={Array []}
       sendRef={[Function]}
     >
       <div
@@ -5787,8 +4625,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -5798,7 +4636,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5808,7 +4647,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 >
   <div
     className="pf-c-select"
-    data-ouia-component-id={23}
+    data-ouia-component-id={20}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -5819,16 +4658,16 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-23"
+      aria-labelledby=" pf-toggle-id-20"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-23"
+      id="pf-toggle-id-20"
       isActive={false}
       isDisabled={false}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -5837,7 +4676,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select"
-            data-ouia-component-id="23"
+            data-ouia-component-id="20"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -5847,12 +4686,11 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                
                 <input
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-23-select-multi-typeahead-typeahead"
+                  id="pf-toggle-id-20-select-multi-typeahead-typeahead"
                   placeholder=""
                   type="text"
                   value=""
@@ -5862,9 +4700,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-23"
+                aria-labelledby=" pf-toggle-id-20"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-23"
+                id="pf-toggle-id-20"
                 type="button"
               >
                 <svg
@@ -5904,7 +4742,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-23-select-multi-typeahead-typeahead"
+            id="pf-toggle-id-20-select-multi-typeahead-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5917,10 +4755,10 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           aria-expanded={false}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-23"
+          aria-labelledby=" pf-toggle-id-20"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-23"
+          id="pf-toggle-id-20"
           onClick={[Function]}
           type="button"
         >
@@ -5971,8 +4809,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -5982,7 +4820,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5992,7 +4831,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={24}
+    data-ouia-component-id={21}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -6003,16 +4842,16 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-24"
+      aria-labelledby=" pf-toggle-id-21"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-24"
+      id="pf-toggle-id-21"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -6021,7 +4860,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="24"
+            data-ouia-component-id="21"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -6031,12 +4870,11 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                
                 <input
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-24-select-multi-typeahead-typeahead"
+                  id="pf-toggle-id-21-select-multi-typeahead-typeahead"
                   placeholder=""
                   type="text"
                   value=""
@@ -6046,9 +4884,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-24"
+                aria-labelledby=" pf-toggle-id-21"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-24"
+                id="pf-toggle-id-21"
                 type="button"
               >
                 <svg
@@ -6141,7 +4979,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-24-select-multi-typeahead-typeahead"
+            id="pf-toggle-id-21-select-multi-typeahead-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -6154,10 +4992,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-24"
+          aria-labelledby=" pf-toggle-id-21"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-24"
+          id="pf-toggle-id-21"
           onClick={[Function]}
           type="button"
         >
@@ -6203,7 +5041,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       keyHandler={[Function]}
       maxHeight=""
       openedOnEnter={false}
-      selected=""
+      selected={Array []}
       sendRef={[Function]}
     >
       <ul
@@ -6360,8 +5198,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -6371,6 +5209,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
+  selection=""
   selections={
     Array [
       "Mr",
@@ -6386,7 +5225,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={25}
+    data-ouia-component-id={22}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -6397,16 +5236,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-25"
+      aria-labelledby=" pf-toggle-id-22"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-25"
+      id="pf-toggle-id-22"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -6415,7 +5254,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="25"
+            data-ouia-component-id="22"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -6430,7 +5269,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 >
                   <li
                     class="pf-c-chip"
-                    data-ouia-component-id="28"
+                    data-ouia-component-id="25"
                     data-ouia-component-type="PF4/Chip"
                     data-ouia-safe="true"
                   >
@@ -6467,7 +5306,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   </li>
                   <li
                     class="pf-c-chip"
-                    data-ouia-component-id="29"
+                    data-ouia-component-id="26"
                     data-ouia-component-type="PF4/Chip"
                     data-ouia-safe="true"
                   >
@@ -6507,7 +5346,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-25-select-multi-typeahead-typeahead"
+                  id="pf-toggle-id-22-select-multi-typeahead-typeahead"
                   placeholder=""
                   type="text"
                   value=""
@@ -6537,9 +5376,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-25"
+                aria-labelledby=" pf-toggle-id-22"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-25"
+                id="pf-toggle-id-22"
                 type="button"
               >
                 <svg
@@ -6694,7 +5533,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   >
                     <li
                       className="pf-c-chip"
-                      data-ouia-component-id={28}
+                      data-ouia-component-id={25}
                       data-ouia-component-type="PF4/Chip"
                       data-ouia-safe={true}
                     >
@@ -6780,7 +5619,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   >
                     <li
                       className="pf-c-chip"
-                      data-ouia-component-id={29}
+                      data-ouia-component-id={26}
                       data-ouia-component-type="PF4/Chip"
                       data-ouia-safe={true}
                     >
@@ -6860,7 +5699,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-25-select-multi-typeahead-typeahead"
+            id="pf-toggle-id-22-select-multi-typeahead-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -6908,10 +5747,10 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-25"
+          aria-labelledby=" pf-toggle-id-22"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-25"
+          id="pf-toggle-id-22"
           onClick={[Function]}
           type="button"
         >
@@ -7177,8 +6016,8 @@ exports[`typeahead multi select test onChange 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[MockFunction]}
@@ -7188,7 +6027,8 @@ exports[`typeahead multi select test onChange 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -7198,7 +6038,7 @@ exports[`typeahead multi select test onChange 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={31}
+    data-ouia-component-id={28}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -7209,16 +6049,16 @@ exports[`typeahead multi select test onChange 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-27"
+      aria-labelledby=" pf-toggle-id-24"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}
-      id="pf-toggle-id-27"
+      id="pf-toggle-id-24"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -7227,7 +6067,7 @@ exports[`typeahead multi select test onChange 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="31"
+            data-ouia-component-id="28"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -7241,7 +6081,7 @@ exports[`typeahead multi select test onChange 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-27-select-typeahead"
+                  id="pf-toggle-id-24-select-typeahead"
                   placeholder=""
                   type="text"
                   value="test"
@@ -7271,9 +6111,9 @@ exports[`typeahead multi select test onChange 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-27"
+                aria-labelledby=" pf-toggle-id-24"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-27"
+                id="pf-toggle-id-24"
                 type="button"
               >
                 <svg
@@ -7330,7 +6170,7 @@ exports[`typeahead multi select test onChange 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-27-select-typeahead"
+            id="pf-toggle-id-24-select-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -7378,10 +6218,10 @@ exports[`typeahead multi select test onChange 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-27"
+          aria-labelledby=" pf-toggle-id-24"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-27"
+          id="pf-toggle-id-24"
           onClick={[Function]}
           type="button"
         >
@@ -7485,8 +6325,8 @@ exports[`typeahead select renders closed successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={false}
   isGrouped={false}
+  isOpen={false}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -7496,7 +6336,8 @@ exports[`typeahead select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -7506,7 +6347,7 @@ exports[`typeahead select renders closed successfully 1`] = `
 >
   <div
     className="pf-c-select"
-    data-ouia-component-id={16}
+    data-ouia-component-id={13}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -7517,16 +6358,16 @@ exports[`typeahead select renders closed successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-16"
+      aria-labelledby=" pf-toggle-id-13"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-16"
+      id="pf-toggle-id-13"
       isActive={false}
       isDisabled={false}
-      isExpanded={false}
       isFocused={false}
       isHovered={false}
+      isOpen={false}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -7535,7 +6376,7 @@ exports[`typeahead select renders closed successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select"
-            data-ouia-component-id="16"
+            data-ouia-component-id="13"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -7549,7 +6390,7 @@ exports[`typeahead select renders closed successfully 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-16-select-typeahead"
+                  id="pf-toggle-id-13-select-typeahead"
                   placeholder=""
                   type="text"
                   value=""
@@ -7559,9 +6400,9 @@ exports[`typeahead select renders closed successfully 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-16"
+                aria-labelledby=" pf-toggle-id-13"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-16"
+                id="pf-toggle-id-13"
                 type="button"
               >
                 <svg
@@ -7601,7 +6442,7 @@ exports[`typeahead select renders closed successfully 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-16-select-typeahead"
+            id="pf-toggle-id-13-select-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -7614,10 +6455,10 @@ exports[`typeahead select renders closed successfully 1`] = `
           aria-expanded={false}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-16"
+          aria-labelledby=" pf-toggle-id-13"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-16"
+          id="pf-toggle-id-13"
           onClick={[Function]}
           type="button"
         >
@@ -7668,8 +6509,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -7679,7 +6520,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -7689,7 +6531,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={17}
+    data-ouia-component-id={14}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -7700,16 +6542,16 @@ exports[`typeahead select renders expanded successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-17"
+      aria-labelledby=" pf-toggle-id-14"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-17"
+      id="pf-toggle-id-14"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -7718,7 +6560,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="17"
+            data-ouia-component-id="14"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -7732,7 +6574,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-17-select-typeahead"
+                  id="pf-toggle-id-14-select-typeahead"
                   placeholder=""
                   type="text"
                   value=""
@@ -7742,9 +6584,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-17"
+                aria-labelledby=" pf-toggle-id-14"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-17"
+                id="pf-toggle-id-14"
                 type="button"
               >
                 <svg
@@ -7837,7 +6679,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-17-select-typeahead"
+            id="pf-toggle-id-14-select-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -7850,10 +6692,10 @@ exports[`typeahead select renders expanded successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-17"
+          aria-labelledby=" pf-toggle-id-14"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-17"
+          id="pf-toggle-id-14"
           onClick={[Function]}
           type="button"
         >
@@ -8056,8 +6898,8 @@ exports[`typeahead select renders selected successfully 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -8067,7 +6909,8 @@ exports[`typeahead select renders selected successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections="Mr"
+  selection="Mr"
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -8077,7 +6920,7 @@ exports[`typeahead select renders selected successfully 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={18}
+    data-ouia-component-id={15}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -8088,16 +6931,16 @@ exports[`typeahead select renders selected successfully 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-18"
+      aria-labelledby=" pf-toggle-id-15"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-18"
+      id="pf-toggle-id-15"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -8106,7 +6949,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="18"
+            data-ouia-component-id="15"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -8120,7 +6963,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-18-select-typeahead"
+                  id="pf-toggle-id-15-select-typeahead"
                   placeholder=""
                   type="text"
                   value="Mr"
@@ -8150,9 +6993,9 @@ exports[`typeahead select renders selected successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-18"
+                aria-labelledby=" pf-toggle-id-15"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-18"
+                id="pf-toggle-id-15"
                 type="button"
               >
                 <svg
@@ -8261,7 +7104,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-18-select-typeahead"
+            id="pf-toggle-id-15-select-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -8309,10 +7152,10 @@ exports[`typeahead select renders selected successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-18"
+          aria-labelledby=" pf-toggle-id-15"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-18"
+          id="pf-toggle-id-15"
           onClick={[Function]}
           type="button"
         >
@@ -8544,8 +7387,8 @@ exports[`typeahead select test creatable option 1`] = `
   hasInlineFilter={false}
   isCreatable={true}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[Function]}
@@ -8554,7 +7397,8 @@ exports[`typeahead select test creatable option 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -8564,7 +7408,7 @@ exports[`typeahead select test creatable option 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={22}
+    data-ouia-component-id={19}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -8575,16 +7419,16 @@ exports[`typeahead select test creatable option 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-22"
+      aria-labelledby=" pf-toggle-id-19"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={false}
-      id="pf-toggle-id-22"
+      id="pf-toggle-id-19"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -8593,7 +7437,7 @@ exports[`typeahead select test creatable option 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="22"
+            data-ouia-component-id="19"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -8607,7 +7451,7 @@ exports[`typeahead select test creatable option 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-22-select-typeahead"
+                  id="pf-toggle-id-19-select-typeahead"
                   placeholder=""
                   type="text"
                   value="test"
@@ -8637,9 +7481,9 @@ exports[`typeahead select test creatable option 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-22"
+                aria-labelledby=" pf-toggle-id-19"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-22"
+                id="pf-toggle-id-19"
                 type="button"
               >
                 <svg
@@ -8699,7 +7543,7 @@ exports[`typeahead select test creatable option 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-22-select-typeahead"
+            id="pf-toggle-id-19-select-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -8747,10 +7591,10 @@ exports[`typeahead select test creatable option 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-22"
+          aria-labelledby=" pf-toggle-id-19"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-22"
+          id="pf-toggle-id-19"
           onClick={[Function]}
           type="button"
         >
@@ -8857,8 +7701,8 @@ exports[`typeahead select test onChange 1`] = `
   hasInlineFilter={false}
   isCreatable={false}
   isDisabled={false}
-  isExpanded={true}
   isGrouped={false}
+  isOpen={true}
   isPlain={false}
   noResultsFoundText="No results found"
   onClear={[MockFunction]}
@@ -8868,7 +7712,8 @@ exports[`typeahead select test onChange 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selections=""
+  selection=""
+  selections={Array []}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -8878,7 +7723,7 @@ exports[`typeahead select test onChange 1`] = `
 >
   <div
     className="pf-c-select pf-m-expanded"
-    data-ouia-component-id={20}
+    data-ouia-component-id={17}
     data-ouia-component-type="PF4/Select"
     data-ouia-safe={true}
     style={
@@ -8889,16 +7734,16 @@ exports[`typeahead select test onChange 1`] = `
   >
     <SelectToggle
       aria-label="Options menu"
-      aria-labelledby=" pf-toggle-id-20"
+      aria-labelledby=" pf-toggle-id-17"
       className=""
       handleTypeaheadKeys={[Function]}
       hasClearButton={true}
-      id="pf-toggle-id-20"
+      id="pf-toggle-id-17"
       isActive={false}
       isDisabled={false}
-      isExpanded={true}
       isFocused={false}
       isHovered={false}
+      isOpen={true}
       isPlain={false}
       onClose={[Function]}
       onEnter={[Function]}
@@ -8907,7 +7752,7 @@ exports[`typeahead select test onChange 1`] = `
         Object {
           "current": <div
             class="pf-c-select pf-m-expanded"
-            data-ouia-component-id="20"
+            data-ouia-component-id="17"
             data-ouia-component-type="PF4/Select"
             data-ouia-safe="true"
           >
@@ -8921,7 +7766,7 @@ exports[`typeahead select test onChange 1`] = `
                   aria-label=""
                   autocomplete="off"
                   class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="pf-toggle-id-20-select-typeahead"
+                  id="pf-toggle-id-17-select-typeahead"
                   placeholder=""
                   type="text"
                   value="test"
@@ -8951,9 +7796,9 @@ exports[`typeahead select test onChange 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-20"
+                aria-labelledby=" pf-toggle-id-17"
                 class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                id="pf-toggle-id-20"
+                id="pf-toggle-id-17"
                 type="button"
               >
                 <svg
@@ -9010,7 +7855,7 @@ exports[`typeahead select test onChange 1`] = `
             autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             disabled={false}
-            id="pf-toggle-id-20-select-typeahead"
+            id="pf-toggle-id-17-select-typeahead"
             onChange={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -9058,10 +7903,10 @@ exports[`typeahead select test onChange 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-20"
+          aria-labelledby=" pf-toggle-id-17"
           className="pf-c-button pf-c-select__toggle-button pf-m-plain"
           disabled={false}
-          id="pf-toggle-id-20"
+          id="pf-toggle-id-17"
           onClick={[Function]}
           type="button"
         >

@@ -33,10 +33,10 @@ interface Filter {
 }
 
 interface DataToolbarState {
-  isExpanded: boolean;
+  isOpen: boolean;
   inputValue: string;
-  statusIsExpanded: boolean;
-  riskIsExpanded: boolean;
+  statusisOpen: boolean;
+  riskisOpen: boolean;
   filters: Filter;
   kebabIsOpen: boolean;
 }
@@ -45,10 +45,10 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
   constructor(props: DataToolbarProps) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       inputValue: '',
-      statusIsExpanded: false,
-      riskIsExpanded: false,
+      statusisOpen: false,
+      riskisOpen: false,
       filters: {
         risk: ['Low'],
         status: ['New', 'Pending']
@@ -57,15 +57,15 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     };
   }
 
-  toggleIsExpanded = () => {
+  toggleisOpen = () => {
     this.setState(prevState => ({
-      isExpanded: !prevState.isExpanded
+      isOpen: !prevState.isOpen
     }));
   };
 
   closeExpandableContent = () => {
     this.setState(() => ({
-      isExpanded: false
+      isOpen: false
     }));
   };
 
@@ -115,15 +115,15 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }
   };
 
-  onStatusToggle = (isExpanded: boolean) => {
+  onStatusToggle = (isOpen: boolean) => {
     this.setState({
-      statusIsExpanded: isExpanded
+      statusisOpen: isOpen
     });
   };
 
-  onRiskToggle = (isExpanded: boolean) => {
+  onRiskToggle = (isOpen: boolean) => {
     this.setState({
-      riskIsExpanded: isExpanded
+      riskisOpen: isOpen
     });
   };
 
@@ -138,7 +138,7 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
   }
 
   render() {
-    const { inputValue, filters, statusIsExpanded, riskIsExpanded, kebabIsOpen } = this.state;
+    const { inputValue, filters, statusisOpen, riskisOpen, kebabIsOpen } = this.state;
 
     const statusMenuItems = [
       <SelectOption key="statusNew" value="New" />,
@@ -178,7 +178,7 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
               onToggle={this.onStatusToggle}
               onSelect={this.onStatusSelect}
               selections={filters.status}
-              isExpanded={statusIsExpanded}
+              isOpen={statusisOpen}
               placeholderText="Status"
             >
               {statusMenuItems}
@@ -191,7 +191,7 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
               onToggle={this.onRiskToggle}
               onSelect={this.onRiskSelect}
               selections={filters.risk}
-              isExpanded={riskIsExpanded}
+              isOpen={riskisOpen}
               placeholderText="Risk"
             >
               {riskMenuItems}

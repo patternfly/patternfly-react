@@ -2,9 +2,7 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { Select } from '../Select';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
-import { CheckboxSelectOption } from '../CheckboxSelectOption';
 import { SelectGroup } from '../SelectGroup';
-import { CheckboxSelectGroup } from '../CheckboxSelectGroup';
 import { SelectVariant, SelectDirection } from '../selectConstants';
 
 class User implements SelectOptionObject {
@@ -27,13 +25,6 @@ const selectOptions = [
   <SelectOption value="Mrs" key="01" />,
   <SelectOption value="Ms" key="02" />,
   <SelectOption value="Other" key="03" />
-];
-
-const checkboxSelectOptions = [
-  <CheckboxSelectOption value="Mr" key="0" />,
-  <CheckboxSelectOption value="Mrs" key="1" />,
-  <CheckboxSelectOption value="Ms" key="2" />,
-  <CheckboxSelectOption value="Other" key="3" />
 ];
 
 const selectOptionsCustom = [
@@ -64,7 +55,7 @@ describe('select', () => {
 
     test('renders expanded successfully', () => {
       const view = mount(
-        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
           {selectOptions}
         </Select>
       );
@@ -72,7 +63,7 @@ describe('select', () => {
     });
     test('renders expanded successfully with custom objects', () => {
       const view = mount(
-        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
           {selectOptionsCustom}
         </Select>
       );
@@ -110,7 +101,7 @@ describe('select', () => {
           onSelect={jest.fn()}
           onToggle={jest.fn()}
           onFilter={customFilter}
-          isExpanded
+          isOpen
         >
           {selectOptions}
         </Select>
@@ -124,7 +115,7 @@ describe('select', () => {
 
   test('renders select groups successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+      <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen isGrouped>
         <SelectGroup label="group 1">{selectOptions}</SelectGroup>
         <SelectGroup label="group 2">{selectOptions}</SelectGroup>
       </Select>
@@ -143,28 +134,10 @@ describe('checkbox select', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('renders closed successfully - old classes', () => {
-    const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
-        {checkboxSelectOptions}
-      </Select>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
   test('renders expanded successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
-      </Select>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
-  test('renders expanded successfully - old classes', () => {
-    const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
-        {checkboxSelectOptions}
       </Select>
     );
     expect(view).toMatchSnapshot();
@@ -177,7 +150,7 @@ describe('checkbox select', () => {
         onSelect={jest.fn()}
         onToggle={jest.fn()}
         onClear={jest.fn()}
-        isExpanded
+        isOpen
         hasInlineFilter
       >
         {selectOptions}
@@ -188,7 +161,7 @@ describe('checkbox select', () => {
 
   test('renders expanded successfully with custom objects', () => {
     const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptionsCustom}
       </Select>
     );
@@ -197,19 +170,9 @@ describe('checkbox select', () => {
 
   test('renders checkbox select groups successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen isGrouped>
         <SelectGroup label="group 1">{selectOptions}</SelectGroup>
         <SelectGroup label="group 2">{selectOptions}</SelectGroup>
-      </Select>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
-  test('renders checkbox select groups successfully - old classes', () => {
-    const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
-        <CheckboxSelectGroup label="group 1">{checkboxSelectOptions}</CheckboxSelectGroup>
-        <CheckboxSelectGroup label="group 2">{checkboxSelectOptions}</CheckboxSelectGroup>
       </Select>
     );
     expect(view).toMatchSnapshot();
@@ -228,7 +191,7 @@ describe('typeahead select', () => {
 
   test('renders expanded successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
@@ -237,7 +200,7 @@ describe('typeahead select', () => {
 
   test('renders selected successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeahead} selections="Mr" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant={SelectVariant.typeahead} selection="Mr" onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
@@ -247,13 +210,7 @@ describe('typeahead select', () => {
   test('test onChange', () => {
     const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
-      <Select
-        variant={SelectVariant.typeahead}
-        onSelect={jest.fn()}
-        onToggle={jest.fn()}
-        onClear={jest.fn()}
-        isExpanded
-      >
+      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} onClear={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
@@ -266,7 +223,7 @@ describe('typeahead select', () => {
   test('test creatable option', () => {
     const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
-      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isExpanded isCreatable>
+      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen isCreatable>
         {selectOptions}
       </Select>
     );
@@ -289,7 +246,7 @@ describe('typeahead multi select', () => {
 
   test('renders expanded successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
@@ -303,7 +260,7 @@ describe('typeahead multi select', () => {
         selections={['Mr', 'Mrs']}
         onSelect={jest.fn()}
         onToggle={jest.fn()}
-        isExpanded
+        isOpen
       >
         {selectOptions}
       </Select>
@@ -314,13 +271,7 @@ describe('typeahead multi select', () => {
   test('test onChange', () => {
     const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
-      <Select
-        variant={SelectVariant.typeahead}
-        onSelect={jest.fn()}
-        onToggle={jest.fn()}
-        onClear={jest.fn()}
-        isExpanded
-      >
+      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} onClear={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
@@ -336,7 +287,7 @@ describe('API', () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
     const view = mount(
-      <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} isExpanded>
+      <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} isOpen>
         {selectOptions}
       </Select>
     );
@@ -352,7 +303,7 @@ describe('API', () => {
     const myMock = jest.fn();
     global.console = { ...global.console, error: myMock };
     mount(
-      <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
@@ -405,7 +356,7 @@ describe('select with custom content', () => {
     expect(view).toMatchSnapshot();
   });
   test('renders expanded successfully', () => {
-    const view = mount(<Select customContent="testing custom" onToggle={jest.fn()} isExpanded />);
+    const view = mount(<Select customContent="testing custom" onToggle={jest.fn()} isOpen />);
     expect(view).toMatchSnapshot();
   });
 });
