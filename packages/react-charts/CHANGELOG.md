@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.0.4...@patternfly/react-charts@6.1.0) (2020-03-26)
+
+
+### Features
+
+* **Charts:** Bump Victory packages (3973) ([#3974](https://github.com/patternfly/patternfly-react/issues/3974)) ([23bd48e](https://github.com/patternfly/patternfly-react/commit/23bd48e1f14fd45a2d403ccd630313971e6a2ebe))
+
+
+
+
+
 ## [6.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.0.3...@patternfly/react-charts@6.0.4) (2020-03-19)
 
 **Note:** Version bump only for package @patternfly/react-charts
