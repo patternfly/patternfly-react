@@ -30,7 +30,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     onClose={[Function]}
     showClose={true}
     title="string"
-    variant="medium"
+    variant="default"
     width={1}
   >
     <div>

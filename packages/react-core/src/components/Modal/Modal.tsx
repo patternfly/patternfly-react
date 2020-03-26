@@ -43,13 +43,13 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Description of the modal */
   description?: React.ReactNode;
   /** Variant of the modal */
-  variant?: 'large' | 'medium' | 'small';
+  variant?: 'small' | 'large' | 'default';
 }
 
 export enum ModalVariant {
+  small = 'small',
   large = 'large',
-  medium = 'medium',
-  small = 'small'
+  default = 'default'
 }
 
 interface ModalState {
@@ -69,7 +69,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     actions: [] as any[],
     isFooterLeftAligned: false,
     onClose: () => undefined as any,
-    variant: 'medium',
+    variant: 'default',
     appendTo: (typeof document !== 'undefined' && document.body) || null
   };
 

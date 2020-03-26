@@ -8,7 +8,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the ModalBox */
   className?: string;
   /** Variant of the modal */
-  variant?: 'large' | 'medium' | 'small';
+  variant?: 'small' | 'large' | 'default';
   /** String to use for Modal Box aria-label */
   title: string;
   /** Id to use for Modal Box description */
@@ -18,7 +18,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
 export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   children,
   className = '',
-  variant = 'medium',
+  variant = 'default',
   title,
   id,
   ...props

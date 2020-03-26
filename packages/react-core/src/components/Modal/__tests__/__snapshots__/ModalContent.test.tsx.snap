@@ -19,7 +19,7 @@ exports[`Modal Content Test description 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Content title"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -63,7 +63,7 @@ exports[`Modal Content Test isOpen 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Content title"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -104,7 +104,7 @@ exports[`Modal Content Test only body 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Content title"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -145,7 +145,7 @@ exports[`Modal Content Test with footer 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Content title"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -191,7 +191,7 @@ exports[`Modal Content Test with onclose 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Content title"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -238,7 +238,7 @@ exports[`Modal Content test without footer 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Content title"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -279,7 +279,7 @@ exports[`Modal Test with custom footer 1`] = `
       id="id"
       style={Object {}}
       title="Test Modal Custom Footer"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
@@ -330,7 +330,7 @@ exports[`Modal Test with custom header 1`] = `
       id="id"
       style={Object {}}
       title="test-custom-header-modal"
-      variant="medium"
+      variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
