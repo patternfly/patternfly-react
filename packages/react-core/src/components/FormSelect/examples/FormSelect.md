@@ -9,6 +9,7 @@ propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
 ## Examples
+
 ```js title=Basic
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
@@ -53,7 +54,7 @@ class FormSelectInputInvalid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
       validated: ValidatedOptions.default
     };
     this.isEmpty = () => this.state.value !== '';
@@ -70,7 +71,7 @@ class FormSelectInputInvalid extends React.Component {
   }
 
   render() {
-    
+
     return (
       <FormSelect
         validated={validated}
@@ -103,15 +104,16 @@ class FormSelectInputInvalid extends React.Component {
 
     this.simulateNetworkCall = callback => {
       setTimeout(callback, 2000);
-    }
+    };
 
     this.onChange = (value, event) => {
-      this.setState({ value,  validated: 'default', helperText: 'Validating...'},
+      this.setState(
+        { value, validated: 'default', helperText: 'Validating...' },
         this.simulateNetworkCall(() => {
           if (value === '3') {
-            this.setState({validated: 'success', helperText: 'You chose wisely'});
+            this.setState({ validated: 'success', helperText: 'You chose wisely' });
           } else {
-            this.setState({validated: 'error', invalidText: 'You must chose Three (thought that was obvious)'});
+            this.setState({ validated: 'error', invalidText: 'You must chose Three (thought that was obvious)' });
           }
         })
       );
