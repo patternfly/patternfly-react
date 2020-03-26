@@ -71,11 +71,12 @@ class FormSelectInputInvalid extends React.Component {
   }
 
   render() {
+    const { value, validated } = this.state;
 
     return (
       <FormSelect
         validated={validated}
-        value={this.state.value}
+        value={value}
         onChange={this.onChange}
         aria-label="FormSelect Input"
       >
