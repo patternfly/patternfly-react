@@ -35,7 +35,7 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
       <TextInput
         isDisabled={isDisabled}
         value={props.editableValue !== undefined ? props.editableValue : value}
-        isValid={props.isValid}
+        validated={props.isValid !== false ? 'default' : 'error'}
         type="text"
         onChange={(newValue, event) => {
           handleTextInputChange(newValue, event, rowIndex, cellIndex);

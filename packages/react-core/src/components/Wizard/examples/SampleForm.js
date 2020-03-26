@@ -33,6 +33,7 @@ class SampleForm extends React.Component {
 
   render() {
     const { value, isValid } = this.state;
+    const validated = isValid ? 'default' : 'error';
 
     return (
       <Form>
@@ -42,10 +43,10 @@ class SampleForm extends React.Component {
           helperText="Please write your age"
           helperTextInvalid="Age has to be a number"
           fieldId="age"
-          isValid={isValid}
+          validated={validated}
         >
           <TextInput
-            isValid={isValid}
+            validated={validated}
             value={value}
             id="age"
             aria-describedby="age-helper"

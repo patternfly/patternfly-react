@@ -91,10 +91,10 @@ export class FormDemo extends Component<FormProps, FormState> {
             helperText="Please write your age"
             helperTextInvalid="Age has to be a number"
             fieldId="age"
-            isValid={isValid}
+            validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
           >
             <TextInput
-              isValid={isValid}
+              validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
               value={value}
               id="age"
               aria-describedby="age-helper"

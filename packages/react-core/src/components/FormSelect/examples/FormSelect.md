@@ -47,17 +47,19 @@ class FormSelectInput extends React.Component {
 
 ```js title=Invalid
 import React from 'react';
-import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';
 
 class FormSelectInputInvalid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       value: ''
+      validated: ValidatedOptions.default
     };
     this.isEmpty = () => this.state.value !== '';
     this.onChange = (value, event) => {
-      this.setState({ value });
+      const validated = this.isEmpty() && ValidatedOptions.error
+      this.setState({ value, validated });
     };
     this.options = [
       { value: '', label: 'Choose a number', disabled: false },
@@ -68,9 +70,10 @@ class FormSelectInputInvalid extends React.Component {
   }
 
   render() {
+    
     return (
       <FormSelect
-        isValid={this.isEmpty()}
+        validated={validated}
         value={this.state.value}
         onChange={this.onChange}
         aria-label="FormSelect Input"
@@ -94,24 +97,26 @@ class FormSelectInputInvalid extends React.Component {
     this.state = {
       value: '',
       invalidText: 'You must choose something',
-      isValid: true,
       validated: 'default',
       helperText: 'Make a selection'
     };
 
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    }
+
     this.onChange = (value, event) => {
-      const isValid = value === '3';
-      this.setState({ value, isValid,  validated: 'error', helperText: 'Validating...'});
-      if (isValid) {
-        setTimeout(() => {
-          if (this.state.isValid) {
-            this.setState({isValid: true, validated: 'success', helperText: 'You chose wisely'});
+      this.setState({ value,  validated: 'default', helperText: 'Validating...'},
+        this.simulateNetworkCall(() => {
+          if (value === '3') {
+            this.setState({validated: 'success', helperText: 'You chose wisely'});
           } else {
-            this.setState({isValid: false, validated: 'error', invalidText: 'You must chose Three (thought that was obvious)'});
+            this.setState({validated: 'error', invalidText: 'You must chose Three (thought that was obvious)'});
           }
-        }, 2000);
-      }
+        })
+      );
     };
+
     this.options = [
       { value: '', label: 'Choose a number', disabled: false },
       { value: '1', label: 'One', disabled: false },
@@ -121,7 +126,7 @@ class FormSelectInputInvalid extends React.Component {
   }
 
   render() {
-    const { value, isValid, validated, helperText, invalidText } = this.state;
+    const { value, validated, helperText, invalidText } = this.state;
     return (
       <Form>
         <FormGroup

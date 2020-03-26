@@ -6,6 +6,7 @@ exports[`FormSelect should match snapshot (auto-generated) 1`] = `
   aria-label="string"
   className="pf-c-form-control ''"
   disabled={false}
+  isValid={true}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}

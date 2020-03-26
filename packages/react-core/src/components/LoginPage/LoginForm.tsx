@@ -3,6 +3,7 @@ import { Form, FormGroup, ActionGroup, FormHelperText } from '../Form';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */
@@ -68,25 +69,35 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
     <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>
       {helperText}
     </FormHelperText>
-    <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
+    <FormGroup
+      label={usernameLabel}
+      isRequired
+      validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
+      fieldId="pf-login-username-id"
+    >
       <TextInput
         autoFocus={!noAutoFocus}
         id="pf-login-username-id"
         isRequired
-        isValid={isValidUsername}
+        validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
         type="text"
         name="pf-login-username-id"
         value={usernameValue}
         onChange={onChangeUsername}
       />
     </FormGroup>
-    <FormGroup label={passwordLabel} isRequired isValid={isValidPassword} fieldId="pf-login-password-id">
+    <FormGroup
+      label={passwordLabel}
+      isRequired
+      validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
+      fieldId="pf-login-password-id"
+    >
       <TextInput
         isRequired
         type="password"
         id="pf-login-password-id"
         name="pf-login-password-id"
-        isValid={isValidPassword}
+        validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
         value={passwordValue}
         onChange={onChangePassword}
       />

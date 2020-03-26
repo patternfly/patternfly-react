@@ -72,8 +72,8 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
 <FormGroup
   fieldId="label-id"
   helperTextInvalid="Invalid FormGroup"
-  isValid={false}
   label="label"
+  validated="error"
 >
   <div
     className="pf-c-form__group"

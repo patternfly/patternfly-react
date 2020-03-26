@@ -5,6 +5,7 @@ exports[`TextArea should match snapshot (auto-generated) 1`] = `
   aria-invalid={false}
   aria-label="null"
   className="pf-c-form-control ''"
+  isValid={true}
   onChange={[Function]}
   required={false}
   value="string"
