@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.30.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.29.1...demo-app-ts@3.30.0) (2020-03-27)
+
+
+### Features
+
+* **Drawer:** added width props, updated demo & integration test ([#3979](https://github.com/patternfly/patternfly-react/issues/3979)) ([b1c7da3](https://github.com/patternfly/patternfly-react/commit/b1c7da3eea53330837952d79f664f0de3b62ec3a))
+
+
+
+
+
 ## [3.29.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.29.0...demo-app-ts@3.29.1) (2020-03-27)
 
 **Note:** Version bump only for package demo-app-ts

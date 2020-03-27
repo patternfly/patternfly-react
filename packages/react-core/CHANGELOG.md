@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.153.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.152.0...@patternfly/react-core@3.153.0) (2020-03-27)
+
+
+### Features
+
+* **Drawer:** added width props, updated demo & integration test ([#3979](https://github.com/patternfly/patternfly-react/issues/3979)) ([b1c7da3](https://github.com/patternfly/patternfly-react/commit/b1c7da3eea53330837952d79f664f0de3b62ec3a))
+
+
+
+
+
 # [3.152.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.151.0...@patternfly/react-core@3.152.0) (2020-03-27)
 
 
