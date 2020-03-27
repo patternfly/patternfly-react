@@ -44,6 +44,8 @@ export interface SelectProps
   noResultsFoundText?: string;
   /** Selected item for single select variant.  Array of selected items for multi select variants. */
   selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
+  /** Flag indicating if selection badge should be hidden for checkbox variant,default false */
+  isCheckboxSelectionBadgeHidden?: boolean;
   /** Id for select toggle element */
   toggleId?: string;
   /** Adds accessible text to Select */
@@ -362,6 +364,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       isDisabled,
       isCreatable,
       selections,
+      isCheckboxSelectionBadgeHidden,
       ariaLabelledBy,
       ariaLabelTypeAhead,
       ariaLabelClear,
@@ -514,11 +517,13 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {selections && (Array.isArray(selections) && selections.length > 0) && (
-                    <div className={css(styles.selectToggleBadge)}>
-                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
-                    </div>
-                  )}
+                  {!isCheckboxSelectionBadgeHidden &&
+                    selections &&
+                    (Array.isArray(selections) && selections.length > 0) && (
+                      <div className={css(styles.selectToggleBadge)}>
+                        <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                      </div>
+                    )}
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
