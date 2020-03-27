@@ -6,7 +6,7 @@ propComponents: ['TextInput']
 typescript: true
 ---
 
-import { TextInput, Button } from '@patternfly/react-core';
+import { TextInput, Button, ValidatedOptions } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic
@@ -50,7 +50,7 @@ import { TextInput } from '@patternfly/react-core';
 
 ```js title=Invalid
 import React from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput, ValidatedOptions } from '@patternfly/react-core';
 
 class InvalidTextInput extends React.Component {
   constructor(props) {
@@ -71,7 +71,7 @@ class InvalidTextInput extends React.Component {
         value={value}
         onChange={this.handleInvalidTextInputChange}
         isRequired
-        isValid={false}
+        validated={ValidatedOptions.error}
         type="text"
         aria-label="invalid text input example"
       />

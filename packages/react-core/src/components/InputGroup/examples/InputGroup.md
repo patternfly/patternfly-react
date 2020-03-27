@@ -28,7 +28,8 @@ import {
   Button,
   InputGroup,
   InputGroupText,
-  TextInput
+  TextInput,
+  ValidatedOptions
 } from '@patternfly/react-core';
 
 class SimpleInputGroups extends React.Component {
@@ -48,7 +49,7 @@ class SimpleInputGroups extends React.Component {
           <InputGroupText id="username" aria-label="@">
             <AtIcon />
           </InputGroupText>
-          <TextInput isValid={false} id="textInput7" type="email" aria-label="Error state username example" />
+          <TextInput validated={ValidatedOptions.error} id="textInput7" type="email" aria-label="Error state username example" />
         </InputGroup>
         <br />
         <InputGroup>

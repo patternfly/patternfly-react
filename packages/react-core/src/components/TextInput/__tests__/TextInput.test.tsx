@@ -34,7 +34,7 @@ test('readonly text input', () => {
 });
 
 test('invalid text input', () => {
-  const view = mount(<TextInput {...props} required isValid={false} aria-label="invalid text input" />);
+  const view = mount(<TextInput {...props} required validated={'error'} aria-label="invalid text input" />);
   expect(view.find('input')).toMatchSnapshot();
 });
 

@@ -27,8 +27,6 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   isReadOnly?: boolean;
   /** Flag to show if the input is required. */
   isRequired?: boolean;
-  /** Flag to show if the input is valid or invalid. This prop will be deprecated. You should use validated instead. */
-  isValid?: boolean;
   /* Value to indicate if the input is modified to show that validation state.
    * If set to success, input will be modified to indicate valid state.
    * If set to error,  input will be modified to indicate error state.
@@ -62,7 +60,6 @@ class TextInputBase extends React.Component<TextInputProps> {
     'aria-label': null,
     className: '',
     isRequired: false,
-    isValid: true,
     validated: 'default' as 'success' | 'error' | 'default',
     isDisabled: false,
     isReadOnly: false,
@@ -92,7 +89,6 @@ class TextInputBase extends React.Component<TextInputProps> {
       value,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
-      isValid,
       validated,
       isReadOnly,
       isRequired,
@@ -110,7 +106,7 @@ class TextInputBase extends React.Component<TextInputProps> {
         onChange={this.handleChange}
         type={type}
         value={value}
-        aria-invalid={!isValid || validated === ValidatedOptions.error}
+        aria-invalid={validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}

@@ -32,10 +32,6 @@ export class TextInputDemo extends Component {
     value: 'read only text input example'
   };
 
-  myValidTextInputProps: TextInputProps = {
-    isValid: false
-  };
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -54,7 +50,6 @@ export class TextInputDemo extends Component {
           isReadOnly={this.myReadOnlyTextInputProps.isReadOnly}
           value={this.myReadOnlyTextInputProps.value}
         />
-        <TextInput id="text-invalid" isValid={this.myValidTextInputProps.isValid} />
         <Text>Validated text input </Text>
         <TextInput
           id="text-validated"

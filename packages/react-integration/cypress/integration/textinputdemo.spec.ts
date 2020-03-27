@@ -18,10 +18,6 @@ describe('Text Input Demo Test', () => {
     cy.get('#text-read-only').should('have.attr', 'readonly');
   });
 
-  it('Verify invalid text input', () => {
-    cy.get('#text-invalid').should('have.attr', 'aria-invalid');
-  });
-
   it('Verify Text input can be validated using validated prop', () => {
     cy.get('#text-validated.pf-m-success').should('not.exist');
     cy.get('#text-validated').then(textinput => {

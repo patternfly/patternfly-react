@@ -251,28 +251,28 @@ class InvalidForm extends React.Component {
     super(props);
     this.state = {
       value: 'Five',
-      isValid: false
+      validated: 'error'
     };
     this.handleTextInputChange = value => {
-      this.setState({ value, isValid: /^\d+$/.test(value) });
+      this.setState({ value, validated: /^\d+$/.test(value) ? 'success' : 'error' });
     };
   }
 
   render() {
-    const { value, isValid } = this.state;
+    const { value, validated } = this.state;
 
     return (
       <Form>
         <FormGroup
           label="Age:"
           type="number"
-          helperText="Please write your age"
+          helperText="Please enter your age"
           helperTextInvalid="Age has to be a number"
           fieldId="age"
-          isValid={isValid}
+          validated={validated}
         >
           <TextInput
-            isValid={isValid}
+            validated={validated}
             value={value}
             id="age"
             aria-describedby="age-helper"
@@ -306,27 +306,33 @@ class InvalidForm extends React.Component {
     this.state = {
       value: '',
       invalidText: 'Age has to be a number',
-      isValid: true,
       validated: 'default',
       helperText: 'Enter your age to continue'
     };
+
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    }
+
     this.handleTextInputChange = value => {
-      const isValid = /^\d+$/.test(value)
-      this.setState({ value, isValid, invalidText: 'Age has to be a number', helperText: 'Validating...', validated: 'error' });
-      if (isValid) {
-        setTimeout(() => {
-          if (this.state.isValid && parseInt(this.state.value, 10) >= 21) {
-            this.setState({isValid: true, validated: 'success', helperText: 'Enjoy your stay'});
-          } else {
-            this.setState({isValid: false, validated: 'error', invalidText: 'You must be at least 21 to continue'});
+      this.setState({ value, validated: 'default', helperText: 'Validating...' },
+        this.simulateNetworkCall(() => {
+          if (/^\d+$/.test(value)) {
+            if (parseInt(value, 10) >= 21) {
+              this.setState({validated: 'success', helperText: 'Enjoy your stay'});
+            } else {
+              this.setState({validated: 'error', invalidText: 'You must be at least 21 to continue'});
+            }
           }
-        }, 2000);
-      }
+          else {
+            this.setState({validated: 'error', invalidText: 'Age has to be a number'});
+          }
+        }));
     };
   }
 
   render() {
-    const { value, isValid, validated, helperText, invalidText } = this.state;
+    const { value, validated, helperText, invalidText } = this.state;
 
     return (
       <Form>

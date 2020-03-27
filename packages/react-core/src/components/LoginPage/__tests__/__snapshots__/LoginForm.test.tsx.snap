@@ -11,33 +11,33 @@ exports[`LoginForm with rememberMeLabel 1`] = `
   <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
-    isValid={true}
     label="Username"
+    validated="default"
   >
     <ForwardRef
       autoFocus={true}
       id="pf-login-username-id"
       isRequired={true}
-      isValid={true}
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
+      validated="default"
       value=""
     />
   </FormGroup>
   <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
-    isValid={true}
     label="Password"
+    validated="default"
   >
     <ForwardRef
       id="pf-login-password-id"
       isRequired={true}
-      isValid={true}
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
+      validated="default"
       value=""
     />
   </FormGroup>
@@ -79,33 +79,33 @@ exports[`should render Login form 1`] = `
   <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
-    isValid={true}
     label="Username"
+    validated="default"
   >
     <ForwardRef
       autoFocus={true}
       id="pf-login-username-id"
       isRequired={true}
-      isValid={true}
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
+      validated="default"
       value=""
     />
   </FormGroup>
   <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
-    isValid={true}
     label="Password"
+    validated="default"
   >
     <ForwardRef
       id="pf-login-password-id"
       isRequired={true}
-      isValid={true}
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
+      validated="default"
       value=""
     />
   </FormGroup>
