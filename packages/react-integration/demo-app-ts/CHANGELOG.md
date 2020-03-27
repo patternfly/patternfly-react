@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.17...demo-app-ts@3.29.0) (2020-03-27)
+
+
+### Features
+
+* **select:** Allow count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/issues/3976)) ([98bef94](https://github.com/patternfly/patternfly-react/commit/98bef941745d57f94b1f9cafd866c06ea1f85a93))
+
+
+
+
+
 ## [3.28.17](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.28.16...demo-app-ts@3.28.17) (2020-03-26)
 
 **Note:** Version bump only for package demo-app-ts
