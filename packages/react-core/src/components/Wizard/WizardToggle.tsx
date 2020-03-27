@@ -33,7 +33,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   activeStep,
   children,
   hasBodyPadding = true,
-  stepButtonAriaHidden,
+  stepButtonAriaHidden
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
