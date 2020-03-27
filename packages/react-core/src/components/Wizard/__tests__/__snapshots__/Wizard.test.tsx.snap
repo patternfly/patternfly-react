@@ -177,13 +177,13 @@ exports[`Wizard should match snapshot 1`] = `
                     />
                   </svg>
                 </button>
-                <h1
+                <h2
                   aria-label="Wizard title"
                   class="pf-c-title pf-m-3xl pf-c-wizard__title"
                   id="pf-wizard-title-0"
                 >
                   Wizard title
-                </h1>
+                </h2>
                 <p
                   class="pf-c-wizard__description"
                   id="pf-wizard-description-0"
@@ -400,13 +400,13 @@ exports[`Wizard should match snapshot 1`] = `
                     />
                   </svg>
                 </button>
-                <h1
+                <h2
                   aria-label="Wizard title"
                   class="pf-c-title pf-m-3xl pf-c-wizard__title"
                   id="pf-wizard-title-0"
                 >
                   Wizard title
-                </h1>
+                </h2>
                 <p
                   class="pf-c-wizard__description"
                   id="pf-wizard-description-0"

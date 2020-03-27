@@ -45,29 +45,11 @@ exports[`md Title 1`] = `
 </h1>
 `;
 
-exports[`sm Title 1`] = `
-<h1
-  className="pf-c-title"
->
-  sm
-   Title
-</h1>
-`;
-
 exports[`xl Title 1`] = `
 <h1
   className="pf-c-title pf-m-xl"
 >
   xl
-   Title
-</h1>
-`;
-
-exports[`xs Title 1`] = `
-<h1
-  className="pf-c-title"
->
-  xs
    Title
 </h1>
 `;

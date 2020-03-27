@@ -17,6 +17,7 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
   <Title
     aria-label="string"
     className="pf-c-wizard__title"
+    headingLevel="h2"
     id="string"
     size="3xl"
   >

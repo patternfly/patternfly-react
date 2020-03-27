@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Title, TitleLevel } from '../Title';
+import { Title, TitleSizes } from '../Title';
 
 export interface ModalBoxHeaderProps {
   /** Content rendered inside the Header */
@@ -17,12 +17,12 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   children = null,
   className = '',
   hideTitle = false,
-  headingLevel = TitleLevel.h1,
+  headingLevel = 'h1',
   ...props
 }: ModalBoxHeaderProps) =>
   hideTitle ? null : (
     <React.Fragment>
-      <Title size="2xl" headingLevel={headingLevel} className={className} {...props}>
+      <Title size={TitleSizes['2xl']} headingLevel={headingLevel} className={className} {...props}>
         {children}
       </Title>
     </React.Fragment>

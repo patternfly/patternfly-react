@@ -383,7 +383,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'title-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Single Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Single Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Title
@@ -427,7 +429,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'title-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Disabled Single Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Disabled Single Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Title
@@ -462,7 +466,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'title-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Custom Single Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Custom Single Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Title
@@ -516,7 +522,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'checkbox-select-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Checkbox Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Checkbox Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Checkbox Title
@@ -550,7 +558,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'typeahead-select-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Typeahead Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Typeahead Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Select a state
@@ -602,7 +612,9 @@ export class SelectDemo extends Component<SelectDemoState> {
 
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Typeahead Multi Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Typeahead Multi Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Select a state
@@ -634,7 +646,9 @@ export class SelectDemo extends Component<SelectDemoState> {
 
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Custom Data Typeahead Multi Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Custom Data Typeahead Multi Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Select a state
@@ -666,7 +680,9 @@ export class SelectDemo extends Component<SelectDemoState> {
 
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Custom Typeahead Multi Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Custom Typeahead Multi Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Select a state
@@ -704,7 +720,9 @@ export class SelectDemo extends Component<SelectDemoState> {
 
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Custom Typeahead Plain Multi Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Custom Typeahead Plain Multi Select
+        </Title>
         <div>
           <span id={titleId} hidden>
             Select a state
@@ -742,7 +760,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'custom-content-title-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Custom Content Select</Title>
+        <Title headingLevel="h2" size="2xl">
+          Custom Content Select
+        </Title>
         <div id="custom-content-select-id">
           <span id={titleId} hidden>
             Title
@@ -767,7 +787,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'typeahead-select-form-id';
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Typeahead inside a form</Title>
+        <Title headingLevel="h2" size="2xl">
+          Typeahead inside a form
+        </Title>
         <Form
           onSubmit={e => {
             window.location.href = '/404';

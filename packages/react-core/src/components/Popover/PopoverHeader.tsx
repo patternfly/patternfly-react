@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Title, TitleSize } from '../Title';
+import { Title, TitleSizes } from '../Title';
 import { Omit } from '../../helpers/typeUtils';
 
 export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
@@ -7,7 +7,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
   id,
   ...props
 }: PopoverHeaderProps) => (
-  <Title headingLevel="h6" size={TitleSize.xl} id={id} {...props}>
+  <Title headingLevel="h6" size={TitleSizes.xl} id={id} {...props}>
     {children}
   </Title>
 );

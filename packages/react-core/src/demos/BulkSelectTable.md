@@ -215,7 +215,7 @@ class BulkSelectTableDemo extends React.Component {
         )}
         {loading && (
           <div className="pf-l-bullseye">
-            <Title size="3xl">Please wait while loading data</Title>
+            <Title headingLevel="h2" size="3xl">Please wait while loading data</Title>
           </div>
         )}
         {this.renderPagination()}
