@@ -62,6 +62,7 @@ exports[`Wizard should match snapshot 1`] = `
                 isNavOpen={false}
                 nav={[Function]}
                 onNavToggle={[Function]}
+                stepButtonAriaHidden={null}
                 steps={
                   Array [
                     Object {
