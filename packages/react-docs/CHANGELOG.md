@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.21.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.21.2...@patternfly/react-docs@4.21.3) (2020-03-27)
+
+
+### Bug Fixes
+
+* **docs:** fix path to react-core UMD file ([#3982](https://github.com/patternfly/patternfly-react/issues/3982)) ([7d55be3](https://github.com/patternfly/patternfly-react/commit/7d55be3962fdbd97b165ed4f6eec1935effa7a2b))
+
+
+
+
+
 ## [4.21.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.21.1...@patternfly/react-docs@4.21.2) (2020-03-27)
 
 **Note:** Version bump only for package @patternfly/react-docs
