@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.2...@patternfly/react-integration@4.2.3) (2020-03-27)
+
+
+### Bug Fixes
+
+* **title:** remove problematic default headingLevel ([#3922](https://github.com/patternfly/patternfly-react/issues/3922)) ([a0ad8a1](https://github.com/patternfly/patternfly-react/commit/a0ad8a1a72d2c15e41e52eeae52006a515d8e8ae))
+
+
+
+
+
 ## [4.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.1...@patternfly/react-integration@4.2.2) (2020-03-27)
 
 **Note:** Version bump only for package @patternfly/react-integration
