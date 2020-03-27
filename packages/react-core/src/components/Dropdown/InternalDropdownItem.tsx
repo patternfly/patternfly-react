@@ -151,18 +151,15 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
-    let isComponentReactElement = false;
     let classes: string;
+    const isChildReactElement = React.isValidElement(children);
+
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (Component === 'button') {
       additionalProps.disabled = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
-    } else if (React.isValidElement(Component)) {
-      // Render a custom wrapper component, for example router Link component
-      // instead of our wrapper
-      isComponentReactElement = true;
     }
 
     const renderWithTooltip = (childNode: React.ReactNode) =>
@@ -202,9 +199,11 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               id={id}
             >
               {renderWithTooltip(
-                isComponentReactElement ? (
-                  React.cloneElement(Component as React.ReactHTMLElement<any>, {
+                isChildReactElement ? (
+                  React.cloneElement(children as React.ReactElement<any>, {
                     ...additionalProps,
+                    ref: this.ref,
+                    id,
                     className: css(classes, itemClass, variant === 'icon' && styles.modifiers.icon)
                   })
                 ) : (
