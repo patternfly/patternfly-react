@@ -24,6 +24,8 @@ export interface SelectDemoState {
   customSingleSelected: string;
   checkIsExpanded: boolean;
   checkSelected: string[];
+  noBadgeCheckIsExpanded: boolean;
+  noBadgeCheckSelected: string[];
   typeaheadIsExpanded: boolean;
   typeaheadSelected: string;
   typeaheadMultiIsExpanded: boolean;
@@ -52,6 +54,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     customSingleSelected: null,
     checkIsExpanded: false,
     checkSelected: [],
+    noBadgeCheckIsExpanded: false,
+    noBadgeCheckSelected: [],
     typeaheadIsExpanded: false,
     typeaheadSelected: null,
     typeaheadMultiIsExpanded: false,
@@ -160,6 +164,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  noBadgeCheckOnToggle = (noBadgeCheckIsExpanded: boolean) => {
+    this.setState({
+      noBadgeCheckIsExpanded
+    });
+  };
+
   typeaheadOnToggle = (typeaheadIsExpanded: boolean) => {
     this.setState({
       typeaheadIsExpanded
@@ -243,6 +253,23 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState(
         (prevState: SelectDemoState) => ({ checkSelected: [...prevState.checkSelected, selection] }),
         () => console.log('selections: ', this.state.checkSelected)
+      );
+    }
+  };
+
+  noBadgeCheckOnSelect = (event: any, selection: string) => {
+    const { noBadgeCheckSelected } = this.state;
+    if (noBadgeCheckSelected.includes(selection)) {
+      this.setState(
+        (prevState: SelectDemoState) => ({
+          noBadgeCheckSelected: prevState.noBadgeCheckSelected.filter(item => item !== selection)
+        }),
+        () => console.log('selections: ', this.state.noBadgeCheckSelected)
+      );
+    } else {
+      this.setState(
+        (prevState: SelectDemoState) => ({ noBadgeCheckSelected: [...prevState.noBadgeCheckSelected, selection] }),
+        () => console.log('selections: ', this.state.noBadgeCheckSelected)
       );
     }
   };
@@ -349,6 +376,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       customSingleIsExpanded: false,
       checkSelected: [],
       checkIsExpanded: false,
+      noBadgeCheckSelected: [],
+      noBadgeCheckIsExpanded: false,
       typeaheadSelected: null,
       typeaheadIsExpanded: false,
       typeaheadMultiSelected: [],
@@ -513,6 +542,35 @@ export class SelectDemo extends Component<SelectDemoState> {
             onSelect={this.checkOnSelect}
             selections={checkSelected}
             isExpanded={checkIsExpanded}
+            placeholderText="Filter by status"
+            ariaLabelledBy={titleId}
+          >
+            {this.checkboxOptions}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
+  renderNoBadgeCheckboxSelect() {
+    const { noBadgeCheckIsExpanded, noBadgeCheckSelected } = this.state;
+    const titleId = 'no-badge-checkbox-select-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Checkbox Select w/ No Selection Badge</Title>
+        <div>
+          <span id={titleId} hidden>
+            Checkbox Title
+          </span>
+          <Select
+            toggleId="check-select-no-badge"
+            variant={SelectVariant.checkbox}
+            aria-label="Select Input"
+            onToggle={this.noBadgeCheckOnToggle}
+            onSelect={this.noBadgeCheckOnSelect}
+            selections={noBadgeCheckSelected}
+            isCheckboxSelectionBadgeHidden
+            isExpanded={noBadgeCheckIsExpanded}
             placeholderText="Filter by status"
             ariaLabelledBy={titleId}
           >
@@ -788,6 +846,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderCustomSingleSelect()}
         {this.renderDisabledSingleSelect()}
         {this.renderCheckboxSelect()}
+        {this.renderNoBadgeCheckboxSelect()}
         {this.renderTypeaheadSelect()}
         {this.renderTypeaheadMultiSelect()}
         {this.renderCustomDataTypeaheadMultiSelect()}
