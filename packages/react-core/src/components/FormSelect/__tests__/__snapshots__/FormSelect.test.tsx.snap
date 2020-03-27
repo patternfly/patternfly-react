@@ -207,11 +207,10 @@ exports[`Simple FormSelect input 1`] = `
 
 exports[`invalid FormSelect input 1`] = `
 <select
-  aria-invalid={false}
+  aria-invalid={true}
   aria-label="invalid FormSelect"
   className="pf-c-form-control"
   disabled={false}
-  isValid={false}
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
