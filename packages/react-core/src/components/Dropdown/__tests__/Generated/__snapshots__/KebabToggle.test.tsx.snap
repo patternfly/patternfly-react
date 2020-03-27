@@ -19,11 +19,6 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
   parentRef={null}
   type="button"
 >
-  <EllipsisVIcon
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-    title={null}
-  />
+  <EllipsisVIcon />
 </Toggle>
 `;

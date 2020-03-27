@@ -38,7 +38,7 @@
     "local-web-server": "^2.6.1",
     "rimraf": "^2.6.2",
     "ts-loader": "^5.3.3",
-    "typescript": "3.4.5",
+    "typescript": "^3.8.3",
     "webpack": "^4.25.1"
   }
 }

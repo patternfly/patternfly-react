@@ -422,10 +422,9 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   });
 
   // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  const VictoryAxisWithContainerComponent = VictoryAxis as any;
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryAxis
+    <VictoryAxisWithContainerComponent
       containerComponent={container}
       theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme}
       {...rest}

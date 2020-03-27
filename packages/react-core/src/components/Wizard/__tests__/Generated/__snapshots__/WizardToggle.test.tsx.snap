@@ -23,10 +23,6 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
     <CaretDownIcon
       aria-hidden="true"
       className="pf-c-wizard__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     />
   </button>
   <div

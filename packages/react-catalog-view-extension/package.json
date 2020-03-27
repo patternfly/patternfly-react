@@ -62,7 +62,7 @@
     "node-sass": "^4.12.0",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2",
-    "typescript": "3.4.5"
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

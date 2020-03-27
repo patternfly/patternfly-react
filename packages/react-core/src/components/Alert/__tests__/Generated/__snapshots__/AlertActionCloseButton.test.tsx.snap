@@ -6,11 +6,6 @@ exports[`AlertActionCloseButton should match snapshot (auto-generated) 1`] = `
   onClick={[Function]}
   variant="plain"
 >
-  <TimesIcon
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-    title={null}
-  />
+  <TimesIcon />
 </Button>
 `;

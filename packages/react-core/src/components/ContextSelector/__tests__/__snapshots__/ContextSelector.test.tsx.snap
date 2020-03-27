@@ -71,10 +71,6 @@ exports[`Renders ContextSelector open 1`] = `
           >
             <SearchIcon
               aria-hidden="true"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
             />
           </Button>
         </InputGroup>

@@ -150,12 +150,7 @@ exports[`component render custom pagination toggle 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -422,31 +417,45 @@ exports[`component render custom pagination toggle 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -502,31 +511,43 @@ exports[`component render custom pagination toggle 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -550,31 +571,43 @@ exports[`component render custom pagination toggle 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -619,31 +652,43 @@ exports[`component render custom pagination toggle 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -667,31 +712,43 @@ exports[`component render custom pagination toggle 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -1100,31 +1157,45 @@ exports[`component render custom perPageOptions 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -1180,31 +1251,43 @@ exports[`component render custom perPageOptions 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -1228,31 +1311,43 @@ exports[`component render custom perPageOptions 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -1297,31 +1392,43 @@ exports[`component render custom perPageOptions 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -1345,31 +1452,43 @@ exports[`component render custom perPageOptions 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -1529,12 +1648,7 @@ exports[`component render custom start end 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -1851,31 +1965,45 @@ exports[`component render custom start end 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -1931,31 +2059,43 @@ exports[`component render custom start end 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -1979,31 +2119,43 @@ exports[`component render custom start end 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -2048,31 +2200,43 @@ exports[`component render custom start end 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -2096,31 +2260,43 @@ exports[`component render custom start end 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -2342,31 +2518,43 @@ exports[`component render empty per page options 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -2390,31 +2578,43 @@ exports[`component render empty per page options 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -2459,31 +2659,43 @@ exports[`component render empty per page options 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -2507,31 +2719,43 @@ exports[`component render empty per page options 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -2691,12 +2915,7 @@ exports[`component render last page 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -3013,31 +3232,45 @@ exports[`component render last page 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -3093,31 +3326,43 @@ exports[`component render last page 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -3141,31 +3386,43 @@ exports[`component render last page 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -3210,31 +3467,43 @@ exports[`component render last page 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -3258,31 +3527,43 @@ exports[`component render last page 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -3455,12 +3736,7 @@ exports[`component render limited number of pages 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -3764,31 +4040,45 @@ exports[`component render limited number of pages 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -3844,31 +4134,43 @@ exports[`component render limited number of pages 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -3892,31 +4194,43 @@ exports[`component render limited number of pages 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -3961,31 +4275,43 @@ exports[`component render limited number of pages 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -4009,31 +4335,43 @@ exports[`component render limited number of pages 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -4193,12 +4531,7 @@ exports[`component render no items 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -4518,31 +4851,45 @@ exports[`component render no items 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -4598,31 +4945,43 @@ exports[`component render no items 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -4646,31 +5005,43 @@ exports[`component render no items 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -4715,31 +5086,43 @@ exports[`component render no items 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -4763,31 +5146,43 @@ exports[`component render no items 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -4925,12 +5320,7 @@ exports[`component render should render correctly bottom 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -5247,31 +5637,45 @@ exports[`component render should render correctly bottom 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -5327,31 +5731,43 @@ exports[`component render should render correctly bottom 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -5375,31 +5791,43 @@ exports[`component render should render correctly bottom 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -5444,31 +5872,43 @@ exports[`component render should render correctly bottom 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -5492,31 +5932,43 @@ exports[`component render should render correctly bottom 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -5676,12 +6128,7 @@ exports[`component render should render correctly compact 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -5998,31 +6445,45 @@ exports[`component render should render correctly compact 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -6078,31 +6539,43 @@ exports[`component render should render correctly compact 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -6126,31 +6599,43 @@ exports[`component render should render correctly compact 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -6310,12 +6795,7 @@ exports[`component render should render correctly disabled 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -6635,31 +7115,45 @@ exports[`component render should render correctly disabled 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -6715,31 +7209,43 @@ exports[`component render should render correctly disabled 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -6763,31 +7269,43 @@ exports[`component render should render correctly disabled 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -6832,31 +7350,43 @@ exports[`component render should render correctly disabled 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -6880,31 +7410,43 @@ exports[`component render should render correctly disabled 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -7064,12 +7606,7 @@ exports[`component render should render correctly top 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -7386,31 +7923,45 @@ exports[`component render should render correctly top 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -7466,31 +8017,43 @@ exports[`component render should render correctly top 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -7514,31 +8077,43 @@ exports[`component render should render correctly top 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -7583,31 +8158,43 @@ exports[`component render should render correctly top 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -7631,31 +8218,43 @@ exports[`component render should render correctly top 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -7807,12 +8406,7 @@ exports[`component render titles 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -8130,31 +8724,45 @@ exports[`component render titles 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -8210,31 +8818,43 @@ exports[`component render titles 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -8258,31 +8878,43 @@ exports[`component render titles 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -8327,31 +8959,43 @@ exports[`component render titles 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -8375,31 +9019,43 @@ exports[`component render titles 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -8559,12 +9215,7 @@ exports[`component render up drop direction 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -8881,31 +9532,45 @@ exports[`component render up drop direction 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -8961,31 +9626,43 @@ exports[`component render up drop direction 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -9009,31 +9686,43 @@ exports[`component render up drop direction 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -9078,31 +9767,43 @@ exports[`component render up drop direction 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -9126,31 +9827,43 @@ exports[`component render up drop direction 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>
@@ -9310,12 +10023,7 @@ exports[`component render zero results 1`] = `
               <i
                 className="pf-c-options-menu__menu-item-icon"
               >
-                <CheckIcon
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                  title={null}
-                />
+                <CheckIcon />
               </i>
             </DropdownItem>,
             <DropdownItem
@@ -9635,31 +10343,45 @@ exports[`component render zero results 1`] = `
                   >
                     <CaretDownIcon
                       className=""
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
+                      <SVGIcon
                         className=""
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
+                        color="currentColor"
+                        config={
                           Object {
-                            "verticalAlign": "-0.125em",
+                            "height": 512,
+                            "name": "CaretDownIcon",
+                            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
+                            "transform": "",
+                            "width": 320,
+                            "xOffset": 0,
+                            "yOffset": 0,
                           }
                         }
-                        viewBox="0 0 320 512"
-                        width="1em"
+                        noVerticalAlign={false}
+                        size="sm"
                       >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          className=""
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </SVGIcon>
                     </CaretDownIcon>
                   </button>
                 </Toggle>
@@ -9715,31 +10437,43 @@ exports[`component render zero results 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleLeftIcon",
+                    "svgPath": "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleLeftIcon>
           </button>
         </Button>
@@ -9763,31 +10497,43 @@ exports[`component render zero results 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleLeftIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleLeftIcon",
+                    "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleLeftIcon>
           </button>
         </Button>
@@ -9832,31 +10578,43 @@ exports[`component render zero results 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
+                    "transform": "",
+                    "width": 256,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 256 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleRightIcon>
           </button>
         </Button>
@@ -9880,31 +10638,43 @@ exports[`component render zero results 1`] = `
             tabIndex={null}
             type="button"
           >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
+            <AngleDoubleRightIcon>
+              <SVGIcon
+                color="currentColor"
+                config={
                   Object {
-                    "verticalAlign": "-0.125em",
+                    "height": 512,
+                    "name": "AngleDoubleRightIcon",
+                    "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z",
+                    "transform": "",
+                    "width": 448,
+                    "xOffset": 0,
+                    "yOffset": 0,
                   }
                 }
-                viewBox="0 0 448 512"
-                width="1em"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                    transform=""
+                  />
+                </svg>
+              </SVGIcon>
             </AngleDoubleRightIcon>
           </button>
         </Button>

@@ -12,12 +12,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     onClick={[Function]}
     variant="plain"
   >
-    <AngleDoubleLeftIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <AngleDoubleLeftIcon />
   </Button>
   <Button
     aria-label="'Go to previous page'"
@@ -26,12 +21,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     onClick={[Function]}
     variant="plain"
   >
-    <AngleLeftIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <AngleLeftIcon />
   </Button>
   <div
     className="pf-c-pagination__nav-page-select"
@@ -61,12 +51,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     onClick={[Function]}
     variant="plain"
   >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <AngleRightIcon />
   </Button>
   <Button
     aria-label="'Go to last page'"
@@ -75,12 +60,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     onClick={[Function]}
     variant="plain"
   >
-    <AngleDoubleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    <AngleDoubleRightIcon />
   </Button>
 </nav>
 `;

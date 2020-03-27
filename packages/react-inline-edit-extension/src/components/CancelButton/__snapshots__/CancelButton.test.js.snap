@@ -4,11 +4,6 @@ exports[`it renders properly 1`] = `
 <Button
   variant="plain"
 >
-  <CloseIcon
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-    title={null}
-  />
+  <CloseIcon />
 </Button>
 `;

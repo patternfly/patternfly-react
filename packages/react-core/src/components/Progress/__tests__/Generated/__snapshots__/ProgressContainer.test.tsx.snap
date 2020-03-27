@@ -19,12 +19,7 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
     <span
       className="pf-c-progress__status-icon"
     >
-      <TimesCircleIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <TimesCircleIcon />
     </span>
   </div>
   <ProgressBar

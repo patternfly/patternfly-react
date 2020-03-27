@@ -14,10 +14,6 @@ exports[`toggle button render 1`] = `
   <AngleRightIcon
     aria-hidden="true"
     className="pf-c-clipboard-copy__group-toggle-icon"
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-    title={null}
   />
 </button>
 `;
