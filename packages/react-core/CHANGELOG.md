@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.152.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.151.0...@patternfly/react-core@3.152.0) (2020-03-27)
+
+
+### Features
+
+* **Dropdown:** Add new prop so Links are treated better ([#3889](https://github.com/patternfly/patternfly-react/issues/3889)) ([5fac34e](https://github.com/patternfly/patternfly-react/commit/5fac34e206b542bcaa0663631b0567765a07e69f)), closes [#3641](https://github.com/patternfly/patternfly-react/issues/3641)
+
+
+
+
+
 # [3.151.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.150.0...@patternfly/react-core@3.151.0) (2020-03-27)
 
 
