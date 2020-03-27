@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.0...demo-app-ts@4.2.1) (2020-03-27)
+
+
+### Bug Fixes
+
+* **icons:** fix types, upgrade typescript ([#3978](https://github.com/patternfly/patternfly-react/issues/3978)) ([aa28738](https://github.com/patternfly/patternfly-react/commit/aa28738c2864b637d1ef1d0cc380a379cc6d3a51))
+
+
+
+
+
 # [4.2.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.1.1...demo-app-ts@4.2.0) (2020-03-26)
 
 
