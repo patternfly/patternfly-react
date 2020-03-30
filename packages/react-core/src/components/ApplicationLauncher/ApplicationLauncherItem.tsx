@@ -16,14 +16,9 @@ export interface ApplicationLauncherItemProps {
   tooltip?: React.ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
-  /** The component that will wrap the item.
-   * If you need to render a custom component, for example a react router Link component,
-   * then pass the component here. Example:
-   * <ApplicationLauncherItem key="router1" component={
-   *   <Link to="/components/alert/">
-   *     <ApplicationLauncherContent>Router link</ApplicationLauncherContent>
-   *   </Link>
-   * } />
+  /** A ReactElement to render, or a string to use as the component tag.
+   * Example: component={<Link to="/components/alert/" /}
+   * Example: component="button"
    */
   component?: React.ReactNode;
   /** Flag indicating if the item is favorited */
