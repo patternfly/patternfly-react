@@ -58,7 +58,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     variant: 'item',
     role: 'none',
     isDisabled: false,
-    href: '',
     tooltipProps: {},
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onClick: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => undefined as any,
@@ -67,8 +66,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       keyHandler: () => {},
       sendRef: () => {}
     },
-    id: undefined,
-    componentID: undefined,
     enterTriggersArrowDown: false
   };
 
@@ -209,10 +206,10 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               {renderWithTooltip(
                 React.isValidElement(component) ? (
                   React.cloneElement(component as React.ReactElement<any>, {
-                    ...additionalProps,
                     href,
-                    id,
-                    className: classes
+                    id: componentID,
+                    className: classes,
+                    ...additionalProps
                   })
                 ) : (
                   <Component
