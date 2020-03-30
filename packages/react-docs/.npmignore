@@ -1,6 +1,3 @@
 .cache
-.babelrc
-
+node_modules
 public
-src
-static

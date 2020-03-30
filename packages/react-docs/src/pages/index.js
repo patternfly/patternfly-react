@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Title } from '@patternfly/react-core/dist/js/components/Title/Title';
 import { PageSection, PageSectionVariants } from '@patternfly/react-core/dist/js/components/Page/PageSection';
@@ -52,11 +51,6 @@ const IndexPage = ({ data, location }) => {
       </div>
     </SideNavLayout>
   );
-};
-
-IndexPage.propTypes = {
-  data: PropTypes.any.isRequired,
-  location: PropTypes.Object
 };
 
 export const pageQuery = graphql`

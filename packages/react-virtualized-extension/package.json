@@ -34,7 +34,6 @@
     "@types/react-virtualized": "^9.21.5",
     "clsx": "^1.0.1",
     "dom-helpers": "^2.4.0 || ^3.0.0",
-    "exenv": "^1.2.2",
     "linear-layout-vector": "0.0.1",
     "react-lifecycles-compat": "^3.0.4",
     "react-virtualized": "^9.21.1"
@@ -46,7 +45,7 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && node ./scripts/copyTS.js && node ./build/copyStyles.js",
+    "build": "yarn build:babel && node ./build/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",

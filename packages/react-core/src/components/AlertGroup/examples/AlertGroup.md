@@ -65,6 +65,8 @@ class ToastAlertGroup extends React.Component {
               title={title}
               action={
                 <AlertActionCloseButton
+                  title={title}
+                  variantLabel={`${variant} alert`}
                   onClose={() => this.removeAlert(key)}
                 />
               }
@@ -113,9 +115,11 @@ class SingularAdditiveAlertGroup extends React.Component {
               isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
-              key={key} 
+              key={key}
               action={
                 <AlertActionCloseButton
+                  title={title}
+                  variantLabel={`${variant} alert`}
                   onClose={() => this.removeAlert(key)}
                 />
               }/>
@@ -166,9 +170,11 @@ class MultipleAdditiveAlertGroup extends React.Component {
               isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
-              key={key} 
+              key={key}
               action={
                 <AlertActionCloseButton
+                  title={title}
+                  variantLabel={`${variant} alert`}
                   onClose={() => this.removeAlert(key)}
                 />
               }/>
@@ -224,9 +230,11 @@ class AsyncAdditiveAlertGroup extends React.Component {
               isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
-              key={key} 
+              key={key}
               action={
                 <AlertActionCloseButton
+                  title={title}
+                  variantLabel={`${variant} alert`}
                   onClose={() => this.removeAlert(key)}
                 />
               }/>

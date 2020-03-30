@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 import cssVar from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage';
 import cssVarName2x from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_2x';
 import cssVarNameSm from '@patternfly/react-tokens/dist/js/c_background_image_BackgroundImage_sm';

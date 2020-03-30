@@ -44,6 +44,8 @@ export interface SelectDemoState {
   typeaheadOptions: TypeAheadOption[];
   typeaheadNewOptions: boolean;
   customContentisOpen: boolean;
+  noBadgeCheckIsOpen: boolean;
+  noBadgeCheckSelected: string[];
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -57,6 +59,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     checkisOpen: false,
     checkSelected: [],
     typeaheadisOpen: false,
+    noBadgeCheckIsOpen: false,
+    noBadgeCheckSelected: [],
     typeaheadSelected: null,
     typeaheadMultiisOpen: false,
     typeaheadMultiSelected: [],
@@ -164,7 +168,13 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
-  typeaheadOnToggle = (typeaheadisOpen: boolean) => {
+  noBadgeCheckOnToggle = (noBadgeCheckIsOpen: boolean) => {
+    this.setState({
+      noBadgeCheckIsOpen
+    });
+  };
+
+  typeaheadOnToggle = (typeaheadIsExpanded: boolean) => {
     this.setState({
       typeaheadisOpen
     });
@@ -259,11 +269,24 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadOnSelect = (
-    _event: React.MouseEvent | React.ChangeEvent,
-    selection: string | SelectOptionObject | (string | SelectOptionObject)[],
-    isPlaceholder: boolean
-  ) => {
+  noBadgeCheckOnSelect = (event: any, selection: string) => {
+    const { noBadgeCheckSelected } = this.state;
+    if (noBadgeCheckSelected.includes(selection)) {
+      this.setState(
+        (prevState: SelectDemoState) => ({
+          noBadgeCheckSelected: prevState.noBadgeCheckSelected.filter(item => item !== selection)
+        }),
+        () => console.log('selections: ', this.state.noBadgeCheckSelected)
+      );
+    } else {
+      this.setState(
+        (prevState: SelectDemoState) => ({ noBadgeCheckSelected: [...prevState.noBadgeCheckSelected, selection] }),
+        () => console.log('selections: ', this.state.noBadgeCheckSelected)
+      );
+    }
+  };
+
+  typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -365,6 +388,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       customSingleisOpen: false,
       checkSelected: [],
       checkisOpen: false,
+      noBadgeCheckSelected: [],
+      noBadgeCheckIsOpen: false,
       typeaheadSelected: null,
       typeaheadisOpen: false,
       typeaheadMultiSelected: [],
@@ -539,6 +564,35 @@ export class SelectDemo extends Component<SelectDemoState> {
             isOpen={checkisOpen}
             placeholderText="Filter by status"
             aria-labelledby={titleId}
+          >
+            {this.checkboxOptions}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
+  renderNoBadgeCheckboxSelect() {
+    const { noBadgeCheckIsOpen, noBadgeCheckSelected } = this.state;
+    const titleId = 'no-badge-checkbox-select-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Checkbox Select w/ No Selection Badge</Title>
+        <div>
+          <span id={titleId} hidden>
+            Checkbox Title
+          </span>
+          <Select
+            toggleId="check-select-no-badge"
+            variant={SelectVariant.checkbox}
+            aria-label="Select Input"
+            onToggle={this.noBadgeCheckOnToggle}
+            onSelect={this.noBadgeCheckOnSelect}
+            selections={noBadgeCheckSelected}
+            isCheckboxSelectionBadgeHidden
+            isExpanded={noBadgeCheckIsOpen}
+            placeholderText="Filter by status"
+            ariaLabelledBy={titleId}
           >
             {this.checkboxOptions}
           </Select>
@@ -826,6 +880,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderCustomSingleSelect()}
         {this.renderDisabledSingleSelect()}
         {this.renderCheckboxSelect()}
+        {this.renderNoBadgeCheckboxSelect()}
         {this.renderTypeaheadSelect()}
         {this.renderTypeaheadMultiSelect()}
         {this.renderCustomDataTypeaheadMultiSelect()}

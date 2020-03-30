@@ -10,7 +10,7 @@ export interface AlertActionLinkProps extends ButtonProps {
 
 export const AlertActionLink: React.FunctionComponent<AlertActionLinkProps> = ({
   className = '',
-  children = '',
+  children,
   ...props
 }: AlertActionLinkProps) => (
   <Button variant={ButtonVariant.link} className={className} {...props}>

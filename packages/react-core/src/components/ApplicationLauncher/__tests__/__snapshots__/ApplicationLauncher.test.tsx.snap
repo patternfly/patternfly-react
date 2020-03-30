@@ -171,47 +171,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <li
                   role="menuitem"
                 >
-                  <a
-                    aria-disabled="false"
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                  >
-                    Link
-                  </a>
+                  Link
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <button
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    Action
-                  </button>
+                  Action
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <a
-                    aria-disabled="true"
-                    class="pf-m-disabled pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                  >
-                    Disabled Link
-                  </a>
+                  Disabled Link
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <button
-                    class="pf-m-disabled pf-c-app-launcher__menu-item"
-                    disabled=""
-                    tabindex="-1"
-                    type="button"
-                  >
-                    Disabled Action
-                  </button>
+                  Disabled Action
                 </li>
                 <li
                   role="separator"
@@ -223,24 +198,12 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 <li
                   role="menuitem"
                 >
-                  <a
-                    aria-disabled="false"
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                  >
-                    Separated Link
-                  </a>
+                  Separated Link
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <button
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    Separated Action
-                  </button>
+                  Separated Action
                 </li>
               </ul>
             </nav>,
@@ -306,47 +269,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <li
                     role="menuitem"
                   >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Link
-                    </a>
+                    Link
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Action
-                    </button>
+                    Action
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <a
-                      aria-disabled="true"
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Disabled Link
-                    </a>
+                    Disabled Link
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <button
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Disabled Action
-                    </button>
+                    Disabled Action
                   </li>
                   <li
                     role="separator"
@@ -358,24 +296,12 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   <li
                     role="menuitem"
                   >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Separated Link
-                    </a>
+                    Separated Link
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Separated Action
-                    </button>
+                    Separated Action
                   </li>
                 </ul>
               </nav>,
@@ -500,16 +426,13 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <a
+                  <ApplicationLauncherContent
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
-                    <ApplicationLauncherContent>
-                      Link
-                    </ApplicationLauncherContent>
-                  </a>
+                    Link
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -556,17 +479,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <button
+                  <ApplicationLauncherContent
                     className="pf-c-app-launcher__menu-item"
                     disabled={false}
-                    href={null}
                     tabIndex={-1}
                     type="button"
                   >
-                    <ApplicationLauncherContent>
-                      Action
-                    </ApplicationLauncherContent>
-                  </button>
+                    Action
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -614,16 +534,13 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <a
+                  <ApplicationLauncherContent
                     aria-disabled={true}
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
-                    <ApplicationLauncherContent>
-                      Disabled Link
-                    </ApplicationLauncherContent>
-                  </a>
+                    Disabled Link
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -672,17 +589,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <button
+                  <ApplicationLauncherContent
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
                     disabled={true}
-                    href={null}
                     tabIndex={-1}
                     type="button"
                   >
-                    <ApplicationLauncherContent>
-                      Disabled Action
-                    </ApplicationLauncherContent>
-                  </button>
+                    Disabled Action
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -768,16 +682,13 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <a
+                  <ApplicationLauncherContent
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
-                    <ApplicationLauncherContent>
-                      Separated Link
-                    </ApplicationLauncherContent>
-                  </a>
+                    Separated Link
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -824,17 +735,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <button
+                  <ApplicationLauncherContent
                     className="pf-c-app-launcher__menu-item"
                     disabled={false}
-                    href={null}
                     tabIndex={-1}
                     type="button"
                   >
-                    <ApplicationLauncherContent>
-                      Separated Action
-                    </ApplicationLauncherContent>
-                  </button>
+                    Separated Action
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -1560,47 +1468,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <li
                   role="menuitem"
                 >
-                  <a
-                    aria-disabled="false"
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                  >
-                    Link
-                  </a>
+                  Link
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <button
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    Action
-                  </button>
+                  Action
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <a
-                    aria-disabled="true"
-                    class="pf-m-disabled pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                  >
-                    Disabled Link
-                  </a>
+                  Disabled Link
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <button
-                    class="pf-m-disabled pf-c-app-launcher__menu-item"
-                    disabled=""
-                    tabindex="-1"
-                    type="button"
-                  >
-                    Disabled Action
-                  </button>
+                  Disabled Action
                 </li>
                 <li
                   role="separator"
@@ -1612,24 +1495,12 @@ exports[`ApplicationLauncher expanded 1`] = `
                 <li
                   role="menuitem"
                 >
-                  <a
-                    aria-disabled="false"
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                  >
-                    Separated Link
-                  </a>
+                  Separated Link
                 </li>
                 <li
                   role="menuitem"
                 >
-                  <button
-                    class="pf-c-app-launcher__menu-item"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    Separated Action
-                  </button>
+                  Separated Action
                 </li>
               </ul>
             </nav>,
@@ -1694,47 +1565,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <li
                     role="menuitem"
                   >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Link
-                    </a>
+                    Link
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Action
-                    </button>
+                    Action
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <a
-                      aria-disabled="true"
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Disabled Link
-                    </a>
+                    Disabled Link
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <button
-                      class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Disabled Action
-                    </button>
+                    Disabled Action
                   </li>
                   <li
                     role="separator"
@@ -1746,24 +1592,12 @@ exports[`ApplicationLauncher expanded 1`] = `
                   <li
                     role="menuitem"
                   >
-                    <a
-                      aria-disabled="false"
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                    >
-                      Separated Link
-                    </a>
+                    Separated Link
                   </li>
                   <li
                     role="menuitem"
                   >
-                    <button
-                      class="pf-c-app-launcher__menu-item"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      Separated Action
-                    </button>
+                    Separated Action
                   </li>
                 </ul>
               </nav>,
@@ -1884,16 +1718,13 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <a
+                  <ApplicationLauncherContent
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
-                    <ApplicationLauncherContent>
-                      Link
-                    </ApplicationLauncherContent>
-                  </a>
+                    Link
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -1940,17 +1771,14 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <button
+                  <ApplicationLauncherContent
                     className="pf-c-app-launcher__menu-item"
                     disabled={false}
-                    href={null}
                     tabIndex={-1}
                     type="button"
                   >
-                    <ApplicationLauncherContent>
-                      Action
-                    </ApplicationLauncherContent>
-                  </button>
+                    Action
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -1998,16 +1826,13 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <a
+                  <ApplicationLauncherContent
                     aria-disabled={true}
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
-                    <ApplicationLauncherContent>
-                      Disabled Link
-                    </ApplicationLauncherContent>
-                  </a>
+                    Disabled Link
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -2056,17 +1881,14 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <button
+                  <ApplicationLauncherContent
                     className="pf-m-disabled pf-c-app-launcher__menu-item"
                     disabled={true}
-                    href={null}
                     tabIndex={-1}
                     type="button"
                   >
-                    <ApplicationLauncherContent>
-                      Disabled Action
-                    </ApplicationLauncherContent>
-                  </button>
+                    Disabled Action
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -2152,16 +1974,13 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <a
+                  <ApplicationLauncherContent
                     aria-disabled={false}
                     className="pf-c-app-launcher__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
-                    <ApplicationLauncherContent>
-                      Separated Link
-                    </ApplicationLauncherContent>
-                  </a>
+                    Separated Link
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>
@@ -2208,17 +2027,14 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onKeyDown={[Function]}
                   role="menuitem"
                 >
-                  <button
+                  <ApplicationLauncherContent
                     className="pf-c-app-launcher__menu-item"
                     disabled={false}
-                    href={null}
                     tabIndex={-1}
                     type="button"
                   >
-                    <ApplicationLauncherContent>
-                      Separated Action
-                    </ApplicationLauncherContent>
-                  </button>
+                    Separated Action
+                  </ApplicationLauncherContent>
                 </li>
               </InternalDropdownItem>
             </DropdownItem>

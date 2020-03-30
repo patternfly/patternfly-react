@@ -13,6 +13,7 @@ coverage
 **/build
 css
 packages/react-icons/src/icons
+packages/react-docs/static
 
 # package managers
 yarn-error.log

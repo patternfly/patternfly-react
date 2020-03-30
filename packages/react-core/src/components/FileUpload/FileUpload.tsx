@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
-import { Omit } from '../../helpers';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
 

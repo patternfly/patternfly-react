@@ -3,7 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/SimpleList/simple-list';
 import { SimpleListGroup } from './SimpleListGroup';
 import { SimpleListItemProps } from './SimpleListItem';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface SimpleListProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect'> {
   /** Content rendered inside the SimpleList */

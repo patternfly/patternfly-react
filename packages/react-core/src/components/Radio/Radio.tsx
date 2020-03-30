@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface RadioProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'> {

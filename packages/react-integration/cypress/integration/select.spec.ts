@@ -121,12 +121,19 @@ describe('Select Test', () => {
     cy.get('#check-select')
       .contains('1')
       .should('exist');
+    cy.get('#check-select .pf-c-select__toggle-badge').should('exist');
     cy.get('input#Cancelled').click();
     cy.get('#check-select')
       .contains('2')
       .should('exist');
     cy.get('#check-select').click();
     cy.get('.pf-c-select__menu').should('not.exist');
+  });
+
+  it('Verify No Badge Checkbox Select', () => {
+    cy.get('#check-select-no-badge').click();
+    cy.get('input#Active').click();
+    cy.get('#check-select-no-badge .pf-c-select__toggle-badge').should('not.exist');
   });
 
   it('Verify Typeahead Select inside Form', () => {

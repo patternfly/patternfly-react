@@ -47,7 +47,11 @@ Object.values(AlertVariant).forEach(variant => {
     test('Action Close Button', () => {
       const onClose = jest.fn();
       const view = mount(
-        <Alert variant={variant} action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />} title="">
+        <Alert
+          variant={variant}
+          action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
+          title={`Sample ${variant} alert`}
+        >
           Some alert
         </Alert>
       );

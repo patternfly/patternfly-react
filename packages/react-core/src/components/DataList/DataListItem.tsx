@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit } from '../../helpers/typeUtils';
 import { DataListContext } from './DataList';
 import { KeyTypes } from '../Select';
 

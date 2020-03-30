@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { RefObject } from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils';
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 
@@ -22,7 +20,7 @@ export interface DataToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivEleme
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Reference to pass to this group if it has .pf-m-chip-container modifier */
-  innerRef?: RefObject<any>;
+  innerRef?: React.RefObject<any>;
 }
 
 class DataToolbarGroupWithRef extends React.Component<DataToolbarGroupProps> {

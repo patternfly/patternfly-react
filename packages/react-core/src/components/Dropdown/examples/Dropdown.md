@@ -9,6 +9,7 @@ typescript: true
 
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownItemIcon, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
+import { Link } from '@reach/router';
 
 ## Examples
 
@@ -1105,26 +1106,64 @@ class DropdownPanel extends React.Component {
 }
 ```
 
-## React router link usage
+```js title=React-Router-Link-Usage
+import React from 'react';
+import {
+  Button,
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownDirection,
+  KebabToggle
+} from '@patternfly/react-core';
+import { Link } from '@reach/router';
+import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
-A react-router Link may be wrapped by DropdownItem or used directly within Dropdown. Here's some example JSX:
-
-<!-- eslint-skip -->
-```js noLive
-/** Wrapped Link for DropdownItem list **/
-<DropdownItem key="link">
-  <Link to={'/'}>Link</Link>
-</DropdownItem>
-
-/** Direct child of Dropdown **/
-<Dropdown
-  onSelect={this.onSelect}
-  toggle={
-    <DropdownToggle onToggle={this.onToggle}>
-      Expanded Dropdown
-    </DropdownToggle>
+class RouterDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id');
+      element.focus();
+    };
   }
-  isOpen={isOpen}>
-  <Link to={'/'}>Link</Link>
-</Dropdown>
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="routerlink">
+        <Link to="/">Link</Link>
+      </DropdownItem>
+    ];
+
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={
+          <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+            Dropdown
+          </DropdownToggle>
+        }
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
 ```
