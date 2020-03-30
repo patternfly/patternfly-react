@@ -19,36 +19,36 @@ Packages released:
 
 ### Components
 - **About modal:**
-  - Allow custom aria-label for the close button ([#3877](https://github.com/patternfly/patternfly-react/pull/3877)
+  - Allow custom aria-label for the close button ([#3877](https://github.com/patternfly/patternfly-react/pull/3877))
 - **Alert:**
-  - Use context to set label ([#3771](https://github.com/patternfly/patternfly-react/pull/3771)
+  - Use context to set label ([#3771](https://github.com/patternfly/patternfly-react/pull/3771))
 - **Card:**
-  - Added wrapper to image to resize it properly ([#3642](https://github.com/patternfly/patternfly-react/pull/3642)
-  - Added Card View to demos ([#3441](https://github.com/patternfly/patternfly-react/pull/3441)
+  - Added wrapper to image to resize it properly ([#3642](https://github.com/patternfly/patternfly-react/pull/3642))
+  - Added Card View to demos ([#3441](https://github.com/patternfly/patternfly-react/pull/3441))
 - **Drawer:**
-  - Added width props, updated demo & integration test ([#3979](https://github.com/patternfly/patternfly-react/pull/3979)
+  - Added width props, updated demo & integration test ([#3979](https://github.com/patternfly/patternfly-react/pull/3979))
 - **Dropdown:**
-  - Added new prop so Links are treated better ([#3889](https://github.com/patternfly/patternfly-react/pull/3889)
-  - Removed duplicate prop ([#3923](https://github.com/patternfly/patternfly-react/pull/3923)
-  - Cleaned console errors in Dropdown.test.tsx ([#3861](https://github.com/patternfly/patternfly-react/pull/3861)
+  - Added new prop so Links are treated better ([#3889](https://github.com/patternfly/patternfly-react/pull/3889))
+  - Removed duplicate prop ([#3923](https://github.com/patternfly/patternfly-react/pull/3923))
+  - Cleaned console errors in Dropdown.test.tsx ([#3861](https://github.com/patternfly/patternfly-react/pull/3861))
 - **Empty state:**
-  - Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/pull/3844)
+  - Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/pull/3844))
 - **Select:**
-  - Allow count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/pull/3976)
-  - Added logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/pull/3895)
-  - Fixed group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/pull/3838)
+  - Allow count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/pull/3976))
+  - Added logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/pull/3895))
+  - Fixed group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/pull/3838))
 - **Table:**
-  - Added column management demo ([#3942](https://github.com/patternfly/patternfly-react/pull/3942)
-  - Fix forward ref types ([#3919](https://github.com/patternfly/patternfly-react/pull/3919)
+  - Added column management demo ([#3942](https://github.com/patternfly/patternfly-react/pull/3942))
+  - Fix forward ref types ([#3919](https://github.com/patternfly/patternfly-react/pull/3919))
 
 ### Other
-- Create unified react-core dist ([#3971](https://github.com/patternfly/patternfly-react/pull/3971)
-- In-house focusTrap ([#3967](https://github.com/patternfly/patternfly-react/pull/3967)
-- Remove a few usages of prop-types ([#3968](https://github.com/patternfly/patternfly-react/pull/3968)
-- Release docs to NPM for patternfly-org ([#3941](https://github.com/patternfly/patternfly-react/pull/3941)
-- Fix tippy types, remove copyTS ([#3940](https://github.com/patternfly/patternfly-react/pull/3940)
-- Create variables by file in react-tokens ([#3896](https://github.com/patternfly/patternfly-react/pull/3896)
-- Remove unused packages from repo ([#3916](https://github.com/patternfly/patternfly-react/pull/3916)
+- Create unified react-core dist ([#3971](https://github.com/patternfly/patternfly-react/pull/3971))
+- In-house focusTrap ([#3967](https://github.com/patternfly/patternfly-react/pull/3967))
+- Remove a few usages of prop-types ([#3968](https://github.com/patternfly/patternfly-react/pull/3968))
+- Release docs to NPM for patternfly-org ([#3941](https://github.com/patternfly/patternfly-react/pull/3941))
+- Fix tippy types, remove copyTS ([#3940](https://github.com/patternfly/patternfly-react/pull/3940))
+- Create variables by file in react-tokens ([#3896](https://github.com/patternfly/patternfly-react/pull/3896))
+- Remove unused packages from repo ([#3916](https://github.com/patternfly/patternfly-react/pull/3916))
 
 ## 2020.03 release notes (2020-03-10)
 Packages released:
