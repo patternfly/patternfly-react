@@ -17,7 +17,7 @@ export interface ApplicationLauncherItemProps {
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
   /** A ReactElement to render, or a string to use as the component tag.
-   * Example: component={<Link to="/components/alert/" /}
+   * Example: component={<Link to="/components/alert/">Alert</Link>}
    * Example: component="button"
    */
   component?: React.ReactNode;
