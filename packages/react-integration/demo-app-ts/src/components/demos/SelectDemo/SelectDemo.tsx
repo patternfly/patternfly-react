@@ -174,7 +174,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
-  typeaheadOnToggle = (typeaheadIsExpanded: boolean) => {
+  typeaheadOnToggle = (typeaheadisOpen: boolean) => {
     this.setState({
       typeaheadisOpen
     });
