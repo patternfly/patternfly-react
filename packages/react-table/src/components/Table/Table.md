@@ -1000,7 +1000,7 @@ class CollapsibleTable extends React.Component {
 }
 ```
 
-```js title=Compound-exandable
+```js title=Compound-expandable
 import React from 'react';
 import {
   Table,
