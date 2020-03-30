@@ -36,7 +36,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   variant = 'item',
   isDisabled = false,
   isHovered = false,
-  href = '',
+  href,
   tooltip = null,
   tooltipProps = {},
   listItemClassName,
