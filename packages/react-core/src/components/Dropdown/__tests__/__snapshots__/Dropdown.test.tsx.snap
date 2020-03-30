@@ -243,7 +243,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -264,7 +263,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -285,7 +283,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -306,7 +303,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -328,7 +324,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -349,7 +344,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -383,7 +377,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -404,7 +397,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -425,7 +417,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -446,7 +437,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -468,7 +458,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -489,7 +478,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -525,7 +513,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -546,7 +533,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -567,7 +553,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -588,7 +573,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -610,7 +594,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -631,7 +614,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -667,7 +649,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -688,7 +669,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -709,7 +689,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -730,7 +709,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -752,7 +730,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -773,7 +750,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -956,7 +932,6 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -977,7 +952,6 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -998,7 +972,6 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1019,7 +992,6 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1041,7 +1013,6 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1062,7 +1033,6 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1095,7 +1065,6 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1116,7 +1085,6 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1137,7 +1105,6 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -1158,7 +1125,6 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -1180,7 +1146,6 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1201,7 +1166,6 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1236,7 +1200,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1257,7 +1220,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1278,7 +1240,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -1299,7 +1260,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -1321,7 +1281,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1342,7 +1301,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1377,7 +1335,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1398,7 +1355,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1419,7 +1375,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -1440,7 +1395,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -1462,7 +1416,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1483,7 +1436,6 @@ exports[`KebabToggle dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1665,7 +1617,6 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1686,7 +1637,6 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1707,7 +1657,6 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1728,7 +1677,6 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1750,7 +1698,6 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1771,7 +1718,6 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1804,7 +1750,6 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1825,7 +1770,6 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1846,7 +1790,6 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -1867,7 +1810,6 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -1889,7 +1831,6 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1910,7 +1851,6 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1945,7 +1885,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1966,7 +1905,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -1987,7 +1925,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -2008,7 +1945,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -2030,7 +1966,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -2051,7 +1986,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -2087,7 +2021,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -2108,7 +2041,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -2129,7 +2061,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -2150,7 +2081,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -2172,7 +2102,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -2193,7 +2122,6 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -2531,7 +2459,6 @@ exports[`KebabToggle expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={0}
                 isDisabled={false}
                 isHovered={false}
@@ -2550,7 +2477,6 @@ exports[`KebabToggle expanded 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-dropdown__menu-item"
-                    href={null}
                   >
                     Link
                   </a>
@@ -2566,7 +2492,6 @@ exports[`KebabToggle expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={1}
                 isDisabled={false}
                 isHovered={false}
@@ -2585,7 +2510,6 @@ exports[`KebabToggle expanded 1`] = `
                   <button
                     className="pf-c-dropdown__menu-item"
                     disabled={false}
-                    href={null}
                     type="button"
                   >
                     Action
@@ -2602,7 +2526,6 @@ exports[`KebabToggle expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={2}
                 isDisabled={true}
                 isHovered={false}
@@ -2621,7 +2544,6 @@ exports[`KebabToggle expanded 1`] = `
                   <a
                     aria-disabled={true}
                     className="pf-m-disabled pf-c-dropdown__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
                     Disabled Link
@@ -2638,7 +2560,6 @@ exports[`KebabToggle expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={3}
                 isDisabled={true}
                 isHovered={false}
@@ -2657,7 +2578,6 @@ exports[`KebabToggle expanded 1`] = `
                   <button
                     className="pf-m-disabled pf-c-dropdown__menu-item"
                     disabled={true}
-                    href={null}
                     type="button"
                   >
                     Disabled Action
@@ -2678,7 +2598,6 @@ exports[`KebabToggle expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={4}
                   isDisabled={false}
                   isHovered={false}
@@ -2695,7 +2614,6 @@ exports[`KebabToggle expanded 1`] = `
                   >
                     <div
                       className="pf-c-dropdown__separator"
-                      href={null}
                     />
                   </li>
                 </InternalDropdownItem>
@@ -2710,7 +2628,6 @@ exports[`KebabToggle expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={5}
                 isDisabled={false}
                 isHovered={false}
@@ -2729,7 +2646,6 @@ exports[`KebabToggle expanded 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-dropdown__menu-item"
-                    href={null}
                   >
                     Separated Link
                   </a>
@@ -2745,7 +2661,6 @@ exports[`KebabToggle expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={6}
                 isDisabled={false}
                 isHovered={false}
@@ -2764,7 +2679,6 @@ exports[`KebabToggle expanded 1`] = `
                   <button
                     className="pf-c-dropdown__menu-item"
                     disabled={false}
-                    href={null}
                     type="button"
                   >
                     Separated Action
@@ -2794,7 +2708,6 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2815,7 +2728,6 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2836,7 +2748,6 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -2857,7 +2768,6 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -2879,7 +2789,6 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2900,7 +2809,6 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2933,7 +2841,6 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2954,7 +2861,6 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2975,7 +2881,6 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2996,7 +2901,6 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -3018,7 +2922,6 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3039,7 +2942,6 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3074,7 +2976,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3095,7 +2996,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3116,7 +3016,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3137,7 +3036,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3159,7 +3057,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3180,7 +3077,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3216,7 +3112,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3237,7 +3132,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3258,7 +3152,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3279,7 +3172,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3301,7 +3193,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3322,7 +3213,6 @@ exports[`KebabToggle plain 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3504,7 +3394,6 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3525,7 +3414,6 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3546,7 +3434,6 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -3567,7 +3454,6 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -3589,7 +3475,6 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3610,7 +3495,6 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3642,7 +3526,6 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3663,7 +3546,6 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3684,7 +3566,6 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -3705,7 +3586,6 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -3727,7 +3607,6 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3748,7 +3627,6 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3782,7 +3660,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3803,7 +3680,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3824,7 +3700,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3845,7 +3720,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3867,7 +3741,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3888,7 +3761,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3923,7 +3795,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3944,7 +3815,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -3965,7 +3835,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -3986,7 +3855,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -4008,7 +3876,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4029,7 +3896,6 @@ exports[`KebabToggle regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4211,7 +4077,6 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4232,7 +4097,6 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4253,7 +4117,6 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -4274,7 +4137,6 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -4296,7 +4158,6 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4317,7 +4178,6 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4350,7 +4210,6 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4371,7 +4230,6 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4392,7 +4250,6 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -4413,7 +4270,6 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -4435,7 +4291,6 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4456,7 +4311,6 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4491,7 +4345,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4512,7 +4365,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4533,7 +4385,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -4554,7 +4405,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -4576,7 +4426,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4597,7 +4446,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4633,7 +4481,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4654,7 +4501,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4675,7 +4521,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -4696,7 +4541,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -4718,7 +4562,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -4739,7 +4582,6 @@ exports[`KebabToggle right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5173,7 +5015,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5194,7 +5035,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5215,7 +5055,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5236,7 +5075,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5258,7 +5096,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5279,7 +5116,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5315,7 +5151,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5336,7 +5171,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5357,7 +5191,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -5378,7 +5211,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -5400,7 +5232,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5421,7 +5252,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5459,7 +5289,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5480,7 +5309,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5501,7 +5329,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -5522,7 +5349,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -5544,7 +5370,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5565,7 +5390,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5603,7 +5427,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5624,7 +5447,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5645,7 +5467,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -5666,7 +5487,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -5688,7 +5508,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5709,7 +5528,6 @@ exports[`dropdown dropup + right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -5909,7 +5727,6 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5930,7 +5747,6 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5951,7 +5767,6 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5972,7 +5787,6 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5994,7 +5808,6 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6015,7 +5828,6 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6050,7 +5862,6 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6071,7 +5882,6 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6092,7 +5902,6 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -6113,7 +5922,6 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -6135,7 +5943,6 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6156,7 +5963,6 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6193,7 +5999,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6214,7 +6019,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6235,7 +6039,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -6256,7 +6059,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -6278,7 +6080,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6299,7 +6100,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6336,7 +6136,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6357,7 +6156,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6378,7 +6176,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -6399,7 +6196,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -6421,7 +6217,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6442,7 +6237,6 @@ exports[`dropdown dropup 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6641,7 +6435,6 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6662,7 +6455,6 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6683,7 +6475,6 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -6704,7 +6495,6 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -6726,7 +6516,6 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6747,7 +6536,6 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6782,7 +6570,6 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6803,7 +6590,6 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6824,7 +6610,6 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -6845,7 +6630,6 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -6867,7 +6651,6 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6888,7 +6671,6 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6925,7 +6707,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6946,7 +6727,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -6967,7 +6747,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -6988,7 +6767,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -7010,7 +6788,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -7031,7 +6808,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -7069,7 +6845,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -7090,7 +6865,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -7111,7 +6885,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -7132,7 +6905,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -7154,7 +6926,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -7175,7 +6946,6 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -7530,7 +7300,6 @@ exports[`dropdown expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={0}
                 isDisabled={false}
                 isHovered={false}
@@ -7549,7 +7318,6 @@ exports[`dropdown expanded 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-dropdown__menu-item"
-                    href={null}
                   >
                     Link
                   </a>
@@ -7565,7 +7333,6 @@ exports[`dropdown expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={1}
                 isDisabled={false}
                 isHovered={false}
@@ -7584,7 +7351,6 @@ exports[`dropdown expanded 1`] = `
                   <button
                     className="pf-c-dropdown__menu-item"
                     disabled={false}
-                    href={null}
                     type="button"
                   >
                     Action
@@ -7601,7 +7367,6 @@ exports[`dropdown expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={2}
                 isDisabled={true}
                 isHovered={false}
@@ -7620,7 +7385,6 @@ exports[`dropdown expanded 1`] = `
                   <a
                     aria-disabled={true}
                     className="pf-m-disabled pf-c-dropdown__menu-item"
-                    href={null}
                     tabIndex={-1}
                   >
                     Disabled Link
@@ -7637,7 +7401,6 @@ exports[`dropdown expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={3}
                 isDisabled={true}
                 isHovered={false}
@@ -7656,7 +7419,6 @@ exports[`dropdown expanded 1`] = `
                   <button
                     className="pf-m-disabled pf-c-dropdown__menu-item"
                     disabled={true}
-                    href={null}
                     type="button"
                   >
                     Disabled Action
@@ -7677,7 +7439,6 @@ exports[`dropdown expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={4}
                   isDisabled={false}
                   isHovered={false}
@@ -7694,7 +7455,6 @@ exports[`dropdown expanded 1`] = `
                   >
                     <div
                       className="pf-c-dropdown__separator"
-                      href={null}
                     />
                   </li>
                 </InternalDropdownItem>
@@ -7709,7 +7469,6 @@ exports[`dropdown expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={5}
                 isDisabled={false}
                 isHovered={false}
@@ -7728,7 +7487,6 @@ exports[`dropdown expanded 1`] = `
                   <a
                     aria-disabled={false}
                     className="pf-c-dropdown__menu-item"
-                    href={null}
                   >
                     Separated Link
                   </a>
@@ -7744,7 +7502,6 @@ exports[`dropdown expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={6}
                 isDisabled={false}
                 isHovered={false}
@@ -7763,7 +7520,6 @@ exports[`dropdown expanded 1`] = `
                   <button
                     className="pf-c-dropdown__menu-item"
                     disabled={false}
-                    href={null}
                     type="button"
                   >
                     Separated Action
@@ -7793,7 +7549,6 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -7814,7 +7569,6 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -7835,7 +7589,6 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -7856,7 +7609,6 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -7878,7 +7630,6 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -7899,7 +7650,6 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -7934,7 +7684,6 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -7955,7 +7704,6 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -7976,7 +7724,6 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -7997,7 +7744,6 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -8019,7 +7765,6 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -8040,7 +7785,6 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -8077,7 +7821,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8098,7 +7841,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8119,7 +7861,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -8140,7 +7881,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -8162,7 +7902,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8183,7 +7922,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8221,7 +7959,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8242,7 +7979,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8263,7 +7999,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -8284,7 +8019,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -8306,7 +8040,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8327,7 +8060,6 @@ exports[`dropdown primary 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8528,7 +8260,6 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -8549,7 +8280,6 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -8570,7 +8300,6 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -8591,7 +8320,6 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -8613,7 +8341,6 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -8634,7 +8361,6 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -8668,7 +8394,6 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -8689,7 +8414,6 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -8710,7 +8434,6 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -8731,7 +8454,6 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -8753,7 +8475,6 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -8774,7 +8495,6 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -8810,7 +8530,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8831,7 +8550,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8852,7 +8570,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -8873,7 +8590,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -8895,7 +8611,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8916,7 +8631,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8953,7 +8667,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8974,7 +8687,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -8995,7 +8707,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -9016,7 +8727,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -9038,7 +8748,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9059,7 +8768,6 @@ exports[`dropdown regular 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9258,7 +8966,6 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -9279,7 +8986,6 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -9300,7 +9006,6 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -9321,7 +9026,6 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -9343,7 +9047,6 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -9364,7 +9067,6 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
-        href=""
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -9399,7 +9101,6 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -9420,7 +9121,6 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -9441,7 +9141,6 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -9462,7 +9161,6 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -9484,7 +9182,6 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -9505,7 +9202,6 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
-          href=""
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -9542,7 +9238,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9563,7 +9258,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9584,7 +9278,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -9605,7 +9298,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -9627,7 +9319,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9648,7 +9339,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9686,7 +9376,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9707,7 +9396,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9728,7 +9416,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -9749,7 +9436,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={true}
               isHovered={false}
@@ -9771,7 +9457,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}
@@ -9792,7 +9477,6 @@ exports[`dropdown right aligned 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
-              href=""
               index={-1}
               isDisabled={false}
               isHovered={false}

@@ -800,7 +800,6 @@ exports[`optionsMenu expanded 1`] = `
                             }
                           }
                           enterTriggersArrowDown={false}
-                          href=""
                           id=""
                           index={-1}
                           isDisabled={false}
@@ -822,7 +821,6 @@ exports[`optionsMenu expanded 1`] = `
                             <button
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
-                              href={null}
                               tabIndex={-1}
                               type="button"
                             >
@@ -850,7 +848,6 @@ exports[`optionsMenu expanded 1`] = `
                             }
                           }
                           enterTriggersArrowDown={false}
-                          href=""
                           id=""
                           index={-1}
                           isDisabled={false}
@@ -872,7 +869,6 @@ exports[`optionsMenu expanded 1`] = `
                             <button
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
-                              href={null}
                               tabIndex={-1}
                               type="button"
                             >
@@ -904,7 +900,6 @@ exports[`optionsMenu expanded 1`] = `
                             }
                           }
                           enterTriggersArrowDown={false}
-                          href=""
                           id=""
                           index={-1}
                           isDisabled={true}
@@ -927,7 +922,6 @@ exports[`optionsMenu expanded 1`] = `
                               aria-disabled={true}
                               className="pf-m-disabled pf-c-options-menu__menu-item"
                               disabled={true}
-                              href={null}
                               tabIndex={-1}
                               type="button"
                             >
@@ -955,7 +949,6 @@ exports[`optionsMenu expanded 1`] = `
                             }
                           }
                           enterTriggersArrowDown={false}
-                          href=""
                           id=""
                           index={-1}
                           isDisabled={false}
@@ -977,7 +970,6 @@ exports[`optionsMenu expanded 1`] = `
                             <button
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
-                              href={null}
                               tabIndex={-1}
                               type="button"
                             >
@@ -1037,7 +1029,6 @@ exports[`optionsMenu expanded 1`] = `
                             }
                           }
                           enterTriggersArrowDown={false}
-                          href=""
                           id=""
                           index={-1}
                           isDisabled={false}
@@ -1059,7 +1050,6 @@ exports[`optionsMenu expanded 1`] = `
                             <button
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
-                              href={null}
                               tabIndex={-1}
                               type="button"
                             >
@@ -1087,7 +1077,6 @@ exports[`optionsMenu expanded 1`] = `
                             }
                           }
                           enterTriggersArrowDown={false}
-                          href=""
                           id=""
                           index={-1}
                           isDisabled={false}
@@ -1109,7 +1098,6 @@ exports[`optionsMenu expanded 1`] = `
                             <button
                               className="pf-c-options-menu__menu-item"
                               disabled={false}
-                              href={null}
                               tabIndex={-1}
                               type="button"
                             >
