@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.0.17...@patternfly/react-table@4.0.18) (2020-03-30)
+
+
+### Bug Fixes
+
+* **table:** expandable example title ([#3985](https://github.com/patternfly/patternfly-react/issues/3985)) ([d2f6dd3](https://github.com/patternfly/patternfly-react/commit/d2f6dd346be9717675a59a2c5772e2cb4dd864e6))
+
+
+
+
+
 ## [4.0.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.0.16...@patternfly/react-table@4.0.17) (2020-03-27)
 
 **Note:** Version bump only for package @patternfly/react-table
