@@ -4,6 +4,52 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.04 release notes (2020-03-31)
+Packages released:
+- [@patternfly/react-catalog-view-extension@1.4.45](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.45)
+- [@patternfly/react-charts@5.3.16](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.16)
+- [@patternfly/react-core@3.153.0](https://www.npmjs.com/package/@patternfly/react-core/v/3.153.0)
+- [@patternfly/react-icons@3.15.13](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.11)
+- [@patternfly/react-inline-edit-extension@2.17.45](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.45)
+- [@patternfly/react-styles@3.7.10](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.10)
+- [@patternfly/react-table@2.28.26](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.26)
+- [@patternfly/react-tokens@2.8.10](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.10)
+- [@patternfly/react-topology@2.14.45](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.45)
+- [@patternfly/react-virtualized-extension@1.4.46](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.46)
+
+### Components
+- **About modal:**
+  - Allow custom aria-label for the close button ([#3877](https://github.com/patternfly/patternfly-react/pull/3877)
+- **Alert:**
+  - Use context to set label ([#3771](https://github.com/patternfly/patternfly-react/pull/3771)
+- **Card:**
+  - Added wrapper to image to resize it properly ([#3642](https://github.com/patternfly/patternfly-react/pull/3642)
+  - Added Card View to demos ([#3441](https://github.com/patternfly/patternfly-react/pull/3441)
+- **Drawer:**
+  - Added width props, updated demo & integration test ([#3979](https://github.com/patternfly/patternfly-react/pull/3979)
+- **Dropdown:**
+  - Added new prop so Links are treated better ([#3889](https://github.com/patternfly/patternfly-react/pull/3889)
+  - Removed duplicate prop ([#3923](https://github.com/patternfly/patternfly-react/pull/3923)
+  - Cleaned console errors in Dropdown.test.tsx ([#3861](https://github.com/patternfly/patternfly-react/pull/3861)
+- **Empty state:**
+  - Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/pull/3844)
+- **Select:**
+  - Allow count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/pull/3976)
+  - Added logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/pull/3895)
+  - Fixed group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/pull/3838)
+- **Table:**
+  - Added column management demo ([#3942](https://github.com/patternfly/patternfly-react/pull/3942)
+  - Fix forward ref types ([#3919](https://github.com/patternfly/patternfly-react/pull/3919)
+
+### Other
+- Create unified react-core dist ([#3971](https://github.com/patternfly/patternfly-react/pull/3971)
+- In-house focusTrap ([#3967](https://github.com/patternfly/patternfly-react/pull/3967)
+- Remove a few usages of prop-types ([#3968](https://github.com/patternfly/patternfly-react/pull/3968)
+- Release docs to NPM for patternfly-org ([#3941](https://github.com/patternfly/patternfly-react/pull/3941)
+- Fix tippy types, remove copyTS ([#3940](https://github.com/patternfly/patternfly-react/pull/3940)
+- Create variables by file in react-tokens ([#3896](https://github.com/patternfly/patternfly-react/pull/3896)
+- Remove unused packages from repo ([#3916](https://github.com/patternfly/patternfly-react/pull/3916)
+
 ## 2020.03 release notes (2020-03-10)
 Packages released:
 - [@patternfly/react-catalog-view-extension: 1.4.29](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.29)
@@ -17,7 +63,7 @@ Packages released:
 - [@patternfly/react-virtualized-extension: 1.4.30](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.30)
 - [@patternfly/react-icons: 3.15.11](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.11)
 
-### Components:
+### Components
 - **Background image:** 
   - Remove width attr from background image filter element ([#3758](https://github.com/patternfly/patternfly-react/pull/3758))
 - **Data toolbar:** 
@@ -64,7 +110,7 @@ Packages released:
 - **Catalog tile:** 
   - Removed truncation and maxLength props ([#3830](https://github.com/patternfly/patternfly-react/pull/3830))
 
-### Other:
+### Other
 - **Chore:**
   - Added experimental exports ([#3775](https://github.com/patternfly/patternfly-react/pull/3775))
   - Wrapped layout examples to fix codesandbox ([#3818](https://github.com/patternfly/patternfly-react/pull/3818))
@@ -92,7 +138,7 @@ Packages released:
 ### Virtualized extension
 - Resolved linter errors ([#3726](https://github.com/patternfly/patternfly-react/pull/3726))
 
-### PF3:
+### PF3
 - **Chore:**
   - Enabled releasing patternfly 3 ([#3863](https://github.com/patternfly/patternfly-react/pull/3863))
   - Removed patternfly-3 packages ([#3852](https://github.com/patternfly/patternfly-react/pull/3852))
@@ -112,7 +158,7 @@ Packages released:
 - [@patternfly/react-icons: 3.15.3](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.3)
 
 
-### Components:
+### Components
 - **Context selector:** 
   - Updated signature for context selector ([#3697](https://github.com/patternfly/patternfly-react/pull/3697))
 - **Data toolbar:** 
@@ -135,13 +181,13 @@ Packages released:
   - Fixed styles that stopped working ([#3635](https://github.com/patternfly/patternfly-react/pull/3635))
   - Fixed linting errors ([#3714](https://github.com/patternfly/patternfly-react/pull/3714))
 
-### Table:
+### Table
 - Added inline edit to table ([#3058](https://github.com/patternfly/patternfly-react/issues/3058))
 - Reverted IHeaderRow interface change ([#3746](https://github.com/patternfly/patternfly-react/pull/3746))
 - Fixed that column functions are not always equal ([#3612](https://github.com/patternfly/patternfly-react/pull/3612))
 - Added support for truncated column headers ([#3729](https://github.com/patternfly/patternfly-react/pull/3729))
 
-### Other:
+### Other
 - **Build:**
   - Updated CircleCi config for pricing ([#3654](https://github.com/patternfly/patternfly-react/pull/3654))
   - Made change to use machine instance ([#3712](https://github.com/patternfly/patternfly-react/pull/3712))
@@ -168,7 +214,7 @@ Packages released:
   - Added react-hooks to eslint-plugin-patternfly-react ([#3636](https://github.com/patternfly/patternfly-react/pull/3636))
   - Fixed linting errors ([#3713](https://github.com/patternfly/patternfly-react/pull/3713))
 
-### PF3:
+### PF3
 - **Slider:**
   - Added limit for lowest possible value of slider ([#3660](https://github.com/patternfly/patternfly-react/pull/3660)) 
   
