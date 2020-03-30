@@ -13,7 +13,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   /** Class applied to list element */
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
-  component?: React.ReactNode | string;
+  component?: React.ReactNode;
   /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
   variant?: 'item' | 'icon';
   /** Role for the item */
@@ -152,7 +152,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
     let classes: string;
-    const isChildReactElement = React.isValidElement(children);
 
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
@@ -175,9 +174,18 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       <DropdownContext.Consumer>
         {({ onSelect, itemClass, disabledClass, hoverClass }) => {
           if (this.props.role === 'separator') {
-            classes = className;
+            classes = css(
+              variant === 'icon' && styles.modifiers.icon,
+              className
+            );
           } else {
-            classes = css(isDisabled && disabledClass, isHovered && hoverClass, className);
+            classes = css(
+              variant === 'icon' && styles.modifiers.icon,
+              className,
+              isDisabled && disabledClass,
+              isHovered && hoverClass,
+              itemClass
+            );
           }
           if (customChild) {
             return React.cloneElement(customChild as React.ReactElement<any>, {
@@ -199,23 +207,19 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               id={id}
             >
               {renderWithTooltip(
-                isChildReactElement ? (
-                  React.cloneElement(children as React.ReactElement<any>, {
+                React.isValidElement(component) ? (
+                  React.cloneElement(component as React.ReactElement<any>, {
                     ...additionalProps,
-                    ref: this.ref,
+                    href,
                     id,
-                    className: css(classes, itemClass, variant === 'icon' && styles.modifiers.icon)
+                    className: classes
                   })
                 ) : (
                   <Component
                     {...additionalProps}
-                    href={href || null}
+                    href={href}
                     ref={this.ref}
-                    className={css(
-                      classes,
-                      this.props.role !== 'separator' && itemClass,
-                      variant === 'icon' && styles.modifiers.icon
-                    )}
+                    className={classes}
                     id={componentID}
                   >
                     {children}

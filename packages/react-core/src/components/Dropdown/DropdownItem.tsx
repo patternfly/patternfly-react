@@ -53,8 +53,6 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         context={context}
         role="menuitem"
         tabIndex={-1}
-        // eslint-disable-next-line react/no-children-prop
-        children={children}
         className={className}
         component={component}
         variant={variant}
@@ -68,7 +66,9 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         additionalChild={additionalChild}
         customChild={customChild}
         {...props}
-      />
+      >
+        {children}
+      </InternalDropdownItem>
     )}
   </DropdownArrowContext.Consumer>
 );
