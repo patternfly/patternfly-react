@@ -1,79 +1,35 @@
-const camelcase = require('camel-case');
-
+const path = require('path');
+const fs = require('fs-extra');
 const glob = require('glob');
-const { dirname, basename, resolve, join, parse } = require('path');
-const { readFileSync } = require('fs');
-const { outputFileSync } = require('fs-extra');
-
-const outDir = resolve(__dirname, '../css');
-const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
-
-const cssFiles = glob.sync('**/*.css', {
-  cwd: pfStylesDir,
-  ignore: ['assets/**', '*ie11*.css', '*.css']
-});
-
-/* Copy @patternfly/patternfly styles */
-cssFiles.forEach(filePath => {
-  const absFilePath = resolve(pfStylesDir, filePath);
-  const cssContent = readFileSync(absFilePath, 'utf8');
-  const cssOutputPath = getCSSOutputPath(outDir, filePath);
-  const newClass = cssToJSNew(cssContent, `./${basename(cssOutputPath)}`);
-
-  outputFileSync(cssOutputPath, cssContent);
-  outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
-});
-
-/* Copy inline styles in the src/css folder */
-const inlineCssFiles = glob.sync('src/css/**/*.css');
-
-inlineCssFiles.forEach(filePath => {
-  const absFilePath = resolve(filePath);
-  const cssContent = readFileSync(absFilePath, 'utf8');
-  const cssOutputPath = getCSSOutputPath(outDir, filePath).replace('src/css/', '');
-  const newClass = cssToJSNew(cssContent, `./${basename(cssOutputPath)}`);
-
-  outputFileSync(cssOutputPath, cssContent);
-  outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
-});
+const camelcase = require('camel-case');
 
 /**
  * @param {string} cssString - CSS string
  * @param {string} cssOutputPath - Path string
  */
-function cssToJSNew(cssString, cssOutputPath = '') {
-  const cssClasses = getCSSClasses(cssString);
-  // eslint-disable-next-line no-undef
-  const distinctValues = [...new Set(cssClasses)];
-  const classDeclaration = [];
-  const modifiersDeclaration = [];
+function cssToJSNew(cssString) {
+  const res = {};
+  const distinctClasses = new Set(getCSSClasses(cssString));
 
-  distinctValues.forEach(className => {
+  distinctClasses.forEach(className => {
     const key = formatClassName(className);
-    const cleanClass = className.replace('.', '').trim();
+    const value = className.replace('.', '').trim();
     if (isModifier(className)) {
-      modifiersDeclaration.push(`'${key}': '${cleanClass}'`);
+      res.modifiers = res.modifiers || {};
+      res.modifiers[key] = value;
     } else {
-      classDeclaration.push(`${key}: '${cleanClass}'`);
+      res[key] = value;
     }
   });
-  const classSection = classDeclaration.length > 0 ? `${classDeclaration.join(',\n  ')},` : '';
 
-  return `import '${cssOutputPath}';
-
-export default {
-  ${classSection}
-  modifiers: {
-    ${modifiersDeclaration.join(',\n    ')}
-  }
-}`;
+  return res;
 }
 
 /**
  * @param {string} cssString - CSS string
  */
 function getCSSClasses(cssString) {
-  return cssString.match(/(\.)(?!\d)([^\s\.,{\[>+~#:)]*)(?![^{]*})/g); //eslint-disable-line
+  return cssString.match(/(\.)(?!\d)([^\s\.,{\[>+~#:)]*)(?![^{]*})/g);
 }
 
 /**
@@ -90,24 +46,40 @@ function isModifier(className) {
   return Boolean(className && className.startsWith) && className.startsWith('.pf-m-');
 }
 
-/**
- * @param {any} absFilePath - Absolute file path
- * @param {any} pathToCSSFile - Path to CSS file
- */
-function getCSSOutputPath(absFilePath, pathToCSSFile) {
-  return join(absFilePath, getFormattedCSSOutputPath(pathToCSSFile));
+function generateClasses() {
+  const outDir = path.resolve(__dirname, '../css');
+  const pfStylesDir = path.dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+
+  const patternflyCSSFiles = glob.sync('**/*.css', {
+    cwd: pfStylesDir,
+    ignore: ['assets/**', '*.css'],
+    absolute: true
+  });
+  const srcCSSFiles = glob.sync('src/css/**/*.css');
+
+  [
+    ...patternflyCSSFiles,
+    ...srcCSSFiles
+  ].forEach(filePath => {
+    const cssContent = fs.readFileSync(filePath, 'utf8');
+    const cssOutputPath = path.join(outDir, filePath.replace(pfStylesDir, '').replace('src/css', ''));
+    const cssOutputFilename = path.basename(cssOutputPath);
+    const classMap = cssToJSNew(cssContent);
+
+    const jsonString = JSON.stringify(classMap, null, 2);
+    fs.outputFileSync(cssOutputPath, cssContent);
+    fs.outputFileSync(
+      cssOutputPath.replace(/.css$/, '.js'),
+      `require('${cssOutputFilename}');
+exports.default = ${jsonString};`
+    );
+    fs.outputFileSync(
+      cssOutputPath.replace(/.css$/, '.d.ts'),
+      `import '${cssOutputFilename}';
+declare const _default: ${jsonString};
+export default _default;`
+    );
+  });
 }
 
-/**
- * @param {any} pathToCSSFile - Path to CSS file
- */
-function getFormattedCSSOutputPath(pathToCSSFile) {
-  const { dir, name } = parse(pathToCSSFile);
-  let formattedDir = dir;
-  const nodeText = 'node_modules';
-  const nodeIndex = formattedDir.lastIndexOf(nodeText);
-  if (nodeIndex !== -1) {
-    formattedDir = formattedDir.substring(nodeIndex + nodeText.length);
-  }
-  return join(formattedDir, `${name}.css`);
-}
+generateClasses();
