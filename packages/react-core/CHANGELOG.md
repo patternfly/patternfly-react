@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.153.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.1...@patternfly/react-core@3.153.2) (2020-03-31)
+
+
+### Bug Fixes
+
+* **app-launcher:** less aggressive router linking ([#3995](https://github.com/patternfly/patternfly-react/issues/3995)) ([28d653e](https://github.com/patternfly/patternfly-react/commit/28d653e8b71ae55426a265bd692b390846ed5b83))
+
+
+
+
+
 ## [3.153.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.0...@patternfly/react-core@3.153.1) (2020-03-30)
 
 **Note:** Version bump only for package @patternfly/react-core
