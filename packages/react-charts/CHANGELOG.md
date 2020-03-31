@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.1.1...@patternfly/react-charts@6.1.2) (2020-03-31)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ### Bug Fixes
 
 * **icons:** fix types, upgrade typescript ([#3978](https://github.com/patternfly/patternfly-react/issues/3978)) ([aa28738](https://github.com/patternfly/patternfly-react/commit/aa28738c2864b637d1ef1d0cc380a379cc6d3a51))
