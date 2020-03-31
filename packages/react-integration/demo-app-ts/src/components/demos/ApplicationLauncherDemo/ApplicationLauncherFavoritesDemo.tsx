@@ -9,7 +9,7 @@ import {
 interface ApplicationLauncherFavoritesDemoState {
   isOpen: boolean;
   favorites: string[];
-  filteredItems: JSX.Element[];
+  filteredItems: JSX.Element[] | [];
 }
 
 export class ApplicationLauncherFavoritesDemo extends React.Component<null, ApplicationLauncherFavoritesDemoState> {
@@ -73,9 +73,9 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
         filteredItems: []
       });
     } else {
-      const filteredGroups = this.appLauncherItems
+      const filteredGroups: JSX.Element[] | [] = this.appLauncherItems
         .map(group => {
-          const filteredGroup = React.cloneElement(group, {
+          const filteredGroup: JSX.Element | [] = React.cloneElement(group, {
             children: group.props.children.filter((item: JSX.Element) => {
               if (item.type === ApplicationLauncherSeparator) {
                 return item;
@@ -88,12 +88,15 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
             filteredGroup.props.children[0].type !== ApplicationLauncherSeparator
           ) {
             return filteredGroup;
-          }
+          } else {
+            return <></>;
+         }
         })
         .filter(newGroup => newGroup);
+      console.log(filteredGroups);
 
       if (filteredGroups.length > 0) {
-        let lastGroup = filteredGroups.pop();
+        let lastGroup: JSX.Element = filteredGroups.pop();
         lastGroup = React.cloneElement(lastGroup, {
           children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
         });
