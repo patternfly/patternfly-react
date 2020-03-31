@@ -5,7 +5,6 @@ import { default as formStyles } from '@patternfly/react-styles/css/components/F
 import { css } from '@patternfly/react-styles';
 
 import { childrenToArray } from '../../helpers/util';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface FilterSidePanelCategoryProps extends Omit<React.HTMLProps<HTMLFormElement>, 'title'> {
   /** Children nodes */

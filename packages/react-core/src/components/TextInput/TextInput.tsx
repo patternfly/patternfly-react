@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
-import { Omit, withInnerRef } from '../../helpers';
 import { ValidatedOptions } from '../../helpers/constants';
 
 export enum TextInputTypes {
@@ -18,7 +17,7 @@ export enum TextInputTypes {
   url = 'url'
 }
 
-export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'disabled'> {
+export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'disabled' | 'ref'> {
   /** Additional classes added to the TextInput. */
   className?: string;
   /** Flag to show if the input is disabled. */
@@ -55,7 +54,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   innerRef?: React.Ref<any>;
 }
 
-class TextInputBase extends React.Component<TextInputProps> {
+export class TextInputBase extends React.Component<TextInputProps> {
   static defaultProps: TextInputProps = {
     'aria-label': null,
     className: '',
@@ -116,5 +115,6 @@ class TextInputBase extends React.Component<TextInputProps> {
   }
 }
 
-const TextInputFR = withInnerRef<HTMLInputElement, TextInputProps>(TextInputBase);
-export { TextInputFR as TextInput, TextInputBase };
+export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (
+  <TextInputBase {...props} innerRef={ref} />
+));

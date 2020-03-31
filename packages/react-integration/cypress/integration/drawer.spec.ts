@@ -17,4 +17,23 @@ describe('Drawer Demo Test', () => {
     cy.get('#toggleButton').click();
     cy.get('.pf-c-drawer').should('have.class', 'pf-m-expanded');
   });
+
+  it('Verify panel widths', () => {
+    // Large viewport
+    const $drawerPanel = cy.get('.pf-c-drawer__panel');
+    $drawerPanel.should('have.class', 'pf-m-width-100');
+    $drawerPanel.should('have.class', 'pf-m-width-50-on-lg');
+    $drawerPanel.should('have.class', 'pf-m-width-33-on-xl');
+    $drawerPanel.should('have.class', 'pf-m-width-25-on-2xl');
+    $drawerPanel.should('have.css', 'flex-basis', '50%');
+    // Medium viewport
+    cy.viewport(800, 660);
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '100%');
+    // Xl viewport
+    cy.viewport(1200, 660);
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '33%');
+    // 2Xl viewport
+    cy.viewport(1450, 660);
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '25%');
+  });
 });

@@ -4,7 +4,6 @@
   "version": "5.0.17",
   "author": "Red Hat",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build:docs": "yarn build:static && yarn build:ram",
     "build:ram": "node --max-old-space-size=8192 ./node_modules/.bin/gatsby build",
@@ -29,10 +28,11 @@
     "@patternfly/react-tokens": "^4.0.2",
     "@patternfly/react-topology": "^4.0.16",
     "@patternfly/react-virtualized-extension": "^4.0.16",
-    "gatsby": "2.19.12",
-    "gatsby-cli": "2.8.29",
+    "gatsby": "2.20.2",
+    "gatsby-cli": "2.11.0",
     "gatsby-theme-patternfly-org": "^1.4.9",
     "gatsby-transformer-react-docgen-typescript": "^0.2.5",
+    "null-loader": "^3.0.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"

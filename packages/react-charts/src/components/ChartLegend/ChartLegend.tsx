@@ -4,7 +4,6 @@ import {
   BlockProps,
   ColorScalePropType,
   EventPropTypeInterface,
-  Omit,
   OrientationTypes,
   PaddingProps,
   StringOrNumberOrCallback,

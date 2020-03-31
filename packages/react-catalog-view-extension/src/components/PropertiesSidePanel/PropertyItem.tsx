@@ -1,7 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { Omit } from '../../helpers/typeUtils';
 import { Text, TextVariants } from '@patternfly/react-core/dist/js/components/Text/Text';
 
 export interface PropertyItemProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'value'> {

@@ -4,7 +4,6 @@ import { css } from '@patternfly/react-styles';
 import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
 import { AriaProps } from './ProgressBar';
 import { getUniqueId } from '../../helpers/util';
-import { Omit } from '../../helpers/typeUtils';
 
 export enum ProgressSize {
   sm = 'sm',

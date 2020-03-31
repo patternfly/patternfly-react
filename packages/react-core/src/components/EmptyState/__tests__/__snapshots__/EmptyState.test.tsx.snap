@@ -31,7 +31,7 @@ exports[`EmptyState Main 1`] = `
 
 exports[`EmptyState Main variant large 1`] = `
 <div
-  className="pf-c-empty-state pf-m-lg"
+  className="pf-c-empty-state"
 >
   <Title
     headingLevel="h3"
@@ -44,7 +44,7 @@ exports[`EmptyState Main variant large 1`] = `
 
 exports[`EmptyState Main variant small 1`] = `
 <div
-  className="pf-c-empty-state pf-m-sm"
+  className="pf-c-empty-state"
 >
   <Title
     headingLevel="h3"

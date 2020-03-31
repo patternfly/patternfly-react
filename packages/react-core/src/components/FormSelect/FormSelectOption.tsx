@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionElement>, 'disabled'> {
   /** additional classes added to the Select Option */

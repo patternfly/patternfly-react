@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 import { PopoverPosition } from '../Popover';
 import { TextInput } from '../TextInput';
 import { TooltipPosition } from '../Tooltip';

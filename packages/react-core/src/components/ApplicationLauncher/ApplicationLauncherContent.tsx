@@ -5,7 +5,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import { ApplicationLauncherIcon } from './ApplicationLauncherIcon';
 import { ApplicationLauncherText } from './ApplicationLauncherText';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import { ApplicationLauncherItemContext } from './ApplicationLauncherItem';
+import { ApplicationLauncherItemContext } from './ApplicationLauncherItemContext';
 
 export interface ApplicationLauncherContentProps {
   /** Main content to be rendered */

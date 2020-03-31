@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { ClipboardCopyProps } from './ClipboardCopy';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
+import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'onChange'> {
   className?: string;

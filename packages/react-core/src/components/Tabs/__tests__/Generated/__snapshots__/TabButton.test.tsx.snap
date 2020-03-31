@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabButton should match snapshot (auto-generated) 1`] = `
-<TabContainer
+<TabButtonBase
   className="''"
-  forwardRef={null}
   href="string"
-  tabContentRef={
-    Object {
-      "current": <div />,
-    }
-  }
+  tabContentRef={null}
 >
   <div>
     ReactNode
   </div>
-</TabContainer>
+</TabButtonBase>
 `;

@@ -11,6 +11,7 @@ module.exports = {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
         context: 'react', // For global items that need sideNav
+        showGdprBanner: false, // GDPR banner
         hiddenPages: ['withOuia', 'Training'], // By title
         sideNav: {
           react: [

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FileUpload/file-upload';
 import { css } from '@patternfly/react-styles';
-import { Omit } from '../../helpers';
 import { InputGroup } from '../InputGroup';
 import { TextInput } from '../TextInput';
 import { Button, ButtonVariant } from '../Button';
@@ -95,7 +94,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   validated = 'default' as 'success' | 'error' | 'default',
   'aria-label': ariaLabel = 'File upload',
   filenamePlaceholder = 'Drag a file here or browse to upload',
-  filenameAriaLabel = filename ? 'Read only' : filenamePlaceholder,
+  filenameAriaLabel = filename ? 'Read only filename' : filenamePlaceholder,
   browseButtonText = 'Browse...',
   clearButtonText = 'Clear',
   isClearButtonDisabled = !filename && !value,

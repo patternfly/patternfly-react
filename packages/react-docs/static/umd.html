@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@2/patternfly.css" crossorigin />
+  <meta charset="utf-8"/>
+</head>
+<body>
+  <h1 class="pf-c-title pf-m-2xl">PatternFly-React UMD Build</h1>
+  <p>
+    UMD build allow for you to quickly get started using <a href="">@patternfly/react-core.</a>
+    If you care about how this is accomplished, it's highly recommended to read&nbsp;
+    <a href="https://reactjs.org/docs/add-react-to-a-website.html#add-react-in-one-minute">React's getting started with UMD guide</a> before returning here since.
+    This guide uses React's guide as a base.
+  </p>
+  <h2 class="pf-c-title pf-m-2xl">1. Write HTML</h2>
+  <p>
+    Create a container to inject React components into.
+    <pre>
+      &lt;div id="react-root">Inject in here&lt;/div>
+    </pre>
+  </p>
+  <h2 class="pf-c-title pf-m-2xl">2. Include JS</h2>
+  <p>
+    PatternFly React depends on React and PropTypes. Add these to the bottom of the &lt;body> tag on your page:
+    <pre>
+      &lt;script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin>&lt;/script>
+      &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>&lt;/script>
+      &lt;script src="https://unpkg.com/prop-types@15.6/prop-types.js" crossorigin>&lt;/script>
+      &lt;script src="https://unpkg.com/@patternfly/react-core@3/dist/umd/react-core.umd.js">&lt;/script>
+      &lt;script src="like-button.js">&lt;/script>
+    </pre>
+
+    @patternfly/react-core exposes a "PatternFlyReact" object for use in your like-button.js. Populate your like-button.js with something like:
+    <pre>
+      'use strict';
+
+      const e = React.createElement;
+
+      class LikeButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { liked: false };
+        }
+
+        render() {
+          if (this.state.liked) {
+            return e(PatternFlyReact.Alert, {
+              title: ' Great success',
+              children: 'You liked this',
+              variant: 'success'
+            });
+          }
+
+          return e(
+            PatternFlyReact.Button,
+            { onClick: () => this.setState({ liked: true }) },
+            'Like'
+          );
+        }
+      }
+
+
+      const domContainer = document.querySelector('#react-root');
+      ReactDOM.render(e(LikeButton), domContainer);
+    </pre>
+  </p>
+  <h2 class="pf-c-title pf-m-2xl">3. (Optional) Include styles</h2>
+  <p>
+    You have to include <b>ALL</b> our PatternFly styles. There's two ways to do this:
+    <pre>
+      &lt;link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@2/patternfly.css" crossorigin />
+    </pre>
+    OR
+    <pre>
+      &lt;link rel="stylesheet" href="https://unpkg.com/@patternfly/react-core@3/dist/styles/base.css" crossorigin />
+      &lt;link rel="stylesheet" href="https://unpkg.com/@patternfly/react-core@3/dist/react-core.umd.css" crossorigin />
+    </pre>
+  </p>
+  <h2 class="pf-c-title pf-m-2xl">4. Don't do this in production</h2>
+  <p>
+    This implementation is very bloated.
+    ALL of React, ReactDOM, PropTypes (which you don't need in production...), and PatternFly (including CSS and fonts) are included which takes 912KB <i>after</i> being gzipped.
+    Even when minified, they take 520Kb <i>after</i> being gzipped.
+    Also, you probably want to be able to use JSX.
+    To enable using JSX, treeshaking, and other modern JS tools PatternFly recommendeds consumption using <a href="https://github.com/patternfly/patternfly-react-seed">Webpack.</a>
+    It's as simple as cloning <a href="https://github.com/patternfly/patternfly-react-seed">our seed repo</a> and running 2 commands!
+  </p>
+  <p>
+    This page serves as an example of how to do this. Checkout the like button below!
+  </p>
+  <div id="react-root">Inject like button here</div>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/prop-types@15.6/prop-types.js" crossorigin></script>
+  <script src="https://unpkg.com/@patternfly/react-core@3/dist/umd/react-core.js"></script>
+  <script src="like-button.js"></script>
+</body>
+</html>

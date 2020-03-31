@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 
-export interface TabContentProps extends React.HTMLProps<HTMLElement> {
+export interface TabContentProps extends Omit<React.HTMLProps<HTMLElement>, 'ref'> {
   /** content rendered inside the tab content area if used outside Tabs component */
   children?: any;
   /** Child to show in the content area */
@@ -20,7 +20,7 @@ export interface TabContentProps extends React.HTMLProps<HTMLElement> {
   'aria-label'?: string;
 }
 
-const TabContent0: React.FC<TabContentProps> = ({
+const TabContentBase: React.FC<TabContentProps> = ({
   id,
   activeKey,
   'aria-label': ariaLabel,
@@ -58,7 +58,6 @@ const TabContent0: React.FC<TabContentProps> = ({
   return null;
 };
 
-// eslint-disable-next-line react/no-multi-comp
-export const TabContent = React.forwardRef<any, TabContentProps>((props: TabContentProps, ref) => (
-  <TabContent0 innerRef={ref} {...props} />
+export const TabContent = React.forwardRef((props: TabContentProps, ref: React.Ref<HTMLElement>) => (
+  <TabContentBase {...props} innerRef={ref} />
 ));
