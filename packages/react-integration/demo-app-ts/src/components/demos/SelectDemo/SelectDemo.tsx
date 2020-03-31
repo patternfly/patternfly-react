@@ -61,7 +61,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     checkSelected: [''],
     typeaheadisOpen: false,
     noBadgeCheckIsOpen: false,
-    noBadgeCheckSelected: [],
+    noBadgeCheckSelected: [''],
     typeaheadSelected: '',
     typeaheadMultiisOpen: false,
     typeaheadMultiSelected: [''],
@@ -274,9 +274,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  noBadgeCheckOnSelect = (event: any, selection: string) => {
+  noBadgeCheckOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { noBadgeCheckSelected } = this.state;
-    if (noBadgeCheckSelected.includes(selection)) {
+    if (noBadgeCheckSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
           noBadgeCheckSelected: prevState.noBadgeCheckSelected.filter(item => item !== selection)
