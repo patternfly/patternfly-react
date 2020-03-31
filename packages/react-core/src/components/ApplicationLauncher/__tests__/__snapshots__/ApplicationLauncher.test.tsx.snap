@@ -581,7 +581,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={0}
                   isDisabled={false}
                   isHovered={false}
@@ -601,7 +600,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <a
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
-                      href={null}
                       tabIndex={-1}
                     >
                       Link
@@ -624,7 +622,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={1}
                   isDisabled={false}
                   isHovered={false}
@@ -644,7 +641,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <button
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
-                      href={null}
                       tabIndex={-1}
                       type="button"
                     >
@@ -668,7 +664,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={2}
                   isDisabled={true}
                   isHovered={false}
@@ -688,7 +683,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <a
                       aria-disabled={true}
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
-                      href={null}
                       tabIndex={-1}
                     >
                       Disabled Link
@@ -712,7 +706,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={3}
                   isDisabled={true}
                   isHovered={false}
@@ -732,7 +725,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <button
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled={true}
-                      href={null}
                       tabIndex={-1}
                       type="button"
                     >
@@ -755,7 +747,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={4}
                   isDisabled={false}
                   isHovered={false}
@@ -772,7 +763,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   >
                     <div
                       className="pf-c-app-launcher__separator"
-                      href={null}
                     />
                   </li>
                 </InternalDropdownItem>
@@ -791,7 +781,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={5}
                   isDisabled={false}
                   isHovered={false}
@@ -811,7 +800,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <a
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
-                      href={null}
                       tabIndex={-1}
                     >
                       Separated Link
@@ -834,7 +822,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={6}
                   isDisabled={false}
                   isHovered={false}
@@ -854,7 +841,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     <button
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
-                      href={null}
                       tabIndex={-1}
                       type="button"
                     >
@@ -2223,7 +2209,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={0}
                   isDisabled={false}
                   isHovered={false}
@@ -2243,7 +2228,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <a
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
-                      href={null}
                       tabIndex={-1}
                     >
                       Link
@@ -2266,7 +2250,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={1}
                   isDisabled={false}
                   isHovered={false}
@@ -2286,7 +2269,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <button
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
-                      href={null}
                       tabIndex={-1}
                       type="button"
                     >
@@ -2310,7 +2292,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={2}
                   isDisabled={true}
                   isHovered={false}
@@ -2330,7 +2311,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <a
                       aria-disabled={true}
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
-                      href={null}
                       tabIndex={-1}
                     >
                       Disabled Link
@@ -2354,7 +2334,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={3}
                   isDisabled={true}
                   isHovered={false}
@@ -2374,7 +2353,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <button
                       className="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled={true}
-                      href={null}
                       tabIndex={-1}
                       type="button"
                     >
@@ -2397,7 +2375,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={4}
                   isDisabled={false}
                   isHovered={false}
@@ -2414,7 +2391,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   >
                     <div
                       className="pf-c-app-launcher__separator"
-                      href={null}
                     />
                   </li>
                 </InternalDropdownItem>
@@ -2433,7 +2409,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={5}
                   isDisabled={false}
                   isHovered={false}
@@ -2453,7 +2428,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <a
                       aria-disabled={false}
                       className="pf-c-app-launcher__menu-item"
-                      href={null}
                       tabIndex={-1}
                     >
                       Separated Link
@@ -2476,7 +2450,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     }
                   }
                   enterTriggersArrowDown={false}
-                  href=""
                   index={6}
                   isDisabled={false}
                   isHovered={false}
@@ -2496,7 +2469,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     <button
                       className="pf-c-app-launcher__menu-item"
                       disabled={false}
-                      href={null}
                       tabIndex={-1}
                       type="button"
                     >

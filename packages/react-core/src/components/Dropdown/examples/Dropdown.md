@@ -1106,7 +1106,7 @@ class DropdownPanel extends React.Component {
 }
 ```
 
-```js title=React-Router-Link-Usage
+```js title=Router-link
 import React from 'react';
 import {
   Button,
@@ -1147,9 +1147,11 @@ class RouterDropdown extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="routerlink">
-        <Link to="/">Link</Link>
-      </DropdownItem>
+      <DropdownItem key="routerlink" component={
+        <Link to="/">
+          @reach/router Link
+        </Link>
+      } />
     ];
 
     return (
