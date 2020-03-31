@@ -9,7 +9,10 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   className?: string;
   /** Class to be applied to list item */
   listItemClassName?: string;
-  /** Indicates which component will be used as dropdown item */
+  /** A ReactElement to render, or a string to use as the component tag.
+   * Example: component={<Link to="/components/alert/">Alert</Link>}
+   * Example: component="button"
+   */
   component?: React.ReactNode;
   /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
   variant?: 'item' | 'icon';
@@ -36,7 +39,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   variant = 'item',
   isDisabled = false,
   isHovered = false,
-  href = '',
+  href,
   tooltip = null,
   tooltipProps = {},
   listItemClassName,
@@ -53,8 +56,6 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         context={context}
         role="menuitem"
         tabIndex={-1}
-        // eslint-disable-next-line react/no-children-prop
-        children={children}
         className={className}
         component={component}
         variant={variant}
@@ -68,7 +69,9 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         additionalChild={additionalChild}
         customChild={customChild}
         {...props}
-      />
+      >
+        {children}
+      </InternalDropdownItem>
     )}
   </DropdownArrowContext.Consumer>
 );

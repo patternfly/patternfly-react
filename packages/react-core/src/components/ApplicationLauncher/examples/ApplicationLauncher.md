@@ -11,6 +11,7 @@ To add a tooltip, use the `tooltip` prop and optionally add more tooltip props b
 
 import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator, Text } from '@patternfly/react-core';
 import { HelpIcon, StarIcon } from '@patternfly/react-icons';
+import { Link } from '@reach/router';
 import pfIcon from './pf-logo-small.svg';
 
 ## Examples
@@ -59,6 +60,7 @@ class SimpleApplicationLauncher extends React.Component {
 
 ```js title=Router-link
 import React from 'react';
+import { Link } from '@reach/router';
 import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent, Text } from '@patternfly/react-core';
 
 class SimpleApplicationLauncher extends React.Component {
@@ -86,14 +88,13 @@ class SimpleApplicationLauncher extends React.Component {
       color: 'var(--pf-c-app-launcher__menu-item--Color)',
       textDecoration: 'none'
     };
-    // Using Text component below to demonstrate, but in reality you'd use a router Link component
     const appLauncherItems = [
       <ApplicationLauncherItem
         key="router1"
         component={
-          <Text component="a" href="#" style={exampleStyle}>
-            Router link
-          </Text>
+          <Link to="/" style={exampleStyle}>
+            @reach/router Link
+          </Link>
         }
       />,
       <ApplicationLauncherItem
@@ -101,9 +102,9 @@ class SimpleApplicationLauncher extends React.Component {
         isExternal
         icon={icon}
         component={
-          <Text component="a" href="#" style={exampleStyle}>
-            <ApplicationLauncherContent>Router link with icon</ApplicationLauncherContent>
-          </Text>
+          <Link to="/" style={exampleStyle}>
+            <ApplicationLauncherContent>@reach/router Link with icon</ApplicationLauncherContent>
+          </Link>
         }
       />,
       <ApplicationLauncherItem key="application_1a" href="#">

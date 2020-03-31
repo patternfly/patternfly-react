@@ -577,7 +577,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     const titleId = 'no-badge-checkbox-select-id';
     return (
       <StackItem isFilled={false}>
-        <Title headingLevel="h2" size="2xl">Checkbox Select w/ No Selection Badge</Title>
+        <Title headingLevel="h2" size="2xl">
+          Checkbox Select w/ No Selection Badge
+        </Title>
         <div>
           <span id={titleId} hidden>
             Checkbox Title
