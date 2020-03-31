@@ -9,7 +9,7 @@ import {
   Title,
   Button
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 export class EmptyStateTable extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   constructor(props: TableProps) {

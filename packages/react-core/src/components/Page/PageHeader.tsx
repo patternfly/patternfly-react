@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import { Button, ButtonVariant } from '../../components/Button';
 import { PageContextConsumer } from './Page';
 

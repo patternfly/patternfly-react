@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
-import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
-import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/js/icons/expand-arrows-alt-icon';
-import SearchPlusIcon from '@patternfly/react-icons/dist/js/icons/search-plus-icon';
-import SearchMinusIcon from '@patternfly/react-icons/dist/js/icons/search-minus-icon';
+import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-icon';
+import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/esm/icons/expand-arrows-alt-icon';
+import SearchPlusIcon from '@patternfly/react-icons/dist/esm/icons/search-plus-icon';
+import SearchMinusIcon from '@patternfly/react-icons/dist/esm/icons/search-minus-icon';
 import '@patternfly/react-styles/css/components/Topology/topology-controlbar.css';
 
 /* ID's for common control buttons */

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
 import { Omit } from '../../helpers/typeUtils';
 

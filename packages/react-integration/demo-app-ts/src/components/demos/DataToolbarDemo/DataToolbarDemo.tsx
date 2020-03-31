@@ -20,11 +20,11 @@ import {
   KebabToggle,
   TextInput
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
 interface Filter {
   risk: string[];

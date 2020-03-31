@@ -4,6 +4,7 @@ import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 import CellSizeAndPositionManager from './CellSizeAndPositionManager';
 import { getMaxElementSize } from './maxElementSize';
+import { SizeAndPositionData } from 'react-virtualized';
 
 interface ContainerSizeAndOffset {
   containerSize: number;
@@ -75,11 +76,11 @@ export default class ScalingCellSizeAndPositionManager {
     return Math.round(offsetPercentage * (safeTotalSize - totalSize));
   }
 
-  getSizeAndPositionOfCell(index: number) {
+  getSizeAndPositionOfCell(index: number): SizeAndPositionData {
     return this._cellSizeAndPositionManager.getSizeAndPositionOfCell(index);
   }
 
-  getSizeAndPositionOfLastMeasuredCell() {
+  getSizeAndPositionOfLastMeasuredCell(): SizeAndPositionData {
     return this._cellSizeAndPositionManager.getSizeAndPositionOfLastMeasuredCell();
   }
 

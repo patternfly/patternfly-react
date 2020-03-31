@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/AppLauncher/app-laun
 import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { ApplicationLauncherContent } from './ApplicationLauncherContent';
 import { ApplicationLauncherContext } from './ApplicationLauncher';
-import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 
 export const ApplicationLauncherItemContext = React.createContext({ isExternal: false, icon: null });
 

@@ -10,9 +10,9 @@ import {
   KebabToggle,
   Button
 } from '@patternfly/react-core';
-import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon';
-import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
-import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
+import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
+import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
+import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 export class OverflowMenuDemo extends React.Component {
   state = {
     isSimpleOpen: false,

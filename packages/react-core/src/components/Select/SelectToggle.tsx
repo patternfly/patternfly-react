@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { KeyTypes, SelectVariant } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 

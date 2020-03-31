@@ -12,5 +12,13 @@
     "./src/**/**.test.tsx",
     "./src/**/**.test.ts",
     "./src/**/examples/**"
+  ],
+  "references": [
+    {
+      "path": "../react-icons"
+    },
+    {
+      "path": "../react-styles"
+    }
   ]
 }

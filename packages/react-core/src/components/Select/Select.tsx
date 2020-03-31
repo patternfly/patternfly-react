@@ -4,7 +4,7 @@ import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';

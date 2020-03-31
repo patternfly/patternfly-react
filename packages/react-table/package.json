@@ -4,7 +4,7 @@
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/js/esm.d.ts",
+  "types": "dist/esm/index.d.ts",
   "patternfly:src": "src/",
   "sideEffects": false,
   "publishConfig": {

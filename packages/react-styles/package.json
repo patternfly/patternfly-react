@@ -3,7 +3,7 @@
   "version": "4.0.5",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/js/esm.d.ts",
+  "types": "dist/esm/index.d.ts",
   "sideEffects": [
     "*.css",
     "*.scss"
@@ -15,21 +15,16 @@
     "tag": "prerelease-v4"
   },
   "scripts": {
-    "build:css": "node scripts/generateClasses.js && tsc && node scripts/removeTS.js",
+    "generate": "node scripts/generateClasses.js && tsc -p tsconfig.css.json && node scripts/removeTS.js",
     "clean": "rimraf dist css"
-  },
-  "dependencies": {
-    "camel-case": "^3.0.0"
   },
   "devDependencies": {
     "@patternfly/patternfly": "4.0.4",
+    "camel-case": "^3.0.0",
     "css": "^2.2.3",
     "cssstyle": "^0.3.1",
-    "fbjs-scripts": "^0.8.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
-    "jsdom": "^15.1.0",
-    "relative": "^3.0.2",
     "rimraf": "^2.6.2",
     "typescript": "^3.8.3"
   },

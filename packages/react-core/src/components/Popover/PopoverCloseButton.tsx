@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const PopoverCloseButton: React.FunctionComponent<PopoverCloseButtonProps> = ({
   onClose = () => undefined as void,

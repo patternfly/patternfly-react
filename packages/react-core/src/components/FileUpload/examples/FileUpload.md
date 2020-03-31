@@ -8,7 +8,7 @@ beta: true
 ---
 
 import { FileUpload, Form, FormGroup, FileUploadField, Checkbox } from '@patternfly/react-core';
-import FileUploadIcon from '@patternfly/react-icons/dist/js/icons/file-upload-icon';
+import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
 
 ## Examples
 
@@ -169,7 +169,7 @@ Regardless of `type`, the preview area (the TextArea, or any future implementati
 ```js title=Custom-file-preview
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
-import FileUploadIcon from '@patternfly/react-icons/dist/js/icons/file-upload-icon';
+import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
 
 class CustomPreviewFileUpload extends React.Component {
   constructor(props) {

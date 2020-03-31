@@ -4,7 +4,7 @@
   "description": "This library provides efficient rendering extensions for PatternFly 4 React tables and lists.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/js/esm.d.ts",
+  "types": "dist/esm/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
