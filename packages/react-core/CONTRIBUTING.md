@@ -22,7 +22,7 @@ hideTOC: true
 4. Add jest tests to `[Component].test.js`. All new components must be tested.
 5. Add any additional public exports to `index.js`
 6. Update the generated `[ComponentName].md.` See how to create [component docs.](../react-core/README.md)
-7. Add integration tests to the demo-app found [here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration)
+7. Add integration tests to the demo-app found [here](https://github.com/patternfly/patternfly-react/tree/master/packages/react-integration)
 
 
 ## Code contribution guidelines
