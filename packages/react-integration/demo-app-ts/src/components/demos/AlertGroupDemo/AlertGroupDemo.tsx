@@ -17,7 +17,7 @@ export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
   removeAlert: (key: React.ReactText) => void;
 
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       alerts: [],
       timer: null

@@ -12,7 +12,7 @@ export class TabDemo extends Component {
   private contentRef3: RefObject<HTMLDivElement>;
 
   constructor(props: {}) {
-    super(props as null);
+    super(props);
 
     this.contentRef1 = React.createRef<HTMLDivElement>();
     this.contentRef2 = React.createRef<HTMLDivElement>();

@@ -15,8 +15,8 @@ interface ApplicationLauncherFavoritesDemoState {
 export class ApplicationLauncherFavoritesDemo extends React.Component<null, ApplicationLauncherFavoritesDemoState> {
   state: ApplicationLauncherFavoritesDemoState = {
     isOpen: false,
-    favorites: [],
-    filteredItems: null
+    favorites: [''],
+    filteredItems: []
   };
 
   appLauncherItems = [
@@ -70,7 +70,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
   onSearch = (textInput: string) => {
     if (textInput === '') {
       this.setState({
-        filteredItems: null
+        filteredItems: []
       });
     } else {
       const filteredGroups = this.appLauncherItems

@@ -28,7 +28,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       isOpen: false,
       selected: ''

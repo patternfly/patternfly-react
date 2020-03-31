@@ -23,7 +23,7 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
   groups: FormSelectGroup[];
   validatedSelectOptions: FormSelectOption[];
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       value: '2',
       validatedValue: '',

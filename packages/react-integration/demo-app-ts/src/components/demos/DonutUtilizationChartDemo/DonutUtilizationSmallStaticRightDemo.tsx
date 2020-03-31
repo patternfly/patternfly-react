@@ -2,9 +2,9 @@ import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
 export class DonutUtilizationSmallStaticRightDemo extends React.Component<{}, { used: number }> {
-  interval: number;
+  interval: number = 0;
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       used: 0
     };
@@ -29,14 +29,17 @@ export class DonutUtilizationSmallStaticRightDemo extends React.Component<{}, { 
       <div>
         <div style={{ backgroundColor: 'white', height: '175px', width: '425px' }}>
           <ChartDonutThreshold
-            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+            data={[
+              { x: 'Warning at 60%', y: 60 },
+              { x: 'Danger at 90%', y: 90 }
+            ]}
             height={175}
             labels={({ datum }) => (datum.x ? datum.x : null)}
             width={425}
           >
             <ChartDonutUtilization
               data={{ x: 'Storage capacity', y: used }}
-              labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+              labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
               legendData={[
                 { name: `Storage capacity: ${used}%` },
                 { name: 'Warning threshold at 60%' },

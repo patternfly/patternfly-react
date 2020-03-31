@@ -9,7 +9,7 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       isOpen: false
     };

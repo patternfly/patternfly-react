@@ -27,7 +27,9 @@ export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWr
         }
       ]
     };
-    this.customRowWrapper = ({ trRef, className, rowProps, row: { isExpanded, isHeightAuto }, ...rest }) => {
+    this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, ...rest }) => {
+      const isExpanded = rest.row ? rest.row.isExpanded : false;
+      const isHeightAuto = rest.row ? rest.row.isHeightAuto : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
         borderLeft: '3px solid var(--pf-global--primary-color--100)'

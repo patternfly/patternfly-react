@@ -12,7 +12,7 @@ export class DonutUtilizationSmallDemo extends React.Component {
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: 75 }}
             height={150}
-            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
             subTitle="of 100 GBps"
             title="75%"
             width={150}

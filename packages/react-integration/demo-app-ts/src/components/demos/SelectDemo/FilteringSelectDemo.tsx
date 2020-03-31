@@ -10,7 +10,7 @@ export interface FilteringSelectDemoState {
 export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
   state = {
     isOpen: false,
-    selections: []
+    selections: ['']
   };
 
   options = [

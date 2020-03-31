@@ -2,9 +2,9 @@ import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { used: number; spacer: string }> {
-  interval: number;
+  interval: number = 0;
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       spacer: '',
       used: 0
@@ -39,7 +39,7 @@ export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { 
             constrainToVisibleArea
             data={{ x: 'Storage capacity', y: used }}
             height={300}
-            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             legendPosition="bottom"

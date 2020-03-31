@@ -16,7 +16,7 @@ export class DonutUtilizationSimpleBottomDemo extends React.Component {
             constrainToVisibleArea
             data={{ x: 'Storage capacity', y: 45 }}
             height={275}
-            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
             legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
             legendPosition="bottom"
             padding={{
