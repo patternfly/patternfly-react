@@ -4,7 +4,7 @@
   "description": "This library provides catalog view extensions for PatternFly 4 React.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/js/index.d.ts",
+  "types": "dist/js/esm.d.ts",
   "patternfly:src": "src/",
   "sideEffects": [
     "*.css",
@@ -29,15 +29,8 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/react-catalog-view-extension/README.md",
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && yarn build:sass",
-    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
-    "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
-    "build:types": "tsc -p tsconfig.gen-dts.json",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass && node-sass --output-style compressed --importer=./node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",
-    "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass && node-sass --output-style compressed --importer=./scripts/node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@patternfly/patternfly": "4.0.4",
@@ -47,25 +40,14 @@
     "patternfly": "^3.59.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-typescript": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
     "@types/react": "^16.4.0",
     "@types/react-dom": "^16.4.0",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "node-sass": "^4.12.0",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^15.6.2 || ^16.4.0"
   }

@@ -7,7 +7,6 @@ import {
   DropdownPosition
 } from '@patternfly/react-core';
 import { DropdownItemProps } from '@patternfly/react-core';
-import { Omit } from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { Provider } from './base';

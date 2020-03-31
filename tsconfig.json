@@ -1,0 +1,29 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/react-charts"
+    },
+    {
+      "path": "./packages/react-core"
+    },
+    {
+      "path": "./packages/react-icons"
+    },
+    {
+      "path": "./packages/react-inline-edit-extension"
+    },
+    {
+      "path": "./packages/react-styles"
+    },
+    {
+      "path": "./packages/react-table"
+    },
+    {
+      "path": "./packages/react-topology"
+    },
+    {
+      "path": "./packages/react-virtualized-extension"
+    }
+  ]
+}

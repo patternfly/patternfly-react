@@ -4,7 +4,7 @@
   "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/js/index.d.ts",
+  "types": "dist/js/esm.d.ts",
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
@@ -25,15 +25,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "node src/generateTokens.js && yarn build:babel:umd",
-    "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd -q",
+    "generate": "node src/generateTokens.js",
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
     "@patternfly/patternfly": "4.0.4",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
