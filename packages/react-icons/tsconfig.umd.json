@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/umd",
+    "module": "umd",
+    "tsBuildInfoFile": "dist/umd.tsbuildinfo"
+  }
+}

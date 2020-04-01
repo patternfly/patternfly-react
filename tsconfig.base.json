@@ -14,5 +14,10 @@
     "importHelpers": true,
     "target": "es5",
     "composite": true
-  }
+  },
+  "exclude": [
+    "**/**.test.tsx",
+    "**/**.test.ts",
+    "**/examples/**"
+  ],
 }

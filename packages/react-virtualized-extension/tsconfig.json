@@ -7,10 +7,5 @@
   "include": [
     "./src/*",
     "./src/**/*"
-  ],
-  "exclude": [
-    "./src/**/**.test.tsx",
-    "./src/**/**.test.ts",
-    "./src/**/examples/**"
   ]
 }
