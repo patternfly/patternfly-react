@@ -50,6 +50,7 @@
     "jest": "24.1.0",
     "jest-cli": "24.1.0",
     "lerna": "3.16.2",
+    "libnpm": "^3.0.1",
     "minimist": "^1.2.0",
     "mutation-observer": "^1.0.3",
     "plop": "^2.0.0",
