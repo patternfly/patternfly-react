@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { Switch } from '../Switch';
+import { assertPropTypes } from 'check-prop-types';
 
 const props = {
   onChange: jest.fn(),
@@ -66,4 +67,12 @@ test('switch passes value and event to onChange handler', () => {
   expect(input.prop('checked')).toBe(false);
   input.simulate('change', { target: { checked: true } });
   expect(props.onChange.mock.calls[0][0]).toBe(true);
+});
+
+test('switch accepts React.Node', () => {
+const view = mount(<Switch id="switch-react-node" label={<span>on</span>} labelOff={<span>off</span>}></Switch>);
+  expect(view.find('span#switch-react-node-on').find('span').first().text()).toBe('on');
+  expect(view.find('span#switch-react-node-off').find('span').first().text()).toBe('off');
+  assertPropTypes(Switch.propTypes, { label: <span>on</span> }, 'prop', Switch.name);
+  assertPropTypes(Switch.propTypes, { labelOff: <span>off</span> }, 'prop', Switch.name);
 });
