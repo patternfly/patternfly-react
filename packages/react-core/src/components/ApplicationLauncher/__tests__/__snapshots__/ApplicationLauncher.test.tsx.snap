@@ -704,7 +704,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={4}
                 isDisabled={false}
                 isHovered={false}
@@ -721,7 +720,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 >
                   <div
                     className="pf-c-app-launcher__separator"
-                    href={null}
                   />
                 </li>
               </InternalDropdownItem>
@@ -2088,7 +2086,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
-                href=""
                 index={4}
                 isDisabled={false}
                 isHovered={false}
@@ -2105,7 +2102,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 >
                   <div
                     className="pf-c-app-launcher__separator"
-                    href={null}
                   />
                 </li>
               </InternalDropdownItem>

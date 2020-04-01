@@ -1,6 +1,5 @@
 import { SFC, FormEvent } from 'react';
-import { TextInputProps } from '@patternfly/react-core';
-import { Omit } from '@patternfly/react-core';
+import { TextInputProps } from '@patternfly/react-core/dist/esm/components/TextInput';
 
 export interface TableTextInputProps extends Omit<TextInputProps, 'defaultValue' | 'autoFocus' | 'onBlur'> {
   defaultValue?: string;

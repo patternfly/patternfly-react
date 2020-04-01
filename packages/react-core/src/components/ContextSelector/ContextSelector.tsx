@@ -9,11 +9,7 @@ import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
-
-// Can't use ES6 imports :(
-// The types for it are also wrong, we should probably ditch this dependency.
-/* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const FocusTrap: any = require('focus-trap-react');
+import { FocusTrap } from '../../helpers';
 
 // seed for the aria-labelledby ID
 let currentId = 0;

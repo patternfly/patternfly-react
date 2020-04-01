@@ -10,9 +10,7 @@ import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
-import { keyHandler, getNextIndex } from '../../helpers/util';
-import { Omit, PickOptional } from '../../helpers/typeUtils';
-import { getOUIAProps, OUIAProps } from '../../helpers';
+import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
 import { Divider } from '../Divider';
 
 // seed for the aria-labelledby ID
@@ -46,6 +44,8 @@ export interface SelectProps
   selection?: string | SelectOptionObject;
   /** Array of selected items for multi select variants. */
   selections?: string[] | SelectOptionObject[];
+  /** Flag indicating if selection badge should be hidden for checkbox variant,default false */
+  isCheckboxSelectionBadgeHidden?: boolean;
   /** Id for select toggle element */
   toggleId?: string;
   /** Adds accessible text to Select */
@@ -373,6 +373,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       createText,
       noResultsFoundText,
       hasInlineFilter,
+      isCheckboxSelectionBadgeHidden,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -544,11 +545,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {selections && (Array.isArray(selections) && selections.length > 0) && (
-                    <div className={css(styles.selectToggleBadge)}>
-                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
-                    </div>
-                  )}
+                  {!isCheckboxSelectionBadgeHidden &&
+                    selections &&
+                    (Array.isArray(selections) && selections.length > 0) && (
+                      <div className={css(styles.selectToggleBadge)}>
+                        <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                      </div>
+                    )}
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>

@@ -8,6 +8,7 @@ import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
+import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
@@ -49,11 +50,6 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
   /** ID of toggle */
   toggleId?: string;
 }
-
-export const ApplicationLauncherContext = React.createContext({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onFavorite: (itemId: string, isFavorite: boolean) => {}
-});
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
   static defaultProps: ApplicationLauncherProps = {

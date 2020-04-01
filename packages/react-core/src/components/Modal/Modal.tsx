@@ -1,13 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { canUseDOM } from '../../helpers';
-
+import { canUseDOM, KEY_CODES, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
-
-import { KEY_CODES } from '../../helpers/constants';
 import { ModalContent } from './ModalContent';
-import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Modal. */

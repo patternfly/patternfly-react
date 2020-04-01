@@ -4,7 +4,6 @@ import { default as checkStyles } from '@patternfly/react-styles/css/components/
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */

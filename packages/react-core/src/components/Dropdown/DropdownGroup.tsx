@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Checkboxes within group */

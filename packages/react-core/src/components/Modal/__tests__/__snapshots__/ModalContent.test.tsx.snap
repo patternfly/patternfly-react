@@ -3,7 +3,6 @@
 exports[`Modal Content Test description 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -12,7 +11,6 @@ exports[`Modal Content Test description 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -47,7 +45,6 @@ exports[`Modal Content Test description 1`] = `
 exports[`Modal Content Test isOpen 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -56,7 +53,6 @@ exports[`Modal Content Test isOpen 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -88,7 +84,6 @@ exports[`Modal Content Test isOpen 1`] = `
 exports[`Modal Content Test only body 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -97,7 +92,6 @@ exports[`Modal Content Test only body 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -129,7 +123,6 @@ exports[`Modal Content Test only body 1`] = `
 exports[`Modal Content Test with footer 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -138,7 +131,6 @@ exports[`Modal Content Test with footer 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -175,7 +167,6 @@ exports[`Modal Content Test with footer 1`] = `
 exports[`Modal Content Test with onclose 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -184,7 +175,6 @@ exports[`Modal Content Test with onclose 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -222,7 +212,6 @@ exports[`Modal Content Test with onclose 1`] = `
 exports[`Modal Content test without footer 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -231,7 +220,6 @@ exports[`Modal Content test without footer 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -263,7 +251,6 @@ exports[`Modal Content test without footer 1`] = `
 exports[`Modal Test with custom footer 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -272,7 +259,6 @@ exports[`Modal Test with custom footer 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""
@@ -314,7 +300,6 @@ exports[`Modal Test with custom footer 1`] = `
 exports[`Modal Test with custom header 1`] = `
 <Backdrop>
   <FocusTrap
-    _createFocusTrap={[Function]}
     active={true}
     className="pf-l-bullseye"
     focusTrapOptions={
@@ -323,7 +308,6 @@ exports[`Modal Test with custom header 1`] = `
       }
     }
     paused={false}
-    tag="div"
   >
     <ModalBox
       className=""

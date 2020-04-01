@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AlertActionCloseButton should match snapshot (auto-generated) 1`] = `
-<Button
-  aria-label="''"
-  onClick={[Function]}
-  variant="plain"
->
-  <TimesIcon />
-</Button>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

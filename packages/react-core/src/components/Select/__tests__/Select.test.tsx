@@ -37,7 +37,8 @@ describe('select', () => {
   describe('single select', () => {
     test('renders closed successfully', () => {
       const view = mount(
-        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
+        <Select toggleId="single-select-closed" variant={SelectVariant.single} onSelect={jest.fn()}
+                onToggle={jest.fn()}>
           {selectOptions}
         </Select>
       );
@@ -46,7 +47,8 @@ describe('select', () => {
 
     test('renders disabled successfully', () => {
       const view = mount(
-        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isDisabled>
+        <Select toggleId="single-select-disabled" variant={SelectVariant.single}
+                onSelect={jest.fn()} onToggle={jest.fn()} isDisabled>
           {selectOptions}
         </Select>
       );
@@ -71,9 +73,10 @@ describe('select', () => {
     });
   });
 
-  test('renders up drection successfully', () => {
+  test('renders up direction successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.single} direction={SelectDirection.up} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="select-up" variant={SelectVariant.single} direction={SelectDirection.up}
+              onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -97,6 +100,7 @@ describe('select', () => {
       };
       const view = mount(
         <Select
+          toggleId="custom-select-filters"
           variant={SelectVariant.typeahead}
           onSelect={jest.fn()}
           onToggle={jest.fn()}
@@ -127,7 +131,25 @@ describe('select', () => {
 describe('checkbox select', () => {
   test('renders closed successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="checkbox-select-closed" variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders checkbox select selections properly', () => {
+    const view = mount(
+      <Select toggleId="checkbox-select-selections" variant={SelectVariant.checkbox} onToggle={jest.fn()} selections={[selectOptions[0]]}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true', () => {
+    const view = mount(
+      <Select toggleId="checkbox-select-hidden-badge" variant={SelectVariant.checkbox} onToggle={jest.fn()} isCheckboxSelectionBadgeHidden selections={[selectOptions[0]]}>
         {selectOptions}
       </Select>
     );
@@ -159,6 +181,23 @@ describe('checkbox select', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders expanded with filtering successfully', () => {
+    const view = mount(
+      <Select
+        toggleId="checkbox-select-expanded-filtered"
+        variant={SelectVariant.checkbox}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        onClear={jest.fn()}
+        isExpanded
+        hasInlineFilter
+      >
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('renders expanded successfully with custom objects', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
@@ -182,7 +221,7 @@ describe('checkbox select', () => {
 describe('typeahead select', () => {
   test('renders closed successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="typeahead-select-closed" variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -237,7 +276,7 @@ describe('typeahead select', () => {
 describe('typeahead multi select', () => {
   test('renders closed successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="typeahead-multi-select-closed" variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -256,6 +295,7 @@ describe('typeahead multi select', () => {
   test('renders selected successfully', () => {
     const view = mount(
       <Select
+        toggleId="typeahead-multi-select-selected"
         variant={SelectVariant.typeaheadMulti}
         selections={['Mr', 'Mrs']}
         onSelect={jest.fn()}
@@ -315,7 +355,7 @@ describe('toggle icon', () => {
   const ToggleIcon = <div>Icon</div>;
   test('select single', () => {
     const view = mount(
-      <Select toggleIcon={ToggleIcon} variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="select-toggle-icon-single" toggleIcon={ToggleIcon} variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -324,7 +364,7 @@ describe('toggle icon', () => {
 
   test('select checkbox', () => {
     const view = mount(
-      <Select toggleIcon={ToggleIcon} variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="checkbox-select-toggle-icon" toggleIcon={ToggleIcon} variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -333,7 +373,7 @@ describe('toggle icon', () => {
 
   test('typeahead select', () => {
     const view = mount(
-      <Select toggleIcon={ToggleIcon} variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="typeahead-select-toggle-icon" toggleIcon={ToggleIcon} variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -342,7 +382,7 @@ describe('toggle icon', () => {
 
   test('typeahead multi select', () => {
     const view = mount(
-      <Select toggleIcon={ToggleIcon} variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select toggleId="multi-typeahead-select-toggle-icon" toggleIcon={ToggleIcon} variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -352,7 +392,7 @@ describe('toggle icon', () => {
 
 describe('select with custom content', () => {
   test('renders closed successfully', () => {
-    const view = mount(<Select customContent="testing custom" onToggle={jest.fn()} />);
+    const view = mount(<Select toggleId="select-custom-content" customContent="testing custom" onToggle={jest.fn()} />);
     expect(view).toMatchSnapshot();
   });
   test('renders expanded successfully', () => {

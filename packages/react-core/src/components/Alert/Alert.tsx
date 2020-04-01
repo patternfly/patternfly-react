@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, getOUIAProps, OUIAProps } from '../../helpers';
-import { Omit } from '../../helpers/typeUtils';
+import { AlertContext } from './AlertContext';
 
 export enum AlertVariant {
   success = 'success',
@@ -48,7 +48,7 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
   ouiaId,
   ...props
 }: AlertProps & OUIAProps) => {
-  const readerTitle = (
+  const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
       {title}
@@ -74,11 +74,13 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
       })}
     >
       <AlertIcon variant={variant} />
-      <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
+      <h4 className={css(styles.alertTitle)}>{getHeadingContent}</h4>
       {children && <div className={css(styles.alertDescription)}>{children}</div>}
-      {action && (
-        <div className={css(styles.alertAction)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
-      )}
+      <AlertContext.Provider value={{ title, variantLabel }}>
+        {action && (typeof action === 'object' || typeof action === 'string') && (
+          <div className={css(styles.alertAction)}>{action}</div>
+        )}
+      </AlertContext.Provider>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabContent should match snapshot (auto-generated) 1`] = `
-<TabContent0
+<TabContentBase
   activeKey={1}
   aria-label="string"
   child={
@@ -12,8 +12,8 @@ exports[`TabContent should match snapshot (auto-generated) 1`] = `
   className="string"
   eventKey={1}
   id="string"
-  innerRef={[Function]}
+  innerRef={null}
 >
   any
-</TabContent0>
+</TabContentBase>
 `;

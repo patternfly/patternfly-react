@@ -4,7 +4,6 @@ import { css } from '@patternfly/react-styles';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { AriaProps, ProgressBar } from './ProgressBar';
-import { Omit } from '../../helpers/typeUtils';
 
 export enum ProgressMeasureLocation {
   outside = 'outside',

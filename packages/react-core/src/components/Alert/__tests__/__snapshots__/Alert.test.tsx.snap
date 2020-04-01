@@ -8,7 +8,7 @@ exports[`Alert - danger Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample danger alert"
   variant="danger"
 >
   <div
@@ -72,6 +72,7 @@ exports[`Alert - danger Action Close Button 1`] = `
       >
         Danger alert:
       </span>
+      Sample danger alert
     </h4>
     <div
       className="pf-c-alert__description"
@@ -84,8 +85,6 @@ exports[`Alert - danger Action Close Button 1`] = `
       <AlertActionCloseButton
         aria-label="Close"
         onClose={[MockFunction]}
-        title=""
-        variantLabel="Danger alert:"
       >
         <Button
           aria-label="Close"
@@ -230,15 +229,10 @@ exports[`Alert - danger Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title=""
-        variantLabel="Danger alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title=""
           variant="link"
-          variantLabel="Danger alert:"
         >
           <button
             aria-disabled={null}
@@ -249,9 +243,7 @@ exports[`Alert - danger Action Link 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title=""
             type="button"
-            variantLabel="Danger alert:"
           >
             <span
               className="pf-c-button__text"
@@ -347,15 +339,10 @@ exports[`Alert - danger Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Danger alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Danger alert:"
         >
           <button
             aria-disabled={null}
@@ -366,9 +353,7 @@ exports[`Alert - danger Action and Title 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Danger alert:"
           >
             <span
               className="pf-c-button__text"
@@ -465,15 +450,10 @@ exports[`Alert - danger Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Danger alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Danger alert:"
         >
           <button
             aria-disabled={null}
@@ -484,9 +464,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Danger alert:"
           >
             <span
               className="pf-c-button__text"
@@ -821,7 +799,7 @@ exports[`Alert - default Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample default alert"
   variant="default"
 >
   <div
@@ -885,6 +863,7 @@ exports[`Alert - default Action Close Button 1`] = `
       >
         Default alert:
       </span>
+      Sample default alert
     </h4>
     <div
       className="pf-c-alert__description"
@@ -897,8 +876,6 @@ exports[`Alert - default Action Close Button 1`] = `
       <AlertActionCloseButton
         aria-label="Close"
         onClose={[MockFunction]}
-        title=""
-        variantLabel="Default alert:"
       >
         <Button
           aria-label="Close"
@@ -1043,15 +1020,10 @@ exports[`Alert - default Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title=""
-        variantLabel="Default alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title=""
           variant="link"
-          variantLabel="Default alert:"
         >
           <button
             aria-disabled={null}
@@ -1062,9 +1034,7 @@ exports[`Alert - default Action Link 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title=""
             type="button"
-            variantLabel="Default alert:"
           >
             <span
               className="pf-c-button__text"
@@ -1160,15 +1130,10 @@ exports[`Alert - default Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Default alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Default alert:"
         >
           <button
             aria-disabled={null}
@@ -1179,9 +1144,7 @@ exports[`Alert - default Action and Title 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Default alert:"
           >
             <span
               className="pf-c-button__text"
@@ -1278,15 +1241,10 @@ exports[`Alert - default Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Default alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Default alert:"
         >
           <button
             aria-disabled={null}
@@ -1297,9 +1255,7 @@ exports[`Alert - default Custom aria label 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Default alert:"
           >
             <span
               className="pf-c-button__text"
@@ -1634,7 +1590,7 @@ exports[`Alert - info Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample info alert"
   variant="info"
 >
   <div
@@ -1698,6 +1654,7 @@ exports[`Alert - info Action Close Button 1`] = `
       >
         Info alert:
       </span>
+      Sample info alert
     </h4>
     <div
       className="pf-c-alert__description"
@@ -1710,8 +1667,6 @@ exports[`Alert - info Action Close Button 1`] = `
       <AlertActionCloseButton
         aria-label="Close"
         onClose={[MockFunction]}
-        title=""
-        variantLabel="Info alert:"
       >
         <Button
           aria-label="Close"
@@ -1856,15 +1811,10 @@ exports[`Alert - info Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title=""
-        variantLabel="Info alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title=""
           variant="link"
-          variantLabel="Info alert:"
         >
           <button
             aria-disabled={null}
@@ -1875,9 +1825,7 @@ exports[`Alert - info Action Link 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title=""
             type="button"
-            variantLabel="Info alert:"
           >
             <span
               className="pf-c-button__text"
@@ -1973,15 +1921,10 @@ exports[`Alert - info Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Info alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Info alert:"
         >
           <button
             aria-disabled={null}
@@ -1992,9 +1935,7 @@ exports[`Alert - info Action and Title 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Info alert:"
           >
             <span
               className="pf-c-button__text"
@@ -2091,15 +2032,10 @@ exports[`Alert - info Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Info alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Info alert:"
         >
           <button
             aria-disabled={null}
@@ -2110,9 +2046,7 @@ exports[`Alert - info Custom aria label 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Info alert:"
           >
             <span
               className="pf-c-button__text"
@@ -2447,7 +2381,7 @@ exports[`Alert - success Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample success alert"
   variant="success"
 >
   <div
@@ -2511,6 +2445,7 @@ exports[`Alert - success Action Close Button 1`] = `
       >
         Success alert:
       </span>
+      Sample success alert
     </h4>
     <div
       className="pf-c-alert__description"
@@ -2523,8 +2458,6 @@ exports[`Alert - success Action Close Button 1`] = `
       <AlertActionCloseButton
         aria-label="Close"
         onClose={[MockFunction]}
-        title=""
-        variantLabel="Success alert:"
       >
         <Button
           aria-label="Close"
@@ -2669,15 +2602,10 @@ exports[`Alert - success Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title=""
-        variantLabel="Success alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title=""
           variant="link"
-          variantLabel="Success alert:"
         >
           <button
             aria-disabled={null}
@@ -2688,9 +2616,7 @@ exports[`Alert - success Action Link 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title=""
             type="button"
-            variantLabel="Success alert:"
           >
             <span
               className="pf-c-button__text"
@@ -2786,15 +2712,10 @@ exports[`Alert - success Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Success alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Success alert:"
         >
           <button
             aria-disabled={null}
@@ -2805,9 +2726,7 @@ exports[`Alert - success Action and Title 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Success alert:"
           >
             <span
               className="pf-c-button__text"
@@ -2904,15 +2823,10 @@ exports[`Alert - success Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Success alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Success alert:"
         >
           <button
             aria-disabled={null}
@@ -2923,9 +2837,7 @@ exports[`Alert - success Custom aria label 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Success alert:"
           >
             <span
               className="pf-c-button__text"
@@ -3260,7 +3172,7 @@ exports[`Alert - warning Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
-  title=""
+  title="Sample warning alert"
   variant="warning"
 >
   <div
@@ -3324,6 +3236,7 @@ exports[`Alert - warning Action Close Button 1`] = `
       >
         Warning alert:
       </span>
+      Sample warning alert
     </h4>
     <div
       className="pf-c-alert__description"
@@ -3336,8 +3249,6 @@ exports[`Alert - warning Action Close Button 1`] = `
       <AlertActionCloseButton
         aria-label="Close"
         onClose={[MockFunction]}
-        title=""
-        variantLabel="Warning alert:"
       >
         <Button
           aria-label="Close"
@@ -3482,15 +3393,10 @@ exports[`Alert - warning Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title=""
-        variantLabel="Warning alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title=""
           variant="link"
-          variantLabel="Warning alert:"
         >
           <button
             aria-disabled={null}
@@ -3501,9 +3407,7 @@ exports[`Alert - warning Action Link 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title=""
             type="button"
-            variantLabel="Warning alert:"
           >
             <span
               className="pf-c-button__text"
@@ -3599,15 +3503,10 @@ exports[`Alert - warning Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Warning alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Warning alert:"
         >
           <button
             aria-disabled={null}
@@ -3618,9 +3517,7 @@ exports[`Alert - warning Action and Title 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Warning alert:"
           >
             <span
               className="pf-c-button__text"
@@ -3717,15 +3614,10 @@ exports[`Alert - warning Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        title="Some title"
-        variantLabel="Warning alert:"
-      >
+      <AlertActionLink>
         <Button
           className=""
-          title="Some title"
           variant="link"
-          variantLabel="Warning alert:"
         >
           <button
             aria-disabled={null}
@@ -3736,9 +3628,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             data-ouia-safe={true}
             disabled={false}
             tabIndex={null}
-            title="Some title"
             type="button"
-            variantLabel="Warning alert:"
           >
             <span
               className="pf-c-button__text"
