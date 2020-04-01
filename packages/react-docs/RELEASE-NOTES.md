@@ -35,7 +35,7 @@ Packages released:
   - Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/pull/3844))
 - **Select:**
   - Fixed group select options in single variant ([#3838](https://github.com/patternfly/patternfly-react/pull/3838))
-  - Allow count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/pull/3976))
+  - Allowed count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/pull/3976))
   - Added logic for disabled default options for typeahead ([#3895](https://github.com/patternfly/patternfly-react/pull/3895))
 ## Table
   - Fixed forward ref types ([#3919](https://github.com/patternfly/patternfly-react/pull/3919))
@@ -50,7 +50,7 @@ Packages released:
   - Created variables by file in react-tokens ([#3896](https://github.com/patternfly/patternfly-react/pull/3896))
 - **Types:**
   - Fixed tippy types, remove copyTS ([#3940](https://github.com/patternfly/patternfly-react/pull/3940))
-  - In-housed focusTrap ([#3967](https://github.com/patternfly/patternfly-react/pull/3967))
+  - Added in-house focusTrap ([#3967](https://github.com/patternfly/patternfly-react/pull/3967))
   - Removed a few usages of prop-types ([#3968](https://github.com/patternfly/patternfly-react/pull/3968))
 
 ## 2020.03 release notes (2020-03-10)
