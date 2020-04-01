@@ -49,6 +49,10 @@ function isModifier(className) {
 function generateCSSinJS() {
   const outDir = path.resolve(__dirname, '../css');
   const pfStylesDir = path.dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
+  if (fs.existsSync(outDir)) {
+    console.log('Not overwriting generated CSS-in-JS files.');
+    return;
+  }
 
   const patternflyCSSFiles = glob.sync('**/*.css', {
     cwd: pfStylesDir,

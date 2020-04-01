@@ -2,8 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const icons = require('./icons');
 
-const destDir = path.join(__dirname, '../src/icons');
-
 const removeSnake = s =>
   s
     .toUpperCase()
@@ -15,8 +13,12 @@ const pascalCase = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])
  * Generates src/icons/*.tsx files
  */
 function generateSrc() {
+  const destDir = path.join(__dirname, '../src/icons');
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir);
+  } else {
+    console.log('Not overwriting generated icon files.');
+    return;
   }
 
   const index = [];
