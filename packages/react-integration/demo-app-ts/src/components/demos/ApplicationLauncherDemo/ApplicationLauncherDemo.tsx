@@ -5,7 +5,7 @@ interface ApplicationLauncherState {
   isOpen: boolean;
 }
 
-export class ApplicationLauncherDemo extends React.Component<null, ApplicationLauncherState> {
+export class ApplicationLauncherDemo extends React.Component<{}, ApplicationLauncherState> {
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
   constructor(props: {}) {

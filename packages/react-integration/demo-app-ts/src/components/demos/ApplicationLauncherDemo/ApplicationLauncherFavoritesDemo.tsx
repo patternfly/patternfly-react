@@ -19,7 +19,7 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
     filteredItems: []
   };
 
-  appLauncherItems = [
+  appLauncherItems: JSX.Element[] = [
     <ApplicationLauncherGroup key="group 1c">
       <ApplicationLauncherItem key="group 1a" id="item-1">
         Item without group title
@@ -73,9 +73,9 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
         filteredItems: []
       });
     } else {
-      const filteredGroups: JSX.Element[] | [] = this.appLauncherItems
-        .map(group => {
-          const filteredGroup: JSX.Element | [] = React.cloneElement(group, {
+      const filteredGroups: JSX.Element[] = this.appLauncherItems
+        .map((group: JSX.Element) => {
+          const filteredGroup: JSX.Element = React.cloneElement(group, {
             children: group.props.children.filter((item: JSX.Element) => {
               if (item.type === ApplicationLauncherSeparator) {
                 return item;
@@ -90,10 +90,9 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
             return filteredGroup;
           } else {
             return <></>;
-         }
+          }
         })
         .filter(newGroup => newGroup);
-      console.log(filteredGroups);
 
       if (filteredGroups.length > 0) {
         let lastGroup: JSX.Element = filteredGroups.pop();
