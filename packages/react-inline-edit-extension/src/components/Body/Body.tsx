@@ -1,29 +1,9 @@
-import React from 'react';
-import { TableContext, TableBody, isRowExpanded } from '@patternfly/react-table';
+import * as React from 'react';
+import { TableBodyProps, isRowExpanded, IRowData, IExtraRowData, TableBody, IRow, IComputedData } from '@patternfly/react-table';
+import { showIdWarnings, TableEditConfirmation } from '../../utils';
+import { IEditedCellData } from '../InlineEdit/editableTableBody';
 
-import PropTypes from 'prop-types';
-import { TableEditConfirmation } from './constants';
-import { showIdWarnings } from './utils/utils';
-
-const propTypes = {
-  ...TableBody.propTypes,
-  editConfig: PropTypes.shape({
-    editConfirmationType: PropTypes.oneOf(Object.values(TableEditConfirmation)),
-    onEditCellClicked: PropTypes.func,
-    onEditConfirmed: PropTypes.func,
-    onEditCanceled: PropTypes.func
-  }).isRequired,
-  /** Function that is fired when user clicks on a row if not editing.  */
-  onRowClick: PropTypes.func
-};
-
-const defaultProps = {
-  ...TableBody.defaultProps,
-  editConfig: null,
-  onRowClick: () => undefined
-};
-
-const resolveCascadeEditability = rows => {
+const resolveCascadeEditability = (rows: ExtendedIRow[]) => {
   // eslint-disable-next-line no-undef
   const isRowExpandedIndexes = new Set(
     rows.map((row, idx) => (isRowExpanded(row, rows) ? idx : null)).filter(row => row !== null)
@@ -56,14 +36,20 @@ const resolveCascadeEditability = rows => {
   }
 };
 
-const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) => {
-  const { target } = event;
+const onRow = (
+  event: React.MouseEvent<Element, MouseEvent>,
+  row: IRow,
+  rowProps: IExtraRowData,
+  computedData: IComputedData,
+  { onRowClick, editConfig }: InlineEditBodyProps
+) => {
+  const target = event.target as any;
   const cell = target.closest('[data-key]');
   // eslint-disable-next-line radix
   const cellNumber = parseInt(cell && cell.getAttribute('data-key'), 10);
   const hasCellNumber = !Number.isNaN(cellNumber);
 
-  let onEditCellClicked;
+  let onEditCellClicked: () => void;
 
   if (hasCellNumber && editConfig && typeof editConfig.onEditCellClicked === 'function') {
     // resolve closest (e.g. for dropdowns) usable id of a clicked element inside a cell
@@ -75,7 +61,7 @@ const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) =
     }
 
     onEditCellClicked = () => {
-      editConfig.onEditCellClicked(event, row, {
+      editConfig.onEditCellClicked(event as any, row, {
         ...rowProps,
         columnIndex: cellNumber,
         elementId
@@ -98,13 +84,40 @@ const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) =
   }, 0);
 };
 
-const Body = ({ BodyComponent, rows, editConfig, onRowClick, ...props }) => {
+export interface EditConfig {
+  editConfirmationType?: typeof TableEditConfirmation | keyof typeof TableEditConfirmation;
+  onEditCellClicked?: (value: React.MouseEvent, row: IRowData, extra: IEditedCellData) => void;
+  onEditConfirmed?: (value: React.MouseEvent, row: IRowData, rowProps: IExtraRowData) => void;
+  onEditCanceled?: (value: React.MouseEvent, row: IRowData, rowProps: IExtraRowData) => void;
+}
+
+export interface InlineEditBodyProps extends TableBodyProps {
+  editConfig: EditConfig;
+}
+
+export interface BodyProps extends TableBodyProps {
+  BodyComponent: typeof TableBody;
+  editConfig: EditConfig;
+}
+
+interface ExtendedIRow extends IRow {
+  editConfig: EditConfig;
+  isTableEditing: boolean;
+}
+
+export const Body = ({
+  BodyComponent,
+  rows = [],
+  editConfig,
+  onRowClick = () => {},
+  ...props
+}: BodyProps) => {
   const isTableEditing = rows.some(row => row.isEditing);
   const mappedRows = rows.map(row => ({
     ...row,
     editConfig,
     isTableEditing
-  }));
+  })) as ExtendedIRow[];
 
   resolveCascadeEditability(mappedRows);
 
@@ -118,40 +131,3 @@ const Body = ({ BodyComponent, rows, editConfig, onRowClick, ...props }) => {
     />
   );
 };
-
-Body.propTypes = {
-  BodyComponent: PropTypes.any.isRequired,
-  rows: PropTypes.array,
-  editConfig: PropTypes.any,
-  onRowClick: PropTypes.func
-};
-
-Body.defaultProps = {
-  rows: [],
-  editConfig: null,
-  onRowClick: () => undefined
-};
-
-const editableTableBody = BodyComponent => {
-  const InlineEditBody = ({ editConfig, onRowClick, ...props }) => (
-    <TableContext.Consumer>
-      {({ rows, ...consumedProps }) => (
-        <Body
-          {...consumedProps}
-          rows={rows}
-          {...props}
-          editConfig={editConfig}
-          onRowClick={onRowClick}
-          BodyComponent={BodyComponent}
-        />
-      )}
-    </TableContext.Consumer>
-  );
-
-  InlineEditBody.propTypes = propTypes;
-  InlineEditBody.defaultProps = defaultProps;
-
-  return InlineEditBody;
-};
-
-export default editableTableBody;

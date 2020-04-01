@@ -2,6 +2,9 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/react-catalog-view-extension/tsconfig.cjs.json"
+    },
+    {
       "path": "./packages/react-charts/tsconfig.cjs.json"
     },
     {
