@@ -30,7 +30,7 @@ Packages released:
 - **Dropdown:**
   - Removed duplicate prop ([#3923](https://github.com/patternfly/patternfly-react/pull/3923))
   - Cleaned console errors in Dropdown.test.tsx ([#3861](https://github.com/patternfly/patternfly-react/pull/3861))
-  - Support router link as DropdownItems through component API ([#3995](https://github.com/patternfly/patternfly-react/pull/3995))
+  - Supported router link as DropdownItems through component API ([#3995](https://github.com/patternfly/patternfly-react/pull/3995))
 - **Empty state:**
   - Added support for extra-large empty state ([#3844](https://github.com/patternfly/patternfly-react/pull/3844))
 - **Select:**
