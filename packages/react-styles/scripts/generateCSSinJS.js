@@ -76,6 +76,7 @@ function generateCSSinJS() {
     fs.outputFileSync(
       cssOutputPath.replace(/.css$/, '.js'),
       `require('./${cssOutputFilename}');
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = ${jsonString};`
     );
     fs.outputFileSync(

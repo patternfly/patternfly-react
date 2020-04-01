@@ -13,7 +13,8 @@
     "strictNullChecks": false,
     "importHelpers": true,
     "target": "es5",
-    "composite": true
+    "composite": true,
+    "sourceMap": true
   },
   "exclude": [
     "**/**.test.tsx",
