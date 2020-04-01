@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "generate": "node src/generateTokens.js",
+    "generate": "node scripts/generateTokens.js",
     "clean": "rimraf dist"
   },
   "devDependencies": {

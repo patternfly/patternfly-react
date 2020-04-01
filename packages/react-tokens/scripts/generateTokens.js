@@ -57,3 +57,6 @@ readdirSync(templateDir).forEach(templateFile => {
     );
   });
 });
+
+console.log('Generated files for', Object.keys(tokens).length, 'tokens.');
+

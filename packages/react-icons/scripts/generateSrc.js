@@ -9,14 +9,7 @@ const removeSnake = s =>
     .toUpperCase()
     .replace('-', '')
     .replace('_', '');
-const toCamel = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])/gi, removeSnake)}`;
-
-/**
- * @param {string} val possibly undefined value to transform into a string
- */
-function stringify(val) {
-  return val ? val : '';
-}
+const pascalCase = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])/gi, removeSnake)}`;
 
 /**
  * Generates src/icons/*.tsx files
@@ -29,7 +22,7 @@ function generateSrc() {
   const index = [];
   Object.entries(icons).forEach(([iconName, icon]) => {
     const fname = `${iconName}-icon.tsx`;
-    const jsName = `${toCamel(iconName)}Icon`;
+    const jsName = `${pascalCase(iconName)}Icon`;
     fs.writeFileSync(
       path.join(destDir, fname),
       `import * as React from 'react';
@@ -42,7 +35,7 @@ export const ${jsName}Config = {
   svgPath: '${icon.svgPathData}',
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
-  transform: '${stringify(icon.transform)}'
+  transform: '${icon.transform || ''}'
 };
 
 export const ${jsName}: React.FunctionComponent<Omit<SVGIconProps, 'config'>> = (
@@ -67,7 +60,7 @@ export default ${jsName};\n`
   );
 
   // eslint-disable-next-line no-console
-  console.log('Generated', index.length, 'icons.');
+  console.log('Generated files for', index.length, 'icons.');
 }
 
 generateSrc();

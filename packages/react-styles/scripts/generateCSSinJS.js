@@ -46,7 +46,7 @@ function isModifier(className) {
   return Boolean(className && className.startsWith) && className.startsWith('.pf-m-');
 }
 
-function generateClasses() {
+function generateCSSinJS() {
   const outDir = path.resolve(__dirname, '../css');
   const pfStylesDir = path.dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 
@@ -56,11 +56,12 @@ function generateClasses() {
     absolute: true
   });
   const srcCSSFiles = glob.sync('src/css/**/*.css');
-
-  [
+  const combinedCSSFiles = [
     ...patternflyCSSFiles,
     ...srcCSSFiles
-  ].forEach(filePath => {
+  ];
+
+  combinedCSSFiles.forEach(filePath => {
     const cssContent = fs.readFileSync(filePath, 'utf8');
     const cssOutputPath = path.join(outDir, filePath.replace(pfStylesDir, '').replace('src/css', ''));
     const cssOutputFilename = path.basename(cssOutputPath);
@@ -80,6 +81,8 @@ declare const _default: ${jsonString};
 export default _default;`
     );
   });
+
+  console.log('Generated files for', combinedCSSFiles.length, 'CSS files.');
 }
 
-generateClasses();
+generateCSSinJS();

@@ -15,7 +15,7 @@
     "tag": "prerelease-v4"
   },
   "scripts": {
-    "generate": "node scripts/generateClasses.js",
+    "generate": "node scripts/generateCSSinJS.js",
     "clean": "rimraf dist css"
   },
   "devDependencies": {
