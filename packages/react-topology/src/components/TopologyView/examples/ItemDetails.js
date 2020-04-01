@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title, TitleSizes } from '@patternfly/react-core/dist/js/components/Title/Title';
+import { Title, TitleSizes } from '@patternfly/react-core/dist/esm/components/Title/Title';
 import { TopologySideBar } from '@patternfly/react-topology';
 
 export class ItemDetails extends React.Component {

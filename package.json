@@ -34,7 +34,6 @@
     "change-case": "^3.0.2",
     "codecov": "^3.2.0",
     "commitizen": "^3.0.7",
-    "concurrently": "^3.5.1",
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
@@ -63,7 +62,8 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn generate && tsc -b -v",
+    "build": "tsc -b -v",
+    "build:all": "yarn build && lerna run build --stream --parallel",
     "build:docs": "lerna run build:docs --stream",
     "build:integration:report": "lerna run build:integration:report --stream",
     "build:integration": "lerna run build:demo-app --stream",

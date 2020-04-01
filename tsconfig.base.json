@@ -2,15 +2,16 @@
   "compilerOptions": {
     "jsx": "react",
     "lib": [
-      "es2017",
+      "es2015",
       "dom"
     ],
     "esModuleInterop": true,
-    "module": "es6",
+    "module": "es2015",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": false,
+    "importHelpers": true,
     "target": "es5",
     "composite": true
   }

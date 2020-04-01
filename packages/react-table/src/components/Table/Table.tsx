@@ -5,7 +5,7 @@ import { getOUIAProps, OUIAProps } from '@patternfly/react-core';
 import {
   DropdownDirection,
   DropdownPosition
-} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+} from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
 import { DropdownItemProps } from '@patternfly/react-core/dist/esm/components/Dropdown/DropdownItem';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';

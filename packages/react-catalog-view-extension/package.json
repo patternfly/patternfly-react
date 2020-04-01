@@ -45,6 +45,7 @@
     "node-sass": "^4.12.0",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2",
+    "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {

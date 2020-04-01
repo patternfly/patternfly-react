@@ -29,6 +29,9 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
+    "build": "yarn build:cjs && yarn build:umd",
+    "build:cjs": "tsc --outDir dist/js --module commonjs --tsBuildInfoFile dist/js.tsbuildinfo",
+    "build:umd": "tsc --outDir dist/umd --module umd --tsBuildInfoFile dist/umd.tsbuildinfo",
     "clean": "rimraf dist",
     "gen:tests": "yo tsx-docgen"
   },
@@ -57,6 +60,7 @@
     "rollup": "^2.2.0",
     "rollup-plugin-scss": "^2.1.0",
     "rollup-plugin-terser": "^5.3.0",
+    "tslib": "^1.11.1",
     "typescript": "^3.8.3",
     "yo": "^3.1.1"
   },
