@@ -21,8 +21,13 @@ export interface DemoSortableTableProps {
   id?: string;
 }
 
+interface Row {
+  row?: IRow | string[];
+  [key: number]: Row;
+}
+
 interface DemoSortableTableState {
-  rows: (IRow | string[])[];
+  rows: Row[];
   columns: (ICell | string)[];
   sortBy: ISortBy;
 }
