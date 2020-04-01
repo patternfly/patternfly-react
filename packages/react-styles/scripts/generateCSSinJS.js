@@ -75,12 +75,12 @@ function generateCSSinJS() {
     fs.outputFileSync(cssOutputPath, cssContent);
     fs.outputFileSync(
       cssOutputPath.replace(/.css$/, '.js'),
-      `require('${cssOutputFilename}');
+      `require('./${cssOutputFilename}');
 exports.default = ${jsonString};`
     );
     fs.outputFileSync(
       cssOutputPath.replace(/.css$/, '.d.ts'),
-      `import '${cssOutputFilename}';
+      `import './${cssOutputFilename}';
 declare const _default: ${jsonString};
 export default _default;`
     );
