@@ -95,11 +95,13 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
         .filter(newGroup => newGroup);
 
       if (filteredGroups.length > 0) {
-        let lastGroup: JSX.Element = filteredGroups.pop();
-        lastGroup = React.cloneElement(lastGroup, {
-          children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
-        });
-        filteredGroups.push(lastGroup);
+        let lastGroup = filteredGroups.pop();
+        if (lastGroup !== undefined) {
+          lastGroup = React.cloneElement(lastGroup, {
+            children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
+          });
+          filteredGroups.push(lastGroup);
+        }
       }
 
       this.setState({
