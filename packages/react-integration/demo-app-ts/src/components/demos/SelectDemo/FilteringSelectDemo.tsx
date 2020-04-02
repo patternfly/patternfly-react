@@ -1,4 +1,4 @@
-import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject, SelectGroup, SelectVariant } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 /* eslint-disable no-console */
@@ -34,9 +34,9 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
     });
   };
 
-  onSelect = (event: React.ChangeEvent, selection: string) => {
+  onSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { selections } = this.state;
-    if (selections.includes(selection)) {
+    if (selections.includes(selection.toString())) {
       this.setState(
         (prevState: FilteringSelectDemoState) => ({
           selections: prevState.selections.filter(item => item !== selection)
@@ -65,6 +65,8 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
           });
           if (filteredGroup.props.children.length > 0) {
             return filteredGroup;
+          } else {
+            return <></>;
           }
         })
         .filter(newGroup => newGroup);

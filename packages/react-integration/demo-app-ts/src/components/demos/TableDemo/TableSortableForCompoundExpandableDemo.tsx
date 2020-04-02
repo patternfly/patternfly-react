@@ -21,13 +21,8 @@ export interface DemoSortableTableProps {
   id?: string;
 }
 
-interface Row {
-  row?: IRow | string[];
-  [key: number]: Row;
-}
-
 interface DemoSortableTableState {
-  rows: Row[];
+  rows: (IRow | string[])[];
   columns: (ICell | string)[];
   sortBy: ISortBy;
 }
@@ -52,8 +47,19 @@ export class DemoSortableTable extends React.Component<DemoSortableTableProps, D
     };
   }
 
+  // rows: (IRow | string[])[];
+  // IRow: { cells?: (React.ReactNode | IRowCell)[]; }
+  // rows: [
+  //   [ strings ] ||
+  //   IRows
+  // ]
+  // rows: [
+  //   this.props.firstColumnRows ? this.props.firstColumnRows : [''],
+  //   ['a', 'two', 'k', 'four', 'five'],
+  //   ['p', 'two', 'b', 'four', 'five']
+  // ],
   onSort = (_event: React.MouseEvent, index: number, direction: SortByDirection) => {
-    const sortedRows = this.state.rows.sort((a, b) => {
+    const sortedRows = this.state.rows.sort((a: IRow | string[], b: IRow | string[]) => {
       if (a && b) {
         if (a[index] < b[index]) {
           return -1;
