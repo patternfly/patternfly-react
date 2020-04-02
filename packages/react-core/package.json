@@ -31,6 +31,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build:bundle": "rollup -c && rollup -c --environment IS_PRODUCTION",
+    "generate": "node scripts/copyStyles.js",
     "gen:tests": "yo tsx-docgen"
   },
   "dependencies": {

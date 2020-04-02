@@ -310,18 +310,12 @@ export const TableContext = React.createContext({
 export class Table extends React.Component<TableProps & OUIAProps, {}> {
   static hasWarnBeta = false;
   static defaultProps = {
-    children: null as React.ReactNode,
-    className: '',
-    variant: null as TableVariant,
     borders: true,
     rowLabeledBy: 'simple-node',
     expandId: 'expandable-toggle',
     contentId: 'expanded-content',
     dropdownPosition: DropdownPosition.right,
     dropdownDirection: DropdownDirection.down,
-    header: undefined as React.ReactNode,
-    caption: undefined as React.ReactNode,
-    'aria-label': undefined as string,
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true
@@ -435,7 +429,7 @@ export class Table extends React.Component<TableProps & OUIAProps, {}> {
               stylesGrid.modifiers[
                 toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
               ],
-            styles.modifiers[variant],
+            styles.modifiers[variant as 'compact'],
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className

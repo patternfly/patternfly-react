@@ -9,8 +9,8 @@ import { inlineEditFormatterFactory } from './utils';
 import { TableEditConfirmation } from './constants';
 import { TableTextInput } from '../TableTextInput';
 
-import { rows, columns } from '../../test-helpers/data-sets';
-import { mockClosest, makeTableId } from '../../test-helpers/helpers';
+import { rows, columns } from '../../test/data-sets';
+import { mockClosest, makeTableId } from '../../test/helpers';
 
 const firstColTitle = 'editcolfirst';
 const lastColTitle = 'editcollast';

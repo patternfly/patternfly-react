@@ -4,7 +4,7 @@ import { mount } from 'enzyme/build';
 
 import { default as editableRowWrapper } from './editableRowWrapper';
 import { TableEditConfirmation } from './constants';
-import { mockClosest } from '../../test-helpers/helpers';
+import { mockClosest } from '../../test/helpers';
 
 const TestRow = ({ trRef }) => <tr ref={trRef} />;
 

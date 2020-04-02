@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Vertical Tabs Tab onActivate is called correctly 1`] = `
-<VerticalTabsTab
+<Component
   id="text-click"
   onActivate={
     [MockFunction] {
@@ -30,12 +30,12 @@ exports[`Vertical Tabs Tab onActivate is called correctly 1`] = `
       Click Me
     </a>
   </li>
-</VerticalTabsTab>
+</Component>
 `;
 
 exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
 <div>
-  <VerticalTabsTab
+  <Component
     id="default-wrap"
     title="Default Wrap"
   >
@@ -51,8 +51,8 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
         Default Wrap
       </a>
     </li>
-  </VerticalTabsTab>
-  <VerticalTabsTab
+  </Component>
+  <Component
     id="word-wrap"
     title="Word Wrap"
     wrapStyle="wrap"
@@ -69,8 +69,8 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
         Word Wrap
       </a>
     </li>
-  </VerticalTabsTab>
-  <VerticalTabsTab
+  </Component>
+  <Component
     id="truncate"
     title="Truncate"
     wrapStyle="truncate"
@@ -87,8 +87,8 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
         Truncate
       </a>
     </li>
-  </VerticalTabsTab>
-  <VerticalTabsTab
+  </Component>
+  <Component
     id="no-wrap"
     title="No Wrap"
     wrapStyle="nowrap"
@@ -105,12 +105,12 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
         No Wrap
       </a>
     </li>
-  </VerticalTabsTab>
+  </Component>
 </div>
 `;
 
 exports[`Vertical Tabs renders restricted tabs properly 1`] = `
-<VerticalTabs
+<Component
   className="test-vertical-tabs"
   id="vertical-tabs"
   restrictTabs={true}
@@ -119,7 +119,7 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
     className="vertical-tabs-pf restrict-tabs test-vertical-tabs"
     id="vertical-tabs"
   >
-    <VerticalTabsTab
+    <Component
       className="test-vertical-tabs-tab"
       id="all"
       shown={true}
@@ -137,8 +137,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
           All
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       hasActiveDescendant={true}
       id="one"
       title="Tab One"
@@ -154,13 +154,13 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
         >
           Tab One
         </a>
-        <VerticalTabs
+        <Component
           restrictTabs={true}
         >
           <ul
             className="vertical-tabs-pf restrict-tabs"
           >
-            <VerticalTabsTab
+            <Component
               id="one-one"
               key="one-one"
               title="Tab One-One"
@@ -176,14 +176,14 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                 >
                   Tab One-One
                 </a>
-                <VerticalTabs
+                <Component
                   activeTab={true}
                   restrictTabs={true}
                 >
                   <ul
                     className="vertical-tabs-pf restrict-tabs active-tab"
                   >
-                    <VerticalTabsTab
+                    <Component
                       active={true}
                       id="one-one-one"
                       key="one-one-one"
@@ -201,8 +201,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                           Tab One-One-One
                         </a>
                       </li>
-                    </VerticalTabsTab>
-                    <VerticalTabsTab
+                    </Component>
+                    <Component
                       active={false}
                       id="one-one-two"
                       key="one-one-two"
@@ -220,8 +220,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                           Tab One-One-Two
                         </a>
                       </li>
-                    </VerticalTabsTab>
-                    <VerticalTabsTab
+                    </Component>
+                    <Component
                       id="one-one-three"
                       key="one-one-three"
                       title="Tab One-One-Three"
@@ -238,12 +238,12 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                           Tab One-One-Three
                         </a>
                       </li>
-                    </VerticalTabsTab>
+                    </Component>
                   </ul>
-                </VerticalTabs>
+                </Component>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="one-two"
               key="one-two"
               title="Tab One-Two"
@@ -260,8 +260,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab One-Two
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="one-three"
               key="one-three"
               title="Tab One-Three"
@@ -278,12 +278,12 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab One-Three
                 </a>
               </li>
-            </VerticalTabsTab>
+            </Component>
           </ul>
-        </VerticalTabs>
+        </Component>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       className="test-tab-class"
       id="two"
       title="Tab Two"
@@ -299,14 +299,14 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
         >
           Tab Two
         </a>
-        <VerticalTabs
+        <Component
           activeTab={true}
           restrictTabs={true}
         >
           <ul
             className="vertical-tabs-pf restrict-tabs active-tab"
           >
-            <VerticalTabsTab
+            <Component
               active={true}
               id="two-one"
               key="one-one-one"
@@ -324,8 +324,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab Two-One
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               active={false}
               id="two-two"
               key="one-one-two"
@@ -343,8 +343,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab Two-Two
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="two-three"
               key="one-one-three"
               title="Tab Two-Three"
@@ -361,12 +361,12 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab Two-Three
                 </a>
               </li>
-            </VerticalTabsTab>
+            </Component>
           </ul>
-        </VerticalTabs>
+        </Component>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="three"
       title="Tab Three"
     >
@@ -381,13 +381,13 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
         >
           Tab Three
         </a>
-        <VerticalTabs
+        <Component
           restrictTabs={true}
         >
           <ul
             className="vertical-tabs-pf restrict-tabs"
           >
-            <VerticalTabsTab
+            <Component
               id="three-one"
               key="three-one"
               title="Tab Three-One"
@@ -404,8 +404,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab Three-One
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="three-two"
               key="three-two"
               title="Tab Three-Two"
@@ -422,12 +422,12 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                   Tab Three-Two
                 </a>
               </li>
-            </VerticalTabsTab>
+            </Component>
           </ul>
-        </VerticalTabs>
+        </Component>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="four"
       title="Tab Four"
     >
@@ -443,8 +443,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
           Tab Four
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="five"
       title="Tab Five"
     >
@@ -460,8 +460,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
           Tab Five
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="six"
       title="Tab Six"
     >
@@ -477,8 +477,8 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
           Tab Six
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="seven"
       title="Tab Seven"
     >
@@ -494,13 +494,13 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
           Tab Seven
         </a>
       </li>
-    </VerticalTabsTab>
+    </Component>
   </ul>
-</VerticalTabs>
+</Component>
 `;
 
 exports[`Vertical Tabs renders tabs properly 1`] = `
-<VerticalTabs
+<Component
   className="test-vertical-tabs"
   id="vertical-tabs"
 >
@@ -508,7 +508,7 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
     className="vertical-tabs-pf test-vertical-tabs"
     id="vertical-tabs"
   >
-    <VerticalTabsTab
+    <Component
       className="test-vertical-tabs-tab"
       id="all"
       title="All"
@@ -525,8 +525,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
           All
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="one"
       title="Tab One"
     >
@@ -541,11 +541,11 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
         >
           Tab One
         </a>
-        <VerticalTabs>
+        <Component>
           <ul
             className="vertical-tabs-pf"
           >
-            <VerticalTabsTab
+            <Component
               id="one-one"
               key="one-one"
               title="Tab One-One"
@@ -561,13 +561,13 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                 >
                   Tab One-One
                 </a>
-                <VerticalTabs
+                <Component
                   activeTab={true}
                 >
                   <ul
                     className="vertical-tabs-pf active-tab"
                   >
-                    <VerticalTabsTab
+                    <Component
                       active={true}
                       id="one-one-one"
                       key="one-one-one"
@@ -585,8 +585,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                           Tab One-One-One
                         </a>
                       </li>
-                    </VerticalTabsTab>
-                    <VerticalTabsTab
+                    </Component>
+                    <Component
                       active={false}
                       id="one-one-two"
                       key="one-one-two"
@@ -604,8 +604,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                           Tab One-One-Two
                         </a>
                       </li>
-                    </VerticalTabsTab>
-                    <VerticalTabsTab
+                    </Component>
+                    <Component
                       id="one-one-three"
                       key="one-one-three"
                       title="Tab One-One-Three"
@@ -622,12 +622,12 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                           Tab One-One-Three
                         </a>
                       </li>
-                    </VerticalTabsTab>
+                    </Component>
                   </ul>
-                </VerticalTabs>
+                </Component>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="one-two"
               key="one-two"
               title="Tab One-Two"
@@ -644,8 +644,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab One-Two
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="one-three"
               key="one-three"
               title="Tab One-Three"
@@ -662,12 +662,12 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab One-Three
                 </a>
               </li>
-            </VerticalTabsTab>
+            </Component>
           </ul>
-        </VerticalTabs>
+        </Component>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       className="test-tab-class"
       id="two"
       title="Tab Two"
@@ -683,11 +683,11 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
         >
           Tab Two
         </a>
-        <VerticalTabs>
+        <Component>
           <ul
             className="vertical-tabs-pf"
           >
-            <VerticalTabsTab
+            <Component
               id="two-one"
               key="one-one-one"
               title="Tab Two-One"
@@ -704,8 +704,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab Two-One
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="two-two"
               key="one-one-two"
               title="Tab Two-Two"
@@ -722,8 +722,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab Two-Two
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="two-three"
               key="one-one-three"
               title="Tab Two-Three"
@@ -740,12 +740,12 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab Two-Three
                 </a>
               </li>
-            </VerticalTabsTab>
+            </Component>
           </ul>
-        </VerticalTabs>
+        </Component>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="three"
       title="Tab Three"
     >
@@ -760,11 +760,11 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
         >
           Tab Three
         </a>
-        <VerticalTabs>
+        <Component>
           <ul
             className="vertical-tabs-pf"
           >
-            <VerticalTabsTab
+            <Component
               id="three-one"
               key="three-one"
               title="Tab Three-One"
@@ -781,8 +781,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab Three-One
                 </a>
               </li>
-            </VerticalTabsTab>
-            <VerticalTabsTab
+            </Component>
+            <Component
               id="three-two"
               key="three-two"
               title="Tab Three-Two"
@@ -799,12 +799,12 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                   Tab Three-Two
                 </a>
               </li>
-            </VerticalTabsTab>
+            </Component>
           </ul>
-        </VerticalTabs>
+        </Component>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="four"
       title="Tab Four"
     >
@@ -820,8 +820,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
           Tab Four
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="five"
       title="Tab Five"
     >
@@ -837,8 +837,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
           Tab Five
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="six"
       title="Tab Six"
     >
@@ -854,8 +854,8 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
           Tab Six
         </a>
       </li>
-    </VerticalTabsTab>
-    <VerticalTabsTab
+    </Component>
+    <Component
       id="seven"
       title="Tab Seven"
     >
@@ -871,7 +871,7 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
           Tab Seven
         </a>
       </li>
-    </VerticalTabsTab>
+    </Component>
   </ul>
-</VerticalTabs>
+</Component>
 `;

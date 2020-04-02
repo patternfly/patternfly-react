@@ -80,7 +80,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
             ) : (
               <DropdownItem
                 component="div"
-                onClick={event => this.onSelect(event, onClick)}
+                onClick={(event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => this.onSelect(event, onClick)}
                 {...props}
                 key={itemKey || key}
                 data-key={itemKey || key}

@@ -1,29 +1,20 @@
 module.exports = {
-  collectCoverage: true,
-  coverageReporters: ['lcov'],
-  clearMocks: true,
-  testMatch: ['**/__tests__/**/*.{js,ts}?(x)', '**/*.test.{js,ts}?(x)'],
-  modulePathIgnorePatterns: [
-    '<rootDir>/packages/*.*/dist/*.*',
-    '<rootDir>/packages/*.*/public/*.*',
-    '<rootDir>/packages/*.*/.cache/*.*'
-  ],
-  roots: ['<rootDir>/packages'],
-  setupFiles: ['<rootDir>/jest.env.js'],
-  snapshotSerializers: [
-    'enzyme-to-json/serializer',
-  ],
+  roots: ["<rootDir>/packages"],
   transform: {
-    '^.+\\.[jt]sx?$': 'babel-jest'
+    "^.+\\.tsx?$": "babel-jest"
   },
-  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|tippy.js|lodash)'],
+  testMatch: [
+    '<rootDir>/packages/**/__tests__/**/*.{js,ts}?(x)',
+    '<rootDir>/packages/**/*.test.{js,ts}?(x)'
+  ],
   testPathIgnorePatterns: [
     '<rootDir>/packages/react-integration/'
   ],
-  coveragePathIgnorePatterns: [
-    '/dist/'
-  ],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
-    "\\.(css|less)$": "<rootDir>/packages/react-styles/__mocks__/styleMock.js"
-  }
+    "\\.css$": "<rootDir>/packages/react-styles/__mocks__/styleMock.js"
+  },
+  // Setup Enzyme
+  snapshotSerializers: ["enzyme-to-json/serializer"],
+  setupFilesAfterEnv: ["<rootDir>/packages/setupEnzyme.js"]
 };

@@ -1,5 +1,5 @@
 import { isRowExpanded } from './utils';
-import { buildExpandableRows } from '../../../test-helpers/data-helpers';
+import { buildExpandableRows } from '../../../test/data-helpers';
 import { IRow } from '../Table';
 
 const assertExpanded = (rows: IRow[], expandedRowIndexes: number[]) => {

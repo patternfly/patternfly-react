@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { mount } from 'enzyme';
 import { Table, TableHeader, sortable } from '@patternfly/react-table';
 import { VirtualTableBody } from './index';
-import { rows, columns, actions } from '@patternfly/react-table/src/test-helpers/data-sets';
+import { rows, columns, actions } from '@patternfly/react-table/src/test/data-sets';
 import { CellMeasurerCache } from 'react-virtualized';
 
 const measurementCache = new CellMeasurerCache({

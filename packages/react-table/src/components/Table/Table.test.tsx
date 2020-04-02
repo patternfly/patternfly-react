@@ -18,7 +18,7 @@ import {
   OnRowEdit,
   OnSort
 } from './index';
-import { rows, columns, editableRows, editableColumns, actions } from '../../test-helpers/data-sets';
+import { rows, columns, editableRows, editableColumns, actions } from '../../test/data-sets';
 import { ColumnsType } from './base';
 
 describe('Simple table', () => {

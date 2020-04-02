@@ -51,7 +51,7 @@ module.exports = {
           '**/build',
           '**/utils',
           '**/public',
-          '**/test-helpers',
+          '**/test',
           /.*react-styles.*/,
           /.*react-docs.*/,
           /.*react-integration.*/,

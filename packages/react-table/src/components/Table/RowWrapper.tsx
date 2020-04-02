@@ -13,7 +13,7 @@ export interface RowWrapperRow {
   isEditable?: boolean;
 }
 
-export interface RowWrapperProps extends OUIAProps {
+export interface RowWrapperProps {
   trRef?: React.Ref<any> | Function;
   className?: string;
   onScroll?: React.UIEventHandler;
@@ -25,7 +25,7 @@ export interface RowWrapperProps extends OUIAProps {
   };
 }
 
-export class RowWrapper extends React.Component<RowWrapperProps, {}> {
+export class RowWrapper extends React.Component<RowWrapperProps & OUIAProps> {
   static defaultProps = {
     className: '' as string,
     row: {

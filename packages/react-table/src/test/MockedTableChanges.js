@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { TableContext } from '../components/Table/Table';
 import { TableHeader } from '../components/Table';
 
 export const withContext = ({ context = {}, contextType = {} }) => WrappedComponent => {
-  class WithContext extends Component {
+  class WithContext extends React.Component {
     getChildContext() {
       return context;
     }
