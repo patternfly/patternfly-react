@@ -2,8 +2,11 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./dist/esm",
-    "tsBuildInfoFile": "dist/esm.tsbuildinfo"
+    "outDir": "./scripts/compiled",
+    "module": "commonjs",
+    "importHelpers": false,
+    "sourceMap": false,
+    "noEmitOnError": false
   },
   "include": [
     "./src/*",

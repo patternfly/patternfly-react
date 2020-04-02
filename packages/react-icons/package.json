@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "generate": "node scripts/generateSrc.js",
+    "generate": "node scripts/generateIcons.js",
     "clean": "rimraf dist src/icons"
   },
   "devDependencies": {
@@ -35,7 +35,6 @@
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
-    "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
