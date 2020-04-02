@@ -21,10 +21,10 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "strictBindCallApply": true,
-    "strictPropertyInitialization": false,
-    "noImplicitAny": false,
-    "strictNullChecks": false,
-    "strictFunctionTypes": false,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
   },
   "include": [
     "src"
