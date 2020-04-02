@@ -7,7 +7,7 @@ export interface ModalBoxFooterProps {
   children?: React.ReactNode;
   /** Additional classes added to the Footer */
   className?: string;
-  /** Flag to align buttons to the left */
+  /** Flag to align buttons to the right */
   isRightAligned?: boolean;
 }
 
