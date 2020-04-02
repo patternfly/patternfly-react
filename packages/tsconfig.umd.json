@@ -2,31 +2,31 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/react-catalog-view-extension/tsconfig.umd.json"
+      "path": "./react-catalog-view-extension/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-charts/tsconfig.umd.json"
+      "path": "./react-charts/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-core/tsconfig.umd.json"
+      "path": "./react-core/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-icons/tsconfig.umd.json"
+      "path": "./react-icons/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-inline-edit-extension/tsconfig.umd.json"
+      "path": "./react-inline-edit-extension/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-styles/tsconfig.umd.json"
+      "path": "./react-styles/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-table/tsconfig.umd.json"
+      "path": "./react-table/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-topology/tsconfig.umd.json"
+      "path": "./react-topology/tsconfig.umd.json"
     },
     {
-      "path": "./packages/react-virtualized-extension/tsconfig.umd.json"
+      "path": "./react-virtualized-extension/tsconfig.umd.json"
     }
   ]
 }

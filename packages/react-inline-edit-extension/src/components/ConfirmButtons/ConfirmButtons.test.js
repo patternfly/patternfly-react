@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme/build';
 
-import { default as ConfirmButtons } from './ConfirmButtons';
+import { ConfirmButtons } from './ConfirmButtons';
 
 const getConfirmButtons = () => (
   <ConfirmButtons
