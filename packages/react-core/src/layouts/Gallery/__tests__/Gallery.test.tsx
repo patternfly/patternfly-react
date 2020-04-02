@@ -3,7 +3,7 @@ import { Gallery } from '../Gallery';
 import { shallow } from 'enzyme';
 
 test('gutter', () => {
-  const view = shallow(<Gallery gutter="md" />);
+  const view = shallow(<Gallery hasGutter />);
   expect(view).toMatchSnapshot();
 });
 

@@ -2,7 +2,7 @@
 
 exports[`Split should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-l-split ''"
+  className="pf-l-split pf-m-gutter ''"
 >
   ReactNode
 </div>

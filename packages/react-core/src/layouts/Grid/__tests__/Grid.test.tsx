@@ -3,6 +3,6 @@ import { Grid } from '../Grid';
 import { shallow } from 'enzyme';
 
 test('gutter', () => {
-  const view = shallow(<Grid gutter="md" />);
+  const view = shallow(<Grid hasGutter />);
   expect(view).toMatchSnapshot();
 });

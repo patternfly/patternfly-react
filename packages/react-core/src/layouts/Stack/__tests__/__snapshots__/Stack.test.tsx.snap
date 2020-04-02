@@ -2,7 +2,7 @@
 
 exports[`gutter 1`] = `
 <Stack
-  gutter="md"
+  hasGutter={true}
 >
   <div
     className="pf-l-stack pf-m-gutter"

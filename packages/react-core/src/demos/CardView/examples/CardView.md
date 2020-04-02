@@ -715,7 +715,7 @@ class CardViewBasic extends React.Component {
             </DataToolbar>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {filtered.map((product, key) => (
                 <React.Fragment>
                   <Card isHoverable key={key}>

@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 
 export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg';
+  hasGutter?: boolean;
   /** content rendered inside the Split layout */
   children?: React.ReactNode;
   /** additional classes added to the Split layout */
@@ -14,7 +14,7 @@ export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const Split: React.FunctionComponent<SplitProps> = ({
-  gutter = null,
+  hasGutter,
   className = '',
   children = null,
   component = 'div',
@@ -22,7 +22,7 @@ export const Split: React.FunctionComponent<SplitProps> = ({
 }: SplitProps) => {
   const Component = component as any;
   return (
-    <Component {...props} className={css(styles.split, gutter && styles.modifiers.gutter, className)}>
+    <Component {...props} className={css(styles.split, hasGutter && styles.modifiers.gutter, className)}>
       {children}
     </Component>
   );

@@ -23,7 +23,7 @@ test('isMain defaults to false', () => {
 
 test('gutter', () => {
   const view = mount(
-    <Stack gutter="md">
+    <Stack hasGutter>
       <StackItem>Basic content</StackItem>
     </Stack>
   );
