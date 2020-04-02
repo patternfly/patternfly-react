@@ -8,16 +8,16 @@ export interface ModalBoxFooterProps {
   /** Additional classes added to the Footer */
   className?: string;
   /** Flag to align buttons to the left */
-  isLeftAligned?: boolean;
+  isRightAligned?: boolean;
 }
 
 export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
   children = null,
   className = '',
-  isLeftAligned = false,
+  isRightAligned = false,
   ...props
 }: ModalBoxFooterProps) => (
-  <div {...props} className={css(styles.modalBoxFooter, isLeftAligned && styles.modifiers.alignLeft, className)}>
+  <div {...props} className={css(styles.modalBoxFooter, !isRightAligned && styles.modifiers.alignLeft, className)}>
     {children}
   </div>
 );
