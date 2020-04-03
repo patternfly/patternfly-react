@@ -5,7 +5,6 @@ cssPrefix: 'pf-c-modal-box'
 typescript: true
 propComponents:
   ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalBoxHeader', 'ModalContent']
-optIn: In a future breaking-change release, the modal footer buttons will default to be left aligned. You can opt into this now by setting the Modal isFooterLeftAligned prop to true.
 ---
 
 import { Modal, ModalVariant, TitleSizes, Button, Title } from '@patternfly/react-core';
@@ -50,7 +49,6 @@ class SimpleModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -102,7 +100,6 @@ class SimpleModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -154,7 +151,6 @@ class SmallModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -206,7 +202,6 @@ class LargeModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -258,7 +253,6 @@ class WidthModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -274,7 +268,7 @@ class WidthModal extends React.Component {
 
 ```js title=Custom-header-and-footer
 import React from 'react';
-import { Modal, ModalVariant, Button, Title } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 class CustomHeaderFooter extends React.Component {
@@ -303,7 +297,7 @@ class CustomHeaderFooter extends React.Component {
     );
 
     const footer = (
-      <Title headingLevel="h4" size={TitleSizes.sm}>
+      <Title headingLevel="h4" size={TitleSizes.md}>
         <WarningTriangleIcon />
         <span className="pf-u-pl-sm">Custom modal footer.</span>
       </Title>
@@ -319,10 +313,9 @@ class CustomHeaderFooter extends React.Component {
           isOpen={isModalOpen}
           header={header}
           title="custom header example"
-          modalContentAriaDescribedBy="custom-header-example"
+          modalContentAriaDescribedById="custom-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
-          isFooterLeftAligned
         >
           <span id="custom-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
@@ -372,10 +365,9 @@ class NoHeader extends React.Component {
           hideTitle={true}
           title="no header example"
           showClose={true}
-          modalContentAriaDescribedBy="no-header-example"
+          modalContentAriaDescribedById="no-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
-          isFooterLeftAligned
         >
           <span id="no-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's

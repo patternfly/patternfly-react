@@ -12,8 +12,7 @@ it('ModalContent should match snapshot (auto-generated)', () => {
     <ModalContent
       children={<div>ReactNode</div>}
       className={"''"}
-      isLarge={false}
-      isSmall={false}
+      variant={'large'}
       isOpen={false}
       header={null}
       title={'string'}
@@ -22,9 +21,7 @@ it('ModalContent should match snapshot (auto-generated)', () => {
       width={-1}
       footer={null}
       actions={[]}
-      isFooterLeftAligned={false}
       onClose={() => undefined as any}
-      ariaDescribedById={"''"}
       id={"''"}
       disableFocusTrap={false}
     />

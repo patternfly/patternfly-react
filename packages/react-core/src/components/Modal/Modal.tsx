@@ -26,8 +26,6 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
   actions?: any;
-  /** Flag to indicate that the Footer content is left aligned */
-  isFooterLeftAligned?: boolean;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Default width of the Modal. */
@@ -63,7 +61,6 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     showClose: true,
     modalContentAriaDescribedById: '',
     actions: [] as any[],
-    isFooterLeftAligned: false,
     onClose: () => undefined as any,
     variant: 'default',
     appendTo: (typeof document !== 'undefined' && document.body) || null
@@ -145,7 +142,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { appendTo, ...props } = this.props;
+    const { appendTo, modalContentAriaDescribedById, ...props } = this.props;
     const { container } = this.state;
 
     if (!canUseDOM || !container) {
@@ -157,7 +154,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         {...props}
         title={this.props.title}
         id={this.id}
-        modalBoxAriaDescribedById={this.props.modalContentAriaDescribedById}
+        modalBoxAriaDescribedById={modalContentAriaDescribedById}
       />,
       container
     );
