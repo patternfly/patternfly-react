@@ -29,7 +29,9 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/react-catalog-view-extension/README.md",
   "scripts": {
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass && node-sass --output-style compressed --importer=./scripts/node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",
+    "generate": "yarn copy:sass && yarn build:sass",
+    "build:sass": "node-sass --output-style compressed --importer=./scripts/node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",
+    "copy:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass",
     "clean": "rimraf dist"
   },
   "dependencies": {
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@types/react": "^16.4.0",
     "@types/react-dom": "^16.4.0",
+    "bootstrap-sass": "3.4.1",
     "node-sass": "^4.12.0",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2",
