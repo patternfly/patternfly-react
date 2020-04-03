@@ -5,17 +5,17 @@
       "es2015",
       "dom"
     ],
-    "esModuleInterop": true,
+    "target": "es2015",
     "module": "es2015",
     "moduleResolution": "node",
-    "target": "es2015",
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": false,
     "importHelpers": true,
     "composite": true,
     "sourceMap": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "strict": true,
+    "strictNullChecks": false
   },
   "exclude": [
     "**/**.test.tsx",
