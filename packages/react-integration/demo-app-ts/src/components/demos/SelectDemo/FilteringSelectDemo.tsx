@@ -69,7 +69,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
             return <></>;
           }
         })
-        .filter(newGroup => newGroup);
+        .filter(newGroup => newGroup.props.children);
     }
   };
 
@@ -93,7 +93,7 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
-          selections={selections}
+          selections={selections.filter(string => string)}
           isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
