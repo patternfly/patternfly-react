@@ -20,7 +20,6 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     }
     hideTitle={false}
     id="pf-modal-0"
-    isFooterRightAligned={false}
     isOpen={false}
     modalBoxAriaDescribedById=""
     onClose={[Function]}
