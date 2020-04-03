@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownItem } from '../Dropdown';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 
 export interface OptionsMenuItemProps
   extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'> {

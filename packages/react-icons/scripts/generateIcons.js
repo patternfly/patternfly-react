@@ -1,6 +1,7 @@
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs-extra');
 const icons = require('./icons');
+const concurrently = require('concurrently');
 
 const removeSnake = s =>
   s
@@ -12,57 +13,40 @@ const pascalCase = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])
 /**
  * Generates src/icons/*.tsx files
  */
-function generateSrc() {
-  const destDir = path.join(__dirname, '../src/icons');
-  if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir);
-  } else {
-    console.log('Not overwriting generated icon files.');
+function generateIcons() {
+  const outDir = path.join(__dirname, '../dist');
+  const templateDir = path.resolve(__dirname, './templates');
+
+  if (fs.existsSync(outDir)) {
+    console.log('Not overwriting generate icons files.')
     return;
   }
 
+  const templates = fs
+    .readdirSync(templateDir)
+    .map(templateFile => require(path.join(templateDir, templateFile)));
+
   const index = [];
   Object.entries(icons).forEach(([iconName, icon]) => {
-    const fname = `${iconName}-icon.tsx`;
+    const fname = `${iconName}-icon`;
     const jsName = `${pascalCase(iconName)}Icon`;
-    fs.writeFileSync(
-      path.join(destDir, fname),
-      `import React from 'react';
-import { SVGIcon, SVGIconProps } from '../SVGIcon';
 
-export const ${jsName}Config = {
-  name: '${jsName}',
-  height: ${icon.height},
-  width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
-  yOffset: ${icon.yOffset || 0},
-  xOffset: ${icon.xOffset || 0},
-  transform: '${icon.transform || ''}'
-};
-
-export const ${jsName}: React.FunctionComponent<Omit<SVGIconProps, 'config'>> = (
-  props
-) => {
-  const newProps = Object.assign({ config: ${jsName}Config }, props) as SVGIconProps;
-  return React.createElement(SVGIcon, newProps);
-};
-
-export default ${jsName};\n`
+    templates.forEach(template =>
+      fs.outputFileSync(
+        template.getSingleOutputPath(outDir, fname),
+        template.getSingleContent(jsName, icon)
+      )
     );
-
-    index.push(path.basename(fname, '.tsx'));
+    index.push(fname);
   });
-
-  fs.writeFileSync(
-    path.join(destDir, 'index.ts'),
-    `${index
-      .sort()
-      .map(fname => `export * from './${fname}';`)
-      .join('\n')}\n`
+  templates.forEach(template => 
+    fs.outputFileSync(template.getOutputPath(outDir), template.getContent(index))
   );
 
-  // eslint-disable-next-line no-console
-  console.log('Generated files for', index.length, 'icons.');
+  // Compile src folder
+  const tsDir = path.resolve(__dirname, '..');
+  concurrently([`yarn tsc -p ${tsDir}`, `yarn tsc -p ${tsDir}/tsconfig.cjs.json`], {  });
+  console.log('Generated files for', index.length, 'icons');
 }
 
-generateSrc();
+generateIcons();

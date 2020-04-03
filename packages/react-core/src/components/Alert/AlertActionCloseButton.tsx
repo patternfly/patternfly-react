@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import { AlertContext } from './AlertContext';
 
 interface AlertActionCloseButtonProps extends ButtonProps {

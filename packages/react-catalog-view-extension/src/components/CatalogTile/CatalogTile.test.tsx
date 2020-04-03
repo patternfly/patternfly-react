@@ -1,6 +1,6 @@
 import * as React from 'react';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-check-circle-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/js/icons/outlined-check-circle-icon';
 import { mount } from 'enzyme';
 
 import { CatalogTile } from './CatalogTile';

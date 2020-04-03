@@ -10,7 +10,7 @@ import {
   OptionsMenuPosition,
   OptionsMenuToggleWithText
 } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
 
 interface OptionsMenuDemoState {
   singleOptionIsOpen: boolean;

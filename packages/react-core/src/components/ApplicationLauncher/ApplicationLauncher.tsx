@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';

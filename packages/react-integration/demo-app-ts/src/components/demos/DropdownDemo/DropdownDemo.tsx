@@ -10,10 +10,10 @@ import {
   StackItem,
   Title
 } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 interface DropdownState {
   isOpen: boolean;

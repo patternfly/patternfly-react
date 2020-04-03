@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DropdownToggleProps } from './DropdownToggle';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
 import { Toggle } from './Toggle';
 
 export interface KebabToggleProps extends DropdownToggleProps {

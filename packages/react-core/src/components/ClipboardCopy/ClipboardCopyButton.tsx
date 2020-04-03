@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
-import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
 import { Tooltip } from '../Tooltip';
 
 export interface ClipboardCopyButtonProps

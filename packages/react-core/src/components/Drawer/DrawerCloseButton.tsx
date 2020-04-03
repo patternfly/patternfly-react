@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer close button outer <div>. */

@@ -1,7 +1,7 @@
 import { Button, ButtonVariant } from '../Button';
 import React from 'react';
 import { mount } from 'enzyme';
-import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
+import CartArrowDownIcon from '@patternfly/react-icons/dist/js/icons/cart-arrow-down-icon';
 
 Object.values(ButtonVariant).forEach(variant => {
   test(`${variant} button`, () => {

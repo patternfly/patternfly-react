@@ -8,7 +8,7 @@ import {
   EmptyStateSecondaryActions,
   Button
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
+import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 import React, { Component } from 'react';
 export class EmptyStateDemo extends Component {
   myLargeEmptyStateProps: EmptyStateProps = {

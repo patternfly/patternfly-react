@@ -4,7 +4,10 @@
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "declarationDir": "./dist/js",
-    "importHelpers": false
+    "rootDirs": [
+      "src/icons",
+      "dist/js/icons"
+    ]
   },
   "include": [
     "./src/*",

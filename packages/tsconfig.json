@@ -11,9 +11,6 @@
       "path": "./react-core"
     },
     {
-      "path": "./react-icons"
-    },
-    {
       "path": "./react-inline-edit-extension"
     },
     {

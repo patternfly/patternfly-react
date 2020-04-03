@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Title } from '../Title';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 
 export interface WizardHeaderProps {
   /** Callback function called when the X (Close) button is clicked */

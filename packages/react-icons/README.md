@@ -58,7 +58,7 @@ module.exports = {
       "transform-imports",
       {
         "@patternfly/react-icons": {
-          transform: (importName, matches) => `@patternfly/react-icons/dist/esm/icons/${importName.split(/(?=[A-Z])/).join('-').toLowerCase()}`,
+          transform: (importName, matches) => `@patternfly/react-icons/dist/js/icons/${importName.split(/(?=[A-Z])/).join('-').toLowerCase()}`,
           preventFullImport: true
         }
       }

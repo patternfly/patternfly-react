@@ -5,7 +5,7 @@ import { DropdownItem, DropdownItemProps } from '../Dropdown';
 import { ApplicationLauncherContent } from './ApplicationLauncherContent';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { ApplicationLauncherItemContext } from './ApplicationLauncherItemContext';
-import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
+import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
 
 export interface ApplicationLauncherItemProps {
   /** Icon rendered before the text */
