@@ -16,12 +16,6 @@ test('Check page main nav section against snapshot', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('Check page section with no padding on mobile example against snapshot', () => {
-  const Section = <PageSection noPaddingMobile />;
-  const view = mount(Section);
-  expect(view).toMatchSnapshot();
-});
-
 test('Check page section with no fill example against snapshot', () => {
   const Section = <PageSection isFilled={false} />;
   const view = mount(Section);

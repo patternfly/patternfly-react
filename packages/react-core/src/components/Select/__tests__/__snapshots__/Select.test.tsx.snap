@@ -2161,7 +2161,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                   class="pf-c-form__fieldset"
                 >
                   <div
-                    class="pf-c-select__menu-input"
+                    class="pf-c-select__menu-search"
                   >
                     <input
                       autocomplete="off"
@@ -2339,7 +2339,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
               className="pf-c-form__fieldset"
             >
               <div
-                className="pf-c-select__menu-input"
+                className="pf-c-select__menu-search"
                 key="inline-filter"
               >
                 <input

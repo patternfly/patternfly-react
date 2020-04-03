@@ -21,7 +21,6 @@ it('ModalContent should match snapshot (auto-generated)', () => {
       width={-1}
       footer={null}
       actions={[]}
-      isFooterRightAligned={false}
       onClose={() => undefined as any}
       id={"''"}
       disableFocusTrap={false}

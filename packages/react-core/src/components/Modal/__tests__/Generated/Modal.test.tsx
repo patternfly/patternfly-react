@@ -19,7 +19,6 @@ it('Modal should match snapshot (auto-generated)', () => {
       showClose={true}
       footer={<div>ReactNode</div>}
       actions={[]}
-      isFooterRightAligned={false}
       onClose={() => undefined as any}
       width={1}
       variant={'large'}

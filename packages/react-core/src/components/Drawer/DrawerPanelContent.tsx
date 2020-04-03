@@ -35,7 +35,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
       <div
         className={css(
           styles.drawerPanel,
-          hasBorder && styles.modifiers.border,
+          !hasBorder && styles.modifiers.noBorder,
           width && styles.modifiers[`width_${width}` as keyof typeof styles.modifiers],
           widthOnLg && styles.modifiers[`width_${widthOnLg}OnLg` as keyof typeof styles.modifiers],
           widthOnXl && styles.modifiers[`width_${widthOnXl}OnXl` as keyof typeof styles.modifiers],

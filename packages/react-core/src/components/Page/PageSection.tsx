@@ -27,8 +27,6 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
   noPadding?: boolean;
-  /** Modifies a main page section to have no padding on mobile */
-  noPaddingMobile?: boolean;
 }
 
 export const PageSection = ({
@@ -37,7 +35,6 @@ export const PageSection = ({
   variant = 'default',
   type = 'default',
   noPadding = false,
-  noPaddingMobile = false,
   isFilled,
   ...props
 }: PageSectionProps) => {
@@ -51,13 +48,13 @@ export const PageSection = ({
     [PageSectionVariants.dark]: styles.modifiers.dark_200,
     [PageSectionVariants.darker]: styles.modifiers.dark_100
   };
+  // TODO: Implement https://github.com/patternfly/patternfly/pull/2816
   return (
     <section
       {...props}
       className={css(
         variantType[type],
         noPadding && styles.modifiers.noPadding,
-        noPaddingMobile && styles.modifiers.noPaddingMobile,
         variantStyle[variant],
         isFilled === false && styles.modifiers.noFill,
         isFilled === true && styles.modifiers.fill,

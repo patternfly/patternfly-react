@@ -10,7 +10,6 @@ describe('Accordion Demo Test', () => {
     toggles.should('have.length', 3);
     toggles.should('have.attr', 'aria-expanded', 'false');
     cy.get('#accordion-example .pf-m-expanded').should('not.exist');
-    cy.get('#accordion-example').should('not.have.class', 'pf-m-no-box-shadow');
   });
 
   it('Verify toggle open behavior', () => {
@@ -40,9 +39,5 @@ describe('Accordion Demo Test', () => {
     cy.get('#item-3').should('have.attr', 'aria-expanded', 'false');
     const expandedContent = cy.get('#accordion-example .pf-c-accordion__expanded-content.pf-m-expanded');
     expandedContent.should('not.exist');
-  });
-
-  it('Verify the pf-m-no-box-shadow modifier is applied to the noBoxShadow accordion', () => {
-    cy.get('#accordion-example-no-box-shadow').should('have.class', 'pf-m-no-box-shadow');
   });
 });
