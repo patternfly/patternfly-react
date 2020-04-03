@@ -2,7 +2,8 @@
 
 exports[`ModalBoxFooter should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-c-modal-box__footer ''"
+  className="pf-c-modal-box__footer pf-m-align-left ''"
+  isLeftAligned={false}
 >
   ReactNode
 </div>

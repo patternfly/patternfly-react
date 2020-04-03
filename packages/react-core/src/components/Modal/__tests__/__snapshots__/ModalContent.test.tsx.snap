@@ -155,7 +155,7 @@ exports[`Modal Content Test with footer 1`] = `
         This is a ModalBox header
       </ModalBoxBody>
       <ModalBoxFooter
-        isLeftAligned={false}
+        isRightAligned={false}
       >
         Testing
       </ModalBoxFooter>
@@ -200,7 +200,7 @@ exports[`Modal Content Test with onclose 1`] = `
         This is a ModalBox header
       </ModalBoxBody>
       <ModalBoxFooter
-        isLeftAligned={false}
+        isRightAligned={false}
       >
         Testing footer
       </ModalBoxFooter>
@@ -284,7 +284,7 @@ exports[`Modal Test with custom footer 1`] = `
         This is a ModalBox header
       </ModalBoxBody>
       <ModalBoxFooter
-        isLeftAligned={false}
+        isRightAligned={false}
       >
         <span
           id="test-custom-footer"
@@ -335,7 +335,7 @@ exports[`Modal Test with custom header 1`] = `
         This is a ModalBox header
       </ModalBoxBody>
       <ModalBoxFooter
-        isLeftAligned={false}
+        isRightAligned={false}
       >
         Testing footer
       </ModalBoxFooter>

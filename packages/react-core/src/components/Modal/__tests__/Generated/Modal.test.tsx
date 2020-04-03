@@ -17,14 +17,12 @@ it('Modal should match snapshot (auto-generated)', () => {
       title={'string'}
       hideTitle={false}
       showClose={true}
-      ariaDescribedById={"''"}
       footer={<div>ReactNode</div>}
       actions={[]}
-      isFooterLeftAligned={false}
+      isFooterRightAligned={false}
       onClose={() => undefined as any}
       width={1}
-      isLarge={false}
-      isSmall={false}
+      variant={'large'}
       appendTo={(typeof document !== 'undefined' && document.body) || null}
       disableFocusTrap={true}
     />
