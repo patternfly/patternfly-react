@@ -3,7 +3,6 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist/esm",
-"declarationDir": "./dist/js",
     "tsBuildInfoFile": "dist/esm.tsbuildinfo"
   },
   "include": [

@@ -67,7 +67,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "yarn generate && tsc -b packages/tsconfig.json -v",
-    "build:all": "yarn build && concurrently \"tsc -b packages/tsconfig.cjs.json -v\" \"yarn build:umd\"",
+    "build:esm": "yarn generate && tsc -b packages/tsconfig.json -v",
+    "build:cjs": "yarn generate && tsc -b packages/tsconfig.cjs.json -v",
+    "build:all": "yarn build:esm && concurrently \"yarn build:cjs\" \"yarn build:umd\"",
     "build:umd": "lerna run build:umd",
     "build:docs": "lerna run build:docs --stream",
     "build:integration:report": "lerna run build:integration:report --stream",

@@ -8,11 +8,11 @@
     "esModuleInterop": true,
     "module": "es2015",
     "moduleResolution": "node",
+    "target": "es2015",
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": false,
     "importHelpers": true,
-    "target": "es5",
     "composite": true,
     "sourceMap": true,
     "declarationMap": true
@@ -21,5 +21,5 @@
     "**/**.test.tsx",
     "**/**.test.ts",
     "**/examples/**"
-  ],
+  ]
 }
