@@ -28,7 +28,7 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
     searchValue: '',
     filteredItems: this.items
   };
-  
+
   onToggle = (event: React.SyntheticEvent, isOpen: boolean) => {
     this.setState({
       isOpen
