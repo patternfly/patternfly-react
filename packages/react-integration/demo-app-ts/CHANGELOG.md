@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.5...demo-app-ts@4.2.6) (2020-04-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.2.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.4...demo-app-ts@4.2.5) (2020-04-03)
+
+
+### Bug Fixes
+
+* **modal:** default action alignment to left ([#4017](https://github.com/patternfly/patternfly-react/issues/4017)) ([f408457](https://github.com/patternfly/patternfly-react/commit/f4084572f9b571080711dcb298b5213f9f8d7af3))
+
+
+
+
+
 ## [4.2.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.3...demo-app-ts@4.2.4) (2020-03-31)
 
 **Note:** Version bump only for package demo-app-ts

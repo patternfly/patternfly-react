@@ -16,7 +16,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 >
   <div
     className="pf-c-tabs pf-m-fill"
-    data-ouia-component-id={10}
+    data-ouia-component-id={7}
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe={true}
     id="handleScrollButtons"
@@ -68,7 +68,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
     </button>
     <ul
       className="pf-c-tabs__list"
-      onScroll={[Function]}
     >
       <li
         className="pf-c-tabs__item pf-m-current"
@@ -339,7 +338,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
 >
   <div
     className="pf-c-tabs pf-m-fill"
-    data-ouia-component-id={6}
+    data-ouia-component-id={5}
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe={true}
     id="scrollLeft"
@@ -391,7 +390,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
     </button>
     <ul
       className="pf-c-tabs__list"
-      onScroll={[Function]}
     >
       <li
         className="pf-c-tabs__item pf-m-current"
@@ -662,7 +660,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 >
   <div
     className="pf-c-tabs pf-m-fill"
-    data-ouia-component-id={8}
+    data-ouia-component-id={6}
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe={true}
     id="scrollRight"
@@ -714,7 +712,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
     </button>
     <ul
       className="pf-c-tabs__list"
-      onScroll={[Function]}
     >
       <li
         className="pf-c-tabs__item pf-m-current"
@@ -1583,7 +1580,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
 Array [
   <div
     class="pf-c-tabs"
-    data-ouia-component-id="11"
+    data-ouia-component-id="8"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="eventKeyTabs"

@@ -272,7 +272,7 @@ exports[`ChartDonutUtilization 1`] = `
         "legend": Object {
           "colorScale": Array [
             "#06c",
-            "#ededed",
+            "#f0f0f0",
             "#d2d2d2",
             "#b8bbbe",
           ],
@@ -330,7 +330,7 @@ exports[`ChartDonutUtilization 1`] = `
         "pie": Object {
           "colorScale": Array [
             "#06c",
-            "#ededed",
+            "#f0f0f0",
           ],
           "height": 230,
           "padAngle": 1,
@@ -408,7 +408,7 @@ exports[`ChartDonutUtilization 1`] = `
           "pointerLength": 10,
           "pointerWidth": 20,
           "style": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "padding": 16,
             "pointerEvents": "none",
           },
@@ -436,7 +436,7 @@ exports[`ChartDonutUtilization 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -737,7 +737,7 @@ exports[`ChartDonutUtilization 1`] = `
           "legend": Object {
             "colorScale": Array [
               "#06c",
-              "#ededed",
+              "#f0f0f0",
               "#d2d2d2",
               "#b8bbbe",
             ],
@@ -795,7 +795,7 @@ exports[`ChartDonutUtilization 1`] = `
           "pie": Object {
             "colorScale": Array [
               "#06c",
-              "#ededed",
+              "#f0f0f0",
             ],
             "height": 230,
             "padAngle": 1,
@@ -873,7 +873,7 @@ exports[`ChartDonutUtilization 1`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -901,7 +901,7 @@ exports[`ChartDonutUtilization 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1193,7 +1193,7 @@ exports[`ChartDonutUtilization 2`] = `
         "legend": Object {
           "colorScale": Array [
             "#06c",
-            "#ededed",
+            "#f0f0f0",
             "#d2d2d2",
             "#b8bbbe",
           ],
@@ -1251,7 +1251,7 @@ exports[`ChartDonutUtilization 2`] = `
         "pie": Object {
           "colorScale": Array [
             "#06c",
-            "#ededed",
+            "#f0f0f0",
           ],
           "height": 230,
           "padAngle": 1,
@@ -1329,7 +1329,7 @@ exports[`ChartDonutUtilization 2`] = `
           "pointerLength": 10,
           "pointerWidth": 20,
           "style": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "padding": 16,
             "pointerEvents": "none",
           },
@@ -1357,7 +1357,7 @@ exports[`ChartDonutUtilization 2`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1658,7 +1658,7 @@ exports[`ChartDonutUtilization 2`] = `
           "legend": Object {
             "colorScale": Array [
               "#06c",
-              "#ededed",
+              "#f0f0f0",
               "#d2d2d2",
               "#b8bbbe",
             ],
@@ -1716,7 +1716,7 @@ exports[`ChartDonutUtilization 2`] = `
           "pie": Object {
             "colorScale": Array [
               "#06c",
-              "#ededed",
+              "#f0f0f0",
             ],
             "height": 230,
             "padAngle": 1,
@@ -1794,7 +1794,7 @@ exports[`ChartDonutUtilization 2`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -1822,7 +1822,7 @@ exports[`ChartDonutUtilization 2`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -2114,7 +2114,7 @@ exports[`renders component data 1`] = `
         "legend": Object {
           "colorScale": Array [
             "#06c",
-            "#ededed",
+            "#f0f0f0",
             "#d2d2d2",
             "#b8bbbe",
           ],
@@ -2172,7 +2172,7 @@ exports[`renders component data 1`] = `
         "pie": Object {
           "colorScale": Array [
             "#06c",
-            "#ededed",
+            "#f0f0f0",
           ],
           "height": 230,
           "padAngle": 1,
@@ -2250,7 +2250,7 @@ exports[`renders component data 1`] = `
           "pointerLength": 10,
           "pointerWidth": 20,
           "style": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "padding": 16,
             "pointerEvents": "none",
           },
@@ -2278,7 +2278,7 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -2579,7 +2579,7 @@ exports[`renders component data 1`] = `
           "legend": Object {
             "colorScale": Array [
               "#06c",
-              "#ededed",
+              "#f0f0f0",
               "#d2d2d2",
               "#b8bbbe",
             ],
@@ -2637,7 +2637,7 @@ exports[`renders component data 1`] = `
           "pie": Object {
             "colorScale": Array [
               "#06c",
-              "#ededed",
+              "#f0f0f0",
             ],
             "height": 230,
             "padAngle": 1,
@@ -2715,7 +2715,7 @@ exports[`renders component data 1`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -2743,7 +2743,7 @@ exports[`renders component data 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",

@@ -315,11 +315,11 @@ exports[`renders component data 1`] = `
         },
         "group": Object {
           "colorScale": Array [
-            "#ededed",
+            "#f0f0f0",
             "#d2d2d2",
             "#b8bbbe",
             "#8a8d90",
-            "#737679",
+            "#6a6e73",
           ],
           "height": 140,
           "padding": 50,
@@ -467,7 +467,7 @@ exports[`renders component data 1`] = `
           "pointerLength": 10,
           "pointerWidth": 20,
           "style": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "padding": 16,
             "pointerEvents": "none",
           },
@@ -495,7 +495,7 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -807,11 +807,11 @@ exports[`renders component data 1`] = `
         },
         "group": Object {
           "colorScale": Array [
-            "#ededed",
+            "#f0f0f0",
             "#d2d2d2",
             "#b8bbbe",
             "#8a8d90",
-            "#737679",
+            "#6a6e73",
           ],
           "height": 140,
           "padding": 50,
@@ -959,7 +959,7 @@ exports[`renders component data 1`] = `
           "pointerLength": 10,
           "pointerWidth": 20,
           "style": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "padding": 16,
             "pointerEvents": "none",
           },
@@ -987,7 +987,7 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1008,7 +1008,7 @@ exports[`renders component data 1`] = `
     data={
       Array [
         Object {
-          "_color": "#ededed",
+          "_color": "#f0f0f0",
           "_index": 0,
           "_x": 1,
           "_y": 50,
@@ -1040,7 +1040,7 @@ exports[`renders component data 1`] = `
     style={
       Object {
         "data": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
         },
       }
     }
@@ -1299,11 +1299,11 @@ exports[`renders component data 1`] = `
         },
         "group": Object {
           "colorScale": Array [
-            "#ededed",
+            "#f0f0f0",
             "#d2d2d2",
             "#b8bbbe",
             "#8a8d90",
-            "#737679",
+            "#6a6e73",
           ],
           "height": 140,
           "padding": 50,
@@ -1451,7 +1451,7 @@ exports[`renders component data 1`] = `
           "pointerLength": 10,
           "pointerWidth": 20,
           "style": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "padding": 16,
             "pointerEvents": "none",
           },
@@ -1479,7 +1479,7 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",

@@ -161,9 +161,7 @@ exports[`isInline 1`] = `
     tabIndex={null}
     type="button"
   >
-    <span
-      className="pf-c-button__text"
-    >
+    <span>
       Hovered Button
     </span>
   </button>
@@ -186,9 +184,7 @@ exports[`link button 1`] = `
     tabIndex={null}
     type="button"
   >
-    <span
-      className="pf-c-button__text"
-    >
+    <span>
       link
        Button
     </span>
@@ -254,9 +250,7 @@ exports[`link with icon 1`] = `
         </SVGIcon>
       </CartArrowDownIcon>
     </span>
-    <span
-      className="pf-c-button__text"
-    >
+    <span>
       Block Button
     </span>
   </button>

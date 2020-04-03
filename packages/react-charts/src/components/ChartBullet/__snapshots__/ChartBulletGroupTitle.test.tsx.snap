@@ -46,9 +46,9 @@ exports[`renders component data 1`] = `
   <Line
     style={
       Object {
-        "fill": "#ededed",
+        "fill": "#f0f0f0",
         "opacity": 1,
-        "stroke": "#ededed",
+        "stroke": "#f0f0f0",
         "strokeWidth": 2,
       }
     }

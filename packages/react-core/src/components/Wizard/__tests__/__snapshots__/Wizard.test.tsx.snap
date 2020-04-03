@@ -347,9 +347,7 @@ exports[`Wizard should match snapshot 1`] = `
                     data-ouia-safe="true"
                     type="button"
                   >
-                    <span
-                      class="pf-c-button__text"
-                    >
+                    <span>
                       Cancel
                     </span>
                   </button>
@@ -570,9 +568,7 @@ exports[`Wizard should match snapshot 1`] = `
                     data-ouia-safe="true"
                     type="button"
                   >
-                    <span
-                      class="pf-c-button__text"
-                    >
+                    <span>
                       Cancel
                     </span>
                   </button>

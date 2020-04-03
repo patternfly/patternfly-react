@@ -245,9 +245,7 @@ exports[`Alert - danger Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -355,9 +353,7 @@ exports[`Alert - danger Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -466,9 +462,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -1036,9 +1030,7 @@ exports[`Alert - default Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -1146,9 +1138,7 @@ exports[`Alert - default Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -1257,9 +1247,7 @@ exports[`Alert - default Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -1827,9 +1815,7 @@ exports[`Alert - info Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -1937,9 +1923,7 @@ exports[`Alert - info Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -2048,9 +2032,7 @@ exports[`Alert - info Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -2618,9 +2600,7 @@ exports[`Alert - success Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -2728,9 +2708,7 @@ exports[`Alert - success Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -2839,9 +2817,7 @@ exports[`Alert - success Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -3409,9 +3385,7 @@ exports[`Alert - warning Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -3519,9 +3493,7 @@ exports[`Alert - warning Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>
@@ -3630,9 +3602,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span
-              className="pf-c-button__text"
-            >
+            <span>
               test
             </span>
           </button>

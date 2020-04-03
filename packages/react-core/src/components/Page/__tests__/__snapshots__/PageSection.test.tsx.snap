@@ -50,13 +50,3 @@ exports[`Check page section with no padding example against snapshot 1`] = `
   />
 </PageSection>
 `;
-
-exports[`Check page section with no padding on mobile example against snapshot 1`] = `
-<PageSection
-  noPaddingMobile={true}
->
-  <section
-    className="pf-c-page__main-section pf-m-no-padding-mobile"
-  />
-</PageSection>
-`;

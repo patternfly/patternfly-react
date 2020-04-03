@@ -95,12 +95,12 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
       {...getOUIAProps('Button', ouiaId)}
     >
       {icon && variant === ButtonVariant.link && iconPosition === 'left' && (
-        <span className="pf-c-button__icon">{icon}</span>
+        <span className={styles.buttonIcon}>{icon}</span>
       )}
-      {variant === ButtonVariant.link && <span className={css(styles.buttonText)}>{children}</span>}
+      {variant === ButtonVariant.link && <span>{children}</span>}
       {variant !== ButtonVariant.link && children}
       {icon && variant === ButtonVariant.link && iconPosition === 'right' && (
-        <span className="pf-c-button__icon">{icon}</span>
+        <span className={styles.buttonIcon}>{icon}</span>
       )}
     </Component>
   );

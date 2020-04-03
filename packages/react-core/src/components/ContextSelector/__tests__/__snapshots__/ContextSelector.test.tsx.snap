@@ -49,9 +49,7 @@ exports[`Renders ContextSelector open 1`] = `
       }
       paused={false}
     >
-      <div
-        className="pf-c-context-selector__menu-input"
-      >
+      <div>
         <InputGroup>
           <ForwardRef
             aria-labelledby="pf-context-selector-search-button-id-0"

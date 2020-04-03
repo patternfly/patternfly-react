@@ -58,7 +58,7 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <Accordion noBoxShadow id="accordion-example-no-box-shadow">
+        <Accordion id="accordion-example-no-box-shadow">
           <AccordionItem>
             <AccordionToggle onClick={() => this.onToggle('item-1')} isExpanded={expanded === 'item-1'} id="item-1">
               Item One
