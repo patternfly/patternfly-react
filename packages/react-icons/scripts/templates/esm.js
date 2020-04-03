@@ -15,7 +15,7 @@ export var ${jsName}Config = {
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'
 };
-export var ${jsName}Icon = function (props) {
+export var ${jsName} = function (props) {
   var newProps = Object.assign({ config: ${jsName}Config }, props);
   return React.createElement(SVGIcon, newProps);
 };

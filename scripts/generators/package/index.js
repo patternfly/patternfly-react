@@ -50,11 +50,6 @@ function setPackageGenerators(plop) {
       },
       {
         type: 'confirm',
-        name: 'buildsWithBabel',
-        message: 'Does this build with Babel?'
-      },
-      {
-        type: 'confirm',
         name: 'includeTypings',
         message: 'Will TypeScript definitions be included?'
       }
@@ -72,14 +67,17 @@ function setPackageGenerators(plop) {
         {
           type: 'add',
           template: '// placeholder\n',
-          path: answers.buildsWithBabel
-            ? join(packageBaseTemplate, 'src/index.js')
-            : join(packageBaseTemplate, 'lib/index.js')
+          path: join(packageBaseTemplate, 'src/index.js')
         },
-        answers.buildsWithBabel && {
+        {
           type: 'add',
-          path: join(packageBaseTemplate, `.babelrc`),
-          templateFile: resolve(__dirname, './.babelrc.hbs')
+          path: join(packageBaseTemplate, 'tsconfig.json'),
+          templateFile: resolve(__dirname, './tsconfig.json.hbs')
+        },
+        {
+          type: 'add',
+          path: join(packageBaseTemplate, 'tsconfig.cjs.json'),
+          templateFile: resolve(__dirname, './tsconfig.cjs.json.hbs')
         },
         {
           type: 'add',
