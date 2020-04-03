@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
+import { getUniqueId, isElementInView } from '../../helpers/util';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { getOUIAProps, OUIAProps } from '../../helpers';
@@ -150,9 +150,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       unmountOnExit,
       ...props
     } = this.props;
-    const {
-      shownKeys
-    } = this.state;
+    const { shownKeys } = this.state;
 
     const uniqueId = id || getUniqueId();
     const Component: any = variant === TabsVariant.nav ? 'nav' : 'div';
