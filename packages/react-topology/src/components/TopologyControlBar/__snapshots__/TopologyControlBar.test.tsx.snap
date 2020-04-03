@@ -21,7 +21,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <SearchMinusIcon />,
+        "icon": <Unknown />,
         "id": "zoom-out",
         "tooltip": "Zoom Out",
       },
@@ -30,7 +30,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "callback": null,
         "disabled": false,
         "hidden": true,
-        "icon": <ExpandArrowsAltIcon />,
+        "icon": <Unknown />,
         "id": "fit-to-screen",
         "tooltip": "Fit to Screen",
       },
@@ -39,7 +39,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "callback": null,
         "disabled": true,
         "hidden": false,
-        "icon": <ExpandIcon />,
+        "icon": <Unknown />,
         "id": "reset-view",
         "tooltip": "Reset View",
       },
@@ -47,7 +47,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
   }
   id="default-test-id"
 >
-  <Toolbar
+  <Component
     className="default-test-class"
     id="default-test-id"
   >
@@ -55,11 +55,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
       className="pf-l-toolbar default-test-class"
       id="default-test-id"
     >
-      <ToolbarGroup>
+      <Component>
         <div
           className="pf-l-toolbar__group"
         >
-          <ToolbarItem
+          <Component
             key="zoom-in"
           >
             <div
@@ -107,11 +107,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         test zoom in tooltip
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -154,7 +154,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -184,7 +184,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         test-zoom-in-aria-label
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -207,7 +207,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -215,14 +215,14 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         >
                           test zoom in tooltip
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
-          <ToolbarItem
+          </Component>
+          <Component
             key="zoom-out"
           >
             <div
@@ -270,11 +270,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         Zoom Out
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -317,7 +317,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -338,7 +338,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       tabIndex={null}
                       type="button"
                     >
-                      <SearchMinusIcon>
+                      <Component>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -375,14 +375,14 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             />
                           </svg>
                         </SVGIcon>
-                      </SearchMinusIcon>
+                      </Component>
                       <span
                         className="sr-only"
                       >
                         Zoom Out
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -405,7 +405,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -413,14 +413,14 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         >
                           Zoom Out
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
-          <ToolbarItem
+          </Component>
+          <Component
             key="reset-view"
           >
             <div
@@ -468,11 +468,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         Reset View
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -515,7 +515,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={true}
                     className="pf-topology-control-bar__button pf-m-disabled"
                     disabled={true}
@@ -536,7 +536,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       tabIndex={null}
                       type="button"
                     >
-                      <ExpandIcon>
+                      <Component>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -573,14 +573,14 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             />
                           </svg>
                         </SVGIcon>
-                      </ExpandIcon>
+                      </Component>
                       <span
                         className="sr-only"
                       >
                         Reset View
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -603,7 +603,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -611,17 +611,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                         >
                           Reset View
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
+          </Component>
         </div>
-      </ToolbarGroup>
+      </Component>
     </div>
-  </Toolbar>
+  </Component>
 </TopologyControlBar>
 `;
 
@@ -635,7 +635,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <SearchPlusIcon />,
+        "icon": <Unknown />,
         "id": "zoom-in",
         "tooltip": "Zoom In",
       },
@@ -644,7 +644,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <SearchMinusIcon />,
+        "icon": <Unknown />,
         "id": "zoom-out",
         "tooltip": "Zoom Out",
       },
@@ -653,7 +653,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <ExpandArrowsAltIcon />,
+        "icon": <Unknown />,
         "id": "fit-to-screen",
         "tooltip": "Fit to Screen",
       },
@@ -662,7 +662,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <ExpandIcon />,
+        "icon": <Unknown />,
         "id": "reset-view",
         "tooltip": "Reset View",
       },
@@ -680,7 +680,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
   id="default-test-id"
   onButtonClick={[MockFunction]}
 >
-  <Toolbar
+  <Component
     className="default-test-class"
     id="default-test-id"
   >
@@ -688,11 +688,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
       className="pf-l-toolbar default-test-class"
       id="default-test-id"
     >
-      <ToolbarGroup>
+      <Component>
         <div
           className="pf-l-toolbar__group"
         >
-          <ToolbarItem
+          <Component
             key="zoom-in"
           >
             <div
@@ -740,11 +740,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         Zoom In
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -787,7 +787,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -808,7 +808,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <SearchPlusIcon>
+                      <Component>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -845,14 +845,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </SearchPlusIcon>
+                      </Component>
                       <span
                         className="sr-only"
                       >
                         Zoom In
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -875,7 +875,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -883,14 +883,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         >
                           Zoom In
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
-          <ToolbarItem
+          </Component>
+          <Component
             key="zoom-out"
           >
             <div
@@ -938,11 +938,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         Zoom Out
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -985,7 +985,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1006,7 +1006,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <SearchMinusIcon>
+                      <Component>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -1043,14 +1043,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </SearchMinusIcon>
+                      </Component>
                       <span
                         className="sr-only"
                       >
                         Zoom Out
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -1073,7 +1073,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -1081,14 +1081,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         >
                           Zoom Out
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
-          <ToolbarItem
+          </Component>
+          <Component
             key="fit-to-screen"
           >
             <div
@@ -1136,11 +1136,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         Fit to Screen
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -1183,7 +1183,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1204,7 +1204,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <ExpandArrowsAltIcon>
+                      <Component>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -1241,14 +1241,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </ExpandArrowsAltIcon>
+                      </Component>
                       <span
                         className="sr-only"
                       >
                         Fit to Screen
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -1271,7 +1271,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -1279,14 +1279,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         >
                           Fit to Screen
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
-          <ToolbarItem
+          </Component>
+          <Component
             key="reset-view"
           >
             <div
@@ -1334,11 +1334,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Unknown
                         isLeftAligned={false}
                       >
                         Reset View
-                      </TooltipContent>
+                      </Unknown>
                     </div>
                   }
                   delay={
@@ -1381,7 +1381,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1402,7 +1402,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <ExpandIcon>
+                      <Component>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -1439,14 +1439,14 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </ExpandIcon>
+                      </Component>
                       <span
                         className="sr-only"
                       >
                         Reset View
                       </span>
                     </button>
-                  </Button>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -1469,7 +1469,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       id=""
                       role="tooltip"
                     >
-                      <TooltipContent
+                      <Component
                         isLeftAligned={false}
                       >
                         <div
@@ -1477,20 +1477,20 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                         >
                           Reset View
                         </div>
-                      </TooltipContent>
+                      </Component>
                     </div>
                   </Portal>
                 </PopoverBase>
               </Tooltip>
             </div>
-          </ToolbarItem>
-          <ToolbarItem
+          </Component>
+          <Component
             key="legend"
           >
             <div
               className="pf-l-toolbar__item"
             >
-              <Button
+              <Component
                 aria-disabled={false}
                 className="pf-topology-control-bar__button"
                 disabled={false}
@@ -1513,12 +1513,12 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 >
                   Legend
                 </button>
-              </Button>
+              </Component>
             </div>
-          </ToolbarItem>
+          </Component>
         </div>
-      </ToolbarGroup>
+      </Component>
     </div>
-  </Toolbar>
+  </Component>
 </TopologyControlBar>
 `;

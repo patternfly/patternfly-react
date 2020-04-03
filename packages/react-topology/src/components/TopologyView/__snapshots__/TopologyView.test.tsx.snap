@@ -5,7 +5,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
   className="my-test-class"
   id="simple-test-id"
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -13,7 +13,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         className="pf-topology-container"
         isFilled={true}
       >
@@ -24,9 +24,9 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
             className="pf-topology-content"
           />
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
 
@@ -50,7 +50,7 @@ exports[`TopologyView should display topology correctly 1`] = `
     />
   }
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -58,7 +58,7 @@ exports[`TopologyView should display topology correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -68,8 +68,8 @@ exports[`TopologyView should display topology correctly 1`] = `
             id="test-context-bar"
           />
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         isFilled={false}
       >
         <div
@@ -79,8 +79,8 @@ exports[`TopologyView should display topology correctly 1`] = `
             id="test-view-bar"
           />
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container"
         isFilled={true}
       >
@@ -102,9 +102,9 @@ exports[`TopologyView should display topology correctly 1`] = `
             </span>
           </div>
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
 
@@ -134,7 +134,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
     />
   }
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -142,7 +142,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -152,8 +152,8 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             id="test-context-bar"
           />
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         isFilled={false}
       >
         <div
@@ -163,8 +163,8 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             id="test-view-bar"
           />
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container pf-topology-container__with-sidebar"
         isFilled={true}
       >
@@ -189,9 +189,9 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             Test SideBar
           </div>
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
 
@@ -221,7 +221,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
     />
   }
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -229,7 +229,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -239,8 +239,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             id="test-context-bar"
           />
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         isFilled={false}
       >
         <div
@@ -250,8 +250,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             id="test-view-bar"
           />
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
         isFilled={true}
       >
@@ -276,8 +276,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             Test SideBar
           </div>
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;

@@ -16,7 +16,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with className 1`
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon />
+    <Component />
   </span>
 </li>
 `;
@@ -31,7 +31,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with custom eleme
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon />
+    <Component />
   </span>
 </li>
 `;
@@ -45,7 +45,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon />
+    <Component />
   </span>
 </li>
 `;
@@ -58,7 +58,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] =
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon />
+    <Component />
   </span>
 </li>
 `;
@@ -71,7 +71,7 @@ exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon />
+    <Component />
   </span>
 </li>
 `;
@@ -90,7 +90,7 @@ exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
   <span
     className="pf-c-breadcrumb__item-divider"
   >
-    <AngleRightIcon />
+    <Component />
   </span>
 </li>
 `;
