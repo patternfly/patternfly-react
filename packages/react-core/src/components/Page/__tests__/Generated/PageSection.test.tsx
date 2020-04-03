@@ -16,7 +16,6 @@ it('PageSection should match snapshot (auto-generated)', () => {
       type={'default'}
       isFilled={true}
       noPadding={false}
-      noPaddingMobile={false}
     />
   );
   expect(view).toMatchSnapshot();

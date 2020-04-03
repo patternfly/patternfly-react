@@ -426,7 +426,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (hasInlineFilter) {
       const filterBox = (
         <React.Fragment>
-          <div key="inline-filter" className={css(styles.selectMenuInput)}>
+          <div key="inline-filter" className={css(styles.selectMenuSearch)}>
             <input
               key="inline-filter-input"
               type="search"

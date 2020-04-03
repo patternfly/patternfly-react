@@ -267,19 +267,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
             Object {
               "current": <nav
                 aria-label="Application launcher"
-<<<<<<< HEAD
                 class="pf-c-app-launcher pf-m-expanded"
                 data-ouia-component-id="5"
                 data-ouia-component-type="PF4/Dropdown"
                 data-ouia-safe="true"
-=======
-                className="pf-c-app-launcher__toggle"
-                disabled={false}
-                id="pf-toggle-id-5"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
->>>>>>> upstream/master
               >
                 <button
                   aria-expanded="true"
@@ -305,346 +296,82 @@ exports[`ApplicationLauncher custom icon 1`] = `
                         transform="rotate(180 0 512) scale(-1 1)"
                       />
                     </svg>
-<<<<<<< HEAD
                   </span>
                 </button>
                 <ul
                   aria-labelledby="pf-toggle-id-5"
                   class="pf-c-app-launcher__menu"
                   role="menu"
-=======
-                  </HelpIcon>
-                </span>
-              </button>
-            </Toggle>
-          </DropdownToggle>
-          <DropdownMenu
-            aria-labelledby="pf-toggle-id-5"
-            autoFocus={false}
-            className=""
-            component="ul"
-            isGrouped={false}
-            isOpen={true}
-            openedOnEnter={false}
-            position="left"
-          >
-            <ul
-              aria-labelledby="pf-toggle-id-5"
-              autoFocus={false}
-              className="pf-c-app-launcher__menu"
-              hidden={false}
-              role="menu"
-            >
-              <DropdownItem
-                index={0}
-                key=".$link"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="a"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={0}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
->>>>>>> upstream/master
                 >
                   <li
                     role="menuitem"
                   >
                     <a
-<<<<<<< HEAD
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      aria-disabled={false}
-                      className="pf-c-app-launcher__menu-item"
-                      tabIndex={-1}
->>>>>>> upstream/master
                     >
                       Link
                     </a>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                component="button"
-                index={1}
-                key=".$action"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="button"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={1}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <button
-<<<<<<< HEAD
                       class="pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      className="pf-c-app-launcher__menu-item"
-                      disabled={false}
-                      tabIndex={-1}
->>>>>>> upstream/master
                       type="button"
                     >
                       Action
                     </button>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                index={2}
-                isDisabled={true}
-                key=".$disabled link"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="a"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={2}
-                  isDisabled={true}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <a
-<<<<<<< HEAD
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      aria-disabled={true}
-                      className="pf-m-disabled pf-c-app-launcher__menu-item"
-                      tabIndex={-1}
->>>>>>> upstream/master
                     >
                       Disabled Link
                     </a>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                component="button"
-                index={3}
-                isDisabled={true}
-                key=".$disabled action"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="button"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={3}
-                  isDisabled={true}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <button
-<<<<<<< HEAD
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled=""
                       tabindex="-1"
-=======
-                      className="pf-m-disabled pf-c-app-launcher__menu-item"
-                      disabled={true}
-                      tabIndex={-1}
->>>>>>> upstream/master
                       type="button"
                     >
                       Disabled Action
                     </button>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownSeparator
-                index={4}
-                key=".$separator"
-              >
-                <InternalDropdownItem
-                  className="pf-c-app-launcher__separator"
-                  component="div"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={4}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="separator"
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="separator"
                   >
                     <div
-<<<<<<< HEAD
                       class="pf-c-app-launcher__separator"
                     />
                   </li>
-=======
-                      className="pf-c-app-launcher__separator"
-                    />
-                  </li>
-                </InternalDropdownItem>
-              </DropdownSeparator>
-              <DropdownItem
-                index={5}
-                key=".$separated link"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="a"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={5}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <a
-<<<<<<< HEAD
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      aria-disabled={false}
-                      className="pf-c-app-launcher__menu-item"
-                      tabIndex={-1}
->>>>>>> upstream/master
                     >
                       Separated Link
                     </a>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                component="button"
-                index={6}
-                key=".$separated action"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="button"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={6}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <button
-<<<<<<< HEAD
                       class="pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      className="pf-c-app-launcher__menu-item"
-                      disabled={false}
-                      tabIndex={-1}
->>>>>>> upstream/master
                       type="button"
                     >
                       Separated Action
@@ -1067,7 +794,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltip={null}
               tooltipProps={null}
             >
-<<<<<<< HEAD
               <InternalDropdownItem
                 className=""
                 component="button"
@@ -1083,15 +809,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 isDisabled={false}
                 isHovered={false}
                 listItemClassName=""
-=======
-              <button
-                aria-expanded={false}
-                aria-haspopup={true}
-                aria-label="Application launcher"
-                className="pf-c-app-launcher__toggle"
-                disabled={false}
-                id="pf-toggle-id-3"
->>>>>>> upstream/master
                 onClick={[Function]}
                 role="menuitem"
                 tabIndex={-1}
@@ -1537,12 +1254,7 @@ exports[`ApplicationLauncher dropup 1`] = `
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-label="Application launcher"
-<<<<<<< HEAD
                 class="pf-c-app-launcher__toggle"
-=======
-                className="pf-c-app-launcher__toggle"
-                disabled={false}
->>>>>>> upstream/master
                 id="pf-toggle-id-2"
                 type="button"
               >
@@ -1942,19 +1654,10 @@ exports[`ApplicationLauncher expanded 1`] = `
             Object {
               "current": <nav
                 aria-label="Application launcher"
-<<<<<<< HEAD
                 class="pf-c-app-launcher pf-m-expanded"
                 data-ouia-component-id="4"
                 data-ouia-component-type="PF4/Dropdown"
                 data-ouia-safe="true"
-=======
-                className="pf-c-app-launcher__toggle"
-                disabled={false}
-                id="pf-toggle-id-4"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
->>>>>>> upstream/master
               >
                 <button
                   aria-expanded="true"
@@ -1979,257 +1682,63 @@ exports[`ApplicationLauncher expanded 1`] = `
                         transform=""
                       />
                     </svg>
-<<<<<<< HEAD
                   </span>
                 </button>
                 <ul
                   aria-labelledby="pf-toggle-id-4"
                   class="pf-c-app-launcher__menu"
                   role="menu"
-=======
-                  </ThIcon>
-                </span>
-              </button>
-            </Toggle>
-          </DropdownToggle>
-          <DropdownMenu
-            aria-labelledby="pf-toggle-id-4"
-            autoFocus={false}
-            className=""
-            component="ul"
-            isGrouped={false}
-            isOpen={true}
-            openedOnEnter={false}
-            position="left"
-          >
-            <ul
-              aria-labelledby="pf-toggle-id-4"
-              autoFocus={false}
-              className="pf-c-app-launcher__menu"
-              hidden={false}
-              role="menu"
-            >
-              <DropdownItem
-                index={0}
-                key=".$link"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="a"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={0}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
->>>>>>> upstream/master
                 >
                   <li
                     role="menuitem"
                   >
                     <a
-<<<<<<< HEAD
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      aria-disabled={false}
-                      className="pf-c-app-launcher__menu-item"
-                      tabIndex={-1}
->>>>>>> upstream/master
                     >
                       Link
                     </a>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                component="button"
-                index={1}
-                key=".$action"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="button"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={1}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <button
-<<<<<<< HEAD
                       class="pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      className="pf-c-app-launcher__menu-item"
-                      disabled={false}
-                      tabIndex={-1}
->>>>>>> upstream/master
                       type="button"
                     >
                       Action
                     </button>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                index={2}
-                isDisabled={true}
-                key=".$disabled link"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="a"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={2}
-                  isDisabled={true}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <a
-<<<<<<< HEAD
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
                       tabindex="-1"
-=======
-                      aria-disabled={true}
-                      className="pf-m-disabled pf-c-app-launcher__menu-item"
-                      tabIndex={-1}
->>>>>>> upstream/master
                     >
                       Disabled Link
                     </a>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownItem
-                component="button"
-                index={3}
-                isDisabled={true}
-                key=".$disabled action"
-              >
-                <InternalDropdownItem
-                  className=""
-                  component="button"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={3}
-                  isDisabled={true}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="menuitem"
-                  tabIndex={-1}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="menuitem"
                   >
                     <button
-<<<<<<< HEAD
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled=""
                       tabindex="-1"
-=======
-                      className="pf-m-disabled pf-c-app-launcher__menu-item"
-                      disabled={true}
-                      tabIndex={-1}
->>>>>>> upstream/master
                       type="button"
                     >
                       Disabled Action
                     </button>
                   </li>
-<<<<<<< HEAD
-=======
-                </InternalDropdownItem>
-              </DropdownItem>
-              <DropdownSeparator
-                index={4}
-                key=".$separator"
-              >
-                <InternalDropdownItem
-                  className="pf-c-app-launcher__separator"
-                  component="div"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={4}
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  role="separator"
-                  tooltipProps={Object {}}
-                  variant="item"
-                >
->>>>>>> upstream/master
                   <li
                     role="separator"
                   >
                     <div
-<<<<<<< HEAD
                       class="pf-c-app-launcher__separator"
-=======
-                      className="pf-c-app-launcher__separator"
->>>>>>> upstream/master
                     />
                   </li>
                   <li
@@ -2633,24 +2142,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tooltipProps={null}
                 variant="item"
               >
-<<<<<<< HEAD
                 <li
                   className={null}
-=======
-                <InternalDropdownItem
-                  className=""
-                  component="a"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={5}
-                  isDisabled={false}
-                  isHovered={false}
->>>>>>> upstream/master
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="menuitem"
@@ -2661,15 +2154,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     href={null}
                     tabIndex={-1}
                   >
-<<<<<<< HEAD
                     <ApplicationLauncherContent>
-=======
-                    <a
-                      aria-disabled={false}
-                      className="pf-c-app-launcher__menu-item"
-                      tabIndex={-1}
-                    >
->>>>>>> upstream/master
                       Separated Link
                     </ApplicationLauncherContent>
                   </a>
@@ -2713,24 +2198,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tooltipProps={null}
                 variant="item"
               >
-<<<<<<< HEAD
                 <li
                   className={null}
-=======
-                <InternalDropdownItem
-                  className=""
-                  component="button"
-                  context={
-                    Object {
-                      "keyHandler": [Function],
-                      "sendRef": [Function],
-                    }
-                  }
-                  enterTriggersArrowDown={false}
-                  index={6}
-                  isDisabled={false}
-                  isHovered={false}
->>>>>>> upstream/master
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="menuitem"
@@ -2742,16 +2211,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     tabIndex={-1}
                     type="button"
                   >
-<<<<<<< HEAD
                     <ApplicationLauncherContent>
-=======
-                    <button
-                      className="pf-c-app-launcher__menu-item"
-                      disabled={false}
-                      tabIndex={-1}
-                      type="button"
-                    >
->>>>>>> upstream/master
                       Separated Action
                     </ApplicationLauncherContent>
                   </button>
@@ -2901,12 +2361,7 @@ exports[`ApplicationLauncher regular 1`] = `
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-label="Application launcher"
-<<<<<<< HEAD
                 class="pf-c-app-launcher__toggle"
-=======
-                className="pf-c-app-launcher__toggle"
-                disabled={false}
->>>>>>> upstream/master
                 id="pf-toggle-id-0"
                 type="button"
               >
@@ -3181,12 +2636,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-label="Application launcher"
-<<<<<<< HEAD
                 class="pf-c-app-launcher__toggle"
-=======
-                className="pf-c-app-launcher__toggle"
-                disabled={false}
->>>>>>> upstream/master
                 id="pf-toggle-id-1"
                 type="button"
               >

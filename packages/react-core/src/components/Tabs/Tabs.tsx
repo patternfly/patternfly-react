@@ -6,7 +6,6 @@ import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
-import { SIDE } from '../../helpers/constants';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { getOUIAProps, OUIAProps } from '../../helpers';
@@ -46,10 +45,6 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
 }
 
 export interface TabsState {
-  showLeftScrollButton: boolean;
-  showRightScrollButton: boolean;
-  highlightLeftScrollButton: boolean;
-  highlightRightScrollButton: boolean;
   shownKeys: (string | number)[];
 }
 
@@ -58,10 +53,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   constructor(props: TabsProps & OUIAProps) {
     super(props);
     this.state = {
-      showLeftScrollButton: false,
-      showRightScrollButton: false,
-      highlightLeftScrollButton: false,
-      highlightRightScrollButton: false,
       shownKeys: [this.props.activeKey] // only for mountOnEnter case
     };
   }
@@ -96,47 +87,12 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       // most recently selected tabContent
       tabContentRef.current.hidden = false;
     }
-    // Update scroll button state and which button to highlight
-    setTimeout(() => {
-      this.handleScrollButtons();
-    }, 1);
     if (mountOnEnter) {
       this.setState({
         shownKeys: shownKeys.concat(eventKey)
       });
     }
   }
-
-  handleScrollButtons = () => {
-    if (this.tabList.current) {
-      const container = this.tabList.current;
-      // get first element and check if it is in view
-      const showLeftScrollButton = !isElementInView(container, container.firstChild as HTMLElement, false);
-
-      // get lase element and check if it is in view
-      const showRightScrollButton = !isElementInView(container, container.lastChild as HTMLElement, false);
-
-      // determine if selected tab is out of view and apply styles
-      let selectedTab;
-      const childrenArr = Array.from(container.children);
-      childrenArr.forEach((child: any) => {
-        const { className } = child;
-        if (className.search('pf-m-current') > 0) {
-          selectedTab = child;
-        }
-      });
-
-      const sideOutOfView = sideElementIsOutOfView(container, selectedTab);
-
-      this.setState({
-        showLeftScrollButton,
-        showRightScrollButton,
-        highlightLeftScrollButton: (sideOutOfView === SIDE.LEFT || sideOutOfView === SIDE.BOTH) && showLeftScrollButton,
-        highlightRightScrollButton:
-          (sideOutOfView === SIDE.RIGHT || sideOutOfView === SIDE.BOTH) && showRightScrollButton
-      });
-    }
-  };
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
@@ -177,16 +133,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     }
   };
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleScrollButtons, false);
-    // call the handle resize function to check if scroll buttons should be shown
-    this.handleScrollButtons();
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('resize', this.handleScrollButtons, false);
-  }
-
   render() {
     const {
       className,
@@ -205,10 +151,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       ...props
     } = this.props;
     const {
-      showLeftScrollButton,
-      showRightScrollButton,
-      highlightLeftScrollButton,
-      highlightRightScrollButton,
       shownKeys
     } = this.state;
 
@@ -222,11 +164,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
           className={css(
             styles.tabs,
             isFilled && styles.modifiers.fill,
-            isSecondary && styles.modifiers.tabsSecondary,
-            showLeftScrollButton && styles.modifiers.start,
-            showRightScrollButton && styles.modifiers.end,
-            highlightLeftScrollButton && styles.modifiers.startCurrent,
-            highlightRightScrollButton && styles.modifiers.endCurrent,
+            isSecondary && styles.modifiers.secondary,
             className
           )}
           {...getOUIAProps('Tabs', ouiaId)}
@@ -240,7 +178,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
           >
             <AngleLeftIcon />
           </button>
-          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
+          <ul className={css(styles.tabsList)} ref={this.tabList}>
             {React.Children.map(children, (child: any, index) => {
               const { title, eventKey, tabContentRef, id: childId, tabContentId, ...rest } = child.props;
               return (

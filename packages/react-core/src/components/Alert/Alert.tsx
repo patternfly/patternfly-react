@@ -4,7 +4,6 @@ import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
 import { capitalize, getOUIAProps, OUIAProps } from '../../helpers';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 import { AlertContext } from './AlertContext';
 
 export enum AlertVariant {

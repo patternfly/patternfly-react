@@ -14,8 +14,6 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Flag to indicate whether use definition list or div */
   asDefinitionList?: boolean;
-  /**  Flag to indicate if the box shadow should be removed */
-  noBoxShadow?: boolean;
 }
 
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -24,13 +22,12 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   'aria-label': ariaLabel = '',
   headingLevel = 'h3',
   asDefinitionList = true,
-  noBoxShadow = false,
   ...props
 }: AccordionProps) => {
   const AccordionList: any = asDefinitionList ? 'dl' : 'div';
   return (
     <AccordionList
-      className={css(styles.accordion, noBoxShadow && styles.modifiers.noBoxShadow, className)}
+      className={css(styles.accordion, className)}
       aria-label={ariaLabel}
       {...props}
     >

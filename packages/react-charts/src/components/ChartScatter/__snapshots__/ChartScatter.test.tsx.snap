@@ -411,7 +411,7 @@ exports[`ChartScatter 1`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -439,7 +439,7 @@ exports[`ChartScatter 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -883,7 +883,7 @@ exports[`ChartScatter 1`] = `
         "pointerLength": 10,
         "pointerWidth": 20,
         "style": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
           "padding": 16,
           "pointerEvents": "none",
         },
@@ -911,7 +911,7 @@ exports[`ChartScatter 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1339,7 +1339,7 @@ exports[`ChartScatter 2`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -1367,7 +1367,7 @@ exports[`ChartScatter 2`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1811,7 +1811,7 @@ exports[`ChartScatter 2`] = `
         "pointerLength": 10,
         "pointerWidth": 20,
         "style": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
           "padding": 16,
           "pointerEvents": "none",
         },
@@ -1839,7 +1839,7 @@ exports[`ChartScatter 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -2268,7 +2268,7 @@ exports[`renders component data 1`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -2296,7 +2296,7 @@ exports[`renders component data 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -4901,7 +4901,7 @@ exports[`renders component data 1`] = `
         "pointerLength": 10,
         "pointerWidth": 20,
         "style": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
           "padding": 16,
           "pointerEvents": "none",
         },
@@ -4929,7 +4929,7 @@ exports[`renders component data 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",

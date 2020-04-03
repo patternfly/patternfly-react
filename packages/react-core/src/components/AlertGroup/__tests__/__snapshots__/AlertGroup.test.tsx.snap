@@ -534,7 +534,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                     <button
                       aria-disabled={null}
                       aria-label="Close"
-<<<<<<< HEAD
                       className="pf-c-button pf-m-plain"
                       data-ouia-component-id={null}
                       data-ouia-component-type="PF4/Button"
@@ -543,9 +542,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                       onClick={[MockFunction]}
                       tabIndex={null}
                       type="button"
-=======
-                      onClose={[MockFunction]}
->>>>>>> upstream/master
                     >
                       <TimesIcon>
                         <SVGIcon

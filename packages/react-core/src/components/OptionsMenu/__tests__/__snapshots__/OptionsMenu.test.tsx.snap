@@ -632,7 +632,6 @@ exports[`optionsMenu expanded 1`] = `
               <CaretDownIcon
                 className="pf-c-options-menu__toggle-icon"
               >
-<<<<<<< HEAD
                 <SVGIcon
                   className="pf-c-options-menu__toggle-icon"
                   color="currentColor"
@@ -649,18 +648,6 @@ exports[`optionsMenu expanded 1`] = `
                   }
                   noVerticalAlign={false}
                   size="sm"
-=======
-                <button
-                  aria-expanded={true}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle"
-                  disabled={false}
-                  id="expanded-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
->>>>>>> upstream/master
                 >
                   <svg
                     aria-hidden={true}
@@ -759,32 +746,12 @@ exports[`optionsMenu expanded 1`] = `
                         onKeyDown={[Function]}
                         role="menuitem"
                       >
-<<<<<<< HEAD
                         <button
                           className="pf-c-options-menu__menu-item"
                           disabled={false}
-=======
-                        <InternalDropdownItem
-                          className=""
-                          component="button"
-                          context={
-                            Object {
-                              "keyHandler": [Function],
-                              "sendRef": [Function],
-                            }
-                          }
-                          enterTriggersArrowDown={false}
-                          id=""
-                          index={-1}
-                          isDisabled={false}
-                          isHovered={false}
-                          onClick={[Function]}
-                          role="menuitem"
->>>>>>> upstream/master
                           tabIndex={-1}
                           type="button"
                         >
-<<<<<<< HEAD
                           Name
                         </button>
                       </li>
@@ -819,29 +786,6 @@ exports[`optionsMenu expanded 1`] = `
                       tooltip={null}
                       tooltipProps={Object {}}
                       variant="item"
-=======
-                          <li
-                            className={null}
-                            id=""
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="menuitem"
-                          >
-                            <button
-                              className="pf-c-options-menu__menu-item"
-                              disabled={false}
-                              tabIndex={-1}
-                              type="button"
-                            >
-                              Name
-                            </button>
-                          </li>
-                        </InternalDropdownItem>
-                      </DropdownItem>
-                    </OptionsMenuItem>
-                    <OptionsMenuItem
-                      key="date"
->>>>>>> upstream/master
                     >
                       <li
                         className={null}
@@ -850,32 +794,12 @@ exports[`optionsMenu expanded 1`] = `
                         onKeyDown={[Function]}
                         role="menuitem"
                       >
-<<<<<<< HEAD
                         <button
                           className="pf-c-options-menu__menu-item"
                           disabled={false}
-=======
-                        <InternalDropdownItem
-                          className=""
-                          component="button"
-                          context={
-                            Object {
-                              "keyHandler": [Function],
-                              "sendRef": [Function],
-                            }
-                          }
-                          enterTriggersArrowDown={false}
-                          id=""
-                          index={-1}
-                          isDisabled={false}
-                          isHovered={false}
-                          onClick={[Function]}
-                          role="menuitem"
->>>>>>> upstream/master
                           tabIndex={-1}
                           type="button"
                         >
-<<<<<<< HEAD
                           Date
                         </button>
                       </li>
@@ -906,28 +830,6 @@ exports[`optionsMenu expanded 1`] = `
                       enterTriggersArrowDown={false}
                       id=""
                       index={-1}
-=======
-                          <li
-                            className={null}
-                            id=""
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="menuitem"
-                          >
-                            <button
-                              className="pf-c-options-menu__menu-item"
-                              disabled={false}
-                              tabIndex={-1}
-                              type="button"
-                            >
-                              Date
-                            </button>
-                          </li>
-                        </InternalDropdownItem>
-                      </DropdownItem>
-                    </OptionsMenuItem>
-                    <OptionsMenuItem
->>>>>>> upstream/master
                       isDisabled={true}
                       isHovered={false}
                       onClick={[Function]}
@@ -946,30 +848,11 @@ exports[`optionsMenu expanded 1`] = `
                       >
                         <button
                           aria-disabled={true}
-<<<<<<< HEAD
                           className="pf-m-disabled pf-c-options-menu__menu-item"
                           disabled={true}
-=======
-                          className=""
-                          component="button"
-                          context={
-                            Object {
-                              "keyHandler": [Function],
-                              "sendRef": [Function],
-                            }
-                          }
-                          enterTriggersArrowDown={false}
-                          id=""
-                          index={-1}
-                          isDisabled={true}
-                          isHovered={false}
-                          onClick={[Function]}
-                          role="menuitem"
->>>>>>> upstream/master
                           tabIndex={-1}
                           type="button"
                         >
-<<<<<<< HEAD
                           Disabled
                         </button>
                       </li>
@@ -1004,30 +887,6 @@ exports[`optionsMenu expanded 1`] = `
                       tooltip={null}
                       tooltipProps={Object {}}
                       variant="item"
-=======
-                          <li
-                            className={null}
-                            id=""
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="menuitem"
-                          >
-                            <button
-                              aria-disabled={true}
-                              className="pf-m-disabled pf-c-options-menu__menu-item"
-                              disabled={true}
-                              tabIndex={-1}
-                              type="button"
-                            >
-                              Disabled
-                            </button>
-                          </li>
-                        </InternalDropdownItem>
-                      </DropdownItem>
-                    </OptionsMenuItem>
-                    <OptionsMenuItem
-                      key="size"
->>>>>>> upstream/master
                     >
                       <li
                         className={null}
@@ -1036,32 +895,12 @@ exports[`optionsMenu expanded 1`] = `
                         onKeyDown={[Function]}
                         role="menuitem"
                       >
-<<<<<<< HEAD
                         <button
                           className="pf-c-options-menu__menu-item"
                           disabled={false}
-=======
-                        <InternalDropdownItem
-                          className=""
-                          component="button"
-                          context={
-                            Object {
-                              "keyHandler": [Function],
-                              "sendRef": [Function],
-                            }
-                          }
-                          enterTriggersArrowDown={false}
-                          id=""
-                          index={-1}
-                          isDisabled={false}
-                          isHovered={false}
-                          onClick={[Function]}
-                          role="menuitem"
->>>>>>> upstream/master
                           tabIndex={-1}
                           type="button"
                         >
-<<<<<<< HEAD
                           Size
                         </button>
                       </li>
@@ -1093,33 +932,6 @@ exports[`optionsMenu expanded 1`] = `
             >
               <h1
                 className="pf-c-options-menu__group-title"
-=======
-                          <li
-                            className={null}
-                            id=""
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="menuitem"
-                          >
-                            <button
-                              className="pf-c-options-menu__menu-item"
-                              disabled={false}
-                              tabIndex={-1}
-                              type="button"
-                            >
-                              Size
-                            </button>
-                          </li>
-                        </InternalDropdownItem>
-                      </DropdownItem>
-                    </OptionsMenuItem>
-                  </ul>
-                </section>
-              </OptionsMenuItemGroup>
-              <OptionsMenuSeparator
-                index={1}
-                key=".$separator"
->>>>>>> upstream/master
               >
                 Sort direction
               </h1>
@@ -1163,32 +975,12 @@ exports[`optionsMenu expanded 1`] = `
                         onKeyDown={[Function]}
                         role="menuitem"
                       >
-<<<<<<< HEAD
                         <button
                           className="pf-c-options-menu__menu-item"
                           disabled={false}
-=======
-                        <InternalDropdownItem
-                          className=""
-                          component="button"
-                          context={
-                            Object {
-                              "keyHandler": [Function],
-                              "sendRef": [Function],
-                            }
-                          }
-                          enterTriggersArrowDown={false}
-                          id=""
-                          index={-1}
-                          isDisabled={false}
-                          isHovered={false}
-                          onClick={[Function]}
-                          role="menuitem"
->>>>>>> upstream/master
                           tabIndex={-1}
                           type="button"
                         >
-<<<<<<< HEAD
                           Ascending
                         </button>
                       </li>
@@ -1223,29 +1015,6 @@ exports[`optionsMenu expanded 1`] = `
                       tooltip={null}
                       tooltipProps={Object {}}
                       variant="item"
-=======
-                          <li
-                            className={null}
-                            id=""
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="menuitem"
-                          >
-                            <button
-                              className="pf-c-options-menu__menu-item"
-                              disabled={false}
-                              tabIndex={-1}
-                              type="button"
-                            >
-                              Ascending
-                            </button>
-                          </li>
-                        </InternalDropdownItem>
-                      </DropdownItem>
-                    </OptionsMenuItem>
-                    <OptionsMenuItem
-                      key="descending"
->>>>>>> upstream/master
                     >
                       <li
                         className={null}
@@ -1254,32 +1023,12 @@ exports[`optionsMenu expanded 1`] = `
                         onKeyDown={[Function]}
                         role="menuitem"
                       >
-<<<<<<< HEAD
                         <button
                           className="pf-c-options-menu__menu-item"
                           disabled={false}
-=======
-                        <InternalDropdownItem
-                          className=""
-                          component="button"
-                          context={
-                            Object {
-                              "keyHandler": [Function],
-                              "sendRef": [Function],
-                            }
-                          }
-                          enterTriggersArrowDown={false}
-                          id=""
-                          index={-1}
-                          isDisabled={false}
-                          isHovered={false}
-                          onClick={[Function]}
-                          role="menuitem"
->>>>>>> upstream/master
                           tabIndex={-1}
                           type="button"
                         >
-<<<<<<< HEAD
                           Descending
                         </button>
                       </li>
@@ -1297,40 +1046,6 @@ exports[`optionsMenu expanded 1`] = `
       </DropdownMenu>
     </div>
   </DropdownWithContext>
-=======
-                          <li
-                            className={null}
-                            id=""
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            role="menuitem"
-                          >
-                            <button
-                              className="pf-c-options-menu__menu-item"
-                              disabled={false}
-                              tabIndex={-1}
-                              type="button"
-                            >
-                              Descending
-                            </button>
-                          </li>
-                        </InternalDropdownItem>
-                      </DropdownItem>
-                    </OptionsMenuItem>
-                    <li
-                      className="pf-c-options-menu__separator"
-                      role="separator"
-                    />
-                  </ul>
-                </section>
-              </OptionsMenuItemGroup>
-            </ul>
-          </DropdownMenu>
-        </div>
-      </DropdownWithContext>
-    </ComponentWithOuia>
-  </Component>
->>>>>>> upstream/master
 </OptionsMenu>
 `;
 
@@ -1610,7 +1325,6 @@ exports[`optionsMenu isDisabled 1`] = `
               onKeyDown={[Function]}
               type="button"
             >
-<<<<<<< HEAD
               <span
                 className="pf-c-options-menu__toggle-text"
               />
@@ -1644,95 +1358,6 @@ exports[`optionsMenu isDisabled 1`] = `
                     style={
                       Object {
                         "verticalAlign": "-0.125em",
-=======
-              <Toggle
-                aria-expanded={false}
-                aria-label="Options menu"
-                ariaHasPopup="listbox"
-                bubbleEvent={false}
-                className=""
-                id="disabled-toggle"
-                isActive={false}
-                isDisabled={true}
-                isFocused={false}
-                isHovered={false}
-                isOpen={false}
-                isPlain={false}
-                isPrimary={false}
-                isSplitButton={false}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                parentRef={
-                  Object {
-                    "current": <div
-                      class="pf-c-options-menu"
-                      id="disabled"
-                    >
-                      <button
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-label="Options menu"
-                        class="pf-c-options-menu__toggle"
-                        disabled=""
-                        id="disabled-toggle"
-                        type="button"
-                      >
-                        <span
-                          class="pf-c-options-menu__toggle-text"
-                        />
-                        <svg
-                          aria-hidden="true"
-                          class="pf-c-options-menu__toggle-icon"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 320 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                            transform=""
-                          />
-                        </svg>
-                      </button>
-                    </div>,
-                  }
-                }
-              >
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle"
-                  disabled={true}
-                  id="disabled-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
-                  />
-                  <CaretDownIcon
-                    className="pf-c-options-menu__toggle-icon"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                    title={null}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      className="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style={
-                        Object {
-                          "verticalAlign": "-0.125em",
-                        }
->>>>>>> upstream/master
                       }
                     }
                     viewBox="0 0 320 512"
@@ -2029,7 +1654,6 @@ exports[`optionsMenu open up 1`] = `
               <CaretDownIcon
                 className="pf-c-options-menu__toggle-icon"
               >
-<<<<<<< HEAD
                 <SVGIcon
                   className="pf-c-options-menu__toggle-icon"
                   color="currentColor"
@@ -2046,18 +1670,6 @@ exports[`optionsMenu open up 1`] = `
                   }
                   noVerticalAlign={false}
                   size="sm"
-=======
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle"
-                  disabled={false}
-                  id="openUp-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
->>>>>>> upstream/master
                 >
                   <svg
                     aria-hidden={true}
@@ -2309,7 +1921,6 @@ exports[`optionsMenu plain 1`] = `
               onKeyDown={[Function]}
               type="button"
             >
-<<<<<<< HEAD
               <span
                 className={null}
               />
@@ -2319,67 +1930,6 @@ exports[`optionsMenu plain 1`] = `
       </OptionsMenuToggle>
     </div>
   </DropdownWithContext>
-=======
-              <Toggle
-                aria-expanded={false}
-                aria-label="Options menu"
-                ariaHasPopup="listbox"
-                bubbleEvent={false}
-                className=""
-                id="plain-toggle"
-                isActive={false}
-                isDisabled={false}
-                isFocused={false}
-                isHovered={false}
-                isOpen={false}
-                isPlain={true}
-                isPrimary={false}
-                isSplitButton={false}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                parentRef={
-                  Object {
-                    "current": <div
-                      class="pf-c-options-menu"
-                      id="plain"
-                    >
-                      <button
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-label="Options menu"
-                        class="pf-c-options-menu__toggle pf-m-plain"
-                        id="plain-toggle"
-                        type="button"
-                      >
-                        <span />
-                      </button>
-                    </div>,
-                  }
-                }
-              >
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle pf-m-plain"
-                  disabled={false}
-                  id="plain-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className={null}
-                  />
-                </button>
-              </Toggle>
-            </DropdownToggle>
-          </OptionsMenuToggle>
-        </div>
-      </DropdownWithContext>
-    </ComponentWithOuia>
-  </Component>
->>>>>>> upstream/master
 </OptionsMenu>
 `;
 
@@ -2623,154 +2173,6 @@ exports[`optionsMenu regular 1`] = `
                     <svg
                       aria-hidden="true"
                       class="pf-c-options-menu__toggle-icon"
-<<<<<<< HEAD
-=======
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
-                  </button>
-                </div>,
-              }
-            }
-          >
-            <DropdownToggle
-              aria-expanded={false}
-              aria-label="Options menu"
-              ariaHasPopup="listbox"
-              id="regular-toggle"
-              isActive={false}
-              isDisabled={false}
-              isFocused={false}
-              isHovered={false}
-              isOpen={false}
-              isPlain={false}
-              onEnter={[Function]}
-              parentRef={
-                Object {
-                  "current": <div
-                    class="pf-c-options-menu"
-                    id="regular"
-                  >
-                    <button
-                      aria-expanded="false"
-                      aria-haspopup="listbox"
-                      aria-label="Options menu"
-                      class="pf-c-options-menu__toggle"
-                      id="regular-toggle"
-                      type="button"
-                    >
-                      <span
-                        class="pf-c-options-menu__toggle-text"
-                      />
-                      <svg
-                        aria-hidden="true"
-                        class="pf-c-options-menu__toggle-icon"
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style="vertical-align: -0.125em;"
-                        viewBox="0 0 320 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                          transform=""
-                        />
-                      </svg>
-                    </button>
-                  </div>,
-                }
-              }
-            >
-              <Toggle
-                aria-expanded={false}
-                aria-label="Options menu"
-                ariaHasPopup="listbox"
-                bubbleEvent={false}
-                className=""
-                id="regular-toggle"
-                isActive={false}
-                isDisabled={false}
-                isFocused={false}
-                isHovered={false}
-                isOpen={false}
-                isPlain={false}
-                isPrimary={false}
-                isSplitButton={false}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                parentRef={
-                  Object {
-                    "current": <div
-                      class="pf-c-options-menu"
-                      id="regular"
-                    >
-                      <button
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-label="Options menu"
-                        class="pf-c-options-menu__toggle"
-                        id="regular-toggle"
-                        type="button"
-                      >
-                        <span
-                          class="pf-c-options-menu__toggle-text"
-                        />
-                        <svg
-                          aria-hidden="true"
-                          class="pf-c-options-menu__toggle-icon"
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style="vertical-align: -0.125em;"
-                          viewBox="0 0 320 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                            transform=""
-                          />
-                        </svg>
-                      </button>
-                    </div>,
-                  }
-                }
-              >
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle"
-                  disabled={false}
-                  id="regular-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
-                  />
-                  <CaretDownIcon
-                    className="pf-c-options-menu__toggle-icon"
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                    title={null}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      aria-labelledby={null}
-                      className="pf-c-options-menu__toggle-icon"
->>>>>>> upstream/master
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -3129,7 +2531,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
               <CaretDownIcon
                 className="pf-c-options-menu__toggle-icon"
               >
-<<<<<<< HEAD
                 <SVGIcon
                   className="pf-c-options-menu__toggle-icon"
                   color="currentColor"
@@ -3146,18 +2547,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
                   }
                   noVerticalAlign={false}
                   size="sm"
-=======
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle"
-                  disabled={false}
-                  id="rightAlignedOpenUp-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
->>>>>>> upstream/master
                 >
                   <svg
                     aria-hidden={true}
@@ -3465,7 +2854,6 @@ exports[`optionsMenu right aligned 1`] = `
               <CaretDownIcon
                 className="pf-c-options-menu__toggle-icon"
               >
-<<<<<<< HEAD
                 <SVGIcon
                   className="pf-c-options-menu__toggle-icon"
                   color="currentColor"
@@ -3482,18 +2870,6 @@ exports[`optionsMenu right aligned 1`] = `
                   }
                   noVerticalAlign={false}
                   size="sm"
-=======
-                <button
-                  aria-expanded={false}
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  className="pf-c-options-menu__toggle"
-                  disabled={false}
-                  id="rightAligned-toggle"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  type="button"
->>>>>>> upstream/master
                 >
                   <svg
                     aria-hidden={true}
