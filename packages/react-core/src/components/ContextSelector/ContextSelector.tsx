@@ -108,7 +108,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
           <div className={css(styles.contextSelectorMenu)}>
             {isOpen && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-                <div>
+                <div className={css(styles.contextSelectorMenuSearch)}>
                   <InputGroup>
                     <TextInput
                       value={searchInputValue}
