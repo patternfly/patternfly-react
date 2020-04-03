@@ -73,9 +73,9 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
         filteredItems: null
       });
     } else {
-      const filteredGroups: (JSX.Element | null)[] = this.appLauncherItems
-        .map((group: JSX.Element) => {
-          const filteredGroup: JSX.Element = React.cloneElement(group, {
+      const filteredGroups = this.appLauncherItems
+        .map(group => {
+          const filteredGroup = React.cloneElement(group, {
             children: group.props.children.filter((item: JSX.Element) => {
               if (item.type === ApplicationLauncherSeparator) {
                 return item;
