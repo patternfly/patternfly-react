@@ -78,7 +78,7 @@ describe('EmptyState', () => {
       />
     );
     expect(view.find('div').props().className).toBe('pf-c-empty-state__icon custom-empty-state-icon');
-    expect(view.find('AddressBookIcon').length).toBe(1);
+    expect(view.find(AddressBookIcon).length).toBe(1);
   });
 
   test('Primary div', () => {

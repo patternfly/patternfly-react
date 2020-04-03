@@ -14,7 +14,7 @@ interface AlertActionCloseButtonProps extends ButtonProps {
   variantLabel?: string;
 }
 
-export const AlertActionCloseButton = ({
+export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseButtonProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   onClose = () => undefined as any,

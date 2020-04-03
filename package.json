@@ -30,7 +30,6 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
-    "@babel/runtime": "^7.9.2",
     "@octokit/rest": "^16.39.0",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
@@ -107,5 +106,13 @@
     "packages": [
       "packages/**"
     ]
+  },
+  "resolutions": {
+    "@babel/helpers": "^7.9.2",
+    "@babel/parser": "^7.9.2",
+    "@babel/plugin-transform-classes": "^7.9.2",
+    "@babel/runtime-corejs3": "^7.9.2",
+    "@babel/runtime": "^7.9.2",
+    "@babel/standalone": "^7.9.2"
   }
 }

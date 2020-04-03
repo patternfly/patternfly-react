@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`it renders properly 1`] = `
-<Button
-  variant="plain"
->
+<Component>
   <CloseIcon />
-</Button>
+</Component>
 `;

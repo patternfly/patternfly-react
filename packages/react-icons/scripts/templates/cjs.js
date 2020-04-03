@@ -7,7 +7,7 @@ function __export(m) {
   for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-${fnames.map(fname => `__export(require("./${fname}"));`)}
+${fnames.map(fname => `__export(require("./${fname}"));`).join('\n')}
 `,
   getSingleOutputPath: (outDir, fname) => join(outDir, `js/icons/${fname}.js`),
   getSingleContent: (jsName, icon) => `"use strict";
@@ -26,7 +26,7 @@ exports.${jsName}Config = {
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'
 };
-exports.${jsName} = function (props) {
+exports.${jsName} = function ${jsName}(props) {
   var newProps = Object.assign({ config: exports.${jsName}Config }, props);
   return react_1.default.createElement(SVGIcon_1.SVGIcon, newProps);
 };

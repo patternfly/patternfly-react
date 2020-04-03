@@ -11,7 +11,7 @@ exports[`toggle button render 1`] = `
   onClick={[MockFunction]}
   type="button"
 >
-  <Component
+  <AngleRightIcon
     aria-hidden="true"
     className="pf-c-clipboard-copy__group-toggle-icon"
   />

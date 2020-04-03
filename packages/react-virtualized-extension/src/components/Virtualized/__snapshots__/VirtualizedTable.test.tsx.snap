@@ -25,7 +25,6 @@ exports[`Actions virtualized table 1`] = `
       },
     ]
   }
-  className=""
   contentId="expanded-content"
   dropdownDirection="down"
   dropdownPosition="right"
@@ -118,7 +117,6 @@ exports[`Actions virtualized table 1`] = `
       },
     ]
   }
-  variant={null}
 >
   <Provider
     aria-label="Aria labeled"
@@ -413,11 +411,11 @@ exports[`Actions virtualized table 1`] = `
       data-ouia-safe={true}
       role="grid"
     >
-      <TableHeader>
+      <Component>
         <ContextHeader
           headerRows={null}
         >
-          <Header
+          <Component
             className=""
             headerRows={null}
           >
@@ -708,7 +706,7 @@ exports[`Actions virtualized table 1`] = `
               <thead
                 className=""
               >
-                <HeaderRow
+                <Component
                   key="0-header-row"
                   renderers={
                     Object {
@@ -985,7 +983,7 @@ exports[`Actions virtualized table 1`] = `
                   rowIndex={0}
                 >
                   <tr>
-                    <HeaderCell
+                    <Component
                       aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
@@ -1000,7 +998,7 @@ exports[`Actions virtualized table 1`] = `
                         data-label="Header cell"
                         scope="col"
                       >
-                        <SortColumn
+                        <Component
                           className="pf-c-button pf-m-plain"
                           onSort={[Function]}
                           sortDirection=""
@@ -1053,10 +1051,10 @@ exports[`Actions virtualized table 1`] = `
                               </ArrowsAltVIcon>
                             </span>
                           </button>
-                        </SortColumn>
+                        </Component>
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={1}
                       data-label="Branches"
                       key="1-header"
@@ -1070,8 +1068,8 @@ exports[`Actions virtualized table 1`] = `
                       >
                         Branches
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={2}
                       data-label="Pull requests"
                       key="2-header"
@@ -1085,8 +1083,8 @@ exports[`Actions virtualized table 1`] = `
                       >
                         Pull requests
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={3}
                       data-label="Workspaces"
                       key="3-header"
@@ -1100,8 +1098,8 @@ exports[`Actions virtualized table 1`] = `
                       >
                         Workspaces
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={4}
                       data-label="Last Commit"
                       key="4-header"
@@ -1115,8 +1113,8 @@ exports[`Actions virtualized table 1`] = `
                       >
                         Last Commit
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       component="td"
                       data-key={5}
                       data-label=""
@@ -1128,14 +1126,14 @@ exports[`Actions virtualized table 1`] = `
                         data-key={5}
                         data-label=""
                       />
-                    </HeaderCell>
+                    </Component>
                   </tr>
-                </HeaderRow>
+                </Component>
               </thead>
             </BaseHeader>
-          </Header>
+          </Component>
         </ContextHeader>
-      </TableHeader>
+      </Component>
     </table>
   </Provider>
 </Table>
@@ -1164,7 +1162,6 @@ exports[`Selectable virtualized table 1`] = `
       },
     ]
   }
-  className=""
   contentId="expanded-content"
   dropdownDirection="down"
   dropdownPosition="right"
@@ -1258,7 +1255,6 @@ exports[`Selectable virtualized table 1`] = `
       },
     ]
   }
-  variant={null}
 >
   <Provider
     aria-label="Aria labeled"
@@ -1553,11 +1549,11 @@ exports[`Selectable virtualized table 1`] = `
       data-ouia-safe={true}
       role="grid"
     >
-      <TableHeader>
+      <Component>
         <ContextHeader
           headerRows={null}
         >
-          <Header
+          <Component
             className=""
             headerRows={null}
           >
@@ -1848,7 +1844,7 @@ exports[`Selectable virtualized table 1`] = `
               <thead
                 className=""
               >
-                <HeaderRow
+                <Component
                   key="0-header-row"
                   renderers={
                     Object {
@@ -2125,7 +2121,7 @@ exports[`Selectable virtualized table 1`] = `
                   rowIndex={0}
                 >
                   <tr>
-                    <HeaderCell
+                    <Component
                       className="pf-c-table__check"
                       component="td"
                       data-key={0}
@@ -2139,7 +2135,7 @@ exports[`Selectable virtualized table 1`] = `
                         data-key={0}
                         data-label=""
                       >
-                        <SelectColumn
+                        <Component
                           aria-label="Select all rows"
                           checked={false}
                           name="check-all"
@@ -2152,10 +2148,10 @@ exports[`Selectable virtualized table 1`] = `
                             onChange={[Function]}
                             type="checkbox"
                           />
-                        </SelectColumn>
+                        </Component>
                       </td>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={1}
@@ -2170,7 +2166,7 @@ exports[`Selectable virtualized table 1`] = `
                         data-label="Header cell"
                         scope="col"
                       >
-                        <SortColumn
+                        <Component
                           className="pf-c-button pf-m-plain"
                           onSort={[Function]}
                           sortDirection=""
@@ -2223,10 +2219,10 @@ exports[`Selectable virtualized table 1`] = `
                               </ArrowsAltVIcon>
                             </span>
                           </button>
-                        </SortColumn>
+                        </Component>
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={2}
                       data-label="Branches"
                       key="2-header"
@@ -2240,8 +2236,8 @@ exports[`Selectable virtualized table 1`] = `
                       >
                         Branches
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={3}
                       data-label="Pull requests"
                       key="3-header"
@@ -2255,8 +2251,8 @@ exports[`Selectable virtualized table 1`] = `
                       >
                         Pull requests
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={4}
                       data-label="Workspaces"
                       key="4-header"
@@ -2270,8 +2266,8 @@ exports[`Selectable virtualized table 1`] = `
                       >
                         Workspaces
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={5}
                       data-label="Last Commit"
                       key="5-header"
@@ -2285,14 +2281,14 @@ exports[`Selectable virtualized table 1`] = `
                       >
                         Last Commit
                       </th>
-                    </HeaderCell>
+                    </Component>
                   </tr>
-                </HeaderRow>
+                </Component>
               </thead>
             </BaseHeader>
-          </Header>
+          </Component>
         </ContextHeader>
-      </TableHeader>
+      </Component>
     </table>
   </Provider>
 </Table>
@@ -2343,7 +2339,6 @@ exports[`Simple Actions table 1`] = `
       },
     ]
   }
-  className=""
   contentId="expanded-content"
   dropdownDirection="down"
   dropdownPosition="right"
@@ -2446,7 +2441,6 @@ exports[`Simple Actions table 1`] = `
       },
     ]
   }
-  variant={null}
 >
   <Provider
     aria-label="Aria labeled"
@@ -2855,11 +2849,11 @@ exports[`Simple Actions table 1`] = `
       data-ouia-safe={true}
       role="grid"
     >
-      <TableHeader>
+      <Component>
         <ContextHeader
           headerRows={null}
         >
-          <Header
+          <Component
             className=""
             headerRows={null}
           >
@@ -3264,7 +3258,7 @@ exports[`Simple Actions table 1`] = `
               <thead
                 className=""
               >
-                <HeaderRow
+                <Component
                   key="0-header-row"
                   renderers={
                     Object {
@@ -3655,7 +3649,7 @@ exports[`Simple Actions table 1`] = `
                   rowIndex={0}
                 >
                   <tr>
-                    <HeaderCell
+                    <Component
                       aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
@@ -3670,7 +3664,7 @@ exports[`Simple Actions table 1`] = `
                         data-label="Header cell"
                         scope="col"
                       >
-                        <SortColumn
+                        <Component
                           className="pf-c-button pf-m-plain"
                           onSort={[Function]}
                           sortDirection=""
@@ -3723,10 +3717,10 @@ exports[`Simple Actions table 1`] = `
                               </ArrowsAltVIcon>
                             </span>
                           </button>
-                        </SortColumn>
+                        </Component>
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={1}
                       data-label="Branches"
                       key="1-header"
@@ -3740,8 +3734,8 @@ exports[`Simple Actions table 1`] = `
                       >
                         Branches
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={2}
                       data-label="Pull requests"
                       key="2-header"
@@ -3755,8 +3749,8 @@ exports[`Simple Actions table 1`] = `
                       >
                         Pull requests
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={3}
                       data-label="Workspaces"
                       key="3-header"
@@ -3770,8 +3764,8 @@ exports[`Simple Actions table 1`] = `
                       >
                         Workspaces
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={4}
                       data-label="Last Commit"
                       key="4-header"
@@ -3785,8 +3779,8 @@ exports[`Simple Actions table 1`] = `
                       >
                         Last Commit
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       component="td"
                       data-key={5}
                       data-label=""
@@ -3798,14 +3792,14 @@ exports[`Simple Actions table 1`] = `
                         data-key={5}
                         data-label=""
                       />
-                    </HeaderCell>
+                    </Component>
                   </tr>
-                </HeaderRow>
+                </Component>
               </thead>
             </BaseHeader>
-          </Header>
+          </Component>
         </ContextHeader>
-      </TableHeader>
+      </Component>
     </table>
   </Provider>
 </Table>
@@ -3831,7 +3825,6 @@ exports[`Simple virtualized table aria-label 1`] = `
       },
     ]
   }
-  className=""
   contentId="expanded-content"
   dropdownDirection="down"
   dropdownPosition="right"
@@ -3924,7 +3917,6 @@ exports[`Simple virtualized table aria-label 1`] = `
       },
     ]
   }
-  variant={null}
 >
   <Provider
     aria-label="Virtual Table Test"
@@ -4173,11 +4165,11 @@ exports[`Simple virtualized table aria-label 1`] = `
       data-ouia-safe={true}
       role="grid"
     >
-      <TableHeader>
+      <Component>
         <ContextHeader
           headerRows={null}
         >
-          <Header
+          <Component
             className=""
             headerRows={null}
           >
@@ -4422,7 +4414,7 @@ exports[`Simple virtualized table aria-label 1`] = `
               <thead
                 className=""
               >
-                <HeaderRow
+                <Component
                   key="0-header-row"
                   renderers={
                     Object {
@@ -4653,7 +4645,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                   rowIndex={0}
                 >
                   <tr>
-                    <HeaderCell
+                    <Component
                       data-key={0}
                       data-label="Header cell"
                       key="0-header"
@@ -4667,8 +4659,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                       >
                         Header cell
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={1}
                       data-label="Branches"
                       key="1-header"
@@ -4682,8 +4674,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                       >
                         Branches
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={2}
                       data-label="Pull requests"
                       key="2-header"
@@ -4697,8 +4689,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                       >
                         Pull requests
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={3}
                       data-label="Workspaces"
                       key="3-header"
@@ -4712,8 +4704,8 @@ exports[`Simple virtualized table aria-label 1`] = `
                       >
                         Workspaces
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={4}
                       data-label="Last Commit"
                       key="4-header"
@@ -4727,14 +4719,14 @@ exports[`Simple virtualized table aria-label 1`] = `
                       >
                         Last Commit
                       </th>
-                    </HeaderCell>
+                    </Component>
                   </tr>
-                </HeaderRow>
+                </Component>
               </thead>
             </BaseHeader>
-          </Header>
+          </Component>
         </ContextHeader>
-      </TableHeader>
+      </Component>
     </table>
   </Provider>
 </Table>
@@ -4760,7 +4752,6 @@ exports[`Simple virtualized table className 1`] = `
       },
     ]
   }
-  className=""
   contentId="expanded-content"
   dropdownDirection="down"
   dropdownPosition="right"
@@ -4853,7 +4844,6 @@ exports[`Simple virtualized table className 1`] = `
       },
     ]
   }
-  variant={null}
 >
   <Provider
     aria-label="Virtual Table Test"
@@ -5102,11 +5092,11 @@ exports[`Simple virtualized table className 1`] = `
       data-ouia-safe={true}
       role="grid"
     >
-      <TableHeader>
+      <Component>
         <ContextHeader
           headerRows={null}
         >
-          <Header
+          <Component
             className=""
             headerRows={null}
           >
@@ -5351,7 +5341,7 @@ exports[`Simple virtualized table className 1`] = `
               <thead
                 className=""
               >
-                <HeaderRow
+                <Component
                   key="0-header-row"
                   renderers={
                     Object {
@@ -5582,7 +5572,7 @@ exports[`Simple virtualized table className 1`] = `
                   rowIndex={0}
                 >
                   <tr>
-                    <HeaderCell
+                    <Component
                       data-key={0}
                       data-label="Header cell"
                       key="0-header"
@@ -5596,8 +5586,8 @@ exports[`Simple virtualized table className 1`] = `
                       >
                         Header cell
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={1}
                       data-label="Branches"
                       key="1-header"
@@ -5611,8 +5601,8 @@ exports[`Simple virtualized table className 1`] = `
                       >
                         Branches
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={2}
                       data-label="Pull requests"
                       key="2-header"
@@ -5626,8 +5616,8 @@ exports[`Simple virtualized table className 1`] = `
                       >
                         Pull requests
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={3}
                       data-label="Workspaces"
                       key="3-header"
@@ -5641,8 +5631,8 @@ exports[`Simple virtualized table className 1`] = `
                       >
                         Workspaces
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={4}
                       data-label="Last Commit"
                       key="4-header"
@@ -5656,14 +5646,14 @@ exports[`Simple virtualized table className 1`] = `
                       >
                         Last Commit
                       </th>
-                    </HeaderCell>
+                    </Component>
                   </tr>
-                </HeaderRow>
+                </Component>
               </thead>
             </BaseHeader>
-          </Header>
+          </Component>
         </ContextHeader>
-      </TableHeader>
+      </Component>
     </table>
   </Provider>
 </Table>
@@ -5692,7 +5682,6 @@ exports[`Sortable Virtualized Table 1`] = `
       },
     ]
   }
-  className=""
   contentId="expanded-content"
   dropdownDirection="down"
   dropdownPosition="right"
@@ -5787,7 +5776,6 @@ exports[`Sortable Virtualized Table 1`] = `
     ]
   }
   sortBy={Object {}}
-  variant={null}
 >
   <Provider
     aria-label="Aria labeled"
@@ -6037,11 +6025,11 @@ exports[`Sortable Virtualized Table 1`] = `
       data-ouia-safe={true}
       role="grid"
     >
-      <TableHeader>
+      <Component>
         <ContextHeader
           headerRows={null}
         >
-          <Header
+          <Component
             className=""
             headerRows={null}
           >
@@ -6287,7 +6275,7 @@ exports[`Sortable Virtualized Table 1`] = `
               <thead
                 className=""
               >
-                <HeaderRow
+                <Component
                   key="0-header-row"
                   renderers={
                     Object {
@@ -6519,7 +6507,7 @@ exports[`Sortable Virtualized Table 1`] = `
                   rowIndex={0}
                 >
                   <tr>
-                    <HeaderCell
+                    <Component
                       aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
@@ -6534,7 +6522,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         data-label="Header cell"
                         scope="col"
                       >
-                        <SortColumn
+                        <Component
                           className="pf-c-button pf-m-plain"
                           isSortedBy={false}
                           onSort={[Function]}
@@ -6588,10 +6576,10 @@ exports[`Sortable Virtualized Table 1`] = `
                               </ArrowsAltVIcon>
                             </span>
                           </button>
-                        </SortColumn>
+                        </Component>
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={1}
                       data-label="Branches"
                       key="1-header"
@@ -6605,8 +6593,8 @@ exports[`Sortable Virtualized Table 1`] = `
                       >
                         Branches
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={2}
                       data-label="Pull requests"
                       key="2-header"
@@ -6620,8 +6608,8 @@ exports[`Sortable Virtualized Table 1`] = `
                       >
                         Pull requests
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={3}
                       data-label="Workspaces"
                       key="3-header"
@@ -6635,8 +6623,8 @@ exports[`Sortable Virtualized Table 1`] = `
                       >
                         Workspaces
                       </th>
-                    </HeaderCell>
-                    <HeaderCell
+                    </Component>
+                    <Component
                       data-key={4}
                       data-label="Last Commit"
                       key="4-header"
@@ -6650,14 +6638,14 @@ exports[`Sortable Virtualized Table 1`] = `
                       >
                         Last Commit
                       </th>
-                    </HeaderCell>
+                    </Component>
                   </tr>
-                </HeaderRow>
+                </Component>
               </thead>
             </BaseHeader>
-          </Header>
+          </Component>
         </ContextHeader>
-      </TableHeader>
+      </Component>
     </table>
   </Provider>
 </Table>

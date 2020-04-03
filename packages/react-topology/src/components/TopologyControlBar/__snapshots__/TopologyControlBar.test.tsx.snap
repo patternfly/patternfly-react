@@ -21,7 +21,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <Unknown />,
+        "icon": <SearchMinusIcon />,
         "id": "zoom-out",
         "tooltip": "Zoom Out",
       },
@@ -30,7 +30,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "callback": null,
         "disabled": false,
         "hidden": true,
-        "icon": <Unknown />,
+        "icon": <ExpandArrowsAltIcon />,
         "id": "fit-to-screen",
         "tooltip": "Fit to Screen",
       },
@@ -39,7 +39,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "callback": null,
         "disabled": true,
         "hidden": false,
-        "icon": <Unknown />,
+        "icon": <ExpandIcon />,
         "id": "reset-view",
         "tooltip": "Reset View",
       },
@@ -338,7 +338,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       tabIndex={null}
                       type="button"
                     >
-                      <Component>
+                      <SearchMinusIcon>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -375,7 +375,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             />
                           </svg>
                         </SVGIcon>
-                      </Component>
+                      </SearchMinusIcon>
                       <span
                         className="sr-only"
                       >
@@ -536,7 +536,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       tabIndex={null}
                       type="button"
                     >
-                      <Component>
+                      <ExpandIcon>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -573,7 +573,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             />
                           </svg>
                         </SVGIcon>
-                      </Component>
+                      </ExpandIcon>
                       <span
                         className="sr-only"
                       >
@@ -635,7 +635,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <Unknown />,
+        "icon": <SearchPlusIcon />,
         "id": "zoom-in",
         "tooltip": "Zoom In",
       },
@@ -644,7 +644,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <Unknown />,
+        "icon": <SearchMinusIcon />,
         "id": "zoom-out",
         "tooltip": "Zoom Out",
       },
@@ -653,7 +653,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <Unknown />,
+        "icon": <ExpandArrowsAltIcon />,
         "id": "fit-to-screen",
         "tooltip": "Fit to Screen",
       },
@@ -662,7 +662,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "callback": null,
         "disabled": false,
         "hidden": false,
-        "icon": <Unknown />,
+        "icon": <ExpandIcon />,
         "id": "reset-view",
         "tooltip": "Reset View",
       },
@@ -808,7 +808,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <Component>
+                      <SearchPlusIcon>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -845,7 +845,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </Component>
+                      </SearchPlusIcon>
                       <span
                         className="sr-only"
                       >
@@ -1006,7 +1006,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <Component>
+                      <SearchMinusIcon>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -1043,7 +1043,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </Component>
+                      </SearchMinusIcon>
                       <span
                         className="sr-only"
                       >
@@ -1204,7 +1204,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <Component>
+                      <ExpandArrowsAltIcon>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -1241,7 +1241,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </Component>
+                      </ExpandArrowsAltIcon>
                       <span
                         className="sr-only"
                       >
@@ -1402,7 +1402,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       tabIndex={null}
                       type="button"
                     >
-                      <Component>
+                      <ExpandIcon>
                         <SVGIcon
                           color="currentColor"
                           config={
@@ -1439,7 +1439,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             />
                           </svg>
                         </SVGIcon>
-                      </Component>
+                      </ExpandIcon>
                       <span
                         className="sr-only"
                       >

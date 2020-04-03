@@ -13,7 +13,7 @@ const pascalCase = s => `${s[0].toUpperCase()}${s.substr(1).replace(/([-_][a-z])
 /**
  * Generates src/icons/*.tsx files
  */
-function generateIcons() {
+async function generateIcons() {
   const outDir = path.join(__dirname, '../dist');
   const templateDir = path.resolve(__dirname, './templates');
 
@@ -45,7 +45,7 @@ function generateIcons() {
 
   // Compile src folder
   const tsDir = path.resolve(__dirname, '..');
-  concurrently([`yarn tsc -p ${tsDir}`, `yarn tsc -p ${tsDir}/tsconfig.cjs.json`], {  });
+  await concurrently([`yarn tsc -p ${tsDir}`, `yarn tsc -p ${tsDir}/tsconfig.cjs.json`]);
   console.log('Generated files for', index.length, 'icons');
 }
 

@@ -39,7 +39,12 @@ export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElemen
 
 let filterCounter = 0;
 
-export const BackgroundImage = ({ className, src, filter = defaultFilter, ...props }: BackgroundImageProps) => {
+export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
+  className,
+  src,
+  filter = defaultFilter,
+  ...props
+}: BackgroundImageProps) => {
   const getUrlValue = (size: keyof BackgroundImageSrcMap) => {
     if (typeof src === 'string') {
       return `url(${src})`;

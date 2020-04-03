@@ -27,7 +27,7 @@ export interface EditableRowWrapperRow extends RowWrapperRow {
 }
 
 export interface EditableRowWrapperProps extends RowWrapper {
-  className: string,
+  className?: string,
   row: EditableRowWrapperRow;
   trRef: (instance: any) => void,
   onScroll: (event: React.UIEvent<Element>) => void;

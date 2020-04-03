@@ -11,7 +11,7 @@ export interface ToggleTemplateProps {
   itemsTitle?: string;
 }
 
-export const ToggleTemplate = ({
+export const ToggleTemplate: React.FunctionComponent<ToggleTemplateProps> = ({
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
