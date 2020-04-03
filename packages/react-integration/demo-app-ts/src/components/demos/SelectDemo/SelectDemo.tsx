@@ -399,23 +399,23 @@ export class SelectDemo extends Component<SelectDemoState> {
     this.setState({
       singleSelected: '',
       singleisOpen: false,
-      disabledSingleisOpen: null,
+      disabledSingleisOpen: false,
       disabledSingleSelected: '',
-      customSingleSelected: null,
+      customSingleSelected: '',
       customSingleisOpen: false,
-      checkSelected: [],
+      checkSelected: [''],
       checkisOpen: false,
-      noBadgeCheckSelected: [],
+      noBadgeCheckSelected: [''],
       noBadgeCheckIsOpen: false,
-      typeaheadSelected: null,
+      typeaheadSelected: '',
       typeaheadisOpen: false,
-      typeaheadMultiSelected: [],
+      typeaheadMultiSelected: [''],
       typeaheadMultiisOpen: false,
       cdtypeaheadMultiisOpen: false,
-      cdtypeaheadMultiSelected: [],
-      plainTypeaheadMultiSelected: [],
+      cdtypeaheadMultiSelected: [''],
+      plainTypeaheadMultiSelected: [''],
       plainTypeaheadMultiisOpen: false,
-      customTypeaheadMultiSelected: [],
+      customTypeaheadMultiSelected: [''],
       customTypeaheadMultiisOpen: false
     });
   };
@@ -577,7 +577,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.checkOnToggle}
             onSelect={this.checkOnSelect}
-            selections={checkSelected}
+            selections={checkSelected.filter(string => string)}
             isOpen={checkisOpen}
             placeholderText="Filter by status"
             aria-labelledby={titleId}
