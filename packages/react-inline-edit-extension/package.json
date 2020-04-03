@@ -4,7 +4,7 @@
   "description": "This library provides inline editing support for PatternFly 4 React table",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "types": "dist/js/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
