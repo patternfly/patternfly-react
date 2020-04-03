@@ -163,7 +163,48 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               data-ouia-safe={true}
                               style={
                                 Object {
+<<<<<<< HEAD
                                   "width": "",
+=======
+                                  "aria-label": "Select Input",
+                                  "children": Array [
+                                    <SelectOption
+                                      className=""
+                                      component="button"
+                                      index={0}
+                                      isChecked={false}
+                                      isDisabled={false}
+                                      isFocused={false}
+                                      isNoResultsOption={false}
+                                      isPlaceholder={false}
+                                      isSelected={false}
+                                      keyHandler={[Function]}
+                                      onClick={[Function]}
+                                      sendRef={[Function]}
+                                      value="Running"
+                                    />,
+                                    <SelectOption
+                                      className=""
+                                      component="button"
+                                      index={0}
+                                      isChecked={false}
+                                      isDisabled={false}
+                                      isFocused={false}
+                                      isNoResultsOption={false}
+                                      isPlaceholder={false}
+                                      isSelected={false}
+                                      keyHandler={[Function]}
+                                      onClick={[Function]}
+                                      sendRef={[Function]}
+                                      value="Cancelled"
+                                    />,
+                                  ],
+                                  "isExpanded": false,
+                                  "onSelect": [Function],
+                                  "onToggle": [Function],
+                                  "selections": "Running",
+                                  "variant": "single",
+>>>>>>> upstream/master
                                 }
                               }
                             >
@@ -171,10 +212,18 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 aria-label="Options menu"
                                 aria-labelledby=" pf-toggle-id-4"
                                 className=""
+<<<<<<< HEAD
                                 handleTypeaheadKeys={[Function]}
                                 hasClearButton={false}
                                 id="pf-toggle-id-4"
                                 isActive={false}
+=======
+                                createText="Create"
+                                customContent={null}
+                                direction="down"
+                                hasInlineFilter={false}
+                                isCreatable={false}
+>>>>>>> upstream/master
                                 isDisabled={false}
                                 isFocused={false}
                                 isHovered={false}
@@ -185,11 +234,103 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 onToggle={[Function]}
                                 parentRef={
                                   Object {
+<<<<<<< HEAD
                                     "current": <div
                                       class="pf-c-select"
                                       data-ouia-component-id="4"
                                       data-ouia-component-type="PF4/Select"
                                       data-ouia-safe="true"
+=======
+                                    "isOuia": false,
+                                    "ouiaId": null,
+                                  }
+                                }
+                                placeholderText=""
+                                selections="Running"
+                                toggleIcon={null}
+                                toggleId={null}
+                                variant="single"
+                                width=""
+                              >
+                                <div
+                                  className="pf-c-select"
+                                  style={
+                                    Object {
+                                      "width": "",
+                                    }
+                                  }
+                                >
+                                  <SelectToggle
+                                    ariaLabelToggle="Options menu"
+                                    ariaLabelledBy=" pf-toggle-id-4"
+                                    className=""
+                                    handleTypeaheadKeys={[Function]}
+                                    hasClearButton={false}
+                                    id="pf-toggle-id-4"
+                                    isActive={false}
+                                    isDisabled={false}
+                                    isExpanded={false}
+                                    isFocused={false}
+                                    isHovered={false}
+                                    isPlain={false}
+                                    onClose={[Function]}
+                                    onEnter={[Function]}
+                                    onToggle={[Function]}
+                                    parentRef={
+                                      Object {
+                                        "current": <div
+                                          class="pf-c-select"
+                                        >
+                                          <button
+                                            aria-expanded="false"
+                                            aria-haspopup="listbox"
+                                            aria-labelledby=" pf-toggle-id-4"
+                                            class="pf-c-select__toggle"
+                                            id="pf-toggle-id-4"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="pf-c-select__toggle-wrapper"
+                                            >
+                                              <span
+                                                class="pf-c-select__toggle-text"
+                                              >
+                                                Running
+                                              </span>
+                                            </div>
+                                            <svg
+                                              aria-hidden="true"
+                                              class="pf-c-select__toggle-arrow"
+                                              fill="currentColor"
+                                              height="1em"
+                                              role="img"
+                                              style="vertical-align: -0.125em;"
+                                              viewBox="0 0 320 512"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                                transform=""
+                                              />
+                                            </svg>
+                                          </button>
+                                        </div>,
+                                      }
+                                    }
+                                    type="button"
+                                    variant="single"
+                                  >
+                                    <button
+                                      aria-expanded={false}
+                                      aria-haspopup="listbox"
+                                      aria-labelledby=" pf-toggle-id-4"
+                                      className="pf-c-select__toggle"
+                                      disabled={false}
+                                      id="pf-toggle-id-4"
+                                      onClick={[Function]}
+                                      onKeyDown={[Function]}
+                                      type="button"
+>>>>>>> upstream/master
                                     >
                                       <button
                                         aria-expanded="false"
@@ -770,7 +911,48 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               data-ouia-safe={true}
                               style={
                                 Object {
+<<<<<<< HEAD
                                   "width": "",
+=======
+                                  "aria-label": "Select Input",
+                                  "children": Array [
+                                    <SelectOption
+                                      className=""
+                                      component="button"
+                                      index={0}
+                                      isChecked={false}
+                                      isDisabled={false}
+                                      isFocused={false}
+                                      isNoResultsOption={false}
+                                      isPlaceholder={false}
+                                      isSelected={false}
+                                      keyHandler={[Function]}
+                                      onClick={[Function]}
+                                      sendRef={[Function]}
+                                      value="Low"
+                                    />,
+                                    <SelectOption
+                                      className=""
+                                      component="button"
+                                      index={0}
+                                      isChecked={false}
+                                      isDisabled={false}
+                                      isFocused={false}
+                                      isNoResultsOption={false}
+                                      isPlaceholder={false}
+                                      isSelected={false}
+                                      keyHandler={[Function]}
+                                      onClick={[Function]}
+                                      sendRef={[Function]}
+                                      value="High"
+                                    />,
+                                  ],
+                                  "isExpanded": false,
+                                  "onSelect": [Function],
+                                  "onToggle": [Function],
+                                  "selections": "Low",
+                                  "variant": "single",
+>>>>>>> upstream/master
                                 }
                               }
                             >
@@ -778,10 +960,18 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 aria-label="Options menu"
                                 aria-labelledby=" pf-toggle-id-5"
                                 className=""
+<<<<<<< HEAD
                                 handleTypeaheadKeys={[Function]}
                                 hasClearButton={false}
                                 id="pf-toggle-id-5"
                                 isActive={false}
+=======
+                                createText="Create"
+                                customContent={null}
+                                direction="down"
+                                hasInlineFilter={false}
+                                isCreatable={false}
+>>>>>>> upstream/master
                                 isDisabled={false}
                                 isFocused={false}
                                 isHovered={false}
@@ -792,11 +982,103 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 onToggle={[Function]}
                                 parentRef={
                                   Object {
+<<<<<<< HEAD
                                     "current": <div
                                       class="pf-c-select"
                                       data-ouia-component-id="7"
                                       data-ouia-component-type="PF4/Select"
                                       data-ouia-safe="true"
+=======
+                                    "isOuia": false,
+                                    "ouiaId": null,
+                                  }
+                                }
+                                placeholderText=""
+                                selections="Low"
+                                toggleIcon={null}
+                                toggleId={null}
+                                variant="single"
+                                width=""
+                              >
+                                <div
+                                  className="pf-c-select"
+                                  style={
+                                    Object {
+                                      "width": "",
+                                    }
+                                  }
+                                >
+                                  <SelectToggle
+                                    ariaLabelToggle="Options menu"
+                                    ariaLabelledBy=" pf-toggle-id-5"
+                                    className=""
+                                    handleTypeaheadKeys={[Function]}
+                                    hasClearButton={false}
+                                    id="pf-toggle-id-5"
+                                    isActive={false}
+                                    isDisabled={false}
+                                    isExpanded={false}
+                                    isFocused={false}
+                                    isHovered={false}
+                                    isPlain={false}
+                                    onClose={[Function]}
+                                    onEnter={[Function]}
+                                    onToggle={[Function]}
+                                    parentRef={
+                                      Object {
+                                        "current": <div
+                                          class="pf-c-select"
+                                        >
+                                          <button
+                                            aria-expanded="false"
+                                            aria-haspopup="listbox"
+                                            aria-labelledby=" pf-toggle-id-5"
+                                            class="pf-c-select__toggle"
+                                            id="pf-toggle-id-5"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="pf-c-select__toggle-wrapper"
+                                            >
+                                              <span
+                                                class="pf-c-select__toggle-text"
+                                              >
+                                                Low
+                                              </span>
+                                            </div>
+                                            <svg
+                                              aria-hidden="true"
+                                              class="pf-c-select__toggle-arrow"
+                                              fill="currentColor"
+                                              height="1em"
+                                              role="img"
+                                              style="vertical-align: -0.125em;"
+                                              viewBox="0 0 320 512"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                                transform=""
+                                              />
+                                            </svg>
+                                          </button>
+                                        </div>,
+                                      }
+                                    }
+                                    type="button"
+                                    variant="single"
+                                  >
+                                    <button
+                                      aria-expanded={false}
+                                      aria-haspopup="listbox"
+                                      aria-labelledby=" pf-toggle-id-5"
+                                      className="pf-c-select__toggle"
+                                      disabled={false}
+                                      id="pf-toggle-id-5"
+                                      onClick={[Function]}
+                                      onKeyDown={[Function]}
+                                      type="button"
+>>>>>>> upstream/master
                                     >
                                       <button
                                         aria-expanded="false"
@@ -2093,7 +2375,48 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                             data-ouia-safe={true}
                             style={
                               Object {
+<<<<<<< HEAD
                                 "width": "",
+=======
+                                "aria-label": "Select Input",
+                                "children": Array [
+                                  <SelectOption
+                                    className=""
+                                    component="button"
+                                    index={0}
+                                    isChecked={false}
+                                    isDisabled={false}
+                                    isFocused={false}
+                                    isNoResultsOption={false}
+                                    isPlaceholder={false}
+                                    isSelected={false}
+                                    keyHandler={[Function]}
+                                    onClick={[Function]}
+                                    sendRef={[Function]}
+                                    value="Running"
+                                  />,
+                                  <SelectOption
+                                    className=""
+                                    component="button"
+                                    index={0}
+                                    isChecked={false}
+                                    isDisabled={false}
+                                    isFocused={false}
+                                    isNoResultsOption={false}
+                                    isPlaceholder={false}
+                                    isSelected={false}
+                                    keyHandler={[Function]}
+                                    onClick={[Function]}
+                                    sendRef={[Function]}
+                                    value="Cancelled"
+                                  />,
+                                ],
+                                "isExpanded": false,
+                                "onSelect": [Function],
+                                "onToggle": [Function],
+                                "selections": "Running",
+                                "variant": "single",
+>>>>>>> upstream/master
                               }
                             }
                           >
@@ -2101,10 +2424,18 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               aria-label="Options menu"
                               aria-labelledby=" pf-toggle-id-0"
                               className=""
+<<<<<<< HEAD
                               handleTypeaheadKeys={[Function]}
                               hasClearButton={false}
                               id="pf-toggle-id-0"
                               isActive={false}
+=======
+                              createText="Create"
+                              customContent={null}
+                              direction="down"
+                              hasInlineFilter={false}
+                              isCreatable={false}
+>>>>>>> upstream/master
                               isDisabled={false}
                               isFocused={false}
                               isHovered={false}
@@ -2115,11 +2446,103 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               onToggle={[Function]}
                               parentRef={
                                 Object {
+<<<<<<< HEAD
                                   "current": <div
                                     class="pf-c-select"
                                     data-ouia-component-id="0"
                                     data-ouia-component-type="PF4/Select"
                                     data-ouia-safe="true"
+=======
+                                  "isOuia": false,
+                                  "ouiaId": null,
+                                }
+                              }
+                              placeholderText=""
+                              selections="Running"
+                              toggleIcon={null}
+                              toggleId={null}
+                              variant="single"
+                              width=""
+                            >
+                              <div
+                                className="pf-c-select"
+                                style={
+                                  Object {
+                                    "width": "",
+                                  }
+                                }
+                              >
+                                <SelectToggle
+                                  ariaLabelToggle="Options menu"
+                                  ariaLabelledBy=" pf-toggle-id-0"
+                                  className=""
+                                  handleTypeaheadKeys={[Function]}
+                                  hasClearButton={false}
+                                  id="pf-toggle-id-0"
+                                  isActive={false}
+                                  isDisabled={false}
+                                  isExpanded={false}
+                                  isFocused={false}
+                                  isHovered={false}
+                                  isPlain={false}
+                                  onClose={[Function]}
+                                  onEnter={[Function]}
+                                  onToggle={[Function]}
+                                  parentRef={
+                                    Object {
+                                      "current": <div
+                                        class="pf-c-select"
+                                      >
+                                        <button
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-labelledby=" pf-toggle-id-0"
+                                          class="pf-c-select__toggle"
+                                          id="pf-toggle-id-0"
+                                          type="button"
+                                        >
+                                          <div
+                                            class="pf-c-select__toggle-wrapper"
+                                          >
+                                            <span
+                                              class="pf-c-select__toggle-text"
+                                            >
+                                              Running
+                                            </span>
+                                          </div>
+                                          <svg
+                                            aria-hidden="true"
+                                            class="pf-c-select__toggle-arrow"
+                                            fill="currentColor"
+                                            height="1em"
+                                            role="img"
+                                            style="vertical-align: -0.125em;"
+                                            viewBox="0 0 320 512"
+                                            width="1em"
+                                          >
+                                            <path
+                                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                              transform=""
+                                            />
+                                          </svg>
+                                        </button>
+                                      </div>,
+                                    }
+                                  }
+                                  type="button"
+                                  variant="single"
+                                >
+                                  <button
+                                    aria-expanded={false}
+                                    aria-haspopup="listbox"
+                                    aria-labelledby=" pf-toggle-id-0"
+                                    className="pf-c-select__toggle"
+                                    disabled={false}
+                                    id="pf-toggle-id-0"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    type="button"
+>>>>>>> upstream/master
                                   >
                                     <button
                                       aria-expanded="false"
@@ -2271,7 +2694,48 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                             data-ouia-safe={true}
                             style={
                               Object {
+<<<<<<< HEAD
                                 "width": "",
+=======
+                                "aria-label": "Select Input",
+                                "children": Array [
+                                  <SelectOption
+                                    className=""
+                                    component="button"
+                                    index={0}
+                                    isChecked={false}
+                                    isDisabled={false}
+                                    isFocused={false}
+                                    isNoResultsOption={false}
+                                    isPlaceholder={false}
+                                    isSelected={false}
+                                    keyHandler={[Function]}
+                                    onClick={[Function]}
+                                    sendRef={[Function]}
+                                    value="Low"
+                                  />,
+                                  <SelectOption
+                                    className=""
+                                    component="button"
+                                    index={0}
+                                    isChecked={false}
+                                    isDisabled={false}
+                                    isFocused={false}
+                                    isNoResultsOption={false}
+                                    isPlaceholder={false}
+                                    isSelected={false}
+                                    keyHandler={[Function]}
+                                    onClick={[Function]}
+                                    sendRef={[Function]}
+                                    value="High"
+                                  />,
+                                ],
+                                "isExpanded": false,
+                                "onSelect": [Function],
+                                "onToggle": [Function],
+                                "selections": "Low",
+                                "variant": "single",
+>>>>>>> upstream/master
                               }
                             }
                           >
@@ -2279,10 +2743,18 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               aria-label="Options menu"
                               aria-labelledby=" pf-toggle-id-1"
                               className=""
+<<<<<<< HEAD
                               handleTypeaheadKeys={[Function]}
                               hasClearButton={false}
                               id="pf-toggle-id-1"
                               isActive={false}
+=======
+                              createText="Create"
+                              customContent={null}
+                              direction="down"
+                              hasInlineFilter={false}
+                              isCreatable={false}
+>>>>>>> upstream/master
                               isDisabled={false}
                               isFocused={false}
                               isHovered={false}
@@ -2293,11 +2765,103 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               onToggle={[Function]}
                               parentRef={
                                 Object {
+<<<<<<< HEAD
                                   "current": <div
                                     class="pf-c-select"
                                     data-ouia-component-id="1"
                                     data-ouia-component-type="PF4/Select"
                                     data-ouia-safe="true"
+=======
+                                  "isOuia": false,
+                                  "ouiaId": null,
+                                }
+                              }
+                              placeholderText=""
+                              selections="Low"
+                              toggleIcon={null}
+                              toggleId={null}
+                              variant="single"
+                              width=""
+                            >
+                              <div
+                                className="pf-c-select"
+                                style={
+                                  Object {
+                                    "width": "",
+                                  }
+                                }
+                              >
+                                <SelectToggle
+                                  ariaLabelToggle="Options menu"
+                                  ariaLabelledBy=" pf-toggle-id-1"
+                                  className=""
+                                  handleTypeaheadKeys={[Function]}
+                                  hasClearButton={false}
+                                  id="pf-toggle-id-1"
+                                  isActive={false}
+                                  isDisabled={false}
+                                  isExpanded={false}
+                                  isFocused={false}
+                                  isHovered={false}
+                                  isPlain={false}
+                                  onClose={[Function]}
+                                  onEnter={[Function]}
+                                  onToggle={[Function]}
+                                  parentRef={
+                                    Object {
+                                      "current": <div
+                                        class="pf-c-select"
+                                      >
+                                        <button
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-labelledby=" pf-toggle-id-1"
+                                          class="pf-c-select__toggle"
+                                          id="pf-toggle-id-1"
+                                          type="button"
+                                        >
+                                          <div
+                                            class="pf-c-select__toggle-wrapper"
+                                          >
+                                            <span
+                                              class="pf-c-select__toggle-text"
+                                            >
+                                              Low
+                                            </span>
+                                          </div>
+                                          <svg
+                                            aria-hidden="true"
+                                            class="pf-c-select__toggle-arrow"
+                                            fill="currentColor"
+                                            height="1em"
+                                            role="img"
+                                            style="vertical-align: -0.125em;"
+                                            viewBox="0 0 320 512"
+                                            width="1em"
+                                          >
+                                            <path
+                                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                              transform=""
+                                            />
+                                          </svg>
+                                        </button>
+                                      </div>,
+                                    }
+                                  }
+                                  type="button"
+                                  variant="single"
+                                >
+                                  <button
+                                    aria-expanded={false}
+                                    aria-haspopup="listbox"
+                                    aria-labelledby=" pf-toggle-id-1"
+                                    className="pf-c-select__toggle"
+                                    disabled={false}
+                                    id="pf-toggle-id-1"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    type="button"
+>>>>>>> upstream/master
                                   >
                                     <button
                                       aria-expanded="false"

@@ -89,6 +89,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
       onClick={[Function]}
       tooltipPosition="top"
     >
+<<<<<<< HEAD
       <Chip
         className=""
         closeBtnAriaLabel="close"
@@ -100,6 +101,11 @@ exports[`ChipGroup chip group with toolbar 1`] = `
       >
         1.1
       </Chip>
+=======
+      <Component>
+        1.1
+      </Component>
+>>>>>>> upstream/master
     </ChipGroupToolbarItem>
   </InnerChipGroup>
 </ContextProvider>
@@ -127,6 +133,7 @@ exports[`ChipGroup chip group with toolbar and tooltip 1`] = `
       onClick={[Function]}
       tooltipPosition="bottom"
     >
+<<<<<<< HEAD
       <Chip
         className=""
         closeBtnAriaLabel="close"
@@ -136,6 +143,9 @@ exports[`ChipGroup chip group with toolbar and tooltip 1`] = `
         onClick={[Function]}
         tooltipPosition="top"
       >
+=======
+      <Component>
+>>>>>>> upstream/master
         1.1
       </Chip>
     </ChipGroupToolbarItem>

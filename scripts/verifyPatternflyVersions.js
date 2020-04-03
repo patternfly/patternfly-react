@@ -19,7 +19,7 @@ async function accumulateDependencies(package, dependencies) {
 }
 
 function setDependency(dependencies, package, version) {
-  if (dependencies[package]) {
+  if (dependencies && dependencies[package]) {
     dependencies[package] = version;
   }
 }

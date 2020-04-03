@@ -380,7 +380,12 @@ exports[`component render custom pagination toggle 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-11"
                             type="button"
                           >
@@ -1120,7 +1125,12 @@ exports[`component render custom perPageOptions 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-7"
                             type="button"
                           >
@@ -1928,7 +1938,12 @@ exports[`component render custom start end 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-9"
                             type="button"
                           >
@@ -3195,7 +3210,12 @@ exports[`component render last page 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-6"
                             type="button"
                           >
@@ -4003,7 +4023,12 @@ exports[`component render limited number of pages 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-4"
                             type="button"
                           >
@@ -4813,8 +4838,13 @@ exports[`component render no items 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
                             disabled=""
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={true}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-8"
                             type="button"
                           >
@@ -5600,7 +5630,12 @@ exports[`component render should render correctly bottom 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-1"
                             type="button"
                           >
@@ -6408,7 +6443,12 @@ exports[`component render should render correctly compact 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-2"
                             type="button"
                           >
@@ -7077,8 +7117,13 @@ exports[`component render should render correctly disabled 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
                             disabled=""
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={true}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-3"
                             type="button"
                           >
@@ -7886,7 +7931,12 @@ exports[`component render should render correctly top 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-0"
                             type="button"
                           >
@@ -8619,6 +8669,7 @@ exports[`component render titles 1`] = `
                           aria-label="Select"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle-10"
+<<<<<<< HEAD
                           type="button"
                         >
                           <svg
@@ -8639,6 +8690,256 @@ exports[`component render titles 1`] = `
                         </button>
                       </div>
                     </div>,
+=======
+                          isActive={false}
+                          isDisabled={false}
+                          isFocused={false}
+                          isHovered={false}
+                          isOpen={false}
+                          isPlain={false}
+                          isPrimary={false}
+                          isSplitButton={false}
+                          onEnter={[Function]}
+                          onToggle={[Function]}
+                          parentRef={
+                            Object {
+                              "current": <div
+                                class="pf-c-options-menu"
+                              >
+                                <div
+                                  class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                                >
+                                  <span
+                                    class="pf-c-options-menu__toggle-text"
+                                  >
+                                    <b>
+                                      1
+                                       - 
+                                      10
+                                    </b>
+                                     
+                                    of 
+                                    <b>
+                                      40
+                                    </b>
+                                     
+                                    values
+                                  </span>
+                                  <button
+                                    aria-expanded="false"
+                                    aria-label="Select"
+                                    class="  pf-c-options-menu__toggle-button"
+                                    id="pagination-options-menu-toggle-10"
+                                    type="button"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class=""
+                                      fill="currentColor"
+                                      height="1em"
+                                      role="img"
+                                      style="vertical-align: -0.125em;"
+                                      viewBox="0 0 320 512"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                        transform=""
+                                      />
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>,
+                            }
+                          }
+                        >
+                          <button
+                            aria-expanded={false}
+                            aria-label="Select"
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+                            id="pagination-options-menu-toggle-10"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            type="button"
+                          >
+                            <CaretDownIcon
+                              className=""
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                className=""
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 320 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CaretDownIcon>
+                          </button>
+                        </Toggle>
+                      </DropdownToggle>
+                    </div>
+                  </OptionsToggle>
+                </div>
+              </DropdownWithContext>
+            </ComponentWithOuia>
+          </Component>
+        </PaginationOptionsMenu>
+        <Navigation
+          className=""
+          currPage="Current page"
+          firstPage={1}
+          isCompact={false}
+          isDisabled={false}
+          lastPage={4}
+          onFirstClick={[Function]}
+          onLastClick={[Function]}
+          onNextClick={[Function]}
+          onPageInput={[Function]}
+          onPreviousClick={[Function]}
+          onSetPage={[Function]}
+          page={1}
+          pagesTitle="books"
+          paginationTitle="Pagination"
+          perPage={10}
+          toFirstPage="Go to first page"
+          toLastPage="Go to last page"
+          toNextPage="Go to next page"
+          toPreviousPage="Go to previous page"
+        >
+          <nav
+            aria-label="Pagination"
+            className="pf-c-pagination__nav"
+          >
+            <Component
+              aria-label="Go to first page"
+              data-action="first"
+              isDisabled={true}
+              onClick={[Function]}
+              variant="plain"
+            >
+              <ComponentWithOuia
+                component={[Function]}
+                componentProps={
+                  Object {
+                    "aria-label": "Go to first page",
+                    "children": <AngleDoubleLeftIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
+                    />,
+                    "data-action": "first",
+                    "isDisabled": true,
+                    "onClick": [Function],
+                    "variant": "plain",
+                  }
+                }
+                consumerContext={
+                  Object {
+                    "isOuia": false,
+                    "ouiaId": null,
+                  }
+                }
+              >
+                <Button
+                  aria-label="Go to first page"
+                  data-action="first"
+                  isDisabled={true}
+                  onClick={[Function]}
+                  ouiaContext={
+                    Object {
+                      "isOuia": false,
+                      "ouiaId": null,
+                    }
+                  }
+                  variant="plain"
+                >
+                  <button
+                    aria-disabled={null}
+                    aria-label="Go to first page"
+                    className="pf-c-button pf-m-plain"
+                    data-action="first"
+                    disabled={true}
+                    onClick={[Function]}
+                    tabIndex={null}
+                    type="button"
+                  >
+                    <AngleDoubleLeftIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 448 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleDoubleLeftIcon>
+                  </button>
+                </Button>
+              </ComponentWithOuia>
+            </Component>
+            <Component
+              aria-label="Go to previous page"
+              data-action="previous"
+              isDisabled={true}
+              onClick={[Function]}
+              variant="plain"
+            >
+              <ComponentWithOuia
+                component={[Function]}
+                componentProps={
+                  Object {
+                    "aria-label": "Go to previous page",
+                    "children": <AngleLeftIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
+                    />,
+                    "data-action": "previous",
+                    "isDisabled": true,
+                    "onClick": [Function],
+                    "variant": "plain",
+                  }
+                }
+                consumerContext={
+                  Object {
+                    "isOuia": false,
+                    "ouiaId": null,
+>>>>>>> upstream/master
                   }
                 }
               >
@@ -9495,7 +9796,12 @@ exports[`component render up drop direction 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={false}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-12"
                             type="button"
                           >
@@ -10305,8 +10611,13 @@ exports[`component render zero results 1`] = `
                           <button
                             aria-expanded="false"
                             aria-label="Items per page"
+<<<<<<< HEAD
                             class="  pf-c-options-menu__toggle-button"
                             disabled=""
+=======
+                            className="  pf-c-options-menu__toggle-button"
+                            disabled={true}
+>>>>>>> upstream/master
                             id="pagination-options-menu-toggle-5"
                             type="button"
                           >

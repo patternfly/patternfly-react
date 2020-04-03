@@ -15,9 +15,16 @@ exports[`Modal Content Test description 1`] = `
     <ModalBox
       className=""
       id="id"
+<<<<<<< HEAD
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
+=======
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+>>>>>>> upstream/master
     >
       <ModalBoxCloseButton
         onClose={[Function]}

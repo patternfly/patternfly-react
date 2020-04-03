@@ -603,6 +603,35 @@ export class SelectDemo extends Component<SelectDemoState> {
     );
   }
 
+  renderNoBadgeCheckboxSelect() {
+    const { noBadgeCheckIsExpanded, noBadgeCheckSelected } = this.state;
+    const titleId = 'no-badge-checkbox-select-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Checkbox Select w/ No Selection Badge</Title>
+        <div>
+          <span id={titleId} hidden>
+            Checkbox Title
+          </span>
+          <Select
+            toggleId="check-select-no-badge"
+            variant={SelectVariant.checkbox}
+            aria-label="Select Input"
+            onToggle={this.noBadgeCheckOnToggle}
+            onSelect={this.noBadgeCheckOnSelect}
+            selections={noBadgeCheckSelected}
+            isCheckboxSelectionBadgeHidden
+            isExpanded={noBadgeCheckIsExpanded}
+            placeholderText="Filter by status"
+            ariaLabelledBy={titleId}
+          >
+            {this.checkboxOptions}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
   renderTypeaheadSelect() {
     const {
       typeaheadOptions,

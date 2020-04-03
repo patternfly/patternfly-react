@@ -67,11 +67,16 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
                             <div
                               className="pf-c-drawer__close"
                             >
+<<<<<<< HEAD
                               <Button
+=======
+                              <Component
+>>>>>>> upstream/master
                                 aria-label="Close drawer panel"
                                 onClick={[Function]}
                                 variant="plain"
                               >
+<<<<<<< HEAD
                                 <button
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
@@ -124,6 +129,75 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
                                   </TimesIcon>
                                 </button>
                               </Button>
+=======
+                                <ComponentWithOuia
+                                  component={[Function]}
+                                  componentProps={
+                                    Object {
+                                      "aria-label": "Close drawer panel",
+                                      "children": <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      />,
+                                      "onClick": [Function],
+                                      "variant": "plain",
+                                    }
+                                  }
+                                  consumerContext={null}
+                                >
+                                  <Button
+                                    aria-label="Close drawer panel"
+                                    onClick={[Function]}
+                                    ouiaContext={
+                                      Object {
+                                        "isOuia": false,
+                                        "ouiaId": null,
+                                      }
+                                    }
+                                    variant="plain"
+                                  >
+                                    <button
+                                      aria-disabled={null}
+                                      aria-label="Close drawer panel"
+                                      className="pf-c-button pf-m-plain"
+                                      disabled={false}
+                                      onClick={[Function]}
+                                      tabIndex={null}
+                                      type="button"
+                                    >
+                                      <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      >
+                                        <svg
+                                          aria-hidden={true}
+                                          aria-labelledby={null}
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          style={
+                                            Object {
+                                              "verticalAlign": "-0.125em",
+                                            }
+                                          }
+                                          viewBox="0 0 352 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                            transform=""
+                                          />
+                                        </svg>
+                                      </TimesIcon>
+                                    </button>
+                                  </Button>
+                                </ComponentWithOuia>
+                              </Component>
+>>>>>>> upstream/master
                             </div>
                           </DrawerCloseButton>
                         </div>
@@ -215,11 +289,16 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
                             <div
                               className="pf-c-drawer__close"
                             >
+<<<<<<< HEAD
                               <Button
+=======
+                              <Component
+>>>>>>> upstream/master
                                 aria-label="Close drawer panel"
                                 onClick={[Function]}
                                 variant="plain"
                               >
+<<<<<<< HEAD
                                 <button
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
@@ -272,6 +351,75 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
                                   </TimesIcon>
                                 </button>
                               </Button>
+=======
+                                <ComponentWithOuia
+                                  component={[Function]}
+                                  componentProps={
+                                    Object {
+                                      "aria-label": "Close drawer panel",
+                                      "children": <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      />,
+                                      "onClick": [Function],
+                                      "variant": "plain",
+                                    }
+                                  }
+                                  consumerContext={null}
+                                >
+                                  <Button
+                                    aria-label="Close drawer panel"
+                                    onClick={[Function]}
+                                    ouiaContext={
+                                      Object {
+                                        "isOuia": false,
+                                        "ouiaId": null,
+                                      }
+                                    }
+                                    variant="plain"
+                                  >
+                                    <button
+                                      aria-disabled={null}
+                                      aria-label="Close drawer panel"
+                                      className="pf-c-button pf-m-plain"
+                                      disabled={false}
+                                      onClick={[Function]}
+                                      tabIndex={null}
+                                      type="button"
+                                    >
+                                      <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      >
+                                        <svg
+                                          aria-hidden={true}
+                                          aria-labelledby={null}
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          style={
+                                            Object {
+                                              "verticalAlign": "-0.125em",
+                                            }
+                                          }
+                                          viewBox="0 0 352 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                            transform=""
+                                          />
+                                        </svg>
+                                      </TimesIcon>
+                                    </button>
+                                  </Button>
+                                </ComponentWithOuia>
+                              </Component>
+>>>>>>> upstream/master
                             </div>
                           </DrawerCloseButton>
                         </div>
@@ -363,11 +511,16 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                             <div
                               className="pf-c-drawer__close"
                             >
+<<<<<<< HEAD
                               <Button
+=======
+                              <Component
+>>>>>>> upstream/master
                                 aria-label="Close drawer panel"
                                 onClick={[Function]}
                                 variant="plain"
                               >
+<<<<<<< HEAD
                                 <button
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
@@ -420,6 +573,75 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
                                   </TimesIcon>
                                 </button>
                               </Button>
+=======
+                                <ComponentWithOuia
+                                  component={[Function]}
+                                  componentProps={
+                                    Object {
+                                      "aria-label": "Close drawer panel",
+                                      "children": <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      />,
+                                      "onClick": [Function],
+                                      "variant": "plain",
+                                    }
+                                  }
+                                  consumerContext={null}
+                                >
+                                  <Button
+                                    aria-label="Close drawer panel"
+                                    onClick={[Function]}
+                                    ouiaContext={
+                                      Object {
+                                        "isOuia": false,
+                                        "ouiaId": null,
+                                      }
+                                    }
+                                    variant="plain"
+                                  >
+                                    <button
+                                      aria-disabled={null}
+                                      aria-label="Close drawer panel"
+                                      className="pf-c-button pf-m-plain"
+                                      disabled={false}
+                                      onClick={[Function]}
+                                      tabIndex={null}
+                                      type="button"
+                                    >
+                                      <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      >
+                                        <svg
+                                          aria-hidden={true}
+                                          aria-labelledby={null}
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          style={
+                                            Object {
+                                              "verticalAlign": "-0.125em",
+                                            }
+                                          }
+                                          viewBox="0 0 352 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                            transform=""
+                                          />
+                                        </svg>
+                                      </TimesIcon>
+                                    </button>
+                                  </Button>
+                                </ComponentWithOuia>
+                              </Component>
+>>>>>>> upstream/master
                             </div>
                           </DrawerCloseButton>
                         </div>
@@ -511,11 +733,16 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                             <div
                               className="pf-c-drawer__close"
                             >
+<<<<<<< HEAD
                               <Button
+=======
+                              <Component
+>>>>>>> upstream/master
                                 aria-label="Close drawer panel"
                                 onClick={[Function]}
                                 variant="plain"
                               >
+<<<<<<< HEAD
                                 <button
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
@@ -568,6 +795,75 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
                                   </TimesIcon>
                                 </button>
                               </Button>
+=======
+                                <ComponentWithOuia
+                                  component={[Function]}
+                                  componentProps={
+                                    Object {
+                                      "aria-label": "Close drawer panel",
+                                      "children": <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      />,
+                                      "onClick": [Function],
+                                      "variant": "plain",
+                                    }
+                                  }
+                                  consumerContext={null}
+                                >
+                                  <Button
+                                    aria-label="Close drawer panel"
+                                    onClick={[Function]}
+                                    ouiaContext={
+                                      Object {
+                                        "isOuia": false,
+                                        "ouiaId": null,
+                                      }
+                                    }
+                                    variant="plain"
+                                  >
+                                    <button
+                                      aria-disabled={null}
+                                      aria-label="Close drawer panel"
+                                      className="pf-c-button pf-m-plain"
+                                      disabled={false}
+                                      onClick={[Function]}
+                                      tabIndex={null}
+                                      type="button"
+                                    >
+                                      <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      >
+                                        <svg
+                                          aria-hidden={true}
+                                          aria-labelledby={null}
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          style={
+                                            Object {
+                                              "verticalAlign": "-0.125em",
+                                            }
+                                          }
+                                          viewBox="0 0 352 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                            transform=""
+                                          />
+                                        </svg>
+                                      </TimesIcon>
+                                    </button>
+                                  </Button>
+                                </ComponentWithOuia>
+                              </Component>
+>>>>>>> upstream/master
                             </div>
                           </DrawerCloseButton>
                         </div>
@@ -659,11 +955,16 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                             <div
                               className="pf-c-drawer__close"
                             >
+<<<<<<< HEAD
                               <Button
+=======
+                              <Component
+>>>>>>> upstream/master
                                 aria-label="Close drawer panel"
                                 onClick={[Function]}
                                 variant="plain"
                               >
+<<<<<<< HEAD
                                 <button
                                   aria-disabled={null}
                                   aria-label="Close drawer panel"
@@ -716,6 +1017,75 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
                                   </TimesIcon>
                                 </button>
                               </Button>
+=======
+                                <ComponentWithOuia
+                                  component={[Function]}
+                                  componentProps={
+                                    Object {
+                                      "aria-label": "Close drawer panel",
+                                      "children": <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      />,
+                                      "onClick": [Function],
+                                      "variant": "plain",
+                                    }
+                                  }
+                                  consumerContext={null}
+                                >
+                                  <Button
+                                    aria-label="Close drawer panel"
+                                    onClick={[Function]}
+                                    ouiaContext={
+                                      Object {
+                                        "isOuia": false,
+                                        "ouiaId": null,
+                                      }
+                                    }
+                                    variant="plain"
+                                  >
+                                    <button
+                                      aria-disabled={null}
+                                      aria-label="Close drawer panel"
+                                      className="pf-c-button pf-m-plain"
+                                      disabled={false}
+                                      onClick={[Function]}
+                                      tabIndex={null}
+                                      type="button"
+                                    >
+                                      <TimesIcon
+                                        color="currentColor"
+                                        noVerticalAlign={false}
+                                        size="sm"
+                                        title={null}
+                                      >
+                                        <svg
+                                          aria-hidden={true}
+                                          aria-labelledby={null}
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          style={
+                                            Object {
+                                              "verticalAlign": "-0.125em",
+                                            }
+                                          }
+                                          viewBox="0 0 352 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                            transform=""
+                                          />
+                                        </svg>
+                                      </TimesIcon>
+                                    </button>
+                                  </Button>
+                                </ComponentWithOuia>
+                              </Component>
+>>>>>>> upstream/master
                             </div>
                           </DrawerCloseButton>
                         </div>
