@@ -41,8 +41,6 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
           </div>
           <DrawerPanelContent>
             <div
-              aria-expanded={false}
-              aria-hidden={true}
               className="pf-c-drawer__panel"
               hidden={true}
             >
@@ -176,8 +174,6 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
           </div>
           <DrawerPanelContent>
             <div
-              aria-expanded={false}
-              aria-hidden={true}
               className="pf-c-drawer__panel"
               hidden={true}
             >
@@ -311,8 +307,6 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
           </div>
           <DrawerPanelContent>
             <div
-              aria-expanded={true}
-              aria-hidden={false}
               className="pf-c-drawer__panel"
               hidden={false}
             >
@@ -446,8 +440,6 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
           </div>
           <DrawerPanelContent>
             <div
-              aria-expanded={true}
-              aria-hidden={false}
               className="pf-c-drawer__panel"
               hidden={false}
             >
@@ -581,8 +573,6 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
           </div>
           <DrawerPanelContent>
             <div
-              aria-expanded={true}
-              aria-hidden={false}
               className="pf-c-drawer__panel"
               hidden={false}
             >
