@@ -20,6 +20,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   validated?: 'success' | 'error' | 'default';
   /** Sets the FormGroup isInline. */
   isInline?: boolean;
+  /** Removes top spacer from label. */
+  hasNoPaddingTop?: boolean;
   /** Helper text after the field. It can be a simple text or an object. */
   helperText?: React.ReactNode;
   /** Helper text after the field when the field is invalid. It can be a simple text or an object. */
@@ -35,6 +37,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   isRequired = false,
   validated = 'default',
   isInline = false,
+  hasNoPaddingTop = false,
   helperText,
   helperTextInvalid,
   fieldId,
@@ -59,7 +62,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   return (
     <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
       {label && (
-        <label className={css(styles.formLabel)} htmlFor={fieldId}>
+        <label className={css(styles.formLabel, hasNoPaddingTop && styles.modifiers.noPaddingTop)} htmlFor={fieldId}>
           <span className={css(styles.formLabelText)}>{label}</span>
           {isRequired && (
             <span className={css(styles.formLabelRequired)} aria-hidden="true">

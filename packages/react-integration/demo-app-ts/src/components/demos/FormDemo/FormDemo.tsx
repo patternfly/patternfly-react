@@ -4,6 +4,7 @@ import {
   FormGroup,
   FormProps,
   TextInput,
+  Checkbox,
   Select,
   SelectOption,
   SelectOptionObject,
@@ -141,6 +142,9 @@ export class FormDemo extends Component<FormProps, FormState> {
                   aria-describedby="age-helper-validated"
                   onChange={this.handleValidatedTextInputChange}
                 />
+              </FormGroup>
+              <FormGroup hasNoPaddingTop id="formgroup-checkbox" label="Subscribe" fieldId="subscribe">
+                <Checkbox id="subscribe" label="Mailing list" />
               </FormGroup>
             </Form>
           </div>

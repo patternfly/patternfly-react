@@ -50,4 +50,8 @@ describe('Form Demo Test', () => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
   });
+
+  it('Verify form group label has no top spacer', () => {
+    cy.get('label[for="subscribe"]').should('have.class', 'pf-m-no-padding-top');
+  });
 });

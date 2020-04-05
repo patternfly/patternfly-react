@@ -353,3 +353,31 @@ class InvalidForm extends React.Component {
   }
 }
 ```
+
+```js title=Horizontal-no-padding-top
+import React from 'react';
+import {
+  Form,
+  FormGroup,
+  Checkbox,
+  Radio
+} from '@patternfly/react-core';
+
+class HorizontalForm extends React.Component {
+  render() {
+
+    return (
+      <Form isHorizontal>
+        <FormGroup
+          label="Label"
+          hasNoPaddingTop
+          fieldId="options"
+        >
+        <Checkbox label="option 1" id="option-1" />
+        <Checkbox label="option 2" id="option-2" />
+        </FormGroup>
+      </Form>
+    );
+  }
+}
+```
