@@ -94,14 +94,11 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
       type={isButtonElement ? type : null}
       {...getOUIAProps('Button', ouiaId)}
     >
-      {icon && variant === ButtonVariant.link && iconPosition === 'left' && (
-        <span className={styles.buttonIcon}>{icon}</span>
+      {icon && iconPosition === 'left' && (
+        <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}
-      {variant === ButtonVariant.link && <span>{children}</span>}
-      {variant !== ButtonVariant.link && children}
-      {icon && variant === ButtonVariant.link && iconPosition === 'right' && (
-        <span className={styles.buttonIcon}>{icon}</span>
-      )}
+      {children}
+      {icon && iconPosition === 'right' && <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>}
     </Component>
   );
 };
