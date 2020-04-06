@@ -12,9 +12,6 @@
   ],
   "references": [
     {
-      "path": "../react-icons"
-    },
-    {
       "path": "../react-styles"
     }
   ]
