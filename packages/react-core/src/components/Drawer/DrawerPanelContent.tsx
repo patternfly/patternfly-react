@@ -8,15 +8,15 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   className?: string;
   /** Content to be rendered in the drawer panel. */
   children?: React.ReactNode;
-  /* Flag indicating that the drawer panel should have a border. */
+  /** Flag indicating that the drawer panel should have a border. */
   hasBorder?: boolean;
-  /* Default width for drawer panel */
+  /** Default width for drawer panel */
   width?: 25 | 33 | 50 | 66 | 75 | 100;
-  /* Drawer panel width on large viewports */
+  /** Drawer panel width on large viewports */
   widthOnLg?: 25 | 33 | 50 | 66 | 75 | 100;
-  /* Drawer panel width on xl viewports */
+  /** Drawer panel width on xl viewports */
   widthOnXl?: 25 | 33 | 50 | 66 | 75 | 100;
-  /* Drawer panel width on 2xl viewports */
+  /** Drawer panel width on 2xl viewports */
   widthOn2Xl?: 25 | 33 | 50 | 66 | 75 | 100;
 }
 
