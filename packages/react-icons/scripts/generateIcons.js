@@ -18,13 +18,12 @@ async function generateIcons() {
   const templateDir = path.resolve(__dirname, './templates');
 
   if (fs.existsSync(outDir)) {
-    console.log('Not overwriting generate icons files.')
+    // eslint-disable-next-line no-console
+    console.log('Not overwriting generate icons files.');
     return;
   }
 
-  const templates = fs
-    .readdirSync(templateDir)
-    .map(templateFile => require(path.join(templateDir, templateFile)));
+  const templates = fs.readdirSync(templateDir).map(templateFile => require(path.join(templateDir, templateFile)));
 
   const index = [];
   Object.entries(icons).forEach(([iconName, icon]) => {
@@ -32,20 +31,16 @@ async function generateIcons() {
     const jsName = `${pascalCase(iconName)}Icon`;
 
     templates.forEach(template =>
-      fs.outputFileSync(
-        template.getSingleOutputPath(outDir, fname),
-        template.getSingleContent(jsName, icon)
-      )
+      fs.outputFileSync(template.getSingleOutputPath(outDir, fname), template.getSingleContent(jsName, icon))
     );
     index.push(fname);
   });
-  templates.forEach(template => 
-    fs.outputFileSync(template.getOutputPath(outDir), template.getContent(index))
-  );
+  templates.forEach(template => fs.outputFileSync(template.getOutputPath(outDir), template.getContent(index)));
 
   // Compile src folder
   const tsDir = path.resolve(__dirname, '..');
   await concurrently([`yarn tsc -p ${tsDir}`, `yarn tsc -p ${tsDir}/tsconfig.cjs.json`]);
+  // eslint-disable-next-line no-console
   console.log('Generated files for', index.length, 'icons');
 }
 

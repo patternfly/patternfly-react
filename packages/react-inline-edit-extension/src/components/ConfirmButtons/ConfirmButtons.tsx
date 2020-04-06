@@ -31,7 +31,7 @@ export interface ConfirmButtonProps {
   environment: Environment;
   buttonsOnTop?: boolean;
   boldBorder?: boolean;
-  messages?: { confirmButtonLabel: string, cancelButtonLabel: string };
+  messages?: { confirmButtonLabel: string; cancelButtonLabel: string };
   onConfirm?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onCancel?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }

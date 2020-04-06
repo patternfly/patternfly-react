@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { TableBodyProps, isRowExpanded, IRowData, IExtraRowData, TableBody, IRow, IComputedData } from '@patternfly/react-table';
+import {
+  TableBodyProps,
+  isRowExpanded,
+  IRowData,
+  IExtraRowData,
+  TableBody,
+  IRow,
+  IComputedData
+} from '@patternfly/react-table';
 import { showIdWarnings, TableEditConfirmation } from '../../utils';
 import { IEditedCellData } from '../InlineEdit/editableTableBody';
 
@@ -105,13 +113,7 @@ interface ExtendedIRow extends IRow {
   isTableEditing: boolean;
 }
 
-export const Body = ({
-  BodyComponent,
-  rows = [],
-  editConfig,
-  onRowClick = () => {},
-  ...props
-}: BodyProps) => {
+export const Body = ({ BodyComponent, rows = [], editConfig, onRowClick = () => {}, ...props }: BodyProps) => {
   const isTableEditing = rows.some(row => row.isEditing);
   const mappedRows = rows.map(row => ({
     ...row,

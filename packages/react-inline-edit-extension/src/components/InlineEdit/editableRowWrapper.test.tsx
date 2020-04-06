@@ -113,7 +113,7 @@ describe('editableRowWrapper', () => {
     const view = mount(getRowWrapper(row), mountOptions);
     const buttons = view.find('.pf-c-table__inline-edit-buttons button.pf-c-button.pf-m-primary');
     const confirmButton = buttons.at(0);
-    confirmButton.simulate('mouseup')
+    confirmButton.simulate('mouseup');
     expect(onEditConfirmed).toHaveBeenCalled();
 
     const cancelButton = buttons.at(1);

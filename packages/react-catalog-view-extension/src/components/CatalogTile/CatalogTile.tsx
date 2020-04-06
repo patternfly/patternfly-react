@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-  Card,
-  CardActions,
-  CardHead,
-  CardHeader,
-  CardBody,
-  CardFooter
-} from '@patternfly/react-core';
+import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 import classNames from 'classnames';
 
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {

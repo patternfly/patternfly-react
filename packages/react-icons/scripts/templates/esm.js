@@ -2,7 +2,11 @@ const { join } = require('path');
 
 module.exports = {
   getOutputPath: outDir => join(outDir, 'esm/icons/index.js'),
-  getContent: fnames => fnames.sort().map(fname => `export * from './${fname}';`).join('\n') + '\n',
+  getContent: fnames =>
+    fnames
+      .sort()
+      .map(fname => `export * from './${fname}';`)
+      .join('\n') + '\n',
   getSingleOutputPath: (outDir, fname) => join(outDir, `esm/icons/${fname}.js`),
   getSingleContent: (jsName, icon) => `import React from 'react';
 import { SVGIcon } from '../SVGIcon';

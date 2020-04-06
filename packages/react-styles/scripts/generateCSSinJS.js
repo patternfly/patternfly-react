@@ -5,7 +5,6 @@ const camelcase = require('camel-case');
 
 /**
  * @param {string} cssString - CSS string
- * @param {string} cssOutputPath - Path string
  */
 function cssToJSNew(cssString) {
   const res = {};
@@ -29,7 +28,7 @@ function cssToJSNew(cssString) {
  * @param {string} cssString - CSS string
  */
 function getCSSClasses(cssString) {
-  return cssString.match(/(\.)(?!\d)([^\s\.,{\[>+~#:)]*)(?![^{]*})/g);
+  return cssString.match(/(.)(?!\d)([^\s.,{[>+~#:)]*)(?![^{]*})/g);
 }
 
 /**
@@ -46,10 +45,14 @@ function isModifier(className) {
   return Boolean(className && className.startsWith) && className.startsWith('.pf-m-');
 }
 
+/**
+ *
+ */
 function generateCSSinJS() {
   const outDir = path.resolve(__dirname, '../css');
   const pfStylesDir = path.dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
   if (fs.existsSync(outDir)) {
+    // eslint-disable-next-line no-console
     console.log('Not overwriting generated CSS-in-JS files.');
     return;
   }
@@ -60,10 +63,7 @@ function generateCSSinJS() {
     absolute: true
   });
   const srcCSSFiles = glob.sync('src/css/**/*.css');
-  const combinedCSSFiles = [
-    ...patternflyCSSFiles,
-    ...srcCSSFiles
-  ];
+  const combinedCSSFiles = [...patternflyCSSFiles, ...srcCSSFiles];
 
   combinedCSSFiles.forEach(filePath => {
     const cssContent = fs.readFileSync(filePath, 'utf8');
@@ -87,6 +87,7 @@ export default _default;`
     );
   });
 
+  // eslint-disable-next-line no-console
   console.log('Generated files for', combinedCSSFiles.length, 'CSS files.');
 }
 

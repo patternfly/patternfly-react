@@ -29,14 +29,22 @@ export interface InlineEditFormatterFactory {
   (props: InlineEditFormatterFactoryProps): Formatter;
 }
 
-export function inlineEditFormatterFactory({ renderEdit, renderValue, resolveValue, isEditable = null }: InlineEditFormatterFactoryProps = {}) {
+/**
+ *
+ */
+export function inlineEditFormatterFactory({
+  renderEdit,
+  renderValue,
+  resolveValue,
+  isEditable = null
+}: InlineEditFormatterFactoryProps = {}) {
   return (value: React.ReactNode, additionalData: AdditionalData) => {
     const { rowData } = additionalData;
-  
+
     if (resolveValue) {
       value = resolveValue(value, additionalData);
     }
-  
+
     if (renderEdit && rowData.isEditing && (!isEditable || isEditable(additionalData))) {
       const computedData = {
         activeEditId: rowData.editConfig && rowData.editConfig.activeEditId
@@ -45,7 +53,7 @@ export function inlineEditFormatterFactory({ renderEdit, renderValue, resolveVal
     } else if (renderValue) {
       return renderValue(value, additionalData);
     }
-  
+
     return value;
   };
 }

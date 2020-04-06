@@ -2,9 +2,13 @@ const { join } = require('path');
 
 module.exports = {
   getOutputPath: outDir => join(outDir, 'js/icons/index.d.ts'),
-  getContent: fnames => fnames.sort().map(fname => `export * from './${fname}';`).join('\n') + '\n',
+  getContent: fnames =>
+    fnames
+      .sort()
+      .map(fname => `export * from './${fname}';`)
+      .join('\n') + '\n',
   getSingleOutputPath: (outDir, fname) => join(outDir, `js/icons/${fname}.d.ts`),
-  getSingleContent: (jsName, icon) => `"use strict";
+  getSingleContent: jsName => `"use strict";
 import React from 'react';
 import { SVGIconProps } from '../SVGIcon';
 export declare const ${jsName}Config: {

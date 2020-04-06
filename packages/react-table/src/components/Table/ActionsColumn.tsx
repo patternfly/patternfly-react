@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Dropdown } from '@patternfly/react-core';
-import {
-  DropdownPosition,
-  DropdownDirection
-} from '@patternfly/react-core';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { KebabToggle } from '@patternfly/react-core';
 import { DropdownItem } from '@patternfly/react-core';
 import { DropdownSeparator } from '@patternfly/react-core';
@@ -80,7 +77,9 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
             ) : (
               <DropdownItem
                 component="div"
-                onClick={(event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => this.onSelect(event, onClick)}
+                onClick={(event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) =>
+                  this.onSelect(event, onClick)
+                }
                 {...props}
                 key={itemKey || key}
                 data-key={itemKey || key}

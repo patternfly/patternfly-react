@@ -10,11 +10,7 @@ export interface IEditedCellData extends IExtraRowData {
 }
 
 export const editableTableBody = (BodyComponent: typeof TableBody) => {
-  const InlineEditBody = ({
-    editConfig = null,
-    onRowClick = () => {},
-    ...props
-  }) => (
+  const InlineEditBody = ({ editConfig = null, onRowClick = () => {}, ...props }) => (
     <TableContext.Consumer>
       {({ rows, ...consumedProps }) => (
         <Body
@@ -28,6 +24,6 @@ export const editableTableBody = (BodyComponent: typeof TableBody) => {
       )}
     </TableContext.Consumer>
   );
-  
+
   return InlineEditBody;
 };

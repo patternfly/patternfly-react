@@ -17,7 +17,6 @@
         "plugin:jsdoc/recommended"
     ],
     "parserOptions": {
-        "project": "packages/tsconfig.base.json",
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
@@ -101,6 +100,7 @@
         }],
         "no-unused-labels": "error",
         "no-var": "error",
+        "no-prototype-builtins": "off",
         "object-shorthand": "error",
         "one-var": [
             "error",

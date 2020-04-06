@@ -16,8 +16,8 @@ export const shallowLeftSideEquals = (newObject: any, oldObject: any) => {
     return newObject === oldObject;
   }
 
-  return !Boolean(Object.keys(newObject).find(key => newObject[key] !== oldObject[key]));
-}
+  return !Object.keys(newObject).find(key => newObject[key] !== oldObject[key]);
+};
 
 export interface ClientBoundingRect {
   top: number;

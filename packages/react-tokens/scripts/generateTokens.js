@@ -6,6 +6,11 @@ const { outputFileSync } = require('fs-extra');
 
 const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, '_');
 
+/**
+ * Gets tokens from patternfly.css
+ *
+ * @returns {any} map of tokens
+ */
 function getTokens() {
   const tokens = {};
   const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
@@ -20,7 +25,7 @@ function getTokens() {
       if (node.type !== 'rule' || node.selectors.indexOf('.pf-t-dark') !== -1) {
         return;
       }
-  
+
       node.declarations.forEach(decl => {
         if (decl.type !== 'declaration') {
           return;
@@ -47,9 +52,13 @@ function getTokens() {
   return tokens;
 }
 
+/**
+ * Generates JS-from-CSS files
+ */
 function generateTokens() {
   const outDir = resolve(__dirname, '../dist');
   if (fs.existsSync(outDir)) {
+    // eslint-disable-next-line no-console
     console.log('Not overwriting generated tokens files.');
     return;
   }
@@ -67,7 +76,8 @@ function generateTokens() {
       );
     });
   });
-  
+
+  // eslint-disable-next-line no-console
   console.log('Generated files for', Object.keys(tokens).length, 'tokens.');
 }
 
