@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`editableRowWrapper renders correctly 1`] = `
-<RowWrapper
+<EditableRowWrapper
   onResize={[MockFunction]}
   onScroll={[MockFunction]}
   row={
@@ -46,5 +46,5 @@ exports[`editableRowWrapper renders correctly 1`] = `
   >
     <tr />
   </TestRow>
-</RowWrapper>
+</EditableRowWrapper>
 `;

@@ -111,13 +111,10 @@ describe('editableRowWrapper', () => {
     };
 
     const view = mount(getRowWrapper(row), mountOptions);
-    const buttons = view.find('.pf-c-table__inline-edit-buttons button.pf-c-button.pf-m-primary');
-    const confirmButton = buttons.at(0);
-    confirmButton.simulate('mouseup');
+    view.find('.pf-c-table__inline-edit-buttons button.pf-c-button.pf-m-primary').simulate('mouseup');
     expect(onEditConfirmed).toHaveBeenCalled();
 
-    const cancelButton = buttons.at(1);
-    cancelButton.simulate('mouseup');
+    view.find('.pf-c-table__inline-edit-buttons button.pf-c-button.pf-m-plain').simulate('mouseup');
     expect(onEditCanceled).toHaveBeenCalled();
   });
 });

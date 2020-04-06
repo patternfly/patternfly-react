@@ -85,6 +85,7 @@
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint:ts": "yarn lint packages",
     "lint:versions": "node scripts/verifyPatternflyVersions.js",
+    "plop": "plop",
     "prettier": "node node_modules/.bin/prettier --write \"packages/**/*.{js,jsx,ts,tsx}\" \"scripts/**/*.{js,jsx,ts,tsx}\"",
     "serve:docs": "lerna run serve",
     "serve:integration": "lerna run serve:demo-app",

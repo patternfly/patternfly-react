@@ -45,6 +45,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
       <Component
         aria-label="Confirm"
         onMouseUp={[MockFunction]}
+        variant="primary"
       >
         <button
           aria-disabled={null}
@@ -107,11 +108,12 @@ exports[`ConfirmButtons renders correctly 1`] = `
       <Component
         aria-label="Discard"
         onMouseUp={[MockFunction]}
+        variant="plain"
       >
         <button
           aria-disabled={null}
           aria-label="Discard"
-          className="pf-c-button pf-m-primary"
+          className="pf-c-button pf-m-plain"
           data-ouia-component-id={null}
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
