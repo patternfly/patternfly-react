@@ -245,9 +245,7 @@ exports[`Alert - danger Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -353,9 +351,7 @@ exports[`Alert - danger Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -462,9 +458,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -1030,9 +1024,7 @@ exports[`Alert - default Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -1138,9 +1130,7 @@ exports[`Alert - default Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -1247,9 +1237,7 @@ exports[`Alert - default Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -1815,9 +1803,7 @@ exports[`Alert - info Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -1923,9 +1909,7 @@ exports[`Alert - info Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -2032,9 +2016,7 @@ exports[`Alert - info Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -2600,9 +2582,7 @@ exports[`Alert - success Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -2708,9 +2688,7 @@ exports[`Alert - success Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -2817,9 +2795,7 @@ exports[`Alert - success Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -3385,9 +3361,7 @@ exports[`Alert - warning Action Link 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -3493,9 +3467,7 @@ exports[`Alert - warning Action and Title 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>
@@ -3602,9 +3574,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             tabIndex={null}
             type="button"
           >
-            <span>
-              test
-            </span>
+            test
           </button>
         </Button>
       </AlertActionLink>

@@ -1264,9 +1264,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       data-ouia-safe="true"
                       type="button"
                     >
-                      <span>
-                        Clear all filters
-                      </span>
+                      Clear all filters
                     </button>
                   </div>
                 </div>
@@ -1339,9 +1337,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                           tabIndex={null}
                           type="button"
                         >
-                          <span>
-                            Clear all filters
-                          </span>
+                          Clear all filters
                         </button>
                       </Button>
                     </div>
@@ -1523,9 +1519,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 data-ouia-safe="true"
                 type="button"
               >
-                <span>
-                  Clear all filters
-                </span>
+                Clear all filters
               </button>
             </div>
           </div>,
@@ -1575,9 +1569,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 tabIndex={null}
                 type="button"
               >
-                <span>
-                  Clear all filters
-                </span>
+                Clear all filters
               </button>
             </Button>
           </div>
