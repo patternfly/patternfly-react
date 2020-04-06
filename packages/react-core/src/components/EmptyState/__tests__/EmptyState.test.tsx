@@ -32,7 +32,7 @@ describe('EmptyState', () => {
 
   test('Main variant large', () => {
     const view = shallow(
-      <EmptyState variant={EmptyStateVariant.lg}>
+      <EmptyState variant={EmptyStateVariant.large}>
         <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
       </EmptyState>
     );
@@ -41,7 +41,7 @@ describe('EmptyState', () => {
 
   test('Main variant small', () => {
     const view = shallow(
-      <EmptyState variant={EmptyStateVariant.sm}>
+      <EmptyState variant={EmptyStateVariant.small}>
         <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
       </EmptyState>
     );
@@ -90,4 +90,14 @@ describe('EmptyState', () => {
     expect(view.props().className).toBe('pf-c-empty-state__primary custom-empty-state-prim-cls');
     expect(view.props().id).toBe('empty-state-prim-id');
   });
+
+  test('Full height', () => {
+    const view = shallow(
+      <EmptyState isFullHeight variant={EmptyStateVariant.large}>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
+      </EmptyState>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
 });

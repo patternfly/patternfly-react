@@ -16,4 +16,8 @@ describe('Empty State Demo Test', () => {
   it('Verify small empty state', () => {
     cy.get('.pf-c-empty-state').contains('Small Empty State');
   });
+
+  it('Verify full height example carries modifier class', () => {
+    cy.get('.pf-c-empty-state#full-height-example').should('have.class', 'pf-m-full-height');
+  });
 });

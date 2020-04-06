@@ -82,6 +82,18 @@ export class EmptyStateDemo extends Component {
       </React.Fragment>
     )
   };
+  myFullHeightEmptyStateProps: EmptyStateProps = {
+    id: 'full-height-example',
+    children: (
+      <React.Fragment>
+        <EmptyStateIcon icon={CubesIcon} />
+        <Title headingLevel="h5" size="lg">
+          Full height empty state
+        </Title>
+        <EmptyStateBody>This represents a full height empty state pattern in Patternfly 4</EmptyStateBody>
+      </React.Fragment>
+    )
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -93,6 +105,9 @@ export class EmptyStateDemo extends Component {
         <EmptyState variant={this.myLargeEmptyStateProps.variant}>{this.myLargeEmptyStateProps.children}</EmptyState>
         <EmptyState variant={this.mySmallEmptyStateProps.variant}>{this.mySmallEmptyStateProps.children}</EmptyState>
         <EmptyState>{this.myFullEmptyStateProps.children}</EmptyState>
+        <EmptyState isFullHeight id={this.myFullHeightEmptyStateProps.id}>
+          {this.myFullHeightEmptyStateProps.children}
+        </EmptyState>
       </React.Fragment>
     );
   }
