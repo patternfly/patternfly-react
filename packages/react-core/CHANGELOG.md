@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.2.6...@patternfly/react-core@4.2.7) (2020-04-07)
+
+
+### Bug Fixes
+
+* **gutter:** fix type for gutter support ([#4014](https://github.com/patternfly/patternfly-react/issues/4014)) ([27fc984](https://github.com/patternfly/patternfly-react/commit/27fc984d059e5ced425e66a6ede5ed163cd02a89))
+
+
+
+
+
 ## [4.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.2.5...@patternfly/react-core@4.2.6) (2020-04-03)
 
 **Note:** Version bump only for package @patternfly/react-core
