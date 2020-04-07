@@ -4,7 +4,7 @@ import { LevelItem } from '../LevelItem';
 import { shallow } from 'enzyme';
 
 test('Gutter', () => {
-  const view = shallow(<Level gutter="md" />);
+  const view = shallow(<Level hasGutter />);
   expect(view).toMatchSnapshot();
 });
 

@@ -238,7 +238,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
 
   render() {
     return (
-      <Stack gutter="md">
+      <Stack hasGutter>
         {this.renderDropdown()}
         {this.renderActionDropdown()}
       </Stack>

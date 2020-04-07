@@ -117,7 +117,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
 
   render() {
     return (
-      <Stack gutter="md">
+      <Stack hasGutter>
         {this.renderPagination()}
         {this.renderDisabled()}
       </Stack>

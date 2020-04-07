@@ -2,7 +2,7 @@
 
 exports[`Grid should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-l-grid pf-m-all-1-col-on-sm pf-m-all-1-col-on-md pf-m-all-1-col-on-lg pf-m-all-1-col-on-xl pf-m-all-1-col-on-2xl ''"
+  className="pf-l-grid pf-m-all-1-col-on-sm pf-m-all-1-col-on-md pf-m-all-1-col-on-lg pf-m-all-1-col-on-xl pf-m-all-1-col-on-2xl pf-m-gutter ''"
 >
   ReactNode
 </div>

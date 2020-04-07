@@ -23,7 +23,7 @@ test('isFilled defaults to false', () => {
 
 test('Gutter', () => {
   const view = mount(
-    <Split gutter="md">
+    <Split hasGutter>
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
