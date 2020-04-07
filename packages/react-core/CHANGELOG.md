@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.153.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.3...@patternfly/react-core@3.153.4) (2020-04-07)
+
+
+### Bug Fixes
+
+* **dropdown:** respect already passed props ([#4016](https://github.com/patternfly/patternfly-react/issues/4016)) ([fe3c082](https://github.com/patternfly/patternfly-react/commit/fe3c08233f50d636490e0c664ac3a4b175b84ba6))
+
+
+
+
+
 ## [3.153.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.2...@patternfly/react-core@3.153.3) (2020-04-01)
 
 **Note:** Version bump only for package @patternfly/react-core
