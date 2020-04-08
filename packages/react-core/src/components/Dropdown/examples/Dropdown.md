@@ -1174,14 +1174,12 @@ class RouterDropdown extends React.Component {
 import React from 'react';
 import {
   Dropdown,
+  DropdownGroup
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
-  KebabToggle
+  DropdownSeparator
 } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+import { UserIcon } from '@patternfly/react-icons';
 
 class ImageTextDropdown extends React.Component {
   constructor(props) {
