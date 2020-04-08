@@ -9,7 +9,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   /** Content to be rendered in the drawer panel. */
   children?: React.ReactNode;
   /* Flag indicating that the drawer panel should not have a border. */
-  hasNoBorder?: boolean;
+  noBorder?: boolean;
   /* Default width for drawer panel */
   width?: 25 | 33 | 50 | 66 | 75 | 100;
   /* Drawer panel width on large viewports */
@@ -23,7 +23,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
-  hasNoBorder = false,
+  noBorder = false,
   width,
   widthOnLg,
   widthOnXl,
@@ -35,7 +35,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
       <div
         className={css(
           styles.drawerPanel,
-          hasNoBorder && styles.modifiers.noBorder,
+          noBorder && styles.modifiers.noBorder,
           width && styles.modifiers[`width_${width}` as keyof typeof styles.modifiers],
           widthOnLg && styles.modifiers[`width_${widthOnLg}OnLg` as keyof typeof styles.modifiers],
           widthOnXl && styles.modifiers[`width_${widthOnXl}OnXl` as keyof typeof styles.modifiers],
