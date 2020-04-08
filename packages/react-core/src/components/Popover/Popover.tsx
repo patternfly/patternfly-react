@@ -11,7 +11,7 @@ import { PopoverBody } from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
-import GenerateId from '../../helpers/GenerateId/GenerateId';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import popoverMaxWidth from '@patternfly/react-tokens/dist/js/c_popover_MaxWidth';
 import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';

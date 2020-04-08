@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
-import { default as checkStyles } from '@patternfly/react-styles/css/components/Check/check';
+import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';

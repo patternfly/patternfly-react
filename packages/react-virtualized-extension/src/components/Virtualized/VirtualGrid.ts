@@ -257,7 +257,7 @@ interface State {
  * Renders tabular data with virtualization along the vertical and horizontal axes.
  * Row heights and column widths must be known ahead of time and specified as properties.
  */
-class VirtualGrid extends React.PureComponent<Props, State> {
+export class VirtualGrid extends React.PureComponent<Props, State> {
   static defaultProps = {
     'aria-label': 'grid',
     'aria-readonly': true,
@@ -1476,4 +1476,3 @@ class VirtualGrid extends React.PureComponent<Props, State> {
 }
 
 polyfill(VirtualGrid as any);
-export default VirtualGrid;

@@ -7,6 +7,4 @@ export interface TableTextInputProps extends Omit<TextInputProps, 'defaultValue'
   onBlur?(value: string, event: FormEvent<HTMLInputElement>): void;
 }
 
-declare const TableTextInput: SFC<TableTextInputProps>;
-
-export default TableTextInput;
+export const TableTextInput: SFC<TableTextInputProps>;

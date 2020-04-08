@@ -31,5 +31,4 @@ export interface InlineEditFormatterFactory {
   (props: InlineEditFormatterFactoryProps): Formatter;
 }
 
-// eslint-disable-next-line no-undef
-export default InlineEditFormatterFactory;
+export const InlineEditFormatterFactory;

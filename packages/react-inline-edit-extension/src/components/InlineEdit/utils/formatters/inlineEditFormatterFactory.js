@@ -1,4 +1,4 @@
-const inlineEditFormatterFactory = ({ renderEdit, renderValue, resolveValue, isEditable = null } = {}) => (
+export const inlineEditFormatterFactory = ({ renderEdit, renderValue, resolveValue, isEditable = null } = {}) => (
   value,
   additionalData
 ) => {
@@ -19,5 +19,3 @@ const inlineEditFormatterFactory = ({ renderEdit, renderValue, resolveValue, isE
 
   return value;
 };
-
-export default inlineEditFormatterFactory;

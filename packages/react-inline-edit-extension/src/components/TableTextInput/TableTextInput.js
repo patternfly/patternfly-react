@@ -24,7 +24,7 @@ const defaultProps = {
   autoFocus: false
 };
 
-class TableTextInput extends React.Component {
+export class TableTextInput extends React.Component {
   handleBlur = event => {
     this.props.onBlur(event.currentTarget.value, event);
   };
@@ -48,5 +48,3 @@ class TableTextInput extends React.Component {
 
 TableTextInput.propTypes = propTypes;
 TableTextInput.defaultProps = defaultProps;
-
-export default TableTextInput;

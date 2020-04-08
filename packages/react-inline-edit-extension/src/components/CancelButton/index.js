@@ -1,1 +1,1 @@
-export { default as CancelButton } from './CancelButton';
+export * from './CancelButton';

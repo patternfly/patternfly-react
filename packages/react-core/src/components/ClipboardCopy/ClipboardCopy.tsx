@@ -5,7 +5,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { PopoverPosition } from '../Popover';
 import { TextInput } from '../TextInput';
 import { TooltipPosition } from '../Tooltip';
-import GenerateId from '../../helpers/GenerateId/GenerateId';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
 import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
