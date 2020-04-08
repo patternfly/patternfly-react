@@ -4,7 +4,7 @@ export enum GutterSize {
   sm = 'sm',
   md = 'md',
   lg = 'lg'
-};
+}
 
 /**
  * @param {any} styleObj - Style object
