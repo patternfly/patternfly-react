@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title } from '@patternfly/react-core/dist/js/components/Title/Title';
-import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
-import { Text } from '@patternfly/react-core/dist/js/components/Text/Text';
-import { Grid } from '@patternfly/react-core/dist/js/layouts/Grid/Grid';
-import { GridItem } from '@patternfly/react-core/dist/js/layouts/Grid/GridItem';
-import { PageSection } from '@patternfly/react-core/dist/js/components/Page/PageSection';
+import { Title, Tooltip, Text, Grid, GridItem, PageSection } from '@patternfly/react-core';
 import spacerMd from '@patternfly/react-tokens/dist/js/global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/js/global_FontSize_sm';
 import * as IconsModule from '@patternfly/react-icons';

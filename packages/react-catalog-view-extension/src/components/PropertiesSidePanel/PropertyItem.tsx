@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import { Text, TextVariants } from '@patternfly/react-core/dist/js/components/Text/Text';
+import { Text, TextVariants } from '@patternfly/react-core';
 
 export interface PropertyItemProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'value'> {
   /** Additional css classes for the Property Item */

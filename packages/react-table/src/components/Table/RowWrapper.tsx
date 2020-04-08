@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { getOUIAProps, OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
-import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
+import { getOUIAProps, OUIAProps, debounce } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
