@@ -5,7 +5,7 @@ import { getGutterModifier, GutterSize } from '../../styles/gutters';
 
 export interface StackProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg' | typeof GutterSize;
+  gutter?: 'sm' | 'md' | 'lg' | GutterSize;
   /** content rendered inside the Stack layout */
   children?: React.ReactNode;
   /** additional classes added to the Stack layout */

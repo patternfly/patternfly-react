@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 
 export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg' | typeof GutterSize;
+  gutter?: 'sm' | 'md' | 'lg' | GutterSize;
   /** content rendered inside the Split layout */
   children?: React.ReactNode;
   /** additional classes added to the Split layout */
