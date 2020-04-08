@@ -1174,7 +1174,7 @@ class RouterDropdown extends React.Component {
 import React from 'react';
 import {
   Dropdown,
-  DropdownGroup
+  DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator
