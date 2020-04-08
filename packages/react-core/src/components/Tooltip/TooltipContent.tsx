@@ -11,7 +11,12 @@ export interface TooltipContentProps extends React.HTMLProps<HTMLDivElement> {
   isLeftAligned?: boolean;
 }
 
-export const TooltipContent = ({ className, children, isLeftAligned, ...props }: TooltipContentProps) => (
+export const TooltipContent: React.FunctionComponent<TooltipContentProps> = ({
+  className,
+  children,
+  isLeftAligned,
+  ...props
+}: TooltipContentProps) => (
   <div className={css(styles.tooltipContent, isLeftAligned && styles.modifiers.textAlignLeft, className)} {...props}>
     {children}
   </div>
