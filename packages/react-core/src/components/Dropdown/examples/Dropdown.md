@@ -1139,7 +1139,7 @@ class RouterDropdown extends React.Component {
       this.onFocus();
     };
     this.onFocus = () => {
-      const element = document.getElementById('toggle-id');
+      const element = document.getElementById('toggle-id-8');
       element.focus();
     };
   }
@@ -1158,7 +1158,7 @@ class RouterDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+          <DropdownToggle id="toggle-id-8" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
             Dropdown
           </DropdownToggle>
         }
@@ -1170,7 +1170,7 @@ class RouterDropdown extends React.Component {
 }
 ```
 
-```js title=Evan's-Example
+```js title=Dropdown-with-image-and-text
 import React from 'react';
 import {
   Dropdown,
@@ -1183,7 +1183,7 @@ import {
 } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
-class SimpleDropdown extends React.Component {
+class ImageTextDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1201,7 +1201,7 @@ class SimpleDropdown extends React.Component {
       this.onFocus();
     };
     this.onFocus = () => {
-      const element = document.getElementById('toggle-id');
+      const element = document.getElementById('toggle-id-9');
       element.focus();
     };
   }
@@ -1227,7 +1227,7 @@ class SimpleDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle 
-            id="toggle-id" 
+            id="toggle-id-9" 
             onToggle={this.onToggle} 
             iconComponent={CaretDownIcon}
             toggleImage={<UserIcon />}
