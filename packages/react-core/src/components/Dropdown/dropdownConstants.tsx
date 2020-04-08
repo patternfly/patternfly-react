@@ -14,6 +14,7 @@ export const DropdownContext = React.createContext<{
   onSelect?: (event?: any) => void;
   id?: string;
   toggleIconClass?: string;
+  toggleImageClass?: string;
   toggleTextClass?: string;
   menuClass?: string;
   itemClass?: string;
@@ -24,6 +25,7 @@ export const DropdownContext = React.createContext<{
   sectionTitleClass?: string;
   sectionComponent?: string;
   disabledClass?: string;
+  plainTextClass?: string;
   hoverClass?: string;
   separatorClass?: string;
   menuComponent?: string;
@@ -32,6 +34,7 @@ export const DropdownContext = React.createContext<{
   onSelect: (event?: any) => undefined as any,
   id: '',
   toggleIconClass: '',
+  toggleImageClass: '',
   toggleTextClass: '',
   menuClass: '',
   itemClass: '',
@@ -42,6 +45,7 @@ export const DropdownContext = React.createContext<{
   sectionTitleClass: '',
   sectionComponent: 'section',
   disabledClass: '',
+  plainTextClass: '',
   hoverClass: '',
   separatorClass: '',
   menuComponent: 'ul'

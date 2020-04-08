@@ -30,6 +30,8 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   isDisabled?: boolean;
   /** Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
+  /** The image to display in the toggle. */
+  toggleImage?: React.ReactNode | null;
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
   iconComponent?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
@@ -60,6 +62,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isPrimary = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
+  toggleImage = null,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
   splitButtonVariant = 'checkbox',
@@ -70,7 +73,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
 }: DropdownToggleProps) => {
   const toggle = (
     <DropdownContext.Consumer>
-      {({ toggleTextClass, toggleIconClass }) => (
+      {({ toggleTextClass, toggleIconClass, toggleImageClass }) => (
         <Toggle
           {...props}
           id={id}
@@ -87,6 +90,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           aria-haspopup={ariaHasPopup}
           {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
         >
+          {toggleImage && <span className={css(toggleImageClass)}>{toggleImage}</span>}
           {children && <span className={IconComponent && css(toggleTextClass)}>{children}</span>}
           {IconComponent && <IconComponent className={css(children && toggleIconClass)} />}
         </Toggle>

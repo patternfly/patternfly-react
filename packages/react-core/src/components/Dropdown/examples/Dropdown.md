@@ -8,7 +8,7 @@ typescript: true
 ---
 
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownItemIcon, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
+import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon, UserIcon } from '@patternfly/react-icons';
 import { Link } from '@reach/router';
 
 ## Examples
@@ -1160,6 +1160,79 @@ class RouterDropdown extends React.Component {
         toggle={
           <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
             Dropdown
+          </DropdownToggle>
+        }
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
+```
+
+```js title=Evan's-Example
+import React from 'react';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownDirection,
+  KebabToggle
+} from '@patternfly/react-core';
+import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+
+class SimpleDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id');
+      element.focus();
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>Text</DropdownItem>
+        <DropdownItem key="group 1 plaintext2" component="div" isPlainText>More text</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={
+          <DropdownToggle 
+            id="toggle-id" 
+            onToggle={this.onToggle} 
+            iconComponent={CaretDownIcon}
+            toggleImage={<UserIcon />}
+          >
+            Ned Username
           </DropdownToggle>
         }
         isOpen={isOpen}
