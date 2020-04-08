@@ -4,7 +4,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 export class SplitDemo extends React.Component {
   render() {
     return (
-      <Split gutter="md" component="article">
+      <Split hasGutter component="article">
         <SplitItem>content</SplitItem>
         <SplitItem isFilled>pf-m-fill</SplitItem>
         <SplitItem>content</SplitItem>

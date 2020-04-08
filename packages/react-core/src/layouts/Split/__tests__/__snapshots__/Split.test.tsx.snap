@@ -2,7 +2,7 @@
 
 exports[`Gutter 1`] = `
 <Split
-  gutter="md"
+  hasGutter={true}
 >
   <div
     className="pf-l-split pf-m-gutter"

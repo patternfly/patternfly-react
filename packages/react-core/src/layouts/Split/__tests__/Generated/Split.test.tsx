@@ -8,6 +8,6 @@ import { Split } from '../../Split';
 import {} from '../..';
 
 it('Split should match snapshot (auto-generated)', () => {
-  const view = shallow(<Split gutter={null} children={<>ReactNode</>} className={"''"} component={'div'} />);
+  const view = shallow(<Split hasGutter children={<>ReactNode</>} className={"''"} component={'div'} />);
   expect(view).toMatchSnapshot();
 });

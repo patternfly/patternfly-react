@@ -268,7 +268,7 @@ export class NavDemo extends Component {
     // Nav onToggle and onSelect should be optional
     // https://github.com/patternfly/patternfly-react/issues/1234
     return (
-      <Stack gutter="md">
+      <Stack hasGutter>
         {this.renderDefaultNav()}
         {this.renderExpandableNav()}
         {this.renderHorizontalNav()}

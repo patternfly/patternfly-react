@@ -4,7 +4,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 export class GalleryDemo extends React.Component {
   render() {
     return (
-      <Gallery gutter="md">
+      <Gallery hasGutter>
         <GalleryItem>Gallery Item</GalleryItem>
         <GalleryItem>Gallery Item</GalleryItem>
         <GalleryItem>Gallery Item</GalleryItem>

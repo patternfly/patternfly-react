@@ -258,7 +258,7 @@ class PageLayoutDefaultNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
@@ -504,7 +504,7 @@ class PageLayoutExpandableNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
@@ -931,7 +931,7 @@ class PageLayoutHorizontalNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
@@ -1172,7 +1172,7 @@ class PageLayoutManualNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
@@ -1381,7 +1381,7 @@ class PageLayoutLightNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>

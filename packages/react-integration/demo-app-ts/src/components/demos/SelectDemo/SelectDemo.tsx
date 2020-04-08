@@ -877,7 +877,7 @@ export class SelectDemo extends Component<SelectDemoState> {
 
   render() {
     return (
-      <Stack gutter="md">
+      <Stack hasGutter>
         {this.renderSingleSelect()}
         {this.renderCustomSingleSelect()}
         {this.renderDisabledSingleSelect()}

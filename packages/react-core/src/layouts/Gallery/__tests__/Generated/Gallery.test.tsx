@@ -8,6 +8,6 @@ import { Gallery } from '../../Gallery';
 import {} from '../..';
 
 it('Gallery should match snapshot (auto-generated)', () => {
-  const view = shallow(<Gallery children={<>ReactNode</>} className={"''"} gutter={null} />);
+  const view = shallow(<Gallery children={<>ReactNode</>} className={"''"} hasGutter />);
   expect(view).toMatchSnapshot();
 });

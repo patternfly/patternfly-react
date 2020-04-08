@@ -3,7 +3,7 @@ title: 'Stack'
 cssPrefix: 'pf-l-stack'
 section: 'layouts'
 propComponents: ['Stack', 'StackItem']
-typescript: true 
+typescript: true
 ---
 
 import { Stack, StackItem } from '@patternfly/react-core';
@@ -28,7 +28,7 @@ import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 StackWithGutterExample = () => (
-  <Stack gutter="md">
+  <Stack hasGutter>
     <StackItem>content</StackItem>
     <StackItem isFilled>pf-m-fill</StackItem>
     <StackItem>content</StackItem>
