@@ -20,7 +20,7 @@ const writeCJSExport = (tokenName, tokenString) =>
 "use strict";
 exports.__esModule = true;
 exports.${tokenName} = ${tokenString};
-exports.["default"] = exports.${tokenName};
+exports["default"] = exports.${tokenName};
 `.trim()
   );
 
@@ -56,7 +56,7 @@ function writeTokens(tokens) {
       .forEach(([oldTokenName, { name, value }]) => {
         const oldToken = {
           name,
-          value,
+          value: oldTokenName.includes('chart') && !isNaN(+value) ? +value : value,
           var: `var(${name})`
         };
         const oldTokenString = JSON.stringify(oldToken, null, 2);

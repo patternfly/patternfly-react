@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "node scripts/generateTokens.js && yarn build:babel:umd",
+    "build": "node scripts/writeTokens.js && yarn build:babel:umd",
     "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd -q",
     "clean": "rimraf dist"
   },
