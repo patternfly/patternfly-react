@@ -1,10 +1,10 @@
 import { getModifier } from '@patternfly/react-styles';
 
-export const GutterSize = {
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg'
-};
+export enum GutterSize {
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg'
+}
 
 /**
  * @param {any} styleObj - Style object

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import { GutterSize } from '../../styles/gutters';
 import styles from '@patternfly/react-styles/css/layouts/Gallery/gallery';
 
 export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
@@ -8,7 +9,7 @@ export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Gallery layout */
   className?: string;
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg';
+  gutter?: 'sm' | 'md' | 'lg' | GutterSize;
 }
 export const Gallery: React.FunctionComponent<GalleryProps> = ({
   children = null,

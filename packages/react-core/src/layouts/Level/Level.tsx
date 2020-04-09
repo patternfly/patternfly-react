@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Level/level';
-import { getGutterModifier } from '../../styles/gutters';
+import { getGutterModifier, GutterSize } from '../../styles/gutters';
 
 export interface LevelProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg';
+  gutter?: 'sm' | 'md' | 'lg' | GutterSize;
   /** additional classes added to the Level layout */
   className?: string;
   /** content rendered inside the Level layout */

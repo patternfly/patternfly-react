@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { getModifier } from '@patternfly/react-styles';
+import { GutterSize } from '../../styles/gutters';
 import { DeviceSizes } from '../../styles/sizes';
 
 export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -12,7 +13,7 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Grid layout */
   className?: string;
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg';
+  gutter?: 'sm' | 'md' | 'lg' | GutterSize;
   /** The number of rows a column in the grid should span.  Value should be a number 1-12 */
   span?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a small device */
