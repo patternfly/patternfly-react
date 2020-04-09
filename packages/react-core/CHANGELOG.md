@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.153.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.5...@patternfly/react-core@3.153.6) (2020-04-09)
+
+
+### Bug Fixes
+
+* **react-core:** guttersize type regression ([#4041](https://github.com/patternfly/patternfly-react/issues/4041)) ([1e3d585](https://github.com/patternfly/patternfly-react/commit/1e3d5856070c4cc84f72b71e914216f20e7a7fe1))
+
+
+
+
+
 ## [3.153.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.4...@patternfly/react-core@3.153.5) (2020-04-08)
 
 **Note:** Version bump only for package @patternfly/react-core
