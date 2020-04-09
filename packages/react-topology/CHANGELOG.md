@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.0.21...@patternfly/react-topology@4.0.22) (2020-04-09)
+
+
+### Bug Fixes
+
+* **packages:** make imports tsc compatible ([#4051](https://github.com/patternfly/patternfly-react/issues/4051)) ([264a625](https://github.com/patternfly/patternfly-react/commit/264a6252b67404bf349ceedaa9c2403b9fe364a6))
+
+
+
+
+
 ## [4.0.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.0.20...@patternfly/react-topology@4.0.21) (2020-04-09)
 
 **Note:** Version bump only for package @patternfly/react-topology
