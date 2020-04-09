@@ -56,15 +56,19 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     this.setState({ isMounted: true });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps: DataToolbarFilterProps) {
     const { categoryName, chips } = this.props;
-    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
+    if (prevProps.chips.length !== chips.length) {
+      this.context.updateNumberFilters(
+        typeof categoryName === 'string' ? categoryName : categoryName.name,
+        chips.length
+      );
+    }
   }
 
   render() {
     const { children, chips, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
-
     const chipGroup = chips.length ? (
       <DataToolbarItem variant="chip-group">
         <ChipGroup withToolbar>
