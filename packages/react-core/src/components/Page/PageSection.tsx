@@ -29,7 +29,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   noPadding?: boolean;
 }
 
-export const PageSection = ({
+export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   className = '',
   children,
   variant = 'default',
