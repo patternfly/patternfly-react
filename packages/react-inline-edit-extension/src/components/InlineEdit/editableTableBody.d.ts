@@ -26,4 +26,4 @@ export interface EditableTableBody {
 }
 
 // eslint-disable-next-line no-undef
-export default EditableTableBody;
+export const EditableTableBody;

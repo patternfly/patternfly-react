@@ -22,7 +22,7 @@ const buttonsBottomPosition = (window, rowDimensions, bold) => {
   };
 };
 
-const ConfirmButtons = ({
+export const ConfirmButtons = ({
   messages: { confirmButtonLabel, cancelButtonLabel },
   onConfirm,
   onCancel,
@@ -90,5 +90,3 @@ ConfirmButtons.propTypes = {
     cancelButtonLabel: PropTypes.string
   })
 };
-
-export default ConfirmButtons;

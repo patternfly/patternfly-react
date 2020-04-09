@@ -1,4 +1,4 @@
-import { default as inlineEditFormatterFactory } from './inlineEditFormatterFactory';
+import { inlineEditFormatterFactory } from './inlineEditFormatterFactory';
 
 const blue = 'blue';
 const alteredValue = 'violet';

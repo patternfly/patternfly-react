@@ -9,7 +9,7 @@ import {
   getBoundingClientRect,
   getClientWindowDimensions
 } from './utils/utils';
-import ConfirmButtons from './ConfirmButtons';
+import { ConfirmButtons } from './ConfirmButtons';
 import { TableEditConfirmation } from './constants';
 import '@patternfly/react-styles/css/components/Table/inline-edit.css';
 import { inlineEditStyles as styles } from './css/inline-edit-css';
@@ -104,7 +104,7 @@ const getTableConfirmation = ({ editConfig }) =>
   tableConfirmationMapper[editConfig && editConfig.editConfirmationType] ||
   tableConfirmationMapper[TableEditConfirmation.NONE];
 
-const editableRowWrapper = RowWrapperComponent => {
+export const editableRowWrapper = RowWrapperComponent => {
   class RowWrapper extends React.Component {
     constructor(props) {
       super(props);
@@ -230,5 +230,3 @@ const editableRowWrapper = RowWrapperComponent => {
 
   return RowWrapper;
 };
-
-export default editableRowWrapper;

@@ -5,7 +5,7 @@ import { ChipGroupContext } from './ChipGroup';
 import { ChipButton } from './ChipButton';
 import { Tooltip } from '../Tooltip';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import GenerateId from '../../helpers/GenerateId/GenerateId';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface ChipGroupToolbarItemProps extends React.HTMLProps<HTMLUListElement> {
   /**  Category name text */

@@ -132,7 +132,7 @@ Body.defaultProps = {
   onRowClick: () => undefined
 };
 
-const editableTableBody = BodyComponent => {
+export const editableTableBody = BodyComponent => {
   const InlineEditBody = ({ editConfig, onRowClick, ...props }) => (
     <TableContext.Consumer>
       {({ rows, ...consumedProps }) => (
@@ -153,5 +153,3 @@ const editableTableBody = BodyComponent => {
 
   return InlineEditBody;
 };
-
-export default editableTableBody;

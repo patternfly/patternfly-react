@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { mount } from 'enzyme/build';
 
-import { default as editableRowWrapper } from './editableRowWrapper';
+import { editableRowWrapper } from './editableRowWrapper';
 import { TableEditConfirmation } from './constants';
 import { mockClosest } from '../../test-helpers/helpers';
 
