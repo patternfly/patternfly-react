@@ -21,7 +21,7 @@ const getDeclarations = cssAst =>
   cssAst.stylesheet.rules
     .filter(node => node.type === 'rule' && !node.selectors.includes('.pf-t-dark'))
     .map(node => node.declarations.filter(decl => decl.type === 'declaration'))
-    .flat();
+    .reduce((acc, val) => acc.concat(val), []); // flatten
 
 const formatFilePathToName = filePath => {
   // const filePathArr = filePath.split('/');
