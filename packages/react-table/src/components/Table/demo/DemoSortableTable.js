@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection } from '@patternfly/react-table';
 
 export default class DemoSortableTable extends React.Component {

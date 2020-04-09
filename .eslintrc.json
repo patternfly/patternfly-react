@@ -17,7 +17,6 @@
         "plugin:jsdoc/recommended"
     ],
     "parserOptions": {
-        "project": "packages/tsconfig.base.json",
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
@@ -90,6 +89,7 @@
         "no-empty": "error",
         "no-eval": "error",
         "no-new-wrappers": "error",
+        "no-prototype-builtins": "off",
         "no-shadow": "error",
         "no-throw-literal": "error",
         "no-trailing-spaces": "off",
