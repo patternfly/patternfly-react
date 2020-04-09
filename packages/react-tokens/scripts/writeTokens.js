@@ -52,7 +52,7 @@ function writeTokens(tokens) {
     // Legacy token support -- values may be incorrect.
     Object.values(tokenValue)
       .map(values => Object.entries(values))
-      .reduce((acc, val) => acc.concat(val), []); // flatten
+      .reduce((acc, val) => acc.concat(val), []) // flatten
       .forEach(([oldTokenName, { name, value }]) => {
         const oldToken = {
           name,
