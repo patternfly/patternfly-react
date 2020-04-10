@@ -574,7 +574,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
 }
 ```
 
-The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Then the rendering of chips will be handled responsively by the Toolbar
+The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
 ```js title=Data-toolbar-with-filters beta
@@ -670,6 +670,15 @@ class DataToolbarWithFilterExample extends React.Component {
       }
     };
 
+    this.onDeleteGroup = (type) => {
+      this.setState((prevState) => {
+        prevState.filters[type.toLowerCase()] = [];
+        return {
+          filters: prevState.filters,
+        }
+      });
+    };
+
     this.onStatusToggle = isExpanded => {
       this.setState({
         statusIsExpanded: isExpanded
@@ -730,7 +739,7 @@ class DataToolbarWithFilterExample extends React.Component {
         </InputGroup>
       </DataToolbarItem>
       <DataToolbarGroup variant="filter-group">
-          <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
+          <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} deleteChipGroup={this.onDeleteGroup} categoryName="Status">
             <Select
               variant={SelectVariant.checkbox}
               aria-label="Status"
