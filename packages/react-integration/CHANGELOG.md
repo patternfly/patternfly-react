@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.9...@patternfly/react-integration@4.2.10) (2020-04-13)
+
+
+### Bug Fixes
+
+* **popover:** update default popover header size ([#4030](https://github.com/patternfly/patternfly-react/issues/4030)) ([e10fb2c](https://github.com/patternfly/patternfly-react/commit/e10fb2c629aa655d20e99985be5dfb292a8e5821))
+
+
+
+
+
 ## [4.2.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.8...@patternfly/react-integration@4.2.9) (2020-04-09)
 
 

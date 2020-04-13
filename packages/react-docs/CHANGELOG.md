@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.0.23...@patternfly/react-docs@5.1.0) (2020-04-13)
+
+
+### Features
+
+* **react-tokens:** unify react-token generation ([#4058](https://github.com/patternfly/patternfly-react/issues/4058)) ([1fcc33e](https://github.com/patternfly/patternfly-react/commit/1fcc33ecafa9e4f7646f57adb5862dbb8df09eb5))
+
+
+
+
+
 ## [5.0.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.0.22...@patternfly/react-docs@5.0.23) (2020-04-09)
 
 
