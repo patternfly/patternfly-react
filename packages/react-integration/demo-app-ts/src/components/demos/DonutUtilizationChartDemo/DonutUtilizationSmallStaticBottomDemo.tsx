@@ -28,7 +28,7 @@ export class DonutUtilizationSmallStaticBottomDemo extends React.Component {
           >
             <ChartDonutUtilization
               data={{ x: 'Storage capacity', y: 45 }}
-              labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
+              labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
               legendData={[
                 { name: `Storage capacity: 45%` },
                 { name: 'Warning threshold at 60%' },

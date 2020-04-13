@@ -21,9 +21,9 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
+    "strictPropertyInitialization": false,
     "noImplicitAny": true,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "strictFunctionTypes": true,
   },
   "include": [

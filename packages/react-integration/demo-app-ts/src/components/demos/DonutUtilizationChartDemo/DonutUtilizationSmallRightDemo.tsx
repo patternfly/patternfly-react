@@ -36,7 +36,7 @@ export class DonutUtilizationSmallRightDemo extends React.Component<{}, { used: 
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: used }}
             height={150}
-            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
+            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"

@@ -36,7 +36,7 @@ export class DonutUtilizationSimpleRightDemo extends React.Component<{}, { used:
         <div style={{ backgroundColor: 'white', height: '230px', width: '435px' }}>
           <ChartDonutUtilization
             data={{ x: 'GBps capacity', y: used }}
-            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : '')}
+            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"
