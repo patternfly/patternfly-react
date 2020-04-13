@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.2.12...@patternfly/react-core@4.2.13) (2020-04-13)
+
+
+### Bug Fixes
+
+* PF4 Switch: label does not accept React.node ([#4004](https://github.com/patternfly/patternfly-react/issues/4004)) ([21319c4](https://github.com/patternfly/patternfly-react/commit/21319c43a6df9b7ddc402d8cc08f4b4103b9a912))
+
+
+
+
+
 ## [4.2.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.2.11...@patternfly/react-core@4.2.12) (2020-04-13)
 
 **Note:** Version bump only for package @patternfly/react-core
