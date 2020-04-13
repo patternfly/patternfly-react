@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.153.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.6...@patternfly/react-core@3.153.7) (2020-04-13)
+
+
+### Bug Fixes
+
+* **DropdownToggleCheckbox:** fix ref to show indeterminate checkbox state properly ([#3990](https://github.com/patternfly/patternfly-react/issues/3990)) ([7c23a02](https://github.com/patternfly/patternfly-react/commit/7c23a02a36f9947808160f3a2fbba375e723163b))
+
+
+
+
+
 ## [3.153.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.5...@patternfly/react-core@3.153.6) (2020-04-09)
 
 
