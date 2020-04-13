@@ -20,6 +20,8 @@ const getSrcDirs = packageName => {
       return ['src', 'scripts'];
     case '@patternfly/react-catalog-view-extension':
       return ['src', 'sass'];
+    case '@patternfly/react-tokens':
+      return ['scripts'];
     default:
       return ['src'];
   }
