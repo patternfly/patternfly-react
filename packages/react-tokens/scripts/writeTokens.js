@@ -82,6 +82,9 @@ exports.__esModule = true;
 ${index.map(file => `__export(require('./${file}'));`).join('\n')}
 `.trim()
   );
+
+  // eslint-disable-next-line no-console
+  console.log('Wrote', index.length * 3 + 3, 'token files');
 }
 
 writeTokens(generateTokens());
