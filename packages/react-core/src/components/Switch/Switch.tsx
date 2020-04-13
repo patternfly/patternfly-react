@@ -12,9 +12,9 @@ export interface SwitchProps
   /** Additional classes added to the Switch */
   className?: string;
   /** Text value for the label when on */
-  label?: string;
+  label?: React.ReactNode;
   /** Text value for the label when off */
-  labelOff?: string;
+  labelOff?: React.ReactNode;
   /** Flag to show if the Switch is checked. */
   isChecked?: boolean;
   /** Flag to show if the Switch is disabled. */
