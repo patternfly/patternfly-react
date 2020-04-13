@@ -21,7 +21,7 @@ export interface WizardStep {
   /** Optional identifier */
   id?: string | number;
   /** The name of the step */
-  name: string;
+  name: React.ReactNode;
   /** The component to render in the main body */
   component?: any;
   /** Setting to true hides the side nav and footer */
@@ -31,7 +31,7 @@ export interface WizardStep {
   /** Sub steps */
   steps?: WizardStep[];
   /** (Unused if footer is controlled) Can change the Next button text. If nextButtonText is also set for the Wizard, this step specific one overrides it. */
-  nextButtonText?: string;
+  nextButtonText?: React.ReactNode;
   /** (Unused if footer is controlled) The condition needed to enable the Next button */
   enableNext?: boolean;
   /** (Unused if footer is controlled) True to hide the Cancel button */
@@ -41,8 +41,8 @@ export interface WizardStep {
 }
 
 export type WizardStepFunctionType = (
-  newStep: { id?: string | number; name: string },
-  prevStep: { prevId?: string | number; prevName: string }
+  newStep: { id?: string | number; name: React.ReactNode },
+  prevStep: { prevId?: string | number; prevName: React.ReactNode }
 ) => void;
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
@@ -63,7 +63,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** The wizard title (required unless isInPage is used) */
   title?: string;
   /** The wizard description */
-  description?: string;
+  description?: React.ReactNode;
   /** Callback function to close the wizard */
   onClose?: () => void;
   /** Callback function when a step in the nav is clicked */
@@ -87,11 +87,11 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** (Unused if footer is controlled) Callback function after Back button is clicked */
   onBack?: WizardStepFunctionType;
   /** (Unused if footer is controlled) The Next button text */
-  nextButtonText?: string;
+  nextButtonText?: React.ReactNode;
   /** (Unused if footer is controlled) The Back button text */
-  backButtonText?: string;
+  backButtonText?: React.ReactNode;
   /** (Unused if footer is controlled) The Cancel button text */
-  cancelButtonText?: string;
+  cancelButtonText?: React.ReactNode;
   /** (Unused if footer is controlled) aria-label for the close button */
   closeButtonAriaLabel?: string;
   /** The parent container to append the modal to. Defaults to document.body */
@@ -273,7 +273,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return flattenedSteps;
   };
 
-  private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: string): number => {
+  private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: React.ReactNode): number => {
     for (let i = 0; i < flattenedSteps.length; i++) {
       if (flattenedSteps[i].name === stepName) {
         return i + 1;
@@ -401,7 +401,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             return (
               <WizardNavItem
                 key={index}
-                text={step.name}
+                content={step.name}
                 isCurrent={hasActiveChild}
                 isDisabled={!canJumpToParent}
                 step={navItemStep}
@@ -418,7 +418,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                     return (
                       <WizardNavItem
                         key={`child_${indexChild}`}
-                        text={childStep.name}
+                        content={childStep.name}
                         isCurrent={activeStep.name === childStep.name}
                         isDisabled={!enabled}
                         step={navItemStep}
@@ -435,7 +435,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
           return (
             <WizardNavItem
               key={index}
-              text={step.name}
+              content={step.name}
               isCurrent={activeStep.name === step.name}
               isDisabled={!enabled}
               step={navItemStep}

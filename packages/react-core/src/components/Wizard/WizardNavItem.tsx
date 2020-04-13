@@ -5,8 +5,8 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 export interface WizardNavItemProps {
   /** Can nest a WizardNav component for substeps */
   children?: React.ReactNode;
-  /** The text to display in the nav item */
-  text?: string;
+  /** The content to display in the nav item */
+  content?: React.ReactNode;
   /** Whether the nav item is the currently active item */
   isCurrent?: boolean;
   /** Whether the nav item is disabled */
@@ -21,7 +21,7 @@ export interface WizardNavItemProps {
 
 export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   children = null,
-  text = '',
+  content = '',
   isCurrent = false,
   isDisabled = false,
   step,
@@ -39,7 +39,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
         aria-disabled={isDisabled ? true : false}
         tabIndex={isDisabled ? -1 : undefined}
       >
-        {text}
+        {content}
       </NavItemComponent>
       {children}
     </li>
