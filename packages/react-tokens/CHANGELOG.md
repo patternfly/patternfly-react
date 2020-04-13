@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.1.0...@patternfly/react-tokens@4.2.0) (2020-04-13)
+
+
+### Features
+
+* **react-styles:** standardize css-in-js generation ([#4066](https://github.com/patternfly/patternfly-react/issues/4066)) ([cf0eee4](https://github.com/patternfly/patternfly-react/commit/cf0eee477955f4309df74b8febe15c12880ade0c))
+
+
+
+
+
 # [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.0.4...@patternfly/react-tokens@4.1.0) (2020-04-13)
 
 
