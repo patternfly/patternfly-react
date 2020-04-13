@@ -1,3 +1,5 @@
 src/icons
 src/index.js
 src/index.d.ts
+dist_old
+dist_intermed
