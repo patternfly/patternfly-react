@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.10...@patternfly/react-integration@4.2.11) (2020-04-13)
+
+
+### Bug Fixes
+
+* **empty-state:** add isFullHeight prop support ([#4031](https://github.com/patternfly/patternfly-react/issues/4031)) ([f6c247d](https://github.com/patternfly/patternfly-react/commit/f6c247d17353d7a0ee3a553c8b28d762659ac23f))
+
+
+
+
+
 ## [4.2.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.9...@patternfly/react-integration@4.2.10) (2020-04-13)
 
 
