@@ -4,7 +4,7 @@ exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
 <Title
   headingLevel="h6"
   id="string"
-  size="xl"
+  size="md"
 >
   <div>
     ReactNode

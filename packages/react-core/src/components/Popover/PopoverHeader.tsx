@@ -6,7 +6,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
   id,
   ...props
 }: PopoverHeaderProps) => (
-  <Title headingLevel="h6" size={TitleSizes.xl} id={id} {...props}>
+  <Title headingLevel="h6" size={TitleSizes.md} id={id} {...props}>
     {children}
   </Title>
 );
