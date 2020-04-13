@@ -171,8 +171,8 @@ class KebabDropdown extends React.Component {
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
+              id="check-2"
+              name="check2"
             />
           </CardActions>
         <CardHeader>This is a really really really really really really really really really really long header</CardHeader>
@@ -250,8 +250,8 @@ class KebabDropdown extends React.Component {
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
+              id="check-3"
+              name="check3"
             />
           </CardActions>
         </CardHead>
