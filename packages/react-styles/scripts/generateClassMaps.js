@@ -7,7 +7,7 @@ const camelcase = require('camel-case');
  * @param {string} cssString - CSS string
  */
 function getCSSClasses(cssString) {
-  return cssString.match(/(\.)(?!\d)([^\s\.,{\[>+~#:)]*)(?![^{]*})/g);
+  return cssString.match(/(\.)(?!\d)([^\s.,{[>+~#:)]*)(?![^{]*})/g);
 }
 
 /**
@@ -43,13 +43,15 @@ function getClassMaps(cssString) {
   });
 
   const ordered = {};
-  Object.keys(res).sort().forEach(key => ordered[key] = res[key]);
+  Object.keys(res)
+    .sort()
+    .forEach(key => (ordered[key] = res[key]));
 
   return ordered;
 }
 
 /**
- * @returns {any} Map of components to classMaps
+ * @returns {any} Map of file names to classMaps
  */
 function generateClassMaps() {
   const pfStylesDir = path.dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
@@ -62,13 +64,11 @@ function generateClassMaps() {
   const srcCSSFiles = glob.sync('src/css/**/*.css');
 
   const res = {};
-  [...patternflyCSSFiles, ...srcCSSFiles].forEach(file =>
-    res[file] = getClassMaps(fs.readFileSync(file, 'utf8'))
-  );
+  [...patternflyCSSFiles, ...srcCSSFiles].forEach(file => (res[file] = getClassMaps(fs.readFileSync(file, 'utf8'))));
 
   return res;
 }
 
 module.exports = {
   generateClassMaps
-}
+};

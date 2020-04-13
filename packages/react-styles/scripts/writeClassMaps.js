@@ -25,14 +25,15 @@ export default _default;
 `.trim()
   );
 
+/**
+ * @param {any} classMaps Map of file names to classMaps
+ */
 function writeClassMaps(classMaps) {
   const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 
   Object.entries(classMaps).forEach(([file, classMap]) => {
-    const outPath = file.includes(pfStylesDir)
-      ? relative(pfStylesDir, file)
-      : relative('src/css', file);
-    
+    const outPath = file.includes(pfStylesDir) ? relative(pfStylesDir, file) : relative('src/css', file);
+
     writeCJSExport(outPath, classMap);
     writeDTSExport(outPath, classMap);
     copyFileSync(file, join(outDir, outPath));
