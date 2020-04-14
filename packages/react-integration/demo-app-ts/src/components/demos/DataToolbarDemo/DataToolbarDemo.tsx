@@ -110,6 +110,17 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
     }
   };
 
+  onDeleteGroup = (type = '') => {
+    if (type) {
+      this.setState(prevState => {
+        prevState.filters[type.toLowerCase()] = [];
+        return {
+          filters: prevState.filters
+        };
+      });
+    }
+  };
+
   onStatusToggle = isExpanded => {
     this.setState({
       statusIsExpanded: isExpanded
@@ -179,7 +190,12 @@ export class DataToolbarDemo extends React.Component<DataToolbarProps, DataToolb
               {statusMenuItems}
             </Select>
           </DataToolbarFilter>
-          <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
+          <DataToolbarFilter
+            chips={filters.risk}
+            deleteChip={this.onDelete}
+            deleteChipGroup={this.onDeleteGroup}
+            categoryName="Risk"
+          >
             <Select
               variant={SelectVariant.checkbox}
               aria-label="Risk"
