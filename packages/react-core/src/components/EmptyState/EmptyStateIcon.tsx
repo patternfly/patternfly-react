@@ -22,17 +22,17 @@ export interface EmptyStateIconProps extends IconProps {
   /** Additional classes added to the EmptyState */
   className?: string;
   /** Icon component to be rendered inside the EmptyState on icon variant */
-  icon?: React.ReactNode;
+  icon?: React.ComponentType<any>;
   /** Component to be rendered inside the EmptyState on container variant */
-  component?: React.FunctionComponent<any>;
+  component?: React.ComponentType<any>;
   /** Adds empty state icon variant styles  */
   variant?: 'icon' | 'container';
 }
 
 export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   className = '',
-  icon: IconComponent = null,
-  component: AnyComponent = null,
+  icon: IconComponent,
+  component: AnyComponent,
   variant = 'icon',
   ...props
 }: EmptyStateIconProps) => {

@@ -67,7 +67,7 @@ export declare const ${jsName}Config: {
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'
 };
-export declare const ${jsName}: React.ComponentType<SVGIconProps>;
+export declare const ${jsName}: React.ComponentClass<SVGIconProps>;
 export default ${jsName};
     `.trim()
   );

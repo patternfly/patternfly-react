@@ -53,7 +53,7 @@ export function createIcon({
   height,
   svgPath,
   transform = ''
-}: IconDefinition): React.ComponentType<SVGIconProps> {
+}: IconDefinition): React.ComponentClass<SVGIconProps> {
   return class SVGIcon extends React.Component<SVGIconProps> {
     static displayName = name;
     static defaultProps = {
