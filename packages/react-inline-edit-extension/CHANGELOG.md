@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.1.0...@patternfly/react-inline-edit-extension@4.2.0) (2020-04-14)
+
+
+### Features
+
+* **react-inline-edit-extension:** convert to TS ([#4073](https://github.com/patternfly/patternfly-react/issues/4073)) ([c4660d0](https://github.com/patternfly/patternfly-react/commit/c4660d0a2b9a7c81ed88fbeb9d527bb5bf1f0c75))
+
+
+
+
+
 # [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.0.31...@patternfly/react-inline-edit-extension@4.1.0) (2020-04-14)
 
 
