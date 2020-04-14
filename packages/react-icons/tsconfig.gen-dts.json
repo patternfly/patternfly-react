@@ -3,7 +3,12 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist/js"
+    "outDir": "dist/js",
+    "rootDirs": [
+      "src",
+      "src/icons",
+      "generated/js/icons"
+    ]
   },
   "include": [
     "./src/*",

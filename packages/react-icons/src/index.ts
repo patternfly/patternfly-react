@@ -1,2 +1,2 @@
 export { IconSize } from './createIcon';
-export * from './icons';
+export * from './icons/index';

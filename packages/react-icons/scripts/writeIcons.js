@@ -2,7 +2,7 @@ const { join, basename } = require('path');
 const { outputFileSync } = require('fs-extra');
 const { generateIcons } = require('./generateIcons');
 
-const outDir = join(__dirname, '../dist');
+let outDir = join(__dirname, '../generated');
 
 const removeSnake = s =>
   s
@@ -73,6 +73,11 @@ export default ${jsName};
   );
 }
 
+/**
+ * Writes CJS and ESM icons to `dist` directory
+ *
+ * @param {any} icons icons from generateIcons
+ */
 function writeIcons(icons) {
   const index = [];
   Object.entries(icons).forEach(([iconName, icon]) => {
@@ -100,7 +105,12 @@ ${index.sort().map(file => `__export(require('./${file}'));`).join('\n')}
   );
 
   // eslint-disable-next-line no-console
-  console.log('Generated', index.length * 3 + 3, 'icons.');
+  console.log('Wrote', index.length * 3 + 3, 'icon files.');
 }
 
-writeIcons(generateIcons());
+// Write to "generated" folder
+const icons = generateIcons();
+writeIcons(icons);
+// Rather than later moving the "generated" folder to "dist", just make it for dist
+outDir = join(__dirname, '../dist');
+writeIcons(icons);
