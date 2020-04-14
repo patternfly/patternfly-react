@@ -108,7 +108,7 @@ class SimpleForm extends React.Component {
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
     );
@@ -223,7 +223,7 @@ class HorizontalForm extends React.Component {
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
     );
