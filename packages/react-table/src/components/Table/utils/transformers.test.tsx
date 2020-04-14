@@ -69,7 +69,7 @@ const testCellActions = ({
       .find('.pf-c-dropdown button')
       .first()
       .simulate('click');
-    expect(view.find('.pf-c-dropdown__menu li div')).toHaveLength(expectDisabled ? 0 : 1);
+    expect(view.find('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1);
   }
 };
 
@@ -189,11 +189,13 @@ describe('Transformer functions', () => {
     actionConfigs.forEach(testCellActions);
   });
 
+  type widthType = 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 'max';
+
   describe('cellWidth', () => {
     const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 'max'];
     widths.forEach(width =>
       test(`${width}`, () => {
-        expect(cellWidth(width as string)()).toEqual({ className: `pf-m-width-${width}` });
+        expect(cellWidth(width as widthType)()).toEqual({ className: `pf-m-width-${width}` });
       })
     );
   });
