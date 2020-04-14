@@ -42,6 +42,9 @@ export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' |
 let currentId = 0;
 
 // Factory to create Icon class components for consumers
+/**
+ *
+ */
 export function createIcon({
   name,
   xOffset = 0,
@@ -58,9 +61,9 @@ export function createIcon({
       size: IconSize.sm,
       noVerticalAlign: false
     };
-  
+
     id = `icon-title-${currentId++}`;
-  
+
     render() {
       const { size, color, title, noVerticalAlign, ...props } = this.props;
 
@@ -69,7 +72,7 @@ export function createIcon({
       const baseAlign = -0.125 * Number.parseFloat(heightWidth);
       const style = noVerticalAlign ? null : { verticalAlign: `${baseAlign}em` };
       const viewBox = [xOffset, yOffset, width, height].join(' ');
-  
+
       return (
         <svg
           style={style}
@@ -87,5 +90,5 @@ export function createIcon({
         </svg>
       );
     }
-  }
-} 
+  };
+}

@@ -1,8 +1,8 @@
-const { join, basename } = require('path');
+const { join } = require('path');
 const { outputFileSync } = require('fs-extra');
 const { generateIcons } = require('./generateIcons');
 
-let outDir = join(__dirname, '../dist');
+const outDir = join(__dirname, '../dist');
 
 const removeSnake = s =>
   s
@@ -29,7 +29,7 @@ exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config)
 exports["default"] = exports.${jsName};
     `.trim()
   );
-}
+};
 
 const writeESMExport = (fname, jsName, icon) => {
   outputFileSync(
@@ -51,7 +51,7 @@ export const ${jsName} = createIcon(${jsName}Config);
 export default ${jsName};
     `.trim()
   );
-}
+};
 
 const writeDTSExport = (fname, jsName, icon) => {
   outputFileSync(
@@ -71,7 +71,7 @@ export declare const ${jsName}: React.ComponentType<SVGIconProps>;
 export default ${jsName};
     `.trim()
   );
-}
+};
 
 /**
  * Writes CJS and ESM icons to `dist` directory
@@ -82,7 +82,7 @@ function writeIcons(icons) {
   const index = [];
   Object.entries(icons).forEach(([iconName, icon]) => {
     const fname = `${iconName}-icon`;
-    const jsName = `${toCamel(iconName)}Icon`
+    const jsName = `${toCamel(iconName)}Icon`;
     writeESMExport(fname, jsName, icon);
     writeCJSExport(fname, jsName, icon);
     writeDTSExport(fname, jsName, icon);
@@ -90,7 +90,10 @@ function writeIcons(icons) {
     index.push(fname);
   });
 
-  const esmIndexString = index.sort().map(file => `export * from './${file}';`).join('\n');
+  const esmIndexString = index
+    .sort()
+    .map(file => `export * from './${file}';`)
+    .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);
   outputFileSync(join(outDir, 'js', 'icons/index.ts'), esmIndexString);
   outputFileSync(
@@ -100,7 +103,10 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 exports.__esModule = true;
-${index.sort().map(file => `__export(require('./${file}'));`).join('\n')}
+${index
+  .sort()
+  .map(file => `__export(require('./${file}'));`)
+  .join('\n')}
 `.trim()
   );
 
