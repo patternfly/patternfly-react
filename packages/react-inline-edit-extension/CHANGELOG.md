@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.0.31...@patternfly/react-inline-edit-extension@4.1.0) (2020-04-14)
+
+
+### Features
+
+* **react-icons:** revert to HOC, use common build system ([#4069](https://github.com/patternfly/patternfly-react/issues/4069)) ([8b7f50c](https://github.com/patternfly/patternfly-react/commit/8b7f50c9a2a3f53a330287a93eae1b7992364d03))
+
+
+
+
+
 ## [4.0.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@4.0.30...@patternfly/react-inline-edit-extension@4.0.31) (2020-04-14)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

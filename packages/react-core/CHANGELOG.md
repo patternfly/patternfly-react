@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.2.15...@patternfly/react-core@4.3.0) (2020-04-14)
+
+
+### Features
+
+* **card:** support flat variation ([#4026](https://github.com/patternfly/patternfly-react/issues/4026)) ([8c95f25](https://github.com/patternfly/patternfly-react/commit/8c95f25db86beec67ad7eaf17ba017a3eb0e9daa))
+* **react-icons:** revert to HOC, use common build system ([#4069](https://github.com/patternfly/patternfly-react/issues/4069)) ([8b7f50c](https://github.com/patternfly/patternfly-react/commit/8b7f50c9a2a3f53a330287a93eae1b7992364d03))
+
+
+
+
+
 ## [4.2.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.2.14...@patternfly/react-core@4.2.15) (2020-04-14)
 
 **Note:** Version bump only for package @patternfly/react-core
