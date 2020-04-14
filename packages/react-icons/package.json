@@ -32,7 +32,7 @@
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "generate": "node scripts/writeIcons.js",
-    "clean": "rimraf dist src/icons src/index.js src/index.d.ts generated"
+    "clean": "rimraf dist src/icons src/index.js src/index.d.ts"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

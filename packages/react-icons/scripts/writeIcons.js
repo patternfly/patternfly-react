@@ -2,7 +2,7 @@ const { join, basename } = require('path');
 const { outputFileSync } = require('fs-extra');
 const { generateIcons } = require('./generateIcons');
 
-let outDir = join(__dirname, '../generated');
+let outDir = join(__dirname, '../dist');
 
 const removeSnake = s =>
   s
@@ -108,9 +108,4 @@ ${index.sort().map(file => `__export(require('./${file}'));`).join('\n')}
   console.log('Wrote', index.length * 3 + 3, 'icon files.');
 }
 
-// Write to "generated" folder
-const icons = generateIcons();
-writeIcons(icons);
-// Rather than later moving the "generated" folder to "dist", just make it for dist
-outDir = join(__dirname, '../dist');
-writeIcons(icons);
+writeIcons(generateIcons());

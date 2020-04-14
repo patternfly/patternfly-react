@@ -7,7 +7,7 @@
     "rootDirs": [
       "src",
       "src/icons",
-      "generated/js/icons"
+      "dist/js/icons"
     ]
   },
   "include": [
