@@ -19,6 +19,9 @@ exports[`SelectToggle should match snapshot (auto-generated) 1`] = `
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
     />
   </button>
 </Fragment>

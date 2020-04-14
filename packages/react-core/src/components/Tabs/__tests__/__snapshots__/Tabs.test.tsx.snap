@@ -27,43 +27,30 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleLeftIcon>
-        <SVGIcon
-          color="currentColor"
-          config={
+      <AngleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
             Object {
-              "height": 512,
-              "name": "AngleLeftIcon",
-              "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
-              "transform": "",
-              "width": 256,
-              "xOffset": 0,
-              "yOffset": 0,
+              "verticalAlign": "-0.125em",
             }
           }
-          noVerticalAlign={false}
-          size="sm"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 256 512"
-            width="1em"
-          >
-            <path
-              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-              transform=""
-            />
-          </svg>
-        </SVGIcon>
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
       </AngleLeftIcon>
     </button>
     <ul
@@ -159,43 +146,30 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleRightIcon>
-        <SVGIcon
-          color="currentColor"
-          config={
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
             Object {
-              "height": 512,
-              "name": "AngleRightIcon",
-              "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
-              "transform": "",
-              "width": 256,
-              "xOffset": 0,
-              "yOffset": 0,
+              "verticalAlign": "-0.125em",
             }
           }
-          noVerticalAlign={false}
-          size="sm"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 256 512"
-            width="1em"
-          >
-            <path
-              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-              transform=""
-            />
-          </svg>
-        </SVGIcon>
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
       </AngleRightIcon>
     </button>
   </div>
@@ -349,43 +323,30 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleLeftIcon>
-        <SVGIcon
-          color="currentColor"
-          config={
+      <AngleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
             Object {
-              "height": 512,
-              "name": "AngleLeftIcon",
-              "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
-              "transform": "",
-              "width": 256,
-              "xOffset": 0,
-              "yOffset": 0,
+              "verticalAlign": "-0.125em",
             }
           }
-          noVerticalAlign={false}
-          size="sm"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 256 512"
-            width="1em"
-          >
-            <path
-              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-              transform=""
-            />
-          </svg>
-        </SVGIcon>
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
       </AngleLeftIcon>
     </button>
     <ul
@@ -481,43 +442,30 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleRightIcon>
-        <SVGIcon
-          color="currentColor"
-          config={
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
             Object {
-              "height": 512,
-              "name": "AngleRightIcon",
-              "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
-              "transform": "",
-              "width": 256,
-              "xOffset": 0,
-              "yOffset": 0,
+              "verticalAlign": "-0.125em",
             }
           }
-          noVerticalAlign={false}
-          size="sm"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 256 512"
-            width="1em"
-          >
-            <path
-              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-              transform=""
-            />
-          </svg>
-        </SVGIcon>
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
       </AngleRightIcon>
     </button>
   </div>
@@ -671,43 +619,30 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleLeftIcon>
-        <SVGIcon
-          color="currentColor"
-          config={
+      <AngleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
             Object {
-              "height": 512,
-              "name": "AngleLeftIcon",
-              "svgPath": "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z",
-              "transform": "",
-              "width": 256,
-              "xOffset": 0,
-              "yOffset": 0,
+              "verticalAlign": "-0.125em",
             }
           }
-          noVerticalAlign={false}
-          size="sm"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 256 512"
-            width="1em"
-          >
-            <path
-              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-              transform=""
-            />
-          </svg>
-        </SVGIcon>
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
       </AngleLeftIcon>
     </button>
     <ul
@@ -803,43 +738,30 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
-      <AngleRightIcon>
-        <SVGIcon
-          color="currentColor"
-          config={
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
             Object {
-              "height": 512,
-              "name": "AngleRightIcon",
-              "svgPath": "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z",
-              "transform": "",
-              "width": 256,
-              "xOffset": 0,
-              "yOffset": 0,
+              "verticalAlign": "-0.125em",
             }
           }
-          noVerticalAlign={false}
-          size="sm"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 256 512"
-            width="1em"
-          >
-            <path
-              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-              transform=""
-            />
-          </svg>
-        </SVGIcon>
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
       </AngleRightIcon>
     </button>
   </div>

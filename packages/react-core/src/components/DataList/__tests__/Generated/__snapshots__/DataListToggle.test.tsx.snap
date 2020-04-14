@@ -16,7 +16,11 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
       id="string"
       variant="plain"
     >
-      <AngleRightIcon />
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
     </Button>
   </div>
 </div>

@@ -11,6 +11,10 @@ exports[`PopoverCloseButton should match snapshot (auto-generated) 1`] = `
   }
   variant="plain"
 >
-  <TimesIcon />
+  <TimesIcon
+    color="currentColor"
+    noVerticalAlign={false}
+    size="sm"
+  />
 </Button>
 `;
