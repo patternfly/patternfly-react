@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "5.1.4",
+  "version": "5.1.5",
   "author": "Red Hat",
   "license": "MIT",
   "scripts": {
@@ -22,9 +22,9 @@
     "@patternfly/react-charts": "^6.1.5",
     "@patternfly/react-core": "^4.2.14",
     "@patternfly/react-icons": "^4.0.6",
-    "@patternfly/react-inline-edit-extension": "^4.0.29",
+    "@patternfly/react-inline-edit-extension": "^4.0.30",
     "@patternfly/react-styles": "^4.1.0",
-    "@patternfly/react-table": "^4.0.29",
+    "@patternfly/react-table": "^4.0.30",
     "@patternfly/react-tokens": "^4.2.0",
     "@patternfly/react-topology": "^4.0.27",
     "@patternfly/react-virtualized-extension": "^4.0.27",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.0.29...@patternfly/react-table@4.0.30) (2020-04-14)
+
+
+### Bug Fixes
+
+* **table:** use button element as default component for table action dropdown ([#4021](https://github.com/patternfly/patternfly-react/issues/4021)) ([98d5af5](https://github.com/patternfly/patternfly-react/commit/98d5af5094d5cd2653b7dfe426de70f520c30041))
+
+
+
+
+
 ## [4.0.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.0.28...@patternfly/react-table@4.0.29) (2020-04-13)
 
 **Note:** Version bump only for package @patternfly/react-table
