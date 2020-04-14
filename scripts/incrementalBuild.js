@@ -22,6 +22,8 @@ const getSrcDirs = packageName => {
       return ['src', 'sass'];
     case '@patternfly/react-tokens':
       return ['scripts'];
+    case '@patternfly/react-styles':
+      return ['src', 'scripts'];
     default:
       return ['src'];
   }

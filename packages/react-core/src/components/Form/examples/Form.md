@@ -108,7 +108,7 @@ class SimpleForm extends React.Component {
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
     );
@@ -223,7 +223,7 @@ class HorizontalForm extends React.Component {
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
     );
@@ -268,14 +268,14 @@ class InvalidForm extends React.Component {
           type="number"
           helperText="Please enter your age"
           helperTextInvalid="Age has to be a number"
-          fieldId="age"
+          fieldId="age-1"
           validated={validated}
         >
           <TextInput
             validated={validated}
             value={value}
-            id="age"
-            aria-describedby="age-helper"
+            id="age-1"
+            aria-describedby="age-1-helper"
             onChange={this.handleTextInputChange}
           />
         </FormGroup>
@@ -341,14 +341,14 @@ class InvalidForm extends React.Component {
           type="number"
           helperText={helperText}
           helperTextInvalid={invalidText}
-          fieldId="age"
+          fieldId="age-2"
           validated={validated}
         >
           <TextInput
             validated={validated}
             value={value}
-            id="age"
-            aria-describedby="age-helper"
+            id="age-2"
+            aria-describedby="age-2-helper"
             onChange={this.handleTextInputChange}
           />
         </FormGroup>

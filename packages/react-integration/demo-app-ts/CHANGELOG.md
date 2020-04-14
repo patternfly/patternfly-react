@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.15...demo-app-ts@4.3.0) (2020-04-14)
+
+
+### Features
+
+* **card:** support flat variation ([#4026](https://github.com/patternfly/patternfly-react/issues/4026)) ([8c95f25](https://github.com/patternfly/patternfly-react/commit/8c95f25db86beec67ad7eaf17ba017a3eb0e9daa))
+
+
+
+
+
+## [4.2.15](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.14...demo-app-ts@4.2.15) (2020-04-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.2.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.13...demo-app-ts@4.2.14) (2020-04-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.2.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.12...demo-app-ts@4.2.13) (2020-04-13)
+
+
+### Bug Fixes
+
+* PF4 Switch: label does not accept React.node ([#4004](https://github.com/patternfly/patternfly-react/issues/4004)) ([21319c4](https://github.com/patternfly/patternfly-react/commit/21319c43a6df9b7ddc402d8cc08f4b4103b9a912))
+
+
+
+
+
+## [4.2.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.11...demo-app-ts@4.2.12) (2020-04-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.2.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.2.10...demo-app-ts@4.2.11) (2020-04-13)
 
 

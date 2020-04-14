@@ -15,6 +15,9 @@ exports[`Renders ContextSelectorToggle 1`] = `
   <CaretDownIcon
     aria-hidden={true}
     className="pf-c-context-selector__toggle-icon"
+    color="currentColor"
+    noVerticalAlign={false}
+    size="sm"
   />
 </button>
 `;
@@ -46,46 +49,30 @@ exports[`Verify ESC press  1`] = `
     <CaretDownIcon
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
     >
-      <SVGIcon
+      <svg
         aria-hidden={true}
+        aria-labelledby={null}
         className="pf-c-context-selector__toggle-icon"
-        color="currentColor"
-        config={
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style={
           Object {
-            "height": 512,
-            "name": "CaretDownIcon",
-            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-            "transform": "",
-            "width": 320,
-            "xOffset": 0,
-            "yOffset": 0,
+            "verticalAlign": "-0.125em",
           }
         }
-        noVerticalAlign={false}
-        size="sm"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
-          className="pf-c-context-selector__toggle-icon"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
-            Object {
-              "verticalAlign": "-0.125em",
-            }
-          }
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
-      </SVGIcon>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          transform=""
+        />
+      </svg>
     </CaretDownIcon>
   </button>
 </ContextSelectorToggle>
@@ -118,46 +105,30 @@ exports[`Verify ESC press with not isOpen 1`] = `
     <CaretDownIcon
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
     >
-      <SVGIcon
+      <svg
         aria-hidden={true}
+        aria-labelledby={null}
         className="pf-c-context-selector__toggle-icon"
-        color="currentColor"
-        config={
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style={
           Object {
-            "height": 512,
-            "name": "CaretDownIcon",
-            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-            "transform": "",
-            "width": 320,
-            "xOffset": 0,
-            "yOffset": 0,
+            "verticalAlign": "-0.125em",
           }
         }
-        noVerticalAlign={false}
-        size="sm"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
-          className="pf-c-context-selector__toggle-icon"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
-            Object {
-              "verticalAlign": "-0.125em",
-            }
-          }
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
-      </SVGIcon>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          transform=""
+        />
+      </svg>
     </CaretDownIcon>
   </button>
 </ContextSelectorToggle>
@@ -190,46 +161,30 @@ exports[`Verify keydown enter  1`] = `
     <CaretDownIcon
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
     >
-      <SVGIcon
+      <svg
         aria-hidden={true}
+        aria-labelledby={null}
         className="pf-c-context-selector__toggle-icon"
-        color="currentColor"
-        config={
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style={
           Object {
-            "height": 512,
-            "name": "CaretDownIcon",
-            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-            "transform": "",
-            "width": 320,
-            "xOffset": 0,
-            "yOffset": 0,
+            "verticalAlign": "-0.125em",
           }
         }
-        noVerticalAlign={false}
-        size="sm"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
-          className="pf-c-context-selector__toggle-icon"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
-            Object {
-              "verticalAlign": "-0.125em",
-            }
-          }
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
-      </SVGIcon>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          transform=""
+        />
+      </svg>
     </CaretDownIcon>
   </button>
 </ContextSelectorToggle>
@@ -262,46 +217,30 @@ exports[`Verify keydown tab  1`] = `
     <CaretDownIcon
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
     >
-      <SVGIcon
+      <svg
         aria-hidden={true}
+        aria-labelledby={null}
         className="pf-c-context-selector__toggle-icon"
-        color="currentColor"
-        config={
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style={
           Object {
-            "height": 512,
-            "name": "CaretDownIcon",
-            "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-            "transform": "",
-            "width": 320,
-            "xOffset": 0,
-            "yOffset": 0,
+            "verticalAlign": "-0.125em",
           }
         }
-        noVerticalAlign={false}
-        size="sm"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
-          className="pf-c-context-selector__toggle-icon"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
-            Object {
-              "verticalAlign": "-0.125em",
-            }
-          }
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            transform=""
-          />
-        </svg>
-      </SVGIcon>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          transform=""
+        />
+      </svg>
     </CaretDownIcon>
   </button>
 </ContextSelectorToggle>

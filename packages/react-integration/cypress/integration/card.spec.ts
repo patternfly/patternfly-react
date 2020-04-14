@@ -27,8 +27,14 @@ describe('Card Demo Test', () => {
 
   it('Verify card is selectable and selected', () => {
     cy.get('article')
-      .last()
+      .eq(2)
       .should('have.class', 'pf-m-selected')
       .should('have.class', 'pf-m-selectable');
+  });
+
+  it('Verify card is flat', () => {
+    cy.get('article')
+      .last()
+      .should('have.class', 'pf-m-flat');
   });
 });

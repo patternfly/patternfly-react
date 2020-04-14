@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.6...@patternfly/react-styles@4.1.0) (2020-04-13)
+
+
+### Features
+
+* **react-styles:** standardize css-in-js generation ([#4066](https://github.com/patternfly/patternfly-react/issues/4066)) ([cf0eee4](https://github.com/patternfly/patternfly-react/commit/cf0eee477955f4309df74b8febe15c12880ade0c))
+
+
+
+
+
 ## [4.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.5...@patternfly/react-styles@4.0.6) (2020-04-03)
 
 **Note:** Version bump only for package @patternfly/react-styles

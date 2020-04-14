@@ -12,6 +12,9 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
   >
     <TimesIcon
       aria-hidden="true"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
     />
   </Button>
   <Title

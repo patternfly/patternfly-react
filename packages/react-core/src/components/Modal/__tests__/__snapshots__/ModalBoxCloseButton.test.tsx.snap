@@ -7,6 +7,10 @@ exports[`ModalBoxCloseButton Test 1`] = `
   onClick={[MockFunction]}
   variant="plain"
 >
-  <TimesIcon />
+  <TimesIcon
+    color="currentColor"
+    noVerticalAlign={false}
+    size="sm"
+  />
 </Button>
 `;

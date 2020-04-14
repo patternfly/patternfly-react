@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "4.0.6",
+  "version": "4.1.0",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
@@ -8,25 +8,22 @@
     "*.css",
     "*.scss"
   ],
-  "description": "",
+  "description": "CSS-in-JS class maps and utilities for PatternFly.",
   "author": "Red Hat",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease-v4"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && yarn build:css && node ./scripts/copyStyles.js",
+    "build": "yarn build:babel && yarn build:types && yarn build:css && node scripts/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/preset-env",
     "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
-    "build:css": "node src/generateClasses.js && tsc && node src/removeTS.js",
+    "build:css": "node scripts/writeClassMaps.js",
     "clean": "rimraf dist css",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
-  },
-  "dependencies": {
-    "camel-case": "^3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -42,6 +39,7 @@
     "@patternfly/patternfly": "4.6.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
+    "camel-case": "^3.0.0",
     "css": "^2.2.3",
     "cssstyle": "^0.3.1",
     "fbjs-scripts": "^0.8.3",

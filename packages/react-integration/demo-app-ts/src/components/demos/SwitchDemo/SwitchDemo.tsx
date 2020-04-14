@@ -48,7 +48,8 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
       <React.Fragment>
         <Switch
           id="simple-switch"
-          label={isChecked ? 'Message when on' : 'Message when off'}
+          label={<div style={{ color: 'green' }}>Message when on</div>}
+          labelOff={<div style={{ color: 'red' }}>Message when off</div>}
           onChange={this.handleChangeSimple}
           aria-label="Switch"
           isChecked={isChecked}
