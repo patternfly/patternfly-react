@@ -25,7 +25,7 @@ exports.${jsName}Config = {
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'
 };
-exports.${jsName} = require("../createIcon")(exports.${jsName}Config);
+exports.${jsName} = require('../createIcon').createIcon(exports.${jsName}Config);
 exports["default"] = exports.${jsName};
     `.trim()
   );
