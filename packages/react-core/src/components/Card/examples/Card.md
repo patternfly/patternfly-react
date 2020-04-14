@@ -458,3 +458,16 @@ class SelectableCard extends React.Component {
   }
 }
 ```
+
+```js title=Flat
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
+SimpleCard = () => (
+  <Card isFlat>
+    <CardHeader>Header</CardHeader>
+    <CardBody>Body</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+);
+```
