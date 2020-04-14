@@ -5,8 +5,7 @@ import { TextInput } from '@patternfly/react-core';
 
 import { editableRowWrapper } from './editableRowWrapper';
 import { editableTableBody } from './editableTableBody';
-import { inlineEditFormatterFactory } from './utils';
-import { TableEditConfirmation } from './constants';
+import { inlineEditFormatterFactory, TableEditConfirmation } from '../../utils';
 import { TableTextInput } from '../TableTextInput';
 
 import { rows, columns } from '../../test-helpers/data-sets';

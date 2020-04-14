@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`editableRowWrapper renders correctly 1`] = `
-<RowWrapper
-  className=""
+<EditableRowWrapper
   onResize={[MockFunction]}
   onScroll={[MockFunction]}
   row={
@@ -12,29 +11,14 @@ exports[`editableRowWrapper renders correctly 1`] = `
       },
     }
   }
-  rowProps={null}
   trRef={
     [MockFunction] {
       "calls": Array [
         Array [
           <tr />,
         ],
-        Array [
-          null,
-        ],
-        Array [
-          <tr />,
-        ],
       ],
       "results": Array [
-        Object {
-          "isThrow": false,
-          "value": undefined,
-        },
-        Object {
-          "isThrow": false,
-          "value": undefined,
-        },
         Object {
           "isThrow": false,
           "value": undefined,
@@ -45,8 +29,8 @@ exports[`editableRowWrapper renders correctly 1`] = `
 >
   <TestRow
     className="pf-c-table__editable-row"
-    onResize={[MockFunction]}
-    onScroll={[MockFunction]}
+    onResize={[Function]}
+    onScroll={[Function]}
     row={
       Object {
         "editConfig": Object {
@@ -54,10 +38,13 @@ exports[`editableRowWrapper renders correctly 1`] = `
         },
       }
     }
-    rowProps={null}
-    trRef={[Function]}
+    trRef={
+      Object {
+        "current": <tr />,
+      }
+    }
   >
     <tr />
   </TestRow>
-</RowWrapper>
+</EditableRowWrapper>
 `;
