@@ -1,16 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { mount } from 'enzyme/build';
+import { mount } from 'enzyme';
 
 import { editableRowWrapper } from './editableRowWrapper';
-import { TableEditConfirmation } from './constants';
+import { TableEditConfirmation } from '../../utils';
 import { mockClosest } from '../../test-helpers/helpers';
 
 const TestRow = ({ trRef }) => <tr ref={trRef} />;
-
-TestRow.propTypes = {
-  trRef: PropTypes.func
-};
 
 TestRow.defaultProps = {
   trRef: null
@@ -115,7 +110,7 @@ describe('editableRowWrapper', () => {
       }
     };
 
-    const view = mount(getRowWrapper(row, null, React.Fragment), mountOptions);
+    const view = mount(getRowWrapper(row), mountOptions);
     view.find('.pf-c-table__inline-edit-buttons button.pf-c-button.pf-m-primary').simulate('mouseup');
     expect(onEditConfirmed).toHaveBeenCalled();
 

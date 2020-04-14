@@ -1,23 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`focused table text input 1`] = `
-<Fragment>
-  <ForwardRef
-    aria-label="focused text input"
-    autoFocus={true}
-    defaultValue="test"
-    onBlur={[Function]}
-  />
-</Fragment>
+<ForwardRef
+  aria-label="focused text input"
+  autoFocus={true}
+  defaultValue="test"
+  onBlur={[Function]}
+/>
 `;
 
 exports[`simple table text input 1`] = `
-<Fragment>
-  <ForwardRef
-    aria-label="simple text input"
-    autoFocus={false}
-    defaultValue={null}
-    onBlur={[Function]}
-  />
-</Fragment>
+<ForwardRef
+  aria-label="simple text input"
+  autoFocus={false}
+  onBlur={[Function]}
+/>
 `;

@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { CancelButton } from '../CancelButton';
 import { ConfirmButton } from '../ConfirmButton';
 import '@patternfly/react-styles/css/components/Table/inline-edit.css';
-import { inlineEditStyles as styles } from './css/inline-edit-css';
+import { inlineEditStyles as styles } from '../InlineEdit/css/inline-edit-css';
+import { WindowDimensions, ClientBoundingRect } from '../../utils';
 
-const buttonsTopPosition = (window, rowDimensions, bold) => {
+const buttonsTopPosition = (window: WindowDimensions, rowDimensions: ClientBoundingRect, bold: boolean) => {
   const boldShift = bold ? -1 : 0;
   return {
     bottom: window.height - rowDimensions.top - 1 + boldShift,
@@ -14,7 +14,7 @@ const buttonsTopPosition = (window, rowDimensions, bold) => {
   };
 };
 
-const buttonsBottomPosition = (window, rowDimensions, bold) => {
+const buttonsBottomPosition = (window: WindowDimensions, rowDimensions: ClientBoundingRect, bold: boolean) => {
   const boldShift = bold ? -1 : 0;
   return {
     top: rowDimensions.bottom - 1 + boldShift,
@@ -22,14 +22,28 @@ const buttonsBottomPosition = (window, rowDimensions, bold) => {
   };
 };
 
+export interface Environment {
+  window: WindowDimensions;
+  row: ClientBoundingRect;
+}
+
+export interface ConfirmButtonProps {
+  environment: Environment;
+  buttonsOnTop?: boolean;
+  boldBorder?: boolean;
+  messages?: { confirmButtonLabel: string; cancelButtonLabel: string };
+  onConfirm?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onCancel?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+}
+
 export const ConfirmButtons = ({
-  messages: { confirmButtonLabel, cancelButtonLabel },
-  onConfirm,
-  onCancel,
+  messages: { confirmButtonLabel, cancelButtonLabel } = { confirmButtonLabel: 'Save', cancelButtonLabel: 'Cancel' },
+  onConfirm = () => {},
+  onCancel = () => {},
   environment,
-  buttonsOnTop,
-  boldBorder
-}) => {
+  buttonsOnTop = false,
+  boldBorder = false
+}: ConfirmButtonProps) => {
   if (environment == null) {
     return null;
   }
@@ -51,42 +65,4 @@ export const ConfirmButtons = ({
       <CancelButton key="cancel" aria-label={cancelButtonLabel} onMouseUp={onCancel} />
     </div>
   );
-};
-
-ConfirmButtons.defaultProps = {
-  onConfirm: () => undefined,
-  onCancel: () => undefined,
-  buttonsOnTop: false,
-  boldBorder: false,
-  environment: undefined,
-  messages: {
-    confirmButtonLabel: 'Save',
-    cancelButtonLabel: 'Cancel'
-  }
-};
-
-ConfirmButtons.propTypes = {
-  /** Confirm edit callback */
-  onConfirm: PropTypes.func,
-  /** Cancel edit callback */
-  onCancel: PropTypes.func,
-  /** Inject confirm buttons positions */
-  environment: PropTypes.shape({
-    window: PropTypes.shape({
-      width: PropTypes.number,
-      height: PropTypes.number
-    }),
-    row: PropTypes.shape({
-      top: PropTypes.number,
-      bottom: PropTypes.number,
-      left: PropTypes.number,
-      right: PropTypes.number
-    })
-  }),
-  buttonsOnTop: PropTypes.bool,
-  boldBorder: PropTypes.bool,
-  messages: PropTypes.shape({
-    confirmButtonLabel: PropTypes.string,
-    cancelButtonLabel: PropTypes.string
-  })
 };

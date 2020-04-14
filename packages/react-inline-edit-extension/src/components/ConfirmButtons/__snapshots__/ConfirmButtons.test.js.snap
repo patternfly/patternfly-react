@@ -41,7 +41,6 @@ exports[`ConfirmButtons renders correctly 1`] = `
       aria-label="Confirm"
       key="confirm"
       onMouseUp={[MockFunction]}
-      variant="primary"
     >
       <Button
         aria-label="Confirm"
@@ -92,7 +91,6 @@ exports[`ConfirmButtons renders correctly 1`] = `
       aria-label="Discard"
       key="cancel"
       onMouseUp={[MockFunction]}
-      variant="plain"
     >
       <Button
         aria-label="Discard"

@@ -41,14 +41,14 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && node ./scripts/copyTS.js",
+    "build": "yarn build:babel && yarn build:types",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
-    "postbuild": "node ./build/copyStyles.js"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -61,10 +61,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
-    "css": "^2.2.3",
-    "fs-extra": "^6.0.1",
-    "glob": "^7.1.2",
-    "npmlog": "^4.1.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "typescript": "^3.8.3"
   }
 }
