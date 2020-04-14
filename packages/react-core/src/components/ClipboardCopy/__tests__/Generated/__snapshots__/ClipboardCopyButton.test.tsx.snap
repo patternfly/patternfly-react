@@ -46,7 +46,11 @@ exports[`ClipboardCopyButton should match snapshot (auto-generated) 1`] = `
     onClick={[Function]}
     type="button"
   >
-    <CopyIcon />
+    <CopyIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
   </button>
 </Tooltip>
 `;

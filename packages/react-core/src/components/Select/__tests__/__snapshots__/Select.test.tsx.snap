@@ -278,45 +278,30 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -844,45 +829,30 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -1031,45 +1001,30 @@ exports[`checkbox select renders checkbox select selections properly when isChec
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -1200,45 +1155,30 @@ exports[`checkbox select renders closed successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -1436,45 +1376,30 @@ exports[`checkbox select renders expanded successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -1836,45 +1761,30 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -2262,45 +2172,30 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -2642,45 +2537,30 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -2897,44 +2777,29 @@ exports[`select custom select filter filters properly 1`] = `
         >
           <TimesCircleIcon
             aria-hidden={true}
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
               aria-hidden={true}
-              color="currentColor"
-              config={
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "TimesCircleIcon",
-                  "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                  "transform": "",
-                  "width": 512,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                transform=""
+              />
+            </svg>
           </TimesCircleIcon>
         </button>
         <button
@@ -2950,45 +2815,30 @@ exports[`select custom select filter filters properly 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -3359,45 +3209,30 @@ exports[`select renders select groups successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -3853,45 +3688,30 @@ exports[`select renders up direction successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -4027,45 +3847,30 @@ exports[`select single select renders closed successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -4202,45 +4007,30 @@ exports[`select single select renders disabled successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -4429,45 +4219,30 @@ exports[`select single select renders expanded successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -4796,45 +4571,30 @@ exports[`select single select renders expanded successfully with custom objects 
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -5108,45 +4868,30 @@ exports[`select with custom content renders closed successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -5282,45 +5027,30 @@ exports[`select with custom content renders expanded successfully 1`] = `
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
         >
-          <SVGIcon
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
             className="pf-c-select__toggle-arrow"
-            color="currentColor"
-            config={
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
               Object {
-                "height": 512,
-                "name": "CaretDownIcon",
-                "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                "transform": "",
-                "width": 320,
-                "xOffset": 0,
-                "yOffset": 0,
+                "verticalAlign": "-0.125em",
               }
             }
-            noVerticalAlign={false}
-            size="sm"
+            viewBox="0 0 320 512"
+            width="1em"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-select__toggle-arrow"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </SVGIcon>
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
         </CaretDownIcon>
       </button>
     </SelectToggle>
@@ -5539,45 +5269,30 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -5790,45 +5505,30 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -6376,44 +6076,29 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                           >
                             <TimesCircleIcon
                               aria-hidden="true"
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
                             >
-                              <SVGIcon
+                              <svg
                                 aria-hidden="true"
-                                color="currentColor"
-                                config={
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
                                   Object {
-                                    "height": 512,
-                                    "name": "TimesCircleIcon",
-                                    "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                                    "transform": "",
-                                    "width": 512,
-                                    "xOffset": 0,
-                                    "yOffset": 0,
+                                    "verticalAlign": "-0.125em",
                                   }
                                 }
-                                noVerticalAlign={false}
-                                size="sm"
+                                viewBox="0 0 512 512"
+                                width="1em"
                               >
-                                <svg
-                                  aria-hidden="true"
-                                  aria-labelledby={null}
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "verticalAlign": "-0.125em",
-                                    }
-                                  }
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </SVGIcon>
+                                <path
+                                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                                  transform=""
+                                />
+                              </svg>
                             </TimesCircleIcon>
                           </button>
                         </Button>
@@ -6476,44 +6161,29 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                           >
                             <TimesCircleIcon
                               aria-hidden="true"
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
                             >
-                              <SVGIcon
+                              <svg
                                 aria-hidden="true"
-                                color="currentColor"
-                                config={
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
                                   Object {
-                                    "height": 512,
-                                    "name": "TimesCircleIcon",
-                                    "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                                    "transform": "",
-                                    "width": 512,
-                                    "xOffset": 0,
-                                    "yOffset": 0,
+                                    "verticalAlign": "-0.125em",
                                   }
                                 }
-                                noVerticalAlign={false}
-                                size="sm"
+                                viewBox="0 0 512 512"
+                                width="1em"
                               >
-                                <svg
-                                  aria-hidden="true"
-                                  aria-labelledby={null}
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "verticalAlign": "-0.125em",
-                                    }
-                                  }
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </SVGIcon>
+                                <path
+                                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                                  transform=""
+                                />
+                              </svg>
                             </TimesCircleIcon>
                           </button>
                         </Button>
@@ -6548,44 +6218,29 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         >
           <TimesCircleIcon
             aria-hidden={true}
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
               aria-hidden={true}
-              color="currentColor"
-              config={
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "TimesCircleIcon",
-                  "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                  "transform": "",
-                  "width": 512,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                transform=""
+              />
+            </svg>
           </TimesCircleIcon>
         </button>
         <button
@@ -6601,45 +6256,30 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -6700,46 +6340,30 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               <CheckIcon
                 aria-hidden={true}
                 className="pf-c-select__menu-item-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <SVGIcon
+                <svg
                   aria-hidden={true}
+                  aria-labelledby={null}
                   className="pf-c-select__menu-item-icon"
-                  color="currentColor"
-                  config={
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
                     Object {
-                      "height": 512,
-                      "name": "CheckIcon",
-                      "svgPath": "M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z",
-                      "transform": "",
-                      "width": 512,
-                      "xOffset": 0,
-                      "yOffset": 0,
+                      "verticalAlign": "-0.125em",
                     }
                   }
-                  noVerticalAlign={false}
-                  size="sm"
+                  viewBox="0 0 512 512"
+                  width="1em"
                 >
-                  <svg
-                    aria-hidden={true}
-                    aria-labelledby={null}
-                    className="pf-c-select__menu-item-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      transform=""
-                    />
-                  </svg>
-                </SVGIcon>
+                  <path
+                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                    transform=""
+                  />
+                </svg>
               </CheckIcon>
             </button>
           </li>
@@ -6777,46 +6401,30 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               <CheckIcon
                 aria-hidden={true}
                 className="pf-c-select__menu-item-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <SVGIcon
+                <svg
                   aria-hidden={true}
+                  aria-labelledby={null}
                   className="pf-c-select__menu-item-icon"
-                  color="currentColor"
-                  config={
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
                     Object {
-                      "height": 512,
-                      "name": "CheckIcon",
-                      "svgPath": "M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z",
-                      "transform": "",
-                      "width": 512,
-                      "xOffset": 0,
-                      "yOffset": 0,
+                      "verticalAlign": "-0.125em",
                     }
                   }
-                  noVerticalAlign={false}
-                  size="sm"
+                  viewBox="0 0 512 512"
+                  width="1em"
                 >
-                  <svg
-                    aria-hidden={true}
-                    aria-labelledby={null}
-                    className="pf-c-select__menu-item-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      transform=""
-                    />
-                  </svg>
-                </SVGIcon>
+                  <path
+                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                    transform=""
+                  />
+                </svg>
               </CheckIcon>
             </button>
           </li>
@@ -7077,44 +6685,29 @@ exports[`typeahead multi select test onChange 1`] = `
         >
           <TimesCircleIcon
             aria-hidden={true}
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
               aria-hidden={true}
-              color="currentColor"
-              config={
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "TimesCircleIcon",
-                  "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                  "transform": "",
-                  "width": 512,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                transform=""
+              />
+            </svg>
           </TimesCircleIcon>
         </button>
         <button
@@ -7130,45 +6723,30 @@ exports[`typeahead multi select test onChange 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -7381,45 +6959,30 @@ exports[`typeahead select renders closed successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -7632,45 +7195,30 @@ exports[`typeahead select renders expanded successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -8067,44 +7615,29 @@ exports[`typeahead select renders selected successfully 1`] = `
         >
           <TimesCircleIcon
             aria-hidden={true}
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
               aria-hidden={true}
-              color="currentColor"
-              config={
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "TimesCircleIcon",
-                  "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                  "transform": "",
-                  "width": 512,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                transform=""
+              />
+            </svg>
           </TimesCircleIcon>
         </button>
         <button
@@ -8120,45 +7653,30 @@ exports[`typeahead select renders selected successfully 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -8214,46 +7732,30 @@ exports[`typeahead select renders selected successfully 1`] = `
               <CheckIcon
                 aria-hidden={true}
                 className="pf-c-select__menu-item-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
               >
-                <SVGIcon
+                <svg
                   aria-hidden={true}
+                  aria-labelledby={null}
                   className="pf-c-select__menu-item-icon"
-                  color="currentColor"
-                  config={
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
                     Object {
-                      "height": 512,
-                      "name": "CheckIcon",
-                      "svgPath": "M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z",
-                      "transform": "",
-                      "width": 512,
-                      "xOffset": 0,
-                      "yOffset": 0,
+                      "verticalAlign": "-0.125em",
                     }
                   }
-                  noVerticalAlign={false}
-                  size="sm"
+                  viewBox="0 0 512 512"
+                  width="1em"
                 >
-                  <svg
-                    aria-hidden={true}
-                    aria-labelledby={null}
-                    className="pf-c-select__menu-item-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      transform=""
-                    />
-                  </svg>
-                </SVGIcon>
+                  <path
+                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                    transform=""
+                  />
+                </svg>
               </CheckIcon>
             </button>
           </li>
@@ -8549,44 +8051,29 @@ exports[`typeahead select test creatable option 1`] = `
         >
           <TimesCircleIcon
             aria-hidden={true}
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
               aria-hidden={true}
-              color="currentColor"
-              config={
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "TimesCircleIcon",
-                  "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                  "transform": "",
-                  "width": 512,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                transform=""
+              />
+            </svg>
           </TimesCircleIcon>
         </button>
         <button
@@ -8602,45 +8089,30 @@ exports[`typeahead select test creatable option 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>
@@ -8889,44 +8361,29 @@ exports[`typeahead select test onChange 1`] = `
         >
           <TimesCircleIcon
             aria-hidden={true}
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
               aria-hidden={true}
-              color="currentColor"
-              config={
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "TimesCircleIcon",
-                  "svgPath": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z",
-                  "transform": "",
-                  "width": 512,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 512 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                transform=""
+              />
+            </svg>
           </TimesCircleIcon>
         </button>
         <button
@@ -8942,45 +8399,30 @@ exports[`typeahead select test onChange 1`] = `
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
           >
-            <SVGIcon
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
               className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              config={
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
                 Object {
-                  "height": 512,
-                  "name": "CaretDownIcon",
-                  "svgPath": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-                  "transform": "",
-                  "width": 320,
-                  "xOffset": 0,
-                  "yOffset": 0,
+                  "verticalAlign": "-0.125em",
                 }
               }
-              noVerticalAlign={false}
-              size="sm"
+              viewBox="0 0 320 512"
+              width="1em"
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </SVGIcon>
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
           </CaretDownIcon>
         </button>
       </div>

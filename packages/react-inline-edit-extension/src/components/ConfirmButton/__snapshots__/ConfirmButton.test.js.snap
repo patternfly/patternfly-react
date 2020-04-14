@@ -4,6 +4,10 @@ exports[`it renders properly 1`] = `
 <Button
   variant="primary"
 >
-  <CheckIcon />
+  <CheckIcon
+    color="currentColor"
+    noVerticalAlign={false}
+    size="sm"
+  />
 </Button>
 `;

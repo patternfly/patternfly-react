@@ -1,2 +1,2 @@
-export { IconSize } from './SVGIcon';
-export * from './icons';
+export { IconSize } from './createIcon';
+export * from './icons/index';
