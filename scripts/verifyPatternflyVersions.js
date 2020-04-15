@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Project = require('@lerna/project');
 
 // '@patternfly/patternfly': {'4.0.4': ['@patternfly/react-styles', ...]},

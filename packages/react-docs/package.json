@@ -39,6 +39,8 @@
   },
   "devDependencies": {
     "@patternfly/patternfly-a11y": "^0.0.17",
+    "@types/react": "^16.8.0",
+    "@types/react-dom": "^16.8.0",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"
   },

@@ -5,7 +5,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
   className="my-test-class"
   id="simple-test-id"
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -13,7 +13,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -29,7 +29,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                 className="pf-c-data-toolbar"
                 id="pf-topology-view-0"
               >
-                <Divider
+                <Component
                   isExpanded={false}
                   key=".2"
                   showClearFiltersButton={false}
@@ -41,7 +41,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                     showClearFiltersButton={false}
                     toolbarId="pf-topology-view-0"
                   />
-                </Divider>
+                </Component>
                 <DataToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -84,8 +84,8 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
             </DataToolbar>
           </GenerateId>
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container"
         isFilled={true}
       >
@@ -96,9 +96,9 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
             className="pf-topology-content"
           />
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
 
@@ -122,7 +122,7 @@ exports[`TopologyView should display topology correctly 1`] = `
     />
   }
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -130,7 +130,7 @@ exports[`TopologyView should display topology correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -290,7 +290,7 @@ exports[`TopologyView should display topology correctly 1`] = `
                     </DataToolbarExpandableContent>
                   </div>
                 </DataToolbarContent>
-                <Divider
+                <Component
                   isExpanded={false}
                   key=".2"
                   showClearFiltersButton={false}
@@ -302,7 +302,7 @@ exports[`TopologyView should display topology correctly 1`] = `
                     showClearFiltersButton={false}
                     toolbarId="pf-topology-view-1"
                   />
-                </Divider>
+                </Component>
                 <DataToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -345,8 +345,8 @@ exports[`TopologyView should display topology correctly 1`] = `
             </DataToolbar>
           </GenerateId>
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container"
         isFilled={true}
       >
@@ -368,9 +368,9 @@ exports[`TopologyView should display topology correctly 1`] = `
             </span>
           </div>
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
 
@@ -400,7 +400,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
     />
   }
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -408,7 +408,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -568,7 +568,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                     </DataToolbarExpandableContent>
                   </div>
                 </DataToolbarContent>
-                <Divider
+                <Component
                   isExpanded={false}
                   key=".2"
                   showClearFiltersButton={false}
@@ -580,7 +580,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                     showClearFiltersButton={false}
                     toolbarId="pf-topology-view-2"
                   />
-                </Divider>
+                </Component>
                 <DataToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -623,8 +623,8 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             </DataToolbar>
           </GenerateId>
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container pf-topology-container__with-sidebar"
         isFilled={true}
       >
@@ -649,9 +649,9 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             Test SideBar
           </div>
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
 
@@ -681,7 +681,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
     />
   }
 >
-  <Stack
+  <Component
     className="my-test-class"
     id="simple-test-id"
   >
@@ -689,7 +689,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <StackItem
+      <Component
         isFilled={false}
       >
         <div
@@ -849,7 +849,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                     </DataToolbarExpandableContent>
                   </div>
                 </DataToolbarContent>
-                <Divider
+                <Component
                   isExpanded={false}
                   key=".2"
                   showClearFiltersButton={false}
@@ -861,7 +861,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                     showClearFiltersButton={false}
                     toolbarId="pf-topology-view-3"
                   />
-                </Divider>
+                </Component>
                 <DataToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -904,8 +904,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             </DataToolbar>
           </GenerateId>
         </div>
-      </StackItem>
-      <StackItem
+      </Component>
+      <Component
         className="pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
         isFilled={true}
       >
@@ -930,8 +930,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             Test SideBar
           </div>
         </div>
-      </StackItem>
+      </Component>
     </div>
-  </Stack>
+  </Component>
 </TopologyView>
 `;
