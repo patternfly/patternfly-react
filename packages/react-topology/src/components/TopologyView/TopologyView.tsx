@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { Stack, StackItem } from '@patternfly/react-core';
+import {
+  DataToolbar,
+  DataToolbarContent,
+  DataToolbarGroup,
+  Divider,
+  GenerateId,
+  Stack,
+  StackItem
+} from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-view.css';
 
 export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
@@ -35,8 +43,25 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
 
   return (
     <Stack className={className} {...props}>
-      {contextToolbar && <StackItem isFilled={false}>{contextToolbar}</StackItem>}
-      {viewToolbar && <StackItem isFilled={false}>{viewToolbar}</StackItem>}
+      <StackItem isFilled={false}>
+        <GenerateId prefix="pf-topology-view-">
+          {randomId => (
+            <DataToolbar id={randomId}>
+              {contextToolbar && (
+                <DataToolbarContent>
+                  <DataToolbarGroup className="project-toolbar">{contextToolbar}</DataToolbarGroup>
+                </DataToolbarContent>
+              )}
+              {viewToolbar && (
+                <DataToolbarContent>
+                  <DataToolbarGroup className="view-toolbar">{viewToolbar}</DataToolbarGroup>
+                </DataToolbarContent>
+              )}
+              <Divider />
+            </DataToolbar>
+          )}
+        </GenerateId>
+      </StackItem>
       <StackItem isFilled className={containerClasses}>
         <div className="pf-topology-content">
           {children}
