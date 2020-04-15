@@ -12,7 +12,7 @@ interface BadgeChipState {
 export class ChipGroupDemo extends Component<{}, BadgeChipState> {
   deleteItem: (id: string) => void;
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       badgeChipArray: [
         {

@@ -13,7 +13,7 @@ export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
   deleteCategory: (category: string) => void;
 
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       chipGroups: [
         {

@@ -22,9 +22,9 @@
     "alwaysStrict": true,
     "strictBindCallApply": true,
     "strictPropertyInitialization": false,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strictNullChecks": false,
-    "strictFunctionTypes": false,
+    "strictFunctionTypes": true,
   },
   "include": [
     "src"

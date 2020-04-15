@@ -9,17 +9,17 @@ import {
 interface ApplicationLauncherFavoritesDemoState {
   isOpen: boolean;
   favorites: string[];
-  filteredItems: JSX.Element[];
+  filteredItems: (JSX.Element | null)[] | null;
 }
 
 export class ApplicationLauncherFavoritesDemo extends React.Component<null, ApplicationLauncherFavoritesDemoState> {
   state: ApplicationLauncherFavoritesDemoState = {
     isOpen: false,
-    favorites: [],
+    favorites: [''],
     filteredItems: null
   };
 
-  appLauncherItems = [
+  appLauncherItems: JSX.Element[] = [
     <ApplicationLauncherGroup key="group 1c">
       <ApplicationLauncherItem key="group 1a" id="item-1">
         Item without group title
@@ -88,16 +88,20 @@ export class ApplicationLauncherFavoritesDemo extends React.Component<null, Appl
             filteredGroup.props.children[0].type !== ApplicationLauncherSeparator
           ) {
             return filteredGroup;
+          } else {
+            return null;
           }
         })
         .filter(newGroup => newGroup);
 
       if (filteredGroups.length > 0) {
         let lastGroup = filteredGroups.pop();
-        lastGroup = React.cloneElement(lastGroup, {
-          children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
-        });
-        filteredGroups.push(lastGroup);
+        if (lastGroup) {
+          lastGroup = React.cloneElement(lastGroup, {
+            children: lastGroup.props.children.filter((item: JSX.Element) => item.type !== ApplicationLauncherSeparator)
+          });
+          filteredGroups.push(lastGroup);
+        }
       }
 
       this.setState({

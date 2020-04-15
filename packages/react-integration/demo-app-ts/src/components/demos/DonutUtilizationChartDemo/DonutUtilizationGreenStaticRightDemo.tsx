@@ -7,9 +7,9 @@ import {
 } from '@patternfly/react-charts';
 
 export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { used: number }> {
-  interval: number;
+  interval: number = 0;
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = {
       used: 0
     };

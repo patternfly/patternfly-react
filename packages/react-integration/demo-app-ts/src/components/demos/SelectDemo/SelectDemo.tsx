@@ -42,6 +42,7 @@ export interface SelectDemoState {
   customTypeaheadMultiSelected: string[];
   direction: SelectDirection.up | SelectDirection.down;
   typeaheadOptions: TypeAheadOption[];
+  typeaheadIsCreatable: boolean;
   typeaheadNewOptions: boolean;
   customContentisOpen: boolean;
   noBadgeCheckIsOpen: boolean;
@@ -51,26 +52,26 @@ export interface SelectDemoState {
 export class SelectDemo extends Component<SelectDemoState> {
   state = {
     singleisOpen: false,
-    singleSelected: null,
-    disabledSingleisOpen: null,
+    singleSelected: '',
+    disabledSingleisOpen: false,
     disabledSingleSelected: '',
     customSingleisOpen: false,
-    customSingleSelected: null,
+    customSingleSelected: '',
     checkisOpen: false,
-    checkSelected: [],
+    checkSelected: [''],
     typeaheadisOpen: false,
     noBadgeCheckIsOpen: false,
-    noBadgeCheckSelected: [],
-    typeaheadSelected: null,
+    noBadgeCheckSelected: [''],
+    typeaheadSelected: '',
     typeaheadMultiisOpen: false,
-    typeaheadMultiSelected: [],
+    typeaheadMultiSelected: [''],
     cdtypeaheadMultiisOpen: false,
-    cdtypeaheadMultiSelected: [],
+    cdtypeaheadMultiSelected: [''],
     plainTypeaheadMultiisOpen: false,
-    plainTypeaheadMultiSelected: [],
+    plainTypeaheadMultiSelected: [''],
     plainTypeaheadMultiIsPlain: true,
     customTypeaheadMultiisOpen: false,
-    customTypeaheadMultiSelected: [],
+    customTypeaheadMultiSelected: [''],
     direction: SelectDirection.down,
     typeaheadOptions: [
       { value: 'Alabama', disabled: false },
@@ -210,7 +211,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
-  singleOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string, isPlaceholder: boolean) => {
+  singleOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -224,8 +229,8 @@ export class SelectDemo extends Component<SelectDemoState> {
 
   disabledSingleOnSelect = (
     _event: React.MouseEvent | React.ChangeEvent,
-    selection: string,
-    isPlaceholder: boolean
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
   ) => {
     if (isPlaceholder) {
       this.clearSelection();
@@ -241,7 +246,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   customSingleOnSelect = (
     _event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject | (string | SelectOptionObject)[],
-    isPlaceholder: boolean
+    isPlaceholder?: boolean
   ) => {
     if (isPlaceholder) {
       this.clearSelection();
@@ -254,9 +259,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  checkOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  checkOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { checkSelected } = this.state;
-    if (checkSelected.includes(selection)) {
+    if (checkSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({ checkSelected: prevState.checkSelected.filter(item => item !== selection) }),
         () => console.log('selections: ', this.state.checkSelected)
@@ -269,9 +274,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  noBadgeCheckOnSelect = (event: any, selection: string) => {
+  noBadgeCheckOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { noBadgeCheckSelected } = this.state;
-    if (noBadgeCheckSelected.includes(selection)) {
+    if (noBadgeCheckSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
           noBadgeCheckSelected: prevState.noBadgeCheckSelected.filter(item => item !== selection)
@@ -286,7 +291,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
+  typeaheadOnSelect = (
+    _event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject | (string | SelectOptionObject)[],
+    isPlaceholder?: boolean
+  ) => {
     if (isPlaceholder) {
       this.clearSelection();
     } else {
@@ -298,9 +307,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  typeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { typeaheadMultiSelected } = this.state;
-    if (typeaheadMultiSelected.includes(selection)) {
+    if (typeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
           typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter(item => item !== selection)
@@ -309,15 +318,17 @@ export class SelectDemo extends Component<SelectDemoState> {
       );
     } else {
       this.setState(
-        (prevState: SelectDemoState) => ({ typeaheadMultiSelected: [...prevState.typeaheadMultiSelected, selection] }),
+        (prevState: SelectDemoState) => ({
+          typeaheadMultiSelected: [...prevState.typeaheadMultiSelected, selection.toString()]
+        }),
         () => console.log('selections: ', this.state.typeaheadMultiSelected)
       );
     }
   };
 
-  cdtypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  cdtypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
     const { cdtypeaheadMultiSelected } = this.state;
-    if (cdtypeaheadMultiSelected.includes(selection)) {
+    if (cdtypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
           cdtypeaheadMultiSelected: prevState.cdtypeaheadMultiSelected.filter(item => item !== selection)
@@ -327,16 +338,19 @@ export class SelectDemo extends Component<SelectDemoState> {
     } else {
       this.setState(
         (prevState: SelectDemoState) => ({
-          cdtypeaheadMultiSelected: [...prevState.cdtypeaheadMultiSelected, selection]
+          cdtypeaheadMultiSelected: [...prevState.cdtypeaheadMultiSelected, selection.toString()]
         }),
         () => console.log('selections: ', this.state.cdtypeaheadMultiSelected)
       );
     }
   };
 
-  plainTypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  plainTypeaheadMultiOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject
+  ) => {
     const { plainTypeaheadMultiSelected } = this.state;
-    if (plainTypeaheadMultiSelected.includes(selection)) {
+    if (plainTypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
           plainTypeaheadMultiSelected: prevState.plainTypeaheadMultiSelected.filter(item => item !== selection)
@@ -346,16 +360,19 @@ export class SelectDemo extends Component<SelectDemoState> {
     } else {
       this.setState(
         (prevState: SelectDemoState) => ({
-          plainTypeaheadMultiSelected: [...prevState.plainTypeaheadMultiSelected, selection]
+          plainTypeaheadMultiSelected: [...prevState.plainTypeaheadMultiSelected, selection.toString()]
         }),
         () => console.log('selections: ', this.state.plainTypeaheadMultiSelected)
       );
     }
   };
 
-  customTypeaheadMultiOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+  customTypeaheadMultiOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject
+  ) => {
     const { customTypeaheadMultiSelected } = this.state;
-    if (customTypeaheadMultiSelected.includes(selection)) {
+    if (customTypeaheadMultiSelected.includes(selection.toString())) {
       this.setState(
         (prevState: SelectDemoState) => ({
           customTypeaheadMultiSelected: prevState.customTypeaheadMultiSelected.filter(item => item !== selection)
@@ -365,7 +382,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     } else {
       this.setState(
         (prevState: SelectDemoState) => ({
-          customTypeaheadMultiSelected: [...prevState.customTypeaheadMultiSelected, selection]
+          customTypeaheadMultiSelected: [...prevState.customTypeaheadMultiSelected, selection.toString()]
         }),
         () => console.log('selections: ', this.state.customTypeaheadMultiSelected)
       );
@@ -374,31 +391,31 @@ export class SelectDemo extends Component<SelectDemoState> {
 
   typeaheadCreateNew = (newValue: string) => {
     this.setState({
-      typeaheadOptions: [...this.state.typeaheadOptions, { value: newValue }]
+      typeaheadOptions: [...this.state.typeaheadOptions, { value: newValue, disabled: false }]
     });
   };
 
   clearSelection = () => {
     this.setState({
-      singleSelected: null,
+      singleSelected: '',
       singleisOpen: false,
-      disabledSingleisOpen: null,
+      disabledSingleisOpen: false,
       disabledSingleSelected: '',
-      customSingleSelected: null,
+      customSingleSelected: '',
       customSingleisOpen: false,
-      checkSelected: [],
+      checkSelected: [''],
       checkisOpen: false,
-      noBadgeCheckSelected: [],
+      noBadgeCheckSelected: [''],
       noBadgeCheckIsOpen: false,
-      typeaheadSelected: null,
+      typeaheadSelected: '',
       typeaheadisOpen: false,
-      typeaheadMultiSelected: [],
+      typeaheadMultiSelected: [''],
       typeaheadMultiisOpen: false,
       cdtypeaheadMultiisOpen: false,
-      cdtypeaheadMultiSelected: [],
-      plainTypeaheadMultiSelected: [],
+      cdtypeaheadMultiSelected: [''],
+      plainTypeaheadMultiSelected: [''],
       plainTypeaheadMultiisOpen: false,
-      customTypeaheadMultiSelected: [],
+      customTypeaheadMultiSelected: [''],
       customTypeaheadMultiisOpen: false
     });
   };
@@ -560,7 +577,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.checkOnToggle}
             onSelect={this.checkOnSelect}
-            selections={checkSelected}
+            selections={checkSelected.filter(string => string)}
             isOpen={checkisOpen}
             placeholderText="Filter by status"
             aria-labelledby={titleId}

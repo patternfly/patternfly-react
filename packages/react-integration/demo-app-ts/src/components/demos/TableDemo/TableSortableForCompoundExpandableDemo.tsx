@@ -37,18 +37,28 @@ export class DemoSortableTable extends React.Component<DemoSortableTableProps, D
         'Workspaces',
         'Last Commit'
       ],
-      rows: [this.props.firstColumnRows, ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        this.props.firstColumnRows ? this.props.firstColumnRows : [''],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
   }
 
   onSort = (_event: React.MouseEvent, index: number, direction: SortByDirection) => {
-    const sortedRows = this.state.rows.sort((a, b) => {
-      if (a[index] < b[index]) {
-        return -1;
+    const sortedRows = this.state.rows.sort(
+      (a: { [index: number]: IRow | string }, b: { [index: number]: IRow | string }) => {
+        if (a && b) {
+          if (a[index] < b[index]) {
+            return -1;
+          }
+          return a[index] > b[index] ? 1 : 0;
+        } else {
+          return 0;
+        }
       }
-      return a[index] > b[index] ? 1 : 0;
-    });
+    );
 
     this.setState({
       sortBy: {

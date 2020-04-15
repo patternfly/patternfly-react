@@ -6,9 +6,9 @@ interface AlertDemoState {
   alertTwoVisible: boolean;
 }
 
-export class AlertDemo extends React.Component<null, AlertDemoState> {
+export class AlertDemo extends React.Component<{}, AlertDemoState> {
   constructor(props: {}) {
-    super(props as null);
+    super(props);
     this.state = { alertOneVisible: true, alertTwoVisible: true };
   }
 

@@ -12,19 +12,20 @@ interface AlertGroupDemoState {
   timer: number;
 }
 
-export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
+export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
   stopAsyncAlerts: () => void;
   removeAlert: (key: React.ReactText) => void;
 
-  constructor(props: {}) {
-    super(props as null);
+  constructor(props: {}, removeAlert: (key: React.ReactText) => void) {
+    super(props);
     this.state = {
       alerts: [],
-      timer: null
+      timer: 0
     };
     this.stopAsyncAlerts = () => {
       clearInterval(this.state.timer);
     };
+    this.removeAlert = removeAlert;
   }
   componentWillUnmount() {
     this.stopAsyncAlerts();

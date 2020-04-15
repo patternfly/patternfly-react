@@ -22,17 +22,30 @@ export class TableBreakpointModifersDemo extends React.Component<TableProps, Tab
       columns: [
         {
           title: 'Repositories',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg)]
+          columnTransforms: [
+            classNames(
+              Visibility.hidden ? Visibility.hidden : '',
+              Visibility.visibleOnMd ? Visibility.visibleOnMd : '',
+              Visibility.hiddenOnLg ? Visibility.hiddenOnLg : ''
+            )
+          ]
         },
         'Branches',
         {
           title: 'Pull requests',
-          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg)]
+          columnTransforms: [
+            classNames(
+              Visibility.hiddenOnMd ? Visibility.hiddenOnMd : '',
+              Visibility.visibleOnLg ? Visibility.visibleOnLg : ''
+            )
+          ]
         },
         'Workspaces',
         {
           title: 'Last Commit',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnSm)]
+          columnTransforms: [
+            classNames(Visibility.hidden ? Visibility.hidden : '', Visibility.visibleOnSm ? Visibility.visibleOnSm : '')
+          ]
         }
       ],
       rows: [
