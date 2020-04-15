@@ -2,6 +2,6 @@
 
 exports[`Title should match snapshot (auto-generated) 1`] = `
 <h1
-  className="pf-c-title ''"
+  className="pf-c-title pf-m-md ''"
 />
 `;

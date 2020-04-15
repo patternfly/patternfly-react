@@ -11,11 +11,20 @@ export enum TitleSizes {
   '4xl' = '4xl'
 }
 
+enum headingLevelSizeMap {
+  h1 = '2xl',
+  h2 = 'xl',
+  h3 = 'lg',
+  h4 = 'md',
+  h5 = 'md',
+  h6 = 'md'
+}
+
 type Size = 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 
 export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
   /** The size of the Title  */
-  size: Size;
+  size?: Size;
   /** Content rendered inside the Title */
   children?: React.ReactNode;
   /** Additional classes added to the Title */
@@ -25,13 +34,13 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
 }
 
 export const Title: React.FunctionComponent<TitleProps> = ({
-  size,
   className = '',
   children = '',
   headingLevel: HeadingLevel,
+  size = headingLevelSizeMap[HeadingLevel],
   ...props
 }: TitleProps) => (
-  <HeadingLevel {...props} className={css(styles.title, styles.modifiers[size as Size], className)}>
+  <HeadingLevel {...props} className={css(styles.title, size && styles.modifiers[size as Size], className)}>
     {children}
   </HeadingLevel>
 );
