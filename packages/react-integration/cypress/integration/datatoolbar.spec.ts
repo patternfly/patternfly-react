@@ -21,6 +21,7 @@ describe('Data Toolbar Demo Test', () => {
         cy.get('.pf-m-chip-group').should('be.visible');
         cy.get('.pf-m-filters-applied-message').should('not.be.visible');
         cy.get('.pf-c-data-toolbar__item .pf-c-button').should('be.visible');
+        cy.get('.pf-c-data-toolbar__item .pf-c-chip-group__close').should('be.visible');
         cy.get('.pf-c-data-toolbar__item .pf-c-button').contains('Clear filters');
       });
     });
@@ -41,6 +42,7 @@ describe('Data Toolbar Demo Test', () => {
         cy.get('.pf-m-chip-container .pf-m-chip-group').should('not.be.visible');
         cy.get('.pf-m-filters-applied-message').should('be.visible');
         cy.get('.pf-c-data-toolbar__item .pf-c-button').should('be.visible');
+        cy.get('.pf-c-data-toolbar__item .pf-c-chip-group__close').should('not.be.visible');
         cy.get('.pf-c-data-toolbar__item .pf-c-button').contains('Clear filters');
       });
     });
@@ -63,6 +65,7 @@ describe('Data Toolbar Demo Test', () => {
       cy.get('.pf-c-data-toolbar__expandable-content').should('be.visible');
       cy.get('.pf-m-chip-container').should('be.visible');
       cy.get('.pf-c-data-toolbar__item .pf-c-button').should('be.visible');
+      cy.get('.pf-c-data-toolbar__item .pf-c-chip-group__close').should('be.visible');
       cy.get('.pf-c-data-toolbar__item .pf-c-button').contains('Clear filters');
       cy.get('#demo-toggle-group .pf-c-data-toolbar__toggle button')
         .last()
@@ -71,6 +74,7 @@ describe('Data Toolbar Demo Test', () => {
       cy.get('.pf-c-data-toolbar__expandable-content').should('not.be.visible');
       cy.get('.pf-m-chip-container').should('not.be.visible');
       cy.get('.pf-c-data-toolbar__item .pf-c-button').should('be.visible');
+      cy.get('.pf-c-data-toolbar__item .pf-c-chip-group__close').should('not.be.visible');
       cy.get('.pf-c-data-toolbar__item .pf-c-button').contains('Clear filters');
     });
   });
