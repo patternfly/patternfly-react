@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.3.2...demo-app-ts@4.4.0) (2020-04-16)
+
+
+### Features
+
+* **title:** supply defaults for title size property ([#4081](https://github.com/patternfly/patternfly-react/issues/4081)) ([1451220](https://github.com/patternfly/patternfly-react/commit/145122052a7ef2708a260a951df84edb2c8d76c0))
+
+
+
+
+
 ## [4.3.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.3.1...demo-app-ts@4.3.2) (2020-04-15)
 
 **Note:** Version bump only for package demo-app-ts
