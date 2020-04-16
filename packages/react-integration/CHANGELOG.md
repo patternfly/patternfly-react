@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.30.0...@patternfly/react-integration@3.30.1) (2020-04-16)
+
+
+### Bug Fixes
+
+* **DataToolbarFilter:** Add prop to enable removal of all chips in a filter category. ([#4060](https://github.com/patternfly/patternfly-react/issues/4060)) ([16340da](https://github.com/patternfly/patternfly-react/commit/16340dad7dc37d4a9446717adc7fc252469e3cd4)), closes [#4059](https://github.com/patternfly/patternfly-react/issues/4059)
+
+
+
+
+
 # [3.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.29.0...@patternfly/react-integration@3.30.0) (2020-03-27)
 
 
