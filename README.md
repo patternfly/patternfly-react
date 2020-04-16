@@ -81,7 +81,7 @@ If you want to start with your existing project, skip to [Install and configure 
   yarn add @patternfly/react-core
   ```
   
-    Once the library is installed, use the specific [setup instructions](#library-packages) for that library to access the components it contains.  
+    Once the library is installed, use the specific setup instructions for that library to access the components it contains.  These can be found in the readme for each [library](#patternfly-react-packages). 
 
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/v4/contribute/about). If you're already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/master/CONTRIBUTING.md) to make React contributions.
