@@ -4,6 +4,23 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.04 release notes (2020-04-17)
+Packages released:
+
+### Components
+- **Data toolbar:** 
+  - Fixed filter context from updating unnecessarily ([#4056](https://github.com/patternfly/patternfly-react/pull/4056))
+  - Added prop to enable removal of all chips in a filter category. ([#4060](https://github.com/patternfly/patternfly-react/pull/4060))
+- **Dropdown:** 
+  - Fixed ref to show indeterminate checkbox in toggle ([#3990](https://github.com/patternfly/patternfly-react/pull/3990))
+  - Updated to respect already passed props ([#4016](https://github.com/patternfly/patternfly-react/pull/4016))
+- **Tooltip:** 
+  - Fixed Codesandbox examples ([#4088](https://github.com/patternfly/patternfly-react/pull/4088))
+
+### Other
+- **Chore:** 
+  - Removed promoted components from experimental index file ([#4029](https://github.com/patternfly/patternfly-react/pull/4029))
+
 ## 2020.04 release notes (2020-03-31)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.4.48](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.48)
