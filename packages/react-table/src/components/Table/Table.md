@@ -1257,7 +1257,6 @@ EmptyStateTable = () => {
       <TableHeader />
       <TableBody />
     </Table>
-    <Bullseye>
     <EmptyState variant={EmptyStateVariant.small}>
       <EmptyStateIcon icon={SearchIcon} />
       <Title headingLevel="h2" size="lg">
@@ -1268,7 +1267,6 @@ EmptyStateTable = () => {
       </EmptyStateBody>
       <Button variant="link">Clear all filters</Button>
     </EmptyState>
-    </Bullseye>
     </React.Fragment>
   );
 }
