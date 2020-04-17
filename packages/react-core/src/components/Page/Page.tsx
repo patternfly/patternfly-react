@@ -100,15 +100,11 @@ export class Page extends React.Component<PageProps, PageState> {
   handleResize = () => {
     const { onPageResize } = this.props;
     const windowSize = window.innerWidth;
-    // eslint-disable-next-line radix
-    const mobileView = windowSize < Number.parseInt(globalBreakpointXl.value, 10);
+    const mobileView = windowSize < Number.parseInt(globalBreakpointXl.value);
     if (onPageResize) {
       onPageResize({ mobileView, windowSize });
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    this.setState(prevState => ({
-      mobileView
-    }));
+    this.setState({ mobileView });
   };
 
   onNavToggleMobile = () => {
