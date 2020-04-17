@@ -1,0 +1,32 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./react-catalog-view-extension/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-charts/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-core/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-icons/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-inline-edit-extension/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-styles/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-table/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-topology/tsconfig.cjs.json"
+    },
+    {
+      "path": "./react-virtualized-extension/tsconfig.cjs.json"
+    }
+  ]
+}

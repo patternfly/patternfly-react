@@ -28,41 +28,17 @@
     "@patternfly/patternfly": "4.6.0",
     "@patternfly/react-core": "^4.6.0",
     "@patternfly/react-icons": "^4.1.0",
-    "@patternfly/react-styles": "^4.1.0"
+    "@patternfly/react-styles": "^4.1.0",
+    "tslib": "^1.11.1"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./build/copyStyles.js",
-    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
-    "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
-    "build:types": "tsc -p tsconfig.gen-dts.json",
-    "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-typescript": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "@patternfly/react-tokens": "^4.2.0",
-    "@types/prop-types": "^15.7.0",
-    "@types/react": "^16.4.0",
-    "@types/react-dom": "^16.4.0",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-plugin-typescript-to-proptypes": "^0.17.1",
-    "css": "^2.2.3",
-    "fs-extra": "^6.0.1",
-    "glob": "^7.1.2",
     "rimraf": "^2.6.2",
     "typescript": "^3.8.3"
   }

@@ -46,7 +46,7 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
     className="pf-topology-side-bar fade my-test-class shown"
     role="dialog"
   >
-    <Button
+    <Component
       aria-label="Close"
       className="pf-topology-side-bar__dismiss"
       onClick={[MockFunction]}
@@ -90,7 +90,7 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
           </svg>
         </TimesIcon>
       </button>
-    </Button>
+    </Component>
     <div
       className="pf-topology-side-bar__body"
     >
