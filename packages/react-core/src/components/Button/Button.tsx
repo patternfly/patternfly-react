@@ -46,7 +46,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   iconPosition?: 'left' | 'right';
   /** Adds accessible text to the button. */
   'aria-label'?: string;
-  /** Icon for the button if variant is a link */
+  /** Icon for the button. Usable by all variants except for plain. */
   icon?: React.ReactNode | null;
   /** Set button tab index unless component is not a button and is disabled */
   tabIndex?: number;
@@ -94,13 +94,12 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
       type={isButtonElement ? type : null}
       {...getOUIAProps('Button', ouiaId)}
     >
-      {icon && variant === ButtonVariant.link && iconPosition === 'left' && (
-        <span className={styles.buttonIcon}>{icon}</span>
+      {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
+        <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}
-      {variant === ButtonVariant.link && <span>{children}</span>}
-      {variant !== ButtonVariant.link && children}
-      {icon && variant === ButtonVariant.link && iconPosition === 'right' && (
-        <span className={styles.buttonIcon}>{icon}</span>
+      {children}
+      {variant !== ButtonVariant.plain && icon && iconPosition === 'right' && (
+        <span className={css(styles.buttonIcon, styles.modifiers.end)}>{icon}</span>
       )}
     </Component>
   );
