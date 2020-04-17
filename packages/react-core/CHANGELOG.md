@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.5.0...@patternfly/react-core@4.6.0) (2020-04-17)
+
+
+### Bug Fixes
+
+* **table:** empty state can now scale on smaller screens ([#4064](https://github.com/patternfly/patternfly-react/issues/4064)) ([2a7001e](https://github.com/patternfly/patternfly-react/commit/2a7001e36e548ff4cde6905ed99661a6c8cbbcec))
+
+
+### Features
+
+* **Button:** allow icon to be used in any variant, add icon css modifiers ([#4032](https://github.com/patternfly/patternfly-react/issues/4032)) ([76d9517](https://github.com/patternfly/patternfly-react/commit/76d9517d2eff49cbca6e781b2dd06639ac28412a))
+* **ContextSelector, Select:** update css name for search input ([#4033](https://github.com/patternfly/patternfly-react/issues/4033)) ([493a02b](https://github.com/patternfly/patternfly-react/commit/493a02b7f38e536d8d22ff629a3845d380722695))
+
+
+
+
+
 # [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.4.0...@patternfly/react-core@4.5.0) (2020-04-16)
 
 

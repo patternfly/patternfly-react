@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.1.2...@patternfly/react-table@4.2.0) (2020-04-17)
+
+
+### Bug Fixes
+
+* **table:** empty state can now scale on smaller screens ([#4064](https://github.com/patternfly/patternfly-react/issues/4064)) ([2a7001e](https://github.com/patternfly/patternfly-react/commit/2a7001e36e548ff4cde6905ed99661a6c8cbbcec))
+
+
+### Features
+
+* **Button:** allow icon to be used in any variant, add icon css modifiers ([#4032](https://github.com/patternfly/patternfly-react/issues/4032)) ([76d9517](https://github.com/patternfly/patternfly-react/commit/76d9517d2eff49cbca6e781b2dd06639ac28412a))
+
+
+
+
+
 ## [4.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.1.1...@patternfly/react-table@4.1.2) (2020-04-16)
 
 **Note:** Version bump only for package @patternfly/react-table
