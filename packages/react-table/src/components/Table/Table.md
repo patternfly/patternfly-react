@@ -1249,34 +1249,25 @@ import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye, Title 
 import { EmptyStateIcon } from '@patternfly/react-icons';
 
 EmptyStateTable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull request', 'Workspaces', 'LastCommit']
-  const rows = [{
-    heightAuto: true,
-    cells: [
-      {
-        props: { colSpan: 8 },
-        title: (
-          <Bullseye>
-            <EmptyState variant={EmptyStateVariant.small}>
-              <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No results found
-              </Title>
-              <EmptyStateBody>
-                No results match the filter criteria. Remove all filters or clear all filters to show results.
-              </EmptyStateBody>
-              <Button variant="link">Clear all filters</Button>
-            </EmptyState>
-          </Bullseye>
-        )
-      },
-    ]
-  }]
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last Commit']
+  const rows = []
   return (
+    <React.Fragment>
     <Table caption="Empty State Table Example" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
+    <EmptyState variant={EmptyStateVariant.small}>
+      <EmptyStateIcon icon={SearchIcon} />
+      <Title headingLevel="h2" size="lg">
+        No results found
+      </Title>
+      <EmptyStateBody>
+        No results match the filter criteria. Remove all filters or clear all filters to show results.
+      </EmptyStateBody>
+      <Button variant="link">Clear all filters</Button>
+    </EmptyState>
+    </React.Fragment>
   );
 }
 ```
