@@ -2,23 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
-export enum IconSize {
-  sm = 'sm',
-  md = 'md',
-  lg = 'lg',
-  xl = 'xl'
-}
-
-export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
-  /** deprecated */
-  color?: string;
-  /** deprecated */
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  /** deprecated */
-  title?: string;
-}
-
-export interface EmptyStateIconProps extends IconProps {
+export interface EmptyStateIconProps {
   /** Additional classes added to the EmptyState */
   className?: string;
   /** Icon component to be rendered inside the EmptyState on icon variant */
