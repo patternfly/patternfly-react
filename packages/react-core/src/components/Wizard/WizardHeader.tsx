@@ -11,7 +11,7 @@ export interface WizardHeaderProps {
   /** Title of the wizard */
   title: string;
   /** Description of the wizard */
-  description?: string;
+  description?: React.ReactNode;
   /** Aria-label applied to the X (Close) button */
   closeButtonAriaLabel?: string;
   /** id for the title */
