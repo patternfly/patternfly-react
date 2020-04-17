@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.1.0...@patternfly/react-icons@4.1.1) (2020-04-17)
+
+
+### Performance Improvements
+
+* **packages:** use tsc to build instead of babel ([#4076](https://github.com/patternfly/patternfly-react/issues/4076)) ([e8c02fa](https://github.com/patternfly/patternfly-react/commit/e8c02fa82397b945decb368fde69452b4273b06b))
+
+
+
+
+
 # [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.0.6...@patternfly/react-icons@4.1.0) (2020-04-14)
 
 

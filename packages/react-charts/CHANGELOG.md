@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.1.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.1.5...@patternfly/react-charts@6.1.6) (2020-04-17)
+
+
+### Performance Improvements
+
+* **packages:** use tsc to build instead of babel ([#4076](https://github.com/patternfly/patternfly-react/issues/4076)) ([e8c02fa](https://github.com/patternfly/patternfly-react/commit/e8c02fa82397b945decb368fde69452b4273b06b))
+
+
+
+
+
 ## [6.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.1.4...@patternfly/react-charts@6.1.5) (2020-04-13)
 
 **Note:** Version bump only for package @patternfly/react-charts

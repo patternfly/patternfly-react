@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.1.3...@patternfly/react-catalog-view-extension@4.1.4) (2020-04-17)
+
+
+### Performance Improvements
+
+* **packages:** use tsc to build instead of babel ([#4076](https://github.com/patternfly/patternfly-react/issues/4076)) ([e8c02fa](https://github.com/patternfly/patternfly-react/commit/e8c02fa82397b945decb368fde69452b4273b06b))
+
+
+
+
+
 ## [4.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.1.2...@patternfly/react-catalog-view-extension@4.1.3) (2020-04-17)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
