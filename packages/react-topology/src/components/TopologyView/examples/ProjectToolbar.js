@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownPosition,
-  Stack,
-  StackItem,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
-} from '@patternfly/react-core';
+import { DataToolbarItem, Dropdown, DropdownItem, DropdownToggle, DropdownPosition } from '@patternfly/react-core';
 
 const projects = [
   { id: 1, name: 'Project 1' },
@@ -57,11 +47,11 @@ export class ProjectToolbar extends React.Component {
     const { projectDropDownOpen, selectedProject } = this.state;
 
     return (
-      <Stack>
-        <StackItem>
-          <label>Project</label>
-        </StackItem>
-        <StackItem>
+      <React.Fragment>
+        <DataToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+          <label>Project:</label>
+        </DataToolbarItem>
+        <DataToolbarItem>
           <Dropdown
             onToggle={this.onProjectDropDownToggle}
             position={DropdownPosition.right}
@@ -73,8 +63,8 @@ export class ProjectToolbar extends React.Component {
               </DropdownItem>
             ))}
           />
-        </StackItem>
-      </Stack>
+        </DataToolbarItem>
+      </React.Fragment>
     );
   };
 
@@ -82,11 +72,11 @@ export class ProjectToolbar extends React.Component {
     const { applicationDropDownOpen, selectedApplication } = this.state;
 
     return (
-      <Stack>
-        <StackItem>
-          <label>Application</label>
-        </StackItem>
-        <StackItem>
+      <React.Fragment>
+        <DataToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+          <label>Application:</label>
+        </DataToolbarItem>
+        <DataToolbarItem>
           <Dropdown
             onToggle={this.onApplicationDropDownToggle}
             position={DropdownPosition.right}
@@ -100,19 +90,17 @@ export class ProjectToolbar extends React.Component {
               </DropdownItem>
             ))}
           />
-        </StackItem>
-      </Stack>
+        </DataToolbarItem>
+      </React.Fragment>
     );
   };
 
   render() {
     return (
-      <Toolbar className="project-toolbar pf-u-mx-md pf-u-mt-md">
-        <ToolbarGroup>
-          <ToolbarItem className="pf-u-mr-xl">{this.renderProjectDropdown()}</ToolbarItem>
-          <ToolbarItem className="pf-u-mr-md">{this.renderApplicationDropdown()}</ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <React.Fragment>
+        {this.renderProjectDropdown()}
+        {this.renderApplicationDropdown()}
+      </React.Fragment>
     );
   }
 }

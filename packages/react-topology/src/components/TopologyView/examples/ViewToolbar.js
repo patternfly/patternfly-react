@@ -1,15 +1,15 @@
 import React from 'react';
 import {
   Button,
+  DataToolbarGroup,
+  DataToolbarItem,
+  DataToolbarToggleGroup,
   Dropdown,
   DropdownPosition,
   DropdownToggle,
   DropdownItem,
   KebabToggle,
-  TextInput,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  TextInput
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
@@ -115,25 +115,27 @@ export class ViewToolbar extends React.Component {
 
   render() {
     return (
-      <Toolbar className="view-toolbar pf-u-px-md pf-u-py-md" style={{ borderBottom: '1px solid #ccc' }}>
-        <ToolbarGroup>
-          <ToolbarItem>{this.renderFilterTypeDropdown()}</ToolbarItem>
-          <ToolbarItem className="pf-u-mr-md">{this.renderFilterInput()}</ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem>
+      <React.Fragment>
+        <DataToolbarToggleGroup breakpoint="xl" toggleIcon={<FilterIcon />}>
+          <DataToolbarGroup variant="filter-group">
+            <DataToolbarItem>{this.renderFilterTypeDropdown()}</DataToolbarItem>
+            <DataToolbarItem>{this.renderFilterInput()}</DataToolbarItem>
+          </DataToolbarGroup>
+        </DataToolbarToggleGroup>
+        <DataToolbarGroup variant="button-group">
+          <DataToolbarItem>
             <Button variant="primary" aria-label="Action 1">
               Action 1
             </Button>
-          </ToolbarItem>
-          <ToolbarItem className="pf-u-mx-md">
+          </DataToolbarItem>
+          <DataToolbarItem>
             <Button variant="plain" aria-label="Action 2">
               Action 2
             </Button>
-          </ToolbarItem>
-          <ToolbarItem>{this.renderActionsdKebab()}</ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </DataToolbarItem>
+          <DataToolbarItem>{this.renderActionsdKebab()}</DataToolbarItem>
+        </DataToolbarGroup>
+      </React.Fragment>
     );
   }
 }

@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
+import {
+  Button,
+  DataToolbar,
+  DataToolbarContent,
+  DataToolbarGroup,
+  DataToolbarItem,
+  GenerateId,
+  Tooltip
+} from '@patternfly/react-core';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/js/icons/expand-arrows-alt-icon';
 import SearchPlusIcon from '@patternfly/react-icons/dist/js/icons/search-plus-icon';
@@ -282,13 +290,19 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   };
 
   return (
-    <Toolbar className={className} {...props}>
-      <ToolbarGroup>
-        {controlButtons.map((button: TopologyControlButton) =>
-          button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>
-        )}
-        {children}
-      </ToolbarGroup>
-    </Toolbar>
+    <GenerateId prefix="pf-topology-control-bar-">
+      {randomId => (
+        <DataToolbar className={className} style={{ backgroundColor: 'transparent', padding: 0 }} id={randomId}>
+          <DataToolbarContent>
+            <DataToolbarGroup breakpointMods={[{ modifier: 'space-items-none' }]}>
+              {controlButtons.map((button: TopologyControlButton) =>
+                button.hidden ? null : <DataToolbarItem key={button.id}>{renderButton(button)}</DataToolbarItem>
+              )}
+              {children}
+            </DataToolbarGroup>
+          </DataToolbarContent>
+        </DataToolbar>
+      )}
+    </GenerateId>
   );
 };

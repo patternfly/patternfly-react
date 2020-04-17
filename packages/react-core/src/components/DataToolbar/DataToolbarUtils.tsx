@@ -50,7 +50,7 @@ export interface DataToolbarBreakpointMod {
     | 'space-items-md'
     | 'space-items-lg';
   /** The breakpoint at which to apply the modifier */
-  breakpoint: 'md' | 'lg' | 'xl' | '2xl';
+  breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
 }
 
 const breakpoints = {
