@@ -140,7 +140,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
           id="dropdown"
           onSelect={this.onSelect}
           toggle={
-            <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+            <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
               Dropdown
             </DropdownToggle>
           }

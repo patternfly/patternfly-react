@@ -72,7 +72,7 @@ class SimpleDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+          <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
             Dropdown
           </DropdownToggle>
         }
@@ -346,7 +346,7 @@ class PrimaryDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle onToggle={this.onToggle} iconComponent={CaretDownIcon} isPrimary id="toggle-id-4">
+          <DropdownToggle onToggle={this.onToggle} toggleIndicator={CaretDownIcon} isPrimary id="toggle-id-4">
             Dropdown
           </DropdownToggle>
         }
@@ -620,7 +620,7 @@ class IconDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle iconComponent={null} onToggle={this.onToggle} aria-label="Applications" id="toggle-id-7">
+          <DropdownToggle toggleIndicator={null} onToggle={this.onToggle} aria-label="Applications" id="toggle-id-7">
             <ThIcon />
           </DropdownToggle>
         }
@@ -1158,7 +1158,7 @@ class RouterDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle id="toggle-id-8" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+          <DropdownToggle id="toggle-id-8" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
             Dropdown
           </DropdownToggle>
         }
@@ -1211,7 +1211,7 @@ class ImageTextDropdown extends React.Component {
         <DropdownItem key="group 1 plaintext" component="div" isPlainText>Text</DropdownItem>
         <DropdownItem key="group 1 plaintext2" component="div" isPlainText>More text</DropdownItem>
       </DropdownGroup>,
-      <DropdownSeparator />,
+      <DropdownSeparator key="dropdown separator" />,
       <DropdownGroup key="group 2">
         <DropdownItem key="group 2 profile">My profile</DropdownItem>
         <DropdownItem key="group 2 user" component="button">
@@ -1227,8 +1227,8 @@ class ImageTextDropdown extends React.Component {
           <DropdownToggle 
             id="toggle-id-9" 
             onToggle={this.onToggle} 
-            iconComponent={CaretDownIcon}
-            toggleImage={<UserIcon />}
+            toggleIndicator={CaretDownIcon}
+            icon={<UserIcon />}
           >
             Ned Username
           </DropdownToggle>

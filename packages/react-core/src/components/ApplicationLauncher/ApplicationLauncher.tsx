@@ -214,7 +214,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             toggle={
               <DropdownToggle
                 id={toggleId}
-                iconComponent={null}
+                toggleIndicator={null}
                 isOpen={isOpen}
                 onToggle={onToggle}
                 isDisabled={isDisabled}

@@ -1844,7 +1844,6 @@ exports[`optionsMenu plain 1`] = `
           aria-expanded={false}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          iconComponent={null}
           id="plain-toggle"
           isActive={false}
           isDisabled={false}
@@ -1875,6 +1874,7 @@ exports[`optionsMenu plain 1`] = `
               </div>,
             }
           }
+          toggleIndicator={null}
         >
           <Toggle
             aria-expanded={false}

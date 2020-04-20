@@ -17,8 +17,8 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
       "sectionTitleClass": "pf-c-dropdown__group-title",
       "separatorClass": "pf-c-dropdown__separator",
       "toggleClass": "pf-c-dropdown__toggle",
-      "toggleIconClass": "pf-c-dropdown__toggle-icon",
-      "toggleImageClass": "pf-c-dropdown__toggle-image",
+      "toggleIconClass": "pf-c-dropdown__toggle-image",
+      "toggleIndicatorClass": "pf-c-dropdown__toggle-icon",
       "toggleTextClass": "pf-c-dropdown__toggle-text",
     }
   }

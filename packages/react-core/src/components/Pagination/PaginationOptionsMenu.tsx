@@ -157,7 +157,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         value={{
           id: widgetId,
           onSelect: this.onSelect,
-          toggleIconClass: styles.optionsMenuToggleIcon,
+          toggleIndicatorClass: styles.optionsMenuToggleIcon,
           toggleTextClass: styles.optionsMenuToggleText,
           menuClass: styles.optionsMenuMenu,
           itemClass: styles.optionsMenuMenuItem,

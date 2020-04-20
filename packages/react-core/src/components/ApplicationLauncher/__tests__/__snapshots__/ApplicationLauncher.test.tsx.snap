@@ -99,10 +99,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
     toggle={
       <DropdownToggle
         aria-label="Application launcher"
-        iconComponent={null}
         isDisabled={false}
         isOpen={true}
         onToggle={[Function]}
+        toggleIndicator={null}
       >
         <HelpIcon
           id="test-icon"
@@ -120,7 +120,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
       <DropdownToggle
         aria-haspopup={true}
         aria-label="Application launcher"
-        iconComponent={null}
         id="pf-toggle-id-5"
         isDisabled={false}
         isOpen={true}
@@ -246,6 +245,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
             </nav>,
           }
         }
+        toggleIndicator={null}
       >
         <Toggle
           aria-haspopup={true}
@@ -946,10 +946,10 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     toggle={
       <DropdownToggle
         aria-label="Application launcher"
-        iconComponent={null}
         isDisabled={false}
         isOpen={false}
         onToggle={[Function]}
+        toggleIndicator={null}
       >
         <ThIcon />
       </DropdownToggle>
@@ -965,7 +965,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       <DropdownToggle
         aria-haspopup={true}
         aria-label="Application launcher"
-        iconComponent={null}
         id="pf-toggle-id-3"
         isDisabled={false}
         isOpen={false}
@@ -1010,6 +1009,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             </nav>,
           }
         }
+        toggleIndicator={null}
       >
         <Toggle
           aria-haspopup={true}
@@ -1221,10 +1221,10 @@ exports[`ApplicationLauncher dropup 1`] = `
     toggle={
       <DropdownToggle
         aria-label="Application launcher"
-        iconComponent={null}
         isDisabled={false}
         isOpen={false}
         onToggle={[Function]}
+        toggleIndicator={null}
       >
         <ThIcon />
       </DropdownToggle>
@@ -1240,7 +1240,6 @@ exports[`ApplicationLauncher dropup 1`] = `
       <DropdownToggle
         aria-haspopup={true}
         aria-label="Application launcher"
-        iconComponent={null}
         id="pf-toggle-id-2"
         isDisabled={false}
         isOpen={false}
@@ -1285,6 +1284,7 @@ exports[`ApplicationLauncher dropup 1`] = `
             </nav>,
           }
         }
+        toggleIndicator={null}
       >
         <Toggle
           aria-haspopup={true}
@@ -1496,10 +1496,10 @@ exports[`ApplicationLauncher expanded 1`] = `
     toggle={
       <DropdownToggle
         aria-label="Application launcher"
-        iconComponent={null}
         isDisabled={false}
         isOpen={true}
         onToggle={[Function]}
+        toggleIndicator={null}
       >
         <ThIcon />
       </DropdownToggle>
@@ -1515,7 +1515,6 @@ exports[`ApplicationLauncher expanded 1`] = `
       <DropdownToggle
         aria-haspopup={true}
         aria-label="Application launcher"
-        iconComponent={null}
         id="pf-toggle-id-4"
         isDisabled={false}
         isOpen={true}
@@ -1640,6 +1639,7 @@ exports[`ApplicationLauncher expanded 1`] = `
             </nav>,
           }
         }
+        toggleIndicator={null}
       >
         <Toggle
           aria-haspopup={true}
@@ -2335,10 +2335,10 @@ exports[`ApplicationLauncher regular 1`] = `
     toggle={
       <DropdownToggle
         aria-label="Application launcher"
-        iconComponent={null}
         isDisabled={false}
         isOpen={false}
         onToggle={[Function]}
+        toggleIndicator={null}
       >
         <ThIcon />
       </DropdownToggle>
@@ -2354,7 +2354,6 @@ exports[`ApplicationLauncher regular 1`] = `
       <DropdownToggle
         aria-haspopup={true}
         aria-label="Application launcher"
-        iconComponent={null}
         id="pf-toggle-id-0"
         isDisabled={false}
         isOpen={false}
@@ -2399,6 +2398,7 @@ exports[`ApplicationLauncher regular 1`] = `
             </nav>,
           }
         }
+        toggleIndicator={null}
       >
         <Toggle
           aria-haspopup={true}
@@ -2610,10 +2610,10 @@ exports[`ApplicationLauncher right aligned 1`] = `
     toggle={
       <DropdownToggle
         aria-label="Application launcher"
-        iconComponent={null}
         isDisabled={false}
         isOpen={false}
         onToggle={[Function]}
+        toggleIndicator={null}
       >
         <ThIcon />
       </DropdownToggle>
@@ -2629,7 +2629,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
       <DropdownToggle
         aria-haspopup={true}
         aria-label="Application launcher"
-        iconComponent={null}
         id="pf-toggle-id-1"
         isDisabled={false}
         isOpen={false}
@@ -2674,6 +2673,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
             </nav>,
           }
         }
+        toggleIndicator={null}
       >
         <Toggle
           aria-haspopup={true}

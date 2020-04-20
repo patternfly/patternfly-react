@@ -13,7 +13,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
       "menuComponent": "ul",
       "onSelect": [Function],
       "toggleClass": " ",
-      "toggleIconClass": "pf-c-options-menu__toggle-icon",
+      "toggleIndicatorClass": "pf-c-options-menu__toggle-icon",
       "toggleTextClass": "pf-c-options-menu__toggle-text",
     }
   }
