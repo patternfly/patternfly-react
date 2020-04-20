@@ -41,8 +41,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     value={{
       onSelect: event => onSelect && onSelect(event),
       toggleTextClass: styles.dropdownToggleText,
-      toggleIconClass: styles.dropdownToggleIcon,
-      toggleIndicatorClass: styles.dropdownToggleIndicator,
+      toggleIconClass: styles.dropdownToggleImage,
+      toggleIndicatorClass: styles.dropdownToggleIcon,
       menuClass: styles.dropdownMenu,
       itemClass: styles.dropdownMenuItem,
       toggleClass: styles.dropdownToggle,
