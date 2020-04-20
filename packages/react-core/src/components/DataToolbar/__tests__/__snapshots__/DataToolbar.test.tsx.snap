@@ -44,7 +44,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 className="pf-c-data-toolbar__toggle"
               >
                 <Component
-                  aria-controls="data-toolbar-expandable-content-7"
+                  aria-controls="data-toolbar-expandable-content-6"
                   aria-haspopup={false}
                   aria-label="Show Filters"
                   onClick={[Function]}
@@ -54,7 +54,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     component={[Function]}
                     componentProps={
                       Object {
-                        "aria-controls": "data-toolbar-expandable-content-7",
+                        "aria-controls": "data-toolbar-expandable-content-6",
                         "aria-haspopup": false,
                         "aria-label": "Show Filters",
                         "children": <FilterIcon
@@ -70,7 +70,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     consumerContext={null}
                   >
                     <Button
-                      aria-controls="data-toolbar-expandable-content-7"
+                      aria-controls="data-toolbar-expandable-content-6"
                       aria-haspopup={false}
                       aria-label="Show Filters"
                       onClick={[Function]}
@@ -83,7 +83,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                       variant="plain"
                     >
                       <button
-                        aria-controls="data-toolbar-expandable-content-7"
+                        aria-controls="data-toolbar-expandable-content-6"
                         aria-disabled={null}
                         aria-haspopup={false}
                         aria-label="Show Filters"
@@ -1455,7 +1455,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
             Object {
               "current": <div
                 class="pf-c-data-toolbar__expandable-content"
-                id="data-toolbar-expandable-content-7"
+                id="data-toolbar-expandable-content-6"
               >
                 <div
                   class="pf-c-data-toolbar__group"
@@ -1484,13 +1484,13 @@ exports[`data toolbar DataToolbarFilter 1`] = `
               </div>,
             }
           }
-          id="data-toolbar-expandable-content-7"
+          id="data-toolbar-expandable-content-6"
           isExpanded={false}
           showClearFiltersButton={true}
         >
           <div
             className="pf-c-data-toolbar__expandable-content"
-            id="data-toolbar-expandable-content-7"
+            id="data-toolbar-expandable-content-6"
           >
             <ForwardRef>
               <DataToolbarGroupWithRef
