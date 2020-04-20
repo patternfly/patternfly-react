@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.153.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.11...@patternfly/react-core@3.153.12) (2020-04-20)
+
+
+### Bug Fixes
+
+* **Datatoolbar:** Revert change that prevents the current state of the toolbar filters to display in ([#4097](https://github.com/patternfly/patternfly-react/issues/4097)) ([241d390](https://github.com/patternfly/patternfly-react/commit/241d390981853959ac2bdad9a961127eda32c40f)), closes [#4096](https://github.com/patternfly/patternfly-react/issues/4096)
+
+
+
+
+
 ## [3.153.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.10...@patternfly/react-core@3.153.11) (2020-04-17)
 
 **Note:** Version bump only for package @patternfly/react-core
