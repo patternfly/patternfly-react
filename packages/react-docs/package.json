@@ -2,6 +2,14 @@
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
   "version": "5.1.12",
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease-v4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
   "author": "Red Hat",
   "license": "MIT",
   "scripts": {
