@@ -13,7 +13,7 @@ import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Chec
 ```js title=Single
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
-import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
@@ -1075,7 +1075,7 @@ class PlainSelectInput extends React.Component {
 ```js title=Panel
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
-import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
