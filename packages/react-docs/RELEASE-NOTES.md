@@ -29,8 +29,8 @@ Packages released:
 
 ### Other
 - **Chore:** 
-  - Removed promoted components from experimental index file ([#4029](https://github.com/patternfly/patternfly-react/
-  
+  - Removed promoted components from experimental index file ([#4029](https://github.com/patternfly/patternfly-react/pull/4029))
+
 ## 2020.04 release notes (2020-03-31)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.4.48](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.48)
