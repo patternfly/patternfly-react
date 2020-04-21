@@ -30,9 +30,9 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   isDisabled?: boolean;
   /** Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
-  /** An image to display within the dropdown toggle */
+  /** An image to display within the dropdown toggle, appearing before any component children */
   icon?: React.ReactNode;
-  /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
+  /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */
   toggleIndicator?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems?: React.ReactNode[];
