@@ -62,20 +62,20 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-0-tab1"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-0-tab1"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-0-tab1"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-0-tab1"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-0-tab1"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-0-tab1"
               onClick={[Function]}
             >
@@ -90,20 +90,20 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-1-tab2"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-1-tab2"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-1-tab2"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-1-tab2"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-1-tab2"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-1-tab2"
               onClick={[Function]}
             >
@@ -118,20 +118,20 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-2-tab3"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-2-tab3"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-2-tab3"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-2-tab3"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-2-tab3"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-2-tab3"
               onClick={[Function]}
             >
@@ -358,20 +358,20 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-0-tab1"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-0-tab1"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-0-tab1"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-0-tab1"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-0-tab1"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-0-tab1"
               onClick={[Function]}
             >
@@ -386,20 +386,20 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-1-tab2"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-1-tab2"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-1-tab2"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-1-tab2"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-1-tab2"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-1-tab2"
               onClick={[Function]}
             >
@@ -414,20 +414,20 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-2-tab3"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-2-tab3"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-2-tab3"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-2-tab3"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-2-tab3"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-2-tab3"
               onClick={[Function]}
             >
@@ -654,20 +654,20 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-0-tab1"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-0-tab1"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-0-tab1"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-0-tab1"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-0-tab1"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-0-tab1"
               onClick={[Function]}
             >
@@ -682,20 +682,20 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-1-tab2"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-1-tab2"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-1-tab2"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-1-tab2"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-1-tab2"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-1-tab2"
               onClick={[Function]}
             >
@@ -710,20 +710,20 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-2-tab3"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-2-tab3"
           onClick={[Function]}
         >
           <TabButtonBase
             aria-controls="pf-tab-section-2-tab3"
-            className="pf-c-tabs__button"
+            className="pf-c-tabs__link"
             id="pf-tab-2-tab3"
             onClick={[Function]}
             tabContentRef={null}
           >
             <button
               aria-controls="pf-tab-section-2-tab3"
-              className="pf-c-tabs__button"
+              className="pf-c-tabs__link"
               id="pf-tab-2-tab3"
               onClick={[Function]}
             >
@@ -925,7 +925,7 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           href="#/items/1"
           id="pf-tab-0-tab1"
         >
@@ -937,7 +937,7 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           href="#/items/2"
           id="pf-tab-1-tab2"
         >
@@ -949,7 +949,7 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           href="#/items/3"
           id="pf-tab-2-tab3"
         >
@@ -1045,7 +1045,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-0-tab1"
         >
           Tab item 1
@@ -1056,7 +1056,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           Tab item 2
@@ -1067,7 +1067,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           Tab item 3
@@ -1162,7 +1162,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-primarieTabs"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-0-primarieTabs"
         >
           Tab item 1
@@ -1173,7 +1173,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           Tab item 2
@@ -1184,7 +1184,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           Tab item 3
@@ -1252,7 +1252,7 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-10-secondary tab1"
-            class="pf-c-tabs__button"
+            class="pf-c-tabs__link"
             id="pf-tab-10-secondary tab1"
           >
             Secondary Tab 1
@@ -1263,7 +1263,7 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-11-secondary tab2"
-            class="pf-c-tabs__button"
+            class="pf-c-tabs__link"
             id="pf-tab-11-secondary tab2"
           >
             Secondary Tab 2
@@ -1274,7 +1274,7 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-12-secondary tab3"
-            class="pf-c-tabs__button"
+            class="pf-c-tabs__link"
             id="pf-tab-12-secondary tab3"
           >
             Secondary Tab 3
@@ -1391,7 +1391,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-0-tab1"
         >
           Tab item 1
@@ -1402,7 +1402,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           Tab item 2
@@ -1413,7 +1413,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           Tab item 3
@@ -1424,7 +1424,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-3-tab4"
         >
           <b>
@@ -1534,7 +1534,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-one-tab1"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-one-tab1"
         >
           Tab item 1
@@ -1545,7 +1545,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-two-tab2"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-two-tab2"
         >
           Tab item 2
@@ -1556,7 +1556,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-three-tab3"
-          class="pf-c-tabs__button"
+          class="pf-c-tabs__link"
           id="pf-tab-three-tab3"
         >
           Tab item 3

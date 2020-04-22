@@ -48,13 +48,7 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
       styles.dataToolbarItem,
       variant &&
         styles.modifiers[
-          toCamel(variant) as
-            | 'bulkSelect'
-            | 'overflowMenu'
-            | 'pagination'
-            | 'searchFilter'
-            | 'label'
-            | 'chipGroup'
+          toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
         ],
       formatBreakpointMods(breakpointMods, styles),
       className

@@ -36,6 +36,7 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
   hideCaret = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isSplitButton = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type,

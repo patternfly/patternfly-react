@@ -9,11 +9,7 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
 }
 
-export const Label: React.FunctionComponent<LabelProps> = ({
-  children,
-  className = '',
-  ...props
-}: LabelProps) => (
+export const Label: React.FunctionComponent<LabelProps> = ({ children, className = '', ...props }: LabelProps) => (
   <span {...props} className={css(styles.label, className)}>
     {children}
   </span>

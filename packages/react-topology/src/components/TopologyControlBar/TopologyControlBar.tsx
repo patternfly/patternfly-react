@@ -250,8 +250,7 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   className = null,
   children = null,
   controlButtons = [],
-  onButtonClick = () => undefined,
-  ...props
+  onButtonClick = () => undefined
 }: TopologyControlBarProps) => {
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, button: TopologyControlButton) => {
     event.preventDefault();

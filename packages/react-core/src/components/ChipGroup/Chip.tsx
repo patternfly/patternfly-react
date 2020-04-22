@@ -77,11 +77,7 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
-          <Component
-            className={css(styles.chip, className)}
-            tabIndex="0"
-            {...getOUIAProps('Chip', ouiaId)}
-          >
+          <Component className={css(styles.chip, className)} tabIndex="0" {...getOUIAProps('Chip', ouiaId)}>
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
@@ -100,10 +96,7 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
       );
     }
     return (
-      <Component
-        className={css(styles.chip, className)}
-        {...getOUIAProps('Chip', ouiaId)}
-      >
+      <Component className={css(styles.chip, className)} {...getOUIAProps('Chip', ouiaId)}>
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
         </span>

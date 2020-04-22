@@ -1,7 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormGroup should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  className="pf-c-form__group ''"
+  isValid={true}
+>
+  <label
+    className="pf-c-form__label"
+    htmlFor="string"
+  >
+    <span
+      className="pf-c-form__label-text"
+    >
+      <div>
+        ReactNode
+      </div>
+    </span>
+  </label>
+  ReactNode
+  <div
+    aria-live="polite"
+    className="pf-c-form__helper-text"
+    id="string-helper"
+  >
+    <div>
+      ReactNode
+    </div>
+  </div>
+</div>
 `;

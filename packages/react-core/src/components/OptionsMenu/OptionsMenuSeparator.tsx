@@ -4,4 +4,4 @@ import { Divider, DividerProps } from '../Divider';
 export const OptionsMenuSeparator: React.FunctionComponent<DividerProps> = ({
   component = 'li',
   ...props
-}: DividerProps) => <Divider component={component} {...props}  />;
+}: DividerProps) => <Divider component={component} {...props} />;

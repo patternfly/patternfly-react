@@ -43,10 +43,7 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
         {({ onSelect }) => (
           <li role="none">
             <button
-              className={css(
-                styles.contextSelectorMenuListItem,
-                className
-              )}
+              className={css(styles.contextSelectorMenuListItem, className)}
               ref={this.ref}
               onClick={event => {
                 if (!isDisabled) {

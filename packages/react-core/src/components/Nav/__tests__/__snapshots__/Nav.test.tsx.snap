@@ -10,7 +10,7 @@ exports[`Dark Nav List 1`] = `
 >
   <nav
     aria-label="Global"
-    className="pf-c-nav pf-m-dark test=nav-class"
+    className="pf-c-nav test=nav-class"
     data-ouia-component-id={1}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
@@ -22,7 +22,7 @@ exports[`Dark Nav List 1`] = `
       variant="default"
     >
       <ul
-        className="pf-c-nav__list test-nav-list-class"
+        className="test-nav-list-class"
       >
         <NavItem
           className="test-nav-item-class"
@@ -108,7 +108,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -124,7 +124,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
       variant="default"
     >
       <ul
-        className="pf-c-nav__list"
+        className=""
       >
         <NavItem
           key="#link1"
@@ -206,7 +206,7 @@ exports[`Default Nav List 1`] = `
   className="test=nav-class"
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -222,7 +222,7 @@ exports[`Default Nav List 1`] = `
       variant="default"
     >
       <ul
-        className="pf-c-nav__list test-nav-list-class"
+        className="test-nav-list-class"
       >
         <NavItem
           className="test-nav-item-class"
@@ -308,7 +308,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -324,7 +324,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
       variant="default"
     >
       <ul
-        className="pf-c-nav__list"
+        className=""
       >
         <NavExpandable
           className="expandable-group"
@@ -472,7 +472,7 @@ exports[`Expandable Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -488,7 +488,7 @@ exports[`Expandable Nav List 1`] = `
       variant="default"
     >
       <ul
-        className="pf-c-nav__list"
+        className=""
       >
         <NavExpandable
           className=""
@@ -636,7 +636,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Test"
@@ -652,7 +652,7 @@ exports[`Expandable Nav List with aria label 1`] = `
       variant="default"
     >
       <ul
-        className="pf-c-nav__list"
+        className=""
       >
         <NavExpandable
           className=""
@@ -806,7 +806,7 @@ exports[`Horizontal Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -966,7 +966,7 @@ exports[`Nav Grouped List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -989,9 +989,7 @@ exports[`Nav Grouped List 1`] = `
         >
           Section 1
         </h2>
-        <ul
-          className="pf-c-nav__list"
-        >
+        <ul>
           <NavList
             ariaLeftScroll="Scroll left"
             ariaRightScroll="Scroll right"
@@ -999,7 +997,7 @@ exports[`Nav Grouped List 1`] = `
             variant="default"
           >
             <ul
-              className="pf-c-nav__list"
+              className=""
             >
               <NavItem
                 key="section1_#link1"
@@ -1088,9 +1086,7 @@ exports[`Nav Grouped List 1`] = `
         >
           Section 2
         </h2>
-        <ul
-          className="pf-c-nav__list"
-        >
+        <ul>
           <NavList
             ariaLeftScroll="Scroll left"
             ariaRightScroll="Scroll right"
@@ -1098,7 +1094,7 @@ exports[`Nav Grouped List 1`] = `
             variant="default"
           >
             <ul
-              className="pf-c-nav__list"
+              className=""
             >
               <NavItem
                 key="section2_#link1"
@@ -1183,7 +1179,7 @@ exports[`Nav List with custom item nodes 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Local"
@@ -1291,7 +1287,7 @@ exports[`Simple Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Global"
@@ -1389,7 +1385,7 @@ exports[`Tertiary Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
-  theme="light"
+  theme="dark"
 >
   <nav
     aria-label="Local"

@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface ExpandableProps {
+export interface ExpandableSectionProps {
   /** Content rendered inside the Expandable Component */
   children: React.ReactNode;
   /** Additional classes added to the Expandable Component */
@@ -23,12 +23,12 @@ export interface ExpandableProps {
   isActive?: boolean;
 }
 
-interface ExpandableState {
+interface ExpandableSectionState {
   isExpanded: boolean;
 }
 
-export class Expandable extends React.Component<ExpandableProps, ExpandableState> {
-  constructor(props: ExpandableProps) {
+export class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
+  constructor(props: ExpandableSectionProps) {
     super(props);
 
     this.state = {
@@ -36,13 +36,13 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     };
   }
 
-  static defaultProps: PickOptional<ExpandableProps> = {
+  static defaultProps: PickOptional<ExpandableSectionProps> = {
     className: '',
     toggleText: '',
     toggleTextExpanded: '',
     toggleTextCollapsed: '',
     onToggle: (): any => undefined,
-    isActive: false,
+    isActive: false
   };
 
   private calculateToggleText(
@@ -63,6 +63,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
   render() {
     const {
       onToggle: onToggleProp,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isActive,
       className,
       toggleText,
@@ -92,11 +93,12 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     );
 
     return (
-      <div {...props} className={css(styles.expandableSection, propOrStateIsExpanded && styles.modifiers.expanded, className)}>
+      <div
+        {...props}
+        className={css(styles.expandableSection, propOrStateIsExpanded && styles.modifiers.expanded, className)}
+      >
         <button
-          className={css(
-            styles.expandableSectionToggle
-          )}
+          className={css(styles.expandableSectionToggle)}
           type="button"
           aria-expanded={propOrStateIsExpanded}
           onClick={onToggle}

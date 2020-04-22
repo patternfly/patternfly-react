@@ -112,11 +112,12 @@ exports[`isFocus 1`] = `
   <button
     aria-disabled={null}
     aria-label={null}
-    className="pf-c-button pf-m-primary pf-m-focus"
+    className="pf-c-button pf-m-primary"
     data-ouia-component-id={null}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    isFocus={true}
     tabIndex={null}
     type="button"
   >
@@ -132,11 +133,12 @@ exports[`isHover 1`] = `
   <button
     aria-disabled={null}
     aria-label={null}
-    className="pf-c-button pf-m-primary pf-m-hover"
+    className="pf-c-button pf-m-primary"
     data-ouia-component-id={null}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
+    isHover={true}
     tabIndex={null}
     type="button"
   >

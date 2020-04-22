@@ -99,7 +99,10 @@ function generateTokens() {
   const scssColorsMap = getRegexMatches(scssColorVariables, /(\$.*):\s*([^\s]+)\s*(?:!default);/g);
 
   // contains default values and mappings to colors.scss for color values
-  const cssGlobalVariables = readFileSync(require.resolve('@patternfly/patternfly/base/patternfly-variables.css'), 'utf8');
+  const cssGlobalVariables = readFileSync(
+    require.resolve('@patternfly/patternfly/base/patternfly-variables.css'),
+    'utf8'
+  );
   const cssGlobalVariablesMap = getRegexMatches(cssGlobalVariables, /(--pf-[\w-]*):\s*([\w -_]+);/g);
 
   const combinedScssVarsColorsMap = {

@@ -12,7 +12,7 @@ exports[`Nav should match snapshot (auto-generated) 1`] = `
 >
   <nav
     aria-label="''"
-    className="pf-c-nav ''"
+    className="pf-c-nav pf-m-light ''"
     data-ouia-component-id={0}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}

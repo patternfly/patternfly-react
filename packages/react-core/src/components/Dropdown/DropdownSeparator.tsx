@@ -17,12 +17,6 @@ export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
   ...props
 }: SeparatorProps) => (
   <DropdownArrowContext.Consumer>
-    {context => (
-      <InternalDropdownItem
-        {...props}
-        context={context}
-        component={Divider}
-      />
-    )}
+    {context => <InternalDropdownItem {...props} context={context} component={Divider} className={className} />}
   </DropdownArrowContext.Consumer>
 );

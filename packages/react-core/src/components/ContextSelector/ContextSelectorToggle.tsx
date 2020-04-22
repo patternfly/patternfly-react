@@ -103,10 +103,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         {...props}
         id={id}
         ref={this.toggle}
-        className={css(
-          styles.contextSelectorToggle,
-          className
-        )}
+        className={css(styles.contextSelectorToggle, className)}
         type="button"
         onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}

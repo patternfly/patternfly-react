@@ -102,7 +102,6 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
       ouiaId,
       ...props
     } = this.props;
-    const { showLeftScrollButton, showRightScrollButton } = this.state;
     const childrenProps: any = (children as any).props;
 
     return (
@@ -123,14 +122,11 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
+          updateScrollButtonState: this.updateScrollButtonState
         }}
       >
         <nav
-          className={css(
-            styles.nav,
-            theme === 'light' && styles.modifiers.light,
-            className
-          )}
+          className={css(styles.nav, theme === 'light' && styles.modifiers.light, className)}
           aria-label={
             ariaLabel === ''
               ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary'

@@ -14,7 +14,6 @@ export interface ClipboardCopyToggleProps
 
 export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyToggleProps> = ({
   onClick,
-  className = '',
   id,
   textId,
   contentId,

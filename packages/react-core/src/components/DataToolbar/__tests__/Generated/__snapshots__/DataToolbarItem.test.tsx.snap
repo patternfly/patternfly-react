@@ -2,7 +2,7 @@
 
 exports[`DataToolbarItem should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-c-data-toolbar__item pf-m-separator string"
+  className="pf-c-data-toolbar__item string"
   id="string"
 >
   <div>

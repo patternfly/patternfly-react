@@ -220,10 +220,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </button>
                 </li>
                 <li
-                  role="separator"
+                  role="none"
                 >
-                  <div
-                    class="pf-c-app-launcher__separator"
+                  <hr
+                    class="pf-c-divider pf-c-app-launcher__menu-item"
                   />
                 </li>
                 <li
@@ -261,8 +261,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
           id="pf-toggle-id-5"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           isPrimary={false}
@@ -355,10 +353,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                   <li
-                    role="separator"
+                    role="none"
                   >
-                    <div
-                      class="pf-c-app-launcher__separator"
+                    <hr
+                      class="pf-c-divider pf-c-app-launcher__menu-item"
                     />
                   </li>
                   <li
@@ -686,8 +684,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={4}
             >
               <InternalDropdownItem
-                className="pf-c-app-launcher__separator"
-                component="div"
+                className=""
+                component={[Function]}
                 context={
                   Object {
                     "keyHandler": [Function],
@@ -699,7 +697,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                role="separator"
+                role="none"
                 tooltipProps={Object {}}
                 variant="item"
               >
@@ -707,11 +705,15 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   className={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="separator"
+                  role="none"
                 >
-                  <div
-                    className="pf-c-app-launcher__separator"
-                  />
+                  <Divider
+                    className="pf-c-app-launcher__menu-item"
+                  >
+                    <hr
+                      className="pf-c-divider pf-c-app-launcher__menu-item"
+                    />
+                  </Divider>
                 </li>
               </InternalDropdownItem>
             </DropdownSeparator>
@@ -1013,8 +1015,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           id="pf-toggle-id-3"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -1285,8 +1285,6 @@ exports[`ApplicationLauncher dropup 1`] = `
           id="pf-toggle-id-2"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -1596,10 +1594,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="separator"
+                  role="none"
                 >
-                  <div
-                    class="pf-c-app-launcher__separator"
+                  <hr
+                    class="pf-c-divider pf-c-app-launcher__menu-item"
                   />
                 </li>
                 <li
@@ -1637,8 +1635,6 @@ exports[`ApplicationLauncher expanded 1`] = `
           id="pf-toggle-id-4"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           isPrimary={false}
@@ -1730,10 +1726,10 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="separator"
+                    role="none"
                   >
-                    <div
-                      class="pf-c-app-launcher__separator"
+                    <hr
+                      class="pf-c-divider pf-c-app-launcher__menu-item"
                     />
                   </li>
                   <li
@@ -2059,8 +2055,8 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={4}
             >
               <InternalDropdownItem
-                className="pf-c-app-launcher__separator"
-                component="div"
+                className=""
+                component={[Function]}
                 context={
                   Object {
                     "keyHandler": [Function],
@@ -2072,7 +2068,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                role="separator"
+                role="none"
                 tooltipProps={Object {}}
                 variant="item"
               >
@@ -2080,11 +2076,15 @@ exports[`ApplicationLauncher expanded 1`] = `
                   className={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="separator"
+                  role="none"
                 >
-                  <div
-                    className="pf-c-app-launcher__separator"
-                  />
+                  <Divider
+                    className="pf-c-app-launcher__menu-item"
+                  >
+                    <hr
+                      className="pf-c-divider pf-c-app-launcher__menu-item"
+                    />
+                  </Divider>
                 </li>
               </InternalDropdownItem>
             </DropdownSeparator>
@@ -2386,8 +2386,6 @@ exports[`ApplicationLauncher regular 1`] = `
           id="pf-toggle-id-0"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -2658,8 +2656,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
           id="pf-toggle-id-1"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}

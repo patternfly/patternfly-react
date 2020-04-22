@@ -216,7 +216,7 @@ exports[`optionsMenu expanded 1`] = `
                   </ul>
                 </section>
                 <li
-                  class="pf-c-options-menu__separator"
+                  class="pf-c-divider"
                   index="1"
                   role="separator"
                 />
@@ -258,7 +258,7 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      class="pf-c-options-menu__separator"
+                      class="pf-c-divider"
                       role="separator"
                     />
                   </ul>
@@ -275,8 +275,6 @@ exports[`optionsMenu expanded 1`] = `
           id="expanded-toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           onEnter={[Function]}
@@ -387,7 +385,7 @@ exports[`optionsMenu expanded 1`] = `
                     </ul>
                   </section>
                   <li
-                    class="pf-c-options-menu__separator"
+                    class="pf-c-divider"
                     index="1"
                     role="separator"
                   />
@@ -429,7 +427,7 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        class="pf-c-options-menu__separator"
+                        class="pf-c-divider"
                         role="separator"
                       />
                     </ul>
@@ -448,8 +446,6 @@ exports[`optionsMenu expanded 1`] = `
             id="expanded-toggle"
             isActive={false}
             isDisabled={false}
-            isFocused={false}
-            isHovered={false}
             isOpen={true}
             isPlain={false}
             isPrimary={false}
@@ -563,7 +559,7 @@ exports[`optionsMenu expanded 1`] = `
                       </ul>
                     </section>
                     <li
-                      class="pf-c-options-menu__separator"
+                      class="pf-c-divider"
                       index="1"
                       role="separator"
                     />
@@ -605,7 +601,7 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          class="pf-c-options-menu__separator"
+                          class="pf-c-divider"
                           role="separator"
                         />
                       </ul>
@@ -899,11 +895,16 @@ exports[`optionsMenu expanded 1`] = `
             index={1}
             key=".$separator"
           >
-            <li
-              className="pf-c-options-menu__separator"
+            <Divider
+              component="li"
               index={1}
-              role="separator"
-            />
+            >
+              <li
+                className="pf-c-divider"
+                index={1}
+                role="separator"
+              />
+            </Divider>
           </OptionsMenuSeparator>
           <OptionsMenuItemGroup
             groupTitle="Sort direction"
@@ -1020,10 +1021,15 @@ exports[`optionsMenu expanded 1`] = `
                     </InternalDropdownItem>
                   </DropdownItem>
                 </OptionsMenuItem>
-                <li
-                  className="pf-c-options-menu__separator"
+                <Divider
+                  component="li"
                   role="separator"
-                />
+                >
+                  <li
+                    className="pf-c-divider"
+                    role="separator"
+                  />
+                </Divider>
               </ul>
             </section>
           </OptionsMenuItemGroup>
@@ -1195,8 +1201,6 @@ exports[`optionsMenu isDisabled 1`] = `
           id="disabled-toggle"
           isActive={false}
           isDisabled={true}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           onEnter={[Function]}
@@ -1250,8 +1254,6 @@ exports[`optionsMenu isDisabled 1`] = `
             id="disabled-toggle"
             isActive={false}
             isDisabled={true}
-            isFocused={false}
-            isHovered={false}
             isOpen={false}
             isPlain={false}
             isPrimary={false}
@@ -1505,8 +1507,6 @@ exports[`optionsMenu open up 1`] = `
           id="openUp-toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           onEnter={[Function]}
@@ -1559,8 +1559,6 @@ exports[`optionsMenu open up 1`] = `
             id="openUp-toggle"
             isActive={false}
             isDisabled={false}
-            isFocused={false}
-            isHovered={false}
             isOpen={false}
             isPlain={false}
             isPrimary={false}
@@ -1797,8 +1795,6 @@ exports[`optionsMenu plain 1`] = `
           id="plain-toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={true}
           onEnter={[Function]}
@@ -1834,8 +1830,6 @@ exports[`optionsMenu plain 1`] = `
             id="plain-toggle"
             isActive={false}
             isDisabled={false}
-            isFocused={false}
-            isHovered={false}
             isOpen={false}
             isPlain={true}
             isPrimary={false}
@@ -2043,8 +2037,6 @@ exports[`optionsMenu regular 1`] = `
           id="regular-toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           onEnter={[Function]}
@@ -2097,8 +2089,6 @@ exports[`optionsMenu regular 1`] = `
             id="regular-toggle"
             isActive={false}
             isDisabled={false}
-            isFocused={false}
-            isHovered={false}
             isOpen={false}
             isPlain={false}
             isPrimary={false}
@@ -2352,8 +2342,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id="rightAlignedOpenUp-toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           onEnter={[Function]}
@@ -2406,8 +2394,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
             id="rightAlignedOpenUp-toggle"
             isActive={false}
             isDisabled={false}
-            isFocused={false}
-            isHovered={false}
             isOpen={false}
             isPlain={false}
             isPrimary={false}
@@ -2660,8 +2646,6 @@ exports[`optionsMenu right aligned 1`] = `
           id="rightAligned-toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           onEnter={[Function]}
@@ -2714,8 +2698,6 @@ exports[`optionsMenu right aligned 1`] = `
             id="rightAligned-toggle"
             isActive={false}
             isDisabled={false}
-            isFocused={false}
-            isHovered={false}
             isOpen={false}
             isPlain={false}
             isPrimary={false}

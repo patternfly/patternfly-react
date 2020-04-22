@@ -2,7 +2,8 @@
 
 exports[`compact label 1`] = `
 <span
-  className="pf-c-label pf-m-compact"
+  className="pf-c-label"
+  isCompact={true}
 >
   Something
 </span>

@@ -53,6 +53,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isPrimary = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,

@@ -29,12 +29,8 @@ exports[`ActionGroup component should render horizontal form ActionGroup variant
         className="pf-c-form__group pf-m-action"
       >
         <div
-          className="pf-c-form__horizontal-group"
-        >
-          <div
-            className="pf-c-form__actions"
-          />
-        </div>
+          className="pf-c-form__actions"
+        />
       </div>
     </ActionGroup>
   </form>

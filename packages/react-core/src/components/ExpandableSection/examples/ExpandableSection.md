@@ -42,9 +42,11 @@ import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 
-<ExpandableSection toggleText="Show More">
-  This content is visible only when the component is expanded.
+UncontrolledExpandable = () => (
+  <ExpandableSection toggleText="Show More">
+    This content is visible only when the component is expanded.
 </ExpandableSection>
+)
 ```
 
 ```js title=Uncontrolled-with-dynamic-toggle-text
@@ -52,7 +54,9 @@ import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 
-<ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
-  This content is visible only when the component is expanded.
-</ExpandableSection>
+UncontrolledWithToggleExpandable = () => (
+  <ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+    This content is visible only when the component is expanded.
+  </ExpandableSection>
+)
 ```

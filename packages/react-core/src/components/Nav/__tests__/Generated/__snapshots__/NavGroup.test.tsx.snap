@@ -11,9 +11,7 @@ exports[`NavGroup should match snapshot (auto-generated) 1`] = `
   >
     string
   </h2>
-  <ul
-    className="pf-c-nav__list"
-  >
+  <ul>
     ReactNode
   </ul>
 </section>
