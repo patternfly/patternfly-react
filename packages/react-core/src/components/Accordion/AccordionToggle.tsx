@@ -37,7 +37,9 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
             aria-expanded={isExpanded}
           >
             <span className={css(styles.accordionToggleText)}>{children}</span>
-            <AngleRightIcon className={css(styles.accordionToggleIcon)} />
+            <span className={css(styles.accordionToggleIcon)}>
+              <AngleRightIcon />
+            </span>
           </button>
         </Container>
       );
