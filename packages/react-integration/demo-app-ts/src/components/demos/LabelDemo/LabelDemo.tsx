@@ -1,11 +1,7 @@
-import { Label, LabelProps } from '@patternfly/react-core';
+import { Label } from '@patternfly/react-core';
 import React, { Component } from 'react';
-export class LabelDemo extends Component {
-  myLabelProps: LabelProps = {
-    isCompact: true,
-    children: 'Compact label'
-  };
 
+export class LabelDemo extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -14,7 +10,7 @@ export class LabelDemo extends Component {
     return (
       <React.Fragment>
         <Label>Default label</Label>
-        <Label isCompact={this.myLabelProps.isCompact}>{this.myLabelProps.children}</Label>
+        <Label>Compact label</Label>
       </React.Fragment>
     );
   }
