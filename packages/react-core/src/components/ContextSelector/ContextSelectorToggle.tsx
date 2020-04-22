@@ -110,7 +110,9 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         onKeyDown={this.onKeyDown}
       >
         <span className={css(styles.contextSelectorToggleText)}>{toggleText}</span>
-        <CaretDownIcon className={css(styles.contextSelectorToggleIcon)} aria-hidden />
+        <span className={css(styles.contextSelectorToggleIcon)}>
+          <CaretDownIcon aria-hidden />
+        </span>
       </button>
     );
   }

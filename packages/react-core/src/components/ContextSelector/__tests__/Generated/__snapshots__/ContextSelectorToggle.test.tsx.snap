@@ -16,12 +16,15 @@ exports[`ContextSelectorToggle should match snapshot (auto-generated) 1`] = `
   >
     ''
   </span>
-  <CaretDownIcon
-    aria-hidden={true}
+  <span
     className="pf-c-context-selector__toggle-icon"
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-  />
+  >
+    <CaretDownIcon
+      aria-hidden={true}
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
 </button>
 `;
