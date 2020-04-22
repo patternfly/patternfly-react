@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Card', 'CardHeadMain', 'CardHeader', 'CardBody', 'CardFooter']
 ---
 
-import { Brand, Card, CardActions, CardHead, CardHeadMain, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
+import { Brand, Card, CardActions, CardHead, CardHeadMain, CardHeader, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg'; 
 
 ## Examples
@@ -25,7 +25,7 @@ SimpleCard = () => (
 
 ```js title=With-image-and-actions
 import React from 'react'; 
-import { Brand, Card, CardHead, CardHeadMain, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
+import { Brand, Card, CardHead, CardHeadMain, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
 import pfLogo from './pfLogo.svg'; 
 
 class KebabDropdown extends React.Component {
