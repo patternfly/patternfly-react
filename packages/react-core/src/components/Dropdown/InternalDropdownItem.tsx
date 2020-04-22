@@ -20,6 +20,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   role?: string;
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
+  /** Render dropdown item as a non-interactive item */
+  isPlainText?: boolean;
   /** Forces display of the hover state of the element */
   isHovered?: boolean;
   /** Default hyperlink location */
@@ -58,6 +60,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     variant: 'item',
     role: 'none',
     isDisabled: false,
+    isPlainText: false,
     tooltipProps: {},
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onClick: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => undefined as any,
@@ -134,6 +137,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       variant,
       role,
       isDisabled,
+      isPlainText,
       index,
       href,
       tooltip,
@@ -169,7 +173,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
     return (
       <DropdownContext.Consumer>
-        {({ onSelect, itemClass, disabledClass, hoverClass }) => {
+        {({ onSelect, itemClass, disabledClass, hoverClass, plainTextClass }) => {
           if (this.props.role === 'separator') {
             classes = css(variant === 'icon' && styles.modifiers.icon, className);
           } else {
@@ -177,6 +181,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               variant === 'icon' && styles.modifiers.icon,
               className,
               isDisabled && disabledClass,
+              isPlainText && plainTextClass,
               isHovered && hoverClass,
               itemClass
             );

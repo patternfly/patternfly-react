@@ -51,7 +51,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
     value={{
       id,
       onSelect: () => undefined,
-      toggleIconClass: styles.optionsMenuToggleIcon,
+      toggleIndicatorClass: styles.optionsMenuToggleIcon,
       toggleTextClass: styles.optionsMenuToggleText,
       menuClass: styles.optionsMenuMenu,
       itemClass: styles.optionsMenuMenuItem,

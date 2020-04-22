@@ -13,6 +13,7 @@ export enum DropdownDirection {
 export const DropdownContext = React.createContext<{
   onSelect?: (event?: any) => void;
   id?: string;
+  toggleIndicatorClass?: string;
   toggleIconClass?: string;
   toggleTextClass?: string;
   menuClass?: string;
@@ -24,6 +25,7 @@ export const DropdownContext = React.createContext<{
   sectionTitleClass?: string;
   sectionComponent?: string;
   disabledClass?: string;
+  plainTextClass?: string;
   hoverClass?: string;
   separatorClass?: string;
   menuComponent?: string;
@@ -31,6 +33,7 @@ export const DropdownContext = React.createContext<{
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelect: (event?: any) => undefined as any,
   id: '',
+  toggleIndicatorClass: '',
   toggleIconClass: '',
   toggleTextClass: '',
   menuClass: '',
@@ -42,6 +45,7 @@ export const DropdownContext = React.createContext<{
   sectionTitleClass: '',
   sectionComponent: 'section',
   disabledClass: '',
+  plainTextClass: '',
   hoverClass: '',
   separatorClass: '',
   menuComponent: 'ul'
