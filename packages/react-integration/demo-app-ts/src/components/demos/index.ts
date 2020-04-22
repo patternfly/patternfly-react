@@ -55,7 +55,7 @@ export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo';
 export * from './DrawerDemo/DrawerDemo';
 export * from './DropdownDemo/DropdownDemo';
 export * from './EmptyStateDemo/EmptyStateDemo';
-export * from './ExpandableSectionDemo/ExpandableDemo';
+export * from './ExpandableSectionDemo/ExpandableSectionDemo';
 export * from './FlexDemo/FlexDemo';
 export * from './FormDemo/FormDemo';
 export * from './FormSelectDemo/FormSelectDemo';

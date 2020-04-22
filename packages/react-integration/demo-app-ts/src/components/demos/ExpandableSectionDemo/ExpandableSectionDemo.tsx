@@ -30,7 +30,9 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
         </ExpandableSection>
         <br />
         <h1> Uncontrolled Expandable Example: </h1>
-        <ExpandableSection toggleText="Show More">This content is visible only when the component is expanded.</ExpandableSection>
+        <ExpandableSection toggleText="Show More">
+          This content is visible only when the component is expanded.
+        </ExpandableSection>
         <h1> Uncontrolled Dynamic Expandable Example: </h1>
         <ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
           This content is visible only when the component is expanded.

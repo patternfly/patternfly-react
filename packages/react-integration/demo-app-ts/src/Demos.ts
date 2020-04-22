@@ -297,9 +297,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.EmptyStateDemo
   },
   {
-    id: 'expandable-demo',
-    name: 'Expandable Demo',
-    componentType: Examples.ExpandableDemo
+    id: 'expandable-section-demo',
+    name: 'Expandable Section Demo',
+    componentType: Examples.ExpandableSectionDemo
   },
   {
     id: 'flex-demo',
