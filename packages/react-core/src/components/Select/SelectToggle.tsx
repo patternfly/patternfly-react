@@ -207,7 +207,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             disabled={isDisabled}
           >
             {children}
-            <CaretDownIcon className={css(styles.selectToggleArrow)} />
+            <span className={css(styles.selectToggleArrow)}>
+              <CaretDownIcon />
+            </span>
           </button>
         )}
         {isTypeahead && (
