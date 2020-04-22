@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-virtualized-extension/",
   "dependencies": {
-    "@patternfly/patternfly": "4.6.0",
+    "@patternfly/patternfly": "4.8.6",
     "@patternfly/react-core": "^4.6.1",
     "@patternfly/react-icons": "^4.1.1",
     "@patternfly/react-styles": "^4.1.1",
