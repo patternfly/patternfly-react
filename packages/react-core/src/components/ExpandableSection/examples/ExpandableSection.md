@@ -1,19 +1,19 @@
 ---
-title: 'Expandable'
+title: 'Expandable section'
 section: components
-cssPrefix: 'pf-c-expandable'
+cssPrefix: 'pf-c-expandable-section'
 typescript: true
-propComponents: ['Expandable']
+propComponents: ['ExpandableSection']
 ---
 
-import { Expandable } from '@patternfly/react-core';
+import { ExpandableSection } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic
 import React from 'react';
-import { Expandable } from '@patternfly/react-core';
+import { ExpandableSection } from '@patternfly/react-core';
 
-class SimpleExpandable extends React.Component {
+class SimpleExpandableSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,9 +29,9 @@ class SimpleExpandable extends React.Component {
   render() {
     const { isExpanded } = this.state;
     return (
-      <Expandable toggleText={isExpanded ? 'Show Less' : 'Show More'} onToggle={this.onToggle} isExpanded={isExpanded}>
+      <ExpandableSection toggleText={isExpanded ? 'Show Less' : 'Show More'} onToggle={this.onToggle} isExpanded={isExpanded}>
         This content is visible only when the component is expanded.
-      </Expandable>
+      </ExpandableSection>
     );
   }
 }
@@ -39,20 +39,20 @@ class SimpleExpandable extends React.Component {
 
 ```js title=Uncontrolled
 import React from 'react';
-import { Expandable } from '@patternfly/react-core';
+import { ExpandableSection } from '@patternfly/react-core';
 
 
-<Expandable toggleText="Show More">
+<ExpandableSection toggleText="Show More">
   This content is visible only when the component is expanded.
-</Expandable>
+</ExpandableSection>
 ```
 
 ```js title=Uncontrolled-with-dynamic-toggle-text
 import React from 'react';
-import { Expandable } from '@patternfly/react-core';
+import { ExpandableSection } from '@patternfly/react-core';
 
 
-<Expandable toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+<ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
   This content is visible only when the component is expanded.
-</Expandable>
+</ExpandableSection>
 ```

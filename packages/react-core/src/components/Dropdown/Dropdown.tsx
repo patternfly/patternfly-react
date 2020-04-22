@@ -50,9 +50,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       sectionClass: styles.dropdownGroup,
       sectionTitleClass: styles.dropdownGroupTitle,
       sectionComponent: 'section',
-      disabledClass: styles.modifiers.disabled,
-      hoverClass: styles.modifiers.hover,
-      separatorClass: styles.dropdownSeparator
+      disabledClass: styles.modifiers.disabled
     }}
   >
     <DropdownWithContext {...props} />

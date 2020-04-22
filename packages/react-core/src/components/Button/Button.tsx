@@ -32,10 +32,6 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   isBlock?: boolean;
   /** Disables the button and adds disabled styling */
   isDisabled?: boolean;
-  /** Adds focus styling to the button */
-  isFocus?: boolean;
-  /** Adds hover styling to the button */
-  isHover?: boolean;
   /** Adds inline styling to a link button */
   isInline?: boolean;
   /** Sets button type */
@@ -59,8 +55,6 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
   isActive = false,
   isBlock = false,
   isDisabled = false,
-  isFocus = false,
-  isHover = false,
   isInline = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
@@ -84,8 +78,6 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
         isBlock && styles.modifiers.block,
         isDisabled && !isButtonElement && styles.modifiers.disabled,
         isActive && styles.modifiers.active,
-        isFocus && styles.modifiers.focus,
-        isHover && styles.modifiers.hover,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         className
       )}

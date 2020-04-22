@@ -71,7 +71,7 @@ export class ChipGroupToolbarItem extends React.Component<ChipGroupToolbarItemPr
 
     if (React.Children.count(children)) {
       const renderChipGroup = (id: string, HeadingLevel: any) => (
-        <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...rest}>
+        <ul className={css(styles.chipGroup, styles.modifiers.category, className)} {...rest}>
           <li>
             {this.state.isTooltipVisible ? (
               <Tooltip position={tooltipPosition} content={categoryName}>

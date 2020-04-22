@@ -24,8 +24,6 @@ export const DropdownContext = React.createContext<{
   sectionTitleClass?: string;
   sectionComponent?: string;
   disabledClass?: string;
-  hoverClass?: string;
-  separatorClass?: string;
   menuComponent?: string;
 }>({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -42,8 +40,6 @@ export const DropdownContext = React.createContext<{
   sectionTitleClass: '',
   sectionComponent: 'section',
   disabledClass: '',
-  hoverClass: '',
-  separatorClass: '',
   menuComponent: 'ul'
 });
 

@@ -84,7 +84,7 @@ function generateTokens() {
   );
 
   // various lookup tables to resolve variables
-  const variables = readFileSync(require.resolve('@patternfly/patternfly/_variables.scss'), 'utf8');
+  const variables = readFileSync(require.resolve('@patternfly/patternfly/base/_variables.scss'), 'utf8');
   const cssGlobalsToScssVarsMap = getRegexMatches(variables, /(--pf-.*):\s*(?:#{)?(\$?pf-[\w- _]+)}?;/g);
 
   // contains default values and mappings to colors.scss for color values
@@ -99,7 +99,7 @@ function generateTokens() {
   const scssColorsMap = getRegexMatches(scssColorVariables, /(\$.*):\s*([^\s]+)\s*(?:!default);/g);
 
   // contains default values and mappings to colors.scss for color values
-  const cssGlobalVariables = readFileSync(require.resolve('@patternfly/patternfly/patternfly-variables.css'), 'utf8');
+  const cssGlobalVariables = readFileSync(require.resolve('@patternfly/patternfly/base/patternfly-variables.css'), 'utf8');
   const cssGlobalVariablesMap = getRegexMatches(cssGlobalVariables, /(--pf-[\w-]*):\s*([\w -_]+);/g);
 
   const combinedScssVarsColorsMap = {

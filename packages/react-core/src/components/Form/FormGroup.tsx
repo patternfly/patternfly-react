@@ -57,27 +57,23 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   );
 
   return (
-    <FormContext.Consumer>
-      {({ isHorizontal }: { isHorizontal: boolean }) => (
-        <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
-          {label && (
-            <label className={css(styles.formLabel)} htmlFor={fieldId}>
-              <span className={css(styles.formLabelText)}>{label}</span>
-              {isRequired && (
-                <span className={css(styles.formLabelRequired)} aria-hidden="true">
-                  {ASTERISK}
-                </span>
-              )}
-            </label>
+    <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
+      {label && (
+        <label className={css(styles.formLabel)} htmlFor={fieldId}>
+          <span className={css(styles.formLabelText)}>{label}</span>
+          {isRequired && (
+            <span className={css(styles.formLabelRequired)} aria-hidden="true">
+              {ASTERISK}
+            </span>
           )}
-          {isHorizontal ? <div className={css(styles.formHorizontalGroup)}>{children}</div> : children}
-          {validated === ValidatedOptions.error && helperTextInvalid
-            ? inValidHelperText
-            : validated !== ValidatedOptions.error && helperText
-            ? validHelperText
-            : ''}
-        </div>
+        </label>
       )}
-    </FormContext.Consumer>
+      {children}
+      {validated === ValidatedOptions.error && helperTextInvalid
+        ? inValidHelperText
+        : validated !== ValidatedOptions.error && helperText
+        ? validHelperText
+        : ''}
+    </div>
   );
 };

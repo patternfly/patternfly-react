@@ -21,11 +21,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
-  /** Forces display of the focused state of the options menu button */
-  isFocused?: boolean;
-  /** Forces display of the hover state of the options menu button */
-  isHovered?: boolean;
-  /** Forces display of the active state of the options menu button */
+  /** TODO: Use once core reimplements. Forces display of the active state of the options menu button */
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;
@@ -46,11 +42,9 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   onToggle = () => null as any,
   isOpen = false,
   isPlain = false,
-  isHovered = false,
-  isActive = false,
-  isFocused = false,
   isDisabled = false,
   /* eslint-disable @typescript-eslint/no-unused-vars */
+  isActive = false,
   'aria-haspopup': ariaHasPopup,
   parentRef,
   onEnter,
@@ -63,9 +57,6 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       styles.optionsMenuToggle,
       styles.modifiers.text,
       isPlain && styles.modifiers.plain,
-      isHovered && styles.modifiers.hover,
-      isActive && styles.modifiers.active,
-      isFocused && styles.modifiers.focus,
       isDisabled && styles.modifiers.disabled
     )}
     {...props}

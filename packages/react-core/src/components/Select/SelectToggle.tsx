@@ -25,11 +25,7 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   handleTypeaheadKeys?: (position: string) => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
-  /** Forces active state */
+  /** TODO: Use once core reimplements. Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
@@ -53,7 +49,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   static defaultProps: PickOptional<SelectToggleProps> = {
     className: '',
     isOpen: false,
-    isFocused: false,
     isHovered: false,
     isActive: false,
     isPlain: false,
@@ -158,9 +153,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       className,
       children,
       isOpen,
-      isFocused,
       isActive,
-      isHovered,
       isPlain,
       isDisabled,
       variant,
@@ -200,10 +193,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             type={type}
             className={css(
               styles.selectToggle,
-              isFocused && styles.modifiers.focus,
-              isHovered && styles.modifiers.hover,
               isDisabled && styles.modifiers.disabled,
-              isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               className
             )}
@@ -227,9 +217,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             ref={this.toggle as React.RefObject<HTMLDivElement>}
             className={css(
               styles.selectToggle,
-              isFocused && styles.modifiers.focus,
-              isHovered && styles.modifiers.hover,
-              isActive && styles.modifiers.active,
               isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
               isTypeahead && styles.modifiers.typeahead,
