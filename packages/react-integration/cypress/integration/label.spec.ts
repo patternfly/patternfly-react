@@ -10,8 +10,4 @@ describe('Label Demo Test', () => {
       .first()
       .contains('Default label');
   });
-
-  it('Verify compact label', () => {
-    cy.get('.pf-m-compact').contains('Compact label');
-  });
 });

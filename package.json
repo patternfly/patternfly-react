@@ -91,7 +91,7 @@
     "prettier": "node node_modules/.bin/prettier --write \"packages/**/*.{js,jsx,ts,tsx}\" \"scripts/**/*.{js,jsx,ts,tsx}\"",
     "serve:docs": "lerna run serve",
     "serve:integration": "lerna run serve:demo-app",
-    "start": "concurrently --kill-others \"yarn build && yarn build:esm --watch\" \"yarn workspace @patternfly/react-docs develop\"",
+    "start": "concurrently --kill-others \"yarn build && yarn watch\" \"yarn workspace @patternfly/react-docs develop\"",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
     "start:pf4": "yarn start",
@@ -102,7 +102,8 @@
     "test:current": "jest --watch",
     "test:integration": "yarn workspace @patternfly/react-integration test:integration",
     "test:watch": "jest --watchAll",
-    "uninstall": "find . -name node_modules -type d | xargs rm -rf"
+    "uninstall": "find . -name node_modules -type d | xargs rm -rf",
+    "watch": "yarn build:esm --watch"
   },
   "config": {
     "commitizen": {
