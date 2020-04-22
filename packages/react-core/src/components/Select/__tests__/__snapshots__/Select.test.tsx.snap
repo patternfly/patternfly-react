@@ -5917,21 +5917,24 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   type="button"
                 >
                   Mr
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-select__menu-item-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
                   >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </li>
               <li
@@ -5945,21 +5948,24 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   type="button"
                 >
                   Mrs
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-select__menu-item-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
                   >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </li>
               <li
@@ -6339,34 +6345,36 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               type="button"
             >
               Mr
-              <CheckIcon
-                aria-hidden={true}
+              <span
                 className="pf-c-select__menu-item-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
+                <CheckIcon
                   aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-select__menu-item-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                    transform=""
-                  />
-                </svg>
-              </CheckIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                      transform=""
+                    />
+                  </svg>
+                </CheckIcon>
+              </span>
             </button>
           </li>
         </SelectOption>
@@ -6401,34 +6409,36 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               type="button"
             >
               Mrs
-              <CheckIcon
-                aria-hidden={true}
+              <span
                 className="pf-c-select__menu-item-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
+                <CheckIcon
                   aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-select__menu-item-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                    transform=""
-                  />
-                </svg>
-              </CheckIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                      transform=""
+                    />
+                  </svg>
+                </CheckIcon>
+              </span>
             </button>
           </li>
         </SelectOption>
@@ -7525,21 +7535,24 @@ exports[`typeahead select renders selected successfully 1`] = `
                   type="button"
                 >
                   Mr
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-select__menu-item-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
                   >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </li>
               <li
@@ -7732,34 +7745,36 @@ exports[`typeahead select renders selected successfully 1`] = `
               type="button"
             >
               Mr
-              <CheckIcon
-                aria-hidden={true}
+              <span
                 className="pf-c-select__menu-item-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
+                <CheckIcon
                   aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-select__menu-item-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                    transform=""
-                  />
-                </svg>
-              </CheckIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                      transform=""
+                    />
+                  </svg>
+                </CheckIcon>
+              </span>
             </button>
           </li>
         </SelectOption>

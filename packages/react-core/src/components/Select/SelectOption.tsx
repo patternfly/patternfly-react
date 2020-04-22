@@ -130,7 +130,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   type="button"
                 >
                   {children || value.toString()}
-                  {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
+                  {isSelected && (
+                    <span className={css(styles.selectMenuItemIcon)}>
+                      <CheckIcon aria-hidden />
+                    </span>
+                  )}
                 </Component>
               </li>
             )}
