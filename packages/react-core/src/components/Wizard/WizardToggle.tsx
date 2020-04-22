@@ -69,7 +69,9 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
           </li>
           {activeStepSubName && <li className={css(styles.wizardToggleListItem)}>{activeStepSubName}</li>}
         </ol>
-        <CaretDownIcon className={css(styles.wizardToggleIcon)} aria-hidden="true" />
+        <span className={css(styles.wizardToggleIcon)}>
+          <CaretDownIcon aria-hidden="true" />
+        </span>
       </button>
       <div className={css(styles.wizardOuterWrap)}>
         <div className={css(styles.wizardInnerWrap)}>
