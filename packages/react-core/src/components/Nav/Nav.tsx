@@ -44,7 +44,7 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
     className: '',
     onSelect: () => undefined,
     onToggle: () => undefined,
-    theme: 'light'
+    theme: 'dark'
   };
 
   state = {
@@ -123,15 +123,12 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
-          updateScrollButtonState: this.updateScrollButtonState
         }}
       >
         <nav
           className={css(
             styles.nav,
-            theme === 'dark' && styles.modifiers.dark,
-            showLeftScrollButton && styles.modifiers.start,
-            showRightScrollButton && styles.modifiers.end,
+            theme === 'light' && styles.modifiers.light,
             className
           )}
           aria-label={

@@ -169,7 +169,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
     return (
       <DropdownContext.Consumer>
-        {({ onSelect, itemClass, disabledClass, hoverClass }) => {
+        {({ onSelect, itemClass, disabledClass }) => {
           if (this.props.role === 'separator') {
             classes = css(variant === 'icon' && styles.modifiers.icon, className);
           } else {
@@ -177,7 +177,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               variant === 'icon' && styles.modifiers.icon,
               className,
               isDisabled && disabledClass,
-              isHovered && hoverClass,
               itemClass
             );
           }

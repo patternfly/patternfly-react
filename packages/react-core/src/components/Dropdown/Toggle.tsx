@@ -117,9 +117,6 @@ export class Toggle extends React.Component<ToggleProps> {
       className,
       children,
       isOpen,
-      isFocused,
-      isActive,
-      isHovered,
       isDisabled,
       isPlain,
       isPrimary,
@@ -127,6 +124,7 @@ export class Toggle extends React.Component<ToggleProps> {
       onToggle,
       'aria-haspopup': ariaHasPopup,
       /* eslint-disable @typescript-eslint/no-unused-vars */
+      isActive,
       bubbleEvent,
       onEnter,
       parentRef,

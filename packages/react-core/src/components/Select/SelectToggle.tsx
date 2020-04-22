@@ -49,7 +49,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   static defaultProps: PickOptional<SelectToggleProps> = {
     className: '',
     isOpen: false,
-    isHovered: false,
     isActive: false,
     isPlain: false,
     isDisabled: false,

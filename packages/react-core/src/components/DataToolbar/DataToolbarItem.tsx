@@ -18,10 +18,9 @@ export enum DataToolbarItemVariant {
 export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar item */
   className?: string;
-  /** A type modifier which modifies spacing specifically depending on the type of item */
+  /** TODO: Support 'separator' element as a <Divider component="div" variant="horizontal" />. A type modifier which modifies spacing specifically depending on the type of item */
   variant?:
     | DataToolbarItemVariant
-    | 'separator'
     | 'bulk-select'
     | 'overflow-menu'
     | 'pagination'
@@ -43,32 +42,27 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
   id,
   children,
   ...props
-}: DataToolbarItemProps) => {
-  const labelVariant = variant === 'label';
-
-  return (
-    <div
-      className={css(
-        styles.dataToolbarItem,
-        variant &&
-          styles.modifiers[
-            toCamel(variant) as
-              | 'separator'
-              | 'bulkSelect'
-              | 'overflowMenu'
-              | 'pagination'
-              | 'searchFilter'
-              | 'label'
-              | 'chipGroup'
-          ],
-        formatBreakpointMods(breakpointMods, styles),
-        className
-      )}
-      {...(labelVariant && { 'aria-hidden': true })}
-      id={id}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
+}: DataToolbarItemProps) => (
+  <div
+    className={css(
+      styles.dataToolbarItem,
+      variant &&
+        styles.modifiers[
+          toCamel(variant) as
+            | 'bulkSelect'
+            | 'overflowMenu'
+            | 'pagination'
+            | 'searchFilter'
+            | 'label'
+            | 'chipGroup'
+        ],
+      formatBreakpointMods(breakpointMods, styles),
+      className
+    )}
+    {...(variant === 'label' && { 'aria-hidden': true })}
+    id={id}
+    {...props}
+  >
+    {children}
+  </div>
+);

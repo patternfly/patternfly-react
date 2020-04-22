@@ -50,7 +50,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isPlaceholder: false,
     isSelected: false,
     isChecked: false,
-    isFocused: false,
     isNoResultsOption: false,
     component: 'button',
     onClick: () => {},

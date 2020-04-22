@@ -10,12 +10,8 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
-  /** Forces display of the hover state of the options menu */
-  isFocused?: boolean;
-  /** Forces display of the hover state of the options menu */
-  isHovered?: boolean;
   isSplitButton?: boolean;
-  /** Forces display of the active state of the options menu */
+  /** TODO: Use once core reimplements. Forces display of the active state of the options menu */
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;
@@ -33,15 +29,13 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
 
 export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({
   isPlain = false,
-  isHovered = false,
-  isActive = false,
-  isFocused = false,
   isDisabled = false,
   isOpen = false,
   parentId = '',
   toggleTemplate = <React.Fragment />,
   hideCaret = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  isActive = false,
   isSplitButton = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type,
@@ -56,9 +50,7 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
         isPlain={isPlain}
         isOpen={isOpen}
         isDisabled={isDisabled}
-        isHovered={isHovered}
         isActive={isActive}
-        isFocused={isFocused}
         id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
         aria-haspopup="listbox"
         aria-label={ariaLabel}

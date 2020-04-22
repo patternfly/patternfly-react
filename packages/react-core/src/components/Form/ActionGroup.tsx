@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import { FormContext } from './FormContext';
 
 export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as ActionGroup content. */
