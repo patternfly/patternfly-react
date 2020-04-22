@@ -41,7 +41,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     value={{
       onSelect: event => onSelect && onSelect(event),
       toggleTextClass: styles.dropdownToggleText,
-      toggleIconClass: styles.dropdownToggleIcon,
+      toggleIconClass: styles.dropdownToggleImage,
+      toggleIndicatorClass: styles.dropdownToggleIcon,
       menuClass: styles.dropdownMenu,
       itemClass: styles.dropdownMenuItem,
       toggleClass: styles.dropdownToggle,
@@ -50,7 +51,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       sectionClass: styles.dropdownGroup,
       sectionTitleClass: styles.dropdownGroupTitle,
       sectionComponent: 'section',
-      disabledClass: styles.modifiers.disabled
+      disabledClass: styles.modifiers.disabled,
+      plainTextClass: styles.modifiers.text,
     }}
   >
     <DropdownWithContext {...props} />

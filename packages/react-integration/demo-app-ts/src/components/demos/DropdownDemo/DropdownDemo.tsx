@@ -14,6 +14,7 @@ import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
+import UserIcon from '@patternfly/react-icons/dist/js/icons/user-icon';
 
 interface DropdownState {
   isOpen: boolean;
@@ -146,7 +147,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
           id="dropdown"
           onSelect={this.onSelect}
           toggle={
-            <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+            <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon} icon={<UserIcon />}>
               Dropdown
             </DropdownToggle>
           }

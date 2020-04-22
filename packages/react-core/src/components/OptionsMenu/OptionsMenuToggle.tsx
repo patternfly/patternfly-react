@@ -46,7 +46,7 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
   <DropdownContext.Consumer>
     {({ id: contextId }) => (
       <DropdownToggle
-        {...((isPlain || hideCaret) && { iconComponent: null })}
+        {...((isPlain || hideCaret) && { toggleIndicator: null })}
         {...props}
         isPlain={isPlain}
         isOpen={isOpen}

@@ -10,11 +10,13 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
       "itemClass": "pf-c-dropdown__menu-item",
       "menuClass": "pf-c-dropdown__menu",
       "onSelect": [Function],
+      "plainTextClass": "pf-m-text",
       "sectionClass": "pf-c-dropdown__group",
       "sectionComponent": "section",
       "sectionTitleClass": "pf-c-dropdown__group-title",
       "toggleClass": "pf-c-dropdown__toggle",
-      "toggleIconClass": "pf-c-dropdown__toggle-icon",
+      "toggleIconClass": "pf-c-dropdown__toggle-image",
+      "toggleIndicatorClass": "pf-c-dropdown__toggle-icon",
       "toggleTextClass": "pf-c-dropdown__toggle-text",
     }
   }

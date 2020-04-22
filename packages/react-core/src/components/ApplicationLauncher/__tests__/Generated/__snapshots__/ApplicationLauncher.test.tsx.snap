@@ -64,11 +64,11 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
       toggle={
         <DropdownToggle
           aria-label="'Application launcher'"
-          iconComponent={null}
           id="string"
           isDisabled={false}
           isOpen={false}
           onToggle={[Function]}
+          toggleIndicator={null}
         >
           <div>
             ReactNode

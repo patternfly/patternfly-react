@@ -26,8 +26,10 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   isDisabled?: boolean;
   /** Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
-  /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  iconComponent?: React.ElementType | null;
+  /** An image to display within the dropdown toggle, appearing before any component children */
+  icon?: React.ReactNode;
+  /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */
+  toggleIndicator?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems?: React.ReactNode[];
   /** Variant of split button toggle */
@@ -55,7 +57,8 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isActive = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
-  iconComponent: IconComponent = CaretDownIcon,
+  icon = null,
+  toggleIndicator: ToggleIndicator = CaretDownIcon,
   splitButtonItems,
   splitButtonVariant = 'checkbox',
   'aria-haspopup': ariaHasPopup,
@@ -65,7 +68,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
 }: DropdownToggleProps) => {
   const toggle = (
     <DropdownContext.Consumer>
-      {({ toggleTextClass, toggleIconClass }) => (
+      {({ toggleTextClass, toggleIndicatorClass, toggleIconClass }) => (
         <Toggle
           {...props}
           id={id}
@@ -80,8 +83,9 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           aria-haspopup={ariaHasPopup}
           {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
         >
-          {children && <span className={IconComponent && css(toggleTextClass)}>{children}</span>}
-          {IconComponent && <IconComponent className={css(children && toggleIconClass)} />}
+          {icon && <span className={css(toggleIconClass)}>{icon}</span>}
+          {children && <span className={ToggleIndicator && css(toggleTextClass)}>{children}</span>}
+          {ToggleIndicator && <ToggleIndicator className={css(children && toggleIndicatorClass)} />}
         </Toggle>
       )}
     </DropdownContext.Consumer>

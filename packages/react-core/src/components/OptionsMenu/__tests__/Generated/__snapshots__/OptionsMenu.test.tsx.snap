@@ -13,7 +13,7 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
       "menuComponent": "ul",
       "onSelect": [Function],
       "toggleClass": "pf-c-options-menu__toggle",
-      "toggleIconClass": "pf-c-options-menu__toggle-icon",
+      "toggleIndicatorClass": "pf-c-options-menu__toggle-icon",
       "toggleTextClass": "pf-c-options-menu__toggle-text",
     }
   }
