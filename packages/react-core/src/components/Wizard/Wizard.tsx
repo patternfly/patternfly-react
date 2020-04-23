@@ -13,8 +13,6 @@ import { WizardNav } from './WizardNav';
 import { WizardNavItem } from './WizardNavItem';
 import { WizardContextProvider } from './WizardContext';
 import { PickOptional } from '../../helpers/typeUtils';
-// Can't use ES6 imports :(
-// The types for it are also wrong, we should probably ditch this dependency.
 import { FocusTrap } from '../../helpers';
 
 export interface WizardStep {
@@ -52,10 +50,6 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isInPage?: boolean;
   /** If true makes the navigation more compact */
   isCompactNav?: boolean;
-  /** True to set full height wizard */
-  isFullHeight?: boolean;
-  /** True to set full width wizard */
-  isFullWidth?: boolean;
   /** Custom width of the wizard */
   width?: number | string;
   /** Custom height of the wizard */
@@ -109,8 +103,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     isOpen: false,
     isInPage: false,
     isCompactNav: false,
-    isFullHeight: false,
-    isFullWidth: false,
     title: '',
     description: '',
     className: '',
@@ -340,8 +332,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isOpen,
       isInPage,
-      isFullHeight,
-      isFullWidth,
       width,
       height,
       title,
@@ -373,8 +363,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const computedSteps: WizardStep[] = this.initSteps(steps);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep && activeStep.enableNext !== undefined ? activeStep.enableNext : true;
-    const setFullWidth = isFullWidth || width;
-    const setFullHeight = isFullHeight || height;
 
     const nav = (isWizardNavOpen: boolean) => (
       <WizardNav isOpen={isWizardNavOpen} aria-label={navAriaLabel}>
@@ -465,11 +453,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
           {...rest}
           className={css(
             styles.wizard,
-            !this.isModal && styles.modifiers.inPage,
             isCompactNav && 'pf-m-compact-nav',
             activeStep.isFinishedStep && 'pf-m-finished',
-            setFullWidth && styles.modifiers.fullWidth,
-            setFullHeight && styles.modifiers.fullHeight,
             className
           )}
           {...(this.isModal && {

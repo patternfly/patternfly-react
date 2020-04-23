@@ -200,9 +200,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             sectionClass: styles.appLauncherGroup,
             sectionTitleClass: styles.appLauncherGroupTitle,
             sectionComponent: 'section',
-            disabledClass: styles.modifiers.disabled,
-            hoverClass: styles.modifiers.hover,
-            separatorClass: styles.appLauncherSeparator
+            disabledClass: styles.modifiers.disabled
           }}
         >
           <DropdownWithContext

@@ -64,7 +64,7 @@ exports[`Check dark page against snapshot 1`] = `
       theme="dark"
     >
       <div
-        className="pf-c-page__sidebar pf-m-dark pf-m-expanded"
+        className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
         <div
@@ -566,8 +566,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   }
   skipToContent={
     <SkipToContent
-      className=""
-      component="a"
       href="#main-content-page-layout-test-nav"
       show={false}
     >
@@ -581,8 +579,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
     id="PageId"
   >
     <SkipToContent
-      className=""
-      component="a"
       href="#main-content-page-layout-test-nav"
       show={false}
     >

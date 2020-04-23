@@ -1,10 +1,7 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Nav/nav';
-import { css } from '@patternfly/react-styles';
+import { Divider, DividerProps } from '../Divider';
 
-export const NavItemSeparator: React.FunctionComponent<React.HTMLProps<HTMLLIElement>> = ({
-  className = '',
+export const NavItemSeparator: React.FunctionComponent<DividerProps> = ({
+  component = 'li',
   ...props
-}: React.HTMLProps<HTMLLIElement>) => (
-  <li className={css(styles.navSeparator, className)} role="separator" {...props} />
-);
+}: DividerProps) => <Divider component={component} {...props} />;

@@ -169,8 +169,6 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 id="pf-toggle-id-4"
                                 isActive={false}
                                 isDisabled={false}
-                                isFocused={false}
-                                isHovered={false}
                                 isOpen={false}
                                 isPlain={false}
                                 onClose={[Function]}
@@ -285,7 +283,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               class="pf-c-data-toolbar__item pf-m-chip-group"
                             >
                               <ul
-                                class="pf-c-chip-group pf-m-toolbar"
+                                class="pf-c-chip-group pf-m-category"
                               >
                                 <li>
                                   <h4
@@ -379,7 +377,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               class="pf-c-data-toolbar__item pf-m-chip-group"
                             >
                               <ul
-                                class="pf-c-chip-group pf-m-toolbar"
+                                class="pf-c-chip-group pf-m-category"
                               >
                                 <li>
                                   <h4
@@ -472,7 +470,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     prefix="pf-random-id-"
                                   >
                                     <ul
-                                      className="pf-c-chip-group pf-m-toolbar"
+                                      className="pf-c-chip-group pf-m-category"
                                     >
                                       <li>
                                         <h4
@@ -731,8 +729,6 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                 id="pf-toggle-id-5"
                                 isActive={false}
                                 isDisabled={false}
-                                isFocused={false}
-                                isHovered={false}
                                 isOpen={false}
                                 isPlain={false}
                                 onClose={[Function]}
@@ -847,7 +843,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               class="pf-c-data-toolbar__item pf-m-chip-group"
                             >
                               <ul
-                                class="pf-c-chip-group pf-m-toolbar"
+                                class="pf-c-chip-group pf-m-category"
                               >
                                 <li>
                                   <h4
@@ -941,7 +937,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                               class="pf-c-data-toolbar__item pf-m-chip-group"
                             >
                               <ul
-                                class="pf-c-chip-group pf-m-toolbar"
+                                class="pf-c-chip-group pf-m-category"
                               >
                                 <li>
                                   <h4
@@ -1034,7 +1030,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                                     prefix="pf-random-id-"
                                   >
                                     <ul
-                                      className="pf-c-chip-group pf-m-toolbar"
+                                      className="pf-c-chip-group pf-m-category"
                                     >
                                       <li>
                                         <h4
@@ -1280,7 +1276,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 class="pf-c-data-toolbar__item pf-m-chip-group"
               >
                 <ul
-                  class="pf-c-chip-group pf-m-toolbar"
+                  class="pf-c-chip-group pf-m-category"
                 >
                   <li>
                     <h4
@@ -1374,7 +1370,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                 class="pf-c-data-toolbar__item pf-m-chip-group"
               >
                 <ul
-                  class="pf-c-chip-group pf-m-toolbar"
+                  class="pf-c-chip-group pf-m-category"
                 >
                   <li>
                     <h4
@@ -1975,8 +1971,6 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               id="pf-toggle-id-0"
                               isActive={false}
                               isDisabled={false}
-                              isFocused={false}
-                              isHovered={false}
                               isOpen={false}
                               isPlain={false}
                               onClose={[Function]}
@@ -2138,8 +2132,6 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                               id="pf-toggle-id-1"
                               isActive={false}
                               isDisabled={false}
-                              isFocused={false}
-                              isHovered={false}
                               isOpen={false}
                               isPlain={false}
                               onClose={[Function]}

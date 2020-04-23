@@ -3,6 +3,7 @@
 exports[`SkipToContent should match snapshot (auto-generated) 1`] = `
 <a
   className="pf-c-button pf-m-primary pf-c-skip-to-content ''"
+  component="a"
   href="string"
 >
   <div>

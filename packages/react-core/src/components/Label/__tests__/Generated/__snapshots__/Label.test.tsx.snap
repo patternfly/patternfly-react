@@ -3,6 +3,7 @@
 exports[`Label should match snapshot (auto-generated) 1`] = `
 <span
   className="pf-c-label ''"
+  isCompact={false}
 >
   <div>
     ReactNode

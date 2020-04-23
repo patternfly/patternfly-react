@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import globalBreakpointMd from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
 import { debounce } from '../../helpers/util';
 
 export enum PageLayouts {
@@ -101,14 +101,11 @@ export class Page extends React.Component<PageProps, PageState> {
     const { onPageResize } = this.props;
     const windowSize = window.innerWidth;
     // eslint-disable-next-line radix
-    const mobileView = windowSize < Number.parseInt(globalBreakpointMd.value, 10);
+    const mobileView = windowSize < Number.parseInt(globalBreakpointXl.value, 10);
     if (onPageResize) {
       onPageResize({ mobileView, windowSize });
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    this.setState(prevState => ({
-      mobileView
-    }));
+    this.setState({ mobileView });
   };
 
   onNavToggleMobile = () => {

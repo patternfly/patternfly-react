@@ -1,11 +1,11 @@
 import React from 'react';
-import { Expandable } from '@patternfly/react-core';
+import { ExpandableSection } from '@patternfly/react-core';
 
-interface ExpandableState {
+interface ExpandableSectionState {
   isExpanded: boolean;
 }
 
-export class ExpandableDemo extends React.Component<null, ExpandableState> {
+export class ExpandableSectionDemo extends React.Component<null, ExpandableSectionState> {
   state = {
     isExpanded: false
   };
@@ -21,20 +21,22 @@ export class ExpandableDemo extends React.Component<null, ExpandableState> {
     return (
       <React.Fragment>
         <h1> Simple Expandable Example: </h1>
-        <Expandable
+        <ExpandableSection
           toggleText={isExpanded ? 'Show Less' : 'Show More'}
           onToggle={this.onToggle}
           isExpanded={isExpanded}
         >
           This content is visible only when the component is expanded.
-        </Expandable>
+        </ExpandableSection>
         <br />
         <h1> Uncontrolled Expandable Example: </h1>
-        <Expandable toggleText="Show More">This content is visible only when the component is expanded.</Expandable>
-        <h1> Uncontrolled Dynamic Expandable Example: </h1>
-        <Expandable toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+        <ExpandableSection toggleText="Show More">
           This content is visible only when the component is expanded.
-        </Expandable>
+        </ExpandableSection>
+        <h1> Uncontrolled Dynamic Expandable Example: </h1>
+        <ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+          This content is visible only when the component is expanded.
+        </ExpandableSection>
       </React.Fragment>
     );
   }

@@ -20,11 +20,7 @@ export interface ContextSelectorToggleProps {
   onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
-  /** Forces active state */
+  /** TODO: Use once core reimplements. Forces active state */
   isActive?: boolean;
 }
 
@@ -35,8 +31,6 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     isOpen: false,
     onEnter: () => undefined as any,
     parentRef: null as any,
-    isFocused: false,
-    isHovered: false,
     isActive: false,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onToggle: (event: any, value: boolean) => undefined as any
@@ -95,12 +89,10 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       className,
       toggleText,
       isOpen,
-      isFocused,
-      isActive,
-      isHovered,
       onToggle,
       id,
       /* eslint-disable @typescript-eslint/no-unused-vars */
+      isActive,
       onEnter,
       parentRef,
       /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -111,13 +103,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         {...props}
         id={id}
         ref={this.toggle}
-        className={css(
-          styles.contextSelectorToggle,
-          isFocused && styles.modifiers.focus,
-          isHovered && styles.modifiers.hover,
-          isActive && styles.modifiers.active,
-          className
-        )}
+        className={css(styles.contextSelectorToggle, className)}
         type="button"
         onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}

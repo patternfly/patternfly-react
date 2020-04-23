@@ -407,13 +407,9 @@ exports[`FormGroup component should render horizontal form group variant 1`] = `
             label
           </span>
         </label>
-        <div
-          className="pf-c-form__horizontal-group"
-        >
-          <input
-            id="label-id"
-          />
-        </div>
+        <input
+          id="label-id"
+        />
         <div
           aria-live="polite"
           className="pf-c-form__helper-text"

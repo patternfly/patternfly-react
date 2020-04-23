@@ -7,17 +7,10 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   children: React.ReactNode;
   /** Additional classes added to the label. */
   className?: string;
-  /** Flag to show if the label is compact. */
-  isCompact?: boolean;
 }
 
-export const Label: React.FunctionComponent<LabelProps> = ({
-  children,
-  className = '',
-  isCompact = false,
-  ...props
-}: LabelProps) => (
-  <span {...props} className={css(styles.label, className, isCompact && styles.modifiers.compact)}>
+export const Label: React.FunctionComponent<LabelProps> = ({ children, className = '', ...props }: LabelProps) => (
+  <span {...props} className={css(styles.label, className)}>
     {children}
   </span>
 );

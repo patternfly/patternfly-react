@@ -1,4 +1,4 @@
-describe('Chip Group Demo Test', () => {
+describe('Clipboard Copy Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#clipboard-copy-demo-nav-item-link').click();
@@ -10,7 +10,7 @@ describe('Chip Group Demo Test', () => {
   });
 
   it('Verify content expands', () => {
-    cy.get('.pf-c-clipboard-copy__group-toggle').click();
-    cy.get('.pf-c-clipboard-copy').should('have.class', 'pf-m-expanded');
+    cy.get('.pf-c-clipboard-copy__group [id*="toggle-"]').click();
+    cy.get('.pf-c-clipboard-copy__expandable-content').should('exist');
   });
 });

@@ -18,11 +18,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: HTMLElement;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
-  /** Forces active state */
+  /** TODO: Use once core reimplements. Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
@@ -54,12 +50,11 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   className = '',
   isOpen = false,
   parentRef = null,
-  isFocused = false,
-  isHovered = false,
-  isActive = false,
   isDisabled = false,
   isPlain = false,
   isPrimary = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  isActive = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
   icon = null,
@@ -80,8 +75,6 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           className={className}
           isOpen={isOpen}
           parentRef={parentRef}
-          isFocused={isFocused}
-          isHovered={isHovered}
           isActive={isActive}
           isDisabled={isDisabled}
           isPlain={isPlain}

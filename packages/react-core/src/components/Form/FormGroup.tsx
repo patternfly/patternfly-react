@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
-import { FormContext } from './FormContext';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 
@@ -14,7 +13,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   label?: React.ReactNode;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
-  /** Sets the FormGroup validated. If you set to success, text color of helper text will be modified to indicate valid state.
+  /**
+   * Sets the FormGroup validated. If you set to success, text color of helper text will be modified to indicate valid state.
    * If set to error,  text color of helper text will be modified to indicate error state.
    */
   validated?: 'success' | 'error' | 'default';
@@ -57,27 +57,23 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   );
 
   return (
-    <FormContext.Consumer>
-      {({ isHorizontal }: { isHorizontal: boolean }) => (
-        <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
-          {label && (
-            <label className={css(styles.formLabel)} htmlFor={fieldId}>
-              <span className={css(styles.formLabelText)}>{label}</span>
-              {isRequired && (
-                <span className={css(styles.formLabelRequired)} aria-hidden="true">
-                  {ASTERISK}
-                </span>
-              )}
-            </label>
+    <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
+      {label && (
+        <label className={css(styles.formLabel)} htmlFor={fieldId}>
+          <span className={css(styles.formLabelText)}>{label}</span>
+          {isRequired && (
+            <span className={css(styles.formLabelRequired)} aria-hidden="true">
+              {ASTERISK}
+            </span>
           )}
-          {isHorizontal ? <div className={css(styles.formHorizontalGroup)}>{children}</div> : children}
-          {validated === ValidatedOptions.error && helperTextInvalid
-            ? inValidHelperText
-            : validated !== ValidatedOptions.error && helperText
-            ? validHelperText
-            : ''}
-        </div>
+        </label>
       )}
-    </FormContext.Consumer>
+      {children}
+      {validated === ValidatedOptions.error && helperTextInvalid
+        ? inValidHelperText
+        : validated !== ValidatedOptions.error && helperText
+        ? validHelperText
+        : ''}
+    </div>
   );
 };

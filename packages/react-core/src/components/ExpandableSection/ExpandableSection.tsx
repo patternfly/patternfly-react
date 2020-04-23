@@ -1,10 +1,10 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/Expandable/expandable';
+import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 
-export interface ExpandableProps {
+export interface ExpandableSectionProps {
   /** Content rendered inside the Expandable Component */
   children: React.ReactNode;
   /** Additional classes added to the Expandable Component */
@@ -19,20 +19,16 @@ export interface ExpandableProps {
   toggleTextCollapsed?: string;
   /** Callback function to toggle the expandable content */
   onToggle?: () => void;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
-  /** Forces active state */
+  /** TODO: Use once core reimplements. Forces active state */
   isActive?: boolean;
 }
 
-interface ExpandableState {
+interface ExpandableSectionState {
   isExpanded: boolean;
 }
 
-export class Expandable extends React.Component<ExpandableProps, ExpandableState> {
-  constructor(props: ExpandableProps) {
+export class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
+  constructor(props: ExpandableSectionProps) {
     super(props);
 
     this.state = {
@@ -40,15 +36,13 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     };
   }
 
-  static defaultProps: PickOptional<ExpandableProps> = {
+  static defaultProps: PickOptional<ExpandableSectionProps> = {
     className: '',
     toggleText: '',
     toggleTextExpanded: '',
     toggleTextCollapsed: '',
     onToggle: (): any => undefined,
-    isFocused: false,
-    isActive: false,
-    isHovered: false
+    isActive: false
   };
 
   private calculateToggleText(
@@ -69,8 +63,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
   render() {
     const {
       onToggle: onToggleProp,
-      isFocused,
-      isHovered,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isActive,
       className,
       toggleText,
@@ -100,22 +93,20 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     );
 
     return (
-      <div {...props} className={css(styles.expandable, propOrStateIsExpanded && styles.modifiers.expanded, className)}>
+      <div
+        {...props}
+        className={css(styles.expandableSection, propOrStateIsExpanded && styles.modifiers.expanded, className)}
+      >
         <button
-          className={css(
-            styles.expandableToggle,
-            isFocused && styles.modifiers.focus,
-            isHovered && styles.modifiers.hover,
-            isActive && styles.modifiers.active
-          )}
+          className={css(styles.expandableSectionToggle)}
           type="button"
           aria-expanded={propOrStateIsExpanded}
           onClick={onToggle}
         >
-          <AngleRightIcon className={css(styles.expandableToggleIcon)} aria-hidden />
+          <AngleRightIcon className={css(styles.expandableSectionToggleIcon)} aria-hidden />
           <span>{computedToggleText}</span>
         </button>
-        <div className={css(styles.expandableContent)} hidden={!propOrStateIsExpanded}>
+        <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded}>
           {children}
         </div>
       </div>

@@ -31,7 +31,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
       >
         <ForwardRef
           aria-controls="pf-tab-section-undefined-string"
-          className="pf-c-tabs__button"
+          className="pf-c-tabs__link"
           id="pf-tab-undefined-string"
           onClick={[Function]}
         />

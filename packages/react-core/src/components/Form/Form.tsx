@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import { FormContext } from './FormContext';
 
 export interface FormProps extends React.HTMLProps<HTMLFormElement> {
   /** Anything that can be rendered as Form content. */
@@ -19,6 +18,6 @@ export const Form: React.FunctionComponent<FormProps> = ({
   ...props
 }: FormProps) => (
   <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, className)}>
-    <FormContext.Provider value={{ isHorizontal }}>{children}</FormContext.Provider>
+    {children}
   </form>
 );

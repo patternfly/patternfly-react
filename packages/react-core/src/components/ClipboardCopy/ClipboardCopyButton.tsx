@@ -1,7 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
-import { css } from '@patternfly/react-styles';
 import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 
 export interface ClipboardCopyButtonProps
@@ -20,7 +19,6 @@ export interface ClipboardCopyButtonProps
 
 export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
   onClick,
-  className = '',
   exitDelay = 100,
   entryDelay = 100,
   maxWidth = '100px',
@@ -39,16 +37,16 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
     position={position}
     content={<div>{children}</div>}
   >
-    <button
+    <Button
       type="button"
+      variant="control"
       onClick={onClick}
-      className={css(styles.clipboardCopyGroupCopy, className)}
       aria-label={ariaLabel}
       id={id}
       aria-labelledby={`${id} ${textId}`}
       {...props}
     >
       <CopyIcon />
-    </button>
+    </Button>
   </Tooltip>
 );

@@ -89,8 +89,6 @@ exports[`KebabToggle basic 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           isPrimary={false}
@@ -549,8 +547,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -979,8 +975,6 @@ exports[`KebabToggle dropup 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -1445,10 +1439,10 @@ exports[`KebabToggle expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="separator"
+                  role="none"
                 >
-                  <div
-                    class="pf-c-dropdown__separator"
+                  <hr
+                    class="pf-c-divider pf-c-dropdown__menu-item"
                   />
                 </li>
                 <li
@@ -1484,8 +1478,6 @@ exports[`KebabToggle expanded 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           isPrimary={false}
@@ -1571,10 +1563,10 @@ exports[`KebabToggle expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="separator"
+                    role="none"
                   >
-                    <div
-                      class="pf-c-dropdown__separator"
+                    <hr
+                      class="pf-c-divider pf-c-dropdown__menu-item"
                     />
                   </li>
                   <li
@@ -1802,8 +1794,8 @@ exports[`KebabToggle expanded 1`] = `
             key=".$separator"
           >
             <InternalDropdownItem
-              className="pf-c-dropdown__separator"
-              component="div"
+              className=""
+              component={[Function]}
               context={
                 Object {
                   "keyHandler": [Function],
@@ -1816,7 +1808,7 @@ exports[`KebabToggle expanded 1`] = `
               isHovered={false}
               isPlainText={false}
               onClick={[Function]}
-              role="separator"
+              role="none"
               tooltipProps={Object {}}
               variant="item"
             >
@@ -1824,11 +1816,15 @@ exports[`KebabToggle expanded 1`] = `
                 className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="separator"
+                role="none"
               >
-                <div
-                  className="pf-c-dropdown__separator"
-                />
+                <Divider
+                  className="pf-c-dropdown__menu-item"
+                >
+                  <hr
+                    className="pf-c-divider pf-c-dropdown__menu-item"
+                  />
+                </Divider>
               </li>
             </InternalDropdownItem>
           </DropdownSeparator>
@@ -2251,8 +2247,6 @@ exports[`KebabToggle plain 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={true}
           isPrimary={false}
@@ -2680,8 +2674,6 @@ exports[`KebabToggle regular 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -3110,8 +3102,6 @@ exports[`KebabToggle right aligned 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -3294,8 +3284,6 @@ exports[`dropdown basic 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           isPrimary={false}
@@ -3773,8 +3761,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -4222,8 +4208,6 @@ exports[`dropdown dropup 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -4708,10 +4692,10 @@ exports[`dropdown expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="separator"
+                  role="none"
                 >
-                  <div
-                    class="pf-c-dropdown__separator"
+                  <hr
+                    class="pf-c-divider pf-c-dropdown__menu-item"
                   />
                 </li>
                 <li
@@ -4746,8 +4730,6 @@ exports[`dropdown expanded 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={true}
           isPlain={false}
           isPrimary={false}
@@ -4838,10 +4820,10 @@ exports[`dropdown expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="separator"
+                    role="none"
                   >
-                    <div
-                      class="pf-c-dropdown__separator"
+                    <hr
+                      class="pf-c-divider pf-c-dropdown__menu-item"
                     />
                   </li>
                   <li
@@ -5075,8 +5057,8 @@ exports[`dropdown expanded 1`] = `
             key=".$separator"
           >
             <InternalDropdownItem
-              className="pf-c-dropdown__separator"
-              component="div"
+              className=""
+              component={[Function]}
               context={
                 Object {
                   "keyHandler": [Function],
@@ -5089,7 +5071,7 @@ exports[`dropdown expanded 1`] = `
               isHovered={false}
               isPlainText={false}
               onClick={[Function]}
-              role="separator"
+              role="none"
               tooltipProps={Object {}}
               variant="item"
             >
@@ -5097,11 +5079,15 @@ exports[`dropdown expanded 1`] = `
                 className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="separator"
+                role="none"
               >
-                <div
-                  className="pf-c-dropdown__separator"
-                />
+                <Divider
+                  className="pf-c-dropdown__menu-item"
+                >
+                  <hr
+                    className="pf-c-divider pf-c-dropdown__menu-item"
+                  />
+                </Divider>
               </li>
             </InternalDropdownItem>
           </DropdownSeparator>
@@ -5534,8 +5520,6 @@ exports[`dropdown primary 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={true}
@@ -5982,8 +5966,6 @@ exports[`dropdown regular 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}
@@ -6431,8 +6413,6 @@ exports[`dropdown right aligned 1`] = `
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
-          isFocused={false}
-          isHovered={false}
           isOpen={false}
           isPlain={false}
           isPrimary={false}

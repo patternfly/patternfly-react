@@ -25,6 +25,6 @@ export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
     <h2 className={css(styles.navSectionTitle)} id={id}>
       {title}
     </h2>
-    <ul className={css(styles.navList)}>{children}</ul>
+    <ul>{children}</ul>
   </section>
 );

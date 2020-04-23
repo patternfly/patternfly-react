@@ -1,16 +1,43 @@
 import React from 'react';
-import { Page, Nav, NavList, NavItem, NavVariants, PageSection, SkipToContent } from '@patternfly/react-core';
-import { AppHeader, AppSidebar } from './components';
+import {
+  Page,
+  Nav,
+  NavList,
+  NavItem,
+  NavVariants,
+  PageSection,
+  SkipToContent,
+  PageSidebar,
+  Avatar,
+  Brand,
+  PageHeader,
+  Button,
+  ButtonVariant,
+  Dropdown,
+  DropdownToggle,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem
+} from '@patternfly/react-core';
+import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+import imgBrand from './assets/images/imgBrand.svg';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+import imgAvatar from './assets/images/imgAvatar.svg';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Demos from './Demos';
 
 interface AppState {
   activeItem: number | string;
+  isNavOpen: boolean;
 }
 
 class App extends React.Component<{}, AppState> {
   state: AppState = {
-    activeItem: ''
+    activeItem: '',
+    isNavOpen: true
   };
 
   private onNavSelect = (selectedItem: { itemId: number | string }) => {
@@ -39,8 +66,7 @@ class App extends React.Component<{}, AppState> {
       {Demos.map(demo => (
         <Route
           path={`/${demo.id}-nav-link`}
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          render={({ match }) => (
+          render={() => (
             <PageSection style={{ zIndex: 2 }} id={`/${demo.id}-page-section`}>
               {React.createElement(demo.componentType)}
             </PageSection>
@@ -55,11 +81,49 @@ class App extends React.Component<{}, AppState> {
   private getSkipToContentLink = () => <SkipToContent href={`#${this.pageId}`}>Skip to Content</SkipToContent>;
 
   render() {
+    const { isNavOpen } = this.state;
+
+    const AppToolbar = (
+      <Toolbar>
+        <ToolbarGroup>
+          <ToolbarItem>
+            <Button id="simple-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+              <CogIcon />
+            </Button>
+          </ToolbarItem>
+        </ToolbarGroup>
+        <ToolbarGroup>
+          <ToolbarItem>
+            <Dropdown
+              isPlain
+              position="right"
+              isOpen={false}
+              toggle={<DropdownToggle onToggle={() => {}}>User</DropdownToggle>}
+              dropdownItems={[]}
+            />
+          </ToolbarItem>
+        </ToolbarGroup>
+      </Toolbar>
+    );
+
+    const AppHeader = (
+      <PageHeader
+        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
+        toolbar={AppToolbar}
+        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        showNavToggle
+        isNavOpen={isNavOpen}
+        onNavToggle={() => this.setState({ isNavOpen: !isNavOpen })}
+      />
+    );
+
+    const AppSidebar = <PageSidebar isNavOpen={isNavOpen} nav={this.getNav()} />;
+
     return (
       <Router>
         <Page
-          header={<AppHeader />}
-          sidebar={<AppSidebar nav={this.getNav()} />}
+          header={AppHeader}
+          sidebar={AppSidebar}
           skipToContent={this.getSkipToContentLink()}
           isManagedSidebar
           mainContainerId={this.pageId}

@@ -9,6 +9,8 @@ exports[`Button should match snapshot (auto-generated) 1`] = `
   data-ouia-component-type="PF4/Button"
   data-ouia-safe={true}
   disabled={false}
+  isFocus={false}
+  isHover={false}
   tabIndex={null}
   type="button"
 >

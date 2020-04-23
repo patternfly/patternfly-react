@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Expandable 1`] = `
+exports[`ExpandableSection 1`] = `
 <div
-  className="pf-c-expandable"
+  className="pf-c-expandable-section"
 >
   <button
-    className="pf-c-expandable__toggle"
+    className="pf-c-expandable-section__toggle"
     onClick={[Function]}
     type="button"
   >
     <AngleRightIcon
       aria-hidden={true}
-      className="pf-c-expandable__toggle-icon"
+      className="pf-c-expandable-section__toggle-icon"
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
@@ -19,7 +19,7 @@ exports[`Expandable 1`] = `
     <span />
   </button>
   <div
-    className="pf-c-expandable__content"
+    className="pf-c-expandable-section__content"
     hidden={true}
   >
     test 
@@ -27,19 +27,19 @@ exports[`Expandable 1`] = `
 </div>
 `;
 
-exports[`Renders Expandable expanded 1`] = `
+exports[`Renders ExpandableSection expanded 1`] = `
 <div
-  className="pf-c-expandable pf-m-expanded"
+  className="pf-c-expandable-section pf-m-expanded"
 >
   <button
     aria-expanded={true}
-    className="pf-c-expandable__toggle"
+    className="pf-c-expandable-section__toggle"
     onClick={[Function]}
     type="button"
   >
     <AngleRightIcon
       aria-hidden={true}
-      className="pf-c-expandable__toggle-icon"
+      className="pf-c-expandable-section__toggle-icon"
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
@@ -47,7 +47,7 @@ exports[`Renders Expandable expanded 1`] = `
     <span />
   </button>
   <div
-    className="pf-c-expandable__content"
+    className="pf-c-expandable-section__content"
     hidden={false}
   >
      test 
@@ -55,18 +55,18 @@ exports[`Renders Expandable expanded 1`] = `
 </div>
 `;
 
-exports[`Renders Uncontrolled Expandable 1`] = `
+exports[`Renders Uncontrolled ExpandableSection 1`] = `
 <div
-  className="pf-c-expandable"
+  className="pf-c-expandable-section"
 >
   <button
-    className="pf-c-expandable__toggle"
+    className="pf-c-expandable-section__toggle"
     onClick={[Function]}
     type="button"
   >
     <AngleRightIcon
       aria-hidden={true}
-      className="pf-c-expandable__toggle-icon"
+      className="pf-c-expandable-section__toggle-icon"
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
@@ -76,7 +76,7 @@ exports[`Renders Uncontrolled Expandable 1`] = `
     </span>
   </button>
   <div
-    className="pf-c-expandable__content"
+    className="pf-c-expandable-section__content"
     hidden={true}
   >
      test 

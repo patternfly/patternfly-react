@@ -15,8 +15,6 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import popoverMaxWidth from '@patternfly/react-tokens/dist/js/c_popover_MaxWidth';
 import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';
-// Can't use ES6 imports :(
-// The types for it are also wrong, we should probably ditch this dependency.
 import { FocusTrap } from '../../helpers';
 
 export enum PopoverPosition {

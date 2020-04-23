@@ -243,7 +243,7 @@ exports[`Chip readonly 1`] = `
     prefix="pf-random-id-"
   >
     <div
-      className="pf-c-chip pf-m-read-only my-chp-cls"
+      className="pf-c-chip my-chp-cls"
       data-ouia-component-id={7}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}

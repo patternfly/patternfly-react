@@ -25,10 +25,6 @@ export interface ToggleProps {
   onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -51,8 +47,6 @@ export class Toggle extends React.Component<ToggleProps> {
   static defaultProps: PickOptional<ToggleProps> = {
     className: '',
     isOpen: false,
-    isFocused: false,
-    isHovered: false,
     isActive: false,
     isDisabled: false,
     isPlain: false,
@@ -123,9 +117,6 @@ export class Toggle extends React.Component<ToggleProps> {
       className,
       children,
       isOpen,
-      isFocused,
-      isActive,
-      isHovered,
       isDisabled,
       isPlain,
       isPrimary,
@@ -133,6 +124,7 @@ export class Toggle extends React.Component<ToggleProps> {
       onToggle,
       'aria-haspopup': ariaHasPopup,
       /* eslint-disable @typescript-eslint/no-unused-vars */
+      isActive,
       bubbleEvent,
       onEnter,
       parentRef,
@@ -150,8 +142,6 @@ export class Toggle extends React.Component<ToggleProps> {
             ref={this.buttonRef}
             className={css(
               isSplitButton ? styles.dropdownToggleButton : toggleClass || styles.dropdownToggle,
-              isFocused && styles.modifiers.focus,
-              isHovered && styles.modifiers.hover,
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               isPrimary && styles.modifiers.primary,

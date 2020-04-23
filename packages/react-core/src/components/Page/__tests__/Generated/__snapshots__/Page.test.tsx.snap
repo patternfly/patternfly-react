@@ -5,7 +5,7 @@ exports[`Page should match snapshot (auto-generated) 1`] = `
   value={
     Object {
       "isManagedSidebar": false,
-      "isNavOpen": true,
+      "isNavOpen": false,
       "onNavToggle": [Function],
     }
   }

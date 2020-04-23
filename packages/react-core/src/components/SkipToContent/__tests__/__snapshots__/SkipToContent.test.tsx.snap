@@ -9,7 +9,7 @@ exports[`Verify Skip To Content 1`] = `
 
 exports[`Verify Skip To Content if forced to display 1`] = `
 <a
-  className="pf-c-button pf-m-primary pf-c-skip-to-content pf-m-focus"
+  className="pf-c-button pf-m-primary pf-c-skip-to-content"
   href="#main-content"
 />
 `;

@@ -112,7 +112,7 @@ export class NavList extends React.Component<NavListProps> {
   render() {
     const { variant, children, className, ariaLeftScroll, ariaRightScroll, ...props } = this.props;
     const variantStyle = {
-      [NavVariants.default]: styles.navList,
+      [NavVariants.default]: '', // TODO: Core wants a BEM element here.
       [NavVariants.simple]: styles.navSimpleList,
       [NavVariants.horizontal]: styles.navHorizontalList,
       [NavVariants.tertiary]: styles.navTertiaryList
@@ -120,7 +120,7 @@ export class NavList extends React.Component<NavListProps> {
     const isHorizontal = variant === NavVariants.horizontal || variant === NavVariants.tertiary;
 
     return (
-      <>
+      <React.Fragment>
         {isHorizontal && (
           <button className={css(styles.navScrollButton)} aria-label={ariaLeftScroll} onClick={this.scrollLeft}>
             <AngleLeftIcon />
@@ -134,7 +134,7 @@ export class NavList extends React.Component<NavListProps> {
             <AngleRightIcon />
           </button>
         )}
-      </>
+      </React.Fragment>
     );
   }
 }

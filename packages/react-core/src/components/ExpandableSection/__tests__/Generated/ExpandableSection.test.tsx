@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Expandable } from '../../Expandable';
+import { ExpandableSection } from '../../ExpandableSection';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('Expandable should match snapshot (auto-generated)', () => {
+it('ExpandableSection should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <Expandable
+    <ExpandableSection
       children={<div>ReactNode</div>}
       className={"''"}
       isExpanded={true}
@@ -17,8 +17,6 @@ it('Expandable should match snapshot (auto-generated)', () => {
       toggleTextExpanded={"''"}
       toggleTextCollapsed={"''"}
       onToggle={(): any => undefined}
-      isFocused={false}
-      isHovered={false}
       isActive={false}
     />
   );
