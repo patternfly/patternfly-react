@@ -8,7 +8,7 @@ This package provides Core PatternFly components for the [PatternFly 4][patternf
 
 This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
 
-For example, to develop with Node 8, use the following:
+For example, to develop with Node 10, use the following:
 
 ```
 nvm install 10
