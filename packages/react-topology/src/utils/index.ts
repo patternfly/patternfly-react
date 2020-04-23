@@ -7,4 +7,5 @@ export * from './svg-utils';
 export { default as useCallbackRef } from './useCallbackRef';
 export { default as useHover } from './useHover';
 export * from './useSize';
+export * from './useCombineRefs'
 export * from './createAggregateEdges';

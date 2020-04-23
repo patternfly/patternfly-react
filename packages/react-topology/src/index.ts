@@ -9,3 +9,4 @@ export * from './layouts';
 export * from './utils';
 export * from './mobx-exports';
 export * from './types';
+export * from './Visualization';
