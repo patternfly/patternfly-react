@@ -116,7 +116,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             >
               {title}
               <span className={css(styles.navToggle)}>
-                <span className="pf-c-nav__toggle-icon">
+                <span className={css(styles.navToggleIcon)}>
                   <AngleRightIcon aria-hidden="true" />
                 </span>
               </span>

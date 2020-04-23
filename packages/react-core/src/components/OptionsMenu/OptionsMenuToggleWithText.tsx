@@ -70,7 +70,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       aria-expanded={isOpen}
       onClick={() => onToggle(!isOpen)}
     >
-      <span className="pf-c-options-menu__toggle-button-icon">{toggleButtonContents}</span>
+      <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
     </button>
   </div>
 );

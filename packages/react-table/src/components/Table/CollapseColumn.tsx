@@ -29,7 +29,7 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="pf-c-table__toggle-icon">
+        <span className={css(styles.tableToggleIcon)}>
           <AngleDownIcon />
         </span>
       </Button>
