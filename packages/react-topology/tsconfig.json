@@ -4,7 +4,18 @@
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "declarationDir": "./dist/js",
-    "tsBuildInfoFile": "dist/esm.tsbuildinfo"
+    "tsBuildInfoFile": "dist/esm.tsbuildinfo",
+    // "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "sourceMap": true,    
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitReturns": true,    
+    "types": ["jest"]
   },
   "include": [
     "./src/*",

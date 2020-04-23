@@ -14,6 +14,7 @@ import {
   DragSpecOperationType,
   DragSource,
   DragOperationWithType,
+  DragElementWrapper
 } from './dnd-types';
 import { useDndManager } from './useDndManager';
 
@@ -22,7 +23,7 @@ export const Modifiers = {
   ALT: 0x01,
   CTRL: 0x02,
   META: 0x04,
-  SHIFT: 0x08,
+  SHIFT: 0x08
 };
 
 const getModifiers = (event: MouseEvent | TouchEvent | KeyboardEvent): number => {
@@ -47,7 +48,7 @@ const getModifiers = (event: MouseEvent | TouchEvent | KeyboardEvent): number =>
 };
 
 const getOperation = (
-  operation: DragSpecOperationType<DragOperationWithType> | undefined,
+  operation: DragSpecOperationType<DragOperationWithType> | undefined
 ): DragOperationWithType | undefined => {
   if (!operation) {
     return undefined;
@@ -55,15 +56,10 @@ const getOperation = (
   if (operation.hasOwnProperty('type')) {
     return operation as DragOperationWithType;
   }
-  return (
-    operation[getModifiers((d3.event && d3.event.sourceEvent) || d3.event)] ||
-    operation[Modifiers.DEFAULT]
-  );
+  return operation[getModifiers((d3.event && d3.event.sourceEvent) || d3.event)] || operation[Modifiers.DEFAULT];
 };
 
-const hasOperation = (
-  operation: DragSpecOperationType<DragOperationWithType> | undefined,
-): boolean => {
+const hasOperation = (operation: DragSpecOperationType<DragOperationWithType> | undefined): boolean => {
   return !!(operation && (operation.hasOwnProperty('type') || Object.keys(operation).length > 0));
 };
 
@@ -75,14 +71,8 @@ export const useDndDrag = <
   CollectedProps extends {} = {},
   Props extends {} = {}
 >(
-  spec: DragSourceSpec<
-    DragObject,
-    DragSpecOperationType<DragOperationWithType>,
-    DropResult,
-    CollectedProps,
-    Props
-  >,
-  props?: Props,
+  spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
+  props?: Props
 ): [CollectedProps, ConnectDragSource] => {
   const specRef = React.useRef(spec);
   specRef.current = spec;
@@ -136,14 +126,14 @@ export const useDndDrag = <
       },
       isCancelled: (): boolean => {
         return dndManager.isCancelled();
-      },
+      }
     };
     return sourceMonitor;
   }, [dndManager]);
 
-  const refCallback = useCallbackRef(
+  const refCallback: DragElementWrapper = useCallbackRef<DragElementWrapper>(
     React.useCallback(
-      (node: SVGElement | null) => {
+      (node: SVGElement | Element | null) => {
         if (node) {
           let operationChangeEvents:
             | {
@@ -157,11 +147,11 @@ export const useDndDrag = <
               .drag()
               .container(
                 // TODO bridge the gap between scene tree and dom tree
-                () =>
-                  d3
-                    .select(node.ownerSVGElement)
-                    .select('[data-surface="true"]')
-                    .node() as any,
+                () => {
+                  const selected =
+                    node instanceof SVGElement ? d3.select(node.ownerSVGElement) : d3.select(node.ownerDocument);
+                  return selected.select('[data-surface="true"]').node() as any;
+                }
               )
               .on('start', function() {
                 operation =
@@ -182,9 +172,9 @@ export const useDndDrag = <
                             cancelled ? event.initialX : event.x,
                             cancelled ? event.initialY : event.y,
                             cancelled ? event.initialPageX : event.pageX,
-                            cancelled ? event.initialPageY : event.pageY,
+                            cancelled ? event.initialPageY : event.pageY
                           ],
-                          drag: [event.x, event.y, event.pageX, event.pageY],
+                          drag: [event.x, event.y, event.pageX, event.pageY]
                         };
                         await dndManager.endDrag();
                       }
@@ -211,13 +201,13 @@ export const useDndDrag = <
                       } else {
                         yield updateOperation();
                       }
-                    }),
+                    })
                   )
                   .on(
                     'keyup.useDndDrag',
                     flow(function*() {
                       yield updateOperation();
-                    }),
+                    })
                   );
               })
               .on(
@@ -238,11 +228,11 @@ export const useDndDrag = <
                     } else {
                       operationChangeEvents = {
                         begin: [x, y, pageX, pageY],
-                        drag: [x, y, pageX, pageY],
+                        drag: [x, y, pageX, pageY]
                       };
                     }
                   }
-                }),
+                })
               )
               .on(
                 'end',
@@ -254,20 +244,17 @@ export const useDndDrag = <
                     dndManager.drop();
                     yield dndManager.endDrag();
                   }
-                }),
+                })
               )
-              .filter(
-                () =>
-                  !d3.event.ctrlKey && !d3.event.button && dndManager.canDragSource(idRef.current),
-              ),
+              .filter(() => !d3.event.ctrlKey && !d3.event.button && dndManager.canDragSource(idRef.current))
           );
         }
         return () => {
           node && d3.select(node).on('mousedown.drag', null);
         };
       },
-      [dndManager, monitor],
-    ),
+      [dndManager, monitor]
+    )
   );
 
   React.useEffect(() => {
@@ -285,8 +272,7 @@ export const useDndDrag = <
           : typeof specRef.current.canDrag === 'function'
           ? specRef.current.canDrag(monitor, propsRef.current)
           : true,
-      beginDrag: () =>
-        specRef.current.begin ? specRef.current.begin(monitor, propsRef.current) : undefined,
+      beginDrag: () => (specRef.current.begin ? specRef.current.begin(monitor, propsRef.current) : undefined),
       drag: () => {
         if (specRef.current.drag) {
           const event = monitor.getDragEvent();
@@ -296,9 +282,7 @@ export const useDndDrag = <
         }
       },
       endDrag: () =>
-        specRef.current.end
-          ? specRef.current.end(monitor.getDropResult(), monitor, propsRef.current)
-          : undefined,
+        specRef.current.end ? specRef.current.end(monitor.getDropResult(), monitor, propsRef.current) : undefined
     };
     const [sourceId, unregister] = dndManager.registerSource(dragSource);
     monitor.receiveHandlerId(sourceId);
@@ -307,12 +291,10 @@ export const useDndDrag = <
 
   const collected = React.useMemo(
     () =>
-      computed(
-        () =>
-          spec.collect ? spec.collect(monitor, propsRef.current) : (({} as any) as CollectedProps),
-        { equals: comparer.shallow },
-      ),
-    [monitor, spec],
+      computed(() => (spec.collect ? spec.collect(monitor, propsRef.current) : (({} as any) as CollectedProps)), {
+        equals: comparer.shallow
+      }),
+    [monitor, spec]
   );
 
   return [collected.get(), refCallback];
@@ -328,17 +310,9 @@ export const withDndDrag = <
   CollectedProps extends {} = {},
   Props extends {} = {}
 >(
-  spec: DragSourceSpec<
-    DragObject,
-    DragSpecOperationType<DragOperationWithType>,
-    DropResult,
-    CollectedProps,
-    Props
-  >,
-) => <P extends WithDndDragProps & CollectedProps & Props>(
-  WrappedComponent: React.ComponentType<P>,
-) => {
-  const Component: React.FC<Omit<P, keyof WithDndDragProps & CollectedProps>> = (props) => {
+  spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
+) => <P extends WithDndDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+  const Component: React.FC<Omit<P, keyof WithDndDragProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} {...dndDragProps} dndDragRef={dndDragRef} />;

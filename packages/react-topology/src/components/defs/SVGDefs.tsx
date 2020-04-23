@@ -26,7 +26,7 @@ export class SVGDefsSetter extends React.Component<SVGDefsSetterProps> {
     removeDef(id);
   }
 
-  render() {
+  render():any {
     return null;
   }
 }
@@ -46,9 +46,7 @@ export default class SVGDefs extends React.Component<SVGDefsProps> {
   render() {
     return (
       <SVGDefsContext.Consumer>
-        {({ addDef, removeDef }) => (
-          <SVGDefsSetter {...this.props} addDef={addDef} removeDef={removeDef} />
-        )}
+        {({ addDef, removeDef }) => <SVGDefsSetter {...this.props} addDef={addDef} removeDef={removeDef} />}
       </SVGDefsContext.Consumer>
     );
   }

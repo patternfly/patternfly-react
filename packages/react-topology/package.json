@@ -31,14 +31,23 @@
     "@patternfly/react-core": "^4.12.6",
     "@patternfly/react-icons": "^4.2.9",
     "@patternfly/react-styles": "^4.2.7",
-    "tslib": "^1.11.1"
+    "tslib": "^1.11.1",
+     "mobx": "^5.14.2",
+    "mobx-react": "^6.1.4",
+    "mobx-react-lite": "^1.4.2"
   },
   "peerDependencies": {
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "@types/dagre": "0.7.42",
+    "@types/webcola": "3.2.0",
+    "dagre": "0.8.2",
+    "webcola": "3.4.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webcola": "3.4.0",
+    "@types/dagre": "0.7.42"
   }
 }

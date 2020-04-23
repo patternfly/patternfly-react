@@ -6,7 +6,7 @@ const groupNodeElements = (nodes: GraphElement[]): Node[] => {
     return [];
   }
   const groupNodes: Node[] = [];
-  _.forEach(nodes, (nextNode) => {
+  _.forEach(nodes, nextNode => {
     if (isNode(nextNode) && nextNode.isGroup() && !nextNode.isCollapsed()) {
       groupNodes.push(nextNode);
       groupNodes.push(...groupNodeElements(nextNode.getChildren()));
@@ -33,12 +33,9 @@ const leafNodeElements = (nodeElements: Node | Node[] | null): Node[] => {
     const leafNodes: Node[] = [];
     const children: GraphElement[] = nodeElements.getChildren();
     if (_.size(children)) {
-      _.forEach(
-        children.filter((e) => isNode(e)),
-        (element: Node) => {
-          leafNodes.push(...leafNodeElements(element));
-        },
-      );
+      _.forEach(children.filter(e => isNode(e)), element => {
+        leafNodes.push(...leafNodeElements(element as Node));
+      });
     }
     return leafNodes;
   }

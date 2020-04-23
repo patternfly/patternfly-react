@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { AddCircleOIcon } from '@patternfly/react-icons';
 import { Tooltip } from '@patternfly/react-core';
 import Point from '../geom/Point';
