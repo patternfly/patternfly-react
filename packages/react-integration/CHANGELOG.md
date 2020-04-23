@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.5.0...@patternfly/react-integration@4.5.1) (2020-04-23)
+
+
+### Bug Fixes
+
+* fix broken image links ([#3960](https://github.com/patternfly/patternfly-react/issues/3960)) ([80ed515](https://github.com/patternfly/patternfly-react/commit/80ed515c9548507870cc3578d2529662e1f23d5c))
+
+
+
+
+
 # [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.4.2...@patternfly/react-integration@4.5.0) (2020-04-23)
 
 
