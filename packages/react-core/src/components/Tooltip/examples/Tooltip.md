@@ -15,27 +15,31 @@ import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
-<Tooltip
-  content={
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-  }
->
-  <span tabIndex="0">I have a tooltip!</span>
-</Tooltip>;
+BasicTooltip = () => (
+  <Tooltip
+    content={
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+    }
+  >
+    <span>I have a tooltip!</span>
+  </Tooltip>
+)
 ```
 
 ```js title=With-left-aligned-text
 import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
-<Tooltip
-  isContentLeftAligned
-  content={
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-  }
->
-  <span tabIndex="0">I have a tooltip!</span>
-</Tooltip>;
+LeftAlignedTooltip = () => (
+  <Tooltip
+    isContentLeftAligned
+    content={
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+    }
+  >
+    <span>I have a tooltip!</span>
+  </Tooltip>
+)
 ```
 
 ```js title=On-icon
@@ -43,16 +47,18 @@ import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
-<div style={{ margin: '50px' }}>
-  <Tooltip
-    position={TooltipPosition.top}
-    content={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-  >
-    <OutlinedQuestionCircleIcon />
-  </Tooltip>
-</div>;
+OnIconTooltip = () => (
+  <div style={{ margin: '50px' }}>
+    <Tooltip
+      position={TooltipPosition.top}
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+    >
+      <OutlinedQuestionCircleIcon />
+    </Tooltip>
+  </div>
+)
 ```
 
 ```js title=Positions

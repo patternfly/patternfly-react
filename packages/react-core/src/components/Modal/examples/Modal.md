@@ -3,8 +3,7 @@ title: 'Modal'
 section: components
 cssPrefix: 'pf-c-modal-box'
 typescript: true
-propComponents:
-  ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalBoxHeader', 'ModalContent']
+propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalBoxHeader', 'ModalContent']
 ---
 
 import { Modal, ModalVariant, TitleSizes, Button, Title } from '@patternfly/react-core';

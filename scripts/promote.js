@@ -34,4 +34,26 @@ async function printPublishCommand() {
   }
 }
 
-printPublishCommand();
+async function getReleasePackageNames() {
+  const packages = (await new Project(__dirname).getPackages())
+    .filter(p => p.private !== true) // Only packages that are published
+    .filter(p => p.name.includes('@patternfly')) // Only PF4 packages
+    .filter(p => p.name !== '@patternfly/react-docs'); // Only used in patternfly.org
+
+  return ['@patternfly/patternfly', ...packages.map(package => package.name)];
+}
+
+async function printList() {
+  const packageNames = await getReleasePackageNames();
+  for (let packageName of packageNames) {
+    const currentTags = await fetchTags(packageName);
+    console.log(`"${packageName}": "${currentTags.prerelease || currentTags.latest}",`);
+  }
+}
+
+if (process.argv[2].includes('list')) {
+  printList();
+}
+else {
+  printPublishCommand();
+}

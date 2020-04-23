@@ -3,100 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [4.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.4.1...@patternfly/react-integration@4.4.2) (2020-04-22)
-
-**Note:** Version bump only for package @patternfly/react-integration
+## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.30.0...@patternfly/react-integration@3.30.1) (2020-04-16)
 
 
+### Bug Fixes
 
-
-
-## [4.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.4.0...@patternfly/react-integration@4.4.1) (2020-04-17)
-
-
-### Performance Improvements
-
-* **packages:** use tsc to build instead of babel ([#4076](https://github.com/patternfly/patternfly-react/issues/4076)) ([e8c02fa](https://github.com/patternfly/patternfly-react/commit/e8c02fa82397b945decb368fde69452b4273b06b))
+* **DataToolbarFilter:** Add prop to enable removal of all chips in a filter category. ([#4060](https://github.com/patternfly/patternfly-react/issues/4060)) ([16340da](https://github.com/patternfly/patternfly-react/commit/16340dad7dc37d4a9446717adc7fc252469e3cd4)), closes [#4059](https://github.com/patternfly/patternfly-react/issues/4059)
 
 
 
 
 
-# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.3.1...@patternfly/react-integration@4.4.0) (2020-04-16)
+# [3.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.29.0...@patternfly/react-integration@3.30.0) (2020-03-27)
 
 
 ### Features
 
-* **title:** supply defaults for title size property ([#4081](https://github.com/patternfly/patternfly-react/issues/4081)) ([1451220](https://github.com/patternfly/patternfly-react/commit/145122052a7ef2708a260a951df84edb2c8d76c0))
+* **Drawer:** added width props, updated demo & integration test ([#3979](https://github.com/patternfly/patternfly-react/issues/3979)) ([b1c7da3](https://github.com/patternfly/patternfly-react/commit/b1c7da3eea53330837952d79f664f0de3b62ec3a))
 
 
 
 
 
-## [4.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.3.0...@patternfly/react-integration@4.3.1) (2020-04-15)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.12...@patternfly/react-integration@4.3.0) (2020-04-14)
+# [3.29.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.28.3...@patternfly/react-integration@3.29.0) (2020-03-27)
 
 
 ### Features
 
-* **card:** support flat variation ([#4026](https://github.com/patternfly/patternfly-react/issues/4026)) ([8c95f25](https://github.com/patternfly/patternfly-react/commit/8c95f25db86beec67ad7eaf17ba017a3eb0e9daa))
+* **select:** Allow count badge to be hidden in checkbox select ([#3976](https://github.com/patternfly/patternfly-react/issues/3976)) ([98bef94](https://github.com/patternfly/patternfly-react/commit/98bef941745d57f94b1f9cafd866c06ea1f85a93))
 
 
 
 
 
-## [4.2.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.11...@patternfly/react-integration@4.2.12) (2020-04-13)
-
-
-### Bug Fixes
-
-* PF4 Switch: label does not accept React.node ([#4004](https://github.com/patternfly/patternfly-react/issues/4004)) ([21319c4](https://github.com/patternfly/patternfly-react/commit/21319c43a6df9b7ddc402d8cc08f4b4103b9a912))
-
-
-
-
-
-## [4.2.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.10...@patternfly/react-integration@4.2.11) (2020-04-13)
-
-
-### Bug Fixes
-
-* **empty-state:** add isFullHeight prop support ([#4031](https://github.com/patternfly/patternfly-react/issues/4031)) ([f6c247d](https://github.com/patternfly/patternfly-react/commit/f6c247d17353d7a0ee3a553c8b28d762659ac23f))
-
-
-
-
-
-## [4.2.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.9...@patternfly/react-integration@4.2.10) (2020-04-13)
-
-
-### Bug Fixes
-
-* **popover:** update default popover header size ([#4030](https://github.com/patternfly/patternfly-react/issues/4030)) ([e10fb2c](https://github.com/patternfly/patternfly-react/commit/e10fb2c629aa655d20e99985be5dfb292a8e5821))
-
-
-
-
-
-## [4.2.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.8...@patternfly/react-integration@4.2.9) (2020-04-09)
-
-
-### Bug Fixes
-
-* **packages:** make imports tsc compatible ([#4051](https://github.com/patternfly/patternfly-react/issues/4051)) ([264a625](https://github.com/patternfly/patternfly-react/commit/264a6252b67404bf349ceedaa9c2403b9fe364a6))
-
-
-
-
-
-## [4.2.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.7...@patternfly/react-integration@4.2.8) (2020-04-09)
+## [3.28.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.28.2...@patternfly/react-integration@3.28.3) (2020-03-25)
 
 **Note:** Version bump only for package @patternfly/react-integration
 
@@ -104,18 +44,18 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [4.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.6...@patternfly/react-integration@4.2.7) (2020-04-07)
+## [3.28.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.28.1...@patternfly/react-integration@3.28.2) (2020-03-17)
 
 
 ### Bug Fixes
 
-* **gutter:** fix type for gutter support ([#4014](https://github.com/patternfly/patternfly-react/issues/4014)) ([27fc984](https://github.com/patternfly/patternfly-react/commit/27fc984d059e5ced425e66a6ede5ed163cd02a89))
+* **core,table:** forward ref types ([#3919](https://github.com/patternfly/patternfly-react/issues/3919)) ([2210ec2](https://github.com/patternfly/patternfly-react/commit/2210ec2c142a385f85de8b0bac9c61a61521186d))
 
 
 
 
 
-## [4.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.5...@patternfly/react-integration@4.2.6) (2020-04-03)
+## [3.28.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.28.0...@patternfly/react-integration@3.28.1) (2020-03-13)
 
 **Note:** Version bump only for package @patternfly/react-integration
 
@@ -123,156 +63,35 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [4.2.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.4...@patternfly/react-integration@4.2.5) (2020-04-03)
-
-
-### Bug Fixes
-
-* **modal:** default action alignment to left ([#4017](https://github.com/patternfly/patternfly-react/issues/4017)) ([f408457](https://github.com/patternfly/patternfly-react/commit/f4084572f9b571080711dcb298b5213f9f8d7af3))
-
-
-
-
-
-## [4.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.3...@patternfly/react-integration@4.2.4) (2020-03-31)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-## [4.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.2...@patternfly/react-integration@4.2.3) (2020-03-27)
-
-
-### Bug Fixes
-
-* **title:** remove problematic default headingLevel ([#3922](https://github.com/patternfly/patternfly-react/issues/3922)) ([a0ad8a1](https://github.com/patternfly/patternfly-react/commit/a0ad8a1a72d2c15e41e52eeae52006a515d8e8ae))
-
-
-
-
-
-## [4.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.1...@patternfly/react-integration@4.2.2) (2020-03-27)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-## [4.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.2.0...@patternfly/react-integration@4.2.1) (2020-03-27)
-
-
-### Bug Fixes
-
-* **icons:** fix types, upgrade typescript ([#3978](https://github.com/patternfly/patternfly-react/issues/3978)) ([aa28738](https://github.com/patternfly/patternfly-react/commit/aa28738c2864b637d1ef1d0cc380a379cc6d3a51))
-
-
-
-
-
-# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.1.0...@patternfly/react-integration@4.2.0) (2020-03-26)
+# [3.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.27.0...@patternfly/react-integration@3.28.0) (2020-03-09)
 
 
 ### Features
 
-* **Select:** change isExpanded to isOpen, split selections prop, rem… ([#3945](https://github.com/patternfly/patternfly-react/issues/3945)) ([1ba0e3c](https://github.com/patternfly/patternfly-react/commit/1ba0e3c693268422c29441e20b7a615218a803ab))
+* **Select:** add inline filtering to checkbox select ([#3843](https://github.com/patternfly/patternfly-react/issues/3843)) ([2263de8](https://github.com/patternfly/patternfly-react/commit/2263de8361b196f4421a3adcbb01b4b2dd410d4a))
 
 
 
 
 
-# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.9...@patternfly/react-integration@4.1.0) (2020-03-25)
+# [3.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.26.0...@patternfly/react-integration@3.27.0) (2020-03-06)
 
 
 ### Features
 
-* **Alert:** change default alert variant to default ([#3903](https://github.com/patternfly/patternfly-react/issues/3903)) ([4a88fc0](https://github.com/patternfly/patternfly-react/commit/4a88fc060cf87a55c9b48c20e76dc5f67a39e727))
+* **ChipGroup:** Added a tooltip to the Chipgroup label ([#3826](https://github.com/patternfly/patternfly-react/issues/3826)) ([d25c80b](https://github.com/patternfly/patternfly-react/commit/d25c80b68795c44d46eaf261b335c5f088d71e96)), closes [#3490](https://github.com/patternfly/patternfly-react/issues/3490)
 
 
 
 
 
-## [4.0.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.8...@patternfly/react-integration@4.0.9) (2020-03-24)
+# [3.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.25.2...@patternfly/react-integration@3.26.0) (2020-03-06)
 
 
-### Bug Fixes
+### Features
 
-* **table:** update types in table ([#3296](https://github.com/patternfly/patternfly-react/issues/3296)) ([42f6060](https://github.com/patternfly/patternfly-react/commit/42f60608a841dd707d0a7627efa9a17954d702c5))
-
-
-
-
-
-## [4.0.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.7...@patternfly/react-integration@4.0.8) (2020-03-24)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-## [4.0.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.6...@patternfly/react-integration@4.0.7) (2020-03-23)
-
-
-### Bug Fixes
-
-* **react-integration:** no implicit any ([#3928](https://github.com/patternfly/patternfly-react/issues/3928)) ([611ae97](https://github.com/patternfly/patternfly-react/commit/611ae97541131070cbe5668e80e4177e6af4de3b))
-
-
-
-
-
-## [4.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.5...@patternfly/react-integration@4.0.6) (2020-03-23)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-## [4.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.4...@patternfly/react-integration@4.0.5) (2020-03-19)
-
-
-### Performance Improvements
-
-* **ouia:** make ouia functional, add namespace ([#3927](https://github.com/patternfly/patternfly-react/issues/3927)) ([05bee77](https://github.com/patternfly/patternfly-react/commit/05bee779ce9d67cbca2177ab98aba432bdc74509))
-
-
-
-
-
-## [4.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.3...@patternfly/react-integration@4.0.4) (2020-03-18)
-
-
-### Performance Improvements
-
-* **react-styles:** remove emotion, fix types ([#3886](https://github.com/patternfly/patternfly-react/issues/3886)) ([2d762a3](https://github.com/patternfly/patternfly-react/commit/2d762a3276888943eff37de45d7e1a2b1103a187)), closes [#3872](https://github.com/patternfly/patternfly-react/issues/3872) [#3821](https://github.com/patternfly/patternfly-react/issues/3821) [#3807](https://github.com/patternfly/patternfly-react/issues/3807) [#3879](https://github.com/patternfly/patternfly-react/issues/3879) [#3871](https://github.com/patternfly/patternfly-react/issues/3871) [#3881](https://github.com/patternfly/patternfly-react/issues/3881) [#3826](https://github.com/patternfly/patternfly-react/issues/3826) [#3490](https://github.com/patternfly/patternfly-react/issues/3490) [#3882](https://github.com/patternfly/patternfly-react/issues/3882)
-
-
-
-
-
-## [4.0.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.2...@patternfly/react-integration@4.0.3) (2020-03-17)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-## [4.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.0.1...@patternfly/react-integration@4.0.2) (2020-03-17)
-
-**Note:** Version bump only for package @patternfly/react-integration
-
-
-
-
-
-## [4.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.25.2...@patternfly/react-integration@4.0.1) (2020-03-05)
-
-**Note:** Version bump only for package @patternfly/react-integration
+* **DataList:** add compact data list ([#3807](https://github.com/patternfly/patternfly-react/issues/3807)) ([18d9b7b](https://github.com/patternfly/patternfly-react/commit/18d9b7b756e985304864e52b09f5f1d1789791f8))
+* **Modal:** add description property ([#3821](https://github.com/patternfly/patternfly-react/issues/3821)) ([c7bfe03](https://github.com/patternfly/patternfly-react/commit/c7bfe03c54caf2ffcc215ab359c98cf0359c035e))
 
 
 

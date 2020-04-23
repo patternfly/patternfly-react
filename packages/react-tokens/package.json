@@ -27,6 +27,7 @@
   "scripts": {
     "generate": "node scripts/writeTokens.js",
     "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd -q",
+    "build:babel:umd:variables": "babel dist/variables/esm --out-dir dist/variables/umd --plugins transform-es2015-modules-umd -q",
     "clean": "rimraf dist"
   },
   "devDependencies": {

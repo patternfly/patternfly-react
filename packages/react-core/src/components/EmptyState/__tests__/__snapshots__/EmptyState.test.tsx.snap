@@ -2,7 +2,7 @@
 
 exports[`EmptyState Full height 1`] = `
 <div
-  className="pf-c-empty-state pf-m-full-height pf-m-lg"
+  className="pf-c-empty-state pf-m-lg pf-m-full-height"
 >
   <div
     className="pf-c-empty-state__content"
