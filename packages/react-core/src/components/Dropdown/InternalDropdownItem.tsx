@@ -207,10 +207,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               {renderWithTooltip(
                 React.isValidElement(component) ? (
                   React.cloneElement(component as React.ReactElement<any>, {
-                    href,
-                    id: componentID,
-                    className: classes,
-                    ...additionalProps
+                    className: css(component.props.className, classes)
                   })
                 ) : (
                   <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>

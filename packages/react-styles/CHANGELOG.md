@@ -3,40 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.1.1...@patternfly/react-styles@4.2.0) (2020-04-23)
-
-
-### Features
-
-* **react-core:** bump core and fix build ([#4116](https://github.com/patternfly/patternfly-react/issues/4116)) ([33a935d](https://github.com/patternfly/patternfly-react/commit/33a935d7381f041d62c67c16baae96f8c04fa288))
-
-
-
-
-
-## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.1.0...@patternfly/react-styles@4.1.1) (2020-04-17)
-
-
-### Performance Improvements
-
-* **packages:** use tsc to build instead of babel ([#4076](https://github.com/patternfly/patternfly-react/issues/4076)) ([e8c02fa](https://github.com/patternfly/patternfly-react/commit/e8c02fa82397b945decb368fde69452b4273b06b))
-
-
-
-
-
-# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.6...@patternfly/react-styles@4.1.0) (2020-04-13)
-
-
-### Features
-
-* **react-styles:** standardize css-in-js generation ([#4066](https://github.com/patternfly/patternfly-react/issues/4066)) ([cf0eee4](https://github.com/patternfly/patternfly-react/commit/cf0eee477955f4309df74b8febe15c12880ade0c))
-
-
-
-
-
-## [4.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.5...@patternfly/react-styles@4.0.6) (2020-04-03)
+## [3.7.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.12...@patternfly/react-styles@3.7.13) (2020-04-17)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
@@ -44,40 +11,42 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [4.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.4...@patternfly/react-styles@4.0.5) (2020-03-27)
+## [3.7.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.11...@patternfly/react-styles@3.7.12) (2020-04-01)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.7.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.10...@patternfly/react-styles@3.7.11) (2020-03-30)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.7.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.9...@patternfly/react-styles@3.7.10) (2020-03-24)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.7.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.8...@patternfly/react-styles@3.7.9) (2020-03-17)
 
 
 ### Bug Fixes
 
-* **icons:** fix types, upgrade typescript ([#3978](https://github.com/patternfly/patternfly-react/issues/3978)) ([aa28738](https://github.com/patternfly/patternfly-react/commit/aa28738c2864b637d1ef1d0cc380a379cc6d3a51))
+* **core,table:** forward ref types ([#3919](https://github.com/patternfly/patternfly-react/issues/3919)) ([2210ec2](https://github.com/patternfly/patternfly-react/commit/2210ec2c142a385f85de8b0bac9c61a61521186d))
 
 
 
 
 
-## [4.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.3...@patternfly/react-styles@4.0.4) (2020-03-19)
-
-
-### Performance Improvements
-
-* **ouia:** make ouia functional, add namespace ([#3927](https://github.com/patternfly/patternfly-react/issues/3927)) ([05bee77](https://github.com/patternfly/patternfly-react/commit/05bee779ce9d67cbca2177ab98aba432bdc74509))
-
-
-
-
-
-## [4.0.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.2...@patternfly/react-styles@4.0.3) (2020-03-18)
-
-
-### Performance Improvements
-
-* **react-styles:** remove emotion, fix types ([#3886](https://github.com/patternfly/patternfly-react/issues/3886)) ([2d762a3](https://github.com/patternfly/patternfly-react/commit/2d762a3276888943eff37de45d7e1a2b1103a187)), closes [#3872](https://github.com/patternfly/patternfly-react/issues/3872) [#3821](https://github.com/patternfly/patternfly-react/issues/3821) [#3807](https://github.com/patternfly/patternfly-react/issues/3807) [#3879](https://github.com/patternfly/patternfly-react/issues/3879) [#3871](https://github.com/patternfly/patternfly-react/issues/3871) [#3881](https://github.com/patternfly/patternfly-react/issues/3881) [#3826](https://github.com/patternfly/patternfly-react/issues/3826) [#3490](https://github.com/patternfly/patternfly-react/issues/3490) [#3882](https://github.com/patternfly/patternfly-react/issues/3882)
-
-
-
-
-
-## [4.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.0.1...@patternfly/react-styles@4.0.2) (2020-03-04)
+## [3.7.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.7...@patternfly/react-styles@3.7.8) (2020-03-09)
 
 **Note:** Version bump only for package @patternfly/react-styles
 
@@ -85,7 +54,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [4.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.6...@patternfly/react-styles@4.0.1) (2020-03-03)
+## [3.7.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.7.6...@patternfly/react-styles@3.7.7) (2020-03-09)
 
 **Note:** Version bump only for package @patternfly/react-styles
 

@@ -39,6 +39,7 @@ interface FilterInfo {
 export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
   private chipGroupContentRef = React.createRef<HTMLDivElement>();
   static hasWarnBeta = false;
+  private staticFilterInfo = {};
   constructor(props: DataToolbarProps) {
     super(props);
 
@@ -82,15 +83,15 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   }
 
   updateNumberFilters = (categoryName: string, numberOfFilters: number) => {
-    const filterInfoToUpdate: FilterInfo = { ...this.state.filterInfo };
-
+    const filterInfoToUpdate: FilterInfo = { ...this.staticFilterInfo };
     if (!filterInfoToUpdate.hasOwnProperty(categoryName) || filterInfoToUpdate[categoryName] !== numberOfFilters) {
       filterInfoToUpdate[categoryName] = numberOfFilters;
+      this.staticFilterInfo = filterInfoToUpdate;
       this.setState({ filterInfo: filterInfoToUpdate });
     }
   };
 
-  getNumberOfFilters = () => Object.values(this.state.filterInfo).reduce((acc, cur) => acc + cur, 0);
+  getNumberOfFilters = () => Object.values(this.state.filterInfo).reduce((acc: any, cur: any) => acc + cur, 0);
 
   render() {
     const {

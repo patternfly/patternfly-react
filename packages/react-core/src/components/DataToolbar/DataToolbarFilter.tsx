@@ -22,6 +22,8 @@ export interface DataToolbarChip {
 export interface DataToolbarFilterProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
   chips?: (string | DataToolbarChip)[];
+  /** Callback passed by consumer used to close the entire chip group */
+  deleteChipGroup?: (category: string | DataToolbarChipGroup) => void;
   /** Callback passed by consumer used to delete a chip from the chips[] */
   deleteChip?: (category: string | DataToolbarChipGroup, chip: DataToolbarChip | string) => void;
   /** Content to be rendered inside the data toolbar item associated with the chip group */
@@ -62,15 +64,16 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
   }
 
   render() {
-    const { children, chips, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
+    const { children, chips, deleteChipGroup, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
-
     const chipGroup = chips.length ? (
       <DataToolbarItem variant="chip-group">
         <ChipGroup withToolbar>
           <ChipGroupToolbarItem
             key={typeof categoryName === 'string' ? categoryName : categoryName.key}
             categoryName={typeof categoryName === 'string' ? categoryName : categoryName.name}
+            isClosable={deleteChipGroup !== undefined}
+            onClick={() => deleteChipGroup(categoryName)}
           >
             {chips.map(chip =>
               typeof chip === 'string' ? (

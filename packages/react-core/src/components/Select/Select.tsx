@@ -306,9 +306,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (!value) {
       return;
     }
-    const item = React.Children.toArray(this.props.children).filter(
+    const item = React.Children.toArray(this.props.children).find(
       (child: React.ReactNode) => (child as React.ReactElement).props.value.toString() === value.toString()
-    )[0] as React.ReactElement;
+    ) as React.ReactElement;
     if (item) {
       if (item && item.props.children) {
         if (type === 'node') {
