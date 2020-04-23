@@ -61,6 +61,8 @@ import {
   SimpleList,
   SimpleListItem,
   SkipToContent,
+  Stack,
+  StackItem,
   Text,
   TextContent,
   TextInput,
@@ -101,6 +103,7 @@ import {
   CardBody,
   DataList,
   DataListAction,
+  DataListCell,
   DataListItem,
   DataListItemCell,
   DataListItemCells,
@@ -117,6 +120,7 @@ import {
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
+  DrawerPanelBody,
   DrawerPanelContent,
   DropdownToggle,
   DropdownItem,
@@ -136,12 +140,16 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Progress,
   Select,
   SelectOption,
   SkipToContent,
+  Stack,
+  StackItem,
   Text,
   TextContent,
   TextInput,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem
@@ -272,13 +280,10 @@ class MasterDetailFullPage extends React.Component {
     };
     
     this.onSelectDataListItem = id => {
-      this.setState({ selectedDataListItemId: id });
-    };
-    
-    this.onOpenDrawerClick = (content) => {
-      this.setState({
+      this.setState({ 
+        selectedDataListItemId: id,
         isDrawerExpanded: true,
-        drawerPanelBodyContent: content
+        drawerPanelBodyContent: id.charAt(id.length-1)
       });
     };
     
@@ -336,12 +341,12 @@ class MasterDetailFullPage extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
+            <Button id="full-page-toolbar-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+            <Button id="full-page-toolbar-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>
@@ -397,7 +402,7 @@ class MasterDetailFullPage extends React.Component {
     const toggleGroupItems = <React.Fragment>
       <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
+          <TextInput name="full-page-data-toolbar-input1" id="full-page-data-toolbar-input1" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
@@ -448,23 +453,35 @@ class MasterDetailFullPage extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-2</Title>
+          <Title size="lx">node-{drawerPanelBodyContent}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
         </DrawerHead>
-        <DrawerPanelBody>{drawerPanelBodyContent}</DrawerPanelBody>
+        <DrawerPanelBody>
+          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+            <FlexItem>
+              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+            </FlexItem>
+            <FlexItem>
+              <Progress value={drawerPanelBodyContent*10} title="Title" />
+            </FlexItem>
+            <FlexItem>
+              <Progress value={drawerPanelBodyContent*5} title="Title" />
+            </FlexItem>
+          </Flex>
+        </DrawerPanelBody>
       </DrawerPanelContent>
     );
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="data-toolbar" className='pf-m-toggle-group-container'>
+        <DataToolbar id="full-page-data-toolbar" className='pf-m-toggle-group-container'>
           <DataToolbarContent>
             {dataToolbarItems}
           </DataToolbarContent>
         </DataToolbar>
         <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
-          <DataListItem aria-labelledby="selectable-action-item1" id="item1">
+          <DataListItem aria-labelledby="selectable-action-item1" id="full-page-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -482,15 +499,21 @@ class MasterDetailFullPage extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("First row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item2" id="item2">
+          <DataListItem aria-labelledby="selectable-action-item2" id="full-page-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -511,15 +534,21 @@ class MasterDetailFullPage extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Second row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item3" id="item3">
+          <DataListItem aria-labelledby="selectable-action-item3" id="full-page-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -537,15 +566,21 @@ class MasterDetailFullPage extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Third row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item4" id="item4">
+          <DataListItem aria-labelledby="selectable-action-item4" id="full-page-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -566,10 +601,16 @@ class MasterDetailFullPage extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Fourth row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
@@ -627,6 +668,7 @@ import {
   CardBody,
   DataList,
   DataListAction,
+  DataListCell,
   DataListItem,
   DataListItemCell,
   DataListItemCells,
@@ -643,6 +685,7 @@ import {
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
+  DrawerPanelBody,
   DrawerPanelContent,
   DropdownToggle,
   DropdownItem,
@@ -662,12 +705,16 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Progress,
   Select,
   SelectOption,
   SkipToContent,
+  Stack,
+  StackItem,
   Text,
   TextContent,
   TextInput,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem
@@ -798,13 +845,10 @@ class MasterDetailContentPadding extends React.Component {
     };
     
     this.onSelectDataListItem = id => {
-      this.setState({ selectedDataListItemId: id });
-    };
-    
-    this.onOpenDrawerClick = (content) => {
-      this.setState({
+      this.setState({ 
+        selectedDataListItemId: id,
         isDrawerExpanded: true,
-        drawerPanelBodyContent: content
+        drawerPanelBodyContent: id.charAt(id.length-1)
       });
     };
     
@@ -862,12 +906,12 @@ class MasterDetailContentPadding extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
+            <Button id="content-padding-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+            <Button id="content-padding-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>
@@ -923,7 +967,7 @@ class MasterDetailContentPadding extends React.Component {
     const toggleGroupItems = <React.Fragment>
       <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
+          <TextInput name="content-padding-data-toolbar-input1" id="content-padding-data-toolbar-input1" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
@@ -974,24 +1018,36 @@ class MasterDetailContentPadding extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-2</Title>
+          <Title size="lx">node-{drawerPanelBodyContent}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
         </DrawerHead>
-        <DrawerPanelBody>{drawerPanelBodyContent}</DrawerPanelBody>
+        <DrawerPanelBody>
+          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+            <FlexItem>
+              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+            </FlexItem>
+            <FlexItem>
+              <Progress value={drawerPanelBodyContent*10} title="Title" />
+            </FlexItem>
+            <FlexItem>
+              <Progress value={drawerPanelBodyContent*5} title="Title" />
+            </FlexItem>
+          </Flex>
+        </DrawerPanelBody>
       </DrawerPanelContent>
     );
     
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="data-toolbar" className='pf-m-toggle-group-container'>
+        <DataToolbar id="content-padding-data-toolbar" className='pf-m-toggle-group-container'>
           <DataToolbarContent>
             {dataToolbarItems}
           </DataToolbarContent>
         </DataToolbar>
         <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
-          <DataListItem aria-labelledby="selectable-action-item1" id="item1">
+          <DataListItem aria-labelledby="selectable-action-item1" id="content-padding-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1009,15 +1065,21 @@ class MasterDetailContentPadding extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("First row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item2" id="item2">
+          <DataListItem aria-labelledby="selectable-action-item2" id="content-padding-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1038,15 +1100,21 @@ class MasterDetailContentPadding extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Second row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item3" id="item3">
+          <DataListItem aria-labelledby="selectable-action-item3" id="content-padding-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1064,15 +1132,21 @@ class MasterDetailContentPadding extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Third row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item4" id="item4">
+          <DataListItem aria-labelledby="selectable-action-item4" id="content-padding-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -1093,10 +1167,16 @@ class MasterDetailContentPadding extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Fourth row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
@@ -1153,6 +1233,7 @@ import {
   CardHeader,
   CardBody,
   Checkbox,
+  Divider,
   Dropdown,
   DropdownToggle,
   DropdownItem,
@@ -1162,11 +1243,15 @@ import {
   DropdownToggleCheckbox,
   Drawer,
   DrawerActions,
+  DrawerPanelBody,
   DrawerCloseButton,
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
   DrawerPanelContent,
+  DrawerSection,
+  Flex,
+  FlexItem,
   Gallery,
   GalleryItem,
   KebabToggle,
@@ -1179,11 +1264,13 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Progress,
   Select,
   SelectOption,
   SkipToContent,
   TextContent,
   Text,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem
@@ -1218,25 +1305,19 @@ class MasterDetailCardView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-
     this.state = {
       isDrawerExpanded: false,
-      selectedCard: null,
+      activeCard: null,
       filters: {
         products: []
       },
       res: [],
-      selectedItems: [],
-      areAllSelected: false,
-      itemsCheckedByDefault: false,
       isUpperToolbarDropdownOpen: false,
       isUpperToolbarKebabDropdownOpen: false,
       isLowerToolbarDropdownOpen: false,
       isLowerToolbarKebabDropdownOpen: false,
       isCardKebabDropdownOpen: false,
       activeItem: 0,
-      splitButtonDropdownIsOpen: false,
     };
 
     this.onPageDropdownToggle = isUpperToolbarDropdownOpen => {
@@ -1287,18 +1368,6 @@ class MasterDetailCardView extends React.Component {
       });
     };
 
-    this.onCardKebabDropdownToggle = (key, isCardKebabDropdownOpen) => {
-      this.setState({
-        [key]: isCardKebabDropdownOpen
-      });
-    };
-
-    this.onCardKebabDropdownSelect = (key, event) => {
-      this.setState({
-        [key]: !this.state[key]
-      });
-    };
-
     this.onNavSelect = result => {
       this.setState({
         activeItem: result.itemId
@@ -1310,18 +1379,6 @@ class MasterDetailCardView extends React.Component {
       this.setState({
         res: this.state.res.filter(filter(({ id }) => id)),
         selectedItems: this.state.selectedItems.filter(filter(id => id))
-      });
-    };
-
-    this.onSplitButtonToggle = isOpen => {
-      this.setState({
-        splitButtonDropdownIsOpen: isOpen
-      });
-    };
-
-    this.onSplitButtonSelect = event => {
-      this.setState((prevState, props) => {
-        return { splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen };
       });
     };
 
@@ -1357,114 +1414,36 @@ class MasterDetailCardView extends React.Component {
     
     this.onCloseDrawerClick = () => {
       this.setState({
-        selectedCard: null,
+        activeCard: null,
         isDrawerExpanded: false
       });
     };
     
     this.onKeyDown = event => {
-      if (event.target !== event.currentTarget) {
+      if (event.target !== event.currentTarget || event.currentTarget.id === this.state.activeCard) {
         return;
       }
       if ([13, 32].includes(event.keyCode)) {
-        const newSelected = event.currentTarget.id === this.state.selectedCard ? null : event.currentTarget.id
+        const newSelected = event.currentTarget.id
         this.setState({
-          selectedCard: newSelected,
+          activeCard: newSelected,
           isDrawerExpanded: true
         })
       }
     }
     
-    this.onClick = event => {
-      const newSelected = event.currentTarget.id === this.state.selectedCard ? null : event.currentTarget.id
+    this.onCardClick = event => {
+      if (event.currentTarget.id === this.state.activeCard) {
+        return;
+      }
+      
+      const newSelected = event.currentTarget.id
+      
       this.setState({
-        selectedCard: newSelected,
+        activeCard: newSelected,
         isDrawerExpanded: true
       })
     }; 
-  }
-
-  selectedItems(e) {
-    const { value, checked } = e.target;
-    let { selectedItems } = this.state;
-
-    if (checked) {
-      selectedItems = [...selectedItems, value];
-    } else {
-      selectedItems = selectedItems.filter(el => el !== value);
-      if (this.state.areAllSelected) {
-        this.setState({
-          areAllSelected: !this.state.areAllSelected
-        });
-      }
-    }
-    this.setState({ selectedItems });
-  }
-
-  splitCheckboxSelectAll(e) {
-    const { checked } = e.target;
-    const { isChecked, res } = this.state;
-    let collection = [];
-
-    if (checked) {
-      for (var i = 0; i <= 9; i++) collection = [...collection, i];
-    }
-
-    this.setState(
-      {
-        selectedItems: collection,
-        isChecked: isChecked,
-        areAllSelected: checked
-      },
-      this.updateSelected
-    );
-  }
-
-  selectPage(e) {
-    const { checked } = e.target;
-    const { isChecked, totalItemCount, perPage } = this.state;
-    let collection = [];
-
-    collection = this.getAllItems();
-
-    this.setState(
-      {
-        selectedItems: collection,
-        isChecked: checked,
-        areAllSelected: totalItemCount === perPage ? true : false
-      },
-      this.updateSelected
-    );
-  }
-
-  selectAll(e) {
-    const { checked } = e.target;
-    const { isChecked } = this.state;
-
-    let collection = [];
-    for (var i = 0; i <= 9; i++) collection = [...collection, i];
-
-    this.setState(
-      {
-        selectedItems: collection,
-        isChecked: true,
-        areAllSelected: true
-      },
-      this.updateSelected
-    );
-  }
-
-  selectNone(e) {
-    const { checked } = e.target;
-    const { isChecked, selectedItems } = this.state;
-    this.setState(
-      {
-        selectedItems: [],
-        isChecked: false,
-        areAllSelected: false
-      },
-      this.updateSelected
-    );
   }
 
   getAllItems() {
@@ -1477,36 +1456,6 @@ class MasterDetailCardView extends React.Component {
     return collection;
   }
 
-  handleCheckboxClick(checked, e) {
-    const { value } = e.target;
-    const { totalItemCount } = this.state;
-
-    if (checked) {
-      const collection = this.getAllItems();
-      this.setState(prevState => ({
-        selectedItems: [...prevState.selectedItems, value * 1],
-        areAllSelected: totalItemCount === prevState.selectedItems.length + 1
-      }));
-    } else {
-      this.setState(prevState => ({
-        selectedItems: prevState.selectedItems.filter(item => item != value),
-        areAllSelected: false
-      }));
-    }
-  }
-
-  updateSelected() {
-    const { res, selectedItems } = this.state;
-    let rows = res.map(post => {
-      post.selected = selectedItems.includes(post.id);
-      return post;
-    });
-
-    this.setState({
-      res: rows
-    });
-  }
-
   fetch(page, perPage) {
     fetch(`https://my-json-server.typicode.com/jenny-s51/cardviewdata/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
@@ -1517,51 +1466,6 @@ class MasterDetailCardView extends React.Component {
 
   componentDidMount() {
     this.fetch(this.state.page, this.state.perPage);
-  }
-
-  buildSelectDropdown() {
-    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
-    const numSelected = selectedItems.length;
-    const allSelected = areAllSelected;
-    const anySelected = numSelected > 0;
-    const someChecked = anySelected ? null : false;
-    const isChecked = allSelected ? true : someChecked;
-    const splitButtonDropdownItems = [
-      <DropdownItem key="item-1" onClick={this.selectNone.bind(this)}>
-        Select none (0 items)
-      </DropdownItem>,
-      <DropdownItem key="item-2" onClick={this.selectPage.bind(this)}>
-        Select page ({this.state.perPage} items)
-      </DropdownItem>,
-      <DropdownItem key="item-3" onClick={this.selectAll.bind(this)}>
-        Select all ({this.state.totalItemCount} items)
-      </DropdownItem>
-    ];
-
-    return (
-      <Dropdown
-        position={DropdownPosition.left}
-        onSelect={this.onSplitButtonSelect}
-        toggle={
-          <DropdownToggle
-            splitButtonItems={[
-              <DropdownToggleCheckbox
-                id="example-checkbox-2"
-                key="split-checkbox"
-                aria-label={anySelected ? 'Deselect all' : 'Select all'}
-                isChecked={areAllSelected}
-                onClick={this.splitCheckboxSelectAll.bind(this)}
-              ></DropdownToggleCheckbox>
-            ]}
-            onToggle={this.onSplitButtonToggle}
-          >
-            {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
-          </DropdownToggle>
-        }
-        isOpen={splitButtonDropdownIsOpen}
-        dropdownItems={splitButtonDropdownItems}
-      />
-    );
   }
 
   buildFilterDropdown() {
@@ -1600,21 +1504,15 @@ class MasterDetailCardView extends React.Component {
   render() {
     const {
       isDrawerExpanded,
-      selectedCard,
+      activeCard,
       isUpperToolbarDropdownOpen,
       isLowerToolbarDropdownOpen,
       isUpperToolbarKebabDropdownOpen,
       isLowerToolbarKebabDropdownOpen,
       isCardKebabDropdownOpen,
-      splitButtonDropdownIsOpen,
       activeItem,
       filters,
       res,
-      checked,
-      selectedItems,
-      itemsCheckedByDefault,
-      areAllSelected,
-      isChecked
     } = this.state;
 
     const toolbarKebabDropdownItems = [
@@ -1637,7 +1535,6 @@ class MasterDetailCardView extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
         <DataToolbarItem>{this.buildFilterDropdown()}</DataToolbarItem>
         <DataToolbarItem>
           <Button variant="primary">Create a Project</Button>
@@ -1645,7 +1542,7 @@ class MasterDetailCardView extends React.Component {
         <DataToolbarItem>
           <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
-            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
+            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
             isOpen={isLowerToolbarKebabDropdownOpen}
             isPlain
             dropdownItems={toolbarKebabDropdownItems}
@@ -1692,12 +1589,12 @@ class MasterDetailCardView extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
+            <Button id="card-view-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+            <Button id="card-view-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>
@@ -1763,41 +1660,9 @@ class MasterDetailCardView extends React.Component {
       <Gallery gutter="md">
         {filtered.map((product, key) => (
           <React.Fragment>
-            <Card isHoverable key={key} id={key} onKeyDown={this.onKeyDown} onClick={this.onClick} isSelectable isSelected={selectedCard === key}>
+            <Card isHoverable key={key} id={'card-view-' + key} onKeyDown={this.onKeyDown} onClick={this.onCardClick} isSelectable isSelected={activeCard === key}>
               <CardHead>
                 <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
-                <CardActions>
-                  <Dropdown
-                    isPlain
-                    position="right"
-                    onSelect={e => this.onCardKebabDropdownSelect(key, e)}
-                    toggle={
-                      <KebabToggle
-                        onToggle={isCardKebabDropdownOpen =>
-                          this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
-                        }
-                      />
-                    }
-                    isOpen={this.state[key]}
-                    dropdownItems={[
-                      <DropdownItem onClick={this.deleteItem(product)} position="right">
-                        <TrashIcon />
-                        Delete
-                      </DropdownItem>
-                    ]}
-                  />
-                  <Checkbox
-                    checked={isChecked}
-                    value={product.id}
-                    selectedItems={selectedItems}
-                    areAllSelected={areAllSelected}
-                    onChange={this.handleCheckboxClick}
-                    isChecked={selectedItems.includes(product.id)}
-                    defaultChecked={this.state.itemsCheckedByDefault}
-                    aria-label="card checkbox example"
-                    id={`check-${product.id}`}
-                  />
-                </CardActions>
               </CardHead>
               <CardHeader>{product.name}</CardHeader>
               <CardBody>{product.description}</CardBody>
@@ -1810,12 +1675,24 @@ class MasterDetailCardView extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-2</Title>
+          <Title size="lx">node-{activeCard && activeCard.charAt(activeCard.length-1)}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
         </DrawerHead>
-        <DrawerPanelBody>Hi</DrawerPanelBody>
+        <DrawerPanelBody>
+          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+            <FlexItem>
+              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+            </FlexItem>
+            <FlexItem>
+              <Progress value={activeCard*10} title="Title" />
+            </FlexItem>
+            <FlexItem>
+              <Progress value={activeCard*5} title="Title" />
+            </FlexItem>
+          </Flex>
+        </DrawerPanelBody>
       </DrawerPanelContent>
     );
 
@@ -1835,9 +1712,9 @@ class MasterDetailCardView extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Drawer isExpanded={isDrawerExpanded}>
+            <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
               <DrawerSection>
-                <DataToolbar id="data-toolbar-group-types" clearAllFilters={this.onDelete}>
+                <DataToolbar id="card-view-data-toolbar-group-types" clearAllFilters={this.onDelete}>
                   <DataToolbarContent>{toolbarItems}</DataToolbarContent>
                 </DataToolbar>
                 <Divider component="div" />
@@ -1879,10 +1756,13 @@ import {
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
+  DrawerPanelBody,
   DrawerPanelContent,
+  DropdownToggle,
   Flex,
   FlexItem,
   FlexModifiers,
+  KebabToggle,
   Nav,
   NavItem,
   NavList,
@@ -1891,14 +1771,17 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Progress,
   Select,
   SelectOption,
   SimpleList,
+  SimpleListGroup,
   SimpleListItem,
   SkipToContent,
   Text,
   TextContent,
   TextInput,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem
@@ -1925,7 +1808,6 @@ class MasterDetailSimpleListInCard extends React.Component {
     };
     
     this.onSelectListItem = (listItem, listItemProps) => {
-      console.log(listItemProps);
       this.setState({
         drawerPanelBodyContent: listItemProps.id
       });
@@ -1962,12 +1844,12 @@ class MasterDetailSimpleListInCard extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
+            <Button id="simple-list-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+            <Button id="simple-list-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>
@@ -2015,7 +1897,7 @@ class MasterDetailSimpleListInCard extends React.Component {
     );
     
     const panelContent = (
-      <DrawerPanelContent widthOnXl="75">
+      <DrawerPanelContent widthOnXl={75}>
         <DrawerHead>
           <Title size="lx">List item {drawerPanelBodyContent} details</Title>
         </DrawerHead>
@@ -2038,19 +1920,18 @@ class MasterDetailSimpleListInCard extends React.Component {
     const drawerContent = (
       <React.Fragment>
         <SimpleList onSelect={this.onSelectListItem}>
-          <SimpleListGroup title="Section 1" id="section-1">
-            <SimpleListItem key="item1" id="1" isCurrent>List item 1</SimpleListItem>
-            <SimpleListItem key="item2" id="2">List item 2</SimpleListItem>
-            <SimpleListItem key="item3" id="3">List item 3</SimpleListItem>
-            <SimpleListItem key="item4" id="4">List item 4</SimpleListItem>
+          <SimpleListGroup title="Section 1" id="simple-list-section-1">
+            <SimpleListItem key="item1" id="simple-list-item1" isCurrent>List item 1</SimpleListItem>
+            <SimpleListItem key="item2" id="simple-list-item2">List item 2</SimpleListItem>
+            <SimpleListItem key="item3" id="simple-list-item3">List item 3</SimpleListItem>
+            <SimpleListItem key="item4" id="simple-list-item4">List item 4</SimpleListItem>
           </SimpleListGroup>
           <SimpleListGroup title="Section 2" id="section-2">
-            <SimpleListItem key="item5" id="5" isCurrent>List item 5</SimpleListItem>
-            <SimpleListItem key="item6" id="6">List item 6</SimpleListItem>
-            <SimpleListItem key="item7" id="7">List item 7</SimpleListItem>
-            <SimpleListItem key="item8" id="8">List item 8</SimpleListItem>
-            <SimpleListItem key="item9" id="9">List item 9</SimpleListItem>
-            <SimpleListItem key="item10" id="10">List item 10</SimpleListItem>
+            <SimpleListItem key="item5" id="simple-list-item5" isCurrent>List item 5</SimpleListItem>
+            <SimpleListItem key="item6" id="simple-list-item6">List item 6</SimpleListItem>
+            <SimpleListItem key="item7" id="simple-list-item7">List item 7</SimpleListItem>
+            <SimpleListItem key="item8" id="simple-list-item8">List item 8</SimpleListItem>
+            <SimpleListItem key="item9" id="simple-list-item9">List item 9</SimpleListItem>
           </SimpleListGroup>
         </SimpleList>
       </React.Fragment> 
@@ -2102,15 +1983,18 @@ import {
   BreadcrumbItem,
   Button,
   ButtonVariant,
-  Dropdown,
   Card,
   CardBody,
   DataList,
   DataListAction,
+  DataListCell,
   DataListItem,
   DataListItemCell,
   DataListItemCells,
   DataListItemRow,
+  DataToolbar,
+  DataToolbarContent,
+  DataToolbarItem,
   Divider,
   Drawer,
   DrawerActions,
@@ -2118,6 +2002,7 @@ import {
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
+  DrawerPanelBody,
   DrawerPanelContent,
   Dropdown,
   DropdownToggle,
@@ -2125,6 +2010,8 @@ import {
   Flex,
   FlexItem,
   FlexModifiers,
+  KebabToggle,
+  Link,
   Nav,
   NavItem,
   NavList,
@@ -2133,6 +2020,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Progress,
   Select,
   SelectOption,
   SimpleList,
@@ -2141,6 +2029,7 @@ import {
   Text,
   TextContent,
   TextInput,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem
@@ -2220,12 +2109,12 @@ class MasterDetailDataListInCard extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
+            <Button id="data-list-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+            <Button id="data-list-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>
@@ -2273,7 +2162,7 @@ class MasterDetailDataListInCard extends React.Component {
     );
     
     const panelContent = (
-      <DrawerPanelContent widthOn2Xl="75">
+      <DrawerPanelContent widthOn2Xl={75}>
         <DrawerHead>
           <Title size="lg" headingLevel='h2'>Patternfly-elements</Title>
         </DrawerHead>
@@ -2300,13 +2189,13 @@ class MasterDetailDataListInCard extends React.Component {
     
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="master-detail-data-list-in-card-toolbar">
+        <DataToolbar id="data-list-data-toolbar">
           <DataToolbarContent>
             <DataToolbarItem>
               <Dropdown
                 onSelect={this.onDropdownSelect}
                 toggle={
-                  <DropdownToggle id="toggle-id" onToggle={this.onDropdownToggle} iconComponent={CaretDownIcon}>
+                  <DropdownToggle id="data-list-toggle-id" onToggle={this.onDropdownToggle} iconComponent={CaretDownIcon}>
                     Dropdown
                   </DropdownToggle>
                 }
@@ -2317,7 +2206,7 @@ class MasterDetailDataListInCard extends React.Component {
           </DataToolbarContent>
         </DataToolbar>
         <DataList aria-label="selectable data list example" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
-          <DataListItem id='dataListItem1'>
+          <DataListItem aria-labelledby='data-list-item1-in-card' id='data-list-item1'>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2328,7 +2217,7 @@ class MasterDetailDataListInCard extends React.Component {
                 ]} />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem id='dataListItem2'>
+          <DataListItem aria-labelledby='data-list-item2-in-card' id='data-list-item2'>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2339,7 +2228,7 @@ class MasterDetailDataListInCard extends React.Component {
                 ]} />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem id='dataListItem3'>
+          <DataListItem aria-labelledby='data-list-item3-in-card' id='data-list-item3'>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2350,7 +2239,7 @@ class MasterDetailDataListInCard extends React.Component {
                 ]} />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem id='dataListItem4'>
+          <DataListItem aria-labelledby='data-list-item4-in-card' id='data-list-item4'>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2361,7 +2250,7 @@ class MasterDetailDataListInCard extends React.Component {
                 ]} />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem id='dataListItem5'>
+          <DataListItem aria-labelledby='data-list-item5-in-card' id='data-list-item5'>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2427,6 +2316,7 @@ import {
   CardBody,
   DataList,
   DataListAction,
+  DataListCell,
   DataListItem,
   DataListItemCell,
   DataListItemCells,
@@ -2443,6 +2333,7 @@ import {
   DrawerContent,
   DrawerContentBody,
   DrawerHead,
+  DrawerPanelBody,
   DrawerPanelContent,
   DropdownToggle,
   DropdownItem,
@@ -2462,12 +2353,16 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Progress,
   Select,
   SelectOption,
   SkipToContent,
+  Stack,
+  StackItem,
   Text,
   TextContent,
   TextInput,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem
@@ -2598,13 +2493,10 @@ class MasterDetailInlineModifier extends React.Component {
     };
     
     this.onSelectDataListItem = id => {
-      this.setState({ selectedDataListItemId: id });
-    };
-    
-    this.onOpenDrawerClick = (content) => {
-      this.setState({
+      this.setState({ 
+        selectedDataListItemId: id,
         isDrawerExpanded: true,
-        drawerPanelBodyContent: content
+        drawerPanelBodyContent: id.charAt(id.length-1)
       });
     };
     
@@ -2662,12 +2554,12 @@ class MasterDetailInlineModifier extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
+            <Button id="inline-modifier-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+            <Button id="inline-modifier-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>
@@ -2723,7 +2615,7 @@ class MasterDetailInlineModifier extends React.Component {
     const toggleGroupItems = <React.Fragment>
       <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
+          <TextInput name="inline-modifier-input" id="inline-modifier-input" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
@@ -2774,23 +2666,35 @@ class MasterDetailInlineModifier extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-2</Title>
+          <Title size="lx">node-{drawerPanelBodyContent}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
         </DrawerHead>
-        <DrawerPanelBody>{drawerPanelBodyContent}</DrawerPanelBody>
+        <DrawerPanelBody>
+          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+            <FlexItem>
+              <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
+            </FlexItem>
+            <FlexItem>
+              <Progress value={drawerPanelBodyContent*10} title="Title" />
+            </FlexItem>
+            <FlexItem>
+              <Progress value={drawerPanelBodyContent*5} title="Title" />
+            </FlexItem>
+          </Flex>
+        </DrawerPanelBody>
       </DrawerPanelContent>
     );
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="data-toolbar" className='pf-m-toggle-group-container'>
+        <DataToolbar id="inline-modifier-data-toolbar" className='pf-m-toggle-group-container'>
           <DataToolbarContent>
             {dataToolbarItems}
           </DataToolbarContent>
         </DataToolbar>
         <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
-          <DataListItem aria-labelledby="selectable-action-item1" id="item1">
+          <DataListItem aria-labelledby="selectable-action-item1" id="inline-modifier-item1">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2808,15 +2712,21 @@ class MasterDetailInlineModifier extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("First row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item2" id="item2">
+          <DataListItem aria-labelledby="selectable-action-item2" id="inline-modifier-item2">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2837,15 +2747,21 @@ class MasterDetailInlineModifier extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Second row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item3" id="item3">
+          <DataListItem aria-labelledby="selectable-action-item3" id="inline-modifier-item3">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2863,15 +2779,21 @@ class MasterDetailInlineModifier extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Third row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="selectable-action-item4" id="item4">
+          <DataListItem aria-labelledby="selectable-action-item4" id="inline-modifier-item4">
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -2892,10 +2814,16 @@ class MasterDetailInlineModifier extends React.Component {
                       </Flex>
                     </Flex>
                   </DataListCell>,
-                  <DataListCell isFilled={false} alignRight>
-                    <Button variant={ButtonVariant.secondary} onClick={() => {this.onOpenDrawerClick("Fourth row expanded drawer content")}}>Secondary</Button>
-                    <Button variant={ButtonVariant.link}>Link Button</Button>
-                  </DataListCell>
+                  <DataListAction alignRight>
+                    <Stack>
+                      <StackItem>
+                        <Button variant={ButtonVariant.secondary}>Secondary</Button>
+                      </StackItem>
+                      <StackItem>
+                        <Button variant={ButtonVariant.link}>Link Button</Button>
+                      </StackItem>
+                    </Stack>
+                  </DataListAction>
                 ]}
               />
             </DataListItemRow>
