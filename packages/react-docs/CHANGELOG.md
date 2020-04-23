@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.1.14...@patternfly/react-docs@5.2.0) (2020-04-23)
+
+
+### Features
+
+* **react-core:** bump core and fix build ([#4116](https://github.com/patternfly/patternfly-react/issues/4116)) ([33a935d](https://github.com/patternfly/patternfly-react/commit/33a935d7381f041d62c67c16baae96f8c04fa288))
+
+
+
+
+
 ## [5.1.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.1.13...@patternfly/react-docs@5.1.14) (2020-04-22)
 
 **Note:** Version bump only for package @patternfly/react-docs

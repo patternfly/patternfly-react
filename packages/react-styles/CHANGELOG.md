@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.1.1...@patternfly/react-styles@4.2.0) (2020-04-23)
+
+
+### Features
+
+* **react-core:** bump core and fix build ([#4116](https://github.com/patternfly/patternfly-react/issues/4116)) ([33a935d](https://github.com/patternfly/patternfly-react/commit/33a935d7381f041d62c67c16baae96f8c04fa288))
+
+
+
+
+
 ## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.1.0...@patternfly/react-styles@4.1.1) (2020-04-17)
 
 
