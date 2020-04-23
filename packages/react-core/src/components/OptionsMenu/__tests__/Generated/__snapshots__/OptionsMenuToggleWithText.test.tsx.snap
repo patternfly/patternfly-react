@@ -21,9 +21,13 @@ exports[`OptionsMenuToggleWithText should match snapshot (auto-generated) 1`] = 
     id="''-toggle"
     onClick={[Function]}
   >
-    <div>
-      ReactNode
-    </div>
+    <span
+      className="pf-c-options-menu__toggle-button-icon"
+    >
+      <div>
+        ReactNode
+      </div>
+    </span>
   </button>
 </div>
 `;

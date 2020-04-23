@@ -3009,7 +3009,11 @@ exports[`optionsMenu text 1`] = `
                   class="pf-c-options-menu__toggle-button"
                   id="-toggle"
                 >
-                  Test
+                  <span
+                    class="pf-c-options-menu__toggle-button-icon"
+                  >
+                    Test
+                  </span>
                 </button>
               </div>
             </div>,
@@ -3039,7 +3043,11 @@ exports[`optionsMenu text 1`] = `
             id="-toggle"
             onClick={[Function]}
           >
-            Test
+            <span
+              className="pf-c-options-menu__toggle-button-icon"
+            >
+              Test
+            </span>
           </button>
         </div>
       </OptionsMenuToggleWithText>
