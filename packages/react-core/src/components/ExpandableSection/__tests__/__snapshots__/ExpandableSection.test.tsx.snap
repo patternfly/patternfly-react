@@ -16,7 +16,6 @@ exports[`ExpandableSection 1`] = `
       noVerticalAlign={false}
       size="sm"
     />
-    <span />
   </button>
   <div
     className="pf-c-expandable-section__content"
@@ -44,7 +43,6 @@ exports[`Renders ExpandableSection expanded 1`] = `
       noVerticalAlign={false}
       size="sm"
     />
-    <span />
   </button>
   <div
     className="pf-c-expandable-section__content"

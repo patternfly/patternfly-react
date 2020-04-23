@@ -103,8 +103,10 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           aria-expanded={propOrStateIsExpanded}
           onClick={onToggle}
         >
-          <AngleRightIcon className={css(styles.expandableSectionToggleIcon)} aria-hidden />
-          <span>{computedToggleText}</span>
+          <span className={css(styles.expandableSectionToggleIcon)}>
+            <AngleRightIcon aria-hidden />
+          </span>
+          <span className="pf-c-expandable-section__toggle-text">{computedToggleText}</span>
         </button>
         <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded}>
           {children}
