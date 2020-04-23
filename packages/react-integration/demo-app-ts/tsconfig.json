@@ -31,5 +31,8 @@
   ],
   "exclude": [
     "**/node_modules/@types/**/*.ts"
+  ],
+  "files": [
+    "custom.d.ts"
   ]
 }
