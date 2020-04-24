@@ -16,7 +16,6 @@ import {
   NavVariants,
   PageHeader
 } from '@patternfly/react-core';
-import './nav.css';
 
 ## Examples
 
@@ -466,14 +465,12 @@ class NavHorizontalList extends React.Component {
         </NavList>
       </Nav>
     );
-    return (
-      <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(21, 21, 21)' }} />
-    );
+    return <PageHeader topNav={nav} />;
   }
 }
 ```
 
-```js title=Tertiary
+```js title=Tertiary-(only-in-PageSection)
 import React from 'react';
 import {
   Nav,
@@ -501,16 +498,18 @@ class NavTertiaryList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
-        <NavList variant={NavVariants.tertiary}>
-          {Array.apply(0, Array(10)).map(function (x, i) {
-            const num = i + 1;
-            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
-              Tertiary nav item {num}
-            </NavItem>;
-          })}
-        </NavList>
-      </Nav>
+      <PageSection type="nav">
+        <Nav onSelect={this.onSelect}>
+          <NavList variant={NavVariants.tertiary}>
+            {Array.apply(0, Array(10)).map(function (x, i) {
+              const num = i + 1;
+              return <NavItem key={num} itemId={num} isActive={activeItem === num}>
+                Tertiary nav item {num}
+              </NavItem>;
+            })}
+          </NavList>
+        </Nav>
+      </PageSection>
     );
   }
 }

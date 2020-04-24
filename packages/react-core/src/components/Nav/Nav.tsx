@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
+import { NavList } from './NavList';
 
 export type NavSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
@@ -48,16 +49,7 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
   };
 
   state = {
-    showLeftScrollButton: false,
-    showRightScrollButton: false
-  };
-
-  updateScrollButtonState = (state: { showLeftScrollButton: boolean; showRightScrollButton: boolean }) => {
-    const { showLeftScrollButton, showRightScrollButton } = state;
-    this.setState({
-      showLeftScrollButton,
-      showRightScrollButton
-    });
+    isScrollable: false
   };
 
   // Callback from NavItem
@@ -102,7 +94,9 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
       ouiaId,
       ...props
     } = this.props;
-    const childrenProps: any = (children as any).props;
+    const childrenProps = (children as NavList).props;
+    const isHorizontal = childrenProps && ['horizontal', 'tertiary'].includes(childrenProps.variant);
+    const { isScrollable } = this.state;
 
     return (
       <NavContext.Provider
@@ -122,11 +116,17 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
-          updateScrollButtonState: this.updateScrollButtonState
+          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable })
         }}
       >
         <nav
-          className={css(styles.nav, theme === 'light' && styles.modifiers.light, className)}
+          className={css(
+            styles.nav,
+            theme === 'light' && styles.modifiers.light,
+            isHorizontal && styles.modifiers.horizontal,
+            isScrollable && styles.modifiers.scrollable,
+            className
+          )}
           aria-label={
             ariaLabel === ''
               ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary'

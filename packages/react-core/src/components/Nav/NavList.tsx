@@ -21,6 +21,13 @@ export interface NavListProps
   ariaRightScroll?: string;
 }
 
+const variantStyle = {
+  [NavVariants.default]: '', // TODO: Core wants a BEM element here.
+  [NavVariants.simple]: styles.navSimpleList,
+  [NavVariants.horizontal]: styles.navHorizontalList,
+  [NavVariants.tertiary]: styles.navTertiaryList
+};
+
 export class NavList extends React.Component<NavListProps> {
   static contextType = NavContext;
 
@@ -32,29 +39,31 @@ export class NavList extends React.Component<NavListProps> {
     ariaRightScroll: 'Scroll right'
   };
 
+  state = {
+    scrollViewAtStart: false,
+    scrollViewAtEnd: false
+  };
+
   navList = React.createRef<HTMLUListElement>();
 
   handleScrollButtons = () => {
-    if (this.navList.current) {
-      const { updateScrollButtonState } = this.context;
-      const container = this.navList.current;
-      // get first element and check if it is in view
-      const showLeftScrollButton = !isElementInView(container, container.firstChild as HTMLElement, false);
-
-      // get last element and check if it is in view
-      const showRightScrollButton = !isElementInView(container, container.lastChild as HTMLElement, false);
-
-      updateScrollButtonState({
-        showLeftScrollButton,
-        showRightScrollButton
+    const container = this.navList.current;
+    if (container) {
+      // check if it elements are in view
+      const scrollViewAtStart = isElementInView(container, container.firstChild as HTMLElement, false);
+      const scrollViewAtEnd = isElementInView(container, container.lastChild as HTMLElement, false);
+      this.setState({
+        scrollViewAtStart,
+        scrollViewAtEnd
       });
+      this.context.updateIsScrollable(!scrollViewAtStart || !scrollViewAtEnd);
     }
   };
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
-    if (this.navList.current) {
-      const container = this.navList.current;
+    const container = this.navList.current;
+    if (container) {
       const childrenArr = Array.from(container.children);
       let firstElementInView: Element;
       let lastElementOutOfView: Element;
@@ -73,8 +82,8 @@ export class NavList extends React.Component<NavListProps> {
 
   scrollRight = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
-    if (this.navList.current) {
-      const container = this.navList.current;
+    const container = this.navList.current;
+    if (container) {
       const childrenArr = Array.from(container.children);
       let lastElementInView: Element;
       let firstElementOutOfView: Element;
@@ -92,37 +101,23 @@ export class NavList extends React.Component<NavListProps> {
   };
 
   componentDidMount() {
-    const { variant } = this.props;
-    const isHorizontal = variant === NavVariants.horizontal || variant === NavVariants.tertiary;
-    if (isHorizontal) {
-      window.addEventListener('resize', this.handleScrollButtons, false);
-      // call the handle resize function to check if scroll buttons should be shown
-      this.handleScrollButtons();
-    }
+    window.addEventListener('resize', this.handleScrollButtons, false);
+    this.handleScrollButtons();
   }
 
   componentWillUnmount() {
-    const { variant } = this.props;
-    const isHorizontal = variant === NavVariants.horizontal || variant === NavVariants.tertiary;
-    if (isHorizontal) {
-      document.removeEventListener('resize', this.handleScrollButtons, false);
-    }
+    document.removeEventListener('resize', this.handleScrollButtons, false);
   }
 
   render() {
     const { variant, children, className, ariaLeftScroll, ariaRightScroll, ...props } = this.props;
-    const variantStyle = {
-      [NavVariants.default]: '', // TODO: Core wants a BEM element here.
-      [NavVariants.simple]: styles.navSimpleList,
-      [NavVariants.horizontal]: styles.navHorizontalList,
-      [NavVariants.tertiary]: styles.navTertiaryList
-    };
+    const { scrollViewAtStart, scrollViewAtEnd } = this.state;
     const isHorizontal = variant === NavVariants.horizontal || variant === NavVariants.tertiary;
 
     return (
       <React.Fragment>
         {isHorizontal && (
-          <button className={css(styles.navScrollButton)} aria-label={ariaLeftScroll} onClick={this.scrollLeft}>
+          <button className={css(styles.navScrollButton)} aria-label={ariaLeftScroll} onClick={this.scrollLeft} disabled={scrollViewAtStart}>
             <AngleLeftIcon />
           </button>
         )}
@@ -130,7 +125,7 @@ export class NavList extends React.Component<NavListProps> {
           {children}
         </ul>
         {isHorizontal && (
-          <button className={css(styles.navScrollButton)} aria-label={ariaRightScroll} onClick={this.scrollRight}>
+          <button className={css(styles.navScrollButton)} aria-label={ariaRightScroll} onClick={this.scrollRight} disabled={scrollViewAtEnd}>
             <AngleRightIcon />
           </button>
         )}
