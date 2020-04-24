@@ -25,6 +25,15 @@ describe('FormGroup component', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('should render no padding-top form group variant', () => {
+    const view = mount(
+      <FormGroup hasNoPaddingTop label="label" fieldId="label-id" helperText="this is helper text">
+        <input id="label-id" />
+      </FormGroup>
+    );
+    expect(view.find('label').prop('className')).toMatch(/no-padding-top/)
+  });
+
   test('should render form group variant with required label', () => {
     const view = mount(
       <FormGroup label="label" isRequired fieldId="label-id">
