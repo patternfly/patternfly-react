@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.3...@patternfly/react-docs@5.2.4) (2020-04-24)
+
+
+### Bug Fixes
+
+* **react-docs:** bump gatsby-theme to fix nav ([#4126](https://github.com/patternfly/patternfly-react/issues/4126)) ([88e3f58](https://github.com/patternfly/patternfly-react/commit/88e3f584bee340f58042b6c89f61fc4ae7b2fce4))
+
+
+
+
+
 ## [5.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.2...@patternfly/react-docs@5.2.3) (2020-04-24)
 
 **Note:** Version bump only for package @patternfly/react-docs
