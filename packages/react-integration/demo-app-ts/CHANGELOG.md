@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.5.3...demo-app-ts@4.6.0) (2020-04-24)
+
+
+### Features
+
+* **form:** support removing top spacer form from labels ([#4025](https://github.com/patternfly/patternfly-react/issues/4025)) ([d05f279](https://github.com/patternfly/patternfly-react/commit/d05f279efbb6e52df517e08cdfcc0bce7edaef27))
+
+
+
+
+
 ## [4.5.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.5.2...demo-app-ts@4.5.3) (2020-04-23)
 
 **Note:** Version bump only for package demo-app-ts

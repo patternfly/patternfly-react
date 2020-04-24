@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.7.2...@patternfly/react-core@4.8.0) (2020-04-24)
+
+
+### Features
+
+* **form:** support removing top spacer form from labels ([#4025](https://github.com/patternfly/patternfly-react/issues/4025)) ([d05f279](https://github.com/patternfly/patternfly-react/commit/d05f279efbb6e52df517e08cdfcc0bce7edaef27))
+
+
+
+
+
 ## [4.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.7.1...@patternfly/react-core@4.7.2) (2020-04-23)
 
 **Note:** Version bump only for package @patternfly/react-core
