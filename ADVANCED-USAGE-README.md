@@ -2,11 +2,11 @@
 This README covers advanced usage topics for PatternFly React users.  
 
 ### Table of contents
-1. [Applying Red Hat Fonts](#Applying-Red-Hat-fonts)
+1. [Applying Overpass Font](#Applying-Overpass-font)
 2. [Tree shaking](#Tree-shaking)
 
-## Applying Red Hat fonts
-If you would like to use Red Hat fonts instead of Overpass, simply add the class `.pf-m-redhat-font` to an element that wraps your application (ideally `<html>` or `<body>`) to adopt the CSS changes that introduce the Red Hat fonts into PatternFly.
+## Applying Overpass font
+If you would like to use Overpass instead of the Red Hat font, simply add the class `.pf-m-overpass-font` to an element that wraps your application (ideally `<html>` or `<body>`) to adopt the CSS changes that would allow opting in to the Overpass font.
 
 
 ## Tree shaking

@@ -48,7 +48,7 @@ export default <Button variant="primary">Button</Button>;
 All component documentation is available on [PatternFly.org](https://www.patternfly.org/v4/documentation/react/components/aboutmodal).
 
 #### Advanced usage
-1. [Applying Red Hat Fonts](../../ADVANCED-USAGE-README.md#Applying-Red-Hat-fonts)
+1. [Applying Overpass font](../../ADVANCED-USAGE-README.md#Applying-Overpass-font)
 2. [Tree shaking](../../ADVANCED-USAGE-README.md#Tree-shaking)
 
 ### Contribution guidelines
