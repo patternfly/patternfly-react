@@ -13,7 +13,8 @@ import {
   NavList,
   NavGroup,
   NavVariants,
-  PageHeader
+  PageHeader,
+  PageSection
 } from '@patternfly/react-core';
 
 ## Examples
@@ -478,7 +479,8 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants
+  NavVariants,
+  PageSection
 } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {
