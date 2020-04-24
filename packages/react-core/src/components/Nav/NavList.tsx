@@ -106,7 +106,7 @@ export class NavList extends React.Component<NavListProps> {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('resize', this.handleScrollButtons, false);
+    window.removeEventListener('resize', this.handleScrollButtons, false);
   }
 
   render() {
