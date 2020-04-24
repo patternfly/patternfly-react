@@ -289,7 +289,8 @@ class MasterDetailFullPage extends React.Component {
     
     this.onCloseDrawerClick = () => {
       this.setState({
-        isDrawerExpanded: false
+        isDrawerExpanded: false,
+        selectedDataListItemId: ''
       });
     };
   }
@@ -854,7 +855,8 @@ class MasterDetailContentPadding extends React.Component {
     
     this.onCloseDrawerClick = () => {
       this.setState({
-        isDrawerExpanded: false
+        isDrawerExpanded: false,
+        selectedDataListItemId: ''
       });
     };
   }
@@ -1808,8 +1810,9 @@ class MasterDetailSimpleListInCard extends React.Component {
     };
     
     this.onSelectListItem = (listItem, listItemProps) => {
+      const id = listItemProps.id;
       this.setState({
-        drawerPanelBodyContent: listItemProps.id
+        drawerPanelBodyContent: id.charAt(id.length-1)
       });
     };
 
@@ -1927,7 +1930,7 @@ class MasterDetailSimpleListInCard extends React.Component {
             <SimpleListItem key="item4" id="simple-list-item4">List item 4</SimpleListItem>
           </SimpleListGroup>
           <SimpleListGroup title="Section 2" id="section-2">
-            <SimpleListItem key="item5" id="simple-list-item5" isCurrent>List item 5</SimpleListItem>
+            <SimpleListItem key="item5" id="simple-list-item5">List item 5</SimpleListItem>
             <SimpleListItem key="item6" id="simple-list-item6">List item 6</SimpleListItem>
             <SimpleListItem key="item7" id="simple-list-item7">List item 7</SimpleListItem>
             <SimpleListItem key="item8" id="simple-list-item8">List item 8</SimpleListItem>
@@ -2502,7 +2505,8 @@ class MasterDetailInlineModifier extends React.Component {
     
     this.onCloseDrawerClick = () => {
       this.setState({
-        isDrawerExpanded: false
+        isDrawerExpanded: false,
+        selectedDataListItemId: ''
       });
     };
   }
