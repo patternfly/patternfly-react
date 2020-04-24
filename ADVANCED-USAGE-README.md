@@ -1,8 +1,6 @@
 # PatternFly React
 This README covers advanced usage topics for PatternFly React users.  
 
-**Community:** [PatternFly website](https://www.patternfly.org) | [Slack](https://slack.patternfly.org) | [Medium](https://medium.com/patternfly) | [Mailing list](https://www.redhat.com/mailman/listinfo/patternfly)
-
 ### Table of contents
 1. [Applying Red Hat Fonts](#Applying-Red-Hat-fonts)
 2. [Tree shaking](#Tree-shaking)
