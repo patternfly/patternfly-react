@@ -85,7 +85,11 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
         >
           {icon && <span className={css(toggleIconClass)}>{icon}</span>}
           {children && <span className={ToggleIndicator && css(toggleTextClass)}>{children}</span>}
-          {ToggleIndicator && <ToggleIndicator className={css(children && toggleIndicatorClass)} />}
+          {ToggleIndicator && (
+            <span className={css(toggleIndicatorClass)}>
+              <ToggleIndicator />
+            </span>
+          )}
         </Toggle>
       )}
     </DropdownContext.Consumer>

@@ -129,21 +129,24 @@ exports[`optionsMenu expanded 1`] = `
                 <span
                   class="pf-c-options-menu__toggle-text"
                 />
-                <svg
-                  aria-hidden="true"
+                <span
                   class="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
               </button>
               <ul
                 aria-labelledby="expanded-toggle"
@@ -298,21 +301,24 @@ exports[`optionsMenu expanded 1`] = `
                   <span
                     class="pf-c-options-menu__toggle-text"
                   />
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-options-menu__toggle-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
                 <ul
                   aria-labelledby="expanded-toggle"
@@ -472,21 +478,24 @@ exports[`optionsMenu expanded 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     />
-                    <svg
-                      aria-hidden="true"
+                    <span
                       class="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
                     >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                   <ul
                     aria-labelledby="expanded-toggle"
@@ -625,33 +634,35 @@ exports[`optionsMenu expanded 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               />
-              <CaretDownIcon
+              <span
                 className="pf-c-options-menu__toggle-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 320 512"
-                  width="1em"
+                <CaretDownIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </CaretDownIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </CaretDownIcon>
+              </span>
             </button>
           </Toggle>
         </DropdownToggle>
@@ -1180,21 +1191,24 @@ exports[`optionsMenu isDisabled 1`] = `
                 <span
                   class="pf-c-options-menu__toggle-text"
                 />
-                <svg
-                  aria-hidden="true"
+                <span
                   class="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
               </button>
             </div>,
           }
@@ -1231,21 +1245,24 @@ exports[`optionsMenu isDisabled 1`] = `
                   <span
                     class="pf-c-options-menu__toggle-text"
                   />
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-options-menu__toggle-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>,
             }
@@ -1287,21 +1304,24 @@ exports[`optionsMenu isDisabled 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     />
-                    <svg
-                      aria-hidden="true"
+                    <span
                       class="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
                     >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </div>,
               }
@@ -1321,33 +1341,35 @@ exports[`optionsMenu isDisabled 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               />
-              <CaretDownIcon
+              <span
                 className="pf-c-options-menu__toggle-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 320 512"
-                  width="1em"
+                <CaretDownIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </CaretDownIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </CaretDownIcon>
+              </span>
             </button>
           </Toggle>
         </DropdownToggle>
@@ -1486,21 +1508,24 @@ exports[`optionsMenu open up 1`] = `
                 <span
                   class="pf-c-options-menu__toggle-text"
                 />
-                <svg
-                  aria-hidden="true"
+                <span
                   class="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
               </button>
             </div>,
           }
@@ -1536,21 +1561,24 @@ exports[`optionsMenu open up 1`] = `
                   <span
                     class="pf-c-options-menu__toggle-text"
                   />
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-options-menu__toggle-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>,
             }
@@ -1591,21 +1619,24 @@ exports[`optionsMenu open up 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     />
-                    <svg
-                      aria-hidden="true"
+                    <span
                       class="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
                     >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </div>,
               }
@@ -1625,33 +1656,35 @@ exports[`optionsMenu open up 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               />
-              <CaretDownIcon
+              <span
                 className="pf-c-options-menu__toggle-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 320 512"
-                  width="1em"
+                <CaretDownIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </CaretDownIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </CaretDownIcon>
+              </span>
             </button>
           </Toggle>
         </DropdownToggle>
@@ -2016,21 +2049,24 @@ exports[`optionsMenu regular 1`] = `
                 <span
                   class="pf-c-options-menu__toggle-text"
                 />
-                <svg
-                  aria-hidden="true"
+                <span
                   class="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
               </button>
             </div>,
           }
@@ -2066,21 +2102,24 @@ exports[`optionsMenu regular 1`] = `
                   <span
                     class="pf-c-options-menu__toggle-text"
                   />
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-options-menu__toggle-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>,
             }
@@ -2121,21 +2160,24 @@ exports[`optionsMenu regular 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     />
-                    <svg
-                      aria-hidden="true"
+                    <span
                       class="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
                     >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </div>,
               }
@@ -2155,33 +2197,35 @@ exports[`optionsMenu regular 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               />
-              <CaretDownIcon
+              <span
                 className="pf-c-options-menu__toggle-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 320 512"
-                  width="1em"
+                <CaretDownIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </CaretDownIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </CaretDownIcon>
+              </span>
             </button>
           </Toggle>
         </DropdownToggle>
@@ -2321,21 +2365,24 @@ exports[`optionsMenu right aligned + open up 1`] = `
                 <span
                   class="pf-c-options-menu__toggle-text"
                 />
-                <svg
-                  aria-hidden="true"
+                <span
                   class="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
               </button>
             </div>,
           }
@@ -2371,21 +2418,24 @@ exports[`optionsMenu right aligned + open up 1`] = `
                   <span
                     class="pf-c-options-menu__toggle-text"
                   />
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-options-menu__toggle-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>,
             }
@@ -2426,21 +2476,24 @@ exports[`optionsMenu right aligned + open up 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     />
-                    <svg
-                      aria-hidden="true"
+                    <span
                       class="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
                     >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </div>,
               }
@@ -2460,33 +2513,35 @@ exports[`optionsMenu right aligned + open up 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               />
-              <CaretDownIcon
+              <span
                 className="pf-c-options-menu__toggle-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 320 512"
-                  width="1em"
+                <CaretDownIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </CaretDownIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </CaretDownIcon>
+              </span>
             </button>
           </Toggle>
         </DropdownToggle>
@@ -2625,21 +2680,24 @@ exports[`optionsMenu right aligned 1`] = `
                 <span
                   class="pf-c-options-menu__toggle-text"
                 />
-                <svg
-                  aria-hidden="true"
+                <span
                   class="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
               </button>
             </div>,
           }
@@ -2675,21 +2733,24 @@ exports[`optionsMenu right aligned 1`] = `
                   <span
                     class="pf-c-options-menu__toggle-text"
                   />
-                  <svg
-                    aria-hidden="true"
+                  <span
                     class="pf-c-options-menu__toggle-icon"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
                   >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                      transform=""
-                    />
-                  </svg>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>,
             }
@@ -2730,21 +2791,24 @@ exports[`optionsMenu right aligned 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     />
-                    <svg
-                      aria-hidden="true"
+                    <span
                       class="pf-c-options-menu__toggle-icon"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 320 512"
-                      width="1em"
                     >
-                      <path
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                        transform=""
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </span>
                   </button>
                 </div>,
               }
@@ -2764,33 +2828,35 @@ exports[`optionsMenu right aligned 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               />
-              <CaretDownIcon
+              <span
                 className="pf-c-options-menu__toggle-icon"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
               >
-                <svg
-                  aria-hidden={true}
-                  aria-labelledby={null}
-                  className="pf-c-options-menu__toggle-icon"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 320 512"
-                  width="1em"
+                <CaretDownIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
                 >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </CaretDownIcon>
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </CaretDownIcon>
+              </span>
             </button>
           </Toggle>
         </DropdownToggle>
@@ -2943,7 +3009,11 @@ exports[`optionsMenu text 1`] = `
                   class="pf-c-options-menu__toggle-button"
                   id="-toggle"
                 >
-                  Test
+                  <span
+                    class="pf-c-options-menu__toggle-button-icon"
+                  >
+                    Test
+                  </span>
                 </button>
               </div>
             </div>,
@@ -2973,7 +3043,11 @@ exports[`optionsMenu text 1`] = `
             id="-toggle"
             onClick={[Function]}
           >
-            Test
+            <span
+              className="pf-c-options-menu__toggle-button-icon"
+            >
+              Test
+            </span>
           </button>
         </div>
       </OptionsMenuToggleWithText>

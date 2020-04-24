@@ -70,7 +70,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       aria-expanded={isOpen}
       onClick={() => onToggle(!isOpen)}
     >
-      {toggleButtonContents}
+      <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
     </button>
   </div>
 );

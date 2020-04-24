@@ -40,7 +40,9 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
         aria-labelledby={ariaLabel !== 'Details' ? null : `${rowid} ${id}`}
         aria-expanded={isExpanded}
       >
-        <AngleRightIcon />
+        <div className={css(styles.dataListToggleIcon)}>
+          <AngleRightIcon />
+        </div>
       </Button>
     </div>
   </div>
