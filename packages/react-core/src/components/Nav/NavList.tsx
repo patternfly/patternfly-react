@@ -126,7 +126,12 @@ export class NavList extends React.Component<NavListProps> {
             <AngleLeftIcon />
           </button>
         )}
-        <ul ref={this.navList} className={css(variantStyle[variant], className)} {...props}>
+        <ul
+          ref={this.navList}
+          className={css(variantStyle[variant], className)}
+          onScroll={this.handleScrollButtons}
+          {...props}
+        >
           {children}
         </ul>
         {isHorizontal && (

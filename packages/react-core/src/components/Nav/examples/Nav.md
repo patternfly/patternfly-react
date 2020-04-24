@@ -16,6 +16,7 @@ import {
   PageHeader,
   PageSection
 } from '@patternfly/react-core';
+import './nav.css';
 
 ## Examples
 
