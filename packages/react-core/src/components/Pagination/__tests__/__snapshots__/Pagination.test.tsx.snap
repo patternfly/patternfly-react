@@ -147,7 +147,7 @@ exports[`component render custom pagination toggle 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -155,7 +155,7 @@ exports[`component render custom pagination toggle 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -267,7 +267,7 @@ exports[`component render custom pagination toggle 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -333,7 +333,7 @@ exports[`component render custom pagination toggle 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -393,7 +393,7 @@ exports[`component render custom pagination toggle 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -427,7 +427,7 @@ exports[`component render custom pagination toggle 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -910,7 +910,7 @@ exports[`component render custom perPageOptions 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -1004,7 +1004,7 @@ exports[`component render custom perPageOptions 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -1075,7 +1075,7 @@ exports[`component render custom perPageOptions 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -1109,7 +1109,7 @@ exports[`component render custom perPageOptions 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -1533,7 +1533,7 @@ exports[`component render custom start end 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -1541,7 +1541,7 @@ exports[`component render custom start end 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -1664,7 +1664,7 @@ exports[`component render custom start end 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -1758,7 +1758,7 @@ exports[`component render custom start end 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -1829,7 +1829,7 @@ exports[`component render custom start end 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -1863,7 +1863,7 @@ exports[`component render custom start end 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -2694,7 +2694,7 @@ exports[`component render last page 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -2702,7 +2702,7 @@ exports[`component render last page 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -2825,7 +2825,7 @@ exports[`component render last page 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -2919,7 +2919,7 @@ exports[`component render last page 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -2990,7 +2990,7 @@ exports[`component render last page 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -3024,7 +3024,7 @@ exports[`component render last page 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -3461,7 +3461,7 @@ exports[`component render limited number of pages 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -3469,7 +3469,7 @@ exports[`component render limited number of pages 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -3579,7 +3579,7 @@ exports[`component render limited number of pages 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -3673,7 +3673,7 @@ exports[`component render limited number of pages 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -3744,7 +3744,7 @@ exports[`component render limited number of pages 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -3778,7 +3778,7 @@ exports[`component render limited number of pages 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -4202,7 +4202,7 @@ exports[`component render no items 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -4210,7 +4210,7 @@ exports[`component render no items 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -4334,7 +4334,7 @@ exports[`component render no items 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -4429,7 +4429,7 @@ exports[`component render no items 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -4501,7 +4501,7 @@ exports[`component render no items 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -4535,7 +4535,7 @@ exports[`component render no items 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -4937,7 +4937,7 @@ exports[`component render should render correctly bottom 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -4945,7 +4945,7 @@ exports[`component render should render correctly bottom 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -5068,7 +5068,7 @@ exports[`component render should render correctly bottom 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -5162,7 +5162,7 @@ exports[`component render should render correctly bottom 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -5233,7 +5233,7 @@ exports[`component render should render correctly bottom 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -5267,7 +5267,7 @@ exports[`component render should render correctly bottom 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -5691,7 +5691,7 @@ exports[`component render should render correctly compact 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -5699,7 +5699,7 @@ exports[`component render should render correctly compact 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -5822,7 +5822,7 @@ exports[`component render should render correctly compact 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -5916,7 +5916,7 @@ exports[`component render should render correctly compact 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -5987,7 +5987,7 @@ exports[`component render should render correctly compact 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -6021,7 +6021,7 @@ exports[`component render should render correctly compact 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -6330,7 +6330,7 @@ exports[`component render should render correctly disabled 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -6338,7 +6338,7 @@ exports[`component render should render correctly disabled 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -6462,7 +6462,7 @@ exports[`component render should render correctly disabled 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -6557,7 +6557,7 @@ exports[`component render should render correctly disabled 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -6629,7 +6629,7 @@ exports[`component render should render correctly disabled 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -6663,7 +6663,7 @@ exports[`component render should render correctly disabled 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -7087,7 +7087,7 @@ exports[`component render should render correctly top 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -7095,7 +7095,7 @@ exports[`component render should render correctly top 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -7218,7 +7218,7 @@ exports[`component render should render correctly top 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -7312,7 +7312,7 @@ exports[`component render should render correctly top 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -7383,7 +7383,7 @@ exports[`component render should render correctly top 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -7417,7 +7417,7 @@ exports[`component render should render correctly top 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -7833,7 +7833,7 @@ exports[`component render titles 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -7841,7 +7841,7 @@ exports[`component render titles 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -7964,7 +7964,7 @@ exports[`component render titles 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -8059,7 +8059,7 @@ exports[`component render titles 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -8130,7 +8130,7 @@ exports[`component render titles 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -8164,7 +8164,7 @@ exports[`component render titles 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -8588,7 +8588,7 @@ exports[`component render up drop direction 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -8596,7 +8596,7 @@ exports[`component render up drop direction 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -8719,7 +8719,7 @@ exports[`component render up drop direction 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -8813,7 +8813,7 @@ exports[`component render up drop direction 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -8884,7 +8884,7 @@ exports[`component render up drop direction 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -8918,7 +8918,7 @@ exports[`component render up drop direction 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
@@ -9342,7 +9342,7 @@ exports[`component render zero results 1`] = `
               >
                  per page
               </span>
-              <span
+              <div
                 className="pf-c-options-menu__menu-item-icon"
               >
                 <CheckIcon
@@ -9350,7 +9350,7 @@ exports[`component render zero results 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </span>
+              </div>
             </DropdownItem>,
             <DropdownItem
               className=""
@@ -9474,7 +9474,7 @@ exports[`component render zero results 1`] = `
                       type="button"
                     >
                       <span
-                        class=""
+                        class="pf-c-options-menu__toggle-icon"
                       >
                         <svg
                           aria-hidden="true"
@@ -9569,7 +9569,7 @@ exports[`component render zero results 1`] = `
                           type="button"
                         >
                           <span
-                            class=""
+                            class="pf-c-options-menu__toggle-icon"
                           >
                             <svg
                               aria-hidden="true"
@@ -9641,7 +9641,7 @@ exports[`component render zero results 1`] = `
                             type="button"
                           >
                             <span
-                              class=""
+                              class="pf-c-options-menu__toggle-icon"
                             >
                               <svg
                                 aria-hidden="true"
@@ -9675,7 +9675,7 @@ exports[`component render zero results 1`] = `
                     type="button"
                   >
                     <span
-                      className=""
+                      className="pf-c-options-menu__toggle-icon"
                     >
                       <CaretDownIcon
                         color="currentColor"
