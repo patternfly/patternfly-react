@@ -11,7 +11,7 @@ exports[`Dark Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav test=nav-class"
-    data-ouia-component-id={1}
+    data-ouia-component-id={3}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -113,7 +113,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={2}
+    data-ouia-component-id={5}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -211,7 +211,7 @@ exports[`Default Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav test=nav-class"
-    data-ouia-component-id={0}
+    data-ouia-component-id={1}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -313,7 +313,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={5}
+    data-ouia-component-id={11}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -477,7 +477,7 @@ exports[`Expandable Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={4}
+    data-ouia-component-id={9}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -641,7 +641,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   <nav
     aria-label="Test"
     className="pf-c-nav"
-    data-ouia-component-id={6}
+    data-ouia-component-id={13}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -810,8 +810,8 @@ exports[`Horizontal Nav List 1`] = `
 >
   <nav
     aria-label="Global"
-    className="pf-c-nav"
-    data-ouia-component-id={9}
+    className="pf-c-nav pf-m-horizontal"
+    data-ouia-component-id={17}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -824,6 +824,7 @@ exports[`Horizontal Nav List 1`] = `
       <button
         aria-label="Scroll left"
         className="pf-c-nav__scroll-button"
+        disabled={true}
         onClick={[Function]}
       >
         <AngleLeftIcon
@@ -927,6 +928,7 @@ exports[`Horizontal Nav List 1`] = `
       <button
         aria-label="Scroll right"
         className="pf-c-nav__scroll-button"
+        disabled={true}
         onClick={[Function]}
       >
         <AngleRightIcon
@@ -971,7 +973,7 @@ exports[`Nav Grouped List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={7}
+    data-ouia-component-id={15}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1183,8 +1185,8 @@ exports[`Nav List with custom item nodes 1`] = `
 >
   <nav
     aria-label="Local"
-    className="pf-c-nav"
-    data-ouia-component-id={13}
+    className="pf-c-nav pf-m-horizontal"
+    data-ouia-component-id={21}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1197,6 +1199,7 @@ exports[`Nav List with custom item nodes 1`] = `
       <button
         aria-label="Scroll left"
         className="pf-c-nav__scroll-button"
+        disabled={true}
         onClick={[Function]}
       >
         <AngleLeftIcon
@@ -1248,6 +1251,7 @@ exports[`Nav List with custom item nodes 1`] = `
       <button
         aria-label="Scroll right"
         className="pf-c-nav__scroll-button"
+        disabled={true}
         onClick={[Function]}
       >
         <AngleRightIcon
@@ -1292,7 +1296,7 @@ exports[`Simple Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    data-ouia-component-id={3}
+    data-ouia-component-id={7}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1389,8 +1393,8 @@ exports[`Tertiary Nav List 1`] = `
 >
   <nav
     aria-label="Local"
-    className="pf-c-nav"
-    data-ouia-component-id={11}
+    className="pf-c-nav pf-m-horizontal"
+    data-ouia-component-id={19}
     data-ouia-component-type="PF4/Nav"
     data-ouia-safe={true}
   >
@@ -1403,6 +1407,7 @@ exports[`Tertiary Nav List 1`] = `
       <button
         aria-label="Scroll left"
         className="pf-c-nav__scroll-button"
+        disabled={true}
         onClick={[Function]}
       >
         <AngleLeftIcon
@@ -1506,6 +1511,7 @@ exports[`Tertiary Nav List 1`] = `
       <button
         aria-label="Scroll right"
         className="pf-c-nav__scroll-button"
+        disabled={true}
         onClick={[Function]}
       >
         <AngleRightIcon

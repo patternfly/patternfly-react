@@ -96,7 +96,6 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
     } = this.props;
     const childrenProps = (children as NavList).props;
     const isHorizontal = childrenProps && ['horizontal', 'tertiary'].includes(childrenProps.variant);
-    const { isScrollable } = this.state;
 
     return (
       <NavContext.Provider
@@ -124,7 +123,7 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
             styles.nav,
             theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
-            isScrollable && styles.modifiers.scrollable,
+            this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
           aria-label={

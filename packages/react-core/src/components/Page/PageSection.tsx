@@ -49,21 +49,19 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   noPadding = false,
   isFilled,
   ...props
-}: PageSectionProps) => {
+}: PageSectionProps) => (
   // TODO: Implement https://github.com/patternfly/patternfly/pull/2816
-  return (
-    <section
-      {...props}
-      className={css(
-        variantType[type],
-        noPadding && styles.modifiers.noPadding,
-        variantStyle[variant],
-        isFilled === false && styles.modifiers.noFill,
-        isFilled === true && styles.modifiers.fill,
-        className
-      )}
-    >
-      {children}
-    </section>
-  );
-};
+  <section
+    {...props}
+    className={css(
+      variantType[type],
+      noPadding && styles.modifiers.noPadding,
+      variantStyle[variant],
+      isFilled === false && styles.modifiers.noFill,
+      isFilled === true && styles.modifiers.fill,
+      className
+    )}
+  >
+    {children}
+  </section>
+);

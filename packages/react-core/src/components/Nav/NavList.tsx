@@ -117,7 +117,12 @@ export class NavList extends React.Component<NavListProps> {
     return (
       <React.Fragment>
         {isHorizontal && (
-          <button className={css(styles.navScrollButton)} aria-label={ariaLeftScroll} onClick={this.scrollLeft} disabled={scrollViewAtStart}>
+          <button
+            className={css(styles.navScrollButton)}
+            aria-label={ariaLeftScroll}
+            onClick={this.scrollLeft}
+            disabled={scrollViewAtStart}
+          >
             <AngleLeftIcon />
           </button>
         )}
@@ -125,7 +130,12 @@ export class NavList extends React.Component<NavListProps> {
           {children}
         </ul>
         {isHorizontal && (
-          <button className={css(styles.navScrollButton)} aria-label={ariaRightScroll} onClick={this.scrollRight} disabled={scrollViewAtEnd}>
+          <button
+            className={css(styles.navScrollButton)}
+            aria-label={ariaRightScroll}
+            onClick={this.scrollRight}
+            disabled={scrollViewAtEnd}
+          >
             <AngleRightIcon />
           </button>
         )}
