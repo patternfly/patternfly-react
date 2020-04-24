@@ -128,9 +128,9 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         {title}
         <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
         {perPage === value && (
-          <span className={css(styles.optionsMenuMenuItemIcon)}>
+          <div className={css(styles.optionsMenuMenuItemIcon)}>
             <CheckIcon />
-          </span>
+          </div>
         )}
       </DropdownItem>
     ));
