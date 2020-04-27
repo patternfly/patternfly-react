@@ -70,7 +70,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   startAtStep?: number;
   /** Aria-label for the Nav */
   navAriaLabel?: string;
-  /** Can remove the default padding around the main body content by setting this to false */
+  /** Can remove the default padding around the main body content by setting this to true */
   hasNoBodyPadding?: boolean;
   /** (Use to control the footer) Passing in a footer component lets you control the buttons yourself */
   footer?: React.ReactNode;
