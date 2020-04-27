@@ -14,6 +14,14 @@ export enum PageSectionTypes {
   nav = 'nav'
 }
 
+export enum PageSectionBreakpoints {
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg',
+  xl = 'xl',
+  '2xl' = '2xl'
+}
+
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the section */
   children?: React.ReactNode;
@@ -26,7 +34,11 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
-  noPadding?: boolean;
+  hasNoPadding?: boolean;
+  /** Modifies a main page section to have padding on specific screen size breakpoints */
+  hasPaddingOn?: ('sm' | 'md' | 'lg' | 'xl' | '2xl')[] | ('sm' | 'md' | 'lg' | 'xl' | '2xl');
+  /** Modifies a main page section to not have padding on specific screen size breakpoints */
+  hasNoPaddingOn?: ('sm' | 'md' | 'lg' | 'xl' | '2xl')[] | ('sm' | 'md' | 'lg' | 'xl' | '2xl');
 }
 
 const variantType = {
@@ -41,21 +53,46 @@ const variantStyle = {
   [PageSectionVariants.darker]: styles.modifiers.dark_100
 };
 
+const paddingBreakpoints = {
+  [PageSectionBreakpoints.sm]: styles.modifiers.paddingOnSm,
+  [PageSectionBreakpoints.md]: styles.modifiers.paddingOnMd,
+  [PageSectionBreakpoints.lg]: styles.modifiers.paddingOnLg,
+  [PageSectionBreakpoints.xl]: styles.modifiers.paddingOnXl,
+  [PageSectionBreakpoints['2xl']]: styles.modifiers.paddingOn_2xl
+};
+
+const noPaddingBreakpoints = {
+  [PageSectionBreakpoints.sm]: styles.modifiers.noPaddingOnSm,
+  [PageSectionBreakpoints.md]: styles.modifiers.noPaddingOnMd,
+  [PageSectionBreakpoints.lg]: styles.modifiers.noPaddingOnLg,
+  [PageSectionBreakpoints.xl]: styles.modifiers.noPaddingOnXl,
+  [PageSectionBreakpoints['2xl']]: styles.modifiers.noPaddingOn_2xl
+};
+
 export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   className = '',
   children,
   variant = 'default',
   type = 'default',
-  noPadding = false,
+  hasNoPadding = false,
+  hasPaddingOn,
+  hasNoPaddingOn,
   isFilled,
   ...props
 }: PageSectionProps) => (
-  // TODO: Implement https://github.com/patternfly/patternfly/pull/2816
   <section
     {...props}
     className={css(
       variantType[type],
-      noPadding && styles.modifiers.noPadding,
+      hasNoPadding && styles.modifiers.noPadding,
+      hasPaddingOn &&
+        (hasPaddingOn.constructor !== Array
+          ? paddingBreakpoints[hasPaddingOn as PageSectionBreakpoints]
+          : (hasPaddingOn as PageSectionBreakpoints[]).map(breakpoint => paddingBreakpoints[breakpoint])),
+      hasNoPaddingOn &&
+        (hasNoPaddingOn.constructor !== Array
+          ? noPaddingBreakpoints[hasNoPaddingOn as PageSectionBreakpoints]
+          : (hasNoPaddingOn as PageSectionBreakpoints[]).map(breakpoint => noPaddingBreakpoints[breakpoint])),
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
