@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.8.1...@patternfly/react-core@4.8.2) (2020-04-27)
+
+
+### Bug Fixes
+
+* **nav:** fix scrolling ([#4129](https://github.com/patternfly/patternfly-react/issues/4129)) ([c6dabe4](https://github.com/patternfly/patternfly-react/commit/c6dabe4e0d1582116a077adeb0cd51e340383ac3))
+* **types:** don't publish tsconfigs ([#4111](https://github.com/patternfly/patternfly-react/issues/4111)) ([6361457](https://github.com/patternfly/patternfly-react/commit/6361457acfed91007fd3bc9b81a1b6df5000f13b))
+
+
+
+
+
 ## [4.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.8.0...@patternfly/react-core@4.8.1) (2020-04-24)
 
 **Note:** Version bump only for package @patternfly/react-core
