@@ -23,6 +23,7 @@ exports[`Dark Nav List 1`] = `
     >
       <ul
         className="test-nav-list-class"
+        onScroll={[Function]}
       >
         <NavItem
           className="test-nav-item-class"
@@ -125,6 +126,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
     >
       <ul
         className=""
+        onScroll={[Function]}
       >
         <NavItem
           key="#link1"
@@ -223,6 +225,7 @@ exports[`Default Nav List 1`] = `
     >
       <ul
         className="test-nav-list-class"
+        onScroll={[Function]}
       >
         <NavItem
           className="test-nav-item-class"
@@ -325,6 +328,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
     >
       <ul
         className=""
+        onScroll={[Function]}
       >
         <NavExpandable
           className="expandable-group"
@@ -489,6 +493,7 @@ exports[`Expandable Nav List 1`] = `
     >
       <ul
         className=""
+        onScroll={[Function]}
       >
         <NavExpandable
           className=""
@@ -653,6 +658,7 @@ exports[`Expandable Nav List with aria label 1`] = `
     >
       <ul
         className=""
+        onScroll={[Function]}
       >
         <NavExpandable
           className=""
@@ -855,6 +861,7 @@ exports[`Horizontal Nav List 1`] = `
       </button>
       <ul
         className="pf-c-nav__horizontal-list"
+        onScroll={[Function]}
       >
         <NavItem
           key="#link1"
@@ -1000,6 +1007,7 @@ exports[`Nav Grouped List 1`] = `
           >
             <ul
               className=""
+              onScroll={[Function]}
             >
               <NavItem
                 key="section1_#link1"
@@ -1097,6 +1105,7 @@ exports[`Nav Grouped List 1`] = `
           >
             <ul
               className=""
+              onScroll={[Function]}
             >
               <NavItem
                 key="section2_#link1"
@@ -1230,6 +1239,7 @@ exports[`Nav List with custom item nodes 1`] = `
       </button>
       <ul
         className="pf-c-nav__tertiary-list"
+        onScroll={[Function]}
       >
         <NavItem
           className="test-nav-item-class"
@@ -1308,6 +1318,7 @@ exports[`Simple Nav List 1`] = `
     >
       <ul
         className="pf-c-nav__simple-list"
+        onScroll={[Function]}
       >
         <NavItem
           key="#link1"
@@ -1438,6 +1449,7 @@ exports[`Tertiary Nav List 1`] = `
       </button>
       <ul
         className="pf-c-nav__tertiary-list"
+        onScroll={[Function]}
       >
         <NavItem
           key="#link1"
