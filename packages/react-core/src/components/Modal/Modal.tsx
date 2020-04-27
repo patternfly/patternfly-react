@@ -38,6 +38,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   description?: React.ReactNode;
   /** Variant of the modal */
   variant?: 'small' | 'large' | 'default';
+  /** Flag to omit placing content in ModalBoxBody */
+  isBasic?: boolean;
 }
 
 export enum ModalVariant {
@@ -63,7 +65,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     actions: [] as any[],
     onClose: () => undefined as any,
     variant: 'default',
-    appendTo: (typeof document !== 'undefined' && document.body) || null
+    appendTo: (typeof document !== 'undefined' && document.body) || null,
+    isBasic: false
   };
 
   constructor(props: ModalProps) {

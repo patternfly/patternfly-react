@@ -1,3 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wizard should match snapshot (auto-generated) 1`] = `""`;
+exports[`Wizard should match snapshot (auto-generated) 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "activeStep": undefined,
+      "goToStepById": [Function],
+      "goToStepByName": [Function],
+      "onBack": [Function],
+      "onClose": [Function],
+      "onNext": [Function],
+    }
+  }
+>
+  <div
+    className="pf-c-wizard ''"
+    hasBodyPadding={true}
+    isFullHeight={false}
+    isFullWidth={false}
+    isInPage={false}
+    isOpen={false}
+  >
+    <WizardToggle
+      hasNoBodyPadding={false}
+      isNavOpen={false}
+      nav={[Function]}
+      onNavToggle={[Function]}
+      steps={Array []}
+    >
+      <WizardFooterInternal
+        backButtonText="'Back'"
+        cancelButtonText="'Cancel'"
+        firstStep={true}
+        isValid={true}
+        nextButtonText="'Next'"
+        onBack={[Function]}
+        onClose={[Function]}
+        onNext={[Function]}
+      />
+    </WizardToggle>
+  </div>
+</ContextProvider>
+`;

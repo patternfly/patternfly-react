@@ -45,6 +45,8 @@ export interface ModalContentProps {
   id: string;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
+  /** Flag to omit placing content in ModalBoxBody */
+  isBasic?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -64,6 +66,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   modalBoxAriaDescribedById = '',
   id = '',
   disableFocusTrap = false,
+  isBasic = false,
   ...props
 }: ModalContentProps) => {
   if (!isOpen) {
@@ -90,13 +93,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       title={title}
       id={modalBoxAriaDescribedById || id}
     >
-      {showClose && <ModalBoxCloseButton onClose={onClose} />}
-      {modalBoxHeader}
-      {description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
-      <ModalBoxBody {...props} {...(!description && { id })}>
-        {children}
-      </ModalBoxBody>
-      {modalBoxFooter}
+      {!isBasic && showClose && <ModalBoxCloseButton onClose={onClose} />}
+      {!isBasic && modalBoxHeader}
+      {!isBasic && description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
+      {!isBasic && <ModalBoxBody {...props} {...(!description && { id })}>{children}</ModalBoxBody>}
+      {!isBasic && modalBoxFooter}
+      {isBasic && children}
     </ModalBox>
   );
   return (

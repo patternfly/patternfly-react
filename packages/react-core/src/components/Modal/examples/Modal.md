@@ -6,12 +6,12 @@ typescript: true
 propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalBoxHeader', 'ModalContent']
 ---
 
-import { Modal, ModalVariant, TitleSizes, Button, Title } from '@patternfly/react-core';
+import { Modal, ModalVariant, TitleSizes, Button, Title, Wizard } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 ## Examples
 
-```js title=Basic
+```js title=Simple
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -377,6 +377,58 @@ class NoHeader extends React.Component {
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
           aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+```js title=Basic-flag-with-wizard
+import React from 'react';
+import { Modal, Button, Wizard } from '@patternfly/react-core';
+
+class SimpleModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+    
+    const steps = [
+      { name: 'Step 1', component: <p>Step 1</p> },
+      { name: 'Step 2', component: <p>Step 2</p> },
+      { name: 'Step 3', component: <p>Step 3</p> },
+      { name: 'Step 4', component: <p>Step 4</p> },
+      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Modal
+          title="Modal Header"
+          isBasic
+          isOpen={isModalOpen}
+          disableFocusTrap={true}
+        >
+          <Wizard
+            title="Simple Wizard"
+            description="Simple Wizard Description"
+            steps={steps}
+            onClose={this.handleModalToggle}
+        />
         </Modal>
       </React.Fragment>
     );

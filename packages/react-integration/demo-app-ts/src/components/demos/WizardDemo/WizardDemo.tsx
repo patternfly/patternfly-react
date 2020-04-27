@@ -1,10 +1,7 @@
-import { Wizard, WizardStep, Button } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class WizardDemo extends Component {
-  state = {
-    isOpen: false
-  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -33,17 +30,12 @@ export class WizardDemo extends Component {
       { name: 'D', component: <p>Step 5</p> }
     ];
     return (
-      <React.Fragment>
-        <Wizard
-          isOpen={this.state.isOpen}
-          title="Wizard title"
-          description="Description here"
-          steps={steps}
-          startAtStep={1}
-          onClose={() => this.setState({ isOpen: false })}
-        />
-        <Button onClick={() => this.setState({ isOpen: true })}>Show Wizard</Button>
-      </React.Fragment>
+      <Wizard
+        title="Wizard title"
+        description="Description here"
+        steps={steps}
+        startAtStep={1}
+      />
     );
   }
 }

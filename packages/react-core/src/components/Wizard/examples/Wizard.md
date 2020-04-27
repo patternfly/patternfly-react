@@ -18,19 +18,9 @@ import { Button, Wizard } from '@patternfly/react-core';
 class SimpleWizard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
   }
 
   render() {
-    const { isOpen } = this.state;
-
     const steps = [
       { name: 'Step 1', component: <p>Step 1</p> },
       { name: 'Step 2', component: <p>Step 2</p> },
@@ -40,20 +30,11 @@ class SimpleWizard extends React.Component {
     ];
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            onClose={this.toggleOpen}
-            title="Simple Wizard"
-            description="Simple Wizard Description"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        title="Simple Wizard"
+        description="Simple Wizard Description"
+        steps={steps}
+      />
     );
   }
 }
@@ -67,13 +48,7 @@ class DisabledStepsWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
       stepIdReached: 1
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
     };
     this.onNext = ({ id }) => {
       this.setState({
@@ -83,7 +58,7 @@ class DisabledStepsWizard extends React.Component {
   }
 
   render() {
-    const { isOpen, stepIdReached } = this.state;
+    const { stepIdReached } = this.state;
 
     const steps = [
       { id: 1, name: 'Step 1', component: <p>Step 1</p> },
@@ -94,21 +69,13 @@ class DisabledStepsWizard extends React.Component {
     ];
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            onClose={this.toggleOpen}
-            title="Simple Wizard"
-            description="Simple Wizard Description"
-            steps={steps}
-            onNext={this.onNext}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        onClose={this.toggleOpen}
+        title="Simple Wizard"
+        description="Simple Wizard Description"
+        steps={steps}
+        onNext={this.onNext}
+      />
     );
   }
 }
@@ -122,18 +89,9 @@ import FinishedStep from './examples/FinishedStep';
 class FinishedStepWizard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
   }
 
   render() {
-    const { isOpen } = this.state;
 
     const steps = [
       { name: 'Step 1', component: <p>Step 1</p> },
@@ -145,20 +103,12 @@ class FinishedStepWizard extends React.Component {
     ];
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            onClose={this.toggleOpen}
-            title="Simple Wizard"
-            description="Simple Wizard Description"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        onClose={this.toggleOpen}
+        title="Simple Wizard"
+        description="Simple Wizard Description"
+        steps={steps}
+      />
     );
   }
 }
@@ -173,17 +123,10 @@ class ValidationWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
       isFormValid: false,
       formValue: 'Thirty',
       allStepsValid: false,
       stepIdReached: 1
-    };
-
-    this.toggleOpen = () => {
-      this.setState(({ isOpen }) => ({
-        isOpen: !isOpen
-      }));
     };
 
     this.onFormChange = (isValid, value) => {
@@ -228,7 +171,7 @@ class ValidationWizard extends React.Component {
   }
 
   render() {
-    const { isOpen, isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
+    const { isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
 
     const steps = [
       { id: 1, name: 'Information', component: <p>Step 1</p> },
@@ -252,24 +195,16 @@ class ValidationWizard extends React.Component {
     ];
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            title="Validation Wizard"
-            description="Validation Wizard Description"
-            onClose={this.toggleOpen}
-            onSave={this.onSave}
-            steps={steps}
-            onNext={this.onNext}
-            onBack={this.onBack}
-            onGoToStep={this.onGoToStep}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        title="Validation Wizard"
+        description="Validation Wizard Description"
+        onClose={this.toggleOpen}
+        onSave={this.onSave}
+        steps={steps}
+        onNext={this.onNext}
+        onBack={this.onBack}
+        onGoToStep={this.onGoToStep}
+      />
     );
   }
 }
@@ -285,13 +220,7 @@ class ValidateButtonPressWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
       stepsValid: 0
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
     };
     this.validateLastStep = onNext => {
       const { stepsValid } = this.state;
@@ -306,7 +235,7 @@ class ValidateButtonPressWizard extends React.Component {
   }
 
   render() {
-    const { isOpen, stepsValid } = this.state;
+    const { stepsValid } = this.state;
 
     const steps = [
       { name: 'Step 1', component: <p>Step 1</p> },
@@ -354,20 +283,12 @@ class ValidateButtonPressWizard extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            onClose={this.toggleOpen}
-            footer={CustomFooter}
-            title="Validate on button press"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        onClose={this.toggleOpen}
+        footer={CustomFooter}
+        title="Validate on button press"
+        steps={steps}
+      />
     );
   }
 }
@@ -383,7 +304,6 @@ class ProgressiveWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
       showCreateStep: false,
       showUpdateStep: false,
       showOptionsStep: false,
@@ -391,11 +311,6 @@ class ProgressiveWizard extends React.Component {
       getStartedStepRadio: 'Create',
       createStepRadio: 'Quick',
       updateStepRadio: 'Quick'
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
     };
     this.onGoToStep = ({ id, name }, { prevId, prevName }) => {
       // Remove steps after the currently clicked step
@@ -488,7 +403,6 @@ class ProgressiveWizard extends React.Component {
 
   render() {
     const {
-      isOpen,
       stepsValid,
       getStartedStepRadio,
       createStepRadio,
@@ -629,72 +543,13 @@ class ProgressiveWizard extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            onClose={this.toggleOpen}
-            footer={CustomFooter}
-            onGoToStep={this.onGoToStep}
-            title="Progressive Wizard"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
-    );
-  }
-}
-```
-
-```js title=Full-height-and-width
-import React from 'react';
-import { Button, Wizard } from '@patternfly/react-core';
-import SampleForm from './examples/SampleForm';
-
-class SimpleWizard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-  }
-
-  render() {
-    const { isOpen } = this.state;
-
-    const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
-      { name: 'Step 3', component: <p>Step 3</p> },
-      { name: 'Step 4', component: <p>Step 4</p> },
-      { name: 'Final Step', component: <p>Final Step</p>, hideCancelButton: true, nextButtonText: 'Close' }
-    ];
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            isFullHeight
-            isFullWidth
-            onClose={this.toggleOpen}
-            title="Simple Wizard"
-            description="Simple Wizard Description"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        onClose={this.toggleOpen}
+        footer={CustomFooter}
+        onGoToStep={this.onGoToStep}
+        title="Progressive Wizard"
+        steps={steps}
+      />
     );
   }
 }
@@ -708,13 +563,7 @@ class SimpleWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 1,
-      isOpen: false
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
+      step: 1
     };
     this.onMove = (curr, prev) => {
       this.setState({
@@ -724,13 +573,12 @@ class SimpleWizard extends React.Component {
     this.onSave = () => {
       this.setState({
         step: 1,
-        isOpen: false,
       })
     }
   }
 
   render() {
-    const { isOpen, step } = this.state;
+    const { step } = this.state;
 
     const steps = [
       { id: 1, name: 'Step 1', component: <p>Step 1</p> },
@@ -741,52 +589,18 @@ class SimpleWizard extends React.Component {
     ];
 
     return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            startAtStep={step}
-            onNext={this.onMove}
-            onBack={this.onMove}
-            onSave={this.onSave}
-            isOpen={isOpen}
-            onClose={this.toggleOpen}
-            title="Simple Wizard"
-            description="Simple Wizard Description"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
+      <Wizard
+        startAtStep={step}
+        onNext={this.onMove}
+        onBack={this.onMove}
+        onSave={this.onSave}
+        onClose={this.toggleOpen}
+        title="Simple Wizard"
+        description="Simple Wizard Description"
+        steps={steps}
+      />
     );
   }
 }
 ```
 
-```js title=In-page
-import React from 'react';
-import { Wizard } from '@patternfly/react-core';
-
-class InPageWizard extends React.Component {
-  render() {
-    const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
-      { name: 'Step 3', component: <p>Step 3</p> },
-      { name: 'Step 4', component: <p>Step 4</p> },
-      { name: 'Final Step', component: <p>Final Step</p>, hideCancelButton: true, nextButtonText: 'Close' }
-    ];
-
-    return (
-      <div style={{height: '400px'}}>
-        <Wizard
-          isInPage
-          onClose={() => console.log('closed')}
-          steps={steps}
-        />
-      </div>
-    );
-  }
-}
-```
