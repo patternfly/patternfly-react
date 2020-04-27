@@ -58,7 +58,7 @@ exports[`Wizard should match snapshot 1`] = `
                     "name": "A",
                   }
                 }
-                hasBodyPadding={true}
+                hasNoBodyPadding={false}
                 isNavOpen={false}
                 nav={[Function]}
                 onNavToggle={[Function]}

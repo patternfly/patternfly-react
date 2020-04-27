@@ -15,8 +15,8 @@ export interface WizardToggleProps {
   activeStep: WizardStep;
   /** The WizardFooter */
   children: React.ReactNode;
-  /** Set to false to remove body padding */
-  hasBodyPadding: boolean;
+  /** Set to true to remove body padding */
+  hasNoBodyPadding: boolean;
   /** If the nav is open */
   isNavOpen: boolean;
   /** Callback function for when the nav is toggled */
@@ -32,7 +32,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding = true,
+  hasNoBodyPadding = false,
   'aria-label': ariaLabel = 'Wizard Toggle'
 }: WizardToggleProps) => {
   let activeStepIndex;
@@ -76,7 +76,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       <div className={css(styles.wizardOuterWrap)}>
         <div className={css(styles.wizardInnerWrap)}>
           {nav(isNavOpen)}
-          <WizardBody hasBodyPadding={hasBodyPadding}>{activeStep.component}</WizardBody>
+          <WizardBody hasNoBodyPadding={hasNoBodyPadding}>{activeStep.component}</WizardBody>
         </div>
         {children}
       </div>

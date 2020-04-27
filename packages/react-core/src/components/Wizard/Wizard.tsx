@@ -71,7 +71,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** Aria-label for the Nav */
   navAriaLabel?: string;
   /** Can remove the default padding around the main body content by setting this to false */
-  hasBodyPadding?: boolean;
+  hasNoBodyPadding?: boolean;
   /** (Use to control the footer) Passing in a footer component lets you control the buttons yourself */
   footer?: React.ReactNode;
   /** (Unused if footer is controlled) Callback function to save at the end of the wizard, if not specified uses onClose */
@@ -112,7 +112,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     cancelButtonText: 'Cancel',
     closeButtonAriaLabel: 'Close',
     navAriaLabel: 'Steps',
-    hasBodyPadding: true,
+    hasNoBodyPadding: false,
     onBack: null as WizardStepFunctionType,
     onNext: null as WizardStepFunctionType,
     onGoToStep: null as WizardStepFunctionType,
@@ -349,7 +349,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       cancelButtonText = 'Cancel',
       closeButtonAriaLabel = 'Close',
       navAriaLabel,
-      hasBodyPadding,
+      hasNoBodyPadding,
       footer,
       isCompactNav,
       appendTo,
@@ -480,7 +480,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             nav={nav}
             steps={steps}
             activeStep={activeStep}
-            hasBodyPadding={hasBodyPadding}
+            hasNoBodyPadding={hasNoBodyPadding}
           >
             {footer || (
               <WizardFooterInternal
