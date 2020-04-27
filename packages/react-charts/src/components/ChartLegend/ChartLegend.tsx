@@ -7,10 +7,9 @@ import {
   OrientationTypes,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryLegend,
-  VictoryLegendProps,
   VictoryStyleInterface
 } from 'victory-core';
+import { VictoryLegend, VictoryLegendProps } from 'victory-legend';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';

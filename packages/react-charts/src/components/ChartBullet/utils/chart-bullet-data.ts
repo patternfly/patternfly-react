@@ -1,5 +1,4 @@
-import { DataGetterPropType } from 'victory';
-import { Data } from 'victory-core';
+import { Data, DataGetterPropType } from 'victory-core';
 import { ChartThemeDefinition } from '../../ChartTheme';
 import {
   getBulletComparativeErrorMeasureTheme,

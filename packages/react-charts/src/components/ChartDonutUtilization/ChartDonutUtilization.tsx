@@ -5,12 +5,12 @@ import {
   AnimatePropTypeInterface,
   CategoryPropType,
   ColorScalePropType,
+  Data,
   DataGetterPropType,
   PaddingProps,
   StringOrNumberOrCallback,
   EventPropTypeInterface,
-  VictoryStyleInterface,
-  Data
+  VictoryStyleInterface
 } from 'victory-core';
 import { VictoryPie } from 'victory-pie';
 import { ChartContainer } from '../ChartContainer';

@@ -10,10 +10,10 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryZoomContainer,
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryChart, VictoryChartProps } from 'victory-chart';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
