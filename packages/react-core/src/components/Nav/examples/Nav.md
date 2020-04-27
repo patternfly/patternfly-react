@@ -4,7 +4,6 @@ section: components
 cssPrefix: 'pf-c-nav'
 typescript: true
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
-optIn: "In a future breaking-change release, the nav will default to the dark theme. You can opt-in and update to use the nav dark theme now by setting the theme prop to 'dark'"
 ---
 import {
   Nav,
@@ -14,7 +13,8 @@ import {
   NavList,
   NavGroup,
   NavVariants,
-  PageHeader
+  PageHeader,
+  PageSection
 } from '@patternfly/react-core';
 import './nav.css';
 
@@ -466,14 +466,12 @@ class NavHorizontalList extends React.Component {
         </NavList>
       </Nav>
     );
-    return (
-      <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(21, 21, 21)' }} />
-    );
+    return <PageHeader topNav={nav} />;
   }
 }
 ```
 
-```js title=Tertiary
+```js title=Tertiary-(only-in-PageSection)
 import React from 'react';
 import {
   Nav,
@@ -482,7 +480,8 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants
+  NavVariants,
+  PageSection
 } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {
@@ -501,16 +500,18 @@ class NavTertiaryList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
-        <NavList variant={NavVariants.tertiary}>
-          {Array.apply(0, Array(10)).map(function (x, i) {
-            const num = i + 1;
-            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
-              Tertiary nav item {num}
-            </NavItem>;
-          })}
-        </NavList>
-      </Nav>
+      <PageSection type="nav">
+        <Nav onSelect={this.onSelect}>
+          <NavList variant={NavVariants.tertiary}>
+            {Array.apply(0, Array(10)).map(function (x, i) {
+              const num = i + 1;
+              return <NavItem key={num} itemId={num} isActive={activeItem === num}>
+                Tertiary nav item {num}
+              </NavItem>;
+            })}
+          </NavList>
+        </Nav>
+      </PageSection>
     );
   }
 }

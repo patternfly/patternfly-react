@@ -45,6 +45,9 @@ export function debounce(this: any, func: (...args: any[]) => any, wait: number)
  * @returns { boolean } True if the component is in View.
  */
 export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean) {
+  if (!container || !element) {
+    return false;
+  }
   const containerBounds = container.getBoundingClientRect();
   const elementBounds = element.getBoundingClientRect();
   const containerBoundsLeft = Math.floor(containerBounds.left);

@@ -6,7 +6,7 @@ exports[`Nav should match snapshot (auto-generated) 1`] = `
     Object {
       "onSelect": [Function],
       "onToggle": [Function],
-      "updateScrollButtonState": [Function],
+      "updateIsScrollable": [Function],
     }
   }
 >

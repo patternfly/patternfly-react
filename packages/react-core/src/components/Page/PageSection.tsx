@@ -29,6 +29,18 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   noPadding?: boolean;
 }
 
+const variantType = {
+  [PageSectionTypes.default]: styles.pageMainSection,
+  [PageSectionTypes.nav]: styles.pageMainNav
+};
+
+const variantStyle = {
+  [PageSectionVariants.default]: '',
+  [PageSectionVariants.light]: styles.modifiers.light,
+  [PageSectionVariants.dark]: styles.modifiers.dark_200,
+  [PageSectionVariants.darker]: styles.modifiers.dark_100
+};
+
 export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   className = '',
   children,
@@ -37,31 +49,19 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   noPadding = false,
   isFilled,
   ...props
-}: PageSectionProps) => {
-  const variantType = {
-    [PageSectionTypes.default]: styles.pageMainSection,
-    [PageSectionTypes.nav]: styles.pageMainNav
-  };
-  const variantStyle = {
-    [PageSectionVariants.default]: '',
-    [PageSectionVariants.light]: styles.modifiers.light,
-    [PageSectionVariants.dark]: styles.modifiers.dark_200,
-    [PageSectionVariants.darker]: styles.modifiers.dark_100
-  };
+}: PageSectionProps) => (
   // TODO: Implement https://github.com/patternfly/patternfly/pull/2816
-  return (
-    <section
-      {...props}
-      className={css(
-        variantType[type],
-        noPadding && styles.modifiers.noPadding,
-        variantStyle[variant],
-        isFilled === false && styles.modifiers.noFill,
-        isFilled === true && styles.modifiers.fill,
-        className
-      )}
-    >
-      {children}
-    </section>
-  );
-};
+  <section
+    {...props}
+    className={css(
+      variantType[type],
+      noPadding && styles.modifiers.noPadding,
+      variantStyle[variant],
+      isFilled === false && styles.modifiers.noFill,
+      isFilled === true && styles.modifiers.fill,
+      className
+    )}
+  >
+    {children}
+  </section>
+);
