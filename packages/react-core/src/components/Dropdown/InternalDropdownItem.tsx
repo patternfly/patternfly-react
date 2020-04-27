@@ -14,8 +14,6 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode;
-  /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
-  variant?: 'item' | 'icon';
   /** Role for the item */
   role?: string;
   /** Render dropdown item as disabled option */
@@ -47,6 +45,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   customChild?: React.ReactNode;
   /** Flag indicating if hitting enter on an item also triggers an arrow down key press */
   enterTriggersArrowDown?: boolean;
+  /** An image to display within the InternalDropdownItem, appearing before any component children */
+  icon?: React.ReactNode;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -57,7 +57,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     className: '',
     isHovered: false,
     component: 'a',
-    variant: 'item',
     role: 'none',
     isDisabled: false,
     isPlainText: false,
@@ -134,7 +133,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       context,
       onClick,
       component,
-      variant,
       role,
       isDisabled,
       isPlainText,
@@ -148,6 +146,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       additionalChild,
       customChild,
       enterTriggersArrowDown,
+      icon,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -175,10 +174,10 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       <DropdownContext.Consumer>
         {({ onSelect, itemClass, disabledClass, plainTextClass }) => {
           if (this.props.role === 'separator') {
-            classes = css(variant === 'icon' && styles.modifiers.icon, className);
+            classes = css(icon && styles.modifiers.icon, className);
           } else {
             classes = css(
-              variant === 'icon' && styles.modifiers.icon,
+              icon && styles.modifiers.icon,
               className,
               isDisabled && disabledClass,
               isPlainText && plainTextClass,
@@ -211,6 +210,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                   })
                 ) : (
                   <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
+                    {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
                     {children}
                   </Component>
                 )
