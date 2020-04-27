@@ -68,7 +68,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       keyHandler: () => {},
       sendRef: () => {}
     },
-    enterTriggersArrowDown: false
+    enterTriggersArrowDown: false,
+    icon: null
   };
 
   componentDidMount() {

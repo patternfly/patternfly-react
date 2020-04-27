@@ -4,7 +4,6 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownItemIcon,
   DropdownToggleAction,
   Stack,
   StackItem,
@@ -173,22 +172,13 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
       </DropdownItem>
     ];
     const dropdownIconItems = [
-      <DropdownItem key="action" component="button" variant="icon">
-        <DropdownItemIcon>
-          <CogIcon />
-        </DropdownItemIcon>
+      <DropdownItem key="action" component="button" icon={<CogIcon />}>
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" component="button" variant="icon" isDisabled>
-        <DropdownItemIcon>
-          <BellIcon />
-        </DropdownItemIcon>
+      <DropdownItem key="disabled link" component="button" icon={<BellIcon />} isDisabled>
         Disabled action
       </DropdownItem>,
-      <DropdownItem key="other action" component="button" variant="icon">
-        <DropdownItemIcon>
-          <CubesIcon />
-        </DropdownItemIcon>
+      <DropdownItem key="other action" component="button" icon={<CubesIcon />}>
         Other action
       </DropdownItem>
     ];
