@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `undefined`;
+
+exports[`list item header with custom icon applied  1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-header"
+  >
+    <span
+      className="pf-c-notification-drawer__list-item-header-icon"
+    >
+      <BellIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </span>
+    <h2
+      className="pf-c-notification-drawer__list-item-header-title"
+    >
+      Pod quit unexpectedly
+    </h2>
+  </div>
+</Fragment>
+`;
+
+exports[`list item header with srTitle applied  1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-header"
+  >
+    <span
+      className="pf-c-notification-drawer__list-item-header-icon"
+    >
+      <BellIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </span>
+    <h2
+      className="pf-c-notification-drawer__list-item-header-title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        screen reader title
+      </span>
+      Pod quit unexpectedly
+    </h2>
+  </div>
+</Fragment>
+`;
+
+exports[`list item header with variant applied  1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-header"
+  >
+    <span
+      className="pf-c-notification-drawer__list-item-header-icon"
+    >
+      <CheckCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </span>
+    <h2
+      className="pf-c-notification-drawer__list-item-header-title"
+    >
+      Pod quit unexpectedly
+    </h2>
+  </div>
+</Fragment>
+`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-header"
+  >
+    <span
+      className="pf-c-notification-drawer__list-item-header-icon"
+    >
+      <BellIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </span>
+    <h2
+      className="pf-c-notification-drawer__list-item-header-title"
+    >
+      Pod quit unexpectedly
+    </h2>
+  </div>
+</Fragment>
+`;

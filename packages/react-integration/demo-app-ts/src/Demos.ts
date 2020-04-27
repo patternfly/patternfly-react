@@ -382,6 +382,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.NotificationBadgeDemo
   },
   {
+    id: 'notification-drawer-basic-demo',
+    name: 'Notification Drawer Basic Demo',
+    componentType: Examples.BasicNotificationDrawerDemo
+  },
+  {
+    id: 'notification-drawer-groups-demo',
+    name: 'Notification Drawer Groups Demo',
+    componentType: Examples.GroupsNotificationDrawerDemo
+  },
+  {
     id: 'options-menu-demo',
     name: 'Options Menu Demo',
     componentType: Examples.OptionsMenuDemo

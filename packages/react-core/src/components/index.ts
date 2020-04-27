@@ -30,6 +30,7 @@ export * from './LoginPage';
 export * from './Modal';
 export * from './Nav';
 export * from './NotificationBadge';
+export * from './NotificationDrawer';
 export * from './OptionsMenu';
 export * from './Page';
 export * from './Pagination';

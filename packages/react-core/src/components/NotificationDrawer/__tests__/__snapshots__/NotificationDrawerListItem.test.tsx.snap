@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__list-item pf-m-hoverable extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<li
+  className="pf-c-notification-drawer__list-item pf-m-hoverable"
+  onClick={[Function]}
+  tabIndex={0}
+/>
+`;

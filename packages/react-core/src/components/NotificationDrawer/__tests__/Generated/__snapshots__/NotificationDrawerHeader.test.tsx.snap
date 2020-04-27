@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationDrawerHeader should match snapshot (auto-generated) 1`] = `
+<div
+  className="pf-c-notification-drawer__header ''"
+>
+  <Text
+    className="pf-c-notification-drawer__header-title"
+    component="h1"
+  >
+    'Notifications'
+  </Text>
+  <span
+    className="pf-c-notification-drawer__header-status"
+  >
+    42 unread
+  </span>
+  <div
+    className="pf-c-notification-drawer__header-action"
+  >
+    <div>
+      ReactNode
+    </div>
+  </div>
+</div>
+`;
