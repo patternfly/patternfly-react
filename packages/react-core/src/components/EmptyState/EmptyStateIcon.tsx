@@ -5,7 +5,9 @@ import styles from '@patternfly/react-styles/css/components/EmptyState/empty-sta
 export interface EmptyStateIconProps {
   /** Additional classes added to the EmptyState */
   className?: string;
-  /** Icon component to be rendered inside the EmptyState on icon variant */
+  /** Icon component to be rendered inside the EmptyState on icon variant
+   * Usually a CheckCircleIcon, ExclamationCircleIcon, LockIcon, PlusCircleIcon, RocketIcon
+   * SearchIcon, or WrenchIcon */
   icon?: React.ComponentType<any>;
   /** Component to be rendered inside the EmptyState on container variant */
   component?: React.ComponentType<any>;
