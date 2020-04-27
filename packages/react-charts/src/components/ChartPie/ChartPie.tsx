@@ -6,13 +6,12 @@ import {
   ColorScalePropType,
   DataGetterPropType,
   EventPropTypeInterface,
+  Helpers,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
-  VictoryPieProps,
   VictoryStyleInterface
-} from 'victory';
-import { Helpers } from 'victory-core';
+} from 'victory-core';
+import { VictoryPie, VictoryPieProps } from 'victory-pie';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';

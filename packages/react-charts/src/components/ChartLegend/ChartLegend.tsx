@@ -10,7 +10,7 @@ import {
   VictoryLegend,
   VictoryLegendProps,
   VictoryStyleInterface
-} from 'victory';
+} from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';

@@ -12,10 +12,10 @@ import {
   ScalePropType,
   ScatterSymbolType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryScatter,
-  VictoryScatterProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import {  } from 'victory-core';
+import { VictoryScatter, VictoryScatterProps } from 'victory-scatter';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';

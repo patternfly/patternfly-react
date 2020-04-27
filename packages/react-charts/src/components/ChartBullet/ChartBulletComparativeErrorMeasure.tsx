@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps, VictoryBar } from 'victory';
+import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
+import { VictoryBar } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';

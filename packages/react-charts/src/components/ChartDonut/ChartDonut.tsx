@@ -6,12 +6,12 @@ import {
   ColorScalePropType,
   DataGetterPropType,
   EventPropTypeInterface,
+  Helpers,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
   VictoryStyleInterface
-} from 'victory';
-import { Helpers } from 'victory-core';
+} from 'victory-core';
+import { VictoryPie } from 'victory-pie';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';

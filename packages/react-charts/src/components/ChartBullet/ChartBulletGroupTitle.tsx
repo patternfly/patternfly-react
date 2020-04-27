@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { PaddingProps, StringOrNumberOrCallback } from 'victory';
-import { Line } from 'victory-core';
+import { PaddingProps, StringOrNumberOrCallback } from 'victory-core';
+import { Line } from 'victory-line';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';

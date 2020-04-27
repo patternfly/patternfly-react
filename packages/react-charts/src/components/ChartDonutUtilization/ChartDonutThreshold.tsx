@@ -3,14 +3,16 @@ import {
   AnimatePropTypeInterface,
   CategoryPropType,
   ColorScalePropType,
+  Data,
   DataGetterPropType,
   EventPropTypeInterface,
+  Helpers,
+  InterpolationPropType,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
   VictoryStyleInterface
-} from 'victory';
-import { Data, Helpers } from 'victory-core';
+} from 'victory-core';
+import { VictoryPie } from 'victory-pie';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';

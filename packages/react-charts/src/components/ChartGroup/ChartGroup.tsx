@@ -12,11 +12,10 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryGroup,
-  VictoryGroupProps,
-  VictoryZoomContainer
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryGroup, VictoryGroupProps } from 'victory-group';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';

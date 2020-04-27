@@ -7,10 +7,9 @@ import {
   DomainPropType,
   EventPropTypeInterface,
   PaddingProps,
-  ScalePropType,
-  VictoryAxis,
-  VictoryAxisProps
-} from 'victory';
+  ScalePropType
+} from 'victory-core';
+import { VictoryAxis, VictoryAxisProps } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';

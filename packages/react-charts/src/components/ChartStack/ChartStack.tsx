@@ -11,10 +11,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryStack,
-  VictoryStackProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryStack, VictoryStackProps } from 'victory-stack';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';

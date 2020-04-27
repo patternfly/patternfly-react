@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory';
+import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getClassName, getTheme } from '../ChartUtils';

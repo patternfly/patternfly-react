@@ -12,10 +12,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryBar,
-  VictoryBarProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryBar, VictoryBarProps } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';

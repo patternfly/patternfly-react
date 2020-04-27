@@ -1,13 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  NumberOrCallback,
-  OrientationTypes,
-  StringOrNumberOrCallback,
-  VictoryStyleObject,
-  VictoryTooltip,
-  VictoryTooltipProps
-} from 'victory';
+import { NumberOrCallback, OrientationTypes, StringOrNumberOrCallback, VictoryStyleObject } from 'victory-core';
+import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 

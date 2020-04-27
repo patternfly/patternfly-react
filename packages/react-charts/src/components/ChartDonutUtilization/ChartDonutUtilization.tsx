@@ -6,13 +6,13 @@ import {
   CategoryPropType,
   ColorScalePropType,
   DataGetterPropType,
-  EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
-  VictoryStyleInterface
-} from 'victory';
-import { Data } from 'victory-core';
+  EventPropTypeInterface,
+  VictoryStyleInterface,
+  Data
+} from 'victory-core';
+import { VictoryPie } from 'victory-pie';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartCommonStyles, ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
@@ -215,6 +215,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * ]}
    */
   events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
+
   /**
    * ChartDonutUtilization uses the standard externalEventMutations prop.
    */
