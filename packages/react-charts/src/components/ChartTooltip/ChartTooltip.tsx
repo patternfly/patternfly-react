@@ -4,10 +4,10 @@ import {
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
-  VictoryStyleObject,
-  VictoryTooltip,
-  VictoryTooltipProps
-} from 'victory';
+  VictoryNumberCallback,
+  VictoryStyleObject
+} from 'victory-core';
+import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -135,7 +135,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
    */
-  orientation?: OrientationTypes;
+  orientation?: OrientationTypes | VictoryNumberCallback;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
@@ -206,12 +206,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartTooltipProps) => (
-  // Note: constrainToVisibleArea is valid, but @types/victory is missing a prop type
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-  // @ts-ignore
-  <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />
-);
+}: ChartTooltipProps) => <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />;
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

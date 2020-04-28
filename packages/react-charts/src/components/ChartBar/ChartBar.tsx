@@ -12,10 +12,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryBar,
-  VictoryBarProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryBar, VictoryBarProps } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -430,12 +429,8 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
     ...containerComponent.props
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryBar containerComponent={container} theme={theme} {...rest} />
-  );
+  // Note: containerComponent is required for theme
+  return <VictoryBar containerComponent={container} theme={theme} {...rest} />;
 };
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted

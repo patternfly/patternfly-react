@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { DataGetterPropType, DomainPropType, PaddingProps, VictoryChart } from 'victory';
+import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
+import { VictoryChart } from 'victory-chart';
 import {
   getComparativeMeasureErrorWidth,
   getComparativeMeasureWidth,

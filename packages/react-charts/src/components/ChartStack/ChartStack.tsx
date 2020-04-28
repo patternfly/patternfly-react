@@ -11,10 +11,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryStack,
-  VictoryStackProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryStack, VictoryStackProps } from 'victory-stack';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -365,10 +364,8 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  // Note: containerComponent is required for theme
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     <VictoryStack containerComponent={container} theme={theme} {...rest}>
       {children}
     </VictoryStack>

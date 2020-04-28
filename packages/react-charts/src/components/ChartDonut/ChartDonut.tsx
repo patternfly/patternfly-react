@@ -6,12 +6,12 @@ import {
   ColorScalePropType,
   DataGetterPropType,
   EventPropTypeInterface,
+  Helpers,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
   VictoryStyleInterface
-} from 'victory';
-import { Helpers } from 'victory-core';
+} from 'victory-core';
+import { VictoryPie, VictorySliceProps } from 'victory-pie';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
@@ -224,7 +224,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
    */
-  innerRadius?: number;
+  innerRadius?: number | ((props: VictorySliceProps) => number);
   /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
@@ -241,12 +241,12 @@ export interface ChartDonutProps extends ChartPieProps {
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * When this prop is not given, the label will be positioned at the centroid of each slice.
    */
-  labelPosition?: 'startAngle' | 'endAngle' | 'centroid';
+  labelPosition?: 'startAngle' | 'centroid' | 'endAngle' | ((props: VictorySliceProps) => string);
   /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    */
-  labelRadius?: number;
+  labelRadius?: number | ((props: VictorySliceProps) => number);
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -327,7 +327,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
    */
-  radius?: number;
+  radius?: number | ((props: VictorySliceProps) => number);
   /**
    * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
    */

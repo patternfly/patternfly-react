@@ -1,6 +1,6 @@
 import { defaults } from 'lodash';
-import { PaddingProps, VictoryLegend } from 'victory';
-import { Helpers, TextSize } from 'victory-core';
+import { Helpers, PaddingProps, TextSize } from 'victory-core';
+import { VictoryLegend } from 'victory-legend';
 import { ChartLegendOrientation, ChartLegendPosition, ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { overpassFontCharacterConstant } from './chart-label';

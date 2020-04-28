@@ -3699,13 +3699,6 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@types/victory@^33.1.4":
-  version "33.1.4"
-  resolved "https://registry.yarnpkg.com/@types/victory/-/victory-33.1.4.tgz#b843b7cee8ed1ab846d4dd03eb048a178e197b4c"
-  integrity sha512-y0uROW9/p2ltaZW+VcH1llrtu6Uwp1lSJ8zZbVjcXJJgddU3Is2aUvU6PxFQhbjBMtjaqNdw1tH/44c5bn/Zsw==
-  dependencies:
-    "@types/react" "*"
-
 "@types/yargs-parser@*":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-13.1.0.tgz#c563aa192f39350a1d18da36c5a8da382bbd8228"

@@ -12,10 +12,9 @@ import {
   ScalePropType,
   ScatterSymbolType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryScatter,
-  VictoryScatterProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryScatter, VictoryScatterProps } from 'victory-scatter';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -418,12 +417,8 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
     ...containerComponent.props
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />
-  );
+  // Note: containerComponent is required for theme
+  return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
 };
 
 // Note: VictoryLine.role must be hoisted

@@ -12,10 +12,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryLine,
-  VictoryLineProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryLine, VictoryLineProps } from 'victory-line';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -399,12 +398,8 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
     theme,
     ...containerComponent.props
   });
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryLine containerComponent={container} theme={theme} {...rest} />
-  );
+  // Note: containerComponent is required for theme
+  return <VictoryLine containerComponent={container} theme={theme} {...rest} />;
 };
 
 // Note: VictoryLine.role must be hoisted

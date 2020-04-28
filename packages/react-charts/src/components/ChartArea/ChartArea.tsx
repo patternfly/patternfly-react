@@ -12,10 +12,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryArea,
-  VictoryAreaProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryArea, VictoryAreaProps } from 'victory-area';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -145,7 +144,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', string | number>[];
   /**
    * ChartArea uses the standard externalEventMutations prop.
    */
@@ -403,12 +402,8 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
     ...containerComponent.props
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryArea containerComponent={container} theme={theme} {...rest} />
-  );
+  // Note: containerComponent is required for theme
+  return <VictoryArea containerComponent={container} theme={theme} {...rest} />;
 };
 
 // Note: VictoryArea.role must be hoisted

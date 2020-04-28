@@ -12,11 +12,10 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryGroup,
-  VictoryGroupProps,
-  VictoryZoomContainer
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryGroup, VictoryGroupProps } from 'victory-group';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -173,7 +172,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
   /**
    * ChartGroup uses the standard externalEventMutations prop.
    */
@@ -437,10 +436,8 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  // Note: containerComponent is required for theme
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     <VictoryGroup containerComponent={container} theme={theme} {...rest}>
       {children}
     </VictoryGroup>

@@ -13,10 +13,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryLine,
-  VictoryLineProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryLine, VictoryLineProps } from 'victory-line';
 import { ChartLine } from '../ChartLine';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getThresholdTheme } from '../ChartUtils';

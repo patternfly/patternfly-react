@@ -1,4 +1,4 @@
-import { VictoryThemeDefinition } from 'victory';
+import { VictoryThemeDefinition } from 'victory-core';
 import { AxisTheme } from './themes/axis-theme';
 import { BaseTheme } from './themes/base-theme';
 import {

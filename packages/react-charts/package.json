@@ -36,7 +36,20 @@
     "lodash": "^4.17.15",
     "tslib": "^1.11.1",
     "victory": "^34.1.3",
-    "victory-core": "^34.1.3"
+    "victory-area": "^34.1.3",
+    "victory-axis": "^34.1.3",
+    "victory-bar": "^34.1.3",
+    "victory-chart": "^34.1.3",
+    "victory-core": "^34.1.3",
+    "victory-pie": "^34.1.3",
+    "victory-group": "^34.1.3",
+    "victory-legend": "^34.1.3",
+    "victory-line": "^34.1.3",
+    "victory-scatter": "^34.1.3",
+    "victory-stack": "^34.1.3",
+    "victory-tooltip": "^34.1.3",
+    "victory-voronoi-container": "^34.1.3",
+    "victory-zoom-container": "^34.1.3"
   },
   "peerDependencies": {
     "react": "^16.4.0"
@@ -46,7 +59,6 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.138",
-    "@types/victory": "^33.1.4",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
