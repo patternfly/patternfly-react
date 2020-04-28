@@ -59,55 +59,6 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-```js title=Compact-nav
-import React from 'react';
-import { Button, Wizard } from '@patternfly/react-core';
-
-class CompactWizard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.toggleOpen = () => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-  }
-
-  render() {
-    const { isOpen } = this.state;
-
-    const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
-      { name: 'Step 3', component: <p>Step 3</p> },
-      { name: 'Step 4', component: <p>Step 4</p> },
-      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
-    ];
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.toggleOpen}>
-          Show Wizard
-        </Button>
-        {isOpen && (
-          <Wizard
-            isOpen={isOpen}
-            isCompactNav
-            onClose={this.toggleOpen}
-            title="Simple Wizard"
-            description="Simple Wizard Description"
-            steps={steps}
-          />
-        )}
-      </React.Fragment>
-    );
-  }
-}
-```
-
 ```js title=Incrementally-enabled-steps
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
