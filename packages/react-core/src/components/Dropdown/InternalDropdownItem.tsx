@@ -161,7 +161,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       additionalProps.disabled = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
     }
-
     const renderWithTooltip = (childNode: React.ReactNode) =>
       tooltip ? (
         <Tooltip content={tooltip} {...tooltipProps}>
