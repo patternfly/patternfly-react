@@ -8,7 +8,7 @@ import { TrainingCard } from 'gatsby-theme-patternfly-org/components';
 
 ## Fundamentals
 
-<Gallery gutter="md">
+<Gallery hasGutter>
   <GalleryItem>
     <TrainingCard
       trainingType="react"
@@ -32,7 +32,7 @@ import { TrainingCard } from 'gatsby-theme-patternfly-org/components';
 </Gallery>
 
 ## Components
-<Gallery gutter="md">
+<Gallery hasGutter>
   <GalleryItem>
     <TrainingCard
       trainingType="react-components"
@@ -67,7 +67,7 @@ import { TrainingCard } from 'gatsby-theme-patternfly-org/components';
 
 ## Charts
 
-<Gallery gutter="md">
+<Gallery hasGutter>
   <GalleryItem>
     <TrainingCard
       trainingType="react-charts"
