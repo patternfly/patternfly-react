@@ -219,10 +219,11 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
-                  <hr
-                    class="pf-c-divider pf-c-app-launcher__menu-item"
+                  <div
+                    class="pf-c-divider"
+                    role="separator"
                   />
                 </li>
                 <li
@@ -353,10 +354,11 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
-                    <hr
-                      class="pf-c-divider pf-c-app-launcher__menu-item"
+                    <div
+                      class="pf-c-divider"
+                      role="separator"
                     />
                   </li>
                   <li
@@ -472,6 +474,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={0}
                 isDisabled={false}
                 isHovered={false}
@@ -482,7 +485,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -529,6 +531,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={1}
                 isDisabled={false}
                 isHovered={false}
@@ -539,7 +542,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -588,6 +590,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={2}
                 isDisabled={true}
                 isHovered={false}
@@ -598,7 +601,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -647,6 +649,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={3}
                 isDisabled={true}
                 isHovered={false}
@@ -657,7 +660,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -689,7 +691,11 @@ exports[`ApplicationLauncher custom icon 1`] = `
             >
               <InternalDropdownItem
                 className=""
-                component={[Function]}
+                component={
+                  <Divider
+                    component="div"
+                  />
+                }
                 context={
                   Object {
                     "keyHandler": [Function],
@@ -697,26 +703,28 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
+                icon={null}
                 index={4}
                 isDisabled={false}
                 isHovered={false}
                 isPlainText={false}
                 onClick={[Function]}
-                role="none"
+                role="separator"
                 tooltipProps={Object {}}
-                variant="item"
               >
                 <li
                   className={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="none"
+                  role="separator"
                 >
                   <Divider
-                    className="pf-c-app-launcher__menu-item"
+                    className=""
+                    component="div"
                   >
-                    <hr
-                      className="pf-c-divider pf-c-app-launcher__menu-item"
+                    <div
+                      className="pf-c-divider"
+                      role="separator"
                     />
                   </Divider>
                 </li>
@@ -747,6 +755,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={5}
                 isDisabled={false}
                 isHovered={false}
@@ -757,7 +766,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -804,6 +812,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={6}
                 isDisabled={false}
                 isHovered={false}
@@ -814,7 +823,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -1600,10 +1608,11 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
-                  <hr
-                    class="pf-c-divider pf-c-app-launcher__menu-item"
+                  <div
+                    class="pf-c-divider"
+                    role="separator"
                   />
                 </li>
                 <li
@@ -1733,10 +1742,11 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
-                    <hr
-                      class="pf-c-divider pf-c-app-launcher__menu-item"
+                    <div
+                      class="pf-c-divider"
+                      role="separator"
                     />
                   </li>
                   <li
@@ -1850,6 +1860,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={0}
                 isDisabled={false}
                 isHovered={false}
@@ -1860,7 +1871,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -1907,6 +1917,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={1}
                 isDisabled={false}
                 isHovered={false}
@@ -1917,7 +1928,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -1966,6 +1976,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={2}
                 isDisabled={true}
                 isHovered={false}
@@ -1976,7 +1987,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -2025,6 +2035,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={3}
                 isDisabled={true}
                 isHovered={false}
@@ -2035,7 +2046,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -2067,7 +2077,11 @@ exports[`ApplicationLauncher expanded 1`] = `
             >
               <InternalDropdownItem
                 className=""
-                component={[Function]}
+                component={
+                  <Divider
+                    component="div"
+                  />
+                }
                 context={
                   Object {
                     "keyHandler": [Function],
@@ -2075,26 +2089,28 @@ exports[`ApplicationLauncher expanded 1`] = `
                   }
                 }
                 enterTriggersArrowDown={false}
+                icon={null}
                 index={4}
                 isDisabled={false}
                 isHovered={false}
                 isPlainText={false}
                 onClick={[Function]}
-                role="none"
+                role="separator"
                 tooltipProps={Object {}}
-                variant="item"
               >
                 <li
                   className={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  role="none"
+                  role="separator"
                 >
                   <Divider
-                    className="pf-c-app-launcher__menu-item"
+                    className=""
+                    component="div"
                   >
-                    <hr
-                      className="pf-c-divider pf-c-app-launcher__menu-item"
+                    <div
+                      className="pf-c-divider"
+                      role="separator"
                     />
                   </Divider>
                 </li>
@@ -2125,6 +2141,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={5}
                 isDisabled={false}
                 isHovered={false}
@@ -2135,7 +2152,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
@@ -2182,6 +2198,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 }
                 enterTriggersArrowDown={false}
                 href={null}
+                icon={null}
                 index={6}
                 isDisabled={false}
                 isHovered={false}
@@ -2192,7 +2209,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 tabIndex={-1}
                 tooltip={null}
                 tooltipProps={null}
-                variant="item"
               >
                 <li
                   className={null}
