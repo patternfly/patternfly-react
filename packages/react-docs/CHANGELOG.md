@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.9...@patternfly/react-docs@5.2.10) (2020-04-28)
+
+
+### Bug Fixes
+
+* **css:** change gutter="x" to hasGutter ([#4145](https://github.com/patternfly/patternfly-react/issues/4145)) ([712c4b6](https://github.com/patternfly/patternfly-react/commit/712c4b6713a02980f60abbc43e7be98cd6833324))
+
+
+
+
+
 ## [5.2.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.8...@patternfly/react-docs@5.2.9) (2020-04-28)
 
 
