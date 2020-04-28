@@ -172,7 +172,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
   /**
    * ChartGroup uses the standard externalEventMutations prop.
    */

@@ -329,7 +329,7 @@ export interface ChartProps extends VictoryChartProps {
    * for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified
    * via props as they determine relative layout for components in Chart.
    */
-  style?: VictoryStyleInterface;
+  style?: Pick<VictoryStyleInterface, 'parent'>;
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.

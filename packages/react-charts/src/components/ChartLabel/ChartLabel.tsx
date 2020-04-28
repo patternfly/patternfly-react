@@ -139,7 +139,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * The transform prop applies a transform to the rendered `<text>` element.
    * In addition to being a string, it can be an object containing transform definitions for easier authoring.
    */
-  transform?: string | {} | (() => string);
+  transform?: string | {} | (() => string | {});
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y` coordinates
    */

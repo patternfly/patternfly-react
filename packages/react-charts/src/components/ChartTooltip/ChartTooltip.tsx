@@ -1,6 +1,12 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { NumberOrCallback, OrientationTypes, StringOrNumberOrCallback, VictoryStyleObject } from 'victory-core';
+import {
+  NumberOrCallback,
+  OrientationTypes,
+  StringOrNumberOrCallback,
+  VictoryNumberCallback,
+  VictoryStyleObject
+} from 'victory-core';
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -129,7 +135,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
    */
-  orientation?: OrientationTypes;
+  orientation?: OrientationTypes | VictoryNumberCallback;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
