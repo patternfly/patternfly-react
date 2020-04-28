@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.8.2...@patternfly/react-core@4.9.0) (2020-04-28)
+
+
+### Features
+
+* **Wizard:** update hasBodyPadding ([#4136](https://github.com/patternfly/patternfly-react/issues/4136)) ([927bd46](https://github.com/patternfly/patternfly-react/commit/927bd4695ad8c039c2a833026ccfe101d5237fe5))
+
+
+
+
+
 ## [4.8.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.8.1...@patternfly/react-core@4.8.2) (2020-04-27)
 
 
