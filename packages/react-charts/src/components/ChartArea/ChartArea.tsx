@@ -3,6 +3,7 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
   CategoryPropType,
+  D3Scale,
   DataGetterPropType,
   DomainPropType,
   DomainPaddingPropType,
@@ -10,7 +11,6 @@ import {
   InterpolationPropType,
   PaddingProps,
   ScalePropType,
-  D3Scale,
   StringOrNumberOrCallback,
   VictoryStyleInterface
 } from 'victory-core';
@@ -144,7 +144,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", string | number>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', string | number>[];
   /**
    * ChartArea uses the standard externalEventMutations prop.
    */

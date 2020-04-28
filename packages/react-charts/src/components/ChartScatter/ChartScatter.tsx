@@ -14,7 +14,6 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface
 } from 'victory-core';
-import {  } from 'victory-core';
 import { VictoryScatter, VictoryScatterProps } from 'victory-scatter';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
