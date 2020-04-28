@@ -157,7 +157,7 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 
 ```js title=Vertical
 import React from 'react';
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
 class VerticalTabs extends React.Component {
   constructor(props) {
@@ -222,7 +222,7 @@ class VerticalTabs extends React.Component {
 
 ```js title=Inset
 import React from 'react';
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
 class InsetTabs extends React.Component {
   constructor(props) {
@@ -333,7 +333,7 @@ class IconAndTextTabs extends React.Component {
 
 ```js title=Tabs-with-sub-tabs
 import React from 'react';
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
 class SecondaryTabs extends React.Component {
   constructor(props) {
@@ -445,7 +445,7 @@ class SecondaryTabs extends React.Component {
 
 ```js title=Filled
 import React from 'react';
-import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
 class FilledTabs extends React.Component {
   constructor(props) {
@@ -501,7 +501,8 @@ class FilledTabs extends React.Component {
 
 ```js title=Filled-with-icons
 import React from 'react';
-import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
+import { UsersIcon,  BoxIcon, DatabaseIcon } from '@patternfly/react-icons';
 
 class FilledTabsWithIcons extends React.Component {
   constructor(props) {
