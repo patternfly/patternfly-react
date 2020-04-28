@@ -2,23 +2,23 @@
 title: 'Tabs'
 section: components
 cssPrefix: 'pf-c-tabs'
-propComponents: ['Tabs', 'Tab']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', TabTitleIcon ]
 typescript: true
 ---
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-import { AddressBookIcon } from '@patternfly/react-icons';
+import { Tabs, Tab, TabsVariant, TabContent, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
+import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Basic
+```js title=Default
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-import { AddressBookIcon } from '@patternfly/react-icons';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
 class SimpleTabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTabKey: 0
+      activeTabKey: 0,
+      isBox: false
     };
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
@@ -26,119 +26,276 @@ class SimpleTabs extends React.Component {
         activeTabKey: tabIndex
       });
     };
-  }
 
-  render() {
-    return (
-      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
-        </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
-        </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
-        </Tab>
-        <Tab
-          eventKey={3}
-          title={
-            <>
-              Tab item 4 <AddressBookIcon />
-            </>
-          }
-        >
-          Tab 4 section
-        </Tab>
-      </Tabs>
-    );
-  }
-}
-```
-
-```js title=Children-mounting-on-click
-import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-
-class MountingSimpleTabs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTabKey: 0
-    };
-    // Toggle currently active tab
-    this.handleTabClick = (event, tabIndex) => {
+    this.toggleBox = checked => {
       this.setState({
-        activeTabKey: tabIndex
+        isBox: checked
       });
     };
   }
 
   render() {
+    const {activeTabKey, isBox} = this.state;
     return (
-      <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
-        </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
-        </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
-        </Tab>
-      </Tabs>
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+              label="isBox"
+              isChecked={isBox}
+              onChange={this.toggleBox}
+              aria-label="show box variation checkbox"
+              id="toggle-box"
+              name="toggle-box"
+            />
+        </div>
+      </div>
     );
   }
 }
 ```
 
-```js title=Unmounting-invisible-children
+```js title=Default-overflow
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-
-class UnmountingSimpleTabs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTabKey: 0
-    };
-    // Toggle currently active tab
-    this.handleTabClick = (event, tabIndex) => {
-      this.setState({
-        activeTabKey: tabIndex
-      });
-    };
-  }
-
-  render() {
-    return (
-      <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
-        </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
-        </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
-        </Tab>
-      </Tabs>
-    );
-  }
-}
-```
-
-```js title=Scroll-buttons-primary
-import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
 class ScrollButtonsPrimaryTabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTabKey: 0
+      activeTabKey: 0,
+      isBox: false
     };
 
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox} = this.state;
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+          <Tab eventKey={7} title={<TabTitleText>Tab item 7</TabTitleText>}>
+            Tab 7 section
+          </Tab>
+          <Tab eventKey={8} title={<TabTitleText>Tab item 8</TabTitleText>}>
+            Tab 8 section
+          </Tab>
+          <Tab eventKey={9} title={<TabTitleText>Tab item 9</TabTitleText>}>
+            Tab 9 section
+          </Tab>
+          <Tab eventKey={10} title={<TabTitleText>Tab item 10</TabTitleText>}>
+            Tab 10 section
+          </Tab>
+          <Tab eventKey={11} title={<TabTitleText>Tab item 11</TabTitleText>}>
+            Tab 11 section
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+              label="isBox"
+              isChecked={isBox}
+              onChange={this.toggleBox}
+              aria-label="show box variation checkbox on overflow"
+              id="toggle-box-overflow"
+              name="toggle-box-overflow"
+            />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Vertical
+import React from 'react';
+import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+
+class VerticalTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isBox: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox} = this.state;
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+                label="isBox"
+                isChecked={isBox}
+                onChange={this.toggleBox}
+                aria-label="show box variation checkbox with vertical"
+                id="toggle-box-vertical"
+                name="toggle-box-vertical"
+              />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Inset
+import React from 'react';
+import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+
+class InsetTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isBox: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox} = this.state;
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} insetOnMd="sm" insetOnLg="lg" insetOnXl="2xl" isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+        <div style={{marginTop: "20px"}}>
+          <Checkbox
+                label="isBox"
+                isChecked={isBox}
+                onChange={this.toggleBox}
+                aria-label="show box variation checkbox with inset"
+                id="toggle-box-inset"
+                name="toggle-box-inset"
+              />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Icons-and-text
+import React from 'react';
+import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
+import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
+
+class IconAndTextTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
       this.setState({
@@ -150,41 +307,23 @@ class ScrollButtonsPrimaryTabs extends React.Component {
   render() {
     return (
       <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
+        <Tab eventKey={0} title={<><TabTitleIcon><UsersIcon /></TabTitleIcon> <TabTitleText>Users</TabTitleText>  </>}>
+          Users
         </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
+        <Tab eventKey={1} title={<><TabTitleIcon><BoxIcon /></TabTitleIcon> <TabTitleText>Containers</TabTitleText>  </>}>
+          Containers
         </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
+        <Tab eventKey={2} title={<><TabTitleIcon><DatabaseIcon /></TabTitleIcon> <TabTitleText>Database</TabTitleText>  </>}>
+          Database
         </Tab>
-        <Tab eventKey={3} title="Tab item 4">
-          Tab 4 section
+        <Tab eventKey={3} title={<><TabTitleIcon><ServerIcon /></TabTitleIcon> <TabTitleText>Server</TabTitleText>  </>}>
+          Server
         </Tab>
-        <Tab eventKey={4} title="Tab item 5">
-          Tab 5 section
+        <Tab eventKey={4} title={<><TabTitleIcon><LaptopIcon /></TabTitleIcon> <TabTitleText>System</TabTitleText>  </>}>
+          System
         </Tab>
-        <Tab eventKey={5} title="Tab item 6">
-          Tab 6 section
-        </Tab>
-        <Tab eventKey={6} title="Tab item 7">
-          Tab 7 section
-        </Tab>
-        <Tab eventKey={7} title="Tab item 8">
-          Tab 8 section
-        </Tab>
-        <Tab eventKey={8} title="Tab item 9">
-          Tab 9 section
-        </Tab>
-        <Tab eventKey={9} title="Tab item 10">
-          Tab 10 section
-        </Tab>
-        <Tab eventKey={10} title="Tab item 11">
-          Tab 11 section
-        </Tab>
-        <Tab eventKey={11} title="Tab item 12">
-          Tab 12 section
+        <Tab eventKey={6} title={<><TabTitleIcon><ProjectDiagramIcon /></TabTitleIcon> <TabTitleText>Network</TabTitleText>  </>}>
+          Network
         </Tab>
       </Tabs>
     );
@@ -192,16 +331,17 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 }
 ```
 
-```js title=Secondary-buttons
+```js title=Tabs-with-sub-tabs
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
 class SecondaryTabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeTabKey1: 0,
-      activeTabKey2: 10
+      activeTabKey2: 10,
+      isBox: false
     };
     // Toggle currently active tab
     this.handleTabClickFirst = (event, tabIndex) => {
@@ -215,110 +355,217 @@ class SecondaryTabs extends React.Component {
         activeTabKey2: tabIndex
       });
     };
-  }
 
-  render() {
-    return (
-      <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst}>
-        <Tab eventKey={0} title="Tab item 1">
-          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
-            <Tab eventKey={10} title="Secondary tab item 1">
-              Secondary tab item 1 item section
-            </Tab>
-            <Tab eventKey={11} title="Secondary tab item 2">
-              Secondary tab item 2 section
-            </Tab>
-            <Tab eventKey={12} title="Secondary tab item 3">
-              Secondary tab item 3 section
-            </Tab>
-          </Tabs>
-        </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
-        </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
-        </Tab>
-      </Tabs>
-    );
-  }
-}
-```
-
-```js title=Scroll-buttons-secondary
-import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-
-class ScrollButtonsSecondaryTabs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTabKey: 0
-    };
-
-    // Toggle currently active tab
-    this.handleTabClick = (event, tabIndex) => {
+    this.toggleBox = checked => {
       this.setState({
-        activeTabKey: tabIndex
+        isBox: checked
       });
     };
   }
 
   render() {
+    const {activeTabKey1, activeTabKey2, isBox} = this.state;
     return (
-      <Tabs activeKey={this.state.activeTabKey} isSecondary onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
+      <div>
+      <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+          <Tabs activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
+            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>} >
+              Secondary tab item 1 item section
+            </Tab>
+            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>>
+              Secondary tab item 2 section
+            </Tab>
+            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>>
+              Secondary tab item 3 section
+            </Tab>
+            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>>
+              Secondary tab item 4 section
+            </Tab>
+            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>>
+              Secondary tab item 5 section
+            </Tab>
+            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>>
+              Secondary tab item 6 section
+            </Tab>
+            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>>
+              Secondary tab item 7 section
+            </Tab>
+            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>>
+              Secondary tab item 8 section
+            </Tab>
+          </Tabs>
         </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+          Containers
         </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+          Database
         </Tab>
-        <Tab eventKey={3} title="Tab item 4">
-          Tab 4 section
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+          Server
         </Tab>
-        <Tab eventKey={4} title="Tab item 5">
-          Tab 5 section
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+          System
         </Tab>
-        <Tab eventKey={5} title="Tab item 6">
-          Tab 6 section
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+          Network
         </Tab>
-        <Tab eventKey={6} title="Tab item 7">
+        <Tab eventKey={7} title={<TabTitleText>Tab item 7</TabTitleText>}>
           Tab 7 section
         </Tab>
-        <Tab eventKey={7} title="Tab item 8">
+        <Tab eventKey={8} title={<TabTitleText>Tab item 8</TabTitleText>}>
           Tab 8 section
         </Tab>
-        <Tab eventKey={8} title="Tab item 9">
+        <Tab eventKey={9} title={<TabTitleText>Tab item 9</TabTitleText>}>
           Tab 9 section
         </Tab>
-        <Tab eventKey={9} title="Tab item 10">
+        <Tab eventKey={10} title={<TabTitleText>Tab item 10</TabTitleText>}>
           Tab 10 section
         </Tab>
-        <Tab eventKey={10} title="Tab item 11">
+        <Tab eventKey={11} title={<TabTitleText>Tab item 11</TabTitleText>}>
           Tab 11 section
         </Tab>
-        <Tab eventKey={11} title="Tab item 12">
-          Tab 12 section
-        </Tab>
       </Tabs>
+      <div style={{marginTop: "20px"}}>
+        <Checkbox
+              label="isBox"
+              isChecked={isBox}
+              onChange={this.toggleBox}
+              aria-label="show box variation checkbox with sub tabs"
+              id="toggle-box-secondary"
+              name="toggle-box-secondary"
+            />
+        </div>
+      </div>
     );
   }
 }
 ```
 
-```js title=Filled-buttons
+```js title=Filled
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
 class FilledTabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      activeTabKey: 0,
+      isBox: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox} = this.state;
+    return (
+      <div>
+      <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+          Users
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+          Containers
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+          Database
+        </Tab>
+      </Tabs>
+       <div style={{marginTop: "20px"}}>
+        <Checkbox
+              label="isBox"
+              isChecked={isBox}
+              onChange={this.toggleBox}
+              aria-label="show box variation checkbox with filled tabs"
+              id="toggle-box-filled"
+              name="toggle-box-filled"
+            />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Filled-with-icons
+import React from 'react';
+import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
+
+class FilledTabsWithIcons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isBox: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const {activeTabKey, isBox} = this.state;
+    return (
+      <div>
+      <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tab eventKey={0} title={<><TabTitleIcon><UsersIcon /></TabTitleIcon> <TabTitleText>Users</TabTitleText>  </>}>
+          Users
+        </Tab>
+        <Tab eventKey={1} title={<><TabTitleIcon><BoxIcon /></TabTitleIcon> <TabTitleText>Containers</TabTitleText>  </>}>
+          Containers
+        </Tab>
+        <Tab eventKey={2} title={<><TabTitleIcon><DatabaseIcon /></TabTitleIcon> <TabTitleText>Database</TabTitleText>  </>}>
+          Database
+        </Tab>
+      </Tabs>
+      <div style={{marginTop: "20px"}}>
+        <Checkbox
+              label="isBox"
+              isChecked={isBox}
+              onChange={this.toggleBox}
+              aria-label="show box variation checkbox with filled icon tabs"
+              id="toggle-box-filled-icon"
+              name="toggle-box-filled-icon"
+            />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Using-the-nav-element
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabTitleText } from '@patternfly/react-core';
+
+class TabsNavVariant extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       activeTabKey: 0
     };
+
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
       this.setState({
@@ -329,15 +576,29 @@ class FilledTabs extends React.Component {
 
   render() {
     return (
-      <Tabs isFilled activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
+      <Tabs
+        activeKey={this.state.activeTabKey}
+        onSelect={this.handleTabClick}
+        aria-label="Local"
+        variant={TabsVariant.nav}
+      >
+       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#">
+          Users
         </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#">
+          Containers
         </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#">
+          Database
+        </Tab>
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>} href="#">
+          Server
+        </Tab>
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>} href="#">
+          System
+        </Tab>
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#">
+          Network
         </Tab>
       </Tabs>
     );
@@ -345,9 +606,10 @@ class FilledTabs extends React.Component {
 }
 ```
 
-```js title=Secondary-using-nav-element
+
+```js title=Sub-nav-using-the-nav-element
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabsVariant, TabTitleText } from '@patternfly/react-core';
 
 class SecondaryTabsNavVariant extends React.Component {
   constructor(props) {
@@ -380,7 +642,7 @@ class SecondaryTabsNavVariant extends React.Component {
         aria-label="Local"
         variant={TabsVariant.nav}
       >
-        <Tab eventKey={0} title="Tab item 1" href="#">
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#">
           <Tabs
             activeKey={this.state.activeTabKey2}
             isSecondary
@@ -388,64 +650,40 @@ class SecondaryTabsNavVariant extends React.Component {
             aria-label="Local secondary"
             variant={TabsVariant.nav}
           >
-            <Tab eventKey={10} title="Secondary tab item 1" href="#">
+            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>} href="#">
               Secondary tab item 1 item section
             </Tab>
-            <Tab eventKey={11} title="Secondary tab item 2" href="#">
+            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>} href="#">
               Secondary tab item 2 section
             </Tab>
-            <Tab eventKey={12} title="Secondary tab item 3" href="#">
+            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>} href="#">
               Secondary tab item 3 section
+            </Tab>
+            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}href="#" >
+              Secondary tab item 4 section
+            </Tab>
+            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>} href="#">
+              Secondary tab item 5 section
+            </Tab>
+            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>} href="#">
+              Secondary tab item 6 section
             </Tab>
           </Tabs>
         </Tab>
-        <Tab eventKey={1} title="Tab item 2" href="#">
-          Tab 2 section
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#">
+          Containers
         </Tab>
-        <Tab eventKey={2} title="Tab item 3" href="#">
-          Tab 3 section
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#">
+          Database
         </Tab>
-      </Tabs>
-    );
-  }
-}
-```
-
-```js title=Using-nav-element
-import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-
-class TabsNavVariant extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTabKey: 0
-    };
-
-    // Toggle currently active tab
-    this.handleTabClick = (event, tabIndex) => {
-      this.setState({
-        activeTabKey: tabIndex
-      });
-    };
-  }
-
-  render() {
-    return (
-      <Tabs
-        activeKey={this.state.activeTabKey}
-        onSelect={this.handleTabClick}
-        aria-label="Local"
-        variant={TabsVariant.nav}
-      >
-        <Tab eventKey={0} title="Tab item 1" href="#">
-          Tab 1 section
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>} href="#">
+          Server
         </Tab>
-        <Tab eventKey={1} title="Tab item 2" href="#">
-          Tab 2 section
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>} href="#">
+          System
         </Tab>
-        <Tab eventKey={2} title="Tab item 3" href="#">
-          Tab 3 section
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#">
+          Network
         </Tab>
       </Tabs>
     );
@@ -455,7 +693,7 @@ class TabsNavVariant extends React.Component {
 
 ```js title=Separate-content
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabTitleText, TabContent } from '@patternfly/react-core';
 
 class SeparateTabContent extends React.Component {
   constructor(props) {
@@ -480,9 +718,9 @@ class SeparateTabContent extends React.Component {
     return (
       <React.Fragment>
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-          <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
-          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
-          <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
+          <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}  tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
           <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
@@ -500,3 +738,76 @@ class SeparateTabContent extends React.Component {
   }
 }
 ```
+
+```js title=Children-mounting-on-click
+import React from 'react';
+import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+
+class MountingSimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} >
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} >
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} >
+          Tab 3 section
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+
+```js title=Unmounting-invisible-children
+import React from 'react';
+import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
+
+class UnmountingSimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} >
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} >
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} >
+          Tab 3 section
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+

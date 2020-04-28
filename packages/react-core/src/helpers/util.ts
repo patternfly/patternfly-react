@@ -273,3 +273,9 @@ export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
  * Copied from exenv
  */
 export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+/**
+ *
+ * @param {string} s string to make first letter a capital
+ */
+export const capitalizeFirstLetter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);

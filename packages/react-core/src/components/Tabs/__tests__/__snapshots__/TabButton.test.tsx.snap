@@ -2,7 +2,6 @@
 
 exports[`should render tab button 1`] = `
 <TabButtonBase
-  eventKey={0}
   tabContentRef={null}
 >
   Tab button

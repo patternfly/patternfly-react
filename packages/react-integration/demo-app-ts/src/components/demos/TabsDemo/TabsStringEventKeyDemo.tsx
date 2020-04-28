@@ -1,4 +1,4 @@
-import { Tabs, Tab, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabContent, TabTitleText } from '@patternfly/react-core';
 import React, { Component, RefObject } from 'react';
 
 export class TabsStringEventKeyDemo extends Component {
@@ -36,21 +36,21 @@ export class TabsStringEventKeyDemo extends Component {
           <Tab
             id="demoTabOne"
             eventKey={'one'}
-            title="Tab item 1"
+            title={<TabTitleText>Tab item 2</TabTitleText>}
             tabContentId="demoTab1Section"
             tabContentRef={this.contentRefOne}
           />
           <Tab
             id="demoTabTwo"
             eventKey={'two'}
-            title="Tab item 2"
+            title={<TabTitleText>Tab item 2</TabTitleText>}
             tabContentId="demoTab2Section"
             tabContentRef={this.contentRefTwo}
           />
           <Tab
             id="demoTabThree"
             eventKey={'three'}
-            title="Tab item 3"
+            title={<TabTitleText>Tab item 3</TabTitleText>}
             tabContentId="demoTab3Section"
             tabContentRef={this.contentRefThree}
           />
