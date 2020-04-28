@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Title, Tooltip, Text, Grid, GridItem, PageSection } from '@patternfly/react-core';
 import spacerMd from '@patternfly/react-tokens/dist/js/global_spacer_md';
 import labelFontSize from '@patternfly/react-tokens/dist/js/global_FontSize_sm';
-import * as IconsModule from '@patternfly/react-icons';
+import * as IconsModule from '@patternfly/react-icons/dist/js';
 import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';
 
 const iconsPage = ({ location }) => {

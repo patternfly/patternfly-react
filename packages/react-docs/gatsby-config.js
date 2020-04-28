@@ -12,7 +12,7 @@ module.exports = {
       options: {
         context: 'react', // For global items that need sideNav
         showGdprBanner: false, // GDPR banner
-        hiddenPages: ['withOuia', 'Training'], // By title
+        hiddenPages: ['Training'], // By title
         sideNav: {
           react: [
             { section: 'overview' },
@@ -71,7 +71,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'react', // This goes in URLs
-        path: path.resolve(__dirname, '../../RELEASE-NOTES.md')
+        path: path.resolve(__dirname, './RELEASE-NOTES.md')
       }
     },
     // Source training
