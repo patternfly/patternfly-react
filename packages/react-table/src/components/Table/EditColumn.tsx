@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Button } from '@patternfly/react-core';
-import { PencilAltIcon, CheckIcon, TimesIcon } from '@patternfly/react-icons';
+import PencilAltIcon from '@patternfly/react-icons/dist/js/icons/pencil-alt-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import { OnRowEdit } from './Table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import classNames from 'classnames';
