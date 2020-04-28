@@ -445,7 +445,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     });
   };
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  // Note: containerComponent is required for theme
   const VictoryChartWithContainerComponent = VictoryChart as any;
   return (
     <VictoryChartWithContainerComponent

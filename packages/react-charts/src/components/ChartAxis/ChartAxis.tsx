@@ -420,10 +420,9 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     ...containerComponent.props
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  const VictoryAxisWithContainerComponent = VictoryAxis as any;
+  // Note: containerComponent is required for theme
   return (
-    <VictoryAxisWithContainerComponent
+    <VictoryAxis
       containerComponent={container}
       theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme}
       {...rest}

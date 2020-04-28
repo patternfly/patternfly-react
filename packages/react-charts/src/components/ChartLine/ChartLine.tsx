@@ -398,12 +398,8 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
     theme,
     ...containerComponent.props
   });
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryLine containerComponent={container} theme={theme} {...rest} />
-  );
+  // Note: containerComponent is required for theme
+  return <VictoryLine containerComponent={container} theme={theme} {...rest} />;
 };
 
 // Note: VictoryLine.role must be hoisted

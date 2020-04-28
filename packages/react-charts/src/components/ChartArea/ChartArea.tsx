@@ -402,12 +402,8 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
     ...containerComponent.props
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
-  return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
-    <VictoryArea containerComponent={container} theme={theme} {...rest} />
-  );
+  // Note: containerComponent is required for theme
+  return <VictoryArea containerComponent={container} theme={theme} {...rest} />;
 };
 
 // Note: VictoryArea.role must be hoisted

@@ -364,10 +364,8 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
 
-  // Note: containerComponent is required for theme, but @types/victory is missing a prop type
+  // Note: containerComponent is required for theme
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-    // @ts-ignore
     <VictoryStack containerComponent={container} theme={theme} {...rest}>
       {children}
     </VictoryStack>

@@ -200,12 +200,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartTooltipProps) => (
-  // Note: constrainToVisibleArea is valid, but @types/victory is missing a prop type
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-  // @ts-ignore
-  <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />
-);
+}: ChartTooltipProps) => <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />;
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

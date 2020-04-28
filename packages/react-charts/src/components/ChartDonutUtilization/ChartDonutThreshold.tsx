@@ -7,7 +7,6 @@ import {
   DataGetterPropType,
   EventPropTypeInterface,
   Helpers,
-  InterpolationPropType,
   PaddingProps,
   StringOrNumberOrCallback,
   VictoryStyleInterface

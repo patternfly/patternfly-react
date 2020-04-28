@@ -119,7 +119,7 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
 }: ChartContainerProps) => {
   const chartClassName = getClassName({ className });
 
-  // Note: theme is valid, but @types/victory is missing a prop type
+  // Note: className is valid, but Victory is missing a type
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;

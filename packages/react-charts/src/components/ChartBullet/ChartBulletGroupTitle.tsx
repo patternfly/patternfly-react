@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Data, PaddingProps, Line, StringOrNumberOrCallback } from 'victory-core';
+import { PaddingProps, Line, StringOrNumberOrCallback } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
