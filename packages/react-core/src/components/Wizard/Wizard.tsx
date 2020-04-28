@@ -108,12 +108,10 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     appendTo: null as HTMLElement
   };
   private container: HTMLDivElement;
-  private titleId: string;
-  private descriptionId: string;
 
   constructor(props: WizardProps) {
     super(props);
-    const newId = Wizard.currentId++;
+
     this.state = {
       currentStep: this.props.startAtStep && Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
       isNavOpen: false

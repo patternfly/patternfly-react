@@ -96,7 +96,11 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       {!isBasic && showClose && <ModalBoxCloseButton onClose={onClose} />}
       {!isBasic && modalBoxHeader}
       {!isBasic && description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
-      {!isBasic && <ModalBoxBody {...props} {...(!description && { id })}>{children}</ModalBoxBody>}
+      {!isBasic && (
+        <ModalBoxBody {...props} {...(!description && { id })}>
+          {children}
+        </ModalBoxBody>
+      )}
       {!isBasic && modalBoxFooter}
       {isBasic && children}
     </ModalBox>
