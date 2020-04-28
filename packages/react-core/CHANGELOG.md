@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.0...@patternfly/react-core@4.9.1) (2020-04-28)
+
+
+### Bug Fixes
+
+* **docs:** bump theme and improve speed ([#4141](https://github.com/patternfly/patternfly-react/issues/4141)) ([f7532bf](https://github.com/patternfly/patternfly-react/commit/f7532bf4507584de5135c72ba3d756675a1e5085))
+
+
+
+
+
 # [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.8.2...@patternfly/react-core@4.9.0) (2020-04-28)
 
 

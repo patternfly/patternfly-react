@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.8...@patternfly/react-docs@5.2.9) (2020-04-28)
+
+
+### Bug Fixes
+
+* **docs:** bump theme and improve speed ([#4141](https://github.com/patternfly/patternfly-react/issues/4141)) ([f7532bf](https://github.com/patternfly/patternfly-react/commit/f7532bf4507584de5135c72ba3d756675a1e5085))
+
+
+
+
+
 ## [5.2.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.7...@patternfly/react-docs@5.2.8) (2020-04-28)
 
 **Note:** Version bump only for package @patternfly/react-docs
