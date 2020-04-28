@@ -447,11 +447,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       <WizardContextProvider value={context}>
         <div
           {...rest}
-          className={css(
-            styles.wizard,
-            activeStep.isFinishedStep && 'pf-m-finished',
-            className
-          )}
+          className={css(styles.wizard, activeStep.isFinishedStep && 'pf-m-finished', className)}
           {...(this.isModal && {
             role: 'dialog',
             'aria-modal': 'true',
