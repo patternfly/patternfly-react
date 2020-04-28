@@ -24,6 +24,9 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-topology#readme",
+  "scripts": {
+    "clean": "rimraf dist"
+  },
   "dependencies": {
     "@patternfly/patternfly": "4.8.6",
     "@patternfly/react-core": "^4.9.1",
@@ -32,11 +35,8 @@
     "tslib": "^1.11.1"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0"
-  },
-  "scripts": {
-    "clean": "rimraf dist"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
