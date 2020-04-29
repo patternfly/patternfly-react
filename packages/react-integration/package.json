@@ -5,9 +5,6 @@
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
-  "publishConfig": {
-    "access": "private"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/patternfly/patternfly-react.git"

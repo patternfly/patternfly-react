@@ -60,7 +60,7 @@
     "yo": "^3.1.1"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }
