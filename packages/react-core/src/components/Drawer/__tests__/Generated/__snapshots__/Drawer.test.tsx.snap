@@ -5,6 +5,7 @@ exports[`Drawer should match snapshot (auto-generated) 1`] = `
   value={
     Object {
       "isExpanded": false,
+      "isStatic": false,
     }
   }
 >

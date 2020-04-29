@@ -31,7 +31,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
-    {({ isExpanded }) => (
+    {({ isExpanded, isStatic }) => (
       <div
         className={css(
           styles.drawerPanel,
@@ -42,9 +42,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
           widthOn2Xl && styles.modifiers[`width_${widthOn2Xl}On_2xl` as keyof typeof styles.modifiers],
           className
         )}
-        hidden={!isExpanded}
-        aria-hidden={!isExpanded}
-        aria-expanded={isExpanded}
+        hidden={isStatic ? false : !isExpanded}
         {...props}
       >
         {children}
