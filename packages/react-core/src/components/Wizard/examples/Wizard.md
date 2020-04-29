@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle']
 ---
 
-import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
+import { Button, Wizard, WizardFooter, WizardContextConsumer, ModalVariant, Alert } from '@patternfly/react-core';
 import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
@@ -31,9 +31,9 @@ class SimpleWizard extends React.Component {
 
     return (
       <Wizard
-        title="Simple Wizard"
         description="Simple Wizard Description"
         steps={steps}
+        height={400}
       />
     );
   }
@@ -71,10 +71,10 @@ class DisabledStepsWizard extends React.Component {
     return (
       <Wizard
         onClose={this.toggleOpen}
-        title="Simple Wizard"
         description="Simple Wizard Description"
         steps={steps}
         onNext={this.onNext}
+        height={400}
       />
     );
   }
@@ -105,9 +105,9 @@ class FinishedStepWizard extends React.Component {
     return (
       <Wizard
         onClose={this.toggleOpen}
-        title="Simple Wizard"
         description="Simple Wizard Description"
         steps={steps}
+        height={400}
       />
     );
   }
@@ -196,7 +196,6 @@ class ValidationWizard extends React.Component {
 
     return (
       <Wizard
-        title="Validation Wizard"
         description="Validation Wizard Description"
         onClose={this.toggleOpen}
         onSave={this.onSave}
@@ -204,6 +203,7 @@ class ValidationWizard extends React.Component {
         onNext={this.onNext}
         onBack={this.onBack}
         onGoToStep={this.onGoToStep}
+        height={400}
       />
     );
   }
@@ -286,8 +286,8 @@ class ValidateButtonPressWizard extends React.Component {
       <Wizard
         onClose={this.toggleOpen}
         footer={CustomFooter}
-        title="Validate on button press"
         steps={steps}
+        height={400}
       />
     );
   }
@@ -547,8 +547,8 @@ class ProgressiveWizard extends React.Component {
         onClose={this.toggleOpen}
         footer={CustomFooter}
         onGoToStep={this.onGoToStep}
-        title="Progressive Wizard"
         steps={steps}
+        height={400}
       />
     );
   }
@@ -595,9 +595,9 @@ class SimpleWizard extends React.Component {
         onBack={this.onMove}
         onSave={this.onSave}
         onClose={this.toggleOpen}
-        title="Simple Wizard"
         description="Simple Wizard Description"
         steps={steps}
+        height={400}
       />
     );
   }

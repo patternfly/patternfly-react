@@ -23,6 +23,14 @@ exports[`Wizard should match snapshot 1`] = `
     <div
       className="pf-c-wizard"
     >
+      <WizardHeader
+        closeButtonAriaLabel="Close"
+        description="Description here"
+        descriptionId="pf-wizard-description-0"
+        onClose={[Function]}
+        title="Wizard title"
+        titleId="pf-wizard-title-0"
+      />
       <WizardToggle
         activeStep={
           Object {

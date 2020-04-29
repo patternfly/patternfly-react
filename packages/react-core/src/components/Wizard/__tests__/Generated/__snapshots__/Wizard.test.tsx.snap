@@ -21,6 +21,14 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
     isInPage={false}
     isOpen={false}
   >
+    <WizardHeader
+      closeButtonAriaLabel="'Close'"
+      description="''"
+      descriptionId="pf-wizard-description-0"
+      onClose={[Function]}
+      title="''"
+      titleId="pf-wizard-title-0"
+    />
     <WizardToggle
       hasNoBodyPadding={false}
       isNavOpen={false}

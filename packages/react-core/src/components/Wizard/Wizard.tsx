@@ -8,6 +8,7 @@ import { WizardNav } from './WizardNav';
 import { WizardNavItem } from './WizardNavItem';
 import { WizardContextProvider } from './WizardContext';
 import { PickOptional } from '../../helpers/typeUtils';
+import { WizardHeader } from './WizardHeader';
 
 export interface WizardStep {
   /** Optional identifier */
@@ -38,11 +39,13 @@ export type WizardStepFunctionType = (
 ) => void;
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
+  /** If true makes the navigation more compact */
+  isCompactNav?: boolean;
   /** Custom width of the wizard */
   width?: number | string;
   /** Custom height of the wizard */
   height?: number | string;
-  /** The wizard title (required unless isInPage is used) */
+  /** The wizard title to display if header is desired */
   title?: string;
   /** The wizard description */
   description?: React.ReactNode;
@@ -108,9 +111,14 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     appendTo: null as HTMLElement
   };
   private container: HTMLDivElement;
+  private titleId: string;
+  private descriptionId: string;
 
   constructor(props: WizardProps) {
     super(props);
+    const newId = Wizard.currentId++;
+    this.titleId = `pf-wizard-title-${newId}`;
+    this.descriptionId = `pf-wizard-description-${newId}`;
 
     this.state = {
       currentStep: this.props.startAtStep && Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
@@ -387,7 +395,18 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         <div
           {...rest}
           className={css(styles.wizard, activeStep.isFinishedStep && 'pf-m-finished', className)}
+          {...(height && { style: { height } })}
         >
+          {title && (
+            <WizardHeader
+              titleId={this.titleId}
+              descriptionId={this.descriptionId}
+              onClose={onClose}
+              title={title}
+              description={description}
+              closeButtonAriaLabel={closeButtonAriaLabel}
+            />
+          )}
           <WizardToggle
             isNavOpen={this.state.isNavOpen}
             onNavToggle={isNavOpen => this.setState({ isNavOpen })}

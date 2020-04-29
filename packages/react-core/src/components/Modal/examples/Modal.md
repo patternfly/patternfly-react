@@ -388,7 +388,7 @@ class NoHeader extends React.Component {
 import React from 'react';
 import { Modal, Button, Wizard } from '@patternfly/react-core';
 
-class SimpleModal extends React.Component {
+class BasicFlag extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -421,7 +421,7 @@ class SimpleModal extends React.Component {
           title="Modal Header"
           isBasic
           isOpen={isModalOpen}
-          disableFocusTrap={true}
+          variant={ModalVariant.large}
         >
           <Wizard
             title="Simple Wizard"
