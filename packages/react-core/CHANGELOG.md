@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.1...@patternfly/react-core@4.9.2) (2020-04-29)
+
+
+### Bug Fixes
+
+* **drawer:** toggle hidden and remove aria-hidden/expanded ([#4034](https://github.com/patternfly/patternfly-react/issues/4034)) ([604e708](https://github.com/patternfly/patternfly-react/commit/604e708ef9105cf26f811383f03a11640f073922))
+
+
+
+
+
 ## [4.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.0...@patternfly/react-core@4.9.1) (2020-04-28)
 
 
