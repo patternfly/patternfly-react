@@ -107,13 +107,13 @@ export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElem
  *    const result = fillTemplate(templateString, templateVars);
  *    // "My name is Jon Dough"
  *
- * @param {object} templateString  The string passed by the consumer
+ * @param {string} templateString  The string passed by the consumer
  * @param {object} templateVars The variables passed to the string
  *
  * @returns {string} The template string literal result
  */
-export function fillTemplate(templateString: string, templateVars: object) {
-  return templateString.replace(/\${(.*)}/g, (_, match) => templateVars[match]);
+export function fillTemplate(templateString: string, templateVars: any) {
+  return templateString.replace(/\${(.*)}/g, (_, match) => templateVars[match] || '');
 }
 
 /**
