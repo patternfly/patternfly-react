@@ -4,7 +4,7 @@ import { ModelKind, Graph, Layout, GraphModel } from '../../types';
 import BaseGraph from '../BaseGraph';
 import BaseEdge from '../BaseEdge';
 import BaseNode from '../BaseNode';
-import Visualization from '../../Visualization';
+import { Visualization } from '../../Visualization';
 
 class TestLayout implements Layout {
   layout = jest.fn();
