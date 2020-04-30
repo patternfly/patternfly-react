@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.153.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.14...@patternfly/react-core@3.153.15) (2020-04-30)
+
+
+### Bug Fixes
+
+* **fillTemplate:** ie11 compatibility ([#4155](https://github.com/patternfly/patternfly-react/issues/4155)) ([1900655](https://github.com/patternfly/patternfly-react/commit/1900655a54680a9cdd13a90db02b6005e1851e05))
+
+
+
+
+
 ## [3.153.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.13...@patternfly/react-core@3.153.14) (2020-04-27)
 
 
