@@ -6,14 +6,16 @@ import styles from '@patternfly/react-styles/css/components/NotificationDrawer/n
 import { Text, TextVariants } from '../Text';
 
 export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivElement> {
-  /**  Content rendered inside the Drawer */
+  /**  Content rendered inside the drawer */
   children?: React.ReactNode;
-  /**  Additional classes for Notification Drawer Header. */
+  /**  Additional classes for notification drawer header. */
   className?: string;
-  /**  Notification Drawer heading count */
+  /**  Notification drawer heading count */
   count?: number;
-  /**  Notification Drawer Heading Title */
+  /**  Notification drawer heading title */
   title?: string;
+  /**  Notification drawer heading unread custom string */
+  unread?: string;
 }
 
 export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawerHeaderProps> = ({
@@ -21,13 +23,14 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
   className = '',
   count,
   title = 'Notifications',
+  unread = 'unread',
   ...props
 }: NotificationDrawerHeaderProps) => (
   <div {...props} className={css(styles.notificationDrawerHeader, className)}>
     <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
       {title}
     </Text>
-    {count && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} unread`}</span>}
+    {count && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unread}`}</span>}
     {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
   </div>
 );

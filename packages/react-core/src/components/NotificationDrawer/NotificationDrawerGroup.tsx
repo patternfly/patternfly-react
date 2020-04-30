@@ -8,19 +8,19 @@ import styles from '@patternfly/react-styles/css/components/NotificationDrawer/n
 import { Badge } from '../Badge';
 
 export interface NotificationDrawerGroupProps extends React.HTMLProps<HTMLElement> {
-  /**  Content rendered inside the Group */
+  /**  Content rendered inside the group */
   children?: React.ReactNode;
-  /**  Additional classes added to the Group */
+  /**  Additional classes added to the group */
   className?: string;
-  /**  Notification Drawer Group count */
+  /**  Notification drawer group count */
   count: number;
-  /**  Adds styling to the Group to indicate expanded state */
+  /**  Adds styling to the group to indicate expanded state */
   isExpanded: boolean;
-  /**  Adds styling to the Group to indicate whether it has been read */
+  /**  Adds styling to the group to indicate whether it has been read */
   isRead?: boolean;
-  /**  Callback for when Group button is clicked to expand */
+  /**  Callback for when group button is clicked to expand */
   onExpand?: (event: any, value: boolean) => void;
-  /**  Notification Drawer Group Title */
+  /**  Notification drawer group title */
   title: string;
 }
 

@@ -5,7 +5,7 @@ exports[`className is added to the root element 1`] = `"pf-c-notification-drawer
 exports[`drawer list with hidden applied  1`] = `
 <ul
   className="pf-c-notification-drawer__list"
-  hidden={true}
+  hidden={false}
 />
 `;
 

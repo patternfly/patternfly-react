@@ -18,17 +18,17 @@ export const variantIcons = {
 };
 
 export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<HTMLDivElement> {
-  /**  Actions rendered inside the Notification Drawer List Item Header */
+  /**  Actions rendered inside the notification drawer list item header */
   children?: React.ReactNode;
-  /**  Additional classes for Notification Drawer List Item Header. */
+  /**  Additional classes for notification drawer list item header. */
   className?: string;
-  /**  Add custom icon for Notification Drawer List Item Header */
+  /**  Add custom icon for notification drawer list item header */
   icon?: React.ReactNode;
-  /**  Notification Drawer List Item Header screen reader title */
+  /**  Notification drawer list item header screen reader title */
   srTitle?: string;
-  /**  Notification Drawer List Item title */
+  /**  Notification drawer list item title */
   title: string;
-  /**  variant indicates the severity level */
+  /**  Variant indicates the severity level */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
 }
 

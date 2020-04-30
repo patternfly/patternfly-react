@@ -4,9 +4,9 @@ import styles from '@patternfly/react-styles/css/components/NotificationDrawer/n
 import { css } from '@patternfly/react-styles';
 
 export interface NotificationDrawerProps extends React.HTMLProps<HTMLDivElement> {
-  /**  Content rendered inside the Notification Drawer */
+  /**  Content rendered inside the notification drawer */
   children?: React.ReactNode;
-  /**  Additional classes added to the Notification Drawer */
+  /**  Additional classes added to the notification drawer */
   className?: string;
 }
 

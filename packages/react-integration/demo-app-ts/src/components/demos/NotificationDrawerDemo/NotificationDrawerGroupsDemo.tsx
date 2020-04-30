@@ -129,7 +129,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               count={2}
               onExpand={this.toggleFirstDrawer}
             >
-              <NotificationDrawerList hidden={!firstGroupExpanded}>
+              <NotificationDrawerList isHidden={!firstGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
                   <NotificationDrawerListItemHeader
                     variant="info"
@@ -224,7 +224,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               count={2}
               onExpand={this.toggleSecondDrawer}
             >
-              <NotificationDrawerList hidden={!secondGroupExpanded}>
+              <NotificationDrawerList isHidden={!secondGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
                   <NotificationDrawerListItemHeader
                     variant="info"
@@ -319,7 +319,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               count={0}
               onExpand={this.toggleThirdDrawer}
             >
-              <NotificationDrawerList hidden={!thirdGroupExpanded}>
+              <NotificationDrawerList isHidden={!thirdGroupExpanded}>
                 <EmptyState variant={EmptyStateVariant.full}>
                   <EmptyStateIcon icon={SearchIcon} />
                   <Title size="lg">No alerts found</Title>

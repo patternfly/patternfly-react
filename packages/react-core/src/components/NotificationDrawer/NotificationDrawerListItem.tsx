@@ -4,19 +4,19 @@ import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
 export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIElement> {
-  /**  Content rendered inside the List Item */
+  /**  Content rendered inside the list item */
   children?: React.ReactNode;
-  /**  Additional classes added to the List Item */
+  /**  Additional classes added to the list item */
   className?: string;
-  /**  Modifies the List Item to include hover styles on :hover */
+  /**  Modifies the list item to include hover styles on :hover */
   isHoverable?: boolean;
-  /**  Adds styling to the List Item to indicate it has been read */
+  /**  Adds styling to the list item to indicate it has been read */
   isRead?: boolean;
-  /**  Callback for when a List Item is clicked */
+  /**  Callback for when a list item is clicked */
   onClick?: (event: any) => void;
-  /**  Tab Index for the List Item */
+  /**  Tab index for the list item */
   tabIndex?: number;
-  /**  variant indicates the severity level */
+  /**  Variant indicates the severity level */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
 }
 

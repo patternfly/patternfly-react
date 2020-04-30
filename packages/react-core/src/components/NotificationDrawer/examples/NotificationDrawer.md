@@ -233,7 +233,7 @@ render() {
   <NotificationDrawerBody>
     <NotificationDrawerGroupList>
       <NotificationDrawerGroup title="First notification group" isExpanded={firstGroupExpanded} count={2} onExpand={this.toggleFirstDrawer} >
-        <NotificationDrawerList hidden={!firstGroupExpanded}>
+        <NotificationDrawerList isHidden={!firstGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
                     <NotificationDrawerListItemHeader variant="info" title="Unread info notification title" srTitle="Info notification:">
                         <Dropdown
@@ -305,7 +305,7 @@ render() {
             </NotificationDrawerList>
         </NotificationDrawerGroup>
         <NotificationDrawerGroup title="Second notification group" isExpanded={secondGroupExpanded} count={2}onExpand={this.toggleSecondDrawer} >
-            <NotificationDrawerList hidden={!secondGroupExpanded}>
+            <NotificationDrawerList isHidden={!secondGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
                     <NotificationDrawerListItemHeader variant="info" title="Unread info notification title" srTitle="Info notification:">
                         <Dropdown
@@ -377,7 +377,7 @@ render() {
             </NotificationDrawerList>
         </NotificationDrawerGroup>
       <NotificationDrawerGroup title="Third notification group" isExpanded={thirdGroupExpanded} count={0} onExpand={this.toggleThirdDrawer}>
-        <NotificationDrawerList hidden={!thirdGroupExpanded}>
+        <NotificationDrawerList isHidden={!thirdGroupExpanded}>
           <EmptyState variant={EmptyStateVariant.full}>
             <EmptyStateIcon icon={SearchIcon} />
               <Title size="lg">
