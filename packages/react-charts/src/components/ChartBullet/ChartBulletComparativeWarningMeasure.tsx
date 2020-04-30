@@ -98,7 +98,7 @@ export interface ChartBulletComparativeWarningMeasureProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: Function | string[] | number[];
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */
