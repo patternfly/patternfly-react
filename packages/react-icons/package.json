@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "generate": "node scripts/writeIcons.js",
+    "generate": "rimraf dist/esm/icons dist/js/icons && node scripts/writeIcons.js",
     "clean": "rimraf dist src/icons src/index.js src/index.d.ts"
   },
   "devDependencies": {
