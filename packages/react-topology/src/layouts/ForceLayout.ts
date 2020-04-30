@@ -1,21 +1,18 @@
 import { Graph, Layout } from '../types';
 import { getGroupPadding } from '../utils/element-utils';
-import { ForceSimulationNode } from './ForceSimulation';
-import { BaseLayout, LayoutOptions } from '.';
-import { LayoutLink } from './LayoutLink';
+import { BaseLayout, LayoutLink, LayoutOptions } from './BaseLayout';
 
 export default class ForceLayout extends BaseLayout implements Layout {
   constructor(graph: Graph, options?: Partial<LayoutOptions>) {
     super(graph, {
       ...options,
-      layoutOnDrag: true
+      layoutOnDrag: true,
     });
   }
 
-  protected getLinkDistance = (e: LayoutLink | d3.SimulationLinkDatum<ForceSimulationNode>) => {
+  protected getLinkDistance = (e: LayoutLink) => {
     let distance = this.options.linkDistance + e.source.radius + e.target.radius;
-    const isFalse = e instanceof LayoutLink && e.isFalse;
-    if (!isFalse && e.source.element.getParent() !== e.target.element.getParent()) {
+    if (!e.isFalse && e.source.element.getParent() !== e.target.element.getParent()) {
       // find the group padding
       distance += getGroupPadding(e.source.element.getParent());
       distance += getGroupPadding(e.target.element.getParent());

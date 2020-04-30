@@ -4,7 +4,7 @@ import { hullPath } from '../utils/svg-utils';
 import DefaultCreateConnector from '../components/DefaultCreateConnector';
 import Point from '../geom/Point';
 import Layer from '../components/layers/Layer';
-// import { ContextMenu, ContextMenuItem } from '../components/contextmenu';
+import { ContextMenu, ContextMenuItem } from '../components/contextmenu';
 import { Node, isNode, AnchorEnd, GraphElement, isGraph, Graph } from '../types';
 import { DragSourceSpec, DragSourceMonitor, DragEvent } from './dnd-types';
 import { useDndDrag } from './useDndDrag';
@@ -37,7 +37,7 @@ type CreateConnectorWidgetProps = {
     element: Node,
     target: Node | Graph,
     event: DragEvent,
-    choice?: ConnectorChoice
+    choice?: ConnectorChoice,
   ) => ConnectorChoice[] | void | undefined | null | React.ReactElement[];
   ConnectorComponent: CreateConnectorRenderer;
   contextMenuClass?: string;
@@ -59,15 +59,15 @@ type PromptData = {
 const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
 const DEFAULT_HANDLE_LENGTH = 32;
 
-const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(props => {
+const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((props) => {
   const {
     element,
     onKeepAlive,
-    // onCreate,
+    onCreate,
     ConnectorComponent,
     handleAngle = DEFAULT_HANDLE_ANGLE,
-    handleLength = DEFAULT_HANDLE_LENGTH
-    // contextMenuClass,
+    handleLength = DEFAULT_HANDLE_LENGTH,
+    contextMenuClass,
   } = props;
   const [prompt, setPrompt] = React.useState<PromptData | null>(null);
   const [active, setActive] = React.useState(false);
@@ -77,14 +77,18 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     const dragSourceSpec: DragSourceSpec<any, any, any, CollectProps> = {
       item: { type: CREATE_CONNECTOR_DROP_TYPE },
       operation: { type: CREATE_CONNECTOR_OPERATION },
-      begin: (monitor: DragSourceMonitor, dragProps: any) => {
+      begin: (monitor: DragSourceMonitor, dragProps: CreateConnectorWidgetProps) => {
         setActive(true);
         return dragProps.element;
       },
-      drag: (event: DragEvent, monitor: DragSourceMonitor, p: any) => {
+      drag: (event: DragEvent, monitor: DragSourceMonitor, p: CreateConnectorWidgetProps) => {
         p.element.raise();
       },
-      end: (dropResult: GraphElement, monitor: DragSourceMonitor, dragProps: any) => {
+      end: (
+        dropResult: GraphElement,
+        monitor: DragSourceMonitor,
+        dragProps: CreateConnectorWidgetProps,
+      ) => {
         const event = monitor.getDragEvent();
         if ((isNode(dropResult) || isGraph(dropResult)) && event) {
           const choices = dragProps.onCreate(dragProps.element, dropResult, event);
@@ -96,11 +100,11 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
         setActive(false);
         dragProps.onKeepAlive(false);
       },
-      collect: monitor => ({
+      collect: (monitor) => ({
         dragging: !!monitor.getItem(),
         event: monitor.isDragging() ? monitor.getDragEvent() : undefined,
-        hints: monitor.getDropHints()
-      })
+        hints: monitor.getDropHints(),
+      }),
     };
     return dragSourceSpec;
   }, [setActive]);
@@ -128,12 +132,12 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     const bounds = element.getBounds();
     const referencePoint = new Point(
       bounds.right(),
-      Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2
+      Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2,
     );
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(referencePoint);
     endPoint = new Point(
       Math.cos(handleAngle) * handleLength + startPoint.x,
-      Math.sin(handleAngle) * handleLength + startPoint.y
+      Math.sin(handleAngle) * handleLength + startPoint.y,
     );
   }
 
@@ -157,11 +161,20 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
             hints={hintsRef.current || []}
           />
           {!active && (
-            <path d={hullPath([[startPoint.x, startPoint.y], [endPoint.x, endPoint.y]], 7)} fillOpacity="0" />
+            <path
+              d={hullPath(
+                [
+                  [startPoint.x, startPoint.y],
+                  [endPoint.x, endPoint.y],
+                ],
+                7,
+              )}
+              fillOpacity="0"
+            />
           )}
         </g>
       </Layer>
-      {/* {prompt && (
+      {prompt && (
         <ContextMenu
           reference={{ x: prompt.event.pageX, y: prompt.event.pageY }}
           className={contextMenuClass}
@@ -184,7 +197,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
                 </ContextMenuItem>
               ))}
         </ContextMenu>
-      )} */}
+      )}
     </>
   );
 });
@@ -202,14 +215,16 @@ export const withCreateConnector = <P extends WithCreateConnectorProps & Element
   onCreate: React.ComponentProps<typeof CreateConnectorWidget>['onCreate'],
   ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
   contextMenuClass?: string,
-  options?: CreateConnectorOptions
+  options?: CreateConnectorOptions,
 ) => (WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = props => {
+  const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = (props) => {
     const [show, setShow] = React.useState(false);
     const [alive, setKeepAlive] = React.useState(false);
     const onShowCreateConnector = React.useCallback(() => setShow(true), []);
     const onHideCreateConnector = React.useCallback(() => setShow(false), []);
-    const onKeepAlive = React.useCallback((isAlive: boolean) => setKeepAlive(isAlive), [setKeepAlive]);
+    const onKeepAlive = React.useCallback((isAlive: boolean) => setKeepAlive(isAlive), [
+      setKeepAlive,
+    ]);
     return (
       <>
         <WrappedComponent

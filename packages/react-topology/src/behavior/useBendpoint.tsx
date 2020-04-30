@@ -10,7 +10,7 @@ import {
   DragSourceSpec,
   DragObjectWithType,
   DragSpecOperationType,
-  DragOperationWithType
+  DragOperationWithType,
 } from './dnd-types';
 import { useDndDrag, WithDndDragProps } from './useDndDrag';
 
@@ -21,10 +21,15 @@ export type WithBendpoint = {
 export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
   point: Point,
   spec?: Omit<
-    DragSourceSpec<DragObjectWithType, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps>,
+    DragSourceSpec<
+      DragObjectWithType,
+      DragSpecOperationType<DragOperationWithType>,
+      DropResult,
+      CollectedProps
+    >,
     'type'
   >,
-  props?: Props
+  props?: Props,
 ): [CollectedProps, ConnectDragSource] => {
   const element = React.useContext(ElementContext);
   if (!isEdge(element)) {
@@ -50,16 +55,16 @@ export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
         },
         canDrag: spec ? spec.canDrag : undefined,
         end: spec ? spec.end : undefined,
-        collect: spec ? spec.collect : undefined
+        collect: spec ? spec.collect : undefined,
       };
       return sourceSpec;
     }, [spec]),
-    props
+    props,
   );
 
   // argh react events don't play nice with d3 pan zoom double click event
   const ref = React.useCallback(
-    node => {
+    (node) => {
       d3.select(node).on(
         'click',
         action(() => {
@@ -67,11 +72,11 @@ export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
             d3.event.stopPropagation();
             elementRef.current.removeBendpoint(pointRef.current);
           }
-        })
+        }),
       );
       dragRef(node);
     },
-    [dragRef]
+    [dragRef],
   );
   return [connect, ref];
 };
@@ -86,12 +91,20 @@ export type WithBendpointProps = {
 
 export const WithBendpoint = <DropResult, CollectedProps, Props = {}>(
   spec?: Omit<
-    DragSourceSpec<DragObjectWithType, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
+    DragSourceSpec<
+      DragObjectWithType,
+      DragSpecOperationType<DragOperationWithType>,
+      DropResult,
+      CollectedProps,
+      Props
+    >,
     'type'
-  >
-) => <P extends WithBendpointProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithBendpointProps> & HocProps> = props => {
-    const [dragProps, bendpointRef] = useBendpoint(props.point, spec as any, props);
+  >,
+) => <P extends WithBendpointProps & CollectedProps & Props>(
+  WrappedComponent: React.ComponentType<P>,
+) => {
+  const Component: React.FC<Omit<P, keyof WithBendpointProps> & HocProps> = (props) => {
+    const [dragProps, bendpointRef] = useBendpoint(props.point, spec, props);
     return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...dragProps} />;
   };
   return observer(Component);

@@ -1,4 +1,4 @@
-import { Visualization } from '../Visualization';
+import Visualization from '../Visualization';
 
 describe('Visualization', () => {
   it('should clean up old graph model', () => {

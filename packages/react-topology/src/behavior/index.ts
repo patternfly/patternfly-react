@@ -9,6 +9,6 @@ export * from './usePanZoom';
 export * from './useReconnect';
 export * from './useSelection';
 export * from './useSvgAnchor';
-// export * from './withContextMenu';
+export * from './withContextMenu';
 export * from './withCreateConnector';
 export * from './withRemoveConnector';

@@ -7,10 +7,12 @@ import { observer } from 'mobx-react';
 import ReactMeasure from 'react-measure';
 import ControllerContext from '../utils/ControllerContext';
 import { State } from '../types';
-import { Visualization } from '../Visualization';
+import Visualization from '../Visualization';
 import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
 import Dimensions from '../geom/Dimensions';
+
+import './VisualizationSurface.scss';
 
 interface VisualizationSurfaceProps {
   visualization: Visualization;
@@ -51,8 +53,8 @@ const VisualizationSurface: React.FC<VisualizationSurfaceProps> = ({ visualizati
       <ReactMeasure client onResize={onMeasure}>
         {({ measureRef }: { measureRef: React.LegacyRef<any> }) => (
           // render an outer div because react-measure doesn't seem to fire events properly on svg resize
-          <div data-test-id="topology" className="pf-topology-visualization-surface" ref={measureRef}>
-            <svg className="pf-topology-visualization-surface__svg" onContextMenu={stopEvent}>
+          <div data-test-id="topology" className="topology-visualization-surface" ref={measureRef}>
+            <svg className="topology-visualization-surface__svg" onContextMenu={stopEvent}>
               <SVGDefsProvider>
                 <ElementWrapper element={graph} />
               </SVGDefsProvider>

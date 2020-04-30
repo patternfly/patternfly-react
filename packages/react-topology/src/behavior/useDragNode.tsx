@@ -59,7 +59,7 @@ export const useDragNode = <
     React.useMemo(() => {
       const sourceSpec: DragSourceSpec<any, any, any, any, Props> = {
         item: (spec && spec.item) || { type: '#useDragNode#' },
-        operation: (monitor: any, p: any) => {
+        operation: (monitor, p) => {
           if (spec) {
             const operation =
               typeof spec.operation === 'function' ? spec.operation(monitor, p) : spec.operation;
