@@ -112,9 +112,8 @@ export function sideElementIsOutOfView(container: HTMLElement, element: HTMLElem
  *
  * @returns {string} The template string literal result
  */
-export function fillTemplate(templateString: string, templateVars: any) {
-  const func = new Function(...Object.keys(templateVars), `return \`${templateString}\`;`);
-  return func(...Object.values(templateVars));
+export function fillTemplate(templateString: string, templateVars: object) {
+  return templateString.replace(/\${(.*)}/g, (_, match) => templateVars[match]);
 }
 
 /**
