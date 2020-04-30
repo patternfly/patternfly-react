@@ -28,7 +28,11 @@ if [ $? -eq 0 ]; then
         echo Checking out $CURRENT_BRANCH
         git checkout $CURRENT_BRANCH
         echo Read-tree of temp-branch
-        git read-tree --prefix=packages/react-topology -u temp-branch
+        mkdir temp-branch-tree
+        git read-tree --prefix=temp-branch-tree -u temp-branch
+        git commit -m "Pulled in remote tree"
+        cp -rf temp-branch-tree/* packages/react-topology
+        git rm -r temp-branch-tree
         cd "$SCRIPTDIR"
         
       else
