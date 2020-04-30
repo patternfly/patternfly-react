@@ -95,7 +95,7 @@ function writeIcons(icons) {
     .map(file => `export * from './${file}';`)
     .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);
-  outputFileSync(join(outDir, 'js', 'icons/index.ts'), esmIndexString);
+  outputFileSync(join(outDir, 'js', 'icons/index.d.ts'), esmIndexString);
   outputFileSync(
     join(outDir, 'js', 'icons/index.js'),
     `"use strict";
