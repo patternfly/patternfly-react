@@ -219,7 +219,7 @@ export interface ChartBarProps extends VictoryBarProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | { (data: any): string | null };
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain

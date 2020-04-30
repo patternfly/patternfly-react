@@ -190,7 +190,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | { (data: any): string | null };
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The maxBubbleSize prop sets an upper limit for scaling data points in a bubble chart
    */

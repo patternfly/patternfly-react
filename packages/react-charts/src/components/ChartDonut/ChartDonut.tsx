@@ -256,7 +256,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | { (data: any): string | null };
+  labels?: string[] | ((data: any) => string | null);
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.

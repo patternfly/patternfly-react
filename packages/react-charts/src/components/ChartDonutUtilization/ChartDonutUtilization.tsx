@@ -324,7 +324,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | { (data: any): string | null };
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The name prop is used to reference a component instance when defining shared events.
    */

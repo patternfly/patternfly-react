@@ -1,12 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  DataGetterPropType,
-  DomainPropType,
-  NumberOrCallback,
-  PaddingProps,
-  VictoryMultiLabeableProps
-} from 'victory-core';
+import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
 import { VictoryBar } from 'victory-bar';
 import { getComparativeMeasureData } from './utils';
 import { ChartBar } from '../ChartBar';
@@ -106,7 +100,7 @@ export interface ChartBulletComparativeMeasureProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | { (data: any): string | null };
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */
