@@ -18,13 +18,6 @@
     "noEmit": true,
     "jsx": "preserve",
     "strict": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": false,
-    "noImplicitAny": true,
-    "strictNullChecks": false,
-    "strictFunctionTypes": true,
   },
   "include": [
     "src"
