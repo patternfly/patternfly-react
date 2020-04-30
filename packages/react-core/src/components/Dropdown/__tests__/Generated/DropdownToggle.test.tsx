@@ -16,17 +16,16 @@ it('DropdownToggle should match snapshot (auto-generated)', () => {
       isOpen={false}
       onToggle={(_isOpen: boolean) => undefined as any}
       parentRef={null}
-      isFocused={false}
-      isHovered={false}
       isActive={false}
       isPlain={false}
       isDisabled={false}
       isPrimary={false}
-      iconComponent={() => <p>ReactElementType</p>}
+      icon={null}
+      toggleIndicator={() => <p>ReactElementType</p>}
       splitButtonItems={[]}
       splitButtonVariant={'checkbox'}
       aria-label={'string'}
-      ariaHasPopup={true}
+      aria-haspopup={true}
       type={'button'}
       onEnter={(event?: React.MouseEvent<HTMLButtonElement>) => undefined as void}
     />

@@ -218,6 +218,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -225,7 +226,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -239,6 +239,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -246,7 +247,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -260,6 +260,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -267,7 +268,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -281,6 +281,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -288,7 +289,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -303,6 +303,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -310,7 +311,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -324,6 +324,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -331,7 +332,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -360,6 +360,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -367,7 +368,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -381,6 +381,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -388,7 +389,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -402,6 +402,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -409,7 +410,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -423,6 +423,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -430,7 +431,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -445,6 +445,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -452,7 +453,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -466,6 +466,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -473,7 +474,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -647,6 +647,7 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -654,7 +655,6 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -668,6 +668,7 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -675,7 +676,6 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -689,6 +689,7 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -696,7 +697,6 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -710,6 +710,7 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -717,7 +718,6 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -732,6 +732,7 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -739,7 +740,6 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -753,6 +753,7 @@ exports[`KebabToggle dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -760,7 +761,6 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -788,6 +788,7 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -795,7 +796,6 @@ exports[`KebabToggle dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -809,6 +809,7 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -816,7 +817,6 @@ exports[`KebabToggle dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -830,6 +830,7 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -837,7 +838,6 @@ exports[`KebabToggle dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -851,6 +851,7 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -858,7 +859,6 @@ exports[`KebabToggle dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -873,6 +873,7 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -880,7 +881,6 @@ exports[`KebabToggle dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -894,6 +894,7 @@ exports[`KebabToggle dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -901,7 +902,6 @@ exports[`KebabToggle dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -1074,6 +1074,7 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1081,7 +1082,6 @@ exports[`KebabToggle expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -1095,6 +1095,7 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1102,7 +1103,6 @@ exports[`KebabToggle expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -1116,6 +1116,7 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1123,7 +1124,6 @@ exports[`KebabToggle expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -1137,6 +1137,7 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1144,7 +1145,6 @@ exports[`KebabToggle expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -1159,6 +1159,7 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1166,7 +1167,6 @@ exports[`KebabToggle expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -1180,6 +1180,7 @@ exports[`KebabToggle expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1187,7 +1188,6 @@ exports[`KebabToggle expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -1216,6 +1216,7 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1223,7 +1224,6 @@ exports[`KebabToggle expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -1237,6 +1237,7 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1244,7 +1245,6 @@ exports[`KebabToggle expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -1258,6 +1258,7 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -1265,7 +1266,6 @@ exports[`KebabToggle expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -1279,6 +1279,7 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -1286,7 +1287,6 @@ exports[`KebabToggle expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -1301,6 +1301,7 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1308,7 +1309,6 @@ exports[`KebabToggle expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -1322,6 +1322,7 @@ exports[`KebabToggle expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -1329,7 +1330,6 @@ exports[`KebabToggle expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -1439,10 +1439,11 @@ exports[`KebabToggle expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
-                  <hr
-                    class="pf-c-divider pf-c-dropdown__menu-item"
+                  <div
+                    class="pf-c-divider"
+                    role="separator"
                   />
                 </li>
                 <li
@@ -1563,10 +1564,11 @@ exports[`KebabToggle expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
-                    <hr
-                      class="pf-c-divider pf-c-dropdown__menu-item"
+                    <div
+                      class="pf-c-divider"
+                      role="separator"
                     />
                   </li>
                   <li
@@ -1660,6 +1662,7 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={0}
             isDisabled={false}
             isHovered={false}
@@ -1668,7 +1671,6 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -1694,6 +1696,7 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={1}
             isDisabled={false}
             isHovered={false}
@@ -1702,7 +1705,6 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -1729,6 +1731,7 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={2}
             isDisabled={true}
             isHovered={false}
@@ -1737,7 +1740,6 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -1764,6 +1766,7 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={3}
             isDisabled={true}
             isHovered={false}
@@ -1772,7 +1775,6 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -1795,7 +1797,11 @@ exports[`KebabToggle expanded 1`] = `
           >
             <InternalDropdownItem
               className=""
-              component={[Function]}
+              component={
+                <Divider
+                  component="div"
+                />
+              }
               context={
                 Object {
                   "keyHandler": [Function],
@@ -1803,26 +1809,28 @@ exports[`KebabToggle expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
+              icon={null}
               index={4}
               isDisabled={false}
               isHovered={false}
               isPlainText={false}
               onClick={[Function]}
-              role="none"
+              role="separator"
               tooltipProps={Object {}}
-              variant="item"
             >
               <li
                 className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="none"
+                role="separator"
               >
                 <Divider
-                  className="pf-c-dropdown__menu-item"
+                  className=""
+                  component="div"
                 >
-                  <hr
-                    className="pf-c-divider pf-c-dropdown__menu-item"
+                  <div
+                    className="pf-c-divider"
+                    role="separator"
                   />
                 </Divider>
               </li>
@@ -1838,6 +1846,7 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={5}
             isDisabled={false}
             isHovered={false}
@@ -1846,7 +1855,6 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -1872,6 +1880,7 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={6}
             isDisabled={false}
             isHovered={false}
@@ -1880,7 +1889,6 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -1918,6 +1926,7 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1925,7 +1934,6 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -1939,6 +1947,7 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -1946,7 +1955,6 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -1960,6 +1968,7 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1967,7 +1976,6 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -1981,6 +1989,7 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -1988,7 +1997,6 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -2003,6 +2011,7 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2010,7 +2019,6 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -2024,6 +2032,7 @@ exports[`KebabToggle plain 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2031,7 +2040,6 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -2060,6 +2068,7 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2067,7 +2076,6 @@ exports[`KebabToggle plain 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -2081,6 +2089,7 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2088,7 +2097,6 @@ exports[`KebabToggle plain 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -2102,6 +2110,7 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2109,7 +2118,6 @@ exports[`KebabToggle plain 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -2123,6 +2131,7 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2130,7 +2139,6 @@ exports[`KebabToggle plain 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -2145,6 +2153,7 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2152,7 +2161,6 @@ exports[`KebabToggle plain 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -2166,6 +2174,7 @@ exports[`KebabToggle plain 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2173,7 +2182,6 @@ exports[`KebabToggle plain 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -2346,6 +2354,7 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2353,7 +2362,6 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -2367,6 +2375,7 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2374,7 +2383,6 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -2388,6 +2396,7 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -2395,7 +2404,6 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -2409,6 +2417,7 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -2416,7 +2425,6 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -2431,6 +2439,7 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2438,7 +2447,6 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -2452,6 +2460,7 @@ exports[`KebabToggle regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2459,7 +2468,6 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -2487,6 +2495,7 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2494,7 +2503,6 @@ exports[`KebabToggle regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -2508,6 +2516,7 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2515,7 +2524,6 @@ exports[`KebabToggle regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -2529,6 +2537,7 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2536,7 +2545,6 @@ exports[`KebabToggle regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -2550,6 +2558,7 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2557,7 +2566,6 @@ exports[`KebabToggle regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -2572,6 +2580,7 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2579,7 +2588,6 @@ exports[`KebabToggle regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -2593,6 +2601,7 @@ exports[`KebabToggle regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2600,7 +2609,6 @@ exports[`KebabToggle regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -2773,6 +2781,7 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2780,7 +2789,6 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -2794,6 +2802,7 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2801,7 +2810,6 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -2815,6 +2823,7 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -2822,7 +2831,6 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -2836,6 +2844,7 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -2843,7 +2852,6 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -2858,6 +2866,7 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2865,7 +2874,6 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -2879,6 +2887,7 @@ exports[`KebabToggle right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -2886,7 +2895,6 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -2915,6 +2923,7 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2922,7 +2931,6 @@ exports[`KebabToggle right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -2936,6 +2944,7 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -2943,7 +2952,6 @@ exports[`KebabToggle right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -2957,6 +2965,7 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2964,7 +2973,6 @@ exports[`KebabToggle right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -2978,6 +2986,7 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -2985,7 +2994,6 @@ exports[`KebabToggle right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -3000,6 +3008,7 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3007,7 +3016,6 @@ exports[`KebabToggle right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -3021,6 +3029,7 @@ exports[`KebabToggle right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3028,7 +3037,6 @@ exports[`KebabToggle right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -3432,6 +3440,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3439,7 +3448,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -3453,6 +3461,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3460,7 +3469,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -3474,6 +3482,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -3481,7 +3490,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -3495,6 +3503,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -3502,7 +3511,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -3517,6 +3525,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3524,7 +3533,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -3538,6 +3546,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3545,7 +3554,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -3576,6 +3584,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3583,7 +3592,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -3597,6 +3605,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3604,7 +3613,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -3618,6 +3626,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -3625,7 +3634,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -3639,6 +3647,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -3646,7 +3655,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -3661,6 +3669,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3668,7 +3677,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -3682,6 +3690,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -3689,7 +3698,6 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -3888,6 +3896,7 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3895,7 +3904,6 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -3909,6 +3917,7 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3916,7 +3925,6 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -3930,6 +3938,7 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -3937,7 +3946,6 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -3951,6 +3959,7 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -3958,7 +3967,6 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -3973,6 +3981,7 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -3980,7 +3989,6 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -3994,6 +4002,7 @@ exports[`dropdown dropup 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4001,7 +4010,6 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -4031,6 +4039,7 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4038,7 +4047,6 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -4052,6 +4060,7 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4059,7 +4068,6 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -4073,6 +4081,7 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -4080,7 +4089,6 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -4094,6 +4102,7 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -4101,7 +4110,6 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -4116,6 +4124,7 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4123,7 +4132,6 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -4137,6 +4145,7 @@ exports[`dropdown dropup 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4144,7 +4153,6 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -4342,6 +4350,7 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4349,7 +4358,6 @@ exports[`dropdown expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -4363,6 +4371,7 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4370,7 +4379,6 @@ exports[`dropdown expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -4384,6 +4392,7 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -4391,7 +4400,6 @@ exports[`dropdown expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -4405,6 +4413,7 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -4412,7 +4421,6 @@ exports[`dropdown expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -4427,6 +4435,7 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4434,7 +4443,6 @@ exports[`dropdown expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -4448,6 +4456,7 @@ exports[`dropdown expanded 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -4455,7 +4464,6 @@ exports[`dropdown expanded 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -4486,6 +4494,7 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4493,7 +4502,6 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -4507,6 +4515,7 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4514,7 +4523,6 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -4528,6 +4536,7 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -4535,7 +4544,6 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -4549,6 +4557,7 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -4556,7 +4565,6 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -4571,6 +4579,7 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4578,7 +4587,6 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -4592,6 +4600,7 @@ exports[`dropdown expanded 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -4599,7 +4608,6 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -4719,10 +4727,11 @@ exports[`dropdown expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
-                  <hr
-                    class="pf-c-divider pf-c-dropdown__menu-item"
+                  <div
+                    class="pf-c-divider"
+                    role="separator"
                   />
                 </li>
                 <li
@@ -4850,10 +4859,11 @@ exports[`dropdown expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
-                    <hr
-                      class="pf-c-divider pf-c-dropdown__menu-item"
+                    <div
+                      class="pf-c-divider"
+                      role="separator"
                     />
                   </li>
                   <li
@@ -4955,6 +4965,7 @@ exports[`dropdown expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={0}
             isDisabled={false}
             isHovered={false}
@@ -4963,7 +4974,6 @@ exports[`dropdown expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -4989,6 +4999,7 @@ exports[`dropdown expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={1}
             isDisabled={false}
             isHovered={false}
@@ -4997,7 +5008,6 @@ exports[`dropdown expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -5024,6 +5034,7 @@ exports[`dropdown expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={2}
             isDisabled={true}
             isHovered={false}
@@ -5032,7 +5043,6 @@ exports[`dropdown expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -5059,6 +5069,7 @@ exports[`dropdown expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={3}
             isDisabled={true}
             isHovered={false}
@@ -5067,7 +5078,6 @@ exports[`dropdown expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -5090,7 +5100,11 @@ exports[`dropdown expanded 1`] = `
           >
             <InternalDropdownItem
               className=""
-              component={[Function]}
+              component={
+                <Divider
+                  component="div"
+                />
+              }
               context={
                 Object {
                   "keyHandler": [Function],
@@ -5098,26 +5112,28 @@ exports[`dropdown expanded 1`] = `
                 }
               }
               enterTriggersArrowDown={false}
+              icon={null}
               index={4}
               isDisabled={false}
               isHovered={false}
               isPlainText={false}
               onClick={[Function]}
-              role="none"
+              role="separator"
               tooltipProps={Object {}}
-              variant="item"
             >
               <li
                 className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="none"
+                role="separator"
               >
                 <Divider
-                  className="pf-c-dropdown__menu-item"
+                  className=""
+                  component="div"
                 >
-                  <hr
-                    className="pf-c-divider pf-c-dropdown__menu-item"
+                  <div
+                    className="pf-c-divider"
+                    role="separator"
                   />
                 </Divider>
               </li>
@@ -5133,6 +5149,7 @@ exports[`dropdown expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={5}
             isDisabled={false}
             isHovered={false}
@@ -5141,7 +5158,6 @@ exports[`dropdown expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -5167,6 +5183,7 @@ exports[`dropdown expanded 1`] = `
               }
             }
             enterTriggersArrowDown={false}
+            icon={null}
             index={6}
             isDisabled={false}
             isHovered={false}
@@ -5175,7 +5192,6 @@ exports[`dropdown expanded 1`] = `
             onClick={[Function]}
             role="none"
             tooltipProps={Object {}}
-            variant="item"
           >
             <li
               className={null}
@@ -5213,6 +5229,7 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5220,7 +5237,6 @@ exports[`dropdown primary 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -5234,6 +5250,7 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5241,7 +5258,6 @@ exports[`dropdown primary 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -5255,6 +5271,7 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5262,7 +5279,6 @@ exports[`dropdown primary 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -5276,6 +5292,7 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5283,7 +5300,6 @@ exports[`dropdown primary 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -5298,6 +5314,7 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5305,7 +5322,6 @@ exports[`dropdown primary 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -5319,6 +5335,7 @@ exports[`dropdown primary 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5326,7 +5343,6 @@ exports[`dropdown primary 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -5357,6 +5373,7 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5364,7 +5381,6 @@ exports[`dropdown primary 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -5378,6 +5394,7 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5385,7 +5402,6 @@ exports[`dropdown primary 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -5399,6 +5415,7 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -5406,7 +5423,6 @@ exports[`dropdown primary 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -5420,6 +5436,7 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -5427,7 +5444,6 @@ exports[`dropdown primary 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -5442,6 +5458,7 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5449,7 +5466,6 @@ exports[`dropdown primary 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -5463,6 +5479,7 @@ exports[`dropdown primary 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5470,7 +5487,6 @@ exports[`dropdown primary 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -5670,6 +5686,7 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5677,7 +5694,6 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -5691,6 +5707,7 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5698,7 +5715,6 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -5712,6 +5728,7 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5719,7 +5736,6 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -5733,6 +5749,7 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -5740,7 +5757,6 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -5755,6 +5771,7 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5762,7 +5779,6 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -5776,6 +5792,7 @@ exports[`dropdown regular 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -5783,7 +5800,6 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -5813,6 +5829,7 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5820,7 +5837,6 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -5834,6 +5850,7 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5841,7 +5858,6 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -5855,6 +5871,7 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -5862,7 +5879,6 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -5876,6 +5892,7 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -5883,7 +5900,6 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -5898,6 +5914,7 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5905,7 +5922,6 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -5919,6 +5935,7 @@ exports[`dropdown regular 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -5926,7 +5943,6 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
@@ -6124,6 +6140,7 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6131,7 +6148,6 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Link
       </InternalDropdownItem>,
@@ -6145,6 +6161,7 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6152,7 +6169,6 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Action
       </InternalDropdownItem>,
@@ -6166,6 +6182,7 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -6173,7 +6190,6 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Link
       </InternalDropdownItem>,
@@ -6187,6 +6203,7 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={true}
         isHovered={false}
@@ -6194,7 +6211,6 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Disabled Action
       </InternalDropdownItem>,
@@ -6209,6 +6225,7 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6216,7 +6233,6 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Link
       </InternalDropdownItem>,
@@ -6230,6 +6246,7 @@ exports[`dropdown right aligned 1`] = `
           }
         }
         enterTriggersArrowDown={false}
+        icon={null}
         index={-1}
         isDisabled={false}
         isHovered={false}
@@ -6237,7 +6254,6 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="none"
         tooltipProps={Object {}}
-        variant="item"
       >
         Separated Action
       </InternalDropdownItem>,
@@ -6268,6 +6284,7 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6275,7 +6292,6 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Link
         </InternalDropdownItem>,
@@ -6289,6 +6305,7 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6296,7 +6313,6 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Action
         </InternalDropdownItem>,
@@ -6310,6 +6326,7 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -6317,7 +6334,6 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Link
         </InternalDropdownItem>,
@@ -6331,6 +6347,7 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={true}
           isHovered={false}
@@ -6338,7 +6355,6 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Disabled Action
         </InternalDropdownItem>,
@@ -6353,6 +6369,7 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6360,7 +6377,6 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Link
         </InternalDropdownItem>,
@@ -6374,6 +6390,7 @@ exports[`dropdown right aligned 1`] = `
             }
           }
           enterTriggersArrowDown={false}
+          icon={null}
           index={-1}
           isDisabled={false}
           isHovered={false}
@@ -6381,7 +6398,6 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           role="none"
           tooltipProps={Object {}}
-          variant="item"
         >
           Separated Action
         </InternalDropdownItem>,
