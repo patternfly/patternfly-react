@@ -19,3 +19,19 @@ exports[`divider using li 1`] = `
   role="separator"
 />
 `;
+
+exports[`vertical divider 1`] = `
+<div
+  className="pf-l-flex"
+>
+  <FlexItem>
+    first item
+  </FlexItem>
+  <Divider
+    isVertical={true}
+  />
+  <FlexItem>
+    second item
+  </FlexItem>
+</div>
+`;

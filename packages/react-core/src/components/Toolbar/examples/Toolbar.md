@@ -7,9 +7,8 @@ section: 'components'
 ---
 
 import { Toolbar , ToolbarItem, ToolbarGroup, ToolbarContent, ToolbarToggleGroup, ToolbarFilter } from '@patternfly/react-core';
-import { Alert, Button, ButtonVariant, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
+import { Alert, Button, ButtonVariant, Divider, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
-import '@patternfly/react-styles/css/components/Divider/divider';
 
 ## Examples
 Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
@@ -826,7 +825,7 @@ There may be situations where all of the required elements simply cannot fit in 
 ```js title=Stacked-example
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarToggleGroup, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, Divider } from '@patternfly/react-core';
+import { Button, Divider, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, Divider } from '@patternfly/react-core';
 import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
 class ToolbarStacked extends React.Component {
