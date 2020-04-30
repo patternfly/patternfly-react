@@ -21,7 +21,7 @@ BasicTooltip = () => (
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
   >
-    <span>I have a tooltip!</span>
+    <span tabIndex="0">I have a tooltip!</span>
   </Tooltip>
 )
 ```
@@ -37,7 +37,7 @@ LeftAlignedTooltip = () => (
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
   >
-    <span>I have a tooltip!</span>
+    <span tabIndex="0">I have a tooltip!</span>
   </Tooltip>
 )
 ```
