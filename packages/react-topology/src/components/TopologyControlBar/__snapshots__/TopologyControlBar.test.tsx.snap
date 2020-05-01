@@ -62,7 +62,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
   <GenerateId
     prefix="pf-topology-control-bar-"
   >
-    <DataToolbar
+    <Toolbar
       className="default-test-class"
       id="pf-topology-control-bar-1"
       style={
@@ -73,7 +73,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
       }
     >
       <div
-        className="pf-c-data-toolbar default-test-class"
+        className="pf-c-toolbar default-test-class"
         id="pf-topology-control-bar-1"
         style={
           Object {
@@ -82,7 +82,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           }
         }
       >
-        <DataToolbarContent
+        <ToolbarContent
           breakpointMods={Array []}
           isExpanded={false}
           key=".0"
@@ -90,10 +90,10 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           toolbarId="pf-topology-control-bar-1"
         >
           <div
-            className="pf-c-data-toolbar__content"
+            className="pf-c-toolbar__content"
           >
             <div
-              className="pf-c-data-toolbar__content-section"
+              className="pf-c-toolbar__content-section"
             >
               <ForwardRef
                 breakpointMods={
@@ -104,7 +104,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
               >
-                <DataToolbarGroupWithRef
+                <ToolbarGroupWithRef
                   breakpointMods={
                     Array [
                       Object {
@@ -115,13 +115,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   innerRef={null}
                 >
                   <div
-                    className="pf-c-data-toolbar__group pf-m-space-items-none"
+                    className="pf-c-toolbar__group pf-m-space-items-none"
                   >
                     <Component
                       key="zoom-in"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -284,7 +284,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       key="zoom-out"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -469,7 +469,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       key="reset-view"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -651,10 +651,10 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       </div>
                     </Component>
                   </div>
-                </DataToolbarGroupWithRef>
+                </ToolbarGroupWithRef>
               </ForwardRef>
             </div>
-            <DataToolbarExpandableContent
+            <ToolbarExpandableContent
               chipContainerRef={
                 Object {
                   "current": null,
@@ -664,11 +664,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               expandableContentRef={
                 Object {
                   "current": <div
-                    class="pf-c-data-toolbar__expandable-content"
+                    class="pf-c-toolbar__expandable-content"
                     id="pf-topology-control-bar-1-expandable-content-1"
                   >
                     <div
-                      class="pf-c-data-toolbar__group"
+                      class="pf-c-toolbar__group"
                     />
                   </div>,
                 }
@@ -678,32 +678,32 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               showClearFiltersButton={false}
             >
               <div
-                className="pf-c-data-toolbar__expandable-content"
+                className="pf-c-toolbar__expandable-content"
                 id="pf-topology-control-bar-1-expandable-content-1"
               >
                 <ForwardRef>
-                  <DataToolbarGroupWithRef
+                  <ToolbarGroupWithRef
                     breakpointMods={Array []}
                     innerRef={null}
                   >
                     <div
-                      className="pf-c-data-toolbar__group"
+                      className="pf-c-toolbar__group"
                     />
-                  </DataToolbarGroupWithRef>
+                  </ToolbarGroupWithRef>
                 </ForwardRef>
               </div>
-            </DataToolbarExpandableContent>
+            </ToolbarExpandableContent>
           </div>
-        </DataToolbarContent>
-        <DataToolbarChipGroupContent
+        </ToolbarContent>
+        <ToolbarChipGroupContent
           chipGroupContentRef={
             Object {
               "current": <div
-                class="pf-c-data-toolbar__content pf-m-hidden"
+                class="pf-c-toolbar__content pf-m-hidden"
                 hidden=""
               >
                 <div
-                  class="pf-c-data-toolbar__group"
+                  class="pf-c-toolbar__group"
                 />
               </div>,
             }
@@ -715,26 +715,26 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           showClearFiltersButton={false}
         >
           <div
-            className="pf-c-data-toolbar__content pf-m-hidden"
+            className="pf-c-toolbar__content pf-m-hidden"
             hidden={true}
           >
             <ForwardRef
               className=""
             >
-              <DataToolbarGroupWithRef
+              <ToolbarGroupWithRef
                 breakpointMods={Array []}
                 className=""
                 innerRef={null}
               >
                 <div
-                  className="pf-c-data-toolbar__group"
+                  className="pf-c-toolbar__group"
                 />
-              </DataToolbarGroupWithRef>
+              </ToolbarGroupWithRef>
             </ForwardRef>
           </div>
-        </DataToolbarChipGroupContent>
+        </ToolbarChipGroupContent>
       </div>
-    </DataToolbar>
+    </Toolbar>
   </GenerateId>
 </TopologyControlBar>
 `;
@@ -813,7 +813,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
   <GenerateId
     prefix="pf-topology-control-bar-"
   >
-    <DataToolbar
+    <Toolbar
       className="default-test-class"
       id="pf-topology-control-bar-0"
       style={
@@ -824,7 +824,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
       }
     >
       <div
-        className="pf-c-data-toolbar default-test-class"
+        className="pf-c-toolbar default-test-class"
         id="pf-topology-control-bar-0"
         style={
           Object {
@@ -833,7 +833,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           }
         }
       >
-        <DataToolbarContent
+        <ToolbarContent
           breakpointMods={Array []}
           isExpanded={false}
           key=".0"
@@ -841,10 +841,10 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           toolbarId="pf-topology-control-bar-0"
         >
           <div
-            className="pf-c-data-toolbar__content"
+            className="pf-c-toolbar__content"
           >
             <div
-              className="pf-c-data-toolbar__content-section"
+              className="pf-c-toolbar__content-section"
             >
               <ForwardRef
                 breakpointMods={
@@ -855,7 +855,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
               >
-                <DataToolbarGroupWithRef
+                <ToolbarGroupWithRef
                   breakpointMods={
                     Array [
                       Object {
@@ -866,13 +866,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   innerRef={null}
                 >
                   <div
-                    className="pf-c-data-toolbar__group pf-m-space-items-none"
+                    className="pf-c-toolbar__group pf-m-space-items-none"
                   >
                     <Component
                       key="zoom-in"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -1057,7 +1057,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       key="zoom-out"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -1242,7 +1242,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       key="fit-to-screen"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -1427,7 +1427,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       key="reset-view"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Tooltip
                           appendTo={[Function]}
@@ -1612,7 +1612,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       key="legend"
                     >
                       <div
-                        className="pf-c-data-toolbar__item"
+                        className="pf-c-toolbar__item"
                       >
                         <Component
                           aria-disabled={false}
@@ -1641,10 +1641,10 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       </div>
                     </Component>
                   </div>
-                </DataToolbarGroupWithRef>
+                </ToolbarGroupWithRef>
               </ForwardRef>
             </div>
-            <DataToolbarExpandableContent
+            <ToolbarExpandableContent
               chipContainerRef={
                 Object {
                   "current": null,
@@ -1654,11 +1654,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               expandableContentRef={
                 Object {
                   "current": <div
-                    class="pf-c-data-toolbar__expandable-content"
+                    class="pf-c-toolbar__expandable-content"
                     id="pf-topology-control-bar-0-expandable-content-0"
                   >
                     <div
-                      class="pf-c-data-toolbar__group"
+                      class="pf-c-toolbar__group"
                     />
                   </div>,
                 }
@@ -1668,32 +1668,32 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               showClearFiltersButton={false}
             >
               <div
-                className="pf-c-data-toolbar__expandable-content"
+                className="pf-c-toolbar__expandable-content"
                 id="pf-topology-control-bar-0-expandable-content-0"
               >
                 <ForwardRef>
-                  <DataToolbarGroupWithRef
+                  <ToolbarGroupWithRef
                     breakpointMods={Array []}
                     innerRef={null}
                   >
                     <div
-                      className="pf-c-data-toolbar__group"
+                      className="pf-c-toolbar__group"
                     />
-                  </DataToolbarGroupWithRef>
+                  </ToolbarGroupWithRef>
                 </ForwardRef>
               </div>
-            </DataToolbarExpandableContent>
+            </ToolbarExpandableContent>
           </div>
-        </DataToolbarContent>
-        <DataToolbarChipGroupContent
+        </ToolbarContent>
+        <ToolbarChipGroupContent
           chipGroupContentRef={
             Object {
               "current": <div
-                class="pf-c-data-toolbar__content pf-m-hidden"
+                class="pf-c-toolbar__content pf-m-hidden"
                 hidden=""
               >
                 <div
-                  class="pf-c-data-toolbar__group"
+                  class="pf-c-toolbar__group"
                 />
               </div>,
             }
@@ -1705,26 +1705,26 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           showClearFiltersButton={false}
         >
           <div
-            className="pf-c-data-toolbar__content pf-m-hidden"
+            className="pf-c-toolbar__content pf-m-hidden"
             hidden={true}
           >
             <ForwardRef
               className=""
             >
-              <DataToolbarGroupWithRef
+              <ToolbarGroupWithRef
                 breakpointMods={Array []}
                 className=""
                 innerRef={null}
               >
                 <div
-                  className="pf-c-data-toolbar__group"
+                  className="pf-c-toolbar__group"
                 />
-              </DataToolbarGroupWithRef>
+              </ToolbarGroupWithRef>
             </ForwardRef>
           </div>
-        </DataToolbarChipGroupContent>
+        </ToolbarChipGroupContent>
       </div>
-    </DataToolbar>
+    </Toolbar>
   </GenerateId>
 </TopologyControlBar>
 `;

@@ -35,7 +35,7 @@ exports[`CatalogTile href renders properly 1`] = `
         className="catalog-tile-pf-header"
       >
         <div
-          className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+          className="pf-c-card__title catalog-tile-pf-header"
         >
           <div
             className="catalog-tile-pf-title"
@@ -136,7 +136,7 @@ exports[`CatalogTile renders properly 1`] = `
       >
         <Component>
           <div
-            className="pf-c-card__head"
+            className="pf-c-card__header"
           >
             <Component>
               <div
@@ -360,7 +360,7 @@ exports[`CatalogTile renders properly 1`] = `
           className="catalog-tile-pf-header"
         >
           <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+            className="pf-c-card__title catalog-tile-pf-header"
           >
             <div
               className="catalog-tile-pf-title"
@@ -456,7 +456,7 @@ exports[`CatalogTile renders properly 1`] = `
       >
         <Component>
           <div
-            className="pf-c-card__head"
+            className="pf-c-card__header"
           >
             <Component>
               <div
@@ -810,7 +810,7 @@ exports[`CatalogTile renders properly 1`] = `
           className="catalog-tile-pf-header"
         >
           <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+            className="pf-c-card__title catalog-tile-pf-header"
           >
             <div
               className="catalog-tile-pf-title"
@@ -889,7 +889,7 @@ exports[`CatalogTile renders properly 1`] = `
       >
         <Component>
           <div
-            className="pf-c-card__head"
+            className="pf-c-card__header"
           >
             <span
               className="catalog-tile-pf-icon fa fa-codepen"
@@ -1078,7 +1078,7 @@ exports[`CatalogTile renders properly 1`] = `
           className="catalog-tile-pf-header"
         >
           <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+            className="pf-c-card__title catalog-tile-pf-header"
           >
             <div
               className="catalog-tile-pf-title"
@@ -1166,7 +1166,7 @@ exports[`CatalogTile renders properly 1`] = `
       >
         <Component>
           <div
-            className="pf-c-card__head"
+            className="pf-c-card__header"
           >
             <Component>
               <div
@@ -1352,7 +1352,7 @@ exports[`CatalogTile renders properly 1`] = `
           className="catalog-tile-pf-header"
         >
           <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+            className="pf-c-card__title catalog-tile-pf-header"
           >
             <div
               className="catalog-tile-pf-title"
@@ -1468,7 +1468,7 @@ exports[`CatalogTile renders properly 1`] = `
       >
         <Component>
           <div
-            className="pf-c-card__head"
+            className="pf-c-card__header"
           >
             <span
               className="catalog-tile-pf-icon "
@@ -1493,7 +1493,7 @@ exports[`CatalogTile renders properly 1`] = `
           className="catalog-tile-pf-header"
         >
           <div
-            className="pf-c-card__header pf-c-title pf-m-md catalog-tile-pf-header"
+            className="pf-c-card__title catalog-tile-pf-header"
           >
             <div
               className="catalog-tile-pf-title"
