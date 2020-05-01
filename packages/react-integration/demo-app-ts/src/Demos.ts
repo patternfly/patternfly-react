@@ -166,9 +166,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListCompactDemo
   },
   {
-    id: 'data-toolbar-demo',
+    id: 'toolbar-demo',
     name: 'Data Toolbar Demo',
-    componentType: Examples.DataToolbarDemo
+    componentType: Examples.ToolbarDemo
   },
   {
     id: 'divider-demo',

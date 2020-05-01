@@ -5,17 +5,17 @@ section: 'demos'
 
 ## Examples
 
-Uses the DataToolbar component to filter results in the table based on user input.
+Uses the Toolbar component to filter results in the table based on user input.
 
 import {
   Title,
   Bullseye,
-  DataToolbar,
-  DataToolbarItem,
-  DataToolbarContent,
-  DataToolbarFilter,
-  DataToolbarGroup,
-  DataToolbarToggleGroup,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarGroup,
+  ToolbarToggleGroup,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -33,12 +33,12 @@ import {
   Button,
   ButtonVariant,
   Bullseye,
-  DataToolbar,
-  DataToolbarItem,
-  DataToolbarContent,
-  DataToolbarFilter,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
+  ToolbarGroup,
   Dropdown,
   DropdownItem,
   DropdownPosition,
@@ -204,7 +204,7 @@ class FilterTableDemo extends React.Component {
     const { isCategoryDropdownOpen, currentCategory } = this.state;
 
     return (
-      <DataToolbarItem>
+      <ToolbarItem>
         <Dropdown
           onSelect={this.onCategorySelect}
           position={DropdownPosition.left}
@@ -221,7 +221,7 @@ class FilterTableDemo extends React.Component {
           ]}
           style={{ width: '100%' }}
         ></Dropdown>
-      </DataToolbarItem>
+      </ToolbarItem>
     );
   }
 
@@ -246,7 +246,7 @@ class FilterTableDemo extends React.Component {
 
     return (
       <React.Fragment>
-        <DataToolbarFilter
+        <ToolbarFilter
           chips={filters.location}
           deleteChip={this.onDelete}
           categoryName="Location"
@@ -262,8 +262,8 @@ class FilterTableDemo extends React.Component {
           >
             {locationMenuItems}
           </Select>
-        </DataToolbarFilter>
-        <DataToolbarFilter
+        </ToolbarFilter>
+        <ToolbarFilter
           chips={filters.name}
           deleteChip={this.onDelete}
           categoryName="Name"
@@ -288,8 +288,8 @@ class FilterTableDemo extends React.Component {
               <SearchIcon />
             </Button>
           </InputGroup>
-        </DataToolbarFilter>
-        <DataToolbarFilter
+        </ToolbarFilter>
+        <ToolbarFilter
           chips={filters.status}
           deleteChip={this.onDelete}
           categoryName="Status"
@@ -306,7 +306,7 @@ class FilterTableDemo extends React.Component {
           >
             {statusMenuItems}
           </Select>
-        </DataToolbarFilter>
+        </ToolbarFilter>
       </React.Fragment>
     );
   }
@@ -314,20 +314,20 @@ class FilterTableDemo extends React.Component {
   renderToolbar() {
     const { filters } = this.state;
     return (
-      <DataToolbar
-        id="data-toolbar-with-chip-groups"
+      <Toolbar
+        id="toolbar-with-chip-groups"
         clearAllFilters={this.onDelete}
         collapseListedFiltersBreakpoint="xl"
       >
-        <DataToolbarContent>
-          <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-            <DataToolbarGroup variant="filter-group">
+        <ToolbarContent>
+          <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+            <ToolbarGroup variant="filter-group">
               {this.buildCategoryDropdown()}
               {this.buildFilterDropdown()}
-            </DataToolbarGroup>
-          </DataToolbarToggleGroup>
-        </DataToolbarContent>
-      </DataToolbar>
+            </ToolbarGroup>
+          </ToolbarToggleGroup>
+        </ToolbarContent>
+      </Toolbar>
     );
   }
 

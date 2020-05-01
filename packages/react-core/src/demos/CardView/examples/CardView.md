@@ -105,12 +105,12 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import {
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarFilter,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
-  DataToolbarItem
+  Toolbar,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
+  ToolbarGroup,
+  ToolbarItem
 } from '@patternfly/react-core/dist/esm/experimental';
 // make sure you've installed @patternfly/patternfly
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -517,7 +517,7 @@ class CardViewBasic extends React.Component {
     ];
 
     return (
-      <DataToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
+      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
         <Select
           variant={SelectVariant.checkbox}
           aria-label="Products"
@@ -529,7 +529,7 @@ class CardViewBasic extends React.Component {
         >
           {filterDropdownItems}
         </Select>
-      </DataToolbarFilter>
+      </ToolbarFilter>
     );
   }
 
@@ -571,12 +571,12 @@ class CardViewBasic extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
-        <DataToolbarItem>{this.buildFilterDropdown()}</DataToolbarItem>
-        <DataToolbarItem>
+        <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
+        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem>
           <Button variant="primary">Create a Project</Button>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
             toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
@@ -584,10 +584,10 @@ class CardViewBasic extends React.Component {
             isPlain
             dropdownItems={toolbarKebabDropdownItems}
           />
-        </DataToolbarItem>
-        <DataToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
+        </ToolbarItem>
+        <ToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
           {this.renderPagination()}
-        </DataToolbarItem>
+        </ToolbarItem>
       </React.Fragment>
     );
 
@@ -710,9 +710,9 @@ class CardViewBasic extends React.Component {
               <Text component="h1">Projects</Text>
               <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
             </TextContent>
-            <DataToolbar id="data-toolbar-group-types" clearAllFilters={this.onDelete}>
-              <DataToolbarContent>{toolbarItems}</DataToolbarContent>
-            </DataToolbar>
+            <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
+              <ToolbarContent>{toolbarItems}</ToolbarContent>
+            </Toolbar>
           </PageSection>
           <PageSection>
             <Gallery hasGutter>
