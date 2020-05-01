@@ -2,7 +2,6 @@ export { selectable } from './decorators/selectable';
 export { sortable } from './decorators/sortable';
 export { cellActions } from './decorators/cellActions';
 export { cellWidth } from './decorators/cellWidth';
-export { cellHeightAuto } from './decorators/cellHeightAuto';
 export { editable } from './decorators/editable';
 export { wrappable } from './decorators/wrappable';
 export { textCenter } from './decorators/textCenter';

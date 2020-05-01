@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   Button,
-  DataToolbarGroup,
-  DataToolbarItem,
-  DataToolbarToggleGroup,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarToggleGroup,
   Dropdown,
   DropdownPosition,
   DropdownToggle,
@@ -116,25 +116,25 @@ export class ViewToolbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <DataToolbarToggleGroup breakpoint="xl" toggleIcon={<FilterIcon />}>
-          <DataToolbarGroup variant="filter-group">
-            <DataToolbarItem>{this.renderFilterTypeDropdown()}</DataToolbarItem>
-            <DataToolbarItem>{this.renderFilterInput()}</DataToolbarItem>
-          </DataToolbarGroup>
-        </DataToolbarToggleGroup>
-        <DataToolbarGroup variant="button-group">
-          <DataToolbarItem>
+        <ToolbarToggleGroup breakpoint="xl" toggleIcon={<FilterIcon />}>
+          <ToolbarGroup variant="filter-group">
+            <ToolbarItem>{this.renderFilterTypeDropdown()}</ToolbarItem>
+            <ToolbarItem>{this.renderFilterInput()}</ToolbarItem>
+          </ToolbarGroup>
+        </ToolbarToggleGroup>
+        <ToolbarGroup variant="button-group">
+          <ToolbarItem>
             <Button variant="primary" aria-label="Action 1">
               Action 1
             </Button>
-          </DataToolbarItem>
-          <DataToolbarItem>
+          </ToolbarItem>
+          <ToolbarItem>
             <Button variant="plain" aria-label="Action 2">
               Action 2
             </Button>
-          </DataToolbarItem>
-          <DataToolbarItem>{this.renderActionsdKebab()}</DataToolbarItem>
-        </DataToolbarGroup>
+          </ToolbarItem>
+          <ToolbarItem>{this.renderActionsdKebab()}</ToolbarItem>
+        </ToolbarGroup>
       </React.Fragment>
     );
   }

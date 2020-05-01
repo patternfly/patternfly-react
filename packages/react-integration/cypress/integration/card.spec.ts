@@ -5,8 +5,8 @@ describe('Card Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/card-demo-nav-link');
   });
 
-  it('Verify default header', () => {
-    cy.get('.pf-c-card__header').contains('Header');
+  it('Verify default title', () => {
+    cy.get('.pf-c-card__title').contains('Header');
   });
 
   it('Verify default body content', () => {

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolbarItem should match snapshot (auto-generated) 1`] = `
+<div
+  className="pf-c-toolbar__item pf-m-bulk-select string"
+  id="string"
+>
+  <div>
+    ReactNode
+  </div>
+</div>
+`;

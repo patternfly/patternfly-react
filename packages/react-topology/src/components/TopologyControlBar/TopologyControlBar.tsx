@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {
   Button,
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarGroup,
-  DataToolbarItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
   GenerateId,
   Tooltip
 } from '@patternfly/react-core';
@@ -291,16 +291,16 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   return (
     <GenerateId prefix="pf-topology-control-bar-">
       {randomId => (
-        <DataToolbar className={className} style={{ backgroundColor: 'transparent', padding: 0 }} id={randomId}>
-          <DataToolbarContent>
-            <DataToolbarGroup breakpointMods={[{ modifier: 'space-items-none' }]}>
+        <Toolbar className={className} style={{ backgroundColor: 'transparent', padding: 0 }} id={randomId}>
+          <ToolbarContent>
+            <ToolbarGroup breakpointMods={[{ modifier: 'space-items-none' }]}>
               {controlButtons.map((button: TopologyControlButton) =>
-                button.hidden ? null : <DataToolbarItem key={button.id}>{renderButton(button)}</DataToolbarItem>
+                button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>
               )}
               {children}
-            </DataToolbarGroup>
-          </DataToolbarContent>
-        </DataToolbar>
+            </ToolbarGroup>
+          </ToolbarContent>
+        </Toolbar>
       )}
     </GenerateId>
   );

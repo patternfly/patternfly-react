@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Card/card';
-import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the Card Footer */
+  /** Content rendered inside the CardHeader */
   children?: React.ReactNode;
-  /** Additional classes added to the Header */
+  /** Additional classes added to the CardHeader */
   className?: string;
 }
 
@@ -15,7 +14,7 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
   className = '',
   ...props
 }: CardHeaderProps) => (
-  <div className={css(styles.cardHeader, titleStyles.title, titleStyles.modifiers.md, className)} {...props}>
+  <div className={css(styles.cardHeader, className)} {...props}>
     {children}
   </div>
 );

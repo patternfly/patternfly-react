@@ -8,7 +8,6 @@ import { css } from '@patternfly/react-styles';
 export interface RowWrapperRow {
   isOpen?: boolean;
   isExpanded?: boolean;
-  isHeightAuto?: boolean;
   isEditable?: boolean;
 }
 
@@ -87,7 +86,7 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onScroll,
       onResize,
-      row: { isExpanded, isHeightAuto, isEditable },
+      row: { isExpanded, isEditable },
       rowProps,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       trRef,
@@ -104,7 +103,6 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
-          isHeightAuto && styles.modifiers.heightAuto,
           isEditable && inlineStyles.modifiers.inlineEditable
         )}
         hidden={isExpanded !== undefined && !isExpanded}

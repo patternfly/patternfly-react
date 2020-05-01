@@ -10,21 +10,9 @@ import {
   PageSidebar,
   Avatar,
   Brand,
-  PageHeader,
-  Button,
-  ButtonVariant,
-  Dropdown,
-  DropdownToggle,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeader
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import imgBrand from './assets/images/imgBrand.svg';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import imgAvatar from './assets/images/imgAvatar.svg';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Demos from './Demos';
@@ -84,26 +72,7 @@ class App extends React.Component<{}, AppState> {
     const { isNavOpen } = this.state;
 
     const AppToolbar = (
-      <Toolbar>
-        <ToolbarGroup>
-          <ToolbarItem>
-            <Button id="simple-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem>
-            <Dropdown
-              isPlain
-              position="right"
-              isOpen={false}
-              toggle={<DropdownToggle onToggle={() => {}}>User</DropdownToggle>}
-              dropdownItems={[]}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div className="pf-c-page__header-tools">TODO: http://patternfly-v4.surge.sh/documentation/core/demos/page</div>
     );
 
     const AppHeader = (

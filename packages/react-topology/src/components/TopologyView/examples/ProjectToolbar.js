@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataToolbarItem, Dropdown, DropdownItem, DropdownToggle, DropdownPosition } from '@patternfly/react-core';
+import { ToolbarItem, Dropdown, DropdownItem, DropdownToggle, DropdownPosition } from '@patternfly/react-core';
 
 const projects = [
   { id: 1, name: 'Project 1' },
@@ -48,10 +48,10 @@ export class ProjectToolbar extends React.Component {
 
     return (
       <React.Fragment>
-        <DataToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+        <ToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
           <label>Project:</label>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onToggle={this.onProjectDropDownToggle}
             position={DropdownPosition.right}
@@ -63,7 +63,7 @@ export class ProjectToolbar extends React.Component {
               </DropdownItem>
             ))}
           />
-        </DataToolbarItem>
+        </ToolbarItem>
       </React.Fragment>
     );
   };
@@ -73,10 +73,10 @@ export class ProjectToolbar extends React.Component {
 
     return (
       <React.Fragment>
-        <DataToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+        <ToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
           <label>Application:</label>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onToggle={this.onApplicationDropDownToggle}
             position={DropdownPosition.right}
@@ -90,7 +90,7 @@ export class ProjectToolbar extends React.Component {
               </DropdownItem>
             ))}
           />
-        </DataToolbarItem>
+        </ToolbarItem>
       </React.Fragment>
     );
   };

@@ -282,12 +282,6 @@ test('Empty state table', () => {
 
   expect(
     view
-      .find('tr')
-      .at(1)
-      .prop('className')
-  ).toEqual('pf-m-height-auto');
-  expect(
-    view
       .find('tbody')
       .find('td')
       .prop('colSpan')

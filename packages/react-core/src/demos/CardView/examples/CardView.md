@@ -11,9 +11,9 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
-  CardActions,
   CardHeader,
+  CardActions,
+  CardTitle,
   CardBody,
   Checkbox,
   Dropdown,
@@ -39,7 +39,9 @@ import {
   Text,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  ToolbarFilter,
+  ToolbarContent
 } from '@patternfly/react-core';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -70,9 +72,9 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
-  CardActions,
   CardHeader,
+  CardActions,
+  CardTitle,
   CardBody,
   Checkbox,
   Dropdown,
@@ -102,16 +104,10 @@ import {
   Text,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  ToolbarFilter,
+  ToolbarContent
 } from '@patternfly/react-core';
-import {
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarFilter,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
-  DataToolbarItem
-} from '@patternfly/react-core/dist/esm/experimental';
 // make sure you've installed @patternfly/patternfly
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -517,7 +513,7 @@ class CardViewBasic extends React.Component {
     ];
 
     return (
-      <DataToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
+      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
         <Select
           variant={SelectVariant.checkbox}
           aria-label="Products"
@@ -529,7 +525,7 @@ class CardViewBasic extends React.Component {
         >
           {filterDropdownItems}
         </Select>
-      </DataToolbarFilter>
+      </ToolbarFilter>
     );
   }
 
@@ -571,12 +567,12 @@ class CardViewBasic extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
-        <DataToolbarItem>{this.buildFilterDropdown()}</DataToolbarItem>
-        <DataToolbarItem>
+        <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
+        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem>
           <Button variant="primary">Create a Project</Button>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
             toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
@@ -584,10 +580,10 @@ class CardViewBasic extends React.Component {
             isPlain
             dropdownItems={toolbarKebabDropdownItems}
           />
-        </DataToolbarItem>
-        <DataToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
+        </ToolbarItem>
+        <ToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
           {this.renderPagination()}
-        </DataToolbarItem>
+        </ToolbarItem>
       </React.Fragment>
     );
 
@@ -710,16 +706,16 @@ class CardViewBasic extends React.Component {
               <Text component="h1">Projects</Text>
               <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
             </TextContent>
-            <DataToolbar id="data-toolbar-group-types" clearAllFilters={this.onDelete}>
-              <DataToolbarContent>{toolbarItems}</DataToolbarContent>
-            </DataToolbar>
+            <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
+              <ToolbarContent>{toolbarItems}</ToolbarContent>
+            </Toolbar>
           </PageSection>
           <PageSection>
             <Gallery hasGutter>
               {filtered.map((product, key) => (
                 <React.Fragment>
                   <Card isHoverable key={key}>
-                    <CardHead>
+                    <CardHeader>
                       <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
                       <CardActions>
                         <Dropdown
@@ -753,8 +749,8 @@ class CardViewBasic extends React.Component {
                           id={`check-${product.id}`}
                         />
                       </CardActions>
-                    </CardHead>
-                    <CardHeader>{product.name}</CardHeader>
+                    </CardHeader>
+                    <CardTitle>{product.name}</CardTitle>
                     <CardBody>{product.description}</CardBody>
                   </Card>
                 </React.Fragment>

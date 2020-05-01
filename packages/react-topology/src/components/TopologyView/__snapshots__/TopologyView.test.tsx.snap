@@ -22,11 +22,11 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
           <GenerateId
             prefix="pf-topology-view-"
           >
-            <DataToolbar
+            <Toolbar
               id="pf-topology-view-0"
             >
               <div
-                className="pf-c-data-toolbar"
+                className="pf-c-toolbar"
                 id="pf-topology-view-0"
               >
                 <Component
@@ -42,15 +42,15 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                     toolbarId="pf-topology-view-0"
                   />
                 </Component>
-                <DataToolbarChipGroupContent
+                <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
                       "current": <div
-                        class="pf-c-data-toolbar__content pf-m-hidden"
+                        class="pf-c-toolbar__content pf-m-hidden"
                         hidden=""
                       >
                         <div
-                          class="pf-c-data-toolbar__group"
+                          class="pf-c-toolbar__group"
                         />
                       </div>,
                     }
@@ -62,26 +62,26 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                   showClearFiltersButton={false}
                 >
                   <div
-                    className="pf-c-data-toolbar__content pf-m-hidden"
+                    className="pf-c-toolbar__content pf-m-hidden"
                     hidden={true}
                   >
                     <ForwardRef
                       className=""
                     >
-                      <DataToolbarGroupWithRef
+                      <ToolbarGroupWithRef
                         breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
                         <div
-                          className="pf-c-data-toolbar__group"
+                          className="pf-c-toolbar__group"
                         />
-                      </DataToolbarGroupWithRef>
+                      </ToolbarGroupWithRef>
                     </ForwardRef>
                   </div>
-                </DataToolbarChipGroupContent>
+                </ToolbarChipGroupContent>
               </div>
-            </DataToolbar>
+            </Toolbar>
           </GenerateId>
         </div>
       </Component>
@@ -139,14 +139,14 @@ exports[`TopologyView should display topology correctly 1`] = `
           <GenerateId
             prefix="pf-topology-view-"
           >
-            <DataToolbar
+            <Toolbar
               id="pf-topology-view-1"
             >
               <div
-                className="pf-c-data-toolbar"
+                className="pf-c-toolbar"
                 id="pf-topology-view-1"
               >
-                <DataToolbarContent
+                <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
                   key=".0"
@@ -154,30 +154,30 @@ exports[`TopologyView should display topology correctly 1`] = `
                   toolbarId="pf-topology-view-1"
                 >
                   <div
-                    className="pf-c-data-toolbar__content"
+                    className="pf-c-toolbar__content"
                   >
                     <div
-                      className="pf-c-data-toolbar__content-section"
+                      className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
                         className="project-toolbar"
                       >
-                        <DataToolbarGroupWithRef
+                        <ToolbarGroupWithRef
                           breakpointMods={Array []}
                           className="project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-data-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group project-toolbar"
                           >
                             <div
                               id="test-context-bar"
                             />
                           </div>
-                        </DataToolbarGroupWithRef>
+                        </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <DataToolbarExpandableContent
+                    <ToolbarExpandableContent
                       chipContainerRef={
                         Object {
                           "current": null,
@@ -187,11 +187,11 @@ exports[`TopologyView should display topology correctly 1`] = `
                       expandableContentRef={
                         Object {
                           "current": <div
-                            class="pf-c-data-toolbar__expandable-content"
+                            class="pf-c-toolbar__expandable-content"
                             id="pf-topology-view-1-expandable-content-0"
                           >
                             <div
-                              class="pf-c-data-toolbar__group"
+                              class="pf-c-toolbar__group"
                             />
                           </div>,
                         }
@@ -201,24 +201,24 @@ exports[`TopologyView should display topology correctly 1`] = `
                       showClearFiltersButton={false}
                     >
                       <div
-                        className="pf-c-data-toolbar__expandable-content"
+                        className="pf-c-toolbar__expandable-content"
                         id="pf-topology-view-1-expandable-content-0"
                       >
                         <ForwardRef>
-                          <DataToolbarGroupWithRef
+                          <ToolbarGroupWithRef
                             breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-data-toolbar__group"
+                              className="pf-c-toolbar__group"
                             />
-                          </DataToolbarGroupWithRef>
+                          </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </DataToolbarExpandableContent>
+                    </ToolbarExpandableContent>
                   </div>
-                </DataToolbarContent>
-                <DataToolbarContent
+                </ToolbarContent>
+                <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
                   key=".1"
@@ -226,30 +226,30 @@ exports[`TopologyView should display topology correctly 1`] = `
                   toolbarId="pf-topology-view-1"
                 >
                   <div
-                    className="pf-c-data-toolbar__content"
+                    className="pf-c-toolbar__content"
                   >
                     <div
-                      className="pf-c-data-toolbar__content-section"
+                      className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
                         className="view-toolbar"
                       >
-                        <DataToolbarGroupWithRef
+                        <ToolbarGroupWithRef
                           breakpointMods={Array []}
                           className="view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-data-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group view-toolbar"
                           >
                             <div
                               id="test-view-bar"
                             />
                           </div>
-                        </DataToolbarGroupWithRef>
+                        </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <DataToolbarExpandableContent
+                    <ToolbarExpandableContent
                       chipContainerRef={
                         Object {
                           "current": null,
@@ -259,11 +259,11 @@ exports[`TopologyView should display topology correctly 1`] = `
                       expandableContentRef={
                         Object {
                           "current": <div
-                            class="pf-c-data-toolbar__expandable-content"
+                            class="pf-c-toolbar__expandable-content"
                             id="pf-topology-view-1-expandable-content-1"
                           >
                             <div
-                              class="pf-c-data-toolbar__group"
+                              class="pf-c-toolbar__group"
                             />
                           </div>,
                         }
@@ -273,23 +273,23 @@ exports[`TopologyView should display topology correctly 1`] = `
                       showClearFiltersButton={false}
                     >
                       <div
-                        className="pf-c-data-toolbar__expandable-content"
+                        className="pf-c-toolbar__expandable-content"
                         id="pf-topology-view-1-expandable-content-1"
                       >
                         <ForwardRef>
-                          <DataToolbarGroupWithRef
+                          <ToolbarGroupWithRef
                             breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-data-toolbar__group"
+                              className="pf-c-toolbar__group"
                             />
-                          </DataToolbarGroupWithRef>
+                          </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </DataToolbarExpandableContent>
+                    </ToolbarExpandableContent>
                   </div>
-                </DataToolbarContent>
+                </ToolbarContent>
                 <Component
                   isExpanded={false}
                   key=".2"
@@ -303,15 +303,15 @@ exports[`TopologyView should display topology correctly 1`] = `
                     toolbarId="pf-topology-view-1"
                   />
                 </Component>
-                <DataToolbarChipGroupContent
+                <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
                       "current": <div
-                        class="pf-c-data-toolbar__content pf-m-hidden"
+                        class="pf-c-toolbar__content pf-m-hidden"
                         hidden=""
                       >
                         <div
-                          class="pf-c-data-toolbar__group"
+                          class="pf-c-toolbar__group"
                         />
                       </div>,
                     }
@@ -323,26 +323,26 @@ exports[`TopologyView should display topology correctly 1`] = `
                   showClearFiltersButton={false}
                 >
                   <div
-                    className="pf-c-data-toolbar__content pf-m-hidden"
+                    className="pf-c-toolbar__content pf-m-hidden"
                     hidden={true}
                   >
                     <ForwardRef
                       className=""
                     >
-                      <DataToolbarGroupWithRef
+                      <ToolbarGroupWithRef
                         breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
                         <div
-                          className="pf-c-data-toolbar__group"
+                          className="pf-c-toolbar__group"
                         />
-                      </DataToolbarGroupWithRef>
+                      </ToolbarGroupWithRef>
                     </ForwardRef>
                   </div>
-                </DataToolbarChipGroupContent>
+                </ToolbarChipGroupContent>
               </div>
-            </DataToolbar>
+            </Toolbar>
           </GenerateId>
         </div>
       </Component>
@@ -417,14 +417,14 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
           <GenerateId
             prefix="pf-topology-view-"
           >
-            <DataToolbar
+            <Toolbar
               id="pf-topology-view-2"
             >
               <div
-                className="pf-c-data-toolbar"
+                className="pf-c-toolbar"
                 id="pf-topology-view-2"
               >
-                <DataToolbarContent
+                <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
                   key=".0"
@@ -432,30 +432,30 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                   toolbarId="pf-topology-view-2"
                 >
                   <div
-                    className="pf-c-data-toolbar__content"
+                    className="pf-c-toolbar__content"
                   >
                     <div
-                      className="pf-c-data-toolbar__content-section"
+                      className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
                         className="project-toolbar"
                       >
-                        <DataToolbarGroupWithRef
+                        <ToolbarGroupWithRef
                           breakpointMods={Array []}
                           className="project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-data-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group project-toolbar"
                           >
                             <div
                               id="test-context-bar"
                             />
                           </div>
-                        </DataToolbarGroupWithRef>
+                        </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <DataToolbarExpandableContent
+                    <ToolbarExpandableContent
                       chipContainerRef={
                         Object {
                           "current": null,
@@ -465,11 +465,11 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       expandableContentRef={
                         Object {
                           "current": <div
-                            class="pf-c-data-toolbar__expandable-content"
+                            class="pf-c-toolbar__expandable-content"
                             id="pf-topology-view-2-expandable-content-2"
                           >
                             <div
-                              class="pf-c-data-toolbar__group"
+                              class="pf-c-toolbar__group"
                             />
                           </div>,
                         }
@@ -479,24 +479,24 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       showClearFiltersButton={false}
                     >
                       <div
-                        className="pf-c-data-toolbar__expandable-content"
+                        className="pf-c-toolbar__expandable-content"
                         id="pf-topology-view-2-expandable-content-2"
                       >
                         <ForwardRef>
-                          <DataToolbarGroupWithRef
+                          <ToolbarGroupWithRef
                             breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-data-toolbar__group"
+                              className="pf-c-toolbar__group"
                             />
-                          </DataToolbarGroupWithRef>
+                          </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </DataToolbarExpandableContent>
+                    </ToolbarExpandableContent>
                   </div>
-                </DataToolbarContent>
-                <DataToolbarContent
+                </ToolbarContent>
+                <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
                   key=".1"
@@ -504,30 +504,30 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                   toolbarId="pf-topology-view-2"
                 >
                   <div
-                    className="pf-c-data-toolbar__content"
+                    className="pf-c-toolbar__content"
                   >
                     <div
-                      className="pf-c-data-toolbar__content-section"
+                      className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
                         className="view-toolbar"
                       >
-                        <DataToolbarGroupWithRef
+                        <ToolbarGroupWithRef
                           breakpointMods={Array []}
                           className="view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-data-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group view-toolbar"
                           >
                             <div
                               id="test-view-bar"
                             />
                           </div>
-                        </DataToolbarGroupWithRef>
+                        </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <DataToolbarExpandableContent
+                    <ToolbarExpandableContent
                       chipContainerRef={
                         Object {
                           "current": null,
@@ -537,11 +537,11 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       expandableContentRef={
                         Object {
                           "current": <div
-                            class="pf-c-data-toolbar__expandable-content"
+                            class="pf-c-toolbar__expandable-content"
                             id="pf-topology-view-2-expandable-content-3"
                           >
                             <div
-                              class="pf-c-data-toolbar__group"
+                              class="pf-c-toolbar__group"
                             />
                           </div>,
                         }
@@ -551,23 +551,23 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       showClearFiltersButton={false}
                     >
                       <div
-                        className="pf-c-data-toolbar__expandable-content"
+                        className="pf-c-toolbar__expandable-content"
                         id="pf-topology-view-2-expandable-content-3"
                       >
                         <ForwardRef>
-                          <DataToolbarGroupWithRef
+                          <ToolbarGroupWithRef
                             breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-data-toolbar__group"
+                              className="pf-c-toolbar__group"
                             />
-                          </DataToolbarGroupWithRef>
+                          </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </DataToolbarExpandableContent>
+                    </ToolbarExpandableContent>
                   </div>
-                </DataToolbarContent>
+                </ToolbarContent>
                 <Component
                   isExpanded={false}
                   key=".2"
@@ -581,15 +581,15 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                     toolbarId="pf-topology-view-2"
                   />
                 </Component>
-                <DataToolbarChipGroupContent
+                <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
                       "current": <div
-                        class="pf-c-data-toolbar__content pf-m-hidden"
+                        class="pf-c-toolbar__content pf-m-hidden"
                         hidden=""
                       >
                         <div
-                          class="pf-c-data-toolbar__group"
+                          class="pf-c-toolbar__group"
                         />
                       </div>,
                     }
@@ -601,26 +601,26 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                   showClearFiltersButton={false}
                 >
                   <div
-                    className="pf-c-data-toolbar__content pf-m-hidden"
+                    className="pf-c-toolbar__content pf-m-hidden"
                     hidden={true}
                   >
                     <ForwardRef
                       className=""
                     >
-                      <DataToolbarGroupWithRef
+                      <ToolbarGroupWithRef
                         breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
                         <div
-                          className="pf-c-data-toolbar__group"
+                          className="pf-c-toolbar__group"
                         />
-                      </DataToolbarGroupWithRef>
+                      </ToolbarGroupWithRef>
                     </ForwardRef>
                   </div>
-                </DataToolbarChipGroupContent>
+                </ToolbarChipGroupContent>
               </div>
-            </DataToolbar>
+            </Toolbar>
           </GenerateId>
         </div>
       </Component>
@@ -698,14 +698,14 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
           <GenerateId
             prefix="pf-topology-view-"
           >
-            <DataToolbar
+            <Toolbar
               id="pf-topology-view-3"
             >
               <div
-                className="pf-c-data-toolbar"
+                className="pf-c-toolbar"
                 id="pf-topology-view-3"
               >
-                <DataToolbarContent
+                <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
                   key=".0"
@@ -713,30 +713,30 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                   toolbarId="pf-topology-view-3"
                 >
                   <div
-                    className="pf-c-data-toolbar__content"
+                    className="pf-c-toolbar__content"
                   >
                     <div
-                      className="pf-c-data-toolbar__content-section"
+                      className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
                         className="project-toolbar"
                       >
-                        <DataToolbarGroupWithRef
+                        <ToolbarGroupWithRef
                           breakpointMods={Array []}
                           className="project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-data-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group project-toolbar"
                           >
                             <div
                               id="test-context-bar"
                             />
                           </div>
-                        </DataToolbarGroupWithRef>
+                        </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <DataToolbarExpandableContent
+                    <ToolbarExpandableContent
                       chipContainerRef={
                         Object {
                           "current": null,
@@ -746,11 +746,11 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       expandableContentRef={
                         Object {
                           "current": <div
-                            class="pf-c-data-toolbar__expandable-content"
+                            class="pf-c-toolbar__expandable-content"
                             id="pf-topology-view-3-expandable-content-4"
                           >
                             <div
-                              class="pf-c-data-toolbar__group"
+                              class="pf-c-toolbar__group"
                             />
                           </div>,
                         }
@@ -760,24 +760,24 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       showClearFiltersButton={false}
                     >
                       <div
-                        className="pf-c-data-toolbar__expandable-content"
+                        className="pf-c-toolbar__expandable-content"
                         id="pf-topology-view-3-expandable-content-4"
                       >
                         <ForwardRef>
-                          <DataToolbarGroupWithRef
+                          <ToolbarGroupWithRef
                             breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-data-toolbar__group"
+                              className="pf-c-toolbar__group"
                             />
-                          </DataToolbarGroupWithRef>
+                          </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </DataToolbarExpandableContent>
+                    </ToolbarExpandableContent>
                   </div>
-                </DataToolbarContent>
-                <DataToolbarContent
+                </ToolbarContent>
+                <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
                   key=".1"
@@ -785,30 +785,30 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                   toolbarId="pf-topology-view-3"
                 >
                   <div
-                    className="pf-c-data-toolbar__content"
+                    className="pf-c-toolbar__content"
                   >
                     <div
-                      className="pf-c-data-toolbar__content-section"
+                      className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
                         className="view-toolbar"
                       >
-                        <DataToolbarGroupWithRef
+                        <ToolbarGroupWithRef
                           breakpointMods={Array []}
                           className="view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-data-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group view-toolbar"
                           >
                             <div
                               id="test-view-bar"
                             />
                           </div>
-                        </DataToolbarGroupWithRef>
+                        </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <DataToolbarExpandableContent
+                    <ToolbarExpandableContent
                       chipContainerRef={
                         Object {
                           "current": null,
@@ -818,11 +818,11 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       expandableContentRef={
                         Object {
                           "current": <div
-                            class="pf-c-data-toolbar__expandable-content"
+                            class="pf-c-toolbar__expandable-content"
                             id="pf-topology-view-3-expandable-content-5"
                           >
                             <div
-                              class="pf-c-data-toolbar__group"
+                              class="pf-c-toolbar__group"
                             />
                           </div>,
                         }
@@ -832,23 +832,23 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       showClearFiltersButton={false}
                     >
                       <div
-                        className="pf-c-data-toolbar__expandable-content"
+                        className="pf-c-toolbar__expandable-content"
                         id="pf-topology-view-3-expandable-content-5"
                       >
                         <ForwardRef>
-                          <DataToolbarGroupWithRef
+                          <ToolbarGroupWithRef
                             breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-data-toolbar__group"
+                              className="pf-c-toolbar__group"
                             />
-                          </DataToolbarGroupWithRef>
+                          </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </DataToolbarExpandableContent>
+                    </ToolbarExpandableContent>
                   </div>
-                </DataToolbarContent>
+                </ToolbarContent>
                 <Component
                   isExpanded={false}
                   key=".2"
@@ -862,15 +862,15 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                     toolbarId="pf-topology-view-3"
                   />
                 </Component>
-                <DataToolbarChipGroupContent
+                <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
                       "current": <div
-                        class="pf-c-data-toolbar__content pf-m-hidden"
+                        class="pf-c-toolbar__content pf-m-hidden"
                         hidden=""
                       >
                         <div
-                          class="pf-c-data-toolbar__group"
+                          class="pf-c-toolbar__group"
                         />
                       </div>,
                     }
@@ -882,26 +882,26 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                   showClearFiltersButton={false}
                 >
                   <div
-                    className="pf-c-data-toolbar__content pf-m-hidden"
+                    className="pf-c-toolbar__content pf-m-hidden"
                     hidden={true}
                   >
                     <ForwardRef
                       className=""
                     >
-                      <DataToolbarGroupWithRef
+                      <ToolbarGroupWithRef
                         breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
                         <div
-                          className="pf-c-data-toolbar__group"
+                          className="pf-c-toolbar__group"
                         />
-                      </DataToolbarGroupWithRef>
+                      </ToolbarGroupWithRef>
                     </ForwardRef>
                   </div>
-                </DataToolbarChipGroupContent>
+                </ToolbarChipGroupContent>
               </div>
-            </DataToolbar>
+            </Toolbar>
           </GenerateId>
         </div>
       </Component>

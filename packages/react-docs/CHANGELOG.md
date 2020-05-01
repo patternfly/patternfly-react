@@ -709,7 +709,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **DataToolbar:** update html structure to match core ([#3710](https://github.com/patternfly/patternfly-react/issues/3710)) ([6e61b1e](https://github.com/patternfly/patternfly-react/commit/6e61b1e43380d8fc86585504a3b13897cf68227d))
+* **Toolbar:** update html structure to match core ([#3710](https://github.com/patternfly/patternfly-react/issues/3710)) ([6e61b1e](https://github.com/patternfly/patternfly-react/commit/6e61b1e43380d8fc86585504a3b13897cf68227d))
 
 
 
@@ -2143,7 +2143,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **DataToolbar:** add Chip groups to DataToolbar ([#2969](https://github.com/patternfly/patternfly-react/issues/2969)) ([c060bdb](https://github.com/patternfly/patternfly-react/commit/c060bdb))
+* **Toolbar:** add Chip groups to Toolbar ([#2969](https://github.com/patternfly/patternfly-react/issues/2969)) ([c060bdb](https://github.com/patternfly/patternfly-react/commit/c060bdb))
 
 
 
@@ -2386,7 +2386,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **DataToolbar:** Add Data Toolbar component to experimental ([#2861](https://github.com/patternfly/patternfly-react/issues/2861)) ([6ec0ce4](https://github.com/patternfly/patternfly-react/commit/6ec0ce4))
+* **Toolbar:** Add Data Toolbar component to experimental ([#2861](https://github.com/patternfly/patternfly-react/issues/2861)) ([6ec0ce4](https://github.com/patternfly/patternfly-react/commit/6ec0ce4))
 
 
 

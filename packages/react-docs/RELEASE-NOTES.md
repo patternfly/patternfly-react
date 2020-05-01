@@ -280,7 +280,7 @@ Packages released:
   - Reverted React.Component back to React.FunctionComponent ([#3431](https://github.com/patternfly/patternfly-react/pull/3431))
 - **Data toolbar:** 
   - Added and removed some modifiers to match core ([#3422](https://github.com/patternfly/patternfly-react/pull/3422))
-  - Reverted promotion of DataToolbar from experimental ([#3580](https://github.com/patternfly/patternfly-react/pull/3580))
+  - Reverted promotion of Toolbar from experimental ([#3580](https://github.com/patternfly/patternfly-react/pull/3580))
   - Updated example to not exclude previous filtered items ([#3571](https://github.com/patternfly/patternfly-react/pull/3571))
 - **Divider:** 
   - Promote Divider from experimental ([#3516](https://github.com/patternfly/patternfly-react/pull/3516))
