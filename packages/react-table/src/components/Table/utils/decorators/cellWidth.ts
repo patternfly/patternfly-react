@@ -17,10 +17,10 @@ type WidthClass =
   | 'width_70'
   | 'width_80'
   | 'width_90'
-  | 'widthMax';
+  | 'width_100';
 
 export const cellWidth = (
-  width: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 'max'
+  width: 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100
 ): ITransform => () => ({
   className: css(
     styles.modifiers[

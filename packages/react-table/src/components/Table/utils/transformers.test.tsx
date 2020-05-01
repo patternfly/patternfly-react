@@ -5,7 +5,6 @@ import {
   sortable,
   cellActions,
   cellWidth,
-  cellHeightAuto,
   collapsible,
   scopeColTransformer,
   headerCol,
@@ -304,10 +303,6 @@ describe('Transformer functions', () => {
 
   test('wrappable', () => {
     expect(wrappable()).toEqual({ className: 'pf-m-wrap' });
-  });
-
-  test('cell height auto', () => {
-    expect(cellHeightAuto()).toEqual({ className: 'pf-m-height-auto' });
   });
 
   test('editable', () => {
