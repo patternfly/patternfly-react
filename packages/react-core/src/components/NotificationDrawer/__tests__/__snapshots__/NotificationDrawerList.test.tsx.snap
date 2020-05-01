@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__list extra-class"`;
+
+exports[`drawer list with hidden applied  1`] = `
+<ul
+  className="pf-c-notification-drawer__list"
+  hidden={false}
+/>
+`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<ul
+  className="pf-c-notification-drawer__list"
+  hidden={false}
+/>
+`;

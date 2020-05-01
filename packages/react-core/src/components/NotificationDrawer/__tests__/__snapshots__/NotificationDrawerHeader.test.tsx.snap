@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__header extra-class"`;
+
+exports[`drawer header with count applied 1`] = `
+<div
+  className="pf-c-notification-drawer__header"
+>
+  <Text
+    className="pf-c-notification-drawer__header-title"
+    component="h1"
+  >
+    Notifications
+  </Text>
+  <span
+    className="pf-c-notification-drawer__header-status"
+  >
+    2 unread
+  </span>
+</div>
+`;
+
+exports[`drawer header with custom unread text applied 1`] = `
+<div
+  className="pf-c-notification-drawer__header"
+>
+  <Text
+    className="pf-c-notification-drawer__header-title"
+    component="h1"
+  >
+    Notifications
+  </Text>
+</div>
+`;
+
+exports[`drawer header with title applied 1`] = `
+<div
+  className="pf-c-notification-drawer__header"
+>
+  <Text
+    className="pf-c-notification-drawer__header-title"
+    component="h1"
+  >
+    Notifications
+  </Text>
+</div>
+`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<div
+  className="pf-c-notification-drawer__header"
+>
+  <Text
+    className="pf-c-notification-drawer__header-title"
+    component="h1"
+  >
+    Notifications
+  </Text>
+</div>
+`;

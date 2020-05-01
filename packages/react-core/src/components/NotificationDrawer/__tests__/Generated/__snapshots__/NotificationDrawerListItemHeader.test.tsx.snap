@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationDrawerListItemHeader should match snapshot (auto-generated) 1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-header ''"
+  >
+    <span
+      className="pf-c-notification-drawer__list-item-header-icon"
+    >
+      <BellIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </span>
+    <h2
+      className="pf-c-notification-drawer__list-item-header-title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        string
+      </span>
+      string
+    </h2>
+  </div>
+  <div
+    className="pf-c-notification-drawer__list-item-action"
+  >
+    <div>
+      ReactNode
+    </div>
+  </div>
+</Fragment>
+`;

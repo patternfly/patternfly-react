@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `undefined`;
+
+exports[`list item body with timestamp property applied  1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-description"
+  />
+  <div
+    className="pf-c-notification-drawer__list-item-timestamp"
+  >
+    5 minutes ago
+  </div>
+</Fragment>
+`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<Fragment>
+  <div
+    className="pf-c-notification-drawer__list-item-description"
+  />
+</Fragment>
+`;

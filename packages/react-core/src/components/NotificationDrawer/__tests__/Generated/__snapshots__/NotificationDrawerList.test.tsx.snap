@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationDrawerList should match snapshot (auto-generated) 1`] = `
+<ul
+  className="pf-c-notification-drawer__list ''"
+  hidden={false}
+>
+  <div>
+    ReactNode
+  </div>
+</ul>
+`;

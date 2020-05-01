@@ -72,6 +72,8 @@ export * from './LoginPageDemo/LoginPageDemo';
 export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
 export * from './NotificationBadgeDemo/NotificationBadgeDemo';
+export * from './NotificationDrawerDemo/NotificationDrawerBasicDemo';
+export * from './NotificationDrawerDemo/NotificationDrawerGroupsDemo';
 export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './OuiaDemo/OuiaDemo';
 export * from './OverflowMenuDemo/OverflowMenuDemo';
