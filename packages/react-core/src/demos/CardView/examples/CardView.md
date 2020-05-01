@@ -104,7 +104,9 @@ import {
   Text,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  ToolbarFilter,
+  ToolbarContent
 } from '@patternfly/react-core';
 // make sure you've installed @patternfly/patternfly
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
