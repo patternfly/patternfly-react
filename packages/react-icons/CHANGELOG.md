@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.2.4...@patternfly/react-icons@4.2.5) (2020-05-01)
+
+
+### Bug Fixes
+
+* **icons:** clean old generated files before regenerating ([#4159](https://github.com/patternfly/patternfly-react/issues/4159)) ([6badc6f](https://github.com/patternfly/patternfly-react/commit/6badc6f97f18e99c90a5d89c1661d6fbd87c2b47))
+
+
+
+
+
 ## [4.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.2.3...@patternfly/react-icons@4.2.4) (2020-04-30)
 
 
