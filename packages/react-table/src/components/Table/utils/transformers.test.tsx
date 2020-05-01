@@ -188,10 +188,10 @@ describe('Transformer functions', () => {
     actionConfigs.forEach(testCellActions);
   });
 
-  type widthType = 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 'max';
+  type widthType = 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
 
   describe('cellWidth', () => {
-    const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 'max'];
+    const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100];
     widths.forEach(width =>
       test(`${width}`, () => {
         expect(cellWidth(width as widthType)()).toEqual({ className: `pf-m-width-${width}` });
