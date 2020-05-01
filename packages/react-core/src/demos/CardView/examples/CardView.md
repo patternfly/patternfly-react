@@ -11,9 +11,9 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
-  CardActions,
   CardHeader,
+  CardActions,
+  CardTitle,
   CardBody,
   Checkbox,
   Dropdown,
@@ -70,9 +70,9 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
-  CardActions,
   CardHeader,
+  CardActions,
+  CardTitle,
   CardBody,
   Checkbox,
   Dropdown,
@@ -719,7 +719,7 @@ class CardViewBasic extends React.Component {
               {filtered.map((product, key) => (
                 <React.Fragment>
                   <Card isHoverable key={key}>
-                    <CardHead>
+                    <CardHeader>
                       <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
                       <CardActions>
                         <Dropdown
@@ -753,8 +753,8 @@ class CardViewBasic extends React.Component {
                           id={`check-${product.id}`}
                         />
                       </CardActions>
-                    </CardHead>
-                    <CardHeader>{product.name}</CardHeader>
+                    </CardHeader>
+                    <CardTitle>{product.name}</CardTitle>
                     <CardBody>{product.description}</CardBody>
                   </Card>
                 </React.Fragment>
