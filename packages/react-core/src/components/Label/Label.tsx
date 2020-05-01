@@ -9,13 +9,21 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   children: React.ReactNode;
   /** Additional classes added to the label. */
   className?: string;
+  /** Color of the label. */
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'grey';
+  /** Variant of the label. */
   variant?: 'outline' | 'filled';
+  /** Icon added to the left of the label text. */
   icon?: React.ReactNode;
+  /** Close click callback for removable labels. If present, label will have a close button. */
   onClose?: (event: React.MouseEvent) => void;
+  /** Aria label of the close button. */
   closeBtnAriaLabel?: string;
+  /** Id of the close button. */
   closeBtnId?: string;
+  /** Text id of the text within the label for the close button aria-labelledby field. */
   closeBtnTextId?: string;
+  /** Href for a label that is a link. If present, the label will change to an anchor element. */
   href?: string;
 }
 
