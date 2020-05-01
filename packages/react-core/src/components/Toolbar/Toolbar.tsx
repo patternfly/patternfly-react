@@ -69,9 +69,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     }
     if (process.env.NODE_ENV !== 'production' && !Toolbar.hasWarnBeta) {
       // eslint-disable-next-line no-console
-      console.warn(
-        'You are using a beta component (Toolbar). These api parts are subject to change in the future.'
-      );
+      console.warn('You are using a beta component (Toolbar). These api parts are subject to change in the future.');
       Toolbar.hasWarnBeta = true;
     }
   }

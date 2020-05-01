@@ -52,10 +52,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
     const expandableContentId = `${toolbarId}-expandable-content-${ToolbarContent.currentId++}`;
 
     return (
-      <div
-        className={css(styles.toolbarContent, formatBreakpointMods(breakpointMods, styles), className)}
-        {...props}
-      >
+      <div className={css(styles.toolbarContent, formatBreakpointMods(breakpointMods, styles), className)} {...props}>
         <ToolbarContentContext.Provider
           value={{
             expandableContentRef: this.expandableContentRef,

@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  Toolbar,
-  ToolbarContent,
-  ToolbarGroup,
-  Divider,
-  GenerateId,
-  Stack,
-  StackItem
-} from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarGroup, Divider, GenerateId, Stack, StackItem } from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-view.css';
 
 export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
