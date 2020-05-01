@@ -2,7 +2,7 @@
 
 exports[`NotificationDrawerGroup should match snapshot (auto-generated) 1`] = `
 <section
-  className="pf-c-notification-drawer__group ''"
+  className="pf-c-notification-drawer__group pf-m-expanded"
 >
   <h1>
     <button
@@ -25,7 +25,7 @@ exports[`NotificationDrawerGroup should match snapshot (auto-generated) 1`] = `
       <span
         className="pf-c-notification-drawer__group-toggle-icon"
       >
-        <AngleDownIcon
+        <AngleRightIcon
           color="currentColor"
           noVerticalAlign={false}
           size="sm"

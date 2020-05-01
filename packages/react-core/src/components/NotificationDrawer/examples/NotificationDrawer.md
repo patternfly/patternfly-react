@@ -70,6 +70,7 @@ render() {
               isPlain
               dropdownItems={dropdownItems}
               id="notification-0"
+              position={DropdownPosition.right}
               />
           </NotificationDrawerHeader>
         <NotificationDrawerBody>
@@ -228,6 +229,7 @@ render() {
       isPlain
       dropdownItems={dropdownItems}
       id="notification-0"
+      position={DropdownPosition.right}
       />
   </NotificationDrawerHeader>
   <NotificationDrawerBody>

@@ -85,6 +85,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
             isPlain
             dropdownItems={dropdownItems}
             id="notification-0"
+            position={DropdownPosition.right}
           />
         </NotificationDrawerHeader>
         <NotificationDrawerBody>

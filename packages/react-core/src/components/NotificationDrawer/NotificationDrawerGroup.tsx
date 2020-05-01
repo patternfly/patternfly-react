@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
@@ -34,26 +33,23 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   onExpand = (event: any, expanded: boolean) => undefined as any,
   title,
   ...props
-}: NotificationDrawerGroupProps) => {
-  const ReadIcon = isExpanded ? AngleDownIcon : AngleRightIcon;
-  return (
-    <section {...props} className={css(styles.notificationDrawerGroup, className)}>
-      <h1>
-        <button
-          className={css(styles.notificationDrawerGroupToggle)}
-          aria-expanded={isExpanded}
-          onClick={e => onExpand(e, !isExpanded)}
-        >
-          <div>{title}</div>
-          <div className={css(styles.notificationDrawerGroupToggleCount)}>
-            <Badge isRead={isRead}>{count}</Badge>
-          </div>
-          <span className="pf-c-notification-drawer__group-toggle-icon">
-            <ReadIcon />
-          </span>
-        </button>
-      </h1>
-      {children}
-    </section>
-  );
-};
+}: NotificationDrawerGroupProps) => (
+  <section {...props} className={css(styles.notificationDrawerGroup, isExpanded && styles.modifiers.expanded)}>
+    <h1>
+      <button
+        className={css(styles.notificationDrawerGroupToggle)}
+        aria-expanded={isExpanded}
+        onClick={e => onExpand(e, !isExpanded)}
+      >
+        <div>{title}</div>
+        <div className={css(styles.notificationDrawerGroupToggleCount)}>
+          <Badge isRead={isRead}>{count}</Badge>
+        </div>
+        <span className="pf-c-notification-drawer__group-toggle-icon">
+          <AngleRightIcon />
+        </span>
+      </button>
+    </h1>
+    {children}
+  </section>
+);

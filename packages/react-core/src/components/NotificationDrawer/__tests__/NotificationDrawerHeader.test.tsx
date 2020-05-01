@@ -18,12 +18,17 @@ test('extra props are spread to the root element', () => {
   expect(view.prop('data-testid')).toBe(testId);
 });
 
-test('drawer header with count applied ', () => {
+test('drawer header with count applied', () => {
   const view = shallow(<NotificationDrawerHeader count={2} />);
   expect(view).toMatchSnapshot();
 });
 
-test('drawer header with title applied ', () => {
+test('drawer header with title applied', () => {
   const view = shallow(<NotificationDrawerHeader title="Notifications" />);
+  expect(view).toMatchSnapshot();
+});
+
+test('drawer header with custom unread text applied', () => {
+  const view = shallow(<NotificationDrawerHeader unreadText="unread alerts" />);
   expect(view).toMatchSnapshot();
 });
