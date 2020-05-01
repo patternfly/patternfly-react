@@ -38,7 +38,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   description?: React.ReactNode;
   /** Variant of the modal */
   variant?: 'small' | 'large' | 'default';
-  /** */
+  /** Flag indicating if modal content should have no padding*/
   noPadding?: boolean;
 }
 

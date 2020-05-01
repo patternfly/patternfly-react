@@ -45,7 +45,7 @@ export interface ModalContentProps {
   id: string;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
-  /** */
+  /** Flag indicating if modal content should have no padding*/
   noPadding?: boolean;
 }
 
