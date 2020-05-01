@@ -15,7 +15,7 @@
     "tag": "prerelease-v4"
   },
   "scripts": {
-    "generate": "node scripts/writeClassMaps.js && node scripts/copyStyles.js",
+    "generate": "rimraf css && node scripts/writeClassMaps.js && node scripts/copyStyles.js",
     "clean": "rimraf dist css"
   },
   "devDependencies": {
