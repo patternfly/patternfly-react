@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.30.1...@patternfly/react-integration@3.31.0) (2020-05-01)
+
+
+### Features
+
+* **NotificationDrawer:** Add new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/issues/4137)) ([afbf832](https://github.com/patternfly/patternfly-react/commit/afbf832ab6394faa40b38a17817e95f67a37d61c)), closes [#1939](https://github.com/patternfly/patternfly-react/issues/1939)
+
+
+
+
+
 ## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.30.0...@patternfly/react-integration@3.30.1) (2020-04-16)
 
 

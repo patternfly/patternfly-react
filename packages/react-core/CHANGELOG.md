@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.154.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.15...@patternfly/react-core@3.154.0) (2020-05-01)
+
+
+### Features
+
+* **NotificationDrawer:** Add new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/issues/4137)) ([afbf832](https://github.com/patternfly/patternfly-react/commit/afbf832ab6394faa40b38a17817e95f67a37d61c)), closes [#1939](https://github.com/patternfly/patternfly-react/issues/1939)
+
+
+
+
+
 ## [3.153.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.14...@patternfly/react-core@3.153.15) (2020-04-30)
 
 

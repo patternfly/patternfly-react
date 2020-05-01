@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.15...demo-app-ts@3.31.0) (2020-05-01)
+
+
+### Features
+
+* **NotificationDrawer:** Add new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/issues/4137)) ([afbf832](https://github.com/patternfly/patternfly-react/commit/afbf832ab6394faa40b38a17817e95f67a37d61c)), closes [#1939](https://github.com/patternfly/patternfly-react/issues/1939)
+
+
+
+
+
 ## [3.30.15](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.14...demo-app-ts@3.30.15) (2020-04-30)
 
 **Note:** Version bump only for package demo-app-ts
