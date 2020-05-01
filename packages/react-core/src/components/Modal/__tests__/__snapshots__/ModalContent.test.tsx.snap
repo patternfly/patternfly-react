@@ -13,6 +13,7 @@ exports[`Modal Content Test description 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -22,13 +23,11 @@ exports[`Modal Content Test description 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Content title
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxDescription
         id="id"
       >
@@ -55,6 +54,7 @@ exports[`Modal Content Test isOpen 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -64,13 +64,11 @@ exports[`Modal Content Test isOpen 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Content title
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxBody
         id="id"
       >
@@ -94,6 +92,7 @@ exports[`Modal Content Test only body 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -103,13 +102,11 @@ exports[`Modal Content Test only body 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Content title
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxBody
         id="id"
       >
@@ -133,6 +130,7 @@ exports[`Modal Content Test with footer 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -142,13 +140,11 @@ exports[`Modal Content Test with footer 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Content title
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxBody
         id="id"
       >
@@ -175,6 +171,7 @@ exports[`Modal Content Test with onclose 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -184,13 +181,11 @@ exports[`Modal Content Test with onclose 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Content title
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxBody
         id="id"
         isLarge={true}
@@ -218,6 +213,7 @@ exports[`Modal Content test without footer 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -227,13 +223,11 @@ exports[`Modal Content test without footer 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Content title
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxBody
         id="id"
       >
@@ -257,6 +251,7 @@ exports[`Modal Test with custom footer 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}
@@ -266,13 +261,11 @@ exports[`Modal Test with custom footer 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        hideTitle={false}
+      <div
+        className="pf-c-modal-box__title"
       >
-         
         Test Modal Custom Footer
-         
-      </ModalBoxHeader>
+      </div>
       <ModalBoxBody
         id="id"
         isLarge={true}
@@ -304,6 +297,7 @@ exports[`Modal Test with custom header 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-label=""
       className=""
       id="id"
       style={Object {}}

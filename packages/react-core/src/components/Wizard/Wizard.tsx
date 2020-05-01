@@ -2,6 +2,7 @@ import * as React from 'react';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
+import { Modal, ModalVariant } from '../Modal';
 import { WizardFooterInternal } from './WizardFooterInternal';
 import { WizardToggle } from './WizardToggle';
 import { WizardNav } from './WizardNav';
@@ -49,6 +50,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   title?: string;
   /** The wizard description */
   description?: React.ReactNode;
+  /** Flag indicating whether the close button should be in the header */
+  hideClose?: boolean;
   /** Callback function to close the wizard */
   onClose?: () => void;
   /** Callback function when a step in the nav is clicked */
@@ -81,6 +84,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   closeButtonAriaLabel?: string;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Flag indicating Wizard modal is open. Wizard will be placed into a modal if this prop is provided */
+  isOpen?: boolean;
 }
 
 interface WizardState {
@@ -98,6 +103,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     nextButtonText: 'Next',
     backButtonText: 'Back',
     cancelButtonText: 'Cancel',
+    hideClose: false,
     closeButtonAriaLabel: 'Close',
     navAriaLabel: 'Steps',
     hasNoBodyPadding: false,
@@ -108,7 +114,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     height: null as string,
     footer: null as React.ReactNode,
     onClose: () => undefined as any,
-    appendTo: null as HTMLElement
+    appendTo: null as HTMLElement,
+    isOpen: undefined
   };
   private container: HTMLDivElement;
   private titleId: string;
@@ -295,11 +302,13 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       nextButtonText = 'Next',
       backButtonText = 'Back',
       cancelButtonText = 'Cancel',
+      hideClose,
       closeButtonAriaLabel = 'Close',
       navAriaLabel,
       hasNoBodyPadding,
       footer,
       appendTo,
+      isOpen,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -405,6 +414,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               title={title}
               description={description}
               closeButtonAriaLabel={closeButtonAriaLabel}
+              hideClose={hideClose}
             />
           )}
           <WizardToggle
@@ -433,6 +443,13 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       </WizardContextProvider>
     );
 
+    if (isOpen !== undefined) {
+      return (
+        <Modal isOpen={isOpen} variant={ModalVariant.large} showClose={false} noPadding>
+          {wizard}
+        </Modal>
+      );
+    }
     return wizard;
   }
 }

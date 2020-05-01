@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { FocusTrap } from '../../helpers';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
-import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 
 import { Backdrop } from '../Backdrop/Backdrop';
 import { ModalBoxBody } from './ModalBoxBody';
-import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
@@ -26,9 +26,9 @@ export interface ModalContentProps {
   /** Description of the modal */
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
-  title: string;
-  /** Flag to show the title (ignored for custom headers) */
-  hideTitle?: boolean;
+  title?: string;
+  /** Accessible descriptor of modal */
+  'aria-label'?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
   /** Default width of the content. */
@@ -45,8 +45,8 @@ export interface ModalContentProps {
   id: string;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
-  /** Flag to omit placing content in ModalBoxBody */
-  isBasic?: boolean;
+  /** */
+  noPadding?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -55,8 +55,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   isOpen = false,
   header = null,
   description = null,
-  title,
-  hideTitle = false,
+  title = '',
+  'aria-label': ariaLabel = '',
   showClose = true,
   footer = null,
   actions = [],
@@ -66,7 +66,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   modalBoxAriaDescribedById = '',
   id = '',
   disableFocusTrap = false,
-  isBasic = false,
+  noPadding = false,
   ...props
 }: ModalContentProps) => {
   if (!isOpen) {
@@ -76,7 +76,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBoxHeader = header ? (
     <div className={css(titleStyles.title)}>{header}</div>
   ) : (
-    <ModalBoxHeader hideTitle={hideTitle}> {title} </ModalBoxHeader>
+    title && <div className={css(styles.modalBoxTitle)}>{title}</div>
   );
 
   const modalBoxFooter = footer ? (
@@ -84,25 +84,30 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ) : (
     actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>
   );
+
+  const modalBody = noPadding ? (
+    children
+  ) : (
+    <ModalBoxBody {...props} {...(!description && { id })}>
+      {children}
+    </ModalBoxBody>
+  );
   const boxStyle = width === -1 ? {} : { width };
+
   const modalBox = (
     <ModalBox
       style={boxStyle}
       className={className}
       variant={variant}
       title={title}
+      aria-label={ariaLabel}
       id={modalBoxAriaDescribedById || id}
     >
-      {!isBasic && showClose && <ModalBoxCloseButton onClose={onClose} />}
-      {!isBasic && modalBoxHeader}
-      {!isBasic && description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
-      {!isBasic && (
-        <ModalBoxBody {...props} {...(!description && { id })}>
-          {children}
-        </ModalBoxBody>
-      )}
-      {!isBasic && modalBoxFooter}
-      {isBasic && children}
+      {showClose && <ModalBoxCloseButton onClose={onClose} />}
+      {modalBoxHeader}
+      {description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
+      {modalBody}
+      {modalBoxFooter}
     </ModalBox>
   );
   return (
@@ -110,7 +115,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       <FocusTrap
         active={!disableFocusTrap}
         focusTrapOptions={{ clickOutsideDeactivates: true }}
-        className={css(styles.bullseye)}
+        className={css(bullsEyeStyles.bullseye)}
       >
         {modalBox}
       </FocusTrap>

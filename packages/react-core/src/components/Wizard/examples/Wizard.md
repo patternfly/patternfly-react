@@ -55,6 +55,9 @@ class DisabledStepsWizard extends React.Component {
         stepIdReached: this.state.stepIdReached < id ? id : this.state.stepIdReached
       });
     };
+    this.closeWizard = () => {
+      console.log("close wizard");
+    }
   }
 
   render() {
@@ -70,7 +73,7 @@ class DisabledStepsWizard extends React.Component {
 
     return (
       <Wizard
-        onClose={this.toggleOpen}
+        onClose={this.closeWizard}
         description="Simple Wizard Description"
         steps={steps}
         onNext={this.onNext}
@@ -89,6 +92,10 @@ import FinishedStep from './examples/FinishedStep';
 class FinishedStepWizard extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.closeWizard = () => {
+      console.log("close wizard");
+    }
   }
 
   render() {
@@ -99,12 +106,12 @@ class FinishedStepWizard extends React.Component {
       { name: 'Step 3', component: <p>Step 3</p> },
       { name: 'Step 4', component: <p>Step 4</p> },
       { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' },
-      { name: 'Finish', component: <FinishedStep onClose={this.toggleOpen} />, isFinishedStep: true }
+      { name: 'Finish', component: <FinishedStep onClose={this.closeWizard} />, isFinishedStep: true }
     ];
 
     return (
       <Wizard
-        onClose={this.toggleOpen}
+        onClose={this.closeWizard}
         description="Simple Wizard Description"
         steps={steps}
         height={400}
@@ -128,6 +135,10 @@ class ValidationWizard extends React.Component {
       allStepsValid: false,
       stepIdReached: 1
     };
+    
+    this.closeWizard = () => {
+      console.log("close wizard");
+    }
 
     this.onFormChange = (isValid, value) => {
       this.setState(
@@ -197,7 +208,7 @@ class ValidationWizard extends React.Component {
     return (
       <Wizard
         description="Validation Wizard Description"
-        onClose={this.toggleOpen}
+        onClose={this.closeWizard}
         onSave={this.onSave}
         steps={steps}
         onNext={this.onNext}
@@ -222,6 +233,11 @@ class ValidateButtonPressWizard extends React.Component {
     this.state = {
       stepsValid: 0
     };
+    
+    this.closeWizard = () => {
+      console.log("close wizard");
+    }
+    
     this.validateLastStep = onNext => {
       const { stepsValid } = this.state;
       if (stepsValid !== 1) {
@@ -249,7 +265,7 @@ class ValidateButtonPressWizard extends React.Component {
           </>
         )
       },
-      { name: 'Finish', component: <FinishedStep onClose={this.toggleOpen} />, isFinishedStep: true }
+      { name: 'Finish', component: <FinishedStep onClose={this.closeWizard} />, isFinishedStep: true }
     ];
 
     const CustomFooter = (
@@ -284,7 +300,7 @@ class ValidateButtonPressWizard extends React.Component {
 
     return (
       <Wizard
-        onClose={this.toggleOpen}
+        onClose={this.closeWizard}
         footer={CustomFooter}
         steps={steps}
         height={400}
@@ -312,6 +328,9 @@ class ProgressiveWizard extends React.Component {
       createStepRadio: 'Quick',
       updateStepRadio: 'Quick'
     };
+    this.closeWizard = () => {
+      console.log("close wizard");
+    }
     this.onGoToStep = ({ id, name }, { prevId, prevName }) => {
       // Remove steps after the currently clicked step
       if (name === 'Get Started') {
@@ -544,7 +563,7 @@ class ProgressiveWizard extends React.Component {
 
     return (
       <Wizard
-        onClose={this.toggleOpen}
+        onClose={this.closeWizard}
         footer={CustomFooter}
         onGoToStep={this.onGoToStep}
         steps={steps}
@@ -565,6 +584,9 @@ class SimpleWizard extends React.Component {
     this.state = {
       step: 1
     };
+    this.closeWizard = () => {
+      console.log("close wizard");
+    }
     this.onMove = (curr, prev) => {
       this.setState({
         step: curr.id
@@ -594,11 +616,56 @@ class SimpleWizard extends React.Component {
         onNext={this.onMove}
         onBack={this.onMove}
         onSave={this.onSave}
-        onClose={this.toggleOpen}
+        onClose={this.closeWizard}
         description="Simple Wizard Description"
         steps={steps}
         height={400}
       />
+    );
+  }
+}
+```
+```js title=Wizard-in-modal
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+
+class WizardInModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isOpen }) => ({
+        isOpen: !isOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    
+    const steps = [
+      { name: 'Step 1', component: <p>Step 1</p> },
+      { name: 'Step 2', component: <p>Step 2</p> },
+      { name: 'Step 3', component: <p>Step 3</p> },
+      { name: 'Step 4', component: <p>Step 4</p> },
+      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Wizard
+          title="Simple Wizard"
+          description="Simple Wizard Description"
+          steps={steps}
+          onClose={this.handleModalToggle}
+          isOpen={isOpen}
+        />
+      </React.Fragment>
     );
   }
 }
