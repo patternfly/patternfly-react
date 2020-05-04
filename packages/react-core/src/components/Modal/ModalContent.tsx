@@ -2,7 +2,6 @@ import * as React from 'react';
 import { FocusTrap } from '../../helpers';
 import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
-import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 
 import { Backdrop } from '../Backdrop/Backdrop';
@@ -11,6 +10,7 @@ import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
 import { ModalBoxDescription } from './ModalBoxDescription';
+import { ModalBoxHeader } from './ModalBoxHeader';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -76,7 +76,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBoxHeader = header ? (
     <div className={css(titleStyles.title)}>{header}</div>
   ) : (
-    title && <div className={css(styles.modalBoxTitle)}>{title}</div>
+    title && <ModalBoxHeader>{title}</ModalBoxHeader>
   );
 
   const modalBoxFooter = footer ? (
