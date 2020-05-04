@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.9...@patternfly/react-core@4.9.10) (2020-05-04)
+
+
+### Bug Fixes
+
+* **experimental:** remove experimental directory ([#4176](https://github.com/patternfly/patternfly-react/issues/4176)) ([f6d2c11](https://github.com/patternfly/patternfly-react/commit/f6d2c11621dc38f4ce559b7f9478f63c5867d3b4))
+
+
+
+
+
 ## [4.9.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.8...@patternfly/react-core@4.9.9) (2020-05-04)
 
 
