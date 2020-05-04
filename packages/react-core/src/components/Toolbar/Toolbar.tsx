@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
-import { ToolbarContentProps } from './ToolbarContent';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
@@ -38,7 +37,6 @@ interface FilterInfo {
 
 export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   private chipGroupContentRef = React.createRef<HTMLDivElement>();
-  static hasWarnBeta = false;
   private staticFilterInfo = {};
   constructor(props: ToolbarProps) {
     super(props);
@@ -67,11 +65,6 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     if (this.isToggleManaged()) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
-    if (process.env.NODE_ENV !== 'production' && !Toolbar.hasWarnBeta) {
-      // eslint-disable-next-line no-console
-      console.warn('You are using a beta component (Toolbar). These api parts are subject to change in the future.');
-      Toolbar.hasWarnBeta = true;
-    }
   }
 
   componentWillUnmount() {
@@ -96,7 +89,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       clearAllFilters,
       clearFiltersButtonText,
       collapseListedFiltersBreakpoint,
-      isExpanded,
+      isExpanded: isExpandedProp,
       toggleIsExpanded,
       className,
       children,
@@ -107,6 +100,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const { isManagedToggleExpanded } = this.state;
 
     const isToggleManaged = this.isToggleManaged();
+    const isExpanded = isToggleManaged ? isManagedToggleExpanded : isExpandedProp;
     const numberOfFilters = this.getNumberOfFilters();
     const showClearFiltersButton = numberOfFilters > 0;
 
@@ -114,28 +108,20 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       <div className={css(styles.toolbar, className)} id={id} {...props}>
         <ToolbarContext.Provider
           value={{
-            isExpanded: this.isToggleManaged() ? isManagedToggleExpanded : isExpanded,
+            isExpanded,
             toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
             chipGroupContentRef: this.chipGroupContentRef,
             updateNumberFilters: this.updateNumberFilters,
-            numberOfFilters
+            numberOfFilters,
+            clearAllFilters,
+            clearFiltersButtonText,
+            showClearFiltersButton,
+            toolbarId: id
           }}
         >
-          {React.Children.map(children, (child: any) => {
-            if (React.isValidElement(child)) {
-              return React.cloneElement<ToolbarContentProps>(child, {
-                clearAllFilters,
-                clearFiltersButtonText,
-                showClearFiltersButton,
-                isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
-                toolbarId: id
-              });
-            } else {
-              return child;
-            }
-          })}
+          {children}
           <ToolbarChipGroupContent
-            isExpanded={isToggleManaged ? isManagedToggleExpanded : isExpanded}
+            isExpanded={isExpanded}
             chipGroupContentRef={this.chipGroupContentRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}

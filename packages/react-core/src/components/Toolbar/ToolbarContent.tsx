@@ -1,8 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-
-import { ToolbarBreakpointMod, ToolbarContentContext } from './ToolbarUtils';
+import { ToolbarBreakpointMod, ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 
@@ -49,28 +48,39 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
       ...props
     } = this.props;
 
-    const expandableContentId = `${toolbarId}-expandable-content-${ToolbarContent.currentId++}`;
-
     return (
       <div className={css(styles.toolbarContent, formatBreakpointMods(breakpointMods, styles), className)} {...props}>
-        <ToolbarContentContext.Provider
-          value={{
-            expandableContentRef: this.expandableContentRef,
-            expandableContentId,
-            chipContainerRef: this.chipContainerRef
+        <ToolbarContext.Consumer>
+          {({
+            clearAllFilters: clearAllFiltersContext,
+            clearFiltersButtonText: clearFiltersButtonContext,
+            showClearFiltersButton: showClearFiltersButtonContext,
+            toolbarId: toolbarIdContext
+          }) => {
+            const expandableContentId = `${toolbarId ||
+              toolbarIdContext}-expandable-content-${ToolbarContent.currentId++}`;
+            return (
+              <ToolbarContentContext.Provider
+                value={{
+                  expandableContentRef: this.expandableContentRef,
+                  expandableContentId,
+                  chipContainerRef: this.chipContainerRef
+                }}
+              >
+                <div className={css(styles.toolbarContentSection)}>{children}</div>
+                <ToolbarExpandableContent
+                  id={expandableContentId}
+                  isExpanded={isExpanded}
+                  expandableContentRef={this.expandableContentRef}
+                  chipContainerRef={this.chipContainerRef}
+                  clearAllFilters={clearAllFilters || clearAllFiltersContext}
+                  showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
+                  clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
+                />
+              </ToolbarContentContext.Provider>
+            );
           }}
-        >
-          <div className={css(styles.toolbarContentSection)}>{children}</div>
-          <ToolbarExpandableContent
-            id={expandableContentId}
-            isExpanded={isExpanded}
-            expandableContentRef={this.expandableContentRef}
-            chipContainerRef={this.chipContainerRef}
-            clearAllFilters={clearAllFilters}
-            showClearFiltersButton={showClearFiltersButton}
-            clearFiltersButtonText={clearFiltersButtonText}
-          />
-        </ToolbarContentContext.Provider>
+        </ToolbarContext.Consumer>
       </div>
     );
   }

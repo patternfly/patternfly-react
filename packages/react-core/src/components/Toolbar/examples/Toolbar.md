@@ -2,7 +2,7 @@
 title: 'Toolbar'
 cssPrefix: 'pf-c-toolbar'
 typescript: true
-propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarGroup', 'ToolbarToggleGroup', 'ToolbarFilter']
+propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarItem', 'ToolbarToggleGroup', 'ToolbarFilter']
 section: 'components'
 ---
 
@@ -45,6 +45,7 @@ class ToolbarItems extends React.Component {
 }
 
 ```
+
 ```js title=Adjusting-item-spacers
 import React from 'react';
 import { Toolbar , ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
@@ -271,7 +272,7 @@ A toggle group can be used when you want to collapse a set of items into an over
 The Toggle group can either have the toggle state managed by the consumer, or the component.
 
   - The first Toggle group example below demonstrates a component managed toggle state.
-```js title=Component-managed-toggle-groups beta
+```js title=Component-managed-toggle-groups
 import React from 'react';
 import { Toolbar , ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
@@ -418,7 +419,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
-```js title=Consumer-managed-toggle-groups beta
+```js title=Consumer-managed-toggle-groups
 import React from 'react';
 import { Toolbar , ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
@@ -576,7 +577,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
 The ToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Pass a deleteChipGroup prop to provide both a handler and visual styling to remove all chips in a group. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
-```js title=Data-toolbar-with-filters beta
+```js title=Data-toolbar-with-filters
 import React from 'react';
 import {
     Toolbar,
@@ -822,10 +823,10 @@ class ToolbarWithFilterExample extends React.Component {
 
 There may be situations where all of the required elements simply cannot fit in a single line.
 
-```js title=Stacked-example beta
+```js title=Stacked-example
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarToggleGroup, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem } from '@patternfly/react-core';
+import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, Divider } from '@patternfly/react-core';
 import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
 class ToolbarStacked extends React.Component {
@@ -1056,7 +1057,7 @@ class ToolbarStacked extends React.Component {
 
     return <Toolbar id="toolbar-group-types">
       <ToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</ToolbarContent>
-      <hr className="pf-c-divider"/>
+      <Divider />
       <ToolbarContent>{secondRowItems}</ToolbarContent>
     </Toolbar>;
   }

@@ -85,9 +85,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         <ToolbarContent
           breakpointMods={Array []}
           isExpanded={false}
-          key=".0"
           showClearFiltersButton={false}
-          toolbarId="pf-topology-control-bar-1"
         >
           <div
             className="pf-c-toolbar__content"
@@ -836,9 +834,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         <ToolbarContent
           breakpointMods={Array []}
           isExpanded={false}
-          key=".0"
           showClearFiltersButton={false}
-          toolbarId="pf-topology-control-bar-0"
         >
           <div
             className="pf-c-toolbar__content"
