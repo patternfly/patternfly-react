@@ -12,6 +12,7 @@ import {
   Table,
   TableHeader,
   TableBody,
+  TableText,
   sortable,
   SortByDirection,
   headerCol,
@@ -21,6 +22,10 @@ import {
   cellWidth,
   textCenter,
   wrappable,
+  truncate,
+  nowrap,
+  breakWord,
+  fitContent,
   classNames,
   Visibility,
   getErrorTextByValidator,
@@ -61,6 +66,8 @@ import {
   TableBody,
   textCenter,
 } from '@patternfly/react-table';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 
 class SimpleTable extends React.Component {
   constructor(props) {
@@ -112,7 +119,7 @@ class SimpleTable extends React.Component {
 
     return (
       <Table aria-label="Simple Table" cells={columns} rows={rows}>
-        <TableHeader />
+        <TableHeader className={css(styles.modifiers.nowrap)}/>
         <TableBody />
       </Table>
     );
@@ -174,7 +181,7 @@ import React from 'react';
 import {
   Table,
   TableHeader,
-  TableBody,
+  TableBody
 } from '@patternfly/react-table';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -304,6 +311,11 @@ import {
   sortable,
   SortByDirection,
   wrappable,
+  truncate,
+  nowrap,
+  breakWord,
+  fitContent,
+  cellWidth
 } from '@patternfly/react-table';
 
 class SortableWrappingHeaders extends React.Component {
@@ -316,23 +328,28 @@ class SortableWrappingHeaders extends React.Component {
           transforms: [sortable, wrappable]
         },
         {
-          title: 'This is a really long table header that goes on for a long time 2.',
-          transforms: [sortable, wrappable]
+          title: 'This is a really long table header.',
+          transforms: [sortable, cellWidth(40)],
+          cellTransforms: [truncate]
         },
         {
-          title: 'This is a really long table header that goes on for a long time 3.',
-          transforms: [sortable,wrappable]
+          title: 'This is a long table header.',
+          transforms: [sortable, breakWord, cellWidth(20)]
         },
         {
-          title: 'This is a really long table header that goes on for a long time 4.',
-          transforms: [sortable, wrappable]
+          title: 'This is another header.',
+          transforms: [sortable, fitContent]
         },
         {
-          title: 'This is a really long table header that goes on for a long time 5.',
-          transforms: [sortable, wrappable]
+          title: 'This is the fifth header.',
+          transforms: [sortable, nowrap]
         },
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'], 
+        ['a', 'a cell with a particularly large amount of information', 'k', 'four', 'five'], 
+        ['p', 'two', 'b', 'four', 'five']
+      ],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
@@ -1200,31 +1217,44 @@ class CompoundExpandableTable extends React.Component {
 }
 ```
 
-```js title=Wrapping-headers
+```js title=Controlling-text
 import React from 'react';
 import {
   Table,
   TableHeader,
   TableBody,
-  wrappable
+  wrappable,
+  truncate,
+  nowrap,
+  breakWord,
+  cellWidth,
+  fitContent,
 } from '@patternfly/react-table';
 
-class WrappableHeadersTable extends React.Component {
+class ControllingText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       columns: [
-        {title: 'This is a really long table header that goes on for a long time 1.', transforms: [wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 2.', transforms: [wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 3.', transforms: [wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 4.', transforms: [wrappable]},
-        {title: 'This is a really long table header that goes on for a long time 5.', transforms: [wrappable]},
+        {title: 'Truncate (width 20%)', transforms: [cellWidth(20)], cellTransforms: [truncate]},
+        {title: 'Break word', cellTransforms: [breakWord]},
+        {title: 'Wrapping table header text. This th text will wrap instead of truncate.', transforms: [wrappable]},
+        {title: 'Fit content', transforms: [fitContent]},
+        {title: '', cellTransforms: [nowrap]},
       ],
       rows: [
-        ['Repository 1', '10', '25', '5', '2 days ago'],
-        ['Repository 2', '10', '25', '5', '2 days ago'],
-        ['Repository 3', '10', '25', '5', '2 days ago'],
-        ['Repository 4', '10', '25', '5', '2 days ago'],
+        [
+          'This text will truncate instead of wrap.', 
+          {title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>}, 
+          {title: <p>By default,
+            <code>thead</code> cells will truncate and
+            <code>tbody</code> cells will wrap. Use
+            <code>.pf-m-wrap</code> on a
+            <code>th</code> to change its behavior.</p>
+          }, 
+          'This cell\'s content will adjust itself to the parent th width. This modifier only affects table layouts.', 
+          {title: <a href="#">No wrap</a>}
+        ]
       ]
     };
   }
@@ -1233,7 +1263,52 @@ class WrappableHeadersTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table aria-label="Wrappable headers" cells={columns} rows={rows}>
+      <Table aria-label="Controlling text" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+```js title=Modifiers-with-table-text
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableText
+  wrappable,
+  truncate,
+  nowrap,
+  breakWord,
+  cellWidth,
+  fitContent,
+} from '@patternfly/react-table';
+
+class ModifiersWithTableText extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {title: 'Truncating text', transforms: [cellWidth(30)], cellTransforms: [truncate]},
+        {title: 'Wrapping table header text. This th text will wrap instead of truncate.', cellTransforms: [nowrap]},
+      ],
+      rows: [
+        [ 
+          {title: <TableText>This text will truncate instead of wrap.</TableText>}, 
+          {title: <TableText><a href="#">This is a link that needs to be on one line and fully readable.</a></TableText>},
+        ]
+      ]
+    };
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table aria-label="Controlling text" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>

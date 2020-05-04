@@ -16,7 +16,12 @@ import {
   OnExpand,
   OnSelect,
   OnRowEdit,
-  OnSort
+  OnSort,
+  wrappable,
+  nowrap,
+  truncate,
+  breakWord,
+  fitContent, ICell
 } from './index';
 import { rows, columns, editableRows, editableColumns, actions } from '../../test-helpers/data-sets';
 import { ColumnsType } from './base';
@@ -211,6 +216,24 @@ test('Selectable table', () => {
   const onSelect: OnSelect = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Control text table', () => {
+  const controlTextColumns: ICell[] = [
+    { ...(columns[0] as object), transforms: [nowrap] },
+    {title: 'new object column', transforms: [wrappable] },
+    { ...(columns[2] as object), transforms: [breakWord] },
+    {title: 'new object column', transforms: [truncate] },
+    { ...(columns[4] as object), transforms: [fitContent] }
+  ];
+
+  const view = mount(
+    <Table aria-label="Aria labeled" cells={controlTextColumns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>

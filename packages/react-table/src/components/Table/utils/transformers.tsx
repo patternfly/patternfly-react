@@ -3,7 +3,7 @@ export { sortable } from './decorators/sortable';
 export { cellActions } from './decorators/cellActions';
 export { cellWidth } from './decorators/cellWidth';
 export { editable } from './decorators/editable';
-export { wrappable } from './decorators/wrappable';
+export { breakWord, fitContent, nowrap, truncate, wrappable } from './decorators/wrappable';
 export { textCenter } from './decorators/textCenter';
 export { collapsible, expandedRow, expandable } from './decorators/collapsible';
 export { compoundExpand } from './decorators/compoundExpand';

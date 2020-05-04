@@ -542,6 +542,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableCompoundExpandableDemo
   },
   {
+    id: 'table-control-text-demo',
+    name: 'Table Control Text Demo',
+    componentType: Examples.TableControlTextDemo
+  },
+  {
     id: 'table-editable-demo',
     name: 'Table Editable Demo',
     componentType: Examples.TableEditableDemo
