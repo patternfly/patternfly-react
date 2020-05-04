@@ -274,7 +274,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
 
   componentDidMount() {
     const target = (typeof document !== 'undefined' && document.body) || null;
-    console.log(target);
     if (target) {
       target.addEventListener('keydown', this.handleKeyClicks, false);
     }
@@ -406,9 +405,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       <WizardContextProvider value={context}>
         <div
           {...rest}
-          className={css(styles.wizard,
-            activeStep && activeStep.isFinishedStep && 'pf-m-finished',
-            className)}
+          className={css(styles.wizard, activeStep && activeStep.isFinishedStep && 'pf-m-finished', className)}
           {...(height && { style: { height } })}
         >
           {title && (
