@@ -18,6 +18,7 @@ export * from './ClipboardCopy';
 export * from './ContextSelector';
 export * from './DataList';
 export * from './Divider';
+export * from './Drawer';
 export * from './Dropdown';
 export * from './EmptyState';
 export * from './ExpandableSection';
