@@ -31,7 +31,6 @@ class SimpleWizard extends React.Component {
 
     return (
       <Wizard
-        description="Simple Wizard Description"
         steps={steps}
         height={400}
       />
@@ -74,7 +73,6 @@ class DisabledStepsWizard extends React.Component {
     return (
       <Wizard
         onClose={this.closeWizard}
-        description="Simple Wizard Description"
         steps={steps}
         onNext={this.onNext}
         height={400}
@@ -112,7 +110,6 @@ class FinishedStepWizard extends React.Component {
     return (
       <Wizard
         onClose={this.closeWizard}
-        description="Simple Wizard Description"
         steps={steps}
         height={400}
       />
@@ -207,7 +204,6 @@ class ValidationWizard extends React.Component {
 
     return (
       <Wizard
-        description="Validation Wizard Description"
         onClose={this.closeWizard}
         onSave={this.onSave}
         steps={steps}
