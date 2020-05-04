@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.7...@patternfly/react-core@4.9.8) (2020-05-04)
+
+
+### Bug Fixes
+
+* **wizard:** remove old prop "isCompactNav" ([#4142](https://github.com/patternfly/patternfly-react/issues/4142)) ([82fd068](https://github.com/patternfly/patternfly-react/commit/82fd0682881c9e94167a551395ac9663891e6012))
+
+
+
+
+
 ## [4.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.6...@patternfly/react-core@4.9.7) (2020-05-01)
 
 **Note:** Version bump only for package @patternfly/react-core
