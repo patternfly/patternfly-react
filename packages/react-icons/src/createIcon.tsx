@@ -1,5 +1,10 @@
 import React from 'react';
 
+interface PathWithProps {
+  path: string;
+  props: React.HTMLProps<SVGPathElement>;
+}
+
 export enum IconSize {
   sm = 'sm',
   md = 'md',
@@ -26,7 +31,7 @@ export interface IconDefinition {
   name?: string;
   width: number;
   height: number;
-  svgPath: string;
+  svgPath: string | PathWithProps | string[] | PathWithProps[];
   xOffset?: number;
   yOffset?: number;
   transform?: string;
@@ -72,6 +77,7 @@ export function createIcon({
       const baseAlign = -0.125 * Number.parseFloat(heightWidth);
       const style = noVerticalAlign ? null : { verticalAlign: `${baseAlign}em` };
       const viewBox = [xOffset, yOffset, width, height].join(' ');
+      const pathToRender = Array.isArray(svgPath) ? svgPath : [svgPath];
 
       return (
         <svg
@@ -86,7 +92,22 @@ export function createIcon({
           {...props}
         >
           {hasTitle && <title id={this.id}>{title}</title>}
-          <path d={svgPath} transform={transform} />
+          {Array.isArray(svgPath) ? (
+            pathToRender.map((path: string | PathWithProps, key: number) => (
+              <path
+                key={key}
+                d={(path as PathWithProps).path || (path as string)}
+                transform={transform}
+                {...(path as PathWithProps).props}
+              />
+            ))
+          ) : (
+            <path
+              d={(svgPath as PathWithProps).path || (svgPath as string)}
+              transform={transform}
+              {...(svgPath as PathWithProps).props}
+            />
+          )}
         </svg>
       );
     }

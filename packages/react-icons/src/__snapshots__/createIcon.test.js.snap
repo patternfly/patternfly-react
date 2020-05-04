@@ -26,3 +26,30 @@ exports[`additional props should be spread to the root svg element 1`] = `
 exports[`height and width are set from size: height 1`] = `"1em"`;
 
 exports[`height and width are set from size: width 1`] = `"1em"`;
+
+exports[`should allow additional props on path 1`] = `
+<svg
+  aria-hidden={true}
+  aria-labelledby={null}
+  fill="currentColor"
+  height="1em"
+  role="img"
+  style={
+    Object {
+      "verticalAlign": "-0.125em",
+    }
+  }
+  viewBox="0 0 10 20"
+  width="1em"
+>
+  <path
+    d="svgPath"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    transform=""
+  />
+</svg>
+`;

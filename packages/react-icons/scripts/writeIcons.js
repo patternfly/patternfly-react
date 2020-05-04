@@ -20,7 +20,7 @@ exports.${jsName}Config = {
   name: '${jsName}',
   height: ${icon.height},
   width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
+  svgPath: ${JSON.stringify(icon.svgPathData)},
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'
@@ -40,7 +40,7 @@ export const ${jsName}Config = {
   name: '${jsName}',
   height: ${icon.height},
   width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
+  svgPath: ${JSON.stringify(icon.svgPathData)},
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'
@@ -62,7 +62,7 @@ export declare const ${jsName}Config: {
   name: '${jsName}',
   height: ${icon.height},
   width: ${icon.width},
-  svgPath: '${icon.svgPathData}',
+  svgPath: ${JSON.stringify(icon.svgPathData)},
   yOffset: ${icon.yOffset || 0},
   xOffset: ${icon.xOffset || 0},
   transform: '${icon.transform || ''}'

@@ -65,3 +65,28 @@ test('additional props should be spread to the root svg element', () => {
   const view = shallow(<SVGIcon data-testid="icon" />);
   expect(view.find('svg')).toMatchSnapshot();
 });
+
+test('should create multiple pahts', () => {
+  const MultiPath = createIcon({
+    ...iconDef,
+    svgPath: ['first', 'second']
+  });
+  const view = shallow(<MultiPath />);
+  expect(view.find('path').length).toBe(2);
+});
+
+test('should allow additional props on path', () => {
+  const CustomIcon = createIcon({
+    ...iconDef,
+    svgPath: {
+      path: 'svgPath',
+      props: {
+        style: {
+          display: 'none'
+        }
+      }
+    }
+  });
+  const view = shallow(<CustomIcon />);
+  expect(view.find('svg')).toMatchSnapshot();
+});
