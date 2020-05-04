@@ -91,7 +91,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     if (tabContentRef) {
       React.Children.toArray<any>(this.props.children)
         .filter(child => child.props && child.props.tabContentRef && child.props.tabContentRef.current)
-        .forEach(child => child.props.tabContentRef.current.hidden = true);
+        .forEach(child => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
       if (tabContentRef.current) {
         tabContentRef.current.hidden = false;

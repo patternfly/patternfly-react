@@ -34,7 +34,10 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   title,
   ...props
 }: NotificationDrawerGroupProps) => (
-  <section {...props} className={css(styles.notificationDrawerGroup, isExpanded && styles.modifiers.expanded)}>
+  <section
+    {...props}
+    className={css(styles.notificationDrawerGroup, isExpanded && styles.modifiers.expanded, className)}
+  >
     <h1>
       <button
         className={css(styles.notificationDrawerGroupToggle)}
