@@ -11,21 +11,18 @@ exports[`Toolbar should match snapshot (auto-generated) 1`] = `
         "chipGroupContentRef": Object {
           "current": null,
         },
+        "clearAllFilters": [Function],
+        "clearFiltersButtonText": "string",
         "isExpanded": true,
         "numberOfFilters": 0,
+        "showClearFiltersButton": false,
         "toggleIsExpanded": [Function],
+        "toolbarId": "string",
         "updateNumberFilters": [Function],
       }
     }
   >
-    <div
-      clearAllFilters={[Function]}
-      clearFiltersButtonText="string"
-      isExpanded={true}
-      key=".0"
-      showClearFiltersButton={false}
-      toolbarId="string"
-    >
+    <div>
       ReactNode
     </div>
     <ToolbarChipGroupContent

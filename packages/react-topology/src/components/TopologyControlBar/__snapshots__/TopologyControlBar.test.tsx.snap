@@ -85,9 +85,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         <ToolbarContent
           breakpointMods={Array []}
           isExpanded={false}
-          key=".0"
           showClearFiltersButton={false}
-          toolbarId="pf-topology-control-bar-1"
         >
           <div
             className="pf-c-toolbar__content"
@@ -665,7 +663,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 Object {
                   "current": <div
                     class="pf-c-toolbar__expandable-content"
-                    id="pf-topology-control-bar-1-expandable-content-1"
+                    id="undefined-expandable-content-1"
                   >
                     <div
                       class="pf-c-toolbar__group"
@@ -673,13 +671,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   </div>,
                 }
               }
-              id="pf-topology-control-bar-1-expandable-content-1"
+              id="undefined-expandable-content-1"
               isExpanded={false}
               showClearFiltersButton={false}
             >
               <div
                 className="pf-c-toolbar__expandable-content"
-                id="pf-topology-control-bar-1-expandable-content-1"
+                id="undefined-expandable-content-1"
               >
                 <ForwardRef>
                   <ToolbarGroupWithRef
@@ -836,9 +834,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         <ToolbarContent
           breakpointMods={Array []}
           isExpanded={false}
-          key=".0"
           showClearFiltersButton={false}
-          toolbarId="pf-topology-control-bar-0"
         >
           <div
             className="pf-c-toolbar__content"
@@ -1655,7 +1651,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 Object {
                   "current": <div
                     class="pf-c-toolbar__expandable-content"
-                    id="pf-topology-control-bar-0-expandable-content-0"
+                    id="undefined-expandable-content-0"
                   >
                     <div
                       class="pf-c-toolbar__group"
@@ -1663,13 +1659,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   </div>,
                 }
               }
-              id="pf-topology-control-bar-0-expandable-content-0"
+              id="undefined-expandable-content-0"
               isExpanded={false}
               showClearFiltersButton={false}
             >
               <div
                 className="pf-c-toolbar__expandable-content"
-                id="pf-topology-control-bar-0-expandable-content-0"
+                id="undefined-expandable-content-0"
               >
                 <ForwardRef>
                   <ToolbarGroupWithRef

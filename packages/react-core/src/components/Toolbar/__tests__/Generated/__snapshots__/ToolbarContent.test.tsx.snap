@@ -24,23 +24,9 @@ exports[`ToolbarContent should match snapshot (auto-generated) 1`] = `
         ReactNode
       </div>
     </div>
-    <ToolbarExpandableContent
-      chipContainerRef={
-        Object {
-          "current": null,
-        }
-      }
-      clearAllFilters={[Function]}
-      clearFiltersButtonText="string"
-      expandableContentRef={
-        Object {
-          "current": null,
-        }
-      }
-      id="string-expandable-content-0"
-      isExpanded={false}
-      showClearFiltersButton={false}
-    />
+    <ContextConsumer>
+      <Component />
+    </ContextConsumer>
   </ContextProvider>
 </div>
 `;
