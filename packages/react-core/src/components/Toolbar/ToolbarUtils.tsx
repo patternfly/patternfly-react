@@ -12,14 +12,19 @@ interface ToolbarContextProps {
   chipGroupContentRef: RefObject<HTMLDivElement>;
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => void;
   numberOfFilters: number;
+  clearAllFilters?: () => void;
+  clearFiltersButtonText?: string;
+  showClearFiltersButton?: boolean;
+  toolbarId?: string;
 }
 
-export const ToolbarContext = React.createContext<Partial<ToolbarContextProps>>({
+export const ToolbarContext = React.createContext<ToolbarContextProps>({
   isExpanded: false,
   toggleIsExpanded: () => {},
   chipGroupContentRef: null,
   updateNumberFilters: () => {},
-  numberOfFilters: 0
+  numberOfFilters: 0,
+  clearAllFilters: () => {}
 });
 
 interface ToolbarContentContextProps {
@@ -28,7 +33,7 @@ interface ToolbarContentContextProps {
   chipContainerRef: RefObject<any>;
 }
 
-export const ToolbarContentContext = React.createContext<Partial<ToolbarContentContextProps>>({
+export const ToolbarContentContext = React.createContext<ToolbarContentContextProps>({
   expandableContentRef: null,
   expandableContentId: '',
   chipContainerRef: null
