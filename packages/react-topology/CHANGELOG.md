@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.2.14...@patternfly/react-topology@4.2.15) (2020-05-04)
+
+
+### Bug Fixes
+
+* **datatoolbar:** finish rename in docs and fix context ([#4175](https://github.com/patternfly/patternfly-react/issues/4175)) ([9f283bf](https://github.com/patternfly/patternfly-react/commit/9f283bf2f7c2245937910382c125e1916388c389))
+
+
+
+
+
 ## [4.2.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.2.13...@patternfly/react-topology@4.2.14) (2020-05-04)
 
 **Note:** Version bump only for package @patternfly/react-topology
