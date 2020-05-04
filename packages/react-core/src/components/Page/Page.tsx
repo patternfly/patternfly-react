@@ -27,7 +27,9 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Sets the value for role on the <main> element */
   role?: string;
   /** an id to use for the [role="main"] element */
-  mainContainerId?: string;
+  mainContainerId?: string; 
+  /** tabIndex to use for the [role="main"] element */
+  mainTabIndex?: number;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
@@ -56,17 +58,10 @@ export interface PageState {
 
 export class Page extends React.Component<PageProps, PageState> {
   static defaultProps: PageProps = {
-    breadcrumb: null as React.ReactNode,
-    children: null as React.ReactNode,
-    className: '',
-    header: null as React.ReactNode,
-    sidebar: null as React.ReactNode,
-    skipToContent: null as React.ReactElement,
     isManagedSidebar: false,
     defaultManagedSidebarIsOpen: true,
     onPageResize: (): void => null,
-    mainContainerId: null as string,
-    role: undefined as string
+    mainTabIndex: -1
   };
 
   constructor(props: PageProps) {
@@ -139,6 +134,7 @@ export class Page extends React.Component<PageProps, PageState> {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onPageResize,
       mainAriaLabel,
+      mainTabIndex,
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
@@ -159,7 +155,7 @@ export class Page extends React.Component<PageProps, PageState> {
             role={role}
             id={mainContainerId}
             className={css(styles.pageMain)}
-            tabIndex={-1}
+            tabIndex={mainTabIndex}
             aria-label={mainAriaLabel}
           >
             {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
