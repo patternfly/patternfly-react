@@ -48,8 +48,6 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   /** True to show the wizard without the modal */
   isInPage?: boolean;
-  /** If true makes the navigation more compact */
-  isCompactNav?: boolean;
   /** Custom width of the wizard */
   width?: number | string;
   /** Custom height of the wizard */
@@ -102,7 +100,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   static defaultProps: PickOptional<WizardProps> = {
     isOpen: false,
     isInPage: false,
-    isCompactNav: false,
     title: '',
     description: '',
     className: '',
@@ -351,7 +348,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       navAriaLabel,
       hasNoBodyPadding,
       footer,
-      isCompactNav,
       appendTo,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -451,12 +447,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       <WizardContextProvider value={context}>
         <div
           {...rest}
-          className={css(
-            styles.wizard,
-            isCompactNav && 'pf-m-compact-nav',
-            activeStep.isFinishedStep && 'pf-m-finished',
-            className
-          )}
+          className={css(styles.wizard, activeStep.isFinishedStep && 'pf-m-finished', className)}
           {...(this.isModal && {
             role: 'dialog',
             'aria-modal': 'true',

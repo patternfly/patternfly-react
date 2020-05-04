@@ -12,7 +12,6 @@ it('Wizard should match snapshot (auto-generated)', () => {
     <Wizard
       isOpen={false}
       isInPage={false}
-      isCompactNav={false}
       isFullHeight={false}
       isFullWidth={false}
       width={null}
