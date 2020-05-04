@@ -43,35 +43,15 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   id,
   children,
   ...props
-<<<<<<< HEAD:packages/react-core/src/components/Toolbar/ToolbarItem.tsx
-}: ToolbarItemProps) => (
-  <div
-    className={css(
-      styles.toolbarItem,
-      variant &&
-        styles.modifiers[
-          toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
-        ],
-      formatBreakpointMods(breakpointMods, styles),
-      className
-    )}
-    {...(variant === 'label' && { 'aria-hidden': true })}
-    id={id}
-    {...props}
-  >
-    {children}
-  </div>
-);
-=======
-}: DataToolbarItemProps) => {
-  if (variant === DataToolbarItemVariant.separator) {
+}: ToolbarItemProps) => {
+  if (variant === ToolbarItemVariant.separator) {
     return <Divider className={css(styles.modifiers.vertical, className)} {...props} />;
   }
 
   return (
     <div
       className={css(
-        styles.dataToolbarItem,
+        styles.toolbarItem,
         variant &&
           styles.modifiers[
             toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
@@ -87,4 +67,3 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     </div>
   );
 };
->>>>>>> chore(Divider): add vertical dividers and use Divider in DataToolbar:packages/react-core/src/components/DataToolbar/DataToolbarItem.tsx
