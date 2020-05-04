@@ -4,29 +4,8 @@ exports[`ToolbarContent should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-toolbar__content string"
 >
-  <ContextProvider
-    value={
-      Object {
-        "chipContainerRef": Object {
-          "current": null,
-        },
-        "expandableContentId": "string-expandable-content-0",
-        "expandableContentRef": Object {
-          "current": null,
-        },
-      }
-    }
-  >
-    <div
-      className="pf-c-toolbar__content-section"
-    >
-      <div>
-        ReactNode
-      </div>
-    </div>
-    <ContextConsumer>
-      <Component />
-    </ContextConsumer>
-  </ContextProvider>
+  <ContextConsumer>
+    <Component />
+  </ContextConsumer>
 </div>
 `;

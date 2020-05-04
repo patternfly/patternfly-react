@@ -178,7 +178,7 @@ exports[`TopologyView should display topology correctly 1`] = `
                         Object {
                           "current": <div
                             class="pf-c-toolbar__expandable-content"
-                            id="undefined-expandable-content-0"
+                            id="pf-topology-view-1-expandable-content-0"
                           >
                             <div
                               class="pf-c-toolbar__group"
@@ -186,13 +186,13 @@ exports[`TopologyView should display topology correctly 1`] = `
                           </div>,
                         }
                       }
-                      id="undefined-expandable-content-0"
+                      id="pf-topology-view-1-expandable-content-0"
                       isExpanded={false}
                       showClearFiltersButton={false}
                     >
                       <div
                         className="pf-c-toolbar__expandable-content"
-                        id="undefined-expandable-content-0"
+                        id="pf-topology-view-1-expandable-content-0"
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
@@ -248,7 +248,7 @@ exports[`TopologyView should display topology correctly 1`] = `
                         Object {
                           "current": <div
                             class="pf-c-toolbar__expandable-content"
-                            id="undefined-expandable-content-1"
+                            id="pf-topology-view-1-expandable-content-1"
                           >
                             <div
                               class="pf-c-toolbar__group"
@@ -256,13 +256,13 @@ exports[`TopologyView should display topology correctly 1`] = `
                           </div>,
                         }
                       }
-                      id="undefined-expandable-content-1"
+                      id="pf-topology-view-1-expandable-content-1"
                       isExpanded={false}
                       showClearFiltersButton={false}
                     >
                       <div
                         className="pf-c-toolbar__expandable-content"
-                        id="undefined-expandable-content-1"
+                        id="pf-topology-view-1-expandable-content-1"
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
@@ -444,7 +444,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                         Object {
                           "current": <div
                             class="pf-c-toolbar__expandable-content"
-                            id="undefined-expandable-content-2"
+                            id="pf-topology-view-2-expandable-content-2"
                           >
                             <div
                               class="pf-c-toolbar__group"
@@ -452,13 +452,13 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                           </div>,
                         }
                       }
-                      id="undefined-expandable-content-2"
+                      id="pf-topology-view-2-expandable-content-2"
                       isExpanded={false}
                       showClearFiltersButton={false}
                     >
                       <div
                         className="pf-c-toolbar__expandable-content"
-                        id="undefined-expandable-content-2"
+                        id="pf-topology-view-2-expandable-content-2"
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
@@ -514,7 +514,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                         Object {
                           "current": <div
                             class="pf-c-toolbar__expandable-content"
-                            id="undefined-expandable-content-3"
+                            id="pf-topology-view-2-expandable-content-3"
                           >
                             <div
                               class="pf-c-toolbar__group"
@@ -522,13 +522,13 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                           </div>,
                         }
                       }
-                      id="undefined-expandable-content-3"
+                      id="pf-topology-view-2-expandable-content-3"
                       isExpanded={false}
                       showClearFiltersButton={false}
                     >
                       <div
                         className="pf-c-toolbar__expandable-content"
-                        id="undefined-expandable-content-3"
+                        id="pf-topology-view-2-expandable-content-3"
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
@@ -713,7 +713,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                         Object {
                           "current": <div
                             class="pf-c-toolbar__expandable-content"
-                            id="undefined-expandable-content-4"
+                            id="pf-topology-view-3-expandable-content-4"
                           >
                             <div
                               class="pf-c-toolbar__group"
@@ -721,13 +721,13 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                           </div>,
                         }
                       }
-                      id="undefined-expandable-content-4"
+                      id="pf-topology-view-3-expandable-content-4"
                       isExpanded={false}
                       showClearFiltersButton={false}
                     >
                       <div
                         className="pf-c-toolbar__expandable-content"
-                        id="undefined-expandable-content-4"
+                        id="pf-topology-view-3-expandable-content-4"
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
@@ -783,7 +783,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                         Object {
                           "current": <div
                             class="pf-c-toolbar__expandable-content"
-                            id="undefined-expandable-content-5"
+                            id="pf-topology-view-3-expandable-content-5"
                           >
                             <div
                               class="pf-c-toolbar__group"
@@ -791,13 +791,13 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                           </div>,
                         }
                       }
-                      id="undefined-expandable-content-5"
+                      id="pf-topology-view-3-expandable-content-5"
                       isExpanded={false}
                       showClearFiltersButton={false}
                     >
                       <div
                         className="pf-c-toolbar__expandable-content"
-                        id="undefined-expandable-content-5"
+                        id="pf-topology-view-3-expandable-content-5"
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
