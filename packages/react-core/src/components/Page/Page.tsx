@@ -27,7 +27,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Sets the value for role on the <main> element */
   role?: string;
   /** an id to use for the [role="main"] element */
-  mainContainerId?: string; 
+  mainContainerId?: string;
   /** tabIndex to use for the [role="main"] element */
   mainTabIndex?: number;
   /**
