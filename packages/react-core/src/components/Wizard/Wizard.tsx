@@ -40,8 +40,6 @@ export type WizardStepFunctionType = (
 ) => void;
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
-  /** If true makes the navigation more compact */
-  isCompactNav?: boolean;
   /** Custom width of the wizard */
   width?: number | string;
   /** Custom height of the wizard */
@@ -117,7 +115,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     appendTo: null as HTMLElement,
     isOpen: undefined
   };
-  private container: HTMLDivElement;
   private titleId: string;
   private descriptionId: string;
 
@@ -137,17 +134,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
       if (this.state.isNavOpen) {
         this.setState({ isNavOpen: !this.state.isNavOpen });
-      }
-    }
-  };
-
-  private toggleSiblingsFromScreenReaders = (hide: boolean): void => {
-    const { appendTo } = this.props;
-    const target: HTMLElement = this.getElement(appendTo);
-    const bodyChildren = target.children;
-    for (const child of Array.from(bodyChildren)) {
-      if (child !== this.container) {
-        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
+      } else if (this.props.isOpen) {
+        this.props.onClose();
       }
     }
   };
@@ -284,6 +272,21 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return appendTo || document.body;
   };
 
+  componentDidMount() {
+    const target = (typeof document !== 'undefined' && document.body) || null;
+    console.log(target);
+    if (target) {
+      target.addEventListener('keydown', this.handleKeyClicks, false);
+    }
+  }
+
+  componentWillUnmount() {
+    const target = (typeof document !== 'undefined' && document.body) || null;
+    if (target) {
+      target.removeEventListener('keydown', this.handleKeyClicks, false);
+    }
+  }
+
   render() {
     const {
       /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -403,7 +406,9 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       <WizardContextProvider value={context}>
         <div
           {...rest}
-          className={css(styles.wizard, activeStep.isFinishedStep && 'pf-m-finished', className)}
+          className={css(styles.wizard,
+            activeStep && activeStep.isFinishedStep && 'pf-m-finished',
+            className)}
           {...(height && { style: { height } })}
         >
           {title && (

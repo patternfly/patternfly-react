@@ -383,57 +383,6 @@ class NoHeader extends React.Component {
 }
 ```
 
-```js title=No-title
-import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
-
-class NoTitle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-    const footer = <React.Fragment>Modal Footer</React.Fragment>;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show No Title Modal
-        </Button>
-        <Modal
-          variant={ModalVariant.large}
-          isOpen={isModalOpen}
-          aria-label="no title example"
-          showClose={true}
-          modalContentAriaDescribedById="no-title-example"
-          onClose={this.handleModalToggle}
-          footer={footer}
-        >
-          <span id="no-title-example">
-            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-            aria-describedby value.
-          </span>
-          <br />
-          <br />
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
-```
-
 ```js title=With-wizard
 import React from 'react';
 import { Modal, Button, Wizard } from '@patternfly/react-core';
@@ -445,6 +394,7 @@ class WithWizard extends React.Component {
       isModalOpen: false
     };
     this.handleModalToggle = () => {
+      console.log("called close wizard");
       this.setState(({ isModalOpen }) => ({
         isModalOpen: !isModalOpen
       }));
@@ -471,6 +421,7 @@ class WithWizard extends React.Component {
           isOpen={isModalOpen}
           variant={ModalVariant.large}
           showClose={false}
+          onClose={this.handleModalToggle}
           noPadding
         >
           <Wizard
