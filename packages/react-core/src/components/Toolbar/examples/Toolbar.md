@@ -825,7 +825,7 @@ There may be situations where all of the required elements simply cannot fit in 
 ```js title=Stacked-example
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarToggleGroup, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import { Button, Divider, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, Divider } from '@patternfly/react-core';
+import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, Divider } from '@patternfly/react-core';
 import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
 class ToolbarStacked extends React.Component {
