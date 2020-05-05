@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.31.0...@patternfly/react-integration@3.31.1) (2020-05-05)
+
+
+### Bug Fixes
+
+* **page:** make tabIndex optional ([#4181](https://github.com/patternfly/patternfly-react/issues/4181)) ([858be76](https://github.com/patternfly/patternfly-react/commit/858be769876640e42203ae82a633f96ff58f9568))
+
+
+
+
+
 # [3.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.30.1...@patternfly/react-integration@3.31.0) (2020-05-01)
 
 

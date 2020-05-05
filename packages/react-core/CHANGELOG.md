@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.155.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.154.0...@patternfly/react-core@3.155.0) (2020-05-05)
+
+
+### Bug Fixes
+
+* **page:** make tabIndex optional ([#4181](https://github.com/patternfly/patternfly-react/issues/4181)) ([858be76](https://github.com/patternfly/patternfly-react/commit/858be769876640e42203ae82a633f96ff58f9568))
+
+
+### Features
+
+* **Select:** Added placeholder text for inline filter ([#4185](https://github.com/patternfly/patternfly-react/issues/4185)) ([42bb77e](https://github.com/patternfly/patternfly-react/commit/42bb77ec77d898050960ceac3cd7b0616c38562f)), closes [#4162](https://github.com/patternfly/patternfly-react/issues/4162)
+
+
+
+
+
 # [3.154.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.15...@patternfly/react-core@3.154.0) (2020-05-01)
 
 
