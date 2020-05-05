@@ -422,7 +422,7 @@ class WithWizard extends React.Component {
           variant={ModalVariant.large}
           showClose={false}
           onClose={this.handleModalToggle}
-          noPadding
+          hasNoBodyWrapper
         >
           <Wizard
             title="Simple Wizard"

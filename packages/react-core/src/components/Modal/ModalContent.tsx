@@ -45,8 +45,8 @@ export interface ModalContentProps {
   id: string;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
-  /** Flag indicating if modal content should have no padding*/
-  noPadding?: boolean;
+  /** Flag indicating if modal content should be placed in a modal box body wrapper */
+  hasNoBodyWrapper?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -66,7 +66,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   modalBoxAriaDescribedById = '',
   id = '',
   disableFocusTrap = false,
-  noPadding = false,
+  hasNoBodyWrapper = false,
   ...props
 }: ModalContentProps) => {
   if (!isOpen) {
@@ -85,7 +85,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>
   );
 
-  const modalBody = noPadding ? (
+  const modalBody = hasNoBodyWrapper ? (
     children
   ) : (
     <ModalBoxBody {...props} {...(!description && { id })}>
