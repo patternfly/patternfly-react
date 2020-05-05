@@ -30,8 +30,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   additionalChild?: React.ReactNode;
   /** Custom item rendering that receives the DropdownContext */
   customChild?: React.ReactNode;
-  /** tabIndex to use */
-  tabIndex?: number;
+  /** tabIndex to use, null to unset it */
+  tabIndex?: number | null;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({

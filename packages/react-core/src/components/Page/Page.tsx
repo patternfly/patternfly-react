@@ -28,8 +28,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   role?: string;
   /** an id to use for the [role="main"] element */
   mainContainerId?: string;
-  /** tabIndex to use for the [role="main"] element */
-  mainTabIndex?: number;
+  /** tabIndex to use for the [role="main"] element, null to unset it */
+  mainTabIndex?: number | null;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
