@@ -211,6 +211,24 @@ describe('checkbox select', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders inline filter placeholder successfully', () => {
+    const view = mount(
+      <Select
+        toggleId="checkbox-select-expanded-filtered"
+        variant={SelectVariant.checkbox}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        onClear={jest.fn()}
+        isExpanded
+        hasInlineFilter
+        inlineFilterPlaceholderText="Test"
+      >
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('.pf-m-search').at(0).props().placeholder).toEqual('Test');
+  });
+
   test('renders expanded successfully with custom objects', () => {
     const view = mount(
       <Select toggleId="checkbox-select-expanded-custom" variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
