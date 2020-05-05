@@ -447,7 +447,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
 
     if (isOpen !== undefined) {
       return (
-        <Modal isOpen={isOpen} variant={ModalVariant.large} showClose={false} noPadding>
+        <Modal isOpen={isOpen} variant={ModalVariant.large} showClose={false} hasNoBodyWrapper>
           {wizard}
         </Modal>
       );

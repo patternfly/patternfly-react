@@ -38,8 +38,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   description?: React.ReactNode;
   /** Variant of the modal */
   variant?: 'small' | 'large' | 'default';
-  /** Flag indicating if modal content should have no padding*/
-  noPadding?: boolean;
+  /** Flag indicating if modal content should be placed in a modal box body wrapper */
+  hasNoBodyWrapper?: boolean;
 }
 
 export enum ModalVariant {
@@ -66,7 +66,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     actions: [] as any[],
     onClose: () => undefined as any,
     variant: 'default',
-    noPadding: false,
+    hasNoBodyWrapper: false,
     appendTo: (typeof document !== 'undefined' && document.body) || null
   };
 

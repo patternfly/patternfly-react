@@ -14,6 +14,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
         ReactNode
       </div>
     }
+    hasNoBodyWrapper={false}
     header={
       <div>
         ReactNode
@@ -23,7 +24,6 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     id="pf-modal-0"
     isOpen={false}
     modalBoxAriaDescribedById=""
-    noPadding={false}
     onClose={[Function]}
     showClose={true}
     title="string"
