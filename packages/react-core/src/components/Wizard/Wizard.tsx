@@ -273,7 +273,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   };
 
   componentDidMount() {
-    const target = (typeof document !== 'undefined' && document.body) || null;
+    const target = typeof document !== 'undefined' ? document.body : null;
     if (target) {
       target.addEventListener('keydown', this.handleKeyClicks, false);
     }
