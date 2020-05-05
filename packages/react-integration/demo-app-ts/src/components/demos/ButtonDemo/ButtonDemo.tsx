@@ -53,7 +53,7 @@ export class ButtonDemo extends React.Component {
           Control Button
         </Button>
         <Button variant="link" tabIndex={-1}>
-          Button with tab index set to zero
+          Button with tab index set to -1
         </Button>
       </React.Fragment>
     );

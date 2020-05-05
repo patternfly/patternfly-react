@@ -30,17 +30,19 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   additionalChild?: React.ReactNode;
   /** Custom item rendering that receives the DropdownContext */
   customChild?: React.ReactNode;
+  /** tabIndex to use, null to unset it */
+  tabIndex?: number | null;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
-  children = null,
-  className = '',
+  children,
+  className,
   component = 'a',
   variant = 'item',
   isDisabled = false,
   isHovered = false,
   href,
-  tooltip = null,
+  tooltip,
   tooltipProps = {},
   listItemClassName,
   onClick,
@@ -48,6 +50,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   ref, // Types of Ref are different for React.FC vs React.Component
   additionalChild,
   customChild,
+  tabIndex = -1,
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
@@ -55,7 +58,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
       <InternalDropdownItem
         context={context}
         role="menuitem"
-        tabIndex={-1}
+        tabIndex={tabIndex}
         className={className}
         component={component}
         variant={variant}

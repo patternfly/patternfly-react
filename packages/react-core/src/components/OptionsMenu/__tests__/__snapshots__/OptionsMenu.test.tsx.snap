@@ -807,7 +807,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           role="menuitem"
                           tabIndex={-1}
-                          tooltip={null}
                           tooltipProps={Object {}}
                           variant="item"
                         >
@@ -855,7 +854,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           role="menuitem"
                           tabIndex={-1}
-                          tooltip={null}
                           tooltipProps={Object {}}
                           variant="item"
                         >
@@ -907,7 +905,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           role="menuitem"
                           tabIndex={-1}
-                          tooltip={null}
                           tooltipProps={Object {}}
                           variant="item"
                         >
@@ -956,7 +953,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           role="menuitem"
                           tabIndex={-1}
-                          tooltip={null}
                           tooltipProps={Object {}}
                           variant="item"
                         >
@@ -1036,7 +1032,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           role="menuitem"
                           tabIndex={-1}
-                          tooltip={null}
                           tooltipProps={Object {}}
                           variant="item"
                         >
@@ -1084,7 +1079,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           role="menuitem"
                           tabIndex={-1}
-                          tooltip={null}
                           tooltipProps={Object {}}
                           variant="item"
                         >
