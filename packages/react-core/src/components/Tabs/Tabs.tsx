@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import { getUniqueId, isElementInView, capitalizeFirstLetter } from '../../helpers/util';
+import { getUniqueId, isElementInView, capitalize } from '../../helpers/util';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { getOUIAProps, OUIAProps } from '../../helpers';
@@ -78,7 +78,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   }
 
   static defaultProps: PickOptional<TabsProps> = {
-    className: '',
     activeKey: 0,
     onSelect: () => undefined as any,
     isFilled: false,
@@ -89,12 +88,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     rightScrollAriaLabel: 'Scroll right',
     variant: TabsVariant.div,
     mountOnEnter: false,
-    unmountOnExit: false,
-    inset: undefined,
-    insetOnMd: undefined,
-    insetOnLg: undefined,
-    insetOnXl: undefined,
-    insetOn2Xl: undefined
+    unmountOnExit: false
   };
 
   handleTabClick(
@@ -114,10 +108,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       // most recently selected tabContent
       tabContentRef.current.hidden = false;
     }
-    // Update scroll button state and which button to highlight
-    setTimeout(() => {
-      this.handleScrollButtons();
-    }, 1);
     if (mountOnEnter) {
       this.setState({
         shownKeys: shownKeys.concat(eventKey)
@@ -187,7 +177,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   };
 
   // Format the inset prop string by capitalizing the first letter.  If the string prop is '2xl' append '_' to beginning of the string so we can key the correct modifier.
-  FormatInsetString = (s: string) => (s === '2xl' ? '_2xl' : capitalizeFirstLetter(s));
+  formatInsetString = (s: string) => (s === '2xl' ? '_2xl' : capitalize(s));
 
   componentDidMount() {
     window.addEventListener('resize', this.handleScrollButtons, false);
@@ -239,15 +229,15 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             isVertical && styles.modifiers.vertical,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
-            inset && styles.modifiers[`inset${this.FormatInsetString(inset)}` as keyof typeof styles.modifiers],
+            inset && styles.modifiers[`inset${this.formatInsetString(inset)}` as keyof typeof styles.modifiers],
             insetOnMd &&
-              styles.modifiers[`inset${this.FormatInsetString(insetOnMd)}OnMd` as keyof typeof styles.modifiers],
+              styles.modifiers[`inset${this.formatInsetString(insetOnMd)}OnMd` as keyof typeof styles.modifiers],
             insetOnLg &&
-              styles.modifiers[`inset${this.FormatInsetString(insetOnLg)}OnLg` as keyof typeof styles.modifiers],
+              styles.modifiers[`inset${this.formatInsetString(insetOnLg)}OnLg` as keyof typeof styles.modifiers],
             insetOnXl &&
-              styles.modifiers[`inset${this.FormatInsetString(insetOnXl)}OnXl` as keyof typeof styles.modifiers],
+              styles.modifiers[`inset${this.formatInsetString(insetOnXl)}OnXl` as keyof typeof styles.modifiers],
             insetOn2Xl &&
-              styles.modifiers[`inset${this.FormatInsetString(insetOn2Xl)}On_2xl` as keyof typeof styles.modifiers],
+              styles.modifiers[`inset${this.formatInsetString(insetOn2Xl)}On_2xl` as keyof typeof styles.modifiers],
             className
           )}
           {...getOUIAProps('Tabs', ouiaId)}
