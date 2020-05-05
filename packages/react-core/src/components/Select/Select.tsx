@@ -86,6 +86,8 @@ export interface SelectProps
   customContent?: React.ReactNode;
   /** Flag indicating if select should have an inline text input for filtering */
   hasInlineFilter?: boolean;
+  /** Placeholder text for inline filter */
+  inlineFilterPlaceholderText?: string;
 }
 
 export interface SelectState {
@@ -380,6 +382,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       createText,
       noResultsFoundText,
       hasInlineFilter,
+      inlineFilterPlaceholderText,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -446,6 +449,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               type="search"
               className={css(formStyles.formControl, formStyles.modifiers.search)}
               onChange={this.onChange}
+              placeholder={inlineFilterPlaceholderText}
               onKeyDown={event => {
                 if (event.key === KeyTypes.ArrowUp) {
                   this.handleArrowKeys(0, 'up');
