@@ -8,6 +8,6 @@ import { AlertActionLink } from '../../AlertActionLink';
 import {} from '../..';
 
 it('AlertActionLink should match snapshot (auto-generated)', () => {
-  const view = shallow(<AlertActionLink children={"''"} className={"''"} />);
+  const view = shallow(<AlertActionLink children={'string'} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

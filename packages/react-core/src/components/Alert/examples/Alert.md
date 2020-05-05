@@ -32,7 +32,7 @@ class AlertTypes extends React.Component {
 
 ```js title=Variations
 import React from 'react';
-import { Alert } from '@patternfly/react-core';
+import { Alert, AlertActionLink } from '@patternfly/react-core';
 
 class AlertVariations extends React.Component {
   render() {
@@ -41,15 +41,15 @@ class AlertVariations extends React.Component {
         <Alert
           variant="success"
           title="Success alert title"
-          onClose={() => alert('Clicked the close button')}
-          actionItems={[
-            { text: 'View details', onClick: () => alert('Clicked on View details') },
-            { text: 'Ignore', onClick: () => alert('Clicked on Ignore') }
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
+          actionLinks={[
+            <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>,
+            { children: 'Ignore', onClick: () => alert('Clicked on Ignore') }
           ]}
         >
           <p>Success alert description. This should tell the user more information about the alert.</p>
         </Alert>
-        <Alert variant="success" title="Success alert title" onClose={() => alert('Clicked the close button')}>
+        <Alert variant="success" title="Success alert title" actionClose={{ onClose: () => alert('Clicked the close button') }}>
           <p>
             Success alert description. This should tell the user more information about the alert.{' '}
             <a href="#">This is a link.</a>
@@ -58,13 +58,13 @@ class AlertVariations extends React.Component {
         <Alert
           variant="success"
           title="Success alert title"
-          onClose={() => alert('Clicked the close button')}
-          actionItems={[
-            { text: 'View details', onClick: () => alert('Clicked on View details') },
-            { text: 'Ignore', onClick: () => alert('Clicked on Ignore') }
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
+          actionLinks={[
+            <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>,
+            { children: 'Ignore', onClick: () => alert('Clicked on Ignore') }
           ]}
         />
-        <Alert variant="success" title="Success alert title" onClose={() => alert('Clicked the close button')} />
+        <Alert variant="success" title="Success alert title" actionClose={{ onClose: () => alert('Clicked the close button') }} />
         <Alert variant="success" title="Success alert title" />
       </React.Fragment>
     );
@@ -93,7 +93,7 @@ class InlineAlert extends React.Component {
 
 ```js title=Inline-variations
 import React from 'react';
-import { Alert } from '@patternfly/react-core';
+import { Alert, AlertActionLink } from '@patternfly/react-core';
 
 class InlineAlertVariations extends React.Component {
   render() {
@@ -103,15 +103,15 @@ class InlineAlertVariations extends React.Component {
           isInline
           variant="success"
           title="Success alert title"
-          onClose={() => alert('Clicked the close button')}
-          actionItems={[
-            { text: 'View details', onClick: () => alert('Clicked on View details') },
-            { text: 'Ignore', onClick: () => alert('Clicked on Ignore') }
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
+          actionLinks={[
+            <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>,
+            { children: 'Ignore', onClick: () => alert('Clicked on Ignore') }
           ]}
         >
           <p>Success alert description. This should tell the user more information about the alert.</p>
         </Alert>
-        <Alert isInline variant="success" title="Success alert title" onClose={() => alert('Clicked the close button')}>
+        <Alert isInline variant="success" title="Success alert title" actionClose={{ onClose: () => alert('Clicked the close button') }}>
           <p>
             Success alert description. This should tell the user more information about the alert.{' '}
             <a href="#">This is a link.</a>
@@ -121,17 +121,17 @@ class InlineAlertVariations extends React.Component {
           isInline
           variant="success"
           title="Success alert title"
-          onClose={() => alert('Clicked the close button')}
-          actionItems={[
-            { text: 'View details', onClick: () => alert('Clicked on View details') },
-            { text: 'Ignore', onClick: () => alert('Clicked on Ignore') }
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
+          actionLinks={[
+            <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>,
+            { children: 'Ignore', onClick: () => alert('Clicked on Ignore') }
           ]}
         />
         <Alert
           isInline
           variant="success"
           title="Success alert title"
-          onClose={() => alert('Clicked the close button')}
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
         />
         <Alert isInline variant="success" title="Success alert title" />
       </React.Fragment>
@@ -152,7 +152,7 @@ class StaticLiveRegionAlert extends React.Component {
           isLiveRegion
           variant="info"
           title="Default live region configuration"
-          onClose={() => alert('Clicked the close button')}
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
         >
           This Alert uses the recommended <code>isLiveRegion</code> prop to automatically sets ARIA attributes and CSS
           classes.
@@ -163,7 +163,7 @@ class StaticLiveRegionAlert extends React.Component {
           aria-atomic="true"
           variant="info"
           title="Customized live region"
-          onClose={() => alert('Clicked the close button')}
+          actionClose={{ onClose: () => alert('Clicked the close button') }}
         >
           You can alternatively omit the <code>isLiveRegion</code> prop to specify ARIA attributes and CSS manually on
           the containing element.
