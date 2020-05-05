@@ -240,9 +240,12 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
             inset && styles.modifiers[`inset${this.FormatInsetString(inset)}` as keyof typeof styles.modifiers],
-            insetOnMd && styles.modifiers[`inset${this.FormatInsetString(insetOnMd)}OnMd` as keyof typeof styles.modifiers],
-            insetOnLg && styles.modifiers[`inset${this.FormatInsetString(insetOnLg)}OnLg` as keyof typeof styles.modifiers],
-            insetOnXl && styles.modifiers[`inset${this.FormatInsetString(insetOnXl)}OnXl` as keyof typeof styles.modifiers],
+            insetOnMd &&
+              styles.modifiers[`inset${this.FormatInsetString(insetOnMd)}OnMd` as keyof typeof styles.modifiers],
+            insetOnLg &&
+              styles.modifiers[`inset${this.FormatInsetString(insetOnLg)}OnLg` as keyof typeof styles.modifiers],
+            insetOnXl &&
+              styles.modifiers[`inset${this.FormatInsetString(insetOnXl)}OnXl` as keyof typeof styles.modifiers],
             insetOn2Xl &&
               styles.modifiers[`inset${this.FormatInsetString(insetOn2Xl)}On_2xl` as keyof typeof styles.modifiers],
             className
