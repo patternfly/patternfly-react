@@ -19,6 +19,7 @@ export enum ToolbarItemVariant {
 export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar item */
   className?: string;
+  /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?:
     | ToolbarItemVariant
     | 'bulk-select'
