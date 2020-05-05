@@ -19,7 +19,7 @@ export interface ExpandableSectionProps {
   toggleTextCollapsed?: string;
   /** Callback function to toggle the expandable content */
   onToggle?: () => void;
-  /** TODO: Use once core reimplements. Forces active state */
+  /** Forces active state */
   isActive?: boolean;
 }
 
@@ -95,7 +95,12 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     return (
       <div
         {...props}
-        className={css(styles.expandableSection, propOrStateIsExpanded && styles.modifiers.expanded, className)}
+        className={css(
+          styles.expandableSection,
+          propOrStateIsExpanded && styles.modifiers.expanded,
+          isActive && styles.modifiers.active,
+          className
+        )}
       >
         <button
           className={css(styles.expandableSectionToggle)}

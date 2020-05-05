@@ -11,7 +11,7 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
   isSplitButton?: boolean;
-  /** TODO: Use once core reimplements. Forces display of the active state of the options menu */
+  /** Forces display of the active state of the options menu */
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;

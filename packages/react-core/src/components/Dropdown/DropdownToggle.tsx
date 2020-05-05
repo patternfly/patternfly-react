@@ -18,7 +18,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: HTMLElement;
-  /** TODO: Use once core reimplements. Forces active state */
+  /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;

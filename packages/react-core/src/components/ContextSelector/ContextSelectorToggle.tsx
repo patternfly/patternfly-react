@@ -20,7 +20,7 @@ export interface ContextSelectorToggleProps {
   onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
-  /** TODO: Use once core reimplements. Forces active state */
+  /** Forces active state */
   isActive?: boolean;
 }
 
@@ -103,7 +103,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
         {...props}
         id={id}
         ref={this.toggle}
-        className={css(styles.contextSelectorToggle, className)}
+        className={css(styles.contextSelectorToggle, isActive && styles.modifiers.active, className)}
         type="button"
         onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
