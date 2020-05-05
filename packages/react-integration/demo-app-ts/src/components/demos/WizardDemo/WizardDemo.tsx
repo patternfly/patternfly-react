@@ -1,11 +1,20 @@
-import { Wizard, WizardStep, Button } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Button, Wizard, WizardStep } from '@patternfly/react-core';
+import React from 'react';
 
-export class WizardDemo extends Component {
+interface WizardDemoState {
+  isOpen: boolean;
+}
+
+export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
   state = {
     isOpen: false
   };
 
+  handleModalToggle = () => {
+    this.setState(({ isOpen }) => ({
+      isOpen: !isOpen
+    }));
+  };
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -34,15 +43,25 @@ export class WizardDemo extends Component {
     ];
     return (
       <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
         <Wizard
-          isOpen={this.state.isOpen}
-          title="Wizard title"
-          description="Description here"
+          title="Simple Wizard"
+          description="Simple Wizard Description"
           steps={steps}
           startAtStep={1}
-          onClose={() => this.setState({ isOpen: false })}
+          onClose={this.handleModalToggle}
+          isOpen={this.state.isOpen}
         />
-        <Button onClick={() => this.setState({ isOpen: true })}>Show Wizard</Button>
+        <Wizard
+          title="Wizard title"
+          description="Description here"
+          hideClose
+          steps={steps}
+          startAtStep={1}
+          height={500}
+        />
       </React.Fragment>
     );
   }

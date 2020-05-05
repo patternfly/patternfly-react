@@ -1,19 +1,15 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { canUseDOM } from '../../helpers';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
-import { Backdrop } from '../Backdrop';
-import { Bullseye } from '../../layouts/Bullseye';
-import { WizardHeader } from './WizardHeader';
+import { Modal, ModalVariant } from '../Modal';
 import { WizardFooterInternal } from './WizardFooterInternal';
 import { WizardToggle } from './WizardToggle';
 import { WizardNav } from './WizardNav';
 import { WizardNavItem } from './WizardNavItem';
 import { WizardContextProvider } from './WizardContext';
 import { PickOptional } from '../../helpers/typeUtils';
-import { FocusTrap } from '../../helpers';
+import { WizardHeader } from './WizardHeader';
 
 export interface WizardStep {
   /** Optional identifier */
@@ -44,18 +40,16 @@ export type WizardStepFunctionType = (
 ) => void;
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
-  /** True to show the wizard (not applicable for isInPage)*/
-  isOpen?: boolean;
-  /** True to show the wizard without the modal */
-  isInPage?: boolean;
   /** Custom width of the wizard */
   width?: number | string;
   /** Custom height of the wizard */
   height?: number | string;
-  /** The wizard title (required unless isInPage is used) */
+  /** The wizard title to display if header is desired */
   title?: string;
   /** The wizard description */
   description?: React.ReactNode;
+  /** Flag indicating whether the close button should be in the header */
+  hideClose?: boolean;
   /** Callback function to close the wizard */
   onClose?: () => void;
   /** Callback function when a step in the nav is clicked */
@@ -88,6 +82,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   closeButtonAriaLabel?: string;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Flag indicating Wizard modal is open. Wizard will be placed into a modal if this prop is provided */
+  isOpen?: boolean;
 }
 
 interface WizardState {
@@ -98,8 +94,6 @@ interface WizardState {
 export class Wizard extends React.Component<WizardProps, WizardState> {
   private static currentId = 0;
   static defaultProps: PickOptional<WizardProps> = {
-    isOpen: false,
-    isInPage: false,
     title: '',
     description: '',
     className: '',
@@ -107,6 +101,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     nextButtonText: 'Next',
     backButtonText: 'Back',
     cancelButtonText: 'Cancel',
+    hideClose: false,
     closeButtonAriaLabel: 'Close',
     navAriaLabel: 'Steps',
     hasNoBodyPadding: false,
@@ -117,21 +112,17 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     height: null as string,
     footer: null as React.ReactNode,
     onClose: () => undefined as any,
-    appendTo: null as HTMLElement
+    appendTo: null as HTMLElement,
+    isOpen: undefined
   };
-  private container: HTMLDivElement;
   private titleId: string;
   private descriptionId: string;
-  private isModal: boolean;
 
   constructor(props: WizardProps) {
     super(props);
     const newId = Wizard.currentId++;
-    this.isModal = !props.isInPage;
-    if (this.isModal) {
-      this.titleId = `pf-wizard-title-${newId}`;
-      this.descriptionId = `pf-wizard-description-${newId}`;
-    }
+    this.titleId = `pf-wizard-title-${newId}`;
+    this.descriptionId = `pf-wizard-description-${newId}`;
 
     this.state = {
       currentStep: this.props.startAtStep && Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
@@ -145,17 +136,6 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         this.setState({ isNavOpen: !this.state.isNavOpen });
       } else if (this.props.isOpen) {
         this.props.onClose();
-      }
-    }
-  };
-
-  private toggleSiblingsFromScreenReaders = (hide: boolean): void => {
-    const { appendTo } = this.props;
-    const target: HTMLElement = this.getElement(appendTo);
-    const bodyChildren = target.children;
-    for (const child of Array.from(bodyChildren)) {
-      if (child !== this.container) {
-        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
   };
@@ -293,42 +273,22 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   };
 
   componentDidMount() {
-    const { appendTo } = this.props;
-    const target: HTMLElement = this.getElement(appendTo);
-    if (this.isModal) {
-      if (this.container) {
-        target.appendChild(this.container);
-      }
-      this.toggleSiblingsFromScreenReaders(true);
+    const target = typeof document !== 'undefined' ? document.body : null;
+    if (target) {
       target.addEventListener('keydown', this.handleKeyClicks, false);
     }
   }
 
   componentWillUnmount() {
-    const { appendTo } = this.props;
-    const target: HTMLElement = this.getElement(appendTo);
-    if (this.isModal) {
-      if (this.container) {
-        target.removeChild(this.container);
-      }
-      this.toggleSiblingsFromScreenReaders(false);
+    const target = (typeof document !== 'undefined' && document.body) || null;
+    if (target) {
       target.removeEventListener('keydown', this.handleKeyClicks, false);
     }
   }
 
   render() {
-    if (this.isModal) {
-      if (!canUseDOM) {
-        return null;
-      }
-      if (!this.container) {
-        this.container = document.createElement('div');
-      }
-    }
     const {
       /* eslint-disable @typescript-eslint/no-unused-vars */
-      isOpen,
-      isInPage,
       width,
       height,
       title,
@@ -344,11 +304,13 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       nextButtonText = 'Next',
       backButtonText = 'Back',
       cancelButtonText = 'Cancel',
+      hideClose,
       closeButtonAriaLabel = 'Close',
       navAriaLabel,
       hasNoBodyPadding,
       footer,
       appendTo,
+      isOpen,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -439,23 +401,14 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       activeStep
     };
 
-    if (this.isModal && !isOpen) {
-      return null;
-    }
-
     const wizard = (
       <WizardContextProvider value={context}>
         <div
           {...rest}
-          className={css(styles.wizard, activeStep.isFinishedStep && 'pf-m-finished', className)}
-          {...(this.isModal && {
-            role: 'dialog',
-            'aria-modal': 'true',
-            'aria-labelledby': this.titleId,
-            'aria-describedby': description ? this.descriptionId : undefined
-          })}
+          className={css(styles.wizard, activeStep && activeStep.isFinishedStep && 'pf-m-finished', className)}
+          {...(height && { style: { height } })}
         >
-          {this.isModal && (
+          {title && (
             <WizardHeader
               titleId={this.titleId}
               descriptionId={this.descriptionId}
@@ -463,6 +416,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               title={title}
               description={description}
               closeButtonAriaLabel={closeButtonAriaLabel}
+              hideClose={hideClose}
             />
           )}
           <WizardToggle
@@ -481,7 +435,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                 isValid={isValid}
                 firstStep={firstStep}
                 activeStep={activeStep}
-                nextButtonText={activeStep.nextButtonText || nextButtonText}
+                nextButtonText={(activeStep && activeStep.nextButtonText) || nextButtonText}
                 backButtonText={backButtonText}
                 cancelButtonText={cancelButtonText}
               />
@@ -491,15 +445,13 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       </WizardContextProvider>
     );
 
-    return this.isModal
-      ? ReactDOM.createPortal(
-          <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-            <Backdrop>
-              <Bullseye>{wizard}</Bullseye>
-            </Backdrop>
-          </FocusTrap>,
-          this.container
-        )
-      : wizard;
+    if (isOpen !== undefined) {
+      return (
+        <Modal isOpen={isOpen} variant={ModalVariant.large} showClose={false} noPadding>
+          {wizard}
+        </Modal>
+      );
+    }
+    return wizard;
   }
 }

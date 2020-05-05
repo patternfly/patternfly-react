@@ -6,6 +6,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
 >
   <ModalContent
     actions={Array []}
+    aria-label=""
     className="''"
     disableFocusTrap={true}
     footer={
@@ -22,6 +23,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     id="pf-modal-0"
     isOpen={false}
     modalBoxAriaDescribedById=""
+    noPadding={false}
     onClose={[Function]}
     showClose={true}
     title="string"

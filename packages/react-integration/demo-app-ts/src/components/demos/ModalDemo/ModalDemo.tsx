@@ -254,9 +254,8 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     return (
       <Modal
         variant={ModalVariant.large}
-        title="Modal Header"
+        aria-label="Modal Header"
         isOpen={isNoHeaderModalOpen}
-        hideTitle
         modalContentAriaDescribedById="no-header-example"
         onClose={this.handleNoHeaderModalToggle}
         actions={[
