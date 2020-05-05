@@ -36,7 +36,7 @@ export class TabsStringEventKeyDemo extends Component {
           <Tab
             id="demoTabOne"
             eventKey={'one'}
-            title={<TabTitleText>Tab item 2</TabTitleText>}
+            title={<TabTitleText>Tab item 1</TabTitleText>}
             tabContentId="demoTab1Section"
             tabContentRef={this.contentRefOne}
           />

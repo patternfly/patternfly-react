@@ -1,4 +1,6 @@
 import * as React from 'react';
+import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import { css } from '@patternfly/react-styles';
 
 export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'ref'> {
   /** content rendered inside the Tab content area. */
@@ -19,7 +21,7 @@ const TabButtonBase: React.FunctionComponent<TabButtonProps> = ({
 }: TabButtonProps) => {
   const Component = (props.href ? 'a' : 'button') as any;
   return (
-    <Component {...props} className={className} ref={tabContentRef}>
+    <Component {...props} className={css(styles.tabsLink, className)} ref={tabContentRef}>
       {children}
     </Component>
   );

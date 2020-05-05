@@ -8,6 +8,8 @@ typescript: true
 import { Tabs, Tab, TabsVariant, TabContent, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
 import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
 
+Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
+
 ## Examples
 ```js title=Default
 import React from 'react';

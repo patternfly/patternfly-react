@@ -186,7 +186,8 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     }
   };
 
-  insetString = (s: string) => (s === '2xl' ? '_2xl' : capitalizeFirstLetter(s));
+  // Format the inset prop string by capitalizing the first letter.  If the string prop is '2xl' append '_' to beginning of the string so we can key the correct modifier.
+  FormatInsetString = (s: string) => (s === '2xl' ? '_2xl' : capitalizeFirstLetter(s));
 
   componentDidMount() {
     window.addEventListener('resize', this.handleScrollButtons, false);
@@ -238,12 +239,12 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             isVertical && styles.modifiers.vertical,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
-            inset && styles.modifiers[`inset${this.insetString(inset)}` as keyof typeof styles.modifiers],
-            insetOnMd && styles.modifiers[`inset${this.insetString(insetOnMd)}OnMd` as keyof typeof styles.modifiers],
-            insetOnLg && styles.modifiers[`inset${this.insetString(insetOnLg)}OnLg` as keyof typeof styles.modifiers],
-            insetOnXl && styles.modifiers[`inset${this.insetString(insetOnXl)}OnXl` as keyof typeof styles.modifiers],
+            inset && styles.modifiers[`inset${this.FormatInsetString(inset)}` as keyof typeof styles.modifiers],
+            insetOnMd && styles.modifiers[`inset${this.FormatInsetString(insetOnMd)}OnMd` as keyof typeof styles.modifiers],
+            insetOnLg && styles.modifiers[`inset${this.FormatInsetString(insetOnLg)}OnLg` as keyof typeof styles.modifiers],
+            insetOnXl && styles.modifiers[`inset${this.FormatInsetString(insetOnXl)}OnXl` as keyof typeof styles.modifiers],
             insetOn2Xl &&
-              styles.modifiers[`inset${this.insetString(insetOn2Xl)}On_2xl` as keyof typeof styles.modifiers],
+              styles.modifiers[`inset${this.FormatInsetString(insetOn2Xl)}On_2xl` as keyof typeof styles.modifiers],
             className
           )}
           {...getOUIAProps('Tabs', ouiaId)}
