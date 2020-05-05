@@ -21,7 +21,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
-  /** TODO: Use once core reimplements. Forces display of the active state of the options menu button */
+  /** Forces display of the active state of the options menu button */
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;
@@ -57,7 +57,8 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       styles.optionsMenuToggle,
       styles.modifiers.text,
       isPlain && styles.modifiers.plain,
-      isDisabled && styles.modifiers.disabled
+      isDisabled && styles.modifiers.disabled,
+      isActive && styles.modifiers.active
     )}
     {...props}
   >

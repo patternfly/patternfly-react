@@ -18,7 +18,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: any;
-  /** TODO: Use once core reimplements. Forces active state */
+  /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
   isDisabled?: boolean;

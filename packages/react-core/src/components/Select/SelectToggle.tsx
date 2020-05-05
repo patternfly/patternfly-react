@@ -25,7 +25,7 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   handleTypeaheadKeys?: (position: string) => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
-  /** TODO: Use once core reimplements. Forces active state */
+  /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
@@ -194,6 +194,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               styles.selectToggle,
               isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
+              isActive && styles.modifiers.active,
               className
             )}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
