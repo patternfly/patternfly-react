@@ -16,4 +16,8 @@ describe('Divider Demo Test', () => {
   it('Verify divider with div', () => {
     cy.get('li.pf-c-divider').should('have.attr', 'role', 'separator');
   });
+
+  it('Verify vertical divider', () => {
+    cy.get('.pf-c-divider#vertical-divider').should('have.class', 'pf-m-vertical');
+  });
 });
