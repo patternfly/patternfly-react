@@ -93,6 +93,7 @@ workflows:
         - build_docs_pf4
     - deploy_prerelease:
         requires:
+        - lint_pf4
         - test_jest_pf4
         - test_integration
         - build_docs_pf4
@@ -221,7 +222,7 @@ jobs:
         name: Breaking Change Lint
         # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
         command: |
-            if git log origin/master..HEAD --format="%b" | grep -i "breaking change";
+            if git log origin/${CIRCLE_BRANCH}..HEAD --format="%b" | grep -i "breaking change";
             then
                 echo "Breaking change above detected"
                 exit 1
