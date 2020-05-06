@@ -246,11 +246,21 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
             {React.Children.map(children, (child: any, index) => {
-              const { title, eventKey, tabContentRef, id: childId, tabContentId, ...rest } = child.props;
+              const {
+                title,
+                eventKey,
+                tabContentRef,
+                id: childId,
+                tabContentId,
+                isHidden = false,
+                ...rest
+              } = child.props;
+
               return (
                 <li
                   key={index}
                   className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
+                  hidden={isHidden}
                 >
                   <TabButton
                     className={css(styles.tabsButton)}
