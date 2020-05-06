@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.156.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.155.0...@patternfly/react-core@3.156.0) (2020-05-06)
+
+
+### Bug Fixes
+
+* **tabs:** properly check children before setting hidden ([#4179](https://github.com/patternfly/patternfly-react/issues/4179)) ([dc85915](https://github.com/patternfly/patternfly-react/commit/dc8591577c21144bf74f4a36c71d288e8a7cdadc))
+
+
+### Features
+
+* **tabs:** allow hiding tab buttons ([#4196](https://github.com/patternfly/patternfly-react/issues/4196)) ([caf13bd](https://github.com/patternfly/patternfly-react/commit/caf13bde3b1ca9a3d325ca9e8bc48acc1136a4f9))
+
+
+
+
+
 # [3.155.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.154.0...@patternfly/react-core@3.155.0) (2020-05-05)
 
 
