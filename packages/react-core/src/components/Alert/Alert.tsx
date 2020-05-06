@@ -23,7 +23,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   title: React.ReactNode;
   /** Close button; use the AlertActionCloseButton component  */
   actionClose?: React.ReactNode;
-  /** Action links; use a single AlertActionLink component or multiple wrapped in React.Fragment */
+  /** Action links; use a single AlertActionLink component or multiple wrapped in an array or React.Fragment */
   actionLinks?: React.ReactNode;
   /** Content rendered inside the Alert */
   children?: React.ReactNode;
