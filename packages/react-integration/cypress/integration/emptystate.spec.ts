@@ -5,6 +5,10 @@ describe('Empty State Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/empty-state-demo-nav-link');
   });
 
+  it('Verify extra large empty state', () => {
+    cy.get('.pf-c-empty-state').contains('Extra Large Empty State');
+  });
+
   it('Verify large empty state', () => {
     cy.get('.pf-c-empty-state').contains('Large Empty State');
   });
