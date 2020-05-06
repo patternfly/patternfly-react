@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__group"`;
+exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__group extra-class"`;
 
 exports[`drawer group with isExpanded applied  1`] = `
 <section

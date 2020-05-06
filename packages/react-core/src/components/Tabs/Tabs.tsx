@@ -89,12 +89,13 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     this.props.onSelect(event, eventKey);
     // process any tab content sections outside of the component
     if (tabContentRef) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      React.Children.map(this.props.children, (child: any, i) => {
-        child.props.tabContentRef.current.hidden = true;
-      });
+      React.Children.toArray<any>(this.props.children)
+        .filter(child => child.props && child.props.tabContentRef && child.props.tabContentRef.current)
+        .forEach(child => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
-      tabContentRef.current.hidden = false;
+      if (tabContentRef.current) {
+        tabContentRef.current.hidden = false;
+      }
     }
     // Update scroll button state and which button to highlight
     setTimeout(() => {
