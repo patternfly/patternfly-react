@@ -191,7 +191,6 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -977,7 +976,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -2306,7 +2304,6 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -2543,7 +2540,6 @@ exports[`checkbox select renders closed successfully 1`] = `
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -2762,7 +2758,6 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -3226,7 +3221,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -3719,7 +3713,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   <svg
                     aria-hidden="true"
@@ -4178,7 +4171,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                     <span
                       class="pf-c-select__toggle-text"
                     />
-                    
                   </div>
                   
                   <button
