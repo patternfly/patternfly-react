@@ -5,6 +5,7 @@ import {
   FormProps,
   TextInput,
   Checkbox,
+  Popover,
   Select,
   SelectOption,
   SelectOptionObject,
@@ -12,6 +13,7 @@ import {
   ValidatedOptions
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 export interface FormState {
   value: string;
@@ -90,6 +92,22 @@ export class FormDemo extends Component<FormProps, FormState> {
         <Form>
           <FormGroup
             label="Age:"
+            labelIcon={
+              <Popover
+                headerContent={<div>The age of a person</div>}
+                bodyContent={<div>Age is typically measured in years.</div>}
+              >
+                <button
+                  id="helper-text-target"
+                  aria-label="More info for name field"
+                  onClick={e => e.preventDefault()}
+                  aria-describedby="simple-form-name"
+                  className="pf-c-form__group-label-help"
+                >
+                  <HelpIcon noVerticalAlign />
+                </button>
+              </Popover>
+            }
             type="number"
             helperText="Please write your age"
             helperTextInvalid="Age has to be a number"
