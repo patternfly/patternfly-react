@@ -43,7 +43,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   icon,
   onClose,
   closeBtn,
-  closeBtnProps,
+  closeBtnProps = {
+    'aria-label': 'label-close-button'
+  },
   href,
   ...props
 }: LabelProps) => {
