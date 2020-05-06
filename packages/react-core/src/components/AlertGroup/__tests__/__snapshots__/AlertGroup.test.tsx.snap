@@ -296,7 +296,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                 </span>
                 Test Alert
               </h4>
-              
               <div
                 class="pf-c-alert__action"
               >
@@ -323,6 +322,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   </svg>
                 </button>
               </div>
+              
             </div>
           </li>
         </ul>
@@ -375,7 +375,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                 </span>
                 Test Alert
               </h4>
-              
               <div
                 class="pf-c-alert__action"
               >
@@ -402,6 +401,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   </svg>
                 </button>
               </div>
+              
             </div>
           </li>
         </ul>
@@ -418,7 +418,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
           key="0"
         >
           <Alert
-            action={
+            actionClose={
               <AlertActionCloseButton
                 aria-label="Close"
                 onClose={[MockFunction]}

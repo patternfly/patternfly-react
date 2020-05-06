@@ -3,8 +3,9 @@
 exports[`AlertActionLink should match snapshot (auto-generated) 1`] = `
 <Button
   className="''"
+  isInline={true}
   variant="link"
 >
-  ''
+  string
 </Button>
 `;

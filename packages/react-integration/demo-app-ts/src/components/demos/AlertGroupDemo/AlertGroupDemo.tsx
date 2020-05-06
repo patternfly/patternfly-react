@@ -68,7 +68,7 @@ export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
               variant={AlertVariant[variant]}
               title={title}
               key={key}
-              action={<AlertActionCloseButton onClose={() => this.removeAlert(key)} id="test-button" />}
+              actionClose={<AlertActionCloseButton onClose={() => this.removeAlert(key)} id="test-button" />}
             />
           ))}
         </AlertGroup>
