@@ -500,3 +500,57 @@ class SeparateTabContent extends React.Component {
   }
 }
 ```
+
+```js title=Toggled-separate-content
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent, Button, Divider } from '@patternfly/react-core';
+
+class ToggledSeparateContent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeKey: 0,
+      isTab2Hidden: false
+    };
+
+    this.contentRef1 = React.createRef();
+    this.contentRef2 = React.createRef();
+    this.contentRef3 = React.createRef();
+
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    const { isTab2Hidden } = this.state;
+    return (
+      <React.Fragment>
+        <Button onClick={() => this.setState({ isTab2Hidden: !isTab2Hidden })}>
+          {isTab2Hidden ? 'Show' : 'Hide'} tab 2
+        </Button>
+        <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
+        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+          <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
+          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} isHidden={isTab2Hidden} />
+          <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+        </Tabs>
+        <div>
+          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
+            Tab 1 section
+          </TabContent>
+          <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+            Tab 2 section
+          </TabContent>
+          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
+            Tab 3 section
+          </TabContent>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+```

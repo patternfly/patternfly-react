@@ -15,6 +15,8 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tabContentId?: string | number;
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
   tabContentRef?: React.RefObject<any>;
+  /** whether to render the tab or not */
+  isHidden?: boolean;
 }
 
 export const Tab: React.FunctionComponent<TabProps> = () => null;

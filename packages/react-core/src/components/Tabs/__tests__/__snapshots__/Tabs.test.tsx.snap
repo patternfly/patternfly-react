@@ -100,6 +100,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         >
           <li
             className="pf-c-tabs__item pf-m-current"
+            hidden={false}
             key="0/.0"
           >
             <ForwardRef
@@ -128,6 +129,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
           </li>
           <li
             className="pf-c-tabs__item"
+            hidden={false}
             key="1/.1"
           >
             <ForwardRef
@@ -156,6 +158,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
           </li>
           <li
             className="pf-c-tabs__item"
+            hidden={false}
             key="2/.2"
           >
             <ForwardRef
@@ -441,6 +444,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         >
           <li
             className="pf-c-tabs__item pf-m-current"
+            hidden={false}
             key="0/.0"
           >
             <ForwardRef
@@ -469,6 +473,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
           </li>
           <li
             className="pf-c-tabs__item"
+            hidden={false}
             key="1/.1"
           >
             <ForwardRef
@@ -497,6 +502,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
           </li>
           <li
             className="pf-c-tabs__item"
+            hidden={false}
             key="2/.2"
           >
             <ForwardRef
@@ -782,6 +788,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         >
           <li
             className="pf-c-tabs__item pf-m-current"
+            hidden={false}
             key="0/.0"
           >
             <ForwardRef
@@ -810,6 +817,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
           </li>
           <li
             className="pf-c-tabs__item"
+            hidden={false}
             key="1/.1"
           >
             <ForwardRef
@@ -838,6 +846,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
           </li>
           <li
             className="pf-c-tabs__item"
+            hidden={false}
             key="2/.2"
           >
             <ForwardRef
