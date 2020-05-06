@@ -503,14 +503,14 @@ class SeparateTabContent extends React.Component {
 
 ```js title=Toggled-separate-content
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabsVariant, TabContent, Button, Divider } from '@patternfly/react-core';
 
 class ToggledSeparateContent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeKey: 0,
-      showTab2: false
+      isTab2Hidden: false
     };
 
     this.contentRef1 = React.createRef();
@@ -526,15 +526,16 @@ class ToggledSeparateContent extends React.Component {
   }
 
   render() {
-    const { showTab2 } = this.state;
+    const { isTab2Hidden } = this.state;
     return (
       <React.Fragment>
-        <button onClick={() => this.setState({ showTab2: !showTab2 })}>
-          Toggle tab 2
-        </button>
+        <Button onClick={() => this.setState({ isTab2Hidden: !isTab2Hidden })}>
+          {isTab2Hidden ? 'Show' : 'Hide'} tab 2
+        </Button>
+        <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
-          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} isHidden={showTab2} />
+          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} isHidden={isTab2Hidden} />
           <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
