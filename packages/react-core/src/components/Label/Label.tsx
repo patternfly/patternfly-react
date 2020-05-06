@@ -17,12 +17,10 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   icon?: React.ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */
   onClose?: (event: React.MouseEvent) => void;
-  /** Aria label of the close button. */
-  closeBtnAriaLabel?: string;
-  /** Id of the close button. */
-  closeBtnId?: string;
-  /** Text id of the text within the label for the close button aria-labelledby field. */
-  closeBtnTextId?: string;
+  /** Node for custom close button. */
+  closeBtn?: React.ReactNode;
+  /** Additional properties for the default close button. */
+  closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. */
   href?: string;
 }
@@ -44,22 +42,16 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   variant = 'filled',
   icon,
   onClose,
-  closeBtnAriaLabel,
-  closeBtnId,
-  closeBtnTextId,
+  closeBtn,
+  closeBtnProps,
   href,
   ...props
 }: LabelProps) => {
   const Component = href ? 'a' : 'span';
-  const closeBtn = (
-    <Button
-      type="button"
-      variant="plain"
-      onClick={onClose}
-      aria-label={closeBtnAriaLabel}
-      id={closeBtnId}
-      aria-labelledby={`${closeBtnId} ${closeBtnTextId}`}
-    >
+  const button = closeBtn ? (
+    closeBtn
+  ) : (
+    <Button type="button" variant="plain" onClick={onClose} {...closeBtnProps}>
       <TimesIcon />
     </Button>
   );
@@ -73,7 +65,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
         {children}
       </Component>
-      {onClose && closeBtn}
+      {onClose && button}
     </span>
   );
 };

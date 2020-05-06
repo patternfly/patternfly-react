@@ -31,71 +31,19 @@ test('label with close button', () => {
   expect(outline).toMatchSnapshot();
 });
 
-test('label with blue color', () => {
-  const view = shallow(<Label color="blue">Something</Label>);
-  expect(view).toMatchSnapshot();
-  const outline = shallow(
-    <Label color="blue" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
-
-test('label with green color', () => {
-  const view = shallow(<Label color="green">Something</Label>);
-  expect(view).toMatchSnapshot();
-  const outline = shallow(
-    <Label color="green" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
-
-test('label with orange color', () => {
-  const view = shallow(<Label color="orange">Something</Label>);
-  expect(view).toMatchSnapshot();
-  const outline = shallow(
-    <Label color="orange" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
-
-test('label with red color', () => {
-  const view = shallow(<Label color="red">Something</Label>);
-  expect(view).toMatchSnapshot();
-  const outline = shallow(
-    <Label color="red" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
-
-test('label with purple color', () => {
-  const view = shallow(<Label color="purple">Something</Label>);
-  expect(view).toMatchSnapshot();
-  const outline = shallow(
-    <Label color="purple" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
-
-test('label with cyan color', () => {
-  const view = shallow(<Label color="cyan">Something</Label>);
-  expect(view).toMatchSnapshot();
-  const outline = shallow(
-    <Label color="cyan" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
+['blue', 'cyan', 'green', 'orange', 'purple', 'red', 'grey'].forEach(
+  (color: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'grey') =>
+    test(`label with ${color} color`, () => {
+      const view = shallow(<Label color={color}>Something</Label>);
+      expect(view).toMatchSnapshot();
+      const outline = shallow(
+        <Label color={color} variant="outline">
+          Something
+        </Label>
+      );
+      expect(outline).toMatchSnapshot();
+    })
+);
 
 test('label with additional class name', () => {
   const view = shallow(<Label className="klass1">Something</Label>);

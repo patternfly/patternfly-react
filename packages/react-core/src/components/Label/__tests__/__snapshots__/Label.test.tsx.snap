@@ -84,7 +84,6 @@ exports[`label with close button 1`] = `
     Something
   </span>
   <Button
-    aria-labelledby="undefined undefined"
     onClick={[MockFunction]}
     type="button"
     variant="plain"
@@ -108,7 +107,6 @@ exports[`label with close button 2`] = `
     Something
   </span>
   <Button
-    aria-labelledby="undefined undefined"
     onClick={[MockFunction]}
     type="button"
     variant="plain"
@@ -161,6 +159,30 @@ exports[`label with green color 1`] = `
 exports[`label with green color 2`] = `
 <span
   className="pf-c-label pf-m-green pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with grey color 1`] = `
+<span
+  className="pf-c-label"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with grey color 2`] = `
+<span
+  className="pf-c-label pf-m-outline"
 >
   <span
     className="pf-c-label__content"
