@@ -12,15 +12,15 @@ import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } f
 ## Examples
 ```js title=Static-alert-group
 import * as React from 'react';
-import { Alert, AlertGroup, AlertVariant } from '@patternfly/react-core';
+import { Alert, AlertGroup } from '@patternfly/react-core';
 
 class StaticAlertGroup extends React.Component {
   render() {
     return (
       <React.Fragment>
         <AlertGroup>
-          <Alert title="Success Alert" variant={AlertVariant['success']} isInline />
-          <Alert title="Info Alert" variant={AlertVariant['info']} isInline/>
+          <Alert title="Success Alert" variant="success" isInline />
+          <Alert title="Info Alert" variant="info" isInline/>
         </AlertGroup>
       </React.Fragment>
     );
