@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.13...@patternfly/react-core@4.9.14) (2020-05-06)
+
+
+### Bug Fixes
+
+* **drawer:** add aria-expanded to the toggle button ([#4192](https://github.com/patternfly/patternfly-react/issues/4192)) ([5f1e818](https://github.com/patternfly/patternfly-react/commit/5f1e8182b9324d25feaa23f28805e838a4bad267))
+
+
+
+
+
 ## [4.9.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.12...@patternfly/react-core@4.9.13) (2020-05-05)
 
 **Note:** Version bump only for package @patternfly/react-core
