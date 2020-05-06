@@ -126,7 +126,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         onClick={event => this.handleNewPerPage(event, value)}
       >
         {title}
-        <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
+        {` ${perPageSuffix}`}
         {perPage === value && (
           <div className={css(styles.optionsMenuMenuItemIcon)}>
             <CheckIcon />
@@ -157,7 +157,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         value={{
           id: widgetId,
           onSelect: this.onSelect,
-          toggleIndicatorClass: styles.optionsMenuToggleIcon,
+          toggleIndicatorClass: styles.optionsMenuToggleButtonIcon,
           toggleTextClass: styles.optionsMenuToggleText,
           menuClass: styles.optionsMenuMenu,
           itemClass: styles.optionsMenuMenuItem,

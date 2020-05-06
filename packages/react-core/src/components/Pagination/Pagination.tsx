@@ -83,6 +83,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact */
   isCompact?: boolean;
+  /** Flag indicating if pagination is not sticky */
+  isStatic?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
@@ -201,6 +203,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       variant,
       isDisabled,
       isCompact,
+      isStatic,
       perPage,
       titles,
       firstPage,
@@ -250,8 +253,9 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
         ref={this.paginationRef}
         className={css(
           styles.pagination,
-          variant === PaginationVariant.bottom && styles.modifiers.footer,
+          variant === PaginationVariant.bottom && styles.modifiers.bottom,
           isCompact && styles.modifiers.compact,
+          isStatic && styles.modifiers.static,
           className
         )}
         id={`${widgetId}-${paginationId++}`}
