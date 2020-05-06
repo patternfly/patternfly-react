@@ -134,10 +134,16 @@ class VerticalPage extends React.Component {
         <PageSection variant={PageSectionVariants.light} hasNoPadding>
           Section with no padding
         </PageSection>
-        <PageSection hasNoPadding hasPaddingOn={[PageSectionBreakpoints.md, PageSectionBreakpoints.lg]}>
+        <PageSection
+          hasNoPadding
+          breakpointMods={[{ modifier: 'padding', breakpoint: 'md' }, { modifier: 'padding', breakpoint: 'lg' }]}
+        >
           Section with padding only on medium/large
         </PageSection>
-        <PageSection variant={PageSectionVariants.light} hasNoPaddingOn={PageSectionBreakpoints.md}>
+        <PageSection
+          variant={PageSectionVariants.light}
+          breakpointMods={[{ modifier: 'no-padding', breakpoint: 'md' }]}
+        >
           Section with no padding on medium
         </PageSection>
       </Page>

@@ -2,6 +2,7 @@ import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import { ToolbarBreakpointMod } from '../components/Toolbar/ToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
+import { PageSectionBreakpointMod } from '../components/Page/PageSection';
 
 /**
  * @param {string} input - String to capitalize
@@ -237,11 +238,11 @@ export function pluralize(i: number, singular: string, plural?: string) {
 
 /** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
- * @param {(ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[]} breakpointMods The modifiers object
+ * @param {(ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod)[]} breakpointMods The modifiers object
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
-  breakpointMods: (ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[],
+  breakpointMods: (ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod)[],
   styles: any
 ) =>
   breakpointMods

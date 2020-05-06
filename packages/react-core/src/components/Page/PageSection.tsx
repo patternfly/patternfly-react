@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
+import { formatBreakpointMods } from '../../helpers/util';
 
 export enum PageSectionVariants {
   default = 'default',
@@ -14,12 +15,11 @@ export enum PageSectionTypes {
   nav = 'nav'
 }
 
-export enum PageSectionBreakpoints {
-  sm = 'sm',
-  md = 'md',
-  lg = 'lg',
-  xl = 'xl',
-  '2xl' = '2xl'
+export interface PageSectionBreakpointMod {
+  /** The attribute to modify  */
+  modifier: 'padding' | 'no-padding';
+  /** The breakpoint at which to apply the modifier */
+  breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
@@ -35,10 +35,8 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
   hasNoPadding?: boolean;
-  /** Modifies a main page section to have padding on specific screen size breakpoints */
-  hasPaddingOn?: ('sm' | 'md' | 'lg' | 'xl' | '2xl')[] | ('sm' | 'md' | 'lg' | 'xl' | '2xl');
-  /** Modifies a main page section to not have padding on specific screen size breakpoints */
-  hasNoPaddingOn?: ('sm' | 'md' | 'lg' | 'xl' | '2xl')[] | ('sm' | 'md' | 'lg' | 'xl' | '2xl');
+  /** An array of objects representing modifiers to apply to the page section at various breakpoints */
+  breakpointMods?: PageSectionBreakpointMod[];
 }
 
 const variantType = {
@@ -53,30 +51,13 @@ const variantStyle = {
   [PageSectionVariants.darker]: styles.modifiers.dark_100
 };
 
-const paddingBreakpoints = {
-  [PageSectionBreakpoints.sm]: styles.modifiers.paddingOnSm,
-  [PageSectionBreakpoints.md]: styles.modifiers.paddingOnMd,
-  [PageSectionBreakpoints.lg]: styles.modifiers.paddingOnLg,
-  [PageSectionBreakpoints.xl]: styles.modifiers.paddingOnXl,
-  [PageSectionBreakpoints['2xl']]: styles.modifiers.paddingOn_2xl
-};
-
-const noPaddingBreakpoints = {
-  [PageSectionBreakpoints.sm]: styles.modifiers.noPaddingOnSm,
-  [PageSectionBreakpoints.md]: styles.modifiers.noPaddingOnMd,
-  [PageSectionBreakpoints.lg]: styles.modifiers.noPaddingOnLg,
-  [PageSectionBreakpoints.xl]: styles.modifiers.noPaddingOnXl,
-  [PageSectionBreakpoints['2xl']]: styles.modifiers.noPaddingOn_2xl
-};
-
 export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   className = '',
   children,
   variant = 'default',
   type = 'default',
   hasNoPadding = false,
-  hasPaddingOn,
-  hasNoPaddingOn,
+  breakpointMods = [] as PageSectionBreakpointMod[],
   isFilled,
   ...props
 }: PageSectionProps) => (
@@ -85,14 +66,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
     className={css(
       variantType[type],
       hasNoPadding && styles.modifiers.noPadding,
-      hasPaddingOn &&
-        (hasPaddingOn.constructor !== Array
-          ? paddingBreakpoints[hasPaddingOn as PageSectionBreakpoints]
-          : (hasPaddingOn as PageSectionBreakpoints[]).map(breakpoint => paddingBreakpoints[breakpoint])),
-      hasNoPaddingOn &&
-        (hasNoPaddingOn.constructor !== Array
-          ? noPaddingBreakpoints[hasNoPaddingOn as PageSectionBreakpoints]
-          : (hasNoPaddingOn as PageSectionBreakpoints[]).map(breakpoint => noPaddingBreakpoints[breakpoint])),
+      formatBreakpointMods(breakpointMods, styles),
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
