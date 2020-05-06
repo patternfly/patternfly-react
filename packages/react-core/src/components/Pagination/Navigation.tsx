@@ -237,7 +237,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             >
               <AngleDoubleRightIcon />
             </Button>
-        </div>
+          </div>
         )}
       </nav>
     );

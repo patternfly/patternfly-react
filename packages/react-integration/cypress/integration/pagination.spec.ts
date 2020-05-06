@@ -28,7 +28,7 @@ describe('Pagination Demo Test', () => {
 
   it('Verify initial state', () => {
     cy.get('.pf-c-pagination').should('have.length', 4);
-    cy.get('.pagination-options-menu-bottom.pf-c-pagination.pf-m-footer').should('exist');
+    cy.get('.pagination-options-menu-bottom.pf-c-pagination.pf-m-bottom').should('exist');
     cy.get('.pagination-options-menu-top')
       .find('.pf-c-options-menu__toggle-text')
       .then(toggleText => expect(toggleText).to.have.text('1 - 20 of 523 '));

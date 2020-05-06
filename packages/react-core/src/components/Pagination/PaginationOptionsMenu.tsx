@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import paginationStyles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
