@@ -1,6 +1,6 @@
 import { Label } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import { InfoCircleIcon } from '@patternfly/react-icons';
+import { InfoCircleIcon } from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
 
 export class LabelDemo extends Component {
   componentDidMount() {
