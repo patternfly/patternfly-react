@@ -2,7 +2,7 @@
 
 exports[`NotificationDrawerGroup should match snapshot (auto-generated) 1`] = `
 <section
-  className="pf-c-notification-drawer__group pf-m-expanded"
+  className="pf-c-notification-drawer__group pf-m-expanded ''"
 >
   <h1>
     <button
