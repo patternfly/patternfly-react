@@ -294,8 +294,8 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             child =>
               child &&
               child.props.children &&
-              (unmountOnExit && child.props.eventKey !== activeKey) &&
-              (mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
+              !(unmountOnExit && child.props.eventKey !== activeKey) &&
+              !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
           )
           .map((child, index) => (
             <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />

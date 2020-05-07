@@ -13,13 +13,10 @@ export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement |
 
 export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   tabContentRef,
   ...props
 }: TabButtonProps) => {
   const Component = (props.href ? 'a' : 'button') as any;
-  return (
-    <Component {...props}>
-      {children}
-    </Component>
-  );
+  return <Component {...props}>{children}</Component>;
 };

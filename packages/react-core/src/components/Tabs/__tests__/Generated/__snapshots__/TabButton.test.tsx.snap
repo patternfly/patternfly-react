@@ -1,13 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabButton should match snapshot (auto-generated) 1`] = `
-<TabButtonBase
+<a
   className="''"
   href="string"
-  tabContentRef={null}
 >
   <div>
     ReactNode
   </div>
-</TabButtonBase>
+</a>
 `;
