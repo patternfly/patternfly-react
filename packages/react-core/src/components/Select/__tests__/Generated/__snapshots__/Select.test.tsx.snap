@@ -50,20 +50,6 @@ exports[`Select should match snapshot (auto-generated) 1`] = `
           className="pf-c-select__toggle-text"
         />
       </div>
-      <button
-        aria-label="'Clear all'"
-        className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        <TimesCircleIcon
-          aria-hidden={true}
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        />
-      </button>
     </SelectToggle>
   </ContextProvider>
 </div>

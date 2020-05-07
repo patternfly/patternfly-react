@@ -156,7 +156,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
       this.setState({
-        typeaheadInputValue: this.props.selections.toString()
+        typeaheadInputValue: this.props.selections as string
       });
     }
   };
@@ -376,7 +376,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
-    const hasAnySelections = selections && selections.length > 0;
+    const hasAnySelections = selections && selections.length > 0 && selectionsProp !== '';
     let childPlaceholderText = null;
     if (!customContent) {
       if (!hasAnySelections && !placeholderText) {
