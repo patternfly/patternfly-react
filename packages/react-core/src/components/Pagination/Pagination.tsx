@@ -165,7 +165,6 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
     itemsStart: null,
     itemsEnd: null,
     perPageOptions: defaultPerPageOptions,
-    dropDirection: DropdownDirection.down,
     widgetId: 'pagination-options-menu',
     toggleTemplate: ToggleTemplate,
     onSetPage: () => undefined,
@@ -212,7 +211,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       itemsStart,
       itemsEnd,
       perPageOptions,
-      dropDirection,
+      dropDirection: dropDirectionProp,
       widgetId,
       toggleTemplate,
       onSetPage,
@@ -225,6 +224,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       ouiaId,
       ...props
     } = this.props;
+    const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
 
     let page = propPage;
     if (!page && offset) {

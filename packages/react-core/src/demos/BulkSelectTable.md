@@ -127,7 +127,6 @@ class BulkSelectTableDemo extends React.Component {
         onPerPageSelect={(_evt, value) => {
           this.fetch(1, value);
         }}
-        dropDirection={variant === 'bottom' ? 'up' : 'down'}
         variant={variant}
       />
     );
