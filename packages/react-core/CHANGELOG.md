@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.11.0...@patternfly/react-core@4.11.1) (2020-05-07)
+
+
+### Bug Fixes
+
+* use id over randomIdWhen component is given an id use this id instead of the random created one. ([#4208](https://github.com/patternfly/patternfly-react/issues/4208)) ([4d7108a](https://github.com/patternfly/patternfly-react/commit/4d7108aae2c491a1067fd4bb4301393e976900d1))
+
+
+
+
+
 # [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.10.0...@patternfly/react-core@4.11.0) (2020-05-07)
 
 
