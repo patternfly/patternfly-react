@@ -432,7 +432,7 @@ class ColumnManagementAction extends React.Component {
     return <Modal
       title="Manage columns"
       isOpen={isModalOpen}
-      isSmall
+      variant="small"
       description={
         <TextContent>
           <Text component={TextVariants.p}>
@@ -450,7 +450,6 @@ class ColumnManagementAction extends React.Component {
           Cancel
         </Button>
       ]}
-      isFooterLeftAligned
     >
       <DataList aria-label="Table column management" id="table-column-management" isCompact>
         <DataListItem aria-labelledby="table-column-management-item1">
@@ -550,20 +549,20 @@ class ColumnManagementAction extends React.Component {
       <ToolbarItem><Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button></ToolbarItem>
       </ToolbarGroup>
       </ToolbarContent>
-      <ToolbarContent>
-        <Pagination
-          itemCount={37}
-          widgetId="pagination-options-menu-bottom"
-          page={1}
-          variant={PaginationVariant.bottom}
-        />
-      </ToolbarContent>
     </React.Fragment>;
 
     return <React.Fragment>
       <Table
         gridBreakPoint='grid-xl'
-        header={<Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>}
+        header={<React.Fragment>
+          <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
+          <Pagination
+            itemCount={37}
+            widgetId="pagination-options-menu-bottom"
+            page={1}
+            variant={PaginationVariant.top}
+          />
+        </React.Fragment>}
         aria-label="This is a table with checkboxes"
         id="page-layout-table-column-management-action-table"
         onSelect={this.onSelect}
@@ -575,17 +574,13 @@ class ColumnManagementAction extends React.Component {
         <TableHeader />
         <TableBody />
       </Table>
-      <Toolbar id="footer">
-        <ToolbarContent>
-          <Pagination
-            id="page-layout-table-column-management-action-toolbar-bottom"
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.bottom}
-          />
-        </ToolbarContent>
-      </Toolbar>
+      <Pagination
+        id="page-layout-table-column-management-action-toolbar-bottom"
+        itemCount={37}
+        widgetId="pagination-options-menu-bottom"
+        page={1}
+        variant={PaginationVariant.bottom}
+      />
       {this.renderModal()}
     </React.Fragment>;
   }

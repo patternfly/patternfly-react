@@ -11,9 +11,7 @@ import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
   top = 'top',
-  bottom = 'bottom',
-  left = 'left',
-  right = 'right'
+  bottom = 'bottom'
 }
 
 const defaultPerPageOptions = [
@@ -78,7 +76,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Total number of items. */
   itemCount: number;
   /** Position where pagination is rendered. */
-  variant?: 'top' | 'bottom' | 'left' | 'right';
+  variant?: 'top' | 'bottom' | PaginationVariant;
   /** Flag indicating if pagination is disabled */
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact */
