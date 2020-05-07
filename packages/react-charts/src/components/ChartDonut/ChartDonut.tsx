@@ -21,13 +21,12 @@ import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
-  textComponent: React.ReactElement<any>;
+  textComponent?: React.ReactElement<any>;
 }
 
 interface ChartDonutTitleInterface {
   dy?: number;
   styles?: any;
-  textComponent?: React.ReactElement<any>;
   titles?: string | string[];
 }
 
