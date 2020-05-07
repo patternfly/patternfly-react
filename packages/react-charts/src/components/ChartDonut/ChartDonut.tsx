@@ -542,11 +542,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   };
 
   // Returns subtitle
-  const getSubTitle = ({
-    textComponent = <ChartLabel/>
-  }: {
-    textComponent?: React.ReactElement<any>;
-  }) => {
+  const getSubTitle = ({ textComponent = <ChartLabel /> }: { textComponent?: React.ReactElement<any> }) => {
     if (!subTitle) {
       return null;
     }
@@ -578,7 +574,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   // Returns title
   const getTitle = ({
     styles = ChartDonutStyles.label.title,
-    titles = title,
+    titles = title
   }: {
     styles?: any;
     titles?: string | string[];
@@ -589,7 +585,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const titleProps = titleComponent ? titleComponent.props : {};
 
     return React.cloneElement(titleComponent, {
-      ...Array.isArray(titles) && { capHeight }, // Use capHeight with multiple labels
+      ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
       key: 'pf-chart-donut-title',
       style: styles,
       text: titles,
