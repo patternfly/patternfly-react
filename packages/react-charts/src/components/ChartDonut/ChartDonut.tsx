@@ -536,13 +536,13 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     return (
       <>
         {getTitle({ titles: title })}
-        {getSubTitle({ textComponent: subTitleComponent ? subTitleComponent : <ChartLabel /> })}
+        {getSubTitle(subTitleComponent)}
       </>
     );
   };
 
   // Returns subtitle
-  const getSubTitle = ({ textComponent = <ChartLabel /> }: { textComponent?: React.ReactElement<any> }) => {
+  const getSubTitle = (textComponent: React.ReactElement<any> = <ChartLabel />) => {
     if (!subTitle) {
       return null;
     }
