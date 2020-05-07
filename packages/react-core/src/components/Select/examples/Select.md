@@ -152,20 +152,20 @@ class GroupedSingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: null
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
     this.onSelect = (event, selection) => {
       this.setState({
         selected: selection,
-        isExpanded: false
+        isOpen: false
       })
     };
 
@@ -192,7 +192,7 @@ class GroupedSingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'grouped-single-select-id';
     return (
       <div>
@@ -204,7 +204,7 @@ class GroupedSingleSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status/vendor"
           ariaLabelledBy={titleId}
           isGrouped
@@ -301,13 +301,13 @@ class CheckboxSelectInputNoBadge extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -341,7 +341,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <div>
@@ -355,7 +355,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isCheckboxSelectionBadgeHidden
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
         >
@@ -376,13 +376,13 @@ class CheckboxSelectInputNoBadge extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -416,7 +416,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <div>
@@ -430,7 +430,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isCheckboxSelectionBadgeHidden
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
         >
@@ -451,13 +451,13 @@ class CheckboxSelectInputNoBadge extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -491,7 +491,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'checkbox-select-id';
     return (
       <div>
@@ -505,7 +505,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isCheckboxSelectionBadgeHidden
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
         >
@@ -711,7 +711,7 @@ class FilteringCheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
@@ -730,9 +730,9 @@ class FilteringCheckboxSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -778,7 +778,7 @@ class FilteringCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, filteredOptions } = this.state;
+    const { isOpen, selected, filteredOptions } = this.state;
     const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
@@ -790,7 +790,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
           onFilter={this.onFilter}
@@ -815,7 +815,7 @@ class FilteringCheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
@@ -834,9 +834,9 @@ class FilteringCheckboxSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -882,7 +882,7 @@ class FilteringCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, filteredOptions } = this.state;
+    const { isOpen, selected, filteredOptions } = this.state;
     const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
@@ -894,7 +894,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
           onFilter={this.onFilter}
@@ -919,7 +919,7 @@ class FilteringCheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
@@ -938,9 +938,9 @@ class FilteringCheckboxSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -986,7 +986,7 @@ class FilteringCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, filteredOptions } = this.state;
+    const { isOpen, selected, filteredOptions } = this.state;
     const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
@@ -998,7 +998,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
           onFilter={this.onFilter}

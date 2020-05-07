@@ -375,10 +375,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
-    const selections = !Array.isArray(selectionsProp) ? [selectionsProp] : selectionsProp;
+    const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
+    const hasAnySelections = selections && selections.length > 0;
     let childPlaceholderText = null;
     if (!customContent) {
-      if (!selections && !placeholderText) {
+      if (!hasAnySelections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
           (child: React.ReactNode) => (child as React.ReactElement).props.isPlaceholder === true
         );
@@ -389,7 +390,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     const hasOnClear = onClear !== Select.defaultProps.onClear;
-    const hasAnySelections = selections && selections.length > 0;
     const clearBtn = (
       <button
         className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
@@ -576,7 +576,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     disabled={isDisabled}
                   />
                 </div>
-                {(selections || typeaheadInputValue) && clearBtn}
+                {(selections[0] || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeaheadMulti && !customContent && (
