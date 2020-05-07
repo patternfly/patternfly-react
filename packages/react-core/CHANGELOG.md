@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.157.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.156.0...@patternfly/react-core@3.157.0) (2020-05-07)
+
+
+### Bug Fixes
+
+* **tabs:** properly handle null Tab and TabContent ([#4211](https://github.com/patternfly/patternfly-react/issues/4211)) ([2fd93b1](https://github.com/patternfly/patternfly-react/commit/2fd93b112eb3cc87a2e9816754926744479a6c50))
+
+
+### Features
+
+* **MasterDetailDemo:** Add Master Detail Demo ([#4115](https://github.com/patternfly/patternfly-react/issues/4115)) ([1ed3055](https://github.com/patternfly/patternfly-react/commit/1ed30551b7bf77ef52603be9b10b30260b40a04c))
+
+
+
+
+
 # [3.156.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.155.0...@patternfly/react-core@3.156.0) (2020-05-06)
 
 
