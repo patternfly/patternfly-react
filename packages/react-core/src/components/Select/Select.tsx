@@ -379,7 +379,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (!selections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
         childPlaceholderText =
-        (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
+          (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
@@ -526,10 +526,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             {variant === SelectVariant.single && !customContent && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
-                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                <span className={css(styles.selectToggleText)}>
-                  {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
-                </span>
+                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                  <span className={css(styles.selectToggleText)}>
+                    {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
+                  </span>
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
