@@ -19,6 +19,18 @@ import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
 
+interface ChartDonutSubTitleInterface {
+  dy?: number;
+  textComponent: React.ReactElement<any>;
+}
+
+interface ChartDonutTitleInterface {
+  dy?: number;
+  styles?: any;
+  textComponent?: React.ReactElement<any>;
+  titles?: string | string[];
+}
+
 export enum ChartDonutLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
@@ -524,10 +536,11 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         padding: defaultPadding
       });
   const chartInnerRadius = innerRadius ? innerRadius : chartRadius - 9; // Todo: Add pf-core variable
+  const centerSubTitle = subTitle && subTitlePosition === ChartDonutSubTitlePosition.center;
 
   // Returns title and subtitle
   const getAllTitles = () => {
-    if (!subTitleComponent && subTitle && subTitlePosition === ChartDonutSubTitlePosition.center) {
+    if (!subTitleComponent && centerSubTitle) {
       return getTitle({
         styles: [ChartDonutStyles.label.title, ChartDonutStyles.label.subTitle],
         titles: [title, subTitle]
@@ -535,14 +548,14 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     }
     return (
       <>
-        {getTitle({ titles: title })}
-        {getSubTitle(subTitleComponent)}
+        {getTitle({ titles: title, dy: centerSubTitle ? -8 : 0 })}
+        {getSubTitle({ textComponent: subTitleComponent, dy: centerSubTitle ? 15 : 0 })}
       </>
     );
   };
 
   // Returns subtitle
-  const getSubTitle = (textComponent: React.ReactElement<any> = <ChartLabel />) => {
+  const getSubTitle = ({ dy = 0, textComponent = <ChartLabel /> }: ChartDonutSubTitleInterface) => {
     if (!subTitle) {
       return null;
     }
@@ -562,6 +575,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         width
       }),
       y: getPieLabelY({
+        dy,
         height,
         labelPosition: subTitlePosition,
         padding: defaultPadding,
@@ -572,13 +586,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   };
 
   // Returns title
-  const getTitle = ({
-    styles = ChartDonutStyles.label.title,
-    titles = title
-  }: {
-    styles?: any;
-    titles?: string | string[];
-  }) => {
+  const getTitle = ({ dy = 0, styles = ChartDonutStyles.label.title, titles = title }: ChartDonutTitleInterface) => {
     if (!titles) {
       return null;
     }
@@ -599,6 +607,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         width
       }),
       y: getPieLabelY({
+        dy,
         height,
         labelPosition: 'center',
         padding: defaultPadding,
