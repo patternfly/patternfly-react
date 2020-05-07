@@ -26,7 +26,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   isReadOnly?: boolean;
   /** Flag to show if the input is required. */
   isRequired?: boolean;
-  /* Value to indicate if the input is modified to show that validation state.
+  /** Value to indicate if the input is modified to show that validation state.
    * If set to success, input will be modified to indicate valid state.
    * If set to error,  input will be modified to indicate error state.
    */
