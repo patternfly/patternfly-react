@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.6.7...@patternfly/react-integration@4.7.0) (2020-05-07)
+
+
+### Features
+
+* **Drawer, DataList, Page:** rename noPadding to hasNoPadding ([#4133](https://github.com/patternfly/patternfly-react/issues/4133)) ([9d7ee63](https://github.com/patternfly/patternfly-react/commit/9d7ee633de1ac24a776fab84a1c1091712395dd2))
+
+
+
+
+
 ## [4.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.6.6...@patternfly/react-integration@4.6.7) (2020-05-06)
 
 **Note:** Version bump only for package @patternfly/react-integration
