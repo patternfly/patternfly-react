@@ -5,6 +5,12 @@ describe('Tab Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/tab-demo-nav-link');
   });
 
+  it('Verify tab2 can be hidden or shown', () => {
+    cy.get('#pf-tab-1-demoTab2').should('be.hidden');
+    cy.get('#showTab2').click();
+    cy.get('#pf-tab-1-demoTab2').should('be.visible');
+  });
+
   it('Verify tabs, tab sections, and tab navigation', () => {
     cy.get('div#unconnectedChildren')
       .find('.pf-c-tabs__button')

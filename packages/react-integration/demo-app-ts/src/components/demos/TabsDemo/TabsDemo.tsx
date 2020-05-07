@@ -1,11 +1,12 @@
-import { Tabs, Tab, TabContent } from '@patternfly/react-core';
+import { Tabs, Tab, TabContent, Button } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TabDemo extends Component {
   state = {
     activeTabKey: 0,
     activeTabKey2: 0,
-    activeTabKey3: 0
+    activeTabKey3: 0,
+    isTab2Hidden: true
   };
   private contentRef1: any;
   private contentRef2: any;
@@ -45,8 +46,13 @@ export class TabDemo extends Component {
   }
 
   render() {
+    const { isTab2Hidden } = this.state;
+
     return (
       <React.Fragment>
+        <Button id="showTab2" onClick={() => this.setState({ isTab2Hidden: !isTab2Hidden })}>
+          {isTab2Hidden ? 'Show' : 'Hide'} tab 2
+        </Button>
         <Tabs id="unconnectedChildren" activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab
             id="demoTab1"
@@ -61,6 +67,7 @@ export class TabDemo extends Component {
             title="Tab item 2"
             tabContentId="demoTab2Section"
             tabContentRef={this.contentRef2}
+            isHidden={isTab2Hidden}
           />
           <Tab
             id="demoTab3"
