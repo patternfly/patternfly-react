@@ -438,7 +438,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.singleOnToggle}
             onSelect={this.singleOnSelect}
-            selection={singleSelected}
+            selections={singleSelected}
             isOpen={singleisOpen}
             aria-labelledby={titleId}
             direction={this.state.direction}
@@ -484,7 +484,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="Select Input"
             onToggle={this.disabledSingleOnToggle}
             onSelect={this.disabledSingleOnSelect}
-            selection={disabledSingleSelected}
+            selections={disabledSingleSelected}
             isOpen={disabledSingleisOpen}
             aria-labelledby={titleId}
             isDisabled
@@ -521,7 +521,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             aria-label="CustomSelect Input"
             onToggle={this.customSingleOnToggle}
             onSelect={this.customSingleOnSelect}
-            selection={customSingleSelected}
+            selections={customSingleSelected}
             isOpen={customSingleisOpen}
             aria-labelledby={titleId}
           >
@@ -645,7 +645,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onToggle={this.typeaheadOnToggle}
             onSelect={this.typeaheadOnSelect}
             onClear={this.clearSelection}
-            selection={typeaheadSelected}
+            selections={typeaheadSelected}
             isOpen={typeaheadisOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
@@ -879,7 +879,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             onToggle={() => null}
             onSelect={() => null}
             onClear={() => null}
-            selection=""
+            selections=""
             isOpen={false}
             aria-labelledby={titleId}
             placeholderText="Select a state"

@@ -40,10 +40,8 @@ export interface SelectProps
   placeholderText?: string | React.ReactNode;
   /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
-  /** Selected item for single select variants. */
-  selection?: string | SelectOptionObject;
-  /** Array of selected items for multi select variants. */
-  selections?: string[] | SelectOptionObject[];
+  /** Selected item for single select variant.  Array of selected items for multi select variants. */
+  selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Flag indicating if selection badge should be hidden for checkbox variant,default false */
   isCheckboxSelectionBadgeHidden?: boolean;
   /** Id for select toggle element */
@@ -118,8 +116,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     clearSelectionsAriaLabel: 'Clear all',
     toggleAriaLabel: 'Options menu',
     removeSelectionAriaLabel: 'Remove',
-    selection: '',
-    selections: [],
+    selections: '',
     createText: 'Create',
     placeholderText: '',
     noResultsFoundText: 'No results found',
@@ -157,9 +154,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
 
-    if (prevProps.selection !== this.props.selection && this.props.variant === SelectVariant.typeahead) {
+    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
       this.setState({
-        typeaheadInputValue: this.props.selection.toString()
+        typeaheadInputValue: this.props.selections as string
       });
     }
   };
@@ -306,9 +303,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (!value) {
       return;
     }
-    const item = React.Children.toArray(this.props.children).find(
-      (child: React.ReactNode) => (child as React.ReactElement).props.value.toString() === value.toString()
-    ) as React.ReactElement;
+    const { children } = this.props;
+    const item = children.filter(child => child.props.value.toString() === value.toString())[0];
     if (item) {
       if (item && item.props.children) {
         if (type === 'node') {
@@ -357,7 +353,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isPlain,
       isDisabled,
       isCreatable,
-      selection,
       selections,
       typeAheadAriaLabel,
       clearSelectionsAriaLabel,
@@ -381,18 +376,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!customContent) {
-      if (!selection && !placeholderText) {
-        const childPlaceholder = React.Children.toArray(children).filter(
-          (child: React.ReactNode) => (child as React.ReactElement).props.isPlaceholder === true
-        );
+      if (!selections && !placeholderText) {
+        const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
         childPlaceholderText =
-          (childPlaceholder[0] && this.getDisplay((childPlaceholder[0] as React.ReactElement).props.value, 'node')) ||
+        (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
 
     const hasOnClear = onClear !== Select.defaultProps.onClear;
-    const hasAnySelections = (selections && selections.length > 0) || (selection && selection !== '');
+    const hasAnySelections =
+      selections && (Array.isArray(selections) ? (selections.length > 0 ? true : false) : selections !== '');
     const clearBtn = (
       <button
         className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
@@ -465,7 +459,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       switch (variant) {
         case 'single':
           variantProps = {
-            selected: selection,
+            selected: selections,
             openedOnEnter
           };
           variantChildren = children;
@@ -480,7 +474,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           break;
         case 'typeahead':
           variantProps = {
-            selected: selection,
+            selected: selections,
             openedOnEnter
           };
           variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
@@ -532,10 +526,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             {variant === SelectVariant.single && !customContent && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
-                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <span className={css(styles.selectToggleText)}>
-                    {this.getDisplay(selection as string, 'node') || placeholderText || childPlaceholderText}
-                  </span>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                <span className={css(styles.selectToggleText)}>
+                  {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
+                </span>
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
@@ -569,7 +563,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     value={
                       typeaheadInputValue !== null
                         ? typeaheadInputValue
-                        : this.getDisplay(selection as string, 'text') || ''
+                        : this.getDisplay(selections as string, 'text') || ''
                     }
                     type="text"
                     onClick={this.onClick}
@@ -579,7 +573,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     disabled={isDisabled}
                   />
                 </div>
-                {(selection || typeaheadInputValue) && clearBtn}
+                {(selections || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -602,7 +596,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     disabled={isDisabled}
                   />
                 </div>
-                {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
+                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) &&
+                  clearBtn}
               </React.Fragment>
             )}
           </SelectToggle>

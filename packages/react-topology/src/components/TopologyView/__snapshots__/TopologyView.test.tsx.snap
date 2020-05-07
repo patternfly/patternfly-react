@@ -29,9 +29,17 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                 className="pf-c-toolbar"
                 id="pf-topology-view-0"
               >
-                <Component>
+                <Component
+                  isExpanded={false}
+                  key=".2"
+                  showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-0"
+                >
                   <hr
                     className="pf-c-divider"
+                    isExpanded={false}
+                    showClearFiltersButton={false}
+                    toolbarId="pf-topology-view-0"
                   />
                 </Component>
                 <ToolbarChipGroupContent
@@ -141,7 +149,9 @@ exports[`TopologyView should display topology correctly 1`] = `
                 <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
+                  key=".0"
                   showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-1"
                 >
                   <div
                     className="pf-c-toolbar__content"
@@ -211,7 +221,9 @@ exports[`TopologyView should display topology correctly 1`] = `
                 <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
+                  key=".1"
                   showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-1"
                 >
                   <div
                     className="pf-c-toolbar__content"
@@ -278,9 +290,17 @@ exports[`TopologyView should display topology correctly 1`] = `
                     </ToolbarExpandableContent>
                   </div>
                 </ToolbarContent>
-                <Component>
+                <Component
+                  isExpanded={false}
+                  key=".2"
+                  showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-1"
+                >
                   <hr
                     className="pf-c-divider"
+                    isExpanded={false}
+                    showClearFiltersButton={false}
+                    toolbarId="pf-topology-view-1"
                   />
                 </Component>
                 <ToolbarChipGroupContent
@@ -407,7 +427,9 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                 <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
+                  key=".0"
                   showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-2"
                 >
                   <div
                     className="pf-c-toolbar__content"
@@ -477,7 +499,9 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                 <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
+                  key=".1"
                   showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-2"
                 >
                   <div
                     className="pf-c-toolbar__content"
@@ -544,9 +568,17 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                     </ToolbarExpandableContent>
                   </div>
                 </ToolbarContent>
-                <Component>
+                <Component
+                  isExpanded={false}
+                  key=".2"
+                  showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-2"
+                >
                   <hr
                     className="pf-c-divider"
+                    isExpanded={false}
+                    showClearFiltersButton={false}
+                    toolbarId="pf-topology-view-2"
                   />
                 </Component>
                 <ToolbarChipGroupContent
@@ -676,7 +708,9 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                 <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
+                  key=".0"
                   showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-3"
                 >
                   <div
                     className="pf-c-toolbar__content"
@@ -746,7 +780,9 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                 <ToolbarContent
                   breakpointMods={Array []}
                   isExpanded={false}
+                  key=".1"
                   showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-3"
                 >
                   <div
                     className="pf-c-toolbar__content"
@@ -813,9 +849,17 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                     </ToolbarExpandableContent>
                   </div>
                 </ToolbarContent>
-                <Component>
+                <Component
+                  isExpanded={false}
+                  key=".2"
+                  showClearFiltersButton={false}
+                  toolbarId="pf-topology-view-3"
+                >
                   <hr
                     className="pf-c-divider"
+                    isExpanded={false}
+                    showClearFiltersButton={false}
+                    toolbarId="pf-topology-view-3"
                   />
                 </Component>
                 <ToolbarChipGroupContent

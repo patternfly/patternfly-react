@@ -99,7 +99,7 @@ class SingleSelectInput extends React.Component {
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
-          selection={selected}
+          selections={selected}
           isOpen={isOpen}
           aria-labelledby={titleId}
           isDisabled={isDisabled}
@@ -1101,7 +1101,7 @@ class TypeaheadSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
-          selection={selected}
+          selections={selected}
           isOpen={isOpen}
           aria-labelledby={titleId}
           placeholderText="Select a state"

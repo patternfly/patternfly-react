@@ -23,8 +23,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -78,6 +77,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
+                
               </div>
               <span
                 class="pf-c-select__toggle-arrow"
@@ -311,7 +311,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     <SelectMenu
       aria-label=""
       aria-labelledby=""
-      checked={Array []}
+      checked=""
       className=""
       hasInlineFilter={false}
       isCustomContent={false}
@@ -364,7 +364,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={0}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -398,7 +398,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={1}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -432,7 +432,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={2}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -466,7 +466,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={3}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -522,7 +522,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={4}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -556,7 +556,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={5}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -590,7 +590,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={6}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -624,7 +624,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       className=""
                       component="button"
                       index={7}
-                      isChecked={false}
+                      isChecked=""
                       isDisabled={false}
                       isNoResultsOption={false}
                       isPlaceholder={false}
@@ -688,7 +688,6 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
   selections={
     Array [
       <SelectOption
@@ -880,7 +879,6 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
   selections={
     Array [
       <SelectOption
@@ -1054,8 +1052,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="checkbox-select-closed"
@@ -1109,6 +1106,7 @@ exports[`checkbox select renders closed successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
+                
               </div>
               <span
                 class="pf-c-select__toggle-arrow"
@@ -1211,8 +1209,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -1266,6 +1263,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
+                
               </div>
               <span
                 class="pf-c-select__toggle-arrow"
@@ -1411,7 +1409,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
     <SelectMenu
       aria-label=""
       aria-labelledby=""
-      checked={Array []}
+      checked=""
       className=""
       hasInlineFilter={false}
       isCustomContent={false}
@@ -1445,7 +1443,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 className=""
                 component="button"
                 index={0}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1479,7 +1477,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 className=""
                 component="button"
                 index={1}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1513,7 +1511,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 className=""
                 component="button"
                 index={2}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1547,7 +1545,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 className=""
                 component="button"
                 index={3}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1609,8 +1607,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -1664,6 +1661,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 <span
                   class="pf-c-select__toggle-text"
                 />
+                
               </div>
               <span
                 class="pf-c-select__toggle-arrow"
@@ -1795,7 +1793,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
     <SelectMenu
       aria-label=""
       aria-labelledby=""
-      checked={Array []}
+      checked=""
       className=""
       hasInlineFilter={false}
       isCustomContent={false}
@@ -1829,7 +1827,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 className=""
                 component="button"
                 index={0}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1871,7 +1869,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 className=""
                 component="button"
                 index={1}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1913,7 +1911,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 className=""
                 component="button"
                 index={2}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -1983,8 +1981,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -2034,6 +2031,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
+                
               </div>
               
               <button
@@ -2202,7 +2200,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
     <SelectMenu
       aria-label=""
       aria-labelledby=""
-      checked={Array []}
+      checked=""
       className=""
       hasInlineFilter={true}
       isCustomContent={false}
@@ -2256,7 +2254,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 className=""
                 component="button"
                 index={1}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -2290,7 +2288,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 className=""
                 component="button"
                 index={2}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -2324,7 +2322,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 className=""
                 component="button"
                 index={3}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -2358,7 +2356,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 className=""
                 component="button"
                 index={4}
-                isChecked={false}
+                isChecked=""
                 isDisabled={false}
                 isNoResultsOption={false}
                 isPlaceholder={false}
@@ -2421,8 +2419,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="checkbox-select-expanded-filtered"
@@ -2472,6 +2469,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 <span
                   class="pf-c-select__toggle-text"
                 />
+                
               </div>
               
               <button
@@ -2585,8 +2583,7 @@ exports[`select custom select filter filters properly 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="custom-select-filters"
@@ -2983,8 +2980,7 @@ exports[`select renders select groups successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -3572,8 +3568,7 @@ exports[`select renders up direction successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="select-up"
@@ -3734,8 +3729,7 @@ exports[`select single select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="single-select-closed"
@@ -3896,8 +3890,7 @@ exports[`select single select renders disabled successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="single-select-disabled"
@@ -4059,8 +4052,7 @@ exports[`select single select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -4422,8 +4414,7 @@ exports[`select single select renders expanded successfully with custom objects 
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -4764,8 +4755,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="select-custom-content"
@@ -4921,8 +4911,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5068,7 +5057,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
       keyHandler={[Function]}
       maxHeight=""
       openedOnEnter={false}
-      selected={Array []}
+      selected=""
       sendRef={[Function]}
     >
       <div
@@ -5144,8 +5133,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="typeahead-multi-select-closed"
@@ -5192,6 +5180,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
+                
                 <input
                   aria-label=""
                   autocomplete="off"
@@ -5325,8 +5314,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -5373,6 +5361,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
+                
                 <input
                   aria-label=""
                   autocomplete="off"
@@ -5543,7 +5532,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       keyHandler={[Function]}
       maxHeight=""
       openedOnEnter={false}
-      selected={Array []}
+      selected=""
       sendRef={[Function]}
     >
       <ul
@@ -5715,7 +5704,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
   selections={
     Array [
       "Mr",
@@ -6539,8 +6527,7 @@ exports[`typeahead multi select test onChange 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -6845,8 +6832,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="typeahead-select-closed"
@@ -7026,8 +7012,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -7416,8 +7401,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection="Mr"
-  selections={Array []}
+  selections="Mr"
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -7908,8 +7892,7 @@ exports[`typeahead select test creatable option 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
@@ -8220,8 +8203,7 @@ exports[`typeahead select test onChange 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
-  selection=""
-  selections={Array []}
+  selections=""
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}
