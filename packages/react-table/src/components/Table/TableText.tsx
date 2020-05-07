@@ -33,7 +33,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   wrapModifier = null,
   ...props
 }: TableTextProps) => {
-  const Component: any = variant;
+  const Component: TableTextVariant | 'span' | 'div' = variant;
 
   return (
     <Component {...props} className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}>
