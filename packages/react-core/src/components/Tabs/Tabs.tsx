@@ -246,38 +246,40 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             <AngleLeftIcon />
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {React.Children.map(children, (child: any, index) => {
-              const {
-                title,
-                eventKey,
-                tabContentRef,
-                id: childId,
-                tabContentId,
-                isHidden = false,
-                ...rest
-              } = child.props;
+            {React.Children.toArray<any>(children)
+              .filter(Boolean)
+              .map((child, index) => {
+                const {
+                  title,
+                  eventKey,
+                  tabContentRef,
+                  id: childId,
+                  tabContentId,
+                  isHidden = false,
+                  ...rest
+                } = child.props;
 
-              return (
-                <li
-                  key={index}
-                  className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
-                  hidden={isHidden}
-                >
-                  <TabButton
-                    className={css(styles.tabsButton)}
-                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
-                    id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-                    aria-controls={
-                      tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
-                    }
-                    tabContentRef={tabContentRef}
-                    {...rest}
+                return (
+                  <li
+                    key={index}
+                    className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
+                    hidden={isHidden}
                   >
-                    {title}
-                  </TabButton>
-                </li>
-              );
-            })}
+                    <TabButton
+                      className={css(styles.tabsButton)}
+                      onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
+                      id={`pf-tab-${eventKey}-${childId || uniqueId}`}
+                      aria-controls={
+                        tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
+                      }
+                      tabContentRef={tabContentRef}
+                      {...rest}
+                    >
+                      {title}
+                    </TabButton>
+                  </li>
+                );
+              })}
           </ul>
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
@@ -287,17 +289,17 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             <AngleRightIcon />
           </button>
         </Component>
-        {React.Children.map(children, (child: any, index) => {
-          if (
-            !child.props.children ||
-            (unmountOnExit && child.props.eventKey !== activeKey) ||
-            (mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
-          ) {
-            return null;
-          } else {
-            return <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />;
-          }
-        })}
+        {React.Children.toArray<any>(children)
+          .filter(
+            child =>
+              child &&
+              child.props.children &&
+              !(unmountOnExit && child.props.eventKey !== activeKey) &&
+              !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
+          )
+          .map((child, index) => (
+            <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />
+          ))}
       </React.Fragment>
     );
   }

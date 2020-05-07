@@ -11,24 +11,12 @@ export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement |
   tabContentRef?: React.Ref<any>;
 }
 
-const TabButtonBase: React.FunctionComponent<TabButtonProps> = ({
+export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   children,
-  className = '',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   tabContentRef,
   ...props
 }: TabButtonProps) => {
   const Component = (props.href ? 'a' : 'button') as any;
-  return (
-    <Component {...props} className={className} ref={tabContentRef}>
-      {children}
-    </Component>
-  );
+  return <Component {...props}>{children}</Component>;
 };
-
-export const TabButton = React.forwardRef(
-  (props: TabButtonProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>) => (
-    <TabButtonBase {...props} tabContentRef={ref} />
-  )
-);
-
-// export const TabButton = withForwardedRef(TabButtonWithRef);
