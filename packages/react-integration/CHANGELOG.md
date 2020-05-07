@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.8.0...@patternfly/react-integration@4.8.1) (2020-05-07)
+
+
+### Bug Fixes
+
+* **select:** revert to single "selections" prop ([#4212](https://github.com/patternfly/patternfly-react/issues/4212)) ([d25fe38](https://github.com/patternfly/patternfly-react/commit/d25fe38f917b97bfc363c1bebb5bada1ff7367d5))
+
+
+
+
+
 # [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.7.0...@patternfly/react-integration@4.8.0) (2020-05-07)
 
 
