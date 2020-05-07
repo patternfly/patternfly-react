@@ -657,17 +657,18 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-input-with-filtering-and-zero/all-badging
+```js title=Grouped-checkbox-input-with-filtering-and-custom-badging
 import React from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
 
-class FilteringCheckboxSelectInput extends React.Component {
+class FilteringCheckboxSelectInputWithBadging extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       isExpanded: false,
-      selected: []
+      selected: [],
+      customBadgeText: 0,
     };
 
     this.options = [
@@ -695,12 +696,12 @@ class FilteringCheckboxSelectInput extends React.Component {
       const { selected } = this.state;
       if (selected.includes(selection)) {
         this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection), customBadgeText: this.setBadgeText(prevState.selected.length - 1) }),
           () => console.log('selections: ', this.state.selected)
         );
       } else {
         this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
+          prevState => ({ selected: [...prevState.selected, selection], customBadgeText: this.setBadgeText(prevState.selected.length + 1) }),
           () => console.log('selections: ', this.state.selected)
         );
       }
@@ -727,13 +728,24 @@ class FilteringCheckboxSelectInput extends React.Component {
 
     this.clearSelection = () => {
       this.setState({
-        selected: []
+        selected: [],
+        customBadgeText: this.setBadgeText(0)
       });
+    };
+
+    this.setBadgeText = (selected) => {
+      if (selected === 7) {
+        return 'All';
+      }
+      if (selected === 0) {
+        return 0;
+      }
+      return null;
     };
   }
 
   render() {
-    const { isExpanded, selected, filteredOptions } = this.state;
+    const { isExpanded, selected, filteredOptions, customBadgeText } = this.state;
     const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
@@ -752,9 +764,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           onClear={this.clearSelection}
           isGrouped
           hasInlineFilter
-          enableZeroBadge
-          enableAllBadge
-          maxNumSelections={7}
+          customBadgeText={customBadgeText}
         >
           {this.options}
         </Select>

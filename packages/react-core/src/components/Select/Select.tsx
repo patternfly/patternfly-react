@@ -88,12 +88,8 @@ export interface SelectProps
   hasInlineFilter?: boolean;
   /** Placeholder text for inline filter */
   inlineFilterPlaceholderText?: string;
-  /** Flag indicating if select should have a badge for zero items selected */
-  enableZeroBadge?: boolean;
-  /** Flag indicating if select should have a badge for all items selected */
-  enableAllBadge?: boolean;
-  /** Max number of selections possible; used to trigger enableAllBadge */
-  maxNumSelections?: number;
+  /** Custom text for select badge */
+  customBadgeText?: string | number;
 }
 
 export interface SelectState {
@@ -137,7 +133,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     toggleIcon: null as React.ReactElement,
     onFilter: null,
     customContent: null,
-    hasInlineFilter: false
+    hasInlineFilter: false,
+    inlineFilterPlaceholderText: null,
+    customBadgeText: null
   };
 
   state: SelectState = {
@@ -389,9 +387,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       noResultsFoundText,
       hasInlineFilter,
       inlineFilterPlaceholderText,
-      enableZeroBadge,
-      enableAllBadge,
-      maxNumSelections,
+      customBadgeText,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -480,22 +476,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     }
 
     const generateSelectedBadge = () => {
-      let badgeText = null;
-      if (!isCheckboxSelectionBadgeHidden && selections && Array.isArray(selections)) {
-        if (enableZeroBadge && selections.length === 0) {
-          badgeText = 0;
-        }
-        if (selections.length > 0) {
-          badgeText = selections.length;
-        }
-        if (enableAllBadge && selections.length === maxNumSelections) {
-          badgeText = 'All';
-        }
-        return (
-          <div className={css(styles.selectToggleBadge)}>
-            <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{badgeText}</span>
-          </div>
-        );
+      if (customBadgeText !== null) {
+        return customBadgeText;
+      }
+      if (Array.isArray(selections) && selections.length > 0) {
+        return selections.length;
       }
       return null;
     };
@@ -551,7 +536,15 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {generateSelectedBadge()}
+                  {!isCheckboxSelectionBadgeHidden &&
+                    (customBadgeText !== null ||
+                      (selections && Array.isArray(selections) && selections.length > 0)) && (
+                      <div className={css(styles.selectToggleBadge)}>
+                        <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
+                          {generateSelectedBadge()}
+                        </span>
+                      </div>
+                    )}
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
