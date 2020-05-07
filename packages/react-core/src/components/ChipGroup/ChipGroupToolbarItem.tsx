@@ -103,7 +103,9 @@ export class ChipGroupToolbarItem extends React.Component<ChipGroupToolbarItemPr
 
       return (
         <ChipGroupContext.Consumer>
-          {(HeadingLevel: any) => <GenerateId>{randomId => renderChipGroup(randomId, HeadingLevel)}</GenerateId>}
+          {(HeadingLevel: any) => (
+            <GenerateId>{randomId => renderChipGroup(this.props.id || randomId, HeadingLevel)}</GenerateId>
+          )}
         </ChipGroupContext.Consumer>
       );
     }

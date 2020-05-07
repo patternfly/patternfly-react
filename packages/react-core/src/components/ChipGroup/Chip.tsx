@@ -117,7 +117,9 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
   render() {
     const { isOverflowChip } = this.props;
     return (
-      <GenerateId>{randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId))}</GenerateId>
+      <GenerateId>
+        {randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(this.props.id || randomId))}
+      </GenerateId>
     );
   }
 }
