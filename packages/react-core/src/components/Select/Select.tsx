@@ -40,10 +40,8 @@ export interface SelectProps
   placeholderText?: string | React.ReactNode;
   /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
-  /** Selected item for single select variants. */
-  selection?: string | SelectOptionObject;
   /** Array of selected items for multi select variants. */
-  selections?: string[] | SelectOptionObject[];
+  selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Flag indicating if selection badge should be hidden for checkbox variant,default false */
   isCheckboxSelectionBadgeHidden?: boolean;
   /** Id for select toggle element */
@@ -118,7 +116,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     clearSelectionsAriaLabel: 'Clear all',
     toggleAriaLabel: 'Options menu',
     removeSelectionAriaLabel: 'Remove',
-    selection: '',
     selections: [],
     createText: 'Create',
     placeholderText: '',
@@ -157,9 +154,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
 
-    if (prevProps.selection !== this.props.selection && this.props.variant === SelectVariant.typeahead) {
+    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
       this.setState({
-        typeaheadInputValue: this.props.selection.toString()
+        typeaheadInputValue: this.props.selections as string
       });
     }
   };
@@ -339,7 +336,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   render() {
-    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       className,
@@ -349,16 +345,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       onToggle,
       onSelect,
       onClear,
-      onFilter,
-      onCreateOption,
       toggleId,
       isOpen,
       isGrouped,
       isPlain,
       isDisabled,
-      isCreatable,
-      selection,
-      selections,
+      selections: selectionsProp,
       typeAheadAriaLabel,
       clearSelectionsAriaLabel,
       toggleAriaLabel,
@@ -370,18 +362,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       maxHeight,
       toggleIcon,
       ouiaId,
-      createText,
-      noResultsFoundText,
       hasInlineFilter,
       isCheckboxSelectionBadgeHidden,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onFilter,
+      onCreateOption,
+      isCreatable,
+      createText,
+      noResultsFoundText,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    /* eslint-enable @typescript-eslint/no-unused-vars */
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
+    const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
+    const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     let childPlaceholderText = null;
     if (!customContent) {
-      if (!selection && !placeholderText) {
+      if (!hasAnySelections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
           (child: React.ReactNode) => (child as React.ReactElement).props.isPlaceholder === true
         );
@@ -392,7 +390,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     const hasOnClear = onClear !== Select.defaultProps.onClear;
-    const hasAnySelections = (selections && selections.length > 0) || (selection && selection !== '');
     const clearBtn = (
       <button
         className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
@@ -465,7 +462,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       switch (variant) {
         case 'single':
           variantProps = {
-            selected: selection,
+            selected: selections[0],
             openedOnEnter
           };
           variantChildren = children;
@@ -480,7 +477,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           break;
         case 'typeahead':
           variantProps = {
-            selected: selection,
+            selected: selections[0],
             openedOnEnter
           };
           variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
@@ -534,7 +531,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>
-                    {this.getDisplay(selection as string, 'node') || placeholderText || childPlaceholderText}
+                    {this.getDisplay(selections[0] as string, 'node') || placeholderText || childPlaceholderText}
                   </span>
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
@@ -569,7 +566,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     value={
                       typeaheadInputValue !== null
                         ? typeaheadInputValue
-                        : this.getDisplay(selection as string, 'text') || ''
+                        : this.getDisplay(selections[0] as string, 'text') || ''
                     }
                     type="text"
                     onClick={this.onClick}
@@ -579,7 +576,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     disabled={isDisabled}
                   />
                 </div>
-                {(selection || typeaheadInputValue) && clearBtn}
+                {(selections[0] || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeaheadMulti && !customContent && (
