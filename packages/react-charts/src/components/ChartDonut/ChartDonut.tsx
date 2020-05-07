@@ -19,6 +19,17 @@ import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
 
+interface ChartDonutSubTitleInterface {
+  dy?: number;
+  textComponent?: React.ReactElement<any>;
+}
+
+interface ChartDonutTitleInterface {
+  dy?: number;
+  styles?: any;
+  titles?: string | string[];
+}
+
 export enum ChartDonutLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
@@ -368,6 +379,16 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * The label component to render the chart subTitle.
    *
+   * When overriding the subTitleComponent prop, title and subTitle will be centered independently. You may choose to
+   * use the x and y props of ChartLabel to adjust the center position. For example:
+   *
+   * <pre>
+   * subTitle="Pets"
+   * subTitleComponent={<ChartLabel y={130} />}
+   * title={100}
+   * titleComponent={<ChartLabel y={107} />}
+   * </pre>
+   *
    * Note: Default label properties may be applied
    */
   subTitleComponent?: React.ReactElement<any>;
@@ -405,6 +426,36 @@ export interface ChartDonutProps extends ChartPieProps {
   title?: string;
   /**
    * The label component to render the chart title.
+   *
+   * When centering both title and subTitle props, it's possible to override both styles via an array provided to
+   * ChartLabel. The first item in the array is associated with title styles, while the second item in the array is
+   * associated with subtitle styles.
+   *
+   * <pre>
+   * subTitle="Pets"
+   * title={100}
+   * titleComponent={
+   *   <ChartLabel style={[{
+   *       fill: 'red', // title color
+   *       fontSize: 24
+   *     }, {
+   *       fill: 'blue', // subtitle color
+   *       fontSize: 14
+   *     }]}
+   *   />
+   * }
+   * </pre>
+   *
+   * In this case, both title and subTitle will be centered together. However, should you also override the
+   * subTitleComponent prop, title and subTitle will be centered independently. You may choose to
+   * use the x and y props of ChartLabel to adjust the center position. For example:
+   *
+   * <pre>
+   * subTitle="Pets"
+   * subTitleComponent={<ChartLabel y={130} />}
+   * title={100}
+   * titleComponent={<ChartLabel y={107} />}
+   * </pre>
    *
    * Note: Default label properties may be applied
    */
@@ -457,7 +508,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   radius,
   standalone = true,
   subTitle,
-  subTitleComponent = <ChartLabel />,
+  subTitleComponent,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutSubTitlePosition,
   themeColor,
   themeVariant,
@@ -484,15 +535,32 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         padding: defaultPadding
       });
   const chartInnerRadius = innerRadius ? innerRadius : chartRadius - 9; // Todo: Add pf-core variable
+  const centerSubTitle = subTitle && subTitlePosition === ChartDonutSubTitlePosition.center;
+
+  // Returns title and subtitle
+  const getAllTitles = () => {
+    if (!subTitleComponent && centerSubTitle) {
+      return getTitle({
+        styles: [ChartDonutStyles.label.title, ChartDonutStyles.label.subTitle],
+        titles: [title, subTitle]
+      });
+    }
+    return (
+      <>
+        {getTitle({ titles: title, dy: centerSubTitle ? -8 : 0 })}
+        {getSubTitle({ textComponent: subTitleComponent, dy: centerSubTitle ? 15 : 0 })}
+      </>
+    );
+  };
 
   // Returns subtitle
-  const getSubTitle = () => {
-    if (!subTitle || subTitlePosition === ChartDonutSubTitlePosition.center) {
+  const getSubTitle = ({ dy = 0, textComponent = <ChartLabel /> }: ChartDonutSubTitleInterface) => {
+    if (!subTitle) {
       return null;
     }
-    const subTitleProps = subTitleComponent.props ? subTitleComponent.props : {};
+    const subTitleProps = textComponent.props ? textComponent.props : {};
 
-    return React.cloneElement(subTitleComponent, {
+    return React.cloneElement(textComponent, {
       key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
@@ -506,6 +574,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         width
       }),
       y: getPieLabelY({
+        dy,
         height,
         labelPosition: subTitlePosition,
         padding: defaultPadding,
@@ -516,18 +585,17 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   };
 
   // Returns title
-  const getTitle = () => {
-    if (!title) {
+  const getTitle = ({ dy = 0, styles = ChartDonutStyles.label.title, titles = title }: ChartDonutTitleInterface) => {
+    if (!titles) {
       return null;
     }
     const titleProps = titleComponent ? titleComponent.props : {};
-    const showBoth = title && subTitle && subTitlePosition === ChartDonutSubTitlePosition.center;
 
     return React.cloneElement(titleComponent, {
-      ...(showBoth && { capHeight }),
+      ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
       key: 'pf-chart-donut-title',
-      style: [ChartDonutStyles.label.title, ChartDonutStyles.label.subTitle],
-      text: showBoth ? [title, subTitle] : title,
+      style: styles,
+      text: titles,
       textAnchor: 'middle',
       verticalAnchor: 'middle',
       x: getPieLabelX({
@@ -538,6 +606,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         width
       }),
       y: getPieLabelY({
+        dy,
         height,
         labelPosition: 'center',
         padding: defaultPadding,
@@ -575,7 +644,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       theme,
       ...containerComponent.props
     },
-    [chart, getTitle(), getSubTitle()]
+    [chart, getAllTitles()]
   );
 
   return standalone ? (
@@ -583,8 +652,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   ) : (
     <React.Fragment>
       {chart}
-      {getTitle()}
-      {getSubTitle()}
+      {getAllTitles()}
     </React.Fragment>
   );
 };
