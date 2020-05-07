@@ -243,7 +243,12 @@ export function pluralize(i: number, singular: string, plural?: string) {
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
-  breakpointMods: (ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod | DataListActionBreakpointMod)[],
+  breakpointMods: (
+    | ToolbarBreakpointMod
+    | FlexBreakpointMod
+    | FlexItemBreakpointMod
+    | PageSectionBreakpointMod
+    | DataListActionBreakpointMod)[],
   styles: any
 ) =>
   breakpointMods
