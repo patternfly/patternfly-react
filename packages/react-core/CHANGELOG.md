@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.11.2...@patternfly/react-core@4.12.0) (2020-05-07)
+
+
+### Features
+
+* **datalist:** add the breakpointMods prop ([#4130](https://github.com/patternfly/patternfly-react/issues/4130)) ([7fda556](https://github.com/patternfly/patternfly-react/commit/7fda556ef841ac57991bc597a538e598092517c5))
+
+
+
+
+
 ## [4.11.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.11.1...@patternfly/react-core@4.11.2) (2020-05-07)
 
 
