@@ -1006,15 +1006,15 @@ exports[`Actions virtualized table 1`] = `
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-button pf-m-plain pf-c-table__button"
                             onClick={[Function]}
                           >
                             <div
-                              className="pf-c-button pf-m-plain"
+                              className="pf-c-button pf-m-plain pf-c-table__button-content"
                             >
                               <Component>
                                 <span
-                                  className=""
+                                  className="pf-c-table__text"
                                 >
                                   Header cell
                                 </span>
@@ -2173,15 +2173,15 @@ exports[`Selectable virtualized table 1`] = `
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-button pf-m-plain pf-c-table__button"
                             onClick={[Function]}
                           >
                             <div
-                              className="pf-c-button pf-m-plain"
+                              className="pf-c-button pf-m-plain pf-c-table__button-content"
                             >
                               <Component>
                                 <span
-                                  className=""
+                                  className="pf-c-table__text"
                                 >
                                   Header cell
                                 </span>
@@ -3670,15 +3670,15 @@ exports[`Simple Actions table 1`] = `
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-button pf-m-plain pf-c-table__button"
                             onClick={[Function]}
                           >
                             <div
-                              className="pf-c-button pf-m-plain"
+                              className="pf-c-button pf-m-plain pf-c-table__button-content"
                             >
                               <Component>
                                 <span
-                                  className=""
+                                  className="pf-c-table__text"
                                 >
                                   Header cell
                                 </span>
@@ -6532,15 +6532,15 @@ exports[`Sortable Virtualized Table 1`] = `
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-button pf-m-plain pf-c-table__button"
                             onClick={[Function]}
                           >
                             <div
-                              className="pf-c-button pf-m-plain"
+                              className="pf-c-button pf-m-plain pf-c-table__button-content"
                             >
                               <Component>
                                 <span
-                                  className=""
+                                  className="pf-c-table__text"
                                 >
                                   Header cell
                                 </span>

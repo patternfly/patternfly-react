@@ -19,7 +19,7 @@ import {
   IAreActionsDisabled,
   OnSelect,
   OnCollapse,
-  OnRowEdit,
+  OnRowEdit
 } from '../Table';
 
 /**

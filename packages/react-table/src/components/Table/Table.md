@@ -1278,7 +1278,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  TableText
+  TableText,
   wrappable,
   truncate,
   nowrap,

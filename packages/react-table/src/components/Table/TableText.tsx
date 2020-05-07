@@ -11,7 +11,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   component?: 'span' | 'div';
 }
 
-export const TableText: React.FunctionComponent <TableTextProps> = ({
+export const TableText: React.FunctionComponent<TableTextProps> = ({
   children = null,
   className = '',
   component = 'span',
@@ -24,4 +24,4 @@ export const TableText: React.FunctionComponent <TableTextProps> = ({
       {children}
     </Component>
   );
-}
+};

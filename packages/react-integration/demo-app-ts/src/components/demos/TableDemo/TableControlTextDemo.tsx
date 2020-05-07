@@ -13,19 +13,16 @@ import {
   breakWord
 } from '@patternfly/react-table';
 
-export class TableControlTextDemo extends React.Component<
-  TableProps,
-  { columns: (ICell | string)[]; rows: IRow[] }
-  > {
+export class TableControlTextDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
       columns: [
         { title: 'Header cell', transforms: [wrappable] },
-        { title: 'Header cell 2', transforms: [nowrap], cellTransforms: [truncate]},
+        { title: 'Header cell 2', transforms: [nowrap], cellTransforms: [truncate] },
         { title: 'Pull requests', transforms: [truncate] },
         { title: 'Header cell 3', transforms: [breakWord] },
-        { title: 'Last Commit', transforms: [fitContent]}
+        { title: 'Last Commit', transforms: [fitContent] }
       ],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
