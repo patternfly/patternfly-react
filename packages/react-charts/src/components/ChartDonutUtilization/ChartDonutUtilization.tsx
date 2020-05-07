@@ -394,6 +394,16 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   /**
    * The label component to render the chart subTitle.
    *
+   * When overriding the subTitleComponent prop, title and subTitle will be centered independently. You may choose to
+   * use the x and y props of ChartLabel to adjust the center position. For example:
+   *
+   * <pre>
+   * subTitle="Pets"
+   * subTitleComponent={<ChartLabel y={130} />}
+   * title={100}
+   * titleComponent={<ChartLabel y={107} />}
+   * </pre>
+   *
    * Note: Default label properties may be applied
    */
   subTitleComponent?: React.ReactElement<any>;
@@ -429,6 +439,42 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The title for the donut chart label
    */
   title?: string;
+  /**
+   * The label component to render the donut chart title.
+   *
+   * When centering both title and subTitle props, it's possible to override both styles via an array provided to
+   * ChartLabel. The first item in the array is associated with title styles, while the second item in the array is
+   * associated with subtitle styles.
+   *
+   * <pre>
+   * subTitle="Pets"
+   * title={100}
+   * titleComponent={
+   *   <ChartLabel style={[{
+   *       fill: 'red', // title color
+   *       fontSize: 24
+   *     }, {
+   *       fill: 'blue', // subtitle color
+   *       fontSize: 14
+   *     }]}
+   *   />
+   * }
+   * </pre>
+   *
+   * In this case, both title and subTitle will be centered together. However, should you also override the
+   * subTitleComponent prop, title and subTitle will be centered independently. You may choose to
+   * use the x and y props of ChartLabel to adjust the center position. For example:
+   *
+   * <pre>
+   * subTitle="Pets"
+   * subTitleComponent={<ChartLabel y={130} />}
+   * title={100}
+   * titleComponent={<ChartLabel y={107} />}
+   * </pre>
+   *
+   * Note: Default label properties may be applied
+   */
+  titleComponent?: React.ReactElement<any>;
   /**
    * The dynamic portion of the chart will change colors when data reaches the given threshold. Colors may be
    * overridden, but defaults shall be provided.
