@@ -2,25 +2,41 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 
+export enum TableTextVariant {
+  div = 'div',
+  nav = 'nav'
+}
+
+export enum WrapModifier {
+  wrap = 'wrap',
+  nowrap = 'nowrap',
+  truncate = 'truncate',
+  breakWord = 'breakWord',
+  fitContent = 'fitContent'
+}
+
 export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered within the table button */
   children?: React.ReactNode;
   /** Additional classes added to the table button */
   className?: string;
-  /** */
-  component?: 'span' | 'div';
+  /** Determines which element to render as a table text */
+  variant?: TableTextVariant | 'span' | 'div';
+  /** Determines which wrapping modifier to apply to the table text */
+  wrapModifier?: WrapModifier | 'wrap' | 'nowrap' | 'truncate' | 'breakWord' | 'fitContent';
 }
 
 export const TableText: React.FunctionComponent<TableTextProps> = ({
   children = null,
   className = '',
-  component = 'span',
+  variant = 'span',
+  wrapModifier = null,
   ...props
 }: TableTextProps) => {
-  const Component: any = component;
+  const Component: any = variant;
 
   return (
-    <Component {...props} className={css(className, styles.tableText)}>
+    <Component {...props} className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}>
       {children}
     </Component>
   );
