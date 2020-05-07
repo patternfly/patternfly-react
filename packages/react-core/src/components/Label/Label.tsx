@@ -43,9 +43,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   icon,
   onClose,
   closeBtn,
-  closeBtnProps = {
-    'aria-label': 'label-close-button'
-  },
+  closeBtnProps,
   href,
   ...props
 }: LabelProps) => {
@@ -53,7 +51,12 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const button = closeBtn ? (
     closeBtn
   ) : (
-    <Button type="button" variant="plain" onClick={onClose} {...closeBtnProps}>
+    <Button
+      type="button"
+      variant="plain"
+      onClick={onClose}
+      {...{ 'aria-label': 'label-close-button', ...closeBtnProps }}
+    >
       <TimesIcon />
     </Button>
   );
