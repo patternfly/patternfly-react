@@ -345,14 +345,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       onToggle,
       onSelect,
       onClear,
-      onFilter,
-      onCreateOption,
       toggleId,
       isOpen,
       isGrouped,
       isPlain,
       isDisabled,
-      isCreatable,
       selections: selectionsProp,
       typeAheadAriaLabel,
       clearSelectionsAriaLabel,
@@ -365,17 +362,20 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       maxHeight,
       toggleIcon,
       ouiaId,
-      createText,
-      noResultsFoundText,
       hasInlineFilter,
       isCheckboxSelectionBadgeHidden,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onFilter,
+      onCreateOption,
+      isCreatable,
+      createText,
+      noResultsFoundText,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    /* eslint-disable @typescript-eslint/no-unused-vars */
-    /* eslint-enable @typescript-eslint/no-unused-vars */
-    const selections = !Array.isArray(selectionsProp) ? [selectionsProp] : selectionsProp;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
+    const selections = !Array.isArray(selectionsProp) ? [selectionsProp] : selectionsProp;
     let childPlaceholderText = null;
     if (!customContent) {
       if (!selections && !placeholderText) {
@@ -389,6 +389,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     const hasOnClear = onClear !== Select.defaultProps.onClear;
+    const hasAnySelections = selections && selections.length > 0;
     const clearBtn = (
       <button
         className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
@@ -533,7 +534,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                     {this.getDisplay(selections[0] as string, 'node') || placeholderText || childPlaceholderText}
                   </span>
                 </div>
-                {hasOnClear && selections && clearBtn}
+                {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.checkbox && !customContent && (
@@ -549,7 +550,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                       </div>
                     )}
                 </div>
-                {hasOnClear && selections && clearBtn}
+                {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeahead && !customContent && (
