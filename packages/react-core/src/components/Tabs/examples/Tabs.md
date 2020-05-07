@@ -526,7 +526,7 @@ class ToggledSeparateContent extends React.Component {
   }
 
   render() {
-    const { isTab2Hidden } = this.state;
+    const { activeKey, isTab2Hidden } = this.state;
     return (
       <React.Fragment>
         <Button onClick={() => this.setState({ isTab2Hidden: !isTab2Hidden })}>
@@ -535,16 +535,20 @@ class ToggledSeparateContent extends React.Component {
         <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
-          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} isHidden={isTab2Hidden} />
+          {!isTab2Hidden && (
+            <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
+          )}
           <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
           <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
             Tab 1 section
           </TabContent>
-          <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
-            Tab 2 section
-          </TabContent>
+          {!isTab2Hidden && (
+            <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+              Tab 2 section
+            </TabContent>
+          )}
           <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
             Tab 3 section
           </TabContent>
