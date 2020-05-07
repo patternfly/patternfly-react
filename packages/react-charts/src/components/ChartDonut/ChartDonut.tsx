@@ -497,7 +497,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   radius,
   standalone = true,
   subTitle,
-  subTitleComponent, // = <ChartLabel />,
+  subTitleComponent,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutSubTitlePosition,
   themeColor,
   themeVariant,
