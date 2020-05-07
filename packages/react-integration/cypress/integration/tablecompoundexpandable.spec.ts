@@ -10,32 +10,29 @@ describe('Table Compound Expandable Test', () => {
   });
 
   it('Test expandable/collapsible', () => {
-    cy.get('button.pf-c-button.pf-m-link')
+    cy.get('button.pf-c-table__button')
       .first()
       .click();
-    cy.get('button.pf-c-button.pf-m-link')
+    cy.get('button.pf-c-table__button')
       .eq(1)
       .click();
-    cy.get('button.pf-c-button.pf-m-link')
+    cy.get('button.pf-c-table__button')
       .eq(2)
       .click();
-    cy.get('button.pf-c-button.pf-m-link')
-      .eq(3)
-      .click();
-    cy.get('button.pf-c-button.pf-m-link')
-      .eq(3)
-      .click();
-    cy.get('button.pf-c-button.pf-m-link')
+    cy.get('button.pf-c-table__button')
       .first()
       .click();
-    cy.get('button.pf-c-button.pf-m-link')
+    cy.get('button.pf-c-table__button')
+      .eq(3)
+      .click();
+    cy.get('button.pf-c-table__button')
+      .eq(3)
+      .click();
+    cy.get('button.pf-c-table__button')
       .eq(4)
       .click();
-    cy.get('button.pf-c-button.pf-m-link')
-      .eq(5)
-      .click();
-    cy.get('button.pf-c-button.pf-m-link')
-      .eq(5)
+    cy.get('button.pf-c-table__button')
+      .eq(4)
       .click();
   });
 });

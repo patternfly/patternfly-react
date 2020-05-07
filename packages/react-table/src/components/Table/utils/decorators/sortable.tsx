@@ -39,7 +39,6 @@ export const sortable: ITransform = (label: IFormatterValueType, { columnIndex, 
         isSortedBy={isSortedBy}
         sortDirection={isSortedBy ? sortBy.direction : ''}
         onSort={sortClicked}
-        className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
       >
         {label}
       </SortColumn>
