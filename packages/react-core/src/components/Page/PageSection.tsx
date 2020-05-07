@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
+import { formatBreakpointMods } from '../../helpers/util';
 
 export enum PageSectionVariants {
   default = 'default',
@@ -12,6 +13,13 @@ export enum PageSectionVariants {
 export enum PageSectionTypes {
   default = 'default',
   nav = 'nav'
+}
+
+export interface PageSectionBreakpointMod {
+  /** The attribute to modify  */
+  modifier: 'padding' | 'no-padding';
+  /** The breakpoint at which to apply the modifier */
+  breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
@@ -26,7 +34,9 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
-  noPadding?: boolean;
+  hasNoPadding?: boolean;
+  /** An array of objects representing modifiers to apply to the page section at various breakpoints */
+  breakpointMods?: PageSectionBreakpointMod[];
 }
 
 const variantType = {
@@ -46,16 +56,17 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   children,
   variant = 'default',
   type = 'default',
-  noPadding = false,
+  hasNoPadding = false,
+  breakpointMods = [] as PageSectionBreakpointMod[],
   isFilled,
   ...props
 }: PageSectionProps) => (
-  // TODO: Implement https://github.com/patternfly/patternfly/pull/2816
   <section
     {...props}
     className={css(
       variantType[type],
-      noPadding && styles.modifiers.noPadding,
+      hasNoPadding && styles.modifiers.noPadding,
+      formatBreakpointMods(breakpointMods, styles),
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,

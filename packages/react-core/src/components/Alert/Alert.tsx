@@ -21,8 +21,10 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isInline?: boolean;
   /** Title of the Alert  */
   title: React.ReactNode;
-  /** Action button to put in the Alert. Should be <AlertActionLink> or <AlertActionCloseButton> */
-  action?: React.ReactNode;
+  /** Close button; use the AlertActionCloseButton component  */
+  actionClose?: React.ReactNode;
+  /** Action links; use a single AlertActionLink component or multiple wrapped in an array or React.Fragment */
+  actionLinks?: React.ReactNode;
   /** Content rendered inside the Alert */
   children?: React.ReactNode;
   /** Additional classes added to the Alert  */
@@ -41,7 +43,8 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
-  action = null,
+  actionClose,
+  actionLinks,
   title,
   children = '',
   className = '',
@@ -75,12 +78,13 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
     >
       <AlertIcon variant={variant} />
       <h4 className={css(styles.alertTitle)}>{getHeadingContent}</h4>
+      {actionClose && (
+        <AlertContext.Provider value={{ title, variantLabel }}>
+          <div className={css(styles.alertAction)}>{actionClose}</div>
+        </AlertContext.Provider>
+      )}
       {children && <div className={css(styles.alertDescription)}>{children}</div>}
-      <AlertContext.Provider value={{ title, variantLabel }}>
-        {action && (typeof action === 'object' || typeof action === 'string') && (
-          <div className={css(styles.alertAction)}>{action}</div>
-        )}
-      </AlertContext.Provider>
+      {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
     </div>
   );
 };

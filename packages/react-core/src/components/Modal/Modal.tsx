@@ -15,9 +15,9 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
-  title: string;
-  /** Flag to hide the title */
-  hideTitle?: boolean;
+  title?: string;
+  /** Accessible descriptor of modal */
+  'aria-label'?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
   /** Id to use for Modal Box descriptor */
@@ -38,6 +38,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   description?: React.ReactNode;
   /** Variant of the modal */
   variant?: 'small' | 'large' | 'default';
+  /** Flag indicating if modal content should be placed in a modal box body wrapper */
+  hasNoBodyWrapper?: boolean;
 }
 
 export enum ModalVariant {
@@ -57,12 +59,14 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   static defaultProps: PickOptional<ModalProps> = {
     className: '',
     isOpen: false,
-    hideTitle: false,
+    title: '',
+    'aria-label': '',
     showClose: true,
     modalContentAriaDescribedById: '',
     actions: [] as any[],
     onClose: () => undefined as any,
     variant: 'default',
+    hasNoBodyWrapper: false,
     appendTo: (typeof document !== 'undefined' && document.body) || null
   };
 
@@ -142,7 +146,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { appendTo, modalContentAriaDescribedById, ...props } = this.props;
+    const { appendTo, modalContentAriaDescribedById, title, 'aria-label': ariaLabel, ...props } = this.props;
     const { container } = this.state;
 
     if (!canUseDOM || !container) {
@@ -152,7 +156,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     return ReactDOM.createPortal(
       <ModalContent
         {...props}
-        title={this.props.title}
+        title={title}
+        aria-label={ariaLabel}
         id={this.id}
         modalBoxAriaDescribedById={modalContentAriaDescribedById}
       />,

@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.10.0...@patternfly/react-core@4.11.0) (2020-05-07)
+
+
+### Features
+
+* **Label:** refactor for updated design and features ([#4165](https://github.com/patternfly/patternfly-react/issues/4165)) ([5b50d2e](https://github.com/patternfly/patternfly-react/commit/5b50d2eb5d63840c04c28850c8f2d813387ac8eb))
+
+
+
+
+
+# [4.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.15...@patternfly/react-core@4.10.0) (2020-05-07)
+
+
+### Features
+
+* **Drawer, DataList, Page:** rename noPadding to hasNoPadding ([#4133](https://github.com/patternfly/patternfly-react/issues/4133)) ([9d7ee63](https://github.com/patternfly/patternfly-react/commit/9d7ee633de1ac24a776fab84a1c1091712395dd2))
+
+
+
+
+
+## [4.9.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.14...@patternfly/react-core@4.9.15) (2020-05-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.9.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.13...@patternfly/react-core@4.9.14) (2020-05-06)
+
+
+### Bug Fixes
+
+* **drawer:** add aria-expanded to the toggle button ([#4192](https://github.com/patternfly/patternfly-react/issues/4192)) ([5f1e818](https://github.com/patternfly/patternfly-react/commit/5f1e8182b9324d25feaa23f28805e838a4bad267))
+
+
+
+
+
+## [4.9.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.12...@patternfly/react-core@4.9.13) (2020-05-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.9.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.11...@patternfly/react-core@4.9.12) (2020-05-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.9.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.10...@patternfly/react-core@4.9.11) (2020-05-05)
+
+
+### Bug Fixes
+
+* **isActive:** add back isActive ([#4188](https://github.com/patternfly/patternfly-react/issues/4188)) ([e240441](https://github.com/patternfly/patternfly-react/commit/e240441dd92d6d5b163ac6c0e72aa7e99dcd7bb7))
+
+
+
+
+
 ## [4.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.9.9...@patternfly/react-core@4.9.10) (2020-05-04)
 
 

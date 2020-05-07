@@ -12,15 +12,15 @@ import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } f
 ## Examples
 ```js title=Static-alert-group
 import * as React from 'react';
-import { Alert, AlertGroup, AlertVariant } from '@patternfly/react-core';
+import { Alert, AlertGroup } from '@patternfly/react-core';
 
 class StaticAlertGroup extends React.Component {
   render() {
     return (
       <React.Fragment>
         <AlertGroup>
-          <Alert title="Success Alert" variant={AlertVariant['success']} isInline />
-          <Alert title="Info Alert" variant={AlertVariant['info']} isInline/>
+          <Alert title="Success Alert" variant="success" isInline />
+          <Alert title="Info Alert" variant="info" isInline/>
         </AlertGroup>
       </React.Fragment>
     );
@@ -63,7 +63,7 @@ class ToastAlertGroup extends React.Component {
               isLiveRegion
               variant={AlertVariant[variant]}
               title={title}
-              action={
+              actionClose={
                 <AlertActionCloseButton
                   title={title}
                   variantLabel={`${variant} alert`}
@@ -116,7 +116,7 @@ class SingularAdditiveAlertGroup extends React.Component {
               variant={AlertVariant[variant]}
               title={title}
               key={key}
-              action={
+              actionClose={
                 <AlertActionCloseButton
                   title={title}
                   variantLabel={`${variant} alert`}
@@ -171,7 +171,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
               variant={AlertVariant[variant]}
               title={title}
               key={key}
-              action={
+              actionClose={
                 <AlertActionCloseButton
                   title={title}
                   variantLabel={`${variant} alert`}
@@ -231,7 +231,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
               variant={AlertVariant[variant]}
               title={title}
               key={key}
-              action={
+              actionClose={
                 <AlertActionCloseButton
                   title={title}
                   variantLabel={`${variant} alert`}

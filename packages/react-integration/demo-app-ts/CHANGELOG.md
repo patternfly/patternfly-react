@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.7.0...demo-app-ts@4.8.0) (2020-05-07)
+
+
+### Features
+
+* **Label:** refactor for updated design and features ([#4165](https://github.com/patternfly/patternfly-react/issues/4165)) ([5b50d2e](https://github.com/patternfly/patternfly-react/commit/5b50d2eb5d63840c04c28850c8f2d813387ac8eb))
+
+
+
+
+
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.18...demo-app-ts@4.7.0) (2020-05-07)
+
+
+### Features
+
+* **Drawer, DataList, Page:** rename noPadding to hasNoPadding ([#4133](https://github.com/patternfly/patternfly-react/issues/4133)) ([9d7ee63](https://github.com/patternfly/patternfly-react/commit/9d7ee633de1ac24a776fab84a1c1091712395dd2))
+
+
+
+
+
+## [4.6.18](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.17...demo-app-ts@4.6.18) (2020-05-06)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.6.17](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.16...demo-app-ts@4.6.17) (2020-05-06)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.6.16](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.15...demo-app-ts@4.6.16) (2020-05-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.6.15](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.14...demo-app-ts@4.6.15) (2020-05-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.6.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.13...demo-app-ts@4.6.14) (2020-05-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.6.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.6.12...demo-app-ts@4.6.13) (2020-05-04)
 
 **Note:** Version bump only for package demo-app-ts

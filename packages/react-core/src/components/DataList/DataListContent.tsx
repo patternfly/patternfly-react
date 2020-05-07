@@ -14,7 +14,7 @@ export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
   /** Flag to show if the expanded content of the DataList item is visible */
   isHidden?: boolean;
   /** Flag to remove padding from the expandable content */
-  noPadding?: boolean;
+  hasNoPadding?: boolean;
   /** Adds accessible text to the DataList toggle */
   'aria-label': string;
 }
@@ -25,7 +25,7 @@ export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
   id = '',
   isHidden = false,
   'aria-label': ariaLabel,
-  noPadding = false,
+  hasNoPadding = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowid = '',
   ...props
@@ -37,6 +37,8 @@ export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
     aria-label={ariaLabel}
     {...props}
   >
-    <div className={css(styles.dataListExpandableContentBody, noPadding && styles.modifiers.noPadding)}>{children}</div>
+    <div className={css(styles.dataListExpandableContentBody, hasNoPadding && styles.modifiers.noPadding)}>
+      {children}
+    </div>
   </section>
 );

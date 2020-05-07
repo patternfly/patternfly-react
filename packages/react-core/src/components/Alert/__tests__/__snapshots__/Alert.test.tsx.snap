@@ -2,7 +2,7 @@
 
 exports[`Alert - danger Action Close Button 1`] = `
 <Alert
-  action={
+  actionClose={
     <AlertActionCloseButton
       aria-label="Close"
       onClose={[MockFunction]}
@@ -62,11 +62,6 @@ exports[`Alert - danger Action Close Button 1`] = `
       Sample danger alert
     </h4>
     <div
-      className="pf-c-alert__description"
-    >
-      Some alert
-    </div>
-    <div
       className="pf-c-alert__action"
     >
       <AlertActionCloseButton
@@ -119,16 +114,23 @@ exports[`Alert - danger Action Close Button 1`] = `
         </Button>
       </AlertActionCloseButton>
     </div>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
   </div>
 </Alert>
 `;
 
 exports[`Alert - danger Action Link 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title=""
   variant="danger"
@@ -188,17 +190,18 @@ exports[`Alert - danger Action Link 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -217,10 +220,12 @@ exports[`Alert - danger Action Link 1`] = `
 
 exports[`Alert - danger Action and Title 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title="Some title"
   variant="danger"
@@ -281,17 +286,18 @@ exports[`Alert - danger Action and Title 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -310,10 +316,12 @@ exports[`Alert - danger Action and Title 1`] = `
 
 exports[`Alert - danger Custom aria label 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   aria-label="Custom aria label for danger"
   title="Some title"
@@ -375,17 +383,18 @@ exports[`Alert - danger Custom aria label 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -664,7 +673,7 @@ exports[`Alert - danger inline variation 1`] = `
 
 exports[`Alert - default Action Close Button 1`] = `
 <Alert
-  action={
+  actionClose={
     <AlertActionCloseButton
       aria-label="Close"
       onClose={[MockFunction]}
@@ -724,11 +733,6 @@ exports[`Alert - default Action Close Button 1`] = `
       Sample default alert
     </h4>
     <div
-      className="pf-c-alert__description"
-    >
-      Some alert
-    </div>
-    <div
       className="pf-c-alert__action"
     >
       <AlertActionCloseButton
@@ -781,16 +785,23 @@ exports[`Alert - default Action Close Button 1`] = `
         </Button>
       </AlertActionCloseButton>
     </div>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
   </div>
 </Alert>
 `;
 
 exports[`Alert - default Action Link 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title=""
   variant="default"
@@ -850,17 +861,18 @@ exports[`Alert - default Action Link 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -879,10 +891,12 @@ exports[`Alert - default Action Link 1`] = `
 
 exports[`Alert - default Action and Title 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title="Some title"
   variant="default"
@@ -943,17 +957,18 @@ exports[`Alert - default Action and Title 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -972,10 +987,12 @@ exports[`Alert - default Action and Title 1`] = `
 
 exports[`Alert - default Custom aria label 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   aria-label="Custom aria label for default"
   title="Some title"
@@ -1037,17 +1054,18 @@ exports[`Alert - default Custom aria label 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -1326,7 +1344,7 @@ exports[`Alert - default inline variation 1`] = `
 
 exports[`Alert - info Action Close Button 1`] = `
 <Alert
-  action={
+  actionClose={
     <AlertActionCloseButton
       aria-label="Close"
       onClose={[MockFunction]}
@@ -1386,11 +1404,6 @@ exports[`Alert - info Action Close Button 1`] = `
       Sample info alert
     </h4>
     <div
-      className="pf-c-alert__description"
-    >
-      Some alert
-    </div>
-    <div
       className="pf-c-alert__action"
     >
       <AlertActionCloseButton
@@ -1443,16 +1456,23 @@ exports[`Alert - info Action Close Button 1`] = `
         </Button>
       </AlertActionCloseButton>
     </div>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
   </div>
 </Alert>
 `;
 
 exports[`Alert - info Action Link 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title=""
   variant="info"
@@ -1512,17 +1532,18 @@ exports[`Alert - info Action Link 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -1541,10 +1562,12 @@ exports[`Alert - info Action Link 1`] = `
 
 exports[`Alert - info Action and Title 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title="Some title"
   variant="info"
@@ -1605,17 +1628,18 @@ exports[`Alert - info Action and Title 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -1634,10 +1658,12 @@ exports[`Alert - info Action and Title 1`] = `
 
 exports[`Alert - info Custom aria label 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   aria-label="Custom aria label for info"
   title="Some title"
@@ -1699,17 +1725,18 @@ exports[`Alert - info Custom aria label 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -1988,7 +2015,7 @@ exports[`Alert - info inline variation 1`] = `
 
 exports[`Alert - success Action Close Button 1`] = `
 <Alert
-  action={
+  actionClose={
     <AlertActionCloseButton
       aria-label="Close"
       onClose={[MockFunction]}
@@ -2048,11 +2075,6 @@ exports[`Alert - success Action Close Button 1`] = `
       Sample success alert
     </h4>
     <div
-      className="pf-c-alert__description"
-    >
-      Some alert
-    </div>
-    <div
       className="pf-c-alert__action"
     >
       <AlertActionCloseButton
@@ -2105,16 +2127,23 @@ exports[`Alert - success Action Close Button 1`] = `
         </Button>
       </AlertActionCloseButton>
     </div>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
   </div>
 </Alert>
 `;
 
 exports[`Alert - success Action Link 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title=""
   variant="success"
@@ -2174,17 +2203,18 @@ exports[`Alert - success Action Link 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -2203,10 +2233,12 @@ exports[`Alert - success Action Link 1`] = `
 
 exports[`Alert - success Action and Title 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title="Some title"
   variant="success"
@@ -2267,17 +2299,18 @@ exports[`Alert - success Action and Title 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -2296,10 +2329,12 @@ exports[`Alert - success Action and Title 1`] = `
 
 exports[`Alert - success Custom aria label 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   aria-label="Custom aria label for success"
   title="Some title"
@@ -2361,17 +2396,18 @@ exports[`Alert - success Custom aria label 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -2650,7 +2686,7 @@ exports[`Alert - success inline variation 1`] = `
 
 exports[`Alert - warning Action Close Button 1`] = `
 <Alert
-  action={
+  actionClose={
     <AlertActionCloseButton
       aria-label="Close"
       onClose={[MockFunction]}
@@ -2710,11 +2746,6 @@ exports[`Alert - warning Action Close Button 1`] = `
       Sample warning alert
     </h4>
     <div
-      className="pf-c-alert__description"
-    >
-      Some alert
-    </div>
-    <div
       className="pf-c-alert__action"
     >
       <AlertActionCloseButton
@@ -2767,16 +2798,23 @@ exports[`Alert - warning Action Close Button 1`] = `
         </Button>
       </AlertActionCloseButton>
     </div>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
   </div>
 </Alert>
 `;
 
 exports[`Alert - warning Action Link 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title=""
   variant="warning"
@@ -2836,17 +2874,18 @@ exports[`Alert - warning Action Link 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -2865,10 +2904,12 @@ exports[`Alert - warning Action Link 1`] = `
 
 exports[`Alert - warning Action and Title 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   title="Some title"
   variant="warning"
@@ -2929,17 +2970,18 @@ exports[`Alert - warning Action and Title 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
@@ -2958,10 +3000,12 @@ exports[`Alert - warning Action and Title 1`] = `
 
 exports[`Alert - warning Custom aria label 1`] = `
 <Alert
-  action={
-    <AlertActionLink>
-      test
-    </AlertActionLink>
+  actionLinks={
+    Array [
+      <AlertActionLink>
+        test
+      </AlertActionLink>,
+    ]
   }
   aria-label="Custom aria label for warning"
   title="Some title"
@@ -3023,17 +3067,18 @@ exports[`Alert - warning Custom aria label 1`] = `
       Some alert
     </div>
     <div
-      className="pf-c-alert__action"
+      className="pf-c-alert__action-group"
     >
       <AlertActionLink>
         <Button
           className=""
+          isInline={true}
           variant="link"
         >
           <button
             aria-disabled={null}
             aria-label={null}
-            className="pf-c-button pf-m-link"
+            className="pf-c-button pf-m-link pf-m-inline"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}

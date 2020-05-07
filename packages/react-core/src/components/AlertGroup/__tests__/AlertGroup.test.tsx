@@ -61,7 +61,7 @@ test('alertgroup closes when alerts are closed', () => {
       <Alert
         isLiveRegion
         title={'Test Alert'}
-        action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
+        actionClose={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
       />
     </AlertGroup>
   );

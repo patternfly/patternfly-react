@@ -56,6 +56,18 @@ export class PageDemo extends React.Component {
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+        <PageSection
+          hasNoPadding
+          breakpointMods={[{ modifier: 'padding', breakpoint: 'md' }, { modifier: 'padding', breakpoint: 'lg' }]}
+        >
+          Section with padding only on medium/large
+        </PageSection>
+        <PageSection
+          variant={PageSectionVariants.light}
+          breakpointMods={[{ modifier: 'no-padding', breakpoint: 'md' }]}
+        >
+          Section with no padding on medium
+        </PageSection>
       </Page>
     );
   }

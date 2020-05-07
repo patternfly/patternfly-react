@@ -23,15 +23,8 @@ exports[`Alert should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </h4>
-  <ContextProvider
-    value={
-      Object {
-        "title": <div>
-          ReactNode
-        </div>,
-        "variantLabel": "string",
-      }
-    }
+  <div
+    className="pf-c-alert__action-group"
   />
 </div>
 `;

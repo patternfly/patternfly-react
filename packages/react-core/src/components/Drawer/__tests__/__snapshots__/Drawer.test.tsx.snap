@@ -46,7 +46,7 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
             >
               <DrawerHead>
                 <DrawerPanelBody
-                  noPadding={false}
+                  hasNoPadding={false}
                 >
                   <div
                     className="pf-c-drawer__body"
@@ -179,7 +179,7 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
             >
               <DrawerHead>
                 <DrawerPanelBody
-                  noPadding={false}
+                  hasNoPadding={false}
                 >
                   <div
                     className="pf-c-drawer__body"
@@ -312,7 +312,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
             >
               <DrawerHead>
                 <DrawerPanelBody
-                  noPadding={false}
+                  hasNoPadding={false}
                 >
                   <div
                     className="pf-c-drawer__body"
@@ -445,7 +445,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
             >
               <DrawerHead>
                 <DrawerPanelBody
-                  noPadding={false}
+                  hasNoPadding={false}
                 >
                   <div
                     className="pf-c-drawer__body"
@@ -578,7 +578,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
             >
               <DrawerHead>
                 <DrawerPanelBody
-                  noPadding={false}
+                  hasNoPadding={false}
                 >
                   <div
                     className="pf-c-drawer__body"

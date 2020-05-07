@@ -6,6 +6,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
 >
   <ModalContent
     actions={Array []}
+    aria-label=""
     className="''"
     disableFocusTrap={true}
     footer={
@@ -13,6 +14,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
         ReactNode
       </div>
     }
+    hasNoBodyWrapper={false}
     header={
       <div>
         ReactNode

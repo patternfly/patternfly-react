@@ -9,7 +9,12 @@ import {} from '../..';
 
 it('AlertActionCloseButton should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <AlertActionCloseButton className={"''"} onClose={() => undefined as any} aria-label={"''"} variantLabel={"''"} />
+    <AlertActionCloseButton
+      className={"''"}
+      onClose={() => undefined as any}
+      aria-label={"''"}
+      variantLabel={'string'}
+    />
   );
   expect(view).toMatchSnapshot();
 });
