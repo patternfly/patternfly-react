@@ -689,7 +689,7 @@ class ExpandableDataList extends React.Component {
             aria-label="Primary Content Details"
             id="ex-expand3"
             isHidden={!this.state.expanded.includes('ex-toggle3')}
-            noPadding
+            hasNoPadding
           >
             This expanded section has no padding.
           </DataListContent>

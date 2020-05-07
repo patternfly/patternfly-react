@@ -2,10 +2,22 @@
 title: 'Drawer'
 cssPrefix: 'pf-c-drawer'
 typescript: true
-propComponents: [Drawer, DrawerContent, DrawerPanelContent, DrawerContentBody, DrawerPanelBody, DrawerSection, DrawerHead, DrawerActions, DrawerCloseButton]
+propComponents:
+  [
+    Drawer,
+    DrawerContent,
+    DrawerPanelContent,
+    DrawerContentBody,
+    DrawerPanelBody,
+    DrawerSection,
+    DrawerHead,
+    DrawerActions,
+    DrawerCloseButton,
+  ]
 section: 'components'
 beta: true
 ---
+
 import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerSection, DrawerHead, DrawerActions, DrawerCloseButton } from '@patternfly/react-core';
 
 ## Examples
@@ -63,7 +75,9 @@ class SimpleDrawer extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
@@ -128,9 +142,11 @@ class SimpleDrawerPanelLeft extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
-          <DrawerContent  panelContent={panelContent}>
+          <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
@@ -142,7 +158,17 @@ class SimpleDrawerPanelLeft extends React.Component {
 
 ```js title=Panel-on-left
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
+import {
+  Drawer,
+  DrawerPanelContent,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelBody,
+  DrawerHead,
+  DrawerActions,
+  DrawerCloseButton,
+  Button
+} from '@patternfly/react-core';
 
 class SimpleDrawerPanelLeft extends React.Component {
   constructor(props) {
@@ -168,23 +194,26 @@ class SimpleDrawerPanelLeft extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent> 
+      <DrawerPanelContent>
         <DrawerHead>
           <span>drawer-panel</span>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick}/>
+            <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
 
-    const drawerContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.";
+    const drawerContent =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded} position="left">
-          <DrawerContent  panelContent={panelContent}>
+          <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
         </Drawer>
@@ -247,7 +276,9 @@ class SimpleDrawerInlineContent extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded} isInline>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
@@ -312,7 +343,9 @@ class DrawerInlineContentPanelLeft extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded} isInline>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
@@ -326,11 +359,20 @@ class DrawerInlineContentPanelLeft extends React.Component {
 
 ```js title=-Inline-panel-on-left
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
+import {
+  Drawer,
+  DrawerPanelContent,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelBody,
+  DrawerHead,
+  DrawerActions,
+  DrawerCloseButton,
+  Button
+} from '@patternfly/react-core';
 
 class DrawerInlineContentPanelLeft extends React.Component {
-
-   constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       isExpanded: false
@@ -348,27 +390,30 @@ class DrawerInlineContentPanelLeft extends React.Component {
         isExpanded: false
       });
     };
-   }
+  }
 
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent> 
+      <DrawerPanelContent>
         <DrawerHead>
           <span>drawer-panel</span>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick}/>
+            <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
 
-    const drawerContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.";
+    const drawerContent =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
-        <Drawer isExpanded={isExpanded} isInline position='left'>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
+        <Drawer isExpanded={isExpanded} isInline position="left">
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -381,11 +426,20 @@ class DrawerInlineContentPanelLeft extends React.Component {
 
 ```js title=Stacked-content-body-elements
 import React, { ReactFragment } from 'react';
-import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPanelBody, DrawerHead, DrawerActions, DrawerCloseButton, Button } from '@patternfly/react-core';
+import {
+  Drawer,
+  DrawerPanelContent,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelBody,
+  DrawerHead,
+  DrawerActions,
+  DrawerCloseButton,
+  Button
+} from '@patternfly/react-core';
 
 class DrawerStackedContentBodyElements extends React.Component {
-
-   constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       isExpanded: false
@@ -403,7 +457,7 @@ class DrawerStackedContentBodyElements extends React.Component {
         isExpanded: false
       });
     };
-   }
+  }
 
   render() {
     const { isExpanded } = this.state;
@@ -411,20 +465,22 @@ class DrawerStackedContentBodyElements extends React.Component {
       <DrawerPanelContent>
         <DrawerHead>
           <DrawerActions>
-            <DrawerCloseButton onClick={this.onCloseClick}/>
+            <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
           drawer-panel
-        </DrawerHead> 
-        <DrawerPanelBody noPadding>drawer-panel with no padding</DrawerPanelBody> 
-        <DrawerPanelBody>drawer-panel</DrawerPanelBody> 
+        </DrawerHead>
+        <DrawerPanelBody hasNoPadding>drawer-panel with no padding</DrawerPanelBody>
+        <DrawerPanelBody>drawer-panel</DrawerPanelBody>
       </DrawerPanelContent>
     );
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
-          <DrawerContent  panelContent={panelContent}>
+          <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>content-body</DrawerContentBody>
             <DrawerContentBody hasPadding>content-body with padding</DrawerContentBody>
             <DrawerContentBody>content-body</DrawerContentBody>
@@ -481,14 +537,16 @@ class DrawerStackedContentBodyElements extends React.Component {
           </DrawerActions>
           drawer-panel
         </DrawerHead>
-        <DrawerPanelBody noPadding>drawer-panel with no padding</DrawerPanelBody>
+        <DrawerPanelBody hasNoPadding>drawer-panel with no padding</DrawerPanelBody>
         <DrawerPanelBody>drawer-panel</DrawerPanelBody>
       </DrawerPanelContent>
     );
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>content-body</DrawerContentBody>
@@ -555,7 +613,9 @@ class DrawerModifiedContentPadding extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>
@@ -608,7 +668,7 @@ class DrawerModifiedPanelPadding extends React.Component {
     const { isExpanded } = this.state;
     const panelContent = (
       <DrawerPanelContent>
-        <DrawerHead noPadding>
+        <DrawerHead hasNoPadding>
           <span>drawer-panel</span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
@@ -622,7 +682,9 @@ class DrawerModifiedPanelPadding extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
@@ -688,7 +750,9 @@ class DrawerWithSection extends React.Component {
 
     return (
       <React.Fragment>
-        <Button aria-expanded={isExpanded} onClick={this.onClick}>Toggle Drawer</Button>
+        <Button aria-expanded={isExpanded} onClick={this.onClick}>
+          Toggle Drawer
+        </Button>
         <Drawer isExpanded={isExpanded}>
           <DrawerSection>drawer-section</DrawerSection>
           <DrawerContent panelContent={panelContent}>
