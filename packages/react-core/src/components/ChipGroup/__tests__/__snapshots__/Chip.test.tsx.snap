@@ -22,34 +22,34 @@ exports[`Chip closable 1`] = `
     >
       <span
         className="pf-c-chip__text"
-        id="pf-random-id-1"
+        id="chip_one"
       >
         Chip
       </span>
       <ChipButton
         aria-label="close"
-        aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-        id="remove_pf-random-id-1"
+        aria-labelledby="remove_chip_one chip_one"
+        id="remove_chip_one"
         onClick={[Function]}
       >
         <Button
           aria-label="close"
-          aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
+          aria-labelledby="remove_chip_one chip_one"
           className=""
-          id="remove_pf-random-id-1"
+          id="remove_chip_one"
           onClick={[Function]}
           variant="plain"
         >
           <button
             aria-disabled={null}
             aria-label="close"
-            aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
+            aria-labelledby="remove_chip_one chip_one"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            id="remove_pf-random-id-1"
+            id="remove_chip_one"
             onClick={[Function]}
             tabIndex={null}
             type="button"
@@ -110,34 +110,34 @@ exports[`Chip closable with tooltip 1`] = `
     >
       <span
         className="pf-c-chip__text"
-        id="pf-random-id-2"
+        id="chip_one"
       >
         1234567890123456789
       </span>
       <ChipButton
         aria-label="close"
-        aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
-        id="remove_pf-random-id-2"
+        aria-labelledby="remove_chip_one chip_one"
+        id="remove_chip_one"
         onClick={[Function]}
       >
         <Button
           aria-label="close"
-          aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
+          aria-labelledby="remove_chip_one chip_one"
           className=""
-          id="remove_pf-random-id-2"
+          id="remove_chip_one"
           onClick={[Function]}
           variant="plain"
         >
           <button
             aria-disabled={null}
             aria-label="close"
-            aria-labelledby="remove_pf-random-id-2 pf-random-id-2"
+            aria-labelledby="remove_chip_one chip_one"
             className="pf-c-button pf-m-plain"
             data-ouia-component-id={null}
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
             disabled={false}
-            id="remove_pf-random-id-2"
+            id="remove_chip_one"
             onClick={[Function]}
             tabIndex={null}
             type="button"
