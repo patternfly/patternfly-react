@@ -4,7 +4,6 @@ exports[`component render custom pagination toggle 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -708,7 +707,6 @@ exports[`component render custom perPageOptions 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -1402,7 +1400,6 @@ exports[`component render custom start end 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -2156,7 +2153,6 @@ exports[`component render empty per page options 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -2579,7 +2575,6 @@ exports[`component render last page 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -3333,7 +3328,6 @@ exports[`component render limited number of pages 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -4087,7 +4081,6 @@ exports[`component render no items 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -4844,7 +4837,6 @@ exports[`component render should render correctly bottom 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -4911,7 +4903,7 @@ exports[`component render should render correctly bottom 1`] = `
     <PaginationOptionsMenu
       className=""
       defaultToFullPage={false}
-      dropDirection="down"
+      dropDirection="up"
       firstIndex={1}
       isDisabled={false}
       itemCount={20}
@@ -4950,7 +4942,7 @@ exports[`component render should render correctly bottom 1`] = `
       <DropdownWithContext
         autoFocus={true}
         className=""
-        direction="down"
+        direction="up"
         dropdownItems={
           Array [
             <DropdownItem
@@ -5025,7 +5017,7 @@ exports[`component render should render correctly bottom 1`] = `
         }
       >
         <div
-          className="pf-c-options-menu"
+          className="pf-c-options-menu pf-m-top"
           data-ouia-component-id={1}
           data-ouia-component-type="PF4/Dropdown"
           data-ouia-safe={true}
@@ -5048,7 +5040,7 @@ exports[`component render should render correctly bottom 1`] = `
             parentRef={
               Object {
                 "current": <div
-                  class="pf-c-options-menu"
+                  class="pf-c-options-menu pf-m-top"
                   data-ouia-component-id="1"
                   data-ouia-component-type="PF4/Dropdown"
                   data-ouia-safe="true"
@@ -5142,7 +5134,7 @@ exports[`component render should render correctly bottom 1`] = `
                 parentRef={
                   Object {
                     "current": <div
-                      class="pf-c-options-menu"
+                      class="pf-c-options-menu pf-m-top"
                       data-ouia-component-id="1"
                       data-ouia-component-type="PF4/Dropdown"
                       data-ouia-safe="true"
@@ -5213,7 +5205,7 @@ exports[`component render should render correctly bottom 1`] = `
                   parentRef={
                     Object {
                       "current": <div
-                        class="pf-c-options-menu"
+                        class="pf-c-options-menu pf-m-top"
                         data-ouia-component-id="1"
                         data-ouia-component-type="PF4/Dropdown"
                         data-ouia-safe="true"
@@ -5576,7 +5568,6 @@ exports[`component render should render correctly compact 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={true}
   isDisabled={false}
@@ -6207,7 +6198,6 @@ exports[`component render should render correctly disabled 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={true}
@@ -6964,7 +6954,6 @@ exports[`component render should render correctly top 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -7718,7 +7707,6 @@ exports[`component render titles 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
@@ -9219,7 +9207,6 @@ exports[`component render zero results 1`] = `
 <Pagination
   className=""
   defaultToFullPage={false}
-  dropDirection="down"
   firstPage={1}
   isCompact={false}
   isDisabled={false}
