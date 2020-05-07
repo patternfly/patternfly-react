@@ -536,7 +536,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     return (
       <>
         {getTitle({ titles: title })}
-        {getSubTitle({ textComponent: subTitleComponent ? subTitleComponent : <ChartLabel/> })}
+        {getSubTitle({ textComponent: subTitleComponent ? subTitleComponent : <ChartLabel /> })}
       </>
     );
   };
