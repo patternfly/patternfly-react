@@ -13,9 +13,10 @@ exports[`Modal Content Test description 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
@@ -24,14 +25,20 @@ exports[`Modal Content Test description 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
+        <ModalBoxDescription
+          id=""
+        >
+          This is a test description.
+        </ModalBoxDescription>
       </ModalBoxHeader>
-      <ModalBoxDescription
+      <ModalBoxBody
         id="id"
       >
-        This is a test description.
-      </ModalBoxDescription>
-      <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
     </ModalBox>
@@ -52,9 +59,10 @@ exports[`Modal Content Test isOpen 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
@@ -63,9 +71,14 @@ exports[`Modal Content Test isOpen 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
       >
         This is a ModalBox header
@@ -88,9 +101,10 @@ exports[`Modal Content Test only body 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
@@ -99,9 +113,14 @@ exports[`Modal Content Test only body 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
       >
         This is a ModalBox header
@@ -124,9 +143,10 @@ exports[`Modal Content Test with footer 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
@@ -135,9 +155,14 @@ exports[`Modal Content Test with footer 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
       >
         This is a ModalBox header
@@ -163,9 +188,10 @@ exports[`Modal Content Test with onclose 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
@@ -174,9 +200,14 @@ exports[`Modal Content Test with onclose 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
         isLarge={true}
       >
@@ -203,9 +234,10 @@ exports[`Modal Content test without footer 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Content title"
       variant="default"
@@ -214,9 +246,14 @@ exports[`Modal Content test without footer 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
       >
         This is a ModalBox header
@@ -239,9 +276,10 @@ exports[`Modal Test with custom footer 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="Test Modal Custom Footer"
       variant="default"
@@ -250,9 +288,14 @@ exports[`Modal Test with custom footer 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Custom Footer
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Custom Footer
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
         isLarge={true}
       >
@@ -283,9 +326,10 @@ exports[`Modal Test with custom header 1`] = `
     paused={false}
   >
     <ModalBox
+      aria-describedby=""
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
       title="test-custom-header-modal"
       variant="default"
@@ -293,16 +337,15 @@ exports[`Modal Test with custom header 1`] = `
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <div
-        className="pf-c-title"
-      >
+      <ModalBoxHeader>
         <span
           id="test-custom-header"
         >
           TEST
         </span>
-      </div>
+      </ModalBoxHeader>
       <ModalBoxBody
+        descriptorId=""
         id="id"
         isLarge={true}
       >

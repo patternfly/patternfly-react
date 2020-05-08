@@ -16,12 +16,14 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   header?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
+  /** Id to use for Modal Box label */
+  'aria-labelledby'?: string;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
+  /** Id to use for Modal Box descriptor */
+  'aria-describedby'?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
-  /** Id to use for Modal Box descriptor */
-  modalContentAriaDescribedById?: string;
   /** Custom footer */
   footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
@@ -54,7 +56,7 @@ interface ModalState {
 
 export class Modal extends React.Component<ModalProps, ModalState> {
   static currentId = 0;
-  id = '';
+  descriptorId = '';
 
   static defaultProps: PickOptional<ModalProps> = {
     className: '',
@@ -62,7 +64,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     title: '',
     'aria-label': '',
     showClose: true,
-    modalContentAriaDescribedById: '',
+    'aria-describedby': '',
+    'aria-labelledby': '',
     actions: [] as any[],
     onClose: () => undefined as any,
     variant: 'default',
@@ -72,8 +75,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
 
   constructor(props: ModalProps) {
     super(props);
-    const newId = Modal.currentId++;
-    this.id = `pf-modal-${newId}`;
+    const newDescriptorId = Modal.currentId++;
+    this.descriptorId = `pf-modal-${newDescriptorId}`;
 
     this.state = {
       container: undefined
@@ -108,7 +111,14 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   componentDidMount() {
-    const { appendTo } = this.props;
+    const {
+      appendTo,
+      title,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledby,
+      hasNoBodyWrapper,
+      'aria-describedby': ariaDescribedby
+    } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     const container = document.createElement('div');
     this.setState({ container });
@@ -119,6 +129,25 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       target.classList.add(css(styles.backdropOpen));
     } else {
       target.classList.remove(css(styles.backdropOpen));
+    }
+
+    if (!title && !ariaLabel && !ariaLabelledby) {
+      // eslint-disable-next-line no-console
+      console.error('Modal: Specify at least one of: title, aria-label, aria-labelledby.');
+    }
+
+    if (ariaLabel && ariaLabelledby) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Modal: When aria-label & aria-labelledby are both set, the aria-label value is overridden. Double check that you have set an appropriate accessible name for this Modal.'
+      );
+    }
+
+    if (hasNoBodyWrapper && !ariaDescribedby) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Modal: When using hasNoBodyWrapper, ensure you link the modal container to its content description by setting aria-describedby.'
+      );
     }
   }
 
@@ -146,7 +175,13 @@ export class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { appendTo, modalContentAriaDescribedById, title, 'aria-label': ariaLabel, ...props } = this.props;
+    const {
+      'aria-labelledby': ariaLabelledby,
+      'aria-label': ariaLabel,
+      'aria-describedby': ariaDescribedby,
+      title,
+      ...props
+    } = this.props;
     const { container } = this.state;
 
     if (!canUseDOM || !container) {
@@ -158,8 +193,9 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         {...props}
         title={title}
         aria-label={ariaLabel}
-        id={this.id}
-        modalBoxAriaDescribedById={modalContentAriaDescribedById}
+        descriptorId={this.descriptorId}
+        aria-describedby={ariaDescribedby}
+        aria-labelledby={ariaLabelledby}
       />,
       container
     );

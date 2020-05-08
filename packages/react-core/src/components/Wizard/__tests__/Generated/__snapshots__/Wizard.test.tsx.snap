@@ -4,11 +4,12 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
 <Modal
   actions={Array []}
   appendTo={<body />}
+  aria-describedby=""
   aria-label=""
+  aria-labelledby=""
   className=""
   hasNoBodyWrapper={true}
   isOpen={false}
-  modalContentAriaDescribedById=""
   onClose={[Function]}
   showClose={false}
   title=""

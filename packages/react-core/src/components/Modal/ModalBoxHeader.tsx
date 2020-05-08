@@ -1,6 +1,4 @@
 import * as React from 'react';
-
-import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import { css } from '@patternfly/react-styles';
 
 export interface ModalBoxHeaderProps {
@@ -15,7 +13,7 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   className = '',
   ...props
 }: ModalBoxHeaderProps) => (
-  <div className={css(styles.modalBoxTitle, className)} {...props}>
+  <header className={css('pf-c-modal-box__header', className)} {...props}>
     {children}
-  </div>
+  </header>
 );

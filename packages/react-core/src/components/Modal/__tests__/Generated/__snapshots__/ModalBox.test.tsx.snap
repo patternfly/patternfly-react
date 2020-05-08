@@ -3,11 +3,10 @@
 exports[`ModalBox should match snapshot (auto-generated) 1`] = `
 <div
   aria-describedby="string"
-  aria-label="string"
+  aria-label="''"
+  aria-labelledby="string"
   aria-modal="true"
   className="pf-c-modal-box ''"
-  isLarge={false}
-  isSmall={false}
   role="dialog"
 >
   <div>

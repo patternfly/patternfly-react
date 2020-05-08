@@ -12,18 +12,22 @@ it('ModalContent should match snapshot (auto-generated)', () => {
     <ModalContent
       children={<div>ReactNode</div>}
       className={"''"}
-      variant={'large'}
+      variant={'default'}
       isOpen={false}
       header={null}
-      title={'string'}
-      hideTitle={false}
+      description={null}
+      title={"''"}
+      aria-label={"''"}
       showClose={true}
       width={-1}
       footer={null}
       actions={[]}
       onClose={() => undefined as any}
-      id={"''"}
+      aria-describedby={"''"}
+      aria-labelledby={"''"}
+      descriptorId={"''"}
       disableFocusTrap={false}
+      hasNoBodyWrapper={false}
     />
   );
   expect(view).toMatchSnapshot();

@@ -288,7 +288,7 @@ class CustomHeaderFooter extends React.Component {
 
     const header = (
       <React.Fragment>
-        <Title headingLevel="h1" size={TitleSizes['2xl']}>
+        <Title id="custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
           Custom Modal Header/Footer
         </Title>
         <p className="pf-u-pt-sm">Allows for custom content in the header and/or footer by passing components.</p>
@@ -312,7 +312,7 @@ class CustomHeaderFooter extends React.Component {
           isOpen={isModalOpen}
           header={header}
           title="custom header example"
-          modalContentAriaDescribedById="custom-header-example"
+          aria-describedby="custom-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
         >
@@ -363,7 +363,7 @@ class NoHeader extends React.Component {
           isOpen={isModalOpen}
           aria-label="no header example"
           showClose={true}
-          modalContentAriaDescribedById="no-header-example"
+          aria-describedby="no-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
         >
@@ -403,7 +403,7 @@ class WithWizard extends React.Component {
 
   render() {
     const { isModalOpen } = this.state;
-    
+
     const steps = [
       { name: 'Step 1', component: <p>Step 1</p> },
       { name: 'Step 2', component: <p>Step 2</p> },
@@ -423,8 +423,12 @@ class WithWizard extends React.Component {
           showClose={false}
           onClose={this.handleModalToggle}
           hasNoBodyWrapper
+          aria-describedby="wiz-modal-example-description"
+          aria-labelledby="wiz-modal-example-title"
         >
           <Wizard
+            titleId="wiz-modal-example-title"
+            descriptionId="wiz-modal-example-description"
             title="Simple Wizard"
             description="Simple Wizard Description"
             steps={steps}
