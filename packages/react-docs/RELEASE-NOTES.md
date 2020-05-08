@@ -24,7 +24,7 @@ Packages released:
   - Added new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/pull/4137))
 - **Page:**
   - Made tabIndex optional ([#4181](https://github.com/patternfly/patternfly-react/pull/4181))
--  **Select:** 
+- **Select:** 
   - Added placeholder text for inline filter ([#4185](https://github.com/patternfly/patternfly-react/pull/4185))
   - Added missing import to docs ([#4109](https://github.com/patternfly/patternfly-react/pull/4109))
   - Added "0" and "All" selected badging ([#4186](https://github.com/patternfly/patternfly-react/pull/4186))
