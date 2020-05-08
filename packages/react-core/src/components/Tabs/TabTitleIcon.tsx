@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 
 export interface TabTitleIconProps extends React.HTMLProps<HTMLSpanElement> {
   /** Icon to be rendered inside the tab button title. */
-  children?: React.ReactNode;
+  children: React.ReactNode;
   /** additional classes added to the tab title icon */
   className?: string;
 }

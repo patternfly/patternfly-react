@@ -116,7 +116,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   }
 
   handleScrollButtons = () => {
-    if (this.tabList.current) {
+    if (this.tabList.current && this.props.isVertical) {
       const container = this.tabList.current;
       // get first element and check if it is in view
       const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
@@ -180,13 +180,17 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   formatInsetString = (s: string) => (s === '2xl' ? '_2xl' : capitalize(s));
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleScrollButtons, false);
-    // call the handle resize function to check if scroll buttons should be shown
-    this.handleScrollButtons();
+    if (!this.props.isVertical) {
+      window.addEventListener('resize', this.handleScrollButtons, false);
+      // call the handle resize function to check if scroll buttons should be shown
+      this.handleScrollButtons();
+    }
   }
 
   componentWillUnmount() {
-    document.removeEventListener('resize', this.handleScrollButtons, false);
+    if (!this.props.isVertical) {
+      window.removeEventListener('resize', this.handleScrollButtons, false);
+    }
   }
 
   render() {
