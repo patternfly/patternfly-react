@@ -19,7 +19,7 @@ describe('Page Managed Sidebar Closed Demo Test', () => {
         .should('eq', "Logo that's a <div>");
       cy.get('.pf-c-page__header-tools')
         .invoke('text')
-        .should('contain', 'Toolbar | Avatar');
+        .should('contain', 'PageHeaderTools | Avatar');
       cy.get('.pf-c-page__main-section.pf-m-dark-100').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-dark-200').should('exist');
       cy.get('.pf-c-page__main-section.pf-m-light').should('exist');
