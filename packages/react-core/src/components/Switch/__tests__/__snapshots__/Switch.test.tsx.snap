@@ -3,12 +3,9 @@
 exports[`no label switch is checked 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="no-label-switch-is-checked"
   isChecked={true}
   isDisabled={false}
-  label=""
-  labelOff=""
   onChange={[Function]}
 >
   <label
@@ -65,12 +62,9 @@ exports[`no label switch is checked 1`] = `
 exports[`no label switch is not checked 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="no-label-switch-is-not-checked"
   isChecked={false}
   isDisabled={false}
-  label=""
-  labelOff=""
   onChange={[Function]}
 >
   <label
@@ -127,7 +121,6 @@ exports[`no label switch is not checked 1`] = `
 exports[`switch is checked 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="switch-is-checked"
   isChecked={true}
   isDisabled={false}
@@ -176,12 +169,9 @@ exports[`switch is checked 1`] = `
 exports[`switch is checked and disabled 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="switch-is-checked-and-disabled"
   isChecked={true}
   isDisabled={true}
-  label=""
-  labelOff=""
   onChange={[Function]}
 >
   <label
@@ -238,7 +228,6 @@ exports[`switch is checked and disabled 1`] = `
 exports[`switch is not checked 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="switch-is-not-checked"
   isChecked={false}
   isDisabled={false}
@@ -287,12 +276,9 @@ exports[`switch is not checked 1`] = `
 exports[`switch is not checked and disabled 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="switch-is-not-checked-and-disabled"
   isChecked={false}
   isDisabled={true}
-  label=""
-  labelOff=""
   onChange={[Function]}
 >
   <label
@@ -349,12 +335,10 @@ exports[`switch is not checked and disabled 1`] = `
 exports[`switch with only label is checked 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="switch-is-checked"
   isChecked={true}
   isDisabled={false}
   label="On"
-  labelOff=""
   onChange={[Function]}
 >
   <label
@@ -398,12 +382,10 @@ exports[`switch with only label is checked 1`] = `
 exports[`switch with only label is not checked 1`] = `
 <Switch
   aria-label=""
-  className=""
   id="switch-is-not-checked"
   isChecked={false}
   isDisabled={false}
   label="Off"
-  labelOff=""
   onChange={[Function]}
 >
   <label
