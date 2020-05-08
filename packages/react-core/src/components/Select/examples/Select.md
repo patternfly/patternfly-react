@@ -657,6 +657,123 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
 }
 ```
 
+```js title=Grouped-checkbox-input-with-filtering-and-custom-badging
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+
+class FilteringCheckboxSelectInputWithBadging extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isExpanded: false,
+      selected: [],
+      customBadgeText: 0,
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection), customBadgeText: this.setBadgeText(prevState.selected.length - 1) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection], customBadgeText: this.setBadgeText(prevState.selected.length + 1) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.onFilter = evt => {
+      const textInput = evt.target.value;
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(newGroup => newGroup);
+        return filteredGroups;
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: [],
+        customBadgeText: this.setBadgeText(0)
+      });
+    };
+
+    this.setBadgeText = (selected) => {
+      if (selected === 7) {
+        return 'All';
+      }
+      if (selected === 0) {
+        return 0;
+      }
+      return null;
+    };
+  }
+
+  render() {
+    const { isExpanded, selected, filteredOptions, customBadgeText } = this.state;
+    const titleId = 'checkbox-filtering-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isExpanded={isExpanded}
+          placeholderText="Filter by status"
+          ariaLabelledBy={titleId}
+          onFilter={this.onFilter}
+          onClear={this.clearSelection}
+          isGrouped
+          hasInlineFilter
+          customBadgeText={customBadgeText}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
 ```js title=Typeahead
 import React from 'react';
 import { Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react-core';

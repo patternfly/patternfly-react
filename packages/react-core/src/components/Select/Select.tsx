@@ -88,6 +88,8 @@ export interface SelectProps
   hasInlineFilter?: boolean;
   /** Placeholder text for inline filter */
   inlineFilterPlaceholderText?: string;
+  /** Custom text for select badge */
+  customBadgeText?: string | number;
 }
 
 export interface SelectState {
@@ -131,7 +133,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     toggleIcon: null as React.ReactElement,
     onFilter: null,
     customContent: null,
-    hasInlineFilter: false
+    hasInlineFilter: false,
+    inlineFilterPlaceholderText: null,
+    customBadgeText: null
   };
 
   state: SelectState = {
@@ -383,6 +387,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       noResultsFoundText,
       hasInlineFilter,
       inlineFilterPlaceholderText,
+      customBadgeText,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -470,6 +475,16 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       );
     }
 
+    const generateSelectedBadge = () => {
+      if (customBadgeText !== null) {
+        return customBadgeText;
+      }
+      if (Array.isArray(selections) && selections.length > 0) {
+        return selections.length;
+      }
+      return null;
+    };
+
     return (
       <div
         className={css(
@@ -521,13 +536,13 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {!isCheckboxSelectionBadgeHidden &&
-                    selections &&
-                    (Array.isArray(selections) && selections.length > 0) && (
-                      <div className={css(styles.selectToggleBadge)}>
-                        <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
-                      </div>
-                    )}
+                  {!isCheckboxSelectionBadgeHidden && (customBadgeText !== null || hasAnySelections) && (
+                    <div className={css(styles.selectToggleBadge)}>
+                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
+                        {generateSelectedBadge()}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
