@@ -1293,12 +1293,12 @@ class ModifiersWithTableText extends React.Component {
     this.state = {
       columns: [
         {title: 'Truncating text', transforms: [cellWidth(30)]},
-        {title: 'Wrapping table header text. This th text will wrap instead of truncate.', cellTransforms: [nowrap]},
+        {title: 'Wrapping table header text. This th text will wrap instead of truncate.'},
       ],
       rows: [
         [ 
           {title: <TableText wrapModifier='truncate'>This text will truncate instead of wrap.</TableText>}, 
-          {title: <TableText><a href="#">This is a link that needs to be on one line and fully readable.</a></TableText>},
+          {title: <TableText wrapModifier='nowrap'><a href="#">This is a link that needs to be on one line and fully readable.</a></TableText>},
         ]
       ]
     };
