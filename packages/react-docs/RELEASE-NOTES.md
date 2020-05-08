@@ -6,16 +6,16 @@ releaseNoteTOC: true
 
 ## 2020.06 release notes (2020-05-12)
 Packages released:
-- [@patternfly/react-catalog-view-extension@1.4.63](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.63)
+- [@patternfly/react-catalog-view-extension@1.4.65](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.65)
 - [@patternfly/react-charts@5.3.20](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.20)
-- [@patternfly/react-core@3.156.0](https://www.npmjs.com/package/@patternfly/react-core/v/3.156.0)
+- [@patternfly/react-core@3.158.0](https://www.npmjs.com/package/@patternfly/react-core/v/3.158.0)
 - [@patternfly/react-icons@3.15.16](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.16)
-- [@patternfly/react-inline-edit-extension@2.17.63](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.63)
+- [@patternfly/react-inline-edit-extension@2.17.65](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.65)
 - [@patternfly/react-styles@3.7.13](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.13)
-- [@patternfly/react-table@2.28.44](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.44)
+- [@patternfly/react-table@2.28.46](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.46)
 - [@patternfly/react-tokens@2.8.13](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.13)
-- [@patternfly/react-topology@2.14.63](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.63)
-- [@patternfly/react-virtualized-extension@1.4.64](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.64)
+- [@patternfly/react-topology@2.14.65](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.65)
+- [@patternfly/react-virtualized-extension@1.4.66](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.66)
 
 ### Components
 - **Empty state:**  
@@ -27,6 +27,7 @@ Packages released:
 -  **Select:** 
   - Added placeholder text for inline filter ([#4185](https://github.com/patternfly/patternfly-react/pull/4185))
   - Added missing import to docs ([#4109](https://github.com/patternfly/patternfly-react/pull/4109))
+  - Added "0" and "All" selected badging ([#4186](https://github.com/patternfly/patternfly-react/pull/4186))
 - **Tabs:** 
   - Updated to Properly handle null Tab and TabContent ([#4211](https://github.com/patternfly/patternfly-react/pull/4211))
   - Added integration test for showing/hiding tab button ([#4205](https://github.com/patternfly/patternfly-react/pull/4205))
