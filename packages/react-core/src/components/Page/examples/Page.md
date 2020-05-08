@@ -68,7 +68,14 @@ class VerticalPage extends React.Component {
 
 ```js title=Horizontal-nav
 import React from 'react';
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 HorizontalPage = () => {
   const logoProps = {
@@ -77,7 +84,12 @@ HorizontalPage = () => {
     target: '_blank'
   };
   const Header = (
-    <PageHeader logo="Logo" logoProps={logoProps} headerTools="PageHeaderTools | Avatar" topNav="Navigation" />
+    <PageHeader
+      logo="Logo"
+      logoProps={logoProps}
+      headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
+      topNav="Navigation"
+    />
   );
 
   return (
@@ -92,7 +104,14 @@ HorizontalPage = () => {
 
 ```js title=Main-Section-Padding
 import React from 'react';
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -119,7 +138,7 @@ class VerticalPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        headerTools="PageHeaderTools | Avatar"
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
@@ -153,7 +172,14 @@ class VerticalPage extends React.Component {
 
 ```js title=With-or-without-fill
 import React from 'react';
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 class FillPage extends React.Component {
   constructor(props) {
@@ -180,7 +206,7 @@ class FillPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        headerTools="PageHeaderTools | Avatar"
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
