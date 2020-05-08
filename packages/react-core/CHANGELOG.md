@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.158.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.157.0...@patternfly/react-core@3.158.0) (2020-05-08)
+
+
+### Features
+
+* **Select:** Add support for 0 and all badges ([#4198](https://github.com/patternfly/patternfly-react/issues/4198)) ([9f7f764](https://github.com/patternfly/patternfly-react/commit/9f7f764fecdd24f41744085af52e870bc60e3a96)), closes [#4186](https://github.com/patternfly/patternfly-react/issues/4186)
+
+
+
+
+
 # [3.157.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.156.0...@patternfly/react-core@3.157.0) (2020-05-07)
 
 
