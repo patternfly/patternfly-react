@@ -536,15 +536,13 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {!isCheckboxSelectionBadgeHidden &&
-                    (customBadgeText !== null ||
-                      hasAnySelections) && (
-                      <div className={css(styles.selectToggleBadge)}>
-                        <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
-                          {generateSelectedBadge()}
-                        </span>
-                      </div>
-                    )}
+                  {!isCheckboxSelectionBadgeHidden && (customBadgeText !== null || hasAnySelections) && (
+                    <div className={css(styles.selectToggleBadge)}>
+                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
+                        {generateSelectedBadge()}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 {hasOnClear && hasAnySelections && clearBtn}
               </React.Fragment>
