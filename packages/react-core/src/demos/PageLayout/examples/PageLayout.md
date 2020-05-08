@@ -22,6 +22,7 @@ import {
   NavItem,
   NavList,
   NavVariants,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -30,13 +31,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -74,6 +72,7 @@ import {
   Nav,
   NavItem,
   NavList,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -82,13 +81,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -176,22 +172,20 @@ class PageLayoutDefaultNav extends React.Component {
       <DropdownItem>Separated link</DropdownItem>,
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <NotificationBadge isRead={false} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+          <PageHeaderToolsItem isSelected>
             <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -200,26 +194,26 @@ class PageLayoutDefaultNav extends React.Component {
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         showNavToggle
       />
     );
@@ -297,6 +291,7 @@ import {
   NavExpandable,
   NavItem,
   NavList,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -305,13 +300,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -423,22 +415,20 @@ class PageLayoutExpandableNav extends React.Component {
       <DropdownItem>Separated link</DropdownItem>,
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="expanded-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="expanded-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <NotificationBadge isRead={false} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+          <PageHeaderToolsItem isSelected>
+            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -447,26 +437,26 @@ class PageLayoutExpandableNav extends React.Component {
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         showNavToggle
       />
     );
@@ -536,6 +526,7 @@ import {
   Nav,
   NavGroup,
   NavItem,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -544,13 +535,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -653,22 +641,20 @@ class PageLayoutGroupsNav extends React.Component {
       <DropdownItem>Separated Link</DropdownItem>,
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="groups-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="groups-example-uid-02" aria-label="Setings actions" variant={ButtonVariant.plain}>
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <NotificationBadge isRead={false} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+          <PageHeaderToolsItem isSelected>
+            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -677,26 +663,26 @@ class PageLayoutGroupsNav extends React.Component {
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         showNavToggle
       />
     );
@@ -755,6 +741,7 @@ import {
   NavItem,
   NavList,
   NavVariants,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -762,13 +749,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -857,22 +841,20 @@ class PageLayoutHorizontalNav extends React.Component {
       <DropdownItem>Separated Link</DropdownItem>,
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="horizontal-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="horizontal-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <NotificationBadge isRead={false} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+          <PageHeaderToolsItem isSelected>
+            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -881,26 +863,26 @@ class PageLayoutHorizontalNav extends React.Component {
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         topNav={PageNav}
       />
     );
@@ -967,6 +949,7 @@ import {
   Nav,
   NavItem,
   NavList,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -975,13 +958,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -1098,22 +1078,20 @@ class PageLayoutManualNav extends React.Component {
       <DropdownItem>Separated Link</DropdownItem>,
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <NotificationBadge isRead={false} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+          <PageHeaderToolsItem isSelected>
             <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -1122,26 +1100,26 @@ class PageLayoutManualNav extends React.Component {
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         showNavToggle
         onNavToggle={isMobileView ? this.onNavToggleMobile : this.onNavToggleDesktop}
         isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}
@@ -1209,6 +1187,7 @@ import {
   NavItem,
   NavList,
   NavVariants,
+  NotificationBadge,
   Page,
   PageHeader,
   PageSection,
@@ -1217,13 +1196,10 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
@@ -1312,22 +1288,20 @@ class PageLayoutLightNav extends React.Component {
       <DropdownItem>Separated Link</DropdownItem>,
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="simple-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="simple-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <NotificationBadge isRead={false} aria-label="Notifications">
+            <BellIcon />
+          </NotificationBadge>
+          <PageHeaderToolsItem isSelected>
+            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -1336,25 +1310,25 @@ class PageLayoutLightNav extends React.Component {
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         showNavToggle
       />
     );

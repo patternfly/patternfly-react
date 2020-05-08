@@ -39,7 +39,9 @@ exports[`Check dark page against snapshot 1`] = `
       toolbar="Toolbar"
     >
       <header
+        avatar=" | Avatar"
         className="pf-c-page__header"
+        toolbar="Toolbar"
       >
         <div
           className="pf-c-page__header-brand"
@@ -49,12 +51,6 @@ exports[`Check dark page against snapshot 1`] = `
           >
             Logo
           </a>
-        </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
         </div>
       </header>
     </PageHeader>
@@ -157,7 +153,9 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       topNav="Navigation"
     >
       <header
+        avatar=" | Avatar"
         className="pf-c-page__header"
+        toolbar="Toolbar"
       >
         <div
           className="pf-c-page__header-brand"
@@ -172,12 +170,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
           className="pf-c-page__header-nav"
         >
           Navigation
-        </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
         </div>
       </header>
     </PageHeader>
@@ -276,7 +268,9 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       topNav="Navigation"
     >
       <header
+        avatar=" | Avatar"
         className="pf-c-page__header"
+        toolbar="Toolbar"
       >
         <div
           className="pf-c-page__header-brand"
@@ -291,12 +285,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
           className="pf-c-page__header-nav"
         >
           Navigation
-        </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
         </div>
       </header>
     </PageHeader>
@@ -596,7 +584,9 @@ exports[`Check page to verify skip to content points to main content region 1`] 
       topNav="Navigation"
     >
       <header
+        avatar=" | Avatar"
         className="pf-c-page__header"
+        toolbar="Toolbar"
       >
         <div
           className="pf-c-page__header-brand"
@@ -611,12 +601,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
           className="pf-c-page__header-nav"
         >
           Navigation
-        </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
         </div>
       </header>
     </PageHeader>
@@ -875,7 +859,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       toolbar="Toolbar"
     >
       <header
+        avatar=" | Avatar"
         className="pf-c-page__header"
+        toolbar="Toolbar"
       >
         <div
           className="pf-c-page__header-brand"
@@ -885,12 +871,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
           >
             Logo
           </a>
-        </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
         </div>
       </header>
     </PageHeader>

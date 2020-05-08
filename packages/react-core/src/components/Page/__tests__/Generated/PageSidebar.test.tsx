@@ -9,7 +9,7 @@ import {} from '../..';
 
 it('PageSidebar should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <PageSidebar className={"''"} nav={<div>ReactNode</div>} isManagedSidebar={true} isNavOpen={true} theme={'light'} />
+    <PageSidebar className={"''"} nav={<div>ReactNode</div>} isManagedSidebar={true} isNavOpen={true} theme={'dark'} />
   );
   expect(view).toMatchSnapshot();
 });

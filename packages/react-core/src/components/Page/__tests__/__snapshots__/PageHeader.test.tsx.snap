@@ -8,7 +8,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   toolbar="Toolbar"
 >
   <header
+    avatar=" | Avatar"
     className="pf-c-page__header"
+    toolbar="Toolbar"
   >
     <div
       className="pf-c-page__header-brand"
@@ -18,12 +20,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       >
         Logo
       </a>
-    </div>
-    <div
-      className="pf-c-page__header-tools"
-    >
-      Toolbar
-       | Avatar
     </div>
   </header>
 </PageHeader>
