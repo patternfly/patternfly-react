@@ -10,7 +10,8 @@ import {
   PageSidebar,
   Avatar,
   Brand,
-  PageHeader
+  PageHeader,
+  PageHeaderTools
 } from '@patternfly/react-core';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
@@ -72,14 +73,15 @@ class App extends React.Component<{}, AppState> {
     const { isNavOpen } = this.state;
 
     const AppToolbar = (
-      <div className="pf-c-page__header-tools">TODO: http://patternfly-v4.surge.sh/documentation/core/demos/page</div>
+      <PageHeaderTools>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const AppHeader = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={AppToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={AppToolbar}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={() => this.setState({ isNavOpen: !isNavOpen })}

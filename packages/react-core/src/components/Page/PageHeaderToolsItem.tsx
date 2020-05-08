@@ -17,7 +17,7 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
 
 /**
  * This component wraps the child and applies styling such as selected on the thing passed in, example:
- * 
+ *
  * <PageHeaderToolsItem isSelected><Button isPlain>Hello</Button></PageHeaderToolsItem>
  * will render
  * <button class="pf-m-plain pf-m-selected">Hello</button>

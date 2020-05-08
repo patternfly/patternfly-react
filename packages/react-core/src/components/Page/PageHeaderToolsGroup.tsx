@@ -23,9 +23,10 @@ export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupP
   hiddenOnSm,
   ...props
 }: PageHeaderToolsGroupProps) => (
-  <div 
+  <div
     className={css(
       styles.pageHeaderToolsGroup,
+      className,
       hiddenOnLg && styles.modifiers.mobile,
       visibleOnLg && styles.modifiers.icons,
       hiddenOnSm && styles.modifiers.user
@@ -34,4 +35,4 @@ export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupP
   >
     {children}
   </div>
-)
+);
