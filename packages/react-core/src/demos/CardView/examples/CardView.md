@@ -31,6 +31,7 @@ import {
   NavVariants,
   Page,
   PageHeader,
+  PageHeaderTools,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -43,8 +44,6 @@ import {
   ToolbarFilter,
   ToolbarContent
 } from '@patternfly/react-core';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
@@ -93,6 +92,7 @@ import {
   NavVariants,
   Page,
   PageHeader,
+  PageHeaderTools,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -108,9 +108,6 @@ import {
   ToolbarFilter,
   ToolbarContent
 } from '@patternfly/react-core';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
@@ -621,50 +618,14 @@ class CardViewBasic extends React.Component {
       <DropdownItem component="button">Separated Action</DropdownItem>
     ];
 
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onPageToolbarKebabDropdownToggle} />}
-              isOpen={isUpperToolbarKebabDropdownOpen}
-              dropdownItems={toolbarKebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onPageDropdownSelect}
-              isOpen={isUpperToolbarDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>Kyle Baker</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
-    );
-
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={
+          <PageHeaderTools>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderTools>
+        }
         showNavToggle
       />
     );

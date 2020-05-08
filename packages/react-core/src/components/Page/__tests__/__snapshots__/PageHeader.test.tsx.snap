@@ -2,15 +2,12 @@
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 <PageHeader
-  avatar=" | Avatar"
+  headerTools="PageHeaderTools | Avatar"
   logo="Logo"
   onNavToggle={[Function]}
-  toolbar="Toolbar"
 >
   <header
-    avatar=" | Avatar"
     className="pf-c-page__header"
-    toolbar="Toolbar"
   >
     <div
       className="pf-c-page__header-brand"
@@ -21,6 +18,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         Logo
       </a>
     </div>
+    PageHeaderTools | Avatar
   </header>
 </PageHeader>
 `;

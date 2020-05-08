@@ -77,7 +77,7 @@ HorizontalPage = () => {
     target: '_blank'
   };
   const Header = (
-    <PageHeader logo="Logo" logoProps={logoProps} headerTools="Toolbar | Avatar" topNav="Navigation" />
+    <PageHeader logo="Logo" logoProps={logoProps} headerTools="PageHeaderTools | Avatar" topNav="Navigation" />
   );
 
   return (
@@ -119,7 +119,7 @@ class VerticalPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        headerTools="Toolbar | Avatar"
+        headerTools="PageHeaderTools | Avatar"
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
@@ -180,7 +180,7 @@ class FillPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        headerTools="Toolbar | Avatar"
+        headerTools="PageHeaderTools | Avatar"
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}

@@ -31,7 +31,7 @@ export class PageDemo extends React.Component {
         id="page-demo-header"
         logo="Logo that's a <div>"
         logoProps={logoProps}
-        headerTools="Toolbar | Avatar"
+        headerTools="PageHeaderTools | Avatar"
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}

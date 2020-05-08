@@ -17,8 +17,7 @@ export class PageManagedSidebarDemo extends React.Component {
       <PageHeader
         logo="Logo that's a <div>"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools="PageHeaderTools | Avatar"
         showNavToggle
         logoComponent={'div'}
       />
