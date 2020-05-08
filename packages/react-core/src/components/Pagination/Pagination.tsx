@@ -11,9 +11,7 @@ import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
   top = 'top',
-  bottom = 'bottom',
-  left = 'left',
-  right = 'right'
+  bottom = 'bottom'
 }
 
 const defaultPerPageOptions = [
@@ -78,11 +76,13 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Total number of items. */
   itemCount: number;
   /** Position where pagination is rendered. */
-  variant?: 'top' | 'bottom' | 'left' | 'right';
+  variant?: 'top' | 'bottom' | PaginationVariant;
   /** Flag indicating if pagination is disabled */
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact */
   isCompact?: boolean;
+  /** Flag indicating if pagination is not sticky */
+  isStatic?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
@@ -165,7 +165,6 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
     itemsStart: null,
     itemsEnd: null,
     perPageOptions: defaultPerPageOptions,
-    dropDirection: DropdownDirection.down,
     widgetId: 'pagination-options-menu',
     toggleTemplate: ToggleTemplate,
     onSetPage: () => undefined,
@@ -201,6 +200,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       variant,
       isDisabled,
       isCompact,
+      isStatic,
       perPage,
       titles,
       firstPage,
@@ -211,7 +211,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       itemsStart,
       itemsEnd,
       perPageOptions,
-      dropDirection,
+      dropDirection: dropDirectionProp,
       widgetId,
       toggleTemplate,
       onSetPage,
@@ -224,6 +224,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       ouiaId,
       ...props
     } = this.props;
+    const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
 
     let page = propPage;
     if (!page && offset) {
@@ -250,8 +251,9 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
         ref={this.paginationRef}
         className={css(
           styles.pagination,
-          variant === PaginationVariant.bottom && styles.modifiers.footer,
+          variant === PaginationVariant.bottom && styles.modifiers.bottom,
           isCompact && styles.modifiers.compact,
+          isStatic && styles.modifiers.static,
           className
         )}
         id={`${widgetId}-${paginationId++}`}
