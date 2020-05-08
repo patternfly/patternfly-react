@@ -455,8 +455,8 @@ class NavHorizontalList extends React.Component {
   render() {
     const { activeItem } = this.state;
     const nav = (
-      <Nav onSelect={this.onSelect}>
-        <NavList variant={NavVariants.horizontal}>
+      <Nav onSelect={this.onSelect} variant="horizontal">
+        <NavList>
           {Array.apply(0, Array(10)).map(function (x, i) {
             const num = i + 1;
             return <NavItem key={num} itemId={num} isActive={activeItem === num}>
@@ -471,7 +471,7 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-```js title=Tertiary-(only-in-PageSection)
+```js title=Tertiary
 import React from 'react';
 import {
   Nav,
@@ -500,18 +500,16 @@ class NavTertiaryList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <PageSection type="nav">
-        <Nav onSelect={this.onSelect}>
-          <NavList variant={NavVariants.tertiary}>
-            {Array.apply(0, Array(10)).map(function (x, i) {
-              const num = i + 1;
-              return <NavItem key={num} itemId={num} isActive={activeItem === num}>
-                Tertiary nav item {num}
-              </NavItem>;
-            })}
-          </NavList>
-        </Nav>
-      </PageSection>
+      <Nav onSelect={this.onSelect} variant="tertiary">
+        <NavList>
+          {Array.apply(0, Array(10)).map(function (x, i) {
+            const num = i + 1;
+            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
+              Tertiary nav item {num}
+            </NavItem>;
+          })}
+        </NavList>
+      </Nav>
     );
   }
 }

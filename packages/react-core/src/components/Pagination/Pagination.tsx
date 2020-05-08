@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { DropdownDirection } from '../Dropdown';
 import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
