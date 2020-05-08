@@ -12,7 +12,7 @@ export interface FormSelectProps
   className?: string;
   /** value of selected option */
   value?: any;
-  /* Value to indicate if the select is modified to show that validation state.
+  /** Value to indicate if the select is modified to show that validation state.
    * If set to success, select will be modified to indicate valid state.
    * If set to error, select will be modified to indicate error state.
    */

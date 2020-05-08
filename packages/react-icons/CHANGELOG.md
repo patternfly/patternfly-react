@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.2.6...@patternfly/react-icons@4.2.7) (2020-05-08)
+
+
+### Bug Fixes
+
+* **pagination:** update to match core ([#4202](https://github.com/patternfly/patternfly-react/issues/4202)) ([508960c](https://github.com/patternfly/patternfly-react/commit/508960c7298f63a08bf1abb5c51f5500062752bd))
+
+
+
+
+
 ## [4.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.2.5...@patternfly/react-icons@4.2.6) (2020-05-01)
 
 **Note:** Version bump only for package @patternfly/react-icons

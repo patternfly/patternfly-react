@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.8.1...@patternfly/react-integration@4.8.2) (2020-05-08)
+
+
+### Bug Fixes
+
+* **pagination:** update to match core ([#4202](https://github.com/patternfly/patternfly-react/issues/4202)) ([508960c](https://github.com/patternfly/patternfly-react/commit/508960c7298f63a08bf1abb5c51f5500062752bd))
+
+
+
+
+
+## [4.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.8.0...@patternfly/react-integration@4.8.1) (2020-05-07)
+
+
+### Bug Fixes
+
+* **select:** revert to single "selections" prop ([#4212](https://github.com/patternfly/patternfly-react/issues/4212)) ([d25fe38](https://github.com/patternfly/patternfly-react/commit/d25fe38f917b97bfc363c1bebb5bada1ff7367d5))
+
+
+
+
+
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.7.0...@patternfly/react-integration@4.8.0) (2020-05-07)
+
+
+### Features
+
+* **Label:** refactor for updated design and features ([#4165](https://github.com/patternfly/patternfly-react/issues/4165)) ([5b50d2e](https://github.com/patternfly/patternfly-react/commit/5b50d2eb5d63840c04c28850c8f2d813387ac8eb))
+
+
+
+
+
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.6.7...@patternfly/react-integration@4.7.0) (2020-05-07)
+
+
+### Features
+
+* **Drawer, DataList, Page:** rename noPadding to hasNoPadding ([#4133](https://github.com/patternfly/patternfly-react/issues/4133)) ([9d7ee63](https://github.com/patternfly/patternfly-react/commit/9d7ee633de1ac24a776fab84a1c1091712395dd2))
+
+
+
+
+
 ## [4.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.6.6...@patternfly/react-integration@4.6.7) (2020-05-06)
 
 **Note:** Version bump only for package @patternfly/react-integration

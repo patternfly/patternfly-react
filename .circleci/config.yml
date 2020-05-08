@@ -222,7 +222,7 @@ jobs:
         name: Breaking Change Lint
         # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
         command: |
-            if git log origin/${CIRCLE_BRANCH}..HEAD --format="%b" | grep -i "breaking change";
+            if git log origin/v4..HEAD --format="%b" | grep -i "breaking change";
             then
                 echo "Breaking change above detected"
                 exit 1

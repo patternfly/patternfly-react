@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.31...@patternfly/react-docs@5.2.32) (2020-05-08)
+
+
+### Bug Fixes
+
+* **pagination:** update to match core ([#4202](https://github.com/patternfly/patternfly-react/issues/4202)) ([508960c](https://github.com/patternfly/patternfly-react/commit/508960c7298f63a08bf1abb5c51f5500062752bd))
+
+
+
+
+
+## [5.2.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.30...@patternfly/react-docs@5.2.31) (2020-05-08)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.2.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.29...@patternfly/react-docs@5.2.30) (2020-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.2.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.28...@patternfly/react-docs@5.2.29) (2020-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.2.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.27...@patternfly/react-docs@5.2.28) (2020-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.2.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.26...@patternfly/react-docs@5.2.27) (2020-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.2.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.25...@patternfly/react-docs@5.2.26) (2020-05-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.2.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.2.24...@patternfly/react-docs@5.2.25) (2020-05-06)
 
 **Note:** Version bump only for package @patternfly/react-docs

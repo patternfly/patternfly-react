@@ -239,7 +239,7 @@ describe('typeahead select', () => {
 
   test('renders selected successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeahead} selection="Mr" onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+      <Select variant={SelectVariant.typeahead} selections="Mr" onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );

@@ -39,7 +39,7 @@ export interface FileUploadProps
   spinnerAriaValueText?: string;
   /** Flag to show if the field is required. */
   isRequired?: boolean;
-  /* Value to indicate if the field is modified to show that validation state.
+  /** Value to indicate if the field is modified to show that validation state.
    * If set to success, field will be modified to indicate valid state.
    * If set to error,  field will be modified to indicate error state.
    */

@@ -6,12 +6,21 @@ typescript: true
 propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']
 ---
 
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants, PageSectionBreakpoints } from '@patternfly/react-core';
 
 ## Examples
+
 ```js title=Vertical-nav
 import React from 'react';
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants,
+  PageSectionBreakpoints
+} from '@patternfly/react-core';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -121,12 +130,27 @@ class VerticalPage extends React.Component {
     return (
       <Page header={Header} sidebar={Sidebar}>
         <PageSection>Section with default padding</PageSection>
-        <PageSection variant={PageSectionVariants.light} noPadding={true}>Section with no padding</PageSection>
+        <PageSection variant={PageSectionVariants.light} hasNoPadding>
+          Section with no padding
+        </PageSection>
+        <PageSection
+          hasNoPadding
+          breakpointMods={[{ modifier: 'padding', breakpoint: 'md' }, { modifier: 'padding', breakpoint: 'lg' }]}
+        >
+          Section with padding only on medium/large
+        </PageSection>
+        <PageSection
+          variant={PageSectionVariants.light}
+          breakpointMods={[{ modifier: 'no-padding', breakpoint: 'md' }]}
+        >
+          Section with no padding on medium
+        </PageSection>
       </Page>
     );
   }
 }
 ```
+
 ```js title=With-or-without-fill
 import React from 'react';
 import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
@@ -166,9 +190,14 @@ class FillPage extends React.Component {
 
     return (
       <Page header={Header} sidebar={Sidebar}>
-        <PageSection style={{height: '10em'}}>This section is set to the default fill variant</PageSection>
-        <PageSection style={{height: '10em'}} isFilled={true}>This section fills the available space.</PageSection>
-        <PageSection style={{height: '10em'}} isFilled={false}> This section does not fill the available space.</PageSection>
+        <PageSection style={{ height: '10em' }}>This section is set to the default fill variant</PageSection>
+        <PageSection style={{ height: '10em' }} isFilled={true}>
+          This section fills the available space.
+        </PageSection>
+        <PageSection style={{ height: '10em' }} isFilled={false}>
+          {' '}
+          This section does not fill the available space.
+        </PageSection>
       </Page>
     );
   }
