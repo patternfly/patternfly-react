@@ -4,7 +4,6 @@ import {
   Nav,
   NavList,
   NavItem,
-  NavVariants,
   PageSection,
   SkipToContent,
   PageSidebar,
@@ -36,7 +35,7 @@ class App extends React.Component<{}, AppState> {
     const { activeItem } = this.state;
     return (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList variant={NavVariants.simple}>
+        <NavList>
           {Demos.map((demo, index) => (
             <NavItem itemId={index} isActive={activeItem === index} key={demo.id}>
               <Link id={`${demo.id}-nav-item-link`} to={`/${demo.id}-nav-link`}>

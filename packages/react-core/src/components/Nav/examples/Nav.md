@@ -12,7 +12,6 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants,
   PageHeader,
   PageSection
 } from '@patternfly/react-core';
@@ -28,8 +27,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavDefaultList extends React.Component {
@@ -77,8 +75,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavGroupedList extends React.Component {
@@ -134,8 +131,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavExpandableList extends React.Component {
@@ -237,8 +233,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavExpandableTitlesList extends React.Component {
@@ -334,8 +329,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavMixedList extends React.Component {
@@ -435,7 +429,6 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants,
   PageHeader
 } from '@patternfly/react-core';
 
@@ -480,7 +473,6 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants,
   PageSection
 } from '@patternfly/react-core';
 

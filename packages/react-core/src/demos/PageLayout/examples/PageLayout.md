@@ -21,7 +21,6 @@ import {
   Nav,
   NavItem,
   NavList,
-  NavVariants,
   Page,
   PageHeader,
   PageSection,
@@ -754,7 +753,6 @@ import {
   Nav,
   NavItem,
   NavList,
-  NavVariants,
   Page,
   PageHeader,
   PageSection,
@@ -818,8 +816,8 @@ class PageLayoutHorizontalNav extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList variant={NavVariants.horizontal}>
+      <Nav onSelect={this.onNavSelect} aria-label="Nav" variant="horizontal">
+        <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
           </NavItem>
@@ -1208,7 +1206,6 @@ import {
   Nav,
   NavItem,
   NavList,
-  NavVariants,
   Page,
   PageHeader,
   PageSection,
@@ -1274,7 +1271,7 @@ class PageLayoutLightNav extends React.Component {
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList variant={NavVariants.default}>
+        <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
           </NavItem>

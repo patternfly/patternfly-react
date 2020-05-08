@@ -5,7 +5,6 @@ import {
   NavExpandable,
   NavList,
   NavItem,
-  NavVariants,
   NavItemSeparator,
   Stack,
   StackItem,
@@ -246,8 +245,8 @@ export class NavDemo extends Component {
           Horizontal Nav
         </Title>
         <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
-          <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal">
-            <NavList variant={NavVariants.horizontal}>
+          <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal" variant="horizontal">
+            <NavList>
               <NavItem id="horizontal-link1" preventDefault itemId={0} isActive={horizontalActiveItem === 0}>
                 Item 1
               </NavItem>
