@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.0...@patternfly/react-core@4.12.1) (2020-05-08)
+
+
+### Bug Fixes
+
+* **EmptyStateIcon:** Add back color prop ([#4219](https://github.com/patternfly/patternfly-react/issues/4219)) ([7fe93e7](https://github.com/patternfly/patternfly-react/commit/7fe93e78cd6fcf0f44509e2d5cdb10deea23bfb5)), closes [#4166](https://github.com/patternfly/patternfly-react/issues/4166)
+
+
+
+
+
 # [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.11.2...@patternfly/react-core@4.12.0) (2020-05-07)
 
 

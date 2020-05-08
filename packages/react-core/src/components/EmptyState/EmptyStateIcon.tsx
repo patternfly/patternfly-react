@@ -2,7 +2,11 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
-export interface EmptyStateIconProps {
+export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
+  /** Changes the color of the icon.  */
+  color?: string;
+}
+export interface EmptyStateIconProps extends IconProps {
   /** Additional classes added to the EmptyState */
   className?: string;
   /** Icon component to be rendered inside the EmptyState on icon variant
