@@ -6,7 +6,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
   className="pf-c-pagination__nav ''"
 >
   <div
-    className=""
+    className="pf-c-pagination__nav-control pf-m-first"
   >
     <Button
       aria-label="'Go to first page'"
@@ -22,7 +22,9 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       />
     </Button>
   </div>
-  <div>
+  <div
+    className="pf-c-pagination__nav-control"
+  >
     <Button
       aria-label="'Go to previous page'"
       data-action="previous"
@@ -58,7 +60,9 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       0 ''s
     </span>
   </div>
-  <div>
+  <div
+    className="pf-c-pagination__nav-control"
+  >
     <Button
       aria-label="'Go to next page'"
       data-action="next"
@@ -74,7 +78,7 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
     </Button>
   </div>
   <div
-    className=""
+    className="pf-c-pagination__nav-control pf-m-last"
   >
     <Button
       aria-label="'Go to last page'"

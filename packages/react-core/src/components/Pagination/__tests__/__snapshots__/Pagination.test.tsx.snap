@@ -473,7 +473,7 @@ exports[`component render custom pagination toggle 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -523,7 +523,9 @@ exports[`component render custom pagination toggle 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -593,7 +595,9 @@ exports[`component render custom pagination toggle 1`] = `
             4
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -643,7 +647,7 @@ exports[`component render custom pagination toggle 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -1162,7 +1166,7 @@ exports[`component render custom perPageOptions 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -1212,7 +1216,9 @@ exports[`component render custom perPageOptions 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -1282,7 +1288,9 @@ exports[`component render custom perPageOptions 1`] = `
             4
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -1332,7 +1340,7 @@ exports[`component render custom perPageOptions 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -1911,7 +1919,7 @@ exports[`component render custom start end 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -1961,7 +1969,9 @@ exports[`component render custom start end 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -2031,7 +2041,9 @@ exports[`component render custom start end 1`] = `
             4
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -2081,7 +2093,7 @@ exports[`component render custom start end 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -2329,7 +2341,7 @@ exports[`component render empty per page options 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -2379,7 +2391,9 @@ exports[`component render empty per page options 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -2449,7 +2463,9 @@ exports[`component render empty per page options 1`] = `
             4
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -2499,7 +2515,7 @@ exports[`component render empty per page options 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -3078,7 +3094,7 @@ exports[`component render last page 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -3128,7 +3144,9 @@ exports[`component render last page 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -3198,7 +3216,9 @@ exports[`component render last page 1`] = `
             2
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -3248,7 +3268,7 @@ exports[`component render last page 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -3827,7 +3847,7 @@ exports[`component render limited number of pages 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -3877,7 +3897,9 @@ exports[`component render limited number of pages 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -3947,7 +3969,9 @@ exports[`component render limited number of pages 1`] = `
             1
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -3997,7 +4021,7 @@ exports[`component render limited number of pages 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -4579,7 +4603,7 @@ exports[`component render no items 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -4629,7 +4653,9 @@ exports[`component render no items 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -4699,7 +4725,9 @@ exports[`component render no items 1`] = `
             0
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -4749,7 +4777,7 @@ exports[`component render no items 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -4866,7 +4894,7 @@ exports[`component render should render correctly bottom 1`] = `
   widgetId="pagination-options-menu"
 >
   <div
-    className="pf-c-pagination"
+    className="pf-c-pagination pf-m-bottom"
     data-ouia-component-id={null}
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe={true}
@@ -5306,7 +5334,7 @@ exports[`component render should render correctly bottom 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -5356,7 +5384,9 @@ exports[`component render should render correctly bottom 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -5426,7 +5456,9 @@ exports[`component render should render correctly bottom 1`] = `
             2
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -5476,7 +5508,7 @@ exports[`component render should render correctly bottom 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -6054,7 +6086,9 @@ exports[`component render should render correctly compact 1`] = `
         aria-label="Pagination"
         className="pf-c-pagination__nav"
       >
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -6103,7 +6137,9 @@ exports[`component render should render correctly compact 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -6684,7 +6720,7 @@ exports[`component render should render correctly disabled 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -6734,7 +6770,9 @@ exports[`component render should render correctly disabled 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -6804,7 +6842,9 @@ exports[`component render should render correctly disabled 1`] = `
             2
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -6854,7 +6894,7 @@ exports[`component render should render correctly disabled 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -7433,7 +7473,7 @@ exports[`component render should render correctly top 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -7483,7 +7523,9 @@ exports[`component render should render correctly top 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -7553,7 +7595,9 @@ exports[`component render should render correctly top 1`] = `
             2
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -7603,7 +7647,7 @@ exports[`component render should render correctly top 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -8175,7 +8219,7 @@ exports[`component render titles 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -8225,7 +8269,9 @@ exports[`component render titles 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -8295,7 +8341,9 @@ exports[`component render titles 1`] = `
             4 bookss
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -8345,7 +8393,7 @@ exports[`component render titles 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -8925,7 +8973,7 @@ exports[`component render up drop direction 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -8975,7 +9023,9 @@ exports[`component render up drop direction 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -9045,7 +9095,9 @@ exports[`component render up drop direction 1`] = `
             4
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -9095,7 +9147,7 @@ exports[`component render up drop direction 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
@@ -9677,7 +9729,7 @@ exports[`component render zero results 1`] = `
         className="pf-c-pagination__nav"
       >
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-first"
         >
           <Button
             aria-label="Go to first page"
@@ -9727,7 +9779,9 @@ exports[`component render zero results 1`] = `
             </button>
           </Button>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to previous page"
             data-action="previous"
@@ -9797,7 +9851,9 @@ exports[`component render zero results 1`] = `
             0
           </span>
         </div>
-        <div>
+        <div
+          className="pf-c-pagination__nav-control"
+        >
           <Button
             aria-label="Go to next page"
             data-action="next"
@@ -9847,7 +9903,7 @@ exports[`component render zero results 1`] = `
           </Button>
         </div>
         <div
-          className=""
+          className="pf-c-pagination__nav-control pf-m-last"
         >
           <Button
             aria-label="Go to last page"
