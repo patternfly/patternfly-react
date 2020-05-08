@@ -38,7 +38,7 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           href="#/items/1"
           id="pf-tab-0-tab1"
         >
@@ -54,7 +54,7 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           href="#/items/2"
           id="pf-tab-1-tab2"
         >
@@ -70,7 +70,7 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           href="#/items/3"
           id="pf-tab-2-tab3"
         >
@@ -172,7 +172,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-0-tab1"
         >
           <span
@@ -187,7 +187,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           <span
@@ -202,7 +202,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           <span
@@ -217,7 +217,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-3-tab4"
         >
           <span
@@ -337,7 +337,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-0-tab1"
         >
           <span
@@ -352,7 +352,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           <span
@@ -367,7 +367,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           <span
@@ -468,7 +468,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-primarieTabs"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-0-primarieTabs"
         >
           <span
@@ -483,7 +483,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           <span
@@ -498,7 +498,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           <span
@@ -572,7 +572,7 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-10-secondary tab1"
-            class="pf-c-tabs__link pf-c-tabs__link"
+            class="pf-c-tabs__link"
             id="pf-tab-10-secondary tab1"
           >
             <span
@@ -587,7 +587,7 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-11-secondary tab2"
-            class="pf-c-tabs__link pf-c-tabs__link"
+            class="pf-c-tabs__link"
             id="pf-tab-11-secondary tab2"
           >
             <span
@@ -602,7 +602,7 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-12-secondary tab3"
-            class="pf-c-tabs__link pf-c-tabs__link"
+            class="pf-c-tabs__link"
             id="pf-tab-12-secondary tab3"
           >
             <span
@@ -725,7 +725,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-0-tab1"
         >
           <span
@@ -740,7 +740,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           <span
@@ -755,7 +755,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           <span
@@ -770,7 +770,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-3-tab4"
         >
           <span
@@ -890,7 +890,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-one-tab1"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-one-tab1"
         >
           <span
@@ -905,7 +905,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-two-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-two-tab2"
         >
           <span
@@ -920,7 +920,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-three-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-three-tab3"
         >
           <span
@@ -1022,7 +1022,7 @@ Array [
       >
         <button
           aria-controls="refTab1Section"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-0-separateTabs"
         >
           <span
@@ -1037,7 +1037,7 @@ Array [
       >
         <button
           aria-controls="refTab2Section"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-1-separateTabs"
         >
           <span
@@ -1052,7 +1052,7 @@ Array [
       >
         <button
           aria-controls="refTab3Section"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-2-separateTabs"
         >
           <span
@@ -1155,7 +1155,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-0-tab1"
         >
           <span
@@ -1170,7 +1170,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-1-tab2"
         >
           <span
@@ -1185,7 +1185,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-2-tab3"
         >
           <span
@@ -1200,7 +1200,7 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          class="pf-c-tabs__link pf-c-tabs__link"
+          class="pf-c-tabs__link"
           id="pf-tab-3-tab4"
         >
           <span
