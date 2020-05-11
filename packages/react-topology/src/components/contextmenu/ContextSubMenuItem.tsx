@@ -4,8 +4,6 @@ import { DropdownMenu, DropdownItem } from '@patternfly/react-core';
 import Popper from '../popper/Popper';
 import { AngleRightIcon } from '@patternfly/react-icons';
 
-import './ContextSubMenuItem.scss';
-
 type ContextSubMenuItemProps = {
   label: React.ReactNode;
   children: React.ReactNode[];
@@ -21,7 +19,7 @@ const ContextSubMenuItem: React.FC<ContextSubMenuItemProps> = ({ label, children
     <>
       <DropdownItem
         {...other}
-        className="topology-context-sub-menu"
+        className="pf-topology-context-sub-menu"
         component={
           <button
             ref={nodeRef}
@@ -45,7 +43,7 @@ const ContextSubMenuItem: React.FC<ContextSubMenuItemProps> = ({ label, children
             }}
           >
             {label}
-            <AngleRightIcon className="topology-context-sub-menu__arrow" />
+            <AngleRightIcon className="pf-topology-context-sub-menu__arrow" />
           </button>
         }
       />

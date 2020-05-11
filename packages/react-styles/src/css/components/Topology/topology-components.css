@@ -44,4 +44,17 @@
       position: initial !important;
     
 }
+
+.pf-topology-context-sub-menu {
+    position: relative;
+    padding-right: var(--pf-global--spacer--lg);    
+}
+
+.pf-topology-context-sub-menu__arrow {
+    position: absolute;
+    right: var(--pf-global--spacer--xs);
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
   

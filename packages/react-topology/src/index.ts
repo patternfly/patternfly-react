@@ -10,3 +10,4 @@ export * from './utils';
 export * from './mobx-exports';
 export * from './types';
 export * from './Visualization';
+export { default as Visualization } from './Visualization';
