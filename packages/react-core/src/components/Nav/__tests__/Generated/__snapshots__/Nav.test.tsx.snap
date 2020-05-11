@@ -4,6 +4,7 @@ exports[`Nav should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "isHorizontal": false,
       "onSelect": [Function],
       "onToggle": [Function],
       "updateIsScrollable": [Function],
@@ -11,7 +12,7 @@ exports[`Nav should match snapshot (auto-generated) 1`] = `
   }
 >
   <nav
-    aria-label="''"
+    aria-label="Local"
     className="pf-c-nav pf-m-light ''"
     data-ouia-component-id={0}
     data-ouia-component-type="PF4/Nav"

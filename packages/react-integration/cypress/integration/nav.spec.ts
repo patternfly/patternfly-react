@@ -89,7 +89,7 @@ describe('Nav Test', () => {
   });
 
   it('Verify Horizontal Nav', () => {
-    cy.get('#nav-primary-horizontal .pf-c-nav__horizontal-list .pf-c-nav__link').each(
+    cy.get('#nav-primary-horizontal .pf-c-nav__link').each(
       (horizontalLink: JQuery<HTMLAnchorElement>, index: number) => {
         const isCurrent = horizontalLink.hasClass('pf-m-current');
         expect(isCurrent).to.be.equal(index === 0);

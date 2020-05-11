@@ -127,7 +127,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   {srText}
                 </h2>
               )}
-              <ul className={css(styles.navSimpleList)}>{children}</ul>
+              <ul className={css(styles.navList)}>{children}</ul>
             </section>
           </li>
         )}
