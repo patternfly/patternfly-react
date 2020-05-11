@@ -53,7 +53,7 @@ type PromptData = {
   element: Node;
   target: Node | Graph;
   event: DragEvent;
-  choices: (ConnectorChoice | React.ReactElement)[];
+  choices: ConnectorChoice[];
 };
 
 const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
@@ -77,17 +77,17 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
     const dragSourceSpec: DragSourceSpec<any, any, any, CollectProps> = {
       item: { type: CREATE_CONNECTOR_DROP_TYPE },
       operation: { type: CREATE_CONNECTOR_OPERATION },
-      begin: (monitor: DragSourceMonitor, dragProps: CreateConnectorWidgetProps) => {
+      begin: (monitor: DragSourceMonitor, dragProps: any) => {
         setActive(true);
         return dragProps.element;
       },
-      drag: (event: DragEvent, monitor: DragSourceMonitor, p: CreateConnectorWidgetProps) => {
+      drag: (event: DragEvent, monitor: DragSourceMonitor, p: any) => {
         p.element.raise();
       },
       end: (
         dropResult: GraphElement,
         monitor: DragSourceMonitor,
-        dragProps: CreateConnectorWidgetProps,
+        dragProps: any,
       ) => {
         const event = monitor.getDragEvent();
         if ((isNode(dropResult) || isGraph(dropResult)) && event) {

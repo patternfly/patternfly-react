@@ -12,8 +12,6 @@ import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
 import Dimensions from '../geom/Dimensions';
 
-import './VisualizationSurface.scss';
-
 interface VisualizationSurfaceProps {
   visualization: Visualization;
   state?: State;
@@ -53,8 +51,8 @@ const VisualizationSurface: React.FC<VisualizationSurfaceProps> = ({ visualizati
       <ReactMeasure client onResize={onMeasure}>
         {({ measureRef }: { measureRef: React.LegacyRef<any> }) => (
           // render an outer div because react-measure doesn't seem to fire events properly on svg resize
-          <div data-test-id="topology" className="topology-visualization-surface" ref={measureRef}>
-            <svg className="topology-visualization-surface__svg" onContextMenu={stopEvent}>
+          <div data-test-id="topology" className="pf-topology-visualization-surface" ref={measureRef}>
+            <svg className="pf-topology-visualization-surface__svg" onContextMenu={stopEvent}>
               <SVGDefsProvider>
                 <ElementWrapper element={graph} />
               </SVGDefsProvider>

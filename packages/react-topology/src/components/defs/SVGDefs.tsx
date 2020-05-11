@@ -26,7 +26,7 @@ export class SVGDefsSetter extends React.Component<SVGDefsSetterProps> {
     removeDef(id);
   }
 
-  render() {
+  render():any {
     return null;
   }
 }
