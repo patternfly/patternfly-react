@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '@patternfly/react-core';
 
 export enum TableTextVariant {
   div = 'div',
@@ -35,9 +36,11 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
 
-  return (
-    <Component {...props} className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}>
+  const tableText = (
+    <Component className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)} {...props}>
       {children}
     </Component>
   );
+
+  return wrapModifier === WrapModifier.truncate ? <Tooltip content={children}>{tableText}</Tooltip> : tableText;
 };

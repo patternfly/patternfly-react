@@ -1014,6 +1014,7 @@ exports[`Actions virtualized table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  title=""
                                 >
                                   Header cell
                                 </span>
@@ -2180,6 +2181,7 @@ exports[`Selectable virtualized table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  title=""
                                 >
                                   Header cell
                                 </span>
@@ -3676,6 +3678,7 @@ exports[`Simple Actions table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  title=""
                                 >
                                   Header cell
                                 </span>
@@ -6537,6 +6540,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  title=""
                                 >
                                   Header cell
                                 </span>
