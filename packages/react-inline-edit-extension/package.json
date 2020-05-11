@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-inline-edit-extension",
-  "version": "4.3.28",
+  "version": "4.3.29",
   "description": "This library provides inline editing support for PatternFly 4 React table",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -30,10 +30,10 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.12.2",
-    "@patternfly/react-icons": "^4.2.7",
-    "@patternfly/react-styles": "^4.2.5",
-    "@patternfly/react-table": "^4.3.28",
+    "@patternfly/react-core": "^4.12.3",
+    "@patternfly/react-icons": "^4.2.8",
+    "@patternfly/react-styles": "^4.2.6",
+    "@patternfly/react-table": "^4.3.29",
     "classnames": "^2.2.5",
     "reactabular-table": "^8.14.0"
   },

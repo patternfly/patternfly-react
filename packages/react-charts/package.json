@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "6.2.8",
+  "version": "6.2.9",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -30,8 +30,8 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
     "@patternfly/patternfly": "4.10.13",
-    "@patternfly/react-styles": "^4.2.5",
-    "@patternfly/react-tokens": "^4.3.4",
+    "@patternfly/react-styles": "^4.2.6",
+    "@patternfly/react-tokens": "^4.3.5",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.15",
     "tslib": "^1.11.1",
