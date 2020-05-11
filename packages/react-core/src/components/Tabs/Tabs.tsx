@@ -58,11 +58,12 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   insetOn2Xl?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
-export interface TabsState {
+interface TabsState {
   showScrollButtons: boolean;
   disableLeftScrollButton: boolean;
   disableRightScrollButton: boolean;
   shownKeys: (string | number)[];
+  ready: boolean;
 }
 
 export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
@@ -73,7 +74,8 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       showScrollButtons: false,
       disableLeftScrollButton: false,
       disableRightScrollButton: false,
-      shownKeys: [this.props.activeKey] // only for mountOnEnter case
+      shownKeys: [this.props.activeKey], // only for mountOnEnter case
+      ready: false
     };
   }
 
@@ -132,7 +134,8 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       this.setState({
         showScrollButtons,
         disableLeftScrollButton,
-        disableRightScrollButton
+        disableRightScrollButton,
+        ready: true
       });
     }
   };
@@ -224,7 +227,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
 
     return (
       <React.Fragment>
-        <Component
+        <Component hidden={this.state.ready}
           aria-label={ariaLabel}
           className={css(
             styles.tabs,
