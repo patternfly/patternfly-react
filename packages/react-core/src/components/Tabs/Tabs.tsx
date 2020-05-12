@@ -10,7 +10,7 @@ import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export enum TabsVariant {
+export enum TabsComponent {
   div = 'div',
   nav = 'nav'
 }
@@ -45,8 +45,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Aria-label for the right scroll button */
   rightScrollAriaLabel?: string;
   /** Determines what tag is used around the tabs. Use "nav" to define the tabs inside a navigation region */
-  variant?: 'div' | 'nav';
-  /** Provides an accessible label for the tabs. Labels should be unique for each set of tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the tabs from other navigation regions on the page. */
+  component?: 'div' | 'nav';
+  /** Provides an accessible label for the tabs. Labels should be unique for each set of tabs that are present on a page. When component is set to nav, this prop should be defined to differentiate the tabs from other navigation regions on the page. */
   'aria-label'?: string;
   /** Waits until the first "enter" transition to mount tab children (add them to the DOM) */
   mountOnEnter?: boolean;
@@ -86,7 +86,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     isBox: false,
     leftScrollAriaLabel: 'Scroll left',
     rightScrollAriaLabel: 'Scroll right',
-    variant: TabsVariant.div,
+    component: TabsComponent.div,
     mountOnEnter: false,
     unmountOnExit: false,
     breakpointMods: [] as TabsBreakpointMod[]
@@ -214,7 +214,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
-      variant,
+      component,
       ouiaId,
       mountOnEnter,
       unmountOnExit,
@@ -225,7 +225,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
 
     const uniqueId = id || getUniqueId();
-    const Component: any = variant === TabsVariant.nav ? 'nav' : 'div';
+    const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
 
     return (
       <React.Fragment>

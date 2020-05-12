@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-tabs'
 propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', TabTitleIcon ]
 typescript: true
 ---
-import { Tabs, Tab, TabsVariant, TabContent, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
+import { Tabs, Tab, TabsComponent, TabContent, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
 import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
 
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
@@ -565,9 +565,9 @@ class FilledTabsWithIcons extends React.Component {
 
 ```js title=Using-the-nav-element
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
-class TabsNavVariant extends React.Component {
+class TabsNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -588,7 +588,7 @@ class TabsNavVariant extends React.Component {
         activeKey={this.state.activeTabKey}
         onSelect={this.handleTabClick}
         aria-label="Local"
-        variant={TabsVariant.nav}
+        component={TabsComponent.nav}
       >
        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#">
           Users
@@ -617,9 +617,9 @@ class TabsNavVariant extends React.Component {
 
 ```js title=Sub-nav-using-the-nav-element
 import React from 'react';
-import { Tabs, Tab, TabsVariant, TabTitleText } from '@patternfly/react-core';
+import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
-class SecondaryTabsNavVariant extends React.Component {
+class SecondaryTabsNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -648,7 +648,7 @@ class SecondaryTabsNavVariant extends React.Component {
         activeKey={this.state.activeTabKey1}
         onSelect={this.handleTabClickFirst}
         aria-label="Local"
-        variant={TabsVariant.nav}
+        component={TabsComponent.nav}
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#">
           <Tabs
@@ -656,7 +656,7 @@ class SecondaryTabsNavVariant extends React.Component {
             isSecondary
             onSelect={this.handleTabClickSecond}
             aria-label="Local secondary"
-            variant={TabsVariant.nav}
+            component={TabsComponent.nav}
           >
             <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>} href="#">
               Secondary tab item 1 item section

@@ -80,7 +80,7 @@ test('should render box tabs', () => {
 
 test('should render accessible tabs', () => {
   const view = render(
-    <Tabs id="accessibleTabs" aria-label="accessible Tabs example" variant="nav">
+    <Tabs id="accessibleTabs" aria-label="accessible Tabs example" component="nav">
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} href="#/items/1">
         Tab 1 section
       </Tab>
