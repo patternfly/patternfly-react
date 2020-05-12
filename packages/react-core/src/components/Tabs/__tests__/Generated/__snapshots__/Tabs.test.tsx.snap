@@ -10,6 +10,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
     data-ouia-safe={true}
     id="string"
     onSelect={[Function]}
+    variant="div"
   >
     <button
       aria-hidden={false}
