@@ -1,5 +1,5 @@
 import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
-import { UsersIcon } from '@patternfly/react-icons';
+import UsersIcon from '@patternfly/react-icons/dist/js/UsersIcon';
 import React, { Component, RefObject } from 'react';
 
 export class TabDemo extends Component {
