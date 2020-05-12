@@ -79,28 +79,13 @@ test('modal generates console error when no accessible name is provided', () => 
 
 test('modal generates console warning when conflicting accessible name strategies are provided', () => {
   const props = {
-    'aria-label': 'Label1',
-    'aria-labelledby': 'element1',
-    onClose: jest.fn(),
-    isOpen: true,
-    children: 'modal content'
-  };
-  const consoleWarnMock = jest.fn();
-  global.console = { warn: consoleWarnMock } as any;
-  shallow(<Modal {...props} />);
-  expect(consoleWarnMock).toBeCalled();
-});
-
-test('modal generates console warning when conflicting accessible name strategies are provided', () => {
-  const props = {
-    'aria-label': 'Label1',
     hasNoBodyWrapper: true,
     onClose: jest.fn(),
     isOpen: true,
     children: 'modal content'
   };
-  const consoleWarnMock = jest.fn();
-  global.console = { warn: consoleWarnMock } as any;
+  const consoleErrorMock = jest.fn();
+  global.console = { error: consoleErrorMock } as any;
   shallow(<Modal {...props} />);
-  expect(consoleWarnMock).toBeCalled();
+  expect(consoleErrorMock).toBeCalled();
 });

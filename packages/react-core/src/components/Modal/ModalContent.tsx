@@ -27,11 +27,11 @@ export interface ModalContentProps {
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
-  /** Id to use for Modal Box label */
+  /** Id of Modal Box label */
   'aria-labelledby'?: string;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
-  /** Id to use for Modal Box descriptor */
+  /** Id of Modal Box description */
   'aria-describedby'?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
@@ -43,6 +43,10 @@ export interface ModalContentProps {
   actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
+  /** Id of the ModalBox container */
+  boxId: string;
+  /** Id of the ModalBox title */
+  labelId: string;
   /** Id of the ModalBoxBody */
   descriptorId: string;
   /** Flag to disable focus trap */
@@ -67,6 +71,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   width = -1,
   'aria-describedby': ariaDescribedby = '',
   'aria-labelledby': ariaLabelledby = '',
+  boxId = '',
+  labelId = '',
   descriptorId = '',
   disableFocusTrap = false,
   hasNoBodyWrapper = false,
@@ -81,10 +87,12 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ) : (
     title && (
       <ModalBoxHeader>
-        <>
-          {<h1 className={css(modalStyles.modalBoxTitle)}>{title}</h1>}
-          {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
-        </>
+        {
+          <h1 id={labelId} className={css(modalStyles.modalBoxTitle)}>
+            {title}
+          </h1>
+        }
+        {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
       </ModalBoxHeader>
     )
   );
@@ -98,7 +106,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBody = hasNoBodyWrapper ? (
     children
   ) : (
-    <ModalBoxBody {...props} {...(!description && { descriptorId })}>
+    <ModalBoxBody {...props} {...(!description && !ariaDescribedby && { descriptorId })}>
       {children}
     </ModalBoxBody>
   );
@@ -106,12 +114,13 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
 
   const modalBox = (
     <ModalBox
+      id={boxId}
       style={boxStyle}
       className={className}
       variant={variant}
       title={title}
       aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledby}
+      aria-labelledby={`${boxId} ${ariaLabelledby || labelId}`}
       aria-describedby={ariaDescribedby || descriptorId}
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}

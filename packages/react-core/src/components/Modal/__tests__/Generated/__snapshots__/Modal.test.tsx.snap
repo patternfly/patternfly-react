@@ -6,21 +6,17 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
 >
   <ModalContent
     actions={Array []}
-    appendTo={
-      <body>
-        <div />
-      </body>
-    }
     aria-describedby="''"
     aria-label="''"
     aria-labelledby="''"
+    boxId="pf-modal-part-0"
     className="''"
     description={
       <div>
         ReactNode
       </div>
     }
-    descriptorId="pf-modal-0"
+    descriptorId="pf-modal-part-2"
     disableFocusTrap={true}
     footer={
       <div>
@@ -34,6 +30,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
       </div>
     }
     isOpen={false}
+    labelId="pf-modal-part-1"
     onClose={[Function]}
     showClose={true}
     title="''"

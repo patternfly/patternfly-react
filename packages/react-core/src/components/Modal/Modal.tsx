@@ -42,6 +42,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'small' | 'large' | 'default';
   /** Flag indicating if modal content should be placed in a modal box body wrapper */
   hasNoBodyWrapper?: boolean;
+  /** An ID to use for the ModalBox container */
+  id?: string;
 }
 
 export enum ModalVariant {
@@ -56,6 +58,8 @@ interface ModalState {
 
 export class Modal extends React.Component<ModalProps, ModalState> {
   static currentId = 0;
+  boxId = '';
+  labelId = '';
   descriptorId = '';
 
   static defaultProps: PickOptional<ModalProps> = {
@@ -66,6 +70,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     showClose: true,
     'aria-describedby': '',
     'aria-labelledby': '',
+    id: undefined,
     actions: [] as any[],
     onClose: () => undefined as any,
     variant: 'default',
@@ -75,8 +80,12 @@ export class Modal extends React.Component<ModalProps, ModalState> {
 
   constructor(props: ModalProps) {
     super(props);
-    const newDescriptorId = Modal.currentId++;
-    this.descriptorId = `pf-modal-${newDescriptorId}`;
+    const boxIdNum = Modal.currentId++;
+    const labelIdNum = boxIdNum + 1;
+    const descriptorIdNum = boxIdNum + 2;
+    this.boxId = props.id || `pf-modal-part-${boxIdNum}`;
+    this.labelId = `pf-modal-part-${labelIdNum}`;
+    this.descriptorId = `pf-modal-part-${descriptorIdNum}`;
 
     this.state = {
       container: undefined
@@ -117,7 +126,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledby,
       hasNoBodyWrapper,
-      'aria-describedby': ariaDescribedby
+      'aria-describedby': ariaDescribedby,
+      header
     } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
     const container = document.createElement('div');
@@ -136,17 +146,10 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       console.error('Modal: Specify at least one of: title, aria-label, aria-labelledby.');
     }
 
-    if (ariaLabel && ariaLabelledby) {
+    if (!ariaLabel && !ariaLabelledby && (hasNoBodyWrapper || header)) {
       // eslint-disable-next-line no-console
-      console.warn(
-        'Modal: When aria-label & aria-labelledby are both set, the aria-label value is overridden. Double check that you have set an appropriate accessible name for this Modal.'
-      );
-    }
-
-    if (hasNoBodyWrapper && !ariaDescribedby) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'Modal: When using hasNoBodyWrapper, ensure you link the modal container to its content description by setting aria-describedby.'
+      console.error(
+        'Modal: When using hasNoBodyWrapper or setting a custom header, ensure you assign an accessible name to the the modal container with aria-label or aria-labelledby.'
       );
     }
   }
@@ -176,6 +179,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {
+      appendTo,
       'aria-labelledby': ariaLabelledby,
       'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedby,
@@ -191,9 +195,11 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     return ReactDOM.createPortal(
       <ModalContent
         {...props}
+        boxId={this.boxId}
+        labelId={this.labelId}
+        descriptorId={this.descriptorId}
         title={title}
         aria-label={ariaLabel}
-        descriptorId={this.descriptorId}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
       />,
