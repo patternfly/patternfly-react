@@ -1,6 +1,6 @@
 import { Node, NodeStyle } from '../types';
 import { Rect } from '../geom';
-import { LayoutGroup } from "./LayoutGroup";
+import { LayoutGroup } from './LayoutGroup';
 export class LayoutNode {
   protected readonly node: Node;
   protected xx?: number;
@@ -52,10 +52,12 @@ export class LayoutNode {
     return this.isFixed ? this.node.getBounds().getCenter().y : undefined;
   }
   setPosition(x: number, y: number) {
-    this.node.setBounds(this.node
-      .getBounds()
-      .clone()
-      .setCenter(x, y));
+    this.node.setBounds(
+      this.node
+        .getBounds()
+        .clone()
+        .setCenter(x, y)
+    );
   }
   get nodeBounds(): Rect {
     const { padding } = this.node.getStyle<NodeStyle>();
@@ -76,10 +78,12 @@ export class LayoutNode {
   }
   update() {
     if (this.xx != null && this.yy != null) {
-      this.node.setBounds(this.node
-        .getBounds()
-        .clone()
-        .setCenter(this.xx, this.yy));
+      this.node.setBounds(
+        this.node
+          .getBounds()
+          .clone()
+          .setCenter(this.xx, this.yy)
+      );
     }
     this.xx = undefined;
     this.yy = undefined;

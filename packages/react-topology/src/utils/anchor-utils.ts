@@ -1,11 +1,6 @@
 import Point from '../geom/Point';
 
-const getEllipseAnchorPoint = (
-  center: Point,
-  width: number,
-  height: number,
-  reference: Point,
-): Point => {
+const getEllipseAnchorPoint = (center: Point, width: number, height: number, reference: Point): Point => {
   const { x, y } = reference;
   if (width === 0 || height === 0 || (center.x === x && center.y === y)) {
     return center;
@@ -23,12 +18,7 @@ const getEllipseAnchorPoint = (
   return new Point((center.x - x) * lenProportion + x, (center.y - y) * lenProportion + y);
 };
 
-const getRectAnchorPoint = (
-  center: Point,
-  width: number,
-  height: number,
-  reference: Point,
-): Point => {
+const getRectAnchorPoint = (center: Point, width: number, height: number, reference: Point): Point => {
   let dx = reference.x - center.x;
   let dy = reference.y - center.y;
 
@@ -36,9 +26,7 @@ const getRectAnchorPoint = (
     return center;
   }
 
-  const scale =
-    0.5 /
-    Math.max(width === 0 ? 0 : Math.abs(dx) / width, height === 0 ? 0 : Math.abs(dy) / height);
+  const scale = 0.5 / Math.max(width === 0 ? 0 : Math.abs(dx) / width, height === 0 ? 0 : Math.abs(dy) / height);
 
   dx *= scale;
   dy *= scale;
@@ -46,9 +34,7 @@ const getRectAnchorPoint = (
   return center.clone().translate(dx, dy);
 };
 
-const svgPointToPoint = (p: SVGPoint): Point => {
-  return new Point(p.x, p.y);
-};
+const svgPointToPoint = (p: SVGPoint): Point => new Point(p.x, p.y);
 
 const distanceToPoint = (p: Point, reference: Point): number => {
   const dx = p.x - reference.x;
@@ -57,9 +43,8 @@ const distanceToPoint = (p: Point, reference: Point): number => {
   return dx * dx + dy * dy;
 };
 
-const isBetween = (a: number, b1: number, b2: number): boolean => {
-  return Math.ceil(a) >= Math.min(b1, b2) && Math.floor(a) <= Math.max(b1, b2);
-};
+const isBetween = (a: number, b1: number, b2: number): boolean =>
+  Math.ceil(a) >= Math.min(b1, b2) && Math.floor(a) <= Math.max(b1, b2);
 
 const getLinesIntersection = (line1: [Point, Point], line2: [Point, Point]): Point | null => {
   const line1xDelta = line1[0].x - line1[1].x;
@@ -98,10 +83,7 @@ const getPathIntersectionPoint = (pathNode: SVGPathElement, line: [Point, Point]
   for (let i = 0; i < numSegments; i++) {
     const pos1 = pathNode.getPointAtLength((pathLength * i) / numSegments);
     const pos2 = pathNode.getPointAtLength((pathLength * (i + 1)) / numSegments);
-    const intersectPoint = getLinesIntersection(
-      [svgPointToPoint(pos1), svgPointToPoint(pos2)],
-      line,
-    );
+    const intersectPoint = getLinesIntersection([svgPointToPoint(pos1), svgPointToPoint(pos2)], line);
     if (intersectPoint) {
       return intersectPoint;
     }
@@ -160,11 +142,7 @@ const getPathClosestPoint = (pathNode: SVGPathElement, reference: Point) => {
   return svgPointToPoint(best);
 };
 
-const getPathAnchorPoint = (
-  pathNode: SVGPathElement,
-  reference: Point,
-  useClosestPathPoint: boolean = false,
-) => {
+const getPathAnchorPoint = (pathNode: SVGPathElement, reference: Point, useClosestPathPoint: boolean = false) => {
   if (useClosestPathPoint) {
     return getPathClosestPoint(pathNode, reference);
   }
@@ -176,10 +154,7 @@ const getPathAnchorPoint = (
 
 const getPolygonAnchorPoint = (polygonNode: SVGPolygonElement, reference: Point) => {
   const polygonBox = polygonNode.getBBox();
-  const polygonCenter = new Point(
-    polygonBox.x + polygonBox.width / 2,
-    polygonBox.y + polygonBox.height / 2,
-  );
+  const polygonCenter = new Point(polygonBox.x + polygonBox.width / 2, polygonBox.y + polygonBox.height / 2);
   const { points } = polygonNode;
   let bestPoint: Point = polygonCenter;
   let bestDistance = Infinity;
@@ -187,7 +162,7 @@ const getPolygonAnchorPoint = (polygonNode: SVGPolygonElement, reference: Point)
   for (let i = 0; i < points.length; i++) {
     const intersectPoint: Point | null = getLinesIntersection(
       [svgPointToPoint(points[i]), svgPointToPoint(points[i === points.length - 1 ? 0 : i + 1])],
-      [polygonCenter, reference],
+      [polygonCenter, reference]
     );
     if (intersectPoint) {
       const intersectDistance: number = distanceToPoint(intersectPoint, reference);

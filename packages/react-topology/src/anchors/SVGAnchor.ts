@@ -4,7 +4,7 @@ import {
   getEllipseAnchorPoint,
   getPathAnchorPoint,
   getPolygonAnchorPoint,
-  getRectAnchorPoint,
+  getRectAnchorPoint
 } from '../utils/anchor-utils';
 import AbstractAnchor from './AbstractAnchor';
 
@@ -38,10 +38,7 @@ export default class SVGAnchor extends AbstractAnchor {
     const width = rect.width.baseVal.value;
     const height = rect.height.baseVal.value;
 
-    const center: Point = new Point(
-      rect.x.baseVal.value + width / 2,
-      rect.y.baseVal.value + height / 2,
-    );
+    const center: Point = new Point(rect.x.baseVal.value + width / 2, rect.y.baseVal.value + height / 2);
     this.owner.translateToParent(center);
 
     const offset2x = this.offset * 2;

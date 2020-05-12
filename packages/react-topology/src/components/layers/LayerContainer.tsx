@@ -4,14 +4,11 @@ import ElementContext from '../../utils/ElementContext';
 import { isNode } from '../../types';
 import { ATTR_DATA_ID, ATTR_DATA_KIND, ATTR_DATA_TYPE } from '../../const';
 
-type LayerContainerProps = {
+interface LayerContainerProps {
   children: React.ReactNode;
-};
+}
 
-const LayerContainer: React.RefForwardingComponent<SVGGElement, LayerContainerProps> = (
-  { children },
-  ref,
-) => {
+const LayerContainer: React.RefForwardingComponent<SVGGElement, LayerContainerProps> = ({ children }, ref) => {
   // accumulate parent positions
   const element = React.useContext(ElementContext);
   let p = element;
@@ -28,7 +25,7 @@ const LayerContainer: React.RefForwardingComponent<SVGGElement, LayerContainerPr
   const commonAttrs = {
     [ATTR_DATA_ID]: element.getId(),
     [ATTR_DATA_KIND]: element.getKind(),
-    [ATTR_DATA_TYPE]: element.getType(),
+    [ATTR_DATA_TYPE]: element.getType()
   };
   return (
     <g ref={ref} transform={`translate(${x}, ${y})`} {...commonAttrs}>

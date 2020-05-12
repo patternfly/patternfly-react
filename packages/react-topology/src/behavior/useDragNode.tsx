@@ -10,7 +10,7 @@ import {
   ConnectDragSource,
   DragObjectWithType,
   DragSpecOperationType,
-  DragOperationWithType,
+  DragOperationWithType
 } from './dnd-types';
 import { useDndManager } from './useDndManager';
 
@@ -23,7 +23,7 @@ export type DragNodeEventListener = EventListener<[Node, DragEvent, string]>;
 export const DRAG_MOVE_OPERATION = 'move.useDragNode';
 
 const defaultOperation = {
-  [Modifiers.DEFAULT]: { type: DRAG_MOVE_OPERATION },
+  [Modifiers.DEFAULT]: { type: DRAG_MOVE_OPERATION }
 };
 
 export const useDragNode = <
@@ -33,18 +33,12 @@ export const useDragNode = <
   Props extends {} = {}
 >(
   spec?: Omit<
-    DragSourceSpec<
-      DragObject,
-      DragSpecOperationType<DragOperationWithType>,
-      DropResult,
-      CollectedProps,
-      Props
-    >,
+    DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
     'item'
   > & {
     item?: DragObject;
   },
-  props?: Props,
+  props?: Props
 ): [CollectedProps, ConnectDragSource] => {
   const element = React.useContext(ElementContext);
   if (!isNode(element)) {
@@ -61,12 +55,11 @@ export const useDragNode = <
         item: (spec && spec.item) || { type: '#useDragNode#' },
         operation: (monitor: any, p: any) => {
           if (spec) {
-            const operation =
-              typeof spec.operation === 'function' ? spec.operation(monitor, p) : spec.operation;
+            const operation = typeof spec.operation === 'function' ? spec.operation(monitor, p) : spec.operation;
             if (typeof operation === 'object' && Object.keys(operation).length > 0) {
               return {
                 ...defaultOperation,
-                ...operation,
+                ...operation
               };
             }
           }
@@ -75,7 +68,7 @@ export const useDragNode = <
         begin: (monitor, p) => {
           elementRef.current.raise();
           if (elementRef.current.isGroup()) {
-            elementRef.current.getChildren().forEach((c) => {
+            elementRef.current.getChildren().forEach(c => {
               c.raise();
             });
           }
@@ -84,18 +77,17 @@ export const useDragNode = <
 
           elementRef.current
             .getController()
-            .fireEvent(
-              DRAG_NODE_START_EVENT,
-              elementRef.current,
-              monitor.getDragEvent(),
-              monitor.getOperation(),
-            );
+            .fireEvent(DRAG_NODE_START_EVENT, elementRef.current, monitor.getDragEvent(), monitor.getOperation());
 
           return result || elementRef.current;
         },
         drag: (event, monitor, p) => {
           const { dx, dy } = event;
 
+          /**
+           * @param e
+           * @param e:Node  node
+           */
           function moveElement(e: Node) {
             let moved = true;
             if (e.isGroup()) {
@@ -110,7 +102,7 @@ export const useDragNode = <
                 e
                   .getPosition()
                   .clone()
-                  .translate(dx, dy),
+                  .translate(dx, dy)
               );
             }
           }
@@ -140,22 +132,22 @@ export const useDragNode = <
               DRAG_NODE_END_EVENT,
               elementRef.current,
               monitor.getDragEvent(),
-              monitor.getOperation(),
+              monitor.getOperation()
             );
           })();
         },
         collect: spec ? spec.collect : undefined,
-        canCancel: spec ? spec.canCancel : true,
+        canCancel: spec ? spec.canCancel : true
       };
       return sourceSpec;
     }, [spec, dndManager]),
-    props,
+    props
   );
 };
 
-export type WithDragNodeProps = {
+export interface WithDragNodeProps {
   dragNodeRef: WithDndDragProps['dndDragRef'];
-};
+}
 
 export const withDragNode = <
   DragObject extends DragObjectWithType = DragObjectWithType,
@@ -164,21 +156,13 @@ export const withDragNode = <
   Props extends {} = {}
 >(
   spec?: Omit<
-    DragSourceSpec<
-      DragObject,
-      DragSpecOperationType<DragOperationWithType>,
-      DropResult,
-      CollectedProps,
-      Props
-    >,
+    DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
     'item'
   > & {
     item?: DragObject;
-  },
-) => <P extends WithDragNodeProps & CollectedProps & Props>(
-  WrappedComponent: React.ComponentType<P>,
-) => {
-  const Component: React.FC<Omit<P, keyof WithDragNodeProps>> = (props) => {
+  }
+) => <P extends WithDragNodeProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+  const Component: React.FC<Omit<P, keyof WithDragNodeProps>> = props => {
     // TODO fix cast to any
     const [dragNodeProps, dragNodeRef] = useDragNode(spec, props as any);
     return <WrappedComponent {...(props as any)} dragNodeRef={dragNodeRef} {...dragNodeProps} />;

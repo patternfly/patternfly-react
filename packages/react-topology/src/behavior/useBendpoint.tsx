@@ -10,26 +10,21 @@ import {
   DragSourceSpec,
   DragObjectWithType,
   DragSpecOperationType,
-  DragOperationWithType,
+  DragOperationWithType
 } from './dnd-types';
 import { useDndDrag, WithDndDragProps } from './useDndDrag';
 
-export type WithBendpoint = {
+export interface WithBendpoint {
   sourceDragRef: ConnectDragSource;
-};
+}
 
 export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
   point: Point,
   spec?: Omit<
-    DragSourceSpec<
-      DragObjectWithType,
-      DragSpecOperationType<DragOperationWithType>,
-      DropResult,
-      CollectedProps
-    >,
+    DragSourceSpec<DragObjectWithType, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps>,
     'type'
   >,
-  props?: Props,
+  props?: Props
 ): [CollectedProps, ConnectDragSource] => {
   const element = React.useContext(ElementContext);
   if (!isEdge(element)) {
@@ -44,9 +39,7 @@ export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
     React.useMemo(() => {
       const sourceSpec: DragSourceSpec<any, any, any, any, Props> = {
         item: { type: '#useBendpoint#' },
-        begin: (monitor, p) => {
-          return spec && spec.begin ? spec.begin(monitor, p) : undefined;
-        },
+        begin: (monitor, p) => (spec && spec.begin ? spec.begin(monitor, p) : undefined),
         drag: (event, monitor, p) => {
           // assumes the edge is in absolute coordinate space
           pointRef.current.translate(event.dx, event.dy);
@@ -55,16 +48,16 @@ export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
         },
         canDrag: spec ? spec.canDrag : undefined,
         end: spec ? spec.end : undefined,
-        collect: spec ? spec.collect : undefined,
+        collect: spec ? spec.collect : undefined
       };
       return sourceSpec;
     }, [spec]),
-    props,
+    props
   );
 
   // argh react events don't play nice with d3 pan zoom double click event
   const ref = React.useCallback(
-    (node) => {
+    node => {
       d3.select(node).on(
         'click',
         action(() => {
@@ -72,22 +65,22 @@ export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
             d3.event.stopPropagation();
             elementRef.current.removeBendpoint(pointRef.current);
           }
-        }),
+        })
       );
       dragRef(node);
     },
-    [dragRef],
+    [dragRef]
   );
   return [connect, ref];
 };
 
-type HocProps = {
+interface HocProps {
   point: Point;
-};
+}
 
-export type WithBendpointProps = {
+export interface WithBendpointProps {
   dragNodeRef: WithDndDragProps['dndDragRef'];
-};
+}
 
 export const WithBendpoint = <DropResult, CollectedProps, Props = {}>(
   spec?: Omit<

@@ -17,6 +17,9 @@ interface VisualizationSurfaceProps {
   state?: State;
 }
 
+/**
+ * @param e
+ */
 function stopEvent(e: React.MouseEvent): void {
   e.preventDefault();
   e.stopPropagation();
@@ -31,14 +34,12 @@ const VisualizationSurface: React.FC<VisualizationSurfaceProps> = ({ visualizati
     () =>
       _.debounce<any>(
         action((contentRect: { client: { width: number; height: number } }) => {
-          visualization
-            .getGraph()
-            .setDimensions(new Dimensions(contentRect.client.width, contentRect.client.height));
+          visualization.getGraph().setDimensions(new Dimensions(contentRect.client.width, contentRect.client.height));
         }),
         100,
-        { leading: true, trailing: true },
+        { leading: true, trailing: true }
       ),
-    [visualization],
+    [visualization]
   );
 
   // dispose of onMeasure

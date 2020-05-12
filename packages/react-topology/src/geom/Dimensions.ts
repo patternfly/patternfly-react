@@ -1,6 +1,6 @@
-import { IDimensions } from './types';
+import { DimensionsIface } from './types';
 
-export default class Dimensions implements IDimensions {
+export default class Dimensions implements DimensionsIface {
   static readonly EMPTY = new Dimensions();
 
   width: number = 0;
@@ -15,7 +15,7 @@ export default class Dimensions implements IDimensions {
     return Dimensions.SINGLETON;
   }
 
-  static fromDimensions(dimension: IDimensions): Dimensions {
+  static fromDimensions(dimension: DimensionsIface): Dimensions {
     return new Dimensions(dimension.width, dimension.height);
   }
 
@@ -57,7 +57,7 @@ export default class Dimensions implements IDimensions {
     return Dimensions.fromDimensions(this);
   }
 
-  equals(r: IDimensions) {
+  equals(r: DimensionsIface) {
     return r.width === this.width && r.height === this.height;
   }
 }

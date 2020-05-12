@@ -1,6 +1,6 @@
-import { Translatable, IPoint } from './types';
+import { Translatable, PointIface } from './types';
 
-export default class Point implements Translatable, IPoint {
+export default class Point implements Translatable, PointIface {
   static readonly EMPTY = new Point();
 
   x: number;
@@ -15,7 +15,7 @@ export default class Point implements Translatable, IPoint {
     return Point.SINGLETON;
   }
 
-  static fromPoint(point: IPoint): Point {
+  static fromPoint(point: PointIface): Point {
     return new Point(point.x, point.y);
   }
 
@@ -52,7 +52,7 @@ export default class Point implements Translatable, IPoint {
     return Point.fromPoint(this);
   }
 
-  equals(p: IPoint) {
+  equals(p: PointIface) {
     return p.x === this.x && p.y === this.y;
   }
 }

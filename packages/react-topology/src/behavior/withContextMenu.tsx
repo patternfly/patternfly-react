@@ -6,18 +6,18 @@ import ContextMenu from '../components/contextmenu/ContextMenu';
 
 type Reference = React.ComponentProps<typeof ContextMenu>['reference'];
 
-export type WithContextMenuProps = {
+export interface WithContextMenuProps {
   onContextMenu: (e: React.MouseEvent) => void;
   contextMenuOpen: boolean;
-};
+}
 
 export const withContextMenu = <E extends TopologyElement>(
   actions: (element: E) => React.ReactElement[],
   container?: Element | null | undefined | (() => Element),
   className?: string,
-  atPoint: boolean = true,
+  atPoint: boolean = true
 ) => <P extends WithContextMenuProps>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithContextMenuProps>> = (props) => {
+  const Component: React.FC<Omit<P, keyof WithContextMenuProps>> = props => {
     const element = React.useContext(ElementContext);
     const [reference, setReference] = React.useState<Reference | null>(null);
     const onContextMenu = React.useCallback((e: React.MouseEvent) => {
@@ -27,19 +27,15 @@ export const withContextMenu = <E extends TopologyElement>(
         atPoint
           ? {
               x: e.pageX,
-              y: e.pageY,
+              y: e.pageY
             }
-          : e.currentTarget,
+          : e.currentTarget
       );
     }, []);
 
     return (
       <>
-        <WrappedComponent
-          {...(props as any)}
-          onContextMenu={onContextMenu}
-          contextMenuOpen={!!reference}
-        />
+        <WrappedComponent {...(props as any)} onContextMenu={onContextMenu} contextMenuOpen={!!reference} />
         {reference ? (
           <ContextMenu
             reference={reference}

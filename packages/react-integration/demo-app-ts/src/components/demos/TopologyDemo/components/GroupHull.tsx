@@ -16,7 +16,7 @@ import {
   maxPadding,
   hullPath,
   useAnchor,
-  RectAnchor,
+  RectAnchor
 } from '@patternfly/react-topology';
 
 type GroupHullProps = {
@@ -41,7 +41,7 @@ const GroupHull: React.FC<GroupHullProps> = ({
   dndDropRef,
   hover,
   droppable,
-  canDrop,
+  canDrop
 }) => {
   const pathRef = React.useRef<string | null>(null);
   const refs = useCombineRefs<SVGPathElement | SVGRectElement>(dragNodeRef, dndDragRef, dndDropRef);
@@ -79,7 +79,7 @@ const GroupHull: React.FC<GroupHullProps> = ({
       return null;
     }
     const points: PointWithSize[] = [];
-    _.forEach(nodeChildren, (c) => {
+    _.forEach(nodeChildren, c => {
       if (c.getNodeShape() === NodeShape.circle) {
         const { width, height } = c.getBounds();
         const { x, y } = c.getBounds().getCenter();

@@ -9,12 +9,7 @@ type ContextMenuProps = Pick<
   'container' | 'className' | 'open' | 'reference' | 'onRequestClose'
 >;
 
-const ContextMenu: React.FC<ContextMenuProps> = ({
-  children,
-  open = true,
-  onRequestClose,
-  ...other
-}) => {
+const ContextMenu: React.FC<ContextMenuProps> = ({ children, open = true, onRequestClose, ...other }) => {
   const [isOpen, setOpen] = React.useState(!!open);
   React.useEffect(() => {
     setOpen(open);
@@ -25,13 +20,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
   }, [onRequestClose]);
 
   return (
-    <Popper
-      {...other}
-      closeOnEsc
-      closeOnOutsideClick
-      open={isOpen}
-      onRequestClose={handleOnRequestClose}
-    >
+    <Popper {...other} closeOnEsc closeOnOutsideClick open={isOpen} onRequestClose={handleOnRequestClose}>
       <DropdownContext.Provider
         value={{
           onSelect: handleOnRequestClose,
@@ -45,7 +34,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
           sectionClass: styles.dropdownGroup,
           sectionTitleClass: styles.dropdownGroupTitle,
           sectionComponent: 'section',
-          disabledClass: styles.modifiers.disabled,
+          disabledClass: styles.modifiers.disabled
           // hoverClass: styles.modifiers.hover,
           // separatorClass: styles.dropdownSeparator,
         }}

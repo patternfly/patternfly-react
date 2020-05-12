@@ -3,9 +3,9 @@ import * as ReactDOM from 'react-dom';
 
 type GetContainer = Element | null | undefined | (() => Element);
 
-type PortalProps = {
+interface PortalProps {
   container?: GetContainer;
-};
+}
 
 const getContainer = (container: GetContainer): Element | null | undefined =>
   typeof container === 'function' ? container() : container;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Defs, DefsState } from '../SVGDefsProvider';
+import { DefsState } from '../SVGDefsProvider';
+import { Defs } from "../Defs";
 
 describe('Defs', () => {
   it('should render initially empty', () => {

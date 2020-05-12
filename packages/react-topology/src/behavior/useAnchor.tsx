@@ -9,7 +9,7 @@ type AnchorConstructor = new (element?: Node) => Anchor;
 export const useAnchor = (
   anchorCallback: ((element: Node) => Anchor | undefined) | AnchorConstructor,
   end: AnchorEnd = AnchorEnd.both,
-  type?: string,
+  type?: string
 ): void => {
   const element = React.useContext(ElementContext);
   if (!isNode(element)) {
@@ -17,9 +17,7 @@ export const useAnchor = (
   }
   React.useEffect(() => {
     action(() => {
-      const anchor = anchorCallback.prototype
-        ? new (anchorCallback as any)(element)
-        : (anchorCallback as any)(element);
+      const anchor = anchorCallback.prototype ? new (anchorCallback as any)(element) : (anchorCallback as any)(element);
       if (anchor) {
         element.setAnchor(anchor, end, type);
       }
@@ -28,14 +26,10 @@ export const useAnchor = (
 };
 
 export const withAnchor = <P extends {} = {}>(anchor: Anchor, end?: AnchorEnd, type?: string) => (
-  WrappedComponent: React.ComponentType<P>,
+  WrappedComponent: React.ComponentType<P>
 ) => {
-  const Component: React.FC<P> = (props) => {
-    useAnchor(
-      React.useCallback(() => anchor, []),
-      end,
-      type,
-    );
+  const Component: React.FC<P> = props => {
+    useAnchor(React.useCallback(() => anchor, []), end, type);
     return <WrappedComponent {...props} />;
   };
   return observer(Component);

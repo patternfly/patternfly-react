@@ -1,35 +1,13 @@
 import * as React from 'react';
 import SVGDefsContext, { SVGDefsContextProps } from './SVGDefsContext';
+import { SVGDefsSetter } from './SVGDefsSetter';
 
-type SVGDefsProps = {
+interface SVGDefsProps {
   id: string;
   children: React.ReactNode;
-};
-
-type SVGDefsSetterProps = SVGDefsContextProps & SVGDefsProps;
-
-export class SVGDefsSetter extends React.Component<SVGDefsSetterProps> {
-  static contextType = SVGDefsContext;
-
-  componentDidMount() {
-    const { addDef, id, children } = this.props;
-    addDef(id, children);
-  }
-
-  componentDidUpdate() {
-    const { addDef, id, children } = this.props;
-    addDef(id, children);
-  }
-
-  componentWillUnmount() {
-    const { removeDef, id } = this.props;
-    removeDef(id);
-  }
-
-  render():any {
-    return null;
-  }
 }
+
+export type SVGDefsSetterProps = SVGDefsContextProps & SVGDefsProps;
 
 /**
  * Contributes `children` to the parent SVG `<defs>` element.
@@ -46,9 +24,7 @@ export default class SVGDefs extends React.Component<SVGDefsProps> {
   render() {
     return (
       <SVGDefsContext.Consumer>
-        {({ addDef, removeDef }) => (
-          <SVGDefsSetter {...this.props} addDef={addDef} removeDef={removeDef} />
-        )}
+        {({ addDef, removeDef }) => <SVGDefsSetter {...this.props} addDef={addDef} removeDef={removeDef} />}
       </SVGDefsContext.Consumer>
     );
   }

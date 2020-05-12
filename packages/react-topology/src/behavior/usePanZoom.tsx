@@ -8,11 +8,11 @@ import Point from '../geom/Point';
 import { isGraph, ModelKind } from '../types';
 import { ATTR_DATA_KIND } from '../const';
 
-export type PanZoomTransform = {
+export interface PanZoomTransform {
   x: number;
   y: number;
   k: number;
-};
+}
 
 const ZOOM_EXTENT: [number, number] = [0.25, 4];
 
@@ -48,11 +48,9 @@ export const usePanZoom = (zoomExtent: [number, number] = ZOOM_EXTENT): PanZoomR
             .on(
               'zoom',
               action(() => {
-                elementRef.current.setPosition(
-                  new Point(d3.event.transform.x, d3.event.transform.y),
-                );
+                elementRef.current.setPosition(new Point(d3.event.transform.x, d3.event.transform.y));
                 elementRef.current.setScale(d3.event.transform.k);
-              }),
+              })
             )
             .filter(() => {
               if (d3.event.ctrlKey || d3.event.button) {
@@ -96,7 +94,7 @@ export const usePanZoom = (zoomExtent: [number, number] = ZOOM_EXTENT): PanZoomR
             Object.assign($svg.node().__zoom, {
               k: scale,
               x: b.x,
-              y: b.y,
+              y: b.y
             });
           });
 
@@ -115,23 +113,21 @@ export const usePanZoom = (zoomExtent: [number, number] = ZOOM_EXTENT): PanZoomR
           }
         };
       },
-      [zoomExtent],
-    ),
+      [zoomExtent]
+    )
   );
 
   return refCallback;
 };
 
-export type WithPanZoomProps = {
+export interface WithPanZoomProps {
   panZoomRef: PanZoomRef;
-};
+}
 
-export const withPanZoom = (zoomExtent: [number, number] = ZOOM_EXTENT) => <
-  P extends WithPanZoomProps
->(
-  WrappedComponent: React.ComponentType<P>,
+export const withPanZoom = (zoomExtent: [number, number] = ZOOM_EXTENT) => <P extends WithPanZoomProps>(
+  WrappedComponent: React.ComponentType<P>
 ) => {
-  const Component: React.FC<Omit<P, keyof WithPanZoomProps>> = (props) => {
+  const Component: React.FC<Omit<P, keyof WithPanZoomProps>> = props => {
     const panZoomRef = usePanZoom(zoomExtent);
     return <WrappedComponent {...(props as any)} panZoomRef={panZoomRef} />;
   };

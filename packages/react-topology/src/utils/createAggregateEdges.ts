@@ -1,19 +1,15 @@
-import * as _ from 'lodash';
+import * as lodash from 'lodash';
 import { EdgeModel, NodeModel } from '../types';
 
-const getNodeParent = (nodeId: string, nodes: NodeModel[]): NodeModel | undefined => {
-  return nodes.find((n) => n.children?.includes(nodeId));
-};
+const getNodeParent = (nodeId: string, nodes: NodeModel[]): NodeModel | undefined =>
+  nodes.find(n => (n.children ? n.children.includes(nodeId) : null));
 
-const getDisplayedNodeForNode = (
-  nodeId: string | undefined,
-  nodes: NodeModel[] | undefined,
-): string => {
+const getDisplayedNodeForNode = (nodeId: string | undefined, nodes: NodeModel[] | undefined): string => {
   if (!nodeId || !nodes) {
     return '';
   }
 
-  let displayedNode = nodes && nodes.find((n) => n.id === nodeId);
+  let displayedNode = nodes && nodes.find(n => n.id === nodeId);
   let parent = displayedNode ? getNodeParent(displayedNode.id, nodes) : null;
   while (parent) {
     if (parent.collapsed) {
@@ -27,11 +23,11 @@ const getDisplayedNodeForNode = (
 const createAggregateEdges = (
   aggregateEdgeType: string,
   edges: EdgeModel[] | undefined,
-  nodes: NodeModel[] | undefined,
+  nodes: NodeModel[] | undefined
 ): EdgeModel[] => {
   const aggregateEdges: EdgeModel[] = [];
 
-  return _.reduce(
+  return lodash.reduce(
     edges,
     (newEdges: EdgeModel[], edge: EdgeModel) => {
       const source = getDisplayedNodeForNode(edge.source, nodes);
@@ -43,9 +39,7 @@ const createAggregateEdges = (
       if (source !== edge.source || target !== edge.target) {
         if (source !== target) {
           const existing = aggregateEdges.find(
-            (e) =>
-              (e.source === source || e.source === target) &&
-              (e.target === target || e.target === source),
+            e => (e.source === source || e.source === target) && (e.target === target || e.target === source)
           );
 
           if (existing) {
@@ -56,23 +50,20 @@ const createAggregateEdges = (
             edge.visible = false;
 
             // Hide edges that are depicted by this aggregate edge
-            _.forEach(existing.children, (existingChild) => {
-              const updateEdge = newEdges.find((newEdge) => newEdge.id === existingChild);
+            lodash.forEach(existing.children, existingChild => {
+              const updateEdge = newEdges.find(newEdge => newEdge.id === existingChild);
               if (updateEdge) {
                 updateEdge.visible = false;
               }
             });
 
             // Update the aggregate edges bidirectional flag
-            existing.data.bidirectional =
-              existing.data.bidirectional || existing.source !== edge.source;
+            existing.data.bidirectional = existing.data.bidirectional || existing.source !== edge.source;
 
             // Check if this edge has already been added
             if (
               !newEdges.find(
-                (e) =>
-                  (e.source === source || e.source === target) &&
-                  (e.target === target || e.target === source),
+                e => (e.source === source || e.source === target) && (e.target === target || e.target === source)
               )
             ) {
               newEdges.push(existing);
@@ -84,7 +75,7 @@ const createAggregateEdges = (
               source,
               target,
               id: `aggregate_${source}_${target}`,
-              type: aggregateEdgeType,
+              type: aggregateEdgeType
             };
             aggregateEdges.push(newEdge);
           }
@@ -96,7 +87,7 @@ const createAggregateEdges = (
       newEdges.push(edge);
       return newEdges;
     },
-    [] as EdgeModel[],
+    [] as EdgeModel[]
   );
 };
 

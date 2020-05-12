@@ -1,38 +1,16 @@
 import * as React from 'react';
 import SVGDefsContext, { SVGDefsContextProps } from './SVGDefsContext';
+import { Defs } from './Defs';
 
-type DefsMap = {
+export interface DefsMap {
   [id: string]: {
     count: number;
     node: React.ReactNode;
   };
-};
+}
 
-export type DefsState = {
+export interface DefsState {
   defs?: DefsMap;
-};
-
-export class Defs extends React.PureComponent<{}, DefsState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {};
-  }
-
-  public setDefs(defs: DefsMap) {
-    // setting the state will re-render this component
-    this.setState({ defs: { ...defs } });
-  }
-
-  render() {
-    const { defs } = this.state;
-    return defs ? (
-      <defs>
-        {Object.keys(defs).map((id) => (
-          <React.Fragment key={id}>{defs[id].node}</React.Fragment>
-        ))}
-      </defs>
-    ) : null;
-  }
 }
 
 export interface SVGDefsProviderProps {
@@ -58,18 +36,18 @@ class SVGDefsProvider extends React.Component<SVGDefsProviderProps> {
       } else {
         this.defs[id] = {
           count: 1,
-          node,
+          node
         };
         this.updateDefs();
       }
     },
-    removeDef: (id) => {
+    removeDef: id => {
       const defObj = this.defs[id];
       if (--defObj.count === 0) {
         delete this.defs[id];
         this.updateDefs();
       }
-    },
+    }
   };
 
   private updateDefs() {

@@ -5,17 +5,17 @@ import ElementContext from '../../utils/ElementContext';
 import LayersContext from './LayersContext';
 import LayerContainer from './LayerContainer';
 
-type LayerProps = {
+interface LayerProps {
   id?: string;
   children: React.ReactNode;
   orderKey?: number;
-};
+}
 
-type LayerDelegateProps = {
+interface LayerDelegateProps {
   id: string;
   children: React.ReactNode;
   orderKey?: number;
-};
+}
 
 const ORDER_KEY = '__order__';
 
@@ -71,14 +71,13 @@ const LayerDelegate: React.FC<LayerDelegateProps> = observer(({ id, children, or
   return createPortal(<LayerContainer ref={nodeRef}>{children}</LayerContainer>, layerNode);
 });
 
-const Layer: React.FC<LayerProps> = ({ id, children, orderKey }) => {
-  return id ? (
+const Layer: React.FC<LayerProps> = ({ id, children, orderKey }) =>
+  id ? (
     <LayerDelegate id={id} orderKey={orderKey}>
       {children}
     </LayerDelegate>
   ) : (
     <>{children}</>
   );
-};
 
 export default Layer;

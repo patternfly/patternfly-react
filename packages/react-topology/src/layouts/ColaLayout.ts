@@ -3,7 +3,8 @@ import * as d3 from 'd3';
 import { action } from 'mobx';
 import { Edge, Graph, Layout, Node } from '../types';
 import { getGroupPadding } from '../utils/element-utils';
-import { BaseLayout, LayoutOptions } from './BaseLayout';
+import { BaseLayout } from './BaseLayout';
+import { LayoutOpts } from './LayoutOpts';
 import { LayoutLink } from './LayoutLink';
 import { LayoutGroup } from './LayoutGroup';
 import { LayoutNode } from './LayoutNode';
@@ -36,7 +37,7 @@ export class ColaLayout extends BaseLayout implements Layout {
 
   private destroyed = false;
 
-  constructor(graph: Graph, options?: Partial<ColaLayoutOptions & LayoutOptions>) {
+  constructor(graph: Graph, options?: Partial<ColaLayoutOptions & LayoutOpts>) {
     super(graph, options);
     this.colaOptions = {
       ...COLA_LAYOUT_DEFAULTS,

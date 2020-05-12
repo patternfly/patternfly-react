@@ -3,7 +3,7 @@ import useCallbackRef from './useCallbackRef';
 
 const useHover = <T extends Element>(
   delayIn: number = 200,
-  delayOut: number = 200,
+  delayOut: number = 200
 ): [boolean, (node: T) => (() => void) | undefined] => {
   const [hover, setHover] = React.useState<boolean>(false);
   const unmountRef = React.useRef(false);
@@ -13,7 +13,7 @@ const useHover = <T extends Element>(
     () => () => {
       unmountRef.current = true;
     },
-    [],
+    []
   );
 
   // The unset handle needs to be referred by listeners in different closures.
@@ -60,17 +60,14 @@ const useHover = <T extends Element>(
               // This can happen with layers. Rendering a node to a new layer will unmount the old node
               // and remount a new node at the same location. This will prevent flickering and getting
               // stuck in a hover state.
-              unsetHandle.current = window.setTimeout(
-                () => setHover(false),
-                Math.max(delayIn, delayOut),
-              );
+              unsetHandle.current = window.setTimeout(() => setHover(false), Math.max(delayIn, delayOut));
             }
           };
         }
         return undefined;
       },
-      [delayIn, delayOut],
-    ),
+      [delayIn, delayOut]
+    )
   );
 
   return [hover, callbackRef];

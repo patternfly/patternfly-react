@@ -2,12 +2,14 @@ import * as React from 'react';
 import { DEFAULT_LAYER } from '../../const';
 import LayersContext from './LayersContext';
 
-type LayersProviderProps = {
+interface LayersProviderProps {
   layers?: string[];
   children?: React.ReactNode;
-};
+}
 
-type State = { [id: string]: Element };
+interface State {
+  [id: string]: Element;
+}
 
 export default class LayersProvider extends React.Component<LayersProviderProps, State> {
   constructor(props: LayersProviderProps) {
@@ -24,7 +26,7 @@ export default class LayersProvider extends React.Component<LayersProviderProps,
 
   private setDomLayers = (node: SVGGElement | null, id: string) => {
     if (node && this.state[id] !== node) {
-      this.setState((state) => ({ ...state, [id]: node }));
+      this.setState(state => ({ ...state, [id]: node }));
     }
   };
 
@@ -44,8 +46,8 @@ export default class LayersProvider extends React.Component<LayersProviderProps,
     const layerIds = layers || [DEFAULT_LAYER];
     return (
       <LayersContext.Provider value={this.contextValue}>
-        {layerIds.map((id) => (
-          <g key={id} data-layer-id={id} ref={(r) => this.setDomLayers(r, id)}>
+        {layerIds.map(id => (
+          <g key={id} data-layer-id={id} ref={r => this.setDomLayers(r, id)}>
             {id === DEFAULT_LAYER && this.state[id] ? children : undefined}
           </g>
         ))}

@@ -8,16 +8,13 @@ export const SELECTION_EVENT = 'selection';
 
 export type SelectionEventListener = EventListener<[string[]]>;
 
-type SelectionHandlerState = {
+interface SelectionHandlerState {
   selectedIds?: string[];
-};
+}
 
 export type OnSelect = (e: React.MouseEvent) => void;
 
-export const useSelection = (
-  multi: boolean = false,
-  controlled: boolean = false,
-): [boolean, OnSelect] => {
+export const useSelection = (multi: boolean = false, controlled: boolean = false): [boolean, OnSelect] => {
   const element = React.useContext(ElementContext);
   const elementRef = React.useRef(element);
   elementRef.current = element;
@@ -28,7 +25,7 @@ export const useSelection = (
         const { selectedIds } = element.getController().getState<SelectionHandlerState>();
         return !!selectedIds && selectedIds.includes(element.getId());
       }),
-    [element],
+    [element]
   );
 
   const onSelect = React.useCallback(
@@ -66,22 +63,20 @@ export const useSelection = (
         elementRef.current.raise();
       }
     }),
-    [],
+    []
   );
   return [selected.get(), onSelect];
 };
 
-export type WithSelectionProps = {
+export interface WithSelectionProps {
   selected: boolean;
   onSelect: OnSelect;
-};
+}
 
-export const withSelection = (multi: boolean = false, controlled: boolean = false) => <
-  P extends WithSelectionProps
->(
-  WrappedComponent: React.ComponentType<P>,
+export const withSelection = (multi: boolean = false, controlled: boolean = false) => <P extends WithSelectionProps>(
+  WrappedComponent: React.ComponentType<P>
 ) => {
-  const Component: React.FC<Omit<P, keyof WithSelectionProps>> = (props) => {
+  const Component: React.FC<Omit<P, keyof WithSelectionProps>> = props => {
     const [selected, onSelect] = useSelection(multi, controlled);
     return <WrappedComponent {...(props as any)} selected={selected} onSelect={onSelect} />;
   };

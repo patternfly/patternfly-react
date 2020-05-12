@@ -3,20 +3,16 @@ import { observer } from 'mobx-react';
 import { Edge } from '../types';
 import DefaultRemoveConnector from '../components/DefaultRemoveConnector';
 
-type ElementProps = {
+interface ElementProps {
   element: Edge;
-};
+}
 
-export type WithRemoveConnectorProps = {
+export interface WithRemoveConnectorProps {
   onShowRemoveConnector?: () => void;
   onHideRemoveConnector?: () => void;
-};
+}
 
-type RemoveRenderer = (
-  edge: Edge,
-  onRemove: (edge: Edge) => void,
-  size?: number,
-) => React.ReactElement;
+type RemoveRenderer = (edge: Edge, onRemove: (edge: Edge) => void, size?: number) => React.ReactElement;
 
 const defaultRenderRemove: RemoveRenderer = (edge: Edge, onRemove: (edge: Edge) => void) => {
   const removeEdge = () => {
@@ -24,19 +20,15 @@ const defaultRenderRemove: RemoveRenderer = (edge: Edge, onRemove: (edge: Edge) 
   };
 
   return (
-    <DefaultRemoveConnector
-      startPoint={edge.getStartPoint()}
-      endPoint={edge.getEndPoint()}
-      onRemove={removeEdge}
-    />
+    <DefaultRemoveConnector startPoint={edge.getStartPoint()} endPoint={edge.getEndPoint()} onRemove={removeEdge} />
   );
 };
 
 export const withRemoveConnector = <P extends WithRemoveConnectorProps & ElementProps>(
   onRemove: (edge: Edge) => void,
-  renderRemove: RemoveRenderer = defaultRenderRemove,
+  renderRemove: RemoveRenderer = defaultRenderRemove
 ) => (WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithRemoveConnectorProps>> = (props) => {
+  const Component: React.FC<Omit<P, keyof WithRemoveConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const onShowRemoveConnector = React.useCallback(() => setShow(true), []);
     const onHideRemoveConnector = React.useCallback(() => setShow(false), []);

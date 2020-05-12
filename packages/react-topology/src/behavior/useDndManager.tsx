@@ -11,25 +11,21 @@ import {
   Unregister,
   DndState,
   DndStateContainer,
-  DragOperationWithType,
+  DragOperationWithType
 } from './dnd-types';
 
 let nextUniqueId = 0;
 
-const getNextUniqueId = (): number => {
-  return nextUniqueId++;
-};
+const getNextUniqueId = (): number => nextUniqueId++;
 
 export const matchesType = (
   targetType: Identifier | Identifier[] | undefined,
-  draggedItemType: Identifier | undefined,
+  draggedItemType: Identifier | undefined
 ): boolean => {
   if (draggedItemType === null) {
     return targetType === null;
   }
-  return Array.isArray(targetType)
-    ? targetType.some((t) => t === draggedItemType)
-    : targetType === draggedItemType;
+  return Array.isArray(targetType) ? targetType.some(t => t === draggedItemType) : targetType === draggedItemType;
 };
 
 export class DndManagerImpl implements DndManager {
@@ -50,11 +46,11 @@ export class DndManagerImpl implements DndManager {
   get dropHints(): string[] {
     return this.state.targetIds
       ? (this.state.targetIds
-          .map((id) => {
+          .map(id => {
             const target = this.getTarget(id);
             return target ? target.dropHint(this) : [];
           })
-          .filter((x) => x) as string[])
+          .filter(x => x) as string[])
       : [];
   }
 
@@ -65,7 +61,7 @@ export class DndManagerImpl implements DndManager {
       key,
       () => {
         delete this.sources[key];
-      },
+      }
     ];
   }
 
@@ -76,7 +72,7 @@ export class DndManagerImpl implements DndManager {
       key,
       () => {
         delete this.targets[key];
-      },
+      }
     ];
   }
 
@@ -155,7 +151,7 @@ export class DndManagerImpl implements DndManager {
   }
 
   hasDropTarget(): boolean {
-    return !!this.getTargetIds().find((id) => this.canDropOnTarget(id));
+    return !!this.getTargetIds().find(id => this.canDropOnTarget(id));
   }
 
   getDropResult(): any {
@@ -184,7 +180,7 @@ export class DndManagerImpl implements DndManager {
     x: number,
     y: number,
     pageX: number,
-    pageY: number,
+    pageY: number
   ): void {
     const ids = Array.isArray(sourceIds) ? sourceIds : [sourceIds];
     if (ids.length) {
@@ -210,7 +206,7 @@ export class DndManagerImpl implements DndManager {
             x,
             y,
             dx: 0,
-            dy: 0,
+            dy: 0
           };
           this.state.operation = operation;
           this.state.isDragging = true;
@@ -222,9 +218,9 @@ export class DndManagerImpl implements DndManager {
   }
 
   hover(targetIds: string[]): void {
-    const ids: string[] = targetIds.filter((id) => this.getTarget(id));
+    const ids: string[] = targetIds.filter(id => this.getTarget(id));
     this.state.targetIds = ids;
-    ids.forEach((id) => {
+    ids.forEach(id => {
       const target = this.getTarget(id);
       if (target) {
         target.hover(this);
@@ -254,7 +250,7 @@ export class DndManagerImpl implements DndManager {
 
   drop(): void {
     this.getTargetIds()
-      .filter((id) => this.canDropOnTarget(id))
+      .filter(id => this.canDropOnTarget(id))
       .reverse()
       .forEach((id, idx) => {
         const target = this.getTarget(id);
@@ -297,12 +293,7 @@ export class DndManagerImpl implements DndManager {
     const source = this.getSource(this.getSourceId());
     if (source && source.canCancel(this)) {
       this.state.cancelled = true;
-      this.drag(
-        this.state.event.initialX,
-        this.state.event.initialY,
-        this.state.event.pageX,
-        this.state.event.pageY,
-      );
+      this.drag(this.state.event.initialX, this.state.event.initialY, this.state.event.pageX, this.state.event.pageY);
       return true;
     }
     return false;
@@ -313,13 +304,9 @@ export class DndManagerImpl implements DndManager {
     const event = this.getDragEvent();
     if (event && draggedItemType) {
       const targetIds: string[] = [];
-      Object.keys(this.targets).forEach((targetId) => {
+      Object.keys(this.targets).forEach(targetId => {
         const target = this.getTarget(targetId);
-        if (
-          target &&
-          matchesType(target.type, draggedItemType) &&
-          target.hitTest(event.x, event.y)
-        ) {
+        if (target && matchesType(target.type, draggedItemType) && target.hitTest(event.x, event.y)) {
           targetIds.push(targetId);
         }
       });

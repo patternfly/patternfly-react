@@ -18,9 +18,9 @@ type EdgeProps = {
   WithTargetDragProps &
   WithRemoveConnectorProps;
 
-type BendpointProps = {
+interface BendpointProps {
   point: Point;
-};
+}
 
 const Bendpoint: React.FC<BendpointProps> = observer(({ point }) => {
   const [hover, setHover] = React.useState(false);

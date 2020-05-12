@@ -9,13 +9,12 @@ import {
   Controller,
   ModelKind,
   ADD_CHILD_EVENT,
-  REMOVE_CHILD_EVENT,
+  REMOVE_CHILD_EVENT
 } from '../types';
 import Stateful from '../utils/Stateful';
 import { Translatable } from '../geom/types';
 
-export default abstract class BaseElement<E extends ElementModel = ElementModel, D = any>
-  extends Stateful
+export default abstract class BaseElement<E extends ElementModel = ElementModel, D = any> extends Stateful
   implements GraphElement<E, D> {
   private id: string = '';
 
@@ -131,8 +130,7 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
   isVisible(): boolean {
     return (
       this.visible &&
-      (!this.parent ||
-        (this.parent.isVisible() && (!isNode(this.parent) || !this.parent.isCollapsed())))
+      (!this.parent || (this.parent.isVisible() && (!isNode(this.parent) || !this.parent.isCollapsed())))
     );
   }
 
@@ -153,11 +151,7 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
   }
 
   insertChild(child: GraphElement, index: number) {
-    if (
-      this.children.length === 0 ||
-      index >= this.children.length ||
-      this.children[index] !== child
-    ) {
+    if (this.children.length === 0 || index >= this.children.length || this.children[index] !== child) {
       const idx = this.children.indexOf(child);
       if (idx !== -1) {
         this.children.splice(idx, 1);
@@ -224,7 +218,7 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
     if (Array.isArray(model.children)) {
       const controller = this.getController();
 
-      const childElements = model.children.map((id) => {
+      const childElements = model.children.map(id => {
         const element = controller.getElementById(id);
         if (!element) {
           throw new Error(`No element found with ID '${id}'.`);
@@ -233,11 +227,11 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
       });
 
       // remove children
-      _.difference(this.children, childElements).forEach((child) => this.removeChild(child));
+      _.difference(this.children, childElements).forEach(child => this.removeChild(child));
 
       // add children
       const toAdd = _.difference(childElements, this.children);
-      toAdd.reverse().forEach((child) => this.insertChild(child, 0));
+      toAdd.reverse().forEach(child => this.insertChild(child, 0));
     }
     if ('data' in model) {
       this.data = model.data;

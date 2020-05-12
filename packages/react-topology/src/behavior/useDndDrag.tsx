@@ -59,9 +59,8 @@ const getOperation = (
   return operation[getModifiers((d3.event && d3.event.sourceEvent) || d3.event)] || operation[Modifiers.DEFAULT];
 };
 
-const hasOperation = (operation: DragSpecOperationType<DragOperationWithType> | undefined): boolean => {
-  return !!(operation && (operation.hasOwnProperty('type') || Object.keys(operation).length > 0));
-};
+const hasOperation = (operation: DragSpecOperationType<DragOperationWithType> | undefined): boolean =>
+  !!(operation && (operation.hasOwnProperty('type') || Object.keys(operation).length > 0));
 
 const EMPTY_PROPS = Object.freeze({});
 
@@ -91,42 +90,20 @@ export const useDndDrag = <
   // source monitor
   const monitor = React.useMemo(() => {
     const sourceMonitor: DragSourceMonitor = {
-      getHandlerId: (): string | undefined => {
-        return idRef.current;
-      },
+      getHandlerId: (): string | undefined => idRef.current,
       receiveHandlerId: (sourceId: string | undefined): void => {
         idRef.current = sourceId;
       },
-      getDropHints: (): string[] => {
-        return dndManager.getDropHints();
-      },
-      canDrag: (): boolean => {
-        return dndManager.canDragSource(idRef.current);
-      },
-      isDragging: (): boolean => {
-        return dndManager.isDraggingSource(idRef.current);
-      },
-      getItemType: (): Identifier | undefined => {
-        return dndManager.getItemType();
-      },
-      getItem: (): any => {
-        return dndManager.getItem();
-      },
-      getDropResult: (): any => {
-        return dndManager.getDropResult();
-      },
-      didDrop: (): boolean => {
-        return dndManager.didDrop();
-      },
-      getDragEvent: (): DragEvent | undefined => {
-        return dndManager.getDragEvent();
-      },
-      getOperation: (): DragOperationWithType | undefined => {
-        return dndManager.getOperation();
-      },
-      isCancelled: (): boolean => {
-        return dndManager.isCancelled();
-      }
+      getDropHints: (): string[] => dndManager.getDropHints(),
+      canDrag: (): boolean => dndManager.canDragSource(idRef.current),
+      isDragging: (): boolean => dndManager.isDraggingSource(idRef.current),
+      getItemType: (): Identifier | undefined => dndManager.getItemType(),
+      getItem: (): any => dndManager.getItem(),
+      getDropResult: (): any => dndManager.getDropResult(),
+      didDrop: (): boolean => dndManager.didDrop(),
+      getDragEvent: (): DragEvent | undefined => dndManager.getDragEvent(),
+      getOperation: (): DragOperationWithType | undefined => dndManager.getOperation(),
+      isCancelled: (): boolean => dndManager.isCancelled()
     };
     return sourceMonitor;
   }, [dndManager]);
@@ -300,9 +277,9 @@ export const useDndDrag = <
   return [collected.get(), refCallback];
 };
 
-export type WithDndDragProps = {
+export interface WithDndDragProps {
   dndDragRef: ConnectDragSource;
-};
+}
 
 export const withDndDrag = <
   DragObject extends DragObjectWithType = DragObjectWithType,

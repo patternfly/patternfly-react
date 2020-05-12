@@ -7,11 +7,11 @@ export interface ForceSimulationNode extends d3.SimulationNodeDatum {
   update(): void;
 }
 
-type ForceSimulationOptions = {
+interface ForceSimulationOptions {
   collideDistance: number;
   simulationSpeed: number;
   chargeStrength: number;
-};
+}
 
 class ForceSimulation {
   private forceLink: d3.ForceLink<ForceSimulationNode, d3.SimulationLinkDatum<ForceSimulationNode>>;
@@ -27,9 +27,9 @@ class ForceSimulation {
       ...{
         collideDistance: 0,
         simulationSpeed: 10,
-        chargeStrength: 0,
+        chargeStrength: 0
       },
-      ...options,
+      ...options
     };
 
     this.setupForceSimulation();
@@ -39,15 +39,11 @@ class ForceSimulation {
     this.simulation = d3.forceSimulation<ForceSimulationNode>();
     this.simulation.force(
       'collide',
-      d3
-        .forceCollide<ForceSimulationNode>()
-        .radius((d) => d.collisionRadius + this.options.collideDistance),
+      d3.forceCollide<ForceSimulationNode>().radius(d => d.collisionRadius + this.options.collideDistance)
     );
     this.simulation.force('charge', d3.forceManyBody().strength(this.options.chargeStrength));
     this.simulation.alpha(0);
-    this.forceLink = d3
-      .forceLink<ForceSimulationNode, d3.SimulationLinkDatum<ForceSimulationNode>>()
-      .id((e) => e.id);
+    this.forceLink = d3.forceLink<ForceSimulationNode, d3.SimulationLinkDatum<ForceSimulationNode>>().id(e => e.id);
 
     this.simulation.force('link', this.forceLink);
     this.simulation.on(
@@ -58,7 +54,7 @@ class ForceSimulation {
           this.simulation.tick();
         }
         this.simulation.nodes().forEach((d: ForceSimulationNode) => !this.destroyed && d.update());
-      }),
+      })
     );
   }
 
@@ -73,8 +69,8 @@ class ForceSimulation {
     distance: (
       link: d3.SimulationLinkDatum<ForceSimulationNode>,
       i: number,
-      links: d3.SimulationLinkDatum<ForceSimulationNode>[],
-    ) => number,
+      links: d3.SimulationLinkDatum<ForceSimulationNode>[]
+    ) => number
   ): void {
     this.forceLink.distance(distance);
 

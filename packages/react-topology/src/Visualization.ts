@@ -17,7 +17,7 @@ import {
   ModelKind,
   LayoutFactory,
   Layout,
-  isGraph,
+  isGraph
 } from './types';
 import defaultElementFactory from './elements/defaultElementFactory';
 import Stateful from './utils/Stateful';
@@ -57,14 +57,14 @@ export default class Visualization extends Stateful implements Controller {
     const idToElement: { [id: string]: ElementModel } = {};
 
     model.nodes &&
-      model.nodes.forEach((n) => {
+      model.nodes.forEach(n => {
         idToElement[n.id] = n;
         this.createElement<Node>(ModelKind.node, n);
         validIds.push(n.id);
       });
 
     model.edges &&
-      model.edges.forEach((e) => {
+      model.edges.forEach(e => {
         idToElement[e.id] = e;
         this.createElement<Edge>(ModelKind.edge, e);
         validIds.push(e.id);
@@ -80,7 +80,7 @@ export default class Visualization extends Stateful implements Controller {
     // process bottom up
     const processElement = (element: ElementModel): void => {
       if (element.children) {
-        element.children.forEach((id) => processElement(idToElement[id]));
+        element.children.forEach(id => processElement(idToElement[id]));
       }
       if (!processed[element.id]) {
         processed[element.id] = true;
@@ -92,7 +92,7 @@ export default class Visualization extends Stateful implements Controller {
     model.edges && model.edges.forEach(processElement);
 
     // remove all stale elements
-    _.forIn(this.elements, (element) => {
+    _.forIn(this.elements, element => {
       if (!isGraph(element) && !validIds.includes(element.getId())) {
         this.removeElement(element);
       }
@@ -145,7 +145,7 @@ export default class Visualization extends Stateful implements Controller {
       element
         .getChildren()
         .slice()
-        .forEach((child) => child.remove());
+        .forEach(child => child.remove());
       element.destroy();
       element.setController(undefined);
       delete this.elements[element.getId()];

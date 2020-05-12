@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import SVGDefs, { SVGDefsSetter } from '../SVGDefs';
+import SVGDefs from '../SVGDefs';
+import { SVGDefsSetter } from "../SVGDefsSetter";
 import SVGDefsContext, { SVGDefsContextProps } from '../SVGDefsContext';
 
 type SVGDefsSetterProps = React.ComponentProps<typeof SVGDefsSetter>;

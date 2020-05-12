@@ -15,7 +15,7 @@ import {
   Identifier,
   DragEvent,
   DropTarget,
-  DragOperationWithType,
+  DragOperationWithType
 } from './dnd-types';
 import { useDndManager } from './useDndManager';
 
@@ -28,7 +28,7 @@ export const useDndDrop = <
   Props extends {} = {}
 >(
   spec: DropTargetSpec<DragObject, DropResult, CollectedProps, Props>,
-  props?: Props,
+  props?: Props
 ): [CollectedProps, ConnectDropTarget] => {
   const specRef = React.useRef(spec);
   specRef.current = spec;
@@ -43,48 +43,24 @@ export const useDndDrop = <
 
   const monitor = React.useMemo((): DropTargetMonitor => {
     const targetMonitor: DropTargetMonitor = {
-      getHandlerId: (): string | undefined => {
-        return idRef.current;
-      },
+      getHandlerId: (): string | undefined => idRef.current,
       receiveHandlerId: (sourceId: string | undefined): void => {
         idRef.current = sourceId;
       },
-      canDrop: (): boolean => {
-        return dndManager.canDropOnTarget(idRef.current);
-      },
-      isDragging: (): boolean => {
-        return dndManager.isDragging();
-      },
-      hasDropTarget: (): boolean => {
-        return dndManager.hasDropTarget();
-      },
-      getDropHints: (): string[] => {
-        return dndManager.getDropHints();
-      },
+      canDrop: (): boolean => dndManager.canDropOnTarget(idRef.current),
+      isDragging: (): boolean => dndManager.isDragging(),
+      hasDropTarget: (): boolean => dndManager.hasDropTarget(),
+      getDropHints: (): string[] => dndManager.getDropHints(),
       isOver(options?: { shallow?: boolean }): boolean {
         return dndManager.isOverTarget(idRef.current, options);
       },
-      getItemType: (): Identifier | undefined => {
-        return dndManager.getItemType();
-      },
-      getItem: (): any => {
-        return dndManager.getItem();
-      },
-      getDropResult: (): any => {
-        return dndManager.getDropResult();
-      },
-      didDrop: (): boolean => {
-        return dndManager.didDrop();
-      },
-      getDragEvent: (): DragEvent | undefined => {
-        return dndManager.getDragEvent();
-      },
-      getOperation: (): DragOperationWithType | undefined => {
-        return dndManager.getOperation();
-      },
-      isCancelled: (): boolean => {
-        return dndManager.isCancelled();
-      },
+      getItemType: (): Identifier | undefined => dndManager.getItemType(),
+      getItem: (): any => dndManager.getItem(),
+      getDropResult: (): any => dndManager.getDropResult(),
+      didDrop: (): boolean => dndManager.didDrop(),
+      getDragEvent: (): DragEvent | undefined => dndManager.getDragEvent(),
+      getOperation: (): DragOperationWithType | undefined => dndManager.getOperation(),
+      isCancelled: (): boolean => dndManager.isCancelled()
     };
     return targetMonitor;
   }, [dndManager]);
@@ -96,13 +72,12 @@ export const useDndDrop = <
   React.useEffect(() => {
     const dropTarget: DropTarget = {
       type: spec.accept,
-      dropHint: () => {
-        return typeof specRef.current.dropHint === 'string'
+      dropHint: () =>
+        typeof specRef.current.dropHint === 'string'
           ? specRef.current.dropHint
           : typeof specRef.current.dropHint === 'function'
           ? specRef.current.dropHint(monitor.getItem(), monitor, propsRef.current)
-          : elementRef.current.getType();
-      },
+          : elementRef.current.getType(),
       hitTest: (x: number, y: number) => {
         if (specRef.current.hitTest) {
           return specRef.current.hitTest(x, y, propsRef.current);
@@ -121,12 +96,7 @@ export const useDndDrop = <
 
           // perform a fast bounds check
           const { x: bboxx, y: bboxy, width, height } = nodeRef.current.getBBox();
-          if (
-            point.x < bboxx ||
-            point.x > bboxx + width ||
-            point.y < bboxy ||
-            point.y > bboxy + height
-          ) {
+          if (point.x < bboxx || point.x > bboxx + width || point.y < bboxy || point.y > bboxy + height) {
             return false;
           }
 
@@ -136,10 +106,7 @@ export const useDndDrop = <
           }
           if (nodeRef.current instanceof SVGCircleElement) {
             const { cx, cy, r } = nodeRef.current;
-            return (
-              Math.sqrt((point.x - cx.animVal.value) ** 2 + (point.y - cy.animVal.value) ** 2) <
-              r.animVal.value
-            );
+            return Math.sqrt((point.x - cx.animVal.value) ** 2 + (point.y - cy.animVal.value) ** 2) < r.animVal.value;
           }
           if (nodeRef.current instanceof SVGEllipseElement) {
             const { cx, cy, rx, ry } = nodeRef.current;
@@ -153,7 +120,7 @@ export const useDndDrop = <
             const arr = (nodeRef.current.getAttribute('points') || '')
               .replace(/,/g, ' ')
               .split(' ')
-              .map((s) => +s);
+              .map(s => +s);
             const points: [number, number][] = [];
             for (let i = 0; i < arr.length; i += 2) {
               points.push(arr.slice(i, i + 2) as [number, number]);
@@ -168,8 +135,7 @@ export const useDndDrop = <
         return false;
       },
       hover: () => {
-        specRef.current.hover &&
-          specRef.current.hover(monitor.getItem(), monitor, propsRef.current);
+        specRef.current.hover && specRef.current.hover(monitor.getItem(), monitor, propsRef.current);
       },
       canDrop: () =>
         typeof specRef.current.canDrop === 'boolean'
@@ -182,7 +148,7 @@ export const useDndDrop = <
           ? specRef.current.drop(monitor.getItem(), monitor, propsRef.current)
           : !monitor.didDrop()
           ? elementRef.current
-          : undefined,
+          : undefined
     };
     const [targetId, unregister] = dndManager.registerTarget(dropTarget);
     monitor.receiveHandlerId(targetId);
@@ -191,20 +157,18 @@ export const useDndDrop = <
 
   const collected = React.useMemo(
     () =>
-      computed(
-        () =>
-          spec.collect ? spec.collect(monitor, propsRef.current) : (({} as any) as CollectedProps),
-        { equals: comparer.shallow },
-      ),
-    [monitor, spec],
+      computed(() => (spec.collect ? spec.collect(monitor, propsRef.current) : (({} as any) as CollectedProps)), {
+        equals: comparer.shallow
+      }),
+    [monitor, spec]
   );
 
   return [collected.get(), nodeRef as any];
 };
 
-export type WithDndDropProps = {
+export interface WithDndDropProps {
   dndDropRef: ConnectDropTarget;
-};
+}
 
 export const withDndDrop = <
   DragObject,
@@ -212,11 +176,9 @@ export const withDndDrop = <
   CollectedProps extends {} = {},
   Props extends {} = {}
 >(
-  spec: DropTargetSpec<DragObject, DropResult, CollectedProps, Props>,
-) => <P extends WithDndDropProps & CollectedProps & Props>(
-  WrappedComponent: React.ComponentType<P>,
-) => {
-  const Component: React.FC<Omit<P, keyof WithDndDropProps & CollectedProps>> = (props) => {
+  spec: DropTargetSpec<DragObject, DropResult, CollectedProps, Props>
+) => <P extends WithDndDropProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+  const Component: React.FC<Omit<P, keyof WithDndDropProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDropProps, dndDropRef] = useDndDrop(spec, props as any);
     return <WrappedComponent {...(props as any)} {...dndDropProps} dndDropRef={dndDropRef} />;

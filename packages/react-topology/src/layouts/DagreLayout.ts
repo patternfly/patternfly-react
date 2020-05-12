@@ -1,14 +1,15 @@
 import * as dagre from 'dagre';
 import * as _ from 'lodash';
 import { Edge, Graph, Layout, Node } from '../types';
-import { BaseLayout, LayoutOptions, LAYOUT_DEFAULTS } from './BaseLayout';
+import { BaseLayout, LAYOUT_DEFAULTS } from './BaseLayout';
+import { LayoutOpts } from './LayoutOpts';
 import { LayoutLink } from './LayoutLink';
 import { LayoutNode } from './LayoutNode';
 import { DagreNode } from './DagreNode';
 import { DagreGroup } from './DagreGroup';
 import { DagreLink } from './DagreLink';
 
-export type DagreLayoutOptions = LayoutOptions & dagre.GraphLabel;
+export type DagreLayoutOptions = LayoutOpts & dagre.GraphLabel;
 
 export class DagreLayout extends BaseLayout implements Layout {
   private dagreOptions: DagreLayoutOptions;

@@ -8,7 +8,7 @@ export type SvgAnchorRef = (node: SVGElement | null) => void;
 
 export const useSvgAnchor = (
   end: AnchorEnd = AnchorEnd.both,
-  type: string = '',
+  type: string = ''
 ): ((node: SVGElement | null) => void) => {
   const element = React.useContext(ElementContext);
   if (!isNode(element)) {
@@ -23,20 +23,20 @@ export const useSvgAnchor = (
         element.setAnchor(anchor, end, type);
       }
     }),
-    [element, type, end],
+    [element, type, end]
   );
 
   return setAnchorSvgRef;
 };
 
-export type WithSvgAnchorProps = {
+export interface WithSvgAnchorProps {
   svgAnchorRef: SvgAnchorRef;
-};
+}
 
-export const withSvgAnchor = (end?: AnchorEnd, type?: string) => <
-  P extends WithSvgAnchorProps
->() => (WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithSvgAnchorProps>> = (props) => {
+export const withSvgAnchor = (end?: AnchorEnd, type?: string) => <P extends WithSvgAnchorProps>() => (
+  WrappedComponent: React.ComponentType<P>
+) => {
+  const Component: React.FC<Omit<P, keyof WithSvgAnchorProps>> = props => {
     const svgAnchorRef = useSvgAnchor(end, type);
     return <WrappedComponent {...(props as any)} svgAnchorRef={svgAnchorRef} />;
   };

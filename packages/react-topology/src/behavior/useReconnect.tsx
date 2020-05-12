@@ -6,12 +6,12 @@ import {
   DragObjectWithType,
   DragOperationWithType,
   DragSourceSpec,
-  DragSpecOperationType,
+  DragSpecOperationType
 } from './dnd-types';
 
-export type WithSourceDragProps = {
+export interface WithSourceDragProps {
   sourceDragRef: ConnectDragSource;
-};
+}
 
 export const withSourceDrag = <
   DragObject extends DragObjectWithType = DragObjectWithType,
@@ -19,17 +19,9 @@ export const withSourceDrag = <
   CollectedProps extends {} = {},
   Props extends {} = {}
 >(
-  spec: DragSourceSpec<
-    DragObject,
-    DragSpecOperationType<DragOperationWithType>,
-    DropResult,
-    CollectedProps,
-    Props
-  >,
-) => <P extends WithSourceDragProps & CollectedProps & Props>(
-  WrappedComponent: React.ComponentType<P>,
-) => {
-  const Component: React.FC<Omit<P, keyof WithSourceDragProps & CollectedProps>> = (props) => {
+  spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
+) => <P extends WithSourceDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+  const Component: React.FC<Omit<P, keyof WithSourceDragProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} sourceDragRef={dndDragRef} {...dndDragProps} />;
@@ -37,9 +29,9 @@ export const withSourceDrag = <
   return observer(Component);
 };
 
-export type WithTargetDragProps = {
+export interface WithTargetDragProps {
   targetDragRef: ConnectDragSource;
-};
+}
 
 export const withTargetDrag = <
   DragObject extends DragObjectWithType = DragObjectWithType,
@@ -47,17 +39,9 @@ export const withTargetDrag = <
   CollectedProps extends {} = {},
   Props extends {} = {}
 >(
-  spec: DragSourceSpec<
-    DragObject,
-    DragSpecOperationType<DragOperationWithType>,
-    DropResult,
-    CollectedProps,
-    Props
-  >,
-) => <P extends WithSourceDragProps & CollectedProps & Props>(
-  WrappedComponent: React.ComponentType<P>,
-) => {
-  const Component: React.FC<Omit<P, keyof WithSourceDragProps & CollectedProps>> = (props) => {
+  spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
+) => <P extends WithSourceDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+  const Component: React.FC<Omit<P, keyof WithSourceDragProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} targetDragRef={dndDragRef} {...dndDragProps} />;

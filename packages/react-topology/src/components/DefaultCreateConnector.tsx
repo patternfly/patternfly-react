@@ -7,21 +7,21 @@ import ConnectorArrow from './ConnectorArrow';
 
 const cursorSize = 20;
 
-type DefaultCreateConnectorProps = {
+interface DefaultCreateConnectorProps {
   startPoint: Point;
   endPoint: Point;
   hints: string[];
   dragging: boolean;
   className?: string;
   tipContents?: React.ReactNode;
-};
+}
 
 const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
   startPoint,
   endPoint,
   hints,
   tipContents,
-  className,
+  className
 }) => {
   const classes = classNames('pf-topology-default-create-connector', className);
   return (
@@ -45,12 +45,7 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
             r={cursorSize / 2}
           />
           {tipContents ? (
-            <Tooltip
-              content={tipContents}
-              trigger="manual"
-              isVisible
-              tippyProps={{ duration: 0, delay: 0 }}
-            >
+            <Tooltip content={tipContents} trigger="manual" isVisible tippyProps={{ duration: 0, delay: 0 }}>
               <AddCircleOIcon
                 className="pf-topology-default-create-connector__create__cursor"
                 style={{ fontSize: cursorSize }}

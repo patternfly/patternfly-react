@@ -12,21 +12,21 @@ import { useDndDrag } from './useDndDrag';
 export const CREATE_CONNECTOR_OPERATION = '#createconnector#';
 export const CREATE_CONNECTOR_DROP_TYPE = '#createConnector#';
 
-export type ConnectorChoice = {
+export interface ConnectorChoice {
   label: string;
-};
+}
 
-export type CreateConnectorOptions = {
+export interface CreateConnectorOptions {
   handleAngle?: number;
   handleLength?: number;
-};
+}
 
-type ConnectorComponentProps = {
+interface ConnectorComponentProps {
   startPoint: Point;
   endPoint: Point;
   hints: string[];
   dragging: boolean;
-};
+}
 
 type CreateConnectorRenderer = React.ComponentType<ConnectorComponentProps>;
 
@@ -37,29 +37,29 @@ type CreateConnectorWidgetProps = {
     element: Node,
     target: Node | Graph,
     event: DragEvent,
-    choice?: ConnectorChoice,
+    choice?: ConnectorChoice
   ) => ConnectorChoice[] | void | undefined | null | React.ReactElement[];
   ConnectorComponent: CreateConnectorRenderer;
   contextMenuClass?: string;
 } & CreateConnectorOptions;
 
-type CollectProps = {
+interface CollectProps {
   event?: DragEvent;
   dragging: boolean;
   hints?: string[] | undefined;
-};
+}
 
-type PromptData = {
+interface PromptData {
   element: Node;
   target: Node | Graph;
   event: DragEvent;
   choices: ConnectorChoice[];
-};
+}
 
 const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
 const DEFAULT_HANDLE_LENGTH = 32;
 
-const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((props) => {
+const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(props => {
   const {
     element,
     onKeepAlive,
@@ -67,7 +67,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
     ConnectorComponent,
     handleAngle = DEFAULT_HANDLE_ANGLE,
     handleLength = DEFAULT_HANDLE_LENGTH,
-    contextMenuClass,
+    contextMenuClass
   } = props;
   const [prompt, setPrompt] = React.useState<PromptData | null>(null);
   const [active, setActive] = React.useState(false);
@@ -84,11 +84,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
       drag: (event: DragEvent, monitor: DragSourceMonitor, p: any) => {
         p.element.raise();
       },
-      end: (
-        dropResult: GraphElement,
-        monitor: DragSourceMonitor,
-        dragProps: any,
-      ) => {
+      end: (dropResult: GraphElement, monitor: DragSourceMonitor, dragProps: any) => {
         const event = monitor.getDragEvent();
         if ((isNode(dropResult) || isGraph(dropResult)) && event) {
           const choices = dragProps.onCreate(dragProps.element, dropResult, event);
@@ -100,11 +96,11 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
         setActive(false);
         dragProps.onKeepAlive(false);
       },
-      collect: (monitor) => ({
+      collect: monitor => ({
         dragging: !!monitor.getItem(),
         event: monitor.isDragging() ? monitor.getDragEvent() : undefined,
-        hints: monitor.getDropHints(),
-      }),
+        hints: monitor.getDropHints()
+      })
     };
     return dragSourceSpec;
   }, [setActive]);
@@ -132,12 +128,12 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
     const bounds = element.getBounds();
     const referencePoint = new Point(
       bounds.right(),
-      Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2,
+      Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2
     );
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(referencePoint);
     endPoint = new Point(
       Math.cos(handleAngle) * handleLength + startPoint.x,
-      Math.sin(handleAngle) * handleLength + startPoint.y,
+      Math.sin(handleAngle) * handleLength + startPoint.y
     );
   }
 
@@ -161,16 +157,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
             hints={hintsRef.current || []}
           />
           {!active && (
-            <path
-              d={hullPath(
-                [
-                  [startPoint.x, startPoint.y],
-                  [endPoint.x, endPoint.y],
-                ],
-                7,
-              )}
-              fillOpacity="0"
-            />
+            <path d={hullPath([[startPoint.x, startPoint.y], [endPoint.x, endPoint.y]], 7)} fillOpacity="0" />
           )}
         </g>
       </Layer>
@@ -184,47 +171,43 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer((pr
             onKeepAlive(false);
           }}
         >
-          {React.isValidElement(prompt.choices?.[0])
-            ? prompt.choices
-            : prompt.choices.map((c: ConnectorChoice) => (
-                <ContextMenuItem
-                  key={c.label}
-                  onClick={() => {
-                    onCreate(prompt.element, prompt.target, prompt.event, c);
-                  }}
-                >
-                  {c.label}
-                </ContextMenuItem>
-              ))}
+          {prompt.choices.map((c: ConnectorChoice) => (
+            <ContextMenuItem
+              key={c.label}
+              onClick={() => {
+                onCreate(prompt.element, prompt.target, prompt.event, c);
+              }}
+            >
+              {c.label}
+            </ContextMenuItem>
+          ))}
         </ContextMenu>
       )}
     </>
   );
 });
 
-type ElementProps = {
+interface ElementProps {
   element: Node;
-};
+}
 
-export type WithCreateConnectorProps = {
+export interface WithCreateConnectorProps {
   onShowCreateConnector: () => void;
   onHideCreateConnector: () => void;
-};
+}
 
 export const withCreateConnector = <P extends WithCreateConnectorProps & ElementProps>(
   onCreate: React.ComponentProps<typeof CreateConnectorWidget>['onCreate'],
   ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
   contextMenuClass?: string,
-  options?: CreateConnectorOptions,
+  options?: CreateConnectorOptions
 ) => (WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = (props) => {
+  const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const [alive, setKeepAlive] = React.useState(false);
     const onShowCreateConnector = React.useCallback(() => setShow(true), []);
     const onHideCreateConnector = React.useCallback(() => setShow(false), []);
-    const onKeepAlive = React.useCallback((isAlive: boolean) => setKeepAlive(isAlive), [
-      setKeepAlive,
-    ]);
+    const onKeepAlive = React.useCallback((isAlive: boolean) => setKeepAlive(isAlive), [setKeepAlive]);
     return (
       <>
         <WrappedComponent

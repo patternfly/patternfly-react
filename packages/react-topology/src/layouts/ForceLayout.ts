@@ -1,11 +1,12 @@
 import { Graph, Layout } from '../types';
 import { getGroupPadding } from '../utils/element-utils';
 import { ForceSimulationNode } from './ForceSimulation';
-import { BaseLayout, LayoutOptions } from '.';
+import { BaseLayout } from '.';
 import { LayoutLink } from './LayoutLink';
+import { LayoutOpts } from './LayoutOpts';
 
 export default class ForceLayout extends BaseLayout implements Layout {
-  constructor(graph: Graph, options?: Partial<LayoutOptions>) {
+  constructor(graph: Graph, options?: Partial<LayoutOpts>) {
     super(graph, {
       ...options,
       layoutOnDrag: true

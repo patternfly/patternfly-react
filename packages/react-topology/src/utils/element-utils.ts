@@ -6,7 +6,7 @@ const groupNodeElements = (nodes: GraphElement[]): Node[] => {
     return [];
   }
   const groupNodes: Node[] = [];
-  _.forEach(nodes, (nextNode) => {
+  _.forEach(nodes, nextNode => {
     if (isNode(nextNode) && nextNode.isGroup() && !nextNode.isCollapsed()) {
       groupNodes.push(nextNode);
       groupNodes.push(...groupNodeElements(nextNode.getChildren()));
@@ -89,9 +89,7 @@ const getElementPadding = (element: GraphElement): number => {
 
   if (Array.isArray(stylePadding)) {
     // For a padding that is not consistent on all sides, use the max padding
-    return stylePadding.reduce((val, current) => {
-      return Math.max(val, current);
-    }, 0);
+    return stylePadding.reduce((val, current) => Math.max(val, current), 0);
   }
 
   return stylePadding as number;
@@ -117,5 +115,5 @@ export {
   getTopCollapsedParent,
   getClosestVisibleParent,
   getElementPadding,
-  getGroupPadding,
+  getGroupPadding
 };

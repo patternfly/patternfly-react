@@ -9,7 +9,7 @@ import {
   WithDndDragProps,
   WithDndDropProps,
   useCombineRefs,
-  Point,
+  Point
 } from '@patternfly/react-topology';
 
 type NodePolygonProps = {
@@ -31,7 +31,7 @@ const NodePolygon: React.FC<NodePolygonProps> = ({
   droppable,
   hover,
   canDrop,
-  dndDropRef,
+  dndDropRef
 }) => {
   const anchorRef = useSvgAnchor();
   const refs = useCombineRefs<SVGPolygonElement>(dragNodeRef, dndDragRef, dndDropRef, anchorRef);
@@ -42,15 +42,13 @@ const NodePolygon: React.FC<NodePolygonProps> = ({
     new Point(width - width / 8, height),
     new Point(0, height / 3),
     new Point(width, height / 3),
-    new Point(width / 8, height),
+    new Point(width / 8, height)
   ];
 
   const p: string = _.reduce(
     points,
-    (result: string, nextPoint: Point) => {
-      return `${result}${nextPoint.x},${nextPoint.y} `;
-    },
-    '',
+    (result: string, nextPoint: Point) => `${result}${nextPoint.x},${nextPoint.y} `,
+    ''
   );
 
   return (
@@ -58,15 +56,7 @@ const NodePolygon: React.FC<NodePolygonProps> = ({
       ref={refs}
       onClick={onSelect}
       points={p}
-      fill={
-        canDrop && hover
-          ? 'lightgreen'
-          : canDrop && droppable
-          ? 'lightblue'
-          : selected
-          ? 'blue'
-          : 'grey'
-      }
+      fill={canDrop && hover ? 'lightgreen' : canDrop && droppable ? 'lightblue' : selected ? 'blue' : 'grey'}
       strokeWidth={1}
       stroke="#333333"
     />

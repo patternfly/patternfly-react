@@ -8,12 +8,12 @@ if (!global.SVGElement) {
   global.SVGElement = global.Element;
 }
 
-type SVGArrowMarkerProps = {
+interface SVGArrowMarkerProps {
   id: string;
   nodeSize: number;
   markerSize: number;
   className?: string;
-};
+}
 
 const SVGArrowMarker: React.FC<SVGArrowMarkerProps> = ({ id, nodeSize, markerSize, className }) => (
   <SVGDefs id={id}>

@@ -12,31 +12,31 @@ export interface Layout {
   destroy(): void;
 }
 
-export type Model = {
+export interface Model {
   graph?: GraphModel;
   nodes?: NodeModel[];
   edges?: EdgeModel[];
-};
+}
 
 export enum AnchorEnd {
   target,
   source,
-  both,
+  both
 }
 
-export type NodeStyle = {
+export interface NodeStyle {
   padding?: Padding;
-};
+}
 
 export enum NodeShape {
   circle,
-  rect,
+  rect
 }
 
 export enum ModelKind {
   graph = 'graph',
   node = 'node',
-  edge = 'edge',
+  edge = 'edge'
 }
 
 export interface ElementModel {
@@ -173,21 +173,17 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   panIntoView(element: Node, options?: { offset?: number; minimumVisible?: number }): void;
 }
 
-export const isGraph = (element: GraphElement): element is Graph => {
-  return element && element.getKind() === ModelKind.graph;
-};
+export const isGraph = (element: GraphElement): element is Graph => element && element.getKind() === ModelKind.graph;
 
-export const isNode = (element: GraphElement): element is Node => {
-  return element && element.getKind() === ModelKind.node;
-};
+export const isNode = (element: GraphElement): element is Node => element && element.getKind() === ModelKind.node;
 
-export const isEdge = (element: GraphElement): element is Edge => {
-  return element && element.getKind() === ModelKind.edge;
-};
+export const isEdge = (element: GraphElement): element is Edge => element && element.getKind() === ModelKind.edge;
 
 export type EventListener<Args extends any[] = any[]> = (...args: Args) => void;
 
-export type State = { [key: string]: any };
+export interface State {
+  [key: string]: any;
+}
 
 export interface WithState {
   getState<S extends {} = {}>(): S;
@@ -196,10 +192,7 @@ export interface WithState {
 
 export type LayoutFactory = (type: string, graph: Graph) => Layout | undefined;
 
-export type ComponentFactory = (
-  kind: ModelKind,
-  type: string,
-) => ComponentType<{ element: GraphElement }> | undefined;
+export type ComponentFactory = (kind: ModelKind, type: string) => ComponentType<{ element: GraphElement }> | undefined;
 
 export type ElementFactory = (kind: ModelKind, type: string) => GraphElement | undefined;
 
@@ -224,7 +217,9 @@ export interface Controller extends WithState {
   getElements(): GraphElement[];
 }
 
-type ElementEvent = { target: GraphElement };
+interface ElementEvent {
+  target: GraphElement;
+}
 export type ElementChildEventListener = EventListener<[ElementEvent & { child: GraphElement }]>;
 
 export type NodeCollapseChangeEventListener = EventListener<[{ node: Node }]>;

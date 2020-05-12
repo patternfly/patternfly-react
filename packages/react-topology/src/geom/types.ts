@@ -10,17 +10,17 @@ export type Padding =
   | [number, number, number]
   | [number, number, number, number];
 
-export interface IPoint {
+export interface PointIface {
   x: number;
   y: number;
 }
 
-export interface IDimensions {
+export interface DimensionsIface {
   width: number;
   height: number;
 }
 
-export interface IRect {
+export interface RectIface {
   x: number;
   y: number;
   width: number;

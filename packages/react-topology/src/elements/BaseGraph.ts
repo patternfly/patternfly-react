@@ -50,7 +50,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   getBounds(): Rect {
     const {
       position: { x, y },
-      dimensions: { width, height },
+      dimensions: { width, height }
     } = this;
     return new Rect(x, y, width, height);
   }
@@ -140,7 +140,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
   fit(padding = 0): void {
     let rect: Rect | undefined;
-    this.getNodes().forEach((c) => {
+    this.getNodes().forEach(c => {
       const b = c.getBounds();
       if (!rect) {
         rect = b.clone();
@@ -167,12 +167,8 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
     // compute the scale
     const scale = Math.min(
-      1 /
-        Math.max(
-          width / Math.max(1, fullWidth - padding),
-          height / Math.max(1, fullHeight - padding),
-        ),
-      maxScale,
+      1 / Math.max(width / Math.max(1, fullWidth - padding), height / Math.max(1, fullHeight - padding)),
+      maxScale
     );
 
     // translate to center
@@ -186,7 +182,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
   panIntoView = (
     nodeElement: Node,
-    { offset = 0, minimumVisible = 0 }: { offset?: number; minimumVisible?: number } = {},
+    { offset = 0, minimumVisible = 0 }: { offset?: number; minimumVisible?: number } = {}
   ): void => {
     if (!nodeElement) {
       return;
@@ -204,7 +200,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
     const newLocation = {
       x: viewX,
-      y: viewY,
+      y: viewY
     };
 
     if (x + width - minVisibleSize < 0) {

@@ -11,7 +11,7 @@ import {
   NodeShape,
   Edge,
   GraphElement,
-  NODE_COLLAPSE_CHANGE_EVENT,
+  NODE_COLLAPSE_CHANGE_EVENT
 } from '../types';
 import CenterAnchor from '../anchors/CenterAnchor';
 import Rect from '../geom/Rect';
@@ -20,14 +20,13 @@ import BaseElement from './BaseElement';
 import Dimensions from '../geom/Dimensions';
 import Point from '../geom/Point';
 
-const createAnchorKey = (end: AnchorEnd = AnchorEnd.both, type: string = ''): string =>
-  `${end}:${type}`;
+const createAnchorKey = (end: AnchorEnd = AnchorEnd.both, type: string = ''): string => `${end}:${type}`;
 
 export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends BaseElement<E, D>
   implements Node<E, D> {
   @observable.shallow
   private anchors: { [type: string]: Anchor } = {
-    [createAnchorKey()]: new CenterAnchor(this),
+    [createAnchorKey()]: new CenterAnchor(this)
   };
 
   @observable.ref
@@ -58,13 +57,13 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
   private get groupBounds(): Rect {
     const children = this.getChildren()
       .filter(isNode)
-      .filter((n) => n.isVisible());
+      .filter(n => n.isVisible());
     if (!children.length) {
       return this.getInternalBounds();
     }
 
     let rect: Rect | undefined;
-    children.forEach((c) => {
+    children.forEach(c => {
       if (isNode(c)) {
         const { padding } = c.getStyle<NodeStyle>();
         const b = c.getBounds();
@@ -93,14 +92,14 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
   private get sourceEdges(): Edge[] {
     return this.getGraph()
       .getEdges()
-      .filter((e) => e.getSource() === this);
+      .filter(e => e.getSource() === this);
   }
 
   @computed
   private get targetEdges(): Edge[] {
     return this.getGraph()
       .getEdges()
-      .filter((e) => e.getTarget() === this);
+      .filter(e => e.getTarget() === this);
   }
 
   getChildren(): GraphElement[] {

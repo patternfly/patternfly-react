@@ -157,7 +157,7 @@ export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends 
       this.target = node;
     }
     if ('bendpoints' in model) {
-      this.bendpoints = model.bendpoints ? model.bendpoints.map((b) => new Point(b[0], b[1])) : [];
+      this.bendpoints = model.bendpoints ? model.bendpoints.map(b => new Point(b[0], b[1])) : [];
     }
   }
 }

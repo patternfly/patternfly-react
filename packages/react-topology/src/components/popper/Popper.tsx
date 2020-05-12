@@ -4,13 +4,18 @@ import useCombineRefs from '../../utils/useCombineRefs';
 import Portal from './Portal';
 
 // alignment with PopperJS reference API
-type PopperJSReference = {
+interface PopperJSReference {
   getBoundingClientRect: PopperJS['reference']['getBoundingClientRect'];
   clientWidth: number;
   clientHeight: number;
-};
+}
 
-type ClientRectProp = { x: number; y: number; width?: number; height?: number };
+interface ClientRectProp {
+  x: number;
+  y: number;
+  width?: number;
+  height?: number;
+}
 
 type Reference = Element | PopperJSReference | ClientRectProp;
 
@@ -24,7 +29,7 @@ class VirtualReference implements PopperJSReference {
       left: x,
       right: x + width,
       top: y,
-      width,
+      width
     };
   }
 
@@ -44,7 +49,7 @@ class VirtualReference implements PopperJSReference {
 const getReference = (reference: Reference): PopperJSReference =>
   'getBoundingClientRect' in reference ? reference : new VirtualReference(reference);
 
-type PopperProps = {
+interface PopperProps {
   closeOnEsc?: boolean;
   closeOnOutsideClick?: boolean;
   container?: React.ComponentProps<typeof Portal>['container'];
@@ -69,7 +74,7 @@ type PopperProps = {
   reference: Reference | (() => Reference);
   zIndex?: number;
   returnFocus?: boolean;
-};
+}
 
 const DEFAULT_POPPER_OPTIONS: PopperOptions = {};
 
@@ -86,7 +91,7 @@ const Popper: React.FC<PopperProps> = ({
   onRequestClose,
   popperRef: popperRefIn,
   zIndex = 9999,
-  returnFocus,
+  returnFocus
 }) => {
   const controlled = typeof open === 'boolean';
   const openProp = controlled ? open || false : true;
@@ -111,7 +116,7 @@ const Popper: React.FC<PopperProps> = ({
       }
       setOpenState(newOpen);
     },
-    [returnFocus, isOpen],
+    [returnFocus, isOpen]
   );
 
   React.useEffect(() => {
@@ -124,7 +129,7 @@ const Popper: React.FC<PopperProps> = ({
         controlled ? onRequestCloseRef.current && onRequestCloseRef.current() : setOpen(false);
       }
     },
-    [controlled, setOpen],
+    [controlled, setOpen]
   );
 
   const onClickOutside = React.useCallback(
@@ -133,7 +138,7 @@ const Popper: React.FC<PopperProps> = ({
         controlled ? onRequestCloseRef.current && onRequestCloseRef.current(e) : setOpen(false);
       }
     },
-    [controlled, setOpen],
+    [controlled, setOpen]
   );
 
   const destroy = React.useCallback(() => {
@@ -154,20 +159,16 @@ const Popper: React.FC<PopperProps> = ({
     destroy();
 
     popperRefs(
-      new PopperJS(
-        getReference(typeof reference === 'function' ? reference() : reference),
-        nodeRef.current,
-        {
-          placement,
-          ...popperOptions,
-          modifiers: {
-            preventOverflow: {
-              boundariesElement: 'window',
-            },
-            ...popperOptions.modifiers,
+      new PopperJS(getReference(typeof reference === 'function' ? reference() : reference), nodeRef.current, {
+        placement,
+        ...popperOptions,
+        modifiers: {
+          preventOverflow: {
+            boundariesElement: 'window'
           },
-        },
-      ),
+          ...popperOptions.modifiers
+        }
+      })
     );
 
     // init document listenerrs
@@ -188,26 +189,27 @@ const Popper: React.FC<PopperProps> = ({
     closeOnEsc,
     closeOnOutsideClick,
     onKeyDown,
-    onClickOutside,
+    onClickOutside
   ]);
 
   const nodeRefCallback = React.useCallback(
-    (node) => {
+    node => {
       nodeRef.current = node;
       initialize();
     },
-    [initialize],
+    [initialize]
   );
 
   React.useEffect(() => {
     initialize();
   }, [initialize]);
 
-  React.useEffect(() => {
-    return () => {
+  React.useEffect(
+    () => () => {
       destroy();
-    };
-  }, [destroy]);
+    },
+    [destroy]
+  );
 
   React.useEffect(() => {
     if (!isOpen) {

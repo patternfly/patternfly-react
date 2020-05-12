@@ -7,7 +7,7 @@ import {
   WithSelectionProps,
   WithDndDragProps,
   WithDndDropProps,
-  useCombineRefs,
+  useCombineRefs
 } from '@patternfly/react-topology';
 
 type NodePathProps = {
@@ -29,7 +29,7 @@ const NodePath: React.FC<NodePathProps> = ({
   droppable,
   hover,
   canDrop,
-  dndDropRef,
+  dndDropRef
 }) => {
   const anchorRef = useSvgAnchor();
   const refs = useCombineRefs<SVGPathElement>(dragNodeRef, dndDragRef, dndDropRef, anchorRef);
@@ -41,15 +41,7 @@ const NodePath: React.FC<NodePathProps> = ({
       onClick={onSelect}
       d={`M0 0 L${width / 2} ${height / 4} L${width} 0 L${width} ${height} L${width / 2} ${height -
         height / 4} L0 ${height} Z`}
-      fill={
-        canDrop && hover
-          ? 'lightgreen'
-          : canDrop && droppable
-          ? 'lightblue'
-          : selected
-          ? 'blue'
-          : 'grey'
-      }
+      fill={canDrop && hover ? 'lightgreen' : canDrop && droppable ? 'lightblue' : selected ? 'blue' : 'grey'}
       strokeWidth={1}
       stroke="#333333"
     />
