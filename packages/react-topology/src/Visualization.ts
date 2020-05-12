@@ -22,7 +22,7 @@ import {
 import defaultElementFactory from './elements/defaultElementFactory';
 import Stateful from './utils/Stateful';
 
-export default class Visualization extends Stateful implements Controller {
+export class Visualization extends Stateful implements Controller {
   @observable.shallow
   elements: { [id: string]: GraphElement } = {};
 

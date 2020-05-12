@@ -7,7 +7,7 @@ import { observer } from 'mobx-react';
 import ReactMeasure from 'react-measure';
 import ControllerContext from '../utils/ControllerContext';
 import { State } from '../types';
-import Visualization from '../Visualization';
+import { Visualization } from '../Visualization';
 import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
 import Dimensions from '../geom/Dimensions';

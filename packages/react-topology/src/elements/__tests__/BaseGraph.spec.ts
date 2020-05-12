@@ -4,7 +4,7 @@ import { ModelKind, Graph, Layout, GraphModel } from '../../types';
 import BaseGraph from '../BaseGraph';
 import BaseEdge from '../BaseEdge';
 import BaseNode from '../BaseNode';
-import Visualization from '../../Visualization';
+import { Visualization } from '../../Visualization';
 
 class TestLayout implements Layout {
   layout = jest.fn();
@@ -77,7 +77,7 @@ describe('BaseGraph', () => {
 
     const controller = new Visualization();
     controller.setGraph(graph);
-    controller.registerLayoutFactory((type) => {
+    controller.registerLayoutFactory((type: any) => {
       switch (type) {
         case LAYOUT1_TYPE:
           return layout1;
@@ -250,14 +250,14 @@ describe('BaseGraph', () => {
     const layoutType = 'test';
     const controller = new Visualization();
     controller.setGraph(graph);
-    controller.registerLayoutFactory((type) => {
+    controller.registerLayoutFactory((type: any) => {
       return type === layoutType ? new TestLayout() : undefined;
     });
 
     const model: GraphModel = {
       id: 'g',
       type: ModelKind.graph,
-      layout: layoutType,
+      layout: layoutType
     };
     graph.setModel(model);
     expect(graph.getLayout()).toBe(model.layout);
@@ -267,7 +267,7 @@ describe('BaseGraph', () => {
     const model: GraphModel = {
       id: 'g',
       type: ModelKind.graph,
-      scale: 5,
+      scale: 5
     };
     graph.setModel(model);
     expect(graph.getScale()).toBe(model.scale);
@@ -277,7 +277,7 @@ describe('BaseGraph', () => {
     const model1: GraphModel = {
       id: 'g',
       type: ModelKind.graph,
-      x: 10,
+      x: 10
     };
     graph.setModel(model1);
     expect(graph.getBounds().x).toBe(model1.x);
@@ -285,7 +285,7 @@ describe('BaseGraph', () => {
     const model2: GraphModel = {
       id: 'g',
       type: ModelKind.graph,
-      y: 20,
+      y: 20
     };
     graph.setModel(model2);
     expect(graph.getBounds().x).toBe(model1.x);
@@ -295,7 +295,7 @@ describe('BaseGraph', () => {
       id: 'g',
       type: ModelKind.graph,
       x: 2,
-      y: 3,
+      y: 3
     };
     graph.setModel(model3);
     expect(graph.getBounds().x).toBe(model3.x);
