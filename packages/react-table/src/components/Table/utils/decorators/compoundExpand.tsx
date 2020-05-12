@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../Table';
+import { TableText } from '../../TableText';
 
 export const compoundExpand: ITransform = (
   value: IFormatterValueType,
@@ -37,7 +38,7 @@ export const compoundExpand: ITransform = (
         aria-expanded={props.isOpen}
         aria-controls={props.ariaControls}
       >
-        {title}
+        <TableText>{title}</TableText>
       </button>
     )
   };

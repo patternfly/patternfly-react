@@ -311,11 +311,6 @@ import {
   sortable,
   SortByDirection,
   wrappable,
-  truncate,
-  nowrap,
-  breakWord,
-  fitContent,
-  cellWidth
 } from '@patternfly/react-table';
 
 class SortableWrappingHeaders extends React.Component {
@@ -328,28 +323,23 @@ class SortableWrappingHeaders extends React.Component {
           transforms: [sortable, wrappable]
         },
         {
-          title: 'This is a really long table header.',
-          transforms: [sortable, cellWidth(40)],
-          cellTransforms: [truncate]
+          title: 'This is a really long table header that goes on for a long time 2.',
+          transforms: [sortable, wrappable]
         },
         {
-          title: 'This is a long table header.',
-          transforms: [sortable, breakWord, cellWidth(20)]
+          title: 'This is a really long table header that goes on for a long time 3.',
+          transforms: [sortable,wrappable]
         },
         {
-          title: 'This is another header.',
-          transforms: [sortable, fitContent]
+          title: 'This is a really long table header that goes on for a long time 4.',
+          transforms: [sortable, wrappable]
         },
         {
-          title: 'This is the fifth header.',
-          transforms: [sortable, nowrap]
+          title: 'This is a really long table header that goes on for a long time 5.',
+          transforms: [sortable, wrappable]
         },
       ],
-      rows: [
-        ['one', 'two', 'a', 'four', 'five'], 
-        ['a', 'a cell with a particularly large amount of information', 'k', 'four', 'five'], 
-        ['p', 'two', 'b', 'four', 'five']
-      ],
+      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
