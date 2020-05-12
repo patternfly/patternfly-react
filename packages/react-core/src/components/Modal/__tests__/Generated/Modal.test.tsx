@@ -15,10 +15,10 @@ it('Modal should match snapshot (auto-generated)', () => {
       isOpen={false}
       header={<div>ReactNode</div>}
       title={"''"}
-      aria-label={"''"}
-      showClose={true}
-      aria-describedby={"''"}
       aria-labelledby={"''"}
+      aria-label={"''"}
+      aria-describedby={"''"}
+      showClose={true}
       footer={<div>ReactNode</div>}
       actions={[]}
       onClose={() => undefined as any}
@@ -28,6 +28,7 @@ it('Modal should match snapshot (auto-generated)', () => {
       description={<div>ReactNode</div>}
       variant={'default'}
       hasNoBodyWrapper={false}
+      id={'string'}
     />
   );
   expect(view).toMatchSnapshot();

@@ -14,9 +14,9 @@ it('ModalBox should match snapshot (auto-generated)', () => {
       className={"''"}
       variant={'default'}
       title={"''"}
+      aria-labelledby={'string'}
       aria-label={"''"}
       aria-describedby={'string'}
-      aria-labelledby={'string'}
     />
   );
   expect(view).toMatchSnapshot();

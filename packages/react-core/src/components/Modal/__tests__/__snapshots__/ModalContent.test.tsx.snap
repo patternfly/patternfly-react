@@ -19,7 +19,6 @@ exports[`Modal Content Test description 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -67,7 +66,6 @@ exports[`Modal Content Test isOpen 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -111,7 +109,6 @@ exports[`Modal Content Test only body 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -155,7 +152,6 @@ exports[`Modal Content Test with footer 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -202,7 +198,6 @@ exports[`Modal Content Test with onclose 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -250,7 +245,6 @@ exports[`Modal Content test without footer 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -294,7 +288,6 @@ exports[`Modal Test with custom footer 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="Test Modal Custom Footer"
       variant="default"
     >
       <ModalBoxCloseButton
@@ -346,7 +339,6 @@ exports[`Modal Test with custom header 1`] = `
       className=""
       id=""
       style={Object {}}
-      title="test-custom-header-modal"
       variant="default"
     >
       <ModalBoxCloseButton

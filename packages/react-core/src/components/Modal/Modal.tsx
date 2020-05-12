@@ -126,7 +126,6 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledby,
       hasNoBodyWrapper,
-      'aria-describedby': ariaDescribedby,
       header
     } = this.props;
     const target: HTMLElement = this.getElement(appendTo);
@@ -177,8 +176,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       appendTo,
       'aria-labelledby': ariaLabelledby,
       'aria-label': ariaLabel,

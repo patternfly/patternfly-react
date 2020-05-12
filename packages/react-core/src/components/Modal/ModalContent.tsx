@@ -118,7 +118,6 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       style={boxStyle}
       className={className}
       variant={variant}
-      title={title}
       aria-label={ariaLabel}
       aria-labelledby={`${boxId} ${ariaLabelledby || labelId}`}
       aria-describedby={ariaDescribedby || descriptorId}

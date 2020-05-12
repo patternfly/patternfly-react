@@ -7,7 +7,7 @@ export interface ModalBoxBodyProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the ModalBoxBody */
   className?: string;
-  /** An id added to the ModalBoxBody */
+  /** An auto-generated id added to the ModalBoxBody */
   descriptorId?: string;
 }
 

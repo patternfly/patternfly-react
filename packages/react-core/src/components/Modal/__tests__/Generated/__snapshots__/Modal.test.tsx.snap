@@ -9,7 +9,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     aria-describedby="''"
     aria-label="''"
     aria-labelledby="''"
-    boxId="pf-modal-part-0"
+    boxId="string"
     className="''"
     description={
       <div>
@@ -29,6 +29,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
         ReactNode
       </div>
     }
+    id="string"
     isOpen={false}
     labelId="pf-modal-part-1"
     onClose={[Function]}

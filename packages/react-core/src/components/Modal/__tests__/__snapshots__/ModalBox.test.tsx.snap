@@ -8,6 +8,7 @@ exports[`ModalBox Test 1`] = `
   className="pf-c-modal-box"
   id="boxId"
   role="dialog"
+  title="Test Modal Box"
 >
   This is a ModalBox
 </div>
@@ -22,6 +23,7 @@ exports[`ModalBox Test isLarge 1`] = `
   id="boxId"
   isLarge={true}
   role="dialog"
+  title="Test Modal Box"
 >
   This is a ModalBox
 </div>
@@ -36,6 +38,7 @@ exports[`ModalBox Test isSmall 1`] = `
   id="boxId"
   isSmall={true}
   role="dialog"
+  title="Test Modal Box"
 >
   This is a ModalBox
 </div>
