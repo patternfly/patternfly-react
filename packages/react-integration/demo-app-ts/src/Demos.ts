@@ -627,6 +627,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TooltipDemo
   },
   {
+    id: 'topology-demo',
+    name: 'Topology Demo',
+    componentType: Examples.TopologyDemo
+  },
+  {
     id: 'wizard-demo',
     name: 'Wizard Demo',
     componentType: Examples.WizardDemo

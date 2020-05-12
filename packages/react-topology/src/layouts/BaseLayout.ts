@@ -1,0 +1,447 @@
+import * as _ from 'lodash';
+import { action } from 'mobx';
+import {
+  Edge,
+  Graph,
+  Layout,
+  Node,
+  ADD_CHILD_EVENT,
+  REMOVE_CHILD_EVENT,
+  GRAPH_LAYOUT_END_EVENT,
+  ElementChildEventListener,
+  NODE_COLLAPSE_CHANGE_EVENT,
+  NodeCollapseChangeEventListener
+} from '../types';
+import { leafNodeElements, groupNodeElements, getClosestVisibleParent } from '../utils/element-utils';
+import {
+  DRAG_MOVE_OPERATION,
+  DRAG_NODE_END_EVENT,
+  DRAG_NODE_START_EVENT,
+  DragEvent,
+  DragNodeEventListener
+} from '../behavior';
+import { BaseEdge } from '../elements';
+import { ForceSimulation } from './ForceSimulation';
+import { LayoutNode } from './LayoutNode';
+import { LayoutGroup } from './LayoutGroup';
+import { LayoutLink } from './LayoutLink';
+import { LayoutOpts } from './LayoutOpts';
+
+const LAYOUT_DEFAULTS: LayoutOpts = {
+  linkDistance: 60,
+  nodeDistance: 35,
+  groupDistance: 35,
+  collideDistance: 0,
+  simulationSpeed: 10,
+  chargeStrength: 0,
+  allowDrag: true,
+  layoutOnDrag: true
+};
+
+class BaseLayout implements Layout {
+  private graph: Graph;
+
+  protected forceSimulation: ForceSimulation;
+
+  protected options: LayoutOpts;
+
+  protected scheduleHandle?: number;
+
+  private scheduleRestart = false;
+
+  protected nodes: LayoutNode[] = [];
+
+  protected edges: LayoutLink[] = [];
+
+  protected groups: LayoutGroup[] = [];
+
+  protected nodesMap: { [id: string]: LayoutNode } = {};
+
+  constructor(graph: Graph, options?: Partial<LayoutOpts>) {
+    this.graph = graph;
+    this.options = {
+      ...LAYOUT_DEFAULTS,
+      ...options
+    };
+
+    if (this.options.allowDrag) {
+      graph
+        .getController()
+        .addEventListener<DragNodeEventListener>(DRAG_NODE_START_EVENT, this.handleDragStart)
+        .addEventListener<DragNodeEventListener>(DRAG_NODE_END_EVENT, this.handleDragEnd);
+    }
+
+    this.forceSimulation = new ForceSimulation(this.options);
+  }
+
+  destroy(): void {
+    if (this.options.allowDrag) {
+      this.graph
+        .getController()
+        .removeEventListener(DRAG_NODE_START_EVENT, this.handleDragStart)
+        .removeEventListener(DRAG_NODE_END_EVENT, this.handleDragEnd);
+    }
+
+    this.stopListening();
+
+    this.forceSimulation.destroy();
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected initDrag(element: Node, event: DragEvent, operation: string): void {}
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected endDrag(element: Node, event: DragEvent, operation: string): void {}
+
+  handleDragStart = (element: Node, event: DragEvent, operation: string) => {
+    this.initDrag(element, event, operation);
+
+    if (!this.options.layoutOnDrag) {
+      return;
+    }
+
+    if (operation !== DRAG_MOVE_OPERATION) {
+      this.forceSimulation.stopSimulation();
+      return;
+    }
+
+    const id = element.getId();
+    let found = false;
+    const dragNode: LayoutNode | undefined = this.nodes.find((node: LayoutNode) => node.id === id);
+    if (dragNode) {
+      dragNode.isFixed = true;
+      found = true;
+    }
+    if (!found) {
+      const dragGroup: LayoutGroup | undefined = this.groups.find((group: LayoutGroup) => group.id === id);
+      if (dragGroup) {
+        const groupNodes = dragGroup.leaves;
+        groupNodes.forEach((node: LayoutNode) => {
+          node.isFixed = true;
+        });
+        found = true;
+      }
+    }
+
+    if (found) {
+      this.forceSimulation.alphaTarget(0.1);
+      this.forceSimulation.restart();
+    }
+  };
+
+  handleDragEnd = (element: Node, event: DragEvent, operation: string) => {
+    this.endDrag(element, event, operation);
+
+    if (!this.options.layoutOnDrag) {
+      return;
+    }
+
+    if (operation !== DRAG_MOVE_OPERATION) {
+      this.forceSimulation.restart();
+      return;
+    }
+
+    const id = element.getId();
+    const dragNode: LayoutNode | undefined = this.nodes.find((node: LayoutNode) => node.id === id);
+    if (dragNode) {
+      dragNode.isFixed = false;
+    } else {
+      const dragGroup: LayoutGroup | undefined = this.groups.find((group: LayoutGroup) => group.id === id);
+      if (dragGroup) {
+        const groupNodes = dragGroup.leaves;
+        groupNodes.forEach((node: LayoutNode) => {
+          node.isFixed = false;
+        });
+      }
+    }
+    this.forceSimulation.alphaTarget(0);
+  };
+
+  layout = () => {
+    this.stopListening();
+
+    this.runLayout(true);
+
+    this.startListening();
+  };
+
+  private startListening(): void {
+    this.graph.getController().addEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
+    this.graph.getController().addEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
+    this.graph.getController().addEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
+  }
+
+  private stopListening(): void {
+    clearTimeout(this.scheduleHandle);
+    this.graph.getController().removeEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
+    this.graph.getController().removeEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
+    this.graph.getController().removeEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
+  }
+
+  private handleChildAdded: ElementChildEventListener = ({ child }): void => {
+    if (!this.nodesMap[child.getId()]) {
+      this.scheduleRestart = true;
+      this.scheduleLayout();
+    }
+  };
+
+  private handleChildRemoved: ElementChildEventListener = ({ child }): void => {
+    if (this.nodesMap[child.getId()]) {
+      this.scheduleRestart = true;
+      this.scheduleLayout();
+    }
+  };
+
+  private handleNodeCollapse: NodeCollapseChangeEventListener = ({ node }): void => {
+    if (!node.isCollapsed()) {
+      this.scheduleRestart = true;
+      this.scheduleLayout();
+    }
+  };
+
+  private scheduleLayout = (): void => {
+    if (!this.scheduleHandle) {
+      this.scheduleHandle = window.setTimeout(() => {
+        delete this.scheduleHandle;
+        this.runLayout(false, this.scheduleRestart);
+        this.scheduleRestart = false;
+      }, 0);
+    }
+  };
+
+  protected getFixedNodeDistance = (link: any): number =>
+    Math.sqrt((link.sourceNode.x - link.targetNode.x) ** 2 + (link.sourceNode.y - link.targetNode.y) ** 2);
+
+  protected getLayoutNode(nodes: LayoutNode[], node: Node | null): LayoutNode | undefined {
+    if (!node) {
+      return undefined;
+    }
+
+    let layoutNode = _.find(nodes, { id: node.getId() });
+    if (!layoutNode && _.size(node.getChildren())) {
+      layoutNode = _.find(nodes, { id: node.getChildren()[0].getId() });
+    }
+    if (!layoutNode) {
+      layoutNode = this.getLayoutNode(nodes, getClosestVisibleParent(node));
+    }
+
+    return layoutNode;
+  }
+
+  protected getFauxEdges(groups: LayoutGroup[], nodes: LayoutNode[]): LayoutLink[] {
+    const fauxEdges: LayoutLink[] = [];
+    groups.forEach((group: LayoutGroup) => {
+      const groupNodes = group.element.getNodes();
+      for (let i = 0; i < groupNodes.length; i++) {
+        for (let j = i + 1; j < groupNodes.length; j++) {
+          const fauxEdge = new BaseEdge();
+          const source = this.getLayoutNode(nodes, groupNodes[i]);
+          const target = this.getLayoutNode(nodes, groupNodes[j]);
+          if (source && target) {
+            const link = this.createLayoutLink(fauxEdge, source, target, true);
+            fauxEdge.setController(target.element.getController());
+            fauxEdges.push(link);
+          }
+        }
+      }
+    });
+
+    return fauxEdges;
+  }
+
+  protected createLayoutNode(node: Node, nodeDistance: number, index: number) {
+    return new LayoutNode(node, nodeDistance, index);
+  }
+
+  protected createLayoutLink(edge: Edge, source: LayoutNode, target: LayoutNode, isFalse: boolean = false): LayoutLink {
+    return new LayoutLink(edge, source, target, isFalse);
+  }
+
+  protected createLayoutGroup(node: Node, padding: number, index: number) {
+    return new LayoutGroup(node, padding, index);
+  }
+
+  protected getNodes(leafNodes: Node[], nodeDistance: number): LayoutNode[] {
+    return leafNodes.map((n, index) => this.createLayoutNode(n, nodeDistance, index));
+  }
+
+  // Default is to clear any initial bend points
+  protected initializeEdgeBendpoints = (edge: Edge): void => {
+    // remove any bendpoints
+    if (edge.getBendpoints().length > 0) {
+      edge.setBendpoints([]);
+    }
+  };
+
+  protected getLinks(edges: Edge[]): LayoutLink[] {
+    const links: LayoutLink[] = [];
+    edges.forEach(e => {
+      const source = this.getLayoutNode(this.nodes, e.getSource());
+      const target = this.getLayoutNode(this.nodes, e.getTarget());
+      if (source && target) {
+        this.initializeEdgeBendpoints(e);
+        links.push(this.createLayoutLink(e, source, target));
+      }
+    });
+
+    return links;
+  }
+
+  // Turn empty groups into nodes
+  protected getNodesFromGroups(groups: Node[], nodeDistance: number, nodeCount: number): LayoutNode[] {
+    let count = 0;
+    const groupNodes: LayoutNode[] = [];
+    groups.forEach((group: Node) => {
+      if (group.getChildren().filter(c => c.isVisible()).length === 0) {
+        groupNodes.push(this.createLayoutNode(group, nodeDistance, nodeCount + count++));
+      }
+    });
+
+    return groupNodes;
+  }
+
+  protected getGroups(groups: Node[], nodes: LayoutNode[], padding: number): LayoutGroup[] {
+    let nodeIndex = nodes.length;
+    // Create groups only for those with children
+    const layoutGroups: LayoutGroup[] = groups
+      .filter(g => g.getChildren().filter(c => c.isVisible()).length > 0)
+      .map((group: Node) => this.createLayoutGroup(group, padding, nodeIndex++));
+
+    layoutGroups.forEach((groupNode: LayoutGroup) => {
+      const leaves: LayoutNode[] = [];
+      const leafElements = groupNode.element
+        .getChildren()
+        .filter((node: any) => !node.isGroup() || node.getChildren().length === 0);
+      leafElements.forEach((leaf: any) => {
+        const layoutLeaf = nodes.find(n => n.id === leaf.getId());
+        if (layoutLeaf) {
+          leaves.push(layoutLeaf);
+          layoutLeaf.parent = groupNode;
+        }
+      });
+      groupNode.leaves = leaves;
+      const childGroups: LayoutGroup[] = [];
+      const groupElements = groupNode.element
+        .getChildren()
+        .filter((node: any) => node.isGroup() && !node.isCollapsed());
+      groupElements.forEach((group: any) => {
+        const layoutGroup = layoutGroups.find(g => g.id === group.getId());
+        if (layoutGroup) {
+          childGroups.push(layoutGroup);
+          layoutGroup.parent = groupNode;
+        }
+      });
+      groupNode.groups = childGroups;
+    });
+
+    return layoutGroups;
+  }
+
+  protected initializeNodePositions(newNodes: LayoutNode[], graph: Graph, force: boolean = false): void {
+    const { width, height } = graph.getBounds();
+    const cx = width / 2;
+    const cy = height / 2;
+    newNodes.forEach((node: LayoutNode) => {
+      // only init position for nodes that are still at 0, 0
+      const { x, y } = node.element.getPosition();
+      if (force || (x === 0 && y === 0)) {
+        node.setPosition(cx, cy);
+      }
+    });
+  }
+
+  protected setupLayout(
+    graph: Graph, // eslint-disable-line @typescript-eslint/no-unused-vars
+    nodes: LayoutNode[], // eslint-disable-line @typescript-eslint/no-unused-vars
+    edges: LayoutLink[], // eslint-disable-line @typescript-eslint/no-unused-vars
+    groups: LayoutGroup[] // eslint-disable-line @typescript-eslint/no-unused-vars
+  ): void {}
+
+  protected updateExistingNodes(existingNodes: LayoutNode[]): void {
+    existingNodes.forEach(n => {
+      (n as LayoutNode).isFixed = true;
+    });
+  }
+
+  protected stopSimulation(): void {
+    this.forceSimulation.haltForceSimulation();
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {}
+
+  protected updateLayout(): void {
+    this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);
+    this.forceSimulation.alpha(0.2);
+  }
+
+  @action
+  private runLayout(initialRun: boolean, restart = true): void {
+    const prevGroups = this.groups;
+
+    // create datum
+    const leafNodes = leafNodeElements(this.graph.getNodes()).filter(n => n.isVisible());
+    const groups = groupNodeElements(this.graph.getNodes()).filter(g => g.isVisible());
+
+    this.nodes = this.getNodes(leafNodes, this.options.nodeDistance);
+
+    const groupNodes: LayoutNode[] = this.getNodesFromGroups(groups, this.options.nodeDistance, this.nodes.length);
+    if (groupNodes) {
+      this.nodes.push(...groupNodes);
+    }
+
+    this.groups = this.getGroups(groups, this.nodes, this.options.groupDistance);
+
+    const newNodes: LayoutNode[] = initialRun
+      ? this.nodes
+      : this.nodes.filter(node => !this.nodesMap[node.element.getId()]);
+    let addingNodes = restart && newNodes.length > 0;
+
+    if (!initialRun && restart && !addingNodes) {
+      this.groups.forEach(group => {
+        const prevGroup = prevGroups.find(g => g.element.getId() === group.element.getId());
+        if (!prevGroup) {
+          addingNodes = true;
+          newNodes.push(...group.leaves);
+        } else {
+          group.leaves.forEach(node => {
+            if (!prevGroup.leaves.find(l => l.element.getId() === node.element.getId())) {
+              newNodes.push(node);
+            }
+          });
+        }
+      });
+      addingNodes = newNodes.length > 0;
+    }
+
+    this.edges = this.getLinks(this.graph.getEdges());
+
+    // initialize new node positions
+    this.initializeNodePositions(newNodes, this.graph, initialRun);
+
+    // re-create the nodes map
+    this.nodesMap = this.nodes.reduce((acc, n) => {
+      acc[n.id] = n;
+      return acc;
+    }, {});
+
+    // Add faux edges to keep grouped items together
+    this.edges.push(...this.getFauxEdges(this.groups, this.nodes));
+
+    this.setupLayout(this.graph, this.nodes, this.edges, this.groups);
+
+    this.updateExistingNodes(this.nodes.filter(n => !newNodes.includes(n)));
+
+    if (initialRun || addingNodes) {
+      // Reset the force simulation
+      this.stopSimulation();
+
+      this.startLayout(this.graph, initialRun, addingNodes);
+    } else if (restart && this.options.layoutOnDrag) {
+      this.updateLayout();
+    }
+    this.graph.getController().fireEvent(GRAPH_LAYOUT_END_EVENT, { graph: this.graph });
+  }
+}
+
+export { BaseLayout, LayoutNode, LayoutGroup, LayoutLink, LayoutOpts as LayoutOptions, LAYOUT_DEFAULTS };

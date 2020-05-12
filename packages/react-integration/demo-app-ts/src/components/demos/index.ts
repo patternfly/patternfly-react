@@ -122,4 +122,5 @@ export * from './TextInputDemo/TextInputDemo';
 export * from './TitleDemo/TitleDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
+export * from './TopologyDemo/TopologyDemo';
 export * from './WizardDemo/WizardDemo';
