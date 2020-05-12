@@ -251,7 +251,12 @@ class InsetTabs extends React.Component {
     const {activeTabKey, isBox} = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} insetOnMd="sm" insetOnLg="lg" insetOnXl="2xl" isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} inset='none' breakpointMods={[
+          { breakpoint: 'md', modifier: 'insetSm' },
+          { breakpoint: '2xl', modifier: 'insetLg' },
+          { breakpoint: 'xl', modifier: 'inset_2xl' }
+        ]} 
+        isBox={isBox}>
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
