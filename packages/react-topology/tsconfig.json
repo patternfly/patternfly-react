@@ -6,15 +6,9 @@
     "declarationDir": "./dist/js",
     "tsBuildInfoFile": "dist/esm.tsbuildinfo",
     "sourceMap": true,    
-    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "declaration": true,
-    "noImplicitAny": true,
-    "emitDecoratorMetadata": true,
     "noImplicitReturns": true,    
-    "types": ["jest"]
   },
   "include": [
     "./src/*",
