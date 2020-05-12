@@ -17,9 +17,9 @@ export enum WrapModifier {
 }
 
 export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered within the table button */
+  /** Content rendered within the table text */
   children?: React.ReactNode;
-  /** Additional classes added to the table button */
+  /** Additional classes added to the table text */
   className?: string;
   /** Determines which element to render as a table text */
   variant?: TableTextVariant | 'span' | 'div';
