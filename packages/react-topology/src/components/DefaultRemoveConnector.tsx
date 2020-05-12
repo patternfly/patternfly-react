@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
-import { TrashIcon } from '@patternfly/react-icons';
+import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
 import Point from '../geom/Point';
 
 interface DefaultRemoveConnectorProps {
