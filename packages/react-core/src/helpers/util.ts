@@ -6,7 +6,7 @@ import { DataListActionBreakpointMod } from '../components/DataList/DataListActi
 import { PageSectionBreakpointMod } from '../components/Page/PageSection';
 
 /**
- * @param {string} input - String to capitalize
+ * @param {string} input - String to capitalize first letter
  */
 export function capitalize(input: string) {
   return input[0].toUpperCase() + input.substring(1);

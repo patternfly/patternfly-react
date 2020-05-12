@@ -502,6 +502,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'tabs-inset-demo',
+    name: 'Tabs Inset Demo',
+    componentType: Examples.TabsInsetDemo
+  },
+  {
     id: 'table-actions-demo',
     name: 'Table Actions Demo',
     componentType: Examples.TableActionsDemo
