@@ -16,6 +16,7 @@ it('PageSection should match snapshot (auto-generated)', () => {
       type={'default'}
       isFilled={true}
       hasNoPadding={false}
+      breakpointMods={[]}
     />
   );
   expect(view).toMatchSnapshot();

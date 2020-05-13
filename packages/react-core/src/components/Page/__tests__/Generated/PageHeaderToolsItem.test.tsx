@@ -11,9 +11,9 @@ it('PageHeaderToolsItem should match snapshot (auto-generated)', () => {
   const view = shallow(
     <PageHeaderToolsItem
       children={<div>ReactNode</div>}
-      visibleOnLg={true}
-      hiddenOnLg={true}
-      hiddenOnSm={true}
+      render={(props: InjectedPageHeaderToolsItemProps) => undefined as React.ReactNode}
+      className={'string'}
+      breakpointMods={[]}
       isSelected={true}
     />
   );

@@ -4,6 +4,7 @@ import { ToolbarBreakpointMod } from '../components/Toolbar/ToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
 import { DataListActionBreakpointMod } from '../components/DataList/DataListActionBreakpoints';
 import { PageSectionBreakpointMod } from '../components/Page/PageSection';
+import { PageHeaderToolsBreakpointMod } from '../components/Page/PageHeaderTools';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -239,7 +240,7 @@ export function pluralize(i: number, singular: string, plural?: string) {
 
 /** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
- * @param {(ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod | DataListActionBreakpointMod)[]} breakpointMods The modifiers object
+ * @param {(ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod | DataListActionBreakpointMod | PageHeaderToolsBreakpointMod)[]} breakpointMods The modifiers object
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
@@ -248,7 +249,8 @@ export const formatBreakpointMods = (
     | FlexBreakpointMod
     | FlexItemBreakpointMod
     | PageSectionBreakpointMod
-    | DataListActionBreakpointMod)[],
+    | DataListActionBreakpointMod
+    | PageHeaderToolsBreakpointMod)[],
   styles: any
 ) =>
   breakpointMods

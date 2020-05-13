@@ -35,7 +35,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -85,7 +85,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -95,7 +95,9 @@ class PageLayoutDefaultNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 0
+      activeItem: 0,
+      selectedSettings: true,
+      selectedHelp: false
     };
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
@@ -129,7 +131,7 @@ class PageLayoutDefaultNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, selectedSettings, selectedHelp } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
@@ -158,33 +160,49 @@ class PageLayoutDefaultNav extends React.Component {
       </DropdownItem>,
       <DropdownItem>
         <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated link</DropdownItem>,
-      <DropdownItem component="button">Separated action</DropdownItem>
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>John Smith</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup>
           <NotificationBadge isRead={false} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
-          <PageHeaderToolsItem isSelected>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedSettings && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            )}
+          />
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedHelp && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            )}
+          />
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -194,18 +212,27 @@ class PageLayoutDefaultNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onDropdownToggle} 
+                  icon={<Avatar src={imgAvatar} alt="Avatar image" />}
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'md' }]}>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -304,7 +331,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -315,7 +342,9 @@ class PageLayoutExpandableNav extends React.Component {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       activeGroup: 'grp-1',
-      activeItem: 'grp-1_itm-1'
+      activeItem: 'grp-1_itm-1',
+      selectedSettings: true,
+      selectedHelp: false
     };
 
     this.onDropdownToggle = isDropdownOpen => {
@@ -351,7 +380,7 @@ class PageLayoutExpandableNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, activeGroup } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, activeGroup, selectedSettings, selectedHelp } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
@@ -401,33 +430,49 @@ class PageLayoutExpandableNav extends React.Component {
       </DropdownItem>,
       <DropdownItem>
         <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated link</DropdownItem>,
-      <DropdownItem component="button">Separated action</DropdownItem>
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>John Smith</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup>
           <NotificationBadge isRead={false} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
-          <PageHeaderToolsItem isSelected>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedSettings && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            )}
+          />
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedHelp && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            )}
+          />
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -437,18 +482,27 @@ class PageLayoutExpandableNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onDropdownToggle} 
+                  icon={<Avatar src={imgAvatar} alt="Avatar image" />}
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'md' }]}>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -539,7 +593,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -549,7 +603,9 @@ class PageLayoutGroupsNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 'grp-1_itm-1'
+      activeItem: 'grp-1_itm-1',
+      selectedSettings: true,
+      selectedHelp: false
     };
 
     this.onDropdownToggle = isDropdownOpen => {
@@ -584,7 +640,7 @@ class PageLayoutGroupsNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, selectedSettings, selectedHelp } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
@@ -627,33 +683,49 @@ class PageLayoutGroupsNav extends React.Component {
       </DropdownItem>,
       <DropdownItem>
         <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>John Smith</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup>
           <NotificationBadge isRead={false} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
-          <PageHeaderToolsItem isSelected>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedSettings && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            )}
+          />
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedHelp && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            )}
+          />
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -663,18 +735,27 @@ class PageLayoutGroupsNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onDropdownToggle} 
+                  icon={<Avatar src={imgAvatar} alt="Avatar image" />}
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'md' }]}>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -752,7 +833,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -762,7 +843,9 @@ class PageLayoutHorizontalNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 0
+      activeItem: 0,
+      selectedSettings: true,
+      selectedHelp: false
     };
 
     this.onDropdownToggle = isDropdownOpen => {
@@ -797,7 +880,7 @@ class PageLayoutHorizontalNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, selectedSettings, selectedHelp } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" variant="horizontal">
@@ -826,33 +909,49 @@ class PageLayoutHorizontalNav extends React.Component {
       </DropdownItem>,
       <DropdownItem>
         <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>John Smith</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup>
           <NotificationBadge isRead={false} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
-          <PageHeaderToolsItem isSelected>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedSettings && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            )}
+          />
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedHelp && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            )}
+          />
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -862,18 +961,27 @@ class PageLayoutHorizontalNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onDropdownToggle} 
+                  icon={<Avatar src={imgAvatar} alt="Avatar image" />}
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'md' }]}>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -961,7 +1069,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -974,7 +1082,9 @@ class PageLayoutManualNav extends React.Component {
       activeItem: 0,
       isMobileView: false,
       isNavOpenDesktop: true,
-      isNavOpenMobile: false
+      isNavOpenMobile: false,
+      selectedSettings: true,
+      selectedHelp: false
     };
 
     this.onDropdownToggle = isDropdownOpen => {
@@ -1033,7 +1143,9 @@ class PageLayoutManualNav extends React.Component {
       activeItem,
       isNavOpenDesktop,
       isNavOpenMobile,
-      isMobileView
+      isMobileView,
+      selectedSettings,
+      selectedHelp
     } = this.state;
 
     const PageNav = (
@@ -1063,33 +1175,49 @@ class PageLayoutManualNav extends React.Component {
       </DropdownItem>,
       <DropdownItem>
         <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>John Smith</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup>
           <NotificationBadge isRead={false} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
-          <PageHeaderToolsItem isSelected>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedSettings && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            )}
+          />
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedHelp && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            )}
+          />
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -1099,18 +1227,27 @@ class PageLayoutManualNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onDropdownToggle} 
+                  icon={<Avatar src={imgAvatar} alt="Avatar image" />}
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'md' }]}>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
 
@@ -1198,7 +1335,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon, UserIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -1208,7 +1345,9 @@ class PageLayoutLightNav extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 0
+      activeItem: 0,
+      selectedSettings: true,
+      selectedHelp: false
     };
 
     this.onDropdownToggle = isDropdownOpen => {
@@ -1243,7 +1382,7 @@ class PageLayoutLightNav extends React.Component {
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, selectedSettings, selectedHelp } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -1272,33 +1411,49 @@ class PageLayoutLightNav extends React.Component {
       </DropdownItem>,
       <DropdownItem>
         <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>John Smith</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibleOnLg /** these icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup>
           <NotificationBadge isRead={false} aria-label="Notifications">
             <BellIcon />
           </NotificationBadge>
-          <PageHeaderToolsItem isSelected>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedSettings && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            )}
+          />
+          <PageHeaderToolsItem 
+            breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+            render={injectedProps => (
+              <Button className={selectedHelp && injectedProps.selectedClass} aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            )}
+          />
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem hiddenOnLg /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -1308,18 +1463,27 @@ class PageLayoutLightNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem hiddenOnSm /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onDropdownToggle} 
+                  icon={<Avatar src={imgAvatar} alt="Avatar image" />}
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'md' }]}>
+            <Avatar src={imgAvatar} alt="Avatar image" />
+          </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );
     const Header = (
