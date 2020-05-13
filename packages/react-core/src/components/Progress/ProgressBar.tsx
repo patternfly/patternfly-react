@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 
 export interface AriaProps {
-  'aria-describedby'?: string;
+  'aria-labelledby'?: string;
   'aria-valuemin'?: number;
   'aria-valuenow'?: number;
   'aria-valuemax'?: number;

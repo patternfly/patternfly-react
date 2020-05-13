@@ -70,13 +70,9 @@ export class Progress extends React.Component<ProgressProps> {
       valueText,
       ...props
     } = this.props;
-    const additionalProps = {
-      ...props,
-      ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
-    };
 
     const progressBarAriaProps: AriaProps = {
-      'aria-describedby': `${this.id}-description`,
+      'aria-labelledby': `${this.id}-description`,
       'aria-valuemin': min,
       'aria-valuenow': value,
       'aria-valuemax': max
@@ -89,7 +85,7 @@ export class Progress extends React.Component<ProgressProps> {
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
     return (
       <div
-        {...additionalProps}
+        {...props}
         className={css(
           styles.progress,
           styles.modifiers[variant],
@@ -99,7 +95,6 @@ export class Progress extends React.Component<ProgressProps> {
           className
         )}
         id={this.id}
-        role="progressbar"
       >
         <ProgressContainer
           parentId={this.id}
