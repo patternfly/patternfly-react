@@ -8,7 +8,6 @@ interface InjectedPageHeaderToolsItemProps {
   selectedClass: string;
 }
 
-/* (props: InjectedPageHeaderToolsItemProps) => React.ReactNode | */
 export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered in page header tools item. If you need the selected class, use the render prop instead */
   children?: React.ReactNode;
@@ -18,8 +17,6 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   className?: string;
   /** An array of breakpoint modifiers to control visibility, e.g. breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} */
   breakpointMods?: PageHeaderToolsBreakpointMod[];
-  /** Can apply the selected modifier to a button */
-  isSelected?: boolean;
 }
 
 export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({

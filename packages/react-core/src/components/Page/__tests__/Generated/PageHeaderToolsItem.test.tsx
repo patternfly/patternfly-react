@@ -14,7 +14,6 @@ it('PageHeaderToolsItem should match snapshot (auto-generated)', () => {
       render={(props: InjectedPageHeaderToolsItemProps) => undefined as React.ReactNode}
       className={'string'}
       breakpointMods={[]}
-      isSelected={true}
     />
   );
   expect(view).toMatchSnapshot();
