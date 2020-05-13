@@ -3,10 +3,10 @@ title: 'Chip group'
 section: components
 cssPrefix: 'pf-c-chip'
 typescript: true
-propComponents: ['Chip', 'ChipGroup', 'ChipGroupToolbarItem']
+propComponents: ['Chip', 'ChipGroup']
 ---
 
-import { Badge, Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
+import { Badge, Chip, ChipGroup } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Single
@@ -30,6 +30,9 @@ class SingleChip extends React.Component {
       },
       readonlychip: {
         name: 'Read-only Chip'
+      },
+      overflowchip: {
+        name: 'Overflow Chip'
       }
     };
     this.deleteItem = id => {
@@ -38,7 +41,7 @@ class SingleChip extends React.Component {
   }
 
   render() {
-    const { chip, longchip, badgechip, readonlychip } = this.state;
+    const { chip, longchip, badgechip, readonlychip, overflowchip } = this.state;
     return (
       <React.Fragment>
         {chip && (
@@ -69,174 +72,45 @@ class SingleChip extends React.Component {
         <Chip key="chip4" onClick={() => this.deleteItem('readonlychip')} isReadOnly>
           {readonlychip.name}
         </Chip>
+        <br /> <br />
+        {overflowchip && (
+          <Chip key="chip5" component='button' onClick={() => this.deleteItem('overflowchip')} isOverflowChip>
+            {overflowchip.name}
+          </Chip>
+        )}
       </React.Fragment>
     );
   }
 }
 ```
 
-```js title=Toolbar
+```js title=Simple-inline-chip-group
 import React from 'react';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core';
 
-class ToolbarChipGroup extends React.Component {
+class SimpleInlineChipGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chipGroups: [
-        {
-          category: 'Category 1 has a very long name',
-          chips: ['Chip 1', 'Chip 2']
-        },
-        {
-          category: 'Category 2',
-          chips: ['Chip 3', 'Chip 4']
-        },
-        {
-          category: 'Category 3',
-          chips: ['Chip 5', 'Chip 6', 'Chip 7', 'Chip 8']
-        }
-      ]
+      chips: ['Chip one', 'Really long chip that goes on and on', 'Chip three', 'Chip four', 'Chip five']
     };
+
     this.deleteItem = id => {
-      const copyOfChipGroups = this.state.chipGroups;
-      for (let i = 0; copyOfChipGroups.length > i; i++) {
-        const index = copyOfChipGroups[i].chips.indexOf(id);
-        if (index !== -1) {
-          copyOfChipGroups[i].chips.splice(index, 1);
-          // check if this is the last item in the group category
-          if (copyOfChipGroups[i].chips.length === 0) {
-            copyOfChipGroups.splice(i, 1);
-            this.setState({ chipGroups: copyOfChipGroups });
-          } else {
-            this.setState({ chipGroups: copyOfChipGroups });
-          }
-        }
-      }
-    };
-  }
-
-  render() {
-    const { chipGroups } = this.state;
-
-    return (
-      <ChipGroup withToolbar>
-        {chipGroups.map(currentGroup => (
-          <ChipGroupToolbarItem key={currentGroup.category} categoryName={currentGroup.category}>
-            {currentGroup.chips.map(chip => (
-              <Chip key={chip} onClick={() => this.deleteItem(chip)}>
-                {chip}
-              </Chip>
-            ))}
-          </ChipGroupToolbarItem>
-        ))}
-      </ChipGroup>
-    );
-  }
-}
-```
-
-```js title=Closable-toolbar
-import React from 'react';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
-
-class ToolbarChipGroup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chipGroups: [
-        {
-          category: 'Category 1',
-          chips: ['Chip 1', 'Chip 2']
-        },
-        {
-          category: 'Category 2',
-          chips: ['Chip 3', 'Chip 4']
-        },
-        {
-          category: 'Category 3',
-          chips: ['Chip 5', 'Chip 6', 'Chip 7', 'Chip 8']
-        }
-      ]
-    };
-    this.deleteItem = id => {
-      const copyOfChipGroups = this.state.chipGroups;
-      for (let i = 0; copyOfChipGroups.length > i; i++) {
-        const index = copyOfChipGroups[i].chips.indexOf(id);
-        if (index !== -1) {
-          copyOfChipGroups[i].chips.splice(index, 1);
-          // check if this is the last item in the group category
-          if (copyOfChipGroups[i].chips.length === 0) {
-            copyOfChipGroups.splice(i, 1);
-            this.setState({ chipGroups: copyOfChipGroups });
-          } else {
-            this.setState({ chipGroups: copyOfChipGroups });
-          }
-        }
-      }
-    };
-    
-    this.deleteCategory = category => {
-      const copyOfChipGroups = this.state.chipGroups;
-      for (let i = 0; copyOfChipGroups.length > i; i++) {
-        if (copyOfChipGroups[i].category === category) {
-          copyOfChipGroups.splice(i, 1);
-          this.setState({ chipGroups: copyOfChipGroups });
-        }
-      }
-    }
-  }
-
-  render() {
-    const { chipGroups } = this.state;
-
-    return (
-      <ChipGroup withToolbar>
-        {chipGroups.map(currentGroup => (
-          <ChipGroupToolbarItem 
-            key={currentGroup.category} 
-            categoryName={currentGroup.category} 
-            isClosable 
-            onClick={() => this.deleteCategory(currentGroup.category)}
-          >
-            {currentGroup.chips.map(chip => (
-              <Chip key={chip} onClick={() => this.deleteItem(chip)}>
-                {chip}
-              </Chip>
-            ))}
-          </ChipGroupToolbarItem>
-        ))}
-      </ChipGroup>
-    );
-  }
-}
-```
-
-```js title=Multi-select
-import React from 'react';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
-
-class MultiSelectChipGroup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chipObject: ['Chip 1', 'Really long chip that goes on and on', 'Chip 3', 'Chip 4']
-    };
-    this.deleteItem = id => {
-      const copyOfChipObject = this.state.chipObject;
-      const index = copyOfChipObject.indexOf(id);
+      const copyOfChips = this.state.chips;
+      const index = copyOfChips.indexOf(id);
       if (index !== -1) {
-        copyOfChipObject.splice(index, 1);
-        this.setState({ chipObject: copyOfChipObject });
+        copyOfChips.splice(index, 1);
+        this.setState({ chips: copyOfChips });
       }
     };
   }
 
   render() {
-    const { chipObject } = this.state;
+    const { chips } = this.state;
+
     return (
       <ChipGroup>
-        {chipObject.map(currentChip => (
+        {chips.map(currentChip => (
           <Chip key={currentChip} onClick={() => this.deleteItem(currentChip)}>
             {currentChip}
           </Chip>
@@ -247,49 +121,101 @@ class MultiSelectChipGroup extends React.Component {
 }
 ```
 
-```js title=Badge
+```js title=Chip-groups-with-categories
 import React from 'react';
-import { Badge, Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core';
 
-class BadgeChip extends React.Component {
+class SimpleCategoryChipGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      badgeChipArray: [
-        {
-          name: 'Lemons',
-          isRead: true,
-          count: 10
-        },
-        {
-          name: 'Limes',
-          isRead: true,
-          count: 8
-        }
-      ]
+      chips: ['Chip one', 'Chip two', 'Chip three', 'Chip four', 'Chip five']
     };
-    this.deleteItem = id => {
-      const copyOfbadgeChipArray = this.state.badgeChipArray;
-      const index = copyOfbadgeChipArray.findIndex(chipObj => chipObj.name === id);
-
+   this.deleteItem = id => {
+      const copyOfChips = this.state.chips;
+      const index = copyOfChips.indexOf(id);
       if (index !== -1) {
-        copyOfbadgeChipArray.splice(index, 1);
-        this.setState({ badgeChipArray: copyOfbadgeChipArray });
+        copyOfChips.splice(index, 1);
+        this.setState({ chips: copyOfChips });
       }
     };
   }
 
   render() {
-    const { badgeChipArray } = this.state;
+    const { chips } = this.state;
+
     return (
-      <ChipGroup>
-        {badgeChipArray.map(chip => (
-          <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
-            {chip.name}
-            <Badge isRead={chip.isRead}>{chip.count}</Badge>
+      <ChipGroup categoryName="Category one">
+        {chips.map(currentChip => (
+          <Chip key={currentChip} onClick={() => this.deleteItem(currentChip)}>
+            {currentChip}
           </Chip>
         ))}
       </ChipGroup>
+    );
+  }
+}
+```
+
+```js title=Chip-groups-with-categories-removable
+import React from 'react';
+import { Chip, ChipGroup } from '@patternfly/react-core';
+
+class CategoryChipGroupRemovable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chips: ['Chip one', 'Chip two', 'Chip three'],
+      chips2: ['Chip one', 'Chip two', 'Chip three', 'Chip 4']
+    };
+   this.deleteItem = id => {
+      const copyOfChips = this.state.chips;
+      const index = copyOfChips.indexOf(id);
+      if (index !== -1) {
+        copyOfChips.splice(index, 1);
+        this.setState({ chips: copyOfChips });
+      }
+    };
+
+    this.deleteItem2 = id => {
+      const copyOfChips = this.state.chips2;
+      const index = copyOfChips.indexOf(id);
+      if (index !== -1) {
+        copyOfChips.splice(index, 1);
+        this.setState({ chips2: copyOfChips });
+      }
+    };
+
+    this.deleteCategory = () => {
+      this.setState({ chips: [] });
+    }
+
+    this.deleteCategory2= () => {
+      this.setState({ chips2: [] });
+    }
+  }
+
+  render() {
+    const { chips, chips2 } = this.state;
+
+    return (
+      <React.Fragment>
+      <ChipGroup categoryName="Category one" isClosable onClick={this.deleteCategory}>
+        {chips.map(currentChip => (
+          <Chip key={currentChip} onClick={() => this.deleteItem(currentChip)}>
+            {currentChip}
+          </Chip>
+        ))}
+      </ChipGroup>
+      <br /> <br />
+      <ChipGroup categoryName="Category two has a very long name" isClosable onClick={this.deleteCategory2}>
+        {chips2.map(currentChip => (
+          <Chip key={currentChip} onClick={() => this.deleteItem2(currentChip)}>
+            {currentChip}
+          </Chip>
+        ))}
+      </ChipGroup>
+      </React.Fragment>
     );
   }
 }

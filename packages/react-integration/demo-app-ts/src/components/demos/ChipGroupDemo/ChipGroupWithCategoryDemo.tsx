@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '@patternfly/react-core';
 
-interface ToolbarChipGroupState {
+interface ChipWithCategoryGroupState {
   chipGroups: {
     chips: string[];
     category: string;
   }[];
 }
 
-export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
+export class ChipWithCategoryGroupDemo extends Component<{}, ChipWithCategoryGroupState> {
   deleteItem: (id: string) => void;
   deleteCategory: (category: string) => void;
 
@@ -61,25 +61,21 @@ export class ToolbarChipGroupDemo extends Component<{}, ToolbarChipGroupState> {
   render() {
     const { chipGroups } = this.state;
 
-    return (
-      <ChipGroup withToolbar>
-        {chipGroups.map(currentGroup => (
-          <ChipGroupToolbarItem
-            key={currentGroup.category}
-            categoryName={currentGroup.category}
-            isClosable
-            onClick={() => this.deleteCategory(currentGroup.category)}
-            closeBtnAriaLabel="Close category demo"
-            tooltipPosition="bottom"
-          >
-            {currentGroup.chips.map(chip => (
-              <Chip key={chip} onClick={() => this.deleteItem(chip)}>
-                {chip}
-              </Chip>
-            ))}
-          </ChipGroupToolbarItem>
+    return chipGroups.map(currentGroup => (
+      <ChipGroup
+        key={currentGroup.category}
+        categoryName={currentGroup.category}
+        isClosable
+        onClick={() => this.deleteCategory(currentGroup.category)}
+        closeBtnAriaLabel="Close category demo"
+        tooltipPosition="bottom"
+      >
+        {currentGroup.chips.map(chip => (
+          <Chip key={chip} onClick={() => this.deleteItem(chip)}>
+            {chip}
+          </Chip>
         ))}
       </ChipGroup>
-    );
+    ));
   }
 }

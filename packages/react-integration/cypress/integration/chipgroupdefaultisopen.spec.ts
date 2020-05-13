@@ -26,23 +26,19 @@ describe('Chip Group Demo Test', () => {
       .should('not.equal', null);
   });
 
-  xit('Verify show less button works', () => {
-    cy.get('.pf-m-overflow')
-      .children('button')
-      .click();
+  it('Verify show less button works', () => {
+    cy.get('.pf-m-overflow').click();
     cy.get('.pf-c-chip__text').contains('more');
   });
 
-  xit('Verify more button works', () => {
-    cy.get('.pf-m-overflow')
-      .children('button')
-      .click();
+  it('Verify more button works', () => {
+    cy.get('.pf-m-overflow').click();
     cy.get('.pf-c-chip__text').contains('Show Less');
   });
 
   it('Verify delete button on first chip', () => {
-    const chip = cy.get('.pf-c-chip').children('#pf-random-id-0');
-    cy.get('#remove_pf-random-id-0').click();
+    const chip = cy.get('.pf-c-chip').children('#pf-random-id-1');
+    cy.get('#remove_pf-random-id-1').click();
     chip.should('not.exist');
   });
 });
