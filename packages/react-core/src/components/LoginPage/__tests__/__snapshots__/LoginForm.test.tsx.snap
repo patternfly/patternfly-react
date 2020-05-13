@@ -5,6 +5,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
   className=""
 >
   <FormHelperText
+    icon={null}
     isError={false}
     isHidden={true}
   />
@@ -73,6 +74,7 @@ exports[`should render Login form 1`] = `
   className=""
 >
   <FormHelperText
+    icon={null}
     isError={false}
     isHidden={true}
   />
