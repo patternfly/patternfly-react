@@ -3,7 +3,7 @@ title: 'Page'
 section: components
 cssPrefix: 'pf-c-page'
 typescript: true
-propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']
+propComponents: ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---
 
 import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants, PageSectionBreakpoints } from '@patternfly/react-core';
