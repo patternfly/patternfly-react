@@ -998,47 +998,58 @@ exports[`Actions virtualized table 1`] = `
                         className="pf-c-table__sort"
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
-                          className="pf-c-button pf-m-plain"
                           onSort={[Function]}
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-table__button"
                             onClick={[Function]}
                           >
-                            Header cell
-                            <span
-                              className="pf-c-table__sort-indicator"
+                            <div
+                              className="pf-c-table__button-content"
                             >
-                              <ArrowsAltVIcon
-                                color="currentColor"
-                                noVerticalAlign={false}
-                                size="sm"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  aria-labelledby={null}
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "verticalAlign": "-0.125em",
-                                    }
-                                  }
-                                  viewBox="0 0 256 512"
-                                  width="1em"
+                              <Component>
+                                <span
+                                  className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
-                                  <path
-                                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </ArrowsAltVIcon>
-                            </span>
+                                  Header cell
+                                </span>
+                              </Component>
+                              <span
+                                className="pf-c-table__sort-indicator"
+                              >
+                                <ArrowsAltVIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ArrowsAltVIcon>
+                              </span>
+                            </div>
                           </button>
                         </Component>
                       </th>
@@ -1053,6 +1064,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -1068,6 +1080,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -1083,6 +1096,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -1098,6 +1112,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -1114,6 +1129,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={5}
                         data-label=""
+                        onMouseEnter={[Function]}
                       />
                     </Component>
                   </tr>
@@ -2125,6 +2141,7 @@ exports[`Selectable virtualized table 1`] = `
                         className="pf-c-table__check"
                         data-key={0}
                         data-label=""
+                        onMouseEnter={[Function]}
                       >
                         <Component
                           aria-label="Select all rows"
@@ -2155,47 +2172,58 @@ exports[`Selectable virtualized table 1`] = `
                         className="pf-c-table__sort"
                         data-key={1}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
-                          className="pf-c-button pf-m-plain"
                           onSort={[Function]}
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-table__button"
                             onClick={[Function]}
                           >
-                            Header cell
-                            <span
-                              className="pf-c-table__sort-indicator"
+                            <div
+                              className="pf-c-table__button-content"
                             >
-                              <ArrowsAltVIcon
-                                color="currentColor"
-                                noVerticalAlign={false}
-                                size="sm"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  aria-labelledby={null}
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "verticalAlign": "-0.125em",
-                                    }
-                                  }
-                                  viewBox="0 0 256 512"
-                                  width="1em"
+                              <Component>
+                                <span
+                                  className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
-                                  <path
-                                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </ArrowsAltVIcon>
-                            </span>
+                                  Header cell
+                                </span>
+                              </Component>
+                              <span
+                                className="pf-c-table__sort-indicator"
+                              >
+                                <ArrowsAltVIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ArrowsAltVIcon>
+                              </span>
+                            </div>
                           </button>
                         </Component>
                       </th>
@@ -2210,6 +2238,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -2225,6 +2254,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -2240,6 +2270,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -2255,6 +2286,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={5}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -3642,47 +3674,58 @@ exports[`Simple Actions table 1`] = `
                         className="pf-c-table__sort"
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
-                          className="pf-c-button pf-m-plain"
                           onSort={[Function]}
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-table__button"
                             onClick={[Function]}
                           >
-                            Header cell
-                            <span
-                              className="pf-c-table__sort-indicator"
+                            <div
+                              className="pf-c-table__button-content"
                             >
-                              <ArrowsAltVIcon
-                                color="currentColor"
-                                noVerticalAlign={false}
-                                size="sm"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  aria-labelledby={null}
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "verticalAlign": "-0.125em",
-                                    }
-                                  }
-                                  viewBox="0 0 256 512"
-                                  width="1em"
+                              <Component>
+                                <span
+                                  className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
-                                  <path
-                                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </ArrowsAltVIcon>
-                            </span>
+                                  Header cell
+                                </span>
+                              </Component>
+                              <span
+                                className="pf-c-table__sort-indicator"
+                              >
+                                <ArrowsAltVIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ArrowsAltVIcon>
+                              </span>
+                            </div>
                           </button>
                         </Component>
                       </th>
@@ -3697,6 +3740,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -3712,6 +3756,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -3727,6 +3772,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -3742,6 +3788,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -3758,6 +3805,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={5}
                         data-label=""
+                        onMouseEnter={[Function]}
                       />
                     </Component>
                   </tr>
@@ -4624,6 +4672,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Header cell
@@ -4639,6 +4688,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -4654,6 +4704,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -4669,6 +4720,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -4684,6 +4736,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -5553,6 +5606,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Header cell
@@ -5568,6 +5622,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -5583,6 +5638,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -5598,6 +5654,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -5613,6 +5670,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -6493,48 +6551,59 @@ exports[`Sortable Virtualized Table 1`] = `
                         className="pf-c-table__sort"
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
-                          className="pf-c-button pf-m-plain"
                           isSortedBy={false}
                           onSort={[Function]}
                           sortDirection=""
                         >
                           <button
-                            className="pf-c-button pf-m-plain"
+                            className="pf-c-table__button"
                             onClick={[Function]}
                           >
-                            Header cell
-                            <span
-                              className="pf-c-table__sort-indicator"
+                            <div
+                              className="pf-c-table__button-content"
                             >
-                              <ArrowsAltVIcon
-                                color="currentColor"
-                                noVerticalAlign={false}
-                                size="sm"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  aria-labelledby={null}
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "verticalAlign": "-0.125em",
-                                    }
-                                  }
-                                  viewBox="0 0 256 512"
-                                  width="1em"
+                              <Component>
+                                <span
+                                  className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
-                                  <path
-                                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </ArrowsAltVIcon>
-                            </span>
+                                  Header cell
+                                </span>
+                              </Component>
+                              <span
+                                className="pf-c-table__sort-indicator"
+                              >
+                                <ArrowsAltVIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 256 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ArrowsAltVIcon>
+                              </span>
+                            </div>
                           </button>
                         </Component>
                       </th>
@@ -6549,6 +6618,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -6564,6 +6634,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -6579,6 +6650,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -6594,6 +6666,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit

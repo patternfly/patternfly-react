@@ -30,7 +30,6 @@ exports[`Transformer functions sortable asc 1`] = `
 Object {
   "aria-sort": "ascending",
   "children": <SortColumn
-    className="pf-c-button pf-m-plain"
     isSortedBy={true}
     onSort={[Function]}
     sortDirection="asc"

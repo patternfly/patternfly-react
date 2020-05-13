@@ -11,4 +11,5 @@ export * from './HeaderCell';
 export * from './RowWrapper';
 export * from './SelectColumn';
 export * from './SortColumn';
+export * from './TableText';
 export * from './utils';
