@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageHeaderToolsItem should match snapshot (auto-generated) 1`] = `
-<Fragment>
-  <div
-    className="pf-m-mobile pf-m-icons pf-m-user pf-m-selected"
-    key=".0"
-  >
+<div
+  className="pf-c-page__header-tools-item string"
+>
+  <div>
     ReactNode
   </div>
-</Fragment>
+</div>
 `;
