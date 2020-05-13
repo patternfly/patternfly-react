@@ -20,7 +20,7 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   isReadOnly?: boolean;
   /** Function that is called when clicking on the chip close button */
   onClick?: (event: React.MouseEvent) => void;
-  /** Component that will be used for chip. It is recommended that <div> or <button> or are used when the chip is an overflow chip. */
+  /** Component that will be used for chip. It is recommended that <button> or <li>  are used when the chip is an overflow chip. */
   component?: React.ReactNode;
   /** Position of the tooltip which is displayed if text is longer */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
