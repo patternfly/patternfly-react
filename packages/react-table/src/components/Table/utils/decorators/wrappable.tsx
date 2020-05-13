@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { ITransform } from '../../Table';
 

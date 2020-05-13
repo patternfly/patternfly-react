@@ -998,6 +998,7 @@ exports[`Actions virtualized table 1`] = `
                         className="pf-c-table__sort"
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
@@ -1014,6 +1015,7 @@ exports[`Actions virtualized table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Header cell
                                 </span>
@@ -1062,6 +1064,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -1077,6 +1080,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -1092,6 +1096,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -1107,6 +1112,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -1123,6 +1129,7 @@ exports[`Actions virtualized table 1`] = `
                         className=""
                         data-key={5}
                         data-label=""
+                        onMouseEnter={[Function]}
                       />
                     </Component>
                   </tr>
@@ -2134,6 +2141,7 @@ exports[`Selectable virtualized table 1`] = `
                         className="pf-c-table__check"
                         data-key={0}
                         data-label=""
+                        onMouseEnter={[Function]}
                       >
                         <Component
                           aria-label="Select all rows"
@@ -2164,6 +2172,7 @@ exports[`Selectable virtualized table 1`] = `
                         className="pf-c-table__sort"
                         data-key={1}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
@@ -2180,6 +2189,7 @@ exports[`Selectable virtualized table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Header cell
                                 </span>
@@ -2228,6 +2238,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -2243,6 +2254,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -2258,6 +2270,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -2273,6 +2286,7 @@ exports[`Selectable virtualized table 1`] = `
                         className=""
                         data-key={5}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -3660,6 +3674,7 @@ exports[`Simple Actions table 1`] = `
                         className="pf-c-table__sort"
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
@@ -3676,6 +3691,7 @@ exports[`Simple Actions table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Header cell
                                 </span>
@@ -3724,6 +3740,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -3739,6 +3756,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -3754,6 +3772,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -3769,6 +3788,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -3785,6 +3805,7 @@ exports[`Simple Actions table 1`] = `
                         className=""
                         data-key={5}
                         data-label=""
+                        onMouseEnter={[Function]}
                       />
                     </Component>
                   </tr>
@@ -4651,6 +4672,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Header cell
@@ -4666,6 +4688,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -4681,6 +4704,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -4696,6 +4720,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -4711,6 +4736,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -5580,6 +5606,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Header cell
@@ -5595,6 +5622,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -5610,6 +5638,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -5625,6 +5654,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -5640,6 +5670,7 @@ exports[`Simple virtualized table className 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit
@@ -6520,6 +6551,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className="pf-c-table__sort"
                         data-key={0}
                         data-label="Header cell"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         <Component
@@ -6537,6 +6569,7 @@ exports[`Sortable Virtualized Table 1`] = `
                               <Component>
                                 <span
                                   className="pf-c-table__text"
+                                  onMouseEnter={[Function]}
                                 >
                                   Header cell
                                 </span>
@@ -6585,6 +6618,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={1}
                         data-label="Branches"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Branches
@@ -6600,6 +6634,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={2}
                         data-label="Pull requests"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Pull requests
@@ -6615,6 +6650,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={3}
                         data-label="Workspaces"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Workspaces
@@ -6630,6 +6666,7 @@ exports[`Sortable Virtualized Table 1`] = `
                         className=""
                         data-key={4}
                         data-label="Last Commit"
+                        onMouseEnter={[Function]}
                         scope="col"
                       >
                         Last Commit

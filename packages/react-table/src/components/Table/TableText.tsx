@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '@patternfly/react-core';
 
 export enum TableTextVariant {
   div = 'div',
@@ -24,6 +25,10 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   variant?: TableTextVariant | 'span' | 'div';
   /** Determines which wrapping modifier to apply to the table text */
   wrapModifier?: WrapModifier | 'wrap' | 'nowrap' | 'truncate' | 'breakWord' | 'fitContent';
+  /** text to display on the tooltip */
+  tooltip?: string;
+  /** callback used to create the tooltip if text is truncated */
+  onMouseEnter?: (event: any) => void;
 }
 
 export const TableText: React.FunctionComponent<TableTextProps> = ({
@@ -31,13 +36,31 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   className = '',
   variant = 'span',
   wrapModifier = null,
+  tooltip: tooltipProp = '',
+  onMouseEnter: onMouseEnterProp = () => {},
   ...props
 }: TableTextProps) => {
   const Component: TableTextVariant | 'span' | 'div' = variant;
 
-  return (
-    <Component className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)} {...props}>
+  const [tooltip, setTooltip] = React.useState('');
+  const onMouseEnter = (event: any) => {
+    if (event.target.offsetWidth < event.target.scrollWidth) {
+      setTooltip(tooltipProp || event.target.innerHTML);
+    } else {
+      setTooltip('');
+    }
+    onMouseEnterProp(event);
+  };
+
+  const text = (
+    <Component
+      onMouseEnter={onMouseEnter}
+      className={css(className, wrapModifier && styles.modifiers[wrapModifier], styles.tableText)}
+      {...props}
+    >
       {children}
     </Component>
   );
+
+  return tooltip !== '' ? <Tooltip content={tooltip}>{text}</Tooltip> : text;
 };
