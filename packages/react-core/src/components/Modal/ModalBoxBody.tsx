@@ -7,17 +7,14 @@ export interface ModalBoxBodyProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the ModalBoxBody */
   className?: string;
-  /** An auto-generated id added to the ModalBoxBody */
-  descriptorId?: string;
 }
 
 export const ModalBoxBody: React.FunctionComponent<ModalBoxBodyProps> = ({
   children = null,
   className = '',
-  descriptorId,
   ...props
 }: ModalBoxBodyProps) => (
-  <div {...props} id={descriptorId} className={css(styles.modalBoxBody, className)}>
+  <div {...props} className={css(styles.modalBoxBody, className)}>
     {children}
   </div>
 );

@@ -13,7 +13,6 @@ it('ModalBox should match snapshot (auto-generated)', () => {
       children={<div>ReactNode</div>}
       className={"''"}
       variant={'default'}
-      title={"''"}
       aria-labelledby={'string'}
       aria-label={"''"}
       aria-describedby={'string'}

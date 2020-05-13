@@ -8,7 +8,6 @@ exports[`ModalBox should match snapshot (auto-generated) 1`] = `
   aria-modal="true"
   className="pf-c-modal-box ''"
   role="dialog"
-  title="''"
 >
   <div>
     ReactNode

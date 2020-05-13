@@ -28,7 +28,7 @@ export interface ModalContentProps {
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
   /** Id of Modal Box label */
-  'aria-labelledby'?: string;
+  'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
   /** Id of Modal Box description */
@@ -63,17 +63,17 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   description = null,
   title = '',
   'aria-label': ariaLabel = '',
+  'aria-describedby': ariaDescribedby,
+  'aria-labelledby': ariaLabelledby,
   showClose = true,
   footer = null,
   actions = [],
   onClose = () => undefined as any,
   variant = 'default',
   width = -1,
-  'aria-describedby': ariaDescribedby = '',
-  'aria-labelledby': ariaLabelledby = '',
-  boxId = '',
-  labelId = '',
-  descriptorId = '',
+  boxId,
+  labelId,
+  descriptorId,
   disableFocusTrap = false,
   hasNoBodyWrapper = false,
   ...props
@@ -106,11 +106,27 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBody = hasNoBodyWrapper ? (
     children
   ) : (
-    <ModalBoxBody {...props} {...(!description && !ariaDescribedby && { descriptorId })}>
+    <ModalBoxBody {...props} {...(!description && !ariaDescribedby && { id: descriptorId })}>
       {children}
     </ModalBoxBody>
   );
   const boxStyle = width === -1 ? {} : { width };
+  const ariaLabelledbyFormatted = (): null | string => {
+    if (ariaLabelledby === null) {
+      return null;
+    }
+    const idRefList: string[] = [];
+    if ((ariaLabel && boxId) !== '') {
+      idRefList.push(ariaLabel && boxId);
+    }
+    if (ariaLabelledby) {
+      idRefList.push(ariaLabelledby);
+    }
+    if (title) {
+      idRefList.push(labelId);
+    }
+    return idRefList.join(' ');
+  };
 
   const modalBox = (
     <ModalBox
@@ -119,8 +135,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       className={className}
       variant={variant}
       aria-label={ariaLabel}
-      aria-labelledby={`${boxId} ${ariaLabelledby || labelId}`}
-      aria-describedby={ariaDescribedby || descriptorId}
+      aria-labelledby={ariaLabelledbyFormatted()}
+      aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}

@@ -8,6 +8,6 @@ import { ModalBoxBody } from '../../ModalBoxBody';
 import {} from '../..';
 
 it('ModalBoxBody should match snapshot (auto-generated)', () => {
-  const view = shallow(<ModalBoxBody children={<>ReactNode</>} className={"''"} descriptorId={'string'} />);
+  const view = shallow(<ModalBoxBody children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

@@ -17,17 +17,17 @@ it('ModalContent should match snapshot (auto-generated)', () => {
       header={null}
       description={null}
       title={"''"}
-      aria-labelledby={"''"}
+      aria-labelledby={'string'}
       aria-label={"''"}
-      aria-describedby={"''"}
+      aria-describedby={'string'}
       showClose={true}
       width={-1}
       footer={null}
       actions={[]}
       onClose={() => undefined as any}
-      boxId={"''"}
-      labelId={"''"}
-      descriptorId={"''"}
+      boxId={'string'}
+      labelId={'string'}
+      descriptorId={'string'}
       disableFocusTrap={false}
       hasNoBodyWrapper={false}
     />

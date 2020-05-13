@@ -17,7 +17,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
   /** Id to use for Modal Box label */
-  'aria-labelledby'?: string;
+  'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
   /** Id to use for Modal Box descriptor */
@@ -119,6 +119,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     }
   };
 
+  isEmpty = (value: string | null) => value === null || value === undefined || value === '';
+
   componentDidMount() {
     const {
       appendTo,
@@ -140,12 +142,12 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       target.classList.remove(css(styles.backdropOpen));
     }
 
-    if (!title && !ariaLabel && !ariaLabelledby) {
+    if (this.isEmpty(title) && this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby)) {
       // eslint-disable-next-line no-console
       console.error('Modal: Specify at least one of: title, aria-label, aria-labelledby.');
     }
 
-    if (!ariaLabel && !ariaLabelledby && (hasNoBodyWrapper || header)) {
+    if (this.isEmpty(ariaLabel) && this.isEmpty(ariaLabelledby) && (hasNoBodyWrapper || header)) {
       // eslint-disable-next-line no-console
       console.error(
         'Modal: When using hasNoBodyWrapper or setting a custom header, ensure you assign an accessible name to the the modal container with aria-label or aria-labelledby.'
