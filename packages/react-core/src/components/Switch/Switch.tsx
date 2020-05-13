@@ -26,13 +26,9 @@ export interface SwitchProps
 }
 
 export class Switch extends React.Component<SwitchProps & OUIAProps> {
-  id = '';
+  id: string;
 
   static defaultProps: SwitchProps = {
-    id: '',
-    className: '',
-    label: '',
-    labelOff: '',
     isChecked: true,
     isDisabled: false,
     'aria-label': '',
@@ -75,7 +71,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps> {
           aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
           {...props}
         />
-        {label !== '' ? (
+        {label !== undefined ? (
           <React.Fragment>
             <span className={css(styles.switchToggle)} />
             <span
@@ -90,25 +86,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps> {
               id={isAriaLabelledBy ? `${this.id}-off` : null}
               aria-hidden="true"
             >
-              {labelOff || label}
-            </span>
-          </React.Fragment>
-        ) : label !== '' && labelOff !== '' ? (
-          <React.Fragment>
-            <span className={css(styles.switchToggle)} />
-            <span
-              className={css(styles.switchLabel, styles.modifiers.on)}
-              id={isAriaLabelledBy ? `${this.id}-on` : null}
-              aria-hidden="true"
-            >
-              {label}
-            </span>
-            <span
-              className={css(styles.switchLabel, styles.modifiers.off)}
-              id={isAriaLabelledBy ? `${this.id}-off` : null}
-              aria-hidden="true"
-            >
-              {labelOff}
+              {labelOff !== undefined ? labelOff : label}
             </span>
           </React.Fragment>
         ) : (

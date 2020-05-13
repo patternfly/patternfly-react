@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { NavVariants } from './NavVariants';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
@@ -13,28 +12,16 @@ export interface NavListProps
   children?: React.ReactNode;
   /** Additional classes added to the list */
   className?: string;
-  /** Indicates the list type. */
-  variant?: 'default' | 'simple' | 'horizontal' | 'tertiary';
   /** Aria-label for the left scroll button */
   ariaLeftScroll?: string;
   /** Aria-label for the right scroll button */
   ariaRightScroll?: string;
 }
 
-const variantStyle = {
-  [NavVariants.default]: '', // TODO: Core wants a BEM element here.
-  [NavVariants.simple]: styles.navSimpleList,
-  [NavVariants.horizontal]: styles.navHorizontalList,
-  [NavVariants.tertiary]: styles.navTertiaryList
-};
-
 export class NavList extends React.Component<NavListProps> {
   static contextType = NavContext;
 
   static defaultProps: NavListProps = {
-    variant: 'default',
-    children: null as React.ReactNode,
-    className: '',
     ariaLeftScroll: 'Scroll left',
     ariaRightScroll: 'Scroll right'
   };
@@ -110,41 +97,44 @@ export class NavList extends React.Component<NavListProps> {
   }
 
   render() {
-    const { variant, children, className, ariaLeftScroll, ariaRightScroll, ...props } = this.props;
+    const { children, className, ariaLeftScroll, ariaRightScroll, ...props } = this.props;
     const { scrollViewAtStart, scrollViewAtEnd } = this.state;
-    const isHorizontal = variant === NavVariants.horizontal || variant === NavVariants.tertiary;
 
     return (
-      <React.Fragment>
-        {isHorizontal && (
-          <button
-            className={css(styles.navScrollButton)}
-            aria-label={ariaLeftScroll}
-            onClick={this.scrollLeft}
-            disabled={scrollViewAtStart}
-          >
-            <AngleLeftIcon />
-          </button>
+      <NavContext.Consumer>
+        {({ isHorizontal }) => (
+          <React.Fragment>
+            {isHorizontal && (
+              <button
+                className={css(styles.navScrollButton)}
+                aria-label={ariaLeftScroll}
+                onClick={this.scrollLeft}
+                disabled={scrollViewAtStart}
+              >
+                <AngleLeftIcon />
+              </button>
+            )}
+            <ul
+              ref={this.navList}
+              className={css(styles.navList, className)}
+              onScroll={this.handleScrollButtons}
+              {...props}
+            >
+              {children}
+            </ul>
+            {isHorizontal && (
+              <button
+                className={css(styles.navScrollButton)}
+                aria-label={ariaRightScroll}
+                onClick={this.scrollRight}
+                disabled={scrollViewAtEnd}
+              >
+                <AngleRightIcon />
+              </button>
+            )}
+          </React.Fragment>
         )}
-        <ul
-          ref={this.navList}
-          className={css(variantStyle[variant], className)}
-          onScroll={this.handleScrollButtons}
-          {...props}
-        >
-          {children}
-        </ul>
-        {isHorizontal && (
-          <button
-            className={css(styles.navScrollButton)}
-            aria-label={ariaRightScroll}
-            onClick={this.scrollRight}
-            disabled={scrollViewAtEnd}
-          >
-            <AngleRightIcon />
-          </button>
-        )}
-      </React.Fragment>
+      </NavContext.Consumer>
     );
   }
 }

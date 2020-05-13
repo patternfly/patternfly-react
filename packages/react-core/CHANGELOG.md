@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.6...@patternfly/react-core@4.12.7) (2020-05-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.12.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.5...@patternfly/react-core@4.12.6) (2020-05-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.12.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.4...@patternfly/react-core@4.12.5) (2020-05-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.12.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.3...@patternfly/react-core@4.12.4) (2020-05-12)
+
+
+### Bug Fixes
+
+* **cloneelement:** update NavItem and LoginFooter ([#4221](https://github.com/patternfly/patternfly-react/issues/4221)) ([a6e1a4c](https://github.com/patternfly/patternfly-react/commit/a6e1a4c0e706ea2fb6b21ee08621a50d49c5b8a9))
+
+
+
+
+
+## [4.12.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.2...@patternfly/react-core@4.12.3) (2020-05-11)
+
+
+### Bug Fixes
+
+* **nav:** bump core and update variants ([#4225](https://github.com/patternfly/patternfly-react/issues/4225)) ([4909a23](https://github.com/patternfly/patternfly-react/commit/4909a237bc384a308bb2f30e907dc037aa7e3e50))
+
+
+
+
+
 ## [4.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.12.1...@patternfly/react-core@4.12.2) (2020-05-08)
 
 

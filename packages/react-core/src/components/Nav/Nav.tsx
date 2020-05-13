@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { getOUIAProps, OUIAProps } from '../../helpers';
-import { NavList } from './NavList';
 
 export type NavSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
@@ -34,15 +33,31 @@ export interface NavProps
   'aria-label'?: string;
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
+  /** For horizontal navs */
+  variant?: 'default' | 'horizontal' | 'tertiary';
 }
 
-export const NavContext = React.createContext({});
+export const NavContext = React.createContext<{
+  onSelect?: (
+    event: React.FormEvent<HTMLInputElement>,
+    groupId: number | string,
+    itemId: number | string,
+    to: string,
+    preventDefault: boolean,
+    onClick: (
+      e: React.FormEvent<HTMLInputElement>,
+      itemId: number | string,
+      groupId: number | string,
+      to: string
+    ) => void
+  ) => void;
+  onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
+  updateIsScrollable?: (isScrollable: boolean) => void;
+  isHorizontal?: boolean;
+}>({});
 
 export class Nav extends React.Component<NavProps & OUIAProps> {
   static defaultProps: NavProps = {
-    'aria-label': '',
-    children: null,
-    className: '',
     onSelect: () => undefined,
     onToggle: () => undefined,
     theme: 'dark'
@@ -92,10 +107,10 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
       onToggle,
       theme,
       ouiaId,
+      variant,
       ...props
     } = this.props;
-    const childrenProps = (children as NavList).props;
-    const isHorizontal = childrenProps && ['horizontal', 'tertiary'].includes(childrenProps.variant);
+    const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
 
     return (
       <NavContext.Provider
@@ -115,7 +130,8 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
-          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable })
+          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
+          isHorizontal
         }}
       >
         <nav
@@ -123,16 +139,11 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
             styles.nav,
             theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
+            variant === 'tertiary' && styles.modifiers.tertiary,
             this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
-          aria-label={
-            ariaLabel === ''
-              ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary'
-                ? 'Local'
-                : 'Global'
-              : ariaLabel
-          }
+          aria-label={ariaLabel || variant === 'tertiary' ? 'Local' : 'Global'}
           {...getOUIAProps('Nav', ouiaId)}
           {...props}
         >

@@ -4,7 +4,10 @@
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "declarationDir": "./dist/js",
-    "tsBuildInfoFile": "dist/esm.tsbuildinfo"
+    "tsBuildInfoFile": "dist/esm.tsbuildinfo",
+    "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitReturns": true,    
   },
   "include": [
     "./src/*",
