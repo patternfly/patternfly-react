@@ -296,6 +296,7 @@ import {
   Button,
   Radio
 } from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 class InvalidForm extends React.Component {
   constructor(props) {
