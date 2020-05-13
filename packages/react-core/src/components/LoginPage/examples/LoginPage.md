@@ -79,7 +79,7 @@ class SimpleLoginPage extends React.Component {
   }
 
   render() {
-    const helperText = <React.Fragment>&nbsp;Invalid login credentials.</React.Fragment>;
+    const helperText = 'Invalid login credentials.';
 
     const socialMediaLoginContent = (
       <React.Fragment>
