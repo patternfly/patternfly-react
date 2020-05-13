@@ -109,6 +109,10 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       numChips,
       expandedText,
       collapsedText,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      defaultIsOpen,
+      tooltipPosition,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...rest
     } = this.props;
     const { isOpen } = this.state;
@@ -116,66 +120,61 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       remaining: React.Children.count(children) - numChips
     });
 
-    if (React.Children.count(children)) {
-      const renderChipGroup = (id: string) => (
-        <div className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}>
-          {categoryName && this.renderLabel(id)}
-          <ul
-            className={css(styles.chipGroupList)}
-            {...(categoryName && { 'aria-labelledby': id })}
-            {...(!categoryName && { 'aria-label': ariaLabel })}
-            // aria-labelledby={id}
-            // aria-label={ariaLabel}
-            role="list"
-            {...rest}
-          >
-            {isOpen ? (
-              <React.Fragment>
-                {React.Children.toArray(children).map((child, i) => (
-                  <li className={css(styles.chipGroupListItem)} key={i}>
-                    {child}
-                  </li>
-                ))}
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                {React.Children.toArray(children).map((child, i) => {
-                  if (i < numChips) {
-                    return (
-                      <li className={css(styles.chipGroupListItem)} key={i}>
-                        {child}
-                      </li>
-                    );
-                  }
-                })}
-              </React.Fragment>
-            )}
-            {React.Children.count(children) > numChips && (
-              <li className={css(styles.chipGroupListItem)}>
-                <Chip isOverflowChip onClick={this.toggleCollapse} component="button">
-                  {isOpen ? expandedText : collapsedTextResult}
-                </Chip>
-              </li>
-            )}
-          </ul>
-          {isClosable && (
-            <div className={css(styles.chipGroupClose)}>
-              <Button
-                variant="plain"
-                aria-label={closeBtnAriaLabel}
-                onClick={onClick}
-                id={`remove_group_${id}`}
-                aria-labelledby={`remove_group_${id} ${id}`}
-              >
-                <TimesIcon aria-hidden="true" />
-              </Button>
-            </div>
+    const renderChipGroup = (id: string) => (
+      <div className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}>
+        {categoryName && this.renderLabel(id)}
+        <ul
+          className={css(styles.chipGroupList)}
+          {...(categoryName && { 'aria-labelledby': id })}
+          {...(!categoryName && { 'aria-label': ariaLabel })}
+          role="list"
+          {...rest}
+        >
+          {isOpen ? (
+            <React.Fragment>
+              {React.Children.toArray(children).map((child, i) => (
+                <li className={css(styles.chipGroupListItem)} key={i}>
+                  {child}
+                </li>
+              ))}
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              {React.Children.toArray(children).map((child, i) => {
+                if (i < numChips) {
+                  return (
+                    <li className={css(styles.chipGroupListItem)} key={i}>
+                      {child}
+                    </li>
+                  );
+                }
+              })}
+            </React.Fragment>
           )}
-        </div>
-      );
+          {React.Children.count(children) > numChips && (
+            <li className={css(styles.chipGroupListItem)}>
+              <Chip isOverflowChip onClick={this.toggleCollapse} component="button">
+                {isOpen ? expandedText : collapsedTextResult}
+              </Chip>
+            </li>
+          )}
+        </ul>
+        {isClosable && (
+          <div className={css(styles.chipGroupClose)}>
+            <Button
+              variant="plain"
+              aria-label={closeBtnAriaLabel}
+              onClick={onClick}
+              id={`remove_group_${id}`}
+              aria-labelledby={`remove_group_${id} ${id}`}
+            >
+              <TimesIcon aria-hidden="true" />
+            </Button>
+          </div>
+        )}
+      </div>
+    );
 
-      return <GenerateId>{randomId => renderChipGroup(this.props.id || randomId)}</GenerateId>;
-    }
-    return null;
+    return React.Children.count(children) === 0 ? null : <GenerateId>{randomId => renderChipGroup(this.props.id || randomId)}</GenerateId>;
   }
 }
