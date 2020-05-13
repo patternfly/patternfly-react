@@ -116,6 +116,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       ...rest
     } = this.props;
     const { isOpen } = this.state;
+    const numChildren = React.Children.count(children);
     const collapsedTextResult = fillTemplate(collapsedText as string, {
       remaining: React.Children.count(children) - numChips
     });
@@ -151,7 +152,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
               })}
             </React.Fragment>
           )}
-          {React.Children.count(children) > numChips && (
+          {numChildren > numChips && (
             <li className={css(styles.chipGroupListItem)}>
               <Chip isOverflowChip onClick={this.toggleCollapse} component="button">
                 {isOpen ? expandedText : collapsedTextResult}
@@ -175,6 +176,6 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       </div>
     );
 
-    return React.Children.count(children) === 0 ? null : <GenerateId>{randomId => renderChipGroup(this.props.id || randomId)}</GenerateId>;
+    return numChildren === 0 ? null : <GenerateId>{randomId => renderChipGroup(this.props.id || randomId)}</GenerateId>;
   }
 }

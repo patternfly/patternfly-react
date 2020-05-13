@@ -5754,7 +5754,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     aria-label="Chip group category"
                     class="pf-c-chip-group__list"
                     role="list"
-                    tooltipposition="top"
                   >
                     <li
                       class="pf-c-chip-group__list-item"
@@ -6022,9 +6021,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 <ul
                   aria-label="Chip group category"
                   className="pf-c-chip-group__list"
-                  defaultIsOpen={false}
                   role="list"
-                  tooltipPosition="top"
                 >
                   <li
                     className="pf-c-chip-group__list-item"
