@@ -51,7 +51,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   ...props
 }: FormGroupProps) => {
   const validHelperText =
-    helperText && (helperText as React.ReactElement).type === FormHelperText ? (
+    React.isValidElement(helperText) && (helperText as React.ReactElement).type === FormHelperText ? (
       helperText
     ) : (
       <div
@@ -65,7 +65,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
     );
 
   const inValidHelperText =
-    helperTextInvalid && (helperTextInvalid as React.ReactElement).type === FormHelperText ? (
+    React.isValidElement(helperTextInvalid) && (helperTextInvalid as React.ReactElement).type === FormHelperText ? (
       helperTextInvalid
     ) : (
       <div className={css(styles.formHelperText, styles.modifiers.error)} id={`${fieldId}-helper`} aria-live="polite">
