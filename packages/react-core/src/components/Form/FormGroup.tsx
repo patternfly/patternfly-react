@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
-import { FormHelperText } from './FormHelperText';
 
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
@@ -51,7 +50,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   ...props
 }: FormGroupProps) => {
   const validHelperText =
-    React.isValidElement(helperText) && (helperText as React.ReactElement).type === FormHelperText ? (
+    typeof helperText !== 'string' ? (
       helperText
     ) : (
       <div
@@ -65,7 +64,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
     );
 
   const inValidHelperText =
-    React.isValidElement(helperTextInvalid) && (helperTextInvalid as React.ReactElement).type === FormHelperText ? (
+    typeof helperTextInvalid !== 'string' ? (
       helperTextInvalid
     ) : (
       <div className={css(styles.formHelperText, styles.modifiers.error)} id={`${fieldId}-helper`} aria-live="polite">
