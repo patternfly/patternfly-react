@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.8.6...@patternfly/react-integration@4.9.0) (2020-05-14)
+
+
+### Bug Fixes
+
+* **modal:** core updates and refactoring for modal ([#4239](https://github.com/patternfly/patternfly-react/issues/4239)) ([9bbe914](https://github.com/patternfly/patternfly-react/commit/9bbe9145d894cdac05e6d848f9192822d9a12e01))
+
+
+### Features
+
+* **Form:** added icon to form helper text ([#4247](https://github.com/patternfly/patternfly-react/issues/4247)) ([7885a84](https://github.com/patternfly/patternfly-react/commit/7885a84e9e5172b0e5484e9e4a61276bbc43433e))
+
+
+
+
+
 ## [4.8.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.8.5...@patternfly/react-integration@4.8.6) (2020-05-13)
 
 **Note:** Version bump only for package @patternfly/react-integration
