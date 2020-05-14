@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.13.2...@patternfly/react-core@4.14.0) (2020-05-14)
+
+
+### Features
+
+* **form:** add support for form label icons ([#4195](https://github.com/patternfly/patternfly-react/issues/4195)) ([d55b1cd](https://github.com/patternfly/patternfly-react/commit/d55b1cd46817f477de43976786c35555a90819c4))
+
+
+
+
+
 ## [4.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.13.1...@patternfly/react-core@4.13.2) (2020-05-14)
 
 **Note:** Version bump only for package @patternfly/react-core
