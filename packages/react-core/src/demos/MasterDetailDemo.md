@@ -26,6 +26,7 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarContent,
+  ToolbarFilter,
   ToolbarToggleGroup,
   ToolbarGroup,
   Divider,
@@ -1194,7 +1195,12 @@ import {
   SkipToContent,
   TextContent,
   Text,
-  Title
+  Title,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -1881,10 +1887,7 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
