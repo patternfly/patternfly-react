@@ -35,7 +35,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -85,7 +85,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -157,7 +157,7 @@ class PageLayoutDefaultNav extends React.Component {
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem>
-        <QuestionCircleIcon /> Help
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
@@ -179,7 +179,7 @@ class PageLayoutDefaultNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
+              <HelpIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -310,7 +310,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -406,7 +406,7 @@ class PageLayoutExpandableNav extends React.Component {
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem>
-        <QuestionCircleIcon /> Help
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
@@ -428,7 +428,7 @@ class PageLayoutExpandableNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
+              <HelpIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -545,7 +545,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -632,7 +632,7 @@ class PageLayoutGroupsNav extends React.Component {
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem>
-        <QuestionCircleIcon /> Help
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
@@ -654,7 +654,7 @@ class PageLayoutGroupsNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
+              <HelpIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -758,7 +758,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -831,7 +831,7 @@ class PageLayoutHorizontalNav extends React.Component {
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem>
-        <QuestionCircleIcon /> Help
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
@@ -853,7 +853,7 @@ class PageLayoutHorizontalNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
+              <HelpIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -967,7 +967,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -1068,7 +1068,7 @@ class PageLayoutManualNav extends React.Component {
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem>
-        <QuestionCircleIcon /> Help
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
@@ -1090,7 +1090,7 @@ class PageLayoutManualNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
+              <HelpIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -1204,7 +1204,7 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, QuestionCircleIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -1277,7 +1277,7 @@ class PageLayoutLightNav extends React.Component {
         <CogIcon /> Settings
       </DropdownItem>,
       <DropdownItem>
-        <QuestionCircleIcon /> Help
+        <HelpIcon /> Help
       </DropdownItem>
     ];
     const userDropdownItems = [
@@ -1299,7 +1299,7 @@ class PageLayoutLightNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <QuestionCircleIcon />
+              <HelpIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
