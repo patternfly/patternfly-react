@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '../index';
+import { Chip, ChipGroup } from '../index';
 
 describe('ChipGroup', () => {
   test('chip group default', () => {
@@ -13,23 +13,19 @@ describe('ChipGroup', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('chip group with toolbar', () => {
+  test('chip group with category', () => {
     const view = shallow(
-      <ChipGroup withToolbar>
-        <ChipGroupToolbarItem>
-          <Chip>1.1</Chip>
-        </ChipGroupToolbarItem>
+      <ChipGroup categoryName="category">
+        <Chip>1.1</Chip>
       </ChipGroup>
     );
     expect(view).toMatchSnapshot();
   });
 
-  test('chip group with closable toolbar', () => {
+  test('chip group with closable category', () => {
     const view = shallow(
-      <ChipGroup withToolbar>
-        <ChipGroupToolbarItem isClosable>
-          <Chip>1.1</Chip>
-        </ChipGroupToolbarItem>
+      <ChipGroup categoryName="category" isClosable>
+        <Chip>1.1</Chip>
       </ChipGroup>
     );
     expect(view).toMatchSnapshot();
@@ -55,12 +51,10 @@ describe('ChipGroup', () => {
     expect(view.html()).toBeNull();
   });
 
-  test('chip group with toolbar and tooltip', () => {
+  test('chip group with category and tooltip', () => {
     const view = shallow(
-      <ChipGroup withToolbar>
-        <ChipGroupToolbarItem categoryName="A very long category name" tooltipPosition="bottom">
-          <Chip>1.1</Chip>
-        </ChipGroupToolbarItem>
+      <ChipGroup categoryName="A very long category name">
+        <Chip>1.1</Chip>
       </ChipGroup>
     );
     expect(view).toMatchSnapshot();

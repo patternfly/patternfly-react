@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ToolbarItem, ToolbarItemProps } from './ToolbarItem';
-import { ChipGroup, Chip, ChipGroupToolbarItem } from '../ChipGroup';
+import { ChipGroup, Chip } from '../ChipGroup';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
@@ -68,25 +68,23 @@ export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFi
     const { isExpanded, chipGroupContentRef } = this.context;
     const chipGroup = chips.length ? (
       <ToolbarItem variant="chip-group">
-        <ChipGroup withToolbar>
-          <ChipGroupToolbarItem
-            key={typeof categoryName === 'string' ? categoryName : categoryName.key}
-            categoryName={typeof categoryName === 'string' ? categoryName : categoryName.name}
-            isClosable={deleteChipGroup !== undefined}
-            onClick={() => deleteChipGroup(categoryName)}
-          >
-            {chips.map(chip =>
-              typeof chip === 'string' ? (
-                <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
-                  {chip}
-                </Chip>
-              ) : (
-                <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
-                  {chip.node}
-                </Chip>
-              )
-            )}
-          </ChipGroupToolbarItem>
+        <ChipGroup
+          key={typeof categoryName === 'string' ? categoryName : categoryName.key}
+          categoryName={typeof categoryName === 'string' ? categoryName : categoryName.name}
+          isClosable={deleteChipGroup !== undefined}
+          onClick={() => deleteChipGroup(categoryName)}
+        >
+          {chips.map(chip =>
+            typeof chip === 'string' ? (
+              <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
+                {chip}
+              </Chip>
+            ) : (
+              <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
+                {chip.node}
+              </Chip>
+            )
+          )}
         </ChipGroup>
       </ToolbarItem>
     ) : null;
