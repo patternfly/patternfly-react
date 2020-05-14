@@ -13,7 +13,7 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 ## Examples
 ```js title=Basic
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
 
 class BasicNotificationDrawer extends React.Component {
 constructor(props) {
@@ -47,7 +47,8 @@ constructor(props) {
       }
     };
   }
-render() {
+
+  render() {
     const { isOpen, isActive } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -382,7 +383,7 @@ render() {
         <NotificationDrawerList isHidden={!thirdGroupExpanded}>
           <EmptyState variant={EmptyStateVariant.full}>
             <EmptyStateIcon icon={SearchIcon} />
-              <Title size="lg">
+              <Title headingLevel="h2" size="lg">
                 No alerts found
               </Title>
             <EmptyStateBody>

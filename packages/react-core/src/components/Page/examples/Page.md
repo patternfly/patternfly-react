@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---
 
-import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants, PageSectionBreakpoints } from '@patternfly/react-core';
+import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
 ## Examples
 
@@ -18,8 +18,7 @@ import {
   PageHeaderTools,
   PageSidebar,
   PageSection,
-  PageSectionVariants,
-  PageSectionBreakpoints
+  PageSectionVariants
 } from '@patternfly/react-core';
 
 class VerticalPage extends React.Component {

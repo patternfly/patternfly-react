@@ -7,6 +7,7 @@ export class TabDemo extends Component {
     activeTabKey: 0,
     activeTabKey2: 0,
     activeTabKey3: 0,
+    activeTabKey4: 0,
     isTab2Hidden: true
   };
   private contentRef1: RefObject<HTMLDivElement>;

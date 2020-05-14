@@ -29,9 +29,9 @@ import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 interface GroupsNotificationDrawerDemoState {
   isOpen: boolean;
   isActive: string;
-  firstGroupExpanded: boolean;
-  secondGroupExpanded: boolean;
-  thirdGroupExpanded: boolean;
+  firstGroupIsOpen: boolean;
+  secondGroupIsOpen: boolean;
+  thirdGroupIsOpen: boolean;
 }
 
 export class GroupsNotificationDrawerDemo extends React.Component<
@@ -43,19 +43,19 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     this.state = {
       isOpen: false,
       isActive: '',
-      firstGroupExpanded: false,
-      secondGroupExpanded: true,
-      thirdGroupExpanded: false
+      firstGroupIsOpen: false,
+      secondGroupIsOpen: true,
+      thirdGroupIsOpen: false
     };
   }
 
-  onToggle = isOpen => {
+  onToggle = (isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onSelect = event => {
+  onSelect = (event: any) => {
     this.setState({
       isOpen: !this.state.isOpen,
       isActive: ''
@@ -63,40 +63,46 @@ export class GroupsNotificationDrawerDemo extends React.Component<
     this.onFocus(event.target.id);
   };
 
-  onClick = event => {
+  onClick = (event: any) => {
     this.setState({
       isActive: event.target.id
     });
     this.onFocus(event.target.id);
   };
 
-  onFocus = id => {
+  onFocus = (id: string) => {
     if (id) {
       const element = document.getElementById(id);
       element.focus();
     }
   };
 
-  toggleFirstDrawer = (event, value) => {
+  toggleFirstDrawer = (event: any, value: boolean) => {
     this.setState({
-      firstGroupExpanded: value
+      firstGroupIsOpen: value
     });
   };
 
-  toggleSecondDrawer = (event, value) => {
+  toggleSecondDrawer = (event: any, value: boolean) => {
     this.setState({
-      secondGroupExpanded: value
+      secondGroupIsOpen: value
     });
   };
 
-  toggleThirdDrawer = (event, value) => {
+  toggleThirdDrawer = (event: any, value: boolean) => {
     this.setState({
-      thirdGroupExpanded: value
+      thirdGroupIsOpen: value
     });
   };
 
   render() {
-    const { isOpen, isActive, firstGroupExpanded, secondGroupExpanded, thirdGroupExpanded } = this.state;
+    const {
+      isOpen,
+      isActive,
+      firstGroupIsOpen: firstGroupExpanded,
+      secondGroupIsOpen: secondGroupExpanded,
+      thirdGroupIsOpen: thirdGroupExpanded
+    } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -323,7 +329,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
               <NotificationDrawerList isHidden={!thirdGroupExpanded}>
                 <EmptyState variant={EmptyStateVariant.full}>
                   <EmptyStateIcon icon={SearchIcon} />
-                  <Title size="lg">No alerts found</Title>
+                  <Title headingLevel="h2" size="lg">
+                    No alerts found
+                  </Title>
                   <EmptyStateBody>
                     There are currently no critical alerts firing. There may be firing alerts of other severities or
                     silenced critical alerts however.

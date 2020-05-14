@@ -6,9 +6,9 @@ describe('Tab Demo Test', () => {
   });
 
   it('Verify tab2 can be hidden or shown', () => {
-    cy.get('#pf-tab-1-demoTab2').should('be.hidden');
+    cy.get('#pf-tab-1-demoTab2').should('not.exist');
     cy.get('#showTab2').click();
-    cy.get('#pf-tab-1-demoTab2').should('be.visible');
+    cy.get('#pf-tab-1-demoTab2').should('exist');
   });
 
   it('Verify tabs, tab sections, and tab navigation', () => {

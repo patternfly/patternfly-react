@@ -270,12 +270,12 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
                   ...rest
                 } = child.props;
 
-                return (
+                return isHidden ? null : (
                   <li
                     key={index}
                     className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
-                    hidden={isHidden}
                   >
+                    ,
                     <TabButton
                       className={css(styles.tabsLink)}
                       onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
