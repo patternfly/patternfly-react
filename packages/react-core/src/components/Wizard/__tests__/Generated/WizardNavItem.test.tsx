@@ -11,7 +11,7 @@ it('WizardNavItem should match snapshot (auto-generated)', () => {
   const view = shallow(
     <WizardNavItem
       children={<>ReactNode</>}
-      text={"''"}
+      content={''}
       isCurrent={false}
       isDisabled={false}
       step={42}

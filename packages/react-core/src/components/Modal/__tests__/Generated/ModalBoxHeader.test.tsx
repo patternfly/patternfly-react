@@ -3,11 +3,11 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { WizardNav } from '../../WizardNav';
+import { ModalBoxHeader } from '../../ModalBoxHeader';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('WizardNav should match snapshot (auto-generated)', () => {
-  const view = shallow(<WizardNav children={'any'} aria-label={'string'} isOpen={false} returnList={false} />);
+it('ModalBoxHeader should match snapshot (auto-generated)', () => {
+  const view = shallow(<ModalBoxHeader children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

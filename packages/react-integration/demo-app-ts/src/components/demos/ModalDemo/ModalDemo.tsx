@@ -231,7 +231,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isOpen={isCustomHeaderFooterModalOpen}
         header={header}
         title="custom header example"
-        modalContentAriaDescribedById="custom-header-example"
+        aria-describedby="custom-header-example"
         onClose={this.handleCustomHeaderFooterModalToggle}
         footer={footer}
       >
@@ -256,7 +256,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         variant={ModalVariant.large}
         aria-label="Modal Header"
         isOpen={isNoHeaderModalOpen}
-        modalContentAriaDescribedById="no-header-example"
+        aria-describedby="no-header-example"
         onClose={this.handleNoHeaderModalToggle}
         actions={[
           <Button key="confirm" variant="primary" onClick={this.handleNoHeaderModalToggle}>

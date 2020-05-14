@@ -9,28 +9,29 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Variant of the modal */
   variant?: 'small' | 'large' | 'default';
-  /** String to use for Modal Box aria-label */
-  title?: string;
+  /** Id to use for Modal Box label */
+  'aria-labelledby'?: string;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
   /** Id to use for Modal Box description */
-  id: string;
+  'aria-describedby': string;
 }
 
 export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   children,
   className = '',
   variant = 'default',
-  title = '',
+  'aria-labelledby': ariaLabelledby,
   'aria-label': ariaLabel = '',
-  id,
+  'aria-describedby': ariaDescribedby,
   ...props
 }: ModalBoxProps) => (
   <div
     {...props}
     role="dialog"
-    aria-label={title || ariaLabel}
-    aria-describedby={id}
+    aria-label={ariaLabel || null}
+    aria-labelledby={ariaLabelledby || null}
+    aria-describedby={ariaDescribedby}
     aria-modal="true"
     className={css(
       styles.modalBox,

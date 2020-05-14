@@ -12,11 +12,12 @@ it('WizardToggle should match snapshot (auto-generated)', () => {
     <WizardToggle
       nav={(isWizardNavOpen: boolean) => undefined as React.ReactElement}
       steps={[]}
-      activeStep={{ name: 'step' }}
+      activeStep={{} /*unrecognizedType WizardStep undefined*/}
       children={<div>ReactNode</div>}
-      hasBodyPadding={true}
+      hasNoBodyPadding={false}
       isNavOpen={true}
       onNavToggle={(isOpen: boolean) => undefined as void}
+      aria-label={"'Wizard Toggle'"}
     />
   );
   expect(view).toMatchSnapshot();
