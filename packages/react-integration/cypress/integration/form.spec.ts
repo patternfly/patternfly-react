@@ -52,6 +52,13 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify form group label has no top spacer', () => {
-    cy.get('label[for="subscribe"]').should('have.class', 'pf-m-no-padding-top');
+    cy.get('.pf-c-form__group-label').should('have.class', 'pf-m-no-padding-top');
+  });
+
+  it('Verify selecting the form label help icon launches popover', () => {
+    cy.get('#helper-text-target')
+      .click()
+      .should('have.attr', 'aria-expanded', 'true');
+    cy.get('.tippy-popper').should('exist');
   });
 });

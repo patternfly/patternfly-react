@@ -11,6 +11,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   className?: string;
   /** Label text before the field. */
   label?: React.ReactNode;
+  /** Sets an icon for the label. For providing additional context. Host element for Popover  */
+  labelIcon?: React.ReactElement;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
   /**
@@ -38,6 +40,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   children = null,
   className = '',
   label,
+  labelIcon,
   isRequired = false,
   validated = 'default',
   isInline = false,
@@ -73,24 +76,30 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       </div>
     );
 
+  const showValidHelperTxt = (validationType: 'success' | 'error' | 'default') =>
+    validationType !== ValidatedOptions.error && helperText ? validHelperText : '';
+
   return (
-    <div {...props} className={css(styles.formGroup, isInline ? styles.modifiers.inline : className)}>
+    <div {...props} className={css(styles.formGroup, className)}>
       {label && (
-        <label className={css(styles.formLabel, hasNoPaddingTop && styles.modifiers.noPaddingTop)} htmlFor={fieldId}>
-          <span className={css(styles.formLabelText)}>{label}</span>
-          {isRequired && (
-            <span className={css(styles.formLabelRequired)} aria-hidden="true">
-              {ASTERISK}
-            </span>
-          )}
-        </label>
+        <div className={css(styles.formGroupLabel, hasNoPaddingTop && styles.modifiers.noPaddingTop)}>
+          <label className={css(styles.formLabel)} htmlFor={fieldId}>
+            <span className={css(styles.formLabelText)}>{label}</span>
+            {isRequired && (
+              <span className={css(styles.formLabelRequired)} aria-hidden="true">
+                {' '}
+                {ASTERISK}
+              </span>
+            )}
+          </label>{' '}
+          {React.isValidElement(labelIcon) && labelIcon}
+        </div>
       )}
-      {children}
-      {validated === ValidatedOptions.error && helperTextInvalid
-        ? inValidHelperText
-        : validated !== ValidatedOptions.error && helperText
-        ? validHelperText
-        : ''}
+
+      <div className={css(styles.formGroupControl, isInline && styles.modifiers.inline)}>
+        {children}
+        {validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated)}
+      </div>
     </div>
   );
 };

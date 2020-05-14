@@ -23,6 +23,7 @@ describe('FormGroup component', () => {
       </FormGroup>
     );
     expect(view).toMatchSnapshot();
+    expect(view.find('.pf-c-form__group-control').prop('className')).toMatch(/pf-m-inline/);
   });
 
   test('should render no padding-top form group variant', () => {
@@ -31,7 +32,7 @@ describe('FormGroup component', () => {
         <input id="label-id" />
       </FormGroup>
     );
-    expect(view.find('label').prop('className')).toMatch(/no-padding-top/)
+    expect(view.find('.pf-c-form__group-label').prop('className')).toMatch(/no-padding-top/);
   });
 
   test('should render form group variant with required label', () => {

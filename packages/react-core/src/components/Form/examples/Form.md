@@ -3,22 +3,23 @@ title: 'Form'
 section: components
 cssPrefix: 'pf-c-form'
 typescript: true
-propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText']
+propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText', 'Button', 'Popover']
 ---
 
 import {
-Form,
-FormGroup,
-TextInput,
-TextArea,
-FormSelect,
-FormHelperText,
-Checkbox,
-ActionGroup,
-Button,
-Radio
+  Button,
+  Form,
+  FormGroup,
+  Popover,
+  TextInput,
+  TextArea,
+  FormSelect,
+  FormHelperText,
+  Checkbox,
+  ActionGroup,
+  Radio
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import { ExclamationCircleIcon, HelpIcon } from '@patternfly/react-icons';
 
 ## Examples
 
@@ -31,10 +32,12 @@ import {
   TextArea,
   FormSelect,
   Checkbox,
+  Popover,
   ActionGroup,
   Button,
   Radio
 } from '@patternfly/react-core';
+import { HelpIcon } from '@patternfly/react-icons';
 
 class SimpleForm extends React.Component {
   constructor(props) {
@@ -60,7 +63,25 @@ class SimpleForm extends React.Component {
 
     return (
       <Form>
-        <FormGroup label="Name" isRequired fieldId="simple-form-name" helperText="Please provide your full name">
+        <FormGroup
+          label="Name"
+          labelIcon={
+            <Popover
+              headerContent={
+                <div>The <a href="https://schema.org/name">name</a> of a <a href="https://schema.org/Person">Person</a></div>}
+              bodyContent={
+                <div>Often composed of <a href="https://schema.org/givenName" target="_blank">givenName</a> and <a href="https://schema.org/familyName" target="_blank">familyName</a>.
+                </div>
+              }>
+              <button aria-label="More info for name field" onClick={e => e.preventDefault()} aria-describedby="simple-form-name" className="pf-c-form__group-label-help">
+                <HelpIcon noVerticalAlign />
+              </button>
+            </Popover>
+          }
+          isRequired
+          fieldId="simple-form-name"
+          helperText="Please provide your full name"
+        >
           <TextInput
             isRequired
             type="text"
