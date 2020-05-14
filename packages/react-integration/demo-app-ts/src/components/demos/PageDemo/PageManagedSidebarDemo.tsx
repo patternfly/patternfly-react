@@ -1,5 +1,12 @@
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 export class PageManagedSidebarDemo extends React.Component {
   componentDidMount() {
@@ -17,8 +24,7 @@ export class PageManagedSidebarDemo extends React.Component {
       <PageHeader
         logo="Logo that's a <div>"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools={<PageHeaderTools>PageHeaderTools | Avatar</PageHeaderTools>}
         showNavToggle
         logoComponent={'div'}
       />

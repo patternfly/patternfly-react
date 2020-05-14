@@ -1,5 +1,13 @@
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants, SkipToContent } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants,
+  SkipToContent
+} from '@patternfly/react-core';
 
 export class PageDemo extends React.Component {
   state = {
@@ -31,8 +39,7 @@ export class PageDemo extends React.Component {
         id="page-demo-header"
         logo="Logo that's a <div>"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools={<PageHeaderTools>PageHeaderTools | Avatar</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}

@@ -3,13 +3,13 @@
  */
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { PageSidebar } from '../../PageSidebar';
+import { PageHeaderToolsItem } from '../../PageHeaderToolsItem';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
-it('PageSidebar should match snapshot (auto-generated)', () => {
+it('PageHeaderToolsItem should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <PageSidebar className={"''"} nav={<div>ReactNode</div>} isManagedSidebar={true} isNavOpen={true} theme={'dark'} />
+    <PageHeaderToolsItem children={<div>ReactNode</div>} className={'string'} breakpointMods={[]} isSelected={true} />
   );
   expect(view).toMatchSnapshot();
 });

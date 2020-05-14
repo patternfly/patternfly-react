@@ -8,10 +8,9 @@ exports[`Check dark page against snapshot 1`] = `
   defaultManagedSidebarIsOpen={true}
   header={
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
-      toolbar="Toolbar"
     />
   }
   id="PageId"
@@ -33,10 +32,9 @@ exports[`Check dark page against snapshot 1`] = `
     id="PageId"
   >
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
-      toolbar="Toolbar"
     >
       <header
         className="pf-c-page__header"
@@ -50,12 +48,7 @@ exports[`Check dark page against snapshot 1`] = `
             Logo
           </a>
         </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
-        </div>
+        PageHeaderTools | Avatar
       </header>
     </PageHeader>
     <PageSidebar
@@ -128,9 +121,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   defaultManagedSidebarIsOpen={true}
   header={
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
-      toolbar="Toolbar"
       topNav="Navigation"
     />
   }
@@ -151,9 +143,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     id="PageId"
   >
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
-      toolbar="Toolbar"
       topNav="Navigation"
     >
       <header
@@ -173,12 +164,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Navigation
         </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
-        </div>
+        PageHeaderTools | Avatar
       </header>
     </PageHeader>
     <PageSidebar
@@ -247,9 +233,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   defaultManagedSidebarIsOpen={true}
   header={
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
-      toolbar="Toolbar"
       topNav="Navigation"
     />
   }
@@ -270,9 +255,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     id="PageId"
   >
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
-      toolbar="Toolbar"
       topNav="Navigation"
     >
       <header
@@ -292,12 +276,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Navigation
         </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
-        </div>
+        PageHeaderTools | Avatar
       </header>
     </PageHeader>
     <PageSidebar
@@ -549,9 +528,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   defaultManagedSidebarIsOpen={true}
   header={
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
-      toolbar="Toolbar"
       topNav="Navigation"
     />
   }
@@ -590,9 +568,8 @@ exports[`Check page to verify skip to content points to main content region 1`] 
       </a>
     </SkipToContent>
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
-      toolbar="Toolbar"
       topNav="Navigation"
     >
       <header
@@ -612,12 +589,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         >
           Navigation
         </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
-        </div>
+        PageHeaderTools | Avatar
       </header>
     </PageHeader>
     <PageSidebar
@@ -845,10 +817,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   defaultManagedSidebarIsOpen={true}
   header={
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
-      toolbar="Toolbar"
     />
   }
   id="PageId"
@@ -869,10 +840,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     id="PageId"
   >
     <PageHeader
-      avatar=" | Avatar"
+      headerTools="PageHeaderTools | Avatar"
       logo="Logo"
       onNavToggle={[Function]}
-      toolbar="Toolbar"
     >
       <header
         className="pf-c-page__header"
@@ -886,12 +856,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
             Logo
           </a>
         </div>
-        <div
-          className="pf-c-page__header-tools"
-        >
-          Toolbar
-           | Avatar
-        </div>
+        PageHeaderTools | Avatar
       </header>
     </PageHeader>
     <PageSidebar

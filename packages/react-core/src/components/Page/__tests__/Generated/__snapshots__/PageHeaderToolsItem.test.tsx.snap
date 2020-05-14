@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeaderToolsItem should match snapshot (auto-generated) 1`] = `
+<div
+  className="pf-c-page__header-tools-item pf-m-selected string"
+>
+  <div>
+    ReactNode
+  </div>
+</div>
+`;
