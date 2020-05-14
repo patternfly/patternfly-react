@@ -11,6 +11,7 @@ import {
   SelectVariant,
   ValidatedOptions
 } from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 export interface FormState {
   value: string;
@@ -92,6 +93,7 @@ export class FormDemo extends Component<FormProps, FormState> {
             type="number"
             helperText="Please write your age"
             helperTextInvalid="Age has to be a number"
+            helperTextInvalidIcon={<ExclamationCircleIcon />}
             fieldId="age"
             validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
           >

@@ -5,6 +5,7 @@ import ArrowsAltVIcon from '@patternfly/react-icons/dist/js/icons/arrows-alt-v-i
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { SortByDirection } from './Table';
+import { TableText } from './TableText';
 
 export interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -29,11 +30,13 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     SortedByIcon = ArrowsAltVIcon;
   }
   return (
-    <button {...props} className={css(className)} onClick={event => onSort && onSort(event)}>
-      {children}
-      <span className={css(styles.tableSortIndicator)}>
-        <SortedByIcon />
-      </span>
+    <button {...props} className={css(className, styles.tableButton)} onClick={event => onSort && onSort(event)}>
+      <div className={css(className, styles.tableButtonContent)}>
+        <TableText>{children}</TableText>
+        <span className={css(styles.tableSortIndicator)}>
+          <SortedByIcon />
+        </span>
+      </div>
     </button>
   );
 };

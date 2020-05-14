@@ -14,7 +14,7 @@ export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
   className = '',
   ...props
 }: ModalBoxFooterProps) => (
-  <div {...props} className={css(styles.modalBoxFooter, className)}>
+  <footer {...props} className={css(styles.modalBoxFooter, className)}>
     {children}
-  </div>
+  </footer>
 );

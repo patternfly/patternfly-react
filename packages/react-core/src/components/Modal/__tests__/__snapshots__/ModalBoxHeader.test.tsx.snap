@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxHeader Test 1`] = `
-<div
-  className="pf-c-modal-box__title"
+<header
+  className="pf-c-modal-box__header"
 >
   This is a ModalBox header
-</div>
+</header>
 `;

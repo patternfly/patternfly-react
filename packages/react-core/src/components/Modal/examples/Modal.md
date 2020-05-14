@@ -37,7 +37,7 @@ class SimpleModal extends React.Component {
           Show Modal
         </Button>
         <Modal
-          title="Modal Header"
+          title="Simple modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -87,7 +87,8 @@ class SimpleModal extends React.Component {
           Show Modal
         </Button>
         <Modal
-          title="Modal Header"
+          aria-label="My modal context"
+          title="Modal header with description"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           description="A description is used when you want to provide more info about the modal than the title is able to describe. The content in the description is static and will not scroll with the rest of the modal body."
@@ -139,7 +140,7 @@ class SmallModal extends React.Component {
         </Button>
         <Modal
           variant={ModalVariant.small}
-          title="Modal Header"
+          title="Small modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -190,7 +191,7 @@ class LargeModal extends React.Component {
         </Button>
         <Modal
           size={ModalVariant.large}
-          title="Modal Header"
+          title="Large modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -241,7 +242,7 @@ class WidthModal extends React.Component {
         </Button>
         <Modal
           width={'50%'}
-          title="Modal Header"
+          title="Modal header for set width example"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -288,8 +289,8 @@ class CustomHeaderFooter extends React.Component {
 
     const header = (
       <React.Fragment>
-        <Title headingLevel="h1" size={TitleSizes['2xl']}>
-          Custom Modal Header/Footer
+        <Title id="custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
+          With custom modal header/footer
         </Title>
         <p className="pf-u-pt-sm">Allows for custom content in the header and/or footer by passing components.</p>
       </React.Fragment>
@@ -311,12 +312,13 @@ class CustomHeaderFooter extends React.Component {
           variant={ModalVariant.large}
           isOpen={isModalOpen}
           header={header}
-          title="custom header example"
-          modalContentAriaDescribedById="custom-header-example"
+          aria-label="My dialog"
+          aria-labelledby="custom-header-label"
+          aria-describedby="custom-header-description"
           onClose={this.handleModalToggle}
           footer={footer}
         >
-          <span id="custom-header-example">
+          <span id="custom-header-description">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
             aria-describedby value.
           </span>
@@ -361,9 +363,9 @@ class NoHeader extends React.Component {
         <Modal
           variant={ModalVariant.large}
           isOpen={isModalOpen}
-          aria-label="no header example"
+          aria-label="No header example"
           showClose={true}
-          modalContentAriaDescribedById="no-header-example"
+          aria-describedby="no-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
         >
@@ -394,7 +396,6 @@ class WithWizard extends React.Component {
       isModalOpen: false
     };
     this.handleModalToggle = () => {
-      console.log("called close wizard");
       this.setState(({ isModalOpen }) => ({
         isModalOpen: !isModalOpen
       }));
@@ -403,7 +404,7 @@ class WithWizard extends React.Component {
 
   render() {
     const { isModalOpen } = this.state;
-    
+
     const steps = [
       { name: 'Step 1', component: <p>Step 1</p> },
       { name: 'Step 2', component: <p>Step 2</p> },
@@ -423,8 +424,12 @@ class WithWizard extends React.Component {
           showClose={false}
           onClose={this.handleModalToggle}
           hasNoBodyWrapper
+          aria-describedby="wiz-modal-example-description"
+          aria-labelledby="wiz-modal-example-title"
         >
           <Wizard
+            titleId="wiz-modal-example-title"
+            descriptionId="wiz-modal-example-description"
             title="Simple Wizard"
             description="Simple Wizard Description"
             steps={steps}

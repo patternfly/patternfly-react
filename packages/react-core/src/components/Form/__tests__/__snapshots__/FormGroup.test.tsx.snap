@@ -221,14 +221,8 @@ exports[`FormGroup component should render form group variant with function help
     <input
       id="label-id"
     />
-    <div
-      aria-live="polite"
-      className="pf-c-form__helper-text"
-      id="label-id-helper"
-    >
-      <div>
-        label
-      </div>
+    <div>
+      label
     </div>
   </div>
 </FormGroup>
@@ -291,15 +285,9 @@ exports[`FormGroup component should render form group variant with node helperTe
     <input
       id="label-id"
     />
-    <div
-      aria-live="polite"
-      className="pf-c-form__helper-text"
-      id="label-id-helper"
-    >
-      <h1>
-        Header
-      </h1>
-    </div>
+    <h1>
+      Header
+    </h1>
   </div>
 </FormGroup>
 `;

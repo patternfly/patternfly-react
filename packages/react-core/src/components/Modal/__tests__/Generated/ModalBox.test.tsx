@@ -12,10 +12,10 @@ it('ModalBox should match snapshot (auto-generated)', () => {
     <ModalBox
       children={<div>ReactNode</div>}
       className={"''"}
-      isLarge={false}
-      isSmall={false}
-      title={'string'}
-      id={'string'}
+      variant={'default'}
+      aria-labelledby={'string'}
+      aria-label={"''"}
+      aria-describedby={'string'}
     />
   );
   expect(view).toMatchSnapshot();

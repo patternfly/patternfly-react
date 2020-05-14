@@ -4,11 +4,12 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
 <Modal
   actions={Array []}
   appendTo={<body />}
+  aria-describedby=""
   aria-label=""
+  aria-labelledby=""
   className=""
   hasNoBodyWrapper={true}
-  isOpen={false}
-  modalContentAriaDescribedById=""
+  isOpen={true}
   onClose={[Function]}
   showClose={false}
   title=""
@@ -28,19 +29,15 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
   >
     <div
       className="pf-c-wizard ''"
-      hasBodyPadding={true}
-      isFullHeight={false}
-      isFullWidth={false}
-      isInPage={false}
     >
       <WizardHeader
         closeButtonAriaLabel="'Close'"
-        description="''"
-        descriptionId="pf-wizard-description-0"
+        description=""
+        descriptionId="string"
         hideClose={false}
         onClose={[Function]}
         title="''"
-        titleId="pf-wizard-title-0"
+        titleId="string"
       />
       <WizardToggle
         hasNoBodyPadding={false}
@@ -50,11 +47,11 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
         steps={Array []}
       >
         <WizardFooterInternal
-          backButtonText="'Back'"
-          cancelButtonText="'Cancel'"
+          backButtonText="Back"
+          cancelButtonText="Cancel"
           firstStep={true}
           isValid={true}
-          nextButtonText="'Next'"
+          nextButtonText="Next"
           onBack={[Function]}
           onClose={[Function]}
           onNext={[Function]}

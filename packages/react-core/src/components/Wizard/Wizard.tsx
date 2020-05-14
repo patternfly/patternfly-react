@@ -46,6 +46,10 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   height?: number | string;
   /** The wizard title to display if header is desired */
   title?: string;
+  /** An optional id for the title */
+  titleId?: string;
+  /** An optional id for the description */
+  descriptionId?: string;
   /** The wizard description */
   description?: React.ReactNode;
   /** Flag indicating whether the close button should be in the header */
@@ -121,8 +125,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   constructor(props: WizardProps) {
     super(props);
     const newId = Wizard.currentId++;
-    this.titleId = `pf-wizard-title-${newId}`;
-    this.descriptionId = `pf-wizard-description-${newId}`;
+    this.titleId = props.titleId || `pf-wizard-title-${newId}`;
+    this.descriptionId = props.descriptionId || `pf-wizard-description-${newId}`;
 
     this.state = {
       currentStep: this.props.startAtStep && Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
@@ -311,6 +315,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       footer,
       appendTo,
       isOpen,
+      titleId,
+      descriptionId,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;

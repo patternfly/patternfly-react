@@ -14,24 +14,27 @@ exports[`Modal Content Test description 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
+        <ModalBoxDescription>
+          This is a test description.
+        </ModalBoxDescription>
       </ModalBoxHeader>
-      <ModalBoxDescription
+      <ModalBoxBody
         id="id"
       >
-        This is a test description.
-      </ModalBoxDescription>
-      <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
     </ModalBox>
@@ -53,21 +56,22 @@ exports[`Modal Content Test isOpen 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
-      <ModalBoxBody
-        id="id"
-      >
+      <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
     </ModalBox>
@@ -89,21 +93,22 @@ exports[`Modal Content Test only body 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
-      <ModalBoxBody
-        id="id"
-      >
+      <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
     </ModalBox>
@@ -125,21 +130,22 @@ exports[`Modal Content Test with footer 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
-      <ModalBoxBody
-        id="id"
-      >
+      <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
       <ModalBoxFooter>
@@ -164,20 +170,22 @@ exports[`Modal Content Test with onclose 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
-        id="id"
         isLarge={true}
       >
         This is a ModalBox header
@@ -204,21 +212,22 @@ exports[`Modal Content test without footer 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Content title"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Content title
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Content title
+        </h1>
       </ModalBoxHeader>
-      <ModalBoxBody
-        id="id"
-      >
+      <ModalBoxBody>
         This is a ModalBox header
       </ModalBoxBody>
     </ModalBox>
@@ -240,20 +249,22 @@ exports[`Modal Test with custom footer 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="Test Modal Custom Footer"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        Test Modal Custom Footer
+        <h1
+          className="pf-c-modal-box__title"
+        >
+          Test Modal Custom Footer
+        </h1>
       </ModalBoxHeader>
       <ModalBoxBody
-        id="id"
         isLarge={true}
       >
         This is a ModalBox header
@@ -284,26 +295,22 @@ exports[`Modal Test with custom header 1`] = `
   >
     <ModalBox
       aria-label=""
+      aria-labelledby=""
       className=""
-      id="id"
       style={Object {}}
-      title="test-custom-header-modal"
       variant="default"
     >
       <ModalBoxCloseButton
         onClose={[Function]}
       />
-      <div
-        className="pf-c-title"
-      >
+      <ModalBoxHeader>
         <span
           id="test-custom-header"
         >
           TEST
         </span>
-      </div>
+      </ModalBoxHeader>
       <ModalBoxBody
-        id="id"
         isLarge={true}
       >
         This is a ModalBox header

@@ -8,6 +8,6 @@ import { WizardBody } from '../../WizardBody';
 import {} from '../..';
 
 it('WizardBody should match snapshot (auto-generated)', () => {
-  const view = shallow(<WizardBody children={'any'} hasBodyPadding={true} />);
+  const view = shallow(<WizardBody children={'any'} hasNoBodyPadding={false} />);
   expect(view).toMatchSnapshot();
 });

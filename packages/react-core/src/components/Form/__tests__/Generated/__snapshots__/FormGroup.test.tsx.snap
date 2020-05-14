@@ -18,14 +18,8 @@ exports[`FormGroup should match snapshot (auto-generated) 1`] = `
     </span>
   </label>
   ReactNode
-  <div
-    aria-live="polite"
-    className="pf-c-form__helper-text"
-    id="string-helper"
-  >
-    <div>
-      ReactNode
-    </div>
+  <div>
+    ReactNode
   </div>
 </div>
 `;

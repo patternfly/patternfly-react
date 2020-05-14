@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FocusTrap } from '../../helpers';
-import titleStyles from '@patternfly/react-styles/css/components/Title/title';
+import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
 
@@ -27,8 +27,12 @@ export interface ModalContentProps {
   description?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title?: string;
+  /** Id of Modal Box label */
+  'aria-labelledby'?: string | null;
   /** Accessible descriptor of modal */
   'aria-label'?: string;
+  /** Id of Modal Box description */
+  'aria-describedby'?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
   /** Default width of the content. */
@@ -39,10 +43,12 @@ export interface ModalContentProps {
   actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
-  /** Id to use for Modal Box descriptor */
-  modalBoxAriaDescribedById?: string;
+  /** Id of the ModalBox container */
+  boxId: string;
+  /** Id of the ModalBox title */
+  labelId: string;
   /** Id of the ModalBoxBody */
-  id: string;
+  descriptorId: string;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
   /** Flag indicating if modal content should be placed in a modal box body wrapper */
@@ -57,14 +63,17 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   description = null,
   title = '',
   'aria-label': ariaLabel = '',
+  'aria-describedby': ariaDescribedby,
+  'aria-labelledby': ariaLabelledby,
   showClose = true,
   footer = null,
   actions = [],
   onClose = () => undefined as any,
   variant = 'default',
   width = -1,
-  modalBoxAriaDescribedById = '',
-  id = '',
+  boxId,
+  labelId,
+  descriptorId,
   disableFocusTrap = false,
   hasNoBodyWrapper = false,
   ...props
@@ -74,9 +83,18 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   }
 
   const modalBoxHeader = header ? (
-    <div className={css(titleStyles.title)}>{header}</div>
+    <ModalBoxHeader>{header}</ModalBoxHeader>
   ) : (
-    title && <ModalBoxHeader>{title}</ModalBoxHeader>
+    title && (
+      <ModalBoxHeader>
+        {
+          <h1 id={labelId} className={css(modalStyles.modalBoxTitle)}>
+            {title}
+          </h1>
+        }
+        {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
+      </ModalBoxHeader>
+    )
   );
 
   const modalBoxFooter = footer ? (
@@ -88,24 +106,40 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const modalBody = hasNoBodyWrapper ? (
     children
   ) : (
-    <ModalBoxBody {...props} {...(!description && { id })}>
+    <ModalBoxBody {...props} {...(!description && !ariaDescribedby && { id: descriptorId })}>
       {children}
     </ModalBoxBody>
   );
   const boxStyle = width === -1 ? {} : { width };
+  const ariaLabelledbyFormatted = (): null | string => {
+    if (ariaLabelledby === null) {
+      return null;
+    }
+    const idRefList: string[] = [];
+    if ((ariaLabel && boxId) !== '') {
+      idRefList.push(ariaLabel && boxId);
+    }
+    if (ariaLabelledby) {
+      idRefList.push(ariaLabelledby);
+    }
+    if (title) {
+      idRefList.push(labelId);
+    }
+    return idRefList.join(' ');
+  };
 
   const modalBox = (
     <ModalBox
+      id={boxId}
       style={boxStyle}
       className={className}
       variant={variant}
-      title={title}
       aria-label={ariaLabel}
-      id={modalBoxAriaDescribedById || id}
+      aria-labelledby={ariaLabelledbyFormatted()}
+      aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}
-      {description && <ModalBoxDescription id={id}>{description}</ModalBoxDescription>}
       {modalBody}
       {modalBoxFooter}
     </ModalBox>
