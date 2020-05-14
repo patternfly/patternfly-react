@@ -11,6 +11,8 @@ export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   isHidden?: boolean;
   /** Additional classes added to the Helper Text Item  */
   className?: string;
+  /** Icon displayed to the left of the helper text. */
+  icon?: React.ReactNode;
 }
 
 export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
@@ -18,6 +20,7 @@ export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
   isError = false,
   isHidden = true,
   className = '',
+  icon = null,
   ...props
 }: FormHelperTextProps) => (
   <p
@@ -29,6 +32,7 @@ export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
     )}
     {...props}
   >
+    {icon && <span className={css(styles.formHelperTextIcon)}>{icon}</span>}
     {children}
   </p>
 );

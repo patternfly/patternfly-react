@@ -5,6 +5,7 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
   className="''"
 >
   <FormHelperText
+    icon={null}
     isError={false}
     isHidden={true}
   />

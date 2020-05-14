@@ -5,19 +5,23 @@ cssPrefix: 'pf-c-form'
 typescript: true
 propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText']
 ---
+
 import {
-  Form,
-  FormGroup,
-  TextInput,
-  TextArea,
-  FormSelect,
-  Checkbox,
-  ActionGroup,
-  Button,
-  Radio
+Form,
+FormGroup,
+TextInput,
+TextArea,
+FormSelect,
+FormHelperText,
+Checkbox,
+ActionGroup,
+Button,
+Radio
 } from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
+
 ```js title=Basic
 import React from 'react';
 import {
@@ -56,12 +60,7 @@ class SimpleForm extends React.Component {
 
     return (
       <Form>
-        <FormGroup
-          label="Name"
-          isRequired
-          fieldId="simple-form-name"
-          helperText="Please provide your full name"
-        >
+        <FormGroup label="Name" isRequired fieldId="simple-form-name" helperText="Please provide your full name">
           <TextInput
             isRequired
             type="text"
@@ -96,7 +95,7 @@ class SimpleForm extends React.Component {
         <FormGroup isInline label="How can we contact you?" isRequired>
           <Checkbox label="Email" aria-label="Email" id="inlinecheck1" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck2" />
-          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3"/>
+          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3" />
         </FormGroup>
         <FormGroup label="Additional Note:" fieldId="simple-form-note">
           <TextInput isDisabled type="text" id="simple-form-note" name="simple-form-number" value="disabled" />
@@ -166,12 +165,7 @@ class HorizontalForm extends React.Component {
 
     return (
       <Form isHorizontal>
-        <FormGroup
-          label="Name"
-          isRequired
-          fieldId="horizontal-form-name"
-          helperText="Please provide your full name"
-        >
+        <FormGroup label="Name" isRequired fieldId="horizontal-form-name" helperText="Please provide your full name">
           <TextInput
             value={value1}
             isRequired
@@ -237,11 +231,13 @@ import {
   TextInput,
   TextArea,
   FormSelect,
+  FormHelperText,
   Checkbox,
   ActionGroup,
   Button,
   Radio
 } from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 class InvalidForm extends React.Component {
   constructor(props) {
@@ -251,7 +247,7 @@ class InvalidForm extends React.Component {
       validated: 'error'
     };
     this.handleTextInputChange = value => {
-      this.setState({ value, validated: /^\d+$/.test(value) ? 'success' : 'error' });
+      this.setState({ value, validated: value === '' ? 'noval' : /^\d+$/.test(value) ? 'success' : 'error' });
     };
   }
 
@@ -263,8 +259,13 @@ class InvalidForm extends React.Component {
         <FormGroup
           label="Age:"
           type="number"
-          helperText="Please enter your age"
+          helperText={
+            <FormHelperText icon={<ExclamationCircleIcon />} isHidden={validated !== 'noval'}>
+              Please enter your age
+            </FormHelperText>
+          }
           helperTextInvalid="Age has to be a number"
+          helperTextInvalidIcon={<ExclamationCircleIcon />}
           fieldId="age-1"
           validated={validated}
         >
@@ -295,6 +296,7 @@ import {
   Button,
   Radio
 } from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 class InvalidForm extends React.Component {
   constructor(props) {
@@ -308,22 +310,23 @@ class InvalidForm extends React.Component {
 
     this.simulateNetworkCall = callback => {
       setTimeout(callback, 2000);
-    }
+    };
 
     this.handleTextInputChange = value => {
-      this.setState({ value, validated: 'default', helperText: 'Validating...' },
+      this.setState(
+        { value, validated: 'default', helperText: 'Validating...' },
         this.simulateNetworkCall(() => {
           if (/^\d+$/.test(value)) {
             if (parseInt(value, 10) >= 21) {
-              this.setState({validated: 'success', helperText: 'Enjoy your stay'});
+              this.setState({ validated: 'success', helperText: 'Enjoy your stay' });
             } else {
-              this.setState({validated: 'error', invalidText: 'You must be at least 21 to continue'});
+              this.setState({ validated: 'error', invalidText: 'You must be at least 21 to continue' });
             }
+          } else {
+            this.setState({ validated: 'error', invalidText: 'Age has to be a number' });
           }
-          else {
-            this.setState({validated: 'error', invalidText: 'Age has to be a number'});
-          }
-        }));
+        })
+      );
     };
   }
 
@@ -337,6 +340,7 @@ class InvalidForm extends React.Component {
           type="number"
           helperText={helperText}
           helperTextInvalid={invalidText}
+          helperTextInvalidIcon={<ExclamationCircleIcon />}
           fieldId="age-2"
           validated={validated}
         >
@@ -356,25 +360,15 @@ class InvalidForm extends React.Component {
 
 ```js title=Horizontal-no-padding-top
 import React from 'react';
-import {
-  Form,
-  FormGroup,
-  Checkbox,
-  Radio
-} from '@patternfly/react-core';
+import { Form, FormGroup, Checkbox, Radio } from '@patternfly/react-core';
 
 class HorizontalForm extends React.Component {
   render() {
-
     return (
       <Form isHorizontal>
-        <FormGroup
-          label="Label"
-          hasNoPaddingTop
-          fieldId="options"
-        >
-        <Checkbox label="option 1" id="option-1" />
-        <Checkbox label="option 2" id="option-2" />
+        <FormGroup label="Label" hasNoPaddingTop fieldId="options">
+          <Checkbox label="option 1" id="option-1" />
+          <Checkbox label="option 2" id="option-2" />
         </FormGroup>
       </Form>
     );

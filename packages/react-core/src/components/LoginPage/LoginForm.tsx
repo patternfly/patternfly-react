@@ -14,6 +14,8 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   showHelperText?: boolean;
   /** Content displayed in the Helper Text component * */
   helperText?: React.ReactNode;
+  /** Icon displayed to the left in the Helper Text */
+  helperTextIcon?: React.ReactNode;
   /** Label for the Username Input Field */
   usernameLabel?: string;
   /** Value for the Username */
@@ -49,6 +51,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   className = '',
   showHelperText = false,
   helperText = null,
+  helperTextIcon = null,
   usernameLabel = 'Username',
   usernameValue = '',
   onChangeUsername = () => undefined as any,
@@ -66,7 +69,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   ...props
 }: LoginFormProps) => (
   <Form className={className} {...props}>
-    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>
+    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
       {helperText}
     </FormHelperText>
     <FormGroup
