@@ -17,6 +17,7 @@ import {
   CardBody,
   Checkbox,
   Dropdown,
+  DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
@@ -31,6 +32,8 @@ import {
   Page,
   PageHeader,
   PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -44,7 +47,7 @@ import {
   ToolbarContent
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -76,6 +79,7 @@ import {
   CardBody,
   Checkbox,
   Dropdown,
+  DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
@@ -91,6 +95,8 @@ import {
   Page,
   PageHeader,
   PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -107,7 +113,7 @@ import {
   ToolbarContent
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -604,26 +610,73 @@ class CardViewBasic extends React.Component {
       </Nav>
     );
 
-    const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
+    const kebabDropdownItems = [
+      <DropdownItem>
+        <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownItem>
+        <HelpIcon /> Help
+      </DropdownItem>
     ];
+    const userDropdownItems = [
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
+    ];
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <PageHeaderToolsItem>
+            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+              <CogIcon />
+            </Button>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem>
+            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+              <HelpIcon />
+            </Button>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+            <Dropdown
+              isPlain
+              position="right"
+              onSelect={this.onKebabDropdownSelect}
+              toggle={<KebabToggle onToggle={this.onPageToolbarKebabDropdownToggle} />}
+              isOpen={isUpperToolbarKebabDropdownOpen}
+              dropdownItems={kebabDropdownItems}
+            />
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
+            <Dropdown
+              isPlain
+              position="right"
+              onSelect={this.onPageDropdownSelect}
+              isOpen={isUpperToolbarDropdownOpen}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onPageDropdownToggle} 
+                >
+                  John Smith
+                </DropdownToggle>
+              }
+              dropdownItems={userDropdownItems}
+            />
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
+    );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        headerTools={
-          <PageHeaderTools>
-            <Avatar src={imgAvatar} alt="Avatar image" />
-          </PageHeaderTools>
-        }
+        headerTools={headerTools}
         showNavToggle
       />
     );
