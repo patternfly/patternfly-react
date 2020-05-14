@@ -116,7 +116,9 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             >
               {title}
               <span className={css(styles.navToggle)}>
-                <AngleRightIcon aria-hidden="true" />
+                <span className={css(styles.navToggleIcon)}>
+                  <AngleRightIcon aria-hidden="true" />
+                </span>
               </span>
             </a>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
@@ -125,7 +127,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   {srText}
                 </h2>
               )}
-              <ul className={css(styles.navSimpleList)}>{children}</ul>
+              <ul className={css(styles.navList)}>{children}</ul>
             </section>
           </li>
         )}

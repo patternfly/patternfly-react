@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { VictoryContainer, VictoryContainerProps } from 'victory';
+import { VictoryContainer, VictoryContainerProps } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
@@ -119,7 +119,7 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
 }: ChartContainerProps) => {
   const chartClassName = getClassName({ className });
 
-  // Note: theme is valid, but @types/victory is missing a prop type
+  // Note: className is valid, but Victory is missing a type
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;

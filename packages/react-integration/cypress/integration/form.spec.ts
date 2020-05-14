@@ -50,4 +50,15 @@ describe('Form Demo Test', () => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
   });
+
+  it('Verify form group label has no top spacer', () => {
+    cy.get('.pf-c-form__group-label').should('have.class', 'pf-m-no-padding-top');
+  });
+
+  it('Verify selecting the form label help icon launches popover', () => {
+    cy.get('#helper-text-target')
+      .click()
+      .should('have.attr', 'aria-expanded', 'true');
+    cy.get('.tippy-popper').should('exist');
+  });
 });

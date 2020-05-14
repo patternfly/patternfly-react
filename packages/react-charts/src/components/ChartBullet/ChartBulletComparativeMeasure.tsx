@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps, VictoryBar } from 'victory';
+import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
+import { VictoryBar } from 'victory-bar';
 import { getComparativeMeasureData } from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
@@ -99,7 +100,7 @@ export interface ChartBulletComparativeMeasureProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: Function | string[] | number[];
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */
@@ -198,14 +199,14 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
       if (horizontal) {
         return 0;
       }
-      const result = typeof barWidth === 'function' ? barWidth(data, false) : barWidth;
+      const result = typeof barWidth === 'function' ? barWidth(data as any) : barWidth;
       return result / 2;
     },
     dy: () => {
       if (!horizontal) {
         return 0;
       }
-      const result = typeof barWidth === 'function' ? barWidth(data, false) : barWidth;
+      const result = typeof barWidth === 'function' ? barWidth(data as any) : barWidth;
       return -(result / 2);
     },
     orientation: 'top',

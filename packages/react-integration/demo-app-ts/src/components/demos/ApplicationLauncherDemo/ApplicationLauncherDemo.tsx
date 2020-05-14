@@ -1,14 +1,14 @@
 import React from 'react';
-import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
+import { ApplicationLauncher, ApplicationLauncherItem, Tooltip } from '@patternfly/react-core';
 
 interface ApplicationLauncherState {
   isOpen: boolean;
 }
 
-export class ApplicationLauncherDemo extends React.Component<null, ApplicationLauncherState> {
+export class ApplicationLauncherDemo extends React.Component<{}, ApplicationLauncherState> {
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
-  constructor(props) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       isOpen: false
@@ -34,24 +34,24 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
     const { isOpen } = this.state;
     const dropdownItems = [
       <Tooltip content={<div>Launch Application 1</div>} key="1">
-        <DropdownItem key="application_1" component="a" href="http://patternfly-react.surge.sh/">
+        <ApplicationLauncherItem key="application_1" component="a" href="https://www.google.com">
           Application 1
-        </DropdownItem>
+        </ApplicationLauncherItem>
       </Tooltip>,
       <Tooltip content={<div>Launch Application 2</div>} position="right" key="2">
-        <DropdownItem key="application_2" component="a">
+        <ApplicationLauncherItem key="application_2" component="a">
           Application 2
-        </DropdownItem>
+        </ApplicationLauncherItem>
       </Tooltip>,
       <Tooltip content={<div>Launch Application 3</div>} position="right" key="3">
-        <DropdownItem key="application_3" component="a">
+        <ApplicationLauncherItem key="application_3" component="a">
           Application 3
-        </DropdownItem>
+        </ApplicationLauncherItem>
       </Tooltip>,
       <Tooltip content={<div>Application Unavailable At This Time</div>} position="bottom" key="4">
-        <DropdownItem key="disabled_application_4" isDisabled component="a">
+        <ApplicationLauncherItem key="disabled_application_4" isDisabled component="a">
           Unavailable Application
-        </DropdownItem>
+        </ApplicationLauncherItem>
       </Tooltip>
     ];
     return (
@@ -60,7 +60,7 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
         onToggle={this.onToggle}
         toggleId="toggle"
         isOpen={isOpen}
-        dropdownItems={dropdownItems}
+        items={dropdownItems}
       />
     );
   }

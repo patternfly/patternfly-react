@@ -14,7 +14,6 @@ exports[`list item header with custom icon applied  1`] = `
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
-        title={null}
       />
     </span>
     <h2
@@ -38,7 +37,6 @@ exports[`list item header with srTitle applied  1`] = `
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
-        title={null}
       />
     </span>
     <h2
@@ -67,7 +65,6 @@ exports[`list item header with variant applied  1`] = `
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
-        title={null}
       />
     </span>
     <h2
@@ -91,7 +88,6 @@ exports[`renders with PatternFly Core styles 1`] = `
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
-        title={null}
       />
     </span>
     <h2

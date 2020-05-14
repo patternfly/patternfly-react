@@ -1,5 +1,13 @@
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants, SkipToContent } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants,
+  SkipToContent
+} from '@patternfly/react-core';
 
 export class PageDemo extends React.Component {
   state = {
@@ -17,8 +25,8 @@ export class PageDemo extends React.Component {
 
   render() {
     const { isNavOpen } = this.state;
-    const headerRole = undefined;
-    const pageRole = undefined;
+    const headerRole: string | undefined = undefined;
+    const pageRole: string | undefined = undefined;
     const logoProps = {
       href: 'https://patternfly.org',
       // eslint-disable-next-line no-console
@@ -31,8 +39,7 @@ export class PageDemo extends React.Component {
         id="page-demo-header"
         logo="Logo that's a <div>"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools={<PageHeaderTools>PageHeaderTools | Avatar</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
@@ -56,6 +63,18 @@ export class PageDemo extends React.Component {
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+        <PageSection
+          hasNoPadding
+          breakpointMods={[{ modifier: 'padding', breakpoint: 'md' }, { modifier: 'padding', breakpoint: 'lg' }]}
+        >
+          Section with padding only on medium/large
+        </PageSection>
+        <PageSection
+          variant={PageSectionVariants.light}
+          breakpointMods={[{ modifier: 'no-padding', breakpoint: 'md' }]}
+        >
+          Section with no padding on medium
+        </PageSection>
       </Page>
     );
   }

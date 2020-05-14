@@ -121,7 +121,7 @@ test('FormSelect input with no aria-label or id generates console error', () => 
 
 test('invalid FormSelect input', () => {
   const view = shallow(
-    <FormSelect isValid={false} aria-label="invalid FormSelect">
+    <FormSelect validated={'error'} aria-label="invalid FormSelect">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );

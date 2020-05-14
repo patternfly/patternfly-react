@@ -1,13 +1,5 @@
 import React from 'react';
-import { Dropdown } from '@patternfly/react-core/dist/js/components/Dropdown/Dropdown';
-import { DropdownItem } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
-import { DropdownToggle } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownToggle';
-import { DropdownPosition } from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
-import { Stack } from '@patternfly/react-core/dist/js/layouts/Stack/Stack';
-import { StackItem } from '@patternfly/react-core/dist/js/layouts/Stack/StackItem';
-import { Toolbar } from '@patternfly/react-core/dist/js/layouts/Toolbar/Toolbar';
-import { ToolbarGroup } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarGroup';
-import { ToolbarItem } from '@patternfly/react-core/dist/js/layouts/Toolbar/ToolbarItem';
+import { ToolbarItem, Dropdown, DropdownItem, DropdownToggle, DropdownPosition } from '@patternfly/react-core';
 
 const projects = [
   { id: 1, name: 'Project 1' },
@@ -55,11 +47,11 @@ export class ProjectToolbar extends React.Component {
     const { projectDropDownOpen, selectedProject } = this.state;
 
     return (
-      <Stack>
-        <StackItem>
-          <label>Project</label>
-        </StackItem>
-        <StackItem>
+      <React.Fragment>
+        <ToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+          <label>Project:</label>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onToggle={this.onProjectDropDownToggle}
             position={DropdownPosition.right}
@@ -71,8 +63,8 @@ export class ProjectToolbar extends React.Component {
               </DropdownItem>
             ))}
           />
-        </StackItem>
-      </Stack>
+        </ToolbarItem>
+      </React.Fragment>
     );
   };
 
@@ -80,11 +72,11 @@ export class ProjectToolbar extends React.Component {
     const { applicationDropDownOpen, selectedApplication } = this.state;
 
     return (
-      <Stack>
-        <StackItem>
-          <label>Application</label>
-        </StackItem>
-        <StackItem>
+      <React.Fragment>
+        <ToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+          <label>Application:</label>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onToggle={this.onApplicationDropDownToggle}
             position={DropdownPosition.right}
@@ -98,19 +90,17 @@ export class ProjectToolbar extends React.Component {
               </DropdownItem>
             ))}
           />
-        </StackItem>
-      </Stack>
+        </ToolbarItem>
+      </React.Fragment>
     );
   };
 
   render() {
     return (
-      <Toolbar className="project-toolbar pf-u-mx-md pf-u-mt-md">
-        <ToolbarGroup>
-          <ToolbarItem className="pf-u-mr-xl">{this.renderProjectDropdown()}</ToolbarItem>
-          <ToolbarItem className="pf-u-mr-md">{this.renderApplicationDropdown()}</ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <React.Fragment>
+        {this.renderProjectDropdown()}
+        {this.renderApplicationDropdown()}
+      </React.Fragment>
     );
   }
 }

@@ -14,11 +14,10 @@ module.exports = {
     name: 'PatternFlyReact',
     globals: {
       react: 'React',
-      'react-dom': 'ReactDOM',
-      'prop-types': 'PropTypes'
+      'react-dom': 'ReactDOM'
     }
   },
-  external: ['react', 'react-dom', 'prop-types'],
+  external: ['react', 'react-dom'],
   plugins: [
     replace({
       'process.env.NODE_ENV': `'${isProduction ? 'production' : 'development'}'`

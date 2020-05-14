@@ -158,36 +158,40 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     return (
       <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
         {!isCompact && (
+          <div className={css(styles.paginationNavControl, styles.modifiers.first)}>
+            <Button
+              variant={ButtonVariant.plain}
+              isDisabled={isDisabled || page === firstPage || page === 0}
+              aria-label={toFirstPage}
+              data-action="first"
+              onClick={event => {
+                onFirstClick(event, 1);
+                this.handleNewPage(event, 1);
+                this.setState({ userInputPage: 1 });
+              }}
+            >
+              <AngleDoubleLeftIcon />
+            </Button>
+          </div>
+        )}
+        <div className={styles.paginationNavControl}>
           <Button
             variant={ButtonVariant.plain}
             isDisabled={isDisabled || page === firstPage || page === 0}
-            aria-label={toFirstPage}
-            data-action="first"
+            data-action="previous"
             onClick={event => {
-              onFirstClick(event, 1);
-              this.handleNewPage(event, 1);
-              this.setState({ userInputPage: 1 });
+              const newPage = (page as number) - 1 >= 1 ? (page as number) - 1 : 1;
+              onPreviousClick(event, newPage);
+              this.handleNewPage(event, newPage);
+              this.setState({ userInputPage: newPage });
             }}
+            aria-label={toPreviousPage}
           >
-            <AngleDoubleLeftIcon />
+            <AngleLeftIcon />
           </Button>
-        )}
-        <Button
-          variant={ButtonVariant.plain}
-          isDisabled={isDisabled || page === firstPage || page === 0}
-          data-action="previous"
-          onClick={event => {
-            const newPage = (page as number) - 1 >= 1 ? (page as number) - 1 : 1;
-            onPreviousClick(event, newPage);
-            this.handleNewPage(event, newPage);
-            this.setState({ userInputPage: newPage });
-          }}
-          aria-label={toPreviousPage}
-        >
-          <AngleLeftIcon />
-        </Button>
+        </div>
         {!isCompact && (
-          <div className={css(styles.paginationNavPageSelect)}>
+          <div className={styles.paginationNavPageSelect}>
             <input
               className={css(styles.formControl)}
               aria-label={currPage}
@@ -202,34 +206,38 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             <span aria-hidden="true">of {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}</span>
           </div>
         )}
-        <Button
-          variant={ButtonVariant.plain}
-          isDisabled={isDisabled || page === lastPage}
-          aria-label={toNextPage}
-          data-action="next"
-          onClick={event => {
-            const newPage = (page as number) + 1 <= lastPage ? (page as number) + 1 : lastPage;
-            onNextClick(event, newPage);
-            this.handleNewPage(event, newPage);
-            this.setState({ userInputPage: newPage });
-          }}
-        >
-          <AngleRightIcon />
-        </Button>
-        {!isCompact && (
+        <div className={styles.paginationNavControl}>
           <Button
             variant={ButtonVariant.plain}
             isDisabled={isDisabled || page === lastPage}
-            aria-label={toLastPage}
-            data-action="last"
+            aria-label={toNextPage}
+            data-action="next"
             onClick={event => {
-              onLastClick(event, lastPage);
-              this.handleNewPage(event, lastPage);
-              this.setState({ userInputPage: lastPage });
+              const newPage = (page as number) + 1 <= lastPage ? (page as number) + 1 : lastPage;
+              onNextClick(event, newPage);
+              this.handleNewPage(event, newPage);
+              this.setState({ userInputPage: newPage });
             }}
           >
-            <AngleDoubleRightIcon />
+            <AngleRightIcon />
           </Button>
+        </div>
+        {!isCompact && (
+          <div className={css(styles.paginationNavControl, styles.modifiers.last)}>
+            <Button
+              variant={ButtonVariant.plain}
+              isDisabled={isDisabled || page === lastPage}
+              aria-label={toLastPage}
+              data-action="last"
+              onClick={event => {
+                onLastClick(event, lastPage);
+                this.handleNewPage(event, lastPage);
+                this.setState({ userInputPage: lastPage });
+              }}
+            >
+              <AngleDoubleRightIcon />
+            </Button>
+          </div>
         )}
       </nav>
     );

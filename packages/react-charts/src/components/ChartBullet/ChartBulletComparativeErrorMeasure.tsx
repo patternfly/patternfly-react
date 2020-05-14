@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps, VictoryBar } from 'victory';
+import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps } from 'victory-core';
+import { VictoryBar } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';
@@ -97,7 +98,7 @@ export interface ChartBulletComparativeErrorMeasureProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: Function | string[] | number[];
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */

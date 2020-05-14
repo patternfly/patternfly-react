@@ -5,7 +5,6 @@ import {
   sortable,
   cellActions,
   cellWidth,
-  cellHeightAuto,
   collapsible,
   scopeColTransformer,
   headerCol,
@@ -69,7 +68,7 @@ const testCellActions = ({
       .find('.pf-c-dropdown button')
       .first()
       .simulate('click');
-    expect(view.find('.pf-c-dropdown__menu li div')).toHaveLength(expectDisabled ? 0 : 1);
+    expect(view.find('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1);
   }
 };
 
@@ -189,11 +188,13 @@ describe('Transformer functions', () => {
     actionConfigs.forEach(testCellActions);
   });
 
+  type widthType = 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
+
   describe('cellWidth', () => {
-    const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 'max'];
+    const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100];
     widths.forEach(width =>
       test(`${width}`, () => {
-        expect(cellWidth(width as string)()).toEqual({ className: `pf-m-width-${width}` });
+        expect(cellWidth(width as widthType)()).toEqual({ className: `pf-m-width-${width}` });
       })
     );
   });
@@ -302,10 +303,6 @@ describe('Transformer functions', () => {
 
   test('wrappable', () => {
     expect(wrappable()).toEqual({ className: 'pf-m-wrap' });
-  });
-
-  test('cell height auto', () => {
-    expect(cellHeightAuto()).toEqual({ className: 'pf-m-height-auto' });
   });
 
   test('editable', () => {

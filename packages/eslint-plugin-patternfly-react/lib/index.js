@@ -1,9 +1,9 @@
 const recommended = require('./config/recommended');
-const importDefaultName = require('./rules/import-default-name');
 
 module.exports = {
   rules: {
-    'import-default-name': importDefaultName
+    'import-default-name': require('./rules/import-default-name'),
+    'import-tokens-icons': require('./rules/import-tokens-icons')
   },
   configs: {
     recommended

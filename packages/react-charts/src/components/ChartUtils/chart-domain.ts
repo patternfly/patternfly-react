@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { DataGetterPropType } from 'victory';
-import { Data } from 'victory-core';
+import { Data, DataGetterPropType } from 'victory-core';
 
 interface DomainInterface {
   data?: any;

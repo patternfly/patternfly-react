@@ -27,7 +27,7 @@ interface GetVisibleCellRangeParams {
   offset: number;
 }
 
-interface SizeAndPositionData {
+export interface SizeAndPositionData {
   offset: number;
   size: number;
 }

@@ -12,9 +12,7 @@ export interface FormSelectProps
   className?: string;
   /** value of selected option */
   value?: any;
-  /** Flag indicating selection is valid. This prop will be deprecated. You should use validated instead. */
-  isValid?: boolean;
-  /* Value to indicate if the select is modified to show that validation state.
+  /** Value to indicate if the select is modified to show that validation state.
    * If set to success, select will be modified to indicate valid state.
    * If set to error, select will be modified to indicate error state.
    */
@@ -45,7 +43,6 @@ export class FormSelect extends React.Component<FormSelectProps> {
   static defaultProps: PickOptional<FormSelectProps> = {
     className: '',
     value: '',
-    isValid: true,
     validated: 'default',
     isDisabled: false,
     isRequired: false,
@@ -59,7 +56,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
   };
 
   render() {
-    const { children, className, value, isValid, validated, isDisabled, isRequired, ...props } = this.props;
+    const { children, className, value, validated, isDisabled, isRequired, ...props } = this.props;
     return (
       <select
         {...props}
@@ -68,7 +65,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
           className,
           validated === ValidatedOptions.success && styles.modifiers.success
         )}
-        aria-invalid={!isValid || validated === ValidatedOptions.error}
+        aria-invalid={validated === ValidatedOptions.error}
         onChange={this.handleChange}
         disabled={isDisabled}
         required={isRequired}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export type NavSelectClickHandler = (
   e: React.FormEvent<HTMLInputElement>,
@@ -33,31 +33,38 @@ export interface NavProps
   'aria-label'?: string;
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
+  /** For horizontal navs */
+  variant?: 'default' | 'horizontal' | 'tertiary';
 }
 
-export const NavContext = React.createContext({});
+export const NavContext = React.createContext<{
+  onSelect?: (
+    event: React.FormEvent<HTMLInputElement>,
+    groupId: number | string,
+    itemId: number | string,
+    to: string,
+    preventDefault: boolean,
+    onClick: (
+      e: React.FormEvent<HTMLInputElement>,
+      itemId: number | string,
+      groupId: number | string,
+      to: string
+    ) => void
+  ) => void;
+  onToggle?: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => void;
+  updateIsScrollable?: (isScrollable: boolean) => void;
+  isHorizontal?: boolean;
+}>({});
 
-class Nav extends React.Component<NavProps & InjectedOuiaProps> {
+export class Nav extends React.Component<NavProps & OUIAProps> {
   static defaultProps: NavProps = {
-    'aria-label': '',
-    children: null,
-    className: '',
     onSelect: () => undefined,
     onToggle: () => undefined,
-    theme: 'light'
+    theme: 'dark'
   };
 
   state = {
-    showLeftScrollButton: false,
-    showRightScrollButton: false
-  };
-
-  updateScrollButtonState = (state: { showLeftScrollButton: boolean; showRightScrollButton: boolean }) => {
-    const { showLeftScrollButton, showRightScrollButton } = state;
-    this.setState({
-      showLeftScrollButton,
-      showRightScrollButton
-    });
+    isScrollable: false
   };
 
   // Callback from NavItem
@@ -99,12 +106,11 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onToggle,
       theme,
-      ouiaContext,
       ouiaId,
+      variant,
       ...props
     } = this.props;
-    const { showLeftScrollButton, showRightScrollButton } = this.state;
-    const childrenProps: any = (children as any).props;
+    const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
 
     return (
       <NavContext.Provider
@@ -124,28 +130,21 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
-          updateScrollButtonState: this.updateScrollButtonState
+          updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
+          isHorizontal
         }}
       >
         <nav
           className={css(
             styles.nav,
-            theme === 'dark' && styles.modifiers.dark,
-            showLeftScrollButton && styles.modifiers.start,
-            showRightScrollButton && styles.modifiers.end,
+            theme === 'light' && styles.modifiers.light,
+            isHorizontal && styles.modifiers.horizontal,
+            variant === 'tertiary' && styles.modifiers.tertiary,
+            this.state.isScrollable && styles.modifiers.scrollable,
             className
           )}
-          aria-label={
-            ariaLabel === ''
-              ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary'
-                ? 'Local'
-                : 'Global'
-              : ariaLabel
-          }
-          {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'Nav',
-            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          })}
+          aria-label={ariaLabel || variant === 'tertiary' ? 'Local' : 'Global'}
+          {...getOUIAProps('Nav', ouiaId)}
           {...props}
         >
           {children}
@@ -154,6 +153,3 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
     );
   }
 }
-
-const NavWithOuiaContext = withOuiaContext(Nav);
-export { NavWithOuiaContext as Nav };

@@ -1,43 +1,46 @@
 import React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 
+interface AlertDemoAlert {
+  title: string;
+  variant: keyof typeof AlertVariant;
+  key: React.ReactText;
+}
+
 interface AlertGroupDemoState {
-  alerts: {
-    title: string;
-    variant: string;
-    key: any;
-  }[];
+  alerts: AlertDemoAlert[];
   timer: number;
 }
 
-export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
+export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
   stopAsyncAlerts: () => void;
-  removeAlert: (key: any) => void;
+  removeAlert: (key: React.ReactText) => void;
 
-  constructor(props) {
+  constructor(props: {}, removeAlert: (key: React.ReactText) => void) {
     super(props);
     this.state = {
       alerts: [],
-      timer: null
+      timer: 0
     };
     this.stopAsyncAlerts = () => {
       clearInterval(this.state.timer);
     };
+    this.removeAlert = removeAlert;
   }
   componentWillUnmount() {
     this.stopAsyncAlerts();
   }
   render() {
-    const addAlerts = incomingAlerts => {
+    const addAlerts = (incomingAlerts: AlertGroupDemoState['alerts']) => {
       this.setState({ alerts: [...this.state.alerts, ...incomingAlerts] });
     };
     const getUniqueId = () => new Date().getTime();
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
-    this.removeAlert = (key: any) => {
-      this.setState({ alerts: [...this.state.alerts.filter((el: any) => el.key !== key)] });
+    this.removeAlert = (key: React.ReactText) => {
+      this.setState({ alerts: [...this.state.alerts.filter((el: AlertDemoAlert) => el.key !== key)] });
     };
     const startAsyncAlerts = () => {
-      const timerValue = setInterval(() => {
+      const timerValue = window.setInterval(() => {
         addAlerts([
           {
             title: `Async Notification ${this.state.alerts.length + 1} was added to the queue.`,
@@ -46,7 +49,7 @@ export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
           }
         ]);
       }, 1500);
-      this.setState({ timer: timerValue as any });
+      this.setState({ timer: timerValue });
     };
     return (
       <React.Fragment>
@@ -65,7 +68,7 @@ export class AlertGroupDemo extends React.Component<null, AlertGroupDemoState> {
               variant={AlertVariant[variant]}
               title={title}
               key={key}
-              action={<AlertActionCloseButton onClose={() => this.removeAlert(key)} id="test-button" />}
+              actionClose={<AlertActionCloseButton onClose={() => this.removeAlert(key)} id="test-button" />}
             />
           ))}
         </AlertGroup>

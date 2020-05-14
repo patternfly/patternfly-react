@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { DataGetterPropType, DomainPropType, PaddingProps, VictoryChart } from 'victory';
+import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
+import { VictoryChart } from 'victory-chart';
 import {
   getComparativeMeasureErrorWidth,
   getComparativeMeasureWidth,
@@ -189,14 +190,15 @@ export interface ChartBulletProps {
    */
   invert?: boolean;
   /**
-   * When a labels prop is provided to ChartVoronoiContainer it will render a label component
-   * rather than activating labels on the child components it renders. This is useful for
-   * creating multi- point tooltips. This prop should be given as a function which will be called
-   * once for each active point. The labels function will be called with the arguments point,
-   * index, and points, where point refers to a single active point, index refers to the position
-   * of that point in the array of active points, and points is an array of all active points.
+   * The labels prop defines labels that will appear above each bar in your chart.
+   * This prop should be given as an array of values or as a function of data.
+   * If given as an array, the number of elements in the array should be equal to
+   * the length of the data array. Labels may also be added directly to the data object
+   * like data={[{y: 1, label: "first"}]}.
+   *
+   * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: (point: any, index: number, points: any[]) => string;
+  labels?: string[] | ((data: any) => string | null);
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.

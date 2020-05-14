@@ -1,4 +1,4 @@
-const fs = require('fs');
+const semver = require('semver');
 const Project = require('@lerna/project');
 
 // '@patternfly/patternfly': {'4.0.4': ['@patternfly/react-styles', ...]},
@@ -25,7 +25,7 @@ function setDependency(dependencies, package, version) {
 }
 
 async function verifyPatternflyVersions() {
-  const packages = await new Project(__dirname).getPackages();
+  const packages = (await new Project(__dirname).getPackages());
 
   packages.forEach(package => {
     accumulateDependencies(package.name, { [package.name]: `^${package.version}` });
@@ -47,8 +47,8 @@ async function verifyPatternflyVersions() {
   if (process.argv[2] === '--fix') {
     mismatchedVersions.forEach(([dep, versions]) => {
       const highestVersion = Object.keys(versions)
-        .sort()
-        .reverse()[0];
+        .sort(semver.compare)
+        .pop();
       Object.keys(versions)
         .filter(version => version !== highestVersion)
         .map(version => versions[version])

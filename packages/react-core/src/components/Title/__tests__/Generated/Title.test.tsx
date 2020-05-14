@@ -8,6 +8,6 @@ import { Title } from '../../Title';
 import {} from '../..';
 
 it('Title should match snapshot (auto-generated)', () => {
-  const view = shallow(<Title size={'xs'} children={''} className={"''"} headingLevel={'h1'} />);
+  const view = shallow(<Title size={'md'} children={''} className={"''"} headingLevel={'h1'} />);
   expect(view).toMatchSnapshot();
 });

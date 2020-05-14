@@ -38,20 +38,20 @@ exports[`ClipboardCopyButton should match snapshot (auto-generated) 1`] = `
   trigger="mouseenter focus click"
   zIndex={9999}
 >
-  <button
+  <Button
     aria-label="'Copyable input'"
     aria-labelledby="string string"
-    className="pf-c-clipboard-copy__group-copy ''"
+    className="''"
     id="string"
     onClick={[Function]}
     type="button"
+    variant="control"
   >
     <CopyIcon
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
-  </button>
+  </Button>
 </Tooltip>
 `;

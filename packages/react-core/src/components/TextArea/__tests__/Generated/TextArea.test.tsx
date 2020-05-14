@@ -12,7 +12,6 @@ it('TextArea should match snapshot (auto-generated)', () => {
     <TextArea
       className={"''"}
       isRequired={false}
-      isValid={true}
       validated={'default'}
       value={'string'}
       onChange={(value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => undefined as void}

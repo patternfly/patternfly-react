@@ -136,9 +136,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ChipGroupDefaultIsOpenDemo
   },
   {
-    id: 'chipgroup-toolbar-demo',
-    name: 'ChipGroup Toolbar Demo',
-    componentType: Examples.ToolbarChipGroupDemo
+    id: 'chipgroup-with-category-demo',
+    name: 'ChipGroup With Category Demo',
+    componentType: Examples.ChipWithCategoryGroupDemo
   },
   {
     id: 'clipboard-copy-demo',
@@ -166,9 +166,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListCompactDemo
   },
   {
-    id: 'data-toolbar-demo',
-    name: 'Data Toolbar Demo',
-    componentType: Examples.DataToolbarDemo
+    id: 'toolbar-demo',
+    name: 'Toolbar Demo',
+    componentType: Examples.ToolbarDemo
   },
   {
     id: 'divider-demo',
@@ -297,9 +297,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.EmptyStateDemo
   },
   {
-    id: 'expandable-demo',
-    name: 'Expandable Demo',
-    componentType: Examples.ExpandableDemo
+    id: 'expandable-section-demo',
+    name: 'Expandable Section Demo',
+    componentType: Examples.ExpandableSectionDemo
   },
   {
     id: 'flex-demo',
@@ -512,6 +512,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'tabs-inset-demo',
+    name: 'Tabs Inset Demo',
+    componentType: Examples.TabsInsetDemo
+  },
+  {
     id: 'table-actions-demo',
     name: 'Table Actions Demo',
     componentType: Examples.TableActionsDemo
@@ -545,6 +550,11 @@ export const Demos: DemoInterface[] = [
     id: 'table-compound-expandable-demo',
     name: 'Table Compound Expandable Demo',
     componentType: Examples.TableCompoundExpandableDemo
+  },
+  {
+    id: 'table-control-text-demo',
+    name: 'Table Control Text Demo',
+    componentType: Examples.TableControlTextDemo
   },
   {
     id: 'table-editable-demo',
@@ -630,6 +640,11 @@ export const Demos: DemoInterface[] = [
     id: 'tooltip-demo',
     name: 'Tooltip Demo',
     componentType: Examples.TooltipDemo
+  },
+  {
+    id: 'topology-demo',
+    name: 'Topology Demo',
+    componentType: Examples.TopologyDemo
   },
   {
     id: 'wizard-demo',

@@ -55,6 +55,14 @@ const generateHeader = (
   formatters: [...(origFormatters || []), ...(header && header.hasOwnProperty('formatters') ? header.formatters : [])]
 });
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+interface ICustomCell {
+  cellFormatters?: ICell['cellFormatters'];
+  cellTransforms?: ICell['cellTransforms'];
+  columnTransforms?: ICell['columnTransforms'];
+  cell?: ICell;
+}
+
 /**
  * Function to generate cell for header config to change look of each cell.
  *
@@ -63,17 +71,7 @@ const generateHeader = (
  * @returns {*} cell, transforms: Array, formatters: Array.
  */
 const generateCell = (
-  {
-    cellFormatters,
-    cellTransforms,
-    columnTransforms,
-    cell
-  }: {
-    cellFormatters?: ICell['cellFormatters'];
-    cellTransforms?: ICell['cellTransforms'];
-    columnTransforms?: ICell['columnTransforms'];
-    cell?: ICell;
-  },
+  { cellFormatters, cellTransforms, columnTransforms, cell }: ICustomCell,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   extra: any
 ) => ({
@@ -129,13 +127,19 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
+export interface ISelectTransform {
+  onSelect: OnSelect;
+  canSelectAll: boolean;
+}
+
 /**
  * Function to define select cell in first column.
  *
  * @param {*} extraObject with onSelect callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const selectableTransforms = ({ onSelect, canSelectAll }: { onSelect: OnSelect; canSelectAll: boolean }) => [
+const selectableTransforms = ({ onSelect, canSelectAll }: ISelectTransform) => [
   ...(onSelect
     ? [
         {

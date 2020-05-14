@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "2.28.47",
+  "version": "4.3.37",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -9,7 +9,7 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "prerelease-v4"
   },
   "repository": {
     "type": "git",
@@ -26,46 +26,25 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-table#readme",
+  "scripts": {
+    "clean": "rimraf dist"
+  },
   "dependencies": {
-    "@patternfly/patternfly": "2.71.6",
-    "@patternfly/react-core": "^3.158.1",
-    "@patternfly/react-icons": "^3.15.17",
-    "@patternfly/react-styles": "^3.7.14",
-    "@patternfly/react-tokens": "^2.8.14",
+    "@patternfly/patternfly": "4.10.21",
+    "@patternfly/react-core": "^4.13.2",
+    "@patternfly/react-icons": "^4.2.10",
+    "@patternfly/react-styles": "^4.2.9",
+    "@patternfly/react-tokens": "^4.3.7",
+    "@types/classnames": "^2.2.9",
     "classnames": "^2.2.5",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "tslib": "^1.11.1"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0"
-  },
-  "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./build/copyStyles.js",
-    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
-    "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
-    "watch:types": "tsc -w -p tsconfig.gen-dts.json",
-    "build:types": "tsc -p tsconfig.gen-dts.json",
-    "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-typescript": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "@types/classnames": "^2.2.9",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-plugin-typescript-to-proptypes": "^0.17.1",
-    "css": "^2.2.3",
-    "fs-extra": "^6.0.1",
-    "glob": "^7.1.2",
     "rimraf": "^2.6.2",
     "typescript": "^3.8.3"
   }

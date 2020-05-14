@@ -4,10 +4,10 @@ import { css } from '@patternfly/react-styles';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
 
-class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaProps> {
+export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
 
@@ -27,7 +27,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
     ouiaComponentType: 'Dropdown'
   };
 
-  constructor(props: DropdownProps & InjectedOuiaProps) {
+  constructor(props: DropdownProps & OUIAProps) {
     super(props);
     if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
       // eslint-disable-next-line no-console
@@ -61,7 +61,6 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
       position,
       toggle,
       autoFocus,
-      ouiaContext,
       ouiaId,
       ouiaComponentType,
       ...props
@@ -94,10 +93,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
                 className
               )}
               ref={this.baseComponentRef}
-              {...(ouiaContext.isOuia && {
-                'data-ouia-component-type': ouiaComponentType,
-                'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-              })}
+              {...getOUIAProps(ouiaComponentType, ouiaId)}
             >
               {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {
@@ -105,7 +101,7 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
                   isOpen,
                   id,
                   isPlain,
-                  ariaHasPopup,
+                  'aria-haspopup': ariaHasPopup,
                   onEnter: () => this.onEnter()
                 })
               )}
@@ -129,7 +125,3 @@ class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaPr
     );
   }
 }
-
-const DropdownWithOuiaContext = withOuiaContext(DropdownWithContext);
-
-export { DropdownWithOuiaContext as DropdownWithContext };

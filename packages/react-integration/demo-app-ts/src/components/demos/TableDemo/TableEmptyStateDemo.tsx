@@ -5,7 +5,6 @@ import {
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateSecondaryActions,
-  EmptyStateVariant,
   Title,
   Button
 } from '@patternfly/react-core';
@@ -27,7 +26,7 @@ export class EmptyStateTable extends React.Component<TableProps, { columns: (ICe
           heightAuto: true,
           props: { colSpan: '8' },
           title: (
-            <EmptyState variant={EmptyStateVariant.small}>
+            <EmptyState variant="small">
               <EmptyStateIcon icon={CubesIcon} />
               <Title headingLevel="h5" size="lg">
                 Empty State

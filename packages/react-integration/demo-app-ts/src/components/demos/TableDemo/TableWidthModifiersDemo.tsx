@@ -15,7 +15,7 @@ export class TableWidthModifiersDemo extends React.Component<
         'Workspaces',
         {
           title: 'Last Commit',
-          transforms: [cellWidth('max')]
+          transforms: [cellWidth(100)]
         }
       ],
       rows: [['one', 'two', 'three', 'four', 'five']]

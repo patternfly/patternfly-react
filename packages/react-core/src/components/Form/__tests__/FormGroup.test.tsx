@@ -23,6 +23,16 @@ describe('FormGroup component', () => {
       </FormGroup>
     );
     expect(view).toMatchSnapshot();
+    expect(view.find('.pf-c-form__group-control').prop('className')).toMatch(/pf-m-inline/);
+  });
+
+  test('should render no padding-top form group variant', () => {
+    const view = mount(
+      <FormGroup hasNoPaddingTop label="label" fieldId="label-id" helperText="this is helper text">
+        <input id="label-id" />
+      </FormGroup>
+    );
+    expect(view.find('.pf-c-form__group-label').prop('className')).toMatch(/no-padding-top/);
   });
 
   test('should render form group variant with required label', () => {
@@ -101,7 +111,7 @@ describe('FormGroup component', () => {
 
   test('should render form group invalid variant', () => {
     const view = mount(
-      <FormGroup label="label" fieldId="label-id" isValid={false} helperTextInvalid="Invalid FormGroup">
+      <FormGroup label="label" fieldId="label-id" validated={'error'} helperTextInvalid="Invalid FormGroup">
         <input id="id" />
       </FormGroup>
     );

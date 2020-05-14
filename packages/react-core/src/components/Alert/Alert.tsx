@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Alert/alert';
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { AlertIcon } from './AlertIcon';
-import { capitalize } from '../../helpers/util';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { capitalize, getOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
 
 export enum AlertVariant {
@@ -22,8 +21,10 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isInline?: boolean;
   /** Title of the Alert  */
   title: React.ReactNode;
-  /** Action button to put in the Alert. Should be <AlertActionLink> or <AlertActionCloseButton> */
-  action?: React.ReactNode;
+  /** Close button; use the AlertActionCloseButton component  */
+  actionClose?: React.ReactNode;
+  /** Action links; use a single AlertActionLink component or multiple wrapped in an array or React.Fragment */
+  actionLinks?: React.ReactNode;
   /** Content rendered inside the Alert */
   children?: React.ReactNode;
   /** Additional classes added to the Alert  */
@@ -36,20 +37,20 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
 }
 
-const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
-  variant = AlertVariant.info,
+export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
+  variant = AlertVariant.default,
   isInline = false,
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
-  action = null,
+  actionClose,
+  actionLinks,
   title,
   children = '',
   className = '',
-  ouiaContext = null,
-  ouiaId = null,
+  ouiaId,
   ...props
-}: AlertProps & InjectedOuiaProps) => {
+}: AlertProps & OUIAProps) => {
   const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
@@ -60,7 +61,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
   const customClassName = css(
     styles.alert,
     isInline && styles.modifiers.inline,
-    variant !== AlertVariant.default && getModifier(styles, variant, styles.modifiers.info),
+    variant !== AlertVariant.default && styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
     className
   );
 
@@ -69,10 +70,7 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
       {...props}
       className={customClassName}
       aria-label={ariaLabel}
-      {...(ouiaContext.isOuia && {
-        'data-ouia-component-type': 'Alert',
-        'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-      })}
+      {...getOUIAProps('Alert', ouiaId)}
       {...(isLiveRegion && {
         'aria-live': 'polite',
         'aria-atomic': 'false'
@@ -80,15 +78,13 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
     >
       <AlertIcon variant={variant} />
       <h4 className={css(styles.alertTitle)}>{getHeadingContent}</h4>
+      {actionClose && (
+        <AlertContext.Provider value={{ title, variantLabel }}>
+          <div className={css(styles.alertAction)}>{actionClose}</div>
+        </AlertContext.Provider>
+      )}
       {children && <div className={css(styles.alertDescription)}>{children}</div>}
-      <AlertContext.Provider value={{ title, variantLabel }}>
-        {action && (typeof action === 'object' || typeof action === 'string') && (
-          <div className={css(styles.alertAction)}>{action}</div>
-        )}
-      </AlertContext.Provider>
+      {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
     </div>
   );
 };
-
-const AlertWithOuiaContext = withOuiaContext(Alert);
-export { AlertWithOuiaContext as Alert };

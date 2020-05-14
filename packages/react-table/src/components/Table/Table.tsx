@@ -1,19 +1,21 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { InjectedOuiaProps, withOuiaContext } from '@patternfly/react-core/dist/js/components/withOuia/withOuia';
 import {
+  getOUIAProps,
+  OUIAProps,
   DropdownDirection,
-  DropdownPosition
-} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
-import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
+  DropdownPosition,
+  DropdownItemProps
+} from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';
 import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
+import { toCamel } from './utils';
 import { calculateColumns } from './utils/headerUtils';
 import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
 
@@ -58,7 +60,7 @@ export type OnExpand = (
   extraData: IExtraData
 ) => void;
 export type OnSelect = (
-  event: React.MouseEvent,
+  event: React.FormEvent<HTMLInputElement>,
   isSelected: boolean,
   rowIndex: number,
   rowData: IRowData,
@@ -306,7 +308,7 @@ export const TableContext = React.createContext({
   rows: [] as (IRow | string[])[]
 });
 
-class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
+export class Table extends React.Component<TableProps & OUIAProps, {}> {
   static hasWarnBeta = false;
   static defaultProps = {
     children: null as React.ReactNode,
@@ -375,7 +377,6 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
       rowWrapper,
       borders,
       role,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
@@ -431,16 +432,16 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
           role={role}
           className={css(
             styles.table,
-            gridBreakPoint && getModifier(stylesGrid, gridBreakPoint),
-            getModifier(styles, variant),
+            gridBreakPoint &&
+              stylesGrid.modifiers[
+                toCamel(gridBreakPoint).replace(/-?2xl/, '_2xl') as 'grid' | 'gridMd' | 'gridLg' | 'gridXl' | 'grid_2xl'
+              ],
+            styles.modifiers[variant],
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className
           )}
-          {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'Table',
-            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          })}
+          {...getOUIAProps('Table', ouiaId)}
         >
           {caption && <caption>{caption}</caption>}
           {children}
@@ -455,7 +456,3 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
     return table;
   }
 }
-
-const TableWithOuiaContext = withOuiaContext(Table);
-
-export { TableWithOuiaContext as Table };

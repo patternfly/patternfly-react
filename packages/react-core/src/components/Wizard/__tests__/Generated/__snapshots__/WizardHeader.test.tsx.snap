@@ -4,23 +4,10 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-wizard__header"
 >
-  <Component
-    aria-label="string"
-    className="pf-c-wizard__close"
-    onClick={[Function]}
-    variant="plain"
-  >
-    <TimesIcon
-      aria-hidden="true"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
-  </Component>
   <Title
     aria-label="string"
     className="pf-c-wizard__title"
+    headingLevel="h2"
     id="string"
     size="3xl"
   >
@@ -30,7 +17,9 @@ exports[`WizardHeader should match snapshot (auto-generated) 1`] = `
     className="pf-c-wizard__description"
     id="string"
   >
-    string
+    <div>
+      ReactNode
+    </div>
   </p>
 </div>
 `;

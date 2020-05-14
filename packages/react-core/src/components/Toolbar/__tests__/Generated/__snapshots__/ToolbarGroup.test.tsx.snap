@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolbarGroup should match snapshot (auto-generated) 1`] = `
+<ToolbarGroupWithRef
+  breakpointMods={Array []}
+  className="string"
+  innerRef={null}
+  variant="filter-group"
+>
+  <div>
+    ReactNode
+  </div>
+</ToolbarGroupWithRef>
+`;

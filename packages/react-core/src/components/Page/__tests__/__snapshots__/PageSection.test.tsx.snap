@@ -12,8 +12,8 @@ exports[`Check page main nav section against snapshot 1`] = `
 
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
 <PageSection
+  hasNoPadding={true}
   isFilled={true}
-  noPadding={true}
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding pf-m-fill"
@@ -43,20 +43,10 @@ exports[`Check page section with no fill example against snapshot 1`] = `
 
 exports[`Check page section with no padding example against snapshot 1`] = `
 <PageSection
-  noPadding={true}
+  hasNoPadding={true}
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding"
-  />
-</PageSection>
-`;
-
-exports[`Check page section with no padding on mobile example against snapshot 1`] = `
-<PageSection
-  noPaddingMobile={true}
->
-  <section
-    className="pf-c-page__main-section pf-m-no-padding-mobile"
   />
 </PageSection>
 `;

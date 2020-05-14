@@ -13,8 +13,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   children: React.ReactNode;
   /** Classes applied to root element of dropdown toggle */
   className?: string;
-  /** Flag to indicate if select is expanded */
-  isExpanded?: boolean;
+  /** Flag to indicate if select is open */
+  isOpen?: boolean;
   /** Callback called when toggle is clicked */
   onToggle?: (isExpanded: boolean) => void;
   /** Callback for toggle open on keyboard entry */
@@ -25,10 +25,6 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   handleTypeaheadKeys?: (position: string) => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -38,9 +34,9 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** Type of the toggle button, defaults to 'button' */
   type?: 'reset' | 'button' | 'submit' | undefined;
   /** Id of label for the Select aria-labelledby */
-  ariaLabelledBy?: string;
+  'aria-labelledby'?: string;
   /** Label for toggle of select variants */
-  ariaLabelToggle?: string;
+  'aria-label'?: string;
   /** Flag for variant, determines toggle rules and interaction */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Flag indicating if select toggle has an clear button */
@@ -52,16 +48,14 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
 
   static defaultProps: PickOptional<SelectToggleProps> = {
     className: '',
-    isExpanded: false,
-    isFocused: false,
-    isHovered: false,
+    isOpen: false,
     isActive: false,
     isPlain: false,
     isDisabled: false,
     hasClearButton: false,
     variant: 'single',
-    ariaLabelledBy: '',
-    ariaLabelToggle: '',
+    'aria-labelledby': '',
+    'aria-label': '',
     type: 'button',
     onToggle: () => {},
     onEnter: () => {},
@@ -88,8 +82,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 
   onDocClick = (event: Event) => {
-    const { parentRef, isExpanded, onToggle, onClose } = this.props;
-    if (isExpanded && parentRef && !parentRef.current.contains(event.target as Node)) {
+    const { parentRef, isOpen, onToggle, onClose } = this.props;
+    if (isOpen && parentRef && !parentRef.current.contains(event.target as Node)) {
       onToggle(false);
       onClose();
       this.toggle.current.focus();
@@ -97,12 +91,12 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   onEscPress = (event: KeyboardEvent) => {
-    const { parentRef, isExpanded, variant, onToggle, onClose } = this.props;
+    const { parentRef, isOpen, variant, onToggle, onClose } = this.props;
     if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
       return;
     }
     if (
-      isExpanded &&
+      isOpen &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
       parentRef &&
       parentRef.current.contains(event.target as Node)
@@ -114,7 +108,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   onKeyDown = (event: React.KeyboardEvent) => {
-    const { isExpanded, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
+    const { isOpen, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
     if (
       (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) &&
       (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
@@ -125,16 +119,16 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       event.key === KeyTypes.Enter &&
       (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
     ) {
-      if (isExpanded) {
+      if (isOpen) {
         handleTypeaheadKeys('enter');
       } else {
-        onToggle(!isExpanded);
+        onToggle(!isOpen);
       }
     }
 
     if (
       (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
-      (event.key === KeyTypes.Tab && !isExpanded) ||
+      (event.key === KeyTypes.Tab && !isOpen) ||
       (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) ||
       ((event.key === KeyTypes.Space || event.key === KeyTypes.Enter) &&
         (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti))
@@ -142,12 +136,12 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       return;
     }
     event.preventDefault();
-    if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
-      onToggle(!isExpanded);
+    if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isOpen) {
+      onToggle(!isOpen);
       onClose();
       this.toggle.current.focus();
-    } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isExpanded) {
-      onToggle(!isExpanded);
+    } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isOpen) {
+      onToggle(!isOpen);
       onEnter();
     }
   };
@@ -157,10 +151,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     const {
       className,
       children,
-      isExpanded,
-      isFocused,
+      isOpen,
       isActive,
-      isHovered,
       isPlain,
       isDisabled,
       variant,
@@ -172,8 +164,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       id,
       type,
       hasClearButton,
-      ariaLabelledBy,
-      ariaLabelToggle,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-label': ariaLabel,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -187,7 +179,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     } = {
       id,
       'aria-labelledby': ariaLabelledBy,
-      'aria-expanded': isExpanded,
+      'aria-expanded': isOpen,
       'aria-haspopup': (variant !== SelectVariant.checkbox && 'listbox') || null
     };
     return (
@@ -200,17 +192,15 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             type={type}
             className={css(
               styles.selectToggle,
-              isFocused && styles.modifiers.focus,
-              isHovered && styles.modifiers.hover,
               isDisabled && styles.modifiers.disabled,
-              isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
+              isActive && styles.modifiers.active,
               className
             )}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={_event => {
-              onToggle(!isExpanded);
-              if (isExpanded) {
+              onToggle(!isOpen);
+              if (isOpen) {
                 onClose();
               }
             }}
@@ -218,7 +208,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             disabled={isDisabled}
           >
             {children}
-            <CaretDownIcon className={css(styles.selectToggleArrow)} />
+            <span className={css(styles.selectToggleArrow)}>
+              <CaretDownIcon />
+            </span>
           </button>
         )}
         {isTypeahead && (
@@ -227,9 +219,6 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             ref={this.toggle as React.RefObject<HTMLDivElement>}
             className={css(
               styles.selectToggle,
-              isFocused && styles.modifiers.focus,
-              isHovered && styles.modifiers.hover,
-              isActive && styles.modifiers.active,
               isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
               isTypeahead && styles.modifiers.typeahead,
@@ -248,11 +237,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               {...toggleProps}
               type={type}
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
-              aria-label={ariaLabelToggle}
+              aria-label={ariaLabel}
               onClick={_event => {
                 _event.stopPropagation();
-                onToggle(!isExpanded);
-                if (isExpanded) {
+                onToggle(!isOpen);
+                if (isOpen) {
                   onClose();
                 }
               }}

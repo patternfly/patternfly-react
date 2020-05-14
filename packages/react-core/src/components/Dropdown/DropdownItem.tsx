@@ -14,10 +14,10 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
    * Example: component="button"
    */
   component?: React.ReactNode;
-  /** Variant of the item. The 'icon' variant should use DropdownItemIcon to wrap contained icons or images. */
-  variant?: 'item' | 'icon';
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
+  /** Render dropdown item as non-interactive item */
+  isPlainText?: boolean;
   /** Forces display of the hover state of the element */
   isHovered?: boolean;
   /** Default hyperlink location */
@@ -32,14 +32,16 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   customChild?: React.ReactNode;
   /** tabIndex to use, null to unset it */
   tabIndex?: number | null;
+  /** An image to display within the DropdownItem, appearing before any component children */
+  icon?: React.ReactNode;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   children,
   className,
   component = 'a',
-  variant = 'item',
   isDisabled = false,
+  isPlainText = false,
   isHovered = false,
   href,
   tooltip,
@@ -51,6 +53,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   additionalChild,
   customChild,
   tabIndex = -1,
+  icon = null,
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
@@ -61,8 +64,8 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         tabIndex={tabIndex}
         className={className}
         component={component}
-        variant={variant}
         isDisabled={isDisabled}
+        isPlainText={isPlainText}
         isHovered={isHovered}
         href={href}
         tooltip={tooltip}
@@ -71,6 +74,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         onClick={onClick}
         additionalChild={additionalChild}
         customChild={customChild}
+        icon={icon}
         {...props}
       >
         {children}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
 import { css } from '@patternfly/react-styles';
-import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
+import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export interface CollapseColumnProps {
@@ -29,7 +29,9 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <AngleDownIcon />
+        <span className={css(styles.tableToggleIcon)}>
+          <AngleDownIcon />
+        </span>
       </Button>
     )}
     {children}

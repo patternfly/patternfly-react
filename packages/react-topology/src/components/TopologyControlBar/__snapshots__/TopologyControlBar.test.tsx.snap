@@ -25,7 +25,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "zoom-out",
         "tooltip": "Zoom Out",
@@ -39,7 +38,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "fit-to-screen",
         "tooltip": "Fit to Screen",
@@ -53,7 +51,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "reset-view",
         "tooltip": "Reset View",
@@ -62,674 +59,681 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
   }
   id="default-test-id"
 >
-  <Toolbar
-    className="default-test-class"
-    id="default-test-id"
+  <GenerateId
+    prefix="pf-topology-control-bar-"
   >
-    <div
-      className="pf-l-toolbar default-test-class"
-      id="default-test-id"
+    <Toolbar
+      className="default-test-class"
+      id="pf-topology-control-bar-1"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "padding": 0,
+        }
+      }
     >
-      <ToolbarGroup>
-        <div
-          className="pf-l-toolbar__group"
+      <div
+        className="pf-c-toolbar default-test-class"
+        id="pf-topology-control-bar-1"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "padding": 0,
+          }
+        }
+      >
+        <ToolbarContent
+          breakpointMods={Array []}
+          isExpanded={false}
+          showClearFiltersButton={false}
         >
-          <ToolbarItem
-            key="zoom-in"
+          <div
+            className="pf-c-toolbar__content"
           >
             <div
-              className="pf-l-toolbar__item"
+              className="pf-c-toolbar__content-section"
             >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="test zoom in tooltip"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
+              <ForwardRef
+                breakpointMods={
                   Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
+                    Object {
+                      "modifier": "space-items-none",
+                    },
                   ]
                 }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
               >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        test zoom in tooltip
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
+                <ToolbarGroupWithRef
+                  breakpointMods={
                     Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
+                      Object {
+                        "modifier": "space-items-none",
                       },
-                    }
+                    ]
                   }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
+                  innerRef={null}
                 >
-                  <Component
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="zoom-in"
-                    onClick={[Function]}
-                    variant="tertiary"
+                  <div
+                    className="pf-c-toolbar__group pf-m-space-items-none"
                   >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": false,
-                          "children": Array [
-                            <span>
-                              test zoom in
-                            </span>,
-                            <span
-                              className="sr-only"
-                            >
-                              test-zoom-in-aria-label
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button",
-                          "disabled": false,
-                          "id": "zoom-in",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
+                    <Component
+                      key="zoom-in"
                     >
-                      <Button
-                        aria-disabled={false}
-                        className="pf-topology-control-bar__button"
-                        disabled={false}
-                        id="zoom-in"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
+                      <div
+                        className="pf-c-toolbar__item"
                       >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                          disabled={false}
-                          id="zoom-in"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <span>
-                            test zoom in
-                          </span>
-                          <span
-                            className="sr-only"
-                          >
-                            test-zoom-in-aria-label
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="test zoom in tooltip"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
                           id=""
-                          role="tooltip"
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
                         >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            test zoom in tooltip
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  >
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          test zoom in tooltip
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-          <ToolbarItem
-            key="zoom-out"
-          >
-            <div
-              className="pf-l-toolbar__item"
-            >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="Zoom Out"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
-                  Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
-                  ]
-                }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
-              >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        Zoom Out
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
-                    Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
-                      },
-                    }
-                  }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
-                >
-                  <Component
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="zoom-out"
-                    onClick={[Function]}
-                    variant="tertiary"
-                  >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": false,
-                          "children": Array [
-                            <SearchMinusIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            <span
-                              className="sr-only"
-                            >
-                              Zoom Out
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button",
-                          "disabled": false,
-                          "id": "zoom-out",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
-                    >
-                      <Button
-                        aria-disabled={false}
-                        className="pf-topology-control-bar__button"
-                        disabled={false}
-                        id="zoom-out"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
-                      >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                          disabled={false}
-                          id="zoom-out"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <SearchMinusIcon
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                            title={null}
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  test zoom in tooltip
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
                               }
-                              viewBox="0 0 512 512"
-                              width="1em"
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={false}
+                              className="pf-topology-control-bar__button"
+                              disabled={false}
+                              id="zoom-in"
+                              onClick={[Function]}
+                              variant="tertiary"
                             >
-                              <path
-                                d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                                transform=""
-                              />
-                            </svg>
-                          </SearchMinusIcon>
-                          <span
-                            className="sr-only"
-                          >
-                            Zoom Out
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
-                          id=""
-                          role="tooltip"
-                        >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            Zoom Out
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  >
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          Zoom Out
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-          <ToolbarItem
-            key="reset-view"
-          >
-            <div
-              className="pf-l-toolbar__item"
-            >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="Reset View"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
-                  Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
-                  ]
-                }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
-              >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        Reset View
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
-                    Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
-                      },
-                    }
-                  }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
-                >
-                  <Component
-                    aria-disabled={true}
-                    className="pf-topology-control-bar__button pf-m-disabled"
-                    disabled={true}
-                    id="reset-view"
-                    onClick={[Function]}
-                    variant="tertiary"
-                  >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": true,
-                          "children": Array [
-                            <ExpandIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            <span
-                              className="sr-only"
-                            >
-                              Reset View
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button pf-m-disabled",
-                          "disabled": true,
-                          "id": "reset-view",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
-                    >
-                      <Button
-                        aria-disabled={true}
-                        className="pf-topology-control-bar__button pf-m-disabled"
-                        disabled={true}
-                        id="reset-view"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
-                      >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
-                          disabled={false}
-                          id="reset-view"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <ExpandIcon
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                            title={null}
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="zoom-in"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <span>
+                                  test zoom in
+                                </span>
+                                <span
+                                  className="sr-only"
+                                >
+                                  test-zoom-in-aria-label
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      test zoom in tooltip
+                                    </div>
+                                  </div>
+                                </div>
                               }
-                              viewBox="0 0 448 512"
-                              width="1em"
                             >
-                              <path
-                                d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
-                                transform=""
-                              />
-                            </svg>
-                          </ExpandIcon>
-                          <span
-                            className="sr-only"
-                          >
-                            Reset View
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
-                          id=""
-                          role="tooltip"
-                        >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            Reset View
-                          </div>
-                        </div>
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    test zoom in tooltip
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
                       </div>
-                    }
+                    </Component>
+                    <Component
+                      key="zoom-out"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="Zoom Out"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          id=""
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  Zoom Out
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
+                              }
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={false}
+                              className="pf-topology-control-bar__button"
+                              disabled={false}
+                              id="zoom-out"
+                              onClick={[Function]}
+                              variant="tertiary"
+                            >
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="zoom-out"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <SearchMinusIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 512 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </SearchMinusIcon>
+                                <span
+                                  className="sr-only"
+                                >
+                                  Zoom Out
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      Zoom Out
+                                    </div>
+                                  </div>
+                                </div>
+                              }
+                            >
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    Zoom Out
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
+                      </div>
+                    </Component>
+                    <Component
+                      key="reset-view"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="Reset View"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          id=""
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  Reset View
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
+                              }
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={true}
+                              className="pf-topology-control-bar__button pf-m-disabled"
+                              disabled={true}
+                              id="reset-view"
+                              onClick={[Function]}
+                              variant="tertiary"
+                            >
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="reset-view"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <ExpandIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 448 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ExpandIcon>
+                                <span
+                                  className="sr-only"
+                                >
+                                  Reset View
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      Reset View
+                                    </div>
+                                  </div>
+                                </div>
+                              }
+                            >
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    Reset View
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
+                      </div>
+                    </Component>
+                  </div>
+                </ToolbarGroupWithRef>
+              </ForwardRef>
+            </div>
+            <ToolbarExpandableContent
+              chipContainerRef={
+                Object {
+                  "current": null,
+                }
+              }
+              clearFiltersButtonText="Clear all filters"
+              expandableContentRef={
+                Object {
+                  "current": <div
+                    class="pf-c-toolbar__expandable-content"
+                    id="pf-topology-control-bar-1-expandable-content-1"
                   >
                     <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          Reset View
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-        </div>
-      </ToolbarGroup>
-    </div>
-  </Toolbar>
+                      class="pf-c-toolbar__group"
+                    />
+                  </div>,
+                }
+              }
+              id="pf-topology-control-bar-1-expandable-content-1"
+              isExpanded={false}
+              showClearFiltersButton={false}
+            >
+              <div
+                className="pf-c-toolbar__expandable-content"
+                id="pf-topology-control-bar-1-expandable-content-1"
+              >
+                <ForwardRef>
+                  <ToolbarGroupWithRef
+                    breakpointMods={Array []}
+                    innerRef={null}
+                  >
+                    <div
+                      className="pf-c-toolbar__group"
+                    />
+                  </ToolbarGroupWithRef>
+                </ForwardRef>
+              </div>
+            </ToolbarExpandableContent>
+          </div>
+        </ToolbarContent>
+        <ToolbarChipGroupContent
+          chipGroupContentRef={
+            Object {
+              "current": <div
+                class="pf-c-toolbar__content pf-m-hidden"
+                hidden=""
+              >
+                <div
+                  class="pf-c-toolbar__group"
+                />
+              </div>,
+            }
+          }
+          clearFiltersButtonText="Clear all filters"
+          collapseListedFiltersBreakpoint="lg"
+          isExpanded={false}
+          numberOfFilters={0}
+          showClearFiltersButton={false}
+        >
+          <div
+            className="pf-c-toolbar__content pf-m-hidden"
+            hidden={true}
+          >
+            <ForwardRef
+              className=""
+            >
+              <ToolbarGroupWithRef
+                breakpointMods={Array []}
+                className=""
+                innerRef={null}
+              >
+                <div
+                  className="pf-c-toolbar__group"
+                />
+              </ToolbarGroupWithRef>
+            </ForwardRef>
+          </div>
+        </ToolbarChipGroupContent>
+      </div>
+    </Toolbar>
+  </GenerateId>
 </TopologyControlBar>
 `;
 
@@ -747,7 +751,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "zoom-in",
         "tooltip": "Zoom In",
@@ -761,7 +764,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "zoom-out",
         "tooltip": "Zoom Out",
@@ -775,7 +777,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "fit-to-screen",
         "tooltip": "Fit to Screen",
@@ -789,7 +790,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />,
         "id": "reset-view",
         "tooltip": "Reset View",
@@ -808,988 +808,919 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
   id="default-test-id"
   onButtonClick={[MockFunction]}
 >
-  <Toolbar
-    className="default-test-class"
-    id="default-test-id"
+  <GenerateId
+    prefix="pf-topology-control-bar-"
   >
-    <div
-      className="pf-l-toolbar default-test-class"
-      id="default-test-id"
+    <Toolbar
+      className="default-test-class"
+      id="pf-topology-control-bar-0"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "padding": 0,
+        }
+      }
     >
-      <ToolbarGroup>
-        <div
-          className="pf-l-toolbar__group"
+      <div
+        className="pf-c-toolbar default-test-class"
+        id="pf-topology-control-bar-0"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "padding": 0,
+          }
+        }
+      >
+        <ToolbarContent
+          breakpointMods={Array []}
+          isExpanded={false}
+          showClearFiltersButton={false}
         >
-          <ToolbarItem
-            key="zoom-in"
+          <div
+            className="pf-c-toolbar__content"
           >
             <div
-              className="pf-l-toolbar__item"
+              className="pf-c-toolbar__content-section"
             >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="Zoom In"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
+              <ForwardRef
+                breakpointMods={
                   Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
+                    Object {
+                      "modifier": "space-items-none",
+                    },
                   ]
                 }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
               >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        Zoom In
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
+                <ToolbarGroupWithRef
+                  breakpointMods={
                     Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
-                      },
-                    }
-                  }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
-                >
-                  <Component
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="zoom-in"
-                    onClick={[Function]}
-                    variant="tertiary"
-                  >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": false,
-                          "children": Array [
-                            <SearchPlusIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            <span
-                              className="sr-only"
-                            >
-                              Zoom In
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button",
-                          "disabled": false,
-                          "id": "zoom-in",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
-                    >
-                      <Button
-                        aria-disabled={false}
-                        className="pf-topology-control-bar__button"
-                        disabled={false}
-                        id="zoom-in"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
-                      >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                          disabled={false}
-                          id="zoom-in"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <SearchPlusIcon
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                            title={null}
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
-                              }
-                              viewBox="0 0 512 512"
-                              width="1em"
-                            >
-                              <path
-                                d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                                transform=""
-                              />
-                            </svg>
-                          </SearchPlusIcon>
-                          <span
-                            className="sr-only"
-                          >
-                            Zoom In
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
-                          id=""
-                          role="tooltip"
-                        >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            Zoom In
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  >
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          Zoom In
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-          <ToolbarItem
-            key="zoom-out"
-          >
-            <div
-              className="pf-l-toolbar__item"
-            >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="Zoom Out"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
-                  Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
-                  ]
-                }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
-              >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        Zoom Out
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
-                    Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
-                      },
-                    }
-                  }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
-                >
-                  <Component
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="zoom-out"
-                    onClick={[Function]}
-                    variant="tertiary"
-                  >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": false,
-                          "children": Array [
-                            <SearchMinusIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            <span
-                              className="sr-only"
-                            >
-                              Zoom Out
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button",
-                          "disabled": false,
-                          "id": "zoom-out",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
-                    >
-                      <Button
-                        aria-disabled={false}
-                        className="pf-topology-control-bar__button"
-                        disabled={false}
-                        id="zoom-out"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
-                      >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                          disabled={false}
-                          id="zoom-out"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <SearchMinusIcon
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                            title={null}
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
-                              }
-                              viewBox="0 0 512 512"
-                              width="1em"
-                            >
-                              <path
-                                d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                                transform=""
-                              />
-                            </svg>
-                          </SearchMinusIcon>
-                          <span
-                            className="sr-only"
-                          >
-                            Zoom Out
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
-                          id=""
-                          role="tooltip"
-                        >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            Zoom Out
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  >
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          Zoom Out
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-          <ToolbarItem
-            key="fit-to-screen"
-          >
-            <div
-              className="pf-l-toolbar__item"
-            >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="Fit to Screen"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
-                  Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
-                  ]
-                }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
-              >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        Fit to Screen
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
-                    Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
-                      },
-                    }
-                  }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
-                >
-                  <Component
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="fit-to-screen"
-                    onClick={[Function]}
-                    variant="tertiary"
-                  >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": false,
-                          "children": Array [
-                            <ExpandArrowsAltIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            <span
-                              className="sr-only"
-                            >
-                              Fit to Screen
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button",
-                          "disabled": false,
-                          "id": "fit-to-screen",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
-                    >
-                      <Button
-                        aria-disabled={false}
-                        className="pf-topology-control-bar__button"
-                        disabled={false}
-                        id="fit-to-screen"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
-                      >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                          disabled={false}
-                          id="fit-to-screen"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <ExpandArrowsAltIcon
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                            title={null}
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
-                              }
-                              viewBox="0 0 448 512"
-                              width="1em"
-                            >
-                              <path
-                                d="M448 344v112a23.94 23.94 0 0 1-24 24H312c-21.39 0-32.09-25.9-17-41l36.2-36.2L224 295.6 116.77 402.9 153 439c15.09 15.1 4.39 41-17 41H24a23.94 23.94 0 0 1-24-24V344c0-21.4 25.89-32.1 41-17l36.19 36.2L184.46 256 77.18 148.7 41 185c-15.1 15.1-41 4.4-41-17V56a23.94 23.94 0 0 1 24-24h112c21.39 0 32.09 25.9 17 41l-36.2 36.2L224 216.4l107.23-107.3L295 73c-15.09-15.1-4.39-41 17-41h112a23.94 23.94 0 0 1 24 24v112c0 21.4-25.89 32.1-41 17l-36.19-36.2L263.54 256l107.28 107.3L407 327.1c15.1-15.2 41-4.5 41 16.9z"
-                                transform=""
-                              />
-                            </svg>
-                          </ExpandArrowsAltIcon>
-                          <span
-                            className="sr-only"
-                          >
-                            Fit to Screen
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
-                          id=""
-                          role="tooltip"
-                        >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            Fit to Screen
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  >
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          Fit to Screen
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-          <ToolbarItem
-            key="reset-view"
-          >
-            <div
-              className="pf-l-toolbar__item"
-            >
-              <Tooltip
-                appendTo={[Function]}
-                aria="describedby"
-                boundary="window"
-                className=""
-                content="Reset View"
-                distance={15}
-                enableFlip={true}
-                entryDelay={500}
-                exitDelay={500}
-                flipBehavior={
-                  Array [
-                    "top",
-                    "right",
-                    "bottom",
-                    "left",
-                    "top",
-                    "right",
-                    "bottom",
-                  ]
-                }
-                id=""
-                isAppLauncher={false}
-                isContentLeftAligned={false}
-                isVisible={false}
-                maxWidth="18.75rem"
-                position="top"
-                tippyProps={Object {}}
-                trigger="mouseenter focus"
-                zIndex={9999}
-              >
-                <PopoverBase
-                  appendTo={[Function]}
-                  aria="describedby"
-                  arrow={true}
-                  boundary="window"
-                  content={
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        Reset View
-                      </TooltipContent>
-                    </div>
-                  }
-                  delay={
-                    Array [
-                      500,
-                      500,
-                    ]
-                  }
-                  distance={15}
-                  flip={true}
-                  flipBehavior={
-                    Array [
-                      "top",
-                      "right",
-                      "bottom",
-                      "left",
-                      "top",
-                      "right",
-                      "bottom",
-                    ]
-                  }
-                  isVisible={false}
-                  lazy={true}
-                  maxWidth="18.75rem"
-                  onCreate={[Function]}
-                  placement="top"
-                  popperOptions={
-                    Object {
-                      "modifiers": Object {
-                        "hide": Object {
-                          "enabled": true,
-                        },
-                        "preventOverflow": Object {
-                          "enabled": true,
-                        },
-                      },
-                    }
-                  }
-                  theme="pf-tooltip"
-                  trigger="mouseenter focus"
-                  zIndex={9999}
-                >
-                  <Component
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="reset-view"
-                    onClick={[Function]}
-                    variant="tertiary"
-                  >
-                    <ComponentWithOuia
-                      component={[Function]}
-                      componentProps={
-                        Object {
-                          "aria-disabled": false,
-                          "children": Array [
-                            <ExpandIcon
-                              color="currentColor"
-                              noVerticalAlign={false}
-                              size="sm"
-                              title={null}
-                            />,
-                            <span
-                              className="sr-only"
-                            >
-                              Reset View
-                            </span>,
-                          ],
-                          "className": "pf-topology-control-bar__button",
-                          "disabled": false,
-                          "id": "reset-view",
-                          "onClick": [Function],
-                          "variant": "tertiary",
-                        }
-                      }
-                      consumerContext={null}
-                    >
-                      <Button
-                        aria-disabled={false}
-                        className="pf-topology-control-bar__button"
-                        disabled={false}
-                        id="reset-view"
-                        onClick={[Function]}
-                        ouiaContext={
-                          Object {
-                            "isOuia": false,
-                            "ouiaId": null,
-                          }
-                        }
-                        variant="tertiary"
-                      >
-                        <button
-                          aria-disabled={null}
-                          aria-label={null}
-                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                          disabled={false}
-                          id="reset-view"
-                          onClick={[Function]}
-                          tabIndex={null}
-                          type="button"
-                        >
-                          <ExpandIcon
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                            title={null}
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
-                              }
-                              viewBox="0 0 448 512"
-                              width="1em"
-                            >
-                              <path
-                                d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
-                                transform=""
-                              />
-                            </svg>
-                          </ExpandIcon>
-                          <span
-                            className="sr-only"
-                          >
-                            Reset View
-                          </span>
-                        </button>
-                      </Button>
-                    </ComponentWithOuia>
-                  </Component>
-                  <Portal
-                    containerInfo={
-                      <div>
-                        <div
-                          class=""
-                          id=""
-                          role="tooltip"
-                        >
-                          <div
-                            class="pf-c-tooltip__content"
-                          >
-                            Reset View
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  >
-                    <div
-                      className=""
-                      id=""
-                      role="tooltip"
-                    >
-                      <TooltipContent
-                        isLeftAligned={false}
-                      >
-                        <div
-                          className="pf-c-tooltip__content"
-                        >
-                          Reset View
-                        </div>
-                      </TooltipContent>
-                    </div>
-                  </Portal>
-                </PopoverBase>
-              </Tooltip>
-            </div>
-          </ToolbarItem>
-          <ToolbarItem
-            key="legend"
-          >
-            <div
-              className="pf-l-toolbar__item"
-            >
-              <Component
-                aria-disabled={false}
-                className="pf-topology-control-bar__button"
-                disabled={false}
-                id="legend"
-                onClick={[Function]}
-                variant="tertiary"
-              >
-                <ComponentWithOuia
-                  component={[Function]}
-                  componentProps={
-                    Object {
-                      "aria-disabled": false,
-                      "children": Array [
-                        "Legend",
-                        "",
-                      ],
-                      "className": "pf-topology-control-bar__button",
-                      "disabled": false,
-                      "id": "legend",
-                      "onClick": [Function],
-                      "variant": "tertiary",
-                    }
-                  }
-                  consumerContext={null}
-                >
-                  <Button
-                    aria-disabled={false}
-                    className="pf-topology-control-bar__button"
-                    disabled={false}
-                    id="legend"
-                    onClick={[Function]}
-                    ouiaContext={
                       Object {
-                        "isOuia": false,
-                        "ouiaId": null,
-                      }
-                    }
-                    variant="tertiary"
+                        "modifier": "space-items-none",
+                      },
+                    ]
+                  }
+                  innerRef={null}
+                >
+                  <div
+                    className="pf-c-toolbar__group pf-m-space-items-none"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="legend"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <Component
+                      key="zoom-in"
                     >
-                      Legend
-                    </button>
-                  </Button>
-                </ComponentWithOuia>
-              </Component>
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="Zoom In"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          id=""
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  Zoom In
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
+                              }
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={false}
+                              className="pf-topology-control-bar__button"
+                              disabled={false}
+                              id="zoom-in"
+                              onClick={[Function]}
+                              variant="tertiary"
+                            >
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="zoom-in"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <SearchPlusIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 512 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </SearchPlusIcon>
+                                <span
+                                  className="sr-only"
+                                >
+                                  Zoom In
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      Zoom In
+                                    </div>
+                                  </div>
+                                </div>
+                              }
+                            >
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    Zoom In
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
+                      </div>
+                    </Component>
+                    <Component
+                      key="zoom-out"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="Zoom Out"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          id=""
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  Zoom Out
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
+                              }
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={false}
+                              className="pf-topology-control-bar__button"
+                              disabled={false}
+                              id="zoom-out"
+                              onClick={[Function]}
+                              variant="tertiary"
+                            >
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="zoom-out"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <SearchMinusIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 512 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </SearchMinusIcon>
+                                <span
+                                  className="sr-only"
+                                >
+                                  Zoom Out
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      Zoom Out
+                                    </div>
+                                  </div>
+                                </div>
+                              }
+                            >
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    Zoom Out
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
+                      </div>
+                    </Component>
+                    <Component
+                      key="fit-to-screen"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="Fit to Screen"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          id=""
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  Fit to Screen
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
+                              }
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={false}
+                              className="pf-topology-control-bar__button"
+                              disabled={false}
+                              id="fit-to-screen"
+                              onClick={[Function]}
+                              variant="tertiary"
+                            >
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="fit-to-screen"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <ExpandArrowsAltIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 448 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M448 344v112a23.94 23.94 0 0 1-24 24H312c-21.39 0-32.09-25.9-17-41l36.2-36.2L224 295.6 116.77 402.9 153 439c15.09 15.1 4.39 41-17 41H24a23.94 23.94 0 0 1-24-24V344c0-21.4 25.89-32.1 41-17l36.19 36.2L184.46 256 77.18 148.7 41 185c-15.1 15.1-41 4.4-41-17V56a23.94 23.94 0 0 1 24-24h112c21.39 0 32.09 25.9 17 41l-36.2 36.2L224 216.4l107.23-107.3L295 73c-15.09-15.1-4.39-41 17-41h112a23.94 23.94 0 0 1 24 24v112c0 21.4-25.89 32.1-41 17l-36.19-36.2L263.54 256l107.28 107.3L407 327.1c15.1-15.2 41-4.5 41 16.9z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ExpandArrowsAltIcon>
+                                <span
+                                  className="sr-only"
+                                >
+                                  Fit to Screen
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      Fit to Screen
+                                    </div>
+                                  </div>
+                                </div>
+                              }
+                            >
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    Fit to Screen
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
+                      </div>
+                    </Component>
+                    <Component
+                      key="reset-view"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Tooltip
+                          appendTo={[Function]}
+                          aria="describedby"
+                          boundary="window"
+                          className=""
+                          content="Reset View"
+                          distance={15}
+                          enableFlip={true}
+                          entryDelay={500}
+                          exitDelay={500}
+                          flipBehavior={
+                            Array [
+                              "top",
+                              "right",
+                              "bottom",
+                              "left",
+                              "top",
+                              "right",
+                              "bottom",
+                            ]
+                          }
+                          id=""
+                          isAppLauncher={false}
+                          isContentLeftAligned={false}
+                          isVisible={false}
+                          maxWidth="18.75rem"
+                          position="top"
+                          tippyProps={Object {}}
+                          trigger="mouseenter focus"
+                          zIndex={9999}
+                        >
+                          <PopoverBase
+                            appendTo={[Function]}
+                            aria="describedby"
+                            arrow={true}
+                            boundary="window"
+                            content={
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Unknown
+                                  isLeftAligned={false}
+                                >
+                                  Reset View
+                                </Unknown>
+                              </div>
+                            }
+                            delay={
+                              Array [
+                                500,
+                                500,
+                              ]
+                            }
+                            distance={15}
+                            flip={true}
+                            flipBehavior={
+                              Array [
+                                "top",
+                                "right",
+                                "bottom",
+                                "left",
+                                "top",
+                                "right",
+                                "bottom",
+                              ]
+                            }
+                            isVisible={false}
+                            lazy={true}
+                            maxWidth="18.75rem"
+                            onCreate={[Function]}
+                            placement="top"
+                            popperOptions={
+                              Object {
+                                "modifiers": Object {
+                                  "hide": Object {
+                                    "enabled": true,
+                                  },
+                                  "preventOverflow": Object {
+                                    "enabled": true,
+                                  },
+                                },
+                              }
+                            }
+                            theme="pf-tooltip"
+                            trigger="mouseenter focus"
+                            zIndex={9999}
+                          >
+                            <Component
+                              aria-disabled={false}
+                              className="pf-topology-control-bar__button"
+                              disabled={false}
+                              id="reset-view"
+                              onClick={[Function]}
+                              variant="tertiary"
+                            >
+                              <button
+                                aria-disabled={null}
+                                aria-label={null}
+                                className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                                data-ouia-component-id={null}
+                                data-ouia-component-type="PF4/Button"
+                                data-ouia-safe={true}
+                                disabled={false}
+                                id="reset-view"
+                                onClick={[Function]}
+                                tabIndex={null}
+                                type="button"
+                              >
+                                <ExpandIcon
+                                  color="currentColor"
+                                  noVerticalAlign={false}
+                                  size="sm"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    aria-labelledby={null}
+                                    fill="currentColor"
+                                    height="1em"
+                                    role="img"
+                                    style={
+                                      Object {
+                                        "verticalAlign": "-0.125em",
+                                      }
+                                    }
+                                    viewBox="0 0 448 512"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
+                                      transform=""
+                                    />
+                                  </svg>
+                                </ExpandIcon>
+                                <span
+                                  className="sr-only"
+                                >
+                                  Reset View
+                                </span>
+                              </button>
+                            </Component>
+                            <Portal
+                              containerInfo={
+                                <div>
+                                  <div
+                                    class=""
+                                    id=""
+                                    role="tooltip"
+                                  >
+                                    <div
+                                      class="pf-c-tooltip__content"
+                                    >
+                                      Reset View
+                                    </div>
+                                  </div>
+                                </div>
+                              }
+                            >
+                              <div
+                                className=""
+                                id=""
+                                role="tooltip"
+                              >
+                                <Component
+                                  isLeftAligned={false}
+                                >
+                                  <div
+                                    className="pf-c-tooltip__content"
+                                  >
+                                    Reset View
+                                  </div>
+                                </Component>
+                              </div>
+                            </Portal>
+                          </PopoverBase>
+                        </Tooltip>
+                      </div>
+                    </Component>
+                    <Component
+                      key="legend"
+                    >
+                      <div
+                        className="pf-c-toolbar__item"
+                      >
+                        <Component
+                          aria-disabled={false}
+                          className="pf-topology-control-bar__button"
+                          disabled={false}
+                          id="legend"
+                          onClick={[Function]}
+                          variant="tertiary"
+                        >
+                          <button
+                            aria-disabled={null}
+                            aria-label={null}
+                            className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                            data-ouia-component-id={null}
+                            data-ouia-component-type="PF4/Button"
+                            data-ouia-safe={true}
+                            disabled={false}
+                            id="legend"
+                            onClick={[Function]}
+                            tabIndex={null}
+                            type="button"
+                          >
+                            Legend
+                          </button>
+                        </Component>
+                      </div>
+                    </Component>
+                  </div>
+                </ToolbarGroupWithRef>
+              </ForwardRef>
             </div>
-          </ToolbarItem>
-        </div>
-      </ToolbarGroup>
-    </div>
-  </Toolbar>
+            <ToolbarExpandableContent
+              chipContainerRef={
+                Object {
+                  "current": null,
+                }
+              }
+              clearFiltersButtonText="Clear all filters"
+              expandableContentRef={
+                Object {
+                  "current": <div
+                    class="pf-c-toolbar__expandable-content"
+                    id="pf-topology-control-bar-0-expandable-content-0"
+                  >
+                    <div
+                      class="pf-c-toolbar__group"
+                    />
+                  </div>,
+                }
+              }
+              id="pf-topology-control-bar-0-expandable-content-0"
+              isExpanded={false}
+              showClearFiltersButton={false}
+            >
+              <div
+                className="pf-c-toolbar__expandable-content"
+                id="pf-topology-control-bar-0-expandable-content-0"
+              >
+                <ForwardRef>
+                  <ToolbarGroupWithRef
+                    breakpointMods={Array []}
+                    innerRef={null}
+                  >
+                    <div
+                      className="pf-c-toolbar__group"
+                    />
+                  </ToolbarGroupWithRef>
+                </ForwardRef>
+              </div>
+            </ToolbarExpandableContent>
+          </div>
+        </ToolbarContent>
+        <ToolbarChipGroupContent
+          chipGroupContentRef={
+            Object {
+              "current": <div
+                class="pf-c-toolbar__content pf-m-hidden"
+                hidden=""
+              >
+                <div
+                  class="pf-c-toolbar__group"
+                />
+              </div>,
+            }
+          }
+          clearFiltersButtonText="Clear all filters"
+          collapseListedFiltersBreakpoint="lg"
+          isExpanded={false}
+          numberOfFilters={0}
+          showClearFiltersButton={false}
+        >
+          <div
+            className="pf-c-toolbar__content pf-m-hidden"
+            hidden={true}
+          >
+            <ForwardRef
+              className=""
+            >
+              <ToolbarGroupWithRef
+                breakpointMods={Array []}
+                className=""
+                innerRef={null}
+              >
+                <div
+                  className="pf-c-toolbar__group"
+                />
+              </ToolbarGroupWithRef>
+            </ForwardRef>
+          </div>
+        </ToolbarChipGroupContent>
+      </div>
+    </Toolbar>
+  </GenerateId>
 </TopologyControlBar>
 `;

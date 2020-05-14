@@ -4,7 +4,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
 <div
   className="pf-c-about-modal-box__close"
 >
-  <Component
+  <Button
     aria-label="Close Dialog"
     onClick={[Function]}
     variant="plain"
@@ -13,9 +13,8 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
-  </Component>
+  </Button>
 </div>
 `;
 
@@ -23,7 +22,7 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
 <div
   className="pf-c-about-modal-box__close"
 >
-  <Component
+  <Button
     aria-label="Klose Daylok"
     onClick={[Function]}
     variant="plain"
@@ -32,9 +31,8 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
-  </Component>
+  </Button>
 </div>
 `;
 
@@ -42,7 +40,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
 <div
   className="pf-c-about-modal-box__close"
 >
-  <Component
+  <Button
     aria-label="Close Dialog"
     onClick={[MockFunction]}
     variant="plain"
@@ -51,8 +49,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
-  </Component>
+  </Button>
 </div>
 `;

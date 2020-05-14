@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from '@patternfly/react-core/dist/js/components/Form/Form';
-import { FormGroup } from '@patternfly/react-core/dist/js/components/Form/FormGroup';
-import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput/TextInput';
+import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
 const propTypes = {
   formValue: PropTypes.string,
@@ -33,6 +31,7 @@ class SampleForm extends React.Component {
 
   render() {
     const { value, isValid } = this.state;
+    const validated = isValid ? 'default' : 'error';
 
     return (
       <Form>
@@ -42,10 +41,10 @@ class SampleForm extends React.Component {
           helperText="Please write your age"
           helperTextInvalid="Age has to be a number"
           fieldId="age"
-          isValid={isValid}
+          validated={validated}
         >
           <TextInput
-            isValid={isValid}
+            validated={validated}
             value={value}
             id="age"
             aria-describedby="age-helper"

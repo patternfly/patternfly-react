@@ -26,8 +26,6 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
   isExpanded = false,
   'aria-controls': ariaControls = '',
   'aria-label': ariaLabel = 'Details',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  'aria-labelledby': ariaLabelledBy = '',
   rowid = '',
   id,
   ...props
@@ -42,7 +40,9 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
         aria-labelledby={ariaLabel !== 'Details' ? null : `${rowid} ${id}`}
         aria-expanded={isExpanded}
       >
-        <AngleRightIcon />
+        <div className={css(styles.dataListToggleIcon)}>
+          <AngleRightIcon />
+        </div>
       </Button>
     </div>
   </div>

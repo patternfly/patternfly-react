@@ -50,7 +50,6 @@ class EmptyStateDemo extends React.Component {
           <TableHeader />
           <TableBody />
         </Table>
-        <Bullseye>
           <EmptyState>
             <EmptyStateIcon icon={SearchIcon} />
               <Title headingLevel="h5" size="lg">
@@ -65,7 +64,6 @@ class EmptyStateDemo extends React.Component {
                 </Button>
               </EmptyStateSecondaryActions>
             </EmptyState>
-          </Bullseye>
         </React.Fragment>
     );
   }
@@ -96,9 +94,7 @@ class LoadingStateDemo extends React.Component {
         {
           props: { colSpan: 8 },
           title: (
-          <Bullseye>
             <center><Spinner size="xl"/></center>
-          </Bullseye>
           )
         },
       ]
@@ -147,7 +143,6 @@ class LoadingStateDemo extends React.Component {
         {
           props: { colSpan: 8 },
           title: (
-          <Bullseye>
             <EmptyState variant={EmptyStateVariant.small}>
               <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
               <Title headingLevel="h2" size="lg">
@@ -157,7 +152,6 @@ class LoadingStateDemo extends React.Component {
                 There was an error retrieving data. Check your connection and try again.
               </EmptyStateBody>
             </EmptyState>
-          </Bullseye>
           )
         },
       ]

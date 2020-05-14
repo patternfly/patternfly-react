@@ -18,7 +18,6 @@ it('OptionsMenu should match snapshot (auto-generated)', () => {
       isOpen={true}
       isText={false}
       isGrouped={false}
-      ariaLabelMenu={'string'}
       position={'right'}
       direction={'up'}
     />

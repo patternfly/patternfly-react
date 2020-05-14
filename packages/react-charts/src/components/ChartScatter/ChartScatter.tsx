@@ -12,10 +12,9 @@ import {
   ScalePropType,
   ScatterSymbolType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryScatter,
-  VictoryScatterProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryScatter, VictoryScatterProps } from 'victory-scatter';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -191,7 +190,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The maxBubbleSize prop sets an upper limit for scaling data points in a bubble chart
    */
@@ -305,7 +304,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * The size prop determines how to scale each data point
    */
@@ -417,6 +416,8 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
     theme,
     ...containerComponent.props
   });
+
+  // Note: containerComponent is required for theme
   return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
 };
 

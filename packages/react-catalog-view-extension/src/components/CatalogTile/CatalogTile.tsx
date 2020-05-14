@@ -1,10 +1,5 @@
 import * as React from 'react';
-import { Card } from '@patternfly/react-core/dist/js/components/Card/Card';
-import { CardActions } from '@patternfly/react-core/dist/js/components/Card/CardActions';
-import { CardHead } from '@patternfly/react-core/dist/js/components/Card/CardHead';
-import { CardHeader } from '@patternfly/react-core/dist/js/components/Card/CardHeader';
-import { CardBody } from '@patternfly/react-core/dist/js/components/Card/CardBody';
-import { CardFooter } from '@patternfly/react-core/dist/js/components/Card/CardFooter';
+import { Card, CardActions, CardHeader, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 import classNames from 'classnames';
 
 export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'title'> {
@@ -112,16 +107,16 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         {...props}
       >
         {(badges.length > 0 || iconImg || iconClass || icon) && (
-          <CardHead>
+          <CardHeader>
             {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
             {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
             {badges.length > 0 && <CardActions>{this.renderBadges(badges)}</CardActions>}
-          </CardHead>
+          </CardHeader>
         )}
-        <CardHeader className="catalog-tile-pf-header">
+        <CardTitle className="catalog-tile-pf-header">
           <div className="catalog-tile-pf-title">{title}</div>
           {vendor && <div className="catalog-tile-pf-subtitle">{vendor}</div>}
-        </CardHeader>
+        </CardTitle>
         {description && (
           <CardBody className="catalog-tile-pf-body">
             <div className="catalog-tile-pf-description">

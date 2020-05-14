@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { css, pickProperties } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { PickOptional } from '../../helpers/typeUtils';
+import { DataListActionBreakpointMod } from './DataListActionBreakpoints';
+import { formatBreakpointMods } from '../../helpers/util';
 
-const visibilityModifiers = pickProperties(styles.modifiers, [
+const visibilityModifiers = [
   'hidden',
   'hiddenOnSm',
   'hiddenOnMd',
@@ -15,10 +17,9 @@ const visibilityModifiers = pickProperties(styles.modifiers, [
   'visibleOnLg',
   'visibleOnXl',
   'visibleOn_2xl'
-]);
+] as (keyof typeof styles.modifiers)[];
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-interface IDataListActionVisibility {
+interface DataListActionVisibility {
   hidden?: string;
   hiddenOnSm?: string;
   hiddenOnMd?: string;
@@ -32,9 +33,16 @@ interface IDataListActionVisibility {
   visibleOn2Xl?: string;
 }
 
-export const DataListActionVisibility: IDataListActionVisibility = Object.keys(visibilityModifiers)
-  .map(key => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
-  .reduce((acc, curr) => ({ ...acc, [curr[0]]: curr[1] }), {});
+export const DataListActionVisibility: DataListActionVisibility = visibilityModifiers
+  .filter(key => styles.modifiers[key])
+  .reduce(
+    (acc, curr) => {
+      const key2 = curr.replace('_2xl', '2Xl') as keyof typeof DataListActionVisibility;
+      acc[key2] = styles.modifiers[curr];
+      return acc;
+    },
+    {} as DataListActionVisibility
+  );
 
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
@@ -47,6 +55,8 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
   'aria-labelledby': string;
   /** Adds accessible text to the DataList Action */
   'aria-label': string;
+  /** An array of objects representing the various modifiers to apply to the data list action at various breakpoints */
+  breakpointMods?: DataListActionBreakpointMod[];
 }
 
 interface DataListActionState {
@@ -55,7 +65,8 @@ interface DataListActionState {
 
 export class DataListAction extends React.Component<DataListActionProps, DataListActionState> {
   static defaultProps: PickOptional<DataListActionProps> = {
-    className: ''
+    className: '',
+    breakpointMods: [] as DataListActionBreakpointMod[]
   };
 
   constructor(props: DataListActionProps) {
@@ -69,8 +80,7 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     this.setState({ isOpen });
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSelect = (event: MouseEvent) => {
+  onSelect = () => {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
     }));
@@ -84,12 +94,16 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
       id,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      breakpointMods,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
 
     return (
-      <div className={css(styles.dataListItemAction, className)} {...props}>
+      <div
+        className={css(styles.dataListItemAction, formatBreakpointMods(breakpointMods, styles), className)}
+        {...props}
+      >
         {children}
       </div>
     );

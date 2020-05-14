@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Table, TableHeader, TableBody, TableProps, headerCol, ICell, IRow } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
+import '@patternfly/patternfly/utilities/Spacing/spacing.css';
 
 interface TableState {
   columns: (ICell | string)[];
@@ -36,9 +37,10 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
       canSelectAll: true
     };
     this.onSelect = this.onSelect.bind(this);
+    this.toggleSelect = this.toggleSelect.bind(this);
   }
 
-  onSelect(event: React.MouseEvent, isSelected: boolean, rowId: number) {
+  onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
     let rows: IRow[];
     if (rowId === -1) {
       rows = this.state.rows.map(oneRow => {
@@ -54,7 +56,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
     });
   }
 
-  toggleSelect = checked => {
+  toggleSelect = (checked: boolean) => {
     this.setState({
       canSelectAll: checked
     });
@@ -65,28 +67,29 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
   }
 
   render() {
-    const { columns, rows } = this.state;
+    const { columns, rows, canSelectAll } = this.state;
 
     return (
       <div>
-        <Table
-          caption="Selectable Table"
-          onSelect={this.onSelect}
-          cells={columns}
-          rows={rows}
-          canSelectAll={this.state.canSelectAll}
-        >
-          <TableHeader />
-          <TableBody />
-        </Table>
         <Checkbox
-          label="canSelectAll"
-          isChecked={this.state.canSelectAll}
+          label="Can select all"
+          className="pf-u-mb-lg"
+          isChecked={canSelectAll}
           onChange={this.toggleSelect}
           aria-label="toggle select all checkbox"
           id="toggle-select-all"
           name="toggle-select-all"
         />
+        <Table
+          onSelect={this.onSelect}
+          canSelectAll={canSelectAll}
+          caption="Selectable Table"
+          cells={columns}
+          rows={rows}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
       </div>
     );
   }

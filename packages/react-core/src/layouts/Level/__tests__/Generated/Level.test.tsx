@@ -8,6 +8,6 @@ import { Level } from '../../Level';
 import {} from '../..';
 
 it('Level should match snapshot (auto-generated)', () => {
-  const view = shallow(<Level gutter={null} className={"''"} children={<>ReactNode</>} />);
+  const view = shallow(<Level hasGutter className={"''"} children={<>ReactNode</>} />);
   expect(view).toMatchSnapshot();
 });

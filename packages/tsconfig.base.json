@@ -2,14 +2,24 @@
   "compilerOptions": {
     "jsx": "react",
     "lib": [
-      "es2017",
+      "es2015",
       "dom"
     ],
-    "module": "commonjs",
+    "target": "es2015",
+    "module": "es2015",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "skipLibCheck": true,
+    "importHelpers": true,
+    "composite": true,
+    "sourceMap": true,
+    "declarationMap": true,
     "strict": true,
-    "strictNullChecks": false,
-    "target": "es5"
-  }
+    "strictNullChecks": false
+  },
+  "exclude": [
+    "**/**.test.tsx",
+    "**/**.test.ts",
+    "**/examples/**"
+  ]
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { DataGetterPropType, DomainPropType, PaddingProps, VictoryScatter } from 'victory';
+import { DataGetterPropType, DomainPropType, PaddingProps } from 'victory-core';
+import { VictoryScatter } from 'victory-scatter';
 import { getPrimaryDotMeasureData } from './utils';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatter } from '../ChartScatter';
@@ -95,7 +96,7 @@ export interface ChartBulletPrimaryDotMeasureProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The measureComponent prop takes an entire component which will be used to create the chart
    */

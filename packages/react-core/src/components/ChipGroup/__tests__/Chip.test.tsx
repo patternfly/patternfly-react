@@ -1,16 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ChipButton } from '../ChipButton';
 import { Chip } from '../Chip';
 
-test('ChipButton', () => {
-  const view = mount(
-    <ChipButton id="my-chip-button" className="chip-bttn-cls">
-      <b>Close</b>
-    </ChipButton>
-  );
-  expect(view).toMatchSnapshot();
-});
 
 describe('Chip', () => {
   test('overflow', () => {
@@ -49,3 +40,4 @@ describe('Chip', () => {
     expect(view).toMatchSnapshot();
   });
 });
+

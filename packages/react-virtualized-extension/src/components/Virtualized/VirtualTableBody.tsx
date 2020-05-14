@@ -14,7 +14,7 @@ import {
 } from './types';
 
 import accessibilityOverscanIndicesGetter from './accessibilityOverscanIndicesGetter';
-import VirtualGrid from './VirtualGrid';
+import { VirtualGrid } from './VirtualGrid';
 import clsx from 'clsx';
 
 /**
@@ -103,7 +103,7 @@ interface Props {
   rows: any[];
 }
 
-export default class VirtualTableBody extends React.PureComponent<Props> {
+export class VirtualTableBody extends React.PureComponent<Props> {
   static defaultProps = {
     autoHeight: false,
     estimatedRowSize: 30,

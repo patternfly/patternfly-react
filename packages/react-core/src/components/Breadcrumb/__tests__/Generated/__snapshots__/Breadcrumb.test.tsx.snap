@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<nav
+  aria-label="'Breadcrumb'"
+  className="pf-c-breadcrumb ''"
+  data-ouia-component-id={0}
+  data-ouia-component-type="PF4/Breadcrumb"
+  data-ouia-safe={true}
+>
+  <ol
+    className="pf-c-breadcrumb__list"
+  >
+    ReactNode
+  </ol>
+</nav>
 `;

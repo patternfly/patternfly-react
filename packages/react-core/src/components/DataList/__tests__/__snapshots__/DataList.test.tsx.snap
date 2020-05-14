@@ -33,11 +33,11 @@ exports[`DataList DataListAction button 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <Component
+  <Button
     id="delete-item-1"
   >
     Delete
-  </Component>
+  </Button>
 </div>
 `;
 
@@ -84,7 +84,7 @@ exports[`DataList DataListContent 1`] = `
 </section>
 `;
 
-exports[`DataList DataListContent noPadding 1`] = `
+exports[`DataList DataListContent hasNoPadding 1`] = `
 <section
   aria-label="Primary Content Details"
   className="pf-c-data-list__expandable-content"

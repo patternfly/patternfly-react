@@ -14,13 +14,12 @@ export enum ProgressMeasureLocation {
 
 export enum ProgressVariant {
   danger = 'danger',
-  success = 'success',
-  info = 'info'
+  success = 'success'
 }
 
 export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Properties needed for aria support */
-  ariaProps?: AriaProps;
+  progressBarAriaProps?: AriaProps;
   /** Progress component DOM ID. */
   parentId: string;
   /** Progress title. */
@@ -28,25 +27,25 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   /** Label to indicate what progress is showing. */
   label?: React.ReactNode;
   /** Type of progress status. */
-  variant?: 'danger' | 'success' | 'info';
+  variant?: 'danger' | 'success';
   /** Location of progress value. */
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
   value: number;
 }
 
-const variantToIcon: { [k: string]: React.FunctionComponent } = {
+const variantToIcon = {
   danger: TimesCircleIcon,
   success: CheckCircleIcon
 };
 
 export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({
-  ariaProps,
+  progressBarAriaProps,
   value,
   title = '',
   parentId,
   label = null,
-  variant = ProgressVariant.info,
+  variant = null,
   measureLocation = ProgressMeasureLocation.top
 }: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
@@ -65,7 +64,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
           </span>
         )}
       </div>
-      <ProgressBar ariaProps={ariaProps} value={value}>
+      <ProgressBar progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
     </React.Fragment>

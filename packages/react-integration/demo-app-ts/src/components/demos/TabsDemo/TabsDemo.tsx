@@ -1,5 +1,6 @@
-import { Tabs, Tab, TabContent, Button } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
+import { Tabs, Tab, TabContent, TabTitleText, TabTitleIcon, Button } from '@patternfly/react-core';
+import UsersIcon from '@patternfly/react-icons/dist/js/icons/users-icon';
 
 export class TabDemo extends Component {
   state = {
@@ -8,11 +9,11 @@ export class TabDemo extends Component {
     activeTabKey3: 0,
     isTab2Hidden: true
   };
-  private contentRef1: any;
-  private contentRef2: any;
-  private contentRef3: any;
+  private contentRef1: RefObject<HTMLDivElement>;
+  private contentRef2: RefObject<HTMLDivElement>;
+  private contentRef3: RefObject<HTMLDivElement>;
 
-  constructor(props) {
+  constructor(props: {}) {
     super(props);
 
     this.contentRef1 = React.createRef<HTMLDivElement>();
@@ -21,23 +22,30 @@ export class TabDemo extends Component {
   }
 
   // Toggle currently active tab
-  private handleTabClick = (event: any, tabIndex: number) => {
+  private handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick2 = (event, tabIndex) => {
+  private handleTabClick2 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey2: tabIndex
     });
   };
 
   // Toggle currently active tab
-  private handleTabClick3 = (event, tabIndex) => {
+  private handleTabClick3 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey3: tabIndex
+    });
+  };
+
+  // Toggle currently active tab
+  private handleTabClick4 = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
+    this.setState({
+      activeTabKey4: tabIndex
     });
   };
 
@@ -57,14 +65,14 @@ export class TabDemo extends Component {
           <Tab
             id="demoTab1"
             eventKey={0}
-            title="Tab item 1"
+            title={<TabTitleText>Tab item 1</TabTitleText>}
             tabContentId="demoTab1Section"
             tabContentRef={this.contentRef1}
           />
           <Tab
             id="demoTab2"
             eventKey={1}
-            title="Tab item 2"
+            title={<TabTitleText>Tab item 2</TabTitleText>}
             tabContentId="demoTab2Section"
             tabContentRef={this.contentRef2}
             isHidden={isTab2Hidden}
@@ -72,7 +80,14 @@ export class TabDemo extends Component {
           <Tab
             id="demoTab3"
             eventKey={2}
-            title={<i>Tab item 3</i>}
+            title={
+              <>
+                <TabTitleIcon>
+                  <UsersIcon />
+                </TabTitleIcon>
+                <TabTitleText>Tab item 3</TabTitleText>
+              </>
+            }
             tabContentId="demoTab3Section"
             tabContentRef={this.contentRef3}
           />
@@ -96,24 +111,57 @@ export class TabDemo extends Component {
           </TabContent>
         </div>
         <Tabs id="mountOnEnter" mountOnEnter activeKey={this.state.activeTabKey2} onSelect={this.handleTabClick2}>
-          <Tab eventKey={0} title="Tab item 1">
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
             Tab 1 section
           </Tab>
-          <Tab eventKey={1} title="Tab item 2">
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
             Tab 2 section
           </Tab>
-          <Tab eventKey={2} title="Tab item 3">
+          <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}>
             Tab 3 section
           </Tab>
         </Tabs>
         <Tabs id="unmountOnExit" unmountOnExit activeKey={this.state.activeTabKey3} onSelect={this.handleTabClick3}>
-          <Tab eventKey={0} title="Tab item 1">
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
             Tab 1 section
           </Tab>
-          <Tab eventKey={1} title="Tab item 2">
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
             Tab 2 section
           </Tab>
-          <Tab eventKey={2} title="Tab item 3">
+          <Tab eventKey={2} title={<TabTitleText>Tab item </TabTitleText>}>
+            Tab 3 section
+          </Tab>
+        </Tabs>
+        <Tabs id="boxTabs" activeKey={this.state.activeTabKey4} onSelect={this.handleTabClick4} isBox>
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Tab item </TabTitleText>}>
+            Tab 3 section
+          </Tab>
+        </Tabs>
+        <Tabs id="verticalTabs" activeKey={this.state.activeTabKey4} onSelect={this.handleTabClick4} isVertical>
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Tab item </TabTitleText>}>
+            Tab 3 section
+          </Tab>
+        </Tabs>
+        <Tabs id="filledTabs" activeKey={this.state.activeTabKey4} onSelect={this.handleTabClick4} isFilled>
+          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Tab item </TabTitleText>}>
             Tab 3 section
           </Tab>
         </Tabs>

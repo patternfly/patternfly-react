@@ -16,31 +16,35 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     perPage: 20
   };
 
-  onSetTopPage = (_event, pageNumber) => {
+  onSetTopPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       topPage: pageNumber
     });
   };
 
-  onSetBottomPage = (_event, pageNumber) => {
+  onSetBottomPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       bottomPage: pageNumber
     });
   };
 
-  onSetDefaultPage = (_event, pageNumber) => {
+  onSetDefaultPage = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, pageNumber: number) => {
     this.setState({
       defaultFullPage: pageNumber
     });
   };
 
-  onPerPageSelect = (_event, perPage) => {
+  onPerPageSelect = (_event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => {
     this.setState({
       perPage
     });
   };
 
-  onDefaultToFullPerPageSelect = (_event, perPage, pageNumber) => {
+  onDefaultToFullPerPageSelect = (
+    _event: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+    perPage: number,
+    pageNumber: number
+  ) => {
     this.setState({
       perPage,
       defaultFullPage: pageNumber
@@ -50,7 +54,9 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   renderPagination() {
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Pagination</Title>
+        <Title headingLevel="h2" size="2xl">
+          Pagination
+        </Title>
         <React.Fragment>
           <Pagination
             itemCount={523}
@@ -90,7 +96,9 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
   renderDisabled() {
     return (
       <StackItem isFilled={false}>
-        <Title size="2xl">Disabled state</Title>
+        <Title headingLevel="h2" size="2xl">
+          Disabled state
+        </Title>
         <React.Fragment>
           <Pagination
             itemCount={523}
@@ -109,7 +117,7 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
 
   render() {
     return (
-      <Stack gutter="md">
+      <Stack hasGutter>
         {this.renderPagination()}
         {this.renderDisabled()}
       </Stack>

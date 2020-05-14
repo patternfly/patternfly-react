@@ -1,11 +1,13 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
-import { getModifier } from '@patternfly/react-styles';
-import { DataToolbarBreakpointMod } from '../components/DataToolbar/DataToolbarUtils';
+import { ToolbarBreakpointMod } from '../components/Toolbar/ToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
+import { DataListActionBreakpointMod } from '../components/DataList/DataListActionBreakpoints';
+import { PageSectionBreakpointMod } from '../components/Page/PageSection';
+import { PageHeaderToolsBreakpointMod } from '../components/Page/PageHeaderTools';
 
 /**
- * @param {string} input - String to capitalize
+ * @param {string} input - String to capitalize first letter
  */
 export function capitalize(input: string) {
   return input[0].toUpperCase() + input.substring(1);
@@ -46,6 +48,9 @@ export function debounce(this: any, func: (...args: any[]) => any, wait: number)
  * @returns { boolean } True if the component is in View.
  */
 export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean) {
+  if (!container || !element) {
+    return false;
+  }
   const containerBounds = container.getBoundingClientRect();
   const elementBounds = element.getBoundingClientRect();
   const containerBoundsLeft = Math.floor(containerBounds.left);
@@ -234,17 +239,38 @@ export function pluralize(i: number, singular: string, plural?: string) {
 
 /** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
- * @param {(DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[]} breakpointMods The modifiers object
+ * @param {(ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod | DataListActionBreakpointMod | PageHeaderToolsBreakpointMod)[]} breakpointMods The modifiers object
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
-  breakpointMods: (DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[],
+  breakpointMods: (
+    | ToolbarBreakpointMod
+    | FlexBreakpointMod
+    | FlexItemBreakpointMod
+    | PageSectionBreakpointMod
+    | DataListActionBreakpointMod
+    | PageHeaderToolsBreakpointMod)[],
   styles: any
 ) =>
-  breakpointMods.reduce(
-    (acc: string, curr: DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod) =>
-      `${acc}${acc && ' '}${getModifier(styles, `${curr.modifier}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`)}`,
-    ''
-  );
+  breakpointMods
+    .map(mod => `${mod.modifier}${mod.breakpoint ? `-on-${mod.breakpoint}` : ''}`)
+    .map(toCamel)
+    .map(modifierKey => styles.modifiers[modifierKey])
+    .filter(Boolean)
+    .join(' ');
 
+const camelize = (s: string) =>
+  s
+    .toUpperCase()
+    .replace('-', '')
+    .replace('_', '');
+/**
+ *
+ * @param {string} s string to make camelCased
+ */
+export const toCamel = (s: string) => s.replace(/([-_][a-z])/gi, camelize);
+
+/**
+ * Copied from exenv
+ */
 export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);

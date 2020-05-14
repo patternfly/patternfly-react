@@ -24,7 +24,7 @@ test('simple text input', () => {
 });
 
 test('invalid text area', () => {
-  const view = shallow(<TextArea {...props} required isValid={false} aria-label="invalid textarea" />);
+  const view = shallow(<TextArea {...props} required validated={'error'} aria-label="invalid textarea" />);
   expect(view).toMatchSnapshot();
 });
 
@@ -54,7 +54,7 @@ test('horizontally resizable text area', () => {
       resizeOrientation="horizontal"
       {...props}
       required
-      isValid={false}
+      validated={'error'}
       aria-label="horizontal resize textarea"
     />
   );

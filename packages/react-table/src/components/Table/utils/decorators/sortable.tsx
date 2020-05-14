@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { SortByDirection, IExtra, IFormatterValueType, ITransform } from '../../Table';
 import { SortColumn } from '../../SortColumn';
 
@@ -35,12 +34,7 @@ export const sortable: ITransform = (label: IFormatterValueType, { columnIndex, 
     className: css(styles.tableSort, isSortedBy && styles.modifiers.selected),
     'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
     children: (
-      <SortColumn
-        isSortedBy={isSortedBy}
-        sortDirection={isSortedBy ? sortBy.direction : ''}
-        onSort={sortClicked}
-        className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
-      >
+      <SortColumn isSortedBy={isSortedBy} sortDirection={isSortedBy ? sortBy.direction : ''} onSort={sortClicked}>
         {label}
       </SortColumn>
     )

@@ -2,17 +2,12 @@
   "name": "{{name}}",
   "version": "1.0.0",
   "description": "{{description}}",
-  {{#if buildsWithBabel }}
+  {{#if buildsWithTypescript }}
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
-  {{#if includeTypings}}
   "types": "dist/js/index.d.ts",
-  {{/if}}
   {{else}}
   "main": "lib/index.js",
-  {{#if includeTypings}}
-  "types": "lib/index.d.ts",
-  {{/if}}
   {{/if}}
   "sideEffects": false,
   "publishConfig": {
@@ -33,25 +28,20 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    {{#if buildsWithBabel}}
-    "build": "yarn build:babel",
-    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
-    "build:babel:cjs": "babel --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
-    "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    {{#if buildsWithTypescript}}
+    "clean": "rimraf dist"
     {{/if}}
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-typescript": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-plugin-typescript-to-proptypes": "^0.17.1",
+    {{#if buildsWithTypescript}}
+    "rimraf": "^2.6.2",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+    {{/if}}
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }

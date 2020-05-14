@@ -3,7 +3,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 
 export class DonutUtilizationInvertedRightDemo extends React.Component<{}, { used: number; spacer: string }> {
   interval: any;
-  constructor(props) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       spacer: '',

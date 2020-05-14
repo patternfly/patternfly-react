@@ -14,14 +14,15 @@ it('DropdownItem should match snapshot (auto-generated)', () => {
       className={"''"}
       listItemClassName={'string'}
       component={'a'}
-      variant={'item'}
       isDisabled={false}
+      isPlainText={false}
       isHovered={false}
-      href={"''"}
+      href={'string'}
       tooltip={null}
       tooltipProps={undefined}
       additionalChild={<div>ReactNode</div>}
       customChild={<div>ReactNode</div>}
+      icon={null}
     />
   );
   expect(view).toMatchSnapshot();

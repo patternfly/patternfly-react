@@ -43,7 +43,7 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, ITableSt
         },
         {
           isSeparator: true,
-          onClick: null
+          onClick: () => {}
         },
         {
           title: 'Third action',

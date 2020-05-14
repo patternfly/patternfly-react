@@ -1,5 +1,5 @@
 import { get, isEmpty, isFinite } from 'lodash';
-import { PaddingProps } from 'victory';
+import { PaddingProps } from 'victory-core';
 
 export const getPaddingForSide = (
   side: 'bottom' | 'left' | 'right' | 'top',

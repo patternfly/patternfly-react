@@ -19,8 +19,8 @@ it('AboutModalContainer should match snapshot (auto-generated)', () => {
       brandImageSrc={'string'}
       brandImageAlt={'string'}
       backgroundImageSrc={'string'}
-      ariaLabelledbyId={'string'}
-      ariaDescribedById={'string'}
+      aria-labelledby={'string'}
+      aria-describedby={'string'}
     />
   );
   expect(view).toMatchSnapshot();

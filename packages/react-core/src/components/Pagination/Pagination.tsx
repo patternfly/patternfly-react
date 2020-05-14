@@ -1,19 +1,16 @@
 import * as React from 'react';
-import { DropdownDirection } from '../Dropdown';
 import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
-import { c_pagination__nav_page_select_c_form_control_width_chars as widthChars } from '@patternfly/react-tokens';
+import { getOUIAProps, OUIAProps } from '../../helpers';
+import widthChars from '@patternfly/react-tokens/dist/js/c_pagination__nav_page_select_c_form_control_width_chars';
 import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {
   top = 'top',
-  bottom = 'bottom',
-  left = 'left',
-  right = 'right'
+  bottom = 'bottom'
 }
 
 const defaultPerPageOptions = [
@@ -78,11 +75,13 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Total number of items. */
   itemCount: number;
   /** Position where pagination is rendered. */
-  variant?: 'top' | 'bottom' | 'left' | 'right';
+  variant?: 'top' | 'bottom' | PaginationVariant;
   /** Flag indicating if pagination is disabled */
   isDisabled?: boolean;
   /** Flag indicating if pagination is compact */
   isCompact?: boolean;
+  /** Flag indicating if pagination is not sticky */
+  isStatic?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
@@ -136,9 +135,9 @@ const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
 };
 
 let paginationId = 0;
-class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
+export class Pagination extends React.Component<PaginationProps & OUIAProps> {
   paginationRef = React.createRef<HTMLDivElement>();
-  static defaultProps: PickOptional<PaginationProps & InjectedOuiaProps> = {
+  static defaultProps: PickOptional<PaginationProps & OUIAProps> = {
     children: null,
     className: '',
     variant: PaginationVariant.top,
@@ -165,7 +164,6 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     itemsStart: null,
     itemsEnd: null,
     perPageOptions: defaultPerPageOptions,
-    dropDirection: DropdownDirection.down,
     widgetId: 'pagination-options-menu',
     toggleTemplate: ToggleTemplate,
     onSetPage: () => undefined,
@@ -175,7 +173,6 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     onNextClick: () => undefined,
     onPageInput: () => undefined,
     onLastClick: () => undefined,
-    ouiaContext: null,
     ouiaId: null
   };
 
@@ -189,7 +186,7 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     handleInputWidth(this.getLastPage(), node);
   }
 
-  componentDidUpdate(prevProps: PaginationProps & InjectedOuiaProps) {
+  componentDidUpdate(prevProps: PaginationProps & OUIAProps) {
     const node = this.paginationRef.current;
     if (prevProps.perPage !== this.props.perPage || prevProps.itemCount !== this.props.itemCount) {
       handleInputWidth(this.getLastPage(), node);
@@ -202,6 +199,7 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
       variant,
       isDisabled,
       isCompact,
+      isStatic,
       perPage,
       titles,
       firstPage,
@@ -212,7 +210,7 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
       itemsStart,
       itemsEnd,
       perPageOptions,
-      dropDirection,
+      dropDirection: dropDirectionProp,
       widgetId,
       toggleTemplate,
       onSetPage,
@@ -222,10 +220,10 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
       onNextClick,
       onPageInput,
       onLastClick,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
+    const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
 
     let page = propPage;
     if (!page && offset) {
@@ -252,15 +250,13 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
         ref={this.paginationRef}
         className={css(
           styles.pagination,
-          variant === PaginationVariant.bottom && styles.modifiers.footer,
+          variant === PaginationVariant.bottom && styles.modifiers.bottom,
           isCompact && styles.modifiers.compact,
+          isStatic && styles.modifiers.static,
           className
         )}
         id={`${widgetId}-${paginationId++}`}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Pagination',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('Pagination', ouiaId)}
         {...props}
       >
         {variant === PaginationVariant.top && (
@@ -318,6 +314,3 @@ class Pagination extends React.Component<PaginationProps & InjectedOuiaProps> {
     );
   }
 }
-
-const PaginationWithOuiaContext = withOuiaContext(Pagination);
-export { PaginationWithOuiaContext as Pagination };

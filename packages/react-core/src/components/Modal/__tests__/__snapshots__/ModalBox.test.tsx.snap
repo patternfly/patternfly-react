@@ -2,11 +2,13 @@
 
 exports[`ModalBox Test 1`] = `
 <div
-  aria-describedby="boxId"
-  aria-label="Test Modal Box"
+  aria-label={null}
+  aria-labelledby={null}
   aria-modal="true"
   className="pf-c-modal-box"
+  id="boxId"
   role="dialog"
+  title="Test Modal Box"
 >
   This is a ModalBox
 </div>
@@ -14,11 +16,14 @@ exports[`ModalBox Test 1`] = `
 
 exports[`ModalBox Test isLarge 1`] = `
 <div
-  aria-describedby="boxId"
-  aria-label="Test Modal Box"
+  aria-label={null}
+  aria-labelledby={null}
   aria-modal="true"
-  className="pf-c-modal-box pf-m-lg"
+  className="pf-c-modal-box"
+  id="boxId"
+  isLarge={true}
   role="dialog"
+  title="Test Modal Box"
 >
   This is a ModalBox
 </div>
@@ -26,11 +31,14 @@ exports[`ModalBox Test isLarge 1`] = `
 
 exports[`ModalBox Test isSmall 1`] = `
 <div
-  aria-describedby="boxId"
-  aria-label="Test Modal Box"
+  aria-label={null}
+  aria-labelledby={null}
   aria-modal="true"
-  className="pf-c-modal-box pf-m-sm"
+  className="pf-c-modal-box"
+  id="boxId"
+  isSmall={true}
   role="dialog"
+  title="Test Modal Box"
 >
   This is a ModalBox
 </div>

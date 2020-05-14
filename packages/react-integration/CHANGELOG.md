@@ -428,7 +428,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **DataToolbar:** move and wrap chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/issues/3319)) ([99f1efe](https://github.com/patternfly/patternfly-react/commit/99f1efe4c179754a1e1aa46585c9776c3073ee34))
+* **Toolbar:** move and wrap chips in expandable content ([#3319](https://github.com/patternfly/patternfly-react/issues/3319)) ([99f1efe](https://github.com/patternfly/patternfly-react/commit/99f1efe4c179754a1e1aa46585c9776c3073ee34))
 
 
 

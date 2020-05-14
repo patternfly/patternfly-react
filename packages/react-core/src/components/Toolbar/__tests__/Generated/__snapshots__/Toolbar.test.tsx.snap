@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar should match snapshot (auto-generated) 1`] = `
+<div
+  className="pf-c-toolbar string"
+  id="string"
+>
+  <ContextProvider
+    value={
+      Object {
+        "chipGroupContentRef": Object {
+          "current": null,
+        },
+        "clearAllFilters": [Function],
+        "clearFiltersButtonText": "string",
+        "isExpanded": true,
+        "numberOfFilters": 0,
+        "showClearFiltersButton": false,
+        "toggleIsExpanded": [Function],
+        "toolbarId": "string",
+        "updateNumberFilters": [Function],
+      }
+    }
+  >
+    <div>
+      ReactNode
+    </div>
+    <ToolbarChipGroupContent
+      chipGroupContentRef={
+        Object {
+          "current": null,
+        }
+      }
+      clearAllFilters={[Function]}
+      clearFiltersButtonText="string"
+      collapseListedFiltersBreakpoint="md"
+      isExpanded={true}
+      numberOfFilters={0}
+      showClearFiltersButton={false}
+    />
+  </ContextProvider>
+</div>
+`;

@@ -7,21 +7,21 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
       "baseClass": "pf-c-dropdown",
       "baseComponent": "div",
       "disabledClass": "pf-m-disabled",
-      "hoverClass": "pf-m-hover",
       "itemClass": "pf-c-dropdown__menu-item",
       "menuClass": "pf-c-dropdown__menu",
       "onSelect": [Function],
+      "plainTextClass": "pf-m-text",
       "sectionClass": "pf-c-dropdown__group",
       "sectionComponent": "section",
       "sectionTitleClass": "pf-c-dropdown__group-title",
-      "separatorClass": "pf-c-dropdown__separator",
       "toggleClass": "pf-c-dropdown__toggle",
-      "toggleIconClass": "pf-c-dropdown__toggle-icon",
+      "toggleIconClass": "pf-c-dropdown__toggle-image",
+      "toggleIndicatorClass": "pf-c-dropdown__toggle-icon",
       "toggleTextClass": "pf-c-dropdown__toggle-text",
     }
   }
 >
-  <Component
+  <DropdownWithContext
     autoFocus={true}
     className="string"
     direction="up"
@@ -29,6 +29,8 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     isGrouped={true}
     isOpen={true}
     isPlain={true}
+    onSelect={[Function]}
+    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <p>
@@ -39,6 +41,6 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     <div>
       ReactNode
     </div>
-  </Component>
+  </DropdownWithContext>
 </ContextProvider>
 `;

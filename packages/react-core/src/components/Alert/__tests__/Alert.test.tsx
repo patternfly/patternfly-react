@@ -5,14 +5,14 @@ import { Alert, AlertVariant } from '../Alert';
 import { AlertActionLink } from '../AlertActionLink';
 import { AlertActionCloseButton } from '../AlertActionCloseButton';
 
-test('default Alert variant is info', () => {
+test('default Alert variant is default', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);
   expect(
     view
       .find('Alert')
       .childAt(0)
       .prop('className')
-  ).toContain('pf-m-info');
+  ).toContain('pf-c-alert');
 });
 
 Object.values(AlertVariant).forEach(variant => {
@@ -37,7 +37,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Action Link', () => {
       const view = mount(
-        <Alert variant={variant} action={<AlertActionLink>test</AlertActionLink>} title="">
+        <Alert variant={variant} actionLinks={[<AlertActionLink>test</AlertActionLink>]} title="">
           Some alert
         </Alert>
       );
@@ -49,7 +49,7 @@ Object.values(AlertVariant).forEach(variant => {
       const view = mount(
         <Alert
           variant={variant}
-          action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
+          actionClose={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
           title={`Sample ${variant} alert`}
         >
           Some alert
@@ -62,7 +62,7 @@ Object.values(AlertVariant).forEach(variant => {
 
     test('Action and Title', () => {
       const view = mount(
-        <Alert variant={variant} action={<AlertActionLink>test</AlertActionLink>} title="Some title">
+        <Alert variant={variant} actionLinks={[<AlertActionLink>test</AlertActionLink>]} title="Some title">
           Some alert
         </Alert>
       );
@@ -74,7 +74,7 @@ Object.values(AlertVariant).forEach(variant => {
         <Alert
           variant={variant}
           aria-label={`Custom aria label for ${variant}`}
-          action={<AlertActionLink>test</AlertActionLink>}
+          actionLinks={[<AlertActionLink>test</AlertActionLink>]}
           title="Some title"
         >
           Some alert

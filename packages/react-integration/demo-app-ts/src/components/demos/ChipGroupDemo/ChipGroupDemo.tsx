@@ -10,8 +10,8 @@ interface BadgeChipState {
 }
 
 export class ChipGroupDemo extends Component<{}, BadgeChipState> {
-  deleteItem: (id: any) => void;
-  constructor(props) {
+  deleteItem: (id: string) => void;
+  constructor(props: {}) {
     super(props);
     this.state = {
       badgeChipArray: [
@@ -27,7 +27,7 @@ export class ChipGroupDemo extends Component<{}, BadgeChipState> {
         }
       ]
     };
-    this.deleteItem = (id: any) => {
+    this.deleteItem = (id: string) => {
       const copyOfbadgeChipArray = this.state.badgeChipArray;
       const index = copyOfbadgeChipArray.findIndex(chipObj => chipObj.name === id);
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TableTextInput from './TableTextInput';
+import { TableTextInput } from './TableTextInput';
 
 const props = {
   defaultValue: 'test',

@@ -8,7 +8,8 @@
         "@typescript-eslint",
         "jsdoc",
         "react",
-        "prettier"
+        "prettier",
+        "patternfly-react"
     ],
     "extends": [
         "eslint:recommended",
@@ -17,7 +18,6 @@
         "plugin:jsdoc/recommended"
     ],
     "parserOptions": {
-        "project": "packages/tsconfig.base.json",
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
@@ -90,6 +90,7 @@
         "no-empty": "error",
         "no-eval": "error",
         "no-new-wrappers": "error",
+        "no-prototype-builtins": "off",
         "no-shadow": "error",
         "no-throw-literal": "error",
         "no-trailing-spaces": "off",
@@ -106,6 +107,7 @@
             "error",
             "never"
         ],
+        "patternfly-react/import-tokens-icons": "error",
         "prefer-const": "error",
         "prettier/prettier": "error",
         "radix": [

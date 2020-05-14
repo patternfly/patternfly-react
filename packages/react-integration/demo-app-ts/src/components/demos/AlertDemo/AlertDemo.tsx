@@ -6,8 +6,8 @@ interface AlertDemoState {
   alertTwoVisible: boolean;
 }
 
-export class AlertDemo extends React.Component<null, AlertDemoState> {
-  constructor(props) {
+export class AlertDemo extends React.Component<{}, AlertDemoState> {
+  constructor(props: {}) {
     super(props);
     this.state = { alertOneVisible: true, alertTwoVisible: true };
   }
@@ -28,7 +28,7 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
             id="info-alert"
             variant="info"
             title="Info alert title"
-            action={<AlertActionCloseButton id="test-button-1" onClose={this.hideAlertOne} />}
+            actionClose={<AlertActionCloseButton id="test-button-1" onClose={this.hideAlertOne} />}
           >
             Info alert description. <a href="#">This is a link.</a>
           </Alert>
@@ -39,12 +39,12 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
             id="info-alert"
             variant="info"
             title="Info alert title"
-            action={<AlertActionCloseButton id="test-button-2" onClose={this.hideAlertTwo} />}
+            actionClose={<AlertActionCloseButton id="test-button-2" onClose={this.hideAlertTwo} />}
           >
             Info alert description. <a href="#">This is a link.</a>
           </Alert>
         )}
-        <Alert id="default-alert" variant="default" title="Default alert title" isInline>
+        <Alert id="default-alert" title="Default alert title" isInline>
           Info alert description
         </Alert>
       </React.Fragment>

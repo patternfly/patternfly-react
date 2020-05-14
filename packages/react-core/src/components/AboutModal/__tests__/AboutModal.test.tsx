@@ -48,7 +48,7 @@ test('modal does not call onClose for esc key if it is not open', () => {
   expect(props.onClose).not.toBeCalled();
 });
 
-test('Each modal is given new ariaDescribedById and ariaLabelledbyId', () => {
+test('Each modal is given new aria-describedby and aria-labelledby', () => {
   const first = new AboutModal(props);
   const second = new AboutModal(props);
   expect(first.ariaLabelledBy).not.toBe(second.ariaLabelledBy);

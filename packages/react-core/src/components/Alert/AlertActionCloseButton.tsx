@@ -3,7 +3,7 @@ import { Button, ButtonVariant, ButtonProps } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import { AlertContext } from './AlertContext';
 
-interface AlertActionCloseButtonProps extends ButtonProps {
+export interface AlertActionCloseButtonProps extends ButtonProps {
   /** Additional classes added to the AlertActionCloseButton */
   className?: string;
   /** A callback for when the close button is clicked */

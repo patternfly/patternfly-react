@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
-import { css, getModifier } from '@patternfly/react-styles';
-import { ProgressContainer, ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+import { css } from '@patternfly/react-styles';
+import { ProgressContainer, ProgressMeasureLocation } from './ProgressContainer';
+import { AriaProps } from './ProgressBar';
 import { getUniqueId } from '../../helpers/util';
 
 export enum ProgressSize {
@@ -18,7 +19,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Where the measure percent will be located. */
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Status variant of progress. */
-  variant?: 'danger' | 'success' | 'info';
+  variant?: 'danger' | 'success';
   /** Title above progress. */
   title?: string;
   /** Text description of current progress value to display instead of percentage. */
@@ -39,7 +40,7 @@ export class Progress extends React.Component<ProgressProps> {
   static defaultProps: ProgressProps = {
     className: '',
     measureLocation: ProgressMeasureLocation.top,
-    variant: ProgressVariant.info,
+    variant: null,
     id: '',
     title: '',
     min: 0,
@@ -54,10 +55,11 @@ export class Progress extends React.Component<ProgressProps> {
 
   render() {
     const {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      /* eslint-disable @typescript-eslint/no-unused-vars */
       id,
-      className,
       size,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
+      className,
       value,
       title,
       label,
@@ -73,7 +75,7 @@ export class Progress extends React.Component<ProgressProps> {
       ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
 
-    const ariaProps: { [k: string]: any } = {
+    const progressBarAriaProps: AriaProps = {
       'aria-describedby': `${this.id}-description`,
       'aria-valuemin': min,
       'aria-valuenow': value,
@@ -81,7 +83,7 @@ export class Progress extends React.Component<ProgressProps> {
     };
 
     if (valueText) {
-      ariaProps['aria-valuetext'] = valueText;
+      progressBarAriaProps['aria-valuetext'] = valueText;
     }
 
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
@@ -90,10 +92,10 @@ export class Progress extends React.Component<ProgressProps> {
         {...additionalProps}
         className={css(
           styles.progress,
-          getModifier(styles, variant, ''),
-          getModifier(styles, measureLocation, ''),
-          getModifier(styles, measureLocation === ProgressMeasureLocation.inside ? ProgressSize.lg : size, ''),
-          !title && getModifier(styles, 'singleline', ''),
+          styles.modifiers[variant],
+          ['inside', 'outside'].includes(measureLocation) && styles.modifiers[measureLocation as 'inside' | 'outside'],
+          measureLocation === 'inside' ? styles.modifiers[ProgressSize.lg] : styles.modifiers[size as 'sm' | 'lg'],
+          !title && styles.modifiers.singleline,
           className
         )}
         id={this.id}
@@ -106,7 +108,7 @@ export class Progress extends React.Component<ProgressProps> {
           label={label}
           variant={variant}
           measureLocation={measureLocation}
-          ariaProps={ariaProps}
+          progressBarAriaProps={progressBarAriaProps}
         />
       </div>
     );

@@ -17,12 +17,11 @@ it('KebabToggle should match snapshot (auto-generated)', () => {
       aria-label={"'Actions'"}
       onToggle={() => undefined as void}
       parentRef={null}
-      isFocused={false}
-      isHovered={false}
       isActive={false}
       isDisabled={false}
       isPlain={false}
       type={'button'}
+      bubbleEvent={false}
     />
   );
   expect(view).toMatchSnapshot();

@@ -21,7 +21,6 @@ references:
   - packages/react-codemods/node_modules/
   - packages/react-icons/node_modules/
   build_cache_paths: &build_cache_paths
-  - .cache/
   - packages/react-charts/dist/
   - packages/react-core/dist/
   - packages/react-inline-edit-extension/dist/
@@ -94,12 +93,13 @@ workflows:
         - build_docs_pf4
     - deploy_prerelease:
         requires:
+        - lint_pf4
         - test_jest_pf4
         - test_integration
         - build_docs_pf4
         filters:
           branches:
-            only: master
+            only: v4
 jobs:
   build_pf4:
     docker:
@@ -128,7 +128,7 @@ jobs:
         - *build_cache_key
     - run:
         name: Build Dist
-        command: yarn build
+        command: yarn build && yarn build:umd
     - save_cache:
         paths: *build_cache_paths
         key: *build_cache_key
@@ -222,7 +222,7 @@ jobs:
         name: Breaking Change Lint
         # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
         command: |
-            if git log origin/master..HEAD --format="%b" | grep -i "breaking change";
+            if git log origin/v4..HEAD --format="%b" | grep -i "breaking change";
             then
                 echo "Breaking change above detected"
                 exit 1
@@ -287,4 +287,4 @@ jobs:
         command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
     - run:
         name: Deploy to NPM and Github
-        command: .circleci/release.sh
+        command: if [[ -z $CIRCLE_PULL_REQUEST ]]; then .circleci/release.sh; fi;

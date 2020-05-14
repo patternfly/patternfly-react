@@ -5,12 +5,18 @@ import {
   NavExpandable,
   NavList,
   NavItem,
-  NavVariants,
   NavItemSeparator,
   Stack,
   StackItem,
   Title
 } from '@patternfly/react-core';
+
+interface SelectedItem {
+  groupId: number | string;
+  itemId: number | string;
+  to: string;
+  event: React.FormEvent<HTMLInputElement>;
+}
 
 export class NavDemo extends Component {
   state = {
@@ -23,7 +29,7 @@ export class NavDemo extends Component {
     expandableClickedItem: ''
   };
 
-  onSimpleSelect = result => {
+  onSimpleSelect = (result: SelectedItem) => {
     this.setState({ simpleActiveItem: result.itemId });
   };
 
@@ -31,7 +37,7 @@ export class NavDemo extends Component {
     window.scrollTo(0, 0);
   }
 
-  onDefaultSelect = result => {
+  onDefaultSelect = (result: SelectedItem) => {
     this.setState({ defaultActiveItem: result.itemId });
   };
 
@@ -50,8 +56,10 @@ export class NavDemo extends Component {
     const { defaultActiveItem } = this.state;
     return (
       <StackItem isFilled>
-        <Title size="2xl">Default Nav</Title>
-        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)', backgroundColor: '#fff' }}>
+        <Title headingLevel="h2" size="2xl">
+          Default Nav
+        </Title>
+        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)' }}>
           <Nav onSelect={this.onDefaultSelect} id="nav-primary-default">
             <NavList>
               <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={defaultActiveItem === 0}>
@@ -91,7 +99,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onExpandableSelect = result => {
+  onExpandableSelect = (result: SelectedItem) => {
     this.setState({
       expandableActiveGroup: result.groupId,
       expandableActiveItem: result.itemId
@@ -113,8 +121,10 @@ export class NavDemo extends Component {
     const { expandableActiveGroup, expandableActiveItem, expandableClickedGroup, expandableClickedItem } = this.state;
     return (
       <StackItem isFilled>
-        <Title size="2xl">Expandable Nav</Title>
-        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)', backgroundColor: '#fff' }}>
+        <Title headingLevel="h2" size="2xl">
+          Expandable Nav
+        </Title>
+        <div className="example" style={{ border: '1px solid rgb(114, 118, 123)' }}>
           <Nav onSelect={this.onExpandableSelect} id="nav-primary-expandable">
             <NavList>
               <NavExpandable
@@ -222,7 +232,7 @@ export class NavDemo extends Component {
     );
   }
 
-  onHorizontalSelect = result => {
+  onHorizontalSelect = (result: SelectedItem) => {
     this.setState({ horizontalActiveItem: result.itemId });
   };
 
@@ -230,11 +240,13 @@ export class NavDemo extends Component {
     const { horizontalActiveItem } = this.state;
 
     return (
-      <StackItem isFilled>
-        <Title size="2xl">Horizontal Nav</Title>
+      <StackItem>
+        <Title headingLevel="h2" size="2xl">
+          Horizontal Nav
+        </Title>
         <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
-          <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal">
-            <NavList variant={NavVariants.horizontal}>
+          <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal" variant="horizontal">
+            <NavList>
               <NavItem id="horizontal-link1" preventDefault itemId={0} isActive={horizontalActiveItem === 0}>
                 Item 1
               </NavItem>
@@ -255,7 +267,7 @@ export class NavDemo extends Component {
     // Nav onToggle and onSelect should be optional
     // https://github.com/patternfly/patternfly-react/issues/1234
     return (
-      <Stack gutter="md">
+      <Stack hasGutter>
         {this.renderDefaultNav()}
         {this.renderExpandableNav()}
         {this.renderHorizontalNav()}

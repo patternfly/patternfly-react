@@ -7,10 +7,9 @@ import {
   DomainPropType,
   EventPropTypeInterface,
   PaddingProps,
-  ScalePropType,
-  VictoryAxis,
-  VictoryAxisProps
-} from 'victory';
+  ScalePropType
+} from 'victory-core';
+import { VictoryAxis, VictoryAxisProps } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
@@ -293,7 +292,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
@@ -420,6 +419,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     theme,
     ...containerComponent.props
   });
+
+  // Note: containerComponent is required for theme
   return (
     <VictoryAxis
       containerComponent={container}

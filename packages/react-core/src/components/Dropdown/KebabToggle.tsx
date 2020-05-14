@@ -18,10 +18,6 @@ export interface KebabToggleProps extends DropdownToggleProps {
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: any;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -42,8 +38,6 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   isOpen = false,
   'aria-label': ariaLabel = 'Actions',
   parentRef = null,
-  isFocused = false,
-  isHovered = false,
   isActive = false,
   isPlain = false,
   isDisabled = false,
@@ -59,8 +53,6 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
     isOpen={isOpen}
     aria-label={ariaLabel}
     parentRef={parentRef}
-    isFocused={isFocused}
-    isHovered={isHovered}
     isActive={isActive}
     isPlain={isPlain}
     isDisabled={isDisabled}

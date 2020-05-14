@@ -8,8 +8,6 @@ import { ModalBoxHeader } from '../../ModalBoxHeader';
 import {} from '../..';
 
 it('ModalBoxHeader should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <ModalBoxHeader children={<>ReactNode</>} className={"''"} hideTitle={false} headingLevel={'h1'} />
-  );
+  const view = shallow(<ModalBoxHeader children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

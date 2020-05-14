@@ -3,12 +3,10 @@ title: 'Modal'
 section: components
 cssPrefix: 'pf-c-modal-box'
 typescript: true
-propComponents:
-  ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalBoxHeader', 'ModalContent']
-optIn: In a future breaking-change release, the modal footer buttons will default to be left aligned. You can opt into this now by setting the Modal isFooterLeftAligned prop to true.
+propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalContent']
 ---
 
-import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
+import { Modal, ModalVariant, TitleSizes, Button, Title, Wizard } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 ## Examples
@@ -39,7 +37,7 @@ class SimpleModal extends React.Component {
           Show Modal
         </Button>
         <Modal
-          title="Modal Header"
+          title="Simple modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -50,7 +48,6 @@ class SimpleModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -90,7 +87,8 @@ class SimpleModal extends React.Component {
           Show Modal
         </Button>
         <Modal
-          title="Modal Header"
+          aria-label="My modal context"
+          title="Modal header with description"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           description="A description is used when you want to provide more info about the modal than the title is able to describe. The content in the description is static and will not scroll with the rest of the modal body."
@@ -102,7 +100,6 @@ class SimpleModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -118,7 +115,7 @@ class SimpleModal extends React.Component {
 
 ```js title=Small
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class SmallModal extends React.Component {
   constructor(props) {
@@ -142,8 +139,8 @@ class SmallModal extends React.Component {
           Show Small Modal
         </Button>
         <Modal
-          isSmall
-          title="Modal Header"
+          variant={ModalVariant.small}
+          title="Small modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -154,7 +151,6 @@ class SmallModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -170,7 +166,7 @@ class SmallModal extends React.Component {
 
 ```js title=Large
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class LargeModal extends React.Component {
   constructor(props) {
@@ -194,8 +190,8 @@ class LargeModal extends React.Component {
           Show Large Modal
         </Button>
         <Modal
-          isLarge
-          title="Modal Header"
+          size={ModalVariant.large}
+          title="Large modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -206,7 +202,6 @@ class LargeModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -247,7 +242,7 @@ class WidthModal extends React.Component {
         </Button>
         <Modal
           width={'50%'}
-          title="Modal Header"
+          title="Modal header for set width example"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
@@ -258,7 +253,6 @@ class WidthModal extends React.Component {
               Cancel
             </Button>
           ]}
-          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -274,7 +268,7 @@ class WidthModal extends React.Component {
 
 ```js title=Custom-header-and-footer
 import React from 'react';
-import { Modal, Button, BaseSizes, Title, TitleLevel } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 class CustomHeaderFooter extends React.Component {
@@ -295,15 +289,15 @@ class CustomHeaderFooter extends React.Component {
 
     const header = (
       <React.Fragment>
-        <Title headingLevel={TitleLevel.h1} size={BaseSizes['2xl']}>
-          Custom Modal Header/Footer
+        <Title id="custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
+          With custom modal header/footer
         </Title>
         <p className="pf-u-pt-sm">Allows for custom content in the header and/or footer by passing components.</p>
       </React.Fragment>
     );
 
     const footer = (
-      <Title headingLevel={TitleLevel.h4} size={BaseSizes.sm}>
+      <Title headingLevel="h4" size={TitleSizes.md}>
         <WarningTriangleIcon />
         <span className="pf-u-pl-sm">Custom modal footer.</span>
       </Title>
@@ -315,16 +309,16 @@ class CustomHeaderFooter extends React.Component {
           Show Custom Header/Footer Modal
         </Button>
         <Modal
-          isLarge
+          variant={ModalVariant.large}
           isOpen={isModalOpen}
           header={header}
-          title="custom header example"
-          ariaDescribedById="custom-header-example"
+          aria-label="My dialog"
+          aria-labelledby="custom-header-label"
+          aria-describedby="custom-header-description"
           onClose={this.handleModalToggle}
           footer={footer}
-          isFooterLeftAligned
         >
-          <span id="custom-header-example">
+          <span id="custom-header-description">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
             aria-describedby value.
           </span>
@@ -342,7 +336,7 @@ class CustomHeaderFooter extends React.Component {
 
 ```js title=No-header
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
 class NoHeader extends React.Component {
   constructor(props) {
@@ -367,15 +361,13 @@ class NoHeader extends React.Component {
           Show No Header Modal
         </Button>
         <Modal
-          isLarge
+          variant={ModalVariant.large}
           isOpen={isModalOpen}
-          hideTitle={true}
-          title="no header example"
+          aria-label="No header example"
           showClose={true}
-          ariaDescribedById="no-header-example"
+          aria-describedby="no-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
-          isFooterLeftAligned
         >
           <span id="no-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
@@ -386,6 +378,64 @@ class NoHeader extends React.Component {
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
           aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
           occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+```js title=With-wizard
+import React from 'react';
+import { Modal, Button, Wizard } from '@patternfly/react-core';
+
+class WithWizard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+  }
+
+  render() {
+    const { isModalOpen } = this.state;
+
+    const steps = [
+      { name: 'Step 1', component: <p>Step 1</p> },
+      { name: 'Step 2', component: <p>Step 2</p> },
+      { name: 'Step 3', component: <p>Step 3</p> },
+      { name: 'Step 4', component: <p>Step 4</p> },
+      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Modal
+          isOpen={isModalOpen}
+          variant={ModalVariant.large}
+          showClose={false}
+          onClose={this.handleModalToggle}
+          hasNoBodyWrapper
+          aria-describedby="wiz-modal-example-description"
+          aria-labelledby="wiz-modal-example-title"
+        >
+          <Wizard
+            titleId="wiz-modal-example-title"
+            descriptionId="wiz-modal-example-description"
+            title="Simple Wizard"
+            description="Simple Wizard Description"
+            steps={steps}
+            onClose={this.handleModalToggle}
+            height={400}
+        />
         </Modal>
       </React.Fragment>
     );

@@ -4,7 +4,7 @@ exports[`AboutModalBoxCloseButton should match snapshot (auto-generated) 1`] = `
 <div
   className="pf-c-about-modal-box__close ''"
 >
-  <Component
+  <Button
     aria-label="Close Dialog"
     onClick={[Function]}
     variant="plain"
@@ -13,8 +13,7 @@ exports[`AboutModalBoxCloseButton should match snapshot (auto-generated) 1`] = `
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
-  </Component>
+  </Button>
 </div>
 `;

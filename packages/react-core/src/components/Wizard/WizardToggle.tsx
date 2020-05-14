@@ -15,12 +15,14 @@ export interface WizardToggleProps {
   activeStep: WizardStep;
   /** The WizardFooter */
   children: React.ReactNode;
-  /** Set to false to remove body padding */
-  hasBodyPadding: boolean;
+  /** Set to true to remove body padding */
+  hasNoBodyPadding: boolean;
   /** If the nav is open */
   isNavOpen: boolean;
   /** Callback function for when the nav is toggled */
   onNavToggle: (isOpen: boolean) => void;
+  /** The button's aria-label */
+  'aria-label'?: string;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -30,7 +32,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding = true
+  hasNoBodyPadding = false,
+  'aria-label': ariaLabel = 'Wizard Toggle'
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -52,10 +55,11 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
     }
   }
   return (
-    <>
+    <React.Fragment>
       <button
         onClick={() => onNavToggle(!isNavOpen)}
         className={css(styles.wizardToggle, isNavOpen && 'pf-m-expanded')}
+        aria-label={ariaLabel}
         aria-expanded={isNavOpen}
       >
         <ol className={css(styles.wizardToggleList)}>
@@ -65,15 +69,17 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
           </li>
           {activeStepSubName && <li className={css(styles.wizardToggleListItem)}>{activeStepSubName}</li>}
         </ol>
-        <CaretDownIcon className={css(styles.wizardToggleIcon)} aria-hidden="true" />
+        <span className={css(styles.wizardToggleIcon)}>
+          <CaretDownIcon aria-hidden="true" />
+        </span>
       </button>
       <div className={css(styles.wizardOuterWrap)}>
         <div className={css(styles.wizardInnerWrap)}>
           {nav(isNavOpen)}
-          <WizardBody hasBodyPadding={hasBodyPadding}>{activeStep.component}</WizardBody>
+          <WizardBody hasNoBodyPadding={hasNoBodyPadding}>{activeStep.component}</WizardBody>
         </div>
         {children}
       </div>
-    </>
+    </React.Fragment>
   );
 };

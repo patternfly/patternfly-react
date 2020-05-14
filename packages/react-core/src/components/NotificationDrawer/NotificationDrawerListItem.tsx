@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationDrawer/notification-drawer';
 
 export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIElement> {
@@ -17,18 +16,18 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   /**  Tab index for the list item */
   tabIndex?: number;
   /**  Variant indicates the severity level */
-  variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
+  variant?: 'success' | 'danger' | 'warning' | 'info';
 }
 
 export const NotificationDrawerListItem: React.FunctionComponent<NotificationDrawerListItemProps> = ({
-  children,
+  children = null,
   className = '',
   isHoverable = true,
   isRead = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClick = (event: React.MouseEvent) => undefined as any,
   tabIndex = 0,
-  variant = 'default',
+  variant,
   ...props
 }: NotificationDrawerListItemProps) => (
   <li
@@ -36,7 +35,7 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
     className={css(
       styles.notificationDrawerListItem,
       isHoverable && styles.modifiers.hoverable,
-      getModifier(styles.modifiers, variant),
+      styles.modifiers[variant],
       isRead && styles.modifiers.read,
       className
     )}

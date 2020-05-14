@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<button
+  aria-disabled={null}
+  aria-label="null"
+  className="pf-c-button pf-m-primary ''"
+  data-ouia-component-id={null}
+  data-ouia-component-type="PF4/Button"
+  data-ouia-safe={true}
+  disabled={false}
+  isFocus={false}
+  isHover={false}
+  tabIndex={null}
+  type="button"
+>
+  ReactNode
+</button>
 `;

@@ -8,8 +8,6 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
   id="''"
   isActive={false}
   isDisabled={false}
-  isFocused={false}
-  isHovered={false}
   isOpen={false}
   isPlain={false}
   isPrimary={false}
@@ -23,7 +21,6 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
     color="currentColor"
     noVerticalAlign={false}
     size="sm"
-    title={null}
   />
 </Toggle>
 `;

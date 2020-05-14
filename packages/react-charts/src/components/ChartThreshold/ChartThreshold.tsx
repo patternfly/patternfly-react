@@ -13,10 +13,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryLine,
-  VictoryLineProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryLine, VictoryLineProps } from 'victory-line';
 import { ChartLine } from '../ChartLine';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getThresholdTheme } from '../ChartUtils';
@@ -292,7 +291,7 @@ export interface ChartThresholdProps extends VictoryLineProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import paginationStyles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
@@ -126,11 +125,11 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         onClick={event => this.handleNewPerPage(event, value)}
       >
         {title}
-        <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
+        {` ${perPageSuffix}`}
         {perPage === value && (
-          <i className={css(styles.optionsMenuMenuItemIcon)}>
+          <div className={css(styles.optionsMenuMenuItemIcon)}>
             <CheckIcon />
-          </i>
+          </div>
         )}
       </DropdownItem>
     ));
@@ -157,7 +156,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         value={{
           id: widgetId,
           onSelect: this.onSelect,
-          toggleIconClass: styles.optionsMenuToggleIcon,
+          toggleIndicatorClass: styles.optionsMenuToggleButtonIcon,
           toggleTextClass: styles.optionsMenuToggleText,
           menuClass: styles.optionsMenuMenu,
           itemClass: styles.optionsMenuMenuItem,

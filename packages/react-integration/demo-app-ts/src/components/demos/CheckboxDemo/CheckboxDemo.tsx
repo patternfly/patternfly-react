@@ -7,8 +7,8 @@ interface CheckboxState {
 }
 
 export class CheckboxDemo extends React.Component<{}, CheckboxState> {
-  handleChange: (check: boolean, event: any) => void;
-  constructor(props) {
+  handleChange: (check: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  constructor(props: {}) {
     super(props);
     this.state = {
       check1: false,

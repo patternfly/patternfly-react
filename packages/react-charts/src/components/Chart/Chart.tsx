@@ -10,11 +10,10 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryChart,
-  VictoryChartProps,
-  VictoryStyleInterface,
-  VictoryZoomContainer
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryChart, VictoryChartProps } from 'victory-chart';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -311,7 +310,7 @@ export interface ChartProps extends VictoryChartProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
@@ -330,7 +329,7 @@ export interface ChartProps extends VictoryChartProps {
    * for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified
    * via props as they determine relative layout for components in Chart.
    */
-  style?: VictoryStyleInterface;
+  style?: Pick<VictoryStyleInterface, 'parent'>;
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
@@ -446,8 +445,10 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     });
   };
 
+  // Note: containerComponent is required for theme
+  const VictoryChartWithContainerComponent = VictoryChart as any;
   return (
-    <VictoryChart
+    <VictoryChartWithContainerComponent
       containerComponent={container}
       height={height}
       padding={defaultPadding}
@@ -457,7 +458,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     >
       {children}
       {getLegend()}
-    </VictoryChart>
+    </VictoryChartWithContainerComponent>
   );
 };
 

@@ -114,7 +114,7 @@ class BulkSelectTableDemo extends React.Component {
     this.fetch(this.state.page, this.state.perPage);
   }
 
-  renderPagination() {
+  renderPagination(variant) {
     const { page, perPage } = this.state;
     return (
       <Pagination
@@ -127,7 +127,7 @@ class BulkSelectTableDemo extends React.Component {
         onPerPageSelect={(_evt, value) => {
           this.fetch(1, value);
         }}
-        variant="top"
+        variant={variant}
       />
     );
   }
@@ -182,12 +182,14 @@ class BulkSelectTableDemo extends React.Component {
 
   renderToolbar() {
     return (
-      <Toolbar className="pf-l-toolbar pf-u-justify-content-space-between pf-u-mx-xl pf-u-my-md">
-        <ToolbarGroup>
-          <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
-        </ToolbarGroup>
-        {this.renderPagination()}
-      </Toolbar>
+      <React.Fragment>
+        <Toolbar className="pf-l-toolbar pf-u-justify-content-space-between pf-u-mx-xl pf-u-my-md">
+          <ToolbarGroup>
+            <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
+          </ToolbarGroup>
+        </Toolbar>
+        {this.renderPagination('top')}
+      </React.Fragment>
     );
   }
 
@@ -215,10 +217,10 @@ class BulkSelectTableDemo extends React.Component {
         )}
         {loading && (
           <div className="pf-l-bullseye">
-            <Title size="3xl">Please wait while loading data</Title>
+            <Title headingLevel="h2" size="3xl">Please wait while loading data</Title>
           </div>
         )}
-        {this.renderPagination()}
+        {this.renderPagination('bottom')}
       </React.Fragment>
     );
   }

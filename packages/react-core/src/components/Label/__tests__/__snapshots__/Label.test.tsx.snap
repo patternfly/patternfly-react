@@ -1,18 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`compact label 1`] = `
-<span
-  className="pf-c-label pf-m-compact"
->
-  Something
-</span>
-`;
-
 exports[`label 1`] = `
 <span
   className="pf-c-label"
 >
-  Something
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label 2`] = `
+<span
+  className="pf-c-label pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
 </span>
 `;
 
@@ -20,7 +28,11 @@ exports[`label with additional class name 1`] = `
 <span
   className="pf-c-label klass1"
 >
-  Something
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
 </span>
 `;
 
@@ -30,6 +42,252 @@ exports[`label with additional class name and props 1`] = `
   data-label-name="something"
   id="label-1"
 >
-  Something
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with blue color 1`] = `
+<span
+  className="pf-c-label pf-m-blue"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with blue color 2`] = `
+<span
+  className="pf-c-label pf-m-blue pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with close button 1`] = `
+<span
+  className="pf-c-label"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+  <Button
+    aria-label="label-close-button"
+    onClick={[MockFunction]}
+    type="button"
+    variant="plain"
+  >
+    <TimesIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </Button>
+</span>
+`;
+
+exports[`label with close button 2`] = `
+<span
+  className="pf-c-label pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+  <Button
+    aria-label="label-close-button"
+    onClick={[MockFunction]}
+    type="button"
+    variant="plain"
+  >
+    <TimesIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </Button>
+</span>
+`;
+
+exports[`label with cyan color 1`] = `
+<span
+  className="pf-c-label pf-m-cyan"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with cyan color 2`] = `
+<span
+  className="pf-c-label pf-m-cyan pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with green color 1`] = `
+<span
+  className="pf-c-label pf-m-green"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with green color 2`] = `
+<span
+  className="pf-c-label pf-m-green pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with grey color 1`] = `
+<span
+  className="pf-c-label"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with grey color 2`] = `
+<span
+  className="pf-c-label pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with href 1`] = `
+<span
+  className="pf-c-label"
+>
+  <a
+    className="pf-c-label__content"
+    href="#"
+  >
+    Something
+  </a>
+</span>
+`;
+
+exports[`label with href 2`] = `
+<span
+  className="pf-c-label pf-m-outline"
+>
+  <a
+    className="pf-c-label__content"
+    href="#"
+  >
+    Something
+  </a>
+</span>
+`;
+
+exports[`label with orange color 1`] = `
+<span
+  className="pf-c-label pf-m-orange"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with orange color 2`] = `
+<span
+  className="pf-c-label pf-m-orange pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with purple color 1`] = `
+<span
+  className="pf-c-label pf-m-purple"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with purple color 2`] = `
+<span
+  className="pf-c-label pf-m-purple pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with red color 1`] = `
+<span
+  className="pf-c-label pf-m-red"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
+</span>
+`;
+
+exports[`label with red color 2`] = `
+<span
+  className="pf-c-label pf-m-red pf-m-outline"
+>
+  <span
+    className="pf-c-label__content"
+  >
+    Something
+  </span>
 </span>
 `;

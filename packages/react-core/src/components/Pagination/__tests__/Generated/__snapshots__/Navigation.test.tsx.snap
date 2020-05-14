@@ -5,34 +5,40 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
   aria-label="'Pagination'"
   className="pf-c-pagination__nav ''"
 >
-  <Component
-    aria-label="'Go to first page'"
-    data-action="first"
-    isDisabled={false}
-    onClick={[Function]}
-    variant="plain"
+  <div
+    className="pf-c-pagination__nav-control pf-m-first"
   >
-    <AngleDoubleLeftIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
-  </Component>
-  <Component
-    aria-label="'Go to previous page'"
-    data-action="previous"
-    isDisabled={false}
-    onClick={[Function]}
-    variant="plain"
+    <Button
+      aria-label="'Go to first page'"
+      data-action="first"
+      isDisabled={false}
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleDoubleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+  <div
+    className="pf-c-pagination__nav-control"
   >
-    <AngleLeftIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
-  </Component>
+    <Button
+      aria-label="'Go to previous page'"
+      data-action="previous"
+      isDisabled={false}
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
   <div
     className="pf-c-pagination__nav-page-select"
   >
@@ -54,33 +60,39 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       0 ''s
     </span>
   </div>
-  <Component
-    aria-label="'Go to next page'"
-    data-action="next"
-    isDisabled={false}
-    onClick={[Function]}
-    variant="plain"
+  <div
+    className="pf-c-pagination__nav-control"
   >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
-  </Component>
-  <Component
-    aria-label="'Go to last page'"
-    data-action="last"
-    isDisabled={false}
-    onClick={[Function]}
-    variant="plain"
+    <Button
+      aria-label="'Go to next page'"
+      data-action="next"
+      isDisabled={false}
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+  <div
+    className="pf-c-pagination__nav-control pf-m-last"
   >
-    <AngleDoubleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
-  </Component>
+    <Button
+      aria-label="'Go to last page'"
+      data-action="last"
+      isDisabled={false}
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleDoubleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
 </nav>
 `;

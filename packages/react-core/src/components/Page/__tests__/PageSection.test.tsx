@@ -5,19 +5,13 @@ import { PageSection, PageSectionTypes } from '../PageSection';
 jest.mock('../Page');
 
 test('Check page section with no padding example against snapshot', () => {
-  const Section = <PageSection noPadding />;
+  const Section = <PageSection hasNoPadding />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
 
 test('Check page main nav section against snapshot', () => {
   const Section = <PageSection type={PageSectionTypes.nav} />;
-  const view = mount(Section);
-  expect(view).toMatchSnapshot();
-});
-
-test('Check page section with no padding on mobile example against snapshot', () => {
-  const Section = <PageSection noPaddingMobile />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
@@ -35,7 +29,7 @@ test('Check page section with fill example against snapshot', () => {
 });
 
 test('Check page section with fill and no padding example against snapshot', () => {
-  const Section = <PageSection isFilled noPadding />;
+  const Section = <PageSection isFilled hasNoPadding />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });

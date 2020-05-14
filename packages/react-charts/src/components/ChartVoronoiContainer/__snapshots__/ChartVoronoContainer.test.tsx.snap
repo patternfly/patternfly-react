@@ -434,7 +434,7 @@ exports[`ChartVoronoiContainer 1`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -462,7 +462,7 @@ exports[`ChartVoronoiContainer 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -888,7 +888,7 @@ exports[`ChartVoronoiContainer 1`] = `
         "pointerLength": 10,
         "pointerWidth": 20,
         "style": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
           "padding": 16,
           "pointerEvents": "none",
         },
@@ -916,7 +916,7 @@ exports[`ChartVoronoiContainer 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1368,7 +1368,7 @@ exports[`ChartVoronoiContainer 2`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -1396,7 +1396,7 @@ exports[`ChartVoronoiContainer 2`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1822,7 +1822,7 @@ exports[`ChartVoronoiContainer 2`] = `
         "pointerLength": 10,
         "pointerWidth": 20,
         "style": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
           "padding": 16,
           "pointerEvents": "none",
         },
@@ -1850,7 +1850,7 @@ exports[`ChartVoronoiContainer 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -2308,7 +2308,7 @@ exports[`renders container via ChartGroup 1`] = `
             "pointerLength": 10,
             "pointerWidth": 20,
             "style": Object {
-              "fill": "#ededed",
+              "fill": "#f0f0f0",
               "padding": 16,
               "pointerEvents": "none",
             },
@@ -2336,7 +2336,7 @@ exports[`renders container via ChartGroup 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fill": "#ededed",
+                "fill": "#f0f0f0",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -2765,7 +2765,7 @@ exports[`renders container via ChartGroup 1`] = `
         "pointerLength": 10,
         "pointerWidth": 20,
         "style": Object {
-          "fill": "#ededed",
+          "fill": "#f0f0f0",
           "padding": 16,
           "pointerEvents": "none",
         },
@@ -2793,7 +2793,7 @@ exports[`renders container via ChartGroup 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#ededed",
+            "fill": "#f0f0f0",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",

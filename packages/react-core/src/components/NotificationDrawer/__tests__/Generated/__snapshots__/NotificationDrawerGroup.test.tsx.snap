@@ -29,7 +29,6 @@ exports[`NotificationDrawerGroup should match snapshot (auto-generated) 1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />
       </span>
     </button>

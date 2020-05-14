@@ -1,2082 +1,1345 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dark Nav List 1`] = `
-<Component
+<Nav
   className="test=nav-class"
+  onSelect={[Function]}
+  onToggle={[Function]}
   theme="dark"
 >
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className="test-nav-list-class"
-          variant="default"
-        >
-          <NavItem
-            className="test-nav-item-class"
-            to="#link1"
-          >
-            Link 1
-          </NavItem>
-          <NavItem
-            className="test-nav-item-class"
-            to="#link2"
-          >
-            Link 2
-          </NavItem>
-          <NavItem
-            className="test-nav-item-class"
-            to="#link3"
-          >
-            Link 3
-          </NavItem>
-          <NavItem
-            className="test-nav-item-class"
-            to="#link4"
-          >
-            Link 4
-          </NavItem>
-        </NavList>,
-        "className": "test=nav-class",
-        "theme": "dark",
-      }
-    }
-    consumerContext={null}
+  <nav
+    aria-label="Global"
+    className="pf-c-nav test=nav-class"
+    data-ouia-component-id={3}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className="test=nav-class"
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="dark"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className="test-nav-list-class"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav pf-m-dark test=nav-class"
+      <ul
+        className="pf-c-nav__list test-nav-list-class"
+        onScroll={[Function]}
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className="test-nav-list-class"
-          variant="default"
+        <NavItem
+          className="test-nav-item-class"
+          key="#link1"
+          to="#link1"
         >
-          <ul
-            className="pf-c-nav__list test-nav-list-class"
+          <li
+            className="pf-c-nav__item test-nav-item-class"
           >
-            <NavItem
-              className="test-nav-item-class"
-              key="#link1"
-              to="#link1"
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link1"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link1"
-                  onClick={[Function]}
-                >
-                  Link 1
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              className="test-nav-item-class"
-              key="#link2"
-              to="#link2"
+              Link 1
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          className="test-nav-item-class"
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link2"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link2"
-                  onClick={[Function]}
-                >
-                  Link 2
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              className="test-nav-item-class"
-              key="#link3"
-              to="#link3"
+              Link 2
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          className="test-nav-item-class"
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link3"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link3"
-                  onClick={[Function]}
-                >
-                  Link 3
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              className="test-nav-item-class"
-              key="#link4"
-              to="#link4"
+              Link 3
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          className="test-nav-item-class"
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link4"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link4"
-                  onClick={[Function]}
-                >
-                  Link 4
-                </a>
-              </li>
-            </NavItem>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+              Link 4
+            </a>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Default Nav List - Trigger item active update 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="default"
-        >
-          <NavItem
-            to="#link1"
-          >
-            Link 1
-          </NavItem>
-          <NavItem
-            to="#link2"
-          >
-            Link 2
-          </NavItem>
-          <NavItem
-            to="#link3"
-          >
-            Link 3
-          </NavItem>
-          <NavItem
-            to="#link4"
-          >
-            Link 4
-          </NavItem>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={5}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="default"
+        <NavItem
+          key="#link1"
+          to="#link1"
         >
-          <ul
-            className="pf-c-nav__list"
+          <li
+            className="pf-c-nav__item"
           >
-            <NavItem
-              key="#link1"
-              to="#link1"
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link1"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link1"
-                  onClick={[Function]}
-                >
-                  Link 1
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link2"
-              to="#link2"
+              Link 1
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link2"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link2"
-                  onClick={[Function]}
-                >
-                  Link 2
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link3"
-              to="#link3"
+              Link 2
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link3"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link3"
-                  onClick={[Function]}
-                >
-                  Link 3
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link4"
-              to="#link4"
+              Link 3
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link4"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link4"
-                  onClick={[Function]}
-                >
-                  Link 4
-                </a>
-              </li>
-            </NavItem>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+              Link 4
+            </a>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Default Nav List 1`] = `
-<Component
+<Nav
   className="test=nav-class"
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
 >
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className="test-nav-list-class"
-          variant="default"
-        >
-          <NavItem
-            className="test-nav-item-class"
-            to="#link1"
-          >
-            Link 1
-          </NavItem>
-          <NavItem
-            className="test-nav-item-class"
-            to="#link2"
-          >
-            Link 2
-          </NavItem>
-          <NavItem
-            className="test-nav-item-class"
-            to="#link3"
-          >
-            Link 3
-          </NavItem>
-          <NavItem
-            className="test-nav-item-class"
-            to="#link4"
-          >
-            Link 4
-          </NavItem>
-        </NavList>,
-        "className": "test=nav-class",
-      }
-    }
-    consumerContext={null}
+  <nav
+    aria-label="Global"
+    className="pf-c-nav test=nav-class"
+    data-ouia-component-id={1}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className="test=nav-class"
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className="test-nav-list-class"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav test=nav-class"
+      <ul
+        className="pf-c-nav__list test-nav-list-class"
+        onScroll={[Function]}
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className="test-nav-list-class"
-          variant="default"
+        <NavItem
+          className="test-nav-item-class"
+          key="#link1"
+          to="#link1"
         >
-          <ul
-            className="pf-c-nav__list test-nav-list-class"
+          <li
+            className="pf-c-nav__item test-nav-item-class"
           >
-            <NavItem
-              className="test-nav-item-class"
-              key="#link1"
-              to="#link1"
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link1"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link1"
-                  onClick={[Function]}
-                >
-                  Link 1
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              className="test-nav-item-class"
-              key="#link2"
-              to="#link2"
+              Link 1
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          className="test-nav-item-class"
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link2"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link2"
-                  onClick={[Function]}
-                >
-                  Link 2
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              className="test-nav-item-class"
-              key="#link3"
-              to="#link3"
+              Link 2
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          className="test-nav-item-class"
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link3"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link3"
-                  onClick={[Function]}
-                >
-                  Link 3
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              className="test-nav-item-class"
-              key="#link4"
-              to="#link4"
+              Link 3
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          className="test-nav-item-class"
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link4"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link test-nav-item-class"
-                  href="#link4"
-                  onClick={[Function]}
-                >
-                  Link 4
-                </a>
-              </li>
-            </NavItem>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+              Link 4
+            </a>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Expandable Nav List - Trigger toggle 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="default"
-        >
-          <NavExpandable
-            className="expandable-group"
-            groupId={null}
-            id="grp-1"
-            isActive={false}
-            isExpanded={true}
-            srText=""
-            title="Section 1"
-          >
-            <NavItem
-              to="#link1"
-            >
-              Link 1
-            </NavItem>
-            <NavItem
-              to="#link2"
-            >
-              Link 2
-            </NavItem>
-            <NavItem
-              to="#link3"
-            >
-              Link 3
-            </NavItem>
-            <NavItem
-              to="#link4"
-            >
-              Link 4
-            </NavItem>
-          </NavExpandable>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={11}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="default"
+        <NavExpandable
+          className="expandable-group"
+          groupId={null}
+          id="grp-1"
+          isActive={false}
+          isExpanded={true}
+          srText=""
+          title="Section 1"
         >
-          <ul
-            className="pf-c-nav__list"
+          <li
+            className="pf-c-nav__item pf-m-expanded expandable-group"
+            onClick={[Function]}
           >
-            <NavExpandable
-              className="expandable-group"
-              groupId={null}
+            <a
+              aria-expanded={true}
+              className="pf-c-nav__link"
+              data-component="pf-nav-expandable"
+              href="#"
               id="grp-1"
-              isActive={false}
-              isExpanded={true}
-              srText=""
-              title="Section 1"
+              onClick={[Function]}
+              onMouseDown={[Function]}
             >
-              <li
-                className="pf-c-nav__item pf-m-expanded expandable-group"
-                onClick={[Function]}
+              Section 1
+              <span
+                className="pf-c-nav__toggle"
               >
-                <a
-                  aria-expanded={true}
-                  className="pf-c-nav__link"
-                  data-component="pf-nav-expandable"
-                  href="#"
-                  id="grp-1"
-                  onClick={[Function]}
-                  onMouseDown={[Function]}
+                <span
+                  className="pf-c-nav__toggle-icon"
                 >
-                  Section 1
-                  <span
-                    className="pf-c-nav__toggle"
+                  <AngleRightIcon
+                    aria-hidden="true"
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
                   >
-                    <AngleRightIcon
+                    <svg
                       aria-hidden="true"
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
                         }
-                        viewBox="0 0 256 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
-                    </AngleRightIcon>
-                  </span>
-                </a>
-                <section
-                  aria-labelledby="grp-1"
-                  className="pf-c-nav__subnav"
-                  hidden={null}
+                      }
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        transform=""
+                      />
+                    </svg>
+                  </AngleRightIcon>
+                </span>
+              </span>
+            </a>
+            <section
+              aria-labelledby="grp-1"
+              className="pf-c-nav__subnav"
+              hidden={null}
+            >
+              <ul
+                className="pf-c-nav__list"
+              >
+                <NavItem
+                  key="#link1"
+                  to="#link1"
                 >
-                  <ul
-                    className="pf-c-nav__simple-list"
+                  <li
+                    className="pf-c-nav__item"
                   >
-                    <NavItem
-                      key="#link1"
-                      to="#link1"
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link1"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link1"
-                          onClick={[Function]}
-                        >
-                          Link 1
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link2"
-                      to="#link2"
+                      Link 1
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link2"
+                  to="#link2"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link2"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link2"
-                          onClick={[Function]}
-                        >
-                          Link 2
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link3"
-                      to="#link3"
+                      Link 2
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link3"
+                  to="#link3"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link3"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link3"
-                          onClick={[Function]}
-                        >
-                          Link 3
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link4"
-                      to="#link4"
+                      Link 3
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link4"
+                  to="#link4"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link4"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link4"
-                          onClick={[Function]}
-                        >
-                          Link 4
-                        </a>
-                      </li>
-                    </NavItem>
-                  </ul>
-                </section>
-              </li>
-            </NavExpandable>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+                      Link 4
+                    </a>
+                  </li>
+                </NavItem>
+              </ul>
+            </section>
+          </li>
+        </NavExpandable>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Expandable Nav List 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="default"
-        >
-          <NavExpandable
-            className=""
-            groupId={null}
-            id="grp-1"
-            isActive={false}
-            isExpanded={false}
-            srText=""
-            title="Section 1"
-          >
-            <NavItem
-              to="#link1"
-            >
-              Link 1
-            </NavItem>
-            <NavItem
-              to="#link2"
-            >
-              Link 2
-            </NavItem>
-            <NavItem
-              to="#link3"
-            >
-              Link 3
-            </NavItem>
-            <NavItem
-              to="#link4"
-            >
-              Link 4
-            </NavItem>
-          </NavExpandable>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={9}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
+        <NavExpandable
           className=""
-          variant="default"
+          groupId={null}
+          id="grp-1"
+          isActive={false}
+          isExpanded={false}
+          srText=""
+          title="Section 1"
         >
-          <ul
-            className="pf-c-nav__list"
+          <li
+            className="pf-c-nav__item"
+            onClick={[Function]}
           >
-            <NavExpandable
-              className=""
-              groupId={null}
+            <a
+              aria-expanded={false}
+              className="pf-c-nav__link"
+              data-component="pf-nav-expandable"
+              href="#"
               id="grp-1"
-              isActive={false}
-              isExpanded={false}
-              srText=""
-              title="Section 1"
+              onClick={[Function]}
+              onMouseDown={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-                onClick={[Function]}
+              Section 1
+              <span
+                className="pf-c-nav__toggle"
               >
-                <a
-                  aria-expanded={false}
-                  className="pf-c-nav__link"
-                  data-component="pf-nav-expandable"
-                  href="#"
-                  id="grp-1"
-                  onClick={[Function]}
-                  onMouseDown={[Function]}
+                <span
+                  className="pf-c-nav__toggle-icon"
                 >
-                  Section 1
-                  <span
-                    className="pf-c-nav__toggle"
+                  <AngleRightIcon
+                    aria-hidden="true"
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
                   >
-                    <AngleRightIcon
+                    <svg
                       aria-hidden="true"
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
                         }
-                        viewBox="0 0 256 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
-                    </AngleRightIcon>
-                  </span>
-                </a>
-                <section
-                  aria-labelledby="grp-1"
-                  className="pf-c-nav__subnav"
-                  hidden={true}
+                      }
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        transform=""
+                      />
+                    </svg>
+                  </AngleRightIcon>
+                </span>
+              </span>
+            </a>
+            <section
+              aria-labelledby="grp-1"
+              className="pf-c-nav__subnav"
+              hidden={true}
+            >
+              <ul
+                className="pf-c-nav__list"
+              >
+                <NavItem
+                  key="#link1"
+                  to="#link1"
                 >
-                  <ul
-                    className="pf-c-nav__simple-list"
+                  <li
+                    className="pf-c-nav__item"
                   >
-                    <NavItem
-                      key="#link1"
-                      to="#link1"
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link1"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link1"
-                          onClick={[Function]}
-                        >
-                          Link 1
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link2"
-                      to="#link2"
+                      Link 1
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link2"
+                  to="#link2"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link2"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link2"
-                          onClick={[Function]}
-                        >
-                          Link 2
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link3"
-                      to="#link3"
+                      Link 2
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link3"
+                  to="#link3"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link3"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link3"
-                          onClick={[Function]}
-                        >
-                          Link 3
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link4"
-                      to="#link4"
+                      Link 3
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link4"
+                  to="#link4"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link4"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link4"
-                          onClick={[Function]}
-                        >
-                          Link 4
-                        </a>
-                      </li>
-                    </NavItem>
-                  </ul>
-                </section>
-              </li>
-            </NavExpandable>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+                      Link 4
+                    </a>
+                  </li>
+                </NavItem>
+              </ul>
+            </section>
+          </li>
+        </NavExpandable>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Expandable Nav List with aria label 1`] = `
-<Component
+<Nav
   aria-label="Test"
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
 >
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "aria-label": "Test",
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="default"
-        >
-          <NavExpandable
-            className=""
-            groupId={null}
-            id="grp-1"
-            isActive={false}
-            isExpanded={false}
-            srText="Section 1 - Example sub-navigation"
-            title="Section 1"
-          >
-            <NavItem
-              to="#link1"
-            >
-              Link 1
-            </NavItem>
-            <NavItem
-              to="#link2"
-            >
-              Link 2
-            </NavItem>
-            <NavItem
-              to="#link3"
-            >
-              Link 3
-            </NavItem>
-            <NavItem
-              to="#link4"
-            >
-              Link 4
-            </NavItem>
-          </NavExpandable>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+  <nav
+    aria-label="Local"
+    className="pf-c-nav"
+    data-ouia-component-id={13}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label="Test"
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
     >
-      <nav
-        aria-label="Test"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
+        <NavExpandable
           className=""
-          variant="default"
+          groupId={null}
+          id="grp-1"
+          isActive={false}
+          isExpanded={false}
+          srText="Section 1 - Example sub-navigation"
+          title="Section 1"
         >
-          <ul
-            className="pf-c-nav__list"
+          <li
+            className="pf-c-nav__item"
+            onClick={[Function]}
           >
-            <NavExpandable
-              className=""
-              groupId={null}
-              id="grp-1"
-              isActive={false}
-              isExpanded={false}
-              srText="Section 1 - Example sub-navigation"
-              title="Section 1"
+            <a
+              aria-expanded={false}
+              className="pf-c-nav__link"
+              data-component="pf-nav-expandable"
+              href="#"
+              id={null}
+              onClick={[Function]}
+              onMouseDown={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-                onClick={[Function]}
+              Section 1
+              <span
+                className="pf-c-nav__toggle"
               >
-                <a
-                  aria-expanded={false}
-                  className="pf-c-nav__link"
-                  data-component="pf-nav-expandable"
-                  href="#"
-                  id={null}
-                  onClick={[Function]}
-                  onMouseDown={[Function]}
+                <span
+                  className="pf-c-nav__toggle-icon"
                 >
-                  Section 1
-                  <span
-                    className="pf-c-nav__toggle"
+                  <AngleRightIcon
+                    aria-hidden="true"
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
                   >
-                    <AngleRightIcon
+                    <svg
                       aria-hidden="true"
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
                         }
-                        viewBox="0 0 256 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
-                    </AngleRightIcon>
-                  </span>
-                </a>
-                <section
-                  aria-labelledby="grp-1"
-                  className="pf-c-nav__subnav"
-                  hidden={true}
+                      }
+                      viewBox="0 0 256 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        transform=""
+                      />
+                    </svg>
+                  </AngleRightIcon>
+                </span>
+              </span>
+            </a>
+            <section
+              aria-labelledby="grp-1"
+              className="pf-c-nav__subnav"
+              hidden={true}
+            >
+              <h2
+                className="pf-u-screen-reader"
+                id="grp-1"
+              >
+                Section 1 - Example sub-navigation
+              </h2>
+              <ul
+                className="pf-c-nav__list"
+              >
+                <NavItem
+                  key="#link1"
+                  to="#link1"
                 >
-                  <h2
-                    className="pf-u-screen-reader"
-                    id="grp-1"
+                  <li
+                    className="pf-c-nav__item"
                   >
-                    Section 1 - Example sub-navigation
-                  </h2>
-                  <ul
-                    className="pf-c-nav__simple-list"
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link1"
+                      onClick={[Function]}
+                    >
+                      Link 1
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link2"
+                  to="#link2"
+                >
+                  <li
+                    className="pf-c-nav__item"
                   >
-                    <NavItem
-                      key="#link1"
-                      to="#link1"
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link2"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link1"
-                          onClick={[Function]}
-                        >
-                          Link 1
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link2"
-                      to="#link2"
+                      Link 2
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link3"
+                  to="#link3"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link3"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link2"
-                          onClick={[Function]}
-                        >
-                          Link 2
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link3"
-                      to="#link3"
+                      Link 3
+                    </a>
+                  </li>
+                </NavItem>
+                <NavItem
+                  key="#link4"
+                  to="#link4"
+                >
+                  <li
+                    className="pf-c-nav__item"
+                  >
+                    <a
+                      aria-current={null}
+                      className="pf-c-nav__link"
+                      href="#link4"
+                      onClick={[Function]}
                     >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link3"
-                          onClick={[Function]}
-                        >
-                          Link 3
-                        </a>
-                      </li>
-                    </NavItem>
-                    <NavItem
-                      key="#link4"
-                      to="#link4"
-                    >
-                      <li
-                        className="pf-c-nav__item"
-                      >
-                        <a
-                          aria-current={null}
-                          className="pf-c-nav__link"
-                          href="#link4"
-                          onClick={[Function]}
-                        >
-                          Link 4
-                        </a>
-                      </li>
-                    </NavItem>
-                  </ul>
-                </section>
-              </li>
-            </NavExpandable>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+                      Link 4
+                    </a>
+                  </li>
+                </NavItem>
+              </ul>
+            </section>
+          </li>
+        </NavExpandable>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Horizontal Nav List 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="horizontal"
-        >
-          <NavItem
-            to="#link1"
-          >
-            Link 1
-          </NavItem>
-          <NavItem
-            to="#link2"
-          >
-            Link 2
-          </NavItem>
-          <NavItem
-            to="#link3"
-          >
-            Link 3
-          </NavItem>
-          <NavItem
-            to="#link4"
-          >
-            Link 4
-          </NavItem>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={17}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      variant="horizontal"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
+        variant="horizontal"
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="horizontal"
+        <NavItem
+          key="#link1"
+          to="#link1"
         >
-          <button
-            aria-label="Scroll left"
-            className="pf-c-nav__scroll-button"
-            onClick={[Function]}
+          <li
+            className="pf-c-nav__item"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link1"
+              onClick={[Function]}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
-          <ul
-            className="pf-c-nav__horizontal-list"
+              Link 1
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item"
           >
-            <NavItem
-              key="#link1"
-              to="#link1"
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link2"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link1"
-                  onClick={[Function]}
-                >
-                  Link 1
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link2"
-              to="#link2"
-            >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link2"
-                  onClick={[Function]}
-                >
-                  Link 2
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link3"
-              to="#link3"
-            >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link3"
-                  onClick={[Function]}
-                >
-                  Link 3
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link4"
-              to="#link4"
-            >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link4"
-                  onClick={[Function]}
-                >
-                  Link 4
-                </a>
-              </li>
-            </NavItem>
-          </ul>
-          <button
-            aria-label="Scroll right"
-            className="pf-c-nav__scroll-button"
-            onClick={[Function]}
+              Link 2
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link3"
+              onClick={[Function]}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+              Link 3
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link4"
+              onClick={[Function]}
+            >
+              Link 4
+            </a>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Nav Grouped List 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": Array [
-          <NavGroup
-            id="grp-1"
-            title="Section 1"
-          >
-            <NavList
-              ariaLeftScroll="Scroll left"
-              ariaRightScroll="Scroll right"
-              className=""
-              variant="default"
-            >
-              <NavItem
-                to="#link1"
-              >
-                Link 1
-              </NavItem>
-              <NavItem
-                to="#link2"
-              >
-                Link 2
-              </NavItem>
-              <NavItem
-                to="#link3"
-              >
-                Link 3
-              </NavItem>
-              <NavItem
-                to="#link4"
-              >
-                Link 4
-              </NavItem>
-            </NavList>
-          </NavGroup>,
-          <NavGroup
-            id="grp-2"
-            title="Section 2"
-          >
-            <NavList
-              ariaLeftScroll="Scroll left"
-              ariaRightScroll="Scroll right"
-              className=""
-              variant="default"
-            >
-              <NavItem
-                to="#link1"
-              >
-                Link 1
-              </NavItem>
-              <NavItem
-                to="#link2"
-              >
-                Link 2
-              </NavItem>
-              <NavItem
-                to="#link3"
-              >
-                Link 3
-              </NavItem>
-              <NavItem
-                to="#link4"
-              >
-                Link 4
-              </NavItem>
-            </NavList>
-          </NavGroup>,
-        ],
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={15}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavGroup
+      id="grp-1"
+      title="Section 1"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav"
+      <section
+        aria-labelledby="grp-1"
+        className="pf-c-nav__section"
       >
-        <NavGroup
+        <h2
+          className="pf-c-nav__section-title"
           id="grp-1"
-          title="Section 1"
         >
-          <section
-            aria-labelledby="grp-1"
-            className="pf-c-nav__section"
+          Section 1
+        </h2>
+        <ul>
+          <NavList
+            ariaLeftScroll="Scroll left"
+            ariaRightScroll="Scroll right"
           >
-            <h2
-              className="pf-c-nav__section-title"
-              id="grp-1"
-            >
-              Section 1
-            </h2>
             <ul
               className="pf-c-nav__list"
+              onScroll={[Function]}
             >
-              <NavList
-                ariaLeftScroll="Scroll left"
-                ariaRightScroll="Scroll right"
-                className=""
-                variant="default"
+              <NavItem
+                key="section1_#link1"
+                to="#link1"
               >
-                <ul
-                  className="pf-c-nav__list"
+                <li
+                  className="pf-c-nav__item"
                 >
-                  <NavItem
-                    key="section1_#link1"
-                    to="#link1"
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link1"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link1"
-                        onClick={[Function]}
-                      >
-                        Link 1
-                      </a>
-                    </li>
-                  </NavItem>
-                  <NavItem
-                    key="section1_#link2"
-                    to="#link2"
+                    Link 1
+                  </a>
+                </li>
+              </NavItem>
+              <NavItem
+                key="section1_#link2"
+                to="#link2"
+              >
+                <li
+                  className="pf-c-nav__item"
+                >
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link2"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link2"
-                        onClick={[Function]}
-                      >
-                        Link 2
-                      </a>
-                    </li>
-                  </NavItem>
-                  <NavItem
-                    key="section1_#link3"
-                    to="#link3"
+                    Link 2
+                  </a>
+                </li>
+              </NavItem>
+              <NavItem
+                key="section1_#link3"
+                to="#link3"
+              >
+                <li
+                  className="pf-c-nav__item"
+                >
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link3"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link3"
-                        onClick={[Function]}
-                      >
-                        Link 3
-                      </a>
-                    </li>
-                  </NavItem>
-                  <NavItem
-                    key="section1_#link4"
-                    to="#link4"
+                    Link 3
+                  </a>
+                </li>
+              </NavItem>
+              <NavItem
+                key="section1_#link4"
+                to="#link4"
+              >
+                <li
+                  className="pf-c-nav__item"
+                >
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link4"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link4"
-                        onClick={[Function]}
-                      >
-                        Link 4
-                      </a>
-                    </li>
-                  </NavItem>
-                </ul>
-              </NavList>
+                    Link 4
+                  </a>
+                </li>
+              </NavItem>
             </ul>
-          </section>
-        </NavGroup>
-        <NavGroup
+          </NavList>
+        </ul>
+      </section>
+    </NavGroup>
+    <NavGroup
+      id="grp-2"
+      title="Section 2"
+    >
+      <section
+        aria-labelledby="grp-2"
+        className="pf-c-nav__section"
+      >
+        <h2
+          className="pf-c-nav__section-title"
           id="grp-2"
-          title="Section 2"
         >
-          <section
-            aria-labelledby="grp-2"
-            className="pf-c-nav__section"
+          Section 2
+        </h2>
+        <ul>
+          <NavList
+            ariaLeftScroll="Scroll left"
+            ariaRightScroll="Scroll right"
           >
-            <h2
-              className="pf-c-nav__section-title"
-              id="grp-2"
-            >
-              Section 2
-            </h2>
             <ul
               className="pf-c-nav__list"
+              onScroll={[Function]}
             >
-              <NavList
-                ariaLeftScroll="Scroll left"
-                ariaRightScroll="Scroll right"
-                className=""
-                variant="default"
+              <NavItem
+                key="section2_#link1"
+                to="#link1"
               >
-                <ul
-                  className="pf-c-nav__list"
+                <li
+                  className="pf-c-nav__item"
                 >
-                  <NavItem
-                    key="section2_#link1"
-                    to="#link1"
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link1"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link1"
-                        onClick={[Function]}
-                      >
-                        Link 1
-                      </a>
-                    </li>
-                  </NavItem>
-                  <NavItem
-                    key="section2_#link2"
-                    to="#link2"
+                    Link 1
+                  </a>
+                </li>
+              </NavItem>
+              <NavItem
+                key="section2_#link2"
+                to="#link2"
+              >
+                <li
+                  className="pf-c-nav__item"
+                >
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link2"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link2"
-                        onClick={[Function]}
-                      >
-                        Link 2
-                      </a>
-                    </li>
-                  </NavItem>
-                  <NavItem
-                    key="section2_#link3"
-                    to="#link3"
+                    Link 2
+                  </a>
+                </li>
+              </NavItem>
+              <NavItem
+                key="section2_#link3"
+                to="#link3"
+              >
+                <li
+                  className="pf-c-nav__item"
+                >
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link3"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link3"
-                        onClick={[Function]}
-                      >
-                        Link 3
-                      </a>
-                    </li>
-                  </NavItem>
-                  <NavItem
-                    key="section2_#link4"
-                    to="#link4"
+                    Link 3
+                  </a>
+                </li>
+              </NavItem>
+              <NavItem
+                key="section2_#link4"
+                to="#link4"
+              >
+                <li
+                  className="pf-c-nav__item"
+                >
+                  <a
+                    aria-current={null}
+                    className="pf-c-nav__link"
+                    href="#link4"
+                    onClick={[Function]}
                   >
-                    <li
-                      className="pf-c-nav__item"
-                    >
-                      <a
-                        aria-current={null}
-                        className="pf-c-nav__link"
-                        href="#link4"
-                        onClick={[Function]}
-                      >
-                        Link 4
-                      </a>
-                    </li>
-                  </NavItem>
-                </ul>
-              </NavList>
+                    Link 4
+                  </a>
+                </li>
+              </NavItem>
             </ul>
-          </section>
-        </NavGroup>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+          </NavList>
+        </ul>
+      </section>
+    </NavGroup>
+  </nav>
+</Nav>
 `;
 
 exports[`Nav List with custom item nodes 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="tertiary"
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={21}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
+  >
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      variant="tertiary"
+    >
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
+        variant="tertiary"
+      >
+        <NavItem
+          className="test-nav-item-class"
+          to="/components/nav#link1"
         >
-          <NavItem
-            className="test-nav-item-class"
-            to="/components/nav#link1"
+          <li
+            className="pf-c-nav__item test-nav-item-class"
           >
             <div
-              className="my-custom-node"
+              aria-current={null}
+              className="pf-c-nav__link my-custom-node"
+              onClick={[Function]}
             >
               My custom node
             </div>
-          </NavItem>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
-  >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
-    >
-      <nav
-        aria-label="Local"
-        className="pf-c-nav"
-      >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="tertiary"
-        >
-          <button
-            aria-label="Scroll left"
-            className="pf-c-nav__scroll-button"
-            onClick={[Function]}
-          >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
-          <ul
-            className="pf-c-nav__tertiary-list"
-          >
-            <NavItem
-              className="test-nav-item-class"
-              to="/components/nav#link1"
-            >
-              <li
-                className="pf-c-nav__item test-nav-item-class"
-              >
-                <div
-                  aria-current={null}
-                  className="pf-c-nav__link my-custom-node"
-                  onClick={[Function]}
-                >
-                  My custom node
-                </div>
-              </li>
-            </NavItem>
-          </ul>
-          <button
-            aria-label="Scroll right"
-            className="pf-c-nav__scroll-button"
-            onClick={[Function]}
-          >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Simple Nav List 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="simple"
-        >
-          <NavItem
-            to="#link1"
-          >
-            Link 1
-          </NavItem>
-          <NavItem
-            to="#link2"
-          >
-            Link 2
-          </NavItem>
-          <NavItem
-            to="#link3"
-          >
-            Link 3
-          </NavItem>
-          <NavItem
-            to="#link4"
-          >
-            Link 4
-          </NavItem>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={7}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      variant="simple"
     >
-      <nav
-        aria-label="Global"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
+        variant="simple"
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="simple"
+        <NavItem
+          key="#link1"
+          to="#link1"
         >
-          <ul
-            className="pf-c-nav__simple-list"
+          <li
+            className="pf-c-nav__item"
           >
-            <NavItem
-              key="#link1"
-              to="#link1"
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link1"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link1"
-                  onClick={[Function]}
-                >
-                  Link 1
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link2"
-              to="#link2"
+              Link 1
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link2"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link2"
-                  onClick={[Function]}
-                >
-                  Link 2
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link3"
-              to="#link3"
+              Link 2
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link3"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link3"
-                  onClick={[Function]}
-                >
-                  Link 3
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link4"
-              to="#link4"
+              Link 3
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link4"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link4"
-                  onClick={[Function]}
-                >
-                  Link 4
-                </a>
-              </li>
-            </NavItem>
-          </ul>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+              Link 4
+            </a>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;
 
 exports[`Tertiary Nav List 1`] = `
-<Component>
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="tertiary"
-        >
-          <NavItem
-            to="#link1"
-          >
-            Link 1
-          </NavItem>
-          <NavItem
-            to="#link2"
-          >
-            Link 2
-          </NavItem>
-          <NavItem
-            to="#link3"
-          >
-            Link 3
-          </NavItem>
-          <NavItem
-            to="#link4"
-          >
-            Link 4
-          </NavItem>
-        </NavList>,
-      }
-    }
-    consumerContext={null}
+<Nav
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav"
+    data-ouia-component-id={19}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
   >
-    <Nav
-      aria-label=""
-      className=""
-      onSelect={[Function]}
-      onToggle={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      theme="light"
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      variant="tertiary"
     >
-      <nav
-        aria-label="Local"
-        className="pf-c-nav"
+      <ul
+        className="pf-c-nav__list"
+        onScroll={[Function]}
+        variant="tertiary"
       >
-        <NavList
-          ariaLeftScroll="Scroll left"
-          ariaRightScroll="Scroll right"
-          className=""
-          variant="tertiary"
+        <NavItem
+          key="#link1"
+          to="#link1"
         >
-          <button
-            aria-label="Scroll left"
-            className="pf-c-nav__scroll-button"
-            onClick={[Function]}
+          <li
+            className="pf-c-nav__item"
           >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link1"
+              onClick={[Function]}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
-          <ul
-            className="pf-c-nav__tertiary-list"
+              Link 1
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item"
           >
-            <NavItem
-              key="#link1"
-              to="#link1"
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link2"
+              onClick={[Function]}
             >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link1"
-                  onClick={[Function]}
-                >
-                  Link 1
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link2"
-              to="#link2"
-            >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link2"
-                  onClick={[Function]}
-                >
-                  Link 2
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link3"
-              to="#link3"
-            >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link3"
-                  onClick={[Function]}
-                >
-                  Link 3
-                </a>
-              </li>
-            </NavItem>
-            <NavItem
-              key="#link4"
-              to="#link4"
-            >
-              <li
-                className="pf-c-nav__item"
-              >
-                <a
-                  aria-current={null}
-                  className="pf-c-nav__link"
-                  href="#link4"
-                  onClick={[Function]}
-                >
-                  Link 4
-                </a>
-              </li>
-            </NavItem>
-          </ul>
-          <button
-            aria-label="Scroll right"
-            className="pf-c-nav__scroll-button"
-            onClick={[Function]}
+              Link 2
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link3"
+              onClick={[Function]}
             >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
-        </NavList>
-      </nav>
-    </Nav>
-  </ComponentWithOuia>
-</Component>
+              Link 3
+            </a>
+          </li>
+        </NavItem>
+        <NavItem
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link"
+              href="#link4"
+              onClick={[Function]}
+            >
+              Link 4
+            </a>
+          </li>
+        </NavItem>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
 `;

@@ -4,7 +4,6 @@ section: components
 cssPrefix: 'pf-c-nav'
 typescript: true
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
-optIn: "In a future breaking-change release, the nav will default to the dark theme. You can opt-in and update to use the nav dark theme now by setting the theme prop to 'dark'"
 ---
 import {
   Nav,
@@ -13,8 +12,8 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants,
-  PageHeader
+  PageHeader,
+  PageSection
 } from '@patternfly/react-core';
 import './nav.css';
 
@@ -28,8 +27,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavDefaultList extends React.Component {
@@ -77,8 +75,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavGroupedList extends React.Component {
@@ -134,8 +131,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavExpandableList extends React.Component {
@@ -237,8 +233,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavExpandableTitlesList extends React.Component {
@@ -334,8 +329,7 @@ import {
   NavItem,
   NavItemSeparator,
   NavList,
-  NavGroup,
-  NavVariants
+  NavGroup
 } from '@patternfly/react-core';
 
 class NavMixedList extends React.Component {
@@ -435,7 +429,6 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants,
   PageHeader
 } from '@patternfly/react-core';
 
@@ -455,8 +448,8 @@ class NavHorizontalList extends React.Component {
   render() {
     const { activeItem } = this.state;
     const nav = (
-      <Nav onSelect={this.onSelect}>
-        <NavList variant={NavVariants.horizontal}>
+      <Nav onSelect={this.onSelect} variant="horizontal">
+        <NavList>
           {Array.apply(0, Array(10)).map(function (x, i) {
             const num = i + 1;
             return <NavItem key={num} itemId={num} isActive={activeItem === num}>
@@ -466,9 +459,7 @@ class NavHorizontalList extends React.Component {
         </NavList>
       </Nav>
     );
-    return (
-      <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(21, 21, 21)' }} />
-    );
+    return <PageHeader topNav={nav} />;
   }
 }
 ```
@@ -482,7 +473,7 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants
+  PageSection
 } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {
@@ -501,8 +492,8 @@ class NavTertiaryList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
-        <NavList variant={NavVariants.tertiary}>
+      <Nav onSelect={this.onSelect} variant="tertiary">
+        <NavList>
           {Array.apply(0, Array(10)).map(function (x, i) {
             const num = i + 1;
             return <NavItem key={num} itemId={num} isActive={activeItem === num}>

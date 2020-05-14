@@ -12,25 +12,34 @@ exports[`FormGroup component should render correctly when label is not a string 
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="id"
+    <div
+      className="pf-c-form__group-label"
     >
-      <span
-        className="pf-c-form__label-text"
+      <label
+        className="pf-c-form__label"
+        htmlFor="id"
       >
-        <div>
-          label
-        </div>
-      </span>
-    </label>
-    <input
-      aria-label="label"
-    />
-    <input
-      id="id"
-    />
-    <input />
+        <span
+          className="pf-c-form__label-text"
+        >
+          <div>
+            label
+          </div>
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        aria-label="label"
+      />
+      <input
+        id="id"
+      />
+      <input />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -44,25 +53,34 @@ exports[`FormGroup component should render default form group variant 1`] = `
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
-    >
-      <span
-        className="pf-c-form__label-text"
-      >
-        label
-      </span>
-    </label>
-    <input
-      id="label-id"
-    />
     <div
-      aria-live="polite"
-      className="pf-c-form__helper-text"
-      id="label-id-helper"
+      className="pf-c-form__group-label"
     >
-      this is helper text
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
+      >
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="label-id"
+      />
+      <div
+        aria-live="polite"
+        className="pf-c-form__helper-text"
+        id="label-id-helper"
+      >
+        this is helper text
+      </div>
     </div>
   </div>
 </FormGroup>
@@ -72,31 +90,40 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
 <FormGroup
   fieldId="label-id"
   helperTextInvalid="Invalid FormGroup"
-  isValid={false}
   label="label"
+  validated="error"
 >
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
-    >
-      <span
-        className="pf-c-form__label-text"
-      >
-        label
-      </span>
-    </label>
-    <input
-      id="id"
-    />
     <div
-      aria-live="polite"
-      className="pf-c-form__helper-text pf-m-error"
-      id="label-id-helper"
+      className="pf-c-form__group-label"
     >
-      Invalid FormGroup
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
+      >
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="id"
+      />
+      <div
+        aria-live="polite"
+        className="pf-c-form__helper-text pf-m-error"
+        id="label-id-helper"
+      >
+        Invalid FormGroup
+      </div>
     </div>
   </div>
 </FormGroup>
@@ -111,25 +138,35 @@ exports[`FormGroup component should render form group required variant 1`] = `
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="id"
+    <div
+      className="pf-c-form__group-label"
     >
-      <span
-        className="pf-c-form__label-text"
+      <label
+        className="pf-c-form__label"
+        htmlFor="id"
       >
-        label
-      </span>
-      <span
-        aria-hidden="true"
-        className="pf-c-form__label-required"
-      >
-        *
-      </span>
-    </label>
-    <input
-      id="id"
-    />
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+        <span
+          aria-hidden="true"
+          className="pf-c-form__label-required"
+        >
+           
+          *
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="id"
+      />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -144,19 +181,28 @@ exports[`FormGroup component should render form group validated error variant 1`
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
+    <div
+      className="pf-c-form__group-label"
     >
-      <span
-        className="pf-c-form__label-text"
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
       >
-        label
-      </span>
-    </label>
-    <input
-      id="id"
-    />
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="id"
+      />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -171,25 +217,34 @@ exports[`FormGroup component should render form group validated success variant 
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
-    >
-      <span
-        className="pf-c-form__label-text"
-      >
-        label
-      </span>
-    </label>
-    <input
-      id="id"
-    />
     <div
-      aria-live="polite"
-      className="pf-c-form__helper-text pf-m-success"
-      id="label-id-helper"
+      className="pf-c-form__group-label"
     >
-      Validated FormGroup
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
+      >
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="id"
+      />
+      <div
+        aria-live="polite"
+        className="pf-c-form__helper-text pf-m-success"
+        id="label-id-helper"
+      >
+        Validated FormGroup
+      </div>
     </div>
   </div>
 </FormGroup>
@@ -208,24 +263,27 @@ exports[`FormGroup component should render form group variant with function help
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
-    >
-      <span
-        className="pf-c-form__label-text"
-      >
-        Label
-      </span>
-    </label>
-    <input
-      id="label-id"
-    />
     <div
-      aria-live="polite"
-      className="pf-c-form__helper-text"
-      id="label-id-helper"
+      className="pf-c-form__group-label"
     >
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
+      >
+        <span
+          className="pf-c-form__label-text"
+        >
+          Label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="label-id"
+      />
       <div>
         label
       </div>
@@ -246,21 +304,30 @@ exports[`FormGroup component should render form group variant with function labe
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="id"
+    <div
+      className="pf-c-form__group-label"
     >
-      <span
-        className="pf-c-form__label-text"
+      <label
+        className="pf-c-form__label"
+        htmlFor="id"
       >
-        <div>
-          label
-        </div>
-      </span>
-    </label>
-    <input
-      aria-label="input"
-    />
+        <span
+          className="pf-c-form__label-text"
+        >
+          <div>
+            label
+          </div>
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        aria-label="input"
+      />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -278,24 +345,27 @@ exports[`FormGroup component should render form group variant with node helperTe
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
-    >
-      <span
-        className="pf-c-form__label-text"
-      >
-        Label
-      </span>
-    </label>
-    <input
-      id="label-id"
-    />
     <div
-      aria-live="polite"
-      className="pf-c-form__helper-text"
-      id="label-id-helper"
+      className="pf-c-form__group-label"
     >
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
+      >
+        <span
+          className="pf-c-form__label-text"
+        >
+          Label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="label-id"
+      />
       <h1>
         Header
       </h1>
@@ -316,21 +386,30 @@ exports[`FormGroup component should render form group variant with node label 1`
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="id"
+    <div
+      className="pf-c-form__group-label"
     >
-      <span
-        className="pf-c-form__label-text"
+      <label
+        className="pf-c-form__label"
+        htmlFor="id"
       >
-        <h1>
-          Header
-        </h1>
-      </span>
-    </label>
-    <input
-      aria-label="input"
-    />
+        <span
+          className="pf-c-form__label-text"
+        >
+          <h1>
+            Header
+          </h1>
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        aria-label="input"
+      />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -344,25 +423,35 @@ exports[`FormGroup component should render form group variant with required labe
   <div
     className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
+    <div
+      className="pf-c-form__group-label"
     >
-      <span
-        className="pf-c-form__label-text"
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
       >
-        label
-      </span>
-      <span
-        aria-hidden="true"
-        className="pf-c-form__label-required"
-      >
-        *
-      </span>
-    </label>
-    <input
-      id="label-id"
-    />
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+        <span
+          aria-hidden="true"
+          className="pf-c-form__label-required"
+        >
+           
+          *
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        id="label-id"
+      />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -374,9 +463,13 @@ exports[`FormGroup component should render form group variant without label 1`] 
   <div
     className="pf-c-form__group"
   >
-    <input
-      aria-label="input"
-    />
+    <div
+      className="pf-c-form__group-control"
+    >
+      <input
+        aria-label="input"
+      />
+    </div>
   </div>
 </FormGroup>
 `;
@@ -397,29 +490,34 @@ exports[`FormGroup component should render horizontal form group variant 1`] = `
       <div
         className="pf-c-form__group"
       >
-        <label
-          className="pf-c-form__label"
-          htmlFor="label-id"
-        >
-          <span
-            className="pf-c-form__label-text"
-          >
-            label
-          </span>
-        </label>
         <div
-          className="pf-c-form__horizontal-group"
+          className="pf-c-form__group-label"
+        >
+          <label
+            className="pf-c-form__label"
+            htmlFor="label-id"
+          >
+            <span
+              className="pf-c-form__label-text"
+            >
+              label
+            </span>
+          </label>
+           
+        </div>
+        <div
+          className="pf-c-form__group-control"
         >
           <input
             id="label-id"
           />
-        </div>
-        <div
-          aria-live="polite"
-          className="pf-c-form__helper-text"
-          id="label-id-helper"
-        >
-          this is helperText
+          <div
+            aria-live="polite"
+            className="pf-c-form__helper-text"
+            id="label-id-helper"
+          >
+            this is helperText
+          </div>
         </div>
       </div>
     </FormGroup>
@@ -435,27 +533,36 @@ exports[`FormGroup component should render inline form group variant 1`] = `
   label="label"
 >
   <div
-    className="pf-c-form__group pf-m-inline"
+    className="pf-c-form__group"
   >
-    <label
-      className="pf-c-form__label"
-      htmlFor="label-id"
-    >
-      <span
-        className="pf-c-form__label-text"
-      >
-        label
-      </span>
-    </label>
-    <input
-      id="label-id"
-    />
     <div
-      aria-live="polite"
-      className="pf-c-form__helper-text"
-      id="label-id-helper"
+      className="pf-c-form__group-label"
     >
-      this is helper text
+      <label
+        className="pf-c-form__label"
+        htmlFor="label-id"
+      >
+        <span
+          className="pf-c-form__label-text"
+        >
+          label
+        </span>
+      </label>
+       
+    </div>
+    <div
+      className="pf-c-form__group-control pf-m-inline"
+    >
+      <input
+        id="label-id"
+      />
+      <div
+        aria-live="polite"
+        className="pf-c-form__helper-text"
+        id="label-id-helper"
+      >
+        this is helper text
+      </div>
     </div>
   </div>
 </FormGroup>

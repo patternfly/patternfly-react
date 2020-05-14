@@ -37,7 +37,7 @@ describe('Table Width Modifiers Test', () => {
     cy.get('th')
       .eq(4)
       .then(widthModifer => {
-        expect(widthModifer).to.have.class('pf-m-width-max');
+        expect(widthModifer).to.have.class('pf-m-width-100');
       });
   });
 });

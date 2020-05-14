@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
 export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>, 'width'> {
@@ -29,7 +29,7 @@ export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
   <div
     className={css(
       styles.dataListCell,
-      width > 1 && getModifier(styles, `flex_${width}`, ''),
+      width > 1 && styles.modifiers[`flex_${width}` as 'flex_2' | 'flex_3' | 'flex_4' | 'flex_5'],
       !isFilled && styles.modifiers.noFill,
       alignRight && styles.modifiers.alignRight,
       isIcon && styles.modifiers.icon,

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chip should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
+<GenerateId
+  prefix="pf-random-id-"
+>
   <Component />
-</ContextConsumer>
+</GenerateId>
 `;

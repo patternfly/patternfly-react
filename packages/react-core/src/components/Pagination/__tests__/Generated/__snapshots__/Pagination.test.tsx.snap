@@ -1,7 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  className="pf-c-pagination ''"
+  data-ouia-component-id={null}
+  data-ouia-component-type="PF4/Pagination"
+  data-ouia-safe={true}
+  id="'pagination-options-menu'-0"
+>
+  <div
+    className="pf-c-pagination__total-items"
+  >
+    <ToggleTemplate
+      firstIndex={1}
+      itemCount={42}
+      itemsTitle=""
+      lastIndex={42}
+    />
+  </div>
+  <PaginationOptionsMenu
+    className=""
+    defaultToFullPage={false}
+    dropDirection="up"
+    firstIndex={1}
+    isDisabled={false}
+    itemCount={42}
+    itemsPerPageTitle="Items per page"
+    itemsTitle=""
+    lastIndex={42}
+    lastPage={1}
+    onPerPageSelect={[Function]}
+    optionsToggle="Items per page"
+    page={1}
+    perPage={42}
+    perPageOptions={
+      Array [
+        Object {
+          "title": "10",
+          "value": 10,
+        },
+        Object {
+          "title": "20",
+          "value": 20,
+        },
+        Object {
+          "title": "50",
+          "value": 50,
+        },
+        Object {
+          "title": "100",
+          "value": 100,
+        },
+      ]
+    }
+    perPageSuffix="per page"
+    toggleTemplate="string"
+    widgetId="'pagination-options-menu'"
+  />
+  <Navigation
+    className=""
+    currPage="Current page"
+    firstPage={1}
+    isCompact={false}
+    isDisabled={false}
+    lastPage={1}
+    onFirstClick={[Function]}
+    onLastClick={[Function]}
+    onNextClick={[Function]}
+    onPageInput={[Function]}
+    onPreviousClick={[Function]}
+    onSetPage={[Function]}
+    page={1}
+    pagesTitle=""
+    paginationTitle="Pagination"
+    perPage={42}
+    toFirstPage="Go to first page"
+    toLastPage="Go to last page"
+    toNextPage="Go to next page"
+    toPreviousPage="Go to previous page"
+  />
+  ReactNode
+</div>
 `;

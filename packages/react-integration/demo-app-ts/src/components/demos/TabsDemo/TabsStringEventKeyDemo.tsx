@@ -1,16 +1,16 @@
-import { Tabs, Tab, TabContent } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Tabs, Tab, TabContent, TabTitleText } from '@patternfly/react-core';
+import React, { Component, RefObject } from 'react';
 
 export class TabsStringEventKeyDemo extends Component {
   state = {
     activeTabKey: 'one'
   };
 
-  private contentRefOne: any;
-  private contentRefTwo: any;
-  private contentRefThree: any;
+  private contentRefOne: RefObject<HTMLDivElement>;
+  private contentRefTwo: RefObject<HTMLDivElement>;
+  private contentRefThree: RefObject<HTMLDivElement>;
 
-  constructor(props) {
+  constructor(props: {}) {
     super(props);
 
     this.contentRefOne = React.createRef<HTMLDivElement>();
@@ -19,7 +19,7 @@ export class TabsStringEventKeyDemo extends Component {
   }
 
   // Toggle currently active tab
-  private handleTabClick = (event: any, tabIndex: string) => {
+  private handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number | string) => {
     this.setState({
       activeTabKey2: tabIndex
     });
@@ -36,21 +36,21 @@ export class TabsStringEventKeyDemo extends Component {
           <Tab
             id="demoTabOne"
             eventKey={'one'}
-            title="Tab item 1"
+            title={<TabTitleText>Tab item 1</TabTitleText>}
             tabContentId="demoTab1Section"
             tabContentRef={this.contentRefOne}
           />
           <Tab
             id="demoTabTwo"
             eventKey={'two'}
-            title="Tab item 2"
+            title={<TabTitleText>Tab item 2</TabTitleText>}
             tabContentId="demoTab2Section"
             tabContentRef={this.contentRefTwo}
           />
           <Tab
             id="demoTabThree"
             eventKey={'three'}
-            title="Tab item 3"
+            title={<TabTitleText>Tab item 3</TabTitleText>}
             tabContentId="demoTab3Section"
             tabContentRef={this.contentRefThree}
           />

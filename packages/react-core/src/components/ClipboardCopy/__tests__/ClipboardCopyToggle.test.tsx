@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ClipboardCopyToggle } from '../ClipboardCopyToggle';
+import { Button } from '../../Button';
 
 const props = {
   id: 'my-id',
@@ -20,7 +21,7 @@ test('toggle button render', () => {
 test('toggle button onClick', () => {
   const onclick = jest.fn();
   const view = shallow(<ClipboardCopyToggle {...props} onClick={onclick} />);
-  view.find('button').simulate('click');
+  view.find(Button).simulate('click');
   expect(onclick).toBeCalled();
 });
 

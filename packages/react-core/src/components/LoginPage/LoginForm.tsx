@@ -3,6 +3,7 @@ import { Form, FormGroup, ActionGroup, FormHelperText } from '../Form';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Flag to indicate if the first dropdown item should not gain initial focus */
@@ -13,6 +14,8 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   showHelperText?: boolean;
   /** Content displayed in the Helper Text component * */
   helperText?: React.ReactNode;
+  /** Icon displayed to the left in the Helper Text */
+  helperTextIcon?: React.ReactNode;
   /** Label for the Username Input Field */
   usernameLabel?: string;
   /** Value for the Username */
@@ -41,10 +44,6 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   isRememberMeChecked?: boolean;
   /** Function that handles the onChange event for the Remember Me Checkbox */
   onChangeRememberMe?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
-  /* THIS PROP IS DEPRECATED AND NO LONGER USED; remove in a future breaking change release
-   * Aria Label for the Remember me checkbox, use this to override using the rememberMeLabel
-   * */
-  rememberMeAriaLabel?: string;
 }
 
 export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
@@ -52,6 +51,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   className = '',
   showHelperText = false,
   helperText = null,
+  helperTextIcon = null,
   usernameLabel = 'Username',
   usernameValue = '',
   onChangeUsername = () => undefined as any,
@@ -66,33 +66,41 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   rememberMeLabel = '',
   isRememberMeChecked = false,
   onChangeRememberMe = () => undefined as any,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  rememberMeAriaLabel = '',
   ...props
 }: LoginFormProps) => (
   <Form className={className} {...props}>
-    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>
+    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText} icon={helperTextIcon}>
       {helperText}
     </FormHelperText>
-    <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
+    <FormGroup
+      label={usernameLabel}
+      isRequired
+      validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
+      fieldId="pf-login-username-id"
+    >
       <TextInput
         autoFocus={!noAutoFocus}
         id="pf-login-username-id"
         isRequired
-        isValid={isValidUsername}
+        validated={isValidUsername ? ValidatedOptions.default : ValidatedOptions.error}
         type="text"
         name="pf-login-username-id"
         value={usernameValue}
         onChange={onChangeUsername}
       />
     </FormGroup>
-    <FormGroup label={passwordLabel} isRequired isValid={isValidPassword} fieldId="pf-login-password-id">
+    <FormGroup
+      label={passwordLabel}
+      isRequired
+      validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
+      fieldId="pf-login-password-id"
+    >
       <TextInput
         isRequired
         type="password"
         id="pf-login-password-id"
         name="pf-login-password-id"
-        isValid={isValidPassword}
+        validated={isValidPassword ? ValidatedOptions.default : ValidatedOptions.error}
         value={passwordValue}
         onChange={onChangePassword}
       />

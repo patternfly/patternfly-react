@@ -3,9 +3,14 @@
 exports[`Label should match snapshot (auto-generated) 1`] = `
 <span
   className="pf-c-label ''"
+  isCompact={false}
 >
-  <div>
-    ReactNode
-  </div>
+  <span
+    className="pf-c-label__content"
+  >
+    <div>
+      ReactNode
+    </div>
+  </span>
 </span>
 `;

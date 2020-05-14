@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../Table';
+import { TableText } from '../../TableText';
 
 export const compoundExpand: ITransform = (
   value: IFormatterValueType,
@@ -32,9 +32,14 @@ export const compoundExpand: ITransform = (
   return {
     className: css(styles.tableCompoundExpansionToggle, props.isOpen && styles.modifiers.expanded),
     children: props.isOpen !== undefined && (
-      <Button variant="link" onClick={onToggle} aria-expanded={props.isOpen} aria-controls={props.ariaControls}>
-        {title}
-      </Button>
+      <button
+        className={css(styles.tableButton)}
+        onClick={onToggle}
+        aria-expanded={props.isOpen}
+        aria-controls={props.ariaControls}
+      >
+        <TableText>{title}</TableText>
+      </button>
     )
   };
 };

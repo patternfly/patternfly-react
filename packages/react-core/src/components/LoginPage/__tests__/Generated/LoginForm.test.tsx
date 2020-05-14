@@ -28,7 +28,6 @@ it('LoginForm should match snapshot (auto-generated)', () => {
       rememberMeLabel={"''"}
       isRememberMeChecked={false}
       onChangeRememberMe={() => undefined as any}
-      rememberMeAriaLabel={"''"}
     />
   );
   expect(view).toMatchSnapshot();

@@ -1,44 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gutter lg 1`] = `
+exports[`Gutter 1`] = `
 <Split
-  gutter="lg"
->
-  <div
-    className="pf-l-split pf-m-gutter"
-  >
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-  </div>
-</Split>
-`;
-
-exports[`Gutter md 1`] = `
-<Split
-  gutter="md"
->
-  <div
-    className="pf-l-split pf-m-gutter"
-  >
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-  </div>
-</Split>
-`;
-
-exports[`Gutter sm 1`] = `
-<Split
-  gutter="sm"
+  hasGutter={true}
 >
   <div
     className="pf-l-split pf-m-gutter"

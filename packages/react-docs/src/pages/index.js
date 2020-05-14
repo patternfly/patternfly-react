@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Title } from '@patternfly/react-core/dist/js/components/Title/Title';
-import { PageSection, PageSectionVariants } from '@patternfly/react-core/dist/js/components/Page/PageSection';
+import { Title, PageSection, PageSectionVariants } from '@patternfly/react-core';
 import { SideNavLayout } from 'gatsby-theme-patternfly-org/layouts';
 
 const containerStyle = {
@@ -27,8 +26,12 @@ const IndexPage = ({ data, location }) => {
       <div style={containerStyle}>
         <PageSection style={centerStyle}>
           <div style={{ flex: 'none', textAlign: 'center' }}>
-            <Title size="4xl">PatternFly 4 React Docs</Title>
-            <Title size="2xl">{prInfo.num ? <a href={prInfo.url}>PR #{prInfo.num}</a> : 'Hi people!'}</Title>
+            <Title size="4xl" headingLevel="h1">
+              PatternFly 4 React Docs
+            </Title>
+            <Title size="2xl" headingLevel="h2">
+              {prInfo.num ? <a href={prInfo.url}>PR #{prInfo.num}</a> : 'Hi people!'}
+            </Title>
             <p>Welcome to Patternfly 4 React docs.</p>
             <p>Now go build something great.</p>
           </div>

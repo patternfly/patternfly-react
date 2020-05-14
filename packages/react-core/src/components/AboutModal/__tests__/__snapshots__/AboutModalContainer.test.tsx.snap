@@ -13,8 +13,6 @@ exports[`About Modal Container Test isOpen 1`] = `
     paused={false}
   >
     <AboutModalBox
-      aria-describedby="ariaDescribedById"
-      aria-labelledby="ariaLablledbyId"
       className=""
     >
       <AboutModalBoxBrand
@@ -25,11 +23,11 @@ exports[`About Modal Container Test isOpen 1`] = `
         onClose={[Function]}
       />
       <AboutModalBoxHeader
-        id="ariaLablledbyId"
         productName="Product Name"
       />
       <AboutModalBoxContent
-        id="ariaDescribedById"
+        aria-describedby="ariaDescribedById"
+        aria-labelledby="ariaLablledbyId"
         noAboutModalBoxContentContainer={false}
         title="Test Modal Container title"
         trademark="Trademark and copyright information here"

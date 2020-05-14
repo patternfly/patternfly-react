@@ -13,7 +13,7 @@ describe('Tab Demo Test', () => {
 
   it('Verify tabs, tab sections, and tab navigation', () => {
     cy.get('div#unconnectedChildren')
-      .find('.pf-c-tabs__button')
+      .find('.pf-c-tabs__link')
       .each((demoButton: JQuery<HTMLButtonElement>, index: number) => {
         const currentItem: number = index + 1;
         expect(demoButton.text()).to.equal(`Tab item ${currentItem}`);
@@ -39,5 +39,17 @@ describe('Tab Demo Test', () => {
     cy.get('#pf-tab-1-unmountOnExit').click();
     cy.get('#pf-tab-section-0-unmountOnExit').should('not.exist');
     cy.get('#pf-tab-section-1-unmountOnExit').should('exist');
+  });
+
+  it('Verify box tabs', () => {
+    cy.get('#boxTabs.pf-m-box').should('exist');
+  });
+
+  it('Verify vertical tabs', () => {
+    cy.get('#verticalTabs.pf-m-vertical').should('exist');
+  });
+
+  it('Verify filled tabs', () => {
+    cy.get('#filledTabs.pf-m-fill').should('exist');
   });
 });

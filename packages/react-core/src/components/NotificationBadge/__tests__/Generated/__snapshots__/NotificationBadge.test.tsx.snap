@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotificationBadge should match snapshot (auto-generated) 1`] = `
-<Component
+<Button
   aria-label="string"
   className="string"
   variant="plain"
@@ -13,5 +13,5 @@ exports[`NotificationBadge should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </span>
-</Component>
+</Button>
 `;

@@ -40,7 +40,7 @@ import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 GridWithGuttersExample = () => (
-  <Grid gutter="md">
+  <Grid hasGutter>
     <GridItem span={8}>span = 8</GridItem>
     <GridItem span={4} rowSpan={2}>
       span = 4, rowSpan = 2

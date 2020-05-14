@@ -14,11 +14,11 @@ it('InternalDropdownItem should match snapshot (auto-generated)', () => {
       className={"''"}
       listItemClassName={'string'}
       component={'a'}
-      variant={'item'}
       role={"'none'"}
       isDisabled={false}
+      isPlainText={false}
       isHovered={false}
-      href={"''"}
+      href={'string'}
       tooltip={<div>ReactNode</div>}
       tooltipProps={undefined}
       index={-1}
@@ -32,6 +32,7 @@ it('InternalDropdownItem should match snapshot (auto-generated)', () => {
       additionalChild={<div>ReactNode</div>}
       customChild={<div>ReactNode</div>}
       enterTriggersArrowDown={false}
+      icon={<div>ReactNode</div>}
     />
   );
   expect(view).toMatchSnapshot();

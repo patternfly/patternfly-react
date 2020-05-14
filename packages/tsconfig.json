@@ -1,0 +1,32 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./react-catalog-view-extension"
+    },
+    {
+      "path": "./react-charts"
+    },
+    {
+      "path": "./react-core"
+    },
+    {
+      "path": "./react-icons"
+    },
+    {
+      "path": "./react-inline-edit-extension"
+    },
+    {
+      "path": "./react-styles"
+    },
+    {
+      "path": "./react-table"
+    },
+    {
+      "path": "./react-topology"
+    },
+    {
+      "path": "./react-virtualized-extension"
+    }
+  ]
+}
