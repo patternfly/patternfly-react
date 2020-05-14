@@ -36,6 +36,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <a
           aria-controls="pf-tab-section-0-tab1"
           class="pf-c-tabs__link"
@@ -52,6 +53,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <a
           aria-controls="pf-tab-section-1-tab2"
           class="pf-c-tabs__link"
@@ -68,6 +70,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <a
           aria-controls="pf-tab-section-2-tab3"
           class="pf-c-tabs__link"
@@ -170,6 +173,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <button
           aria-controls="pf-tab-section-0-tab1"
           class="pf-c-tabs__link"
@@ -185,6 +189,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-1-tab2"
           class="pf-c-tabs__link"
@@ -200,6 +205,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-2-tab3"
           class="pf-c-tabs__link"
@@ -215,6 +221,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-3-tab4"
           class="pf-c-tabs__link"
@@ -335,6 +342,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <button
           aria-controls="pf-tab-section-0-tab1"
           class="pf-c-tabs__link"
@@ -350,6 +358,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-1-tab2"
           class="pf-c-tabs__link"
@@ -365,6 +374,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-2-tab3"
           class="pf-c-tabs__link"
@@ -466,6 +476,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <button
           aria-controls="pf-tab-section-0-primarieTabs"
           class="pf-c-tabs__link"
@@ -481,6 +492,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-1-tab2"
           class="pf-c-tabs__link"
@@ -496,6 +508,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-2-tab3"
           class="pf-c-tabs__link"
@@ -570,6 +583,7 @@ Array [
         <li
           class="pf-c-tabs__item"
         >
+          ,
           <button
             aria-controls="pf-tab-section-10-secondary tab1"
             class="pf-c-tabs__link"
@@ -585,6 +599,7 @@ Array [
         <li
           class="pf-c-tabs__item"
         >
+          ,
           <button
             aria-controls="pf-tab-section-11-secondary tab2"
             class="pf-c-tabs__link"
@@ -600,6 +615,7 @@ Array [
         <li
           class="pf-c-tabs__item"
         >
+          ,
           <button
             aria-controls="pf-tab-section-12-secondary tab3"
             class="pf-c-tabs__link"
@@ -723,6 +739,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <button
           aria-controls="pf-tab-section-0-tab1"
           class="pf-c-tabs__link"
@@ -738,6 +755,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-1-tab2"
           class="pf-c-tabs__link"
@@ -753,6 +771,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-2-tab3"
           class="pf-c-tabs__link"
@@ -768,6 +787,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-3-tab4"
           class="pf-c-tabs__link"
@@ -888,6 +908,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-one-tab1"
           class="pf-c-tabs__link"
@@ -903,6 +924,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-two-tab2"
           class="pf-c-tabs__link"
@@ -918,6 +940,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-three-tab3"
           class="pf-c-tabs__link"
@@ -1020,6 +1043,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <button
           aria-controls="refTab1Section"
           class="pf-c-tabs__link"
@@ -1035,6 +1059,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="refTab2Section"
           class="pf-c-tabs__link"
@@ -1050,6 +1075,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="refTab3Section"
           class="pf-c-tabs__link"
@@ -1153,6 +1179,7 @@ Array [
       <li
         class="pf-c-tabs__item pf-m-current"
       >
+        ,
         <button
           aria-controls="pf-tab-section-0-tab1"
           class="pf-c-tabs__link"
@@ -1168,6 +1195,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-1-tab2"
           class="pf-c-tabs__link"
@@ -1183,6 +1211,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-2-tab3"
           class="pf-c-tabs__link"
@@ -1198,6 +1227,7 @@ Array [
       <li
         class="pf-c-tabs__item"
       >
+        ,
         <button
           aria-controls="pf-tab-section-3-tab4"
           class="pf-c-tabs__link"

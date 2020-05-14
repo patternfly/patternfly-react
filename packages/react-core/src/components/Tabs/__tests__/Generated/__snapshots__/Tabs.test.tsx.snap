@@ -31,9 +31,9 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
     >
       <li
         className="pf-c-tabs__item ''"
-        hidden={false}
         key="0"
       >
+        ,
         <TabButton
           aria-controls="pf-tab-section-undefined-string"
           className="pf-c-tabs__link"
