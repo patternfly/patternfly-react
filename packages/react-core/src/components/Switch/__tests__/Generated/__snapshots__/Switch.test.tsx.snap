@@ -1,7 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Switch should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<label
+  className="pf-c-switch ''"
+  data-ouia-component-id={0}
+  data-ouia-component-type="PF4/Switch"
+  data-ouia-safe={true}
+  htmlFor="''"
+>
+  <input
+    aria-label="''"
+    aria-labelledby={null}
+    checked={true}
+    className="pf-c-switch__input"
+    disabled={false}
+    id="''"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+  <span
+    aria-hidden="true"
+    className="pf-c-switch__label pf-m-on"
+    id={null}
+  >
+    ''
+  </span>
+  <span
+    aria-hidden="true"
+    className="pf-c-switch__label pf-m-off"
+    id={null}
+  >
+    ''
+  </span>
+</label>
 `;

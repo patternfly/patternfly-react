@@ -57,7 +57,7 @@ class InvalidTextArea extends React.Component {
         value={value}
         onChange={this.handleInvalidTextAreaChange}
         isRequired
-        isValid={false}
+        validated={'error'}
         aria-label="invalid text area example"
       />
     );
@@ -75,41 +75,39 @@ class InvalidTextArea extends React.Component {
     this.state = {
       value: '',
       invalidText: 'You must have something to say',
-      isValid: false,
       validated: 'default',
       helperText: 'Enter comments'
     };
     
+    this.simulateNetworkCall = callback => {
+      setTimeout(callback, 2000);
+    }
+    
     this.handleTextAreaChange = value => {
-      if (this.validationTimeout) {
-        clearTimeout(this.validationTimeout);
-      }
 
-      const isValid = !!value && value.length > 0;
       this.setState({
         value,
-        isValid,
+        validated: 'default',
         helperText: 'Validating...',
-        invalidText: 'You must have something to say',
-        validated: 'error'
-      });
-
-      if (isValid) {
-        this.validationTimeout = setTimeout(() => {
-          if (!this.state.isValid) {
-            this.setState({validated: 'error', invalidText: 'You must have something to say'});
-          } else if (value.length > 10) {
-            this.setState({isValid: true, validated: 'success', helperText: 'Thanks for your comments!'});
-          } else {
-            this.setState({isValid: false, validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
+      },
+        this.simulateNetworkCall(() => {
+          if (value && value.length > 0) {
+            if (value.length > 10) {
+              this.setState({validated: 'success', helperText: 'Thanks for your comments!'});
+            } else {
+              this.setState({validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
+            }
           }
-        }, 2000);
-      }
+          else {
+            this.setState({validated: 'error', invalidText: 'You must have something to say'});
+          }
+        })
+      );
     };
   }
 
   render() {
-    const { value, isValid, validated, helperText, invalidText } = this.state;
+    const { value, validated, helperText, invalidText } = this.state;
 
     return (
       <Form>
@@ -119,7 +117,6 @@ class InvalidTextArea extends React.Component {
           helperText={helperText}
           helperTextInvalid={invalidText}
           fieldId="selection"
-          isValid={isValid}
           validated={validated}
         >
           <TextArea

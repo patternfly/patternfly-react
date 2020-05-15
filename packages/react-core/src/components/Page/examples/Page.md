@@ -3,15 +3,23 @@ title: 'Page'
 section: components
 cssPrefix: 'pf-c-page'
 typescript: true
-propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']
+propComponents: ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---
 
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
 ## Examples
+
 ```js title=Vertical-nav
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -38,8 +46,7 @@ class VerticalPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
@@ -60,7 +67,14 @@ class VerticalPage extends React.Component {
 
 ```js title=Horizontal-nav
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 HorizontalPage = () => {
   const logoProps = {
@@ -69,7 +83,12 @@ HorizontalPage = () => {
     target: '_blank'
   };
   const Header = (
-    <PageHeader logo="Logo" logoProps={logoProps} toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />
+    <PageHeader
+      logo="Logo"
+      logoProps={logoProps}
+      headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
+      topNav="Navigation"
+    />
   );
 
   return (
@@ -84,7 +103,14 @@ HorizontalPage = () => {
 
 ```js title=Main-Section-Padding
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -111,8 +137,7 @@ class VerticalPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
@@ -123,16 +148,37 @@ class VerticalPage extends React.Component {
     return (
       <Page header={Header} sidebar={Sidebar}>
         <PageSection>Section with default padding</PageSection>
-        <PageSection variant={PageSectionVariants.light} noPadding={true}>Section with no padding</PageSection>
-        <PageSection noPaddingMobile={true}>Section with no padding on mobile only</PageSection>
+        <PageSection variant={PageSectionVariants.light} hasNoPadding>
+          Section with no padding
+        </PageSection>
+        <PageSection
+          hasNoPadding
+          breakpointMods={[{ modifier: 'padding', breakpoint: 'md' }, { modifier: 'padding', breakpoint: 'lg' }]}
+        >
+          Section with padding only on medium/large
+        </PageSection>
+        <PageSection
+          variant={PageSectionVariants.light}
+          breakpointMods={[{ modifier: 'no-padding', breakpoint: 'md' }]}
+        >
+          Section with no padding on medium
+        </PageSection>
       </Page>
     );
   }
 }
 ```
+
 ```js title=With-or-without-fill
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
 
 class FillPage extends React.Component {
   constructor(props) {
@@ -159,8 +205,7 @@ class FillPage extends React.Component {
       <PageHeader
         logo="Logo"
         logoProps={logoProps}
-        toolbar="Toolbar"
-        avatar=" | Avatar"
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
@@ -170,9 +215,14 @@ class FillPage extends React.Component {
 
     return (
       <Page header={Header} sidebar={Sidebar}>
-        <PageSection style={{height: '10em'}}>This section is set to the default fill variant</PageSection>
-        <PageSection style={{height: '10em'}} isFilled={true}>This section fills the available space.</PageSection>
-        <PageSection style={{height: '10em'}} isFilled={false}> This section does not fill the available space.</PageSection>
+        <PageSection style={{ height: '10em' }}>This section is set to the default fill variant</PageSection>
+        <PageSection style={{ height: '10em' }} isFilled={true}>
+          This section fills the available space.
+        </PageSection>
+        <PageSection style={{ height: '10em' }} isFilled={false}>
+          {' '}
+          This section does not fill the available space.
+        </PageSection>
       </Page>
     );
   }

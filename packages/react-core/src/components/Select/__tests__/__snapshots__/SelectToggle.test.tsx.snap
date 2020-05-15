@@ -2,16 +2,14 @@
 
 exports[`state active 1`] = `
 <SelectToggle
-  ariaLabelToggle=""
-  ariaLabelledBy=""
+  aria-label=""
+  aria-labelledby=""
   className=""
   hasClearButton={false}
   id="Select Toggle"
   isActive={true}
   isDisabled={false}
-  isExpanded={false}
-  isFocused={false}
-  isHovered={false}
+  isOpen={false}
   isPlain={false}
   onClose={[Function]}
   onEnter={[Function]}
@@ -36,50 +34,50 @@ exports[`state active 1`] = `
     type="button"
   >
     Select
-    <CaretDownIcon
+    <span
       className="pf-c-select__toggle-arrow"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
-        aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-select__toggle-arrow"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+      <CaretDownIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </SelectToggle>
 `;
 
 exports[`state focus 1`] = `
 <SelectToggle
-  ariaLabelToggle=""
-  ariaLabelledBy=""
+  aria-label=""
+  aria-labelledby=""
   className=""
   hasClearButton={false}
   id="Select Toggle"
   isActive={false}
   isDisabled={false}
-  isExpanded={false}
   isFocused={true}
-  isHovered={false}
+  isOpen={false}
   isPlain={false}
   onClose={[Function]}
   onEnter={[Function]}
@@ -96,58 +94,59 @@ exports[`state focus 1`] = `
     aria-expanded={false}
     aria-haspopup="listbox"
     aria-labelledby=""
-    className="pf-c-select__toggle pf-m-focus"
+    className="pf-c-select__toggle"
     disabled={false}
     id="Select Toggle"
+    isFocused={true}
     onClick={[Function]}
     onKeyDown={[Function]}
     type="button"
   >
     Select
-    <CaretDownIcon
+    <span
       className="pf-c-select__toggle-arrow"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
-        aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-select__toggle-arrow"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+      <CaretDownIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </SelectToggle>
 `;
 
 exports[`state hover 1`] = `
 <SelectToggle
-  ariaLabelToggle=""
-  ariaLabelledBy=""
+  aria-label=""
+  aria-labelledby=""
   className=""
   hasClearButton={false}
   id="Select Toggle"
   isActive={false}
   isDisabled={false}
-  isExpanded={false}
-  isFocused={false}
   isHovered={true}
+  isOpen={false}
   isPlain={false}
   onClose={[Function]}
   onEnter={[Function]}
@@ -164,42 +163,44 @@ exports[`state hover 1`] = `
     aria-expanded={false}
     aria-haspopup="listbox"
     aria-labelledby=""
-    className="pf-c-select__toggle pf-m-hover"
+    className="pf-c-select__toggle"
     disabled={false}
     id="Select Toggle"
+    isHovered={true}
     onClick={[Function]}
     onKeyDown={[Function]}
     type="button"
   >
     Select
-    <CaretDownIcon
+    <span
       className="pf-c-select__toggle-arrow"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
-        aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-select__toggle-arrow"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+      <CaretDownIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </SelectToggle>
 `;

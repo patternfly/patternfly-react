@@ -1,15 +1,15 @@
 import React from 'react';
 import {
   Button,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarToggleGroup,
   Dropdown,
   DropdownPosition,
   DropdownToggle,
   DropdownItem,
   KebabToggle,
-  TextInput,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  TextInput
 } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
@@ -115,25 +115,27 @@ export class ViewToolbar extends React.Component {
 
   render() {
     return (
-      <Toolbar className="view-toolbar pf-u-px-md pf-u-py-md" style={{ borderBottom: '1px solid #ccc' }}>
-        <ToolbarGroup>
-          <ToolbarItem>{this.renderFilterTypeDropdown()}</ToolbarItem>
-          <ToolbarItem className="pf-u-mr-md">{this.renderFilterInput()}</ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
+      <React.Fragment>
+        <ToolbarToggleGroup breakpoint="xl" toggleIcon={<FilterIcon />}>
+          <ToolbarGroup variant="filter-group">
+            <ToolbarItem>{this.renderFilterTypeDropdown()}</ToolbarItem>
+            <ToolbarItem>{this.renderFilterInput()}</ToolbarItem>
+          </ToolbarGroup>
+        </ToolbarToggleGroup>
+        <ToolbarGroup variant="button-group">
           <ToolbarItem>
             <Button variant="primary" aria-label="Action 1">
               Action 1
             </Button>
           </ToolbarItem>
-          <ToolbarItem className="pf-u-mx-md">
+          <ToolbarItem>
             <Button variant="plain" aria-label="Action 2">
               Action 2
             </Button>
           </ToolbarItem>
           <ToolbarItem>{this.renderActionsdKebab()}</ToolbarItem>
         </ToolbarGroup>
-      </Toolbar>
+      </React.Fragment>
     );
   }
 }

@@ -1,7 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  aria-label="string"
+  className="pf-c-alert pf-m-success ''"
+  data-ouia-component-id={0}
+  data-ouia-component-type="PF4/Alert"
+  data-ouia-safe={true}
+>
+  <AlertIcon
+    variant="success"
+  />
+  <h4
+    className="pf-c-alert__title"
+  >
+    <span
+      className="pf-u-screen-reader"
+    >
+      string
+    </span>
+    <div>
+      ReactNode
+    </div>
+  </h4>
+  <div
+    className="pf-c-alert__action-group"
+  />
+</div>
 `;

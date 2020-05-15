@@ -1,5 +1,4 @@
 import * as React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   Table,
   TableHeader,
@@ -9,7 +8,8 @@ import {
   SortByDirection,
   ICell,
   IRow,
-  ISortBy
+  ISortBy,
+  TableProps
 } from '@patternfly/react-table';
 
 export interface DemoSortableTableProps {
@@ -20,26 +20,45 @@ export interface DemoSortableTableProps {
   id?: string;
 }
 
-export class DemoSortableTable extends React.Component<DemoSortableTableProps> {
-  state = {
-    columns: [
-      { title: 'Repositories', transforms: [sortable] },
-      'Branches',
-      { title: 'Pull requests', transforms: [sortable] },
-      'Workspaces',
-      'Last Commit'
-    ],
-    rows: [this.props.firstColumnRows, ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
-    sortBy: {}
-  };
+interface DemoSortableTableState {
+  rows: (IRow | string[])[];
+  columns: (ICell | string)[];
+  sortBy: ISortBy;
+}
+
+export class DemoSortableTable extends React.Component<DemoSortableTableProps, DemoSortableTableState> {
+  constructor(props: TableProps) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories', transforms: [sortable] },
+        'Branches',
+        { title: 'Pull requests', transforms: [sortable] },
+        'Workspaces',
+        'Last Commit'
+      ],
+      rows: [
+        this.props.firstColumnRows ? this.props.firstColumnRows : [''],
+        ['a', 'two', 'k', 'four', 'five'],
+        ['p', 'two', 'b', 'four', 'five']
+      ],
+      sortBy: {}
+    };
+  }
 
   onSort = (_event: React.MouseEvent, index: number, direction: SortByDirection) => {
-    const sortedRows = this.state.rows.sort((a, b) => {
-      if (a[index] < b[index]) {
-        return -1;
+    const sortedRows = this.state.rows.sort(
+      (a: { [index: number]: IRow | string }, b: { [index: number]: IRow | string }) => {
+        if (a && b) {
+          if (a[index] < b[index]) {
+            return -1;
+          }
+          return a[index] > b[index] ? 1 : 0;
+        } else {
+          return 0;
+        }
       }
-      return a[index] > b[index] ? 1 : 0;
-    });
+    );
 
     this.setState({
       sortBy: {

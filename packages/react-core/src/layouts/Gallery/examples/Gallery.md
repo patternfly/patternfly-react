@@ -33,7 +33,7 @@ import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 GalleryWithGuttersExample = () => (
-  <Gallery gutter="md">
+  <Gallery hasGutter>
     <GalleryItem>Gallery Item</GalleryItem>
     <GalleryItem>Gallery Item</GalleryItem>
     <GalleryItem>Gallery Item</GalleryItem>

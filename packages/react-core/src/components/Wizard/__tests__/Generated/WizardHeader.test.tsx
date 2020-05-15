@@ -12,8 +12,9 @@ it('WizardHeader should match snapshot (auto-generated)', () => {
     <WizardHeader
       onClose={() => undefined}
       title={'string'}
-      description={'string'}
-      ariaLabelCloseButton={'string'}
+      description={<div>ReactNode</div>}
+      hideClose={true}
+      closeButtonAriaLabel={'string'}
       titleId={'string'}
       descriptionId={'string'}
     />

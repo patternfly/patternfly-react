@@ -30,8 +30,6 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
   isText?: boolean;
   /** Flag to indicate if menu is groupped */
   isGrouped?: boolean;
-  /** Provides an accessible name for the options menu */
-  ariaLabelMenu?: string;
   /** Indicates where menu will be aligned horizontally */
   position?: 'right' | 'left';
   /** Menu will open up or open down from the options menu toggle */
@@ -53,7 +51,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
     value={{
       id,
       onSelect: () => undefined,
-      toggleIconClass: styles.optionsMenuToggleIcon,
+      toggleIndicatorClass: styles.optionsMenuToggleIcon,
       toggleTextClass: styles.optionsMenuToggleText,
       menuClass: styles.optionsMenuMenu,
       itemClass: styles.optionsMenuMenuItem,

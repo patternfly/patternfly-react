@@ -1,3 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wizard should match snapshot (auto-generated) 1`] = `""`;
+exports[`Wizard should match snapshot (auto-generated) 1`] = `
+<Modal
+  actions={Array []}
+  appendTo={<body />}
+  aria-describedby=""
+  aria-label=""
+  aria-labelledby=""
+  className=""
+  hasNoBodyWrapper={true}
+  isOpen={true}
+  onClose={[Function]}
+  showClose={false}
+  title=""
+  variant="large"
+>
+  <ContextProvider
+    value={
+      Object {
+        "activeStep": undefined,
+        "goToStepById": [Function],
+        "goToStepByName": [Function],
+        "onBack": [Function],
+        "onClose": [Function],
+        "onNext": [Function],
+      }
+    }
+  >
+    <div
+      className="pf-c-wizard ''"
+    >
+      <WizardHeader
+        closeButtonAriaLabel="'Close'"
+        description=""
+        descriptionId="string"
+        hideClose={false}
+        onClose={[Function]}
+        title="''"
+        titleId="string"
+      />
+      <WizardToggle
+        hasNoBodyPadding={false}
+        isNavOpen={false}
+        nav={[Function]}
+        onNavToggle={[Function]}
+        steps={Array []}
+      >
+        <WizardFooterInternal
+          backButtonText="Back"
+          cancelButtonText="Cancel"
+          firstStep={true}
+          isValid={true}
+          nextButtonText="Next"
+          onBack={[Function]}
+          onClose={[Function]}
+          onNext={[Function]}
+        />
+      </WizardToggle>
+    </div>
+  </ContextProvider>
+</Modal>
+`;

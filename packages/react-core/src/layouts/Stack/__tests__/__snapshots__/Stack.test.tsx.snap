@@ -1,44 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gutter lg 1`] = `
+exports[`gutter 1`] = `
 <Stack
-  gutter="lg"
->
-  <div
-    className="pf-l-stack pf-m-gutter"
-  >
-    <StackItem>
-      <div
-        className="pf-l-stack__item"
-      >
-        Basic content
-      </div>
-    </StackItem>
-  </div>
-</Stack>
-`;
-
-exports[`Gutter md 1`] = `
-<Stack
-  gutter="md"
->
-  <div
-    className="pf-l-stack pf-m-gutter"
-  >
-    <StackItem>
-      <div
-        className="pf-l-stack__item"
-      >
-        Basic content
-      </div>
-    </StackItem>
-  </div>
-</Stack>
-`;
-
-exports[`Gutter sm 1`] = `
-<Stack
-  gutter="sm"
+  hasGutter={true}
 >
   <div
     className="pf-l-stack pf-m-gutter"

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export interface BodyCellProps {
@@ -17,8 +18,10 @@ export interface BodyCellProps {
   value?: any;
   isValid?: boolean;
   name?: string;
+  tooltip?: string;
+  onMouseEnter?: (event: any) => void;
+  children: React.ReactNode;
 }
-
 export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   'data-label': dataLabel = '',
   className = '',
@@ -27,6 +30,9 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isVisible,
   parentId,
   textCenter = false,
+  tooltip: tooltipProp = '',
+  onMouseEnter: onMouseEnterProp = () => {},
+  children,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   errorText,
   isValid,
@@ -38,12 +44,34 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
 }: BodyCellProps) => {
-  const Component = component as any;
   const mappedProps = {
     ...(dataLabel ? { 'data-label': dataLabel } : {}),
     ...props
   };
-  return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : (
-    <Component {...mappedProps} className={css(className, textCenter && styles.modifiers.center)} colSpan={colSpan} />
+
+  const [tooltip, setTooltip] = React.useState('');
+  const onMouseEnter = (event: any) => {
+    if (event.target.offsetWidth < event.target.scrollWidth) {
+      setTooltip(tooltipProp || event.target.innerHTML);
+    } else {
+      setTooltip('');
+    }
+    onMouseEnterProp(event);
+  };
+
+  const Component = component as any;
+  const cell = (
+    <Component
+      {...mappedProps}
+      onMouseEnter={onMouseEnter}
+      className={css(className, textCenter && styles.modifiers.center)}
+      colSpan={colSpan}
+    >
+      {children}
+    </Component>
   );
+
+  const bodyCell = tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
+
+  return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : bodyCell;
 };

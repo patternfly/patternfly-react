@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory';
+import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -164,8 +164,9 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
     ...labelComponent.props
   });
 
-  // Note: theme is required by voronoiContainerMixin, but @types/victory is missing a prop type
+  // Note: theme is required by voronoiContainerMixin
   return (
+    // Note: className is valid, but Victory is missing a type
     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />

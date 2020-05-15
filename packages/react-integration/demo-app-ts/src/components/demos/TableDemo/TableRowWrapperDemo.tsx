@@ -27,7 +27,8 @@ export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWr
         }
       ]
     };
-    this.customRowWrapper = ({ trRef, className, rowProps, row: { isExpanded, isHeightAuto }, ...rest }) => {
+    this.customRowWrapper = ({ trRef, className, rowProps = { rowIndex: 0, rowKey: '' }, ...rest }) => {
+      const isExpanded = rest.row ? rest.row.isExpanded : false;
       const isOddRow = (rowProps.rowIndex + 1) % 2;
       const customStyle = {
         borderLeft: '3px solid var(--pf-global--primary-color--100)'
@@ -41,8 +42,7 @@ export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWr
             isOddRow ? 'odd-row-class' : 'even-row-class',
             'custom-static-class',
             isExpanded !== undefined && styles.tableExpandableRow,
-            isExpanded && styles.modifiers.expanded,
-            isHeightAuto && styles.modifiers.heightAuto
+            isExpanded && styles.modifiers.expanded
           )}
           hidden={isExpanded !== undefined && !isExpanded}
           style={isOddRow ? customStyle : {}}

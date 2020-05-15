@@ -5,39 +5,40 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
   className="''"
 >
   <FormHelperText
+    icon={null}
     isError={false}
     isHidden={true}
   />
   <FormGroup
     fieldId="pf-login-username-id"
     isRequired={true}
-    isValid={true}
     label="'Username'"
+    validated="default"
   >
     <ForwardRef
       autoFocus={true}
       id="pf-login-username-id"
       isRequired={true}
-      isValid={true}
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
+      validated="default"
       value="''"
     />
   </FormGroup>
   <FormGroup
     fieldId="pf-login-password-id"
     isRequired={true}
-    isValid={true}
     label="'Password'"
+    validated="default"
   >
     <ForwardRef
       id="pf-login-password-id"
       isRequired={true}
-      isValid={true}
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
+      validated="default"
       value="''"
     />
   </FormGroup>
@@ -55,7 +56,7 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
     />
   </FormGroup>
   <ActionGroup>
-    <Component
+    <Button
       isBlock={true}
       isDisabled={false}
       onClick={[Function]}
@@ -63,7 +64,7 @@ exports[`LoginForm should match snapshot (auto-generated) 1`] = `
       variant="primary"
     >
       'Log In'
-    </Component>
+    </Button>
   </ActionGroup>
 </Form>
 `;

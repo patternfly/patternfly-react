@@ -11,9 +11,11 @@ export interface WizardHeaderProps {
   /** Title of the wizard */
   title: string;
   /** Description of the wizard */
-  description?: string;
-  /** aria-label applied to the X (Close) button */
-  ariaLabelCloseButton?: string;
+  description?: React.ReactNode;
+  /** Flag indicating whether the close button should be in the header */
+  hideClose?: boolean;
+  /** Aria-label applied to the X (Close) button */
+  closeButtonAriaLabel?: string;
   /** id for the title */
   titleId?: string;
   /** id for the description */
@@ -24,15 +26,18 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   onClose = () => undefined,
   title,
   description,
-  ariaLabelCloseButton,
+  hideClose,
+  closeButtonAriaLabel,
   titleId,
   descriptionId
 }: WizardHeaderProps) => (
   <div className={css(styles.wizardHeader)}>
-    <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabelCloseButton} onClick={onClose}>
-      <TimesIcon aria-hidden="true" />
-    </Button>
-    <Title size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>
+    {!hideClose && (
+      <Button variant="plain" className={css(styles.wizardClose)} aria-label={closeButtonAriaLabel} onClick={onClose}>
+        <TimesIcon aria-hidden="true" />
+      </Button>
+    )}
+    <Title headingLevel="h2" size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>
       {title || <>&nbsp;</>}
     </Title>
     {description && (

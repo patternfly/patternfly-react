@@ -2,7 +2,7 @@
 
 import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
-import CellSizeAndPositionManager from './CellSizeAndPositionManager';
+import CellSizeAndPositionManager, { SizeAndPositionData } from './CellSizeAndPositionManager';
 import { getMaxElementSize } from './maxElementSize';
 
 interface ContainerSizeAndOffset {
@@ -75,11 +75,11 @@ export default class ScalingCellSizeAndPositionManager {
     return Math.round(offsetPercentage * (safeTotalSize - totalSize));
   }
 
-  getSizeAndPositionOfCell(index: number) {
+  getSizeAndPositionOfCell(index: number): SizeAndPositionData {
     return this._cellSizeAndPositionManager.getSizeAndPositionOfCell(index);
   }
 
-  getSizeAndPositionOfLastMeasuredCell() {
+  getSizeAndPositionOfLastMeasuredCell(): SizeAndPositionData {
     return this._cellSizeAndPositionManager.getSizeAndPositionOfLastMeasuredCell();
   }
 

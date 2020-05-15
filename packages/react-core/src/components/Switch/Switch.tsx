@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { getUniqueId } from '../../helpers/util';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface SwitchProps
   extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
@@ -12,9 +12,9 @@ export interface SwitchProps
   /** Additional classes added to the Switch */
   className?: string;
   /** Text value for the label when on */
-  label?: string;
+  label?: React.ReactNode;
   /** Text value for the label when off */
-  labelOff?: string;
+  labelOff?: React.ReactNode;
   /** Flag to show if the Switch is checked. */
   isChecked?: boolean;
   /** Flag to show if the Switch is disabled. */
@@ -25,21 +25,17 @@ export interface SwitchProps
   'aria-label'?: string;
 }
 
-class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
-  id = '';
+export class Switch extends React.Component<SwitchProps & OUIAProps> {
+  id: string;
 
   static defaultProps: SwitchProps = {
-    id: '',
-    className: '',
-    label: '',
-    labelOff: '',
     isChecked: true,
     isDisabled: false,
     'aria-label': '',
     onChange: () => undefined as any
   };
 
-  constructor(props: SwitchProps & InjectedOuiaProps) {
+  constructor(props: SwitchProps & OUIAProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
       // eslint-disable-next-line no-console
@@ -58,21 +54,13 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
       isChecked,
       isDisabled,
       onChange,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
 
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
-      <label
-        className={css(styles.switch, className)}
-        htmlFor={this.id}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Switch',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
-      >
+      <label className={css(styles.switch, className)} htmlFor={this.id} {...getOUIAProps('Switch', ouiaId)}>
         <input
           id={this.id}
           className={css(styles.switchInput)}
@@ -83,7 +71,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
           aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
           {...props}
         />
-        {label !== '' ? (
+        {label !== undefined ? (
           <React.Fragment>
             <span className={css(styles.switchToggle)} />
             <span
@@ -98,25 +86,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
               id={isAriaLabelledBy ? `${this.id}-off` : null}
               aria-hidden="true"
             >
-              {labelOff || label}
-            </span>
-          </React.Fragment>
-        ) : label !== '' && labelOff !== '' ? (
-          <React.Fragment>
-            <span className={css(styles.switchToggle)} />
-            <span
-              className={css(styles.switchLabel, styles.modifiers.on)}
-              id={isAriaLabelledBy ? `${this.id}-on` : null}
-              aria-hidden="true"
-            >
-              {label}
-            </span>
-            <span
-              className={css(styles.switchLabel, styles.modifiers.off)}
-              id={isAriaLabelledBy ? `${this.id}-off` : null}
-              aria-hidden="true"
-            >
-              {labelOff}
+              {labelOff !== undefined ? labelOff : label}
             </span>
           </React.Fragment>
         ) : (
@@ -130,7 +100,3 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
     );
   }
 }
-
-const SwitchWithOuiaContext = withOuiaContext(Switch);
-
-export { SwitchWithOuiaContext as Switch };

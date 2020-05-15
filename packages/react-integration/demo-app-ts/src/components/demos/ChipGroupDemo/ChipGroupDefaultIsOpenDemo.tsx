@@ -10,8 +10,8 @@ interface BadgeChipState {
 }
 
 export class ChipGroupDefaultIsOpenDemo extends Component<{}, BadgeChipState> {
-  deleteItem: (id: any) => void;
-  constructor(props) {
+  deleteItem: (id: string) => void;
+  constructor(props: {}) {
     super(props);
     this.state = {
       badgeChipArray: [
@@ -24,10 +24,20 @@ export class ChipGroupDefaultIsOpenDemo extends Component<{}, BadgeChipState> {
           name: 'Limes',
           isRead: true,
           count: 8
+        },
+        {
+          name: 'oranges',
+          isRead: true,
+          count: 3
+        },
+        {
+          name: 'grapfruit',
+          isRead: true,
+          count: 1
         }
       ]
     };
-    this.deleteItem = (id: any) => {
+    this.deleteItem = (id: string) => {
       const copyOfbadgeChipArray = this.state.badgeChipArray;
       const index = copyOfbadgeChipArray.findIndex(chipObj => chipObj.name === id);
 

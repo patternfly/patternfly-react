@@ -8,6 +8,6 @@ import { WizardNav } from '../../WizardNav';
 import {} from '../..';
 
 it('WizardNav should match snapshot (auto-generated)', () => {
-  const view = shallow(<WizardNav children={'any'} ariaLabel={'string'} isOpen={false} returnList={false} />);
+  const view = shallow(<WizardNav children={'any'} aria-label={'string'} isOpen={false} returnList={false} />);
   expect(view).toMatchSnapshot();
 });

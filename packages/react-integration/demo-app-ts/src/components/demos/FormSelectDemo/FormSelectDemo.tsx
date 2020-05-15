@@ -7,10 +7,22 @@ interface FormSelectState {
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
 }
 
+interface FormSelectOption {
+  value: string;
+  label: string;
+  disabled: boolean;
+}
+
+interface FormSelectGroup {
+  groupLabel: string;
+  disabled: boolean;
+  options: FormSelectOption[];
+}
+
 export class FormSelectDemo extends Component<{}, FormSelectState> {
-  groups: any[];
-  validatedSelectOptions: any[];
-  constructor(props) {
+  groups: FormSelectGroup[];
+  validatedSelectOptions: FormSelectOption[];
+  constructor(props: {}) {
     super(props);
     this.state = {
       value: '2',
@@ -67,10 +79,10 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
     window.scrollTo(0, 0);
   }
 
-  getOptionLbl = option => option.label;
-  getOptionVal = option => option.value;
-  getOptionsGroupLbl = group => group && group.groupLabel;
-  getGroupOptions = group => group && group.options;
+  getOptionLbl = (option: FormSelectOption) => option.label;
+  getOptionVal = (option: FormSelectOption) => option.value;
+  getOptionsGroupLbl = (group: FormSelectGroup) => group && group.groupLabel;
+  getGroupOptions = (group: FormSelectGroup) => group && group.options;
 
   render() {
     return (
@@ -78,7 +90,7 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
         <FormSelect id="select1" value={this.state.value} onChange={this.onChange} aria-label="FormSelect Input">
           {this.groups.map((group, index) => (
             <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
-              {group.options.map((option, i) => (
+              {group.options.map((option: FormSelectOption, i: number) => (
                 <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
               ))}
             </FormSelectOptionGroup>

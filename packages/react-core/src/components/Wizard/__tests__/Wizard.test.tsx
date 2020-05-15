@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
 test('Wizard should match snapshot', () => {
@@ -27,8 +27,9 @@ test('Wizard should match snapshot', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const name = { step };
   };
+
   const view = mount(
-    <Wizard isOpen title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} />
+    <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} />
   );
   // ran into: https://github.com/airbnb/enzyme/issues/1213
   // so instead of: expect(view).toMatchSnapshot();

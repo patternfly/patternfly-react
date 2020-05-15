@@ -8,6 +8,6 @@ import { EmptyState } from '../../EmptyState';
 import {} from '../..';
 
 it('EmptyState should match snapshot (auto-generated)', () => {
-  const view = shallow(<EmptyState className={"''"} children={<div>ReactNode</div>} variant={'small'} />);
+  const view = shallow(<EmptyState className={"''"} children={<div>ReactNode</div>} variant={'sm'} />);
   expect(view).toMatchSnapshot();
 });

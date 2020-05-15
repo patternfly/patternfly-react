@@ -4,6 +4,7 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
 <Fragment>
   <button
     aria-expanded={true}
+    aria-label="'Wizard Toggle'"
     className="pf-c-wizard__toggle pf-m-expanded"
     onClick={[Function]}
   >
@@ -19,14 +20,16 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
          
       </li>
     </ol>
-    <CaretDownIcon
-      aria-hidden="true"
+    <span
       className="pf-c-wizard__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    >
+      <CaretDownIcon
+        aria-hidden="true"
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
   </button>
   <div
     className="pf-c-wizard__outer-wrap"
@@ -35,7 +38,7 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
       className="pf-c-wizard__inner-wrap"
     >
       <WizardBody
-        hasBodyPadding={true}
+        hasNoBodyPadding={false}
       />
     </div>
     <div>

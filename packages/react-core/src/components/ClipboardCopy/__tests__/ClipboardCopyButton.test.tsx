@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ClipboardCopyButton } from '../ClipboardCopyButton';
+import { Button } from '../../Button';
 
 const props = {
   id: 'my-id',
@@ -26,6 +27,6 @@ test('copy button onClick', () => {
       Copy to Clipboard
     </ClipboardCopyButton>
   );
-  view.find('button').simulate('click');
+  view.find(Button).simulate('click');
   expect(onclick).toBeCalled();
 });

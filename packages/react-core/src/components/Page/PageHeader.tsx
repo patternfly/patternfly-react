@@ -8,17 +8,15 @@ import { PageContextConsumer } from './Page';
 export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the page header */
   className?: string;
-  /** Component to render the logo/brand (e.g. <Brand />) */
+  /** Component to render the logo/brand, use <Brand /> */
   logo?: React.ReactNode;
   /** Additional props passed to the logo anchor container */
   logoProps?: object;
   /** Component to use to wrap the passed <logo> */
   logoComponent?: React.ReactNode;
-  /** Component to render the toolbar (e.g. <Toolbar />) */
-  toolbar?: React.ReactNode;
-  /** Component to render the avatar (e.g. <Avatar /> */
-  avatar?: React.ReactNode;
-  /** Component to render navigation within the header (e.g. <Nav /> */
+  /** Component to render the header tools, use <PageHeaderTools />  */
+  headerTools?: React.ReactNode;
+  /** Component to render navigation within the header, use <Nav /> */
   topNav?: React.ReactNode;
   /** True to show the nav toggle button (toggles side nav) */
   showNavToggle?: boolean;
@@ -37,13 +35,12 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
 }
 
-export const PageHeader = ({
+export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   className = '',
   logo = null as React.ReactNode,
   logoProps = null as object,
   logoComponent = 'a',
-  toolbar = null as React.ReactNode,
-  avatar = null as React.ReactNode,
+  headerTools = null as React.ReactNode,
   topNav = null as React.ReactNode,
   isNavOpen = true,
   role = undefined as string,
@@ -89,12 +86,7 @@ export const PageHeader = ({
             pf-c-context-selector
           </div> */}
             {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
-            {(toolbar || avatar) && (
-              <div className={css(styles.pageHeaderTools)}>
-                {toolbar}
-                {avatar}
-              </div>
-            )}
+            {headerTools}
           </header>
         );
       }}

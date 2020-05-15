@@ -6,6 +6,8 @@ import { NavContext, NavSelectClickHandler } from './Nav';
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
   /** Content rendered inside the nav item */
   children?: React.ReactNode;
+  /** Whether to add className to children */
+  styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
   /** Target navigation link */
@@ -25,9 +27,10 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
-  children = null as React.ReactNode,
-  className = '',
-  to = '',
+  children,
+  styleChildren = true,
+  className,
+  to,
   isActive = false,
   groupId = null as string,
   itemId = null as string,
@@ -38,40 +41,42 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 }: NavItemProps) => {
   const Component = component as any;
 
-  const renderDefaultLink = (): React.ReactNode => {
+  const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
-      <NavContext.Consumer>
-        {(context: any) => (
-          <Component
-            href={to}
-            onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-            className={css(styles.navLink, isActive && styles.modifiers.current, className)}
-            aria-current={isActive ? 'page' : null}
-            {...props}
-          >
-            {children}
-          </Component>
-        )}
-      </NavContext.Consumer>
+      <Component
+        href={to}
+        onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+        className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+        aria-current={isActive ? 'page' : null}
+        {...props}
+      >
+        {children}
+      </Component>
     );
   };
 
-  const renderClonedChild = (child: React.ReactElement): React.ReactNode => (
-    <NavContext.Consumer>
-      {(context: any) =>
-        React.cloneElement(child, {
-          onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-          className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className),
-          'aria-current': isActive ? 'page' : null
-        })
-      }
-    </NavContext.Consumer>
-  );
+  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode => {
+    const childClass = child.props && child.props.className;
+    const childClassName = styleChildren
+      ? css(styles.navLink, isActive && styles.modifiers.current, childClass)
+      : childClass;
+    return React.cloneElement(child, {
+      onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
+      className: childClassName,
+      'aria-current': isActive ? 'page' : null
+    });
+  };
 
   return (
     <li className={css(styles.navItem, className)}>
-      {React.isValidElement(children) ? renderClonedChild(children as React.ReactElement) : renderDefaultLink()}
+      <NavContext.Consumer>
+        {(context: any) =>
+          React.isValidElement(children)
+            ? renderClonedChild(context, children as React.ReactElement)
+            : renderDefaultLink(context)
+        }
+      </NavContext.Consumer>
     </li>
   );
 };

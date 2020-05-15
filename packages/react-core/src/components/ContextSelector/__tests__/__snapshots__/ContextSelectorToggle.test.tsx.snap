@@ -12,14 +12,16 @@ exports[`Renders ContextSelectorToggle 1`] = `
   <span
     className="pf-c-context-selector__toggle-text"
   />
-  <CaretDownIcon
-    aria-hidden={true}
+  <span
     className="pf-c-context-selector__toggle-icon"
-    color="currentColor"
-    noVerticalAlign={false}
-    size="sm"
-    title={null}
-  />
+  >
+    <CaretDownIcon
+      aria-hidden={true}
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
 </button>
 `;
 
@@ -28,8 +30,6 @@ exports[`Verify ESC press  1`] = `
   className=""
   id="toggle-id"
   isActive={false}
-  isFocused={false}
-  isHovered={false}
   isOpen={true}
   onEnter={[Function]}
   onToggle={[Function]}
@@ -47,35 +47,36 @@ exports[`Verify ESC press  1`] = `
     <span
       className="pf-c-context-selector__toggle-text"
     />
-    <CaretDownIcon
-      aria-hidden={true}
+    <span
       className="pf-c-context-selector__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
+      <CaretDownIcon
         aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-context-selector__toggle-icon"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </ContextSelectorToggle>
 `;
@@ -85,8 +86,6 @@ exports[`Verify ESC press with not isOpen 1`] = `
   className=""
   id="toggle-id"
   isActive={false}
-  isFocused={false}
-  isHovered={false}
   isOpen={false}
   onEnter={[Function]}
   onToggle={[MockFunction]}
@@ -104,35 +103,36 @@ exports[`Verify ESC press with not isOpen 1`] = `
     <span
       className="pf-c-context-selector__toggle-text"
     />
-    <CaretDownIcon
-      aria-hidden={true}
+    <span
       className="pf-c-context-selector__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
+      <CaretDownIcon
         aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-context-selector__toggle-icon"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </ContextSelectorToggle>
 `;
@@ -142,8 +142,6 @@ exports[`Verify keydown enter  1`] = `
   className=""
   id="toggle-id"
   isActive={false}
-  isFocused={false}
-  isHovered={false}
   isOpen={false}
   onEnter={[MockFunction]}
   onToggle={[MockFunction]}
@@ -161,35 +159,36 @@ exports[`Verify keydown enter  1`] = `
     <span
       className="pf-c-context-selector__toggle-text"
     />
-    <CaretDownIcon
-      aria-hidden={true}
+    <span
       className="pf-c-context-selector__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
+      <CaretDownIcon
         aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-context-selector__toggle-icon"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </ContextSelectorToggle>
 `;
@@ -199,8 +198,6 @@ exports[`Verify keydown tab  1`] = `
   className=""
   id="toggle-id"
   isActive={false}
-  isFocused={false}
-  isHovered={false}
   isOpen={true}
   onEnter={[Function]}
   onToggle={[Function]}
@@ -218,35 +215,36 @@ exports[`Verify keydown tab  1`] = `
     <span
       className="pf-c-context-selector__toggle-text"
     />
-    <CaretDownIcon
-      aria-hidden={true}
+    <span
       className="pf-c-context-selector__toggle-icon"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
     >
-      <svg
+      <CaretDownIcon
         aria-hidden={true}
-        aria-labelledby={null}
-        className="pf-c-context-selector__toggle-icon"
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
       >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          transform=""
-        />
-      </svg>
-    </CaretDownIcon>
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+            transform=""
+          />
+        </svg>
+      </CaretDownIcon>
+    </span>
   </button>
 </ContextSelectorToggle>
 `;

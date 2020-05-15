@@ -3,66 +3,58 @@ import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
 interface ContextSelectorState {
   isOpen: boolean;
-  selected: string;
+  selected: React.ReactNode;
   searchValue: string;
   filteredItems: string[];
 }
 
 export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
-  items: string[];
-  onToggle: (event: any, isOpen: any) => void;
-  onSelect: (event: any, value: string) => void;
-  onSearchInputChange: (value: string) => void;
-  onSearchButtonClick: (event: any) => void;
-  constructor(props) {
-    super(props);
-    this.items = [
-      'My Project',
-      'OpenShift Cluster',
-      'Production Ansible',
-      'AWS',
-      'Azure',
-      'My Project 2',
-      'OpenShift Cluster ',
-      'Production Ansible 2 ',
-      'AWS 2',
-      'Azure 2'
-    ];
+  items = [
+    'My Project',
+    'OpenShift Cluster',
+    'Production Ansible',
+    'AWS',
+    'Azure',
+    'My Project 2',
+    'OpenShift Cluster ',
+    'Production Ansible 2 ',
+    'AWS 2',
+    'Azure 2'
+  ];
 
-    this.state = {
-      isOpen: false,
-      selected: this.items[0],
-      searchValue: '',
-      filteredItems: this.items
-    };
+  state = {
+    isOpen: false,
+    selected: this.items[0],
+    searchValue: '',
+    filteredItems: this.items
+  };
 
-    this.onToggle = (event, isOpen) => {
-      this.setState({
-        isOpen
-      });
-    };
+  onToggle = (event: React.SyntheticEvent, isOpen: boolean) => {
+    this.setState({
+      isOpen
+    });
+  };
 
-    this.onSelect = (event, value) => {
-      this.setState({
-        selected: value,
-        isOpen: !this.state.isOpen
-      });
-    };
+  onSelect = (event: React.SyntheticEvent, value: React.ReactNode) => {
+    this.setState({
+      selected: value,
+      isOpen: !this.state.isOpen
+    });
+  };
 
-    this.onSearchInputChange = value => {
-      this.setState({ searchValue: value });
-    };
+  onSearchInputChange = (value: string) => {
+    this.setState({ searchValue: value });
+  };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    this.onSearchButtonClick = _event => {
-      const filtered =
-        this.state.searchValue === ''
-          ? this.items
-          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onSearchButtonClick = (event?: React.SyntheticEvent<HTMLButtonElement, Event>) => {
+    const filtered =
+      this.state.searchValue === ''
+        ? this.items
+        : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
 
-      this.setState({ filteredItems: filtered || [] });
-    };
-  }
+    this.setState({ filteredItems: filtered || [] });
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);

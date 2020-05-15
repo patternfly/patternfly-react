@@ -80,7 +80,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           id="textarea1"
           value={textAreaValue}
           onChange={this.handleChange}
-          isValid={isValid}
+          validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 1"
         />
         <Text>Required text area</Text>
@@ -89,7 +89,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           value={requiredTextAreaValue}
           onChange={this.handleChangeRequired}
           isRequired
-          isValid={requiredIsValid}
+          validated={requiredIsValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 2"
         />
         <Text>Resize text area horizontally </Text>
@@ -98,7 +98,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           resizeOrientation="horizontal"
           value={resizeHorizontalTextArea}
           onChange={this.handleChangeHorizontal}
-          isValid={horizontalIsValid}
+          validated={horizontalIsValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 3"
         />
         <Text>Resize text area vertically </Text>
@@ -107,7 +107,7 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           resizeOrientation="vertical"
           value={resizeVerticalTextArea}
           onChange={this.handleChangeVertical}
-          isValid={verticalIsValid}
+          validated={verticalIsValid ? ValidatedOptions.default : ValidatedOptions.error}
           aria-label="text area example 4"
         />
         <Text>Validated text area </Text>

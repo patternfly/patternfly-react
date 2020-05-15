@@ -8,6 +8,6 @@ import { DrawerPanelContent } from '../../DrawerPanelContent';
 import {} from '../..';
 
 it('DrawerPanelContent should match snapshot (auto-generated)', () => {
-  const view = shallow(<DrawerPanelContent className={"''"} children={<div>ReactNode</div>} noPadding={false} />);
+  const view = shallow(<DrawerPanelContent className={"''"} children={<div>ReactNode</div>} hasNoPadding={false} />);
   expect(view).toMatchSnapshot();
 });

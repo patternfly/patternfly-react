@@ -1,7 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Fragment>
+  <div
+    aria-label="string"
+    className="pf-c-tabs ''"
+    data-ouia-component-id={0}
+    data-ouia-component-type="PF4/Tabs"
+    data-ouia-safe={true}
+    id="string"
+    onSelect={[Function]}
+    variant="div"
+  >
+    <button
+      aria-hidden={false}
+      aria-label="'Scroll left'"
+      className="pf-c-tabs__scroll-button"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item ''"
+        key="0"
+      >
+        <TabButton
+          aria-controls="pf-tab-section-undefined-string"
+          className="pf-c-tabs__link"
+          id="pf-tab-undefined-string"
+          onClick={[Function]}
+        />
+      </li>
+    </ul>
+    <button
+      aria-hidden={false}
+      aria-label="'Scroll right'"
+      className="pf-c-tabs__scroll-button"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </button>
+  </div>
+  <ForwardRef
+    activeKey={0}
+    child={
+      <div>
+        ReactNode
+      </div>
+    }
+    id="string"
+    key="0"
+  />
+</Fragment>
 `;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Title, TitleLevel } from '../Title';
+import { Title, TitleSizes } from '../Title';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Login/login';
 
@@ -23,7 +23,7 @@ export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
 }: LoginMainHeaderProps) => (
   <header className={css(styles.loginMainHeader, className)} {...props}>
     {title && (
-      <Title headingLevel={TitleLevel.h2} size="3xl">
+      <Title headingLevel="h2" size={TitleSizes['3xl']}>
         {title}
       </Title>
     )}

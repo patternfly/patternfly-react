@@ -7,32 +7,38 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
   /** Additional classes added to the ModalBox */
   className?: string;
-  /** Creates a large version of the ModalBox */
-  isLarge?: boolean;
-  /** Creates a small version of the ModalBox. */
-  isSmall?: boolean;
-  /** String to use for Modal Box aria-label */
-  title: string;
+  /** Variant of the modal */
+  variant?: 'small' | 'large' | 'default';
+  /** Id to use for Modal Box label */
+  'aria-labelledby'?: string;
+  /** Accessible descriptor of modal */
+  'aria-label'?: string;
   /** Id to use for Modal Box description */
-  id: string;
+  'aria-describedby': string;
 }
 
 export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   children,
   className = '',
-  isLarge = false,
-  isSmall = false,
-  title,
-  id,
+  variant = 'default',
+  'aria-labelledby': ariaLabelledby,
+  'aria-label': ariaLabel = '',
+  'aria-describedby': ariaDescribedby,
   ...props
 }: ModalBoxProps) => (
   <div
     {...props}
     role="dialog"
-    aria-label={title}
-    aria-describedby={id}
+    aria-label={ariaLabel || null}
+    aria-labelledby={ariaLabelledby || null}
+    aria-describedby={ariaDescribedby}
     aria-modal="true"
-    className={css(styles.modalBox, className, isLarge && styles.modifiers.lg, isSmall && styles.modifiers.sm)}
+    className={css(
+      styles.modalBox,
+      className,
+      variant === 'large' && styles.modifiers.lg,
+      variant === 'small' && styles.modifiers.sm
+    )}
   >
     {children}
   </div>

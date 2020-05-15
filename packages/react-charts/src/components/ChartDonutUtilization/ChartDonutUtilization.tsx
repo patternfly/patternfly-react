@@ -5,14 +5,14 @@ import {
   AnimatePropTypeInterface,
   CategoryPropType,
   ColorScalePropType,
+  Data,
   DataGetterPropType,
-  EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
+  EventPropTypeInterface,
   VictoryStyleInterface
-} from 'victory';
-import { Data } from 'victory-core';
+} from 'victory-core';
+import { VictoryPie, VictorySliceProps } from 'victory-pie';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartCommonStyles, ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
@@ -215,6 +215,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * ]}
    */
   events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
+
   /**
    * ChartDonutUtilization uses the standard externalEventMutations prop.
    */
@@ -239,7 +240,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
    */
-  innerRadius?: number;
+  innerRadius?: number | ((props: VictorySliceProps) => number);
   /**
    * Invert the threshold color scale used to represent warnings, errors, etc.
    *
@@ -270,7 +271,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * When this prop is not given, the label will be positioned at the centroid of each slice.
    */
-  labelPosition?: 'startAngle' | 'endAngle' | 'centroid';
+  labelPosition?: 'startAngle' | 'centroid' | 'endAngle' | ((props: VictorySliceProps) => string);
   /**
    * The legend component to render with chart.
    *
@@ -313,7 +314,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    */
-  labelRadius?: number;
+  labelRadius?: number | ((props: VictorySliceProps) => number);
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -323,7 +324,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The name prop is used to reference a component instance when defining shared events.
    */
@@ -349,7 +350,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
    */
-  radius?: number;
+  radius?: number | ((props: VictorySliceProps) => number);
   /**
    * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
    */

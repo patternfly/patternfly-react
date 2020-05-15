@@ -18,14 +18,13 @@ it('Toggle should match snapshot (auto-generated)', () => {
       onToggle={() => {}}
       onEnter={() => {}}
       parentRef={'any'}
-      isFocused={false}
-      isHovered={false}
       isActive={false}
       isDisabled={false}
       isPlain={false}
       isPrimary={false}
       isSplitButton={false}
-      ariaHasPopup={true}
+      aria-haspopup={true}
+      bubbleEvent={false}
     />
   );
   expect(view).toMatchSnapshot();

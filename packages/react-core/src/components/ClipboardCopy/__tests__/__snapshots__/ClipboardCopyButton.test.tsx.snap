@@ -36,20 +36,20 @@ exports[`copy button render 1`] = `
   trigger="mouseenter focus click"
   zIndex={9999}
 >
-  <button
+  <Button
     aria-label="click this button to copy text"
     aria-labelledby="my-id my-text-id"
-    className="pf-c-clipboard-copy__group-copy fancy-copy-button"
+    className="fancy-copy-button"
     id="my-id"
     onClick={[MockFunction]}
     type="button"
+    variant="control"
   >
     <CopyIcon
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
-  </button>
+  </Button>
 </Tooltip>
 `;

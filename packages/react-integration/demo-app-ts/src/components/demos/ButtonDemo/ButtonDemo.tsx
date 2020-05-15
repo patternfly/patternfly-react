@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button, ButtonProps } from '@patternfly/react-core';
 
+const href = 'https://www.google.com';
+
 export class ButtonDemo extends React.Component {
   myButtonProps: ButtonProps = {
     component: 'button',
-    href: 'https://github.com/patternfly/patternfly-next',
+    href,
     target: '_blank'
   };
 
@@ -15,7 +17,7 @@ export class ButtonDemo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <a href="https://github.com/patternfly/patternfly-next">
+        <a href={href}>
           <Button
             component={this.myButtonProps.component}
             href={this.myButtonProps.href}
@@ -25,7 +27,7 @@ export class ButtonDemo extends React.Component {
             Link to Core Docs
           </Button>{' '}
         </a>
-        <a href="https://github.com/patternfly/patternfly-next">
+        <a href={href}>
           <Button
             component={this.myButtonProps.component}
             href={this.myButtonProps.href}

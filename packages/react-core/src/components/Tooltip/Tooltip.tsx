@@ -4,7 +4,7 @@ import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
@@ -149,7 +149,10 @@ export class Tooltip extends React.Component<TooltipProps> {
     } = this.props;
     const content = (
       <div
-        className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
+        className={css(
+          !enableFlip && (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top),
+          className
+        )}
         role="tooltip"
         id={id}
         {...rest}

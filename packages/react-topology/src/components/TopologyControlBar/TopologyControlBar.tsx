@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
+import {
+  Button,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
+  GenerateId,
+  Tooltip
+} from '@patternfly/react-core';
 import ExpandIcon from '@patternfly/react-icons/dist/js/icons/expand-icon';
 import ExpandArrowsAltIcon from '@patternfly/react-icons/dist/js/icons/expand-arrows-alt-icon';
 import SearchPlusIcon from '@patternfly/react-icons/dist/js/icons/search-plus-icon';
@@ -242,8 +250,7 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   className = null,
   children = null,
   controlButtons = [],
-  onButtonClick = () => undefined,
-  ...props
+  onButtonClick = () => undefined
 }: TopologyControlBarProps) => {
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, button: TopologyControlButton) => {
     event.preventDefault();
@@ -282,13 +289,19 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   };
 
   return (
-    <Toolbar className={className} {...props}>
-      <ToolbarGroup>
-        {controlButtons.map((button: TopologyControlButton) =>
-          button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>
-        )}
-        {children}
-      </ToolbarGroup>
-    </Toolbar>
+    <GenerateId prefix="pf-topology-control-bar-">
+      {randomId => (
+        <Toolbar className={className} style={{ backgroundColor: 'transparent', padding: 0 }} id={randomId}>
+          <ToolbarContent>
+            <ToolbarGroup breakpointMods={[{ modifier: 'space-items-none' }]}>
+              {controlButtons.map((button: TopologyControlButton) =>
+                button.hidden ? null : <ToolbarItem key={button.id}>{renderButton(button)}</ToolbarItem>
+              )}
+              {children}
+            </ToolbarGroup>
+          </ToolbarContent>
+        </Toolbar>
+      )}
+    </GenerateId>
   );
 };

@@ -11,9 +11,7 @@ describe('Switch Demo Test', () => {
   });
 
   it('Verify OUIA attributes exist', () => {
-    cy.get('.pf-c-switch[for="simple-switch"]').should('have.attr', 'data-ouia-component-type', 'Switch');
+    cy.get('.pf-c-switch[for="simple-switch"]').should('have.attr', 'data-ouia-component-type', 'PF4/Switch');
     cy.get('.pf-c-switch[for="simple-switch"]').should('have.attr', 'data-ouia-component-id', 'first_switch');
-    cy.get('.pf-c-switch[for="disabled-switch-off"]').should('have.attr', 'data-ouia-component-type', 'Switch');
-    cy.get('.pf-c-switch[for="disabled-switch-off"]').should('not.have.attr', 'data-ouia-component-id');
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-virtualized-extension",
-  "version": "1.4.67",
+  "version": "4.2.39",
   "description": "This library provides efficient rendering extensions for PatternFly 4 React tables and lists.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -8,7 +8,7 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "prerelease-v4"
   },
   "repository": {
     "type": "git",
@@ -26,51 +26,31 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-virtualized-extension/",
+  "scripts": {
+    "clean": "rimraf dist"
+  },
   "dependencies": {
-    "@patternfly/patternfly": "2.71.6",
-    "@patternfly/react-core": "^3.158.1",
-    "@patternfly/react-icons": "^3.15.17",
-    "@patternfly/react-styles": "^3.7.14",
+    "@patternfly/react-core": "^4.14.1",
+    "@patternfly/react-icons": "^4.2.10",
+    "@patternfly/react-styles": "^4.2.9",
     "@types/react-virtualized": "^9.21.5",
     "clsx": "^1.0.1",
     "dom-helpers": "^2.4.0 || ^3.0.0",
     "linear-layout-vector": "0.0.1",
     "react-lifecycles-compat": "^3.0.4",
-    "react-virtualized": "^9.21.1"
+    "react-virtualized": "^9.21.1",
+    "tslib": "^1.11.1"
   },
   "peerDependencies": {
-    "@patternfly/react-table": "^2.10.0",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0"
-  },
-  "scripts": {
-    "build": "yarn build:babel && node ./build/copyStyles.js",
-    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
-    "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
-    "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-typescript": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
     "@types/dom-helpers": "^3.4.1",
     "@types/react-lifecycles-compat": "^3.0.1",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-plugin-typescript-to-proptypes": "^0.17.1",
-    "css": "^2.2.3",
-    "fs-extra": "^6.0.1",
-    "glob": "^7.1.2",
     "lodash": "^4.17.15",
     "rimraf": "^2.6.2",
+    "typescript": "^3.8.3",
     "uuid": "^3.3.2"
   }
 }

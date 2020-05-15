@@ -1,7 +1,15 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "4.21.31",
+  "version": "5.2.44",
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease-v4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
   "author": "Red Hat",
   "license": "MIT",
   "scripts": {
@@ -17,21 +25,20 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.1.5",
     "@mdx-js/react": "^1.1.5",
-    "@patternfly/patternfly": "2.71.6",
-    "@patternfly/react-catalog-view-extension": "^1.4.66",
-    "@patternfly/react-charts": "^5.3.21",
-    "@patternfly/react-core": "^3.158.1",
-    "@patternfly/react-icons": "^3.15.17",
-    "@patternfly/react-inline-edit-extension": "^2.17.66",
-    "@patternfly/react-styles": "^3.7.14",
-    "@patternfly/react-table": "^2.28.47",
-    "@patternfly/react-tokens": "^2.8.14",
-    "@patternfly/react-topology": "^2.14.66",
-    "@patternfly/react-virtualized-extension": "^1.4.67",
-    "gatsby": "2.20.2",
-    "gatsby-cli": "2.11.0",
-    "gatsby-theme-patternfly-org": "^1.4.1",
-    "gatsby-transformer-react-docgen-typescript": "^0.2.5",
+    "@patternfly/patternfly": "4.10.21",
+    "@patternfly/react-catalog-view-extension": "^4.2.38",
+    "@patternfly/react-charts": "^6.2.12",
+    "@patternfly/react-core": "^4.14.1",
+    "@patternfly/react-icons": "^4.2.10",
+    "@patternfly/react-inline-edit-extension": "^4.3.39",
+    "@patternfly/react-styles": "^4.2.9",
+    "@patternfly/react-table": "^4.3.39",
+    "@patternfly/react-tokens": "^4.3.7",
+    "@patternfly/react-topology": "^4.2.38",
+    "@patternfly/react-virtualized-extension": "^4.2.39",
+    "gatsby": "2.21.0",
+    "gatsby-theme-patternfly-org": "^4.0.6",
+    "gatsby-transformer-react-docgen-typescript": "^4.0.2",
     "null-loader": "^3.0.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
@@ -39,6 +46,8 @@
   },
   "devDependencies": {
     "@patternfly/patternfly-a11y": "^0.0.17",
+    "@types/react": "^16.8.0",
+    "@types/react-dom": "^16.8.0",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"
   },

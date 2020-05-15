@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
-import { getModifier } from '@patternfly/react-styles';
-import { GutterSize } from '../../styles/gutters';
 import { DeviceSizes } from '../../styles/sizes';
 
 export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -13,7 +11,7 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Grid layout */
   className?: string;
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg' | GutterSize;
+  hasGutter?: boolean;
   /** The number of rows a column in the grid should span.  Value should be a number 1-12 */
   span?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a small device */
@@ -31,23 +29,23 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
 export const Grid: React.FunctionComponent<GridProps> = ({
   children = null,
   className = '',
-  gutter = null,
+  hasGutter,
   span = null,
   ...props
 }: GridProps) => {
-  const classes = [styles.grid, span && getModifier(styles, `all_${span}Col`)];
+  const classes = [styles.grid, span && styles.modifiers[`all_${span}Col` as keyof typeof styles.modifiers]];
 
   Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
     const key = propKey as keyof typeof DeviceSizes;
     const propValue = props[key] as gridItemSpanValueShape;
     if (propValue) {
-      classes.push(getModifier(styles, `all_${propValue}ColOn${gridSpanModifier}`));
+      classes.push(styles.modifiers[`all_${propValue}ColOn${gridSpanModifier}` as keyof typeof styles.modifiers]);
     }
     delete props[key];
   });
 
   return (
-    <div className={css(...classes, gutter && styles.modifiers.gutter, className)} {...props}>
+    <div className={css(...classes, hasGutter && styles.modifiers.gutter, className)} {...props}>
       {children}
     </div>
   );

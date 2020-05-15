@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css, getModifier } from '@patternfly/react-styles';
-import { ValidatedOptions } from '../../helpers/constants';
+import { css } from '@patternfly/react-styles';
+import { capitalize, ValidatedOptions } from '../../helpers';
 
 export enum TextAreResizeOrientation {
   horizontal = 'horizontal',
@@ -15,8 +15,6 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   className?: string;
   /** Flag to show if the TextArea is required. */
   isRequired?: boolean;
-  /** Flag to show if the TextArea is valid or invalid. This prop will be deprecated. You should use validated instead. */
-  isValid?: boolean;
   /** Value to indicate if the textarea is modified to show that validation state.
    * If set to success, textarea will be modified to indicate valid state.
    * If set to error, textarea will be modified to indicate error state.
@@ -36,7 +34,6 @@ export class TextArea extends React.Component<TextAreaProps> {
   static defaultProps: TextAreaProps = {
     className: '',
     isRequired: false,
-    isValid: true,
     validated: 'default',
     resizeOrientation: 'both',
     'aria-label': null as string
@@ -58,19 +55,19 @@ export class TextArea extends React.Component<TextAreaProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, value, onChange, isValid, validated, isRequired, resizeOrientation, ...props } = this.props;
-    const orientation = 'resize' + resizeOrientation.charAt(0).toUpperCase() + resizeOrientation.slice(1);
+    const { className, value, onChange, validated, isRequired, resizeOrientation, ...props } = this.props;
+    const orientation = `resize${capitalize(resizeOrientation)}` as 'resizeVertical' | 'resizeHorizontal';
     return (
       <textarea
         className={css(
           styles.formControl,
           className,
-          resizeOrientation !== TextAreResizeOrientation.both && getModifier(styles, orientation),
+          resizeOrientation !== TextAreResizeOrientation.both && styles.modifiers[orientation],
           validated === ValidatedOptions.success && styles.modifiers.success
         )}
         onChange={this.handleChange}
         {...(typeof this.props.defaultValue !== 'string' && { value })}
-        aria-invalid={!isValid || validated === ValidatedOptions.error}
+        aria-invalid={validated === ValidatedOptions.error}
         required={isRequired}
         {...props}
       />

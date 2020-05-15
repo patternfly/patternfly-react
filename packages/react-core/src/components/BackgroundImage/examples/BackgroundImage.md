@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['BackgroundImage']
 ---
 
-import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
+import { BackgroundImage } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic isFullscreen
@@ -19,11 +19,11 @@ class SimpleBackgroundImage extends React.Component {
      * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
      */
     this.images = {
-      [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
-      [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
-      [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
-      [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg'
+      'xs': '/assets/images/pfbg_576.jpg',
+      'xs2x': '/assets/images/pfbg_576@2x.jpg',
+      'sm': '/assets/images/pfbg_768.jpg',
+      'sm2x': '/assets/images/pfbg_768@2x.jpg',
+      'lg': '/assets/images/pfbg_1200.jpg'
     };
   }
   render() {

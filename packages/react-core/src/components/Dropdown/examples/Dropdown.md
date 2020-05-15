@@ -7,8 +7,8 @@ propComponents:
 typescript: true
 ---
 
-import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownItemIcon, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
+import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
+import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon, UserIcon } from '@patternfly/react-icons';
 import { Link } from '@reach/router';
 
 ## Examples
@@ -72,7 +72,7 @@ class SimpleDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+          <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
             Dropdown
           </DropdownToggle>
         }
@@ -346,7 +346,7 @@ class PrimaryDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle onToggle={this.onToggle} iconComponent={CaretDownIcon} isPrimary id="toggle-id-4">
+          <DropdownToggle onToggle={this.onToggle} toggleIndicator={CaretDownIcon} isPrimary id="toggle-id-4">
             Dropdown
           </DropdownToggle>
         }
@@ -620,7 +620,7 @@ class IconDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle iconComponent={null} onToggle={this.onToggle} aria-label="Applications" id="toggle-id-7">
+          <DropdownToggle toggleIndicator={null} onToggle={this.onToggle} aria-label="Applications" id="toggle-id-7">
             <ThIcon />
           </DropdownToggle>
         }
@@ -944,7 +944,6 @@ import {
   DropdownToggle,
   DropdownToggleAction,
   DropdownItem,
-  DropdownItemIcon,
   DropdownSeparator,
   DropdownPosition,
   DropdownDirection,
@@ -1001,22 +1000,13 @@ class SplitButtonActionDropdown extends React.Component {
       </DropdownItem>
     ];
     const dropdownIconItems = [
-      <DropdownItem key="action" component="button" variant="icon">
-        <DropdownItemIcon>
-          <CogIcon />
-        </DropdownItemIcon>
+      <DropdownItem key="action" component="button" icon={<CogIcon />}>
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" component="button" variant="icon" isDisabled>
-        <DropdownItemIcon>
-          <BellIcon />
-        </DropdownItemIcon>
+      <DropdownItem key="disabled link" component="button" icon={<BellIcon />} isDisabled>
         Disabled action
       </DropdownItem>,
-      <DropdownItem key="other action" component="button" variant="icon">
-        <DropdownItemIcon>
-          <CubesIcon />
-        </DropdownItemIcon>
+      <DropdownItem key="other action" component="button" icon={<CubesIcon />}>
         Other action
       </DropdownItem>
     ];
@@ -1139,7 +1129,7 @@ class RouterDropdown extends React.Component {
       this.onFocus();
     };
     this.onFocus = () => {
-      const element = document.getElementById('toggle-id');
+      const element = document.getElementById('toggle-id-8');
       element.focus();
     };
   }
@@ -1158,8 +1148,79 @@ class RouterDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle id="toggle-id" onToggle={this.onToggle} iconComponent={CaretDownIcon}>
+          <DropdownToggle id="toggle-id-8" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
             Dropdown
+          </DropdownToggle>
+        }
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
+```
+
+```js title=Dropdown-with-image-and-text
+import React from 'react';
+import {
+  Dropdown,
+  DropdownGroup,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator
+} from '@patternfly/react-core';
+import { UserIcon } from '@patternfly/react-icons';
+
+class ImageTextDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id-9');
+      element.focus();
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownGroup key="group 1">
+        <DropdownItem key="group 1 plaintext" component="div" isPlainText>Text</DropdownItem>
+        <DropdownItem key="group 1 plaintext2" component="div" isPlainText>More text</DropdownItem>
+      </DropdownGroup>,
+      <DropdownSeparator key="dropdown separator" />,
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={
+          <DropdownToggle 
+            id="toggle-id-9" 
+            onToggle={this.onToggle} 
+            toggleIndicator={CaretDownIcon}
+            icon={<UserIcon />}
+          >
+            Ned Username
           </DropdownToggle>
         }
         isOpen={isOpen}

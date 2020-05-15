@@ -8,10 +8,6 @@ describe('Label Demo Test', () => {
   it('Verify default label', () => {
     cy.get('.pf-c-label')
       .first()
-      .contains('Default label');
-  });
-
-  it('Verify compact label', () => {
-    cy.get('.pf-m-compact').contains('Compact label');
+      .contains('Grey');
   });
 });

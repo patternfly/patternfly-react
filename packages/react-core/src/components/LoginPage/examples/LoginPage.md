@@ -3,22 +3,35 @@ title: 'Login page'
 section: components
 cssPrefix: 'pf-c-login'
 typescript: true
-propComponents: ['LoginPage', 'Login', 'LoginForm', 'LoginMainBody', 'LoginMainHeader', 'LoginHeader', 'LoginFooter', 'LoginMainFooter', 'LoginFooterItem', 'LoginMainFooterBandItem', 'LoginMainFooterLinksItem']
+propComponents:
+  [
+    'LoginPage',
+    'Login',
+    'LoginForm',
+    'LoginMainBody',
+    'LoginMainHeader',
+    'LoginHeader',
+    'LoginFooter',
+    'LoginMainFooter',
+    'LoginFooterItem',
+    'LoginMainFooterBandItem',
+    'LoginMainFooterLinksItem',
+  ]
 ---
 
 import brandImg from './brandImgColor.svg';
 import {
-  LoginFooterItem,
-  LoginForm,
-  LoginMainFooterBandItem,
-  LoginMainFooterLinksItem,
-  LoginPage,
-  BackgroundImageSrc,
-  ListItem
+LoginFooterItem,
+LoginForm,
+LoginMainFooterBandItem,
+LoginMainFooterLinksItem,
+LoginPage,
+ListItem
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
+
 ```js title=Basic isFullscreen
 import React from 'react';
 import brandImg from './brandImgColor.svg';
@@ -66,12 +79,7 @@ class SimpleLoginPage extends React.Component {
   }
 
   render() {
-    const helperText = (
-      <React.Fragment>
-        <ExclamationCircleIcon />
-        &nbsp;Invalid login credentials.
-      </React.Fragment>
-    );
+    const helperText = 'Invalid login credentials.';
 
     const socialMediaLoginContent = (
       <React.Fragment>
@@ -132,6 +140,7 @@ class SimpleLoginPage extends React.Component {
       <LoginForm
         showHelperText={this.state.showHelperText}
         helperText={helperText}
+        helperTextIcon={<ExclamationCircleIcon />}
         usernameLabel="Username"
         usernameValue={this.state.usernameValue}
         onChangeUsername={this.handleUsernameChange}
@@ -148,11 +157,11 @@ class SimpleLoginPage extends React.Component {
     );
 
     const images = {
-      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
-      [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
-      [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-      [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
-      [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
+      lg: '/assets/images/pfbg_1200.jpg',
+      sm: '/assets/images/pfbg_768.jpg',
+      sm2x: '/assets/images/pfbg_768@2x.jpg',
+      xs: '/assets/images/pfbg_576.jpg',
+      xs2x: '/assets/images/pfbg_576@2x.jpg'
     };
 
     return (

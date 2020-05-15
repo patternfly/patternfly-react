@@ -31,7 +31,6 @@ exports[`drawer group with isExpanded applied  1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />
       </span>
     </button>
@@ -68,7 +67,6 @@ exports[`drawer group with isRead applied  1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />
       </span>
     </button>
@@ -105,7 +103,6 @@ exports[`renders with PatternFly Core styles 1`] = `
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
-          title={null}
         />
       </span>
     </button>

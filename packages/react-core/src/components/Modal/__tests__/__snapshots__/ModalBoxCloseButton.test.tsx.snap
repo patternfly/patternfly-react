@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxCloseButton Test 1`] = `
-<Component
+<Button
   aria-label="Close"
   className="test-box-close-button-class"
   onClick={[MockFunction]}
@@ -11,7 +11,6 @@ exports[`ModalBoxCloseButton Test 1`] = `
     color="currentColor"
     noVerticalAlign={false}
     size="sm"
-    title={null}
   />
-</Component>
+</Button>
 `;

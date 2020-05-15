@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title, TitleLevel } from '@patternfly/react-core/dist/js/components/Title/Title';
-import { BaseSizes } from '@patternfly/react-core';
+import { Title, TitleSizes } from '@patternfly/react-core';
 import { TopologySideBar } from '@patternfly/react-topology';
 
 export class ItemDetails extends React.Component {
@@ -10,7 +9,7 @@ export class ItemDetails extends React.Component {
 
     const header = (
       <div className="pf-u-m-lg">
-        <Title headingLevel={TitleLevel.h1} size={BaseSizes['2xl']}>
+        <Title headingLevel="h1" size={TitleSizes['2xl']}>
           Item Details
         </Title>
         <p>Short description of the selected item.</p>

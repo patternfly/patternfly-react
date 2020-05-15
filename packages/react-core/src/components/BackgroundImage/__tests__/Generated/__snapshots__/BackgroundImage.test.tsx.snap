@@ -2,7 +2,17 @@
 
 exports[`BackgroundImage should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-c-background-image css-1gixqsx ''"
+  className="pf-c-background-image ''"
+  style={
+    Object {
+      "--pf-c-background-image--BackgroundImage": "url(string)",
+      "--pf-c-background-image--BackgroundImage--lg": "url(string)",
+      "--pf-c-background-image--BackgroundImage--sm": "url(string)",
+      "--pf-c-background-image--BackgroundImage--sm-2x": "url(string)",
+      "--pf-c-background-image--BackgroundImage-2x": "url(string)",
+      "--pf-c-background-image--Filter": "url(#patternfly-background-image-filter-overlay0)",
+    }
+  }
 >
   <svg
     className="pf-c-background-image__filter"
@@ -11,7 +21,7 @@ exports[`BackgroundImage should match snapshot (auto-generated) 1`] = `
     xmlns="http://www.w3.org/2000/svg"
   >
     <filter
-      id="image_overlay"
+      id="patternfly-background-image-filter-overlay0"
     >
       <feColorMatrix
         type="matrix"

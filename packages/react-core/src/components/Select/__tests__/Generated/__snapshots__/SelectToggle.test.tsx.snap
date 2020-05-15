@@ -9,6 +9,9 @@ exports[`SelectToggle should match snapshot (auto-generated) 1`] = `
     className="pf-c-select__toggle ''"
     disabled={false}
     id="string"
+    isExpanded={false}
+    isFocused={false}
+    isHovered={false}
     onClick={[Function]}
     onKeyDown={[Function]}
     type="button"
@@ -16,13 +19,15 @@ exports[`SelectToggle should match snapshot (auto-generated) 1`] = `
     <div>
       ReactNode
     </div>
-    <CaretDownIcon
+    <span
       className="pf-c-select__toggle-arrow"
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-      title={null}
-    />
+    >
+      <CaretDownIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
   </button>
 </Fragment>
 `;

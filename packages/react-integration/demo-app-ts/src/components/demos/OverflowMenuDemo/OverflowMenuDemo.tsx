@@ -25,14 +25,14 @@ export class OverflowMenuDemo extends React.Component {
     marginBottom: '2rem'
   };
 
-  onSimpleToggle = isSimpleOpen => {
+  onSimpleToggle = (isSimpleOpen: boolean) => {
     this.setState({
       isSimpleOpen
     });
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSimpleSelect = _event => {
+  onSimpleSelect = (_event?: React.SyntheticEvent<HTMLDivElement>) => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
     });
@@ -82,14 +82,14 @@ export class OverflowMenuDemo extends React.Component {
     );
   }
 
-  onAdditionalOptionsToggle = isAdditionalOptionsOpen => {
+  onAdditionalOptionsToggle = (isAdditionalOptionsOpen: boolean) => {
     this.setState({
       isAdditionalOptionsOpen
     });
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onAdditionalOptionsSelect = _event => {
+  onAdditionalOptionsSelect = (_event?: React.SyntheticEvent<HTMLDivElement>) => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
     });
@@ -163,14 +163,14 @@ export class OverflowMenuDemo extends React.Component {
     );
   }
 
-  onPersistToggle = isPersistOpen => {
+  onPersistToggle = (isPersistOpen: boolean) => {
     this.setState({
       isPersistOpen
     });
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onPersistSelect = _event => {
+  onPersistSelect = (_event?: React.SyntheticEvent<HTMLDivElement>) => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
     });

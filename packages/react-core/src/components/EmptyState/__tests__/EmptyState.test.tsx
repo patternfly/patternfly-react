@@ -7,8 +7,7 @@ import { EmptyStateSecondaryActions } from '../EmptyStateSecondaryActions';
 import { EmptyStateIcon } from '../EmptyStateIcon';
 import { EmptyStatePrimary } from '../EmptyStatePrimary';
 import { Button } from '../../Button';
-import { Title } from '../../Title';
-import { BaseSizes } from '../../../styles/sizes';
+import { Title, TitleSizes } from '../../Title';
 
 describe('EmptyState', () => {
   test('Main', () => {
@@ -31,10 +30,10 @@ describe('EmptyState', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('Main variant regular', () => {
+  test('Main variant large', () => {
     const view = shallow(
-      <EmptyState variant={EmptyStateVariant.full}>
-        <Title size={BaseSizes.md}>EmptyState full</Title>
+      <EmptyState variant={EmptyStateVariant.large}>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();
@@ -43,7 +42,7 @@ describe('EmptyState', () => {
   test('Main variant small', () => {
     const view = shallow(
       <EmptyState variant={EmptyStateVariant.small}>
-        <Title size={BaseSizes.md}>EmptyState small</Title>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();
@@ -91,4 +90,14 @@ describe('EmptyState', () => {
     expect(view.props().className).toBe('pf-c-empty-state__primary custom-empty-state-prim-cls');
     expect(view.props().id).toBe('empty-state-prim-id');
   });
+
+  test('Full height', () => {
+    const view = shallow(
+      <EmptyState isFullHeight variant={EmptyStateVariant.large}>
+        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
+      </EmptyState>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
 });

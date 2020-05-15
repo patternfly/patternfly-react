@@ -44,7 +44,7 @@ test('modal does not call onClose for esc key if it is not open', () => {
 test('Each modal is given a new id', () => {
   const first = shallow(<Modal {...props} />);
   const second = shallow(<Modal {...props} />);
-  expect((first.instance() as any).id).not.toBe((second.instance() as any).id);
+  expect((first.instance() as any).descriptorId).not.toBe((second.instance() as any).descriptorId);
 });
 
 test('modal removes body backdropOpen class when removed', () => {
@@ -63,4 +63,29 @@ test('modal shows/hides the close button based on showClose (default true)', () 
   view.setProps({ showClose: false });
   view.update();
   expect(view.exists('.pf-c-modal-box .pf-c-button')).toBeFalsy();
+});
+
+test('modal generates console error when no accessible name is provided', () => {
+  const props = {
+    onClose: jest.fn(),
+    isOpen: true,
+    children: 'modal content'
+  };
+  const consoleErrorMock = jest.fn();
+  global.console = { error: consoleErrorMock } as any;
+  shallow(<Modal {...props} />);
+  expect(consoleErrorMock).toBeCalled();
+});
+
+test('modal generates console warning when conflicting accessible name strategies are provided', () => {
+  const props = {
+    hasNoBodyWrapper: true,
+    onClose: jest.fn(),
+    isOpen: true,
+    children: 'modal content'
+  };
+  const consoleErrorMock = jest.fn();
+  global.console = { error: consoleErrorMock } as any;
+  shallow(<Modal {...props} />);
+  expect(consoleErrorMock).toBeCalled();
 });

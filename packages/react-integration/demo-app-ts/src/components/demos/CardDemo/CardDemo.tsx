@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 export class CardDemo extends React.Component {
   componentDidMount() {
@@ -10,19 +10,25 @@ export class CardDemo extends React.Component {
     return (
       <React.Fragment>
         <Card isHoverable>
-          <CardHeader>Header</CardHeader>
+          <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
         <br></br>
         <Card isCompact>
-          <CardHeader>Header</CardHeader>
+          <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
         <br></br>
         <Card isSelectable isSelected>
-          <CardHeader>Header</CardHeader>
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <br></br>
+        <Card isFlat>
+          <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>

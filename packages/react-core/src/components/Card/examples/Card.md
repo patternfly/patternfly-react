@@ -3,20 +3,20 @@ title: 'Card'
 section: components
 cssPrefix: 'pf-c-card'
 typescript: true
-propComponents: ['Card', 'CardHeadMain', 'CardHeader', 'CardBody', 'CardFooter']
+propComponents: ['Card', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter']
 ---
 
-import { Brand, Card, CardActions, CardHead, CardHeadMain, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
+import { Brand, Card, CardActions, CardHeader, CardHeaderMain, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg'; 
 
 ## Examples
 ```js title=Basic
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 SimpleCard = () => (
   <Card>
-    <CardHeader>Header</CardHeader>
+    <CardTitle>Header</CardTitle>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
   </Card>
@@ -25,7 +25,7 @@ SimpleCard = () => (
 
 ```js title=With-image-and-actions
 import React from 'react'; 
-import { Brand, Card, CardHead, CardHeadMain, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
+import { Brand, Card, CardHeader, CardHeaderMain, CardActions, CardTitle, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
 import pfLogo from './pfLogo.svg'; 
 
 class KebabDropdown extends React.Component {
@@ -74,10 +74,10 @@ class KebabDropdown extends React.Component {
     ];
     return (
       <Card>
-        <CardHead>
-          <CardHeadMain>
+        <CardHeader>
+          <CardHeaderMain>
             <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
-          </CardHeadMain>
+          </CardHeaderMain>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -96,8 +96,8 @@ class KebabDropdown extends React.Component {
               name="check1"
             />
           </CardActions>
-        </CardHead>
-        <CardHeader>Header</CardHeader>
+        </CardHeader>
+        <CardTitle>Header</CardTitle>
         <CardBody>Body</CardBody>
         <CardFooter>Footer</CardFooter>
       </Card>
@@ -108,7 +108,7 @@ class KebabDropdown extends React.Component {
 
 ```js title=Card-header-in-card-head
  import React from 'react'; 
-import { Card, CardHead, CardActions, CardHeader, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
+import { Card, CardHeader, CardActions, CardTitle, CardBody, CardFooter, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -156,7 +156,7 @@ class KebabDropdown extends React.Component {
     ];
     return (
       <Card>
-        <CardHead>
+        <CardHeader>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -171,12 +171,12 @@ class KebabDropdown extends React.Component {
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
+              id="check-2"
+              name="check2"
             />
           </CardActions>
-        <CardHeader>This is a really really really really really really really really really really long header</CardHeader>
-        </CardHead>
+        <CardTitle>This is a really really really really really really really really really really long header</CardTitle>
+        </CardHeader>
         <CardBody>Body</CardBody>
         <CardFooter>Footer</CardFooter>
       </Card>
@@ -187,7 +187,7 @@ class KebabDropdown extends React.Component {
 
 ```js title=Only-actions-in-card-head-(no-header/footer)
  import React from 'react'; 
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHeader, CardActions, CardTitle, CardBody } from '@patternfly/react-core'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -235,7 +235,7 @@ class KebabDropdown extends React.Component {
     ];
     return (
       <Card>
-        <CardHead>
+        <CardHeader>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -250,11 +250,11 @@ class KebabDropdown extends React.Component {
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
+              id="check-3"
+              name="check3"
             />
           </CardActions>
-        </CardHead>
+        </CardHeader>
         <CardBody>This is the card body, there is only actions in the card head.</CardBody>
       </Card>
     );
@@ -264,16 +264,16 @@ class KebabDropdown extends React.Component {
 
 ```js title=Only-image-in-the-card-head
 import React from 'react';
-import { Brand, Card, CardBody, CardFooter, CardHead, CardHeadMain, CardHeader } from '@patternfly/react-core';
+import { Brand, Card, CardBody, CardFooter, CardHeader, CardHeaderMain, CardTitle } from '@patternfly/react-core';
 
 ImageCard = () => (
   <Card>
-    <CardHead>
-      <CardHeadMain>
+    <CardHeader>
+      <CardHeaderMain>
         <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }}/>
-      </CardHeadMain>
-    </CardHead> 
-    <CardHeader>Header</CardHeader>
+      </CardHeaderMain>
+    </CardHeader> 
+    <CardTitle>Header</CardTitle>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
   </Card>
@@ -282,11 +282,11 @@ ImageCard = () => (
 
 ```js title=With-no-footer
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 NoFooterCard = () => (
   <Card>
-    <CardHeader>Header</CardHeader>
+    <CardTitle>Header</CardTitle>
     <CardBody>This card has no footer</CardBody>
   </Card>
 );
@@ -294,7 +294,7 @@ NoFooterCard = () => (
 
 ```js title=With-no-header
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 NoHeaderCard = () => (
   <Card>
@@ -306,7 +306,7 @@ NoHeaderCard = () => (
 
 ```js title=With-only-a-content-section
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 ContentOnlyCard = () => (
   <Card>
@@ -317,11 +317,11 @@ ContentOnlyCard = () => (
 
 ```js title=With-multiple-body-sections
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 MultipleBodyCard = () => (
   <Card>
-    <CardHeader>Header</CardHeader>
+    <CardTitle>Header</CardTitle>
     <CardBody>Body</CardBody>
     <CardBody>Body</CardBody>
     <CardBody>Body</CardBody>
@@ -332,11 +332,11 @@ MultipleBodyCard = () => (
 
 ```js title=With-only-one-body-that-fills
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 NoFillBodyCard = () => (
   <Card style={{ minHeight: '30em' }}>
-    <CardHeader>Header</CardHeader>
+    <CardTitle>Header</CardTitle>
     <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
     <CardBody isFilled={false}>Body pf-m-no-fill</CardBody>
     <CardBody>Body</CardBody>
@@ -347,11 +347,11 @@ NoFillBodyCard = () => (
 
 ```js title=Hover
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 HoverableCard = () => (
   <Card isHoverable>
-    <CardHeader>Header</CardHeader>
+    <CardTitle>Header</CardTitle>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
   </Card>
@@ -360,11 +360,11 @@ HoverableCard = () => (
 
 ```js title=Compact
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-HoverableCard = () => (
+CompactCard = () => (
   <Card isCompact>
-    <CardHeader>Header</CardHeader>
+    <CardTitle>Header</CardTitle>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>
   </Card>
@@ -373,7 +373,7 @@ HoverableCard = () => (
 
 ```js title=Selectable-and-selected
 import React from 'react';
-import { Card, CardHead, CardActions, CardHeader, CardBody, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
+import { Card, CardHeader, CardActions, CardTitle, CardBody, Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, } from '@patternfly/react-core'; 
 
 class SelectableCard extends React.Component {
   constructor(props) {
@@ -433,7 +433,7 @@ class SelectableCard extends React.Component {
     return (
       <>
       <Card id="first-card" onKeyDown={this.onKeyDown} onClick={this.onClick} isSelectable isSelected={selected === 'first-card'}>
-        <CardHead>
+        <CardHeader>
           <CardActions>
             <Dropdown
               onSelect={this.onSelect}
@@ -444,17 +444,30 @@ class SelectableCard extends React.Component {
               position={'right'}
             />
           </CardActions>
-        </CardHead>
-        <CardHeader>First card</CardHeader>
+        </CardHeader>
+        <CardTitle>First card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
       <br/>
       <Card id="second-card" onKeyDown={this.onKeyDown} onClick={this.onClick} isSelectable isSelected={selected === 'second-card'}>
-        <CardHeader>Second card</CardHeader>
+        <CardTitle>Second card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
       </>
     );
   }
 }
+```
+
+```js title=Flat
+import React from 'react';
+import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
+
+SimpleCard = () => (
+  <Card isFlat>
+    <CardTitle>Header</CardTitle>
+    <CardBody>Body</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+);
 ```

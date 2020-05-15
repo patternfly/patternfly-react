@@ -23,11 +23,11 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     }
   };
 
-  handleChangeSimple = isChecked => {
+  handleChangeSimple = (isChecked: boolean) => {
     this.setState({ simple: { isChecked } });
   };
 
-  handleChangeTable = id => isChecked => {
+  handleChangeTable = (id: string) => (isChecked: boolean) => {
     this.setState({
       table: {
         ...this.state.table,
@@ -48,7 +48,8 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
       <React.Fragment>
         <Switch
           id="simple-switch"
-          label={isChecked ? 'Message when on' : 'Message when off'}
+          label={<div style={{ color: 'green' }}>Message when on</div>}
+          labelOff={<div style={{ color: 'red' }}>Message when off</div>}
           onChange={this.handleChangeSimple}
           aria-label="Switch"
           isChecked={isChecked}

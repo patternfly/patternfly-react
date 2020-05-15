@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
@@ -21,10 +21,6 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
   isPlain?: boolean;
-  /** Forces display of the focused state of the options menu button */
-  isFocused?: boolean;
-  /** Forces display of the hover state of the options menu button */
-  isHovered?: boolean;
   /** Forces display of the active state of the options menu button */
   isActive?: boolean;
   /** Disables the options menu toggle */
@@ -32,7 +28,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Internal parent reference */
   parentRef?: HTMLElement;
   /** Indicates that the element has a popup context menu or sub-level menu */
-  ariaHasPopup?: boolean | 'dialog' | 'menu' | 'false' | 'true' | 'listbox' | 'tree' | 'grid';
+  'aria-haspopup'?: boolean | 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid';
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
 }
@@ -46,12 +42,10 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   onToggle = () => null as any,
   isOpen = false,
   isPlain = false,
-  isHovered = false,
-  isActive = false,
-  isFocused = false,
   isDisabled = false,
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  ariaHasPopup,
+  isActive = false,
+  'aria-haspopup': ariaHasPopup,
   parentRef,
   onEnter,
   /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -61,12 +55,10 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   <div
     className={css(
       styles.optionsMenuToggle,
-      getModifier(styles, 'text'),
-      isPlain && getModifier(styles, 'plain'),
-      isHovered && getModifier(styles, 'hover'),
-      isActive && getModifier(styles, 'active'),
-      isFocused && getModifier(styles, 'focus'),
-      isDisabled && getModifier(styles, 'disabled')
+      styles.modifiers.text,
+      isPlain && styles.modifiers.plain,
+      isDisabled && styles.modifiers.disabled,
+      isActive && styles.modifiers.active
     )}
     {...props}
   >
@@ -79,7 +71,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
       aria-expanded={isOpen}
       onClick={() => onToggle(!isOpen)}
     >
-      {toggleButtonContents}
+      <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
     </button>
   </div>
 );

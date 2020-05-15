@@ -2,12 +2,13 @@
 
 exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
 <div
+  aria-labelledby="''"
   className="pf-c-data-list__item-control ''"
 >
   <div
     className="pf-c-data-list__toggle"
   >
-    <Component
+    <Button
       aria-controls="''"
       aria-expanded={false}
       aria-label="'Details'"
@@ -15,13 +16,16 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
       id="string"
       variant="plain"
     >
-      <AngleRightIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
-    </Component>
+      <div
+        className="pf-c-data-list__toggle-icon"
+      >
+        <AngleRightIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+        />
+      </div>
+    </Button>
   </div>
 </div>
 `;

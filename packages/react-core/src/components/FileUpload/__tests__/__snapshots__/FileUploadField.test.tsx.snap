@@ -18,21 +18,21 @@ exports[`simple fileuploadfield 1`] = `
         placeholder="Do something custom with this!"
         value=""
       />
-      <Component
+      <Button
         id="custom-file-upload-browse-button"
         isDisabled={false}
         onClick={[MockFunction]}
         variant="control"
       >
         Browse...
-      </Component>
-      <Component
+      </Button>
+      <Button
         isDisabled={false}
         onClick={[MockFunction]}
         variant="control"
       >
         Clear
-      </Component>
+      </Button>
     </InputGroup>
   </div>
   <div
@@ -44,7 +44,6 @@ exports[`simple fileuploadfield 1`] = `
       disabled={false}
       id="custom-file-upload"
       isRequired={false}
-      isValid={true}
       name="custom-file-upload"
       onChange={[Function]}
       readOnly={false}

@@ -13,7 +13,6 @@ it('FormSelect should match snapshot (auto-generated)', () => {
       children={<div>ReactNode</div>}
       className={"''"}
       value={''}
-      isValid={true}
       validated={'default'}
       isDisabled={false}
       isRequired={false}

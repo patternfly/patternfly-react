@@ -25,10 +25,6 @@ export interface ToggleProps {
   onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -40,7 +36,7 @@ export interface ToggleProps {
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Flag for aria popup */
-  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
+  'aria-haspopup'?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'tree';
   /** Allows selecting toggle to select parent */
   bubbleEvent?: boolean;
 }
@@ -51,8 +47,6 @@ export class Toggle extends React.Component<ToggleProps> {
   static defaultProps: PickOptional<ToggleProps> = {
     className: '',
     isOpen: false,
-    isFocused: false,
-    isHovered: false,
     isActive: false,
     isDisabled: false,
     isPlain: false,
@@ -123,21 +117,18 @@ export class Toggle extends React.Component<ToggleProps> {
       className,
       children,
       isOpen,
-      isFocused,
-      isActive,
-      isHovered,
       isDisabled,
       isPlain,
       isPrimary,
       isSplitButton,
-      ariaHasPopup,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      bubbleEvent,
       onToggle,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      'aria-haspopup': ariaHasPopup,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      isActive,
+      bubbleEvent,
       onEnter,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       parentRef,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       id,
       type,
       ...props
@@ -151,8 +142,6 @@ export class Toggle extends React.Component<ToggleProps> {
             ref={this.buttonRef}
             className={css(
               isSplitButton ? styles.dropdownToggleButton : toggleClass || styles.dropdownToggle,
-              isFocused && styles.modifiers.focus,
-              isHovered && styles.modifiers.hover,
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               isPrimary && styles.modifiers.primary,

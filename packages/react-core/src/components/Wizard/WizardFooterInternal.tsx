@@ -11,9 +11,9 @@ export interface WizardFooterInternalProps {
   isValid: boolean;
   firstStep: boolean;
   activeStep: WizardStep;
-  nextButtonText: string;
-  backButtonText: string;
-  cancelButtonText: string;
+  nextButtonText: React.ReactNode;
+  backButtonText: React.ReactNode;
+  cancelButtonText: React.ReactNode;
 }
 
 export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalProps> = ({

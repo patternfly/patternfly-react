@@ -101,9 +101,7 @@ describe('DataList', () => {
   });
 
   test('Toggle default with aria label', () => {
-    const view = shallow(
-      <DataListToggle aria-label="Toggle details for" aria-labelledby="ex-toggle2 ex-item2" id="ex-toggle2" />
-    );
+    const view = shallow(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
 
     expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');
     expect(view.find(Button).props()['aria-labelledby']).toBe(null);
@@ -181,9 +179,9 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('DataListContent noPadding', () => {
+  test('DataListContent hasNoPadding', () => {
     const view = shallow(
-      <DataListContent aria-label="Primary Content Details" hidden noPadding>
+      <DataListContent aria-label="Primary Content Details" hidden hasNoPadding>
         test
       </DataListContent>
     );

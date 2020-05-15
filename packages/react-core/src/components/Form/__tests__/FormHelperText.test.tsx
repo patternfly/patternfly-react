@@ -1,9 +1,15 @@
 import React from 'react';
 import { FormHelperText } from '../FormHelperText';
 import { shallow } from 'enzyme';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 test('renders with PatternFly Core styles', () => {
   const view = shallow(<FormHelperText isError isHidden={false} />);
+  expect(view).toMatchSnapshot();
+});
+
+test('renders with icon', () => {
+  const view = shallow(<FormHelperText isError isHidden={false} icon={<ExclamationCircleIcon />} />);
   expect(view).toMatchSnapshot();
 });
 

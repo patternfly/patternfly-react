@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface RadioProps
@@ -85,12 +85,9 @@ export class Radio extends React.Component<RadioProps> {
       />
     );
     const labelRendered = !label ? null : isLabelWrapped ? (
-      <span className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}>{label}</span>
+      <span className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)}>{label}</span>
     ) : (
-      <label
-        className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}
-        htmlFor={props.id}
-      >
+      <label className={css(styles.radioLabel, isDisabled && styles.modifiers.disabled)} htmlFor={props.id}>
         {label}
       </label>
     );

@@ -8,6 +8,6 @@ import { Stack } from '../../Stack';
 import {} from '../..';
 
 it('Stack should match snapshot (auto-generated)', () => {
-  const view = shallow(<Stack gutter={null} children={<>ReactNode</>} className={"''"} component={'div'} />);
+  const view = shallow(<Stack hasGutter children={<>ReactNode</>} className={"''"} component={'div'} />);
   expect(view).toMatchSnapshot();
 });

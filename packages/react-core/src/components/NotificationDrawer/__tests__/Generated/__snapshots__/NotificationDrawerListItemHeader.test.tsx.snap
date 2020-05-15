@@ -12,7 +12,6 @@ exports[`NotificationDrawerListItemHeader should match snapshot (auto-generated)
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
-        title={null}
       />
     </span>
     <h2

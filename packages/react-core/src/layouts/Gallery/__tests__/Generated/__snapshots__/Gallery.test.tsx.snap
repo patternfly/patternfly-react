@@ -2,7 +2,7 @@
 
 exports[`Gallery should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-l-gallery ''"
+  className="pf-l-gallery pf-m-gutter ''"
 >
   ReactNode
 </div>

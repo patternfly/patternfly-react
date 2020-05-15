@@ -6,8 +6,8 @@ interface AccordionDemoState {
 }
 
 export class AccordionDemo extends React.Component<null, AccordionDemoState> {
-  state = {
-    expanded: null
+  state: AccordionDemoState = {
+    expanded: ''
   };
 
   componentDidMount() {
@@ -16,7 +16,7 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
 
   onToggle = (id: string) => {
     const { expanded } = this.state;
-    this.setState({ expanded: id !== expanded ? id : null });
+    this.setState({ expanded: id !== expanded ? id : '' });
   };
 
   render() {
@@ -58,7 +58,7 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <Accordion noBoxShadow id="accordion-example-no-box-shadow">
+        <Accordion id="accordion-example-no-box-shadow">
           <AccordionItem>
             <AccordionToggle onClick={() => this.onToggle('item-1')} isExpanded={expanded === 'item-1'} id="item-1">
               Item One

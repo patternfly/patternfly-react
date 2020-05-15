@@ -4,28 +4,33 @@ import {
   FormGroup,
   FormProps,
   TextInput,
+  Checkbox,
+  Popover,
   Select,
   SelectOption,
+  SelectOptionObject,
   SelectVariant,
   ValidatedOptions
 } from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 
 export interface FormState {
   value: string;
   isValid: boolean;
-  isExpanded: boolean;
+  isOpen: boolean;
   selected: string[];
   validatedValue: string;
   validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
-  constructor(props) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       value: 'Five',
       isValid: false,
-      isExpanded: false,
+      isOpen: false,
       selected: [],
       validatedValue: '',
       validated: ValidatedOptions.default
@@ -38,14 +43,14 @@ export class FormDemo extends Component<FormProps, FormState> {
     const validated = /^\d+$/.test(value) ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedValue: value, validated });
   };
-  onToggle = isExpanded => {
+  onToggle = (isOpen: boolean) => {
     this.setState({
-      isExpanded
+      isOpen
     });
   };
-  onSelect = (event, selection) => {
+  onSelect = (event: React.SyntheticEvent, selection: string | SelectOptionObject) => {
     const { selected } = this.state;
-    if (selected.includes(selection)) {
+    if (selected.includes(selection.toString())) {
       this.setState(
         prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
         // eslint-disable-next-line no-console
@@ -53,7 +58,7 @@ export class FormDemo extends Component<FormProps, FormState> {
       );
     } else {
       this.setState(
-        prevState => ({ selected: [...prevState.selected, selection] }),
+        prevState => ({ selected: [...prevState.selected, selection.toString()] }),
         // eslint-disable-next-line no-console
         () => console.log('selections: ', this.state.selected)
       );
@@ -62,7 +67,7 @@ export class FormDemo extends Component<FormProps, FormState> {
   clearSelection = () => {
     this.setState({
       selected: [],
-      isExpanded: false
+      isOpen: false
     });
   };
 
@@ -71,7 +76,7 @@ export class FormDemo extends Component<FormProps, FormState> {
   }
 
   render() {
-    const { value, isValid, isExpanded, selected, validatedValue, validated } = this.state;
+    const { value, isValid, isOpen, selected, validatedValue, validated } = this.state;
     const titleId = 'multi-typeahead-select-id';
     const options = [
       { value: 'Alabama', disabled: false },
@@ -87,14 +92,31 @@ export class FormDemo extends Component<FormProps, FormState> {
         <Form>
           <FormGroup
             label="Age:"
+            labelIcon={
+              <Popover
+                headerContent={<div>The age of a person</div>}
+                bodyContent={<div>Age is typically measured in years.</div>}
+              >
+                <button
+                  id="helper-text-target"
+                  aria-label="More info for name field"
+                  onClick={e => e.preventDefault()}
+                  aria-describedby="simple-form-name"
+                  className="pf-c-form__group-label-help"
+                >
+                  <HelpIcon noVerticalAlign />
+                </button>
+              </Popover>
+            }
             type="number"
             helperText="Please write your age"
             helperTextInvalid="Age has to be a number"
+            helperTextInvalidIcon={<ExclamationCircleIcon />}
             fieldId="age"
-            isValid={isValid}
+            validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
           >
             <TextInput
-              isValid={isValid}
+              validated={isValid ? ValidatedOptions.default : ValidatedOptions.error}
               value={value}
               id="age"
               aria-describedby="age-helper"
@@ -116,8 +138,8 @@ export class FormDemo extends Component<FormProps, FormState> {
                 onSelect={this.onSelect}
                 onClear={this.clearSelection}
                 selections={selected}
-                isExpanded={isExpanded}
-                ariaLabelledBy={titleId}
+                isOpen={isOpen}
+                aria-labelledby={titleId}
                 placeholderText="Select a state"
               >
                 {options.map((option, index) => (
@@ -140,6 +162,9 @@ export class FormDemo extends Component<FormProps, FormState> {
                   aria-describedby="age-helper-validated"
                   onChange={this.handleValidatedTextInputChange}
                 />
+              </FormGroup>
+              <FormGroup hasNoPaddingTop id="formgroup-checkbox" label="Subscribe" fieldId="subscribe">
+                <Checkbox id="subscribe" label="Mailing list" />
               </FormGroup>
             </Form>
           </div>

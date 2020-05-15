@@ -5,78 +5,91 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
-import { SIDE } from '../../helpers/constants';
+import { getUniqueId, isElementInView, capitalize } from '../../helpers/util';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export enum TabsVariant {
+export enum TabsComponent {
   div = 'div',
   nav = 'nav'
 }
-
-export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
-  /** content rendered inside the Tabs Component. */
-  children: React.ReactNode;
-  /** additional classes added to the Tabs */
-  className?: string;
-  /** the index of the active tab */
-  activeKey?: number | string;
-  /** handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
-  /** uniquely identifies the Tabs */
-  id?: string;
-  /** enables the filled tab list layout */
-  isFilled?: boolean;
-  /** enables Secondary Tab styling */
-  isSecondary?: boolean;
-  /** aria-label for the left Scroll Button */
-  leftScrollAriaLabel?: string;
-  /** aria-label for the right Scroll Button */
-  rightScrollAriaLabel?: string;
-  /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
-  variant?: 'div' | 'nav';
-  /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
-  'aria-label'?: string;
-  /** waits until the first "enter" transition to mount tab children (add them to the DOM) */
-  mountOnEnter?: boolean;
-  /** unmounts tab children (removes them from the DOM) when they are no longer visible */
-  unmountOnExit?: boolean;
+export interface TabsBreakpointMod {
+  /** The attribute to modify  */
+  modifier: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+  /** The breakpoint at which to apply the modifier */
+  breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
 }
 
-export interface TabsState {
-  showLeftScrollButton: boolean;
-  showRightScrollButton: boolean;
-  highlightLeftScrollButton: boolean;
-  highlightRightScrollButton: boolean;
+export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
+  /** Content rendered inside the tabs component. */
+  children: React.ReactNode;
+  /** Additional classes added to the tabs */
+  className?: string;
+  /** The index of the active tab */
+  activeKey?: number | string;
+  /** Callback to handle tab selection */
+  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  /** Uniquely identifies the tabs */
+  id?: string;
+  /** Enables the filled tab list layout */
+  isFilled?: boolean;
+  /** Enables secondary tab styling */
+  isSecondary?: boolean;
+  /** Enables box styling to the tab component */
+  isBox?: boolean;
+  /** Enables vertical tab styling */
+  isVertical?: boolean;
+  /** Aria-label for the left scroll button */
+  leftScrollAriaLabel?: string;
+  /** Aria-label for the right scroll button */
+  rightScrollAriaLabel?: string;
+  /** Determines what tag is used around the tabs. Use "nav" to define the tabs inside a navigation region */
+  component?: 'div' | 'nav';
+  /** Provides an accessible label for the tabs. Labels should be unique for each set of tabs that are present on a page. When component is set to nav, this prop should be defined to differentiate the tabs from other navigation regions on the page. */
+  'aria-label'?: string;
+  /** Waits until the first "enter" transition to mount tab children (add them to the DOM) */
+  mountOnEnter?: boolean;
+  /** Unmounts tab children (removes them from the DOM) when they are no longer visible */
+  unmountOnExit?: boolean;
+  /* Modifies the tabs component padding/inset to visually match padding of other adjacent components.*/
+  inset?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  /** Array of objects representing the various modifiers to apply to tabs at various breakpoints */
+  breakpointMods?: TabsBreakpointMod[];
+}
+
+interface TabsState {
+  showScrollButtons: boolean;
+  disableLeftScrollButton: boolean;
+  disableRightScrollButton: boolean;
   shownKeys: (string | number)[];
 }
 
-class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
+export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
   tabList = React.createRef<HTMLUListElement>();
-  constructor(props: TabsProps & InjectedOuiaProps) {
+  constructor(props: TabsProps & OUIAProps) {
     super(props);
     this.state = {
-      showLeftScrollButton: false,
-      showRightScrollButton: false,
-      highlightLeftScrollButton: false,
-      highlightRightScrollButton: false,
+      showScrollButtons: false,
+      disableLeftScrollButton: false,
+      disableRightScrollButton: false,
       shownKeys: [this.props.activeKey] // only for mountOnEnter case
     };
   }
 
   static defaultProps: PickOptional<TabsProps> = {
-    className: '',
     activeKey: 0,
     onSelect: () => undefined as any,
     isFilled: false,
     isSecondary: false,
+    isVertical: false,
+    isBox: false,
     leftScrollAriaLabel: 'Scroll left',
     rightScrollAriaLabel: 'Scroll right',
-    variant: TabsVariant.div,
+    component: TabsComponent.div,
     mountOnEnter: false,
-    unmountOnExit: false
+    unmountOnExit: false,
+    breakpointMods: [] as TabsBreakpointMod[]
   };
 
   handleTabClick(
@@ -97,10 +110,6 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
         tabContentRef.current.hidden = false;
       }
     }
-    // Update scroll button state and which button to highlight
-    setTimeout(() => {
-      this.handleScrollButtons();
-    }, 1);
     if (mountOnEnter) {
       this.setState({
         shownKeys: shownKeys.concat(eventKey)
@@ -109,32 +118,23 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
   }
 
   handleScrollButtons = () => {
-    if (this.tabList.current) {
+    if (this.tabList.current && !this.props.isVertical) {
       const container = this.tabList.current;
       // get first element and check if it is in view
-      const showLeftScrollButton = !isElementInView(container, container.firstChild as HTMLElement, false);
+      const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
-      // get lase element and check if it is in view
-      const showRightScrollButton = !isElementInView(container, container.lastChild as HTMLElement, false);
+      // get last element and check if it is in view
+      const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
-      // determine if selected tab is out of view and apply styles
-      let selectedTab;
-      const childrenArr = Array.from(container.children);
-      childrenArr.forEach((child: any) => {
-        const { className } = child;
-        if (className.search('pf-m-current') > 0) {
-          selectedTab = child;
-        }
-      });
+      const showScrollButtons = overflowOnLeft || overflowOnRight;
 
-      const sideOutOfView = sideElementIsOutOfView(container, selectedTab);
+      const disableLeftScrollButton = !overflowOnLeft;
+      const disableRightScrollButton = !overflowOnRight;
 
       this.setState({
-        showLeftScrollButton,
-        showRightScrollButton,
-        highlightLeftScrollButton: (sideOutOfView === SIDE.LEFT || sideOutOfView === SIDE.BOTH) && showLeftScrollButton,
-        highlightRightScrollButton:
-          (sideOutOfView === SIDE.RIGHT || sideOutOfView === SIDE.BOTH) && showRightScrollButton
+        showScrollButtons,
+        disableLeftScrollButton,
+        disableRightScrollButton
       });
     }
   };
@@ -178,14 +178,28 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     }
   };
 
+  // Format the inset prop string by capitalizing the first letter.  If the string prop is '2xl' append '_' to beginning of the string so we can key the correct modifier.
+  formatInsetString = (s: string) => (s === '2xl' ? '_2xl' : capitalize(s));
+
+  // Format the breakpoints array
+  formatTabBreakpointMods = (breakpointMods: TabsBreakpointMod[]) =>
+    breakpointMods.map(
+      mod =>
+        styles.modifiers[`${mod.modifier}On${this.formatInsetString(mod.breakpoint)}` as keyof typeof styles.modifiers]
+    );
+
   componentDidMount() {
-    window.addEventListener('resize', this.handleScrollButtons, false);
-    // call the handle resize function to check if scroll buttons should be shown
-    this.handleScrollButtons();
+    if (!this.props.isVertical) {
+      window.addEventListener('resize', this.handleScrollButtons, false);
+      // call the handle resize function to check if scroll buttons should be shown
+      this.handleScrollButtons();
+    }
   }
 
   componentWillUnmount() {
-    document.removeEventListener('resize', this.handleScrollButtons, false);
+    if (!this.props.isVertical) {
+      window.removeEventListener('resize', this.handleScrollButtons, false);
+    }
   }
 
   render() {
@@ -196,26 +210,23 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
       id,
       isFilled,
       isSecondary,
+      isVertical,
+      isBox,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
-      variant,
-      ouiaContext,
+      component,
       ouiaId,
       mountOnEnter,
       unmountOnExit,
+      inset,
+      breakpointMods,
       ...props
     } = this.props;
-    const {
-      showLeftScrollButton,
-      showRightScrollButton,
-      highlightLeftScrollButton,
-      highlightRightScrollButton,
-      shownKeys
-    } = this.state;
+    const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
 
     const uniqueId = id || getUniqueId();
-    const Component: any = variant === TabsVariant.nav ? 'nav' : 'div';
+    const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
 
     return (
       <React.Fragment>
@@ -224,17 +235,15 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
           className={css(
             styles.tabs,
             isFilled && styles.modifiers.fill,
-            isSecondary && styles.modifiers.tabsSecondary,
-            showLeftScrollButton && styles.modifiers.start,
-            showRightScrollButton && styles.modifiers.end,
-            highlightLeftScrollButton && styles.modifiers.startCurrent,
-            highlightRightScrollButton && styles.modifiers.endCurrent,
+            isSecondary && styles.modifiers.secondary,
+            isVertical && styles.modifiers.vertical,
+            isBox && styles.modifiers.box,
+            showScrollButtons && !isVertical && styles.modifiers.scrollable,
+            this.formatTabBreakpointMods(breakpointMods),
+            inset && styles.modifiers[`inset${this.formatInsetString(inset)}` as keyof typeof styles.modifiers],
             className
           )}
-          {...(ouiaContext.isOuia && {
-            'data-ouia-component-type': 'Tabs',
-            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          })}
+          {...getOUIAProps('Tabs', ouiaId)}
           id={id && id}
           {...props}
         >
@@ -242,6 +251,8 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
             aria-label={leftScrollAriaLabel}
             onClick={this.scrollLeft}
+            disabled={disableLeftScrollButton}
+            aria-hidden={disableLeftScrollButton}
           >
             <AngleLeftIcon />
           </button>
@@ -259,14 +270,13 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
                   ...rest
                 } = child.props;
 
-                return (
+                return isHidden ? null : (
                   <li
                     key={index}
                     className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
-                    hidden={isHidden}
                   >
                     <TabButton
-                      className={css(styles.tabsButton)}
+                      className={css(styles.tabsLink)}
                       onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
                       id={`pf-tab-${eventKey}-${childId || uniqueId}`}
                       aria-controls={
@@ -285,6 +295,8 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
             aria-label={rightScrollAriaLabel}
             onClick={this.scrollRight}
+            disabled={disableRightScrollButton}
+            aria-hidden={disableRightScrollButton}
           >
             <AngleRightIcon />
           </button>
@@ -304,7 +316,3 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     );
   }
 }
-
-const TabsWithOuiaContext = withOuiaContext(Tabs);
-
-export { TabsWithOuiaContext as Tabs };

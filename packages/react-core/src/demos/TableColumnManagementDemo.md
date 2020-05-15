@@ -14,10 +14,10 @@ import {
   DataListItemRow,
   DataListCell,
   DataListItemCells,
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarGroup,
-  DataToolbarItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
   Modal,
   OptionsMenu,
   OptionsMenuToggle,
@@ -48,10 +48,10 @@ import {
   DataListItemRow,
   DataListCell,
   DataListItemCells,
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarGroup,
-  DataToolbarItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
   Modal,
   OptionsMenu,
   OptionsMenuToggle,
@@ -432,7 +432,7 @@ class ColumnManagementAction extends React.Component {
     return <Modal
       title="Manage columns"
       isOpen={isModalOpen}
-      isSmall
+      variant="small"
       description={
         <TextContent>
           <Text component={TextVariants.p}>
@@ -450,7 +450,6 @@ class ColumnManagementAction extends React.Component {
           Cancel
         </Button>
       ]}
-      isFooterLeftAligned
     >
       <DataList aria-label="Table column management" id="table-column-management" isCompact>
         <DataListItem aria-labelledby="table-column-management-item1">
@@ -520,10 +519,10 @@ class ColumnManagementAction extends React.Component {
   render() {
     const { canSelectAll, columns, rows } = this.state;
 
-    const dataToolbarItems = <React.Fragment>
+    const toolbarItems = <React.Fragment>
       <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>Choose one</span>
-      <DataToolbarContent>
-      <DataToolbarItem>
+      <ToolbarContent>
+      <ToolbarItem>
         <Select
           id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
           variant={SelectVariant.single}
@@ -531,8 +530,8 @@ class ColumnManagementAction extends React.Component {
           aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
           placeholderText={<><FilterIcon /> Name</>}
         />
-      </DataToolbarItem>
-      <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarItem>
         <OptionsMenu
           id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
           isPlain
@@ -544,26 +543,26 @@ class ColumnManagementAction extends React.Component {
               hideCaret/>
           }
         />
-      </DataToolbarItem>
-      <DataToolbarGroup variant="button-group">
-      <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
-      <DataToolbarItem><Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button></DataToolbarItem>
-      </DataToolbarGroup>
-      </DataToolbarContent>
-      <DataToolbarContent>
-        <Pagination
-          itemCount={37}
-          widgetId="pagination-options-menu-bottom"
-          page={1}
-          variant={PaginationVariant.bottom}
-        />
-      </DataToolbarContent>
+      </ToolbarItem>
+      <ToolbarGroup variant="button-group">
+      <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
+      <ToolbarItem><Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button></ToolbarItem>
+      </ToolbarGroup>
+      </ToolbarContent>
     </React.Fragment>;
 
     return <React.Fragment>
       <Table
         gridBreakPoint='grid-xl'
-        header={<DataToolbar id="page-layout-table-column-management-action-toolbar-top">{dataToolbarItems}</DataToolbar>}
+        header={<React.Fragment>
+          <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
+          <Pagination
+            itemCount={37}
+            widgetId="pagination-options-menu-bottom"
+            page={1}
+            variant={PaginationVariant.top}
+          />
+        </React.Fragment>}
         aria-label="This is a table with checkboxes"
         id="page-layout-table-column-management-action-table"
         onSelect={this.onSelect}
@@ -575,17 +574,13 @@ class ColumnManagementAction extends React.Component {
         <TableHeader />
         <TableBody />
       </Table>
-      <DataToolbar id="footer">
-        <DataToolbarContent>
-          <Pagination
-            id="page-layout-table-column-management-action-toolbar-bottom"
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.bottom}
-          />
-        </DataToolbarContent>
-      </DataToolbar>
+      <Pagination
+        id="page-layout-table-column-management-action-toolbar-bottom"
+        itemCount={37}
+        widgetId="pagination-options-menu-bottom"
+        page={1}
+        variant={PaginationVariant.bottom}
+      />
       {this.renderModal()}
     </React.Fragment>;
   }

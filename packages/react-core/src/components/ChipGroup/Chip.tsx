@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { ChipButton } from './ChipButton';
+import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
-import GenerateId from '../../helpers/GenerateId/GenerateId';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the chip text */
@@ -14,13 +14,13 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   closeBtnAriaLabel?: string;
   /** Additional classes added to the chip item */
   className?: string;
-  /** Flag indicating if the chip has overflow */
+  /** Flag indicating if the chip is an overflow chip */
   isOverflowChip?: boolean;
-  /** Flag if chip is read only */
+  /** Flag indicating if chip is read only */
   isReadOnly?: boolean;
-  /** Function that is called when clicking on the chip button */
+  /** Function that is called when clicking on the chip close button */
   onClick?: (event: React.MouseEvent) => void;
-  /** Internal flag for which component will be used for chip */
+  /** Component that will be used for chip. It is recommended that <button> or <li>  are used when the chip is an overflow chip. */
   component?: React.ReactNode;
   /** Position of the tooltip which is displayed if text is longer */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
@@ -30,8 +30,8 @@ interface ChipState {
   isTooltipVisible: boolean;
 }
 
-class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
-  constructor(props: ChipProps & InjectedOuiaProps) {
+export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
+  constructor(props: ChipProps & OUIAProps) {
     super(props);
     this.state = {
       isTooltipVisible: false
@@ -57,95 +57,64 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
   }
 
   renderOverflowChip = () => {
-    const { children, className, onClick, ouiaContext, ouiaId } = this.props;
+    const { children, className, onClick, ouiaId } = this.props;
     const Component = this.props.component as any;
     return (
       <Component
+        onClick={onClick}
         className={css(styles.chip, styles.modifiers.overflow, className)}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'OverflowChip',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('OverflowChip', ouiaId)}
       >
-        <ChipButton onClick={onClick}>
-          <span className={css(styles.chipText)}>{children}</span>
-        </ChipButton>
+        <span className={css(styles.chipText)}>{children}</span>
       </Component>
     );
   };
 
-  renderChip = (randomId: string) => {
-    const {
-      children,
-      closeBtnAriaLabel,
-      tooltipPosition,
-      className,
-      onClick,
-      isReadOnly,
-      ouiaContext,
-      ouiaId
-    } = this.props;
-    const Component = this.props.component as any;
-    if (this.state.isTooltipVisible) {
-      return (
-        <Tooltip position={tooltipPosition} content={children}>
-          <Component
-            className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
-            tabIndex="0"
-            {...(ouiaContext.isOuia && {
-              'data-ouia-component-type': 'Chip',
-              'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-            })}
-          >
-            <span ref={this.span} className={css(styles.chipText)} id={randomId}>
-              {children}
-            </span>
-            {!isReadOnly && (
-              <ChipButton
-                onClick={onClick}
-                ariaLabel={closeBtnAriaLabel}
-                id={`remove_${randomId}`}
-                aria-labelledby={`remove_${randomId} ${randomId}`}
-              >
-                <TimesCircleIcon aria-hidden="true" />
-              </ChipButton>
-            )}
-          </Component>
-        </Tooltip>
-      );
-    }
+  renderInnerChip(id: string) {
+    const { children, className, onClick, closeBtnAriaLabel, isReadOnly, component, ouiaId } = this.props;
+    const Component = component as any;
     return (
       <Component
-        className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Chip',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        className={css(styles.chip, className)}
+        {...(this.state.isTooltipVisible && { tabIndex: 0 })}
+        {...getOUIAProps('Chip', ouiaId)}
       >
-        <span ref={this.span} className={css(styles.chipText)} id={randomId}>
+        <span ref={this.span} className={css(styles.chipText)} id={id}>
           {children}
         </span>
         {!isReadOnly && (
-          <ChipButton
+          <Button
             onClick={onClick}
-            ariaLabel={closeBtnAriaLabel}
-            id={`remove_${randomId}`}
-            aria-labelledby={`remove_${randomId} ${randomId}`}
+            variant="plain"
+            aria-label={closeBtnAriaLabel}
+            id={`remove_${id}`}
+            aria-labelledby={`remove_${id} ${id}`}
           >
-            <TimesCircleIcon aria-hidden="true" />
-          </ChipButton>
+            <TimesIcon aria-hidden="true" />
+          </Button>
         )}
       </Component>
     );
+  }
+
+  renderChip = (randomId: string) => {
+    const { children, tooltipPosition } = this.props;
+    if (this.state.isTooltipVisible) {
+      return (
+        <Tooltip position={tooltipPosition} content={children}>
+          {this.renderInnerChip(randomId)}
+        </Tooltip>
+      );
+    }
+    return this.renderInnerChip(randomId);
   };
 
   render() {
     const { isOverflowChip } = this.props;
     return (
-      <GenerateId>{randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId))}</GenerateId>
+      <GenerateId>
+        {randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(this.props.id || randomId))}
+      </GenerateId>
     );
   }
 }
-
-const ChipWithOuiaContext = withOuiaContext(Chip);
-export { ChipWithOuiaContext as Chip };

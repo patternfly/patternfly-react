@@ -15,7 +15,7 @@ it('DataListContent should match snapshot (auto-generated)', () => {
       id={"''"}
       rowid={"''"}
       isHidden={false}
-      noPadding={false}
+      hasNoPadding={false}
       aria-label={'string'}
     />
   );

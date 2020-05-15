@@ -196,20 +196,6 @@ Please ensure that all React UI components contributed meet the following guidel
     See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
 - When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
-- Exporting components from other libraries (without manipulating them)
-  to consumers is a common task, use:
-
-  ```js
-  # Badge/Badge.js
-  import { Badge } from 'react-bootstrap';
-  export default Badge;
-
-  # Badge/index.js
-  export { default as Badge } from './Badge';
-
-  # index.js
-  export * from './Badge';
-  ```
 
   **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**
 

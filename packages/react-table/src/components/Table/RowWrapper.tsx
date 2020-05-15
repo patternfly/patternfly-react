@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { InjectedOuiaProps, withOuiaContext } from '@patternfly/react-core/dist/js/components/withOuia/withOuia';
-import { debounce } from '@patternfly/react-core/dist/js/helpers/util';
+import { getOUIAProps, OUIAProps, debounce } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
@@ -9,11 +8,10 @@ import { css } from '@patternfly/react-styles';
 export interface RowWrapperRow {
   isOpen?: boolean;
   isExpanded?: boolean;
-  isHeightAuto?: boolean;
   isEditable?: boolean;
 }
 
-export interface RowWrapperProps extends InjectedOuiaProps {
+export interface RowWrapperProps extends OUIAProps {
   trRef?: React.Ref<any> | Function;
   className?: string;
   onScroll?: React.UIEventHandler;
@@ -25,7 +23,7 @@ export interface RowWrapperProps extends InjectedOuiaProps {
   };
 }
 
-class RowWrapper extends React.Component<RowWrapperProps, {}> {
+export class RowWrapper extends React.Component<RowWrapperProps, {}> {
   static defaultProps = {
     className: '' as string,
     row: {
@@ -88,12 +86,11 @@ class RowWrapper extends React.Component<RowWrapperProps, {}> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onScroll,
       onResize,
-      row: { isExpanded, isHeightAuto, isEditable },
+      row: { isExpanded, isEditable },
       rowProps,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       trRef,
       className,
-      ouiaContext,
       ouiaId,
       ...props
     } = this.props;
@@ -106,19 +103,11 @@ class RowWrapper extends React.Component<RowWrapperProps, {}> {
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
           isExpanded && styles.modifiers.expanded,
-          isHeightAuto && styles.modifiers.heightAuto,
           isEditable && inlineStyles.modifiers.inlineEditable
         )}
         hidden={isExpanded !== undefined && !isExpanded}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'TableRow',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('TableRow', ouiaId)}
       />
     );
   }
 }
-
-const RowWrapperWithOuiaContext = withOuiaContext(RowWrapper);
-
-export { RowWrapperWithOuiaContext as RowWrapper };

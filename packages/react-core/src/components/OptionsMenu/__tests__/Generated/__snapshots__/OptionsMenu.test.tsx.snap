@@ -13,13 +13,13 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
       "menuComponent": "ul",
       "onSelect": [Function],
       "toggleClass": "pf-c-options-menu__toggle",
-      "toggleIconClass": "pf-c-options-menu__toggle-icon",
+      "toggleIndicatorClass": "pf-c-options-menu__toggle-icon",
       "toggleTextClass": "pf-c-options-menu__toggle-text",
     }
   }
 >
-  <Component
-    ariaLabelMenu="string"
+  <DropdownWithContext
+    autoFocus={true}
     className="''"
     direction="up"
     dropdownItems={Array []}
@@ -27,6 +27,8 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={true}
+    onSelect={[Function]}
+    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <p>

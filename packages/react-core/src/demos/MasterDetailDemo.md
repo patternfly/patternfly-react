@@ -17,19 +17,18 @@ import {
   Card,
   CardActions,
   CardBody,
-  CardHead,
   CardHeader,
   DataList,
   DataListAction,
   DataListItem,
-  DataListItemCell,
   DataListItemCells,
   DataListItemRow,
-  DataToolbar,
-  DataToolbarItem,
-  DataToolbarContent,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
+  ToolbarGroup,
   Divider,
   Drawer,
   DrawerActions,
@@ -66,9 +65,7 @@ import {
   Text,
   TextContent,
   TextInput,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -105,14 +102,13 @@ import {
   DataListAction,
   DataListCell,
   DataListItem,
-  DataListItemCell,
   DataListItemCells,
   DataListItemRow,
-  DataToolbar,
-  DataToolbarItem,
-  DataToolbarContent,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarToggleGroup,
+  ToolbarGroup,
   Divider,
   Drawer,
   DrawerActions,
@@ -149,10 +145,7 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -339,42 +332,9 @@ class MasterDetailFullPage extends React.Component {
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
     const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="full-page-toolbar-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="full-page-toolbar-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
-              isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div>
+        need to implement new toolbar
+      </div>
     );
 
     const Header = (
@@ -401,16 +361,16 @@ class MasterDetailFullPage extends React.Component {
     );
     
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="full-page-data-toolbar-input1" id="full-page-data-toolbar-input1" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group">
-          <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarGroup variant="filter-group">
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -427,8 +387,8 @@ class MasterDetailFullPage extends React.Component {
                />
               ))}
             </Select>
-          </DataToolbarItem>
-          <DataToolbarItem>
+          </ToolbarItem>
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -445,16 +405,16 @@ class MasterDetailFullPage extends React.Component {
                  />
                ))}
             </Select>
-          </DataToolbarItem>
-       </DataToolbarGroup>
+          </ToolbarItem>
+       </ToolbarGroup>
     </React.Fragment>;
 
-    const dataToolbarItems =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-{drawerPanelBodyContent}</Title>
+          <Title headingLevel="h2" size="xl">node-{drawerPanelBodyContent}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
@@ -476,11 +436,11 @@ class MasterDetailFullPage extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="full-page-data-toolbar" className='pf-m-toggle-group-container'>
-          <DataToolbarContent>
-            {dataToolbarItems}
-          </DataToolbarContent>
-        </DataToolbar>
+        <Toolbar id="full-page-data-toolbar" className='pf-m-toggle-group-container'>
+          <ToolbarContent>
+            {ToolbarItems}
+          </ToolbarContent>
+        </Toolbar>
         <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
           <DataListItem aria-labelledby="selectable-action-item1" id="full-page-item1">
             <DataListItemRow>
@@ -671,14 +631,13 @@ import {
   DataListAction,
   DataListCell,
   DataListItem,
-  DataListItemCell,
   DataListItemCells,
   DataListItemRow,
-  DataToolbar,
-  DataToolbarItem,
-  DataToolbarContent,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarToggleGroup,
+  ToolbarGroup,
   Divider,
   Drawer,
   DrawerActions,
@@ -715,10 +674,7 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -905,42 +861,9 @@ class MasterDetailContentPadding extends React.Component {
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
     const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="content-padding-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="content-padding-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
-              isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div>
+        need to implement new toolbar
+      </div>
     );
 
     const Header = (
@@ -967,16 +890,16 @@ class MasterDetailContentPadding extends React.Component {
     );
     
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="content-padding-data-toolbar-input1" id="content-padding-data-toolbar-input1" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group">
-        <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarGroup variant="filter-group">
+        <ToolbarItem>
           <Select
             variant={SelectVariant.single}
             aria-label="Select Input"
@@ -993,8 +916,8 @@ class MasterDetailContentPadding extends React.Component {
              />
             ))}
           </Select>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Select
             variant={SelectVariant.single}
             aria-label="Select Input"
@@ -1011,16 +934,16 @@ class MasterDetailContentPadding extends React.Component {
                />
              ))}
           </Select>
-        </DataToolbarItem>
-      </DataToolbarGroup>
+        </ToolbarItem>
+      </ToolbarGroup>
     </React.Fragment>;
 
-    const dataToolbarItems =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-{drawerPanelBodyContent}</Title>
+          <Title headingLevel="h2" size="xl">node-{drawerPanelBodyContent}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
@@ -1043,11 +966,11 @@ class MasterDetailContentPadding extends React.Component {
     
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="content-padding-data-toolbar" className='pf-m-toggle-group-container'>
-          <DataToolbarContent>
-            {dataToolbarItems}
-          </DataToolbarContent>
-        </DataToolbar>
+        <Toolbar id="content-padding-data-toolbar" className='pf-m-toggle-group-container'>
+          <ToolbarContent>
+            {ToolbarItems}
+          </ToolbarContent>
+        </Toolbar>
         <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
           <DataListItem aria-labelledby="selectable-action-item1" id="content-padding-item1">
             <DataListItemRow>
@@ -1230,10 +1153,10 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
   CardActions,
   CardHeader,
   CardBody,
+  CardTitle,
   Checkbox,
   Divider,
   Dropdown,
@@ -1274,17 +1197,11 @@ import {
   Text,
   Title,
   Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
 } from '@patternfly/react-core';
-import {
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarFilter,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
-  DataToolbarItem
-} from '@patternfly/react-core/dist/esm/experimental';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
@@ -1487,7 +1404,7 @@ class MasterDetailCardView extends React.Component {
     ];
 
     return (
-      <DataToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
+      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
         <Select
           variant={SelectVariant.checkbox}
           aria-label="Products"
@@ -1499,7 +1416,7 @@ class MasterDetailCardView extends React.Component {
         >
           {filterDropdownItems}
         </Select>
-      </DataToolbarFilter>
+      </ToolbarFilter>
     );
   }
 
@@ -1537,11 +1454,11 @@ class MasterDetailCardView extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <DataToolbarItem>{this.buildFilterDropdown()}</DataToolbarItem>
-        <DataToolbarItem>
+        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem>
           <Button variant="primary">Create a Project</Button>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
             toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
@@ -1549,7 +1466,7 @@ class MasterDetailCardView extends React.Component {
             isPlain
             dropdownItems={toolbarKebabDropdownItems}
           />
-        </DataToolbarItem>
+        </ToolbarItem>
       </React.Fragment>
     );
 
@@ -1588,42 +1505,9 @@ class MasterDetailCardView extends React.Component {
     ];
 
     const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="card-view-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="card-view-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onPageToolbarKebabDropdownToggle} />}
-              isOpen={isUpperToolbarKebabDropdownOpen}
-              dropdownItems={toolbarKebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onPageDropdownSelect}
-              isOpen={isUpperToolbarDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>Kyle Baker</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div>
+        need to implement new toolbar
+      </div>
     );
 
     const Header = (
@@ -1663,10 +1547,10 @@ class MasterDetailCardView extends React.Component {
         {filtered.map((product, key) => (
           <React.Fragment>
             <Card isHoverable key={key} id={'card-view-' + key} onKeyDown={this.onKeyDown} onClick={this.onCardClick} isSelectable isSelected={activeCard === key}>
-              <CardHead>
+              <CardHeader>
                 <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
-              </CardHead>
-              <CardHeader>{product.name}</CardHeader>
+              </CardHeader>
+              <CardTitle>{product.name}</CardTitle>
               <CardBody>{product.description}</CardBody>
             </Card>
           </React.Fragment>
@@ -1677,7 +1561,7 @@ class MasterDetailCardView extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-{activeCard && activeCard.charAt(activeCard.length-1)}</Title>
+          <Title headingLevel="h2" size="xl">node-{activeCard && activeCard.charAt(activeCard.length-1)}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
@@ -1716,9 +1600,9 @@ class MasterDetailCardView extends React.Component {
           <PageSection>
             <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
               <DrawerSection>
-                <DataToolbar id="card-view-data-toolbar-group-types" clearAllFilters={this.onDelete}>
-                  <DataToolbarContent>{toolbarItems}</DataToolbarContent>
-                </DataToolbar>
+                <Toolbar id="card-view-data-toolbar-group-types" clearAllFilters={this.onDelete}>
+                  <ToolbarContent>{toolbarItems}</ToolbarContent>
+                </Toolbar>
                 <Divider component="div" />
               </DrawerSection>
               <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
@@ -1748,7 +1632,6 @@ import {
   DataList,
   DataListAction,
   DataListItem,
-  DataListItemCell,
   DataListItemCells,
   DataListItemRow,
   Divider,
@@ -1844,36 +1727,9 @@ class MasterDetailSimpleListInCard extends React.Component {
     );
     
     const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="simple-list-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="simple-list-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div>
+        need to implement new toolbar
+      </div>
     );
 
     const Header = (
@@ -1902,7 +1758,7 @@ class MasterDetailSimpleListInCard extends React.Component {
     const panelContent = (
       <DrawerPanelContent widthOnXl={75}>
         <DrawerHead>
-          <Title size="lx">List item {drawerPanelBodyContent} details</Title>
+          <Title headingLevel="h2" size="xl">List item {drawerPanelBodyContent} details</Title>
         </DrawerHead>
         <DrawerPanelBody>
           <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
@@ -1992,12 +1848,11 @@ import {
   DataListAction,
   DataListCell,
   DataListItem,
-  DataListItemCell,
   DataListItemCells,
   DataListItemRow,
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
   Divider,
   Drawer,
   DrawerActions,
@@ -2032,10 +1887,7 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -2109,36 +1961,9 @@ class MasterDetailDataListInCard extends React.Component {
     );
     
     const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="data-list-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="data-list-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              toggle={<KebabToggle />}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              toggle={<DropdownToggle>Kyle Baker</DropdownToggle>}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div>
+        need to implement new toolbar
+      </div>
     );
 
     const Header = (
@@ -2192,9 +2017,9 @@ class MasterDetailDataListInCard extends React.Component {
     
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="data-list-data-toolbar">
-          <DataToolbarContent>
-            <DataToolbarItem>
+        <Toolbar id="data-list-data-toolbar">
+          <ToolbarContent>
+            <ToolbarItem>
               <Dropdown
                 onSelect={this.onDropdownSelect}
                 toggle={
@@ -2205,9 +2030,9 @@ class MasterDetailDataListInCard extends React.Component {
                 isOpen={isDropdownOpen}
                 dropdownItems={dropdownItems}
               />
-            </DataToolbarItem>
-          </DataToolbarContent>
-        </DataToolbar>
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
         <DataList aria-label="selectable data list example" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
           <DataListItem aria-labelledby='data-list-item1-in-card' id='data-list-item1'>
             <DataListItemRow>
@@ -2321,14 +2146,13 @@ import {
   DataListAction,
   DataListCell,
   DataListItem,
-  DataListItemCell,
   DataListItemCells,
   DataListItemRow,
-  DataToolbar,
-  DataToolbarItem,
-  DataToolbarContent,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarToggleGroup,
+  ToolbarGroup,
   Divider,
   Drawer,
   DrawerActions,
@@ -2365,10 +2189,7 @@ import {
   Text,
   TextContent,
   TextInput,
-  Title,
-  Toolbar,
-  ToolbarGroup,
-  ToolbarItem
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -2555,42 +2376,9 @@ class MasterDetailInlineModifier extends React.Component {
       <DropdownItem component="button">Separated action</DropdownItem>
     ];
     const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="inline-modifier-button1" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="inline-modifier-button2" aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
-              isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+      <div>
+        need to implement new toolbar
+      </div>
     );
 
     const Header = (
@@ -2617,16 +2405,16 @@ class MasterDetailInlineModifier extends React.Component {
     );
     
     const toggleGroupItems = <React.Fragment>
-      <DataToolbarItem>
+      <ToolbarItem>
         <InputGroup>
           <TextInput name="inline-modifier-input" id="inline-modifier-input" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarGroup variant="filter-group">
-          <DataToolbarItem>
+      </ToolbarItem>
+      <ToolbarGroup variant="filter-group">
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -2643,8 +2431,8 @@ class MasterDetailInlineModifier extends React.Component {
                />
               ))}
             </Select>
-          </DataToolbarItem>
-          <DataToolbarItem>
+          </ToolbarItem>
+          <ToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -2661,16 +2449,16 @@ class MasterDetailInlineModifier extends React.Component {
                  />
                ))}
             </Select>
-          </DataToolbarItem>
-       </DataToolbarGroup>
+          </ToolbarItem>
+       </ToolbarGroup>
     </React.Fragment>;
 
-    const dataToolbarItems =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <Title size="lx">node-{drawerPanelBodyContent}</Title>
+          <Title headingLevel="h2" size="xl">node-{drawerPanelBodyContent}</Title>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseDrawerClick}/>
           </DrawerActions>
@@ -2692,11 +2480,11 @@ class MasterDetailInlineModifier extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <DataToolbar id="inline-modifier-data-toolbar" className='pf-m-toggle-group-container'>
-          <DataToolbarContent>
-            {dataToolbarItems}
-          </DataToolbarContent>
-        </DataToolbar>
+        <Toolbar id="inline-modifier-data-toolbar" className='pf-m-toggle-group-container'>
+          <ToolbarContent>
+            {ToolbarItems}
+          </ToolbarContent>
+        </Toolbar>
         <DataList aria-label="data list" selectedDataListItemId={selectedDataListItemId} onSelectDataListItem={this.onSelectDataListItem}>
           <DataListItem aria-labelledby="selectable-action-item1" id="inline-modifier-item1">
             <DataListItemRow>

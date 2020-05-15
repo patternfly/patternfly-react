@@ -8,7 +8,6 @@ exports[`it renders properly 1`] = `
     color="currentColor"
     noVerticalAlign={false}
     size="sm"
-    title={null}
   />
 </Component>
 `;

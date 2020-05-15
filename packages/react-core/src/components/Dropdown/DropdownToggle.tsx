@@ -18,10 +18,6 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: HTMLElement;
-  /** Forces focus state */
-  isFocused?: boolean;
-  /** Forces hover state */
-  isHovered?: boolean;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -30,8 +26,10 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   isDisabled?: boolean;
   /** Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
-  /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  iconComponent?: React.ElementType | null;
+  /** An image to display within the dropdown toggle, appearing before any component children */
+  icon?: React.ReactNode;
+  /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */
+  toggleIndicator?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems?: React.ReactNode[];
   /** Variant of split button toggle */
@@ -39,7 +37,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   /** Accessible label for the dropdown toggle button */
   'aria-label'?: string;
   /** Accessibility property to indicate correct has popup */
-  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
+  'aria-haspopup'?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'tree';
   /** Type to put on the button */
   type?: 'button' | 'submit' | 'reset';
   /** Callback called when the Enter key is pressed */
@@ -52,43 +50,46 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   className = '',
   isOpen = false,
   parentRef = null,
-  isFocused = false,
-  isHovered = false,
-  isActive = false,
   isDisabled = false,
   isPlain = false,
   isPrimary = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  isActive = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onToggle = (_isOpen: boolean) => undefined as any,
-  iconComponent: IconComponent = CaretDownIcon,
+  icon = null,
+  toggleIndicator: ToggleIndicator = CaretDownIcon,
   splitButtonItems,
   splitButtonVariant = 'checkbox',
-  ariaHasPopup,
+  'aria-haspopup': ariaHasPopup,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {
   const toggle = (
     <DropdownContext.Consumer>
-      {({ toggleTextClass, toggleIconClass }) => (
+      {({ toggleTextClass, toggleIndicatorClass, toggleIconClass }) => (
         <Toggle
           {...props}
           id={id}
           className={className}
           isOpen={isOpen}
           parentRef={parentRef}
-          isFocused={isFocused}
-          isHovered={isHovered}
           isActive={isActive}
           isDisabled={isDisabled}
           isPlain={isPlain}
           isPrimary={isPrimary}
           onToggle={onToggle}
-          ariaHasPopup={ariaHasPopup}
+          aria-haspopup={ariaHasPopup}
           {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
         >
-          {children && <span className={IconComponent && css(toggleTextClass)}>{children}</span>}
-          {IconComponent && <IconComponent className={css(children && toggleIconClass)} />}
+          {icon && <span className={css(toggleIconClass)}>{icon}</span>}
+          {children && <span className={ToggleIndicator && css(toggleTextClass)}>{children}</span>}
+          {ToggleIndicator && (
+            <span className={css(toggleIndicatorClass)}>
+              <ToggleIndicator />
+            </span>
+          )}
         </Toggle>
       )}
     </DropdownContext.Consumer>

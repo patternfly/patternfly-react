@@ -56,7 +56,8 @@ export class EmptyStateDemo extends Component {
           <Button variant="link">Action area</Button>
         </EmptyStateSecondaryActions>
       </React.Fragment>
-    )
+    ),
+    variant: EmptyStateVariant.large
   };
   mySmallEmptyStateProps: EmptyStateProps = {
     children: (
@@ -103,8 +104,19 @@ export class EmptyStateDemo extends Component {
           <Button variant="link">Action area</Button>
         </EmptyStateSecondaryActions>
       </React.Fragment>
-    ),
-    variant: EmptyStateVariant.full
+    )
+  };
+  myFullHeightEmptyStateProps: EmptyStateProps = {
+    id: 'full-height-example',
+    children: (
+      <React.Fragment>
+        <EmptyStateIcon icon={CubesIcon} />
+        <Title headingLevel="h5" size="lg">
+          Full height empty state
+        </Title>
+        <EmptyStateBody>This represents a full height empty state pattern in Patternfly 4</EmptyStateBody>
+      </React.Fragment>
+    )
   };
 
   componentDidMount() {
@@ -114,12 +126,12 @@ export class EmptyStateDemo extends Component {
   render() {
     return (
       <React.Fragment>
-        <EmptyState variant={this.myExtraLargeEmptyStateProps.variant}>
-          {this.myExtraLargeEmptyStateProps.children}
-        </EmptyState>
-        <EmptyState>{this.myLargeEmptyStateProps.children}</EmptyState>
+        <EmptyState variant={this.myLargeEmptyStateProps.variant}>{this.myLargeEmptyStateProps.children}</EmptyState>
         <EmptyState variant={this.mySmallEmptyStateProps.variant}>{this.mySmallEmptyStateProps.children}</EmptyState>
-        <EmptyState variant={this.myFullEmptyStateProps.variant}>{this.myFullEmptyStateProps.children}</EmptyState>
+        <EmptyState>{this.myFullEmptyStateProps.children}</EmptyState>
+        <EmptyState isFullHeight id={this.myFullHeightEmptyStateProps.id}>
+          {this.myFullHeightEmptyStateProps.children}
+        </EmptyState>
       </React.Fragment>
     );
   }

@@ -112,7 +112,7 @@ describe('state', () => {
       <DropdownContext.Provider
         value={{
           toggleTextClass: 'some-test-class',
-          toggleIconClass: 'another-test-class'
+          toggleIndicatorClass: 'another-test-class'
         }}
       >
         <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
@@ -128,7 +128,7 @@ describe('state', () => {
       <DropdownContext.Provider
         value={{
           toggleTextClass: 'some-test-class',
-          toggleIconClass: 'another-test-class'
+          toggleIndicatorClass: 'another-test-class'
         }}
       >
         <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>

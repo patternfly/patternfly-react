@@ -2,7 +2,7 @@
 
 exports[`Stack should match snapshot (auto-generated) 1`] = `
 <div
-  className="pf-l-stack ''"
+  className="pf-l-stack pf-m-gutter ''"
 >
   ReactNode
 </div>

@@ -1,7 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ContextProvider
+  value={
+    Object {
+      "isHorizontal": false,
+      "onSelect": [Function],
+      "onToggle": [Function],
+      "updateIsScrollable": [Function],
+    }
+  }
+>
+  <nav
+    aria-label="Local"
+    className="pf-c-nav pf-m-light ''"
+    data-ouia-component-id={0}
+    data-ouia-component-type="PF4/Nav"
+    data-ouia-safe={true}
+  >
+    ReactNode
+  </nav>
+</ContextProvider>
 `;

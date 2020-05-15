@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolbarChipGroupContent should match snapshot (auto-generated) 1`] = `
+<div
+  className="pf-c-toolbar__content pf-m-hidden string"
+  hidden={true}
+>
+  <ForwardRef
+    className=""
+  />
+</div>
+`;

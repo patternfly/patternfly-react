@@ -30,7 +30,7 @@ export interface ContextSelectorProps {
   screenReaderLabel?: string;
   /** Text that appears in the Context Selector Toggle */
   toggleText?: string;
-  /** aria-label for the Context Selector Search Button */
+  /** Aria-label for the Context Selector Search Button */
   searchButtonAriaLabel?: string;
   /** Value in the Search field */
   searchInputValue?: string;
@@ -108,7 +108,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
           <div className={css(styles.contextSelectorMenu)}>
             {isOpen && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-                <div className={css(styles.contextSelectorMenuInput)}>
+                <div className={css(styles.contextSelectorMenuSearch)}>
                   <InputGroup>
                     <TextInput
                       value={searchInputValue}

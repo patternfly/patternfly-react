@@ -17,6 +17,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement> {
   isSelectable?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
+  /** Modifies the card to include flat styling */
+  isFlat?: boolean;
 }
 
 export const Card: React.FunctionComponent<CardProps> = ({
@@ -27,6 +29,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isCompact = false,
   isSelectable = false,
   isSelected = false,
+  isFlat = false,
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -38,6 +41,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isCompact && styles.modifiers.compact,
         isSelectable && styles.modifiers.selectable,
         isSelected && isSelectable && styles.modifiers.selected,
+        isFlat && styles.modifiers.flat,
         className
       )}
       tabIndex={isSelectable ? '0' : undefined}

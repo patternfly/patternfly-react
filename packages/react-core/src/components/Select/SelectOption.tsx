@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
-import { default as checkStyles } from '@patternfly/react-styles/css/components/Check/check';
+import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
@@ -32,8 +32,6 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isSelected?: boolean;
   /** Internal flag indicating if the option is checked */
   isChecked?: boolean;
-  /** Internal flag indicating if the option is focused */
-  isFocused?: boolean;
   /** Internal callback for ref tracking */
   sendRef?: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
@@ -52,7 +50,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isPlaceholder: false,
     isSelected: false,
     isChecked: false,
-    isFocused: false,
     isNoResultsOption: false,
     component: 'button',
     onClick: () => {},
@@ -97,7 +94,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       isNoResultsOption,
       isSelected,
       isChecked,
-      isFocused,
       sendRef,
       keyHandler,
       index,
@@ -118,7 +114,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     styles.selectMenuItem,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
-                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   onClick={(event: any) => {
@@ -135,7 +130,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   type="button"
                 >
                   {children || value.toString()}
-                  {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
+                  {isSelected && (
+                    <span className={css(styles.selectMenuItemIcon)}>
+                      <CheckIcon aria-hidden />
+                    </span>
+                  )}
                 </Component>
               </li>
             )}
@@ -177,7 +176,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     styles.selectMenuItem,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
-                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   role="option"

@@ -23,7 +23,6 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
-        title={null}
       />
     </span>
   </div>

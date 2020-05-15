@@ -11,10 +11,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryStack,
-  VictoryStackProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryStack, VictoryStackProps } from 'victory-stack';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -195,7 +194,7 @@ export interface ChartStackProps extends VictoryStackProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -296,7 +295,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
@@ -364,6 +363,8 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
     ...containerComponent.props,
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
+
+  // Note: containerComponent is required for theme
   return (
     <VictoryStack containerComponent={container} theme={theme} {...rest}>
       {children}

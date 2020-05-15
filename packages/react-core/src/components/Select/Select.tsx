@@ -10,9 +10,7 @@ import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
-import { keyHandler, getNextIndex } from '../../helpers/util';
-import { PickOptional } from '../../helpers/typeUtils';
-import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
+import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
 import { Divider } from '../Divider';
 
 // seed for the aria-labelledby ID
@@ -26,8 +24,8 @@ export interface SelectProps
   className?: string;
   /** Flag specifying which direction the Select menu expands */
   direction?: 'up' | 'down';
-  /** Flag to indicate if select is expanded */
-  isExpanded?: boolean;
+  /** Flag to indicate if select is open */
+  isOpen?: boolean;
   /** Flag to indicate if select options are grouped */
   isGrouped?: boolean;
   /** Display the toggle with no border or background */
@@ -42,7 +40,7 @@ export interface SelectProps
   placeholderText?: string | React.ReactNode;
   /** Text to display in typeahead select when no results are found */
   noResultsFoundText?: string;
-  /** Selected item for single select variant.  Array of selected items for multi select variants. */
+  /** Array of selected items for multi select variants. */
   selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Flag indicating if selection badge should be hidden for checkbox variant,default false */
   isCheckboxSelectionBadgeHidden?: boolean;
@@ -51,15 +49,15 @@ export interface SelectProps
   /** Adds accessible text to Select */
   'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
-  ariaLabelledBy?: string;
+  'aria-labelledby'?: string;
   /** Label for input field of type ahead select variants */
-  ariaLabelTypeAhead?: string;
+  typeAheadAriaLabel?: string;
   /** Label for clear selection button of type ahead select variants */
-  ariaLabelClear?: string;
+  clearSelectionsAriaLabel?: string;
   /** Label for toggle of type ahead select variants */
-  ariaLabelToggle?: string;
+  toggleAriaLabel?: string;
   /** Label for remove chip button of multiple type ahead select variant */
-  ariaLabelRemove?: string;
+  removeSelectionAriaLabel?: string;
   /** Callback for selection behavior */
   onSelect?: (
     event: React.MouseEvent | React.ChangeEvent,
@@ -101,7 +99,7 @@ export interface SelectState {
   creatableValue: string;
 }
 
-class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectState> {
+export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private refCollection: HTMLElement[] = [];
@@ -111,18 +109,18 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     className: '',
     direction: SelectDirection.down,
     toggleId: null as string,
-    isExpanded: false,
+    isOpen: false,
     isGrouped: false,
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
     'aria-label': '',
-    ariaLabelledBy: '',
-    ariaLabelTypeAhead: '',
-    ariaLabelClear: 'Clear all',
-    ariaLabelToggle: 'Options menu',
-    ariaLabelRemove: 'Remove',
-    selections: '',
+    'aria-labelledby': '',
+    typeAheadAriaLabel: '',
+    clearSelectionsAriaLabel: 'Clear all',
+    toggleAriaLabel: 'Options menu',
+    removeSelectionAriaLabel: 'Remove',
+    selections: [],
     createText: 'Create',
     placeholderText: '',
     noResultsFoundText: 'No results found',
@@ -197,9 +195,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       }
       typeaheadFilteredChildren =
         e.target.value.toString() !== ''
-          ? React.Children.toArray(this.props.children).filter(
-              (child: React.ReactNode) =>
-                this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
+          ? React.Children.toArray<React.ReactElement>(this.props.children).filter(
+              child => this.getDisplay(child.props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
     }
@@ -267,15 +264,15 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   };
 
   handleFocus = () => {
-    if (!this.props.isExpanded) {
+    if (!this.props.isOpen) {
       this.props.onToggle(true);
     }
   };
 
   handleTypeaheadKeys = (position: string) => {
-    const { isExpanded, isCreatable, createText } = this.props;
+    const { isOpen, isCreatable, createText } = this.props;
     const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
-    if (isExpanded) {
+    if (isOpen) {
       if (position === 'enter' && (typeaheadActiveChild || this.refCollection[0])) {
         this.setState({
           typeaheadInputValue:
@@ -311,16 +308,13 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     if (!value) {
       return;
     }
-
-    const { children, isGrouped } = this.props;
-    let item = children.filter(
-      child => child.props.value !== undefined && child.props.value.toString() === value.toString()
-    )[0];
-    if (isGrouped) {
-      item = children
-        .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
-        .filter(child => child.props.value.toString() === value.toString())[0];
-    }
+    const item = this.props.isGrouped
+      ? React.Children.toArray<React.ReactElement>(this.props.children)
+          .reduce((acc, curr) => [...acc, ...React.Children.toArray(curr.props.children)], [])
+          .find(child => child.props.value.toString() === value.toString())
+      : React.Children.toArray<React.ReactElement>(this.props.children).find(
+          child => child.props.value.toString() === value.toString()
+        );
     if (item) {
       if (item && item.props.children) {
         if (type === 'node') {
@@ -350,8 +344,18 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     return multi.join('');
   };
 
+  generateSelectedBadge = () => {
+    const { customBadgeText, selections } = this.props;
+    if (customBadgeText !== null) {
+      return customBadgeText;
+    }
+    if (Array.isArray(selections) && selections.length > 0) {
+      return selections.length;
+    }
+    return null;
+  };
+
   render() {
-    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       className,
@@ -361,51 +365,52 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       onToggle,
       onSelect,
       onClear,
-      onFilter,
-      onCreateOption,
       toggleId,
-      isExpanded,
+      isOpen,
       isGrouped,
       isPlain,
       isDisabled,
-      isCreatable,
-      selections,
-      isCheckboxSelectionBadgeHidden,
-      ariaLabelledBy,
-      ariaLabelTypeAhead,
-      ariaLabelClear,
-      ariaLabelToggle,
-      ariaLabelRemove,
+      selections: selectionsProp,
+      typeAheadAriaLabel,
+      clearSelectionsAriaLabel,
+      toggleAriaLabel,
+      removeSelectionAriaLabel,
       'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       placeholderText,
       width,
       maxHeight,
       toggleIcon,
-      ouiaContext,
       ouiaId,
+      hasInlineFilter,
+      isCheckboxSelectionBadgeHidden,
+      inlineFilterPlaceholderText,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      onFilter,
+      onCreateOption,
+      isCreatable,
       createText,
       noResultsFoundText,
-      hasInlineFilter,
-      inlineFilterPlaceholderText,
-      customBadgeText,
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    /* eslint-enable @typescript-eslint/no-unused-vars */
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
+    const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
+    const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     let childPlaceholderText = null;
     if (!customContent) {
-      if (!selections && !placeholderText) {
-        const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
+      if (!hasAnySelections && !placeholderText) {
+        const childPlaceholder = React.Children.toArray(children).filter(
+          (child: React.ReactNode) => (child as React.ReactElement).props.isPlaceholder === true
+        );
         childPlaceholderText =
-          (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
+          (childPlaceholder[0] && this.getDisplay((childPlaceholder[0] as React.ReactElement).props.value, 'node')) ||
           (children[0] && this.getDisplay(children[0].props.value, 'node'));
       }
     }
 
     const hasOnClear = onClear !== Select.defaultProps.onClear;
-    const hasAnySelections =
-      selections && (Array.isArray(selections) ? (selections.length > 0 ? true : false) : selections !== '');
     const clearBtn = (
       <button
         className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
@@ -413,7 +418,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
           this.clearSelection(e);
           onClear(e);
         }}
-        aria-label={ariaLabelClear}
+        aria-label={clearSelectionsAriaLabel}
         type="button"
         disabled={isDisabled}
       >
@@ -426,20 +431,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       selectedChips = (
         <ChipGroup>
           {selections &&
-            (selections as string[]).map(item => {
-              const isItemDisabled = React.Children.toArray(children.filter(child => child.props.value === item))[0]
-                .props.isDisabled;
-              return (
-                <Chip
-                  key={item}
-                  onClick={e => onSelect(e, item)}
-                  closeBtnAriaLabel={ariaLabelRemove}
-                  {...(isItemDisabled && { isReadOnly: true })}
-                >
-                  {this.getDisplay(item, 'node')}
-                </Chip>
-              );
-            })}
+            (selections as string[]).map(item => (
+              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={removeSelectionAriaLabel}>
+                {this.getDisplay(item, 'node')}
+              </Chip>
+            ))}
         </ChipGroup>
       );
     }
@@ -448,7 +444,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     if (hasInlineFilter) {
       const filterBox = (
         <React.Fragment>
-          <div key="inline-filter" className={css(styles.selectMenuInput)}>
+          <div key="inline-filter" className={css(styles.selectMenuSearch)}>
             <input
               key="inline-filter-input"
               type="search"
@@ -475,43 +471,73 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       );
     }
 
-    const generateSelectedBadge = () => {
-      if (customBadgeText !== null) {
-        return customBadgeText;
+    let variantProps: any;
+    let variantChildren: any;
+    if (customContent) {
+      variantProps = {
+        selected: selections,
+        openedOnEnter,
+        isCustomContent: true
+      };
+      variantChildren = customContent;
+    } else {
+      switch (variant) {
+        case 'single':
+          variantProps = {
+            selected: selections[0],
+            openedOnEnter
+          };
+          variantChildren = children;
+          break;
+        case 'checkbox':
+          variantProps = {
+            checked: selections,
+            isGrouped,
+            hasInlineFilter
+          };
+          variantChildren = filterWithChildren;
+          break;
+        case 'typeahead':
+          variantProps = {
+            selected: selections[0],
+            openedOnEnter
+          };
+          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          break;
+        case 'typeaheadmulti':
+          variantProps = {
+            selected: selections,
+            openedOnEnter
+          };
+          variantChildren = this.extendTypeaheadChildren(typeaheadActiveChild);
+          break;
       }
-      if (Array.isArray(selections) && selections.length > 0) {
-        return selections.length;
-      }
-      return null;
-    };
+    }
 
     return (
       <div
         className={css(
           styles.select,
-          isExpanded && styles.modifiers.expanded,
+          isOpen && styles.modifiers.expanded,
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
         ref={this.parentRef}
         style={{ width }}
-        {...(ouiaContext.isOuia && {
-          'data-ouia-component-type': 'Select',
-          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        })}
+        {...getOUIAProps('Select', ouiaId)}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
           <SelectToggle
             id={selectToggleId}
             parentRef={this.parentRef}
-            isExpanded={isExpanded}
+            isOpen={isOpen}
             isPlain={isPlain}
             onToggle={onToggle}
             onEnter={this.onEnter}
             onClose={this.onClose}
-            ariaLabelledBy={`${ariaLabelledBy || ''} ${selectToggleId}`}
             variant={variant}
-            ariaLabelToggle={ariaLabelToggle}
+            aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
+            aria-label={toggleAriaLabel}
             handleTypeaheadKeys={this.handleTypeaheadKeys}
             isDisabled={isDisabled}
             hasClearButton={hasOnClear}
@@ -523,23 +549,25 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               </div>
             )}
             {variant === SelectVariant.single && !customContent && (
-              <div className={css(styles.selectToggleWrapper)}>
-                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                <span className={css(styles.selectToggleText)}>
-                  {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
-                </span>
+              <React.Fragment>
+                <div className={css(styles.selectToggleWrapper)}>
+                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                  <span className={css(styles.selectToggleText)}>
+                    {this.getDisplay(selections[0] as string, 'node') || placeholderText || childPlaceholderText}
+                  </span>
+                </div>
                 {hasOnClear && hasAnySelections && clearBtn}
-              </div>
+              </React.Fragment>
             )}
             {variant === SelectVariant.checkbox && !customContent && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {!isCheckboxSelectionBadgeHidden && (customBadgeText !== null || hasAnySelections) && (
+                  {!isCheckboxSelectionBadgeHidden && hasAnySelections && (
                     <div className={css(styles.selectToggleBadge)}>
                       <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
-                        {generateSelectedBadge()}
+                        {this.generateSelectedBadge()}
                       </span>
                     </div>
                   )}
@@ -555,12 +583,12 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id={`${selectToggleId}-select-typeahead`}
-                    aria-label={ariaLabelTypeAhead}
+                    aria-label={typeAheadAriaLabel}
                     placeholder={placeholderText as string}
                     value={
                       typeaheadInputValue !== null
                         ? typeaheadInputValue
-                        : this.getDisplay(selections as string, 'text') || ''
+                        : this.getDisplay(selections[0] as string, 'text') || ''
                     }
                     type="text"
                     onClick={this.onClick}
@@ -570,7 +598,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {(selections || typeaheadInputValue) && clearBtn}
+                {(selections[0] || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
             {variant === SelectVariant.typeaheadMulti && !customContent && (
@@ -582,7 +610,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id={`${selectToggleId}-select-multi-typeahead-typeahead`}
-                    aria-label={ariaLabelTypeAhead}
+                    aria-label={typeAheadAriaLabel}
                     placeholder={placeholderText as string}
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                     type="text"
@@ -593,31 +621,16 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                     disabled={isDisabled}
                   />
                 </div>
-                {((selections && (Array.isArray(selections) && selections.length > 0)) || typeaheadInputValue) &&
-                  clearBtn}
+                {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
               </React.Fragment>
             )}
           </SelectToggle>
-          {customContent && isExpanded && (
-            <SelectMenu
-              {...props}
-              selected={selections}
-              openedOnEnter={openedOnEnter}
-              aria-label={ariaLabel}
-              aria-labelledby={ariaLabelledBy}
-              sendRef={this.sendRef}
-              keyHandler={this.handleArrowKeys}
-              maxHeight={maxHeight}
-              isCustomContent
-            >
-              {customContent}
-            </SelectMenu>
-          )}
-          {variant === SelectVariant.single && isExpanded && !customContent && (
+          {isOpen && (
             <SelectMenu
               {...props}
               isGrouped={isGrouped}
               selected={selections}
+              {...variantProps}
               openedOnEnter={openedOnEnter}
               aria-label={ariaLabel}
               aria-labelledby={ariaLabelledBy}
@@ -625,46 +638,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               keyHandler={this.handleArrowKeys}
               maxHeight={maxHeight}
             >
-              {children}
+              {variantChildren}
             </SelectMenu>
           )}
-          {variant === SelectVariant.checkbox && isExpanded && !customContent && (
-            <SelectMenu
-              {...props}
-              checked={selections ? (selections as string[]) : []}
-              aria-label={ariaLabel}
-              aria-labelledby={ariaLabelledBy}
-              isGrouped={isGrouped}
-              sendRef={this.sendRef}
-              keyHandler={this.handleArrowKeys}
-              maxHeight={maxHeight}
-              hasInlineFilter={hasInlineFilter}
-            >
-              {filterWithChildren}
-            </SelectMenu>
-          )}
-          {(variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) &&
-            isExpanded &&
-            !customContent && (
-              <SelectMenu
-                {...props}
-                selected={selections}
-                openedOnEnter={openedOnEnter}
-                aria-label={ariaLabel}
-                aria-labelledby={ariaLabelledBy}
-                sendRef={this.sendRef}
-                keyHandler={this.handleArrowKeys}
-                maxHeight={maxHeight}
-              >
-                {this.extendTypeaheadChildren(typeaheadActiveChild)}
-              </SelectMenu>
-            )}
         </SelectContext.Provider>
       </div>
     );
   }
 }
-
-const SelectWithOuiaContext = withOuiaContext(Select);
-
-export { SelectWithOuiaContext as Select };

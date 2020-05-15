@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandableSection 1`] = `
+<div
+  className="pf-c-expandable-section"
+>
+  <button
+    className="pf-c-expandable-section__toggle"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="pf-c-expandable-section__toggle-icon"
+    >
+      <AngleRightIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+    <span
+      className="pf-c-expandable-section__toggle-text"
+    />
+  </button>
+  <div
+    className="pf-c-expandable-section__content"
+    hidden={true}
+  >
+    test 
+  </div>
+</div>
+`;
+
+exports[`Renders ExpandableSection expanded 1`] = `
+<div
+  className="pf-c-expandable-section pf-m-expanded"
+>
+  <button
+    aria-expanded={true}
+    className="pf-c-expandable-section__toggle"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="pf-c-expandable-section__toggle-icon"
+    >
+      <AngleRightIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+    <span
+      className="pf-c-expandable-section__toggle-text"
+    />
+  </button>
+  <div
+    className="pf-c-expandable-section__content"
+    hidden={false}
+  >
+     test 
+  </div>
+</div>
+`;
+
+exports[`Renders Uncontrolled ExpandableSection 1`] = `
+<div
+  className="pf-c-expandable-section"
+>
+  <button
+    className="pf-c-expandable-section__toggle"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="pf-c-expandable-section__toggle-icon"
+    >
+      <AngleRightIcon
+        aria-hidden={true}
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </span>
+    <span
+      className="pf-c-expandable-section__toggle-text"
+    >
+      Show More
+    </span>
+  </button>
+  <div
+    className="pf-c-expandable-section__content"
+    hidden={true}
+  >
+     test 
+  </div>
+</div>
+`;

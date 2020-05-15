@@ -51,7 +51,7 @@ async function printList() {
   }
 }
 
-if (process.argv[2].includes('list')) {
+if (process.argv[2] && process.argv[2].includes('list')) {
   printList();
 }
 else {

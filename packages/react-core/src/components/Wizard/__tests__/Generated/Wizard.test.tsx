@@ -10,31 +10,30 @@ import {} from '../..';
 it('Wizard should match snapshot (auto-generated)', () => {
   const view = shallow(
     <Wizard
-      isOpen={false}
-      isInPage={false}
-      isCompactNav={false}
-      isFullHeight={false}
-      isFullWidth={false}
       width={null}
       height={null}
       title={"''"}
-      description={"''"}
+      titleId={'string'}
+      descriptionId={'string'}
+      description={''}
+      hideClose={false}
       onClose={() => undefined as any}
       onGoToStep={null}
       className={"''"}
       steps={[]}
       startAtStep={1}
-      ariaLabelNav={"'Steps'"}
-      hasBodyPadding={true}
+      navAriaLabel={"'Steps'"}
+      hasNoBodyPadding={false}
       footer={null}
       onSave={() => undefined as void}
       onNext={null}
       onBack={null}
-      nextButtonText={"'Next'"}
-      backButtonText={"'Back'"}
-      cancelButtonText={"'Cancel'"}
-      ariaLabelCloseButton={"'Close'"}
+      nextButtonText={'Next'}
+      backButtonText={'Back'}
+      cancelButtonText={'Cancel'}
+      closeButtonAriaLabel={"'Close'"}
       appendTo={null}
+      isOpen={true}
     />
   );
   expect(view).toMatchSnapshot();

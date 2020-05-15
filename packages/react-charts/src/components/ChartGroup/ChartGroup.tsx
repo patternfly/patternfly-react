@@ -12,11 +12,10 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryGroup,
-  VictoryGroupProps,
-  VictoryZoomContainer
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryGroup, VictoryGroupProps } from 'victory-group';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -173,7 +172,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
   /**
    * ChartGroup uses the standard externalEventMutations prop.
    */
@@ -216,7 +215,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -329,7 +328,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
@@ -436,6 +435,8 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     ...containerComponent.props,
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
+
+  // Note: containerComponent is required for theme
   return (
     <VictoryGroup containerComponent={container} theme={theme} {...rest}>
       {children}

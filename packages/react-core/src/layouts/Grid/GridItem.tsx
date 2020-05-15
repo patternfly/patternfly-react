@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
-import { getModifier } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
 
 export type gridSpans = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -59,9 +58,9 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
 }: GridItemProps) => {
   const classes = [
     styles.gridItem,
-    span && getModifier(styles, `${span}Col`),
-    rowSpan && getModifier(styles, `${rowSpan}Row`),
-    offset && getModifier(styles, `offset_${offset}Col`)
+    span && styles.modifiers[`${span}Col` as keyof typeof styles.modifiers],
+    rowSpan && styles.modifiers[`${rowSpan}Row` as keyof typeof styles.modifiers],
+    offset && styles.modifiers[`offset_${offset}Col` as keyof typeof styles.modifiers]
   ];
 
   Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
@@ -74,13 +73,13 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
     const offsetValue = props[offsetKey] as gridSpans;
 
     if (spanValue) {
-      classes.push(getModifier(styles, `${spanValue}ColOn${classModifier}`));
+      classes.push(styles.modifiers[`${spanValue}ColOn${classModifier}` as keyof typeof styles.modifiers]);
     }
     if (rowSpanValue) {
-      classes.push(getModifier(styles, `${rowSpanValue}RowOn${classModifier}`));
+      classes.push(styles.modifiers[`${rowSpanValue}RowOn${classModifier}` as keyof typeof styles.modifiers]);
     }
     if (offsetValue) {
-      classes.push(getModifier(styles, `offset_${offsetValue}ColOn${classModifier}`));
+      classes.push(styles.modifiers[`offset_${offsetValue}ColOn${classModifier}` as keyof typeof styles.modifiers]);
     }
 
     delete props[key];

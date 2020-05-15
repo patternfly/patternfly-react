@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`editableRowWrapper renders correctly 1`] = `
+<EditableRowWrapper
+  onResize={[MockFunction]}
+  onScroll={[MockFunction]}
+  row={
+    Object {
+      "editConfig": Object {
+        "editConfirmationType": null,
+      },
+    }
+  }
+  trRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <tr />,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <TestRow
+    className="pf-c-table__editable-row"
+    onResize={[Function]}
+    onScroll={[Function]}
+    row={
+      Object {
+        "editConfig": Object {
+          "editConfirmationType": null,
+        },
+      }
+    }
+    trRef={
+      Object {
+        "current": <tr />,
+      }
+    }
+  >
+    <tr />
+  </TestRow>
+</EditableRowWrapper>
+`;

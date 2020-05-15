@@ -7,10 +7,10 @@ import {
   OrientationTypes,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryLegend,
-  VictoryLegendProps,
-  VictoryStyleInterface
-} from 'victory';
+  VictoryStyleInterface,
+  VictoryStyleObject
+} from 'victory-core';
+import { VictoryLegend, VictoryLegendProps } from 'victory-legend';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
@@ -215,7 +215,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    *
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
-  style?: VictoryStyleInterface;
+  style?: VictoryStyleInterface & { title?: VictoryStyleObject };
   /**
    * The symbolSpacer prop defines the number of pixels between data
    * components and label components.
@@ -302,6 +302,8 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     theme,
     ...containerComponent.props
   });
+
+  // Note: containerComponent is required for theme
   return <VictoryLegend containerComponent={container} dataComponent={dataComponent} theme={theme} {...rest} />;
 };
 

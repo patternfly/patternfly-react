@@ -5,10 +5,6 @@ describe('Empty State Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/empty-state-demo-nav-link');
   });
 
-  it('Verify extra large empty state', () => {
-    cy.get('.pf-c-empty-state').contains('Extra Large Empty State');
-  });
-
   it('Verify large empty state', () => {
     cy.get('.pf-c-empty-state').contains('Large Empty State');
   });
@@ -19,5 +15,9 @@ describe('Empty State Demo Test', () => {
 
   it('Verify small empty state', () => {
     cy.get('.pf-c-empty-state').contains('Small Empty State');
+  });
+
+  it('Verify full height example carries modifier class', () => {
+    cy.get('.pf-c-empty-state#full-height-example').should('have.class', 'pf-m-full-height');
   });
 });

@@ -11,12 +11,6 @@ describe('Chip Group Demo Test', () => {
       .contains('Lemons');
   });
 
-  xit('Verify chip is closed on default', () => {
-    cy.get('.pf-c-chip__text')
-      .eq(1)
-      .should('not.contain', 'Limes');
-  });
-
   it('Verify chip has badge', () => {
     cy.get('span')
       .children('.pf-c-badge')
@@ -26,23 +20,9 @@ describe('Chip Group Demo Test', () => {
       .should('not.equal', null);
   });
 
-  xit('Verify more button works', () => {
-    cy.get('.pf-m-overflow')
-      .children('button')
-      .click();
-    cy.get('.pf-c-chip__text').contains('Show Less');
-  });
-
-  xit('Verify show less button works', () => {
-    cy.get('.pf-m-overflow')
-      .children('button')
-      .click();
-    cy.get('.pf-c-chip__text').contains('more');
-  });
-
   it('Verify delete button on first chip', () => {
-    const chip = cy.get('.pf-c-chip').children('#pf-random-id-0');
-    cy.get('#remove_pf-random-id-0').click();
+    const chip = cy.get('.pf-c-chip').children('#pf-random-id-1');
+    cy.get('#remove_pf-random-id-1').click();
     chip.should('not.exist');
   });
 });

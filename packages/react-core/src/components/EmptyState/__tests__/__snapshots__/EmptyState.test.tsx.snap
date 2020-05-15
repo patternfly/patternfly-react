@@ -1,43 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmptyState Main 1`] = `
+exports[`EmptyState Full height 1`] = `
 <div
-  className="pf-c-empty-state pf-m-lg"
+  className="pf-c-empty-state pf-m-lg pf-m-full-height"
 >
-  <Title
-    headingLevel="h5"
-    size="lg"
+  <div
+    className="pf-c-empty-state__content"
   >
-    HTTP Proxies
-  </Title>
-  <EmptyStateBody>
-    Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
-  </EmptyStateBody>
-  <Component
-    variant="primary"
-  >
-    New HTTP Proxy
-  </Component>
-  <EmptyStateSecondaryActions>
-    <Component
-      aria-label="learn more action"
-      variant="link"
+    <Title
+      headingLevel="h3"
+      size="md"
     >
-      Learn more about this in the documentation.
-    </Component>
-  </EmptyStateSecondaryActions>
+      EmptyState large
+    </Title>
+  </div>
 </div>
 `;
 
-exports[`EmptyState Main variant regular 1`] = `
+exports[`EmptyState Main 1`] = `
 <div
   className="pf-c-empty-state"
 >
-  <Title
-    size="md"
+  <div
+    className="pf-c-empty-state__content"
   >
-    EmptyState full
-  </Title>
+    <Title
+      headingLevel="h5"
+      size="lg"
+    >
+      HTTP Proxies
+    </Title>
+    <EmptyStateBody>
+      Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
+    </EmptyStateBody>
+    <Button
+      variant="primary"
+    >
+      New HTTP Proxy
+    </Button>
+    <EmptyStateSecondaryActions>
+      <Button
+        aria-label="learn more action"
+        variant="link"
+      >
+        Learn more about this in the documentation.
+      </Button>
+    </EmptyStateSecondaryActions>
+  </div>
+</div>
+`;
+
+exports[`EmptyState Main variant large 1`] = `
+<div
+  className="pf-c-empty-state pf-m-lg"
+>
+  <div
+    className="pf-c-empty-state__content"
+  >
+    <Title
+      headingLevel="h3"
+      size="md"
+    >
+      EmptyState large
+    </Title>
+  </div>
 </div>
 `;
 
@@ -45,10 +71,15 @@ exports[`EmptyState Main variant small 1`] = `
 <div
   className="pf-c-empty-state pf-m-sm"
 >
-  <Title
-    size="md"
+  <div
+    className="pf-c-empty-state__content"
   >
-    EmptyState small
-  </Title>
+    <Title
+      headingLevel="h3"
+      size="md"
+    >
+      EmptyState small
+    </Title>
+  </div>
 </div>
 `;

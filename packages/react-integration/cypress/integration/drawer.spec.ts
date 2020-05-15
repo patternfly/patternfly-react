@@ -25,7 +25,7 @@ describe('Drawer Demo Test', () => {
     $drawerPanel.should('have.class', 'pf-m-width-50-on-lg');
     $drawerPanel.should('have.class', 'pf-m-width-33-on-xl');
     $drawerPanel.should('have.class', 'pf-m-width-25-on-2xl');
-    $drawerPanel.should('have.css', 'flex-basis', '50%');
+    $drawerPanel.should('have.css', 'flex-basis', '33%');
     // Medium viewport
     cy.viewport(800, 660);
     cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', '100%');

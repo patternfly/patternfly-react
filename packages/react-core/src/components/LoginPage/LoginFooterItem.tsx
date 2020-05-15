@@ -18,13 +18,11 @@ export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
   href = '#',
   target = '_blank',
   ...props
-}: LoginFooterItemProps) => {
-  const reactElement: boolean = React.isValidElement(children);
-  return reactElement ? (
-    React.cloneElement(children as React.ReactElement<any>)
+}: LoginFooterItemProps) =>
+  React.isValidElement(children) ? (
+    children
   ) : (
     <a target={target} href={href} {...props}>
       {children}
     </a>
   );
-};

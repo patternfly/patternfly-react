@@ -12,10 +12,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryBar,
-  VictoryBarProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryBar, VictoryBarProps } from 'victory-bar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -220,7 +219,7 @@ export interface ChartBarProps extends VictoryBarProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -326,7 +325,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
@@ -429,6 +428,8 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
     theme,
     ...containerComponent.props
   });
+
+  // Note: containerComponent is required for theme
   return <VictoryBar containerComponent={container} theme={theme} {...rest} />;
 };
 

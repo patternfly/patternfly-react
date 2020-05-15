@@ -8,6 +8,6 @@ import { ModalBoxFooter } from '../../ModalBoxFooter';
 import {} from '../..';
 
 it('ModalBoxFooter should match snapshot (auto-generated)', () => {
-  const view = shallow(<ModalBoxFooter children={<>ReactNode</>} className={"''"} isLeftAligned={false} />);
+  const view = shallow(<ModalBoxFooter children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

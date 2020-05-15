@@ -58,3 +58,8 @@ test('card with only isSelected applied - not change', () => {
   expect(view.prop('className')).not.toMatch(/selected/);
   expect(view.prop('tabIndex')).toBe(undefined);
 });
+
+test('card with isFlat applied', () => {
+  const view = shallow(<Card isFlat />);
+  expect(view.prop('className')).toMatch(/m-flat/);
+});

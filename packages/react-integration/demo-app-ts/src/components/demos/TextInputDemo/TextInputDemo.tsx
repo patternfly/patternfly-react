@@ -8,11 +8,11 @@ export class TextInputDemo extends Component {
     validated: ValidatedOptions.default
   };
 
-  handleTextInputChange = value => {
+  handleTextInputChange = (value: string) => {
     this.setState({ value });
   };
 
-  handleValidatedTextInputChange = value => {
+  handleValidatedTextInputChange = (value: string) => {
     // If the text input contains less than 5 characters, set validated to error
     const validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
     this.setState({ validatedTexInputValue: value, validated });
@@ -30,10 +30,6 @@ export class TextInputDemo extends Component {
   myReadOnlyTextInputProps: TextInputProps = {
     isReadOnly: true,
     value: 'read only text input example'
-  };
-
-  myValidTextInputProps: TextInputProps = {
-    isValid: false
   };
 
   componentDidMount() {
@@ -54,7 +50,6 @@ export class TextInputDemo extends Component {
           isReadOnly={this.myReadOnlyTextInputProps.isReadOnly}
           value={this.myReadOnlyTextInputProps.value}
         />
-        <TextInput id="text-invalid" isValid={this.myValidTextInputProps.isValid} />
         <Text>Validated text input </Text>
         <TextInput
           id="text-validated"

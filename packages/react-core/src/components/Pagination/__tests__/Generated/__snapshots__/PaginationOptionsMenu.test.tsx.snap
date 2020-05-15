@@ -13,16 +13,22 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
       "menuComponent": "ul",
       "onSelect": [Function],
       "toggleClass": " ",
-      "toggleIconClass": "pf-c-options-menu__toggle-icon",
+      "toggleIndicatorClass": "pf-c-options-menu__toggle-button-icon",
       "toggleTextClass": "pf-c-options-menu__toggle-text",
     }
   }
 >
-  <Component
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
     direction="up"
     dropdownItems={Array []}
+    isGrouped={false}
     isOpen={false}
     isPlain={true}
+    onSelect={[Function]}
+    ouiaComponentType="Dropdown"
+    position="left"
     toggle={
       <OptionsToggle
         firstIndex={0}

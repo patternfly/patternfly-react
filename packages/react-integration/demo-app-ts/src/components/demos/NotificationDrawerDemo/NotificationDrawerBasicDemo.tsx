@@ -33,13 +33,13 @@ export class BasicNotificationDrawerDemo extends React.Component<
     };
   }
 
-  onToggle = isOpen => {
+  onToggle = (isOpen: boolean) => {
     this.setState({
       isOpen
     });
   };
 
-  onSelect = event => {
+  onSelect = (event: any) => {
     this.setState({
       isOpen: !this.state.isOpen,
       isActive: ''
@@ -47,14 +47,14 @@ export class BasicNotificationDrawerDemo extends React.Component<
     this.onFocus(event.target.id);
   };
 
-  onClick = event => {
+  onClick = (event: any) => {
     this.setState({
       isActive: event.target.id
     });
     this.onFocus(event.target.id);
   };
 
-  onFocus = id => {
+  onFocus = (id: string) => {
     if (id) {
       const element = document.getElementById(id);
       element.focus();

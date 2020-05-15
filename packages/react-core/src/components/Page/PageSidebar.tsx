@@ -23,7 +23,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   className = '',
   nav,
   isNavOpen = true,
-  theme = 'light',
+  theme = 'dark',
   ...props
 }: PageSidebarProps) => (
   <PageContextConsumer>
@@ -35,7 +35,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           id="page-sidebar"
           className={css(
             styles.pageSidebar,
-            theme === 'dark' && styles.modifiers.dark,
+            theme === 'light' && styles.modifiers.light,
             navOpen && styles.modifiers.expanded,
             !navOpen && styles.modifiers.collapsed,
             className

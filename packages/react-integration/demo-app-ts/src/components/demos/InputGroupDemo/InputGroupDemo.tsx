@@ -15,7 +15,8 @@ import {
   DropdownToggle,
   DropdownItem,
   Popover,
-  PopoverPosition
+  PopoverPosition,
+  ValidatedOptions
 } from '@patternfly/react-core';
 
 interface InputGroupState {
@@ -26,7 +27,7 @@ interface InputGroupState {
 export class InputGroupDemo extends React.Component<{}, InputGroupState> {
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
-  constructor(props) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       isOpen: false,
@@ -122,7 +123,12 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
           <InputGroupText id="username" aria-label="@">
             <AtIcon />
           </InputGroupText>
-          <TextInput isValid={false} id="textInput7" type="email" aria-label="Error state username example" />
+          <TextInput
+            validated={ValidatedOptions.error}
+            id="textInput7"
+            type="email"
+            aria-label="Error state username example"
+          />
         </InputGroup>
         <br />
         <br />

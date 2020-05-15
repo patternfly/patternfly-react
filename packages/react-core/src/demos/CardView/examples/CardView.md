@@ -11,12 +11,13 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
-  CardActions,
   CardHeader,
+  CardActions,
+  CardTitle,
   CardBody,
   Checkbox,
   Dropdown,
+  DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
@@ -28,9 +29,11 @@ import {
   Nav,
   NavItem,
   NavList,
-  NavVariants,
   Page,
   PageHeader,
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -39,12 +42,12 @@ import {
   Text,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  ToolbarFilter,
+  ToolbarContent
 } from '@patternfly/react-core';
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -70,12 +73,13 @@ import {
   Button,
   ButtonVariant,
   Card,
-  CardHead,
-  CardActions,
   CardHeader,
+  CardActions,
+  CardTitle,
   CardBody,
   Checkbox,
   Dropdown,
+  DropdownGroup,
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
@@ -88,9 +92,11 @@ import {
   Nav,
   NavItem,
   NavList,
-  NavVariants,
   Page,
   PageHeader,
+  PageHeaderTools,
+  PageHeaderToolsGroup,
+  PageHeaderToolsItem,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -102,21 +108,12 @@ import {
   Text,
   Toolbar,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  ToolbarFilter,
+  ToolbarContent
 } from '@patternfly/react-core';
-import {
-  DataToolbar,
-  DataToolbarContent,
-  DataToolbarFilter,
-  DataToolbarToggleGroup,
-  DataToolbarGroup,
-  DataToolbarItem
-} from '@patternfly/react-core/dist/esm/experimental';
-// make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 import pfIcon from './pf-logo-small.svg';
@@ -517,7 +514,7 @@ class CardViewBasic extends React.Component {
     ];
 
     return (
-      <DataToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
+      <ToolbarFilter categoryName="Products" chips={filters.products} deleteChip={this.onDelete}>
         <Select
           variant={SelectVariant.checkbox}
           aria-label="Products"
@@ -529,7 +526,7 @@ class CardViewBasic extends React.Component {
         >
           {filterDropdownItems}
         </Select>
-      </DataToolbarFilter>
+      </ToolbarFilter>
     );
   }
 
@@ -571,12 +568,12 @@ class CardViewBasic extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <DataToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</DataToolbarItem>
-        <DataToolbarItem>{this.buildFilterDropdown()}</DataToolbarItem>
-        <DataToolbarItem>
+        <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
+        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem>
           <Button variant="primary">Create a Project</Button>
-        </DataToolbarItem>
-        <DataToolbarItem>
+        </ToolbarItem>
+        <ToolbarItem>
           <Dropdown
             onSelect={this.onToolbarKebabDropdownSelect}
             toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
@@ -584,10 +581,10 @@ class CardViewBasic extends React.Component {
             isPlain
             dropdownItems={toolbarKebabDropdownItems}
           />
-        </DataToolbarItem>
-        <DataToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
+        </ToolbarItem>
+        <ToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
           {this.renderPagination()}
-        </DataToolbarItem>
+        </ToolbarItem>
       </React.Fragment>
     );
 
@@ -613,62 +610,73 @@ class CardViewBasic extends React.Component {
       </Nav>
     );
 
-    const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem component="button">Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled component="button">
-        Disabled Action
+    const kebabDropdownItems = [
+      <DropdownItem>
+        <CogIcon /> Settings
       </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem component="button">Separated Action</DropdownItem>
+      <DropdownItem>
+        <HelpIcon /> Help
+      </DropdownItem>
     ];
-
-    const PageToolbar = (
-      <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
-          <ToolbarItem>
-            <Button id="default-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
-              <BellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarItem>
-            <Button id="default-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
+    const userDropdownItems = [
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
+    ];
+    const headerTools = (
+      <PageHeaderTools>
+        <PageHeaderToolsGroup breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+          <PageHeaderToolsItem>
+            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
-          </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem className={css(accessibleStyles.hiddenOnLg, spacingStyles.mr_0)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem>
+            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+              <HelpIcon />
+            </Button>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onKebabDropdownSelect}
               toggle={<KebabToggle onToggle={this.onPageToolbarKebabDropdownToggle} />}
               isOpen={isUpperToolbarKebabDropdownOpen}
-              dropdownItems={toolbarKebabDropdownItems}
+              dropdownItems={kebabDropdownItems}
             />
-          </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onPageDropdownSelect}
               isOpen={isUpperToolbarDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onPageDropdownToggle}>Kyle Baker</DropdownToggle>}
+              toggle={
+                <DropdownToggle 
+                  onToggle={this.onPageDropdownToggle} 
+                >
+                  John Smith
+                </DropdownToggle>
+              }
               dropdownItems={userDropdownItems}
             />
-          </ToolbarItem>
-        </ToolbarGroup>
-      </Toolbar>
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
+        <Avatar src={imgAvatar} alt="Avatar image" />
+      </PageHeaderTools>
     );
 
     const Header = (
       <PageHeader
         logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        toolbar={PageToolbar}
-        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
+        headerTools={headerTools}
         showNavToggle
       />
     );
@@ -710,16 +718,16 @@ class CardViewBasic extends React.Component {
               <Text component="h1">Projects</Text>
               <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
             </TextContent>
-            <DataToolbar id="data-toolbar-group-types" clearAllFilters={this.onDelete}>
-              <DataToolbarContent>{toolbarItems}</DataToolbarContent>
-            </DataToolbar>
+            <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
+              <ToolbarContent>{toolbarItems}</ToolbarContent>
+            </Toolbar>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {filtered.map((product, key) => (
                 <React.Fragment>
                   <Card isHoverable key={key}>
-                    <CardHead>
+                    <CardHeader>
                       <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
                       <CardActions>
                         <Dropdown
@@ -753,8 +761,8 @@ class CardViewBasic extends React.Component {
                           id={`check-${product.id}`}
                         />
                       </CardActions>
-                    </CardHead>
-                    <CardHeader>{product.name}</CardHeader>
+                    </CardHeader>
+                    <CardTitle>{product.name}</CardTitle>
                     <CardBody>{product.description}</CardBody>
                   </Card>
                 </React.Fragment>

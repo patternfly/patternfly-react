@@ -12,10 +12,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface,
-  VictoryArea,
-  VictoryAreaProps
-} from 'victory';
+  VictoryStyleInterface
+} from 'victory-core';
+import { VictoryArea, VictoryAreaProps } from 'victory-area';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -145,7 +144,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', string | number>[];
   /**
    * ChartArea uses the standard externalEventMutations prop.
    */
@@ -298,7 +297,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x?: boolean; y?: boolean };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
@@ -402,6 +401,8 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
     theme,
     ...containerComponent.props
   });
+
+  // Note: containerComponent is required for theme
   return <VictoryArea containerComponent={container} theme={theme} {...rest} />;
 };
 

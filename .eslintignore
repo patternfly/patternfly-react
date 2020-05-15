@@ -12,7 +12,9 @@ coverage
 **/Generated
 **/build
 css
+packages/react-docs/.cache
 packages/react-docs/static
+packages/react-docs/public
 
 # package managers
 yarn-error.log
