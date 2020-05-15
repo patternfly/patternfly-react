@@ -99,7 +99,7 @@ workflows:
         - build_docs_pf4
         filters:
           branches:
-            only: master
+            only: v3
 jobs:
   build_pf4:
     docker:
@@ -222,7 +222,7 @@ jobs:
         name: Breaking Change Lint
         # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
         command: |
-            if git log origin/master..HEAD --format="%b" | grep -i "breaking change";
+            if git log origin/v3..HEAD --format="%b" | grep -i "breaking change";
             then
                 echo "Breaking change above detected"
                 exit 1
