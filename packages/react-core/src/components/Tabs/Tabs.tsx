@@ -275,7 +275,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
                     key={index}
                     className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
                   >
-                    ,
                     <TabButton
                       className={css(styles.tabsLink)}
                       onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
