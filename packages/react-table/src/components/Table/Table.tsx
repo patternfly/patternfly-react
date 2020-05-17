@@ -238,7 +238,10 @@ export interface IRow extends RowType {
   isExpanded?: boolean;
   isFirstVisible?: boolean;
   isLastVisible?: boolean;
+  /* Whether the row checkbox is selected */
   selected?: boolean;
+  /* Whether the row checkbox is disabled */
+  disableCheckbox?: boolean;
 }
 
 export interface TableProps {
