@@ -14,8 +14,10 @@ import {
   validateCellEdits,
   cancelCellEdits,
   applyCellEdits,
-  EditableTextCell
+  EditableTextCell,
+  SelectInputCell
 } from '@patternfly/react-table';
+import { SelectOption } from '@patternfly/react-core';
 
 const rowLevelValidationRules: IValidatorDef[] = [
   {
@@ -40,12 +42,38 @@ const rowLevelValidationRules: IValidatorDef[] = [
   }
 ];
 
-export class TableEditableDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+interface TableState {
+  rows: IRow[];
+  columns: (ICell | string)[];
+  isExpanded: boolean[];
+  selected: string[];
+}
+
+export class TableEditableDemo extends React.Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
+  private options;
+
   constructor(props: TableProps) {
     super(props);
+
+    this.options = [
+      { value: 'Option 1' },
+      { value: 'Option 2' },
+      { value: 'Option 3' },
+      { value: 'Option 4' },
+      { value: 'Option 5' }
+    ];
+
     this.state = {
-      columns: ['Text input col 1', 'Disabled text input col 2', 'Text input col 3', 'Text input col 4'],
+      isExpanded: [false, false, false],
+      selected: ['Option 1', 'Option 2'],
+      columns: [
+        'Text input col 1',
+        'Disabled text input col 2',
+        'Text input col 3',
+        'Text input col 4',
+        'Dropdown col 5'
+      ],
       rows: [
         {
           isEditable: true,
@@ -114,6 +142,30 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
               props: {
                 value: 'Row 1 cell 4 content',
                 name: 'uniqueIdRow1Cell4'
+              }
+            },
+            {
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+                <SelectInputCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={updatedProps}
+                  onSelect={this.onSelect}
+                  inputAriaLabel="Row 1 cell 5 content"
+                  isExpanded={this.state.isExpanded[rowIndex]}
+                  options={this.options.map((option, index) => (
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
+                  ))}
+                  onToggle={isExpanded => {
+                    this.onToggle(isExpanded, rowIndex);
+                  }}
+                  selections={this.state.selected[rowIndex]}
+                />
+              ),
+              props: {
+                value: 'Option 1',
+                name: 'uniqueIdRow1Cell5'
               }
             }
           ]
@@ -188,6 +240,30 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
                 value: 'Row 2 cell 4 content',
                 name: 'uniqueIdRow2Cell4'
               }
+            },
+            {
+              title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
+                <SelectInputCell
+                  value={value}
+                  rowIndex={rowIndex}
+                  cellIndex={cellIndex}
+                  props={updatedProps}
+                  onSelect={this.onSelect}
+                  inputAriaLabel="Row 2 cell 5 content"
+                  isExpanded={this.state.isExpanded[rowIndex]}
+                  options={this.options.map((option, index) => (
+                    <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
+                  ))}
+                  onToggle={isExpanded => {
+                    this.onToggle(isExpanded, rowIndex);
+                  }}
+                  selections={this.state.selected[rowIndex]}
+                />
+              ),
+              props: {
+                value: 'Option 2',
+                name: 'uniqueIdRow2Cell5'
+              }
             }
           ]
         }
@@ -235,6 +311,29 @@ export class TableEditableDemo extends React.Component<TableProps, { columns: (I
     }
     this.setState({
       rows: newRows
+    });
+  };
+
+  onSelect = (newValue, evt, rowIndex, cellIndex) => {
+    const newRows = Array.from(this.state.rows);
+    (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
+    const newSelected = Array.from(this.state.selected);
+    newSelected[rowIndex] = newValue;
+    const newIsExpanded = Array.from(this.state.isExpanded);
+    newIsExpanded[rowIndex] = false;
+
+    this.setState({
+      rows: newRows,
+      isExpanded: newIsExpanded,
+      selected: newSelected
+    });
+  };
+
+  onToggle = (isExpanded, rowIndex) => {
+    const newIsExpanded = Array.from(this.state.isExpanded);
+    newIsExpanded[rowIndex] = isExpanded;
+    this.setState({
+      isExpanded: newIsExpanded
     });
   };
 

@@ -10,6 +10,7 @@ export * from './Header';
 export * from './HeaderCell';
 export * from './RowWrapper';
 export * from './SelectColumn';
+export * from './SelectInputCell';
 export * from './SortColumn';
 export * from './TableText';
 export * from './utils';

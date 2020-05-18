@@ -18,7 +18,7 @@ describe('Table Simple Test', () => {
   it('Check number of columns', () => {
     cy.get('thead')
       .find('th')
-      .should('have.length', 5);
+      .should('have.length', 6);
   });
 
   it('Check edit', () => {
@@ -44,11 +44,19 @@ describe('Table Simple Test', () => {
       .clear()
       .type('xyz');
     cy.get(
+      '.pf-m-inline-editable:nth-of-type(2) > [data-label="Dropdown col 5"] > .pf-c-inline-edit__input > .pf-c-select'
+    ).click();
+    cy.get('button#uniqueIdRow2Cell5Option3-3').click();
+    cy.get(
       '.pf-m-inline-editable:nth-of-type(2) > .pf-c-table__inline-edit-action > .pf-c-inline-edit__group > :nth-child(2) > .pf-c-button'
     ).click();
     cy.get(
       '.pf-c-inline-edit tbody tr:nth-of-type(2) > [data-label="Text input col 4"] .pf-c-inline-edit__value'
     ).should('have.text', 'Row 2 cell 4 content');
+    cy.get('.pf-c-inline-edit tbody tr:nth-of-type(2) > [data-label="Dropdown col 5"] .pf-c-inline-edit__value').should(
+      'have.text',
+      'Option 2'
+    );
   });
 
   it('Check failed validation displays error msg', () => {

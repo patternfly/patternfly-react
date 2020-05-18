@@ -32,7 +32,8 @@ import {
   cancelCellEdits,
   validateCellEdits,
   applyCellEdits,
-  EditableTextCell
+  EditableTextCell,
+  SelectInputCell
 } from '@patternfly/react-table';
 
 import {
@@ -42,6 +43,7 @@ import {
     EmptyStateBody,
     EmptyStatePrimary,
     Bullseye,
+    SelectOption
 } from '@patternfly/react-core';
 
 import {
@@ -1340,7 +1342,7 @@ EmptyStateTable = () => {
 
 ```js title=Editable-rows isBeta
 import React from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput, SelectOption } from '@patternfly/react-core';
 import {
   Table,
   TableHeader,
@@ -1350,13 +1352,25 @@ import {
   cancelCellEdits,
   validateCellEdits,
   applyCellEdits,
-  EditableTextCell
+  EditableTextCell,
+  SelectInputCell
 } from '@patternfly/react-table';
 
 class EditableRowsTable extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.options = [
+      {value: "Option 1"},
+      {value: "Option 2"},
+      {value: "Option 3"},
+      {value: "Option 4"},
+      {value: "Option 5"}
+    ],
+    
     this.state = {
+      isExpanded: [false, false, false],
+      selected: ["Option 1", "Option 2", "Option 3"],
       columns: [
         'Text input col 1',
         'Disabled text input col 2',
@@ -1428,16 +1442,27 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <SelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
                   props={props}
-                  handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 4 content" />
+                  onSelect={this.onSelect}
+                  inputAriaLabel="Row 1 cell 4 content"
+                  isExpanded={this.state.isExpanded[rowIndex]}
+                  options={this.options.map((option, index) => (
+                    <SelectOption
+                      key={index}
+                      value={option.value}
+                      id={'uniqueIdRow1Cell4Option' + index} 
+                    />
+                  ))}
+                  onToggle={(isExpanded) => {this.onToggle(isExpanded, rowIndex)}}
+                  selections={this.state.selected[rowIndex]}
+                />
               ),
               props: {
-                value: 'Row 1 cell 4 content',
+                value: 'Option 1',
                 name: 'uniqueIdRow1Cell4'
               }
             },
@@ -1493,16 +1518,27 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <SelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
                   props={props}
-                  handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 4 content" />
+                  onSelect={this.onSelect}
+                  inputAriaLabel="Row 2 cell 4 content"
+                  isExpanded={this.state.isExpanded[rowIndex]}
+                  options={this.options.map((option, index) => (
+                    <SelectOption
+                      key={index}
+                      value={option.value}
+                      id={'uniqueIdRow2Cell4Option' + index}
+                    />
+                  ))}
+                  onToggle={(isExpanded) => {this.onToggle(isExpanded, rowIndex)}}
+                  selections={this.state.selected[rowIndex]}
+                  />
               ),
               props: {
-                value: 'Row 2 cell 4 content',
+                value: 'Option 2',
                 name: 'uniqueIdRow2Cell4'
               }
             },
@@ -1580,16 +1616,27 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <SelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
                   props={props}
-                  handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 3 cell 4 content" />
+                  onSelect={this.onSelect}
+                  inputAriaLabel="Row 3 cell 4 content"
+                  isExpanded={this.state.isExpanded[rowIndex]}
+                  options={this.options.map((option, index) => (
+                    <SelectOption
+                      key={index}
+                      value={option.value}
+                      id={'uniqueIdRow3Cell4Option' + index}
+                    />
+                  ))}
+                  onToggle={(isExpanded) => {this.onToggle(isExpanded, rowIndex)}}
+                  selections={this.state.selected[rowIndex]}
+                  />
               ),
               props: {
-                value: 'Row 3 cell 4 content',
+                value: 'Option 3',
                 name: 'uniqueIdRow3Cell4'
               }
             }
@@ -1624,6 +1671,29 @@ class EditableRowsTable extends React.Component {
       newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
       this.setState({
         rows: newRows
+      });
+    };
+    
+    this.onSelect = (newValue, evt, rowIndex, cellIndex) => {
+      let newRows = Array.from(this.state.rows);
+      newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
+      let newSelected = Array.from(this.state.selected);
+      newSelected[rowIndex] = newValue;
+      const newIsExpanded = Array.from(this.state.isExpanded);
+      newIsExpanded[rowIndex] = false;
+      
+      this.setState({
+        rows: newRows,
+        isExpanded: newIsExpanded,
+        selected: newSelected
+      });
+    };
+    
+    this.onToggle = (isExpanded, rowIndex) => {
+      const newIsExpanded = Array.from(this.state.isExpanded);
+      newIsExpanded[rowIndex] = isExpanded;
+      this.setState({
+        isExpanded: newIsExpanded
       });
     };
   }
