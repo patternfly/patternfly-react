@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.3.0...@patternfly/react-topology@4.3.1) (2020-05-18)
+
+
+### Bug Fixes
+
+* **topology:** make required packages normal deps ([#4258](https://github.com/patternfly/patternfly-react/issues/4258)) ([af40535](https://github.com/patternfly/patternfly-react/commit/af40535221548b7471193964505323c7302351e1))
+
+
+
+
+
 # [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.14.66...@patternfly/react-topology@4.3.0) (2020-05-15)
 
 
