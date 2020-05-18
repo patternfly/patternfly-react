@@ -32,13 +32,15 @@
     "@patternfly/react-icons": "^4.3.0",
     "@patternfly/react-styles": "^4.3.0",
     "d3": "^5.16.0",
+    "dagre": "0.8.2",
     "lodash": "^4.17.15",
     "mobx": "^5.14.2",
     "mobx-react": "^6.1.4",
     "mobx-react-lite": "^1.4.2",
     "point-in-svg-path": "^1.0.1",
     "react-measure": "^2.3.0",
-    "tslib": "^1.11.1"
+    "tslib": "^1.11.1",
+    "webcola": "3.4.0"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -47,9 +49,7 @@
   "devDependencies": {
     "@types/dagre": "0.7.42",
     "@types/webcola": "3.2.0",
-    "dagre": "0.8.2",
     "rimraf": "^2.6.2",
-    "typescript": "^3.8.3",
-    "webcola": "3.4.0"
+    "typescript": "^3.8.3"
   }
 }
