@@ -111,7 +111,7 @@ class VirtualizedExample extends React.Component {
           {({width}) => (
             <VirtualTableBody
               className="pf-c-table pf-c-virtualized pf-c-window-scroller"
-              deferredMeasurementCache={deferredMeasurementCache}
+              deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
@@ -245,7 +245,7 @@ class SortableExample extends React.Component {
             <VirtualTableBody
               ref={ref => this.sortableVirtualBody = ref}
               className="pf-c-table pf-c-virtualized pf-c-window-scroller"
-              deferredMeasurementCache={deferredMeasurementCache}
+              deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
@@ -387,7 +387,7 @@ class SelectableExample extends React.Component {
             <VirtualTableBody
               ref={ref => this.selectableVirtualBody = ref}
               className="pf-c-table pf-c-virtualized pf-c-window-scroller"
-              deferredMeasurementCache={deferredMeasurementCache}
+              deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
@@ -528,7 +528,7 @@ class ActionsExample extends React.Component {
             <VirtualTableBody
               ref={ref => this.actionsVirtualBody = ref}
               className="pf-c-table pf-c-virtualized pf-c-window-scroller"
-              deferredMeasurementCache={deferredMeasurementCache}
+              deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
