@@ -49,9 +49,14 @@ interface TableState {
   selected: string[];
 }
 
+interface Option {
+  value: string;
+}
+
 export class TableEditableDemo extends React.Component<TableProps, TableState> {
   static displayName = 'TableEditableDemo';
-  private options;
+
+  private options: Option[];
 
   constructor(props: TableProps) {
     super(props);
@@ -314,7 +319,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onSelect = (newValue, evt, rowIndex, cellIndex) => {
+  onSelect = (newValue: string, event: React.MouseEvent | React.ChangeEvent, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
     const newSelected = Array.from(this.state.selected);
@@ -329,7 +334,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     });
   };
 
-  onToggle = (isExpanded, rowIndex) => {
+  onToggle = (isExpanded: boolean, rowIndex: number) => {
     const newIsExpanded = Array.from(this.state.isExpanded);
     newIsExpanded[rowIndex] = isExpanded;
     this.setState({
