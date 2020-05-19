@@ -9,23 +9,18 @@ This package is currently an extension. Extension components do not undergo the 
 <br />
 <br />
 
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
-import UUID from 'uuid/v1';
 import virtualGridStyles from './VirtualGrid.example.css';
 import windowScrollerStyles from './WindowScroller.example.css';
 
 ## Examples
 ```js title=Window-scroller
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
@@ -44,7 +39,7 @@ class WindowScrollerExample extends React.Component {
         cells.push(cellValue);
       }
       rows.push({
-        id: UUID(),
+        id: `window-scroller-row-${i}`,
         cells
       });
 
@@ -103,13 +98,9 @@ class WindowScrollerExample extends React.Component {
   render() {
     const {scrollToIndex, columns, rows, scollableElement} = this.state;
 
-    const rowRenderer = ({index, isScrolling, isVisible, key, style, parent}) => {
+    const rowRenderer = ({index, isScrolling, key, style, parent}) => {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
-
-      const className = clsx({
-        isVisible: isVisible
-      });
 
       return <CellMeasurer
         cache={this._cellMeasurementCache}
@@ -117,7 +108,7 @@ class WindowScrollerExample extends React.Component {
         key={key}
         parent={parent}
         rowIndex={index}>
-        <tr style={style} className={className} role="row">
+        <tr style={style} role="row">
           <td className={columns[0].props.className} role="gridcell">{text}</td>
           <td className={columns[1].props.className} role="gridcell">{text}</td>
           <td className={columns[2].props.className} role="gridcell">{text}</td>

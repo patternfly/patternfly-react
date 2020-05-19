@@ -14,8 +14,8 @@ import {
 } from './types';
 
 import accessibilityOverscanIndicesGetter from './accessibilityOverscanIndicesGetter';
-import { VirtualGrid } from './VirtualGrid';
-import clsx from 'clsx';
+import { VirtualGrid, VirtualGridProps } from './VirtualGrid';
+import { css } from '@patternfly/react-styles';
 
 /**
  * It is inefficient to create and manage a large list of DOM elements within a scrolling container
@@ -26,14 +26,34 @@ import clsx from 'clsx';
  * This component renders a virtualized list of elements with either fixed or dynamic heights.
  */
 
-interface Props {
+interface VirtualTableBodyProps extends Omit<
+  VirtualGridProps,
+  | 'style'
+  | 'containerStyle'
+  | 'aria-label'
+  | 'aria-readonly'
+  | 'tabIndex'
+  | 'role'
+  | 'autoContainerWidth'
+  | 'cellRenderer'
+  | 'className'
+  | 'columnWidth'
+  | 'columnCount'
+  | 'noContentRenderer'
+  | 'onScroll'
+  | 'onSectionRendered'
+  | 'ref'
+  | 'scrollToRow'
+  | 'scrollContainerComponent'
+  | 'innerScrollContainerComponent'
+> {
   'aria-label'?: string;
 
   /**
    * Removes fixed height from the scrollingContainer so that the total height
    * of rows can stretch the window. Intended for use with WindowScroller
    */
-  autoHeight: boolean;
+  autoHeight?: boolean;
 
   /** Optional CSS class name */
   className?: string;
@@ -42,32 +62,32 @@ interface Props {
    * Used to estimate the total height of a List before all of its rows have actually been measured.
    * The estimated total height is adjusted as rows are rendered.
    */
-  estimatedRowSize: number;
+  estimatedRowSize?: number;
 
   /** Height constraint for list (determines how many actual rows are rendered) */
   height: number;
 
   /** Optional renderer to be used in place of rows when rowCount is 0 */
-  noRowsRenderer: NoContentRenderer;
+  noRowsRenderer?: NoContentRenderer;
 
   /** Callback invoked with information about the slice of rows that were just rendered.  */
 
-  onRowsRendered: (params: any) => void;
+  onRowsRendered?: (params: any) => void;
 
   /**
    * Callback invoked whenever the scroll offset changes within the inner scrollable region.
    * This callback can be used to sync scrolling between lists, tables, or grids.
    */
-  onScroll: (params: Scroll) => void;
+  onScroll?: (params: Scroll) => void;
 
   /** See VirtualGrid#overscanIndicesGetter */
-  overscanIndicesGetter: OverscanIndicesGetter;
+  overscanIndicesGetter?: OverscanIndicesGetter;
 
   /**
    * Number of rows to render above/below the visible bounds of the list.
    * These rows can help for smoother scrolling on touch devices.
    */
-  overscanRowCount: number;
+  overscanRowCount?: number;
 
   /** Either a fixed row height (number) or a function that returns the height of a row given its index.  */
   rowHeight: CellSize;
@@ -79,16 +99,15 @@ interface Props {
   rowCount: number;
 
   /** See VirtualGrid#scrollToAlignment */
-  scrollToAlignment: Alignment;
+  scrollToAlignment?: Alignment;
 
   /** Row index to ensure visible (by forcefully scrolling if necessary) */
-  scrollToIndex: number;
+  scrollToIndex?: number;
 
   /** Vertical offset. */
   scrollTop?: number;
 
-  /** Optional inline style */
-  style: Object;
+  style?: Object;
 
   /** Tab index for focus */
   tabIndex?: number;
@@ -103,7 +122,7 @@ interface Props {
   rows: any[];
 }
 
-export class VirtualTableBody extends React.PureComponent<Props> {
+export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
   static defaultProps = {
     autoHeight: false,
     estimatedRowSize: 30,
@@ -194,16 +213,15 @@ export class VirtualTableBody extends React.PureComponent<Props> {
   }
 
   render() {
-    const { className, noRowsRenderer, scrollToIndex, width, columns, columnCount, rows, tabIndex, style } = this.props;
+    const { className, noRowsRenderer, scrollToIndex, width, columns, columnCount, style } = this.props;
 
-    const classNames = clsx('ReactVirtualized__List', className);
+    const classNames = css('ReactVirtualized__List', className);
 
-    const VirtualGridAny = VirtualGrid as any;
     return (
       // note: these aria props if rendered will break a11y for role="presentation"
       // this approach attempts to fix non standard table grids
       // see: https://www.html5accessibility.com/tests/aria-table-fix.html
-      <VirtualGridAny
+      <VirtualGrid
         {...this.props}
         style={{
           tableLayout: 'fixed',
@@ -227,8 +245,6 @@ export class VirtualTableBody extends React.PureComponent<Props> {
         onSectionRendered={this._onSectionRendered}
         ref={this._setRef}
         scrollToRow={scrollToIndex}
-        columns={columns}
-        rows={rows}
         scrollContainerComponent="table"
         innerScrollContainerComponent="tbody"
       />

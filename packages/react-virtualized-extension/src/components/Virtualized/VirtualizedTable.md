@@ -9,23 +9,18 @@ This package is currently an extension. Extension components do not undergo the 
 <br />
 <br />
 
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, headerCol, sortable, SortByDirection } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
-import UUID from 'uuid/v1';
 import virtualGridStyles from './VirtualGrid.example.css';
 
 
 ## Examples
 ```js title=Basic
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
-import { debounce } from 'lodash';
+import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -37,7 +32,7 @@ class VirtualizedExample extends React.Component {
    const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
-        id: UUID(),
+        id: `basic-row-${i}`,
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
       });
     }
@@ -77,13 +72,9 @@ class VirtualizedExample extends React.Component {
       keyMapper: rowIndex => rowIndex
     });
 
-    const rowRenderer = ({index, isScrolling, isVisible, key, style, parent}) => {
+    const rowRenderer = ({index, isScrolling, key, style, parent}) => {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
-
-      const className = clsx({
-        isVisible: isVisible
-      });
 
       return <CellMeasurer
         cache={measurementCache}
@@ -91,7 +82,7 @@ class VirtualizedExample extends React.Component {
         key={key}
         parent={parent}
         rowIndex={index}>
-        <tr style={style} className={className} role="row">
+        <tr style={style} role="row">
           <td className={columns[0].props.className} role="gridcell">{text}</td>
           <td className={columns[1].props.className} role="gridcell">{text}</td>
           <td className={columns[2].props.className} role="gridcell">{text}</td>
@@ -119,7 +110,7 @@ class VirtualizedExample extends React.Component {
         <AutoSizer disableHeight>
           {({width}) => (
             <VirtualTableBody
-              className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -136,13 +127,9 @@ class VirtualizedExample extends React.Component {
     );
   }
 }
-
-export default VirtualizedExample;
 ```
 
 ```js title=Sortable
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
@@ -156,7 +143,7 @@ class SortableExample extends React.Component {
    const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
-        id: UUID(),
+        id: `sortable-row-${i}`,
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
       });
     }
@@ -216,20 +203,17 @@ class SortableExample extends React.Component {
       keyMapper: rowIndex => rowIndex
     });
 
-    const rowRenderer = ({index, isScrolling, isVisible, key, style, parent}) => {
+    const rowRenderer = ({index, isScrolling, key, style, parent}) => {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx({
-        isVisible: isVisible
-      });
       return <CellMeasurer
         cache={measurementCache}
         columnIndex={0}
         key={key}
         parent={parent}
         rowIndex={index}>
-        <tr style={style} className={className} role="row">
+        <tr style={style} role="row">
           <td className={columns[0].props.className} role="gridcell">{text}</td>
           <td className={columns[1].props.className} role="gridcell">{text}</td>
           <td className={columns[2].props.className} role="gridcell">{text}</td>
@@ -260,7 +244,7 @@ class SortableExample extends React.Component {
           {({width}) => (
             <VirtualTableBody
               ref={ref => this.sortableVirtualBody = ref}
-              className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -277,13 +261,9 @@ class SortableExample extends React.Component {
     );
   }
 }
-
-export default SortableExample;
 ```
 
 ```js title=Selectable
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
@@ -298,7 +278,7 @@ class SelectableExample extends React.Component {
     for (let i = 0; i < 100; i++) {
       rows.push({
         selected: false,
-        id: UUID(),
+        id: `selectable-row-${i}`,
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
       });
     }
@@ -360,13 +340,9 @@ class SelectableExample extends React.Component {
       keyMapper: rowIndex => rowIndex
     });
 
-    const rowRenderer = ({index, isScrolling, isVisible, key, style, parent}) => {
+    const rowRenderer = ({index, isScrolling, key, style, parent}) => {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
-
-      const className = clsx({
-        isVisible: isVisible
-      });
 
       return <CellMeasurer
         cache={measurementCache}
@@ -374,7 +350,7 @@ class SelectableExample extends React.Component {
         key={key}
         parent={parent}
         rowIndex={index}>
-        <tr data-id={index} style={style} className={className} role="row">
+        <tr data-id={index} style={style} role="row">
           <td data-key="0" className="pf-c-table__check" role="gridcell">
             <input type="checkbox" checked={rows[index].selected} 
               onChange={(e) => 
@@ -410,7 +386,7 @@ class SelectableExample extends React.Component {
           {({width}) => (
             <VirtualTableBody
               ref={ref => this.selectableVirtualBody = ref}
-              className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -427,13 +403,9 @@ class SelectableExample extends React.Component {
     );
   }
 }
-
-export default SelectableExample;
 ```
 
 ```js title=Actions
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
@@ -448,7 +420,7 @@ class ActionsExample extends React.Component {
     for (let i = 0; i < 100; i++) {
       rows.push({
         disableActions: i % 3 === 2,
-        id: UUID(),
+        id: `actions-row-${i}`,
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
       });
     }
@@ -509,13 +481,9 @@ class ActionsExample extends React.Component {
       keyMapper: rowIndex => rowIndex
     });
 
-    const rowRenderer = ({index, isScrolling, isVisible, key, style, parent}) => {
+    const rowRenderer = ({index, isScrolling, key, style, parent}) => {
       const {rows, columns, actions} = this.state;
       const text = rows[index].cells[0];
-
-      const className = clsx({
-        isVisible: isVisible
-      });
 
       return <CellMeasurer
         cache={measurementCache}
@@ -523,7 +491,7 @@ class ActionsExample extends React.Component {
         key={key}
         parent={parent}
         rowIndex={index}>
-        <tr data-id={index} style={style} className={className} role="row">
+        <tr data-id={index} style={style} role="row">
           <td className={columns[0].props.className} role="gridcell">{text}</td>
           <td className={columns[1].props.className} role="gridcell">{text}</td>
           <td className={columns[2].props.className} role="gridcell">{text}</td>
@@ -559,7 +527,7 @@ class ActionsExample extends React.Component {
           {({width}) => (
             <VirtualTableBody
               ref={ref => this.actionsVirtualBody = ref}
-              className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
+              className="pf-c-table pf-c-virtualized pf-c-window-scroller"
               deferredMeasurementCache={measurementCache}
               rowHeight={measurementCache.rowHeight}
               height={400}
@@ -576,6 +544,4 @@ class ActionsExample extends React.Component {
     );
   }
 }
-
-export default ActionsExample;
 ```
