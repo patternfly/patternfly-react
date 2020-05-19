@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
-import clsx from 'clsx';
 import { mount } from 'enzyme';
 import { Table, TableHeader, sortable } from '@patternfly/react-table';
 import { VirtualTableBody } from './index';
@@ -14,13 +13,7 @@ const measurementCache = new CellMeasurerCache({
 });
 
 describe('Simple virtualized table', () => {
-  const rowRenderer = (index: number, isVisible: boolean) => {
-    const text = rows[index].cells[0];
-
-    const className = clsx({
-      isVisible
-    });
-  };
+  const rowRenderer = () => {};
 
   test('className', () => {
     const view = mount(
@@ -64,13 +57,7 @@ describe('Simple virtualized table', () => {
 });
 
 test('Sortable Virtualized Table', () => {
-  const rowRenderer = (index: number, isVisible: boolean) => {
-    const text = rows[index].cells[0];
-
-    const className = clsx({
-      isVisible
-    });
-  };
+  const rowRenderer = () => {};
 
   const onSortCall = () => undefined as any;
   columns[0] = { ...(columns[0] as object), transforms: [sortable] };
@@ -93,13 +80,7 @@ test('Sortable Virtualized Table', () => {
 });
 
 test('Simple Actions table', () => {
-  const rowRenderer = (index: number, isVisible: boolean) => {
-    const text = rows[index].cells[0];
-
-    const className = clsx({
-      isVisible
-    });
-  };
+  const rowRenderer = () => {};
 
   const rowsWithDisabledAction = [
     ...rows,
@@ -130,13 +111,7 @@ test('Simple Actions table', () => {
 });
 
 test('Actions virtualized table', () => {
-  const rowRenderer = (index: number, isVisible: boolean) => {
-    const text = rows[index].cells[0];
-
-    const className = clsx({
-      isVisible
-    });
-  };
+  const rowRenderer = () => {};
 
   const view = mount(
     <Table
@@ -165,13 +140,7 @@ test('Actions virtualized table', () => {
 });
 
 test('Selectable virtualized table', () => {
-  const rowRenderer = (index: number, isVisible: boolean) => {
-    const text = rows[index].cells[0];
-
-    const className = clsx({
-      isVisible
-    });
-  };
+  const rowRenderer = () => {};
 
   const onSelect = () => undefined as any;
   const view = mount(

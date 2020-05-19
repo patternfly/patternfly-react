@@ -33,10 +33,7 @@
     "@patternfly/react-core": "^4.15.0",
     "@patternfly/react-icons": "^4.3.0",
     "@patternfly/react-styles": "^4.3.0",
-    "clsx": "^1.0.1",
-    "dom-helpers": "^2.4.0 || ^3.0.0",
     "linear-layout-vector": "0.0.1",
-    "react-lifecycles-compat": "^3.0.4",
     "react-virtualized": "^9.21.1",
     "tslib": "^1.11.1"
   },
@@ -46,11 +43,8 @@
   },
   "devDependencies": {
     "@types/dom-helpers": "^3.4.1",
-    "@types/react-lifecycles-compat": "^3.0.1",
     "@types/react-virtualized": "^9.21.5",
-    "lodash": "^4.17.15",
     "rimraf": "^2.6.2",
-    "typescript": "^3.8.3",
-    "uuid": "^3.3.2"
+    "typescript": "^3.8.3"
   }
 }
