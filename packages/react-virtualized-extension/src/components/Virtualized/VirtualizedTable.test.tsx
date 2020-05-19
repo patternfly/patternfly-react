@@ -22,6 +22,7 @@ describe('Simple virtualized table', () => {
         {({ width }: { width: number }) => (
           <VirtualTableBody
             className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+            deferredMeasurementCache={measurementCache}
             height={400}
             rowCount={rows.length}
             rowHeight={measurementCache.rowHeight}

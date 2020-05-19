@@ -213,7 +213,7 @@ export class VirtualTableBody extends React.Component<VirtualTableBodyProps> {
   }
 
   render() {
-    const { className, noRowsRenderer, scrollToIndex, width, columns, columnCount, rows, tabIndex, style } = this.props;
+    const { className, noRowsRenderer, scrollToIndex, width, columns, columnCount, style } = this.props;
 
     const classNames = css('ReactVirtualized__List', className);
 
