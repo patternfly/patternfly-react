@@ -20,7 +20,7 @@ export interface ISelectInputCell {
   inputAriaLabel: string;
   isDisabled?: boolean;
   selections: string | SelectOptionObject | (string | SelectOptionObject)[];
-  isExpanded: boolean;
+  isOpen: boolean;
   onToggle: (isExpanded: boolean) => void;
 }
 
@@ -32,7 +32,7 @@ export const SelectInputCell: React.FunctionComponent<ISelectInputCell> = ({
   onSelect,
   inputAriaLabel,
   isDisabled = false,
-  isExpanded,
+  isOpen,
   onToggle,
   selections,
   options
@@ -46,7 +46,7 @@ export const SelectInputCell: React.FunctionComponent<ISelectInputCell> = ({
       onSelect={onSelectHandler}
       aria-label={inputAriaLabel}
       isDisabled={isDisabled}
-      isExpanded={isExpanded}
+      isOpen={isOpen}
       onToggle={onToggle}
       selections={selections}
       {...props}

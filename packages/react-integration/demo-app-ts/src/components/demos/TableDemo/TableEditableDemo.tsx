@@ -45,7 +45,7 @@ const rowLevelValidationRules: IValidatorDef[] = [
 interface TableState {
   rows: IRow[];
   columns: (ICell | string)[];
-  isExpanded: boolean[];
+  isSelectOpen: boolean[];
   selected: string[];
 }
 
@@ -70,7 +70,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     ];
 
     this.state = {
-      isExpanded: [false, false, false],
+      isSelectOpen: [false, false],
       selected: ['Option 1', 'Option 2'],
       columns: [
         'Text input col 1',
@@ -158,12 +158,12 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   props={updatedProps}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 1 cell 5 content"
-                  isExpanded={this.state.isExpanded[rowIndex]}
+                  isOpen={this.state.isSelectOpen[rowIndex]}
                   options={this.options.map((option, index) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
                   ))}
-                  onToggle={isExpanded => {
-                    this.onToggle(isExpanded, rowIndex);
+                  onToggle={isOpen => {
+                    this.onToggle(isOpen, rowIndex)
                   }}
                   selections={this.state.selected[rowIndex]}
                 />
@@ -255,12 +255,12 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   props={updatedProps}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 2 cell 5 content"
-                  isExpanded={this.state.isExpanded[rowIndex]}
+                  isOpen={this.state.isSelectOpen[rowIndex]}
                   options={this.options.map((option, index) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
                   ))}
-                  onToggle={isExpanded => {
-                    this.onToggle(isExpanded, rowIndex);
+                  onToggle={isOpen => {
+                    this.onToggle(isOpen, rowIndex)
                   }}
                   selections={this.state.selected[rowIndex]}
                 />
@@ -324,27 +324,26 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
     const newSelected = Array.from(this.state.selected);
     newSelected[rowIndex] = newValue;
-    const newIsExpanded = Array.from(this.state.isExpanded);
-    newIsExpanded[rowIndex] = false;
+    const newIsSelectOpen = Array.from(this.state.isSelectOpen);
+    newIsSelectOpen[rowIndex] = false;
 
     this.setState({
       rows: newRows,
-      isExpanded: newIsExpanded,
+      isSelectOpen: newIsSelectOpen,
       selected: newSelected
     });
   };
 
-  onToggle = (isExpanded: boolean, rowIndex: number) => {
-    const newIsExpanded = Array.from(this.state.isExpanded);
-    newIsExpanded[rowIndex] = isExpanded;
+  onToggle = (isOpen: boolean, rowIndex: number) => {
+    const newIsSelectOpen = Array.from(this.state.isSelectOpen);
+    newIsSelectOpen[rowIndex] = isOpen;
     this.setState({
-      isExpanded: newIsExpanded
+      isSelectOpen: newIsSelectOpen
     });
   };
 
   render() {
     const { columns, rows } = this.state;
-
     return (
       <Table
         caption="Editable Table"

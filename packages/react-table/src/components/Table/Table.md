@@ -1369,7 +1369,7 @@ class EditableRowsTable extends React.Component {
     ],
     
     this.state = {
-      isExpanded: [false, false, false],
+      isSelectOpen: [false, false, false],
       selected: ["Option 1", "Option 2", "Option 3"],
       columns: [
         'Text input col 1',
@@ -1449,7 +1449,7 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 1 cell 4 content"
-                  isExpanded={this.state.isExpanded[rowIndex]}
+                  isOpen={this.state.isSelectOpen[rowIndex]}
                   options={this.options.map((option, index) => (
                     <SelectOption
                       key={index}
@@ -1457,7 +1457,7 @@ class EditableRowsTable extends React.Component {
                       id={'uniqueIdRow1Cell4Option' + index} 
                     />
                   ))}
-                  onToggle={(isExpanded) => {this.onToggle(isExpanded, rowIndex)}}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex)}}
                   selections={this.state.selected[rowIndex]}
                 />
               ),
@@ -1525,7 +1525,7 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 2 cell 4 content"
-                  isExpanded={this.state.isExpanded[rowIndex]}
+                  isOpen={this.state.isSelectOpen[rowIndex]}
                   options={this.options.map((option, index) => (
                     <SelectOption
                       key={index}
@@ -1533,7 +1533,7 @@ class EditableRowsTable extends React.Component {
                       id={'uniqueIdRow2Cell4Option' + index}
                     />
                   ))}
-                  onToggle={(isExpanded) => {this.onToggle(isExpanded, rowIndex)}}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex)}}
                   selections={this.state.selected[rowIndex]}
                   />
               ),
@@ -1623,7 +1623,7 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 3 cell 4 content"
-                  isExpanded={this.state.isExpanded[rowIndex]}
+                  isOpen={this.state.isSelectOpen[rowIndex]}
                   options={this.options.map((option, index) => (
                     <SelectOption
                       key={index}
@@ -1631,7 +1631,7 @@ class EditableRowsTable extends React.Component {
                       id={'uniqueIdRow3Cell4Option' + index}
                     />
                   ))}
-                  onToggle={(isExpanded) => {this.onToggle(isExpanded, rowIndex)}}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex)}}
                   selections={this.state.selected[rowIndex]}
                   />
               ),
@@ -1679,21 +1679,21 @@ class EditableRowsTable extends React.Component {
       newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
       let newSelected = Array.from(this.state.selected);
       newSelected[rowIndex] = newValue;
-      const newIsExpanded = Array.from(this.state.isExpanded);
-      newIsExpanded[rowIndex] = false;
+      const newIsOpen = Array.from(this.state.isSelectOpen);
+      newIsOpen[rowIndex] = false;
       
       this.setState({
         rows: newRows,
-        isExpanded: newIsExpanded,
+        isSelectOpen: newIsOpen,
         selected: newSelected
       });
     };
     
-    this.onToggle = (isExpanded, rowIndex) => {
-      const newIsExpanded = Array.from(this.state.isExpanded);
-      newIsExpanded[rowIndex] = isExpanded;
+    this.onToggle = (isOpen, rowIndex) => {
+      const newIsOpen = Array.from(this.state.isSelectOpen);
+      newIsOpen[rowIndex] = isOpen;
       this.setState({
-        isExpanded: newIsExpanded
+        isSelectOpen: newIsOpen
       });
     };
   }
