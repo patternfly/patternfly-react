@@ -391,6 +391,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isCreatable,
       createText,
       noResultsFoundText,
+      customBadgeText,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -432,7 +433,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         <ChipGroup>
           {selections &&
             (selections as string[]).map(item => (
-              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={removeSelectionAriaLabel}>
+              <Chip
+                key={item}
+                onClick={(e: React.MouseEvent) => onSelect(e, item)}
+                closeBtnAriaLabel={removeSelectionAriaLabel}
+              >
                 {this.getDisplay(item, 'node')}
               </Chip>
             ))}

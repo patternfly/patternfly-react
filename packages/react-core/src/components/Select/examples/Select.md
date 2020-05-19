@@ -166,7 +166,7 @@ class GroupedSingleSelectInput extends React.Component {
       this.setState({
         selected: selection,
         isOpen: false
-      })
+      });
     };
 
     this.clearSelection = () => {
@@ -206,7 +206,7 @@ class GroupedSingleSelectInput extends React.Component {
           selections={selected}
           isOpen={isOpen}
           placeholderText="Filter by status/vendor"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isGrouped
         >
           {this.options}
@@ -336,7 +336,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
       <SelectOption key={0} value="Debug" />,
       <SelectOption key={1} value="Info" />,
       <SelectOption key={2} value="Warn" />,
-      <SelectOption key={3} value="Error" />,
+      <SelectOption key={3} value="Error" />
     ];
   }
 
@@ -357,7 +357,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
           isCheckboxSelectionBadgeHidden
           isOpen={isOpen}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options}
         </Select>
@@ -470,7 +470,7 @@ class GroupedSingleSelectInput extends React.Component {
       this.setState({
         selected: selection,
         isOpen: false
-      })
+      });
     };
 
     this.clearSelection = () => {
@@ -510,7 +510,7 @@ class GroupedSingleSelectInput extends React.Component {
           selections={selected}
           isOpen={isOpen}
           placeholderText="Filter by status/vendor"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isGrouped
         >
           {this.options}
@@ -669,7 +669,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
       <SelectOption key={0} value="Debug" />,
       <SelectOption key={1} value="Info" />,
       <SelectOption key={2} value="Warn" />,
-      <SelectOption key={3} value="Error" />,
+      <SelectOption key={3} value="Error" />
     ];
   }
 
@@ -690,7 +690,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
           isCheckboxSelectionBadgeHidden
           isOpen={isOpen}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options}
         </Select>
@@ -790,7 +790,7 @@ class FilteringCheckboxSelectInput extends React.Component {
           selections={selected}
           isOpen={isOpen}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           onFilter={this.onFilter}
           onClear={this.clearSelection}
           isGrouped
@@ -894,7 +894,7 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
           selections={selected}
           isOpen={isOpen}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           onFilter={this.onFilter}
           onClear={this.clearSelection}
           isGrouped
@@ -920,7 +920,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
     this.state = {
       isOpen: false,
       selected: [],
-      customBadgeText: 0,
+      customBadgeText: 0
     };
 
     this.options = [
@@ -948,12 +948,18 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       const { selected } = this.state;
       if (selected.includes(selection)) {
         this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection), customBadgeText: this.setBadgeText(prevState.selected.length - 1) }),
+          prevState => ({
+            selected: prevState.selected.filter(item => item !== selection),
+            customBadgeText: this.setBadgeText(prevState.selected.length - 1)
+          }),
           () => console.log('selections: ', this.state.selected)
         );
       } else {
         this.setState(
-          prevState => ({ selected: [...prevState.selected, selection], customBadgeText: this.setBadgeText(prevState.selected.length + 1) }),
+          prevState => ({
+            selected: [...prevState.selected, selection],
+            customBadgeText: this.setBadgeText(prevState.selected.length + 1)
+          }),
           () => console.log('selections: ', this.state.selected)
         );
       }
@@ -985,7 +991,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
       });
     };
 
-    this.setBadgeText = (selected) => {
+    this.setBadgeText = selected => {
       if (selected === 7) {
         return 'All';
       }
@@ -1011,7 +1017,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
           selections={selected}
           isOpen={isOpen}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           onFilter={this.onFilter}
           onClear={this.clearSelection}
           isGrouped
