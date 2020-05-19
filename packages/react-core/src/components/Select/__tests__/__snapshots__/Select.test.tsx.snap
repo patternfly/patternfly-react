@@ -314,7 +314,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       aria-labelledby=""
       checked={Array []}
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -342,7 +341,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
               aria-label=""
               aria-labelledby={null}
               className="pf-c-form__fieldset"
-              customBadgeText={null}
             >
               <SelectGroup
                 key=".0"
@@ -1420,7 +1418,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
       aria-labelledby=""
       checked={Array []}
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -1448,7 +1445,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
               aria-label=""
               aria-labelledby={null}
               className="pf-c-form__fieldset"
-              customBadgeText={null}
             >
               <SelectOption
                 className=""
@@ -1807,7 +1803,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       aria-labelledby=""
       checked={Array []}
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -1835,7 +1830,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
               aria-label=""
               aria-labelledby={null}
               className="pf-c-form__fieldset"
-              customBadgeText={null}
             >
               <SelectOption
                 className=""
@@ -2216,7 +2210,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
       aria-labelledby=""
       checked={Array []}
       className=""
-      customBadgeText={null}
       hasInlineFilter={true}
       isCustomContent={false}
       isExpanded={false}
@@ -2244,7 +2237,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
               aria-label=""
               aria-labelledby={null}
               className="pf-c-form__fieldset"
-              customBadgeText={null}
             >
               <div
                 className="pf-c-select__menu-search"
@@ -2854,7 +2846,6 @@ exports[`select custom select filter filters properly 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -2867,7 +2858,6 @@ exports[`select custom select filter filters properly 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -2894,7 +2884,6 @@ exports[`select custom select filter filters properly 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mr-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2928,7 +2917,6 @@ exports[`select custom select filter filters properly 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mrs-1"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2962,7 +2950,6 @@ exports[`select custom select filter filters properly 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Other-2"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -3260,7 +3247,6 @@ exports[`select renders select groups successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -3273,7 +3259,6 @@ exports[`select renders select groups successfully 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectGroup
@@ -4278,7 +4263,6 @@ exports[`select single select renders expanded successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -4291,7 +4275,6 @@ exports[`select single select renders expanded successfully 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -4632,7 +4615,6 @@ exports[`select single select renders expanded successfully with custom objects 
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -4645,7 +4627,6 @@ exports[`select single select renders expanded successfully with custom objects 
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -5095,7 +5076,6 @@ exports[`select with custom content renders expanded successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={true}
       isExpanded={false}
@@ -5108,7 +5088,6 @@ exports[`select with custom content renders expanded successfully 1`] = `
     >
       <div
         className="pf-c-select__menu"
-        customBadgeText={null}
       >
         testing custom
       </div>
@@ -5574,7 +5553,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -5587,7 +5565,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -5614,7 +5591,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mr-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -5648,7 +5624,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mrs-1"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -5682,7 +5657,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Ms-2"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -5716,7 +5690,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Other-3"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -6348,7 +6321,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -6366,7 +6338,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -6393,7 +6364,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-selected={true}
               className="pf-c-select__menu-item pf-m-selected"
               id="Mr-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -6457,7 +6427,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-selected={true}
               className="pf-c-select__menu-item pf-m-selected"
               id="Mrs-1"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -6521,7 +6490,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Ms-2"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -6555,7 +6523,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Other-3"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -6824,7 +6791,6 @@ exports[`typeahead multi select test onChange 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -6837,7 +6803,6 @@ exports[`typeahead multi select test onChange 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -6864,7 +6829,6 @@ exports[`typeahead multi select test onChange 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item pf-m-disabled"
               id="No results found-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7297,7 +7261,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -7310,7 +7273,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -7337,7 +7299,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mr-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7371,7 +7332,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mrs-1"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7405,7 +7365,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Ms-2"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7439,7 +7398,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Other-3"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7763,7 +7721,6 @@ exports[`typeahead select renders selected successfully 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -7776,7 +7733,6 @@ exports[`typeahead select renders selected successfully 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -7803,7 +7759,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               aria-selected={true}
               className="pf-c-select__menu-item pf-m-selected"
               id="Mr-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7867,7 +7822,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Mrs-1"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7901,7 +7855,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Ms-2"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -7935,7 +7888,6 @@ exports[`typeahead select renders selected successfully 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="Other-3"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -8206,7 +8158,6 @@ exports[`typeahead select test creatable option 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -8219,7 +8170,6 @@ exports[`typeahead select test creatable option 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -8246,7 +8196,6 @@ exports[`typeahead select test creatable option 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item"
               id="test-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -8518,7 +8467,6 @@ exports[`typeahead select test onChange 1`] = `
       aria-label=""
       aria-labelledby=""
       className=""
-      customBadgeText={null}
       hasInlineFilter={false}
       isCustomContent={false}
       isExpanded={false}
@@ -8531,7 +8479,6 @@ exports[`typeahead select test onChange 1`] = `
     >
       <ul
         className="pf-c-select__menu"
-        customBadgeText={null}
         role="listbox"
       >
         <SelectOption
@@ -8558,7 +8505,6 @@ exports[`typeahead select test onChange 1`] = `
               aria-selected={null}
               className="pf-c-select__menu-item pf-m-disabled"
               id="No results found-0"
-              isFocused={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
