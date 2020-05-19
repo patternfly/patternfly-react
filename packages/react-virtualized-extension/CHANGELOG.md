@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.1...@patternfly/react-virtualized-extension@4.3.2) (2020-05-19)
+
+
+### Bug Fixes
+
+* **virtualized-props:** fix required and extended props ([#4264](https://github.com/patternfly/patternfly-react/issues/4264)) ([6d2b929](https://github.com/patternfly/patternfly-react/commit/6d2b9293147a7658d8161e9acb38635017b3112a))
+
+
+
+
+
 ## [4.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.0...@patternfly/react-virtualized-extension@4.3.1) (2020-05-18)
 
 
