@@ -25,54 +25,58 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
             <Toolbar
               id="pf-topology-view-0"
             >
-              <div
-                className="pf-c-toolbar"
-                id="pf-topology-view-0"
+              <GenerateId
+                prefix="pf-random-id-"
               >
-                <Component>
-                  <hr
-                    className="pf-c-divider"
-                  />
-                </Component>
-                <ToolbarChipGroupContent
-                  chipGroupContentRef={
-                    Object {
-                      "current": <div
-                        class="pf-c-toolbar__content pf-m-hidden"
-                        hidden=""
-                      >
-                        <div
-                          class="pf-c-toolbar__group"
-                        />
-                      </div>,
-                    }
-                  }
-                  clearFiltersButtonText="Clear all filters"
-                  collapseListedFiltersBreakpoint="lg"
-                  isExpanded={false}
-                  numberOfFilters={0}
-                  showClearFiltersButton={false}
+                <div
+                  className="pf-c-toolbar"
+                  id="pf-topology-view-0"
                 >
-                  <div
-                    className="pf-c-toolbar__content pf-m-hidden"
-                    hidden={true}
+                  <Component>
+                    <hr
+                      className="pf-c-divider"
+                    />
+                  </Component>
+                  <ToolbarChipGroupContent
+                    chipGroupContentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-toolbar__content pf-m-hidden"
+                          hidden=""
+                        >
+                          <div
+                            class="pf-c-toolbar__group"
+                          />
+                        </div>,
+                      }
+                    }
+                    clearFiltersButtonText="Clear all filters"
+                    collapseListedFiltersBreakpoint="lg"
+                    isExpanded={false}
+                    numberOfFilters={0}
+                    showClearFiltersButton={false}
                   >
-                    <ForwardRef
-                      className=""
+                    <div
+                      className="pf-c-toolbar__content pf-m-hidden"
+                      hidden={true}
                     >
-                      <ToolbarGroupWithRef
-                        breakpointMods={Array []}
+                      <ForwardRef
                         className=""
-                        innerRef={null}
                       >
-                        <div
-                          className="pf-c-toolbar__group"
-                        />
-                      </ToolbarGroupWithRef>
-                    </ForwardRef>
-                  </div>
-                </ToolbarChipGroupContent>
-              </div>
+                        <ToolbarGroupWithRef
+                          breakpointMods={Array []}
+                          className=""
+                          innerRef={null}
+                        >
+                          <div
+                            className="pf-c-toolbar__group"
+                          />
+                        </ToolbarGroupWithRef>
+                      </ForwardRef>
+                    </div>
+                  </ToolbarChipGroupContent>
+                </div>
+              </GenerateId>
             </Toolbar>
           </GenerateId>
         </div>
@@ -132,196 +136,200 @@ exports[`TopologyView should display topology correctly 1`] = `
             prefix="pf-topology-view-"
           >
             <Toolbar
-              id="pf-topology-view-1"
+              id="pf-topology-view-2"
             >
-              <div
-                className="pf-c-toolbar"
-                id="pf-topology-view-1"
+              <GenerateId
+                prefix="pf-random-id-"
               >
-                <ToolbarContent
-                  breakpointMods={Array []}
-                  isExpanded={false}
-                  showClearFiltersButton={false}
+                <div
+                  className="pf-c-toolbar"
+                  id="pf-topology-view-2"
                 >
-                  <div
-                    className="pf-c-toolbar__content"
+                  <ToolbarContent
+                    breakpointMods={Array []}
+                    isExpanded={false}
+                    showClearFiltersButton={false}
                   >
                     <div
-                      className="pf-c-toolbar__content-section"
+                      className="pf-c-toolbar__content"
                     >
-                      <ForwardRef
-                        className="project-toolbar"
+                      <div
+                        className="pf-c-toolbar__content-section"
                       >
-                        <ToolbarGroupWithRef
-                          breakpointMods={Array []}
+                        <ForwardRef
                           className="project-toolbar"
-                          innerRef={null}
                         >
-                          <div
-                            className="pf-c-toolbar__group project-toolbar"
-                          >
-                            <div
-                              id="test-context-bar"
-                            />
-                          </div>
-                        </ToolbarGroupWithRef>
-                      </ForwardRef>
-                    </div>
-                    <ToolbarExpandableContent
-                      chipContainerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      clearFiltersButtonText="Clear all filters"
-                      expandableContentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-toolbar__expandable-content"
-                            id="pf-topology-view-1-expandable-content-0"
-                          >
-                            <div
-                              class="pf-c-toolbar__group"
-                            />
-                          </div>,
-                        }
-                      }
-                      id="pf-topology-view-1-expandable-content-0"
-                      isExpanded={false}
-                      showClearFiltersButton={false}
-                    >
-                      <div
-                        className="pf-c-toolbar__expandable-content"
-                        id="pf-topology-view-1-expandable-content-0"
-                      >
-                        <ForwardRef>
                           <ToolbarGroupWithRef
                             breakpointMods={Array []}
+                            className="project-toolbar"
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-toolbar__group"
-                            />
+                              className="pf-c-toolbar__group project-toolbar"
+                            >
+                              <div
+                                id="test-context-bar"
+                              />
+                            </div>
                           </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </ToolbarExpandableContent>
-                  </div>
-                </ToolbarContent>
-                <ToolbarContent
-                  breakpointMods={Array []}
-                  isExpanded={false}
-                  showClearFiltersButton={false}
-                >
-                  <div
-                    className="pf-c-toolbar__content"
+                      <ToolbarExpandableContent
+                        chipContainerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
+                        clearFiltersButtonText="Clear all filters"
+                        expandableContentRef={
+                          Object {
+                            "current": <div
+                              class="pf-c-toolbar__expandable-content"
+                              id="pf-topology-view-2-expandable-content-0"
+                            >
+                              <div
+                                class="pf-c-toolbar__group"
+                              />
+                            </div>,
+                          }
+                        }
+                        id="pf-topology-view-2-expandable-content-0"
+                        isExpanded={false}
+                        showClearFiltersButton={false}
+                      >
+                        <div
+                          className="pf-c-toolbar__expandable-content"
+                          id="pf-topology-view-2-expandable-content-0"
+                        >
+                          <ForwardRef>
+                            <ToolbarGroupWithRef
+                              breakpointMods={Array []}
+                              innerRef={null}
+                            >
+                              <div
+                                className="pf-c-toolbar__group"
+                              />
+                            </ToolbarGroupWithRef>
+                          </ForwardRef>
+                        </div>
+                      </ToolbarExpandableContent>
+                    </div>
+                  </ToolbarContent>
+                  <ToolbarContent
+                    breakpointMods={Array []}
+                    isExpanded={false}
+                    showClearFiltersButton={false}
                   >
                     <div
-                      className="pf-c-toolbar__content-section"
+                      className="pf-c-toolbar__content"
+                    >
+                      <div
+                        className="pf-c-toolbar__content-section"
+                      >
+                        <ForwardRef
+                          className="view-toolbar"
+                        >
+                          <ToolbarGroupWithRef
+                            breakpointMods={Array []}
+                            className="view-toolbar"
+                            innerRef={null}
+                          >
+                            <div
+                              className="pf-c-toolbar__group view-toolbar"
+                            >
+                              <div
+                                id="test-view-bar"
+                              />
+                            </div>
+                          </ToolbarGroupWithRef>
+                        </ForwardRef>
+                      </div>
+                      <ToolbarExpandableContent
+                        chipContainerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
+                        clearFiltersButtonText="Clear all filters"
+                        expandableContentRef={
+                          Object {
+                            "current": <div
+                              class="pf-c-toolbar__expandable-content"
+                              id="pf-topology-view-2-expandable-content-1"
+                            >
+                              <div
+                                class="pf-c-toolbar__group"
+                              />
+                            </div>,
+                          }
+                        }
+                        id="pf-topology-view-2-expandable-content-1"
+                        isExpanded={false}
+                        showClearFiltersButton={false}
+                      >
+                        <div
+                          className="pf-c-toolbar__expandable-content"
+                          id="pf-topology-view-2-expandable-content-1"
+                        >
+                          <ForwardRef>
+                            <ToolbarGroupWithRef
+                              breakpointMods={Array []}
+                              innerRef={null}
+                            >
+                              <div
+                                className="pf-c-toolbar__group"
+                              />
+                            </ToolbarGroupWithRef>
+                          </ForwardRef>
+                        </div>
+                      </ToolbarExpandableContent>
+                    </div>
+                  </ToolbarContent>
+                  <Component>
+                    <hr
+                      className="pf-c-divider"
+                    />
+                  </Component>
+                  <ToolbarChipGroupContent
+                    chipGroupContentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-toolbar__content pf-m-hidden"
+                          hidden=""
+                        >
+                          <div
+                            class="pf-c-toolbar__group"
+                          />
+                        </div>,
+                      }
+                    }
+                    clearFiltersButtonText="Clear all filters"
+                    collapseListedFiltersBreakpoint="lg"
+                    isExpanded={false}
+                    numberOfFilters={0}
+                    showClearFiltersButton={false}
+                  >
+                    <div
+                      className="pf-c-toolbar__content pf-m-hidden"
+                      hidden={true}
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className=""
                       >
                         <ToolbarGroupWithRef
                           breakpointMods={Array []}
-                          className="view-toolbar"
+                          className=""
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
-                          >
-                            <div
-                              id="test-view-bar"
-                            />
-                          </div>
+                            className="pf-c-toolbar__group"
+                          />
                         </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <ToolbarExpandableContent
-                      chipContainerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      clearFiltersButtonText="Clear all filters"
-                      expandableContentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-toolbar__expandable-content"
-                            id="pf-topology-view-1-expandable-content-1"
-                          >
-                            <div
-                              class="pf-c-toolbar__group"
-                            />
-                          </div>,
-                        }
-                      }
-                      id="pf-topology-view-1-expandable-content-1"
-                      isExpanded={false}
-                      showClearFiltersButton={false}
-                    >
-                      <div
-                        className="pf-c-toolbar__expandable-content"
-                        id="pf-topology-view-1-expandable-content-1"
-                      >
-                        <ForwardRef>
-                          <ToolbarGroupWithRef
-                            breakpointMods={Array []}
-                            innerRef={null}
-                          >
-                            <div
-                              className="pf-c-toolbar__group"
-                            />
-                          </ToolbarGroupWithRef>
-                        </ForwardRef>
-                      </div>
-                    </ToolbarExpandableContent>
-                  </div>
-                </ToolbarContent>
-                <Component>
-                  <hr
-                    className="pf-c-divider"
-                  />
-                </Component>
-                <ToolbarChipGroupContent
-                  chipGroupContentRef={
-                    Object {
-                      "current": <div
-                        class="pf-c-toolbar__content pf-m-hidden"
-                        hidden=""
-                      >
-                        <div
-                          class="pf-c-toolbar__group"
-                        />
-                      </div>,
-                    }
-                  }
-                  clearFiltersButtonText="Clear all filters"
-                  collapseListedFiltersBreakpoint="lg"
-                  isExpanded={false}
-                  numberOfFilters={0}
-                  showClearFiltersButton={false}
-                >
-                  <div
-                    className="pf-c-toolbar__content pf-m-hidden"
-                    hidden={true}
-                  >
-                    <ForwardRef
-                      className=""
-                    >
-                      <ToolbarGroupWithRef
-                        breakpointMods={Array []}
-                        className=""
-                        innerRef={null}
-                      >
-                        <div
-                          className="pf-c-toolbar__group"
-                        />
-                      </ToolbarGroupWithRef>
-                    </ForwardRef>
-                  </div>
-                </ToolbarChipGroupContent>
-              </div>
+                  </ToolbarChipGroupContent>
+                </div>
+              </GenerateId>
             </Toolbar>
           </GenerateId>
         </div>
@@ -398,196 +406,200 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             prefix="pf-topology-view-"
           >
             <Toolbar
-              id="pf-topology-view-2"
+              id="pf-topology-view-4"
             >
-              <div
-                className="pf-c-toolbar"
-                id="pf-topology-view-2"
+              <GenerateId
+                prefix="pf-random-id-"
               >
-                <ToolbarContent
-                  breakpointMods={Array []}
-                  isExpanded={false}
-                  showClearFiltersButton={false}
+                <div
+                  className="pf-c-toolbar"
+                  id="pf-topology-view-4"
                 >
-                  <div
-                    className="pf-c-toolbar__content"
+                  <ToolbarContent
+                    breakpointMods={Array []}
+                    isExpanded={false}
+                    showClearFiltersButton={false}
                   >
                     <div
-                      className="pf-c-toolbar__content-section"
+                      className="pf-c-toolbar__content"
                     >
-                      <ForwardRef
-                        className="project-toolbar"
+                      <div
+                        className="pf-c-toolbar__content-section"
                       >
-                        <ToolbarGroupWithRef
-                          breakpointMods={Array []}
+                        <ForwardRef
                           className="project-toolbar"
-                          innerRef={null}
                         >
-                          <div
-                            className="pf-c-toolbar__group project-toolbar"
-                          >
-                            <div
-                              id="test-context-bar"
-                            />
-                          </div>
-                        </ToolbarGroupWithRef>
-                      </ForwardRef>
-                    </div>
-                    <ToolbarExpandableContent
-                      chipContainerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      clearFiltersButtonText="Clear all filters"
-                      expandableContentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-toolbar__expandable-content"
-                            id="pf-topology-view-2-expandable-content-2"
-                          >
-                            <div
-                              class="pf-c-toolbar__group"
-                            />
-                          </div>,
-                        }
-                      }
-                      id="pf-topology-view-2-expandable-content-2"
-                      isExpanded={false}
-                      showClearFiltersButton={false}
-                    >
-                      <div
-                        className="pf-c-toolbar__expandable-content"
-                        id="pf-topology-view-2-expandable-content-2"
-                      >
-                        <ForwardRef>
                           <ToolbarGroupWithRef
                             breakpointMods={Array []}
+                            className="project-toolbar"
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-toolbar__group"
-                            />
+                              className="pf-c-toolbar__group project-toolbar"
+                            >
+                              <div
+                                id="test-context-bar"
+                              />
+                            </div>
                           </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </ToolbarExpandableContent>
-                  </div>
-                </ToolbarContent>
-                <ToolbarContent
-                  breakpointMods={Array []}
-                  isExpanded={false}
-                  showClearFiltersButton={false}
-                >
-                  <div
-                    className="pf-c-toolbar__content"
+                      <ToolbarExpandableContent
+                        chipContainerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
+                        clearFiltersButtonText="Clear all filters"
+                        expandableContentRef={
+                          Object {
+                            "current": <div
+                              class="pf-c-toolbar__expandable-content"
+                              id="pf-topology-view-4-expandable-content-2"
+                            >
+                              <div
+                                class="pf-c-toolbar__group"
+                              />
+                            </div>,
+                          }
+                        }
+                        id="pf-topology-view-4-expandable-content-2"
+                        isExpanded={false}
+                        showClearFiltersButton={false}
+                      >
+                        <div
+                          className="pf-c-toolbar__expandable-content"
+                          id="pf-topology-view-4-expandable-content-2"
+                        >
+                          <ForwardRef>
+                            <ToolbarGroupWithRef
+                              breakpointMods={Array []}
+                              innerRef={null}
+                            >
+                              <div
+                                className="pf-c-toolbar__group"
+                              />
+                            </ToolbarGroupWithRef>
+                          </ForwardRef>
+                        </div>
+                      </ToolbarExpandableContent>
+                    </div>
+                  </ToolbarContent>
+                  <ToolbarContent
+                    breakpointMods={Array []}
+                    isExpanded={false}
+                    showClearFiltersButton={false}
                   >
                     <div
-                      className="pf-c-toolbar__content-section"
+                      className="pf-c-toolbar__content"
+                    >
+                      <div
+                        className="pf-c-toolbar__content-section"
+                      >
+                        <ForwardRef
+                          className="view-toolbar"
+                        >
+                          <ToolbarGroupWithRef
+                            breakpointMods={Array []}
+                            className="view-toolbar"
+                            innerRef={null}
+                          >
+                            <div
+                              className="pf-c-toolbar__group view-toolbar"
+                            >
+                              <div
+                                id="test-view-bar"
+                              />
+                            </div>
+                          </ToolbarGroupWithRef>
+                        </ForwardRef>
+                      </div>
+                      <ToolbarExpandableContent
+                        chipContainerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
+                        clearFiltersButtonText="Clear all filters"
+                        expandableContentRef={
+                          Object {
+                            "current": <div
+                              class="pf-c-toolbar__expandable-content"
+                              id="pf-topology-view-4-expandable-content-3"
+                            >
+                              <div
+                                class="pf-c-toolbar__group"
+                              />
+                            </div>,
+                          }
+                        }
+                        id="pf-topology-view-4-expandable-content-3"
+                        isExpanded={false}
+                        showClearFiltersButton={false}
+                      >
+                        <div
+                          className="pf-c-toolbar__expandable-content"
+                          id="pf-topology-view-4-expandable-content-3"
+                        >
+                          <ForwardRef>
+                            <ToolbarGroupWithRef
+                              breakpointMods={Array []}
+                              innerRef={null}
+                            >
+                              <div
+                                className="pf-c-toolbar__group"
+                              />
+                            </ToolbarGroupWithRef>
+                          </ForwardRef>
+                        </div>
+                      </ToolbarExpandableContent>
+                    </div>
+                  </ToolbarContent>
+                  <Component>
+                    <hr
+                      className="pf-c-divider"
+                    />
+                  </Component>
+                  <ToolbarChipGroupContent
+                    chipGroupContentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-toolbar__content pf-m-hidden"
+                          hidden=""
+                        >
+                          <div
+                            class="pf-c-toolbar__group"
+                          />
+                        </div>,
+                      }
+                    }
+                    clearFiltersButtonText="Clear all filters"
+                    collapseListedFiltersBreakpoint="lg"
+                    isExpanded={false}
+                    numberOfFilters={0}
+                    showClearFiltersButton={false}
+                  >
+                    <div
+                      className="pf-c-toolbar__content pf-m-hidden"
+                      hidden={true}
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className=""
                       >
                         <ToolbarGroupWithRef
                           breakpointMods={Array []}
-                          className="view-toolbar"
+                          className=""
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
-                          >
-                            <div
-                              id="test-view-bar"
-                            />
-                          </div>
+                            className="pf-c-toolbar__group"
+                          />
                         </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <ToolbarExpandableContent
-                      chipContainerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      clearFiltersButtonText="Clear all filters"
-                      expandableContentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-toolbar__expandable-content"
-                            id="pf-topology-view-2-expandable-content-3"
-                          >
-                            <div
-                              class="pf-c-toolbar__group"
-                            />
-                          </div>,
-                        }
-                      }
-                      id="pf-topology-view-2-expandable-content-3"
-                      isExpanded={false}
-                      showClearFiltersButton={false}
-                    >
-                      <div
-                        className="pf-c-toolbar__expandable-content"
-                        id="pf-topology-view-2-expandable-content-3"
-                      >
-                        <ForwardRef>
-                          <ToolbarGroupWithRef
-                            breakpointMods={Array []}
-                            innerRef={null}
-                          >
-                            <div
-                              className="pf-c-toolbar__group"
-                            />
-                          </ToolbarGroupWithRef>
-                        </ForwardRef>
-                      </div>
-                    </ToolbarExpandableContent>
-                  </div>
-                </ToolbarContent>
-                <Component>
-                  <hr
-                    className="pf-c-divider"
-                  />
-                </Component>
-                <ToolbarChipGroupContent
-                  chipGroupContentRef={
-                    Object {
-                      "current": <div
-                        class="pf-c-toolbar__content pf-m-hidden"
-                        hidden=""
-                      >
-                        <div
-                          class="pf-c-toolbar__group"
-                        />
-                      </div>,
-                    }
-                  }
-                  clearFiltersButtonText="Clear all filters"
-                  collapseListedFiltersBreakpoint="lg"
-                  isExpanded={false}
-                  numberOfFilters={0}
-                  showClearFiltersButton={false}
-                >
-                  <div
-                    className="pf-c-toolbar__content pf-m-hidden"
-                    hidden={true}
-                  >
-                    <ForwardRef
-                      className=""
-                    >
-                      <ToolbarGroupWithRef
-                        breakpointMods={Array []}
-                        className=""
-                        innerRef={null}
-                      >
-                        <div
-                          className="pf-c-toolbar__group"
-                        />
-                      </ToolbarGroupWithRef>
-                    </ForwardRef>
-                  </div>
-                </ToolbarChipGroupContent>
-              </div>
+                  </ToolbarChipGroupContent>
+                </div>
+              </GenerateId>
             </Toolbar>
           </GenerateId>
         </div>
@@ -667,196 +679,200 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             prefix="pf-topology-view-"
           >
             <Toolbar
-              id="pf-topology-view-3"
+              id="pf-topology-view-6"
             >
-              <div
-                className="pf-c-toolbar"
-                id="pf-topology-view-3"
+              <GenerateId
+                prefix="pf-random-id-"
               >
-                <ToolbarContent
-                  breakpointMods={Array []}
-                  isExpanded={false}
-                  showClearFiltersButton={false}
+                <div
+                  className="pf-c-toolbar"
+                  id="pf-topology-view-6"
                 >
-                  <div
-                    className="pf-c-toolbar__content"
+                  <ToolbarContent
+                    breakpointMods={Array []}
+                    isExpanded={false}
+                    showClearFiltersButton={false}
                   >
                     <div
-                      className="pf-c-toolbar__content-section"
+                      className="pf-c-toolbar__content"
                     >
-                      <ForwardRef
-                        className="project-toolbar"
+                      <div
+                        className="pf-c-toolbar__content-section"
                       >
-                        <ToolbarGroupWithRef
-                          breakpointMods={Array []}
+                        <ForwardRef
                           className="project-toolbar"
-                          innerRef={null}
                         >
-                          <div
-                            className="pf-c-toolbar__group project-toolbar"
-                          >
-                            <div
-                              id="test-context-bar"
-                            />
-                          </div>
-                        </ToolbarGroupWithRef>
-                      </ForwardRef>
-                    </div>
-                    <ToolbarExpandableContent
-                      chipContainerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      clearFiltersButtonText="Clear all filters"
-                      expandableContentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-toolbar__expandable-content"
-                            id="pf-topology-view-3-expandable-content-4"
-                          >
-                            <div
-                              class="pf-c-toolbar__group"
-                            />
-                          </div>,
-                        }
-                      }
-                      id="pf-topology-view-3-expandable-content-4"
-                      isExpanded={false}
-                      showClearFiltersButton={false}
-                    >
-                      <div
-                        className="pf-c-toolbar__expandable-content"
-                        id="pf-topology-view-3-expandable-content-4"
-                      >
-                        <ForwardRef>
                           <ToolbarGroupWithRef
                             breakpointMods={Array []}
+                            className="project-toolbar"
                             innerRef={null}
                           >
                             <div
-                              className="pf-c-toolbar__group"
-                            />
+                              className="pf-c-toolbar__group project-toolbar"
+                            >
+                              <div
+                                id="test-context-bar"
+                              />
+                            </div>
                           </ToolbarGroupWithRef>
                         </ForwardRef>
                       </div>
-                    </ToolbarExpandableContent>
-                  </div>
-                </ToolbarContent>
-                <ToolbarContent
-                  breakpointMods={Array []}
-                  isExpanded={false}
-                  showClearFiltersButton={false}
-                >
-                  <div
-                    className="pf-c-toolbar__content"
+                      <ToolbarExpandableContent
+                        chipContainerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
+                        clearFiltersButtonText="Clear all filters"
+                        expandableContentRef={
+                          Object {
+                            "current": <div
+                              class="pf-c-toolbar__expandable-content"
+                              id="pf-topology-view-6-expandable-content-4"
+                            >
+                              <div
+                                class="pf-c-toolbar__group"
+                              />
+                            </div>,
+                          }
+                        }
+                        id="pf-topology-view-6-expandable-content-4"
+                        isExpanded={false}
+                        showClearFiltersButton={false}
+                      >
+                        <div
+                          className="pf-c-toolbar__expandable-content"
+                          id="pf-topology-view-6-expandable-content-4"
+                        >
+                          <ForwardRef>
+                            <ToolbarGroupWithRef
+                              breakpointMods={Array []}
+                              innerRef={null}
+                            >
+                              <div
+                                className="pf-c-toolbar__group"
+                              />
+                            </ToolbarGroupWithRef>
+                          </ForwardRef>
+                        </div>
+                      </ToolbarExpandableContent>
+                    </div>
+                  </ToolbarContent>
+                  <ToolbarContent
+                    breakpointMods={Array []}
+                    isExpanded={false}
+                    showClearFiltersButton={false}
                   >
                     <div
-                      className="pf-c-toolbar__content-section"
+                      className="pf-c-toolbar__content"
+                    >
+                      <div
+                        className="pf-c-toolbar__content-section"
+                      >
+                        <ForwardRef
+                          className="view-toolbar"
+                        >
+                          <ToolbarGroupWithRef
+                            breakpointMods={Array []}
+                            className="view-toolbar"
+                            innerRef={null}
+                          >
+                            <div
+                              className="pf-c-toolbar__group view-toolbar"
+                            >
+                              <div
+                                id="test-view-bar"
+                              />
+                            </div>
+                          </ToolbarGroupWithRef>
+                        </ForwardRef>
+                      </div>
+                      <ToolbarExpandableContent
+                        chipContainerRef={
+                          Object {
+                            "current": null,
+                          }
+                        }
+                        clearFiltersButtonText="Clear all filters"
+                        expandableContentRef={
+                          Object {
+                            "current": <div
+                              class="pf-c-toolbar__expandable-content"
+                              id="pf-topology-view-6-expandable-content-5"
+                            >
+                              <div
+                                class="pf-c-toolbar__group"
+                              />
+                            </div>,
+                          }
+                        }
+                        id="pf-topology-view-6-expandable-content-5"
+                        isExpanded={false}
+                        showClearFiltersButton={false}
+                      >
+                        <div
+                          className="pf-c-toolbar__expandable-content"
+                          id="pf-topology-view-6-expandable-content-5"
+                        >
+                          <ForwardRef>
+                            <ToolbarGroupWithRef
+                              breakpointMods={Array []}
+                              innerRef={null}
+                            >
+                              <div
+                                className="pf-c-toolbar__group"
+                              />
+                            </ToolbarGroupWithRef>
+                          </ForwardRef>
+                        </div>
+                      </ToolbarExpandableContent>
+                    </div>
+                  </ToolbarContent>
+                  <Component>
+                    <hr
+                      className="pf-c-divider"
+                    />
+                  </Component>
+                  <ToolbarChipGroupContent
+                    chipGroupContentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-toolbar__content pf-m-hidden"
+                          hidden=""
+                        >
+                          <div
+                            class="pf-c-toolbar__group"
+                          />
+                        </div>,
+                      }
+                    }
+                    clearFiltersButtonText="Clear all filters"
+                    collapseListedFiltersBreakpoint="lg"
+                    isExpanded={false}
+                    numberOfFilters={0}
+                    showClearFiltersButton={false}
+                  >
+                    <div
+                      className="pf-c-toolbar__content pf-m-hidden"
+                      hidden={true}
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className=""
                       >
                         <ToolbarGroupWithRef
                           breakpointMods={Array []}
-                          className="view-toolbar"
+                          className=""
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
-                          >
-                            <div
-                              id="test-view-bar"
-                            />
-                          </div>
+                            className="pf-c-toolbar__group"
+                          />
                         </ToolbarGroupWithRef>
                       </ForwardRef>
                     </div>
-                    <ToolbarExpandableContent
-                      chipContainerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      clearFiltersButtonText="Clear all filters"
-                      expandableContentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-toolbar__expandable-content"
-                            id="pf-topology-view-3-expandable-content-5"
-                          >
-                            <div
-                              class="pf-c-toolbar__group"
-                            />
-                          </div>,
-                        }
-                      }
-                      id="pf-topology-view-3-expandable-content-5"
-                      isExpanded={false}
-                      showClearFiltersButton={false}
-                    >
-                      <div
-                        className="pf-c-toolbar__expandable-content"
-                        id="pf-topology-view-3-expandable-content-5"
-                      >
-                        <ForwardRef>
-                          <ToolbarGroupWithRef
-                            breakpointMods={Array []}
-                            innerRef={null}
-                          >
-                            <div
-                              className="pf-c-toolbar__group"
-                            />
-                          </ToolbarGroupWithRef>
-                        </ForwardRef>
-                      </div>
-                    </ToolbarExpandableContent>
-                  </div>
-                </ToolbarContent>
-                <Component>
-                  <hr
-                    className="pf-c-divider"
-                  />
-                </Component>
-                <ToolbarChipGroupContent
-                  chipGroupContentRef={
-                    Object {
-                      "current": <div
-                        class="pf-c-toolbar__content pf-m-hidden"
-                        hidden=""
-                      >
-                        <div
-                          class="pf-c-toolbar__group"
-                        />
-                      </div>,
-                    }
-                  }
-                  clearFiltersButtonText="Clear all filters"
-                  collapseListedFiltersBreakpoint="lg"
-                  isExpanded={false}
-                  numberOfFilters={0}
-                  showClearFiltersButton={false}
-                >
-                  <div
-                    className="pf-c-toolbar__content pf-m-hidden"
-                    hidden={true}
-                  >
-                    <ForwardRef
-                      className=""
-                    >
-                      <ToolbarGroupWithRef
-                        breakpointMods={Array []}
-                        className=""
-                        innerRef={null}
-                      >
-                        <div
-                          className="pf-c-toolbar__group"
-                        />
-                      </ToolbarGroupWithRef>
-                    </ForwardRef>
-                  </div>
-                </ToolbarChipGroupContent>
-              </div>
+                  </ToolbarChipGroupContent>
+                </div>
+              </GenerateId>
             </Toolbar>
           </GenerateId>
         </div>
