@@ -482,7 +482,7 @@ class TooltipPieChart extends React.Component {
 
 ```js title=Legend-links
 import React from 'react';
-import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
 class LegendLinkPieChart extends React.Component {
