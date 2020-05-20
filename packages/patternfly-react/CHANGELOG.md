@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.16](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.15...patternfly-react@2.39.16) (2020-05-20)
+
+
+### Bug Fixes
+
+* **patternfly-react:** remove side effects ([#4273](https://github.com/patternfly/patternfly-react/issues/4273)) ([7ba1ed4](https://github.com/patternfly/patternfly-react/commit/7ba1ed4ec118656761b6390fcd578531bcf75b02))
+
+
+
+
+
 ## [2.39.15](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.14...patternfly-react@2.39.15) (2020-03-03)
 
 **Note:** Version bump only for package patternfly-react
