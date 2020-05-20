@@ -2,6 +2,36 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerContext } from './Drawer';
+import { formatBreakpointMods } from '../../helpers/util';
+
+export const DrawerModifiers = {
+  25: 'width_25',
+  33: 'width_33',
+  50: 'width_50',
+  66: 'width_66',
+  75: 'width_75',
+  100: 'width_100'
+} as const;
+
+export enum DrawerBreakpoints {
+  none = '',
+  lg = 'lg',
+  xl = 'xl',
+  '2xl' = '2xl'
+}
+
+export interface DrawerBreakpointMod {
+  modifier:
+    | 'width_25'
+    | 'width_33'
+    | 'width_50'
+    | 'width_66'
+    | 'width_75'
+    | 'width_100'
+    | typeof DrawerModifiers[keyof typeof DrawerModifiers];
+  /** The breakpoint at which to apply the modifier */
+  breakpoint: '' | 'lg' | 'xl' | '2xl' | DrawerBreakpoints;
+}
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer. */
@@ -11,23 +41,14 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   /** Flag indicating that the drawer panel should not have a border. */
   hasNoBorder?: boolean;
   /** Default width for drawer panel */
-  width?: 25 | 33 | 50 | 66 | 75 | 100;
-  /** Drawer panel width on large viewports */
-  widthOnLg?: 25 | 33 | 50 | 66 | 75 | 100;
-  /** Drawer panel width on xl viewports */
-  widthOnXl?: 25 | 33 | 50 | 66 | 75 | 100;
-  /** Drawer panel width on 2xl viewports */
-  widthOn2Xl?: 25 | 33 | 50 | 66 | 75 | 100;
+  breakpointMods?: DrawerBreakpointMod[];
 }
 
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
   hasNoBorder = false,
-  width,
-  widthOnLg,
-  widthOnXl,
-  widthOn2Xl,
+  breakpointMods = [] as DrawerBreakpointMod[],
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
@@ -36,10 +57,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
         className={css(
           styles.drawerPanel,
           hasNoBorder && styles.modifiers.noBorder,
-          width && styles.modifiers[`width_${width}` as keyof typeof styles.modifiers],
-          widthOnLg && styles.modifiers[`width_${widthOnLg}OnLg` as keyof typeof styles.modifiers],
-          widthOnXl && styles.modifiers[`width_${widthOnXl}OnXl` as keyof typeof styles.modifiers],
-          widthOn2Xl && styles.modifiers[`width_${widthOn2Xl}On_2xl` as keyof typeof styles.modifiers],
+          formatBreakpointMods(breakpointMods, styles),
           className
         )}
         hidden={isStatic ? false : !isExpanded}
