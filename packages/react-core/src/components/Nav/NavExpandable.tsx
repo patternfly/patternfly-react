@@ -79,7 +79,6 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   ) => {
     // Item events can bubble up, ignore those
     if (!this.expandableRef.current || !this.expandableRef.current.contains(e.target as Node)) {
-      console.log('true');
       return;
     }
 
