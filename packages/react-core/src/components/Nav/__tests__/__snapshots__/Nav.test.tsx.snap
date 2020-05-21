@@ -334,7 +334,6 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
             <a
               aria-expanded={true}
               className="pf-c-nav__link"
-              data-component="pf-nav-expandable"
               href="#"
               id="grp-1"
               onClick={[Function]}
@@ -499,7 +498,6 @@ exports[`Expandable Nav List 1`] = `
             <a
               aria-expanded={false}
               className="pf-c-nav__link"
-              data-component="pf-nav-expandable"
               href="#"
               id="grp-1"
               onClick={[Function]}
@@ -665,7 +663,6 @@ exports[`Expandable Nav List with aria label 1`] = `
             <a
               aria-expanded={false}
               className="pf-c-nav__link"
-              data-component="pf-nav-expandable"
               href="#"
               id={null}
               onClick={[Function]}
