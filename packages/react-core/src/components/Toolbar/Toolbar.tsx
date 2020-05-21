@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
@@ -20,7 +21,7 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Content to be rendered as rows in the data toolbar */
   children?: React.ReactNode;
   /** Id of the data toolbar */
-  id: string;
+  id?: string;
 }
 
 export interface ToolbarState {
@@ -81,7 +82,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   getNumberOfFilters = () =>
     Object.values(this.state.filterInfo).reduce((acc: any, cur: any) => acc + cur, 0) as number;
 
-  render() {
+  renderToolbar = (randomId: string) => {
     const {
       clearAllFilters,
       clearFiltersButtonText,
@@ -90,7 +91,6 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       toggleIsExpanded,
       className,
       children,
-      id,
       ...props
     } = this.props;
 
@@ -102,7 +102,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const showClearFiltersButton = numberOfFilters > 0;
 
     return (
-      <div className={css(styles.toolbar, className)} id={id} {...props}>
+      <div className={css(styles.toolbar, className)} id={randomId} {...props}>
         <ToolbarContext.Provider
           value={{
             isExpanded,
@@ -113,7 +113,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
             clearAllFilters,
             clearFiltersButtonText,
             showClearFiltersButton,
-            toolbarId: id
+            toolbarId: randomId
           }}
         >
           {children}
@@ -128,6 +128,14 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
           />
         </ToolbarContext.Provider>
       </div>
+    );
+  };
+
+  render() {
+    return this.props.id ? (
+      this.renderToolbar(this.props.id)
+    ) : (
+      <GenerateId>{randomId => this.renderToolbar(randomId)}</GenerateId>
     );
   }
 }
