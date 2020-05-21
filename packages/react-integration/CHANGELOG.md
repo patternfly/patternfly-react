@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.11.0...@patternfly/react-integration@4.12.0) (2020-05-21)
+
+
+### Features
+
+* **drawer:** use the breakpoint mods prop instead of width props ([#4270](https://github.com/patternfly/patternfly-react/issues/4270)) ([4cac8d0](https://github.com/patternfly/patternfly-react/commit/4cac8d01ea771a7e8b082ca33242fcf590b861f8))
+
+
+
+
+
 # [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.31.3...@patternfly/react-integration@4.11.0) (2020-05-15)
 
 

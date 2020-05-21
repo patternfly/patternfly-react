@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.11.2...demo-app-ts@4.12.0) (2020-05-21)
+
+
+### Features
+
+* **drawer:** use the breakpoint mods prop instead of width props ([#4270](https://github.com/patternfly/patternfly-react/issues/4270)) ([4cac8d0](https://github.com/patternfly/patternfly-react/commit/4cac8d01ea771a7e8b082ca33242fcf590b861f8))
+
+
+
+
+
 ## [4.11.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.11.1...demo-app-ts@4.11.2) (2020-05-21)
 
 **Note:** Version bump only for package demo-app-ts
