@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.12.1...demo-app-ts@4.12.2) (2020-05-21)
+
+
+### Bug Fixes
+
+* **charts:** Use Victory's createContainer instead of allowZoom prop ([#4278](https://github.com/patternfly/patternfly-react/issues/4278)) ([8c353d9](https://github.com/patternfly/patternfly-react/commit/8c353d9a5a4322984d5e564d5737e53e796928f6))
+
+
+
+
+
 ## [4.12.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.12.0...demo-app-ts@4.12.1) (2020-05-21)
 
 **Note:** Version bump only for package demo-app-ts
