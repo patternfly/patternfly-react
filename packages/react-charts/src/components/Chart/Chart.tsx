@@ -13,7 +13,6 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryChart, VictoryChartProps } from 'victory-chart';
-import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -23,14 +22,6 @@ import { getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide, g
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartProps extends VictoryChartProps {
-  /**
-   * Specifies the zoom capability of the container component. A value of true allows the chart to
-   * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
-   * controlled by dragging. By default this value is set to false.
-   *
-   * Note: Only compatible with charts that display an x, y axis
-   */
-  allowZoom?: boolean;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -364,7 +355,6 @@ export interface ChartProps extends VictoryChartProps {
 }
 
 export const Chart: React.FunctionComponent<ChartProps> = ({
-  allowZoom = false,
   ariaDesc,
   ariaTitle,
   children,
@@ -378,7 +368,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
+  containerComponent = <ChartContainer />,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.chart.height,
   width = theme.chart.width,

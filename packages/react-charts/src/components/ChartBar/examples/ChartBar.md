@@ -13,6 +13,7 @@ hideDarkMode: true
 ---
 
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -100,15 +101,16 @@ PurpleBottomLegend = (
 ```js title=Multi--color-(ordered)-with-bottom--left-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 
 BottomLeftLegend = (
   <div>
     This demonstrates zoom for both the x and y axis
     <div style={{ height: '400px', width: '450px' }}>
       <Chart
-        allowZoom
         ariaDesc="Average number of pets"
         ariaTitle="Bar chart example"
+        containerComponent={<VictoryZoomContainer />}
         domainPadding={{ x: [30, 25] }}
         legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
         legendPosition="bottom-left"
