@@ -257,7 +257,7 @@ export const formatBreakpointMods = (
   breakpointMods
     .map(mod => `${mod.modifier}${mod.breakpoint ? `-on-${mod.breakpoint}` : ''}`)
     .map(toCamel)
-    .map(mod => mod.replace(/-2xl$/gi, '_2xl'))
+    .map(mod => mod.replace(/-(\dxl)$/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])
     .filter(Boolean)
     .join(' ');
