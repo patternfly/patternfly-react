@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.17.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.0...@patternfly/react-core@4.17.1) (2020-05-21)
+
+
+### Bug Fixes
+
+* **nav:** fix expanding on new span icon ([#4275](https://github.com/patternfly/patternfly-react/issues/4275)) ([8c9c008](https://github.com/patternfly/patternfly-react/commit/8c9c0087b9a11e294d1d53ea47f2e28533a2b467))
+* **util:** 3xl and 4xl breakpoint modifiers ([#4276](https://github.com/patternfly/patternfly-react/issues/4276)) ([6bd33d5](https://github.com/patternfly/patternfly-react/commit/6bd33d5a51288291f40b9a97bed12371b0fe92cc))
+
+
+
+
+
 # [4.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.16.1...@patternfly/react-core@4.17.0) (2020-05-21)
 
 

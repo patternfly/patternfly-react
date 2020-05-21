@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.12.0...@patternfly/react-integration@4.12.1) (2020-05-21)
+
+
+### Bug Fixes
+
+* **nav:** fix expanding on new span icon ([#4275](https://github.com/patternfly/patternfly-react/issues/4275)) ([8c9c008](https://github.com/patternfly/patternfly-react/commit/8c9c0087b9a11e294d1d53ea47f2e28533a2b467))
+
+
+
+
+
 # [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.11.0...@patternfly/react-integration@4.12.0) (2020-05-21)
 
 
