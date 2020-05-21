@@ -117,6 +117,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     styles.selectMenuItem,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
+                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   onClick={(event: any) => {
@@ -148,6 +149,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checkStyles.check,
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
+                  isFocused && styles.modifiers.focus,
                   className
                 )}
                 onKeyDown={this.onKeyDown}
