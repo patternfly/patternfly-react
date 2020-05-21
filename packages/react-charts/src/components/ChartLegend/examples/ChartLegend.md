@@ -237,65 +237,6 @@ StandaloneLegend = (
 )
 ```
 
-```js title=Legend-tooltips
-import React from 'react';
-import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
-import { Tooltip } from '@patternfly/react-core';
-
-class TooltipPieChart extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // Custom legend label compoenent
-    this.LegendLabel = ({datum, ...rest}) => (
-      <Tooltip content={datum.name} enableFlip>
-        <ChartLabel {...rest} />
-      </Tooltip>
-    );
-
-    // Custom legend component
-    this.getLegend = (legendData) => (
-      <ChartLegend
-        data={legendData}
-        labelComponent={<this.LegendLabel />}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <div>
-        <p>This demonstrates an approach for applying tooltips to a legend using a custom label component</p>
-        <div style={{ height: '275px', width: '300px' }}>
-          <ChartPie
-            ariaDesc="Average number of pets"
-            ariaTitle="Pie chart example"
-            constrainToVisibleArea={true}
-            data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-            height={275}
-            labels={({ datum }) => `${datum.x}: ${datum.y}`}
-            legendComponent={this.getLegend([
-              { name: 'Cats: 35' }, 
-              { name: 'Dogs: 55' }, 
-              { name: 'Birds: 10' }
-            ])}
-            legendPosition="bottom"
-            padding={{
-              bottom: 65,
-              left: 20,
-              right: 20,
-              top: 20
-            }}
-            themeColor={ChartThemeColor.multiOrdered}
-            width={300}
-          />
-        </div>
-      </div>
-    );
-  }
-}
-```
-
 ```js title=Interactive-legend
 import React from 'react';
 import { 
@@ -473,6 +414,234 @@ class InteractiveLegendChart extends React.Component {
               })}
             </ChartGroup>
           </Chart>
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Legend-tooltips
+import React from 'react';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { Tooltip } from '@patternfly/react-core';
+
+class TooltipPieChart extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // Custom legend label compoenent
+    this.LegendLabel = ({datum, ...rest}) => (
+      <Tooltip content={datum.name} enableFlip>
+        <ChartLabel {...rest} />
+      </Tooltip>
+    );
+
+    // Custom legend component
+    this.getLegend = (legendData) => (
+      <ChartLegend
+        data={legendData}
+        labelComponent={<this.LegendLabel />}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        <p>This demonstrates an approach for applying tooltips to a legend using a custom label component. These tooltips are keyboard navigable.</p>
+        <div style={{ height: '275px', width: '300px' }}>
+          <ChartPie
+            ariaDesc="Average number of pets"
+            ariaTitle="Pie chart example"
+            constrainToVisibleArea={true}
+            data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+            height={275}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
+            legendComponent={this.getLegend([
+              { name: 'Cats: 35' }, 
+              { name: 'Dogs: 55' }, 
+              { name: 'Birds: 10' }
+            ])}
+            legendPosition="bottom"
+            padding={{
+              bottom: 65,
+              left: 20,
+              right: 20,
+              top: 20
+            }}
+            themeColor={ChartThemeColor.multiOrdered}
+            width={300}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Legend-links
+import React from 'react';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Tooltip } from '@patternfly/react-core';
+
+class LegendLinkPieChart extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // Custom legend label compoenent
+    this.LegendLabel = ({datum, ...rest}) => (
+      <a href="#" aria-label="Learn more about...">
+        <ChartLabel {...rest} />
+      </a>
+    );
+
+    // Custom legend component
+    this.getLegend = (legendData) => (
+      <ChartLegend
+        data={legendData}
+        labelComponent={<this.LegendLabel />}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        <p>This demonstrates an approach for applying links to a legend using a custom label component. These links are keyboard navigable.</p>
+        <div style={{ height: '275px', width: '450px' }}>
+          <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Line chart example"
+            containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+            legendComponent={this.getLegend([
+              { name: 'Cats' }, 
+              { name: 'Dogs' }, 
+              { name: 'Birds' },
+              { name: 'Mice'}
+            ])}
+            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+            legendPosition="bottom"
+            height={275}
+            maxDomain={{y: 10}}
+            minDomain={{y: 0}}
+            padding={{
+              bottom: 75, // Adjusted to accommodate legend
+              left: 50,
+              right: 50, 
+              top: 50
+            }}
+            width={450}
+          >
+            <ChartAxis tickValues={[2, 3, 4]} />
+            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+            <ChartGroup>
+              <ChartLine
+                data={[
+                  { name: 'Cats', x: '2015', y: 1 },
+                  { name: 'Cats', x: '2016', y: 2 },
+                  { name: 'Cats', x: '2017', y: 5 },
+                  { name: 'Cats', x: '2018', y: 3 }
+                ]}
+              />
+              <ChartLine
+                data={[
+                  { name: 'Dogs', x: '2015', y: 2 },
+                  { name: 'Dogs', x: '2016', y: 1 },
+                  { name: 'Dogs', x: '2017', y: 7 },
+                  { name: 'Dogs', x: '2018', y: 4 }
+                ]}
+                style={{
+                  data: {
+                    strokeDasharray: '3,3'
+                  }
+                }}
+              />
+              <ChartLine
+                data={[
+                  { name: 'Birds', x: '2015', y: 3 },
+                  { name: 'Birds', x: '2016', y: 4 },
+                  { name: 'Birds', x: '2017', y: 9 },
+                  { name: 'Birds', x: '2018', y: 5 }
+                ]}
+              />
+              <ChartLine
+                data={[
+                  { name: 'Mice', x: '2015', y: 3 },
+                  { name: 'Mice', x: '2016', y: 3 },
+                  { name: 'Mice', x: '2017', y: 8 },
+                  { name: 'Mice', x: '2018', y: 7 }
+                ]}
+              />
+            </ChartGroup>
+          </Chart>
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Legend-layout
+import React from 'react';
+import { ChartLabel, ChartLegend, ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
+import { Tooltip } from '@patternfly/react-core';
+
+class LegendLayoutPieChart extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // Custom legend label compoenent
+    this.LegendLabel = ({values, ...rest}) => (
+      <ChartLabel
+        {...rest}
+        style={[{ fontWeight: 700 }, {}]}
+        text={[values[rest.index], rest.text]}
+      />
+    );
+
+    // Custom legend component
+    this.getLegend = (legendData, values) => (
+      <ChartLegend
+        data={legendData}
+        gutter={25}
+        itemsPerRow={2}
+        labelComponent={<this.LegendLabel dy={10} lineHeight={1.5} values={values} />}
+        rowGutter={20}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        <p>This demonstrates an approach for applying a different legend layout and styles using a custom label component</p>
+        <div style={{ height: '230px', width: '350px' }}>
+          <ChartDonut
+            ariaDesc="Average number of pets"
+            ariaTitle="Pie chart example"
+            constrainToVisibleArea={true}
+            data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+            height={275}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
+            legendComponent={this.getLegend([
+              { name: 'Cats' }, 
+              { name: 'Dogs' }, 
+              { name: 'Birds' }
+            ], [ 35, 55, 10 ])}
+            legendOrientation="vertical"
+            legendPosition="right"
+            padding={{
+              bottom: 20,
+              left: 20,
+              right: 140, // Adjusted to accommodate legend
+              top: 20
+            }}
+            subTitle="Pets"
+            title="100"
+            themeColor={ChartThemeColor.multiOrdered}
+            width={350}
+          />
         </div>
       </div>
     );
