@@ -132,6 +132,10 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   };
 
   render() {
-    return <GenerateId>{randomId => this.renderToolbar(this.props.id || randomId)}</GenerateId>;
+    return this.props.id ? (
+      this.renderToolbar(this.props.id)
+    ) : (
+      <GenerateId>{randomId => this.renderToolbar(randomId)}</GenerateId>
+    );
   }
 }
