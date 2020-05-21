@@ -34,11 +34,9 @@ describe('Nav Test', () => {
 
   it('Verify Expandable Nav', () => {
     // All groups start open
-    cy.get('#nav-primary-expandable .pf-c-nav__link[data-component="pf-nav-expandable"]').each(
-      (expandableGroup: JQuery<HTMLAnchorElement>) => {
-        expect(expandableGroup.attr('aria-expanded')).to.be.equal('true');
-      }
-    );
+    cy.get('#nav-primary-expandable .pf-c-nav__link[id="grp-1"]').each((expandableGroup: JQuery<HTMLAnchorElement>) => {
+      expect(expandableGroup.attr('aria-expanded')).to.be.equal('true');
+    });
 
     // Verify close and open of group 1
     cy.get('#grp-1').then((group1Link: JQuery<HTMLAnchorElement>) => {

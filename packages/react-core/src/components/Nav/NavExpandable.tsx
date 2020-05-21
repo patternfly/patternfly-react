@@ -44,6 +44,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     id: ''
   };
 
+  expandableRef = React.createRef<HTMLAnchorElement>();
   id = this.props.id || getUniqueId();
 
   state = {
@@ -77,7 +78,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     ) => void
   ) => {
     // Item events can bubble up, ignore those
-    if ((e.target as any).getAttribute('data-component') !== 'pf-nav-expandable') {
+    if (!this.expandableRef.current || !this.expandableRef.current.contains(e.target as Node)) {
       return;
     }
 
@@ -106,8 +107,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             {...props}
           >
             <a
-              data-component="pf-nav-expandable"
-              className={css(styles.navLink)}
+              ref={this.expandableRef}
+              className={styles.navLink}
               id={srText ? null : this.id}
               href="#"
               onClick={e => e.preventDefault()}
