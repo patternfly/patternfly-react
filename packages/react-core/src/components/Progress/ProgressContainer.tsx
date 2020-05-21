@@ -51,10 +51,10 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
     <React.Fragment>
-      <div className={css(progressStyle.progressDescription)} id={`${parentId}-description`}>
+      <div className={css(progressStyle.progressDescription)} id={`${parentId}-description`} aria-hidden="true">
         {title}
       </div>
-      <div className={css(progressStyle.progressStatus)}>
+      <div className={css(progressStyle.progressStatus)} aria-hidden="true">
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
           <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
         )}
@@ -64,7 +64,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
           </span>
         )}
       </div>
-      <ProgressBar progressBarAriaProps={progressBarAriaProps} value={value}>
+      <ProgressBar role="progressbar" progressBarAriaProps={progressBarAriaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
     </React.Fragment>

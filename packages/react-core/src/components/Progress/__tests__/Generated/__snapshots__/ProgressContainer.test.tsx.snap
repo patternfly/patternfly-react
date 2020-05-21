@@ -3,12 +3,14 @@
 exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
 <Fragment>
   <div
+    aria-hidden="true"
     className="pf-c-progress__description"
     id="string-description"
   >
     ''
   </div>
   <div
+    aria-hidden="true"
     className="pf-c-progress__status"
   >
     <span
@@ -27,6 +29,7 @@ exports[`ProgressContainer should match snapshot (auto-generated) 1`] = `
     </span>
   </div>
   <ProgressBar
+    role="progressbar"
     value={42}
   />
 </Fragment>
