@@ -15,7 +15,6 @@ import {
   VictoryStyleInterface
 } from 'victory-core';
 import { VictoryGroup, VictoryGroupProps } from 'victory-group';
-import { VictoryZoomContainer } from 'victory-zoom-container';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -29,14 +28,6 @@ export enum ChartGroupSortOrder {
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartGroupProps extends VictoryGroupProps {
-  /**
-   * Specifies the zoom capability of the container component. A value of true allows the chart to
-   * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
-   * controlled by dragging. By default this value is set to false.
-   *
-   * Note: Only compatible with charts that display an x, y axis
-   */
-  allowZoom?: boolean;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -415,16 +406,16 @@ export interface ChartGroupProps extends VictoryGroupProps {
 }
 
 export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
-  allowZoom = false,
   ariaDesc,
   ariaTitle,
   children,
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
+  containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
+
   ...rest
 }: ChartGroupProps) => {
   // Clone so users can override container props

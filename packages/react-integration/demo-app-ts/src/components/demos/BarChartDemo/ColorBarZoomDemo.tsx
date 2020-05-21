@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartAxis } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory-zoom-container';
 
 export class ColorBarZoomDemo extends React.Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ export class ColorBarZoomDemo extends React.Component {
       <div>
         <div style={{ height: '400px', width: '450px', paddingLeft: '50px' }}>
           <Chart
-            allowZoom
+            containerComponent={<VictoryZoomContainer />}
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
             legendPosition="bottom"
@@ -27,7 +28,7 @@ export class ColorBarZoomDemo extends React.Component {
           >
             <ChartAxis />
             <ChartAxis dependentAxis showGrid />
-            <ChartGroup allowZoom offset={11} horizontal>
+            <ChartGroup offset={11} horizontal>
               <ChartBar
                 data={[
                   { name: 'Cats', x: '2015', y: 1 },
