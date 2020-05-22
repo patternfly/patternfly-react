@@ -4,9 +4,9 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
 <Modal
   actions={Array []}
   appendTo={<body />}
-  aria-describedby=""
+  aria-describedby="string"
   aria-label=""
-  aria-labelledby=""
+  aria-labelledby="string"
   className=""
   hasNoBodyWrapper={true}
   isOpen={true}
