@@ -41,4 +41,14 @@ describe('BreadcrumbItem component', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('should render breadcrumbItem with component', () => {
+    const MyComponent = () => <div>My component contents</div>;
+    const consoleError = jest.spyOn(console, 'error').mockImplementation();
+    const view = shallow(
+      <BreadcrumbItem component={MyComponent}>Stuff</BreadcrumbItem>
+    );
+    expect(view).toMatchSnapshot();
+    expect(consoleError).not.toHaveBeenCalled();
+  });
 });
