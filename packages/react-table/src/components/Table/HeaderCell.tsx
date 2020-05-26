@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { Tooltip } from '@patternfly/react-core';
+import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 
 export interface HeaderCellProps {
   'data-label'?: string;

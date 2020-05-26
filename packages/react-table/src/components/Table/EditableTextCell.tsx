@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput } from '@patternfly/react-core/dist/js/components/TextInput';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import classNames from 'classnames';
