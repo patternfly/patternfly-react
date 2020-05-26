@@ -99,11 +99,6 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.onCogClick = _event => {
       // eslint-disable-next-line no-console
-      console.log('Action clicked!');
-    };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    this.onCogClick = _event => {
-      // eslint-disable-next-line no-console
       console.log('Cog clicked!');
     };
     this.onCogFocus = () => {
