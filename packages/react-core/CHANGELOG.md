@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.17.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.1...@patternfly/react-core@4.17.2) (2020-05-26)
+
+
+### Bug Fixes
+
+* **wiz:** add missing label for wiz-in-modal ([#4280](https://github.com/patternfly/patternfly-react/issues/4280)) ([71a45d1](https://github.com/patternfly/patternfly-react/commit/71a45d122b20afddb9f2c99105f3603cbfc96bac))
+
+
+
+
+
 ## [4.17.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.0...@patternfly/react-core@4.17.1) (2020-05-21)
 
 
