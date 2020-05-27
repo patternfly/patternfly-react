@@ -23,11 +23,10 @@ exports[`Modal Content Test description 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Content title
-        </h1>
+          title="Test Modal Content title"
+        />
         <ModalBoxDescription>
           This is a test description.
         </ModalBoxDescription>
@@ -65,11 +64,10 @@ exports[`Modal Content Test isOpen 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Content title
-        </h1>
+          title="Test Modal Content title"
+        />
       </ModalBoxHeader>
       <ModalBoxBody>
         This is a ModalBox header
@@ -102,11 +100,10 @@ exports[`Modal Content Test only body 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Content title
-        </h1>
+          title="Test Modal Content title"
+        />
       </ModalBoxHeader>
       <ModalBoxBody>
         This is a ModalBox header
@@ -139,11 +136,10 @@ exports[`Modal Content Test with footer 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Content title
-        </h1>
+          title="Test Modal Content title"
+        />
       </ModalBoxHeader>
       <ModalBoxBody>
         This is a ModalBox header
@@ -179,11 +175,10 @@ exports[`Modal Content Test with onclose 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Content title
-        </h1>
+          title="Test Modal Content title"
+        />
       </ModalBoxHeader>
       <ModalBoxBody
         isLarge={true}
@@ -221,11 +216,10 @@ exports[`Modal Content test without footer 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Content title
-        </h1>
+          title="Test Modal Content title"
+        />
       </ModalBoxHeader>
       <ModalBoxBody>
         This is a ModalBox header
@@ -258,11 +252,10 @@ exports[`Modal Test with custom footer 1`] = `
         onClose={[Function]}
       />
       <ModalBoxHeader>
-        <h1
+        <ModalBoxTitle
           className="pf-c-modal-box__title"
-        >
-          Test Modal Custom Footer
-        </h1>
+          title="Test Modal Custom Footer"
+        />
       </ModalBoxHeader>
       <ModalBoxBody
         isLarge={true}
