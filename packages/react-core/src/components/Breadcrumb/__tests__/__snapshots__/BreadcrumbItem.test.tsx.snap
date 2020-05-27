@@ -37,7 +37,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with component 1`
       color="currentColor"
       noVerticalAlign={false}
       size="sm"
-      title={null}
     />
   </span>
 </li>
