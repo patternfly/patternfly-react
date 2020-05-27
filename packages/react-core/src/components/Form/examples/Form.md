@@ -7,17 +7,17 @@ propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText', 'Button',
 ---
 
 import {
-  Button,
-  Form,
-  FormGroup,
-  Popover,
-  TextInput,
-  TextArea,
-  FormSelect,
-  FormHelperText,
-  Checkbox,
-  ActionGroup,
-  Radio
+Button,
+Form,
+FormGroup,
+Popover,
+TextInput,
+TextArea,
+FormSelect,
+FormHelperText,
+Checkbox,
+ActionGroup,
+Radio
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon, HelpIcon } from '@patternfly/react-icons';
 
@@ -68,12 +68,30 @@ class SimpleForm extends React.Component {
           labelIcon={
             <Popover
               headerContent={
-                <div>The <a href="https://schema.org/name">name</a> of a <a href="https://schema.org/Person">Person</a></div>}
-              bodyContent={
-                <div>Often composed of <a href="https://schema.org/givenName" target="_blank">givenName</a> and <a href="https://schema.org/familyName" target="_blank">familyName</a>.
+                <div>
+                  The <a href="https://schema.org/name">name</a> of a <a href="https://schema.org/Person">Person</a>
                 </div>
-              }>
-              <button aria-label="More info for name field" onClick={e => e.preventDefault()} aria-describedby="simple-form-name" className="pf-c-form__group-label-help">
+              }
+              bodyContent={
+                <div>
+                  Often composed of{' '}
+                  <a href="https://schema.org/givenName" target="_blank">
+                    givenName
+                  </a>{' '}
+                  and{' '}
+                  <a href="https://schema.org/familyName" target="_blank">
+                    familyName
+                  </a>
+                  .
+                </div>
+              }
+            >
+              <button
+                aria-label="More info for name field"
+                onClick={e => e.preventDefault()}
+                aria-describedby="simple-form-name"
+                className="pf-c-form__group-label-help"
+              >
                 <HelpIcon noVerticalAlign />
               </button>
             </Popover>
@@ -118,7 +136,7 @@ class SimpleForm extends React.Component {
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck2" />
           <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3" />
         </FormGroup>
-        <FormGroup label="Additional Note:" fieldId="simple-form-note">
+        <FormGroup label="Additional Note" fieldId="simple-form-note">
           <TextInput isDisabled type="text" id="simple-form-note" name="simple-form-number" value="disabled" />
         </FormGroup>
         <FormGroup fieldId="checkbox1">
@@ -278,7 +296,7 @@ class InvalidForm extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="Age:"
+          label="Age"
           type="number"
           helperText={
             <FormHelperText icon={<ExclamationCircleIcon />} isHidden={validated !== 'noval'}>
@@ -357,7 +375,7 @@ class InvalidForm extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="Age:"
+          label="Age"
           type="number"
           helperText={helperText}
           helperTextInvalid={invalidText}

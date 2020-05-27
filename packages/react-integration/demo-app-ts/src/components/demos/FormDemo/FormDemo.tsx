@@ -91,7 +91,7 @@ export class FormDemo extends Component<FormProps, FormState> {
       <React.Fragment>
         <Form>
           <FormGroup
-            label="Age:"
+            label="Age"
             labelIcon={
               <Popover
                 headerContent={<div>The age of a person</div>}
@@ -148,7 +148,7 @@ export class FormDemo extends Component<FormProps, FormState> {
               </Select>
               <FormGroup
                 id="formgroup-validated"
-                label="Validated Age:"
+                label="Validated Age"
                 type="number"
                 helperText="Enter age"
                 helperTextInvalid="Age must be a number"
