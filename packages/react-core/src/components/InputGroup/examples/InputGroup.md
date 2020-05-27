@@ -205,7 +205,7 @@ class SimpleInputGroups extends React.Component {
     return (
       <React.Fragment>
         <InputGroup>
-          <TextInput name="textInput10" id="textInput10" type="search" aria-label="input example with popover" />
+          <TextInput name="textInput10" id="textInput10" type="text" aria-label="input example with popover" />
           <Popover
             aria-label="popover example"
             position={PopoverPosition.top}
@@ -218,7 +218,7 @@ class SimpleInputGroups extends React.Component {
         </InputGroup>
         <br />
         <InputGroup>
-          <TextInput name="textInput12" id="textInput12" type="search" aria-label="search input example" />
+          <TextInput name="textInput12" id="textInput12" type="text" aria-label="input example with popover" />
           <Popover
             aria-label="popover example"
             position={PopoverPosition.top}
