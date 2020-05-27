@@ -402,7 +402,8 @@ class SelectableTable extends React.Component {
           cells: ['one', 'two', 'a', 'four', 'five']
         },
         {
-          cells: ['a', 'two', 'k', 'four', 'five']
+          cells: ['a', 'two', 'k', 'four', 'five'],
+          disableCheckbox: true,
         },
         {
           cells: ['p', 'two', 'b', 'four', 'five']
