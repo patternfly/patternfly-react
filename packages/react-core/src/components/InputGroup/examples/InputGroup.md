@@ -61,7 +61,7 @@ class SimpleInputGroups extends React.Component {
         <br />
         <InputGroup>
           <TextInput name="textInput12" id="textInput12" type="search" aria-label="search input example" />
-          <Button variant="plain" aria-label="search button for search input">
+          <Button variant="plain" aria-label="Popover for input">
             <QuestionCircleIcon />
           </Button>
         </InputGroup>
