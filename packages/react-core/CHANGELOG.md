@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.158.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.158.1...@patternfly/react-core@3.158.2) (2020-05-27)
+
+
+### Bug Fixes
+
+* **Pagination:** Fix imports of tokens in pagination to direct imports ([#4290](https://github.com/patternfly/patternfly-react/issues/4290)) ([c443390](https://github.com/patternfly/patternfly-react/commit/c443390f0ea450080cfa60e362bc356fec59505c))
+
+
+
+
+
 ## [3.158.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.158.0...@patternfly/react-core@3.158.1) (2020-05-11)
 
 **Note:** Version bump only for package @patternfly/react-core
