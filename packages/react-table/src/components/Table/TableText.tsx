@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
-import { Tooltip } from '@patternfly/react-core';
+import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 
 export enum TableTextVariant {
   div = 'div',
