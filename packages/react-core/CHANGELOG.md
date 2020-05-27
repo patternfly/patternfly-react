@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.17.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.2...@patternfly/react-core@4.17.3) (2020-05-27)
+
+
+### Bug Fixes
+
+* **loginpage:** basic example logo ([#4294](https://github.com/patternfly/patternfly-react/issues/4294)) ([e140178](https://github.com/patternfly/patternfly-react/commit/e140178f2378710c91e7667e9158b0b0f5c974ec))
+
+
+
+
+
 ## [4.17.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.1...@patternfly/react-core@4.17.2) (2020-05-26)
 
 
