@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.4.6...@patternfly/react-table@4.5.0) (2020-05-27)
+
+
+### Bug Fixes
+
+* **Table:** update imports to direct imports for react table [v4] ([#4286](https://github.com/patternfly/patternfly-react/issues/4286)) ([af5ad5b](https://github.com/patternfly/patternfly-react/commit/af5ad5bfdc3595bdaebf9c5a988fdd9ba26b2dd3))
+
+
+### Features
+
+* **table:** support row checkbox disable ([#4231](https://github.com/patternfly/patternfly-react/issues/4231)) ([6c8dba8](https://github.com/patternfly/patternfly-react/commit/6c8dba8f27acca0e878cf345aa3ad9b94d9fb4a0))
+
+
+
+
+
 ## [4.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.4.5...@patternfly/react-table@4.4.6) (2020-05-26)
 
 **Note:** Version bump only for package @patternfly/react-table
