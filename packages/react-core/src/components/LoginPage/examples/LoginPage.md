@@ -19,19 +19,18 @@ propComponents:
   ]
 ---
 
-import brandImg from './brandImgColor.svg';
+import brandImg2 from './brandImgColor2.svg';
 import {
-LoginFooterItem,
-LoginForm,
-LoginMainFooterBandItem,
-LoginMainFooterLinksItem,
-LoginPage,
-ListItem
+  LoginFooterItem,
+  LoginForm,
+  LoginMainFooterBandItem,
+  LoginMainFooterLinksItem,
+  LoginPage,
+  ListItem
 } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 ## Examples
-
 ```js title=Basic isFullscreen
 import React from 'react';
 import brandImg from './brandImgColor.svg';
@@ -79,7 +78,12 @@ class SimpleLoginPage extends React.Component {
   }
 
   render() {
-    const helperText = 'Invalid login credentials.';
+    const helperText = (
+      <React.Fragment>
+        <ExclamationCircleIcon />
+        &nbsp;Invalid login credentials.
+      </React.Fragment>
+    );
 
     const socialMediaLoginContent = (
       <React.Fragment>
@@ -167,7 +171,7 @@ class SimpleLoginPage extends React.Component {
     return (
       <LoginPage
         footerListVariants="inline"
-        brandImgSrc={brandImg}
+        brandImgSrc={brandImg2}
         brandImgAlt="PatternFly logo"
         backgroundImgSrc={images}
         backgroundImgAlt="Images"
