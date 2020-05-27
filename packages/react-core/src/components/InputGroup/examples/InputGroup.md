@@ -23,7 +23,7 @@ import {
 ## Examples
 ```js title=Basic
 import React from 'react';
-import { AtIcon, SearchIcon } from '@patternfly/react-icons';
+import { AtIcon, QuestionCircleIcon, SearchIcon } from '@patternfly/react-icons';
 import {
   Button,
   InputGroup,
@@ -56,6 +56,13 @@ class SimpleInputGroups extends React.Component {
           <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
           <Button variant="control" aria-label="search button for search input">
             <SearchIcon />
+          </Button>
+        </InputGroup>
+        <br />
+        <InputGroup>
+          <TextInput name="textInput12" id="textInput12" type="search" aria-label="search input example" />
+          <Button variant="plain" aria-label="search button for search input">
+            <QuestionCircleIcon />
           </Button>
         </InputGroup>
       </React.Fragment>
