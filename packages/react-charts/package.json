@@ -41,6 +41,7 @@
     "victory-bar": "^34.3.8",
     "victory-chart": "^34.3.8",
     "victory-core": "^34.3.8",
+    "victory-create-container": "^34.3.8",
     "victory-group": "^34.3.8",
     "victory-legend": "^34.3.8",
     "victory-line": "^34.3.8",
