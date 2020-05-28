@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.3...@patternfly/react-core@4.18.0) (2020-05-28)
+
+
+### Features
+
+* **Form:** remove semicolons from docs ([#4296](https://github.com/patternfly/patternfly-react/issues/4296)) ([c666474](https://github.com/patternfly/patternfly-react/commit/c666474bad1741fbd30c3ceccaa3eafc5187bd72))
+
+
+
+
+
 ## [4.17.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.2...@patternfly/react-core@4.17.3) (2020-05-27)
 
 

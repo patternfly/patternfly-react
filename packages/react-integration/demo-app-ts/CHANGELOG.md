@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.13.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.12.4...demo-app-ts@4.13.0) (2020-05-28)
+
+
+### Features
+
+* **Form:** remove semicolons from docs ([#4296](https://github.com/patternfly/patternfly-react/issues/4296)) ([c666474](https://github.com/patternfly/patternfly-react/commit/c666474bad1741fbd30c3ceccaa3eafc5187bd72))
+
+
+
+
+
 ## [4.12.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.12.3...demo-app-ts@4.12.4) (2020-05-27)
 
 **Note:** Version bump only for package demo-app-ts
