@@ -11,6 +11,7 @@ import { Visualization } from '../Visualization';
 import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
 import Dimensions from '../geom/Dimensions';
+import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 
 interface VisualizationSurfaceProps {
   visualization: Visualization;
