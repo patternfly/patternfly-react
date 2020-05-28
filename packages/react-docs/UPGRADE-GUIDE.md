@@ -47,7 +47,7 @@ Hey Fliers, we've been busy for the past 12 weeks keeping up with changes to Pat
 
 ### Chip group
 - **Chip:**
-  - The overflow chip no longer contains a button. To specify a overflow chip as a button do use `<Chip component='button' isOverflowChip>Chip</Chip>` [(#4246)](https://github.com/patternfly/patternfly-react/pull/4246
+  - The overflow chip no longer contains a button. To specify a overflow chip as a button do use `<Chip component='button' isOverflowChip>Chip</Chip>` [(#4246)](https://github.com/patternfly/patternfly-react/pull/4246)
 - **ChipGroup** :
   - Removed prop `withToolbar`. Use the `categoryName` prop instead to add a chip group with a category. [(#4246)](https://github.com/patternfly/patternfly-react/pull/4246)
   - Removed prop `headingLevel`. The category name has internally been switched to a `<span>`. [(#4246)](https://github.com/patternfly/patternfly-react/pull/4246)
