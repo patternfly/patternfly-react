@@ -16,22 +16,24 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   /** A type modifier which modifies spacing specifically depending on the type of group */
   variant?: ToolbarGroupVariant | 'filter-group' | 'icon-button-group' | 'button-group';
   /** Array of objects representing the various modifiers to apply to the data toolbar group at various breakpoints */
-  breakpointMods?: ({
-    modifier:
-      | 'hidden'
-      | 'visible'
-      | 'align-right'
-      | 'align-left'
-      | 'spacer-none'
-      | 'spacer-sm'
-      | 'spacer-md'
-      | 'spacer-lg'
-      | 'space-items-none'
-      | 'space-items-sm'
-      | 'space-items-md'
-      | 'space-items-lg',
-    breakpoint?: 'md' | 'lg' | 'xl' | '2xl'
-  } | ToolbarBreakpointMod)[];
+  breakpointMods?: (
+    | {
+        modifier:
+          | 'hidden'
+          | 'visible'
+          | 'align-right'
+          | 'align-left'
+          | 'spacer-none'
+          | 'spacer-sm'
+          | 'spacer-md'
+          | 'spacer-lg'
+          | 'space-items-none'
+          | 'space-items-sm'
+          | 'space-items-md'
+          | 'space-items-lg';
+        breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
+      }
+    | ToolbarBreakpointMod)[];
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Reference to pass to this group if it has .pf-m-chip-container modifier */

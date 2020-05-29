@@ -22,10 +22,12 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
   /** Adds accessible text to the DataList Action */
   'aria-label': string;
   /** An array of objects representing the various modifiers to apply to the data list action at various breakpoints */
-  breakpointMods?: ({
-    modifier: 'hidden' | 'visible';
-    breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  } | DataListActionBreakpointMod)[];
+  breakpointMods?: (
+    | {
+        modifier: 'hidden' | 'visible';
+        breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+      }
+    | DataListActionBreakpointMod)[];
 }
 
 interface DataListActionState {

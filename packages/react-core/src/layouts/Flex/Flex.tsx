@@ -11,10 +11,12 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Flex layout */
   className?: string;
   /** An array of objects representing the various modifiers to apply to the flex component at various breakpoints */
-  breakpointMods?: ({
-    modifier: keyof typeof FlexModifiers,
-    breakpoint?: keyof typeof FlexBreakpoints
-  } | FlexBreakpointMod)[];
+  breakpointMods?: (
+    | {
+        modifier: keyof typeof FlexModifiers;
+        breakpoint?: keyof typeof FlexBreakpoints;
+      }
+    | FlexBreakpointMod)[];
 }
 
 export const Flex: React.FunctionComponent<FlexProps> = ({
@@ -23,10 +25,7 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
   breakpointMods,
   ...props
 }: FlexProps) => (
-  <div
-    className={css(styles.flex, formatBreakpointMods(breakpointMods, styles), className)}
-    {...props}
-  >
+  <div className={css(styles.flex, formatBreakpointMods(breakpointMods, styles), className)} {...props}>
     {children}
   </div>
 );

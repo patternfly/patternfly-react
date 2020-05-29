@@ -54,10 +54,12 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Unmounts tab children (removes them from the DOM) when they are no longer visible */
   unmountOnExit?: boolean;
   /** Array of objects representing the various modifiers to apply to tabs at various breakpoints */
-  breakpointMods?: ({
-    modifier: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl',
-    breakpoint?: 'md' | 'lg' | 'xl' | '2xl'
-  } | TabsBreakpointMod)[];
+  breakpointMods?: (
+    | {
+        modifier: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+        breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
+      }
+    | TabsBreakpointMod)[];
 }
 
 interface TabsState {

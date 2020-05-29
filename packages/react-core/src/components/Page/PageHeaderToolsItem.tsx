@@ -25,7 +25,7 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
     className={css(
       styles.pageHeaderToolsItem,
       isSelected && styles.modifiers.selected,
-       formatBreakpointMods(breakpointMods, styles),
+      formatBreakpointMods(breakpointMods, styles),
       className
     )}
   >

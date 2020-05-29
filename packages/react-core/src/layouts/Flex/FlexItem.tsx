@@ -11,10 +11,12 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Flex layout */
   className?: string;
   /** An array of objects representing the various modifiers to apply to the flex item at various breakpoints */
-  breakpointMods?: ({
-    modifier: keyof typeof FlexItemModifiers,
-    breakpoint?: keyof typeof FlexBreakpoints
-  } | FlexItemBreakpointMod)[];
+  breakpointMods?: (
+    | {
+        modifier: keyof typeof FlexItemModifiers;
+        breakpoint?: keyof typeof FlexBreakpoints;
+      }
+    | FlexItemBreakpointMod)[];
 }
 
 export const FlexItem: React.FunctionComponent<FlexItemProps> = ({

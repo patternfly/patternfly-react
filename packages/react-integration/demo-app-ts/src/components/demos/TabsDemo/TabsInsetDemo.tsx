@@ -63,8 +63,8 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsNone"
           activeKey={this.state.activeTabKey}
-          inset="none"
           breakpointMods={[
+            { modifier: 'insetNone' },
             { breakpoint: 'md', modifier: 'insetNone' },
             { breakpoint: 'lg', modifier: 'insetNone' },
             { breakpoint: 'xl', modifier: 'insetNone' },
@@ -85,8 +85,8 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsSm"
           activeKey={this.state.activeTabKey2}
-          inset="sm"
           breakpointMods={[
+            { modifier: 'insetSm' },
             { breakpoint: 'md', modifier: 'insetSm' },
             { breakpoint: 'lg', modifier: 'insetSm' },
             { breakpoint: 'xl', modifier: 'insetSm' },
@@ -107,8 +107,8 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsMd"
           activeKey={this.state.activeTabKey3}
-          inset="md"
           breakpointMods={[
+            { modifier: 'insetMd' },
             { breakpoint: 'md', modifier: 'insetMd' },
             { breakpoint: 'lg', modifier: 'insetMd' },
             { breakpoint: 'xl', modifier: 'insetMd' },
@@ -129,8 +129,8 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsLg"
           activeKey={this.state.activeTabKey4}
-          inset="lg"
           breakpointMods={[
+            { modifier: 'insetLg' },
             { breakpoint: 'md', modifier: 'insetLg' },
             { breakpoint: 'lg', modifier: 'insetLg' },
             { breakpoint: 'xl', modifier: 'insetLg' },
@@ -151,8 +151,8 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsXl"
           activeKey={this.state.activeTabKey5}
-          inset="xl"
           breakpointMods={[
+            { modifier: 'insetXl'},
             { breakpoint: 'md', modifier: 'insetXl' },
             { breakpoint: 'lg', modifier: 'insetXl' },
             { breakpoint: 'xl', modifier: 'insetXl' },
@@ -173,8 +173,8 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabs2Xl"
           activeKey={this.state.activeTabKey5}
-          inset="2xl"
           breakpointMods={[
+            { modifier: 'inset_2xl' },
             { breakpoint: 'md', modifier: 'inset_2xl' },
             { breakpoint: 'lg', modifier: 'inset_2xl' },
             { breakpoint: 'xl', modifier: 'inset_2xl' },

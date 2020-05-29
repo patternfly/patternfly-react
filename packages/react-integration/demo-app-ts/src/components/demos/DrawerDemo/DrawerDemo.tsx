@@ -8,9 +8,7 @@ import {
   DrawerSection,
   DrawerHead,
   DrawerActions,
-  DrawerBreakpoints,
   DrawerCloseButton,
-  DrawerModifiers,
   DrawerProps
 } from '@patternfly/react-core';
 
@@ -44,10 +42,9 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
     const panelContent = (
       <DrawerPanelContent
         breakpointMods={[
-          { modifier: DrawerModifiers[100], breakpoint: DrawerBreakpoints.none },
-          { modifier: DrawerModifiers[50], breakpoint: DrawerBreakpoints.lg },
-          { modifier: DrawerModifiers[33], breakpoint: DrawerBreakpoints.xl },
-          { modifier: DrawerModifiers[25], breakpoint: DrawerBreakpoints['2xl'] }
+          { modifier: 'width_50', breakpoint: 'lg' },
+          { modifier: 'width_33', breakpoint: 'xl' },
+          { modifier: 'width_25', breakpoint: '2xl' }
         ]}
       >
         <DrawerHead>

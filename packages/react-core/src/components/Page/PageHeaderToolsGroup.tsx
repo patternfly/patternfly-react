@@ -16,10 +16,12 @@ export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElemen
   /** Additional classes added to the page header tools group. */
   className?: string;
   /** An array of breakpoint modifiers to control visibility, e.g. breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} */
-  breakpointMods?: ({
-    modifier: 'hidden' | 'visible',
-    breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
-  } | PageHeaderToolsBreakpointMod)[];
+  breakpointMods?: (
+    | {
+        modifier: 'hidden' | 'visible';
+        breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+      }
+    | PageHeaderToolsBreakpointMod)[];
 }
 
 export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupProps> = ({
@@ -28,14 +30,7 @@ export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupP
   breakpointMods,
   ...props
 }: PageHeaderToolsGroupProps) => (
-  <div
-    className={css(
-      styles.pageHeaderToolsGroup,
-      formatBreakpointMods(breakpointMods, styles),
-      className
-    )}
-    {...props}
-  >
+  <div className={css(styles.pageHeaderToolsGroup, formatBreakpointMods(breakpointMods, styles), className)} {...props}>
     {children}
   </div>
 );
