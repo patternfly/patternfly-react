@@ -152,7 +152,7 @@ export class TabsInsetDemo extends Component {
           id="insetTabsXl"
           activeKey={this.state.activeTabKey5}
           breakpointMods={[
-            { modifier: 'insetXl'},
+            { modifier: 'insetXl' },
             { breakpoint: 'md', modifier: 'insetXl' },
             { breakpoint: 'lg', modifier: 'insetXl' },
             { breakpoint: 'xl', modifier: 'insetXl' },
