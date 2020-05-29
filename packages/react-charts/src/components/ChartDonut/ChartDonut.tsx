@@ -546,10 +546,10 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       });
     }
     return (
-      <>
+      <React.Fragment key="pf-chart-donut-titles">
         {getTitle({ titles: title, dy: centerSubTitle ? -8 : 0 })}
         {getSubTitle({ textComponent: subTitleComponent, dy: centerSubTitle ? 15 : 0 })}
-      </>
+      </React.Fragment>
     );
   };
 
