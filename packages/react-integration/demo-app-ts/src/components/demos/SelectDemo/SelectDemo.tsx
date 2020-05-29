@@ -442,6 +442,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             isOpen={singleisOpen}
             aria-labelledby={titleId}
             direction={this.state.direction}
+            maxWidth={'100%'}
             maxHeight={200}
           >
             {this.singleOptions.map((option, index) => (

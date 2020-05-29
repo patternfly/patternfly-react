@@ -76,6 +76,8 @@ export interface SelectProps
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
   width?: string | number;
+  /** Max width of the select container as a number of px or string percentage */
+  maxWidth?: string | number;
   /** Max height of the select container as a number of px or string percentage */
   maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
@@ -379,6 +381,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       'aria-labelledby': ariaLabelledBy,
       placeholderText,
       width,
+      maxWidth,
       maxHeight,
       toggleIcon,
       ouiaId,
@@ -641,6 +644,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               aria-labelledby={ariaLabelledBy}
               sendRef={this.sendRef}
               keyHandler={this.handleArrowKeys}
+              maxWidth={maxWidth}
               maxHeight={maxHeight}
             >
               {variantChildren}

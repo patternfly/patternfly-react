@@ -25,6 +25,8 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   checked?: (string | SelectOptionObject)[];
   /** Internal flag for specifiying how the menu was opened */
   openedOnEnter?: boolean;
+  /** Flag to specify the  maximum width of the menu, as a string percentage or number of pixels */
+  maxWidth?: string | number;
   /** Flag to specify the  maximum height of the menu, as a string percentage or number of pixels */
   maxHeight?: string | number;
   /** Inner prop passed from parent */
@@ -46,6 +48,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     isGrouped: false,
     openedOnEnter: false,
     selected: '',
+    maxWidth: '',
     maxHeight: '',
     sendRef: () => {},
     keyHandler: () => {},
@@ -136,6 +139,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       isGrouped,
       sendRef,
       keyHandler,
+      maxWidth,
       maxHeight,
       noResultsFoundText,
       createText,
@@ -145,35 +149,27 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
+    const overflowProps =
+      maxWidth || maxHeight
+        ? { style: { width: maxWidth, maxHeight, overflow: 'auto', minWidth: maxWidth ? 'auto' : undefined } }
+        : {};
     return (
       <SelectConsumer>
         {({ variant }) => (
           <React.Fragment>
             {isCustomContent && (
-              <div
-                className={css(styles.selectMenu, className)}
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                {...props}
-              >
+              <div className={css(styles.selectMenu, className)} {...overflowProps} {...props}>
                 {children}
               </div>
             )}
             {variant !== SelectVariant.checkbox && !isCustomContent && (
-              <ul
-                className={css(styles.selectMenu, className)}
-                role="listbox"
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                {...props}
-              >
+              <ul className={css(styles.selectMenu, className)} role="listbox" {...overflowProps} {...props}>
                 {this.extendChildren()}
               </ul>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-                <div
-                  className={css(styles.selectMenu, className)}
-                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-                >
+                <div className={css(styles.selectMenu, className)} {...overflowProps}>
                   <fieldset
                     {...props}
                     aria-label={ariaLabel}
@@ -190,10 +186,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
               </FocusTrap>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
-              <div
-                className={css(styles.selectMenu, className)}
-                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
-              >
+              <div className={css(styles.selectMenu, className)} {...overflowProps}>
                 <fieldset className={css(styles.selectMenuFieldset)} />
               </div>
             )}
