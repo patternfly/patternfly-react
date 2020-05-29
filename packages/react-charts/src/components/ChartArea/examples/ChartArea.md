@@ -13,7 +13,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
 
 ## Introduction
@@ -90,64 +90,83 @@ BasicRightAlignedLegend = (
 
 ```js title=Cyan-with-bottom-aligned-legend-and-axis-label
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-BottomAlignedLegend = (
-  <div style={{ height: '250px', width: '650px' }}>
-    <Chart
-      ariaDesc="Average number of pets"
-      ariaTitle="Area chart example"
-      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-      legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
-      legendPosition="bottom"
-      height={250}
-      padding={{
-        bottom: 100, // Adjusted to accommodate legend
-        left: 50,
-        right: 50,
-        top: 50,
-      }}
-      maxDomain={{y: 9}}
-      themeColor={ChartThemeColor.cyan}
-      width={650}
-    >
-      <ChartAxis label="Years"/>
-      <ChartAxis dependentAxis showGrid/>
-      <ChartGroup>
-        <ChartArea
-          data={[
-            { name: 'Cats', x: '2015', y: 3 },
-            { name: 'Cats', x: '2016', y: 4 },
-            { name: 'Cats', x: '2017', y: 8 },
-            { name: 'Cats', x: '2018', y: 6 }
-          ]}
-          interpolation="monotoneX"
-        />
-        <ChartArea
-          data={[
-            { name: 'Dogs', x: '2015', y: 2 },
-            { name: 'Dogs', x: '2016', y: 3 },
-            { name: 'Dogs', x: '2017', y: 4 },
-            { name: 'Dogs', x: '2018', y: 5 },
-            { name: 'Dogs', x: '2019', y: 6 }
-          ]}
-          interpolation="monotoneX"
-        />
-        <ChartArea
-          data={[
-            { name: 'Birds', x: '2015', y: 1 },
-            { name: 'Birds', x: '2016', y: 2 },
-            { name: 'Birds', x: '2017', y: 3 },
-            { name: 'Birds', x: '2018', y: 2 },
-            { name: 'Birds', x: '2019', y: 4 }
-          ]}
-          interpolation="monotoneX"
-        />
-      </ChartGroup>
-    </Chart>
-  </div>
-)
+class BottomAlignedLegend extends React.Component {
+  render() {
+    // Note: Container order is important
+    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+
+    return (
+      <div>
+        <p>This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor</p>
+        <div style={{ height: '250px', width: '650px' }}>
+          <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Area chart example"
+            containerComponent={
+              <CursorVoronoiContainer
+                constrainToVisibleArea
+                cursorDimension="x"
+                labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                mouseFollowTooltips
+                voronoiDimension="x"
+                voronoiPadding={50}
+              />
+            }
+            legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+            legendPosition="bottom"
+            height={250}
+            padding={{
+              bottom: 100, // Adjusted to accommodate legend
+              left: 50,
+              right: 50,
+              top: 50,
+            }}
+            maxDomain={{y: 9}}
+            themeColor={ChartThemeColor.cyan}
+            width={650}
+          >
+            <ChartAxis label="Years"/>
+            <ChartAxis dependentAxis showGrid/>
+            <ChartGroup>
+              <ChartArea
+                data={[
+                  { name: 'Cats', x: '2015', y: 3 },
+                  { name: 'Cats', x: '2016', y: 4 },
+                  { name: 'Cats', x: '2017', y: 8 },
+                  { name: 'Cats', x: '2018', y: 6 }
+                ]}
+                interpolation="monotoneX"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Dogs', x: '2015', y: 2 },
+                  { name: 'Dogs', x: '2016', y: 3 },
+                  { name: 'Dogs', x: '2017', y: 4 },
+                  { name: 'Dogs', x: '2018', y: 5 },
+                  { name: 'Dogs', x: '2019', y: 6 }
+                ]}
+                interpolation="monotoneX"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Birds', x: '2015', y: 1 },
+                  { name: 'Birds', x: '2016', y: 2 },
+                  { name: 'Birds', x: '2017', y: 3 },
+                  { name: 'Birds', x: '2018', y: 2 },
+                  { name: 'Birds', x: '2019', y: 4 }
+                ]}
+                interpolation="monotoneX"
+              />
+            </ChartGroup>
+          </Chart>
+        </div>
+      </div>
+    );
+  }
+}
 ```
 
 ```js title=Multi--color-(unordered)-bottom--left-aligned-legend-and-responsive-container

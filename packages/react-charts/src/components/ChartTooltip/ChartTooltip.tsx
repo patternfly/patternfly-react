@@ -4,10 +4,12 @@ import {
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
+  TextAnchorType,
   VictoryNumberCallback,
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
+import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -141,6 +143,11 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   labelComponent?: React.ReactElement<any>;
   /**
+   * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
+   * values are 'start', 'middle', 'end', and 'inherit'.
+   */
+  labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
+  /**
    * The orientation prop determines which side of the (x, y) coordinate the tooltip should be rendered on.
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
@@ -211,13 +218,29 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
 
 export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   constrainToVisibleArea = false,
+  labelComponent = <ChartLabel />,
+  labelTextAnchor,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartTooltipProps) => <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />;
+}: ChartTooltipProps) => {
+  const chartLabelComponent = React.cloneElement(labelComponent, {
+    textAnchor: labelTextAnchor,
+    ...labelComponent.props
+  });
+
+  return (
+    <VictoryTooltip
+      constrainToVisibleArea={constrainToVisibleArea}
+      labelComponent={chartLabelComponent}
+      theme={theme}
+      {...rest}
+    />
+  );
+};
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

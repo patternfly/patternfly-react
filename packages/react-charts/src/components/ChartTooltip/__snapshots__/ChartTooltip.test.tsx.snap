@@ -12,15 +12,7 @@ exports[`ChartTooltip 1`] = `
     />
   }
   groupComponent={<g />}
-  labelComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  labelComponent={<ChartLabel />}
   renderInPortal={true}
   text="This is a tooltip"
   theme={
@@ -487,15 +479,7 @@ exports[`ChartTooltip 2`] = `
     />
   }
   groupComponent={<g />}
-  labelComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  labelComponent={<ChartLabel />}
   renderInPortal={true}
   text="This is a tooltip"
   theme={
