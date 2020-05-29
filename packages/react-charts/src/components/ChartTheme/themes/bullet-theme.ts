@@ -84,7 +84,7 @@ export const BulletGroupTitleTheme = {
       left: 0,
       right: 0,
       top: chart_global_layout_Padding.value
-    }
+    } as any // Victory incorrectly typed ThemeBaseProps.padding as number instead of PaddingProps
   },
   line: {
     style: {

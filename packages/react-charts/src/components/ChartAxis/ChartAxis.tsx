@@ -5,11 +5,16 @@ import {
   D3Scale,
   DomainPaddingPropType,
   DomainPropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
+  OrientationTypes,
   PaddingProps,
-  ScalePropType
+  RangePropType,
+  ScalePropType,
+  StringOrNumberOrList,
+  TickLabelProps
 } from 'victory-core';
-import { VictoryAxis, VictoryAxisProps } from 'victory-axis';
+import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
@@ -26,7 +31,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: AnimatePropTypeInterface;
+  animate?: boolean | AnimatePropTypeInterface;
   /**
    * The axisComponent prop takes in an entire component which will be used
    * to create the axis line. The new element created from the passed axisComponent
@@ -50,7 +55,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when
    * dependent axes should line up with values on the independent axis.
    */
-  axisValue?: any;
+  axisValue?: number | string | object | Date;
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
@@ -132,11 +137,11 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'axis' | 'axisLabel' | 'grid' | 'ticks' | 'tickLabels' | 'parent', number | string>[];
+  events?: EventPropTypeInterface<VictoryAxisTTargetType, number | string>[];
   /**
    * ChartAxis uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * When true, this prop reduces the number of tick labels to fit the length of the axis.
    * Labels are removed at approximately even intervals from the original array of labels.
@@ -230,8 +235,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
   offsetY?: number;
   /**
    * The orientation prop specifies the position and orientation of your axis.
+   * Valid values are 'top', 'bottom', 'left' and 'right'.
    */
-  orientation?: 'top' | 'bottom' | 'left' | 'right';
+  orientation?: OrientationTypes;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -252,7 +258,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
+  range?: RangePropType;
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
@@ -268,9 +274,11 @@ export interface ChartAxisProps extends VictoryAxisProps {
         y?: ScalePropType | D3Scale;
       };
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * Show axis grid and ticks
    */
@@ -313,9 +321,15 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * note: custom angle and verticalAnchor properties may be included in labels styles.
    */
   style?: {
-    parent?: React.CSSProperties;
-    axis?: React.CSSProperties;
-    axisLabel?: React.CSSProperties;
+    parent?: {
+      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+    };
+    axis?: {
+      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+    };
+    axisLabel?: {
+      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+    };
     grid?: {
       [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
     };
@@ -323,7 +337,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
       [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     tickLabels?: {
-      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
+      [K in keyof TickLabelProps]: string | number | ((tick?: any) => string | number);
     };
   };
   /**

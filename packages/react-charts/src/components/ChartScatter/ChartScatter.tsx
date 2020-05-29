@@ -7,14 +7,19 @@ import {
   DataGetterPropType,
   DomainPropType,
   DomainPaddingPropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
+  OriginType,
   PaddingProps,
+  RangePropType,
   ScalePropType,
   ScatterSymbolType,
+  SortOrderPropType,
   StringOrNumberOrCallback,
+  StringOrNumberOrList,
   VictoryStyleInterface
 } from 'victory-core';
-import { VictoryScatter, VictoryScatterProps } from 'victory-scatter';
+import { VictoryScatter, VictoryScatterProps, VictoryScatterTTargetType } from 'victory-scatter';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -36,7 +41,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: AnimatePropTypeInterface;
+  animate?: boolean | AnimatePropTypeInterface;
   /**
    * The bubbleProperty prop indicates which property of the data object should be used
    * to scale data points in a bubble chart
@@ -147,11 +152,11 @@ export interface ChartScatterProps extends VictoryScatterProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<VictoryScatterTTargetType, StringOrNumberOrCallback>[];
   /**
    * ChartScatter uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -190,7 +195,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string | null);
+  labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
    * The maxBubbleSize prop sets an upper limit for scaling data points in a bubble chart
    */
@@ -235,9 +240,10 @@ export interface ChartScatterProps extends VictoryScatterProps {
   name?: string;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
    * **This prop should not be set manually.**
    */
-  origin?: { x: number; y: number };
+  origin?: OriginType;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -247,6 +253,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
   padding?: PaddingProps;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+   *
    * **This prop should not be set manually.**
    */
   polar?: boolean;
@@ -263,7 +270,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
+  range?: RangePropType;
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -284,9 +291,11 @@ export interface ChartScatterProps extends VictoryScatterProps {
         y?: ScalePropType | D3Scale;
       };
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the
@@ -314,11 +323,11 @@ export interface ChartScatterProps extends VictoryScatterProps {
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
    */
-  sortKey?: string | string[] | Function;
+  sortKey?: DataGetterPropType;
   /**
-   * The sortOrder prop specifies whether sorted data should be returned in ascending or descending order.
+   * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
    */
-  sortOrder?: 'ascending' | 'descending';
+  sortOrder?: SortOrderPropType;
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to

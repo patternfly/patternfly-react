@@ -92,13 +92,15 @@ export const getPieLabelY = ({ dy = 0, height, labelPosition, padding, width }: 
 };
 
 // Average pixels per glyph for overpass / Red Hat fonts
-export const overpassFontCharacterConstant = 2.5875;
+export const overpassFontCharacterConstant = '2.5875';
 
 // Returns an approximate size for the give text
 export const getLabelTextSize = ({ text, theme }: ChartLabelTextSizeInterface): { height: number; width: number } => {
-  const style = theme.legend.style.labels;
+  const style: any = theme.legend.style.labels;
+
+  // The approximateTextSize function returns height and width, but Victory incorrectly typed it as number
   return TextSize.approximateTextSize(text, {
     ...style,
     characterConstant: overpassFontCharacterConstant
-  });
+  }) as any;
 };
