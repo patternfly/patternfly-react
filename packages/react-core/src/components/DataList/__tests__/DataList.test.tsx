@@ -9,7 +9,6 @@ import { DataListItemCells } from '../DataListItemCells';
 import { DataListItemRow } from '../DataListItemRow';
 import { DataListContent } from '../DataListContent';
 import { Button } from '../../Button';
-import { css } from '@patternfly/react-styles';
 import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dropdown';
 
 describe('DataList', () => {
@@ -148,7 +147,10 @@ describe('DataList', () => {
   test('DataListAction visibility - show button when lg', () => {
     const view = shallow(
       <DataListAction
-        className={css('visibleOnLg', 'hidden')}
+        breakpointMods={[
+          { modifier: 'hidden' },
+          { breakpoint: 'lg', modifier: 'visible' }
+        ]}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"
@@ -163,7 +165,10 @@ describe('DataList', () => {
   test('DataListAction visibility - hide button on 2xl', () => {
     const view = shallow(
       <DataListAction
-        className={css('hiddenOn2Xl')}
+        breakpointMods={[
+          { modifier: 'hidden' },
+          { breakpoint: '2xl', modifier: 'hidden' }
+        ]}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"

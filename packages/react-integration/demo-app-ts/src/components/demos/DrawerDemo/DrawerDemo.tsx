@@ -42,6 +42,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
     const panelContent = (
       <DrawerPanelContent
         breakpointMods={[
+          { modifier: 'width_100' },
           { modifier: 'width_50', breakpoint: 'lg' },
           { modifier: 'width_33', breakpoint: 'xl' },
           { modifier: 'width_25', breakpoint: '2xl' }
