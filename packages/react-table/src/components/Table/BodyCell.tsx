@@ -45,7 +45,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   ...props
 }: BodyCellProps) => {
   const mappedProps = {
-    ...(dataLabel ? { 'data-label': dataLabel } : {}),
+    ...(dataLabel && !parentId ? { 'data-label': dataLabel } : {}),
     ...props
   };
 
