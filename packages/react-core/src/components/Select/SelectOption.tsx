@@ -4,6 +4,7 @@ import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
+import { GenerateId } from '../../helpers';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */
@@ -26,7 +27,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isDisabled?: boolean;
   /** Flag indicating if the option acts as a placeholder */
   isPlaceholder?: boolean;
-  /** Flad indicating if the option acts as a "no results" indicator */
+  /** Flag indicating if the option acts as a "no results" indicator */
   isNoResultsOption?: boolean;
   /** Internal flag indicating if the option is selected */
   isSelected?: boolean;
@@ -154,20 +155,22 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 )}
                 onKeyDown={this.onKeyDown}
               >
-                <input
-                  id={value.toString()}
-                  className={css(checkStyles.checkInput)}
-                  type="checkbox"
-                  onChange={event => {
-                    if (!isDisabled) {
-                      onClick(event);
-                      onSelect(event, value);
-                    }
-                  }}
-                  ref={this.ref}
-                  checked={isChecked || false}
-                  disabled={isDisabled}
-                />
+                <GenerateId>{randomId => (
+                  <input
+                    id={`pf-check-${randomId}`}
+                    className={css(checkStyles.checkInput)}
+                    type="checkbox"
+                    onChange={event => {
+                      if (!isDisabled) {
+                        onClick(event);
+                        onSelect(event, value);
+                      }
+                    }}
+                    ref={this.ref}
+                    checked={isChecked || false}
+                    disabled={isDisabled}
+                  />
+                  )}</GenerateId>
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
                   {children || value.toString()}
                 </span>
