@@ -100,14 +100,15 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
               aria-labelledby={group.props.label.replace(/\W/g, '-')}
               className={css(styles.selectMenuFieldset)}
             >
-              {group.props.children && group.props.children.map((option: React.ReactElement) =>
-                React.cloneElement(option, {
-                  isChecked: checked && checked.includes(option.props.value),
-                  sendRef,
-                  keyHandler,
-                  index: index++
-                })
-              )}
+              {group.props.children &&
+                group.props.children.map((option: React.ReactElement) =>
+                  React.cloneElement(option, {
+                    isChecked: checked && checked.includes(option.props.value),
+                    sendRef,
+                    keyHandler,
+                    index: index++
+                  })
+                )}
             </fieldset>
           )
         });

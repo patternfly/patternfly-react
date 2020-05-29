@@ -155,22 +155,24 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 )}
                 onKeyDown={this.onKeyDown}
               >
-                <GenerateId>{randomId => (
-                  <input
-                    id={`pf-check-${randomId}`}
-                    className={css(checkStyles.checkInput)}
-                    type="checkbox"
-                    onChange={event => {
-                      if (!isDisabled) {
-                        onClick(event);
-                        onSelect(event, value);
-                      }
-                    }}
-                    ref={this.ref}
-                    checked={isChecked || false}
-                    disabled={isDisabled}
-                  />
-                  )}</GenerateId>
+                <GenerateId>
+                  {randomId => (
+                    <input
+                      id={`pf-check-${randomId}`}
+                      className={css(checkStyles.checkInput)}
+                      type="checkbox"
+                      onChange={event => {
+                        if (!isDisabled) {
+                          onClick(event);
+                          onSelect(event, value);
+                        }
+                      }}
+                      ref={this.ref}
+                      checked={isChecked || false}
+                      disabled={isDisabled}
+                    />
+                  )}
+                </GenerateId>
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
                   {children || value.toString()}
                 </span>
