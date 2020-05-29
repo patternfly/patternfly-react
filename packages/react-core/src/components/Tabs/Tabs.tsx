@@ -53,13 +53,14 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   mountOnEnter?: boolean;
   /** Unmounts tab children (removes them from the DOM) when they are no longer visible */
   unmountOnExit?: boolean;
-  /** Array of objects representing the various modifiers to apply to tabs at various breakpoints */
-  breakpointMods?: (
-    | {
-        modifier: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
-        breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
-      }
-    | TabsBreakpointMod)[];
+  /** Insets at various breakpoints. */
+  insets?: {
+    default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+    md?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+    lg?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+    xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+    '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
+  };
 }
 
 interface TabsState {
@@ -92,8 +93,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     rightScrollAriaLabel: 'Scroll right',
     component: TabsComponent.div,
     mountOnEnter: false,
-    unmountOnExit: false,
-    breakpointMods: [] as TabsBreakpointMod[]
+    unmountOnExit: false
   };
 
   handleTabClick(
@@ -213,7 +213,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       ouiaId,
       mountOnEnter,
       unmountOnExit,
-      breakpointMods,
+      insets,
       ...props
     } = this.props;
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
@@ -232,7 +232,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             isVertical && styles.modifiers.vertical,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
-            formatBreakpointMods(breakpointMods, styles),
+            formatBreakpointMods(insets, styles),
             className
           )}
           {...getOUIAProps('Tabs', ouiaId)}

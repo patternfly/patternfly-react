@@ -1,32 +1,29 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { ToolbarBreakpointMod, ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
+import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
 import { formatBreakpointMods } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 
 export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
-  /** An array of objects representing the various modifiers to apply to the content row at various breakpoints */
-  breakpointMods?: (
-    | {
-        modifier:
-          | 'hidden'
-          | 'visible'
-          | 'align-right'
-          | 'align-left'
-          | 'spacer-none'
-          | 'spacer-sm'
-          | 'spacer-md'
-          | 'spacer-lg'
-          | 'space-items-none'
-          | 'space-items-sm'
-          | 'space-items-md'
-          | 'space-items-lg';
-        breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
-      }
-    | ToolbarBreakpointMod)[];
+  /** Visibility at various breakpoints. */
+  visiblity?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Alignment at various breakpoints. */
+  alignment?: {
+    default?: 'alignRight' | 'alignLeft';
+    md?: 'alignRight' | 'alignLeft';
+    lg?: 'alignRight' | 'alignLeft';
+    xl?: 'alignRight' | 'alignLeft';
+    '2xl'?: 'alignRight' | 'alignLeft';
+  };
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -57,7 +54,8 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
       children,
       isExpanded,
       toolbarId,
-      breakpointMods,
+      visiblity,
+      alignment,
       clearAllFilters,
       showClearFiltersButton,
       clearFiltersButtonText,
@@ -65,7 +63,15 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
     } = this.props;
 
     return (
-      <div className={css(styles.toolbarContent, formatBreakpointMods(breakpointMods, styles), className)} {...props}>
+      <div
+        className={css(
+          styles.toolbarContent,
+          formatBreakpointMods(visiblity, styles),
+          formatBreakpointMods(alignment, styles),
+          className
+        )}
+        {...props}
+      >
         <ToolbarContext.Consumer>
           {({
             clearAllFilters: clearAllFiltersContext,

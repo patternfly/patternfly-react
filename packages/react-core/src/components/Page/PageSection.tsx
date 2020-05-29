@@ -35,13 +35,15 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
   hasNoPadding?: boolean;
-  /** An array of objects representing modifiers to apply to the page section at various breakpoints */
-  breakpointMods?: (
-    | {
-        modifier: 'padding' | 'no-padding';
-        breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-      }
-    | PageSectionBreakpointMod)[];
+  /** Padding at various breakpoints. */
+  paddings?: {
+    default: 'padding' | 'no-padding';
+    sm: 'padding' | 'no-padding';
+    md: 'padding' | 'no-padding';
+    lg: 'padding' | 'no-padding';
+    xl: 'padding' | 'no-padding';
+    '2xl': 'padding' | 'no-padding';
+  };
 }
 
 const variantType = {
@@ -62,7 +64,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   variant = 'default',
   type = 'default',
   hasNoPadding = false,
-  breakpointMods = [] as PageSectionBreakpointMod[],
+  paddings,
   isFilled,
   ...props
 }: PageSectionProps) => (
@@ -71,7 +73,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
     className={css(
       variantType[type],
       hasNoPadding && styles.modifiers.noPadding,
-      formatBreakpointMods(breakpointMods, styles),
+      formatBreakpointMods(paddings, styles),
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,

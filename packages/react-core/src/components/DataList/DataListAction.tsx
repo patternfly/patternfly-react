@@ -3,13 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { formatBreakpointMods } from '../../helpers/util';
 
-export interface DataListActionBreakpointMod {
-  /** The attribute to modify  */
-  modifier: 'hidden' | 'visible';
-  /** The breakpoint at which to apply the modifier */
-  breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-}
-
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
   children: React.ReactNode;
@@ -21,13 +14,15 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
   'aria-labelledby': string;
   /** Adds accessible text to the DataList Action */
   'aria-label': string;
-  /** An array of objects representing the various modifiers to apply to the data list action at various breakpoints */
-  breakpointMods?: (
-    | {
-        modifier: 'hidden' | 'visible';
-        breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-      }
-    | DataListActionBreakpointMod)[];
+  /** What breakpoints to hide/show the data list action */
+  visibility?: {
+    default?: 'hidden' | 'visible';
+    sm?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
 }
 
 interface DataListActionState {
@@ -53,18 +48,18 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     const {
       children,
       className,
+      visibility,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       id,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
-      breakpointMods,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
 
     return (
       <div
-        className={css(styles.dataListItemAction, formatBreakpointMods(breakpointMods, styles), className)}
+        className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)}
         {...props}
       >
         {children}
