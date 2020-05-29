@@ -117,12 +117,12 @@ describe('Select Test', () => {
 
   it('Verify Checkbox Select', () => {
     cy.get('#check-select').click();
-    cy.get('input#Active').click();
+    cy.get('input#pf-check-pf-random-id-8').click();
     cy.get('#check-select')
       .contains('1')
       .should('exist');
     cy.get('#check-select .pf-c-select__toggle-badge').should('exist');
-    cy.get('input#Cancelled').click();
+    cy.get('input#pf-check-pf-random-id-9').click();
     cy.get('#check-select')
       .contains('2')
       .should('exist');
@@ -132,7 +132,7 @@ describe('Select Test', () => {
 
   it('Verify No Badge Checkbox Select', () => {
     cy.get('#check-select-no-badge').click();
-    cy.get('input#Active').click();
+    cy.get('input#pf-check-pf-random-id-13').click();
     cy.get('#check-select-no-badge .pf-c-select__toggle-badge').should('not.exist');
   });
 
