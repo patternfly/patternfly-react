@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { PageHeaderToolsBreakpointMod } from './PageHeaderTools';
+import { PageHeaderToolsBreakpointMod } from './';
 import { formatBreakpointMods } from '../../helpers/util';
 
 export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -25,7 +25,7 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
     className={css(
       styles.pageHeaderToolsItem,
       isSelected && styles.modifiers.selected,
-      breakpointMods && formatBreakpointMods(breakpointMods, styles),
+       formatBreakpointMods(breakpointMods, styles),
       className
     )}
   >

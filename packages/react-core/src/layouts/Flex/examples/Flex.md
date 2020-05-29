@@ -2,7 +2,7 @@
 title: 'Flex'
 cssPrefix: 'pf-l-flex'
 section: 'layouts'
-propComponents: ['Flex']
+propComponents: ['Flex', 'FlexItem']
 typescript: true
 ---
 
@@ -114,6 +114,93 @@ FlexSpacingNoneExample = () => (
 ```
 
 ### Flex layout modifiers
+
+#### List of modifiers
+
+**FlexModifiers:**
+- `flex`
+- `inline-flex`
+- `spacer-none`
+- `spacer-xs`
+- `spacer-sm`
+- `spacer-md`
+- `spacer-lg`
+- `spacer-xl`
+- `spacer-2xl`
+- `spacer-3xl`
+- `space-items-none`
+- `space-items-xs`
+- `space-items-sm`
+- `space-items-md`
+- `space-items-lg`
+- `space-items-xl`
+- `space-items-2xl`
+- `space-items-3xl`
+- `grow`
+- `shrink`
+- `flex-1`
+- `flex-2`
+- `flex-3`
+- `flex-4`
+- `flex-default`
+- `flex-none`
+- `column`
+- `column-reverse`
+- `row`
+- `row-reverse`
+- `wrap`
+- `wrap-reverse`
+- `nowrap`
+- `align-right`
+- `align-left`
+- `align-self-flex-start`
+- `align-self-flex-end`
+- `align-self-center`
+- `align-self-baseline`
+- `align-self-stretch`
+- `justify-content-flex-end`
+- `justify-content-center`
+- `justify-content-space-between`
+- `justify-content-space-around`
+- `justify-content-space-evenly`
+- `justify-content-flex-start`
+- `full-width`
+- `align-items-flex-start`
+- `align-items-flex-end`
+- `align-items-stretch`
+- `align-items-baseline`
+- `align-content-flex-start`
+- `align-content-flex-end`
+- `align-content-center`
+- `align-content-stretch`
+- `align-content-space-between`
+- `align-content-space-around`
+
+**FlexItemModifiers:**
+- `spacer-none`
+- `spacer-xs`
+- `spacer-sm`
+- `spacer-md`
+- `spacer-lg`
+- `spacer-xl`
+- `spacer-2xl`
+- `spacer-3xl`
+- `grow`
+- `shrink`
+- `flex-1`
+- `flex-2`
+- `flex-3`
+- `flex-4`
+- `flex-default`
+- `flex-none`
+- `align-right`
+- `align-left`
+- `align-self-flex-start`
+- `align-self-flex-end`
+- `align-self-center`
+- `align-self-baseline`
+- `align-self-stretch`
+- `full-width`
 
 ```js title=Default-layout
 import React from 'react';

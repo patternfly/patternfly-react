@@ -4,22 +4,6 @@ import { css } from '@patternfly/react-styles';
 import { DrawerContext } from './Drawer';
 import { formatBreakpointMods } from '../../helpers/util';
 
-export const DrawerModifiers = {
-  25: 'width_25',
-  33: 'width_33',
-  50: 'width_50',
-  66: 'width_66',
-  75: 'width_75',
-  100: 'width_100'
-} as const;
-
-export enum DrawerBreakpoints {
-  none = '',
-  lg = 'lg',
-  xl = 'xl',
-  '2xl' = '2xl'
-}
-
 export interface DrawerBreakpointMod {
   modifier:
     | 'width_25'
@@ -28,9 +12,8 @@ export interface DrawerBreakpointMod {
     | 'width_66'
     | 'width_75'
     | 'width_100'
-    | typeof DrawerModifiers[keyof typeof DrawerModifiers];
   /** The breakpoint at which to apply the modifier */
-  breakpoint: '' | 'lg' | 'xl' | '2xl' | DrawerBreakpoints;
+  breakpoint?: 'lg' | 'xl' | '2xl';
 }
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -41,14 +24,23 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   /** Flag indicating that the drawer panel should not have a border. */
   hasNoBorder?: boolean;
   /** Default width for drawer panel */
-  breakpointMods?: DrawerBreakpointMod[];
+  breakpointMods?: ({
+    modifier:
+    | 'width_25'
+    | 'width_33'
+    | 'width_50'
+    | 'width_66'
+    | 'width_75'
+    | 'width_100',
+    breakpoint?: 'lg' | 'xl' | '2xl'
+  } | DrawerBreakpointMod)[];
 }
 
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
   hasNoBorder = false,
-  breakpointMods = [] as DrawerBreakpointMod[],
+  breakpointMods,
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>

@@ -9,7 +9,22 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** An array of objects representing the various modifiers to apply to the content row at various breakpoints */
-  breakpointMods?: ToolbarBreakpointMod[];
+  breakpointMods?: ({
+    modifier:
+      | 'hidden'
+      | 'visible'
+      | 'align-right'
+      | 'align-left'
+      | 'spacer-none'
+      | 'spacer-sm'
+      | 'spacer-md'
+      | 'spacer-lg'
+      | 'space-items-none'
+      | 'space-items-sm'
+      | 'space-items-md'
+      | 'space-items-lg',
+    breakpoint?: 'md' | 'lg' | 'xl' | '2xl'
+  } | ToolbarBreakpointMod)[];
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -31,7 +46,6 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
 
   static defaultProps: ToolbarContentProps = {
     isExpanded: false,
-    breakpointMods: [] as ToolbarBreakpointMod[],
     showClearFiltersButton: false
   };
 

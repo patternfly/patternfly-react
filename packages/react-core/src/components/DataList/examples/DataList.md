@@ -19,8 +19,6 @@ typescript: true
 
 import {
 Button,
-DataListActionModifiers,
-DataListActionBreakpoints,
 DataList,
 DataListItem,
 DataListItemCells,
@@ -147,7 +145,6 @@ import {
   Button,
   DataList,
   DataListActionModifiers,
-  DataListActionBreakpoints,
   DataListItem,
   DataListItemCells,
   DataListItemRow,
@@ -263,8 +260,8 @@ class CheckboxActionDataList extends React.Component {
             <DataListAction
               breakpointMods={[
                 {
-                  modifier: DataListActionModifiers.hidden,
-                  breakpoint: DataListActionBreakpoints.lg
+                  modifier: 'hidden',
+                  breakpoint: 'lg'
                 }
               ]}
               aria-labelledby="check-action-item2 check-action-action2"
@@ -290,10 +287,10 @@ class CheckboxActionDataList extends React.Component {
             <DataListAction
               breakpointMods={[
                 {
-                  modifier: DataListActionModifiers.visible,
-                  breakpoint: DataListActionBreakpoints.lg
+                  modifier: 'visible',
+                  breakpoint: 'lg'
                 }, {
-                  modifier: DataListActionModifiers.hidden,
+                  modifier: 'hidden',
                 }
               ]}
               aria-labelledby="check-action-item2 check-action-action2"
@@ -322,8 +319,8 @@ class CheckboxActionDataList extends React.Component {
             <DataListAction
               breakpointMods={[
                 {
-                  modifier: DataListActionModifiers.hidden,
-                  breakpoint: DataListActionBreakpoints.xl
+                  modifier: 'hidden',
+                  breakpoint: 'xl'
                 }
               ]}
               aria-labelledby="check-action-item3 check-action-action3"
@@ -355,10 +352,11 @@ class CheckboxActionDataList extends React.Component {
             <DataListAction
               breakpointMods={[
                 {
-                  modifier: DataListActionModifiers.visible,
-                  breakpoint: DataListActionBreakpoints.xl
-                }, {
-                  modifier: DataListActionModifiers.hidden,
+                  modifier: 'visible',
+                  breakpoint: 'xl'
+                },
+                {
+                  modifier: 'hidden'
                 }
               ]}
               aria-labelledby="check-action-item3 check-action-action3"

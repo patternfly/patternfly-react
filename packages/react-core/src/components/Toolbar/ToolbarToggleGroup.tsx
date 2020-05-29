@@ -9,7 +9,6 @@ import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoi
 
 import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, capitalize, toCamel } from '../../helpers/util';
-import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
@@ -17,14 +16,25 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** The breakpoint at which the toggle group is collapsed down */
   breakpoint: 'md' | 'lg' | 'xl';
   /** An array of objects representing the various modifiers to apply to the data toolbar toggle group at various breakpoints */
-  breakpointMods?: ToolbarBreakpointMod[];
+  breakpointMods?: ({
+    modifier:
+      | 'hidden'
+      | 'visible'
+      | 'align-right'
+      | 'align-left'
+      | 'spacer-none'
+      | 'spacer-sm'
+      | 'spacer-md'
+      | 'spacer-lg'
+      | 'space-items-none'
+      | 'space-items-sm'
+      | 'space-items-md'
+      | 'space-items-lg',
+    breakpoint?: 'md' | 'lg' | 'xl' | '2xl'
+  } | ToolbarBreakpointMod)[];
 }
 
 export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
-  static defaultProps: PickOptional<ToolbarToggleGroupProps> = {
-    breakpointMods: [] as ToolbarBreakpointMod[]
-  };
-
   isContentPopup = () => {
     const viewportSize = window.innerWidth;
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);

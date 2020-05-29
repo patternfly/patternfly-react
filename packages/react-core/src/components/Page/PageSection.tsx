@@ -36,7 +36,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Modifies a main page section to have no padding */
   hasNoPadding?: boolean;
   /** An array of objects representing modifiers to apply to the page section at various breakpoints */
-  breakpointMods?: PageSectionBreakpointMod[];
+  breakpointMods?: ({
+    modifier: 'padding' | 'no-padding';
+    breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  } | PageSectionBreakpointMod)[];
 }
 
 const variantType = {

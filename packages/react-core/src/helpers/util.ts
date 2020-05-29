@@ -2,10 +2,11 @@ import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 import { ToolbarBreakpointMod } from '../components/Toolbar/ToolbarUtils';
 import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
-import { DataListActionBreakpointMod } from '../components/DataList/DataListActionBreakpoints';
+import { DataListActionBreakpointMod } from '../components/DataList';
 import { PageSectionBreakpointMod } from '../components/Page/PageSection';
-import { PageHeaderToolsBreakpointMod } from '../components/Page/PageHeaderTools';
+import { PageHeaderToolsBreakpointMod } from '../components/Page';
 import { DrawerBreakpointMod } from '../components/Drawer';
+import { TabsBreakpointMod } from '../components/Tabs';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -245,6 +246,7 @@ export function pluralize(i: number, singular: string, plural?: string) {
  */
 export const formatBreakpointMods = (
   breakpointMods: (
+    | TabsBreakpointMod
     | DrawerBreakpointMod
     | ToolbarBreakpointMod
     | FlexBreakpointMod
@@ -254,7 +256,7 @@ export const formatBreakpointMods = (
     | PageHeaderToolsBreakpointMod)[],
   styles: any
 ) =>
-  breakpointMods
+  (breakpointMods || [])
     .map(mod => `${mod.modifier}${mod.breakpoint ? `-on-${mod.breakpoint}` : ''}`)
     .map(toCamel)
     .map(mod => mod.replace(/-(\dxl)$/gi, (_res, group) => `_${group}`))

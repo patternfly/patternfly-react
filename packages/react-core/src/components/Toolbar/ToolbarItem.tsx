@@ -30,7 +30,22 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'chip-group'
     | 'separator';
   /** An array of objects representing the various modifiers to apply to the data toolbar item at various breakpoints */
-  breakpointMods?: ToolbarBreakpointMod[];
+  breakpointMods?: ({
+    modifier:
+      | 'hidden'
+      | 'visible'
+      | 'align-right'
+      | 'align-left'
+      | 'spacer-none'
+      | 'spacer-sm'
+      | 'spacer-md'
+      | 'spacer-lg'
+      | 'space-items-none'
+      | 'space-items-sm'
+      | 'space-items-md'
+      | 'space-items-lg',
+    breakpoint?: 'md' | 'lg' | 'xl' | '2xl'
+  } | ToolbarBreakpointMod)[];
   /** id for this data toolbar item */
   id?: string;
   /** Content to be rendered inside the data toolbar item */
@@ -40,7 +55,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
-  breakpointMods = [] as ToolbarBreakpointMod[],
+  breakpointMods,
   id,
   children,
   ...props
