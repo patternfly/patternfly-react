@@ -7,13 +7,17 @@ import {
   D3Scale,
   DomainPropType,
   DomainPaddingPropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
+  OriginType,
   PaddingProps,
+  RangePropType,
   ScalePropType,
   StringOrNumberOrCallback,
+  StringOrNumberOrList,
   VictoryStyleInterface
 } from 'victory-core';
-import { VictoryStack, VictoryStackProps } from 'victory-stack';
+import { VictoryStack, VictoryStackProps, VictoryStackTTargetType } from 'victory-stack';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -30,7 +34,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: AnimatePropTypeInterface;
+  animate?: boolean | AnimatePropTypeInterface;
   /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
@@ -151,11 +155,11 @@ export interface ChartStackProps extends VictoryStackProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<VictoryStackTTargetType, StringOrNumberOrCallback>[];
   /**
    * ChartStack uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -194,7 +198,7 @@ export interface ChartStackProps extends VictoryStackProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string | null);
+  labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -231,9 +235,10 @@ export interface ChartStackProps extends VictoryStackProps {
   name?: string;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
    * **This prop should not be set manually.**
    */
-  origin?: { x: number; y: number };
+  origin?: OriginType;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -243,6 +248,7 @@ export interface ChartStackProps extends VictoryStackProps {
   padding?: PaddingProps;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+   *
    * **This prop should not be set manually.**
    */
   polar?: boolean;
@@ -259,7 +265,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
+  range?: RangePropType;
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
@@ -275,9 +281,11 @@ export interface ChartStackProps extends VictoryStackProps {
         y?: ScalePropType | D3Scale;
       };
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the

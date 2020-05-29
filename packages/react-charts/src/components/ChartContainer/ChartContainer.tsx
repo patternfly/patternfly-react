@@ -1,6 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { VictoryContainer, VictoryContainerProps } from 'victory-core';
+import { OriginType, VictoryContainer, VictoryContainerProps } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
@@ -11,10 +11,12 @@ import { getClassName, getTheme } from '../ChartUtils';
  */
 export interface ChartContainerProps extends VictoryContainerProps {
   /**
-   * The children prop specifies the child or children that will be rendered within the container. This prop should not
-   * be set manually. It will be set by whatever Victory component is rendering the container.
+   * The children prop specifies the child or children that will be rendered within the container. It will be set by
+   * whatever Victory component is rendering the container.
+   *
+   * **This prop should not be set manually.**
    */
-  children?: React.ReactNode | React.ReactNode[];
+  children?: React.ReactElement | React.ReactElement[];
   /**
    * The className prop specifies a className that will be applied to the outer-most div rendered by ChartContainer
    */
@@ -57,6 +59,35 @@ export interface ChartContainerProps extends VictoryContainerProps {
    */
   height?: number;
   /**
+   * The name prop is used to reference a component instance when defining shared events.
+   */
+  name?: string;
+  /**
+   * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
+   * **This prop should not be set manually.**
+   */
+  origin?: OriginType;
+  /**
+   * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+   *
+   * **This prop should not be set manually.**
+   */
+  polar?: boolean;
+  /**
+   * The portalComponent prop takes a component instance which will be used as a container for children that should
+   * render inside a top-level container so that they will always appear above other elements. VictoryTooltip renders
+   * inside a portal so that tooltips always render above data. VictoryPortal is used to define elements that should
+   * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
+   * elements from SVG to another type of element e.g., react-native-svg elements.
+   */
+  portalComponent?: React.ReactElement;
+  /**
+   * The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is
+   * not set, the z-index of the enclosing div will be set to 99.
+   */
+  portalZIndex?: number;
+  /**
    * The responsive prop specifies whether the rendered container should be a responsive container
    * with a viewBox attribute, or a static container with absolute width and height.
    */
@@ -71,6 +102,10 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * @example {border: 1px solid red}
    */
   style?: React.CSSProperties;
+  /**
+   * The tabIndex prop specifies the description of the chart/SVG to assist with accessibility.
+   */
+  tabIndex?: number;
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.

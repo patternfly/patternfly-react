@@ -429,7 +429,7 @@ export const getPieLegendY = ({
 //
 // See https://github.com/FormidableLabs/victory/issues/864
 const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
-  const style = theme.legend.style.labels;
+  const style: any = theme.legend.style.labels;
   if (!(legendData && legendData.length)) {
     return 0;
   }
@@ -445,8 +445,9 @@ const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLe
       }
     });
   }
-  const textSize = TextSize.approximateTextSize(result, style);
-  const adjustedTextSize = TextSize.approximateTextSize(result, {
+  // The approximateTextSize function returns height and width, but Victory incorrectly typed it as number
+  const textSize: any = TextSize.approximateTextSize(result, style);
+  const adjustedTextSize: any = TextSize.approximateTextSize(result, {
     ...style,
     characterConstant: overpassFontCharacterConstant
   });

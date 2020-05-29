@@ -17,23 +17,8 @@ import { ThresholdTheme } from './themes/threshold-theme';
 import { DonutThresholdDynamicTheme, DonutThresholdStaticTheme } from './themes/donut-threshold-theme';
 import { DonutUtilizationDynamicTheme, DonutUtilizationStaticTheme } from './themes/donut-utilization-theme';
 
-export interface ChartThemeDefinitionInterface extends VictoryThemeDefinition {
-  area?: any;
-  axis?: any;
-  bar?: any;
-  boxplot?: any;
-  candlestick?: any;
-  chart?: any;
-  errorbar?: any;
-  group?: any;
-  legend?: any;
-  line?: any;
-  pie?: any;
-  scatter?: any;
-  stack?: any;
-  tooltip?: any;
-  voronoi?: any;
-}
+// Note: Victory incorrectly typed ThemeBaseProps.padding as number instead of PaddingProps
+export interface ChartThemeDefinitionInterface extends VictoryThemeDefinition {}
 
 interface ChartThemeColorInterface {
   blue: string;
