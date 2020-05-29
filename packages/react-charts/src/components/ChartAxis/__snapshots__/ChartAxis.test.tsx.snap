@@ -1914,6 +1914,14 @@ exports[`ChartAxis 2`] = `
 
 exports[`renders component data 1`] = `
 <VictoryChart
+  backgroundComponent={
+    <Background
+      circleComponent={<Circle />}
+      rectComponent={<Rect />}
+      role="presentation"
+      shapeRendering="auto"
+    />
+  }
   containerComponent={
     <ChartContainer
       className="pf-c-chart"
@@ -2690,6 +2698,35 @@ exports[`renders component data 1`] = `
               "padding": 50,
               "width": 450,
             },
+            "histogram": Object {
+              "colorScale": Array [
+                "#252525",
+                "#525252",
+                "#737373",
+                "#969696",
+                "#bdbdbd",
+                "#d9d9d9",
+                "#f0f0f0",
+              ],
+              "height": 300,
+              "padding": 50,
+              "style": Object {
+                "data": Object {
+                  "fill": "#969696",
+                  "stroke": "#252525",
+                  "strokeWidth": 2,
+                },
+                "labels": Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 10,
+                  "stroke": "transparent",
+                },
+              },
+              "width": 450,
+            },
             "legend": Object {
               "colorScale": Array [
                 "#252525",
@@ -3218,6 +3255,35 @@ exports[`renders component data 1`] = `
               ],
               "height": 300,
               "padding": 50,
+              "width": 450,
+            },
+            "histogram": Object {
+              "colorScale": Array [
+                "#252525",
+                "#525252",
+                "#737373",
+                "#969696",
+                "#bdbdbd",
+                "#d9d9d9",
+                "#f0f0f0",
+              ],
+              "height": 300,
+              "padding": 50,
+              "style": Object {
+                "data": Object {
+                  "fill": "#969696",
+                  "stroke": "#252525",
+                  "strokeWidth": 2,
+                },
+                "labels": Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 10,
+                  "stroke": "transparent",
+                },
+              },
               "width": 450,
             },
             "legend": Object {
@@ -3773,6 +3839,35 @@ exports[`renders component data 1`] = `
               "padding": 50,
               "width": 450,
             },
+            "histogram": Object {
+              "colorScale": Array [
+                "#252525",
+                "#525252",
+                "#737373",
+                "#969696",
+                "#bdbdbd",
+                "#d9d9d9",
+                "#f0f0f0",
+              ],
+              "height": 300,
+              "padding": 50,
+              "style": Object {
+                "data": Object {
+                  "fill": "#969696",
+                  "stroke": "#252525",
+                  "strokeWidth": 2,
+                },
+                "labels": Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 10,
+                  "stroke": "transparent",
+                },
+              },
+              "width": 450,
+            },
             "legend": Object {
               "colorScale": Array [
                 "#252525",
@@ -4319,6 +4414,35 @@ exports[`renders component data 1`] = `
               ],
               "height": 300,
               "padding": 50,
+              "width": 450,
+            },
+            "histogram": Object {
+              "colorScale": Array [
+                "#252525",
+                "#525252",
+                "#737373",
+                "#969696",
+                "#bdbdbd",
+                "#d9d9d9",
+                "#f0f0f0",
+              ],
+              "height": 300,
+              "padding": 50,
+              "style": Object {
+                "data": Object {
+                  "fill": "#969696",
+                  "stroke": "#252525",
+                  "strokeWidth": 2,
+                },
+                "labels": Object {
+                  "fill": "#252525",
+                  "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                  "fontSize": 14,
+                  "letterSpacing": "normal",
+                  "padding": 10,
+                  "stroke": "transparent",
+                },
+              },
               "width": 450,
             },
             "legend": Object {
