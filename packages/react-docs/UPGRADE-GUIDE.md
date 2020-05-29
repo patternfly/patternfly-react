@@ -24,7 +24,7 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
 - Removed prop `noBoxShadow`. If a shadow is needed, the accordion can be placed in a card, or a shadow can be applied either using CSS or a box-shadow utility class. [(#4022)](https://github.com/patternfly/patternfly-react/pull/4022)
 
 ### Alert
-- Changed default variant to `default`. To maintain current default behavior, set the `variant` property to `info`.[(#3903)](https://github.com/patternfly/patternfly-react/pull/3903). 
+- Changed default variant to `default`. To maintain current default behavior, set the `variant` property to `info`. [(#3903)](https://github.com/patternfly/patternfly-react/pull/3903). 
 - If you were previously using the `action` prop for the close button, use the `actionClose` prop instead [(#4190)](https://github.com/patternfly/patternfly-react/pull/4190) 
 - If you were previously using the `action` prop for a link button, use the `actionLinks` prop instead [(#4190)](https://github.com/patternfly/patternfly-react/pull/4190)
 
@@ -77,10 +77,10 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
 - **Dropdown:**
   - Removed props `isHover` and `isFocus` from Toggle, KebabToggle, and DropdownToggle [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
   - Removed prop `variant`. If you were using `variant="icon"` before, use the new prop `icon` instead. [(#4147)](https://github.com/patternfly/patternfly-react/pull/4147)
-**DropdownToggle**:
+- **DropdownToggle**:
   - Removed prop `ariaHasPopup` in favor of `aria-haspopup`
   - Renamed `iconComponent` to `toggleIndicator` [(#4038)](https://github.com/patternfly/patternfly-react/pull/4038)
-**DropdownItemIcon**:
+- **DropdownItemIcon**:
   - This component has been removed in favor of `<DropdownItem icon={<Icon />} />` [(#4147)](https://github.com/patternfly/patternfly-react/pull/4147)
 
 ### Empty state
