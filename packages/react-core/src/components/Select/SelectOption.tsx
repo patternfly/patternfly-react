@@ -4,7 +4,6 @@ import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
-import { GenerateId } from '../../helpers';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */
@@ -41,6 +40,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   keyHandler?: (index: number, position: string) => void;
   /** Optional callback for click event */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
+  /** Id of the checkbox input */
+  inputId?: string;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -57,7 +58,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     component: 'button',
     onClick: () => {},
     sendRef: () => {},
-    keyHandler: () => {}
+    keyHandler: () => {},
+    inputId: ''
   };
 
   componentDidMount() {
@@ -102,13 +104,14 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       keyHandler,
       index,
       component,
+      inputId,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
     return (
       <SelectConsumer>
-        {({ onSelect, onClose, variant }) => (
+        {({ onSelect, onClose, variant, inputIdPrefix }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
               <li role="presentation">
@@ -155,24 +158,20 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 )}
                 onKeyDown={this.onKeyDown}
               >
-                <GenerateId>
-                  {randomId => (
-                    <input
-                      id={`pf-check-${randomId}`}
-                      className={css(checkStyles.checkInput)}
-                      type="checkbox"
-                      onChange={event => {
-                        if (!isDisabled) {
-                          onClick(event);
-                          onSelect(event, value);
-                        }
-                      }}
-                      ref={this.ref}
-                      checked={isChecked || false}
-                      disabled={isDisabled}
-                    />
-                  )}
-                </GenerateId>
+                <input
+                  id={inputId || `${inputIdPrefix}-${value.toString()}`}
+                  className={css(checkStyles.checkInput)}
+                  type="checkbox"
+                  onChange={event => {
+                    if (!isDisabled) {
+                      onClick(event);
+                      onSelect(event, value);
+                    }
+                  }}
+                  ref={this.ref}
+                  checked={isChecked || false}
+                  disabled={isDisabled}
+                />
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
                   {children || value.toString()}
                 </span>

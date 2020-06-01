@@ -7,7 +7,7 @@ describe('Select Test', () => {
 
   it('Verify Single Select', () => {
     cy.get('#single-select').click();
-    cy.get('#Miss-2').click();
+    cy.get('#pf-random-id-0-2').click();
     cy.get('#single-select')
       .contains('Miss')
       .should('exist');
@@ -19,7 +19,7 @@ describe('Select Test', () => {
 
   it('Verify Custom Single Select', () => {
     cy.get('#custom-select').click();
-    cy.get('#Miss-2').click();
+    cy.get('#pf-random-id-1-2').click();
     cy.get('#custom-select')
       .contains('text-Miss')
       .should('exist');
@@ -117,12 +117,12 @@ describe('Select Test', () => {
 
   it('Verify Checkbox Select', () => {
     cy.get('#check-select').click();
-    cy.get('input#pf-check-pf-random-id-8').click();
+    cy.get('input#Cancelled').click();
     cy.get('#check-select')
       .contains('1')
       .should('exist');
     cy.get('#check-select .pf-c-select__toggle-badge').should('exist');
-    cy.get('input#pf-check-pf-random-id-9').click();
+    cy.get('input#Paused').click();
     cy.get('#check-select')
       .contains('2')
       .should('exist');
@@ -132,7 +132,7 @@ describe('Select Test', () => {
 
   it('Verify No Badge Checkbox Select', () => {
     cy.get('#check-select-no-badge').click();
-    cy.get('input#pf-check-pf-random-id-13').click();
+    cy.get('input#Cancelled').click();
     cy.get('#check-select-no-badge .pf-c-select__toggle-badge').should('not.exist');
   });
 

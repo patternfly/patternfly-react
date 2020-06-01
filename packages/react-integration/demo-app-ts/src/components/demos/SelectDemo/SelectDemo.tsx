@@ -96,11 +96,15 @@ export class SelectDemo extends Component<SelectDemoState> {
   ];
 
   checkboxOptions = [
-    <SelectOption key={0} value="Active" />,
-    <SelectOption key={1} value={{ numericValue: 0, toString: () => 'Cancelled' } as SelectOptionObject} />,
-    <SelectOption key={2} value="Paused" />,
-    <SelectOption key={3} value="Warning" />,
-    <SelectOption key={4} value="Restarted" />
+    <SelectOption key={0} value="Active" inputId="Active" />,
+    <SelectOption
+      key={1}
+      value={{ numericValue: 0, toString: () => 'Cancelled' } as SelectOptionObject}
+      inputId="Cancelled"
+    />,
+    <SelectOption key={2} value="Paused" inputId="Paused" />,
+    <SelectOption key={3} value="Warning" inputId="Warning" />,
+    <SelectOption key={4} value="Restarted" inputId="Restarted" />
   ];
 
   customTypeaheadOptions = [
