@@ -147,10 +147,7 @@ describe('DataList', () => {
   test('DataListAction visibility - show button when lg', () => {
     const view = shallow(
       <DataListAction
-        breakpointMods={[
-          { modifier: 'hidden' },
-          { breakpoint: 'lg', modifier: 'visible' }
-        ]}
+        visibility={{ default: 'hidden', lg: 'visible' }}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"
@@ -165,10 +162,7 @@ describe('DataList', () => {
   test('DataListAction visibility - hide button on 2xl', () => {
     const view = shallow(
       <DataListAction
-        breakpointMods={[
-          { modifier: 'hidden' },
-          { breakpoint: '2xl', modifier: 'hidden' }
-        ]}
+        visibility={{ default: 'hidden', '2xl': 'hidden' }}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"

@@ -9,7 +9,7 @@ import {} from '../..';
 
 it('PageHeaderToolsItem should match snapshot (auto-generated)', () => {
   const view = shallow(
-    <PageHeaderToolsItem children={<div>ReactNode</div>} className={'string'} breakpointMods={[]} isSelected={true} />
+    <PageHeaderToolsItem children={<div>ReactNode</div>} className={'string'} isSelected={true} />
   );
   expect(view).toMatchSnapshot();
 });

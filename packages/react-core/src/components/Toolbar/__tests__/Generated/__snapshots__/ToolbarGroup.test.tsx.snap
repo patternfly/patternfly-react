@@ -2,7 +2,6 @@
 
 exports[`ToolbarGroup should match snapshot (auto-generated) 1`] = `
 <ToolbarGroupWithRef
-  breakpointMods={Array []}
   className="string"
   innerRef={null}
   variant="filter-group"

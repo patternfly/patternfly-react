@@ -93,23 +93,19 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               className="pf-c-toolbar__content-section"
             >
               <ForwardRef
-                breakpointMods={
-                  Array [
-                    Object {
-                      "modifier": "space-items-none",
-                    },
-                  ]
+                spaceItems={
+                  Object {
+                    "default": "spaceItemsNone",
+                  }
                 }
               >
                 <ToolbarGroupWithRef
-                  breakpointMods={
-                    Array [
-                      Object {
-                        "modifier": "space-items-none",
-                      },
-                    ]
-                  }
                   innerRef={null}
+                  spaceItems={
+                    Object {
+                      "default": "spaceItemsNone",
+                    }
+                  }
                 >
                   <div
                     className="pf-c-toolbar__group pf-m-space-items-none"
@@ -839,23 +835,19 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               className="pf-c-toolbar__content-section"
             >
               <ForwardRef
-                breakpointMods={
-                  Array [
-                    Object {
-                      "modifier": "space-items-none",
-                    },
-                  ]
+                spaceItems={
+                  Object {
+                    "default": "spaceItemsNone",
+                  }
                 }
               >
                 <ToolbarGroupWithRef
-                  breakpointMods={
-                    Array [
-                      Object {
-                        "modifier": "space-items-none",
-                      },
-                    ]
-                  }
                   innerRef={null}
+                  spaceItems={
+                    Object {
+                      "default": "spaceItemsNone",
+                    }
+                  }
                 >
                   <div
                     className="pf-c-toolbar__group pf-m-space-items-none"

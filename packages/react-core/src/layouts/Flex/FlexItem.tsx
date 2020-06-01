@@ -39,12 +39,12 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to add for flex property at various breakpoints */
   flex?: {
-    default?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    sm?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    md?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    lg?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    xl?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    '2xl'?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    default?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    sm?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    md?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    lg?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    xl?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    '2xl'?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
   };
   /** Value to add for align-self property at various breakpoints */
   alignSelf?: {

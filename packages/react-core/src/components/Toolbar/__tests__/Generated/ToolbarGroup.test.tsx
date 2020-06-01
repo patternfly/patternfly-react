@@ -12,7 +12,6 @@ it('ToolbarGroup should match snapshot (auto-generated)', () => {
     <ToolbarGroup
       className={'string'}
       variant={'filter-group'}
-      breakpointMods={[]}
       children={<div>ReactNode</div>}
       innerRef={{ current: document.createElement('div') }}
     />

@@ -47,12 +47,12 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to add for flex property at various breakpoints */
   flex?: {
-    default?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    sm?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    md?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    lg?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    xl?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
-    '2xl'?: 'default' | 'none' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    default?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    sm?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    md?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    lg?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    xl?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
+    '2xl'?: 'flexDefault' | 'flexNone' | 'flex_1' | 'flex_2' | 'flex_3' | 'flex_4';
   };
   /** Value to add for flex-direction property at various breakpoints */
   direction?: {
@@ -74,12 +74,12 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to add for align-content property at various breakpoints */
   alignContent?: {
-    default?: 'alignContentFlextStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    sm?: 'alignContentFlextStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    md?: 'alignContentFlextStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    lg?: 'alignContentFlextStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    xl?: 'alignContentFlextStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    '2xl'?: 'alignContentFlextStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    default?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    sm?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    md?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    lg?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    xl?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    '2xl'?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
   };
   /** Value to add for align-self property at various breakpoints */
   alignSelf?: {
@@ -101,12 +101,12 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to add for justify-content property at various breakpoints */
   justifyContent?: {
-    default?: 'justifyContentFlextStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentStretch' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    sm?: 'justifyContentFlextStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentStretch' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    md?: 'justifyContentFlextStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentStretch' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    lg?: 'justifyContentFlextStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentStretch' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    xl?: 'justifyContentFlextStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentStretch' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    '2xl'?: 'justifyContentFlextStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentStretch' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    default?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    sm?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    md?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    lg?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    xl?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    '2xl'?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
   };
   /** Value to set to display property at various breakpoints */
   display?: {
@@ -128,12 +128,12 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to set for flex-wrap property at various breakpoints */
   flexWrap?: {
-    default?: 'wrap' | 'wrapReverse' | 'noWrap';
-    sm?: 'wrap' | 'wrapReverse' | 'noWrap';
-    md?: 'wrap' | 'wrapReverse' | 'noWrap';
-    lg?: 'wrap' | 'wrapReverse' | 'noWrap';
-    xl?: 'wrap' | 'wrapReverse' | 'noWrap';
-    '2xl'?: 'wrap' | 'wrapReverse' | 'noWrap';
+    default?: 'wrap' | 'wrapReverse' | 'nowrap';
+    sm?: 'wrap' | 'wrapReverse' | 'nowrap';
+    md?: 'wrap' | 'wrapReverse' | 'nowrap';
+    lg?: 'wrap' | 'wrapReverse' | 'nowrap';
+    xl?: 'wrap' | 'wrapReverse' | 'nowrap';
+    '2xl'?: 'wrap' | 'wrapReverse' | 'nowrap';
   };
 }
 

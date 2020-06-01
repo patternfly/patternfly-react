@@ -248,7 +248,7 @@ export const formatBreakpointMods = (
   },
   styles: any
 ) =>
-  Object.entries(mods)
+  Object.entries(mods || {})
     .map(([breakpoint, mod]) => `${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
     .map(toCamel)
     .map(mod => mod.replace(/-(\dxl)$/gi, (_res, group) => `_${group}`))

@@ -8,6 +8,6 @@ import { Flex } from '../../Flex';
 import {} from '../..';
 
 it('Flex should match snapshot (auto-generated)', () => {
-  const view = shallow(<Flex children={<>ReactNode</>} className={"''"} breakpointMods={[]} />);
+  const view = shallow(<Flex children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });
