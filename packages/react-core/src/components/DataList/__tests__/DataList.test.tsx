@@ -162,7 +162,7 @@ describe('DataList', () => {
   test('DataListAction visibility - hide button on 2xl', () => {
     const view = shallow(
       <DataListAction
-        visibility={{ default: 'hidden', '2xl': 'hidden' }}
+        visibility={{ '2xl': 'hidden' }}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"
