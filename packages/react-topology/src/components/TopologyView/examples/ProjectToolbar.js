@@ -48,7 +48,7 @@ export class ProjectToolbar extends React.Component {
 
     return (
       <React.Fragment>
-        <ToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+        <ToolbarItem spacer={{ default: 'spacerSm' }}>
           <label>Project:</label>
         </ToolbarItem>
         <ToolbarItem>
@@ -73,7 +73,7 @@ export class ProjectToolbar extends React.Component {
 
     return (
       <React.Fragment>
-        <ToolbarItem breakpointMods={[{ modifier: 'spacer-sm' }]}>
+        <ToolbarItem spacer={{ default: 'spacerSm' }}>
           <label>Application:</label>
         </ToolbarItem>
         <ToolbarItem>

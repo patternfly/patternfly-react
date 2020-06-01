@@ -257,12 +257,7 @@ class CheckboxActionDataList extends React.Component {
               ]}
             />
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: 'hidden',
-                  breakpoint: 'lg'
-                }
-              ]}
+              visibility={{ lg: 'hidden' }}
               aria-labelledby="check-action-item2 check-action-action2"
               id="check-action-action2"
               aria-label="Actions"
@@ -284,14 +279,7 @@ class CheckboxActionDataList extends React.Component {
               />
             </DataListAction>
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: 'visible',
-                  breakpoint: 'lg'
-                }, {
-                  modifier: 'hidden',
-                }
-              ]}
+              visibility={{ default: 'hidden', lg: 'visible' }}
               aria-labelledby="check-action-item2 check-action-action2"
               id="check-action-action2"
               aria-label="Actions"
@@ -316,12 +304,7 @@ class CheckboxActionDataList extends React.Component {
               ]}
             />
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: 'hidden',
-                  breakpoint: 'xl'
-                }
-              ]}
+              visibility={{ xl: 'hidden' }}
               aria-labelledby="check-action-item3 check-action-action3"
               id="check-action-action3"
               aria-label="Actions"
@@ -349,15 +332,7 @@ class CheckboxActionDataList extends React.Component {
               />
             </DataListAction>
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: 'visible',
-                  breakpoint: 'xl'
-                },
-                {
-                  modifier: 'hidden'
-                }
-              ]}
+              visibility={{ default: 'hidden', xl: 'visible' }}
               aria-labelledby="check-action-item3 check-action-action3"
               id="check-action-action3"
               aria-label="Actions"

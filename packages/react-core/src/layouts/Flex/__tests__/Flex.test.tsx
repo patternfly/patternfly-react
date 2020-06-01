@@ -36,7 +36,7 @@ test('extra props are spread to the root element', () => {
 });
 
 const flexModifiers = {
-  spacer: ['spacerNone', 'spacer-xs', 'spacerSm', 'spacerMd', 'spacerLg', 'spacerXl', 'spacer_2xl', 'spacer_3xl', 'spacer_4xl'],
+  spacer: ['spacerNone', 'spacerXs', 'spacerSm', 'spacerMd', 'spacerLg', 'spacerXl', 'spacer_2xl', 'spacer_3xl', 'spacer_4xl'],
   spaceItems: ['spaceItemsNone', 'spaceItemsXs', 'spaceItemsSm', 'spaceItemsMd', 'spaceItemsLg', 'spaceItemsXl', 'spaceItems_2xl', 'spaceItems_3xl', 'spaceItems_4xl'],
   grow: ['grow'],
   shrink: ['shrink'],

@@ -15,13 +15,6 @@ export enum PageSectionTypes {
   nav = 'nav'
 }
 
-export interface PageSectionBreakpointMod {
-  /** The attribute to modify  */
-  modifier: 'padding' | 'no-padding';
-  /** The breakpoint at which to apply the modifier */
-  breakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-}
-
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the section */
   children?: React.ReactNode;
@@ -33,16 +26,14 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   type?: 'default' | 'nav';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
-  /** Modifies a main page section to have no padding */
-  hasNoPadding?: boolean;
   /** Padding at various breakpoints. */
-  paddings?: {
-    default: 'padding' | 'no-padding';
-    sm: 'padding' | 'no-padding';
-    md: 'padding' | 'no-padding';
-    lg: 'padding' | 'no-padding';
-    xl: 'padding' | 'no-padding';
-    '2xl': 'padding' | 'no-padding';
+  padding?: {
+    default: 'padding' | 'noPadding';
+    sm: 'padding' | 'noPadding';
+    md: 'padding' | 'noPadding';
+    lg: 'padding' | 'noPadding';
+    xl: 'padding' | 'noPadding';
+    '2xl': 'padding' | 'noPadding';
   };
 }
 
@@ -63,8 +54,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   children,
   variant = 'default',
   type = 'default',
-  hasNoPadding = false,
-  paddings,
+  padding,
   isFilled,
   ...props
 }: PageSectionProps) => (
@@ -72,8 +62,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
     {...props}
     className={css(
       variantType[type],
-      hasNoPadding && styles.modifiers.noPadding,
-      formatBreakpointMods(paddings, styles),
+      formatBreakpointMods(padding, styles),
       variantStyle[variant],
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,

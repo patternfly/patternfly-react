@@ -11,12 +11,12 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Spacers at various breakpoints */
   spacer?: {
-    default?: 'spacerNone' | 'spacer-xs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    sm?: 'spacerNone' | 'spacer-xs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    md?: 'spacerNone' | 'spacer-xs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    lg?: 'spacerNone' | 'spacer-xs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    xl?: 'spacerNone' | 'spacer-xs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    '2xl'?: 'spacerNone' | 'spacer-xs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    default?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    sm?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    md?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    lg?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    xl?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    '2xl'?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
   };
   /** Space items at various breakpoints */
   spaceItems?: {
