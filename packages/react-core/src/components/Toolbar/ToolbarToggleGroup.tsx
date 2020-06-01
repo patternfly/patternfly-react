@@ -20,6 +20,14 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
+  /** Controls when filters are shown and when the toggle button is hidden. */
+  show?: {
+    default?: 'show';
+    md?: 'show';
+    lg?: 'show';
+    xl?: 'show';
+    '2xl'?: 'show';
+  };
   /** Alignment at various breakpoints. */
   alignment?: {
     default?: 'alignRight' | 'alignLeft';
@@ -54,7 +62,18 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
   };
 
   render() {
-    const { toggleIcon, variant, visiblity, alignment, spacer, spaceItems, className, children, ...props } = this.props;
+    const {
+      toggleIcon,
+      variant,
+      visiblity,
+      show,
+      alignment,
+      spacer,
+      spaceItems,
+      className,
+      children,
+      ...props
+    } = this.props;
 
     return (
       <ToolbarContext.Consumer>
@@ -75,6 +94,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                     styles.toolbarGroup,
                     variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
                     formatBreakpointMods(visiblity, styles),
+                    formatBreakpointMods(show, styles),
                     formatBreakpointMods(alignment, styles),
                     formatBreakpointMods(spacer, styles),
                     formatBreakpointMods(spaceItems, styles),
