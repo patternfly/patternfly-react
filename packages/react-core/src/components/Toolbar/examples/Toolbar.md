@@ -402,7 +402,7 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
        </ToolbarGroup>
     </React.Fragment>;
 
-    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
 
     return <Toolbar id="toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
       <ToolbarContent>
@@ -556,7 +556,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
       </ToolbarGroup>
     </React.Fragment>;
 
-    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
 
     return (
       <Toolbar id="toolbar-consumer-managed-toggle-groups"
@@ -788,7 +788,7 @@ class ToolbarWithFilterExample extends React.Component {
 
     const toolbarItems = <React.Fragment>
       <ToolbarToggleGroup toggleIcon={<FilterIcon />}
-        breakpoint='xl'>
+        show={{ xl: 'show' }}>
         {toggleGroupItems}
       </ToolbarToggleGroup>
       <ToolbarGroup variant="icon-button-group">
@@ -1016,7 +1016,7 @@ class ToolbarStacked extends React.Component {
 
 
     const firstRowItems = <React.Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>
       <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
       <ToolbarItem variant="overflow-menu">Overflow Menu</ToolbarItem>
     </React.Fragment>;

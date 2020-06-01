@@ -320,7 +320,7 @@ class FilterTableDemo extends React.Component {
         collapseListedFiltersBreakpoint="xl"
       >
         <ToolbarContent>
-          <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+          <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>
             <ToolbarGroup variant="filter-group">
               {this.buildCategoryDropdown()}
               {this.buildFilterDropdown()}
