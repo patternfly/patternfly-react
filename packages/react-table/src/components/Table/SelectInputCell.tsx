@@ -4,38 +4,46 @@ import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inl
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import classNames from 'classnames';
 
-// eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface ISelectInputCell {
-  value: string;
+export interface SelectInputCellProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
+  /** Row index of this select input cell */
   rowIndex: number;
+  /** Cell index of this select input cell */
   cellIndex: number;
+  /** TODO */
   props: any;
+  /** Event handler which fires when user selects an option in this cell */
   onSelect: (
     newValue: string | SelectOptionObject,
     event: React.MouseEvent | React.ChangeEvent,
     rowIndex: number,
     cellIndex: number
   ) => void;
-  options: React.ReactElement[];
+  /** Options to display in the expandable select menu */
+  options?: React.ReactElement[];
+  /** accessible aria label for the select in the select input cell */
   inputAriaLabel: string;
+  /** Flag indicating the select input is disabled */
   isDisabled?: boolean;
+  /** Current selected options to display as the read only value of the table cell */
   selections: string | SelectOptionObject | (string | SelectOptionObject)[];
+  /** Flag indicating the select menu is open */
   isOpen: boolean;
+  /** Event handler which fires when the select toggle is toggled */
   onToggle: (isExpanded: boolean) => void;
 }
 
-export const SelectInputCell: React.FunctionComponent<ISelectInputCell> = ({
-  value,
-  rowIndex,
-  cellIndex,
-  props,
-  onSelect,
-  inputAriaLabel,
+export const SelectInputCell: React.FunctionComponent<SelectInputCellProps> = ({
+  value = "",
+  rowIndex = 0,
+  cellIndex = 0,
+  props = {} as any,
+  onSelect = () => {},
+  inputAriaLabel = "",
   isDisabled = false,
-  isOpen,
-  onToggle,
-  selections,
-  options
+  isOpen = false,
+  onToggle = () => {},
+  selections = '',
+  options = [] as React.ReactElement[]
 }) => {
   const onSelectHandler = (event: React.MouseEvent | React.ChangeEvent, newValue: string | SelectOptionObject) => {
     onSelect(newValue, event, rowIndex, cellIndex);

@@ -5,7 +5,7 @@ import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import classNames from 'classnames';
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
-export interface IEditableTextCell {
+export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   value: string;
   rowIndex: number;
   cellIndex: number;

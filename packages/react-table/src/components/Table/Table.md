@@ -3,7 +3,7 @@ title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
 typescript: true
-propComponents: ['Table', 'TableHeader', 'TableBody']
+propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableTableCell', 'SelectInputCell']
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
@@ -1462,7 +1462,7 @@ class EditableRowsTable extends React.Component {
                 />
               ),
               props: {
-                value: 'Option 1',
+                value: "Option 1",
                 name: 'uniqueIdRow1Cell4'
               }
             },
