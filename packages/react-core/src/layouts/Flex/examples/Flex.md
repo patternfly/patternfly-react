@@ -77,8 +77,8 @@ FlexSpacingExample = () => (
     <FlexItem spacer={{ default: 'spacerMd' }}>Item - md</FlexItem>
     <FlexItem spacer={{ default: 'spacerLg' }}>Item - lg</FlexItem>
     <FlexItem spacer={{ default: 'spacerXl' }}>Item - xl</FlexItem>
-    <FlexItem spacer={{ default: 'spacer_2xl' }}>Item - 2xl</FlexItem>
-    <FlexItem spacer={{ default: 'spacer_3xl' }}>Item - 3xl</FlexItem>
+    <FlexItem spacer={{ default: 'spacer2xl' }}>Item - 2xl</FlexItem>
+    <FlexItem spacer={{ default: 'spacer3xl' }}>Item - 3xl</FlexItem>
   </Flex>
 );
 ```

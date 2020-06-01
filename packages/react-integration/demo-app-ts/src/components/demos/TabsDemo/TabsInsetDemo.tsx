@@ -174,11 +174,11 @@ export class TabsInsetDemo extends Component {
           id="insetTabs2Xl"
           activeKey={this.state.activeTabKey5}
           inset={{
-            default: 'inset_2xl',
-            md: 'inset_2xl',
-            lg: 'inset_2xl',
-            xl: 'inset_2xl',
-            '2xl': 'inset_2xl'
+            default: 'inset2xl',
+            md: 'inset2xl',
+            lg: 'inset2xl',
+            xl: 'inset2xl',
+            '2xl': 'inset2xl'
           }}
           onSelect={this.handleTabClick5}
         >

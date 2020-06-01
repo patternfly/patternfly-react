@@ -18,9 +18,9 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     sm?:
       | 'spacerNone'
       | 'spacerXs'
@@ -28,9 +28,9 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     md?:
       | 'spacerNone'
       | 'spacerXs'
@@ -38,9 +38,9 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     lg?:
       | 'spacerNone'
       | 'spacerXs'
@@ -48,9 +48,9 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     xl?:
       | 'spacerNone'
       | 'spacerXs'
@@ -58,9 +58,9 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     '2xl'?:
       | 'spacerNone'
       | 'spacerXs'
@@ -68,9 +68,9 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
   };
   /** Whether to add flex: grow at various breakpoints */
   grow?: {

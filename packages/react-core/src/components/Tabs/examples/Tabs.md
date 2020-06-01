@@ -254,7 +254,7 @@ class InsetTabs extends React.Component {
         <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} inset={{
           default: 'insetNone',
           md: 'insetSm',
-          xl: 'inset_2xl',
+          xl: 'inset2xl',
           '2xl': 'insetLg'
         }}
         isBox={isBox}>

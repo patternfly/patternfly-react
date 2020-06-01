@@ -18,9 +18,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     sm?:
       | 'spacerNone'
       | 'spacerXs'
@@ -28,9 +28,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     md?:
       | 'spacerNone'
       | 'spacerXs'
@@ -38,9 +38,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     lg?:
       | 'spacerNone'
       | 'spacerXs'
@@ -48,9 +48,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     xl?:
       | 'spacerNone'
       | 'spacerXs'
@@ -58,9 +58,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
     '2xl'?:
       | 'spacerNone'
       | 'spacerXs'
@@ -68,9 +68,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spacerMd'
       | 'spacerLg'
       | 'spacerXl'
-      | 'spacer_2xl'
-      | 'spacer_3xl'
-      | 'spacer_4xl';
+      | 'spacer2xl'
+      | 'spacer3xl'
+      | 'spacer4xl';
   };
   /** Space items at various breakpoints */
   spaceItems?: {
@@ -81,9 +81,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItemsMd'
       | 'spaceItemsLg'
       | 'spaceItemsXl'
-      | 'spaceItems_2xl'
-      | 'spaceItems_3xl'
-      | 'spaceItems_4xl';
+      | 'spaceItems2xl'
+      | 'spaceItems3xl'
+      | 'spaceItems4xl';
     sm?:
       | 'spaceItemsNone'
       | 'spaceItemsXs'
@@ -91,9 +91,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItemsMd'
       | 'spaceItemsLg'
       | 'spaceItemsXl'
-      | 'spaceItems_2xl'
-      | 'spaceItems_3xl'
-      | 'spaceItems_4xl';
+      | 'spaceItems2xl'
+      | 'spaceItems3xl'
+      | 'spaceItems4xl';
     md?:
       | 'spaceItemsNone'
       | 'spaceItemsXs'
@@ -101,9 +101,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItemsMd'
       | 'spaceItemsLg'
       | 'spaceItemsXl'
-      | 'spaceItems_2xl'
-      | 'spaceItems_3xl'
-      | 'spaceItems_4xl';
+      | 'spaceItems2xl'
+      | 'spaceItems3xl'
+      | 'spaceItems4xl';
     lg?:
       | 'spaceItemsNone'
       | 'spaceItemsXs'
@@ -111,9 +111,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItemsMd'
       | 'spaceItemsLg'
       | 'spaceItemsXl'
-      | 'spaceItems_2xl'
-      | 'spaceItems_3xl'
-      | 'spaceItems_4xl';
+      | 'spaceItems2xl'
+      | 'spaceItems3xl'
+      | 'spaceItems4xl';
     xl?:
       | 'spaceItemsNone'
       | 'spaceItemsXs'
@@ -121,9 +121,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItemsMd'
       | 'spaceItemsLg'
       | 'spaceItemsXl'
-      | 'spaceItems_2xl'
-      | 'spaceItems_3xl'
-      | 'spaceItems_4xl';
+      | 'spaceItems2xl'
+      | 'spaceItems3xl'
+      | 'spaceItems4xl';
     '2xl'?:
       | 'spaceItemsNone'
       | 'spaceItemsXs'
@@ -131,9 +131,9 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
       | 'spaceItemsMd'
       | 'spaceItemsLg'
       | 'spaceItemsXl'
-      | 'spaceItems_2xl'
-      | 'spaceItems_3xl'
-      | 'spaceItems_4xl';
+      | 'spaceItems2xl'
+      | 'spaceItems3xl'
+      | 'spaceItems4xl';
   };
   /** Whether to add flex: grow at various breakpoints */
   grow?: {
