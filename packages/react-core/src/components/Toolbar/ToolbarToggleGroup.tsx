@@ -7,7 +7,7 @@ import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 
-import { formatBreakpointMods, capitalize, toCamel } from '../../helpers/util';
+import { formatBreakpointMods, toCamel } from '../../helpers/util';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
@@ -54,10 +54,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
   };
 
   render() {
-    const { toggleIcon, variant, visiblity,
-      alignment,
-      spacer,
-      spaceItems, className, children, ...props } = this.props;
+    const { toggleIcon, variant, visiblity, alignment, spacer, spaceItems, className, children, ...props } = this.props;
 
     return (
       <ToolbarContext.Consumer>

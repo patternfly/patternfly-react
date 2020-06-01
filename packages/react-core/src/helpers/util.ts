@@ -232,9 +232,10 @@ export function pluralize(i: number, singular: string, plural?: string) {
   return `${i || 0} ${i === 1 ? singular : plural}`;
 }
 
-/** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
+/**
+ * This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
- * @param {(DrawerBreakpointMod | ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod | DataListActionBreakpointMod | PageHeaderToolsBreakpointMod)[]} breakpointMods The modifiers object
+ * @param {object} mods The modifiers object
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (

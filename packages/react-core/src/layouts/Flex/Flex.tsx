@@ -11,21 +11,129 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Spacers at various breakpoints */
   spacer?: {
-    default?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    sm?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    md?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    lg?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    xl?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    '2xl'?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    default?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    sm?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    md?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    lg?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    xl?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    '2xl'?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
   };
   /** Space items at various breakpoints */
   spaceItems?: {
-    default?: 'spaceItemsNone' | 'spaceItemsXs' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg' | 'spaceItemsXl' | 'spaceItems_2xl' | 'spaceItems_3xl' | 'spaceItems_4xl';
-    sm?: 'spaceItemsNone' | 'spaceItemsXs' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg' | 'spaceItemsXl' | 'spaceItems_2xl' | 'spaceItems_3xl' | 'spaceItems_4xl';
-    md?: 'spaceItemsNone' | 'spaceItemsXs' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg' | 'spaceItemsXl' | 'spaceItems_2xl' | 'spaceItems_3xl' | 'spaceItems_4xl';
-    lg?: 'spaceItemsNone' | 'spaceItemsXs' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg' | 'spaceItemsXl' | 'spaceItems_2xl' | 'spaceItems_3xl' | 'spaceItems_4xl';
-    xl?: 'spaceItemsNone' | 'spaceItemsXs' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg' | 'spaceItemsXl' | 'spaceItems_2xl' | 'spaceItems_3xl' | 'spaceItems_4xl';
-    '2xl'?: 'spaceItemsNone' | 'spaceItemsXs' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg' | 'spaceItemsXl' | 'spaceItems_2xl' | 'spaceItems_3xl' | 'spaceItems_4xl';
+    default?:
+      | 'spaceItemsNone'
+      | 'spaceItemsXs'
+      | 'spaceItemsSm'
+      | 'spaceItemsMd'
+      | 'spaceItemsLg'
+      | 'spaceItemsXl'
+      | 'spaceItems_2xl'
+      | 'spaceItems_3xl'
+      | 'spaceItems_4xl';
+    sm?:
+      | 'spaceItemsNone'
+      | 'spaceItemsXs'
+      | 'spaceItemsSm'
+      | 'spaceItemsMd'
+      | 'spaceItemsLg'
+      | 'spaceItemsXl'
+      | 'spaceItems_2xl'
+      | 'spaceItems_3xl'
+      | 'spaceItems_4xl';
+    md?:
+      | 'spaceItemsNone'
+      | 'spaceItemsXs'
+      | 'spaceItemsSm'
+      | 'spaceItemsMd'
+      | 'spaceItemsLg'
+      | 'spaceItemsXl'
+      | 'spaceItems_2xl'
+      | 'spaceItems_3xl'
+      | 'spaceItems_4xl';
+    lg?:
+      | 'spaceItemsNone'
+      | 'spaceItemsXs'
+      | 'spaceItemsSm'
+      | 'spaceItemsMd'
+      | 'spaceItemsLg'
+      | 'spaceItemsXl'
+      | 'spaceItems_2xl'
+      | 'spaceItems_3xl'
+      | 'spaceItems_4xl';
+    xl?:
+      | 'spaceItemsNone'
+      | 'spaceItemsXs'
+      | 'spaceItemsSm'
+      | 'spaceItemsMd'
+      | 'spaceItemsLg'
+      | 'spaceItemsXl'
+      | 'spaceItems_2xl'
+      | 'spaceItems_3xl'
+      | 'spaceItems_4xl';
+    '2xl'?:
+      | 'spaceItemsNone'
+      | 'spaceItemsXs'
+      | 'spaceItemsSm'
+      | 'spaceItemsMd'
+      | 'spaceItemsLg'
+      | 'spaceItemsXl'
+      | 'spaceItems_2xl'
+      | 'spaceItems_3xl'
+      | 'spaceItems_4xl';
   };
   /** Whether to add flex: grow at various breakpoints */
   grow?: {
@@ -65,21 +173,67 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to add for align-items property at various breakpoints */
   alignItems?: {
-    default?: 'alignItemsFlexStart' | 'alignItemsFlexEnd' | 'alignItemsCenter' | 'alignItemsStretch' | 'alignItemsBaseline';
+    default?:
+      | 'alignItemsFlexStart'
+      | 'alignItemsFlexEnd'
+      | 'alignItemsCenter'
+      | 'alignItemsStretch'
+      | 'alignItemsBaseline';
     sm?: 'alignItemsFlexStart' | 'alignItemsFlexEnd' | 'alignItemsCenter' | 'alignItemsStretch' | 'alignItemsBaseline';
     md?: 'alignItemsFlexStart' | 'alignItemsFlexEnd' | 'alignItemsCenter' | 'alignItemsStretch' | 'alignItemsBaseline';
     lg?: 'alignItemsFlexStart' | 'alignItemsFlexEnd' | 'alignItemsCenter' | 'alignItemsStretch' | 'alignItemsBaseline';
     xl?: 'alignItemsFlexStart' | 'alignItemsFlexEnd' | 'alignItemsCenter' | 'alignItemsStretch' | 'alignItemsBaseline';
-    '2xl'?: 'alignItemsFlexStart' | 'alignItemsFlexEnd' | 'alignItemsCenter' | 'alignItemsStretch' | 'alignItemsBaseline';
+    '2xl'?:
+      | 'alignItemsFlexStart'
+      | 'alignItemsFlexEnd'
+      | 'alignItemsCenter'
+      | 'alignItemsStretch'
+      | 'alignItemsBaseline';
   };
   /** Value to add for align-content property at various breakpoints */
   alignContent?: {
-    default?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    sm?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    md?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    lg?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    xl?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
-    '2xl'?: 'alignContentFlexStart' | 'alignContentFlexEnd' | 'alignContentCenter' | 'alignContentStretch' | 'alignContentSpaceBetween' | 'alignContentSpaceAround';
+    default?:
+      | 'alignContentFlexStart'
+      | 'alignContentFlexEnd'
+      | 'alignContentCenter'
+      | 'alignContentStretch'
+      | 'alignContentSpaceBetween'
+      | 'alignContentSpaceAround';
+    sm?:
+      | 'alignContentFlexStart'
+      | 'alignContentFlexEnd'
+      | 'alignContentCenter'
+      | 'alignContentStretch'
+      | 'alignContentSpaceBetween'
+      | 'alignContentSpaceAround';
+    md?:
+      | 'alignContentFlexStart'
+      | 'alignContentFlexEnd'
+      | 'alignContentCenter'
+      | 'alignContentStretch'
+      | 'alignContentSpaceBetween'
+      | 'alignContentSpaceAround';
+    lg?:
+      | 'alignContentFlexStart'
+      | 'alignContentFlexEnd'
+      | 'alignContentCenter'
+      | 'alignContentStretch'
+      | 'alignContentSpaceBetween'
+      | 'alignContentSpaceAround';
+    xl?:
+      | 'alignContentFlexStart'
+      | 'alignContentFlexEnd'
+      | 'alignContentCenter'
+      | 'alignContentStretch'
+      | 'alignContentSpaceBetween'
+      | 'alignContentSpaceAround';
+    '2xl'?:
+      | 'alignContentFlexStart'
+      | 'alignContentFlexEnd'
+      | 'alignContentCenter'
+      | 'alignContentStretch'
+      | 'alignContentSpaceBetween'
+      | 'alignContentSpaceAround';
   };
   /** Value to add for align-self property at various breakpoints */
   alignSelf?: {
@@ -101,12 +255,48 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
   /** Value to add for justify-content property at various breakpoints */
   justifyContent?: {
-    default?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    sm?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    md?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    lg?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    xl?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
-    '2xl'?: 'justifyContentFlexStart' | 'justifyContentFlexEnd' | 'justifyContentCenter' | 'justifyContentSpaceBetween' | 'justifyContentSpaceAround' | 'justifyContentSpaceEvenly';
+    default?:
+      | 'justifyContentFlexStart'
+      | 'justifyContentFlexEnd'
+      | 'justifyContentCenter'
+      | 'justifyContentSpaceBetween'
+      | 'justifyContentSpaceAround'
+      | 'justifyContentSpaceEvenly';
+    sm?:
+      | 'justifyContentFlexStart'
+      | 'justifyContentFlexEnd'
+      | 'justifyContentCenter'
+      | 'justifyContentSpaceBetween'
+      | 'justifyContentSpaceAround'
+      | 'justifyContentSpaceEvenly';
+    md?:
+      | 'justifyContentFlexStart'
+      | 'justifyContentFlexEnd'
+      | 'justifyContentCenter'
+      | 'justifyContentSpaceBetween'
+      | 'justifyContentSpaceAround'
+      | 'justifyContentSpaceEvenly';
+    lg?:
+      | 'justifyContentFlexStart'
+      | 'justifyContentFlexEnd'
+      | 'justifyContentCenter'
+      | 'justifyContentSpaceBetween'
+      | 'justifyContentSpaceAround'
+      | 'justifyContentSpaceEvenly';
+    xl?:
+      | 'justifyContentFlexStart'
+      | 'justifyContentFlexEnd'
+      | 'justifyContentCenter'
+      | 'justifyContentSpaceBetween'
+      | 'justifyContentSpaceAround'
+      | 'justifyContentSpaceEvenly';
+    '2xl'?:
+      | 'justifyContentFlexStart'
+      | 'justifyContentFlexEnd'
+      | 'justifyContentCenter'
+      | 'justifyContentSpaceBetween'
+      | 'justifyContentSpaceAround'
+      | 'justifyContentSpaceEvenly';
   };
   /** Value to set to display property at various breakpoints */
   display?: {

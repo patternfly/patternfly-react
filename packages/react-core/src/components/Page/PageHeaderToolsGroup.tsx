@@ -16,7 +16,7 @@ export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElemen
     lg: 'hidden' | 'visible';
     xl: 'hidden' | 'visible';
     '2xl': 'hidden' | 'visible';
-  }
+  };
 }
 
 export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupProps> = ({

@@ -54,10 +54,7 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
 
 class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
   render() {
-    const {       visiblity,
-      alignment,
-      spacer,
-      spaceItems, className, variant, children, innerRef, ...props } = this.props;
+    const { visiblity, alignment, spacer, spaceItems, className, variant, children, innerRef, ...props } = this.props;
     return (
       <div
         className={css(

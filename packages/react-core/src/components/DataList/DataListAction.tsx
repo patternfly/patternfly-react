@@ -58,10 +58,7 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     } = this.props;
 
     return (
-      <div
-        className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)}
-        {...props}
-      >
+      <div className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)} {...props}>
         {children}
       </div>
     );

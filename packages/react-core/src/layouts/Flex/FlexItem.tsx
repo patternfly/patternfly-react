@@ -11,12 +11,66 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Spacers at various breakpoints */
   spacer?: {
-    default?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    sm?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    md?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    lg?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    xl?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
-    '2xl'?: 'spacerNone' | 'spacerXs' | 'spacerSm' | 'spacerMd' | 'spacerLg' | 'spacerXl' | 'spacer_2xl' | 'spacer_3xl' | 'spacer_4xl';
+    default?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    sm?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    md?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    lg?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    xl?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
+    '2xl'?:
+      | 'spacerNone'
+      | 'spacerXs'
+      | 'spacerSm'
+      | 'spacerMd'
+      | 'spacerLg'
+      | 'spacerXl'
+      | 'spacer_2xl'
+      | 'spacer_3xl'
+      | 'spacer_4xl';
   };
   /** Whether to add flex: grow at various breakpoints */
   grow?: {
@@ -96,8 +150,9 @@ export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
       formatBreakpointMods(alignSelf, styles),
       formatBreakpointMods(align, styles),
       formatBreakpointMods(fullWidth, styles),
-      className)
-    }>
+      className
+    )}
+  >
     {children}
   </div>
 );
