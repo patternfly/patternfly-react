@@ -57,7 +57,7 @@ class ToolbarSpacers extends React.Component {
 
   render() {
     const firstSpacers = {
-      default: 'spacerNone'}
+      default: 'spacerNone'
     };
     const secondSpacers = {
       default: 'spacerSm'

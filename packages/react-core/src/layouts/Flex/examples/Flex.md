@@ -6,7 +6,7 @@ propComponents: ['Flex', 'FlexItem']
 typescript: true
 ---
 
-import { Flex, FlexItem, FlexModifiers, FlexBreakpoints } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 import './flex.css';
 
 ## Examples
@@ -67,25 +67,25 @@ NestedItemsFlexExample = () => (
 ### Flex Spacing
 ```js title=Individually-spaced
 import React from 'react';
-import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 
 FlexSpacingExample = () => (
   <Flex>
-    <FlexItem spacer={{ default: 'spacerNone']}]}>Item - none</FlexItem>
-    <FlexItem spacer={{ default: 'spacerXs']}]}>Item - xs</FlexItem>
-    <FlexItem spacer={{ default: 'spacerSm']}]}>Item -sm</FlexItem>
-    <FlexItem spacer={{ default: 'spacerMd']}]}>Item - md</FlexItem>
-    <FlexItem spacer={{ default: 'spacerLg']}]}>Item - lg</FlexItem>
-    <FlexItem spacer={{ default: 'spacerXl']}]}>Item - xl</FlexItem>
-    <FlexItem spacer={{ default: 'spacer_2xl']}]}>Item - 2xl</FlexItem>
-    <FlexItem spacer={{ default: 'spacer_3xl']}]}>Item - 3xl</FlexItem>
+    <FlexItem spacer={{ default: 'spacerNone' }}>Item - none</FlexItem>
+    <FlexItem spacer={{ default: 'spacerXs' }}>Item - xs</FlexItem>
+    <FlexItem spacer={{ default: 'spacerSm' }}>Item -sm</FlexItem>
+    <FlexItem spacer={{ default: 'spacerMd' }}>Item - md</FlexItem>
+    <FlexItem spacer={{ default: 'spacerLg' }}>Item - lg</FlexItem>
+    <FlexItem spacer={{ default: 'spacerXl' }}>Item - xl</FlexItem>
+    <FlexItem spacer={{ default: 'spacer_2xl' }}>Item - 2xl</FlexItem>
+    <FlexItem spacer={{ default: 'spacer_3xl' }}>Item - 3xl</FlexItem>
   </Flex>
 );
 ```
 
 ```js title=Spacing-xl
 import React from 'react';
-import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 
 FlexSpacingXlExample = () => (
   <Flex spaceItems={{ modifier: 'spaceItemsXl' }}>
@@ -100,7 +100,7 @@ FlexSpacingXlExample = () => (
 
 ```js title=Spacing-none
 import React from 'react';
-import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 
 FlexSpacingNoneExample = () => (
   <Flex spaceItems={{ default: 'spaceItemsNone' }}>
@@ -119,88 +119,88 @@ FlexSpacingNoneExample = () => (
 
 **FlexModifiers:**
 - `flex`
-- `inline-flex`
-- `spacer-none`
-- `spacer-xs`
-- `spacer-sm`
-- `spacer-md`
-- `spacer-lg`
-- `spacer-xl`
-- `spacer-2xl`
-- `spacer-3xl`
-- `space-items-none`
-- `space-items-xs`
-- `space-items-sm`
-- `space-items-md`
-- `space-items-lg`
-- `space-items-xl`
-- `space-items-2xl`
-- `space-items-3xl`
+- `inlineFlex`
+- `spacerNone`
+- `spacerXs`
+- `spacerSm`
+- `spacerMd`
+- `spacerLg`
+- `spacerXl`
+- `spacer_2xl`
+- `spacer_3xl`
+- `spaceItemsNone`
+- `spaceItemsXs`
+- `spaceItemsSm`
+- `spaceItemsMd`
+- `spaceItemsLg`
+- `spaceItemsXl`
+- `spaceItems_2xl`
+- `spaceItems_3xl`
 - `grow`
 - `shrink`
-- `flex-1`
-- `flex-2`
-- `flex-3`
-- `flex-4`
-- `flex-default`
-- `flex-none`
+- `flex_1`
+- `flex_2`
+- `flex_3`
+- `flex_4`
+- `flexDefault`
+- `flexNone`
 - `column`
-- `column-reverse`
+- `columnReverse`
 - `row`
-- `row-reverse`
+- `rowReverse`
 - `wrap`
-- `wrap-reverse`
+- `wrapReverse`
 - `nowrap`
-- `align-right`
-- `align-left`
-- `align-self-flex-start`
-- `align-self-flex-end`
-- `align-self-center`
-- `align-self-baseline`
-- `align-self-stretch`
-- `justify-content-flex-end`
-- `justify-content-center`
-- `justify-content-space-between`
-- `justify-content-space-around`
-- `justify-content-space-evenly`
-- `justify-content-flex-start`
-- `full-width`
-- `align-items-flex-start`
-- `align-items-flex-end`
-- `align-items-stretch`
-- `align-items-baseline`
-- `align-content-flex-start`
-- `align-content-flex-end`
-- `align-content-center`
-- `align-content-stretch`
-- `align-content-space-between`
-- `align-content-space-around`
+- `alignRight`
+- `alignLeft`
+- `alignSelfFlexStart`
+- `alignSelfFlexEnd`
+- `alignSelfCenter`
+- `alignSelfBaseline`
+- `alignSelfStretch`
+- `justifyContentFlexEnd`
+- `justifyContentCenter`
+- `justifyContentSpaceBetween`
+- `justifyContentSpaceAround`
+- `justifyContentSpaceEvenly`
+- `justifyContentFlexStart`
+- `fullWidth`
+- `alignItemsFlexStart`
+- `alignItemsFlexEnd`
+- `alignItemsStretch`
+- `alignItemsBaseline`
+- `alignContentFlexStart`
+- `alignContentFlexEnd`
+- `alignContentCenter`
+- `alignContentStretch`
+- `alignContentSpaceBetween`
+- `alignContentSpaceAround`
 
 **FlexItemModifiers:**
-- `spacer-none`
-- `spacer-xs`
-- `spacer-sm`
-- `spacer-md`
-- `spacer-lg`
-- `spacer-xl`
-- `spacer-2xl`
-- `spacer-3xl`
+- `spacerNone`
+- `spacerXs`
+- `spacerSm`
+- `spacerMd`
+- `spacerLg`
+- `spacerXl`
+- `spacer_2xl`
+- `spacer_3xl`
 - `grow`
 - `shrink`
-- `flex-1`
-- `flex-2`
-- `flex-3`
-- `flex-4`
-- `flex-default`
-- `flex-none`
-- `align-right`
-- `align-left`
-- `align-self-flex-start`
-- `align-self-flex-end`
-- `align-self-center`
-- `align-self-baseline`
-- `align-self-stretch`
-- `full-width`
+- `flex_1`
+- `flex_2`
+- `flex_3`
+- `flex_4`
+- `flexDefault`
+- `flexNone`
+- `alignRight`
+- `alignLeft`
+- `alignSelfFlexStart`
+- `alignSelfFlexEnd`
+- `alignSelfCenter`
+- `alignSelfBaseline`
+- `alignSelfStretch`
+- `fullWidth`
 
 ```js title=Default-layout
 import React from 'react';
@@ -358,7 +358,7 @@ FlexNestingElementsInColumnsExample = () => (
 
 ```js title=Switching-between-direction-column-and-row
 import React from 'react';
-import { Flex, FlexItem, FlexModifiers, FlexBreakpoints } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 
 FlexSwitchingBetweenDirectionColumnAndRowExample = () => (
   <Flex direction={{ default: 'column', lg: 'row' }}>
@@ -378,10 +378,10 @@ FlexSwitchingBetweenDirectionColumnAndRowExample = () => (
 
 ```js title=Controlling-width-of-text
 import React from 'react';
-import { Flex, FlexItem, FlexModifiers } from '@patternfly/react-core';
+import { Flex, FlexItem } from '@patternfly/react-core';
 
 FlexControllingWidthOfTextExample = () => (
-  <Flex direction={{ default: 'column'], lg: 'row' }}>
+  <Flex direction={{ default: 'column', lg: 'row' }}>
     <Flex flex={{ default: 'flex_1' }}>
       <FlexItem>Flex item</FlexItem>
       <FlexItem>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est animi modi temporibus, alias qui obcaecati ullam dolor nam, nulla magni iste rem praesentium numquam provident amet ut nesciunt harum accusamus.</FlexItem>

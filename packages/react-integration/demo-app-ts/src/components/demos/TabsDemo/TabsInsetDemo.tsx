@@ -63,13 +63,13 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsNone"
           activeKey={this.state.activeTabKey}
-          breakpointMods={[
-            { modifier: 'insetNone' },
-            { breakpoint: 'md', modifier: 'insetNone' },
-            { breakpoint: 'lg', modifier: 'insetNone' },
-            { breakpoint: 'xl', modifier: 'insetNone' },
-            { breakpoint: '2xl', modifier: 'insetNone' }
-          ]}
+          inset={{
+            default: 'insetNone',
+            md: 'insetNone',
+            lg: 'insetNone',
+            xl: 'insetNone',
+            '2xl': 'insetNone'
+          }}
           onSelect={this.handleTabClick}
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
@@ -85,13 +85,13 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsSm"
           activeKey={this.state.activeTabKey2}
-          breakpointMods={[
-            { modifier: 'insetSm' },
-            { breakpoint: 'md', modifier: 'insetSm' },
-            { breakpoint: 'lg', modifier: 'insetSm' },
-            { breakpoint: 'xl', modifier: 'insetSm' },
-            { breakpoint: '2xl', modifier: 'insetSm' }
-          ]}
+          inset={{
+            default: 'insetSm',
+            md: 'insetSm',
+            lg: 'insetSm',
+            xl: 'insetSm',
+            '2xl': 'insetSm'
+          }}
           onSelect={this.handleTabClick2}
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
@@ -107,13 +107,13 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsMd"
           activeKey={this.state.activeTabKey3}
-          breakpointMods={[
-            { modifier: 'insetMd' },
-            { breakpoint: 'md', modifier: 'insetMd' },
-            { breakpoint: 'lg', modifier: 'insetMd' },
-            { breakpoint: 'xl', modifier: 'insetMd' },
-            { breakpoint: '2xl', modifier: 'insetMd' }
-          ]}
+          inset={{
+            default: 'insetMd',
+            md: 'insetMd',
+            lg: 'insetMd',
+            xl: 'insetMd',
+            '2xl': 'insetMd'
+          }}
           onSelect={this.handleTabClick3}
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
@@ -129,13 +129,13 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsLg"
           activeKey={this.state.activeTabKey4}
-          breakpointMods={[
-            { modifier: 'insetLg' },
-            { breakpoint: 'md', modifier: 'insetLg' },
-            { breakpoint: 'lg', modifier: 'insetLg' },
-            { breakpoint: 'xl', modifier: 'insetLg' },
-            { breakpoint: '2xl', modifier: 'insetLg' }
-          ]}
+          inset={{
+            default: 'insetLg',
+            md: 'insetLg',
+            lg: 'insetLg',
+            xl: 'insetLg',
+            '2xl': 'insetLg'
+          }}
           onSelect={this.handleTabClick4}
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
@@ -151,13 +151,13 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabsXl"
           activeKey={this.state.activeTabKey5}
-          breakpointMods={[
-            { modifier: 'insetXl' },
-            { breakpoint: 'md', modifier: 'insetXl' },
-            { breakpoint: 'lg', modifier: 'insetXl' },
-            { breakpoint: 'xl', modifier: 'insetXl' },
-            { breakpoint: '2xl', modifier: 'insetXl' }
-          ]}
+          inset={{
+            default: 'insetXl',
+            md: 'insetXl',
+            lg: 'insetXl',
+            xl: 'insetXl',
+            '2xl': 'insetXl'
+          }}
           onSelect={this.handleTabClick5}
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
@@ -173,13 +173,13 @@ export class TabsInsetDemo extends Component {
         <Tabs
           id="insetTabs2Xl"
           activeKey={this.state.activeTabKey5}
-          breakpointMods={[
-            { modifier: 'inset_2xl' },
-            { breakpoint: 'md', modifier: 'inset_2xl' },
-            { breakpoint: 'lg', modifier: 'inset_2xl' },
-            { breakpoint: 'xl', modifier: 'inset_2xl' },
-            { breakpoint: '2xl', modifier: 'inset_2xl' }
-          ]}
+          inset={{
+            default: 'inset_2xl',
+            md: 'inset_2xl',
+            lg: 'inset_2xl',
+            xl: 'inset_2xl',
+            '2xl': 'inset_2xl'
+          }}
           onSelect={this.handleTabClick5}
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>

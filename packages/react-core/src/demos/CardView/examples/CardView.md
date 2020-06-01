@@ -642,7 +642,7 @@ class CardViewBasic extends React.Component {
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem visibility={[{ lg: 'hidden' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem visibility={{ lg: 'hidden' }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -652,7 +652,7 @@ class CardViewBasic extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem visibility={[{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"

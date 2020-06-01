@@ -247,7 +247,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
 
     const toolbarItems = (
       <React.Fragment>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl" id="demo-toggle-group">
+        <ToolbarToggleGroup toggleIcon={<FilterIcon />} id="demo-toggle-group">
           {toggleGroupItems}
         </ToolbarToggleGroup>
         <ToolbarGroup variant="icon-button-group">

@@ -28,12 +28,12 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
   /** Padding at various breakpoints. */
   padding?: {
-    default: 'padding' | 'noPadding';
-    sm: 'padding' | 'noPadding';
-    md: 'padding' | 'noPadding';
-    lg: 'padding' | 'noPadding';
-    xl: 'padding' | 'noPadding';
-    '2xl': 'padding' | 'noPadding';
+    default?: 'padding' | 'noPadding';
+    sm?: 'padding' | 'noPadding';
+    md?: 'padding' | 'noPadding';
+    lg?: 'padding' | 'noPadding';
+    xl?: 'padding' | 'noPadding';
+    '2xl'?: 'padding' | 'noPadding';
   };
 }
 

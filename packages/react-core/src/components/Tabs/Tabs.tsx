@@ -54,7 +54,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Unmounts tab children (removes them from the DOM) when they are no longer visible */
   unmountOnExit?: boolean;
   /** Insets at various breakpoints. */
-  insets?: {
+  inset?: {
     default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
     md?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
     lg?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
@@ -213,7 +213,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       ouiaId,
       mountOnEnter,
       unmountOnExit,
-      insets,
+      inset,
       ...props
     } = this.props;
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
@@ -232,7 +232,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             isVertical && styles.modifiers.vertical,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
-            formatBreakpointMods(insets, styles),
+            formatBreakpointMods(inset, styles),
             className
           )}
           {...getOUIAProps('Tabs', ouiaId)}

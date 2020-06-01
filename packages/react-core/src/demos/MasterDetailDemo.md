@@ -418,7 +418,7 @@ class MasterDetailFullPage extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex spaceItems={{ default: 'spaceItemsLg']}} direction={{ default: 'column' }}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -650,7 +650,6 @@ import {
   DropdownSeparator,
   Flex,
   FlexItem,
-  FlexModifiers,
   Gallery,
   GalleryItem,
   InputGroup,
@@ -947,7 +946,7 @@ class MasterDetailContentPadding extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex spaceItems={{ default: 'spaceItemsLg']}} direction={{ default: 'column' }}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -1565,7 +1564,7 @@ class MasterDetailCardView extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex spaceItems={{ default: 'spaceItemsLg']}} direction={{ default: 'column' }}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -1644,7 +1643,6 @@ import {
   DropdownToggle,
   Flex,
   FlexItem,
-  FlexModifiers,
   KebabToggle,
   Nav,
   NavItem,
@@ -1759,7 +1757,7 @@ class MasterDetailSimpleListInCard extends React.Component {
           <Title headingLevel="h2" size="xl">List item {drawerPanelBodyContent} details</Title>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex spaceItems={{ default: 'spaceItemsLg']}} direction={{ default: 'column' }}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -1865,7 +1863,6 @@ import {
   DropdownItem,
   Flex,
   FlexItem,
-  FlexModifiers,
   KebabToggle,
   Link,
   Nav,
@@ -1993,7 +1990,7 @@ class MasterDetailDataListInCard extends React.Component {
           <Title size="lg" headingLevel='h2'>Patternfly-elements</Title>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex spaceItems={{ default: 'spaceItemsLg']}} direction={{ default: 'column' }}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -2165,7 +2162,6 @@ import {
   DropdownSeparator,
   Flex,
   FlexItem,
-  FlexModifiers,
   Gallery,
   GalleryItem,
   InputGroup,
@@ -2462,7 +2458,7 @@ class MasterDetailInlineModifier extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex spaceItems={{ default: 'spaceItemsLg']}} direction={{ default: 'column' }}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
