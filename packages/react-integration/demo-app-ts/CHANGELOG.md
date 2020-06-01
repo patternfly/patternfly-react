@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.0...demo-app-ts@4.13.1) (2020-06-01)
+
+
+### Bug Fixes
+
+* **breakpoints:** make API consistent and appear in docs ([#4310](https://github.com/patternfly/patternfly-react/issues/4310)) ([ac1afa6](https://github.com/patternfly/patternfly-react/commit/ac1afa60067346c658fcb160534d9ddaf7dafbc6))
+
+
+
+
+
 # [4.13.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.12.4...demo-app-ts@4.13.0) (2020-05-28)
 
 
