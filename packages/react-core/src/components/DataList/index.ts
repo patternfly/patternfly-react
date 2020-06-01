@@ -7,4 +7,3 @@ export * from './DataListItemCells';
 export * from './DataListItemRow';
 export * from './DataListToggle';
 export * from './DataListContent';
-export * from './DataListActionBreakpoints';

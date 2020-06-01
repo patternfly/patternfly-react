@@ -42,7 +42,6 @@ import {
   DropdownSeparator,
   Flex,
   FlexItem,
-  FlexModifiers,
   Gallery,
   GalleryItem,
   InputGroup,
@@ -123,7 +122,6 @@ import {
   DropdownSeparator,
   Flex,
   FlexItem,
-  FlexModifiers,
   Gallery,
   GalleryItem,
   InputGroup,
@@ -409,7 +407,7 @@ class MasterDetailFullPage extends React.Component {
        </ToolbarGroup>
     </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
@@ -420,7 +418,7 @@ class MasterDetailFullPage extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -447,7 +445,7 @@ class MasterDetailFullPage extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
                         <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
@@ -479,7 +477,7 @@ class MasterDetailFullPage extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly-elements</p>
                         <small>PatternFly elements</small>
@@ -514,7 +512,7 @@ class MasterDetailFullPage extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
                         <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
@@ -546,7 +544,7 @@ class MasterDetailFullPage extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly-elements</p>
                         <small>PatternFly elements</small>
@@ -652,7 +650,6 @@ import {
   DropdownSeparator,
   Flex,
   FlexItem,
-  FlexModifiers,
   Gallery,
   GalleryItem,
   InputGroup,
@@ -938,7 +935,7 @@ class MasterDetailContentPadding extends React.Component {
       </ToolbarGroup>
     </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
@@ -949,7 +946,7 @@ class MasterDetailContentPadding extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -977,7 +974,7 @@ class MasterDetailContentPadding extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
                         <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
@@ -1009,7 +1006,7 @@ class MasterDetailContentPadding extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly-elements</p>
                         <small>PatternFly elements</small>
@@ -1044,7 +1041,7 @@ class MasterDetailContentPadding extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
                         <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
@@ -1076,7 +1073,7 @@ class MasterDetailContentPadding extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly-elements</p>
                         <small>PatternFly elements</small>
@@ -1567,7 +1564,7 @@ class MasterDetailCardView extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -1646,7 +1643,6 @@ import {
   DropdownToggle,
   Flex,
   FlexItem,
-  FlexModifiers,
   KebabToggle,
   Nav,
   NavItem,
@@ -1761,7 +1757,7 @@ class MasterDetailSimpleListInCard extends React.Component {
           <Title headingLevel="h2" size="xl">List item {drawerPanelBodyContent} details</Title>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -1867,7 +1863,6 @@ import {
   DropdownItem,
   Flex,
   FlexItem,
-  FlexModifiers,
   KebabToggle,
   Link,
   Nav,
@@ -1995,7 +1990,7 @@ class MasterDetailDataListInCard extends React.Component {
           <Title size="lg" headingLevel='h2'>Patternfly-elements</Title>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -2167,7 +2162,6 @@ import {
   DropdownSeparator,
   Flex,
   FlexItem,
-  FlexModifiers,
   Gallery,
   GalleryItem,
   InputGroup,
@@ -2453,7 +2447,7 @@ class MasterDetailInlineModifier extends React.Component {
        </ToolbarGroup>
     </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
@@ -2464,7 +2458,7 @@ class MasterDetailInlineModifier extends React.Component {
           </DrawerActions>
         </DrawerHead>
         <DrawerPanelBody>
-          <Flex breakpointMods={[{modifier: FlexModifiers["space-items-lg"]},{modifier: FlexModifiers["column"]}]}>
+          <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
             <FlexItem>
               <p>The content of the drawer really is up to you. It could have form fields, definition lists, text lists, labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here, and can also make the drawer scrollable.</p>
             </FlexItem>
@@ -2491,7 +2485,7 @@ class MasterDetailInlineModifier extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
                         <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
@@ -2523,7 +2517,7 @@ class MasterDetailInlineModifier extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly-elements</p>
                         <small>PatternFly elements</small>
@@ -2558,7 +2552,7 @@ class MasterDetailInlineModifier extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly</p>
                         <small>Working repo for PatternFly 4 <a>https://pf4.patternfly.org/</a></small>
@@ -2590,7 +2584,7 @@ class MasterDetailInlineModifier extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="primary content">
-                    <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
+                    <Flex direction={{ default: 'column' }}>
                       <FlexItem>
                         <p>patternfly-elements</p>
                         <small>PatternFly elements</small>

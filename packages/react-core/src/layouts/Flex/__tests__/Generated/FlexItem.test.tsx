@@ -8,6 +8,6 @@ import { FlexItem } from '../../FlexItem';
 import {} from '../..';
 
 it('FlexItem should match snapshot (auto-generated)', () => {
-  const view = shallow(<FlexItem children={<>ReactNode</>} className={"''"} breakpointMods={[]} />);
+  const view = shallow(<FlexItem children={<>ReactNode</>} className={"''"} />);
   expect(view).toMatchSnapshot();
 });

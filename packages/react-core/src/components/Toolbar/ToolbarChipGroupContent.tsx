@@ -52,7 +52,7 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
     };
 
     const collapseListedFilters =
-      typeof window !== 'undefined' ? window.innerWidth < globalBreakpoints(collapseListedFiltersBreakpoint) : false;
+      typeof window !== 'undefined' ? window.innerWidth < globalBreakpoints[collapseListedFiltersBreakpoint] : false;
 
     return (
       <div

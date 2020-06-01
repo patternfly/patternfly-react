@@ -15,8 +15,7 @@ it('PageSection should match snapshot (auto-generated)', () => {
       variant={'default'}
       type={'default'}
       isFilled={true}
-      hasNoPadding={false}
-      breakpointMods={[]}
+      padding={{ default: 'noPadding' }}
     />
   );
   expect(view).toMatchSnapshot();

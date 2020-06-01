@@ -2,14 +2,13 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { DataList } from '../DataList';
 import { DataListItem } from '../DataListItem';
-import { DataListAction, DataListActionVisibility } from '../DataListAction';
+import { DataListAction } from '../DataListAction';
 import { DataListCell } from '../DataListCell';
 import { DataListToggle } from '../DataListToggle';
 import { DataListItemCells } from '../DataListItemCells';
 import { DataListItemRow } from '../DataListItemRow';
 import { DataListContent } from '../DataListContent';
 import { Button } from '../../Button';
-import { css } from '@patternfly/react-styles';
 import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dropdown';
 
 describe('DataList', () => {
@@ -148,7 +147,7 @@ describe('DataList', () => {
   test('DataListAction visibility - show button when lg', () => {
     const view = shallow(
       <DataListAction
-        className={css(DataListActionVisibility.visibleOnLg, DataListActionVisibility.hidden)}
+        visibility={{ default: 'hidden', lg: 'visible' }}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"
@@ -163,7 +162,7 @@ describe('DataList', () => {
   test('DataListAction visibility - hide button on 2xl', () => {
     const view = shallow(
       <DataListAction
-        className={css(DataListActionVisibility.hiddenOn2Xl)}
+        visibility={{ '2xl': 'hidden' }}
         aria-labelledby="check-action-item2 check-action-action2"
         id="check-action-action2"
         aria-label="Actions"

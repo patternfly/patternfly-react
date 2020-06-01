@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 
 export enum ToolbarGroupVariant {
@@ -15,8 +14,38 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
   variant?: ToolbarGroupVariant | 'filter-group' | 'icon-button-group' | 'button-group';
-  /** Array of objects representing the various modifiers to apply to the data toolbar group at various breakpoints */
-  breakpointMods?: ToolbarBreakpointMod[];
+  /** Visibility at various breakpoints. */
+  visiblity?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Alignment at various breakpoints. */
+  alignment?: {
+    default?: 'alignRight' | 'alignLeft';
+    md?: 'alignRight' | 'alignLeft';
+    lg?: 'alignRight' | 'alignLeft';
+    xl?: 'alignRight' | 'alignLeft';
+    '2xl'?: 'alignRight' | 'alignLeft';
+  };
+  /** Spacers at various breakpoints. */
+  spacer?: {
+    default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    md?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    lg?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+  };
+  /** Space items at various breakpoints. */
+  spaceItems?: {
+    default?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+    md?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+    lg?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+    xl?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+    '2xl'?: 'spaceItemsNone' | 'spaceItemsSm' | 'spaceItemsMd' | 'spaceItemsLg';
+  };
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
   /** Reference to pass to this group if it has .pf-m-chip-container modifier */
@@ -24,18 +53,17 @@ export interface ToolbarGroupProps extends Omit<React.HTMLProps<HTMLDivElement>,
 }
 
 class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
-  static defaultProps = {
-    breakpointMods: [] as ToolbarBreakpointMod[]
-  };
-
   render() {
-    const { breakpointMods, className, variant, children, innerRef, ...props } = this.props;
+    const { visiblity, alignment, spacer, spaceItems, className, variant, children, innerRef, ...props } = this.props;
     return (
       <div
         className={css(
           styles.toolbarGroup,
           variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-          formatBreakpointMods(breakpointMods, styles),
+          formatBreakpointMods(visiblity, styles),
+          formatBreakpointMods(alignment, styles),
+          formatBreakpointMods(spacer, styles),
+          formatBreakpointMods(spaceItems, styles),
           className
         )}
         {...props}

@@ -56,38 +56,38 @@ class ToolbarSpacers extends React.Component {
   }
 
   render() {
-    const firstSpacers = [
-      {modifier: 'spacer-none'}
-    ];
-    const secondSpacers = [
-      {modifier: 'spacer-sm'}
-    ];
-    const thirdSpacers = [
-      {modifier: 'spacer-md'}
-    ];
-    const fourthSpacers = [
-      {modifier: 'spacer-lg'}
-    ];
-    const fifthSpacers = [
-      {modifier: 'spacer-none'},
-      {modifier: 'spacer-sm', breakpoint: 'md'},
-      {modifier: 'spacer-md', breakpoint: 'lg'},
-      {modifier: 'spacer-lg', breakpoint: 'xl'}
-    ];
-    const spaceItems = [
-      {modifier: 'space-items-lg'}
-     ];
+    const firstSpacers = {
+      default: 'spacerNone'
+    };
+    const secondSpacers = {
+      default: 'spacerSm'
+    };
+    const thirdSpacers = {
+      default: 'spacerMd'
+    };
+    const fourthSpacers = {
+      default: 'spacerLg'
+    };
+    const fifthSpacers = {
+      default: 'spacerNone',
+      md: 'spacerSm',
+      lg: 'spacerMd',
+      xl: 'spacerLg'
+    };
+    const spaceItems = {
+      lg: 'spaceItemsLg'
+    };
 
     const items = <React.Fragment>
-          <ToolbarItem breakpointMods={firstSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem breakpointMods={secondSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem breakpointMods={thirdSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
-          <ToolbarItem breakpointMods={fourthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem spacer={firstSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem spacer={secondSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem spacer={thirdSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem spacer={fourthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
           <ToolbarItem variant="separator"></ToolbarItem>
-          <ToolbarItem breakpointMods={fifthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
+          <ToolbarItem spacer={fifthSpacers}><Button variant="secondary">Action</Button></ToolbarItem>
           <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
           <ToolbarItem variant="separator"></ToolbarItem>
-          <ToolbarGroup breakpointMods={spaceItems}>
+          <ToolbarGroup spaceItems={spaceItems}>
             <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
             <ToolbarItem><Button variant="secondary">Action</Button></ToolbarItem>
           </ToolbarGroup>
@@ -402,7 +402,7 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
        </ToolbarGroup>
     </React.Fragment>;
 
-    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
 
     return <Toolbar id="toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
       <ToolbarContent>
@@ -556,7 +556,7 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
       </ToolbarGroup>
     </React.Fragment>;
 
-    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>;
+    const items =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
 
     return (
       <Toolbar id="toolbar-consumer-managed-toggle-groups"
@@ -788,7 +788,7 @@ class ToolbarWithFilterExample extends React.Component {
 
     const toolbarItems = <React.Fragment>
       <ToolbarToggleGroup toggleIcon={<FilterIcon />}
-        breakpoint='xl'>
+        show={{ xl: 'show' }}>
         {toggleGroupItems}
       </ToolbarToggleGroup>
       <ToolbarGroup variant="icon-button-group">
@@ -1016,7 +1016,7 @@ class ToolbarStacked extends React.Component {
 
 
     const firstRowItems = <React.Fragment>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</ToolbarToggleGroup>
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>
       <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
       <ToolbarItem variant="overflow-menu">Overflow Menu</ToolbarItem>
     </React.Fragment>;
@@ -1042,7 +1042,7 @@ class ToolbarStacked extends React.Component {
             dropdownItems={splitButtonDropdownItems}
           />
       </ToolbarItem>
-      <ToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
+      <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
         <Pagination
           itemCount={37}
           perPage={this.state.perPage}

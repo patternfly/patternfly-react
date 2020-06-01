@@ -841,7 +841,7 @@ class SimpleDrawer extends React.Component {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent breakpointMods={[{modifier: 'width_33', breakpoint: ''}]}>
+      <DrawerPanelContent widths={{ default: 'width_33' }}>
         <DrawerHead>
           <span>drawer-panel</span>
           <DrawerActions>

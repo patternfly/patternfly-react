@@ -233,11 +233,11 @@ test('text pluralize', () => {
 });
 
 test('formatBreakpointMods', () => {
-  expect(formatBreakpointMods([{ modifier: 'spacer-none' }], styles)).toEqual('pf-m-spacer-none');
-  expect(formatBreakpointMods([{ modifier: 'spacer-none', breakpoint: 'md' }], styles)).toEqual(
+  expect(formatBreakpointMods({ default: 'spacerNone' }, styles)).toEqual('pf-m-spacer-none');
+  expect(formatBreakpointMods({ md: 'spacerNone' }, styles)).toEqual(
     'pf-m-spacer-none-on-md'
   );
-  expect(formatBreakpointMods([{ modifier: 'column' }, { modifier: 'row', breakpoint: 'lg' }], styles)).toEqual(
+  expect(formatBreakpointMods({ default: 'column', lg: 'row' }, styles)).toEqual(
     'pf-m-column pf-m-row-on-lg'
   );
 });

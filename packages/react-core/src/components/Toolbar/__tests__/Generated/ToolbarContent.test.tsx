@@ -11,7 +11,6 @@ it('ToolbarContent should match snapshot (auto-generated)', () => {
   const view = shallow(
     <ToolbarContent
       className={'string'}
-      breakpointMods={[]}
       children={<div>ReactNode</div>}
       isExpanded={false}
       clearAllFilters={() => undefined as void}

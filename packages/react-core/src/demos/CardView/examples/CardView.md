@@ -582,7 +582,7 @@ class CardViewBasic extends React.Component {
             dropdownItems={toolbarKebabDropdownItems}
           />
         </ToolbarItem>
-        <ToolbarItem variant="pagination" breakpointMods={[{ modifier: 'align-right' }]}>
+        <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
           {this.renderPagination()}
         </ToolbarItem>
       </React.Fragment>
@@ -629,7 +629,7 @@ class CardViewBasic extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'lg' }]} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup visibility={{ default: 'hidden', lg: 'visible' }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
           <PageHeaderToolsItem>
             <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
@@ -642,7 +642,7 @@ class CardViewBasic extends React.Component {
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden', breakpoint: 'lg' }]} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem visibility={{ lg: 'hidden' }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
             <Dropdown
               isPlain
               position="right"
@@ -652,7 +652,7 @@ class CardViewBasic extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */>
             <Dropdown
               isPlain
               position="right"
