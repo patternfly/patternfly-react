@@ -16,6 +16,7 @@ import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Demos from './Demos';
+import './App.css';
 
 interface AppState {
   activeItem: number | string;
