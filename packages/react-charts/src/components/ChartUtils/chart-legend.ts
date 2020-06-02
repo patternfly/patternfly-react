@@ -42,6 +42,11 @@ interface ChartLegendPositionInterface {
   width?: number; // Overall width of SVG
 }
 
+interface ChartLegendTextMaxSizeInterface {
+  legendData: any[]; // The legend data used to determine width
+  theme: ChartThemeDefinition; // The theme that will be applied to the chart
+}
+
 interface ChartLegendTextSizeInterface {
   legendData: any[]; // The legend data used to determine width
   legendOrientation?: 'horizontal' | 'vertical'; // Orientation of legend
@@ -425,11 +430,34 @@ export const getPieLegendY = ({
   }
 };
 
+// Returns an approximation of longest text width based on legend styles
+export const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSizeInterface) => {
+  const style: any = theme && theme.legend && theme.legend.style ? theme.legend.style.labels : undefined;
+  if (!(legendData && legendData.length)) {
+    return 0;
+  }
+
+  let result = '';
+  legendData.forEach(data => {
+    if (data.name && data.name.length > result.length) {
+      result = data.name;
+    }
+  });
+
+  // The approximateTextSize function returns height and width, but Victory incorrectly typed it as number
+  const adjustedTextSize: any = TextSize.approximateTextSize(result, {
+    ...style,
+    characterConstant: overpassFontCharacterConstant
+  });
+
+  return adjustedTextSize.width;
+};
+
 // Returns an approximation of over-sized text width due to growing character count
 //
 // See https://github.com/FormidableLabs/victory/issues/864
 const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
-  const style: any = theme.legend.style.labels;
+  const style: any = theme && theme.legend && theme.legend.style ? theme.legend.style.labels : undefined;
   if (!(legendData && legendData.length)) {
     return 0;
   }

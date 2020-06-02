@@ -5,6 +5,8 @@ import {
   ColorScalePropType,
   EventCallbackInterface,
   EventPropTypeInterface,
+  Helpers,
+  NumberOrCallback,
   OrientationTypes,
   PaddingProps,
   StringOrNumberOrCallback,
@@ -12,38 +14,20 @@ import {
   VictoryStyleInterface,
   VictoryStyleObject
 } from 'victory-core';
-import {
-  VictoryLegend,
-  VictoryLegendProps,
-  VictoryLegendOrientationType,
-  VictoryLegendTTargetType
-} from 'victory-legend';
-import { ChartContainer } from '../ChartContainer';
+import { VictoryLegend, VictoryLegendOrientationType, VictoryLegendTTargetType } from 'victory-legend';
 import { ChartLabel } from '../ChartLabel';
-import { ChartPoint } from '../ChartPoint';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-
-export enum ChartLegendOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-}
-
-export enum ChartLegendPosition {
-  bottom = 'bottom',
-  bottomLeft = 'bottom-left',
-  right = 'right'
-}
-
-export enum ChartLegendRowGutter {
-  bottom = 'bottom',
-  top = 'top'
-}
+import { ChartLegend, ChartLegendProps } from '../ChartLegend';
+import { ChartLegendTooltipLabel } from './ChartLegendTooltipLabel';
+import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartLegendProps extends VictoryLegendProps {
+// Overriding title prop
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+export interface ChartLegendTooltipLegendProps extends ChartLegendProps {
   /**
    * The borderComponent prop takes a component instance which will be responsible
    * for rendering a border around the legend. The new element created from the passed
@@ -123,6 +107,19 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * default Point component.
    */
   dataComponent?: React.ReactElement<any>;
+  /**
+   * Victory components can pass a datum prop to their label component. This can be used to calculate functional styles,
+   * and determine child text
+   */
+  datum?: {};
+  /**
+   * The dx prop defines a horizontal shift from the x coordinate.
+   */
+  dx?: NumberOrCallback;
+  /**
+   * The dy prop defines a horizontal shift from the y coordinate.
+   */
+  dy?: NumberOrCallback;
   /**
    * ChartLegend uses the standard eventKey prop to specify how event targets
    * are addressed. This prop is not commonly used.
@@ -225,6 +222,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    *
+   * Note: this may be overridden when ChartLegendTooltip is used as a label component.
+   *
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    */
   style?: VictoryStyleInterface & { title?: VictoryStyleObject };
@@ -233,6 +232,12 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * components and label components.
    */
   symbolSpacer?: number;
+  /**
+   * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
+   * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
+   * ChartLabel will split in to separate <tspan/> elements.
+   */
+  text?: StringOrNumberOrCallback | string[] | number[];
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
@@ -260,8 +265,12 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * The title prop specifies a title to render with the legend.
    * This prop should be given as a string, or an array of strings for multi-line titles.
+   *
+   * Valid types are string, string[], or Function
+   *
+   * Example: title={(datum) => datum.x}
    */
-  title?: string | string[];
+  title?: string | string[] | Function;
   /**
    * The titleComponent prop takes a component instance which will be used to render
    * a title for the component. The new element created from the passed
@@ -297,58 +306,132 @@ export interface ChartLegendProps extends VictoryLegendProps {
   y?: number;
 }
 
-export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
-  containerComponent = <ChartContainer />,
-  dataComponent = <ChartPoint />,
-  labelComponent = <ChartLabel />,
-  responsive = true,
+export const defaultLegendProps = {
+  borderPadding: 0,
+  gutter: 0,
+  orientation: 'vertical' as any,
+  padding: 0,
+  rowGutter: -10,
+  standalone: false,
+  style: {
+    labels: {
+      fill: ChartLegendTooltipStyles.label.fill,
+      padding: 0
+    },
+    title: {
+      fill: ChartLegendTooltipStyles.label.fill,
+      padding: 0
+    }
+  }
+};
+
+export const ChartLegendTooltipLegend: React.FunctionComponent<ChartLegendTooltipLegendProps> = ({
+  borderPadding = defaultLegendProps.borderPadding,
+  data,
+  datum,
+  dx = 0,
+  dy = 0,
+  gutter = defaultLegendProps.gutter,
+  labelComponent = <ChartLegendTooltipLabel />,
+  orientation = defaultLegendProps.orientation,
+  padding = defaultLegendProps.padding,
+  rowGutter = defaultLegendProps.rowGutter,
+  standalone = defaultLegendProps.standalone,
+  style = defaultLegendProps.style,
+  text,
   themeColor,
   themeVariant,
+  title,
   titleComponent = <ChartLabel />,
+  x,
+  y,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartLegendProps) => {
-  // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
-    responsive,
-    theme,
-    ...containerComponent.props
+}: ChartLegendTooltipLegendProps) => {
+  const offsetY = 10 * (Array.isArray(text) ? text.length : 1);
+
+  // Component offsets
+  const legendOffsetX = -50;
+  const legendOffsetY = -offsetY + 5 + (title ? 0 : -10);
+  const titleOffsetX = -40;
+  const titleOffsetY = -offsetY;
+
+  // Legend properties
+  const legendProps = {
+    borderPadding,
+    gutter,
+    orientation,
+    padding,
+    rowGutter,
+    standalone,
+    style: Array.isArray(style) ? defaultLegendProps.style : style
+  };
+  const emptyLegendDimensions = getLegendTooltipSize({
+    legendData: [{ name: '' }],
+    legendProps,
+    theme
+  });
+  const maxLegendDimensions = getLegendTooltipSize({
+    legendData: data,
+    legendProps,
+    text,
+    theme
+  });
+  const minLegendDimensions = getLegendTooltipSize({
+    legendData: data,
+    legendProps,
+    theme
   });
 
-  // Note: containerComponent is required for theme
+  // Returns text prop as legend data so y values can be passed individually to the label component
+  const getLegendData = () => {
+    const textEvaluated = Helpers.evaluateProp(text);
+    const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
+    return _text.map((name, index) => ({ name, symbol: data && data[index] ? data[index].symbol : undefined }));
+  };
+
+  // Returns the label component
+  const getLabelComponent = () =>
+    React.cloneElement(labelComponent, {
+      dx: maxLegendDimensions.width - emptyLegendDimensions.width,
+      legendData: data,
+      ...labelComponent.props
+    });
+
+  // Returns the title component
+  const getTitleComponent = () => {
+    const _title = title instanceof Function ? title(datum) : title;
+
+    return React.cloneElement(titleComponent, {
+      style: {
+        fill: ChartLegendTooltipStyles.label.fill,
+        fontWeight: ChartLegendTooltipStyles.label.fontWeight
+      },
+      text: _title,
+      textAnchor: 'start',
+      x: x + titleOffsetX + Helpers.evaluateProp(dx),
+      y: y + titleOffsetY + Helpers.evaluateProp(dy),
+      ...titleComponent.props
+    });
+  };
+
   return (
-    <VictoryLegend
-      containerComponent={container}
-      dataComponent={dataComponent}
-      labelComponent={labelComponent}
-      theme={theme}
-      titleComponent={titleComponent}
-      {...rest}
-    />
+    <React.Fragment>
+      {getTitleComponent()}
+      <ChartLegend
+        data={getLegendData()}
+        labelComponent={getLabelComponent()}
+        theme={theme}
+        x={x + legendOffsetX + Helpers.evaluateProp(dx)}
+        y={y + legendOffsetY + Helpers.evaluateProp(dy)}
+        {...legendProps}
+        {...rest}
+      />
+    </React.Fragment>
   );
 };
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
-hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-ChartLegend.getBaseProps = props => {
-  const theme = getTheme(null, null);
-  return (VictoryLegend as any).getBaseProps(
-    {
-      titleComponent: <ChartLabel />, // Workaround for getBaseProps error
-      ...props
-    },
-    {
-      height: theme.chart.height,
-      orientation: theme.legend.orientation,
-      titleOrientation: theme.legend.titleOrientation,
-      x: 0,
-      y: 0,
-      width: theme.chart.width
-    }
-  );
-};
+hoistNonReactStatics(ChartLegendTooltipLegend, VictoryLegend, { getBaseProps: true });

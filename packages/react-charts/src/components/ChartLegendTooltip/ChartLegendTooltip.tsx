@@ -8,15 +8,16 @@ import {
   VictoryNumberCallback,
   VictoryStyleObject
 } from 'victory-core';
-import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
-import { ChartLabel } from '../ChartLabel';
-import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { VictoryTooltip } from 'victory-tooltip';
+import { ChartLegendTooltipLegend, defaultLegendProps } from './ChartLegendTooltipLegend';
+import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartTooltip';
+import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartTooltipProps extends VictoryTooltipProps {
+export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   /**
    * The active prop specifies whether the tooltip component should be displayed.
    */
@@ -148,6 +149,20 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
+   *
+   * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   */
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
+  /**
    * The orientation prop determines which side of the (x, y) coordinate the tooltip should be rendered on.
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
@@ -207,6 +222,13 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   themeVariant?: string;
   /**
+   * The title prop specifies a title to render with the legend.
+   * This prop should be given as a string, or an array of strings for multi-line titles.
+   *
+   * Example: title={(datum) => datum.x}
+   */
+  title?: string | string[] | Function;
+  /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */
   x?: number;
@@ -216,32 +238,76 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   y?: number;
 }
 
-export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
-  constrainToVisibleArea = false,
-  labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
-  labelTextAnchor,
+export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
+  datum,
+  labelComponent = <ChartLegendTooltipLegend />,
+  legendData,
   themeColor,
   themeVariant,
+  title,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartTooltipProps) => {
-  const chartLabelComponent = React.cloneElement(labelComponent, {
-    textAnchor: labelTextAnchor,
-    theme,
-    ...labelComponent.props
-  });
+}: ChartLegendTooltipProps) => {
+  // Returns the tooltip legend component
+  const getTooltipLegendComponent = () =>
+    React.cloneElement(labelComponent, {
+      data: legendData,
+      title,
+      ...labelComponent.props
+    });
+
+  // Returns legend dimensions
+  const getLegendDimensions = (props: any) => {
+    const legendComponent = getTooltipLegendComponent();
+    const getKeyValue = (key: string) =>
+      legendComponent.props[key] ? legendComponent.props[key] : (defaultLegendProps as any)[key];
+
+    const sizeProps = {
+      legendData,
+      legendProps: {
+        borderPadding: getKeyValue('borderPadding'),
+        gutter: getKeyValue('gutter'),
+        orientation: getKeyValue('orientation'),
+        padding: getKeyValue('padding'),
+        rowGutter: getKeyValue('rowGutter'),
+        standalone: getKeyValue('standalone'),
+        style: getKeyValue('style')
+      },
+      theme,
+      ...props // text
+    };
+    const legendDimensions = getLegendTooltipSize(sizeProps);
+    return legendDimensions;
+  };
+
+  // Returns flyout height based on legend size
+  const getFlyoutHeight = (props: any) => {
+    const legendComponent = getTooltipLegendComponent();
+    const height = getLegendDimensions(props).height + ChartLegendTooltipStyles.flyout.padding;
+    return legendComponent.props.title ? height : height - 10;
+  };
+
+  // Returns flyout width based on legend size
+  const getFlyoutWidth = (props: any) => {
+    const legendComponent = getTooltipLegendComponent();
+    return getLegendDimensions(props).width + ChartLegendTooltipStyles.flyout.padding;
+  };
 
   return (
-    <VictoryTooltip
-      constrainToVisibleArea={constrainToVisibleArea}
-      labelComponent={chartLabelComponent}
-      theme={theme}
-      {...rest}
-    />
+    <React.Fragment>
+      <ChartCursorTooltip
+        datum={datum}
+        flyoutHeight={getFlyoutHeight}
+        flyoutWidth={getFlyoutWidth}
+        labelComponent={getTooltipLegendComponent()}
+        theme={theme}
+        {...rest}
+      />
+    </React.Fragment>
   );
 };
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
-hoistNonReactStatics(ChartTooltip, VictoryTooltip);
+hoistNonReactStatics(ChartLegendTooltip, VictoryTooltip);

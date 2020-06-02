@@ -1,17 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLegend 1`] = `
-<VictoryLegend
-  borderComponent={
-    <Border
-      rectComponent={<Rect />}
+exports[`ChartVoronoiContainer 1`] = `
+<VictoryCursorContainer
+  className="pf-c-chart"
+  cursorComponent={
+    <LineSegment
+      lineComponent={<Line />}
       role="presentation"
       shapeRendering="auto"
     />
   }
-  containerComponent={
-    <ChartContainer
-      responsive={true}
+  cursorLabelComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
       theme={
         Object {
           "area": Object {
@@ -461,22 +465,18 @@ exports[`ChartLegend 1`] = `
           },
         }
       }
+      tspanComponent={<TSpan />}
     />
   }
-  data={
-    Array [
-      Object {
-        "name": "Series 1",
-      },
-      Object {
-        "name": "Series 2",
-      },
-    ]
+  cursorLabelOffset={
+    Object {
+      "x": 5,
+      "y": -10,
+    }
   }
-  dataComponent={<ChartPoint />}
-  groupComponent={<g />}
-  labelComponent={<ChartLabel />}
-  standalone={true}
+  portalComponent={<Portal />}
+  portalZIndex={99}
+  responsive={true}
   theme={
     Object {
       "area": Object {
@@ -926,22 +926,25 @@ exports[`ChartLegend 1`] = `
       },
     }
   }
-  titleComponent={<ChartLabel />}
 />
 `;
 
-exports[`ChartLegend 2`] = `
-<VictoryLegend
-  borderComponent={
-    <Border
-      rectComponent={<Rect />}
+exports[`ChartVoronoiContainer 2`] = `
+<VictoryCursorContainer
+  className="pf-c-chart"
+  cursorComponent={
+    <LineSegment
+      lineComponent={<Line />}
       role="presentation"
       shapeRendering="auto"
     />
   }
-  containerComponent={
-    <ChartContainer
-      responsive={true}
+  cursorLabelComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
       theme={
         Object {
           "area": Object {
@@ -1391,22 +1394,18 @@ exports[`ChartLegend 2`] = `
           },
         }
       }
+      tspanComponent={<TSpan />}
     />
   }
-  data={
-    Array [
-      Object {
-        "name": "Series 1",
-      },
-      Object {
-        "name": "Series 2",
-      },
-    ]
+  cursorLabelOffset={
+    Object {
+      "x": 5,
+      "y": -10,
+    }
   }
-  dataComponent={<ChartPoint />}
-  groupComponent={<g />}
-  labelComponent={<ChartLabel />}
-  standalone={true}
+  portalComponent={<Portal />}
+  portalZIndex={99}
+  responsive={true}
   theme={
     Object {
       "area": Object {
@@ -1856,21 +1855,38 @@ exports[`ChartLegend 2`] = `
       },
     }
   }
-  titleComponent={<ChartLabel />}
 />
 `;
 
-exports[`renders component data 1`] = `
-<VictoryLegend
-  borderComponent={
-    <Border
-      rectComponent={<Rect />}
-      role="presentation"
-      shapeRendering="auto"
-    />
-  }
+exports[`renders container via ChartGroup 1`] = `
+<VictoryGroup
   containerComponent={
-    <ChartContainer
+    <ChartCursorContainer
+      className="pf-c-chart"
+      cursorComponent={
+        <LineSegment
+          lineComponent={<Line />}
+          role="presentation"
+          shapeRendering="auto"
+        />
+      }
+      cursorLabelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      cursorLabelOffset={
+        Object {
+          "x": 5,
+          "y": -10,
+        }
+      }
+      portalComponent={<Portal />}
+      portalZIndex={99}
       responsive={true}
       theme={
         Object {
@@ -2323,20 +2339,10 @@ exports[`renders component data 1`] = `
       }
     />
   }
-  data={
-    Array [
-      Object {
-        "name": "Cats",
-      },
-      Object {
-        "name": "Dogs",
-      },
-    ]
-  }
-  dataComponent={<ChartPoint />}
   groupComponent={<g />}
-  height={50}
-  labelComponent={<ChartLabel />}
+  height={200}
+  samples={50}
+  sortOrder="ascending"
   standalone={true}
   theme={
     Object {
@@ -2787,8 +2793,64 @@ exports[`renders component data 1`] = `
       },
     }
   }
-  title="Average number of pets"
-  titleComponent={<ChartLabel />}
   width={200}
-/>
+>
+  <ChartArea
+    data={
+      Array [
+        Object {
+          "name": "Cats",
+          "x": 1,
+          "y": 1,
+        },
+        Object {
+          "name": "Cats",
+          "x": 2,
+          "y": 2,
+        },
+        Object {
+          "name": "Cats",
+          "x": 3,
+          "y": 3.2,
+        },
+        Object {
+          "name": "Cats",
+          "x": 4,
+          "y": 3.5,
+        },
+      ]
+    }
+  />
+  <ChartArea
+    data={
+      Array [
+        Object {
+          "name": "Dogs",
+          "x": 1,
+          "y": 0.5,
+        },
+        Object {
+          "name": "Dogs",
+          "x": 2,
+          "y": 1,
+        },
+        Object {
+          "name": "Dogs",
+          "x": 3,
+          "y": 2,
+        },
+        Object {
+          "name": "Dogs",
+          "x": 4,
+          "y": 2.5,
+        },
+        Object {
+          "name": "Dogs",
+          "x": 5,
+          "y": 2.5,
+        },
+      ]
+    }
+  />
+</VictoryGroup>
 `;
