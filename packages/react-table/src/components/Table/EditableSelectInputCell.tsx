@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
 import { Select, SelectOptionObject } from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
-import classNames from 'classnames';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
   /** Row index of this select input cell */
   rowIndex: number;
@@ -43,7 +44,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   cellIndex,
   props,
   onSelect = () => {},
-  inputAriaLabel = "",
+  inputAriaLabel = '',
   isDisabled = false,
   isOpen = false,
   onToggle = () => {},
@@ -73,7 +74,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
       <div className={inlineStyles.inlineEditValue}>{value}</div>
       <div className={inlineStyles.inlineEditInput}>
         {select}
-        <div className={classNames(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
+        <div className={css(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
           {props.errorText}
         </div>
       </div>

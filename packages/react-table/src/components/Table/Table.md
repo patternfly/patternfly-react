@@ -1585,7 +1585,7 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableSelectInputCell
+                <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
