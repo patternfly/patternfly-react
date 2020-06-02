@@ -88,7 +88,7 @@ export interface SelectProps
   inlineFilterPlaceholderText?: string;
   /** Custom text for select badge */
   customBadgeText?: string | number;
-  /** */
+  /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
 }
 

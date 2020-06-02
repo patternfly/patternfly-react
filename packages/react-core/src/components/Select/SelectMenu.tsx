@@ -57,8 +57,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     const { children, isGrouped } = this.props;
     const childrenArray: React.ReactElement[] = children as React.ReactElement[];
     if (isGrouped) {
-      let index = 0;
-      return React.Children.map(childrenArray, (group: React.ReactElement) =>
+      return React.Children.map(childrenArray, (group: React.ReactElement, index: number) =>
         React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
           children: group.props.children.map((option: React.ReactElement) =>
@@ -103,15 +102,14 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
               aria-labelledby={group.props.label.replace(/\W/g, '-')}
               className={css(styles.selectMenuFieldset)}
             >
-              {group.props.children &&
-                group.props.children.map((option: React.ReactElement) =>
-                  React.cloneElement(option, {
-                    isChecked: checked && checked.includes(option.props.value),
-                    sendRef,
-                    keyHandler,
-                    index: index++
-                  })
-                )}
+              {React.Children.map(group.props.children, (option: React.ReactElement) =>
+                React.cloneElement(option, {
+                  isChecked: checked && checked.includes(option.props.value),
+                  sendRef,
+                  keyHandler,
+                  index: index++
+                })
+              )}
             </fieldset>
           )
         });
