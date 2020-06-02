@@ -10,7 +10,8 @@ import {
   ConnectDragSource,
   DragObjectWithType,
   DragSpecOperationType,
-  DragOperationWithType
+  DragOperationWithType,
+  DragSourceMonitor
 } from './dnd-types';
 import { useDndManager } from './useDndManager';
 
@@ -18,7 +19,7 @@ export const DRAG_NODE_EVENT = 'drag_node';
 export const DRAG_NODE_START_EVENT = `${DRAG_NODE_EVENT}_start`;
 export const DRAG_NODE_END_EVENT = `${DRAG_NODE_EVENT}_end`;
 
-export type DragNodeEventListener = EventListener<[Node, DragEvent, string]>;
+export type DragNodeEventListener = EventListener<[Node, DragEvent, DragOperationWithType]>;
 
 export const DRAG_MOVE_OPERATION = 'move.useDragNode';
 
@@ -53,7 +54,7 @@ export const useDragNode = <
     React.useMemo(() => {
       const sourceSpec: DragSourceSpec<any, any, any, any, Props> = {
         item: (spec && spec.item) || { type: '#useDragNode#' },
-        operation: (monitor: any, p: any) => {
+        operation: (monitor: DragSourceMonitor, p: Props) => {
           if (spec) {
             const operation = typeof spec.operation === 'function' ? spec.operation(monitor, p) : spec.operation;
             if (typeof operation === 'object' && Object.keys(operation).length > 0) {
@@ -86,7 +87,6 @@ export const useDragNode = <
 
           /**
            * @param e
-           * @param e:Node  node
            */
           function moveElement(e: Node) {
             let moved = true;

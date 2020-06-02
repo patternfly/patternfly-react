@@ -3,10 +3,10 @@ import { getGroupPadding } from '../utils/element-utils';
 import { ForceSimulationNode } from './ForceSimulation';
 import { BaseLayout } from '.';
 import { LayoutLink } from './LayoutLink';
-import { LayoutOpts } from './LayoutOpts';
+import { LayoutOptions } from './LayoutOptions';
 
 export default class ForceLayout extends BaseLayout implements Layout {
-  constructor(graph: Graph, options?: Partial<LayoutOpts>) {
+  constructor(graph: Graph, options?: Partial<LayoutOptions>) {
     super(graph, {
       ...options,
       layoutOnDrag: true

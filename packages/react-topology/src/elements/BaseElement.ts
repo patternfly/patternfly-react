@@ -9,7 +9,8 @@ import {
   Controller,
   ModelKind,
   ADD_CHILD_EVENT,
-  REMOVE_CHILD_EVENT
+  REMOVE_CHILD_EVENT,
+  ELEMENT_VISIBILITY_CHANGE_EVENT
 } from '../types';
 import Stateful from '../utils/Stateful';
 import { Translatable } from '../geom/types';
@@ -124,7 +125,12 @@ export default abstract class BaseElement<E extends ElementModel = ElementModel,
   }
 
   setVisible(visible: boolean): void {
-    this.visible = visible;
+    if (this.visible !== visible) {
+      this.visible = visible;
+      if (this.controller) {
+        this.controller.fireEvent(ELEMENT_VISIBILITY_CHANGE_EVENT, { visible, target: this });
+      }
+    }
   }
 
   isVisible(): boolean {

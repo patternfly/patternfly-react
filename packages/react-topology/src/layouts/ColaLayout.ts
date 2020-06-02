@@ -4,7 +4,7 @@ import { action } from 'mobx';
 import { Edge, Graph, Layout, Node } from '../types';
 import { getGroupPadding } from '../utils/element-utils';
 import { BaseLayout } from './BaseLayout';
-import { LayoutOpts } from './LayoutOpts';
+import { LayoutOptions } from './LayoutOptions';
 import { LayoutLink } from './LayoutLink';
 import { LayoutGroup } from './LayoutGroup';
 import { LayoutNode } from './LayoutNode';
@@ -28,7 +28,7 @@ const COLA_LAYOUT_DEFAULTS: ColaLayoutOptions = {
   gridSnapIterations: 50
 };
 
-export class ColaLayout extends BaseLayout implements Layout {
+class ColaLayout extends BaseLayout implements Layout {
   private d3Cola: any;
 
   private colaOptions: ColaLayoutOptions;
@@ -37,7 +37,7 @@ export class ColaLayout extends BaseLayout implements Layout {
 
   private destroyed = false;
 
-  constructor(graph: Graph, options?: Partial<ColaLayoutOptions & LayoutOpts>) {
+  constructor(graph: Graph, options?: Partial<ColaLayoutOptions & LayoutOptions>) {
     super(graph, options);
     this.colaOptions = {
       ...COLA_LAYOUT_DEFAULTS,
@@ -62,7 +62,8 @@ export class ColaLayout extends BaseLayout implements Layout {
     this.d3Cola.avoidOverlaps(true);
     this.d3Cola.linkDistance(this.getLinkDistance);
     this.d3Cola.on('tick', () => {
-      if (this.tickCount++ % this.options.simulationSpeed === 0) {
+      this.tickCount++;
+      if (this.tickCount === 1 || this.tickCount % this.options.simulationSpeed === 0) {
         action(() => this.nodes.forEach(d => d.update()))();
       }
       if (this.colaOptions.maxTicks >= 0 && this.tickCount > this.colaOptions.maxTicks) {
@@ -70,6 +71,7 @@ export class ColaLayout extends BaseLayout implements Layout {
       }
     });
     this.d3Cola.on('end', () => {
+      this.tickCount = 0;
       action(() => {
         if (this.destroyed) {
           return;
@@ -135,6 +137,7 @@ export class ColaLayout extends BaseLayout implements Layout {
   protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
     // start the layout
     this.d3Cola.alpha(0.2);
+    this.tickCount = 0;
     this.d3Cola.start(
       addingNodes ? 0 : this.colaOptions.initialUnconstrainedIterations,
       addingNodes ? 0 : this.colaOptions.initialUserConstraintIterations,
@@ -145,3 +148,5 @@ export class ColaLayout extends BaseLayout implements Layout {
     );
   }
 }
+
+export { ColaLayout, ColaNode, ColaGroup, ColaLink };
