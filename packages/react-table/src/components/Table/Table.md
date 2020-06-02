@@ -3,7 +3,7 @@ title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
 typescript: true
-propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableTableCell', 'SelectInputCell']
+propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableTableCell', 'EditableSelectInputCell']
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
@@ -33,7 +33,7 @@ import {
   validateCellEdits,
   applyCellEdits,
   EditableTextCell,
-  SelectInputCell
+  EditableSelectInputCell
 } from '@patternfly/react-table';
 
 import {
@@ -1353,7 +1353,7 @@ import {
   validateCellEdits,
   applyCellEdits,
   EditableTextCell,
-  SelectInputCell
+  EditableSelectInputCell
 } from '@patternfly/react-table';
 
 class EditableRowsTable extends React.Component {
@@ -1442,7 +1442,7 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <SelectInputCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
@@ -1518,7 +1518,7 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <SelectInputCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
@@ -1585,7 +1585,7 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
@@ -1616,7 +1616,7 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <SelectInputCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}

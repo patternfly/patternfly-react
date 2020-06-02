@@ -4,13 +4,18 @@ import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inl
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import classNames from 'classnames';
 
-export interface SelectInputCellProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
+export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
   /** Row index of this select input cell */
   rowIndex: number;
   /** Cell index of this select input cell */
   cellIndex: number;
-  /** TODO */
-  props: any;
+  /** Data structure containing the value to display in the cell, the name of the select input,
+   * and arbitrary data to pass to the internal select component in the editable select input cell */
+  props: {
+    name: string;
+    value: string;
+    [key: string]: any;
+  };
   /** Event handler which fires when user selects an option in this cell */
   onSelect: (
     newValue: string | SelectOptionObject,
@@ -21,22 +26,22 @@ export interface SelectInputCellProps extends Omit<React.HTMLProps<HTMLElement |
   /** Options to display in the expandable select menu */
   options?: React.ReactElement[];
   /** accessible aria label for the select in the select input cell */
-  inputAriaLabel: string;
+  inputAriaLabel?: string;
   /** Flag indicating the select input is disabled */
   isDisabled?: boolean;
   /** Current selected options to display as the read only value of the table cell */
-  selections: string | SelectOptionObject | (string | SelectOptionObject)[];
+  selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Flag indicating the select menu is open */
-  isOpen: boolean;
+  isOpen?: boolean;
   /** Event handler which fires when the select toggle is toggled */
-  onToggle: (isExpanded: boolean) => void;
+  onToggle?: (isExpanded: boolean) => void;
 }
 
-export const SelectInputCell: React.FunctionComponent<SelectInputCellProps> = ({
-  value = "",
-  rowIndex = 0,
-  cellIndex = 0,
-  props = {} as any,
+export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInputCell> = ({
+  value,
+  rowIndex,
+  cellIndex,
+  props,
   onSelect = () => {},
   inputAriaLabel = "",
   isDisabled = false,
