@@ -46,6 +46,10 @@ export const cancelCellEdits = (row: IRow) => {
     delete cell.props.errorText;
     delete cell.props.editableValue;
     cell.props.isValid = true;
+    // for editable selects, revert the selected property to its original value
+    if (cell.props.selected) {
+      cell.props.selected = cell.props.value;
+    }
   });
 
   row.isEditable = !row.isEditable;

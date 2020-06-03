@@ -1237,15 +1237,15 @@ class ControllingText extends React.Component {
       ],
       rows: [
         [
-          'This text will truncate instead of wrap.', 
-          {title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>}, 
+          'This text will truncate instead of wrap.',
+          {title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>},
           {title: <p>By default,
             <code>thead</code> cells will truncate and
             <code>tbody</code> cells will wrap. Use
             <code>.pf-m-wrap</code> on a
             <code>th</code> to change its behavior.</p>
-          }, 
-          'This cell\'s content will adjust itself to the parent th width. This modifier only affects table layouts.', 
+          },
+          'This cell\'s content will adjust itself to the parent th width. This modifier only affects table layouts.',
           {title: <a href="#">No wrap</a>}
         ]
       ]
@@ -1289,8 +1289,8 @@ class ModifiersWithTableText extends React.Component {
         {title: 'Wrapping table header text. This th text will wrap instead of truncate.'},
       ],
       rows: [
-        [ 
-          {title: <TableText wrapModifier='truncate'>This text will truncate instead of wrap.</TableText>}, 
+        [
+          {title: <TableText wrapModifier='truncate'>This text will truncate instead of wrap.</TableText>},
           {title: <TableText wrapModifier='nowrap'><a href="#">This is a link that needs to be on one line and fully readable.</a></TableText>},
         ]
       ]
@@ -1359,7 +1359,7 @@ import {
 class EditableRowsTable extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.options = [
       {value: "Option 1"},
       {value: "Option 2"},
@@ -1367,10 +1367,10 @@ class EditableRowsTable extends React.Component {
       {value: "Option 4"},
       {value: "Option 5"}
     ],
-    
+
     this.state = {
-      isSelectOpen: [false, false, false],
-      selected: ["Option 1", "Option 2", "Option 3"],
+      // isSelectOpen: [false, false, false],
+      // selected: props.selected,
       columns: [
         'Text input col 1',
         'Disabled text input col 2',
@@ -1449,21 +1449,23 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 1 cell 4 content"
-                  isOpen={this.state.isSelectOpen[rowIndex]}
+                  isOpen={props.isSelectOpen}
                   options={this.options.map((option, index) => (
                     <SelectOption
                       key={index}
                       value={option.value}
-                      id={'uniqueIdRow1Cell4Option' + index} 
+                      id={'uniqueIdRow1Cell4Option' + index}
                     />
                   ))}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex)}}
-                  selections={this.state.selected[rowIndex]}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  selections={props.selected}
                 />
               ),
               props: {
                 value: "Option 1",
-                name: 'uniqueIdRow1Cell4'
+                name: 'uniqueIdRow1Cell4',
+                isSelectOpen: props.isSelectOpen,
+                selected: props.selected
               }
             },
           ]
@@ -1525,7 +1527,7 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 2 cell 4 content"
-                  isOpen={this.state.isSelectOpen[rowIndex]}
+                  isOpen={props.isSelectOpen}
                   options={this.options.map((option, index) => (
                     <SelectOption
                       key={index}
@@ -1533,13 +1535,15 @@ class EditableRowsTable extends React.Component {
                       id={'uniqueIdRow2Cell4Option' + index}
                     />
                   ))}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex)}}
-                  selections={this.state.selected[rowIndex]}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  selections={props.selected}
                   />
               ),
               props: {
                 value: 'Option 2',
-                name: 'uniqueIdRow2Cell4'
+                name: 'uniqueIdRow2Cell4',
+                isSelectOpen: props.isSelectOpen,
+                selected: props.selected
               }
             },
           ]
@@ -1623,7 +1627,7 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   inputAriaLabel="Row 3 cell 4 content"
-                  isOpen={this.state.isSelectOpen[rowIndex]}
+                  isOpen={props.isSelectOpen}
                   options={this.options.map((option, index) => (
                     <SelectOption
                       key={index}
@@ -1631,13 +1635,15 @@ class EditableRowsTable extends React.Component {
                       id={'uniqueIdRow3Cell4Option' + index}
                     />
                   ))}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex)}}
-                  selections={this.state.selected[rowIndex]}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  selections={props.selected}
                   />
               ),
               props: {
                 value: 'Option 3',
-                name: 'uniqueIdRow3Cell4'
+                name: 'uniqueIdRow3Cell4',
+                isSelectOpen: props.isSelectOpen,
+                selected: props.selected
               }
             }
           ]
@@ -1673,27 +1679,21 @@ class EditableRowsTable extends React.Component {
         rows: newRows
       });
     };
-    
+
     this.onSelect = (newValue, evt, rowIndex, cellIndex) => {
       let newRows = Array.from(this.state.rows);
       newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
-      let newSelected = Array.from(this.state.selected);
-      newSelected[rowIndex] = newValue;
-      const newIsOpen = Array.from(this.state.isSelectOpen);
-      newIsOpen[rowIndex] = false;
-      
+      newRows[rowIndex].cells[cellIndex].props.selected = newValue;
       this.setState({
-        rows: newRows,
-        isSelectOpen: newIsOpen,
-        selected: newSelected
+        rows: newRows
       });
     };
-    
-    this.onToggle = (isOpen, rowIndex) => {
-      const newIsOpen = Array.from(this.state.isSelectOpen);
-      newIsOpen[rowIndex] = isOpen;
+
+    this.onToggle = (isOpen, rowIndex, cellIndex) => {
+      let newRows = Array.from(this.state.rows);
+      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;;
       this.setState({
-        isSelectOpen: newIsOpen
+        rows: newRows
       });
     };
   }

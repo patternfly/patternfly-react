@@ -15,7 +15,7 @@ import {
   cancelCellEdits,
   applyCellEdits,
   EditableTextCell,
-  SelectInputCell
+  EditableSelectInputCell
 } from '@patternfly/react-table';
 import { SelectOption } from '@patternfly/react-core';
 
@@ -151,7 +151,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
             },
             {
               title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
-                <SelectInputCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
@@ -248,7 +248,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
             },
             {
               title: (value: string, rowIndex: number, cellIndex: number, updatedProps: any) => (
-                <SelectInputCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}

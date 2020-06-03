@@ -15,6 +15,7 @@ export interface BodyCellProps {
   isOpen?: boolean;
   ariaControls?: string;
   editableValue?: any;
+  isSelectOpen?: boolean;
   value?: any;
   isValid?: boolean;
   name?: string;
@@ -39,6 +40,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isOpen,
   ariaControls,
   editableValue,
+  isSelectOpen = false,
   value,
   name,
   /* eslint-enable @typescript-eslint/no-unused-vars */
