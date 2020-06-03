@@ -56,7 +56,7 @@ export default ${jsName};
 const writeDTSExport = (fname, jsName, icon) => {
   outputFileSync(
     join(outDir, 'js/icons', `${fname}.d.ts`),
-    `import React from 'react';
+    `import * as React from 'react';
 import { SVGIconProps } from '../createIcon';
 export declare const ${jsName}Config: {
   name: '${jsName}',

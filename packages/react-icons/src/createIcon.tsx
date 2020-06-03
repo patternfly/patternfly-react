@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export enum IconSize {
   sm = 'sm',
@@ -41,9 +41,8 @@ export interface SVGIconProps extends Omit<React.HTMLProps<SVGElement>, 'size' |
 
 let currentId = 0;
 
-// Factory to create Icon class components for consumers
 /**
- *
+ * Factory to create Icon class components for consumers
  */
 export function createIcon({
   name,
