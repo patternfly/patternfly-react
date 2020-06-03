@@ -1,8 +1,8 @@
 # Contributing to PatternFly React
 
-> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](./packages/patternfly-3/patternfly-react/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
 >
-> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](./packages/patternfly-4/react-core/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md)
 
 ## Outline
 
