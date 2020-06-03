@@ -42,6 +42,11 @@ class SimpleDrawer extends React.Component {
     this.state = {
       isExpanded: false
     };
+    this.drawerRef = React.createRef();
+
+    this.onMount = () => {
+      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    }
 
     this.onClick = () => {
       const isExpanded = !this.state.isExpanded;
@@ -62,7 +67,7 @@ class SimpleDrawer extends React.Component {
     const panelContent = (
       <DrawerPanelContent>
         <DrawerHead>
-          <span>drawer-panel</span>
+          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>drawer-panel</span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -78,7 +83,7 @@ class SimpleDrawer extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded}>
+        <Drawer isExpanded={isExpanded} onMount={this.onMount} >
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
