@@ -9,6 +9,7 @@ interface TableState {
 }
 
 export class TableSelectableExpandableDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableSelectableExpandableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -46,7 +47,7 @@ export class TableSelectableExpandableDemo extends React.Component<TableProps, T
     this.onCollapse = this.onCollapse.bind(this);
   }
 
-  onCollapse(event: React.MouseEvent, rowKey: number, isOpen: boolean) {
+  onCollapse(event: React.FormEvent, rowKey: number, isOpen: boolean) {
     const { rows } = this.state;
     rows[rowKey].isOpen = isOpen;
     this.setState({
@@ -54,7 +55,7 @@ export class TableSelectableExpandableDemo extends React.Component<TableProps, T
     });
   }
 
-  onSelect(event: React.MouseEvent, isSelected: boolean, rowId: number) {
+  onSelect(event: React.FormEvent, isSelected: boolean, rowId: number) {
     let rows: IRow[];
     if (rowId === -1) {
       rows = this.state.rows.map(oneRow => {
@@ -70,7 +71,7 @@ export class TableSelectableExpandableDemo extends React.Component<TableProps, T
     });
   }
 
-  toggleSelect = checked => {
+  toggleSelect = (checked: boolean) => {
     this.setState({
       canSelectAll: checked
     });
