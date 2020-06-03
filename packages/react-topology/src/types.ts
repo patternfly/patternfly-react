@@ -136,6 +136,7 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setNodeShape(shape: NodeShape): void;
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
+  isDimensionsInitialized(): boolean;
 }
 
 export interface Edge<E extends EdgeModel = EdgeModel, D = any> extends GraphElement<E, D> {

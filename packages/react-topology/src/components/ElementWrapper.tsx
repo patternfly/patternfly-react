@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import ElementContext from '../utils/ElementContext';
 import { GraphElement, isGraph, isEdge, isNode } from '../types';
 import { ATTR_DATA_ID, ATTR_DATA_KIND, ATTR_DATA_TYPE } from '../const';
+import ComputeElementDimensions from './ComputeElementDimensions';
 
 interface ElementWrapperProps {
   element: GraphElement;
@@ -41,7 +42,9 @@ const ElementChildren: React.FC<ElementWrapperProps> = observer(({ element }) =>
 
 const ElementWrapper: React.FC<ElementWrapperProps> = observer(({ element }) => {
   if (!element.isVisible()) {
-    return null;
+    if (!isNode(element) || element.isDimensionsInitialized()) {
+      return null;
+    }
   }
 
   if (isEdge(element)) {
@@ -51,11 +54,13 @@ const ElementWrapper: React.FC<ElementWrapperProps> = observer(({ element }) => 
       return null;
     }
   }
+
   const commonAttrs = {
     [ATTR_DATA_ID]: element.getId(),
     [ATTR_DATA_KIND]: element.getKind(),
     [ATTR_DATA_TYPE]: element.getType()
   };
+
   if (isGraph(element)) {
     return (
       <g {...commonAttrs}>
@@ -63,14 +68,25 @@ const ElementWrapper: React.FC<ElementWrapperProps> = observer(({ element }) => 
       </g>
     );
   }
-  if (isNode(element) && (!element.isGroup() || element.isCollapsed())) {
-    const { x, y } = element.getPosition();
-    return (
-      <g {...commonAttrs} transform={`translate(${x}, ${y})`}>
-        <ElementComponent element={element} />
-        <ElementChildren element={element} />
-      </g>
-    );
+
+  if (isNode(element)) {
+    if (!element.isDimensionsInitialized()) {
+      return (
+        <ComputeElementDimensions element={element}>
+          <ElementComponent element={element} />
+          <ElementChildren element={element} />
+        </ComputeElementDimensions>
+      );
+    }
+    if (!element.isGroup() || element.isCollapsed()) {
+      const { x, y } = element.getPosition();
+      return (
+        <g {...commonAttrs} transform={`translate(${x}, ${y})`}>
+          <ElementComponent element={element} />
+          <ElementChildren element={element} />
+        </g>
+      );
+    }
   }
   return (
     <g {...commonAttrs}>
