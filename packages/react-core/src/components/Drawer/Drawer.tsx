@@ -46,8 +46,8 @@ export const Drawer: React.SFC<DrawerProps> = ({
     onMount && onMount();
     return () => {
       onUnMount && onUnMount();
-    }
-  }, [isExpanded, onMount, onUnMount])
+    };
+  }, [isExpanded, onMount, onUnMount]);
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic }}>
@@ -58,12 +58,12 @@ export const Drawer: React.SFC<DrawerProps> = ({
           isInline && styles.modifiers.inline,
           isStatic && styles.modifiers.static,
           position === 'left' && styles.modifiers.panelLeft,
-          className,
+          className
         )}
         {...props}
       >
         {children}
       </div>
     </DrawerContext.Provider>
-  )
+  );
 };
