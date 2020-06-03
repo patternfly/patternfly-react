@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { action } from 'mobx';
+// https://github.com/mobxjs/mobx-react#observer-batching
+import 'mobx-react/batchingForReactDom';
 import { observer } from 'mobx-react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore-next-line
@@ -18,13 +20,10 @@ interface VisualizationSurfaceProps {
   state?: State;
 }
 
-/**
- * @param e
- */
-function stopEvent(e: React.MouseEvent): void {
+const stopEvent = (e: React.MouseEvent): void => {
   e.preventDefault();
   e.stopPropagation();
-}
+};
 
 const VisualizationSurface: React.FC<VisualizationSurfaceProps> = ({ visualization, state }) => {
   React.useEffect(() => {
