@@ -11,7 +11,6 @@ import {
   ElementChildEventListener,
   NODE_COLLAPSE_CHANGE_EVENT,
   NodeCollapseChangeEventListener,
-  NodeStyle,
   ElementVisibilityChangeEventListener,
   ELEMENT_VISIBILITY_CHANGE_EVENT,
   ElementVisibilityChangeEvent
@@ -27,7 +26,6 @@ import {
 } from '../behavior';
 import { BaseEdge } from '../elements';
 import { ForceSimulation } from './ForceSimulation';
-import { Rect } from '../geom';
 import { LayoutNode } from './LayoutNode';
 import { LayoutGroup } from './LayoutGroup';
 import { LayoutLink } from './LayoutLink';
