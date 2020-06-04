@@ -32,10 +32,7 @@ class ForceSimulation {
       ...options
     };
 
-    this.setupForceSimulation();
-  }
-
-  private setupForceSimulation(): void {
+    // Setup Force Simulation
     this.simulation = d3.forceSimulation<ForceSimulationNode>();
     this.simulation.force(
       'collide',
