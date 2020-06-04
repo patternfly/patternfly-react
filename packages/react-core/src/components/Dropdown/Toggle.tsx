@@ -25,6 +25,8 @@ export interface ToggleProps {
   onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
+  /** The menu element */
+  getMenuRef?: any;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -82,20 +84,14 @@ export class Toggle extends React.Component<ToggleProps> {
   };
 
   onEscPress = (event: KeyboardEvent) => {
-    const { parentRef } = this.props;
+    const { parentRef, getMenuRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (this.props.isOpen) {
-      console.log(`isOpen ${this.props.isOpen}, parentRef && parentRef.current: ${parentRef && parentRef.current}`);
-      parentRef && parentRef.current && console.log(`parentRef.current.contains(event.target): ${parentRef.current.contains(event.target)}`);
-      console.log(parentRef);
-      console.log(event.target);
-    }
+    const menuRef = getMenuRef && getMenuRef();
     if (
-      this.props.isOpen &&
-      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
-      parentRef &&
-      parentRef.current &&
-      parentRef.current.contains(event.target)
+      (this.props.isOpen &&
+        (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+        (parentRef && parentRef.current && parentRef.current.contains(event.target))) ||
+      (menuRef && menuRef.contains && menuRef.contains(event.target))
     ) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
@@ -134,6 +130,7 @@ export class Toggle extends React.Component<ToggleProps> {
       bubbleEvent,
       onEnter,
       parentRef,
+      getMenuRef,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       id,
       type,

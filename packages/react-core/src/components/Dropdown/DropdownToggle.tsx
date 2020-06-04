@@ -18,6 +18,8 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: HTMLElement;
+  /** The menu element */
+  getMenuRef?: () => void;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -50,6 +52,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   className = '',
   isOpen = false,
   parentRef = null,
+  getMenuRef = null,
   isDisabled = false,
   isPlain = false,
   isPrimary = false,
@@ -75,6 +78,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           className={className}
           isOpen={isOpen}
           parentRef={parentRef}
+          getMenuRef={getMenuRef}
           isActive={isActive}
           isDisabled={isDisabled}
           isPlain={isPlain}

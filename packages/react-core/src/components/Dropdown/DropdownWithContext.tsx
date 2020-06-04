@@ -8,16 +8,12 @@ import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
 import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
-import { FocusTrap } from '../../helpers';
 
-export interface DropdownWithContextState {
-  focusTrapActive: boolean;
-}
-
-export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps, DropdownWithContextState> {
+export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
   tip: TippyInstance;
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
+  menuComponentRef = React.createRef<any>();
 
   // seed for the aria-labelledby ID
   static currentId = 0;
@@ -37,9 +33,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
 
   constructor(props: DropdownProps & OUIAProps) {
     super(props);
-    this.state = {
-      focusTrapActive: false
-    };
     if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
       // eslint-disable-next-line no-console
       console.error(
@@ -56,6 +49,19 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     if (!this.props.isOpen) {
       this.openedOnEnter = false;
     }
+  }
+
+  setMenuComponentRef = (element: any) => {
+    this.menuComponentRef = element;
+  };
+
+  getMenuComponentRef = () => {
+    return this.menuComponentRef;
+  };
+
+  getPlacement = (position: 'right' | 'left', direction: 'up' | 'down') => {
+    const placement = `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
+    return placement;
   }
 
   render() {
@@ -94,8 +100,18 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
         {({ baseClass, baseComponent, id: contextId }) => {
           const BaseComponent = baseComponent as any;
           const content = isOpen ? (
-            <div className="pf-c-dropdown" style={{ position: 'absolute' }}>
+            <div
+              className={css(
+                baseClass,
+                direction === DropdownDirection.up && styles.modifiers.top,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                isOpen && styles.modifiers.expanded,
+                className
+              )}
+              style={{ position: 'absolute' }}
+            >
               <DropdownMenu
+                setMenuComponentRef={this.setMenuComponentRef}
                 component={component}
                 isOpen={true}
                 position={position}
@@ -124,7 +140,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               appendTo={() => document.body}
               boundary="window"
               flip={false}
-              placement="bottom-start"
+              placement={this.getPlacement(position, direction)}
               hideOnClick={false}
               theme="pf-popover"
               lazy={false}
@@ -147,6 +163,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 {React.Children.map(toggle, oneToggle =>
                   React.cloneElement(oneToggle, {
                     parentRef: this.baseComponentRef,
+                    getMenuRef: this.getMenuComponentRef,
                     isOpen,
                     id,
                     isPlain,
