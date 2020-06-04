@@ -112,11 +112,6 @@ class IntialSelectionDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
-      this.onFocus();
-    };
-    this.onFocus = () => {
-      const element = document.getElementById('toggle-id-1');
-      element.focus();
     };
   }
 

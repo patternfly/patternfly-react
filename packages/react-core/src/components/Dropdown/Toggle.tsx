@@ -84,6 +84,12 @@ export class Toggle extends React.Component<ToggleProps> {
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
+    if (this.props.isOpen) {
+      console.log(`isOpen ${this.props.isOpen}, parentRef && parentRef.current: ${parentRef && parentRef.current}`);
+      parentRef && parentRef.current && console.log(`parentRef.current.contains(event.target): ${parentRef.current.contains(event.target)}`);
+      console.log(parentRef);
+      console.log(event.target);
+    }
     if (
       this.props.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&

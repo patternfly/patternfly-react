@@ -54,7 +54,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       const focusTargetCollection = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
       const focusTarget = focusTargetCollection && focusTargetCollection[0];
       if (focusTarget && focusTarget.focus) {
-        focusTarget.focus();
+        setTimeout(() => focusTarget.focus());
       }
     }
   }
