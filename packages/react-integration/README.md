@@ -38,12 +38,12 @@ Once the demo app is launched, all saved changes you make to the code should be 
 
 Before you can start writing a Cypress test, you need to build a demo page to test against.
 
-1. Go to the [component demo section](https://github.com/patternfly/patternfly-react/tree/master/packages/react-integration/demo-app-ts/src/components/demos) and create a new folder to add your demo page.
-2. To see your demo in app navigation, add your demo to the [Demo.ts](https://github.com/patternfly/patternfly-react/tree/master/packages/react-integration/demo-app-ts/src/Demos.ts) file.
+1. Go to the [component demo section](./demo-app-ts/src/components/demos) and create a new folder to add your demo page.
+2. To see your demo in app navigation, add your demo to the [Demo.ts](./demo-app-ts/src/Demos.ts) file.
 
 ## Building Cypress tests
 
-We use [Cypress](https://www.cypress.io/) for integration testing. View all of our existing Cypress tests [here](https://github.com/patternfly/patternfly-react/tree/master/packages/react-integration/cypress/integration).
+We use [Cypress](https://www.cypress.io/) for integration testing. View all of our existing Cypress tests [here](./cypress/integration).
 
 Make sure your demo app is running. If you need to launch the demo application, run the following command from the root directory:
 
@@ -55,7 +55,7 @@ Run the following command from the root directory to launch Cypress:
 
 You can leave both the demo app and Cypress running while you develop your tests. You may receive notifications from Cypress that ask you to refresh as you make changes. Use the “Try again” button to refresh Cypress with your updated tests.
 
-Add any new integration tests you write to the [integration folder here](https://github.com/patternfly/patternfly-react/tree/master/packages/react-integration/cypress/integration).
+Add any new integration tests you write to the [integration folder here](./cypress/integration).
 
 ## Running integration tests
 

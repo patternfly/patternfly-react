@@ -25,7 +25,7 @@ Using PatternFly 3?  Take a look at the [PatternFly 3 React component informatio
 | &nbsp;&nbsp;[@patternfly/react-core](./packages/react-core/README.md) | Core set of components |
 | &nbsp;&nbsp;[@patternfly/react-table](./packages/react-table/README.md) | Table components | 
 | &nbsp;&nbsp;[@patternfly/react-charts](./packages/react-charts/README.md) | Chart components
-| &nbsp;&nbsp;[@patternfly/react-icons](https://github.com/patternfly/patternfly-react/tree/master/packages/react-icons/README.md) | Icon components |
+| &nbsp;&nbsp;[@patternfly/react-icons](./packages/react-icons/README.md) | Icon components |
 | &nbsp;&nbsp;[@patternfly/react-styles](./packages/react-styles/README.md) | PatternFly CSS styles |
 | &nbsp;&nbsp;[@patternfly/react-tokens](./packages/react-tokens/README.md) | PatternFly CSS variable tokens |
 | &nbsp;&nbsp;[@patternfly/react-topology](./packages/react-topology/README.md) | Topology components |
