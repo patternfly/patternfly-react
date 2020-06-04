@@ -218,7 +218,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
 
 export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   constrainToVisibleArea = false,
-  labelComponent = <ChartLabel />,
+  labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   labelTextAnchor,
   themeColor,
   themeVariant,
