@@ -1370,8 +1370,6 @@ class EditableRowsTable extends React.Component {
     ],
 
     this.state = {
-      // isSelectOpen: [false, false, false],
-      // selected: props.selected,
       columns: [
         'Text input col 1',
         'Disabled text input col 2',
@@ -1396,7 +1394,9 @@ class EditableRowsTable extends React.Component {
           ],
           cells: [
             {
-              title: (value, rowIndex, cellIndex, props) => (
+              title: (value, rowIndex, cellIndex, props) => {
+                // console.log(`textinput for row ${rowIndex}: `, props);
+                return (
                 <EditableTextCell
                   value={value}
                   rowIndex={rowIndex}
@@ -1404,7 +1404,8 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   handleTextInputChange={this.handleTextInputChange}
                   inputAriaLabel="Row 1 cell 1 content" />
-              ),
+              )
+              },
               props: {
                 value: 'Row 1 cell 1 content',
                 name: 'uniqueIdRow1Cell1'
@@ -1442,7 +1443,9 @@ class EditableRowsTable extends React.Component {
               }
             },
             {
-              title: (value, rowIndex, cellIndex, props) => (
+              title: (value, rowIndex, cellIndex, props) => {
+                console.log(`props for row ${rowIndex}: `, props);
+                return (
                 <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
@@ -1462,12 +1465,13 @@ class EditableRowsTable extends React.Component {
                   onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
                   selections={props.selected}
                 />
-              ),
+              )
+              },
               props: {
-                value: 'Option 1',
+                value: ['Option 1'],
                 name: 'uniqueIdRow1Cell4',
-                isSelectOpen: props.isSelectOpen,
-                selected: props.selected || 'Option 1'
+                isSelectOpen: props.isSelectOpen || false,
+                selected: props.selected || ['Option 1']
               }
             },
           ]
@@ -1521,7 +1525,9 @@ class EditableRowsTable extends React.Component {
               }
             },
             {
-              title: (value, rowIndex, cellIndex, props) => (
+              title: (value, rowIndex, cellIndex, props) => {
+                console.log(`props for row ${rowIndex}: `, props);
+                return (
                 <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
@@ -1541,12 +1547,13 @@ class EditableRowsTable extends React.Component {
                   onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
                   selections={props.selected}
                   />
-              ),
+              )
+              },
               props: {
-                value: 'Option 2',
+                value: ['Option 2'],
                 name: 'uniqueIdRow2Cell4',
-                isSelectOpen: props.isSelectOpen,
-                selected: props.selected || 'Option 2'
+                isSelectOpen: props.isSelectOpen || false,
+                selected: props.selected || ['Option 2']
               }
             },
           ]
@@ -1622,7 +1629,9 @@ class EditableRowsTable extends React.Component {
               }
             },
             {
-              title: (value, rowIndex, cellIndex, props) => (
+              title: (value, rowIndex, cellIndex, props) => {
+                console.log(`props for row ${rowIndex}: `, props);
+                return (
                 <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
@@ -1642,12 +1651,13 @@ class EditableRowsTable extends React.Component {
                   onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
                   selections={props.selected}
                   />
-              ),
+              )
+              },
               props: {
-                value: '',
+                value: [''],
                 name: 'uniqueIdRow3Cell4',
                 isSelectOpen: props.isSelectOpen || false,
-                selected: props.selected
+                selected: props.selected || []
               }
             }
           ]
@@ -1686,16 +1696,29 @@ class EditableRowsTable extends React.Component {
 
     this.onSelect = (newValue, evt, rowIndex, cellIndex, isPlaceholder) => {
       let newRows = Array.from(this.state.rows);
-      
+      // console.log(`onSelect for row ${rowIndex} incoming props: `, newRows[rowIndex].cells[cellIndex].props);
       if (isPlaceholder) {
-        newRows[rowIndex].cells[cellIndex].props.editableValue = '';
-        newRows[rowIndex].cells[cellIndex].props.selected = null;
+        newRows[rowIndex].cells[cellIndex].props.editableValue = [''];
+        newRows[rowIndex].cells[cellIndex].props.selected = [''];
       } else {
-        newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
-        newRows[rowIndex].cells[cellIndex].props.selected = newValue;
+        if (newRows[rowIndex].cells[cellIndex].props.editableValue === undefined) {
+          newRows[rowIndex].cells[cellIndex].props.editableValue = [];
+        }
+        // newRows[rowIndex].cells[cellIndex].props.editableValue.push(newValue);
+
+        console.log(newRows[rowIndex].cells[cellIndex].props.editableValue, newValue, newRows[rowIndex].cells[cellIndex].props.selected);
+
+        newRows[rowIndex].cells[cellIndex].props.editableValue.push(newValue);
+        // let newSelected = newRows[rowIndex].cells[cellIndex].props.selected;
+        // newSelected.push(newValue);
+        // newRows[rowIndex].cells[cellIndex].props.selected = newSelected
+
+        let newSelected = newRows[rowIndex].cells[cellIndex].props.selected;
+        newSelected.push(newValue);
+        newRows[rowIndex].cells[cellIndex].props.editableValue = newSelected;
       }
-      
-      
+
+
       this.setState({
         rows: newRows
       });

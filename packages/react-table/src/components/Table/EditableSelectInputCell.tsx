@@ -16,7 +16,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     name: string;
     value: string;
     isSelectOpen: boolean;
-    selected: string;
+    selected: string | SelectOptionObject | (string | SelectOptionObject)[];
     [key: string]: any;
   };
   /** Event handler which fires when user selects an option in this cell */
@@ -50,7 +50,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   isDisabled = false,
   isOpen = false,
   onToggle = () => {},
-  selections = '',
+  selections = [''],
   options = [] as React.ReactElement[],
   props
 }) => {
@@ -59,6 +59,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
     newValue: string | SelectOptionObject,
     isPlaceholder: boolean
   ) => {
+    console.log('onSelectHandler props: ', props);
     onSelect(newValue, event, rowIndex, cellIndex, isPlaceholder);
   };
 

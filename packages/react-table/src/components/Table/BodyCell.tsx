@@ -40,7 +40,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isOpen,
   ariaControls,
   editableValue,
-  isSelectOpen = false,
+  isSelectOpen,
   value,
   name,
   /* eslint-enable @typescript-eslint/no-unused-vars */
