@@ -19,7 +19,7 @@ After you have written your new PatternFly component, tests, and Storybook stori
 ## PatternFly React Doc
 
 PatternFly 4 React uses Gatsby. Examples are created to demonstrate of the use of the React components. Documents are generated from these examples.
-See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
+See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
 
 Some things to keep in mind when writing examples:
 

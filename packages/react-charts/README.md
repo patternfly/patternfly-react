@@ -99,11 +99,11 @@ Note the build scripts for this are located in the root package.json under `yarn
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the patternfly-react tests:
+Testing is done at the root of this repo. To only run the @patternfly/react-charts tests:
 
 ```
-yarn test packages/patternfly-4/react-charts
+yarn test packages/react-charts
 ```
 
 [patternfly-4]: https://github.com/patternfly/patternfly
-[docs]: https://patternfly-react.surge.sh/patternfly-4
+[docs]: https://patternfly-react.surge.sh/

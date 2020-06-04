@@ -15,7 +15,7 @@ This project provides a set of React components for the [PatternFly project](htt
 3. [Contribution guidelines](#Contribution-guidelines)
 4. [License](#License)
 
-Using PatternFly 3?  Take a look at the [PatternFly 3 React component information](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-3/patternfly-react/README.md).
+Using PatternFly 3?  Take a look at the [PatternFly 3 React component information](https://github.com/patternfly/patternfly-react/blob/patternfly-3/README.md).
 
 ### PatternFly React packages
 

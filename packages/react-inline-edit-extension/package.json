@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/",
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/react-inline-edit-extension",
   "scripts": {
     "clean": "rimraf dist"
   },

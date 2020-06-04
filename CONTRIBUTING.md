@@ -1,8 +1,8 @@
 # Contributing to PatternFly React
 
-> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](./packages/patternfly-3/patternfly-react/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md)
 >
-> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](./packages/patternfly-4/react-core/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](./packages/react-core/CONTRIBUTING.md)
 
 ## Outline
 
@@ -99,7 +99,7 @@ If you find a bug within the repo, please help us track the issue by following t
 
 To create an issue for adding a new component to the repo, please observe the following process:
 
-1.  If the component does not yet exist as a PatternFly component, please do not start coding yet.  Components contributed to PatternFly-React should have a design pattern in PatternFly or be approved PatternFly-Extension components.
+1.  If the component does not yet exist as a PatternFly component, please do not start coding yet. Components contributed to PatternFly-React should have a design pattern in PatternFly or be approved PatternFly-Extension components.
 2.  If the component exists in PatternFly core (meaning CSS and the pattern design exists), then create an issue with the following details:
     - Assign the label `enhancement` to the issue
     - Include the text “Component -“ in the beginning of the title if the issue captures a new component
@@ -107,10 +107,8 @@ To create an issue for adding a new component to the repo, please observe the fo
 3.  If a component is not in PatternFly, but you feel it would be a good addition to the library, please do the following:
     - Open a new GitHub issue and tag it with the Extension label
     - Reach out on the patternfly-react channel on slack, the mailing list or the forum to see if the issue is approved as an extension
-    - If it is approved:
-        - For PatternFly 3 components, please use the patternfly-react-extensions package
-        - For PatternFly 4 components, direction will be given as to which package it will go in.  Generally, we are recommending most extension components go in individual packages.  Several smaller common components may end up being grouped together.  In the future, a generator for extension component packages will be created.
-    - Extension components do not undergo the same rigorous design or coding review process as core PatternFly components.  If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
+    - If it is approved, direction will be given as to which package it will go in. Generally, we are recommending most extension components go in individual packages. Several smaller common components may end up being grouped together. In the future, a generator for extension component packages will be created.
+    - Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
 
 ### Contributing Components
 
@@ -155,7 +153,7 @@ Follow the prompts to generate the desired component or package.
 Currently the following generators are provided
 
 - PatternFly 4 Component
-- PatternFly 3 Component
+- PatternFly 3 Component (only available on the `patternfly-3` branch, see [this guide](https://github.com/patternfly/patternfly-react/blob/patternfly-3/packages/patternfly-react/CONTRIBUTING.md))
 - Package
 
 ## Guidelines and Requirements
@@ -167,10 +165,9 @@ Please ensure that all React UI components contributed meet the following guidel
 - This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components)
   when possible and accept [props](https://facebook.github.io/react/docs/components-and-props.html) as UI display parameters.
 - Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
-- For PatternFly 3 components, provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
-  For PatternFly 4 components, provide associated examples for documentation in the examples directory for the component.
+- Provide associated examples for documentation in the examples directory for the component.
 - Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
-- Ensure the component's rendered design and Storybook stories for PatternFly 3 or Documentation examples for PatternFly 4 meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
+- Ensure the component's rendered design and documentation examples meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
   **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
 - Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
 
@@ -187,13 +184,8 @@ Please ensure that all React UI components contributed meet the following guidel
 - Always prefer **default imports** between components in the same folder
 - Components that are not getting exported (to consumers) from
   the `index.js` file should be in a subfolder named `InnerComponents`
-- Storybooks for PatternFly 3
-  - Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
-  - When your stories contain multiple files, put them in a subfolder named `Stories`
-  - `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
-- Documentation for PatternFly 4
-  - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
-    See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
+- Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
+  See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
 - When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
 
@@ -227,17 +219,9 @@ $ git checkout -b my-branch -t upstream/master
  yarn generate
 ```
 
-- When you select the option to generate a PatternFly 3 component, a structure resembling the following is generated
-  ```text
-  packages/patternfly-3/patternfly-react/src/components/[ComponentName]/
-    index.js - Barrel File exporting public exports
-    ComponentName.js - Component Implementation
-    ComponentName.test.js - Component Tests
-    ComponentName.stories.js - Component Stories
-  ```
 - When you select the option to generate a PatternFly 4 component, a structure resembling the following is generated
   ```text
-  packages/patternfly-4/react-core/src/[type]/[ComponentName]/
+  packages/react-core/src/[type]/[ComponentName]/
     index.js - Barrel File exporting public exports
     ComponentName.js - Component Implementation
     ComponentName.test.js - Component Tests
@@ -290,7 +274,7 @@ $ git push origin my-branch
 - Storybook and Documentation
   - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
 
-A link to the Storybook (PatternFly 3) and demo documentation (PatternFly 4) will be automatically generated and posted as a comment after the pull request build is complete.
+A link to the demo documentation will be automatically generated and posted as a comment after the pull request build is complete.
 
 Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 
