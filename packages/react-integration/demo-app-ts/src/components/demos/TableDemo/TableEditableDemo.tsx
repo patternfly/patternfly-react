@@ -93,7 +93,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
               ),
               props: {
                 value: 'Row 1 cell 1 content',
-                name: 'uniqueIdRow1Cell1',
+                name: 'uniqueIdRow1Cell1'
               }
             },
             {
@@ -158,7 +158,9 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   options={this.options.map((option, index) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
                   ))}
-                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  onToggle={isOpen => {
+                    this.onToggle(isOpen, rowIndex, cellIndex);
+                  }}
                   selections={updatedProps.selected}
                 />
               ),
@@ -323,7 +325,6 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
     if (isPlaceholder) {
       (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = '';
       (newRows[rowIndex].cells[cellIndex] as IRowCell).props.selected = null;
-      (newRows[rowIndex].cells[cellIndex] as IRowCell).props.isSelectOpen = false;
     } else {
       (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
       (newRows[rowIndex].cells[cellIndex] as IRowCell).props.selected = newValue;
@@ -334,7 +335,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
   };
 
   onToggle = (isOpen: boolean, rowIndex: number, cellIndex: number) => {
-    let newRows = Array.from(this.state.rows);
+    const newRows = Array.from(this.state.rows);
     (newRows[rowIndex].cells[cellIndex] as IRowCell).props.isSelectOpen = isOpen;
     this.setState({
       rows: newRows
