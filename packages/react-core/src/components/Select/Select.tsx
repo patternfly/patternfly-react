@@ -425,8 +425,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         disabled={isDisabled}
         ref={this.clearRef}
         onKeyDown={event => {
-          if (event.key === KeyTypes.Enter)
+          if (event.key === KeyTypes.Enter) {
             this.clearRef.current.click();
+          }
         }}
       >
         <TimesCircleIcon aria-hidden />
