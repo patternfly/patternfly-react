@@ -31,12 +31,6 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   activateLabels?: boolean;
   /**
-   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
-   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
-   * property is also provided.
-   */
-  allowTooltip?: boolean;
-  /**
    * he children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
    *
@@ -103,7 +97,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   labelComponent?: React.ReactElement<any>;
   /**
-   * When the mouseFollowTooltip prop is set on VictoryVoronoiContainer, The position of the center of the tooltip
+   * When the mouseFollowTooltip prop is set on ChartVoronoiContainer, The position of the center of the tooltip
    * follows the position of the mouse.
    */
   mouseFollowTooltips?: boolean;
@@ -137,7 +131,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   polar?: boolean;
   /**
    * The portalComponent prop takes a component instance which will be used as a container for children that should
-   * render inside a top-level container so that they will always appear above other elements. VictoryTooltip renders
+   * render inside a top-level container so that they will always appear above other elements. ChartTooltip renders
    * inside a portal so that tooltips always render above data. VictoryPortal is used to define elements that should
    * render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered
    * elements from SVG to another type of element e.g., react-native-svg elements.
@@ -161,7 +155,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   responsive?: boolean;
   /**
-   * The style prop specifies styles for your VictoryContainer. Any valid inline style properties
+   * The style prop specifies styles for your ChartContainer. Any valid inline style properties
    * will be applied. Height and width should be specified via the height
    * and width props, as they are used to calculate the alignment of
    * components within the container. Styles from the child component will
@@ -225,14 +219,13 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
 
 export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContainerProps> = ({
   className,
-  allowTooltip = true,
   constrainToVisibleArea = false,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  labelComponent = allowTooltip ? <ChartTooltip /> : undefined,
+  labelComponent = <ChartTooltip />, // Note that Victory provides its own tooltip component here
   ...rest
 }: ChartVoronoiContainerProps) => {
   const chartClassName = getClassName({ className });
