@@ -1361,6 +1361,7 @@ class EditableRowsTable extends React.Component {
     super(props);
 
     this.options = [
+      {value: "Placeholder...", isPlaceholder: true},
       {value: "Option 1"},
       {value: "Option 2"},
       {value: "Option 3"},
@@ -1455,6 +1456,7 @@ class EditableRowsTable extends React.Component {
                       key={index}
                       value={option.value}
                       id={'uniqueIdRow1Cell4Option' + index}
+                      isPlaceholder={option.isPlaceholder}
                     />
                   ))}
                   onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
@@ -1462,10 +1464,10 @@ class EditableRowsTable extends React.Component {
                 />
               ),
               props: {
-                value: "Option 1",
+                value: 'Option 1',
                 name: 'uniqueIdRow1Cell4',
                 isSelectOpen: props.isSelectOpen,
-                selected: props.selected
+                selected: props.selected || 'Option 1'
               }
             },
           ]
@@ -1533,6 +1535,7 @@ class EditableRowsTable extends React.Component {
                       key={index}
                       value={option.value}
                       id={'uniqueIdRow2Cell4Option' + index}
+                      isPlaceholder={option.isPlaceholder}
                     />
                   ))}
                   onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
@@ -1543,7 +1546,7 @@ class EditableRowsTable extends React.Component {
                 value: 'Option 2',
                 name: 'uniqueIdRow2Cell4',
                 isSelectOpen: props.isSelectOpen,
-                selected: props.selected
+                selected: props.selected || 'Option 2'
               }
             },
           ]
@@ -1633,6 +1636,7 @@ class EditableRowsTable extends React.Component {
                       key={index}
                       value={option.value}
                       id={'uniqueIdRow3Cell4Option' + index}
+                      isPlaceholder={option.isPlaceholder}
                     />
                   ))}
                   onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
@@ -1640,9 +1644,9 @@ class EditableRowsTable extends React.Component {
                   />
               ),
               props: {
-                value: 'Option 3',
+                value: '',
                 name: 'uniqueIdRow3Cell4',
-                isSelectOpen: props.isSelectOpen,
+                isSelectOpen: props.isSelectOpen || false,
                 selected: props.selected
               }
             }
@@ -1680,10 +1684,18 @@ class EditableRowsTable extends React.Component {
       });
     };
 
-    this.onSelect = (newValue, evt, rowIndex, cellIndex) => {
+    this.onSelect = (newValue, evt, rowIndex, cellIndex, isPlaceholder) => {
       let newRows = Array.from(this.state.rows);
-      newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
-      newRows[rowIndex].cells[cellIndex].props.selected = newValue;
+      
+      if (isPlaceholder) {
+        newRows[rowIndex].cells[cellIndex].props.editableValue = '';
+        newRows[rowIndex].cells[cellIndex].props.selected = null;
+      } else {
+        newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
+        newRows[rowIndex].cells[cellIndex].props.selected = newValue;
+      }
+      
+      
       this.setState({
         rows: newRows
       });

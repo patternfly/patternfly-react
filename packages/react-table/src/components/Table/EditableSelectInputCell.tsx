@@ -24,7 +24,8 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     newValue: string | SelectOptionObject,
     event: React.MouseEvent | React.ChangeEvent,
     rowIndex: number,
-    cellIndex: number
+    cellIndex: number,
+    isPlaceholder?: boolean
   ) => void;
   /** Options to display in the expandable select menu */
   options?: React.ReactElement[];
@@ -53,8 +54,12 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   options = [] as React.ReactElement[],
   props
 }) => {
-  const onSelectHandler = (event: React.MouseEvent | React.ChangeEvent, newValue: string | SelectOptionObject) => {
-    onSelect(newValue, event, rowIndex, cellIndex);
+  const onSelectHandler = (
+    event: React.MouseEvent | React.ChangeEvent,
+    newValue: string | SelectOptionObject,
+    isPlaceholder: boolean
+  ) => {
+    onSelect(newValue, event, rowIndex, cellIndex, isPlaceholder);
   };
 
   const select = (
