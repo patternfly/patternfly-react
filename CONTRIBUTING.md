@@ -55,7 +55,7 @@ Our issue tracker utilizes several labels to help organize and identify issues. 
 
 ### PR Labels
 
-Since the components in patternfly-react are based on patternfly, we want to make sure these components stay in sync with the core patternfly components as documented on [patternfly.org](http://www.patternfly.org/pattern-library/). To help make sure component contributions are consistent with the [design documentation](http://www.patternfly.org/pattern-library/) and [html/css implementation](https://rawgit.com/patternfly/patternfly/master-dist/dist/tests/), we use the following labels during the PR review process.
+Since the components in patternfly-react are based on patternfly, we want to make sure these components stay in sync with the core patternfly components as documented on [patternfly.org](https://www.patternfly.org/v4/documentation/core/components/aboutmodalbox/). To help make sure component contributions are consistent with the [design documentation](https://www.patternfly.org/v4/design-guidelines/styles/colors/) and [html/css implementation](https://www.patternfly.org/v4/documentation/core/overview/release-notes/), we use the following labels during the PR review process.
 
 - `css review` - The issue requires css review. Add this label when you are working on a component, and the html and css are ready for review against the core patternfly implementation.
 - `ux review` - The issue requires ux design review. Add this label when you are working on a component, and the storybook example is ready for review by a ux designer.
@@ -103,7 +103,7 @@ To create an issue for adding a new component to the repo, please observe the fo
 2.  If the component exists in PatternFly core (meaning CSS and the pattern design exists), then create an issue with the following details:
     - Assign the label `enhancement` to the issue
     - Include the text “Component -“ in the beginning of the title if the issue captures a new component
-    - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+    - If the component is documented as a [PatternFly Library Pattern](https://www.patternfly.org/v4/documentation/core/components/aboutmodalbox/), include a link to it.
 3.  If a component is not in PatternFly, but you feel it would be a good addition to the library, please do the following:
     - Open a new GitHub issue and tag it with the Extension label
     - Reach out on the patternfly-react channel on slack, the mailing list or the forum to see if the issue is approved as an extension
@@ -167,7 +167,7 @@ Please ensure that all React UI components contributed meet the following guidel
 - This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components)
   when possible and accept [props](https://facebook.github.io/react/docs/components-and-props.html) as UI display parameters.
 - Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
-- For PatternFly 3 components, provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
+- For PatternFly 3 components, provide an associated `.stories.js` [story](https://storybook.js.org/docs/basics/writing-stories/) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybookjs/storybook/tree/master/addons/knobs) to enable dynamic visualizations of your component's props.
   For PatternFly 4 components, provide associated examples for documentation in the examples directory for the component.
 - Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
 - Ensure the component's rendered design and Storybook stories for PatternFly 3 or Documentation examples for PatternFly 4 meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
@@ -193,7 +193,7 @@ Please ensure that all React UI components contributed meet the following guidel
   - `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
 - Documentation for PatternFly 4
   - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
-    See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
+    See how to write documentation in the [`react-docs` README](./packages/react-docs/README.md)
 - When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
 
@@ -254,7 +254,7 @@ Ensure no lint errors are introduced in `yarn-error.log` after running this comm
 
 5.  Add a commit using `yarn commit`:
 
-This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
+This project uses [`lerna`](https://lerna.js.org) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
 
 You can use `commitizen` to help you to follow [the convention][3].
 
@@ -288,7 +288,7 @@ $ git push origin my-branch
 
 - Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
 - Storybook and Documentation
-  - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
+  - Include a link to the design documentation in the [PatternFly Pattern Library](https://www.patternfly.org/v4/documentation/core/components/aboutmodalbox/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
 
 A link to the Storybook (PatternFly 3) and demo documentation (PatternFly 4) will be automatically generated and posted as a comment after the pull request build is complete.
 
@@ -356,6 +356,6 @@ The process for revoking someone's maintainer status is a discussion limited to 
 - Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
 - Do not merge if the build is failing. Wait until tests are green to merge.
 
-[1]: http://contributor-covenant.org/version/1/4/code_of_conduct.md
+[1]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
 [2]: mailto:patternfly@redhat.com
 [3]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
