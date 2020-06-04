@@ -150,7 +150,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0] = this.filterRef.current;
     }
 
-    if (!prevState.openedOnEnter && this.state.openedOnEnter) {
+    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent) {
       this.refCollection[0].focus();
     }
 
@@ -548,10 +548,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             hasClearButton={hasOnClear}
           >
             {customContent && (
-              <div className={css(styles.selectToggleWrapper)}>
-                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-              </div>
+              <React.Fragment>
+                <div className={css(styles.selectToggleWrapper)}>
+                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                  <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+                </div>
+              </React.Fragment>
             )}
             {variant === SelectVariant.single && !customContent && (
               <React.Fragment>
