@@ -368,7 +368,6 @@ class InteractiveLegendChart extends React.Component {
             ariaTitle="Area chart example"
             containerComponent={
               <ChartVoronoiContainer
-                allowTooltip={!allHidden}
                 labels={!allHidden ? tootlip : undefined} 
                 constrainToVisibleArea 
               />

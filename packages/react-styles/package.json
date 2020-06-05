@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
@@ -19,7 +19,7 @@
     "clean": "rimraf dist css"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "4.10.29",
+    "@patternfly/patternfly": "4.10.30",
     "camel-case": "^3.0.0",
     "css": "^2.2.3",
     "fbjs-scripts": "^0.8.3",
