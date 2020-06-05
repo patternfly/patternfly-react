@@ -548,12 +548,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             hasClearButton={hasOnClear}
           >
             {customContent && (
-              <React.Fragment>
-                <div className={css(styles.selectToggleWrapper)}>
-                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                </div>
-              </React.Fragment>
+              <div className={css(styles.selectToggleWrapper)}>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+              </div>
             )}
             {variant === SelectVariant.single && !customContent && (
               <React.Fragment>
