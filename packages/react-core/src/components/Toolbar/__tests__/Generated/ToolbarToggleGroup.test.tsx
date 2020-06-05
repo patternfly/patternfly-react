@@ -8,6 +8,6 @@ import { ToolbarToggleGroup } from '../../ToolbarToggleGroup';
 import {} from '../..';
 
 it('ToolbarToggleGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(<ToolbarToggleGroup toggleIcon={<div>ReactNode</div>} />);
+  const view = shallow(<ToolbarToggleGroup breakpoint="xl" toggleIcon={<div>ReactNode</div>} />);
   expect(view).toMatchSnapshot();
 });

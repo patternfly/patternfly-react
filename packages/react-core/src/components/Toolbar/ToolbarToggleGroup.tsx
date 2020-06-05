@@ -7,11 +7,13 @@ import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 
-import { formatBreakpointMods, toCamel } from '../../helpers/util';
+import { formatBreakpointMods, toCamel, capitalize } from '../../helpers/util';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
+  /** Controls when filters are shown and when the toggle button is hidden. */
+  breakpoint: 'md' | 'lg' | 'xl' | '2xl';
   /** Visibility at various breakpoints. */
   visiblity?: {
     default?: 'hidden' | 'visible';
@@ -19,14 +21,6 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     lg?: 'hidden' | 'visible';
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
-  };
-  /** Controls when filters are shown and when the toggle button is hidden. */
-  show?: {
-    default?: 'show';
-    md?: 'show';
-    lg?: 'show';
-    xl?: 'show';
-    '2xl'?: 'show';
   };
   /** Alignment at various breakpoints. */
   alignment?: {
@@ -66,7 +60,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
       toggleIcon,
       variant,
       visiblity,
-      show,
+      breakpoint,
       alignment,
       spacer,
       spaceItems,
@@ -74,6 +68,11 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
       children,
       ...props
     } = this.props;
+
+    if (!breakpoint && !toggleIcon) {
+      // eslint-disable-next-line no-console
+      console.error('ToolbarToggleGroup will not be visible without a breakpoint or toggleIcon.');
+    }
 
     return (
       <ToolbarContext.Consumer>
@@ -92,13 +91,20 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                 <div
                   className={css(
                     styles.toolbarGroup,
+                    styles.modifiers.toggleGroup,
                     variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+                    breakpoint &&
+                      styles.modifiers[
+                        `showOn${capitalize(breakpoint.replace('2xl', '_2xl'))}` as
+                          | 'showOnMd'
+                          | 'showOnLg'
+                          | 'showOnXl'
+                          | 'showOn_2xl'
+                      ],
                     formatBreakpointMods(visiblity, styles),
-                    formatBreakpointMods(show, styles),
                     formatBreakpointMods(alignment, styles),
                     formatBreakpointMods(spacer, styles),
                     formatBreakpointMods(spaceItems, styles),
-                    styles.modifiers.toggleGroup,
                     className
                   )}
                   {...props}

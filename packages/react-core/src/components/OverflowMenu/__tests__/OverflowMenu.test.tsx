@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, mount } from 'enzyme';
+import { render, shallow, mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenu } from '../OverflowMenu';
 
@@ -27,5 +27,16 @@ describe('OverflowMenu', () => {
       </OverflowMenu>
     );
     expect(view).toMatchSnapshot();
+  });
+
+  test('should warn on bad props', () => {
+    const myMock = jest.fn() as any;
+    global.console = { error: myMock } as any;
+    shallow(
+      <OverflowMenu breakpoint={undefined as "md"}>
+        <div>BASIC</div>
+      </OverflowMenu>
+    );
+    expect(myMock).toBeCalled();
   });
 });
