@@ -8,12 +8,12 @@ const visibilityModifiers = [
   'hiddenOnMd',
   'hiddenOnLg',
   'hiddenOnXl',
-  'hiddenOn_2xl',
+  'hiddenOn2xl',
   'visibleOnSm',
   'visibleOnMd',
   'visibleOnLg',
   'visibleOnXl',
-  'visibleOn_2xl'
+  'visibleOn2xl'
 ] as (keyof typeof styles.modifiers)[];
 
 interface Visibility {
@@ -34,7 +34,7 @@ export const Visibility = visibilityModifiers
   .filter(key => styles.modifiers[key])
   .reduce(
     (acc, curr) => {
-      const key2 = curr.replace('_2xl', '2Xl') as keyof typeof Visibility;
+      const key2 = curr.replace('2xl', '2Xl') as keyof typeof Visibility;
       acc[key2] = styles.modifiers[curr];
       return acc;
     },

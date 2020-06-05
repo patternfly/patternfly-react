@@ -61,7 +61,6 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                       className=""
                     >
                       <ToolbarGroupWithRef
-                        breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
@@ -139,7 +138,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                 id="pf-topology-view-1"
               >
                 <ToolbarContent
-                  breakpointMods={Array []}
                   isExpanded={false}
                   showClearFiltersButton={false}
                 >
@@ -153,7 +151,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                         className="project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          breakpointMods={Array []}
                           className="project-toolbar"
                           innerRef={null}
                         >
@@ -196,7 +193,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
-                            breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
@@ -209,7 +205,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                   </div>
                 </ToolbarContent>
                 <ToolbarContent
-                  breakpointMods={Array []}
                   isExpanded={false}
                   showClearFiltersButton={false}
                 >
@@ -223,7 +218,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                         className="view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          breakpointMods={Array []}
                           className="view-toolbar"
                           innerRef={null}
                         >
@@ -266,7 +260,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
-                            breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
@@ -310,7 +303,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                       className=""
                     >
                       <ToolbarGroupWithRef
-                        breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
@@ -405,7 +397,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                 id="pf-topology-view-2"
               >
                 <ToolbarContent
-                  breakpointMods={Array []}
                   isExpanded={false}
                   showClearFiltersButton={false}
                 >
@@ -419,7 +410,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                         className="project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          breakpointMods={Array []}
                           className="project-toolbar"
                           innerRef={null}
                         >
@@ -462,7 +452,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
-                            breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
@@ -475,7 +464,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                   </div>
                 </ToolbarContent>
                 <ToolbarContent
-                  breakpointMods={Array []}
                   isExpanded={false}
                   showClearFiltersButton={false}
                 >
@@ -489,7 +477,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                         className="view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          breakpointMods={Array []}
                           className="view-toolbar"
                           innerRef={null}
                         >
@@ -532,7 +519,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
-                            breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
@@ -576,7 +562,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       className=""
                     >
                       <ToolbarGroupWithRef
-                        breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >
@@ -674,7 +659,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                 id="pf-topology-view-3"
               >
                 <ToolbarContent
-                  breakpointMods={Array []}
                   isExpanded={false}
                   showClearFiltersButton={false}
                 >
@@ -688,7 +672,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                         className="project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          breakpointMods={Array []}
                           className="project-toolbar"
                           innerRef={null}
                         >
@@ -731,7 +714,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
-                            breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
@@ -744,7 +726,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                   </div>
                 </ToolbarContent>
                 <ToolbarContent
-                  breakpointMods={Array []}
                   isExpanded={false}
                   showClearFiltersButton={false}
                 >
@@ -758,7 +739,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                         className="view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          breakpointMods={Array []}
                           className="view-toolbar"
                           innerRef={null}
                         >
@@ -801,7 +781,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       >
                         <ForwardRef>
                           <ToolbarGroupWithRef
-                            breakpointMods={Array []}
                             innerRef={null}
                           >
                             <div
@@ -845,7 +824,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       className=""
                     >
                       <ToolbarGroupWithRef
-                        breakpointMods={Array []}
                         className=""
                         innerRef={null}
                       >

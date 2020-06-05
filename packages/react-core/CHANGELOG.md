@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.2...@patternfly/react-core@4.18.3) (2020-06-05)
+
+
+### Bug Fixes
+
+* **ToolbarToggleGroup:** revert show to breakpoint ([#4343](https://github.com/patternfly/patternfly-react/issues/4343)) ([8c50170](https://github.com/patternfly/patternfly-react/commit/8c501709770b5e28e85f7db0bb64c3607d260c55))
+
+
+
+
+
+## [4.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.1...@patternfly/react-core@4.18.2) (2020-06-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.18.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.0...@patternfly/react-core@4.18.1) (2020-06-01)
+
+
+### Bug Fixes
+
+* **breakpoints:** make API consistent and appear in docs ([#4310](https://github.com/patternfly/patternfly-react/issues/4310)) ([ac1afa6](https://github.com/patternfly/patternfly-react/commit/ac1afa60067346c658fcb160534d9ddaf7dafbc6))
+
+
+
+
+
+# [4.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.3...@patternfly/react-core@4.18.0) (2020-05-28)
+
+
+### Features
+
+* **Form:** remove semicolons from docs ([#4296](https://github.com/patternfly/patternfly-react/issues/4296)) ([c666474](https://github.com/patternfly/patternfly-react/commit/c666474bad1741fbd30c3ceccaa3eafc5187bd72))
+
+
+
+
+
+## [4.17.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.2...@patternfly/react-core@4.17.3) (2020-05-27)
+
+
+### Bug Fixes
+
+* **loginpage:** basic example logo ([#4294](https://github.com/patternfly/patternfly-react/issues/4294)) ([e140178](https://github.com/patternfly/patternfly-react/commit/e140178f2378710c91e7667e9158b0b0f5c974ec))
+
+
+
+
+
 ## [4.17.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.1...@patternfly/react-core@4.17.2) (2020-05-26)
 
 

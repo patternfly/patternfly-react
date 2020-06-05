@@ -2,12 +2,18 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css } from '@patternfly/react-styles';
 import { OverflowMenuContext } from './OverflowMenuContext';
-/* eslint-disable camelcase */
-import global_breakpoint_md from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
-import global_breakpoint_lg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
-import global_breakpoint_xl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
-/* eslint-enable camelcase */
+import mdBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
+import lgBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
+import xlBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
+import xl2Breakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
 import { debounce } from '../../helpers/util';
+
+const breakpoints = {
+  md: mdBreakpoint,
+  lg: lgBreakpoint,
+  xl: xlBreakpoint,
+  '2xl': xl2Breakpoint
+};
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -15,7 +21,7 @@ export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the OverflowMenu. */
   className?: string;
   /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
-  breakpoint: 'md' | 'lg' | 'xl';
+  breakpoint: 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
@@ -40,23 +46,21 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   }
 
   handleResize = () => {
-    const breakpoints: { [index: string]: { value: string } } = {
-      /* eslint-disable camelcase */
-      md: global_breakpoint_md,
-      lg: global_breakpoint_lg,
-      xl: global_breakpoint_xl
-      /* eslint-enable camelcase */
-    };
-    const { breakpoint } = this.props;
-    let breakpointWidth: string | number = breakpoints[breakpoint].value;
-    breakpointWidth = Number(breakpointWidth.split('px')[0]);
+    const breakpointPx = breakpoints[this.props.breakpoint];
+    if (!breakpointPx) {
+      // eslint-disable-next-line no-console
+      console.error('OverflowMenu will not be visible without a valid breakpoint.');
+      return;
+    }
+    const breakpointWidth = Number(breakpointPx.value.replace('px', ''));
     const isBelowBreakpoint = window.innerWidth < breakpointWidth;
-    this.state.isBelowBreakpoint !== isBelowBreakpoint && this.setState({ isBelowBreakpoint });
+    this.setState({ isBelowBreakpoint });
   };
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, breakpoint, children, ...props } = this.props;
+
     return (
       <div {...props} className={css(styles.overflowMenu, className)}>
         <OverflowMenuContext.Provider value={{ isBelowBreakpoint: this.state.isBelowBreakpoint }}>

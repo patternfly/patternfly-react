@@ -2,7 +2,7 @@
 
 exports[`PageSection should match snapshot (auto-generated) 1`] = `
 <section
-  className="pf-c-page__main-section pf-m-fill ''"
+  className="pf-c-page__main-section pf-m-no-padding pf-m-fill ''"
 >
   <div>
     ReactNode

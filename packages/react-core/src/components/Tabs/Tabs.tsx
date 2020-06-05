@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import { getUniqueId, isElementInView, capitalize } from '../../helpers/util';
+import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helpers/util';
 import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { getOUIAProps, OUIAProps } from '../../helpers';
@@ -13,12 +13,6 @@ import { getOUIAProps, OUIAProps } from '../../helpers';
 export enum TabsComponent {
   div = 'div',
   nav = 'nav'
-}
-export interface TabsBreakpointMod {
-  /** The attribute to modify  */
-  modifier: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset_2xl';
-  /** The breakpoint at which to apply the modifier */
-  breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
@@ -52,10 +46,15 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   mountOnEnter?: boolean;
   /** Unmounts tab children (removes them from the DOM) when they are no longer visible */
   unmountOnExit?: boolean;
-  /* Modifies the tabs component padding/inset to visually match padding of other adjacent components.*/
-  inset?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  /** Array of objects representing the various modifiers to apply to tabs at various breakpoints */
-  breakpointMods?: TabsBreakpointMod[];
+  /** Insets at various breakpoints. */
+  inset?: {
+    default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    sm?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    md?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    lg?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+    '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
+  };
 }
 
 interface TabsState {
@@ -88,8 +87,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     rightScrollAriaLabel: 'Scroll right',
     component: TabsComponent.div,
     mountOnEnter: false,
-    unmountOnExit: false,
-    breakpointMods: [] as TabsBreakpointMod[]
+    unmountOnExit: false
   };
 
   handleTabClick(
@@ -178,16 +176,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     }
   };
 
-  // Format the inset prop string by capitalizing the first letter.  If the string prop is '2xl' append '_' to beginning of the string so we can key the correct modifier.
-  formatInsetString = (s: string) => (s === '2xl' ? '_2xl' : capitalize(s));
-
-  // Format the breakpoints array
-  formatTabBreakpointMods = (breakpointMods: TabsBreakpointMod[]) =>
-    breakpointMods.map(
-      mod =>
-        styles.modifiers[`${mod.modifier}On${this.formatInsetString(mod.breakpoint)}` as keyof typeof styles.modifiers]
-    );
-
   componentDidMount() {
     if (!this.props.isVertical) {
       window.addEventListener('resize', this.handleScrollButtons, false);
@@ -220,7 +208,6 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       mountOnEnter,
       unmountOnExit,
       inset,
-      breakpointMods,
       ...props
     } = this.props;
     const { showScrollButtons, disableLeftScrollButton, disableRightScrollButton, shownKeys } = this.state;
@@ -239,8 +226,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             isVertical && styles.modifiers.vertical,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
-            this.formatTabBreakpointMods(breakpointMods),
-            inset && styles.modifiers[`inset${this.formatInsetString(inset)}` as keyof typeof styles.modifiers],
+            formatBreakpointMods(inset, styles),
             className
           )}
           {...getOUIAProps('Tabs', ouiaId)}

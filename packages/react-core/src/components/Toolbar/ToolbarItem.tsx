@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { ToolbarBreakpointMod } from './ToolbarUtils';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
 
@@ -29,8 +28,30 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'label'
     | 'chip-group'
     | 'separator';
-  /** An array of objects representing the various modifiers to apply to the data toolbar item at various breakpoints */
-  breakpointMods?: ToolbarBreakpointMod[];
+  /** Visibility at various breakpoints. */
+  visiblity?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Alignment at various breakpoints. */
+  alignment?: {
+    default?: 'alignRight' | 'alignLeft';
+    md?: 'alignRight' | 'alignLeft';
+    lg?: 'alignRight' | 'alignLeft';
+    xl?: 'alignRight' | 'alignLeft';
+    '2xl'?: 'alignRight' | 'alignLeft';
+  };
+  /** Spacers at various breakpoints. */
+  spacer?: {
+    default?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    md?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    lg?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    xl?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+    '2xl'?: 'spacerNone' | 'spacerSm' | 'spacerMd' | 'spacerLg';
+  };
   /** id for this data toolbar item */
   id?: string;
   /** Content to be rendered inside the data toolbar item */
@@ -40,7 +61,9 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
-  breakpointMods = [] as ToolbarBreakpointMod[],
+  visiblity,
+  alignment,
+  spacer,
   id,
   children,
   ...props
@@ -57,7 +80,9 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           styles.modifiers[
             toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
           ],
-        formatBreakpointMods(breakpointMods, styles),
+        formatBreakpointMods(visiblity, styles),
+        formatBreakpointMods(alignment, styles),
+        formatBreakpointMods(spacer, styles),
         className
       )}
       {...(variant === 'label' && { 'aria-hidden': true })}

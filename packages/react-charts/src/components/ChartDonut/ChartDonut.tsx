@@ -5,13 +5,19 @@ import {
   CategoryPropType,
   ColorScalePropType,
   DataGetterPropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
   Helpers,
+  NumberOrCallback,
+  OriginType,
   PaddingProps,
+  SliceNumberOrCallback,
+  SortOrderPropType,
   StringOrNumberOrCallback,
+  StringOrNumberOrList,
   VictoryStyleInterface
 } from 'victory-core';
-import { VictoryPie, VictorySliceProps } from 'victory-pie';
+import { SliceProps, VictoryPie, VictorySliceLabelPositionType } from 'victory-pie';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
@@ -65,7 +71,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: AnimatePropTypeInterface;
+  animate?: boolean | AnimatePropTypeInterface;
   /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
@@ -129,7 +135,7 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut
    */
-  cornerRadius?: number;
+  cornerRadius?: SliceNumberOrCallback<SliceProps, 'cornerRadius'>;
   /**
    * The data prop specifies the data to be plotted,
    * where data X-value is the slice label (string or number),
@@ -207,7 +213,7 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * ChartDonut uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -235,7 +241,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
    */
-  innerRadius?: number | ((props: VictorySliceProps) => number);
+  innerRadius?: NumberOrCallback;
   /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
@@ -252,12 +258,12 @@ export interface ChartDonutProps extends ChartPieProps {
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * When this prop is not given, the label will be positioned at the centroid of each slice.
    */
-  labelPosition?: 'startAngle' | 'centroid' | 'endAngle' | ((props: VictorySliceProps) => string);
+  labelPosition?: VictorySliceLabelPositionType | ((props: SliceProps) => VictorySliceLabelPositionType);
   /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    */
-  labelRadius?: number | ((props: VictorySliceProps) => number);
+  labelRadius?: number | ((props: SliceProps) => number);
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -267,7 +273,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string | null);
+  labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.
@@ -319,14 +325,15 @@ export interface ChartDonutProps extends ChartPieProps {
   name?: string;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
    * **This prop should not be set manually.**
    */
-  origin?: { x: number; y: number };
+  origin?: OriginType;
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
    */
-  padAngle?: number;
+  padAngle?: NumberOrCallback;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -338,21 +345,23 @@ export interface ChartDonutProps extends ChartPieProps {
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
    */
-  radius?: number | ((props: VictorySliceProps) => number);
+  radius?: NumberOrCallback;
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
    */
-  sortKey?: string | string[] | Function;
+  sortKey?: DataGetterPropType;
   /**
-   * The sortOrder prop specifies whether sorted data should be returned in ascending or descending order.
+   * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
    */
-  sortOrder?: 'ascending' | 'descending';
+  sortOrder?: SortOrderPropType;
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
@@ -495,6 +504,17 @@ export interface ChartDonutProps extends ChartPieProps {
   y?: DataGetterPropType;
 }
 
+interface ChartDonutSubTitleInterface {
+  dy?: number;
+  textComponent?: React.ReactElement<any>;
+}
+
+interface ChartDonutTitleInterface {
+  dy?: number;
+  styles?: any;
+  titles?: string | string[];
+}
+
 export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   allowTooltip = true,
   ariaDesc,
@@ -509,7 +529,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   standalone = true,
   subTitle,
   subTitleComponent,
-  subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutSubTitlePosition,
+  subTitlePosition = ChartDonutStyles.label.subTitlePosition,
   themeColor,
   themeVariant,
   title,
@@ -546,10 +566,10 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       });
     }
     return (
-      <>
+      <React.Fragment key="pf-chart-donut-titles">
         {getTitle({ titles: title, dy: centerSubTitle ? -8 : 0 })}
         {getSubTitle({ textComponent: subTitleComponent, dy: centerSubTitle ? 15 : 0 })}
-      </>
+      </React.Fragment>
     );
   };
 

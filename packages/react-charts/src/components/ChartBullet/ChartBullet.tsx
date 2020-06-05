@@ -198,7 +198,7 @@ export interface ChartBulletProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string | null);
+  labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.

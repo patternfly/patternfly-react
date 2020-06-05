@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.3.3...@patternfly/react-icons@4.3.4) (2020-06-05)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [4.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.3.2...@patternfly/react-icons@4.3.3) (2020-06-03)
+
+
+### Bug Fixes
+
+* **icons:** use star import ([#4325](https://github.com/patternfly/patternfly-react/issues/4325)) ([0ab2fc6](https://github.com/patternfly/patternfly-react/commit/0ab2fc6cb81bfd7805ac527d1654d0bf65395323))
+
+
+
+
+
+## [4.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.3.1...@patternfly/react-icons@4.3.2) (2020-06-01)
+
+
+### Bug Fixes
+
+* **breakpoints:** make API consistent and appear in docs ([#4310](https://github.com/patternfly/patternfly-react/issues/4310)) ([ac1afa6](https://github.com/patternfly/patternfly-react/commit/ac1afa60067346c658fcb160534d9ddaf7dafbc6))
+
+
+
+
+
 ## [4.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.3.0...@patternfly/react-icons@4.3.1) (2020-05-21)
 
 **Note:** Version bump only for package @patternfly/react-icons

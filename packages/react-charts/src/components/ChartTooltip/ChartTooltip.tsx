@@ -4,10 +4,12 @@ import {
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
+  TextAnchorType,
   VictoryNumberCallback,
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
+import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -41,7 +43,10 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * function that returns a numeric value. When this prop is set, non-zero pointerLength values will no longer be
    * respected.
    */
-  centerOffset?: { x: number | Function; y: number | Function };
+  centerOffset?: {
+    x?: NumberOrCallback;
+    y?: NumberOrCallback;
+  };
   /**
    * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
    * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
@@ -66,18 +71,18 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * The dx prop defines a horizontal shift from the x coordinate.
    */
-  dx?: StringOrNumberOrCallback;
+  dx?: NumberOrCallback;
   /**
    * The dy prop defines a vertical shift from the y coordinate.
    */
-  dy?: StringOrNumberOrCallback;
+  dy?: NumberOrCallback;
   /**
    * The events prop attaches arbitrary event handlers to the label component. This prop should be given as an object of
    * event names and corresponding event handlers. When events are provided via Victory’s event system, event handlers
    * will be called with the event, the props of the component is attached to, and an eventKey.
    * Examples: events={{onClick: (evt) => alert("x: " + evt.clientX)}}
    */
-  events?: {};
+  events?: { [key: string]: (event: React.SyntheticEvent<any>) => void };
   /**
    * The flyoutComponent prop takes a component instance which will be used to create the flyout path for each tooltip.
    * The new element created from the passed flyoutComponent will be supplied with the following properties: x, y, dx, dy,
@@ -111,6 +116,14 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
+   * This prop refers to the height of the svg that VictoryLabel is rendered within. This prop is passed from parents
+   * of VictoryLabel, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
+   * tooltip flyout. Please use flyoutHeight instead
+   *
+   * **This prop should not be set manually.**
+   */
+  height?: number;
+  /**
    * The horizontal prop determines whether to plot the flyouts to the left / right of the (x, y) coordinate rather than top / bottom.
    * This is useful when an orientation prop is not provided, and data will determine the default orientation. i.e.
    * negative values result in a left orientation and positive values will result in a right orientation by default.
@@ -130,6 +143,11 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   labelComponent?: React.ReactElement<any>;
   /**
+   * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
+   * values are 'start', 'middle', 'end', and 'inherit'.
+   */
+  labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
+  /**
    * The orientation prop determines which side of the (x, y) coordinate the tooltip should be rendered on.
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
@@ -144,9 +162,9 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * This prop determines which side of the tooltip flyout the pointer should originate on. When this prop is not set,
    * it will be determined based on the overall orientation of the flyout in relation to its data point, and any center
-   * or centerOffset values.
+   * or centerOffset values. Valid values are 'top', 'bottom', 'left' and 'right.
    */
-  pointerOrientation?: 'top' | 'bottom' | 'left' | 'right' | Function;
+  pointerOrientation?: OrientationTypes | ((...args: any[]) => OrientationTypes);
   /**
    * The pointerWidth prop determines the width of the base of the triangular pointer extending from
    * the flyout. This prop may be given as a positive number or a function of datum.
@@ -160,7 +178,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties;
+  style?: React.CSSProperties | React.CSSProperties[];
   /**
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
@@ -200,13 +218,29 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
 
 export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   constrainToVisibleArea = false,
+  labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
+  labelTextAnchor,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartTooltipProps) => <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />;
+}: ChartTooltipProps) => {
+  const chartLabelComponent = React.cloneElement(labelComponent, {
+    textAnchor: labelTextAnchor,
+    ...labelComponent.props
+  });
+
+  return (
+    <VictoryTooltip
+      constrainToVisibleArea={constrainToVisibleArea}
+      labelComponent={chartLabelComponent}
+      theme={theme}
+      {...rest}
+    />
+  );
+};
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

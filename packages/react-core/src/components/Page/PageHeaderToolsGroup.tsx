@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { PageHeaderToolsBreakpointMod } from './PageHeaderTools';
 import { formatBreakpointMods } from '../../helpers/util';
 
 export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElement> {
@@ -9,24 +8,24 @@ export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElemen
   children: React.ReactNode;
   /** Additional classes added to the page header tools group. */
   className?: string;
-  /** An array of breakpoint modifiers to control visibility, e.g. breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} */
-  breakpointMods?: PageHeaderToolsBreakpointMod[];
+  /** Visibility at various breakpoints. */
+  visibility?: {
+    default: 'hidden' | 'visible';
+    sm: 'hidden' | 'visible';
+    md: 'hidden' | 'visible';
+    lg: 'hidden' | 'visible';
+    xl: 'hidden' | 'visible';
+    '2xl': 'hidden' | 'visible';
+  };
 }
 
 export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupProps> = ({
   children,
   className,
-  breakpointMods,
+  visibility,
   ...props
 }: PageHeaderToolsGroupProps) => (
-  <div
-    className={css(
-      styles.pageHeaderToolsGroup,
-      breakpointMods && formatBreakpointMods(breakpointMods, styles),
-      className
-    )}
-    {...props}
-  >
+  <div className={css(styles.pageHeaderToolsGroup, formatBreakpointMods(visibility, styles), className)} {...props}>
     {children}
   </div>
 );

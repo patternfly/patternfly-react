@@ -19,8 +19,6 @@ typescript: true
 
 import {
 Button,
-DataListActionModifiers,
-DataListActionBreakpoints,
 DataList,
 DataListItem,
 DataListItemCells,
@@ -28,7 +26,6 @@ DataListItemRow,
 DataListCell,
 DataListCheck,
 DataListAction,
-DataListActionVisibility,
 DataListToggle,
 DataListContent,
 Dropdown,
@@ -147,7 +144,6 @@ import {
   Button,
   DataList,
   DataListActionModifiers,
-  DataListActionBreakpoints,
   DataListItem,
   DataListItemCells,
   DataListItemRow,
@@ -261,12 +257,7 @@ class CheckboxActionDataList extends React.Component {
               ]}
             />
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: DataListActionModifiers.hidden,
-                  breakpoint: DataListActionBreakpoints.lg
-                }
-              ]}
+              visibility={{ lg: 'hidden' }}
               aria-labelledby="check-action-item2 check-action-action2"
               id="check-action-action2"
               aria-label="Actions"
@@ -288,14 +279,7 @@ class CheckboxActionDataList extends React.Component {
               />
             </DataListAction>
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: DataListActionModifiers.visible,
-                  breakpoint: DataListActionBreakpoints.lg
-                }, {
-                  modifier: DataListActionModifiers.hidden,
-                }
-              ]}
+              visibility={{ default: 'hidden', lg: 'visible' }}
               aria-labelledby="check-action-item2 check-action-action2"
               id="check-action-action2"
               aria-label="Actions"
@@ -320,12 +304,7 @@ class CheckboxActionDataList extends React.Component {
               ]}
             />
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: DataListActionModifiers.hidden,
-                  breakpoint: DataListActionBreakpoints.xl
-                }
-              ]}
+              visibility={{ xl: 'hidden' }}
               aria-labelledby="check-action-item3 check-action-action3"
               id="check-action-action3"
               aria-label="Actions"
@@ -353,14 +332,7 @@ class CheckboxActionDataList extends React.Component {
               />
             </DataListAction>
             <DataListAction
-              breakpointMods={[
-                {
-                  modifier: DataListActionModifiers.visible,
-                  breakpoint: DataListActionBreakpoints.xl
-                }, {
-                  modifier: DataListActionModifiers.hidden,
-                }
-              ]}
+              visibility={{ default: 'hidden', xl: 'visible' }}
               aria-labelledby="check-action-item3 check-action-action3"
               id="check-action-action3"
               aria-label="Actions"

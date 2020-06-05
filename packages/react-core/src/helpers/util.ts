@@ -1,11 +1,5 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
-import { ToolbarBreakpointMod } from '../components/Toolbar/ToolbarUtils';
-import { FlexBreakpointMod, FlexItemBreakpointMod } from '../layouts/Flex/FlexUtils';
-import { DataListActionBreakpointMod } from '../components/DataList/DataListActionBreakpoints';
-import { PageSectionBreakpointMod } from '../components/Page/PageSection';
-import { PageHeaderToolsBreakpointMod } from '../components/Page/PageHeaderTools';
-import { DrawerBreakpointMod } from '../components/Drawer';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -238,26 +232,27 @@ export function pluralize(i: number, singular: string, plural?: string) {
   return `${i || 0} ${i === 1 ? singular : plural}`;
 }
 
-/** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
+/**
+ * This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
- * @param {(DrawerBreakpointMod | ToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod | PageSectionBreakpointMod | DataListActionBreakpointMod | PageHeaderToolsBreakpointMod)[]} breakpointMods The modifiers object
+ * @param {object} mods The modifiers object
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
-  breakpointMods: (
-    | DrawerBreakpointMod
-    | ToolbarBreakpointMod
-    | FlexBreakpointMod
-    | FlexItemBreakpointMod
-    | PageSectionBreakpointMod
-    | DataListActionBreakpointMod
-    | PageHeaderToolsBreakpointMod)[],
+  mods: {
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  },
   styles: any
 ) =>
-  breakpointMods
-    .map(mod => `${mod.modifier}${mod.breakpoint ? `-on-${mod.breakpoint}` : ''}`)
+  Object.entries(mods || {})
+    .map(([breakpoint, mod]) => `${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
     .map(toCamel)
-    .map(mod => mod.replace(/-(\dxl)$/gi, (_res, group) => `_${group}`))
+    .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])
     .filter(Boolean)
     .join(' ');

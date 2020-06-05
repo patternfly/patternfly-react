@@ -1,7 +1,13 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { defaults } from 'lodash';
-import { StringOrNumberOrCallback, TextAnchorType, VerticalAnchorType } from 'victory-core';
+import {
+  LabelOrientationType,
+  OriginType,
+  StringOrNumberOrCallback,
+  TextAnchorType,
+  VerticalAnchorType
+} from 'victory-core';
 import { VictoryLabel, VictoryLabelProps } from 'victory-core';
 import { ChartCommonStyles } from '../ChartTheme';
 
@@ -85,13 +91,18 @@ export interface ChartLabelProps extends VictoryLabelProps {
    */
   index?: string | number;
   /**
+   * When the text property contains an array of strings, the inline property lets the <tspan /> elements lay out next
+   * to each other. If this property is not specified, the <tspan /> elements will stack vertically instead.
+   */
+  inline?: boolean;
+  /**
    * The labelPlacement prop is used to specify the placement of labels relative to the data point they represent.
    * This prop may be given as “vertical”, “parallel” or “perpendicular”. This props is particularly useful in polar
    * charts, where it may be desireable to position a label either parallel or perpendicular to its corresponding angle.
    * When this prop is not set, perpendicular label placement will be used for polar charts, and vertical label
    * placement will be used for cartesian charts.
    */
-  labelPlacement?: 'parallel' | 'perpendicular' | 'vertical';
+  labelPlacement?: LabelOrientationType;
   /**
    * The lineHeight prop defines how much space a single line of text should take up.
    * Note that SVG has no notion of line-height, so the positioning may differ slightly from what you would expect with CSS,
@@ -102,11 +113,13 @@ export interface ChartLabelProps extends VictoryLabelProps {
   lineHeight?: StringOrNumberOrCallback;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
    * **This prop should not be set manually.**
    */
-  origin?: { x: number; y: number };
+  origin?: OriginType;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+   *
    * **This prop should not be set manually.**
    */
   polar?: boolean;
@@ -144,6 +157,13 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y` coordinates
    */
   verticalAnchor?: VerticalAnchorType | (() => VerticalAnchorType);
+  /**
+   * This props refers to the width of the svg that VictoryLabel is rendered within. This prop is passed from parents
+   * of VictoryLabel.
+   *
+   * **This prop should not be set manually.**
+   */
+  width?: number;
   /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */

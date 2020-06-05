@@ -2,7 +2,7 @@
 title: 'Tabs'
 section: components
 cssPrefix: 'pf-c-tabs'
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', TabTitleIcon ]
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
 typescript: true
 ---
 import { Tabs, Tab, TabsComponent, TabContent, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
@@ -251,11 +251,12 @@ class InsetTabs extends React.Component {
     const {activeTabKey, isBox} = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} inset='none' breakpointMods={[
-          { breakpoint: 'md', modifier: 'insetSm' },
-          { breakpoint: '2xl', modifier: 'insetLg' },
-          { breakpoint: 'xl', modifier: 'inset_2xl' }
-        ]} 
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} inset={{
+          default: 'insetNone',
+          md: 'insetSm',
+          xl: 'inset2xl',
+          '2xl': 'insetLg'
+        }}
         isBox={isBox}>
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users

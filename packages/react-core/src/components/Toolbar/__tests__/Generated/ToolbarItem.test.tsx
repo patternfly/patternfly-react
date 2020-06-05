@@ -12,7 +12,6 @@ it('ToolbarItem should match snapshot (auto-generated)', () => {
     <ToolbarItem
       className={'string'}
       variant={'bulk-select'}
-      breakpointMods={[]}
       id={'string'}
       children={<div>ReactNode</div>}
     />

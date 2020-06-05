@@ -7,14 +7,19 @@ import {
   DataGetterPropType,
   DomainPropType,
   DomainPaddingPropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
   InterpolationPropType,
+  OriginType,
   PaddingProps,
+  RangePropType,
   ScalePropType,
+  SortOrderPropType,
   StringOrNumberOrCallback,
+  StringOrNumberOrList,
   VictoryStyleInterface
 } from 'victory-core';
-import { VictoryArea, VictoryAreaProps } from 'victory-area';
+import { VictoryArea, VictoryAreaProps, VictoryAreaTTargetType } from 'victory-area';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -38,7 +43,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: AnimatePropTypeInterface;
+  animate?: boolean | AnimatePropTypeInterface;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -105,7 +110,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
    */
-  eventKey?: StringOrNumberOrCallback;
+  eventKey?: string[] | number[] | StringOrNumberOrCallback;
   /**
    * The event prop take an array of event objects. Event objects are composed of
    * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
@@ -144,11 +149,11 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', string | number>[];
+  events?: EventPropTypeInterface<VictoryAreaTTargetType, string | number>[];
   /**
    * ChartArea uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -191,7 +196,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | number[] | Function;
+  labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -228,9 +233,10 @@ export interface ChartAreaProps extends VictoryAreaProps {
   name?: string;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   *
    * **This prop should not be set manually.**
    */
-  origin?: { x: number; y: number };
+  origin?: OriginType;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -240,7 +246,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
   padding?: PaddingProps;
   /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
-   * **This prop should not be set manually.**
    */
   polar?: boolean;
   /**
@@ -256,7 +261,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
+  range?: RangePropType;
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -277,9 +282,11 @@ export interface ChartAreaProps extends VictoryAreaProps {
         y?: ScalePropType | D3Scale;
       };
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the
@@ -303,11 +310,11 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
    */
-  sortKey?: string | string[] | Function;
+  sortKey?: DataGetterPropType;
   /**
-   * The sortOrder prop specifies whether sorted data should be returned in ascending or descending order.
+   * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
    */
-  sortOrder?: 'ascending' | 'descending';
+  sortOrder?: SortOrderPropType;
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to

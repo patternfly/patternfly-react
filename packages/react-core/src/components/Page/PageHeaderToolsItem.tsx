@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { PageHeaderToolsBreakpointMod } from './PageHeaderTools';
 import { formatBreakpointMods } from '../../helpers/util';
 
 export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -9,8 +8,15 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   children: React.ReactNode;
   /** Additional classes added to the page header tools item. */
   className?: string;
-  /** An array of breakpoint modifiers to control visibility, e.g. breakpointMods={[{ modifier: 'hidden' }, { modifier: 'visible', breakpoint: 'md' }]} */
-  breakpointMods?: PageHeaderToolsBreakpointMod[];
+  /** Visibility at various breakpoints. */
+  visibility?: {
+    default: 'hidden' | 'visible';
+    sm: 'hidden' | 'visible';
+    md: 'hidden' | 'visible';
+    lg: 'hidden' | 'visible';
+    xl: 'hidden' | 'visible';
+    '2xl': 'hidden' | 'visible';
+  };
   /** True to make an icon button appear selected */
   isSelected?: boolean;
 }
@@ -18,14 +24,14 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
 export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
   children,
   className,
-  breakpointMods,
+  visibility,
   isSelected
 }: PageHeaderToolsItemProps) => (
   <div
     className={css(
       styles.pageHeaderToolsItem,
       isSelected && styles.modifiers.selected,
-      breakpointMods && formatBreakpointMods(breakpointMods, styles),
+      formatBreakpointMods(visibility, styles),
       className
     )}
   >

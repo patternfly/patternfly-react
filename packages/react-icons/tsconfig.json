@@ -8,8 +8,7 @@
       "src",
       "src/icons",
       "dist/js/icons"
-    ],
-    "importHelpers": false
+    ]
   },
   "include": [
     "./src/*",

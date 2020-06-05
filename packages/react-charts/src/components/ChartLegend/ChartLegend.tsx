@@ -3,14 +3,21 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   BlockProps,
   ColorScalePropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
   OrientationTypes,
   PaddingProps,
   StringOrNumberOrCallback,
+  StringOrNumberOrList,
   VictoryStyleInterface,
   VictoryStyleObject
 } from 'victory-core';
-import { VictoryLegend, VictoryLegendProps } from 'victory-legend';
+import {
+  VictoryLegend,
+  VictoryLegendProps,
+  VictoryLegendOrientationType,
+  VictoryLegendTTargetType
+} from 'victory-legend';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
@@ -96,6 +103,9 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   data?: {
     name?: string;
+    labels?: {
+      fill?: string;
+    };
     symbol?: {
       fill?: string;
       type?: string;
@@ -121,11 +131,11 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * ChartLegend uses the standard events prop.
    */
-  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<VictoryLegendTTargetType, StringOrNumberOrCallback>[];
   /**
    * ChartLegend uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -174,7 +184,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * orientation is both the default setting and recommended for
    * displaying many series of data.
    */
-  orientation?: 'horizontal' | 'vertical';
+  orientation?: VictoryLegendOrientationType;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -199,9 +209,11 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   rowGutter?: number | Omit<BlockProps, 'left' | 'right'>;
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to

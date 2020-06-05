@@ -1,3 +1,4 @@
+export * from './chart-container';
 export * from './chart-domain';
 export * from './chart-helpers';
 export * from './chart-interactive-legend';
@@ -6,3 +7,4 @@ export * from './chart-legend';
 export * from './chart-origin';
 export * from './chart-padding';
 export * from './chart-theme';
+export * from './chart-tooltip';

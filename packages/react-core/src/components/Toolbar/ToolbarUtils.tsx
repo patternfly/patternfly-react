@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { RefObject } from 'react';
-
 import globalBreakpointMd from '@patternfly/react-tokens/dist/js/global_breakpoint_md';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/js/global_breakpoint_lg';
 import globalBreakpointXl from '@patternfly/react-tokens/dist/js/global_breakpoint_xl';
@@ -39,30 +38,9 @@ export const ToolbarContentContext = React.createContext<ToolbarContentContextPr
   chipContainerRef: null
 });
 
-export interface ToolbarBreakpointMod {
-  /** The attribute to modify  */
-  modifier:
-    | 'hidden'
-    | 'visible'
-    | 'align-right'
-    | 'align-left'
-    | 'spacer-none'
-    | 'spacer-sm'
-    | 'spacer-md'
-    | 'spacer-lg'
-    | 'space-items-none'
-    | 'space-items-sm'
-    | 'space-items-md'
-    | 'space-items-lg';
-  /** The breakpoint at which to apply the modifier */
-  breakpoint?: 'md' | 'lg' | 'xl' | '2xl';
-}
-
-const breakpoints = {
+export const globalBreakpoints = {
   md: parseInt(globalBreakpointMd.value),
   lg: parseInt(globalBreakpointLg.value),
   xl: parseInt(globalBreakpointXl.value),
   '2xl': parseInt(globalBreakpoint2xl.value)
 };
-
-export const globalBreakpoints = (breakpoint: keyof typeof breakpoints) => breakpoints[breakpoint];
