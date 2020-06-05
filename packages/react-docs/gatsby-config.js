@@ -74,6 +74,13 @@ module.exports = {
         path: path.resolve(__dirname, './RELEASE-NOTES.md')
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'react', // This goes in URLs
+        path: path.resolve(__dirname, './UPGRADE-GUIDE.md')
+      }
+    },
     // Source training
     {
       resolve: 'gatsby-source-filesystem',

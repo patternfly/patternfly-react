@@ -3309,10 +3309,10 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@4.10.30":
-  version "4.10.30"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.10.30.tgz#769f28f858406fdd90444383d282d6fbf3a310be"
-  integrity sha512-puLC7nOp0gzzmZYqlzePqAcZQ376c6W1zkf3/YdcZZRlnXhQWGWrtVDE3uavkTxG/TIt70or9cmDliMdOEPbQQ==
+"@patternfly/patternfly@4.10.31":
+  version "4.10.31"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.10.31.tgz#742852b69d90bb2efe304130f7226d2e356306cf"
+  integrity sha512-UxdZ/apWRowXYZ5qPz5LPfXwyB4YGpomrCJPX7c36+Zg8jFpYyVqgVYainL8Yf/GrChtC2LKyoHg7UUTtMtp4A==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
