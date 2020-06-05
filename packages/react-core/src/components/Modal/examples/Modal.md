@@ -540,7 +540,7 @@ class WithDropdown extends React.Component {
             }
             isOpen={isOpen}
             dropdownItems={dropdownItems}
-            menuAppendTo={document.body}
+            menuAppendTo={() => document.body}
           />
         </Modal>
       </React.Fragment>

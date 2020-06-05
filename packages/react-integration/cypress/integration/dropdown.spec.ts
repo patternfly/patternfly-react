@@ -20,8 +20,10 @@ describe('Dropdown Demo Test', () => {
 
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
     cy.get('#dropdown > button').trigger('keydown', { keyCode: 13 });
     cy.get('#dropdown').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Link');
     // When toggle is expanded, enter closes panel
     cy.get('#toggle-id').trigger('keydown', { keyCode: 13 });
@@ -155,10 +157,12 @@ describe('Action Dropdown Demo Test', () => {
 
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
     cy.get('#action-dropdown button')
       .last()
       .trigger('keydown', { keyCode: 13 });
     cy.get('#action-dropdown').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
     cy.get('#action-toggle-id').trigger('keydown', { keyCode: 13 });
@@ -293,10 +297,12 @@ describe('Cog Dropdown Demo Test', () => {
 
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
     cy.get('#cog-dropdown button')
       .last()
       .trigger('keydown', { keyCode: 13 });
     cy.get('#cog-dropdown').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
     cy.get('#cog-toggle-id').trigger('keydown', { keyCode: 13 });

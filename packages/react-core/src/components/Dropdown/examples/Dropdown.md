@@ -1297,7 +1297,7 @@ class MenuOnDocumentBodyDropdown extends React.Component {
           }
           isOpen={isOpen}
           dropdownItems={dropdownItems}
-          menuAppendTo={document.body}
+          menuAppendTo={() => document.body}
         />
       </div>
     );
