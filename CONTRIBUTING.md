@@ -219,7 +219,7 @@ git fetch upstream
 2.  Create a branch:
 
 ```text
-$ git checkout -b my-branch -t upstream/master
+$ git checkout -b my-branch upstream/master
 ```
 
 3. Generate your Component
