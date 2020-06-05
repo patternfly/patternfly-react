@@ -69,6 +69,11 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
       ...props
     } = this.props;
 
+    if (!breakpoint && !toggleIcon) {
+      // eslint-disable-next-line no-console
+      console.error('ToolbarToggleGroup will not be visible without a breakpoint or toggleIcon.');
+    }
+
     return (
       <ToolbarContext.Consumer>
         {({ isExpanded, toggleIsExpanded }) => (
@@ -81,7 +86,6 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                   expandableContentRef.current.classList.remove(styles.modifiers.expanded);
                 }
               }
-              console.log('breakpoint', breakpoint, capitalize(breakpoint))
 
               return (
                 <div
@@ -89,7 +93,14 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                     styles.toolbarGroup,
                     styles.modifiers.toggleGroup,
                     variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                    breakpoint && styles.modifiers[`showOn${capitalize(breakpoint.replace('2xl', '_2xl'))}` as 'showOnMd' | 'showOnLg' | 'showOnXl' | 'showOn_2xl'],
+                    breakpoint &&
+                      styles.modifiers[
+                        `showOn${capitalize(breakpoint.replace('2xl', '_2xl'))}` as
+                          | 'showOnMd'
+                          | 'showOnLg'
+                          | 'showOnXl'
+                          | 'showOn_2xl'
+                      ],
                     formatBreakpointMods(visiblity, styles),
                     formatBreakpointMods(alignment, styles),
                     formatBreakpointMods(spacer, styles),

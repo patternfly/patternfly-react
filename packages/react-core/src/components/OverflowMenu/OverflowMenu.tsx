@@ -8,6 +8,13 @@ import xlBreakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_xl'
 import xl2Breakpoint from '@patternfly/react-tokens/dist/js/global_breakpoint_2xl';
 import { debounce } from '../../helpers/util';
 
+const breakpoints = {
+  md: mdBreakpoint,
+  lg: lgBreakpoint,
+  xl: xlBreakpoint,
+  '2xl': xl2Breakpoint
+};
+
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
@@ -39,22 +46,21 @@ export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMen
   }
 
   handleResize = () => {
-    const breakpoints: { [index: string]: { value: string } } = {
-      md: mdBreakpoint,
-      lg: lgBreakpoint,
-      xl: xlBreakpoint,
-      '2xl': xl2Breakpoint
-    };
-    const { breakpoint } = this.props;
-    let breakpointWidth: string | number = breakpoints[breakpoint].value;
-    breakpointWidth = Number(breakpointWidth.split('px')[0]);
+    const breakpointPx = breakpoints[this.props.breakpoint];
+    if (!breakpointPx) {
+      // eslint-disable-next-line no-console
+      console.error('OverflowMenu will not be visible without a valid breakpoint.');
+      return;
+    }
+    const breakpointWidth = Number(breakpointPx.value.replace('px', ''));
     const isBelowBreakpoint = window.innerWidth < breakpointWidth;
-    this.state.isBelowBreakpoint !== isBelowBreakpoint && this.setState({ isBelowBreakpoint });
+    this.setState({ isBelowBreakpoint });
   };
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { className, breakpoint, children, ...props } = this.props;
+
     return (
       <div {...props} className={css(styles.overflowMenu, className)}>
         <OverflowMenuContext.Provider value={{ isBelowBreakpoint: this.state.isBelowBreakpoint }}>
