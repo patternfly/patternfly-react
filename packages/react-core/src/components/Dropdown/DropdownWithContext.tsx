@@ -56,9 +56,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     this.menuComponentRef = element;
   };
 
-  getMenuComponentRef = () => {
-    return this.menuComponentRef;
-  };
+  getMenuComponentRef = () => this.menuComponentRef;
 
   getPlacement = (position: 'right' | 'left', direction: 'up' | 'down') => {
     const placement = `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
