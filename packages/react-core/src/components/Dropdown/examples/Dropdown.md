@@ -73,7 +73,7 @@ class SimpleDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
-            Inline Dropdown
+            Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
@@ -112,6 +112,11 @@ class IntialSelectionDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id-1');
+      element.focus();
     };
   }
 
@@ -139,13 +144,12 @@ class IntialSelectionDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle id="toggle-id-1" onToggle={this.onToggle}>
-            Parent Dropdown
+            Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
         autoFocus={false}
-        // menuAppendTo="parent"
       />
     );
   }
@@ -206,13 +210,12 @@ class GroupedDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle onToggle={this.onToggle} id="toggle-id-3">
-            document body Dropdown
+            Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
         isGrouped
-        // menuAppendTo={document.body}
       />
     );
   }
@@ -1222,6 +1225,78 @@ class ImageTextDropdown extends React.Component {
         }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
+```
+
+```js title=Append-menu-document-body
+import React from 'react';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownDirection,
+  KebabToggle
+} from '@patternfly/react-core';
+import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
+
+class MenuOnDocumentBodyDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id-menu-document-body');
+      element.focus();
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={
+          <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+            Dropdown
+          </DropdownToggle>
+        }
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+        menuAppendTo={document.body}
       />
     );
   }

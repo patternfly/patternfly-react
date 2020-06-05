@@ -81,6 +81,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       autoFocus,
       ouiaId,
       menuAppendTo,
+      menuTippyProps,
       ouiaComponentType,
       ...props
     } = this.props;
@@ -115,7 +116,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               {renderedContent}
             </DropdownMenu>
           );
-          const popoverContent = isOpen ? (
+          const popoverContent = (
             <div
               className={css(
                 baseClass,
@@ -126,10 +127,8 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               )}
               style={{ position: 'absolute' }}
             >
-              {menuComponent}
+              {isOpen && menuComponent}
             </div>
-          ) : (
-            <></>
           );
           const mainComponent = (
             <BaseComponent
@@ -181,6 +180,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               duration={0}
               animation="none"
               showOnCreate
+              {...menuTippyProps}
             >
               {mainComponent}
             </PopoverBase>

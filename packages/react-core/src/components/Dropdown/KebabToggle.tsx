@@ -19,7 +19,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   /** Element which wraps toggle */
   parentRef?: any;
   /** The menu element */
-  getMenuRef?: () => void;
+  getMenuRef?: any;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */

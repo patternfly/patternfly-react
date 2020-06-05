@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
+import { Props as TippyProps } from 'tippy.js';
 
 export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything which can be rendered in a dropdown */
@@ -33,6 +34,8 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
    * Some examples: menuAppendTo={document.body} menuAppendTo={document.getElementById('___gatsby')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
+  /** additional tippy.js props to pass through to the dropdown menu */
+  menuTippyProps?: Partial<TippyProps>;
   ouiaComponentType?: string;
 }
 

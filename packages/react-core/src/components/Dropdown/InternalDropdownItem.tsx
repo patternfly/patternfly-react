@@ -47,6 +47,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   enterTriggersArrowDown?: boolean;
   /** An image to display within the InternalDropdownItem, appearing before any component children */
   icon?: React.ReactNode;
+  /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
+  autoFocus?: boolean;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -73,7 +75,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   };
 
   componentDidMount() {
-    const { context, index, isDisabled, role, customChild } = this.props;
+    const { context, index, isDisabled, role, customChild, autoFocus } = this.props;
     const customRef = customChild ? this.getInnerNode(this.ref.current) : this.ref.current;
     context.sendRef(
       index,
@@ -81,6 +83,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       isDisabled,
       role === 'separator'
     );
+    autoFocus && setTimeout(() => customRef.focus());
   }
 
   componentDidUpdate() {
@@ -148,6 +151,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       customChild,
       enterTriggersArrowDown,
       icon,
+      autoFocus,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
