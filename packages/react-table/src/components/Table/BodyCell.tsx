@@ -15,6 +15,7 @@ export interface BodyCellProps {
   isOpen?: boolean;
   ariaControls?: string;
   editableValue?: any;
+  options?: React.ReactElement[];
   isSelectOpen?: boolean;
   value?: any;
   isValid?: boolean;
@@ -40,6 +41,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isOpen,
   ariaControls,
   editableValue,
+  options,
   isSelectOpen,
   value,
   name,

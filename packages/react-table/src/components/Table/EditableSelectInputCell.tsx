@@ -14,7 +14,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
    * and arbitrary data to pass to the internal select component in the editable select input cell */
   props: {
     name: string;
-    value: string;
+    value: string | string[];
     isSelectOpen: boolean;
     selected: string | SelectOptionObject | (string | SelectOptionObject)[];
     [key: string]: any;
@@ -59,12 +59,12 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
     newValue: string | SelectOptionObject,
     isPlaceholder: boolean
   ) => {
-    console.log('onSelectHandler props: ', props);
     onSelect(newValue, event, rowIndex, cellIndex, isPlaceholder);
   };
 
   const select = (
     <Select
+      variant="typeaheadmulti"
       onSelect={onSelectHandler}
       aria-label={inputAriaLabel}
       isDisabled={isDisabled}
@@ -78,7 +78,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
 
   return (
     <React.Fragment>
-      <div className={inlineStyles.inlineEditValue}>{value}</div>
+      <div className={inlineStyles.inlineEditValue}>{Array.isArray(value) ? value.join(', ') : value}</div>
       <div className={inlineStyles.inlineEditInput}>
         {select}
         <div className={css(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">

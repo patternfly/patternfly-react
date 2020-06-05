@@ -19,7 +19,25 @@ export const editable: ITransform = (label: IFormatterValueType, { rowIndex, row
             const invalidCells = (rowData.cells as IRowCell[]).filter(cellData => {
               const testValue =
                 cellData.props.editableValue === '' ? '' : cellData.props.editableValue || cellData.props.value;
-              const failedValidation = !rule.validator(testValue);
+
+              let failedValidation = false;
+
+              if (Array.isArray(testValue) && testValue.length) {
+                // multiple values, like multiselect
+                failedValidation = testValue.reduce((hasInvalidSelection: boolean, el: string) => {
+                  // if one value fails validation, the entire cell is invalid
+                  if (hasInvalidSelection === true) {
+                    return true;
+                  }
+                  return !rule.validator(el);
+                }, failedValidation);
+              } else if (Array.isArray(testValue) && !testValue.length) {
+                // case where all values were dismissed in multiselect
+                failedValidation = !rule.validator('');
+              } else {
+                // simple text fields
+                failedValidation = !rule.validator(testValue);
+              }
 
               if (failedValidation) {
                 cellData.props.isValid = false;
