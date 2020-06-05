@@ -10,16 +10,16 @@ import {
   withDragNode,
   withPanZoom,
   GraphComponent,
-  withContextMenu
+  withContextMenu,
+  useModel,
+  useComponentFactory,
+  ComponentFactory
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import DefaultNode from './components/DefaultNode';
+import withTopologySetup from './utils/withTopologySetup';
 
-/**
- * @param label
- * @param i
- */
-function contextMenuItem(label: string, i: number): React.ReactElement {
+const contextMenuItem = (label: string, i: number): React.ReactElement => {
   if (label === '-') {
     return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
   }
@@ -29,14 +29,9 @@ function contextMenuItem(label: string, i: number): React.ReactElement {
       {label}
     </ContextMenuItem>
   );
-}
+};
 
-/**
- * @param labels
- */
-function createContextMenuItems(...labels: string[]): React.ReactElement[] {
-  return labels.map(contextMenuItem);
-}
+const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
 
 const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
@@ -61,34 +56,39 @@ export const ControlledContextMenu = () => {
   );
 };
 
-export const ContextMenuOnNode = () => {
-  const vis = new Visualization();
-  const model: Model = {
-    graph: {
-      id: 'g1',
-      type: 'graph'
-    },
-    nodes: [
-      {
-        id: 'n1',
-        type: 'node',
-        x: 50,
-        y: 50,
-        width: 20,
-        height: 20
+export const ContextMenuOnNode = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(
+    React.useCallback<ComponentFactory>(kind => {
+      if (kind === ModelKind.graph) {
+        return withPanZoom()(GraphComponent);
       }
-    ]
-  };
-  vis.fromModel(model);
-  vis.registerComponentFactory(defaultComponentFactory);
-  vis.registerComponentFactory(kind => {
-    if (kind === ModelKind.graph) {
-      return withPanZoom()(GraphComponent);
-    }
-    if (kind === ModelKind.node) {
-      return withDragNode()(withContextMenu(() => defaultMenu)(DefaultNode));
-    }
-    return undefined;
-  });
-  return <VisualizationSurface visualization={vis} />;
-};
+      if (kind === ModelKind.node) {
+        return withDragNode()(withContextMenu(() => defaultMenu)(DefaultNode));
+      }
+      return undefined;
+    }, [])
+  );
+  useModel(
+    React.useMemo(
+      (): Model => ({
+        graph: {
+          id: 'g1',
+          type: 'graph'
+        },
+        nodes: [
+          {
+            id: 'n1',
+            type: 'node',
+            x: 50,
+            y: 50,
+            width: 20,
+            height: 20
+          }
+        ]
+      }),
+      []
+    )
+  );
+  return null;
+});

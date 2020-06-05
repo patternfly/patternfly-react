@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { reaction } from 'mobx';
 import {
-  Visualization,
-  VisualizationSurface,
   Model,
   ModelKind,
   withPanZoom,
-  GraphComponent
+  GraphComponent,
+  useComponentFactory,
+  useVisualizationController,
+  useModel,
+  ComponentFactory
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
+import withTopologySetup from './utils/withTopologySetup';
 
 const model: Model = {
   graph: {
@@ -44,27 +47,31 @@ const model: Model = {
   ]
 };
 
-export const PanZoom: React.FC = () => {
-  const vis = new Visualization();
-  vis.registerComponentFactory(defaultComponentFactory);
-  vis.registerComponentFactory(kind => {
-    if (kind === ModelKind.graph) {
-      return withPanZoom()(GraphComponent);
-    }
-    return undefined;
-  });
-  vis.fromModel(model);
-  reaction(
-    () => ({
-      x: vis.getGraph().getBounds().x,
-      y: vis.getGraph().getBounds().y,
-      k: vis.getGraph().getScale()
-    }),
-    transform => {
-      // logging to action panel is too laggy therefore log to console
-      // eslint-disable-next-line no-console
-      console.log(`Pan zoom event`, transform);
-    }
+export const PanZoom: React.FC = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(
+    React.useCallback<ComponentFactory>(kind => {
+      if (kind === ModelKind.graph) {
+        return withPanZoom()(GraphComponent);
+      }
+      return undefined;
+    }, [])
   );
-  return <VisualizationSurface visualization={vis} />;
-};
+  const controller = useVisualizationController();
+
+  React.useEffect(() => {
+    reaction(
+      () => ({
+        x: controller.getGraph().getBounds().x,
+        y: controller.getGraph().getBounds().y,
+        k: controller.getGraph().getScale()
+      }),
+      transform => {
+        // eslint-disable-next-line no-console
+        console.log(`Pan zoom event`, transform);
+      }
+    );
+  }, [controller]);
+  useModel(model);
+  return null;
+});
