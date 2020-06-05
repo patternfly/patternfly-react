@@ -6,8 +6,19 @@ typescript: true
 propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalContent']
 ---
 
-import { Modal, ModalVariant, TitleSizes, Button, Title, Wizard } from '@patternfly/react-core';
-import { WarningTriangleIcon } from '@patternfly/react-icons';
+import { 
+  Modal, 
+  ModalVariant, 
+  TitleSizes, 
+  Button, 
+  Title, 
+  Wizard,
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  KebabToggle
+} from '@patternfly/react-core';
+import { WarningTriangleIcon, ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
 ## Examples
 
@@ -436,6 +447,101 @@ class WithWizard extends React.Component {
             onClose={this.handleModalToggle}
             height={400}
         />
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+```js title=With-dropdown
+import React from 'react';
+import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
+
+class WithDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
+      isOpen: false
+    };
+    this.handleModalToggle = () => {
+      this.setState(({ isModalOpen }) => ({
+        isModalOpen: !isModalOpen
+      }));
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id-menu-document-body');
+      element.focus();
+    };
+  }
+
+  render() {
+    const { isModalOpen, isOpen } = this.state;
+
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Modal
+          title="Modal with dropdown"
+          variant={ModalVariant.small}
+          isOpen={isModalOpen}
+          onClose={this.handleModalToggle}
+          actions={[
+            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+              Confirm
+            </Button>,
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
+              Cancel
+            </Button>
+          ]}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+          <Dropdown
+            onSelect={this.onSelect}
+            toggle={
+              <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+                Dropdown
+              </DropdownToggle>
+            }
+            isOpen={isOpen}
+            dropdownItems={dropdownItems}
+            menuAppendTo={document.body}
+          />
         </Modal>
       </React.Fragment>
     );

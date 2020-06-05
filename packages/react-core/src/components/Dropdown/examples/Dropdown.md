@@ -1287,17 +1287,19 @@ class MenuOnDocumentBodyDropdown extends React.Component {
       </DropdownItem>
     ];
     return (
-      <Dropdown
-        onSelect={this.onSelect}
-        toggle={
-          <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
-            Dropdown
-          </DropdownToggle>
-        }
-        isOpen={isOpen}
-        dropdownItems={dropdownItems}
-        menuAppendTo={document.body}
-      />
+      <div style={{ height: '50px', overflow: 'hidden' }}>
+        <Dropdown
+          onSelect={this.onSelect}
+          toggle={
+            <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+              Dropdown
+            </DropdownToggle>
+          }
+          isOpen={isOpen}
+          dropdownItems={dropdownItems}
+          menuAppendTo={document.body}
+        />
+      </div>
     );
   }
 }

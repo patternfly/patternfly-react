@@ -17,6 +17,7 @@ exports[`KebabToggle basic 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -34,6 +35,7 @@ exports[`KebabToggle basic 1`] = `
     >
       <KebabToggle
         aria-haspopup={false}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -86,6 +88,7 @@ exports[`KebabToggle basic 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -185,6 +188,7 @@ exports[`KebabToggle basic 1`] = `
         isOpen={true}
         openedOnEnter={false}
         position="left"
+        setMenuComponentRef={[Function]}
       >
         <div
           className="pf-c-dropdown__menu"
@@ -482,6 +486,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="right"
@@ -499,6 +504,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     >
       <KebabToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -544,6 +550,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -910,6 +917,7 @@ exports[`KebabToggle dropup 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -927,6 +935,7 @@ exports[`KebabToggle dropup 1`] = `
     >
       <KebabToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -972,6 +981,7 @@ exports[`KebabToggle dropup 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -1338,6 +1348,7 @@ exports[`KebabToggle expanded 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -1355,6 +1366,7 @@ exports[`KebabToggle expanded 1`] = `
     >
       <KebabToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -1476,6 +1488,7 @@ exports[`KebabToggle expanded 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -1644,6 +1657,7 @@ exports[`KebabToggle expanded 1`] = `
         isOpen={true}
         openedOnEnter={false}
         position="left"
+        setMenuComponentRef={[Function]}
       >
         <ul
           aria-labelledby="Dropdown Toggle"
@@ -2190,6 +2204,7 @@ exports[`KebabToggle plain 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={true}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -2207,6 +2222,7 @@ exports[`KebabToggle plain 1`] = `
     >
       <KebabToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={true}
@@ -2252,6 +2268,7 @@ exports[`KebabToggle plain 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -2617,6 +2634,7 @@ exports[`KebabToggle regular 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -2634,6 +2652,7 @@ exports[`KebabToggle regular 1`] = `
     >
       <KebabToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -2679,6 +2698,7 @@ exports[`KebabToggle regular 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -3045,6 +3065,7 @@ exports[`KebabToggle right aligned 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="right"
@@ -3062,6 +3083,7 @@ exports[`KebabToggle right aligned 1`] = `
     >
       <KebabToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -3107,6 +3129,7 @@ exports[`KebabToggle right aligned 1`] = `
           aria-label="Actions"
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -3214,6 +3237,7 @@ exports[`dropdown basic 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -3233,6 +3257,7 @@ exports[`dropdown basic 1`] = `
     >
       <DropdownToggle
         aria-haspopup={false}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -3292,6 +3317,7 @@ exports[`dropdown basic 1`] = `
           aria-haspopup={false}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -3407,6 +3433,7 @@ exports[`dropdown basic 1`] = `
         isOpen={true}
         openedOnEnter={false}
         position="left"
+        setMenuComponentRef={[Function]}
       >
         <div
           className="pf-c-dropdown__menu"
@@ -3706,6 +3733,7 @@ exports[`dropdown dropup + right aligned 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="right"
@@ -3725,6 +3753,7 @@ exports[`dropdown dropup + right aligned 1`] = `
     >
       <DropdownToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -3777,6 +3806,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           aria-haspopup={true}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -4161,6 +4191,7 @@ exports[`dropdown dropup 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -4180,6 +4211,7 @@ exports[`dropdown dropup 1`] = `
     >
       <DropdownToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -4232,6 +4264,7 @@ exports[`dropdown dropup 1`] = `
           aria-haspopup={true}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -4616,6 +4649,7 @@ exports[`dropdown expanded 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -4635,6 +4669,7 @@ exports[`dropdown expanded 1`] = `
     >
       <DropdownToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={true}
         isPlain={false}
@@ -4763,6 +4798,7 @@ exports[`dropdown expanded 1`] = `
           aria-haspopup={true}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -4947,6 +4983,7 @@ exports[`dropdown expanded 1`] = `
         isOpen={true}
         openedOnEnter={false}
         position="left"
+        setMenuComponentRef={[Function]}
       >
         <ul
           aria-labelledby="Dropdown Toggle"
@@ -5495,6 +5532,7 @@ exports[`dropdown primary 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -5515,6 +5553,7 @@ exports[`dropdown primary 1`] = `
     >
       <DropdownToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -5568,6 +5607,7 @@ exports[`dropdown primary 1`] = `
           aria-haspopup={true}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -5951,6 +5991,7 @@ exports[`dropdown regular 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="left"
@@ -5970,6 +6011,7 @@ exports[`dropdown regular 1`] = `
     >
       <DropdownToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -6022,6 +6064,7 @@ exports[`dropdown regular 1`] = `
           aria-haspopup={true}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}
@@ -6406,6 +6449,7 @@ exports[`dropdown right aligned 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={false}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="right"
@@ -6425,6 +6469,7 @@ exports[`dropdown right aligned 1`] = `
     >
       <DropdownToggle
         aria-haspopup={true}
+        getMenuRef={[Function]}
         id="Dropdown Toggle"
         isOpen={false}
         isPlain={false}
@@ -6477,6 +6522,7 @@ exports[`dropdown right aligned 1`] = `
           aria-haspopup={true}
           bubbleEvent={false}
           className=""
+          getMenuRef={[Function]}
           id="Dropdown Toggle"
           isActive={false}
           isDisabled={false}

@@ -9,6 +9,7 @@ exports[`state active 1`] = `
   <Toggle
     bubbleEvent={false}
     className=""
+    getMenuRef={null}
     id="Dropdown Toggle"
     isActive={true}
     isDisabled={false}
@@ -77,6 +78,7 @@ exports[`state class changes 1`] = `
   <Toggle
     bubbleEvent={false}
     className=""
+    getMenuRef={null}
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
@@ -147,6 +149,7 @@ exports[`state class changes 2`] = `
   <Toggle
     bubbleEvent={false}
     className=""
+    getMenuRef={null}
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
@@ -217,6 +220,7 @@ exports[`state focus 1`] = `
   <Toggle
     bubbleEvent={false}
     className=""
+    getMenuRef={null}
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}
@@ -287,6 +291,7 @@ exports[`state hover 1`] = `
   <Toggle
     bubbleEvent={false}
     className=""
+    getMenuRef={null}
     id="Dropdown Toggle"
     isActive={false}
     isDisabled={false}

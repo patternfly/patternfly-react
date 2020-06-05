@@ -5,6 +5,7 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
   aria-label="'Actions'"
   bubbleEvent={false}
   className="''"
+  getMenuRef={null}
   id="''"
   isActive={false}
   isDisabled={false}
