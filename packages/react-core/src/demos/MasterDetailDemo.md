@@ -407,7 +407,7 @@ class MasterDetailFullPage extends React.Component {
        </ToolbarGroup>
     </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
@@ -935,7 +935,7 @@ class MasterDetailContentPadding extends React.Component {
       </ToolbarGroup>
     </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
@@ -2447,7 +2447,7 @@ class MasterDetailInlineModifier extends React.Component {
        </ToolbarGroup>
     </React.Fragment>;
 
-    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} show={{ xl: 'show' }}>{toggleGroupItems}</ToolbarToggleGroup>;
+    const ToolbarItems =  <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{toggleGroupItems}</ToolbarToggleGroup>;
     
     const panelContent = (
       <DrawerPanelContent>
