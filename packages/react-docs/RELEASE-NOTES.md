@@ -4,6 +4,22 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.07 release notes (2020-06-05)
+Packages released:
+- [@patternfly/patternfly@4.10.30](https://www.npmjs.com/package/@patternfly/patternfly/v/4.10.30)
+- [@patternfly/react-catalog-view-extension@1.4.66](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.66)
+- [@patternfly/react-charts@5.3.21](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.21)
+- [@patternfly/react-core@3.158.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.158.1)
+- [@patternfly/react-icons@3.15.17](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.17)
+- [@patternfly/react-inline-edit-extension@2.17.66](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.66)
+- [@patternfly/react-styles@3.7.14](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.14)
+- [@patternfly/react-table@2.28.47](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.47)
+- [@patternfly/react-tokens@2.8.14](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.14)
+- [@patternfly/react-topology@2.14.66](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.66)
+- [@patternfly/react-virtualized-extension@1.4.67](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.67)
+
+This is our major release. Checkout our [upgrade guide](/documentation/react/overview/upgrade-guide) for a list of breaking changes!
+
 ## 2020.06 release notes (2020-05-12)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.4.66](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.66)

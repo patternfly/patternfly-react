@@ -94,6 +94,12 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
 - Renamed component to `ExpandableSection` [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
 - Removed props `isFocus` and `isHovered` from ExpandableSection [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
 
+### Flex
+- **Flex:**
+  - Removed `breakpointMods` prop in favor of `spacer`, `spaceItems`, `grow`, `shrink`, `flex`, `direction`, `alignItems`, `alignContent`, `alignSelf`, `align`, `justifyContent`, `display`, `fullWidth` and `flexWrap` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+- **FlexItem:**
+  - Removed `breakpointMods` prop in favor of `spacer`, `grow`, `shrink`, `flex`, `alignSelf`, `align`, and `fullWidth` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+
 ### Form select
 - Removed boolean `isValid` prop in favor of `validated?: 'default' | 'success' | 'error' | ValidatedOptions;`. Update your boolean logic to use the new 'default' or 'error' options instead. [(#3975)](https://github.com/patternfly/patternfly-react/pull/3975)
 
@@ -147,6 +153,7 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
   - Made mainContainerId a required property for skip to content component [(#3904)](https://github.com/patternfly/patternfly-react/pull/3904)
   - Changed default theme to dark. Use `theme="light"` if you wish to use the light variant. [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
   - Renamed `noPadding` to `hasNoPadding`. [(#4133)](https://github.com/patternfly/patternfly-react/pull/4133)
+  - Removed prop `hasNoPadding` in favor of `padding={{ default: 'noPadding' }}` to prevent conflicts when setting both `hasNoPadding` and `padding={{ default: 'padding' | 'noPadding' }}` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
 - **PageSection:**
   - Removed prop `noPaddingMobile` from PageSection in favor of `hasNoPaddingOn={PageSectionBreakpoints[]}` [(#4133)](https://github.com/patternfly/patternfly-react/pull/4133)
   - Added `hasPaddingOn` and `hasNoPaddingOn` properties to PageSection, accounting for page size breakpoints. Breakpoints are defined in the `PageSectionBreakpoints` enum. [(#4133)](https://github.com/patternfly/patternfly-react/pull/4133)
@@ -220,8 +227,13 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
 - Removed invalid values `xs` and `sm` for `size` prop. Use size `md` instead.
 
 ### Toolbar (formerly DataToolbar)
-- The old Toolbar component that is normally used in the PageHeader has been removed in favor of `PageHeaderTools` [(#4223)](https://github.com/patternfly/patternfly-react/pull/4223)
-- Removed separator variant [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
+- **Toolbar:**
+  - The old Toolbar component that is normally used in the PageHeader has been removed in favor of `PageHeaderTools` [(#4223)](https://github.com/patternfly/patternfly-react/pull/4223)
+  - Removed separator variant [(#4116)](https://github.com/patternfly/patternfly-react/pull/4116)
+- **ToolbarItem:**
+  - Removed `breakpointMods` prop in favor of `visiblity`, `alignment`, and `spacer` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
+- **ToolbarToggleGroup:**
+  - Removed `breakpointMods` prop in favor of `visiblity`, `alignment`, `spacer`, and `spaceItems` [(#4310)](https://github.com/patternfly/patternfly-react/pull/4310)
 
 ### Wizard
 - **Wizard**
@@ -242,11 +254,12 @@ This upgrade guide details **what** was broken and **how** to fix it. To learn *
   - Renamed prop `text` to `content`. The type of the prop has been changed to `React.ReactNode` to allow for flexibility. [(#4063)](https://github.com/patternfly/patternfly-react/pull/4063)
 
 ## React charts
-- Updated Victory to package versions to 34.3.8 [(#3974)](https://github.com/patternfly/patternfly-react/pull/3974)
+- Updated Victory to package versions to 34.3.9 [(#3974)](https://github.com/patternfly/patternfly-react/pull/3974)
 - Removed the `@types/victory` dependency and updated the PatternFly charts to use the types introduced with Victory 34.x. [(#4138)](https://github.com/patternfly/patternfly-react/pull/4138)
-- Updated label prop types to sync with Victory 34.3.8 [(#4152)](https://github.com/patternfly/patternfly-react/pull/4152)
+- Updated label prop types to sync with Victory 34.3.9 [(#4152)](https://github.com/patternfly/patternfly-react/pull/4152)
 - Use `containerComponent={<VictoryZoomComponent />}` with Chart instead of `allowZoom`. [(#4278)](https://github.com/patternfly/patternfly-react/pull/4278)
 - Use `containerComponent={<VictoryZoomComponent />}` with ChartGroup instead of `allowZoom`. [(#4278)](https://github.com/patternfly/patternfly-react/pull/4278)
+- The `allowTooltip` prop was removed from `ChartVoronoiContainer` because Victory always provides a default tooltip.
 
 ## React icons
 - Updated types.
