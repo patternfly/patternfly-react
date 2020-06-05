@@ -28,6 +28,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     direction: DropdownDirection.down,
     onSelect: (): void => undefined,
     autoFocus: true,
+    menuAppendTo: 'inline',
     ouiaComponentType: 'Dropdown'
   };
 
@@ -62,7 +63,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
   getPlacement = (position: 'right' | 'left', direction: 'up' | 'down') => {
     const placement = `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
     return placement;
-  }
+  };
 
   render() {
     const {
@@ -79,6 +80,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       toggle,
       autoFocus,
       ouiaId,
+      menuAppendTo,
       ouiaComponentType,
       ...props
     } = this.props;
@@ -99,7 +101,21 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       <DropdownContext.Consumer>
         {({ baseClass, baseComponent, id: contextId }) => {
           const BaseComponent = baseComponent as any;
-          const content = isOpen ? (
+          const menuComponent = (
+            <DropdownMenu
+              setMenuComponentRef={this.setMenuComponentRef}
+              component={component}
+              isOpen={isOpen}
+              position={position}
+              aria-labelledby={contextId ? `${contextId}-toggle` : id}
+              openedOnEnter={openedOnEnter}
+              isGrouped={isGrouped}
+              autoFocus={openedOnEnter && autoFocus}
+            >
+              {renderedContent}
+            </DropdownMenu>
+          );
+          const popoverContent = isOpen ? (
             <div
               className={css(
                 baseClass,
@@ -110,25 +126,43 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               )}
               style={{ position: 'absolute' }}
             >
-              <DropdownMenu
-                setMenuComponentRef={this.setMenuComponentRef}
-                component={component}
-                isOpen={true}
-                position={position}
-                aria-labelledby={contextId ? `${contextId}-toggle` : id}
-                openedOnEnter={openedOnEnter}
-                isGrouped={isGrouped}
-                autoFocus={openedOnEnter && autoFocus}
-              >
-                {renderedContent}
-              </DropdownMenu>
+              {menuComponent}
             </div>
           ) : (
             <></>
           );
-          return (
+          const mainComponent = (
+            <BaseComponent
+              {...props}
+              className={css(
+                baseClass,
+                direction === DropdownDirection.up && styles.modifiers.top,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                isOpen && styles.modifiers.expanded,
+                className
+              )}
+              ref={this.baseComponentRef}
+              {...getOUIAProps(ouiaComponentType, ouiaId)}
+            >
+              {React.Children.map(toggle, oneToggle =>
+                React.cloneElement(oneToggle, {
+                  parentRef: this.baseComponentRef,
+                  getMenuRef: this.getMenuComponentRef,
+                  isOpen,
+                  id,
+                  isPlain,
+                  'aria-haspopup': ariaHasPopup,
+                  onEnter: () => this.onEnter()
+                })
+              )}
+              {menuAppendTo === 'inline' && isOpen && menuComponent}
+            </BaseComponent>
+          );
+          return menuAppendTo === 'inline' ? (
+            mainComponent
+          ) : (
             <PopoverBase
-              content={content}
+              content={popoverContent}
               onCreate={(tip: TippyInstance) => (this.tip = tip)}
               isVisible={isOpen}
               trigger={'manual'}
@@ -137,41 +171,18 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               interactiveBorder={0}
               maxWidth="none"
               distance={0}
-              appendTo={() => document.body}
+              appendTo={menuAppendTo}
               boundary="window"
               flip={false}
               placement={this.getPlacement(position, direction)}
               hideOnClick={false}
               theme="pf-popover"
-              lazy={false}
+              lazy
               duration={0}
               animation="none"
               showOnCreate
             >
-              <BaseComponent
-                {...props}
-                className={css(
-                  baseClass,
-                  direction === DropdownDirection.up && styles.modifiers.top,
-                  position === DropdownPosition.right && styles.modifiers.alignRight,
-                  isOpen && styles.modifiers.expanded,
-                  className
-                )}
-                ref={this.baseComponentRef}
-                {...getOUIAProps(ouiaComponentType, ouiaId)}
-              >
-                {React.Children.map(toggle, oneToggle =>
-                  React.cloneElement(oneToggle, {
-                    parentRef: this.baseComponentRef,
-                    getMenuRef: this.getMenuComponentRef,
-                    isOpen,
-                    id,
-                    isPlain,
-                    'aria-haspopup': ariaHasPopup,
-                    onEnter: () => this.onEnter()
-                  })
-                )}
-              </BaseComponent>
+              {mainComponent}
             </PopoverBase>
           );
         }}

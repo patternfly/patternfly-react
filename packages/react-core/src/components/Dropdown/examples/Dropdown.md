@@ -73,7 +73,7 @@ class SimpleDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
-            Dropdown
+            Inline Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
@@ -139,12 +139,13 @@ class IntialSelectionDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle id="toggle-id-1" onToggle={this.onToggle}>
-            Dropdown
+            Parent Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
         autoFocus={false}
+        // menuAppendTo="parent"
       />
     );
   }
@@ -205,12 +206,13 @@ class GroupedDropdown extends React.Component {
         onSelect={this.onSelect}
         toggle={
           <DropdownToggle onToggle={this.onToggle} id="toggle-id-3">
-            Dropdown
+            document body Dropdown
           </DropdownToggle>
         }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
         isGrouped
+        // menuAppendTo={document.body}
       />
     );
   }

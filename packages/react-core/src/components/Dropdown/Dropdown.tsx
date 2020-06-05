@@ -28,6 +28,11 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
   autoFocus?: boolean;
+  /** The parent container to append the dropdown menu to. Defaults to 'inline'
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples: menuAppendTo={document.body} menuAppendTo={document.getElementById('___gatsby')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
   ouiaComponentType?: string;
 }
 

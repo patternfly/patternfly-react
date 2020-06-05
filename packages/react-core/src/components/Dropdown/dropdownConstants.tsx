@@ -27,7 +27,6 @@ export const DropdownContext = React.createContext<{
   disabledClass?: string;
   plainTextClass?: string;
   menuComponent?: string;
-  menuRef?: any;
 }>({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelect: (event?: any) => undefined as any,
@@ -45,8 +44,7 @@ export const DropdownContext = React.createContext<{
   sectionComponent: 'section',
   disabledClass: '',
   plainTextClass: '',
-  menuComponent: 'ul',
-  menuRef: null
+  menuComponent: 'ul'
 });
 
 export const DropdownArrowContext = React.createContext({
