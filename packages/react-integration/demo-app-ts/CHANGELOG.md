@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.2...demo-app-ts@4.13.3) (2020-06-05)
+
+
+### Bug Fixes
+
+* **ToolbarToggleGroup:** revert show to breakpoint ([#4343](https://github.com/patternfly/patternfly-react/issues/4343)) ([8c50170](https://github.com/patternfly/patternfly-react/commit/8c501709770b5e28e85f7db0bb64c3607d260c55))
+
+
+
+
+
 ## [4.13.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.1...demo-app-ts@4.13.2) (2020-06-03)
 
 **Note:** Version bump only for package demo-app-ts

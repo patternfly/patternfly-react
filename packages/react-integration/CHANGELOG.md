@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.1...@patternfly/react-integration@4.13.2) (2020-06-05)
+
+
+### Bug Fixes
+
+* **ToolbarToggleGroup:** revert show to breakpoint ([#4343](https://github.com/patternfly/patternfly-react/issues/4343)) ([8c50170](https://github.com/patternfly/patternfly-react/commit/8c501709770b5e28e85f7db0bb64c3607d260c55))
+
+
+
+
+
 ## [4.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.0...@patternfly/react-integration@4.13.1) (2020-06-01)
 
 
