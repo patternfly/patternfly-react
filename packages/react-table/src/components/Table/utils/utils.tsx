@@ -99,6 +99,11 @@ export const applyCellEdits = (row: IRow, type: RowEditType) => {
     const hasValue = cell.props.value !== undefined && cell.props.value !== null;
     const hasEditableValue = cell.props.editableValue !== undefined && cell.props.editableValue !== null;
 
+    // sync for validation
+    if (hasValue && !hasEditableValue) {
+      cell.props.editableValue = cell.props.value;
+    }
+
     if (cell.props && hasValue && hasEditableValue) {
       if (type === 'save') {
         cell.props.value = cell.props.editableValue;
