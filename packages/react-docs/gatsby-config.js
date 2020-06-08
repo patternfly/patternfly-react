@@ -13,6 +13,7 @@ module.exports = {
         context: 'react', // For global items that need sideNav
         showGdprBanner: false, // GDPR banner
         hiddenPages: ['Training'], // By title
+        showFooter: false,
         sideNav: {
           react: [
             { section: 'overview' },
