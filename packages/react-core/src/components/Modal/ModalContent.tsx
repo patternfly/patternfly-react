@@ -11,6 +11,7 @@ import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
 import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxHeader } from './ModalBoxHeader';
+import { ModalBoxTitle } from './ModalBoxTitle';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -87,11 +88,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   ) : (
     title && (
       <ModalBoxHeader>
-        {
-          <h1 id={labelId} className={css(modalStyles.modalBoxTitle)}>
-            {title}
-          </h1>
-        }
+        <ModalBoxTitle title={title} id={labelId} className={css(modalStyles.modalBoxTitle)} />
         {description && <ModalBoxDescription id={descriptorId}>{description}</ModalBoxDescription>}
       </ModalBoxHeader>
     )
