@@ -145,4 +145,27 @@ describe('Modal Test', () => {
         });
     });
   });
+
+  it('Verify Custom Escape Press Modal', () => {
+    cy.get('#showCustomEscapeModalButton.customEscapePressed').should('not.exist');
+    cy.get('#showCustomEscapeModalButton').then((modalButton: JQuery<HTMLButtonElement>) => {
+      cy.wrap(modalButton).click();
+      cy.get('.pf-c-modal-box').should('exist');
+      cy.get('.pf-c-modal-box')
+        .then(() => {
+          cy.get('.pf-c-modal-box .pf-c-button[aria-label="Close"]').then(closeButton => {
+            cy.wrap(closeButton).click();
+            cy.get('.pf-c-modal-box').should('not.exist');
+            cy.get('#showCustomEscapeModalButton.customEscapePressed').should('not.exist');
+          });
+        })
+        .then(() => {
+          cy.wrap(modalButton).click();
+          cy.get('.pf-c-modal-box').should('exist');
+          cy.get('body').trigger('keydown', { keyCode: 27, which: 27 });
+          cy.get('.pf-c-modal-box').should('not.exist');
+          cy.get('#showCustomEscapeModalButton.customEscapePressed').should('exist');
+        });
+    });
+  });
 });

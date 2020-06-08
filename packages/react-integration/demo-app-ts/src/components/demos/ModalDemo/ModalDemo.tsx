@@ -10,6 +10,8 @@ interface ModalDemoState {
   isHalfWidthModalOpen: boolean;
   isCustomHeaderFooterModalOpen: boolean;
   isNoHeaderModalOpen: boolean;
+  isModalCustomEscapeOpen: boolean;
+  customEscapePressed: boolean;
 }
 
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
@@ -20,7 +22,9 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     isLargeModalOpen: false,
     isHalfWidthModalOpen: false,
     isCustomHeaderFooterModalOpen: false,
-    isNoHeaderModalOpen: false
+    isNoHeaderModalOpen: false,
+    isModalCustomEscapeOpen: false,
+    customEscapePressed: false
   };
 
   handleModalToggle = () => {
@@ -64,6 +68,13 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
       isNoHeaderModalOpen: !isNoHeaderModalOpen
     }));
   };
+
+  handleModalCustomEscapeToggle = (event?: any, customEscapePressed?: boolean) => {
+    this.setState(({ isModalCustomEscapeOpen }) => ({
+      isModalCustomEscapeOpen: !isModalCustomEscapeOpen,
+      customEscapePressed
+    }));
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -276,22 +287,23 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   }
 
   renderModalWithCustomEscape() {
-    const { isModalOpen } = this.state;
+    const { isModalCustomEscapeOpen } = this.state;
 
     return (
       <Modal
         title="Modal Header"
-        isOpen={isModalOpen}
-        onClose={this.handleModalToggle}
+        isOpen={isModalCustomEscapeOpen}
+        onClose={this.handleModalCustomEscapeToggle}
+        aria-describedby="custom-escape-example"
         actions={[
-          <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+          <Button key="cancel" variant="secondary" onClick={this.handleModalCustomEscapeToggle}>
             Cancel
           </Button>,
-          <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+          <Button key="confirm" variant="primary" onClick={this.handleModalCustomEscapeToggle}>
             Confirm
           </Button>
         ]}
-        onEscapePress={this.handleModalToggle}
+        onEscapePress={(event: any) => this.handleModalCustomEscapeToggle(event, true)}
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -351,6 +363,15 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             id="showDescriptionModalButton"
           >
             Show Modal with Description
+          </Button>
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleModalCustomEscapeToggle}
+            id="showCustomEscapeModalButton"
+            className={this.state.customEscapePressed ? 'customEscapePressed' : ''}
+          >
+            Show Modal with custom escape button behavior
           </Button>
         </div>
         {this.renderModal()}

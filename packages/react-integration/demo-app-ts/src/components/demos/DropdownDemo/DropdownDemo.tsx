@@ -19,6 +19,7 @@ interface DropdownState {
   isOpen: boolean;
   isActionOpen: boolean;
   isCogOpen: boolean;
+  isMenuOnDocumentBodyOpen: boolean;
 }
 
 export class DropdownDemo extends React.Component<{}, DropdownState> {
@@ -33,13 +34,17 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
   onCogSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onCogClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   onCogFocus: () => void;
+  onMenuDocumentBodyToggle: (isOpen: boolean) => void;
+  onMenuDocumentBodySelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
+  onMenuDocumentBodyFocus: () => void;
 
   constructor(props: any) {
     super(props);
     this.state = {
       isOpen: false,
       isActionOpen: false,
-      isCogOpen: false
+      isCogOpen: false,
+      isMenuOnDocumentBodyOpen: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -103,6 +108,25 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     };
     this.onCogFocus = () => {
       const element = document.getElementById('cog-toggle-id');
+      if (element) {
+        element.focus();
+      }
+    };
+
+    this.onMenuDocumentBodyToggle = isMenuOnDocumentBodyOpen => {
+      this.setState({
+        isMenuOnDocumentBodyOpen
+      });
+    };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onMenuDocumentBodySelect = _event => {
+      this.setState({
+        isMenuOnDocumentBodyOpen: !this.state.isMenuOnDocumentBodyOpen
+      });
+      this.onMenuDocumentBodyFocus();
+    };
+    this.onMenuDocumentBodyFocus = () => {
+      const element = document.getElementById('toggle-id-document-body');
       if (element) {
         element.focus();
       }
@@ -229,7 +253,7 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
   }
 
   renderMenuOnDocumentBodyDropdown() {
-    const { isOpen } = this.state;
+    const { isMenuOnDocumentBodyOpen } = this.state;
 
     const dropdownItems = [
       <DropdownItem key="link" href="https://www.google.com">
@@ -257,19 +281,19 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
           Dropdown with menu on document body
         </Title>
         <Dropdown
-          id="dropdown"
-          onSelect={this.onSelect}
+          id="dropdown-document-body"
+          onSelect={this.onMenuDocumentBodySelect}
           toggle={
             <DropdownToggle
               id="toggle-id-document-body"
-              onToggle={this.onToggle}
+              onToggle={this.onMenuDocumentBodyToggle}
               toggleIndicator={CaretDownIcon}
               icon={<UserIcon />}
             >
               Dropdown
             </DropdownToggle>
           }
-          isOpen={isOpen}
+          isOpen={isMenuOnDocumentBodyOpen}
           dropdownItems={dropdownItems}
           menuAppendTo={() => document.body}
         />
