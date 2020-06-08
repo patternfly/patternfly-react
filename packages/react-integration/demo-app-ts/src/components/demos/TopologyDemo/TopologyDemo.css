@@ -1,0 +1,10 @@
+.pf-ri__topology-demo {
+    height: 100%;
+}
+.pf-ri__topology-demo .pf-c-tab-content {
+    height: 100%;
+}
+
+.pf-ri__topology-demo .pf-c-tab-content:focus {
+    outline: none;
+}

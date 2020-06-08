@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import {
   WithCreateConnectorProps,
   Node,
+  WithContextMenuProps,
   WithDragNodeProps,
   WithSelectionProps,
   WithDndDragProps,
@@ -21,7 +22,8 @@ type NodeProps = {
   WithDragNodeProps &
   WithDndDragProps &
   WithDndDropProps &
-  WithCreateConnectorProps;
+  WithCreateConnectorProps &
+  WithContextMenuProps;
 
 const DefaultNode: React.FC<NodeProps> = ({
   element,
@@ -34,7 +36,8 @@ const DefaultNode: React.FC<NodeProps> = ({
   canDrop,
   dndDropRef,
   onHideCreateConnector,
-  onShowCreateConnector
+  onShowCreateConnector,
+  onContextMenu
 }) => {
   useAnchor(EllipseAnchor);
   const refs = useCombineRefs<SVGEllipseElement>(dragNodeRef, dndDragRef, dndDropRef);
@@ -44,6 +47,7 @@ const DefaultNode: React.FC<NodeProps> = ({
     <ellipse
       onMouseEnter={onShowCreateConnector}
       onMouseLeave={onHideCreateConnector}
+      onContextMenu={onContextMenu}
       ref={refs}
       onClick={onSelect}
       cx={width / 2}

@@ -1,154 +1,143 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Tab, Tabs, TabTitleText } from '@patternfly/react-core';
+import '@patternfly/react-styles/css/components/Topology/topology-components.css';
+import { Shapes } from './Shapes';
+import { SingleNode, SingleEdge, Group, GroupHull, MultiEdge } from './Basics';
+import { ControlledSelection, MultiSelect, Performance, UncontrolledSelection } from './Selection';
+import { PanZoom } from './PanZoom';
+import { Cola, Dagre, Force } from './Layouts';
+import { Anchors, CreateConnector, Reconnect } from './Connectors';
+import { Dnd, DndShiftRegroup } from './DragDrop';
+import { ContextMenuOnNode, ControlledContextMenu, UncontrolledContextMenu } from './ContextMenus';
+import { Topology, WithSideBar } from './TopologyPackage';
+import { ComplexGroup } from './Groups';
+import { CollapsibleGroups } from './CollapsibleGroups';
 
-import {
-  Visualization,
-  Model,
-  VisualizationSurface,
-  ModelKind,
-  withPanZoom,
-  GraphComponent,
-  withDragNode
-} from '@patternfly/react-topology';
-import defaultComponentFactory from './components/defaultComponentFactory';
-import shapesComponentFactory from './components/shapesComponentFactory';
-import Node from './components/DefaultNode';
+import './TopologyDemo.css';
 
-export default {
-  title: 'Shapes'
-};
+export const TopologyDemo: React.FC = () => {
+  const [activeKey, setActiveKey] = React.useState<number>(0);
+  const [activeSecondaryKey, setActiveSecondaryKey] = React.useState<number>(0);
 
-export const shapes = () => {
-  const vis = new Visualization();
-  const model: Model = {
-    graph: {
-      id: 'g1',
-      type: 'graph',
-      x: 25,
-      y: 25
-    },
-    nodes: [
-      {
-        id: 'gr1',
-        type: 'group-hull',
-        group: true,
-        children: ['n2', 'n3'],
-        style: {
-          padding: 10
-        }
-      },
-      {
-        id: 'gr2',
-        type: 'group-hull',
-        group: true,
-        children: ['n4', 'n5'],
-        style: {
-          padding: 10
-        }
-      },
-      {
-        id: 'n1',
-        type: 'node-drag',
-        x: 50,
-        y: 50,
-        width: 30,
-        height: 30
-      },
-      {
-        id: 'n2',
-        type: 'node-rect',
-        x: 200,
-        y: 20,
-        width: 30,
-        height: 50
-      },
-      {
-        id: 'n3',
-        type: 'node-ellipse',
-        x: 150,
-        y: 100,
-        width: 50,
-        height: 30
-      },
-      {
-        id: 'n4',
-        type: 'node-path',
-        x: 300,
-        y: 250,
-        width: 30,
-        height: 30
-      },
-      {
-        id: 'n5',
-        type: 'node-polygon',
-        x: 350,
-        y: 370,
-        width: 65,
-        height: 65
-      },
-      {
-        id: 'n6',
-        type: 'node-rect',
-        x: 300,
-        y: 200,
-        width: 60,
-        height: 20
-      }
-    ],
-    edges: [
-      {
-        id: 'e1',
-        type: 'edge',
-        source: 'n1',
-        target: 'n2'
-      },
-      {
-        id: 'e2',
-        type: 'edge',
-        source: 'n1',
-        target: 'n3'
-      },
-      {
-        id: 'e3',
-        type: 'edge',
-        source: 'n1',
-        target: 'n4'
-      },
-      {
-        id: 'e4',
-        type: 'edge',
-        source: 'n1',
-        target: 'n5'
-      },
-      {
-        id: 'e5',
-        type: 'edge',
-        source: 'n1',
-        target: 'n6'
-      }
-    ]
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+    setActiveKey(tabIndex);
+    setActiveSecondaryKey(0);
   };
-  vis.fromModel(model);
-  vis.registerComponentFactory(defaultComponentFactory);
-  vis.registerComponentFactory(shapesComponentFactory);
-  // support pan zoom and drag
-  vis.registerComponentFactory((kind, type) => {
-    if (kind === ModelKind.graph) {
-      return withPanZoom()(GraphComponent);
-    }
-    if (type === 'node-drag') {
-      return withDragNode()(Node);
-    }
-    return undefined;
-  });
-  return <VisualizationSurface visualization={vis} />;
+
+  const handleSecondaryTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+    setActiveSecondaryKey(tabIndex);
+  };
+
+  return (
+    <div className="pf-ri__topology-demo">
+      <Tabs unmountOnExit activeKey={activeKey} onSelect={handleTabClick}>
+        <Tab eventKey={0} title={<TabTitleText>Basic</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Single Node</TabTitleText>}>
+              <SingleNode />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>Single Edge</TabTitleText>}>
+              <SingleEdge />
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>Multi Edge</TabTitleText>}>
+              <MultiEdge />
+            </Tab>
+            <Tab eventKey={3} title={<TabTitleText>Group</TabTitleText>}>
+              <Group />
+            </Tab>
+            <Tab eventKey={4} title={<TabTitleText>Group Hull</TabTitleText>}>
+              <GroupHull />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Selection</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Uncontrolled</TabTitleText>}>
+              <UncontrolledSelection />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>Controlled</TabTitleText>}>
+              <ControlledSelection />
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>Multi Select</TabTitleText>}>
+              <MultiSelect />
+            </Tab>
+            <Tab eventKey={3} title={<TabTitleText>Performance</TabTitleText>}>
+              <Performance />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={3} title={<TabTitleText>Pan Zoom</TabTitleText>}>
+          <PanZoom />
+        </Tab>
+        <Tab eventKey={4} title={<TabTitleText>Layout</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Force</TabTitleText>}>
+              <Force />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>Dagre</TabTitleText>}>
+              <Dagre />
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>Cola</TabTitleText>}>
+              <Cola />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={5} title={<TabTitleText>Connector</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Reconnect</TabTitleText>}>
+              <Reconnect />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>Create Connector</TabTitleText>}>
+              <CreateConnector />
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>Anchors</TabTitleText>}>
+              <Anchors />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={6} title={<TabTitleText>Drag and Drop</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Dnd</TabTitleText>}>
+              <Dnd />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>Dnd Shift Regroup</TabTitleText>}>
+              <DndShiftRegroup />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={7} title={<TabTitleText>Shapes</TabTitleText>}>
+          <Shapes />
+        </Tab>
+        <Tab eventKey={8} title={<TabTitleText>Context Menu</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Controlled Context Menu</TabTitleText>}>
+              <ControlledContextMenu />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>Uncontrolled Context Menu</TabTitleText>}>
+              <UncontrolledContextMenu />
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>Context Menu on Node</TabTitleText>}>
+              <ContextMenuOnNode />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={9} title={<TabTitleText>Topology Package</TabTitleText>}>
+          <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
+            <Tab eventKey={0} title={<TabTitleText>Topology</TabTitleText>}>
+              <Topology />
+            </Tab>
+            <Tab eventKey={1} title={<TabTitleText>With Side Bar</TabTitleText>}>
+              <WithSideBar />
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={10} title={<TabTitleText>Complex Group</TabTitleText>}>
+          <ComplexGroup />
+        </Tab>
+        <Tab eventKey={11} title={<TabTitleText>Collapsible Groups</TabTitleText>}>
+          <CollapsibleGroups />
+        </Tab>
+      </Tabs>
+    </div>
+  );
 };
-
-export class TopologyDemo extends Component {
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
-  render() {
-    return shapes();
-  }
-}

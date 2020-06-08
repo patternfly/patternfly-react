@@ -9,5 +9,6 @@ export { default as DefaultRemoveConnector } from './DefaultRemoveConnector';
 export { default as GraphComponent } from './GraphComponent';
 export { default as SVGArrowMarker } from './SVGArrowMarker';
 export { default as ElementWrapper } from './ElementWrapper';
+export * from './contextmenu';
 export * from './layers';
 export * from './defs';
