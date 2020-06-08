@@ -466,8 +466,7 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class DrawerStackedContentBodyElements extends React.Component {
@@ -541,8 +540,7 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  Title
+  Button
 } from '@patternfly/react-core';
 
 class DrawerStackedContentBodyElements extends React.Component {
