@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import { SelectProps } from '@patternfly/react-core';
 
 export interface BodyCellProps {
   'data-label'?: string;
@@ -15,6 +16,7 @@ export interface BodyCellProps {
   isOpen?: boolean;
   ariaControls?: string;
   editableValue?: any;
+  editableSelectProps?: SelectProps;
   options?: React.ReactElement[];
   isSelectOpen?: boolean;
   value?: any;
@@ -41,6 +43,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isOpen,
   ariaControls,
   editableValue,
+  editableSelectProps,
   options,
   isSelectOpen,
   value,

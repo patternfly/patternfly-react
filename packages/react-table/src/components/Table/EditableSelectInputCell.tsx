@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Select, SelectOptionObject } from '@patternfly/react-core';
+import { Select, SelectOptionObject, SelectProps } from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 
@@ -17,6 +17,8 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     value: string | string[];
     isSelectOpen: boolean;
     selected: string | SelectOptionObject | (string | SelectOptionObject)[];
+    options: React.ReactElement[];
+    editableSelectProps?: SelectProps;
     [key: string]: any;
   };
   /** Event handler which fires when user selects an option in this cell */
@@ -71,7 +73,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
 
   const select = (
     <Select
-      variant="typeaheadmulti"
+      {...props.editableSelectProps}
       onSelect={onSelectHandler}
       onClear={onClear}
       aria-label={inputAriaLabel}
