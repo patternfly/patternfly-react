@@ -123,7 +123,9 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 isOpen && styles.modifiers.expanded,
                 className
               )}
-              style={{ position: 'absolute' }}
+              // temporary fix until Core adds a modifier
+              // https://github.com/patternfly/patternfly-react/pull/4348#discussion_r436924794
+              style={{ display: 'block' }}
             >
               {isOpen && menuComponent}
             </div>
