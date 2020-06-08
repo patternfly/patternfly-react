@@ -41,7 +41,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 ```javascript
 import React from 'react';
- // TODO
+// TODO
 ```
 
 ## Contribution
@@ -98,7 +98,7 @@ yarn build
 Testing is done at the root of this repo. To only run the @patternfly/react-topology tests:
 
 ```
-yarn test packages/patternfly-4/react-topology
+yarn test packages/react-topology
 ```
 
 [patternfly-4]: https://github.com/patternfly/patternfly-next

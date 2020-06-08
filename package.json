@@ -83,7 +83,6 @@
     "build:generate": "lerna run generate --parallel --stream",
     "clean": "yarn clean:build && yarn clean:pf3 && lerna run clean --parallel",
     "clean:build": "rimraf .cache .eslintcache coverage",
-    "clean:pf3": "rimraf packages/patternfly-3 packages/patternfly-4",
     "commit": "git-cz",
     "generate": "yarn plop",
     "lint": "node --max-old-space-size=4096 node_modules/.bin/eslint --ext js,jsx,ts,tsx --cache",

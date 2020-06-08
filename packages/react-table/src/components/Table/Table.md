@@ -1023,7 +1023,7 @@ import {
   CubeIcon
 } from '@patternfly/react-icons';
 
-// https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-4/react-table/src/components/Table/demo/DemoSortableTable.js
+// https://github.com/patternfly/patternfly-react/blob/master/packages/react-table/src/components/Table/demo/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
