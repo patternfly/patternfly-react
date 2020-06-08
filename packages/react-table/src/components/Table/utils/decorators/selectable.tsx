@@ -48,7 +48,7 @@ export const selectable: ITransform = (
     ...(rowData &&
       rowData.disableCheckbox && {
         disabled: true,
-        class: checkStyles.checkInput
+        className: checkStyles.checkInput
       })
   };
 
