@@ -31,7 +31,10 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
   autoFocus?: boolean;
   /** The parent container to append the dropdown menu to. Defaults to 'inline'
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples: menuAppendTo={document.body} menuAppendTo={document.getElementById('target')}
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
   /** additional tippy.js props to pass through to the dropdown menu */

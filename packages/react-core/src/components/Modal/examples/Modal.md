@@ -463,21 +463,23 @@ class WithDropdown extends React.Component {
     super(props);
     this.state = {
       isModalOpen: false,
-      isOpen: false
+      isDropdownOpen: false
     };
     this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-    this.onToggle = isOpen => {
+      const { isModalOpen } = this.state;
       this.setState({
-        isOpen
+        isModalOpen: !isModalOpen,
+        isDropdownOpen: false
+      });
+    };
+    this.onToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
       });
     };
     this.onSelect = event => {
       this.setState({
-        isOpen: !this.state.isOpen
+        isDropdownOpen: !this.state.isDropdownOpen
       });
       this.onFocus();
     };
@@ -488,7 +490,7 @@ class WithDropdown extends React.Component {
   }
 
   render() {
-    const { isModalOpen, isOpen } = this.state;
+    const { isModalOpen, isDropdownOpen } = this.state;
 
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -526,22 +528,22 @@ class WithDropdown extends React.Component {
             </Button>
           ]}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-          <Dropdown
-            onSelect={this.onSelect}
-            toggle={
-              <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
-                Dropdown
-              </DropdownToggle>
-            }
-            isOpen={isOpen}
-            dropdownItems={dropdownItems}
-            menuAppendTo={() => document.body}
-          />
+          <div>
+            Set the dropdown <em>menuAppendTo</em> prop to <strong>parent</strong> in order to allow the dropdown menu break out of the modal container.
+          </div>
+          <div>
+            <Dropdown
+              onSelect={this.onSelect}
+              toggle={
+                <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+                  Dropdown with a menu that can break out
+                </DropdownToggle>
+              }
+              isOpen={isDropdownOpen}
+              dropdownItems={dropdownItems}
+              menuAppendTo="parent"
+            />
+          </div>
         </Modal>
       </React.Fragment>
     );
