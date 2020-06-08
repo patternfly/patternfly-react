@@ -7,7 +7,7 @@
   "types": "dist/js/index.d.ts",
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease-v4"
+    "tag": "prerelease"
   },
   "repository": {
     "type": "git",
