@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.22...@patternfly/react-docs@5.3.23) (2020-06-08)
+
+
+### Bug Fixes
+
+* **docs:** remove footer ([#4327](https://github.com/patternfly/patternfly-react/issues/4327)) ([4ef0f44](https://github.com/patternfly/patternfly-react/commit/4ef0f44455e9cccc7fa45919e6c0869272773dc9))
+
+
+
+
+
 ## [5.3.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.21...@patternfly/react-docs@5.3.22) (2020-06-05)
 
 **Note:** Version bump only for package @patternfly/react-docs

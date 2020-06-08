@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.5...@patternfly/react-core@4.18.6) (2020-06-08)
+
+
+### Bug Fixes
+
+* **Select:** fix filter clear button accessibility issue ([#4331](https://github.com/patternfly/patternfly-react/issues/4331)) ([d398f3e](https://github.com/patternfly/patternfly-react/commit/d398f3ec1fd1ebcf0fd74cc2816f1a1402d0d5d5))
+* **Select:** fix panel issue ([#4340](https://github.com/patternfly/patternfly-react/issues/4340)) ([0e9c43b](https://github.com/patternfly/patternfly-react/commit/0e9c43b9c98f3afa7f58594abe717a862c8189d2))
+
+
+
+
+
 ## [4.18.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.4...@patternfly/react-core@4.18.5) (2020-06-05)
 
 
