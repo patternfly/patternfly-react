@@ -7,13 +7,22 @@ export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivEl
   children?: any;
   /** Indicates when a dropdown item shows and hides the corresponding list item */
   isShared?: boolean;
+  /** Indicates the index of the list item */
+  index?: number;
 }
 
 export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({
   children,
-  isShared = false
+  isShared = false,
+  index
 }: OverflowMenuDropdownItemProps) => (
   <OverflowMenuContext.Consumer>
-    {value => (!isShared || value.isBelowBreakpoint) && <DropdownItem component="button"> {children} </DropdownItem>}
+    {value =>
+      (!isShared || value.isBelowBreakpoint) && (
+        <DropdownItem component="button" index={index}>
+          {children}
+        </DropdownItem>
+      )
+    }
   </OverflowMenuContext.Consumer>
 );
