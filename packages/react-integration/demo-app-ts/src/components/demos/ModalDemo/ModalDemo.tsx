@@ -74,7 +74,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
       isModalCustomEscapeOpen: !isModalCustomEscapeOpen,
       customEscapePressed
     }));
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
