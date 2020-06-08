@@ -26,7 +26,7 @@ export interface ToggleProps {
   /** Element which wraps toggle */
   parentRef?: any;
   /** The menu element */
-  getMenuRef?: any;
+  getMenuRef?: () => HTMLElement;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -74,8 +74,8 @@ export class Toggle extends React.Component<ToggleProps> {
   onDocClick = (event: MouseEvent | TouchEvent) => {
     const { isOpen, parentRef, onToggle, getMenuRef } = this.props;
     const menuRef = getMenuRef && getMenuRef();
-    const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target);
-    const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target);
+    const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
+    const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       onToggle(false, event);
       this.buttonRef.current.focus();
@@ -86,8 +86,8 @@ export class Toggle extends React.Component<ToggleProps> {
     const { parentRef, getMenuRef } = this.props;
     const keyCode = event.keyCode || event.which;
     const menuRef = getMenuRef && getMenuRef();
-    const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target);
-    const escFromWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target);
+    const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
+    const escFromWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (
       this.props.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&

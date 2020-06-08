@@ -228,11 +228,61 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     );
   }
 
+  renderMenuOnDocumentBodyDropdown() {
+    const { isOpen } = this.state;
+
+    const dropdownItems = [
+      <DropdownItem key="link" href="https://www.google.com">
+        Link
+      </DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl" headingLevel="h2">
+          Dropdown with menu on document body
+        </Title>
+        <Dropdown
+          id="dropdown"
+          onSelect={this.onSelect}
+          toggle={
+            <DropdownToggle
+              id="toggle-id-document-body"
+              onToggle={this.onToggle}
+              toggleIndicator={CaretDownIcon}
+              icon={<UserIcon />}
+            >
+              Dropdown
+            </DropdownToggle>
+          }
+          isOpen={isOpen}
+          dropdownItems={dropdownItems}
+          menuAppendTo={() => document.body}
+        />
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
         {this.renderDropdown()}
         {this.renderActionDropdown()}
+        {this.renderMenuOnDocumentBodyDropdown()}
       </Stack>
     );
   }
