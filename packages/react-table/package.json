@@ -9,7 +9,7 @@
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease"
+    "tag": "v3"
   },
   "repository": {
     "type": "git",
