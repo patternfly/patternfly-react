@@ -18,7 +18,7 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Lifecycle function invoked when the drawer has been mounted to the DOM. */
   onMount?: () => void;
   /** Lifecycle function invoked when the drawer has been unmounted from the DOM. */
-  onUnMount?: () => void;
+  onUnmount?: () => void;
 }
 
 export interface DrawerContextProps {
@@ -38,16 +38,16 @@ export const Drawer: React.SFC<DrawerProps> = ({
   isInline = false,
   isStatic = false,
   position = 'right',
-  onMount,
-  onUnMount,
+  onMount = () => {},
+  onUnmount = () => {},
   ...props
 }: DrawerProps) => {
   React.useEffect(() => {
-    onMount && onMount();
+    onMount();
     return () => {
-      onUnMount && onUnMount();
+      onUnmount();
     };
-  }, [isExpanded, onMount, onUnMount]);
+  }, [isExpanded, onMount, onUnmount]);
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic }}>
