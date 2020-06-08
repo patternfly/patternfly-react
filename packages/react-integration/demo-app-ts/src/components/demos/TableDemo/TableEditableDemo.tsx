@@ -153,6 +153,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   cellIndex={cellIndex}
                   props={updatedProps}
                   onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
                   inputAriaLabel="Row 1 cell 5 content"
                   isOpen={updatedProps.isSelectOpen}
                   options={this.options.map((option, index) => (
@@ -252,6 +253,7 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   cellIndex={cellIndex}
                   props={updatedProps}
                   onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
                   inputAriaLabel="Row 2 cell 5 content"
                   isOpen={updatedProps.isSelectOpen}
                   options={this.options.map((option, index) => (
@@ -264,10 +266,18 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 />
               ),
               props: {
-                value: 'Option 2',
+                value: ['Option 2'],
                 name: 'uniqueIdRow2Cell5',
                 isSelectOpen: (props as any).isSelectOpen || false,
-                selected: (props as any).selected || 'Option 2'
+                selected: (props as any).selected || ['Option 2'],
+                options: [
+                  {value: 'Placeholder...', isPlaceholder: true},
+                  {value: 'Option 1'},
+                  {value: 'Option 2'},
+                  {value: 'Option 3'},
+                  {value: 'Option 4'},
+                  {value: 'Option 5'}
+                ]
               }
             }
           ]
@@ -337,6 +347,16 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
   onToggle = (isOpen: boolean, rowIndex: number, cellIndex: number) => {
     const newRows = Array.from(this.state.rows);
     (newRows[rowIndex].cells[cellIndex] as IRowCell).props.isSelectOpen = isOpen;
+    this.setState({
+      rows: newRows
+    });
+  };
+
+  clearSelection = (rowIndex: number, cellIndex: number) => {
+    const newRows = Array.from(this.state.rows);
+    const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
+    newCellProps.editableValue = [];
+    newCellProps.selected = [];
     this.setState({
       rows: newRows
     });

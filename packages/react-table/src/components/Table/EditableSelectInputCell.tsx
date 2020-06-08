@@ -39,6 +39,8 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   isOpen?: boolean;
   /** Event handler which fires when the select toggle is toggled */
   onToggle?: (isExpanded: boolean) => void;
+  /** */
+  clearSelection?: (rowIndex: number, cellIndex: number, event?: React.MouseEvent) => void;
 }
 
 export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInputCell> = ({
@@ -46,6 +48,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   rowIndex,
   cellIndex,
   onSelect = () => {},
+  clearSelection = () => {},
   inputAriaLabel = '',
   isDisabled = false,
   isOpen = false,
@@ -62,10 +65,15 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
     onSelect(newValue, event, rowIndex, cellIndex, isPlaceholder);
   };
 
+  const onClear = (event: React.MouseEvent) => {
+    clearSelection(rowIndex, cellIndex, event);
+  };
+
   const select = (
     <Select
       variant="typeaheadmulti"
       onSelect={onSelectHandler}
+      onClear={onClear}
       aria-label={inputAriaLabel}
       isDisabled={isDisabled}
       isOpen={isOpen}

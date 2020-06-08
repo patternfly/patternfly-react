@@ -1438,6 +1438,7 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
                   inputAriaLabel="Row 1 cell 4 content"
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
@@ -1525,6 +1526,7 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
                   inputAriaLabel="Row 2 cell 4 content"
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => {
@@ -1636,6 +1638,7 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
                   inputAriaLabel="Row 3 cell 4 content"
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
@@ -1721,6 +1724,16 @@ class EditableRowsTable extends React.Component {
         newCellProps.selected = newSelected;
       }
 
+      this.setState({
+        rows: newRows
+      });
+    };
+    
+    this.clearSelection = (rowIndex, cellIndex) => {
+      const newRows = Array.from(this.state.rows);
+      const newCellProps = newRows[rowIndex].cells[cellIndex].props;
+      newCellProps.editableValue = [];
+      newCellProps.selected = [];
       this.setState({
         rows: newRows
       });
