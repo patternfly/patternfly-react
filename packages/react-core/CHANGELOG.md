@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.7...@patternfly/react-core@4.18.8) (2020-06-08)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** fix accessibility issue on KebabToggle button ([#4353](https://github.com/patternfly/patternfly-react/issues/4353)) ([3df7370](https://github.com/patternfly/patternfly-react/commit/3df73703cb7b380da5542aed505dcca5c28abf59))
+
+
+
+
+
 ## [4.18.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.6...@patternfly/react-core@4.18.7) (2020-06-08)
 
 **Note:** Version bump only for package @patternfly/react-core
