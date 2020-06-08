@@ -204,12 +204,14 @@ git clone https://github.com/<your-username>/patternfly-react.git
 cd patternfly-react
 # Assign the original repo to a remote called "upstream"
 git remote add upstream https://github.com/patternfly/patternfly-react.git
+# Fetch the code and branches from remote repo "upstream"
+git fetch upstream
 ```
 
 2.  Create a branch:
 
 ```text
-$ git checkout -b my-branch -t upstream/master
+$ git checkout -b my-branch upstream/master
 ```
 
 3. Generate your Component
