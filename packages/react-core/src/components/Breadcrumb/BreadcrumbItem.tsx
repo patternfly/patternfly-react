@@ -15,7 +15,7 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Target for breadcrumb link. */
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component?: React.ReactNode;
+  component?: React.ElementType;
 }
 
 export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
@@ -27,7 +27,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   component = 'a',
   ...props
 }: BreadcrumbItemProps) => {
-  const Component = component as any;
+  const Component = component;
   return (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
       {to && (

@@ -25,6 +25,23 @@ exports[`BreadcrumbItem component should render breadcrumbItem with className 1`
 </li>
 `;
 
+exports[`BreadcrumbItem component should render breadcrumbItem with component 1`] = `
+<li
+  className="pf-c-breadcrumb__item"
+>
+  Stuff
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+</li>
+`;
+
 exports[`BreadcrumbItem component should render breadcrumbItem with custom element 1`] = `
 <li
   className="pf-c-breadcrumb__item"
