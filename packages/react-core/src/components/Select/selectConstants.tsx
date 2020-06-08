@@ -20,7 +20,8 @@ export enum SelectVariant {
   single = 'single',
   checkbox = 'checkbox',
   typeahead = 'typeahead',
-  typeaheadMulti = 'typeaheadmulti'
+  typeaheadMulti = 'typeaheadmulti',
+  panel = 'panel'
 }
 
 export enum SelectDirection {
