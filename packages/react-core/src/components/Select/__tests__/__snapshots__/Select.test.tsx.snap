@@ -2772,6 +2772,7 @@ exports[`select custom select filter filters properly 1`] = `
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           disabled={false}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <TimesCircleIcon
@@ -6247,6 +6248,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           disabled={false}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <TimesCircleIcon
@@ -6717,6 +6719,7 @@ exports[`typeahead multi select test onChange 1`] = `
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           disabled={false}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <TimesCircleIcon
@@ -7647,6 +7650,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           disabled={false}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <TimesCircleIcon
@@ -8084,6 +8088,7 @@ exports[`typeahead select test creatable option 1`] = `
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           disabled={false}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <TimesCircleIcon
@@ -8393,6 +8398,7 @@ exports[`typeahead select test onChange 1`] = `
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           disabled={false}
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <TimesCircleIcon
