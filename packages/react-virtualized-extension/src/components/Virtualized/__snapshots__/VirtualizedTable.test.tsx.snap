@@ -1008,7 +1008,6 @@ exports[`Actions virtualized table 1`] = `
                           <button
                             className="pf-c-table__button"
                             onClick={[Function]}
-                            type="button"
                           >
                             <div
                               className="pf-c-table__button-content"
@@ -2183,7 +2182,6 @@ exports[`Selectable virtualized table 1`] = `
                           <button
                             className="pf-c-table__button"
                             onClick={[Function]}
-                            type="button"
                           >
                             <div
                               className="pf-c-table__button-content"
@@ -3686,7 +3684,6 @@ exports[`Simple Actions table 1`] = `
                           <button
                             className="pf-c-table__button"
                             onClick={[Function]}
-                            type="button"
                           >
                             <div
                               className="pf-c-table__button-content"
@@ -6565,7 +6562,6 @@ exports[`Sortable Virtualized Table 1`] = `
                           <button
                             className="pf-c-table__button"
                             onClick={[Function]}
-                            type="button"
                           >
                             <div
                               className="pf-c-table__button-content"
