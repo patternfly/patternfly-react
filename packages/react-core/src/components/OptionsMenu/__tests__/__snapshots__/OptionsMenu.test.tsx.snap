@@ -3036,6 +3036,7 @@ exports[`optionsMenu text 1`] = `
             className="pf-c-options-menu__toggle-button"
             id="-toggle"
             onClick={[Function]}
+            onKeyDown={[Function]}
           >
             <span
               className="pf-c-options-menu__toggle-button-icon"
