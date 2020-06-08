@@ -487,6 +487,18 @@ class WithDropdown extends React.Component {
       const element = document.getElementById('toggle-id-menu-document-body');
       element.focus();
     };
+    this.onEscapePress = () => {
+      const { isDropdownOpen } = this.state;
+      if (isDropdownOpen) {
+        this.setState({
+          isDropdownOpen: !isDropdownOpen
+        }, () => {
+          this.onFocus();
+        });
+      } else {
+        this.handleModalToggle();
+      }
+    }
   }
 
   render() {
@@ -527,9 +539,10 @@ class WithDropdown extends React.Component {
               Cancel
             </Button>
           ]}
+          onEscapePress={this.onEscapePress}
         >
           <div>
-            Set the dropdown <em>menuAppendTo</em> prop to <strong>parent</strong> in order to allow the dropdown menu break out of the modal container.
+            Set the dropdown <strong>menuAppendTo</strong> prop to <em>parent</em> in order to allow the dropdown menu break out of the modal container. You'll also want to handle closing of the modal yourself, by listening to the <strong>onEscapePress</strong> callback on the Modal component, so you can close the Dropdown first if it's open.
           </div>
           <div>
             <Dropdown
