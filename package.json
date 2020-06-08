@@ -81,7 +81,7 @@
     "build:docs": "yarn workspace @patternfly/react-docs build:docs",
     "build:umd": "yarn workspace @patternfly/react-core build:umd",
     "build:generate": "lerna run generate --parallel --stream",
-    "clean": "yarn clean:build && yarn clean:pf3 && lerna run clean --parallel",
+    "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "rimraf .cache .eslintcache coverage",
     "commit": "git-cz",
     "generate": "yarn plop",
