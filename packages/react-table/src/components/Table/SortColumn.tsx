@@ -7,7 +7,7 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import { SortByDirection } from './Table';
 import { TableText } from './TableText';
 
-export interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
   isSortedBy?: boolean;
@@ -21,6 +21,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   isSortedBy = false,
   onSort = null,
   sortDirection = '',
+  type = 'button',
   ...props
 }: SortColumnProps) => {
   let SortedByIcon;
@@ -30,7 +31,12 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     SortedByIcon = ArrowsAltVIcon;
   }
   return (
-    <button {...props} className={css(className, styles.tableButton)} onClick={event => onSort && onSort(event)}>
+    <button
+      {...props}
+      type={type}
+      className={css(className, styles.tableButton)}
+      onClick={event => onSort && onSort(event)}
+    >
       <div className={css(className, styles.tableButtonContent)}>
         <TableText>{children}</TableText>
         <span className={css(styles.tableSortIndicator)}>
