@@ -9,7 +9,7 @@ export class LayoutNode {
   protected nodeHeight: number;
   protected nodeRadius: number;
   public readonly distance: number;
-  public parent: LayoutGroup;
+  public parent?: LayoutGroup;
   public index: number;
   // isFixed is used locally for Force simulation during drag events
   public isFixed: boolean = false;

@@ -65,11 +65,16 @@ export interface EdgeModel extends ElementModel {
   bendpoints?: PointTuple[];
 }
 
+// Scale extent: [min scale, max scale]
+export type ScaleExtent = [number, number];
+
 export interface GraphModel extends ElementModel {
   layout?: string;
   x?: number;
   y?: number;
   scale?: number;
+  scaleExtent?: ScaleExtent;
+  maxScale?: number;
   layers?: string[];
 }
 
@@ -131,6 +136,7 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setNodeShape(shape: NodeShape): void;
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
+  isDimensionsInitialized(): boolean;
 }
 
 export interface Edge<E extends EdgeModel = EdgeModel, D = any> extends GraphElement<E, D> {
@@ -158,6 +164,8 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   setPosition(location: Point): void;
   getDimensions(): Dimensions;
   setDimensions(dimensions: Dimensions): void;
+  getScaleExtent(): ScaleExtent;
+  setScaleExtent(scaleExtent: ScaleExtent): void;
   getScale(): number;
   setScale(scale: number): void;
   getLayout(): string | undefined;
@@ -217,16 +225,20 @@ export interface Controller extends WithState {
   getElements(): GraphElement[];
 }
 
-interface ElementEvent {
+export interface ElementEvent {
   target: GraphElement;
 }
+export type ElementVisibilityChangeEvent = ElementEvent & { visible: boolean };
+
 export type ElementChildEventListener = EventListener<[ElementEvent & { child: GraphElement }]>;
+export type ElementVisibilityChangeEventListener = EventListener<[ElementVisibilityChangeEvent]>;
 
 export type NodeCollapseChangeEventListener = EventListener<[{ node: Node }]>;
 
 export type GraphLayoutEndEventListener = EventListener<[{ graph: Graph }]>;
 
 export const ADD_CHILD_EVENT = 'element-add-child';
+export const ELEMENT_VISIBILITY_CHANGE_EVENT = 'element-visibility-change';
 export const REMOVE_CHILD_EVENT = 'element-remove-child';
 export const NODE_COLLAPSE_CHANGE_EVENT = 'node-collapse-change';
 export const GRAPH_LAYOUT_END_EVENT = 'graph-layout-end';

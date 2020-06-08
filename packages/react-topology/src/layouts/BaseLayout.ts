@@ -10,7 +10,10 @@ import {
   GRAPH_LAYOUT_END_EVENT,
   ElementChildEventListener,
   NODE_COLLAPSE_CHANGE_EVENT,
-  NodeCollapseChangeEventListener
+  NodeCollapseChangeEventListener,
+  ElementVisibilityChangeEventListener,
+  ELEMENT_VISIBILITY_CHANGE_EVENT,
+  ElementVisibilityChangeEvent
 } from '../types';
 import { leafNodeElements, groupNodeElements, getClosestVisibleParent } from '../utils/element-utils';
 import {
@@ -18,16 +21,17 @@ import {
   DRAG_NODE_END_EVENT,
   DRAG_NODE_START_EVENT,
   DragEvent,
-  DragNodeEventListener
+  DragNodeEventListener,
+  DragOperationWithType
 } from '../behavior';
 import { BaseEdge } from '../elements';
 import { ForceSimulation } from './ForceSimulation';
 import { LayoutNode } from './LayoutNode';
 import { LayoutGroup } from './LayoutGroup';
 import { LayoutLink } from './LayoutLink';
-import { LayoutOpts } from './LayoutOpts';
+import { LayoutOptions } from './LayoutOptions';
 
-const LAYOUT_DEFAULTS: LayoutOpts = {
+const LAYOUT_DEFAULTS: LayoutOptions = {
   linkDistance: 60,
   nodeDistance: 35,
   groupDistance: 35,
@@ -37,13 +41,12 @@ const LAYOUT_DEFAULTS: LayoutOpts = {
   allowDrag: true,
   layoutOnDrag: true
 };
-
 class BaseLayout implements Layout {
   private graph: Graph;
 
   protected forceSimulation: ForceSimulation;
 
-  protected options: LayoutOpts;
+  protected options: LayoutOptions;
 
   protected scheduleHandle?: number;
 
@@ -57,7 +60,7 @@ class BaseLayout implements Layout {
 
   protected nodesMap: { [id: string]: LayoutNode } = {};
 
-  constructor(graph: Graph, options?: Partial<LayoutOpts>) {
+  constructor(graph: Graph, options?: Partial<LayoutOptions>) {
     this.graph = graph;
     this.options = {
       ...LAYOUT_DEFAULTS,
@@ -88,19 +91,19 @@ class BaseLayout implements Layout {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  protected initDrag(element: Node, event: DragEvent, operation: string): void {}
+  protected initDrag(element: Node, event: DragEvent, operation: DragOperationWithType): void {}
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  protected endDrag(element: Node, event: DragEvent, operation: string): void {}
+  protected endDrag(element: Node, event: DragEvent, operation: DragOperationWithType): void {}
 
-  handleDragStart = (element: Node, event: DragEvent, operation: string) => {
+  handleDragStart = (element: Node, event: DragEvent, operation: DragOperationWithType) => {
     this.initDrag(element, event, operation);
 
     if (!this.options.layoutOnDrag) {
       return;
     }
 
-    if (operation !== DRAG_MOVE_OPERATION) {
+    if (operation.type !== DRAG_MOVE_OPERATION) {
       this.forceSimulation.stopSimulation();
       return;
     }
@@ -129,14 +132,14 @@ class BaseLayout implements Layout {
     }
   };
 
-  handleDragEnd = (element: Node, event: DragEvent, operation: string) => {
+  handleDragEnd = (element: Node, event: DragEvent, operation: DragOperationWithType) => {
     this.endDrag(element, event, operation);
 
     if (!this.options.layoutOnDrag) {
       return;
     }
 
-    if (operation !== DRAG_MOVE_OPERATION) {
+    if (operation.type !== DRAG_MOVE_OPERATION) {
       this.forceSimulation.restart();
       return;
     }
@@ -166,27 +169,46 @@ class BaseLayout implements Layout {
   };
 
   private startListening(): void {
-    this.graph.getController().addEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
-    this.graph.getController().addEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
-    this.graph.getController().addEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
+    const controller = this.graph.getController();
+    if (controller) {
+      controller.addEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
+      controller.addEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
+      controller.addEventListener(ELEMENT_VISIBILITY_CHANGE_EVENT, this.handleElementVisibilityChange);
+      controller.addEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
+    }
   }
 
   private stopListening(): void {
-    clearTimeout(this.scheduleHandle);
-    this.graph.getController().removeEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
-    this.graph.getController().removeEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
-    this.graph.getController().removeEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
+    const controller = this.graph.getController();
+    if (this.scheduleHandle) {
+      window.cancelAnimationFrame(this.scheduleHandle);
+    }
+    if (controller) {
+      controller.removeEventListener(ADD_CHILD_EVENT, this.handleChildAdded);
+      controller.removeEventListener(REMOVE_CHILD_EVENT, this.handleChildRemoved);
+      controller.removeEventListener(ELEMENT_VISIBILITY_CHANGE_EVENT, this.handleElementVisibilityChange);
+      controller.removeEventListener(NODE_COLLAPSE_CHANGE_EVENT, this.handleNodeCollapse);
+    }
   }
 
-  private handleChildAdded: ElementChildEventListener = ({ child }): void => {
+  protected handleChildAdded: ElementChildEventListener = ({ child }): void => {
     if (!this.nodesMap[child.getId()]) {
       this.scheduleRestart = true;
       this.scheduleLayout();
     }
   };
 
-  private handleChildRemoved: ElementChildEventListener = ({ child }): void => {
+  protected handleChildRemoved: ElementChildEventListener = ({ child }): void => {
     if (this.nodesMap[child.getId()]) {
+      this.scheduleRestart = true;
+      this.scheduleLayout();
+    }
+  };
+
+  protected handleElementVisibilityChange: ElementVisibilityChangeEventListener = (
+    event: ElementVisibilityChangeEvent
+  ): void => {
+    if (event.visible === (this.nodesMap[event.target.getId()] === undefined)) {
       this.scheduleRestart = true;
       this.scheduleLayout();
     }
@@ -201,11 +223,11 @@ class BaseLayout implements Layout {
 
   private scheduleLayout = (): void => {
     if (!this.scheduleHandle) {
-      this.scheduleHandle = window.setTimeout(() => {
+      this.scheduleHandle = window.requestAnimationFrame(() => {
         delete this.scheduleHandle;
         this.runLayout(false, this.scheduleRestart);
         this.scheduleRestart = false;
-      }, 0);
+      });
     }
   };
 
@@ -444,4 +466,4 @@ class BaseLayout implements Layout {
   }
 }
 
-export { BaseLayout, LayoutNode, LayoutGroup, LayoutLink, LayoutOpts as LayoutOptions, LAYOUT_DEFAULTS };
+export { BaseLayout, LayoutNode, LayoutGroup, LayoutLink, LayoutOptions, LAYOUT_DEFAULTS };

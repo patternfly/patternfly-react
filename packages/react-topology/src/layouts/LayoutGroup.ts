@@ -2,9 +2,9 @@ import { Node } from '../types';
 import { LayoutNode } from './LayoutNode';
 export class LayoutGroup {
   protected readonly node: Node;
-  public leaves: LayoutNode[];
-  public groups: LayoutGroup[];
-  public parent: LayoutGroup;
+  public leaves: LayoutNode[] = [];
+  public groups: LayoutGroup[] = [];
+  public parent?: LayoutGroup;
   public padding: number;
   public index: number;
   constructor(node: Node, padding: number, index: number) {

@@ -1,4 +1,4 @@
-export interface LayoutOpts {
+export interface LayoutOptions {
   linkDistance: number;
   nodeDistance: number;
   groupDistance: number;

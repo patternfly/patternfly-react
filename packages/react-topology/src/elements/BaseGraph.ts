@@ -3,7 +3,7 @@ import Rect from '../geom/Rect';
 import Point from '../geom/Point';
 import Dimensions from '../geom/Dimensions';
 import { DEFAULT_LAYERS } from '../const';
-import { Graph, Edge, Node, GraphModel, ModelKind, isNode, isEdge, Layout } from '../types';
+import { Graph, Edge, Node, GraphModel, ModelKind, isNode, isEdge, Layout, ScaleExtent } from '../types';
 import BaseElement from './BaseElement';
 
 export default class BaseGraph<E extends GraphModel = GraphModel, D = any> extends BaseElement<E, D>
@@ -25,6 +25,9 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
   private currentLayout?: Layout;
 
+  @observable.ref
+  private scaleExtent: ScaleExtent = [0.25, 4];
+
   @computed
   private get edges(): Edge[] {
     return this.getChildren().filter(isEdge);
@@ -45,6 +48,14 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
   setLayers(layers: string[]): void {
     this.layers = layers;
+  }
+
+  getScaleExtent(): ScaleExtent {
+    return this.scaleExtent;
+  }
+
+  setScaleExtent(scaleExtent: ScaleExtent): void {
+    this.scaleExtent = scaleExtent;
   }
 
   getBounds(): Rect {
@@ -132,7 +143,8 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     const c = location || b.getCenter().translate(-x, -y);
     x = (c.x - x) / this.scale;
     y = (c.y - y) / this.scale;
-    this.scale *= scale;
+    const newScale = Math.max(Math.min(this.scale * scale, this.scaleExtent[1]), this.scaleExtent[0]);
+    this.setScale(newScale);
     x = c.x - x * this.scale;
     y = c.y - y * this.scale;
     this.position = new Point(x, y);
@@ -233,6 +245,9 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     }
     if ('layout' in model) {
       this.setLayout(model.layout);
+    }
+    if (model.scaleExtent && model.scaleExtent.length === 2) {
+      this.setScaleExtent(model.scaleExtent);
     }
     if ('scale' in model && typeof model.scale === 'number') {
       this.setScale(+model.scale);

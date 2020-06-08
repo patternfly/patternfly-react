@@ -32,8 +32,8 @@ describe('BaseGraph', () => {
 
   it('should update scale', () => {
     expect(graph.getScale()).toBe(1);
-    graph.setScale(4.5);
-    expect(graph.getScale()).toBe(4.5);
+    graph.setScale(3.5);
+    expect(graph.getScale()).toBe(3.5);
   });
 
   it('should reset position and scale', () => {
@@ -77,7 +77,7 @@ describe('BaseGraph', () => {
 
     const controller = new Visualization();
     controller.setGraph(graph);
-    controller.registerLayoutFactory((type: any) => {
+    controller.registerLayoutFactory(type => {
       switch (type) {
         case LAYOUT1_TYPE:
           return layout1;
@@ -118,6 +118,7 @@ describe('BaseGraph', () => {
 
   it('should adjust bounds to fit nodes', () => {
     graph.setBounds(new Rect(0, 0, 100, 100));
+    graph.setScaleExtent([0.1, 100]);
 
     // no change if no nodes
     graph.fit();
@@ -250,7 +251,7 @@ describe('BaseGraph', () => {
     const layoutType = 'test';
     const controller = new Visualization();
     controller.setGraph(graph);
-    controller.registerLayoutFactory((type: any) => {
+    controller.registerLayoutFactory(type => {
       return type === layoutType ? new TestLayout() : undefined;
     });
 
@@ -267,7 +268,7 @@ describe('BaseGraph', () => {
     const model: GraphModel = {
       id: 'g',
       type: ModelKind.graph,
-      scale: 5
+      scale: 4
     };
     graph.setModel(model);
     expect(graph.getScale()).toBe(model.scale);
@@ -310,5 +311,24 @@ describe('BaseGraph', () => {
 
     graph.translateToParent(p);
     expect(p).toEqual({ x: 5, y: 6 });
+  });
+
+  it('should set scale extents based on model', () => {
+    graph.setModel({
+      id: 'test-graph-id',
+      type: 'graph',
+      scaleExtent: [0.2, 3.0],
+      scale: 5.5
+    });
+    expect(graph.getScale()).toBe(5.5);
+    const scaleExtent = graph.getScaleExtent();
+    expect(scaleExtent[0]).toBe(0.2);
+    expect(scaleExtent[1]).toBe(3.0);
+
+    // Scale extents do NOT prevent setting scale out of range
+    graph.setScale(10);
+    expect(graph.getScale()).toBe(10);
+    graph.setScale(0.1);
+    expect(graph.getScale()).toBe(0.1);
   });
 });
