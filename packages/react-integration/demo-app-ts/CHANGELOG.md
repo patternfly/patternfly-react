@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.11...demo-app-ts@4.13.12) (2020-06-09)
+
+
+### Bug Fixes
+
+* **Drawer:** opening drawer can send focus to the drawer ([#4328](https://github.com/patternfly/patternfly-react/issues/4328)) ([fec328a](https://github.com/patternfly/patternfly-react/commit/fec328ab03bb1456e5eb685b5fe91b712c82ef5d))
+
+
+
+
+
 ## [4.13.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.10...demo-app-ts@4.13.11) (2020-06-09)
 
 **Note:** Version bump only for package demo-app-ts
