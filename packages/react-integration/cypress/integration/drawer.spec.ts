@@ -16,6 +16,12 @@ describe('Drawer Demo Test', () => {
     cy.get('.pf-c-drawer').should('not.have.class', 'pf-m-expanded');
     cy.get('#toggleButton').click();
     cy.get('.pf-c-drawer').should('have.class', 'pf-m-expanded');
+    cy.get('#toggleButton').click();
+  });
+
+  it('Verify that focus gets sent to drawer', () => {
+    cy.get('#toggleButton').click();
+    cy.focused().contains('drawer-panel');
   });
 
   it('Verify panel widths', () => {

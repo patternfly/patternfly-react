@@ -23,6 +23,11 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
       isExpanded: false
     };
   }
+  drawerRef = React.createRef<HTMLButtonElement>();
+
+  onMount = () => {
+    this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus();
+  };
 
   onClick = () => {
     const isExpanded = !this.state.isExpanded;
@@ -49,7 +54,9 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
         }}
       >
         <DrawerHead>
-          <span>drawer-panel</span>
+          <span ref={this.drawerRef} tabIndex={isExpanded ? 0 : -1}>
+            drawer-panel
+          </span>
           <DrawerActions>
             <DrawerCloseButton onClick={this.onCloseClick} />
           </DrawerActions>
@@ -65,7 +72,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
         <Button id="toggleButton" onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded}>
+        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
           <DrawerSection>drawer-section</DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>

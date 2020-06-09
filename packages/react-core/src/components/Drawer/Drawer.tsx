@@ -15,6 +15,10 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isStatic?: boolean;
   /** Position of the drawer panel */
   position?: 'left' | 'right';
+  /** Lifecycle function invoked when the drawer has been mounted to the DOM. */
+  onMount?: () => void;
+  /** Lifecycle function invoked when the drawer has been unmounted from the DOM. */
+  onUnmount?: () => void;
 }
 
 export interface DrawerContextProps {
@@ -34,21 +38,32 @@ export const Drawer: React.SFC<DrawerProps> = ({
   isInline = false,
   isStatic = false,
   position = 'right',
+  onMount = () => {},
+  onUnmount = () => {},
   ...props
-}: DrawerProps) => (
-  <DrawerContext.Provider value={{ isExpanded, isStatic }}>
-    <div
-      className={css(
-        styles.drawer,
-        isExpanded && styles.modifiers.expanded,
-        isInline && styles.modifiers.inline,
-        isStatic && styles.modifiers.static,
-        position === 'left' && styles.modifiers.panelLeft,
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  </DrawerContext.Provider>
-);
+}: DrawerProps) => {
+  React.useEffect(() => {
+    onMount();
+    return () => {
+      onUnmount();
+    };
+  }, [isExpanded, onMount, onUnmount]);
+
+  return (
+    <DrawerContext.Provider value={{ isExpanded, isStatic }}>
+      <div
+        className={css(
+          styles.drawer,
+          isExpanded && styles.modifiers.expanded,
+          isInline && styles.modifiers.inline,
+          isStatic && styles.modifiers.static,
+          position === 'left' && styles.modifiers.panelLeft,
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    </DrawerContext.Provider>
+  );
+};
