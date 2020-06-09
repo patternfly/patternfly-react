@@ -5,11 +5,13 @@ import {
   Model,
   ModelKind,
   NodeModel,
-  Visualization,
   withPanZoom,
   GraphComponent,
   withDragNode,
-  VisualizationSurface
+  useComponentFactory,
+  useLayoutFactory,
+  useModel,
+  ComponentFactory
 } from '@patternfly/react-topology';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import data from './data/miserables';
@@ -17,6 +19,7 @@ import defaultComponentFactory from './components/defaultComponentFactory';
 import GroupHull from './components/GroupHull';
 import Group from './components/DefaultGroup';
 import Node from './components/DefaultNode';
+import withTopologySetup from './utils/withTopologySetup';
 
 const getModel = (layout: string): Model => {
   // create nodes from data
@@ -72,44 +75,32 @@ const getModel = (layout: string): Model => {
   return model;
 };
 
-const getVisualization = (model: Model): Visualization => {
-  const vis = new Visualization();
-
-  vis.registerLayoutFactory(defaultLayoutFactory);
-  vis.registerComponentFactory(defaultComponentFactory);
+const layoutStory = (model: Model): React.FC => () => {
+  useLayoutFactory(defaultLayoutFactory);
+  useComponentFactory(defaultComponentFactory);
 
   // support pan zoom and drag
-  vis.registerComponentFactory((kind: string, type: string) => {
-    if (kind === ModelKind.graph) {
-      return withPanZoom()(GraphComponent);
-    }
-    if (type === 'group-hull') {
-      return withDragNode()(GroupHull);
-    }
-    if (type === 'group') {
-      return withDragNode()(Group);
-    }
-    if (kind === ModelKind.node) {
-      return withDragNode()(Node);
-    }
-    return undefined;
-  });
-  vis.fromModel(model);
-
-  return vis;
+  useComponentFactory(
+    React.useCallback<ComponentFactory>((kind: string, type: string) => {
+      if (kind === ModelKind.graph) {
+        return withPanZoom()(GraphComponent);
+      }
+      if (type === 'group-hull') {
+        return withDragNode()(GroupHull);
+      }
+      if (type === 'group') {
+        return withDragNode()(Group);
+      }
+      if (kind === ModelKind.node) {
+        return withDragNode()(Node);
+      }
+      return undefined;
+    }, [])
+  );
+  useModel(model);
+  return null;
 };
 
-export const Force = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
-  return <VisualizationSurface visualization={vis} />;
-};
-
-export const Dagre = () => {
-  const vis: Visualization = getVisualization(getModel('Dagre'));
-  return <VisualizationSurface visualization={vis} />;
-};
-
-export const Cola = () => {
-  const vis: Visualization = getVisualization(getModel('Cola'));
-  return <VisualizationSurface visualization={vis} />;
-};
+export const Force = withTopologySetup(layoutStory(getModel('Force')));
+export const Dagre = withTopologySetup(layoutStory(getModel('Dagre')));
+export const Cola = withTopologySetup(layoutStory(getModel('Cola')));

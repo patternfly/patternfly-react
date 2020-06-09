@@ -5,16 +5,23 @@ import { EventListener } from '../types';
 import ElementContext from '../utils/ElementContext';
 
 export const SELECTION_EVENT = 'selection';
+export const SELECTION_STATE = 'selectedIds';
 
 export type SelectionEventListener = EventListener<[string[]]>;
 
 interface SelectionHandlerState {
-  selectedIds?: string[];
+  [SELECTION_STATE]?: string[];
 }
 
 export type OnSelect = (e: React.MouseEvent) => void;
 
-export const useSelection = (multi: boolean = false, controlled: boolean = false): [boolean, OnSelect] => {
+interface Options {
+  multiSelect?: boolean;
+  controlled?: boolean;
+  raiseOnSelect?: boolean;
+}
+
+export const useSelection = ({ multiSelect, controlled, raiseOnSelect }: Options = {}): [boolean, OnSelect] => {
   const element = React.useContext(ElementContext);
   const elementRef = React.useRef(element);
   elementRef.current = element;
@@ -36,7 +43,7 @@ export const useSelection = (multi: boolean = false, controlled: boolean = false
       const idx = state.selectedIds ? state.selectedIds.indexOf(id) : -1;
       let selectedIds: string[];
       let raise = false;
-      if (multi && (e.ctrlKey || e.metaKey)) {
+      if (multiSelect && (e.ctrlKey || e.metaKey)) {
         if (!state.selectedIds) {
           raise = true;
           selectedIds = [id];
@@ -49,7 +56,7 @@ export const useSelection = (multi: boolean = false, controlled: boolean = false
             selectedIds.splice(idx, 1);
           }
         }
-      } else if (idx === -1 || multi) {
+      } else if (idx === -1 || multiSelect) {
         raise = true;
         selectedIds = [id];
       } else {
@@ -59,11 +66,11 @@ export const useSelection = (multi: boolean = false, controlled: boolean = false
         state.selectedIds = selectedIds;
       }
       elementRef.current.getController().fireEvent(SELECTION_EVENT, selectedIds);
-      if (raise) {
+      if (raiseOnSelect && raise) {
         elementRef.current.raise();
       }
     }),
-    []
+    [multiSelect, controlled, raiseOnSelect]
   );
   return [selected.get(), onSelect];
 };
@@ -73,11 +80,11 @@ export interface WithSelectionProps {
   onSelect: OnSelect;
 }
 
-export const withSelection = (multi: boolean = false, controlled: boolean = false) => <P extends WithSelectionProps>(
+export const withSelection = (options?: Options) => <P extends WithSelectionProps>(
   WrappedComponent: React.ComponentType<P>
 ) => {
   const Component: React.FC<Omit<P, keyof WithSelectionProps>> = props => {
-    const [selected, onSelect] = useSelection(multi, controlled);
+    const [selected, onSelect] = useSelection(options);
     return <WrappedComponent {...(props as any)} selected={selected} onSelect={onSelect} />;
   };
   return observer(Component);

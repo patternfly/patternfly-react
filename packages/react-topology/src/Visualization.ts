@@ -107,6 +107,10 @@ export class Visualization extends Stateful implements Controller {
     }
   }
 
+  hasGraph(): boolean {
+    return !!this.graph;
+  }
+
   getGraph(): Graph {
     if (!this.graph) {
       throw new Error('Graph has not been set.');

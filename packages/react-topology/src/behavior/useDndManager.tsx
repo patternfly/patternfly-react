@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { computed, observable } from 'mobx';
-import ControllerContext from '../utils/ControllerContext';
+import useVisualizationController from '../hooks/useVisualizationController';
 import {
   DndManager,
   Identifier,
@@ -325,7 +324,7 @@ export class DndManagerImpl implements DndManager {
 }
 
 export const useDndManager = () => {
-  const controller = React.useContext(ControllerContext);
+  const controller = useVisualizationController();
   const store = controller.getStore<DndStore>();
   let { dndManager } = store;
   if (!dndManager) {

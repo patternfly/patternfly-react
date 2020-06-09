@@ -18,9 +18,11 @@ import {
   SELECTION_EVENT,
   SelectionEventListener,
   withSelection,
-  createAggregateEdges
+  createAggregateEdges,
+  VisualizationProvider,
+  useEventListener
 } from '@patternfly/react-topology';
-import { Toolbar, ToolbarGroup, ToolbarItem, Checkbox } from '@patternfly/react-core';
+import { ToolbarGroup, ToolbarItem, Checkbox } from '@patternfly/react-core';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import data from './data/group-types';
 import GroupHull from './components/GroupHull';
@@ -128,7 +130,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis }) =>
   const [collapseOrange, setCollapseOrange] = React.useState<boolean>(false);
   const [collapsePink, setCollapsePink] = React.useState<boolean>(false);
 
-  vis.addEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
+  useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
   });
 
@@ -235,7 +237,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis }) =>
       }
       viewToolbar={viewToolbar}
     >
-      <VisualizationSurface visualization={vis} state={{ selectedIds }} />
+      <VisualizationSurface state={{ selectedIds }} />
     </TopologyView>
   );
 };
@@ -243,5 +245,9 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis }) =>
 export const CollapsibleGroups = () => {
   const vis: Visualization = getVisualization(getModel());
 
-  return <TopologyViewComponent vis={vis} />;
+  return (
+    <VisualizationProvider controller={vis}>
+      <TopologyViewComponent vis={vis} />
+    </VisualizationProvider>
+  );
 };

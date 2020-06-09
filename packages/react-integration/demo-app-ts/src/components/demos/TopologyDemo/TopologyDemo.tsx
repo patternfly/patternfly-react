@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabTitleText } from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 import { Shapes } from './Shapes';
-import { SingleNode, SingleEdge, Group, GroupHull, MultiEdge } from './Basics';
+import { SingleNode, SingleEdge, Group, GroupHull, MultiEdge, AutoSizeNode } from './Basics';
 import { ControlledSelection, MultiSelect, Performance, UncontrolledSelection } from './Selection';
 import { PanZoom } from './PanZoom';
 import { Cola, Dagre, Force } from './Layouts';
@@ -47,6 +47,9 @@ export const TopologyDemo: React.FC = () => {
             </Tab>
             <Tab eventKey={4} title={<TabTitleText>Group Hull</TabTitleText>}>
               <GroupHull />
+            </Tab>
+            <Tab eventKey={5} title={<TabTitleText>Auto Size Node</TabTitleText>}>
+              <AutoSizeNode />
             </Tab>
           </Tabs>
         </Tab>
