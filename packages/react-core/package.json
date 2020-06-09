@@ -12,7 +12,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "tag": "prerelease-v4"
+    "tag": "prerelease"
   },
   "repository": {
     "type": "git",
