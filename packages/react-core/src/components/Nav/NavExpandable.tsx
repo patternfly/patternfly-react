@@ -99,6 +99,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
           <li
             className={css(
               styles.navItem,
+              styles.modifiers.expandable,
               expandedState && styles.modifiers.expanded,
               isActive && styles.modifiers.current,
               className
