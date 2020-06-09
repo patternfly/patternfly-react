@@ -6,8 +6,19 @@ typescript: true
 propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalContent']
 ---
 
-import { Modal, ModalVariant, TitleSizes, Button, Title, Wizard } from '@patternfly/react-core';
-import { WarningTriangleIcon } from '@patternfly/react-icons';
+import { 
+  Modal, 
+  ModalVariant, 
+  TitleSizes, 
+  Button, 
+  Title, 
+  Wizard,
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  KebabToggle
+} from '@patternfly/react-core';
+import { WarningTriangleIcon, ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
 ## Examples
 
@@ -436,6 +447,116 @@ class WithWizard extends React.Component {
             onClose={this.handleModalToggle}
             height={400}
         />
+        </Modal>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+```js title=With-dropdown
+import React from 'react';
+import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
+
+class WithDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
+      isDropdownOpen: false
+    };
+    this.handleModalToggle = () => {
+      const { isModalOpen } = this.state;
+      this.setState({
+        isModalOpen: !isModalOpen,
+        isDropdownOpen: false
+      });
+    };
+    this.onToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id-menu-document-body');
+      element.focus();
+    };
+    this.onEscapePress = () => {
+      const { isDropdownOpen } = this.state;
+      if (isDropdownOpen) {
+        this.setState({
+          isDropdownOpen: !isDropdownOpen
+        }, () => {
+          this.onFocus();
+        });
+      } else {
+        this.handleModalToggle();
+      }
+    }
+  }
+
+  render() {
+    const { isModalOpen, isDropdownOpen } = this.state;
+
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.handleModalToggle}>
+          Show Modal
+        </Button>
+        <Modal
+          title="Modal with dropdown"
+          variant={ModalVariant.small}
+          isOpen={isModalOpen}
+          onClose={this.handleModalToggle}
+          actions={[
+            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
+              Confirm
+            </Button>,
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
+              Cancel
+            </Button>
+          ]}
+          onEscapePress={this.onEscapePress}
+        >
+          <div>
+            Set the dropdown <strong>menuAppendTo</strong> prop to <em>parent</em> in order to allow the dropdown menu break out of the modal container. You'll also want to handle closing of the modal yourself, by listening to the <strong>onEscapePress</strong> callback on the Modal component, so you can close the Dropdown first if it's open.
+          </div>
+          <div>
+            <Dropdown
+              onSelect={this.onSelect}
+              toggle={
+                <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+                  Dropdown with a menu that can break out
+                </DropdownToggle>
+              }
+              isOpen={isDropdownOpen}
+              dropdownItems={dropdownItems}
+              menuAppendTo="parent"
+            />
+          </div>
         </Modal>
       </React.Fragment>
     );

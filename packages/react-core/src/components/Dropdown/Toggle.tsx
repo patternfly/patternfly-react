@@ -25,6 +25,8 @@ export interface ToggleProps {
   onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
+  /** The menu element */
+  getMenuRef?: () => HTMLElement;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -58,38 +60,38 @@ export class Toggle extends React.Component<ToggleProps> {
   };
 
   componentDidMount = () => {
-    document.addEventListener('mousedown', event => this.onDocClick(event));
-    document.addEventListener('touchstart', event => this.onDocClick(event));
-    document.addEventListener('keydown', event => this.onEscPress(event));
+    document.addEventListener('mousedown', this.onDocClick);
+    document.addEventListener('touchstart', this.onDocClick);
+    document.addEventListener('keydown', this.onEscPress);
   };
 
   componentWillUnmount = () => {
-    document.removeEventListener('mousedown', event => this.onDocClick(event));
-    document.removeEventListener('touchstart', event => this.onDocClick(event));
-    document.removeEventListener('keydown', event => this.onEscPress(event));
+    document.removeEventListener('mousedown', this.onDocClick);
+    document.removeEventListener('touchstart', this.onDocClick);
+    document.removeEventListener('keydown', this.onEscPress);
   };
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    if (
-      this.props.isOpen &&
-      this.props.parentRef &&
-      this.props.parentRef.current &&
-      !this.props.parentRef.current.contains(event.target)
-    ) {
-      this.props.onToggle(false, event);
+    const { isOpen, parentRef, onToggle, getMenuRef } = this.props;
+    const menuRef = getMenuRef && getMenuRef();
+    const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
+    const clickedWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
+    if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
+      onToggle(false, event);
       this.buttonRef.current.focus();
     }
   };
 
   onEscPress = (event: KeyboardEvent) => {
-    const { parentRef } = this.props;
+    const { parentRef, getMenuRef } = this.props;
     const keyCode = event.keyCode || event.which;
+    const menuRef = getMenuRef && getMenuRef();
+    const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
+    const escFromWithinMenu = menuRef && menuRef.contains && menuRef.contains(event.target as Node);
     if (
       this.props.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
-      parentRef &&
-      parentRef.current &&
-      parentRef.current.contains(event.target)
+      (escFromToggle || escFromWithinMenu)
     ) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
@@ -128,6 +130,7 @@ export class Toggle extends React.Component<ToggleProps> {
       bubbleEvent,
       onEnter,
       parentRef,
+      getMenuRef,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       id,
       type,

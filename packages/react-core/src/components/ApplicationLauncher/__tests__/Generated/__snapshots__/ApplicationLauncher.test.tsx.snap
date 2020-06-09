@@ -58,6 +58,7 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
       isGrouped={false}
       isOpen={false}
       isPlain={false}
+      menuAppendTo="inline"
       onSelect={[Function]}
       ouiaComponentType="Dropdown"
       position="right"

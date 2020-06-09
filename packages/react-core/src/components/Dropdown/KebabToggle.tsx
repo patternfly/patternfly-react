@@ -18,6 +18,8 @@ export interface KebabToggleProps extends DropdownToggleProps {
   onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: any;
+  /** The menu element */
+  getMenuRef?: () => HTMLElement;
   /** Forces active state */
   isActive?: boolean;
   /** Disables the dropdown toggle */
@@ -38,6 +40,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   isOpen = false,
   'aria-label': ariaLabel = 'Actions',
   parentRef = null,
+  getMenuRef = null,
   isActive = false,
   isPlain = false,
   isDisabled = false,
@@ -53,6 +56,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
     isOpen={isOpen}
     aria-label={ariaLabel}
     parentRef={parentRef}
+    getMenuRef={getMenuRef}
     isActive={isActive}
     isPlain={isPlain}
     isDisabled={isDisabled}

@@ -19,6 +19,7 @@ interface DropdownState {
   isOpen: boolean;
   isActionOpen: boolean;
   isCogOpen: boolean;
+  isMenuOnDocumentBodyOpen: boolean;
 }
 
 export class DropdownDemo extends React.Component<{}, DropdownState> {
@@ -33,13 +34,17 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
   onCogSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onCogClick: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   onCogFocus: () => void;
+  onMenuDocumentBodyToggle: (isOpen: boolean) => void;
+  onMenuDocumentBodySelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
+  onMenuDocumentBodyFocus: () => void;
 
   constructor(props: any) {
     super(props);
     this.state = {
       isOpen: false,
       isActionOpen: false,
-      isCogOpen: false
+      isCogOpen: false,
+      isMenuOnDocumentBodyOpen: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -103,6 +108,25 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     };
     this.onCogFocus = () => {
       const element = document.getElementById('cog-toggle-id');
+      if (element) {
+        element.focus();
+      }
+    };
+
+    this.onMenuDocumentBodyToggle = isMenuOnDocumentBodyOpen => {
+      this.setState({
+        isMenuOnDocumentBodyOpen
+      });
+    };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.onMenuDocumentBodySelect = _event => {
+      this.setState({
+        isMenuOnDocumentBodyOpen: !this.state.isMenuOnDocumentBodyOpen
+      });
+      this.onMenuDocumentBodyFocus();
+    };
+    this.onMenuDocumentBodyFocus = () => {
+      const element = document.getElementById('toggle-id-document-body');
       if (element) {
         element.focus();
       }
@@ -228,11 +252,61 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     );
   }
 
+  renderMenuOnDocumentBodyDropdown() {
+    const { isMenuOnDocumentBodyOpen } = this.state;
+
+    const dropdownItems = [
+      <DropdownItem key="link" href="https://www.google.com">
+        Link
+      </DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl" headingLevel="h2">
+          Dropdown with menu on document body
+        </Title>
+        <Dropdown
+          id="dropdown-document-body"
+          onSelect={this.onMenuDocumentBodySelect}
+          toggle={
+            <DropdownToggle
+              id="toggle-id-document-body"
+              onToggle={this.onMenuDocumentBodyToggle}
+              toggleIndicator={CaretDownIcon}
+              icon={<UserIcon />}
+            >
+              Dropdown
+            </DropdownToggle>
+          }
+          isOpen={isMenuOnDocumentBodyOpen}
+          dropdownItems={dropdownItems}
+          menuAppendTo={() => document.body}
+        />
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
         {this.renderDropdown()}
         {this.renderActionDropdown()}
+        {this.renderMenuOnDocumentBodyDropdown()}
       </Stack>
     );
   }

@@ -24,6 +24,8 @@ export interface DropdownMenuProps {
   position?: DropdownPosition | 'right' | 'left';
   /** Flag to indicate if menu is grouped */
   isGrouped?: boolean;
+  // Function to call on component mount
+  setMenuComponentRef?: any;
 }
 
 export interface DropdownMenuItem extends React.HTMLAttributes<any> {
@@ -43,7 +45,8 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     autoFocus: true,
     position: DropdownPosition.left,
     component: 'ul',
-    isGrouped: false
+    isGrouped: false,
+    setMenuComponentRef: null
   };
 
   componentDidMount() {
@@ -54,7 +57,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       const focusTargetCollection = this.refsCollection.find(ref => ref && ref[0] && !ref[0].hasAttribute('disabled'));
       const focusTarget = focusTargetCollection && focusTargetCollection[0];
       if (focusTarget && focusTarget.focus) {
-        focusTarget.focus();
+        setTimeout(() => focusTarget.focus());
       }
     }
   }
@@ -126,7 +129,17 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, isOpen, position, children, component, isGrouped, openedOnEnter, ...props } = this.props;
+    const {
+      className,
+      isOpen,
+      position,
+      children,
+      component,
+      isGrouped,
+      openedOnEnter,
+      setMenuComponentRef,
+      ...props
+    } = this.props;
     return (
       <DropdownArrowContext.Provider
         value={{
@@ -145,6 +158,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 )}
                 hidden={!isOpen}
                 onClick={event => onSelect && onSelect(event)}
+                ref={setMenuComponentRef}
               >
                 {children}
               </div>
@@ -165,6 +179,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                     )}
                     hidden={!isOpen}
                     role="menu"
+                    ref={setMenuComponentRef}
                   >
                     {this.extendChildren()}
                   </MenuComponent>
@@ -185,6 +200,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                     )}
                     hidden={!isOpen}
                     role="menu"
+                    ref={setMenuComponentRef}
                   >
                     {this.extendChildren()}
                   </MenuComponent>

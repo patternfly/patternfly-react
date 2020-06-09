@@ -20,8 +20,10 @@ describe('Dropdown Demo Test', () => {
 
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
     cy.get('#dropdown > button').trigger('keydown', { keyCode: 13 });
     cy.get('#dropdown').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Link');
     // When toggle is expanded, enter closes panel
     cy.get('#toggle-id').trigger('keydown', { keyCode: 13 });
@@ -155,10 +157,12 @@ describe('Action Dropdown Demo Test', () => {
 
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
     cy.get('#action-dropdown button')
       .last()
       .trigger('keydown', { keyCode: 13 });
     cy.get('#action-dropdown').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
     cy.get('#action-toggle-id').trigger('keydown', { keyCode: 13 });
@@ -284,7 +288,7 @@ describe('Cog Dropdown Demo Test', () => {
   // Mouse click opens panel
   it('Verify dropdown menu expanded', () => {
     cy.get('#cog-dropdown button')
-      .last()
+      .eq(1)
       .click();
     cy.get('#cog-dropdown').should('have.class', 'pf-m-expanded');
     cy.get('#cog-toggle-id').click();
@@ -293,10 +297,12 @@ describe('Cog Dropdown Demo Test', () => {
 
   // When toggle is collapsed:
   it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
     cy.get('#cog-dropdown button')
       .last()
       .trigger('keydown', { keyCode: 13 });
     cy.get('#cog-dropdown').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
     cy.focused().contains('Action');
     // When toggle is expanded, enter closes panel
     cy.get('#cog-toggle-id').trigger('keydown', { keyCode: 13 });
@@ -404,5 +410,153 @@ describe('Cog Dropdown Demo Test', () => {
       .first()
       .trigger('keydown', { keyCode: 38 });
     cy.focused().contains('Other action');
+  });
+});
+
+describe('Dropdown with menu on document body demo test', () => {
+  it('Navigate to demo section', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('#dropdown-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link');
+  });
+
+  it('Verify toggle dropdown', () => {
+    cy.get('#dropdown-document-body > button').should('have.class', 'pf-c-dropdown__toggle');
+  });
+
+  // Accessibility Tests:
+  // Mouse click opens panel
+  it('Verify dropdown menu expanded', () => {
+    cy.get('#dropdown-document-body > button').click();
+    cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
+  });
+
+  it('Verify dropdown menu tippy exists', () => {
+    cy.get('.tippy-popper').should('exist');
+  });
+
+  it('Verify dropdown menu is on document.body', () => {
+    cy.get('body')
+      .children('.tippy-popper')
+      .should('exist');
+  });
+
+  it('Verify dropdown menu closed', () => {
+    cy.get('#toggle-id-document-body').click();
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+  });
+
+  // When toggle is collapsed:
+  it('Enter opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.clock();
+    cy.get('#dropdown-document-body > button').trigger('keydown', { keyCode: 13 });
+    cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
+    cy.tick(1);
+    cy.focused().contains('Link');
+    // When toggle is expanded, enter closes panel
+    cy.get('#toggle-id-document-body').trigger('keydown', { keyCode: 13 });
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+  });
+
+  it('Space opens panel, places focus on first element in panel that can receive focus', () => {
+    cy.get('#dropdown-document-body > button').trigger('keydown', { keyCode: 32 });
+    cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
+    cy.focused().contains('Link');
+    // When toggle is expanded, space closes panel and focus stays on the toggle
+    cy.get('.pf-c-dropdown__menu-item')
+      .last()
+      .trigger('keydown', { keyCode: 32 });
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+    cy.focused().contains('Dropdown');
+  });
+
+  // Panel - Escape User action
+  it('Esc closes planel, places focus on the toggle', () => {
+    cy.get('#dropdown-document-body > button').click();
+    cy.get('#toggle-id-document-body').trigger('keydown', { keyCode: 27 });
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+    cy.focused().contains('Dropdown');
+  });
+
+  it('Mouse click outside panel closes panel', () => {
+    cy.get('#dropdown-document-body > button').click();
+    cy.get('main').click(0, 0, { force: true });
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+  });
+
+  // Panel > Menu - Single-selection variant
+  it('Mouse click closes panel', () => {
+    cy.get('#dropdown-document-body > button').click();
+    cy.get('#dropdown-document-body')
+      .find('button')
+      .first()
+      .click();
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+  });
+
+  it('Enter closes the panel', () => {
+    cy.get('#dropdown-document-body > button').click();
+    cy.get('.pf-c-dropdown__menu-item')
+      .last()
+      .trigger('keydown', { keyCode: 13 });
+    cy.get('#dropdown-document-body').should('not.have.class', 'pf-m-expanded');
+  });
+
+  it('When focus is in panel, space places focus on toggle', () => {
+    cy.get('#dropdown-document-body > button').click();
+    cy.get('.pf-c-dropdown__menu').trigger('keydown', { keyCode: 32 });
+    cy.focused().should('have.class', 'pf-c-dropdown__toggle');
+  });
+
+  // Panel > Menu > Menu Item - Managing focus
+  it('Tab closes panel, focus stays on toggle', () => {
+    cy.get('.pf-c-dropdown__menu-item')
+      .last()
+      .trigger('keydown', { keyCode: 9 });
+    cy.get('.pf-c-dropdown__toggle')
+      .last()
+      .should('not.have.class', 'pf-m-expanded');
+    cy.focused().contains('Dropdown');
+  });
+
+  it('Shift + Tab closes panel, focus stays on toggle', () => {
+    cy.get('.pf-c-dropdown__menu-item')
+      .last()
+      .trigger('keydown', { shiftKey: true, keyCode: 9, which: 9 });
+    cy.get('.pf-c-dropdown__toggle')
+      .last()
+      .should('not.have.class', 'pf-m-expanded');
+    cy.focused().contains('Dropdown');
+  });
+
+  it('Arrow down places focus on next enabled menu item', () => {
+    cy.get('.pf-c-dropdown__menu-item')
+      .first()
+      .trigger('keydown', { keyCode: 40 });
+    cy.focused().contains('Action');
+    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
+    cy.get('.pf-c-dropdown__menu-item')
+      .last()
+      .trigger('keydown', { keyCode: 40 });
+    cy.focused().contains('Link');
+  });
+
+  it('Arrow up places focus on previous enabled menu item', () => {
+    cy.get('.pf-c-dropdown__menu-item')
+      .last()
+      .trigger('keydown', { keyCode: 38 });
+    cy.focused().contains('Separated Link');
+    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
+    cy.get('.pf-c-dropdown__menu-item')
+      .first()
+      .trigger('keydown', { keyCode: 38 });
+    cy.focused().contains('Separated Action');
+  });
+
+  // Needs to be last because of redirect
+  it('Verify menu selection/link works', () => {
+    cy.get('.pf-c-dropdown__menu-item')
+      .first()
+      .should('have.attr', 'href', 'https://www.google.com');
   });
 });

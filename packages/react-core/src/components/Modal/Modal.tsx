@@ -44,6 +44,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   hasNoBodyWrapper?: boolean;
   /** An ID to use for the ModalBox container */
   id?: string;
+  /** Modal handles pressing of the Escape key and closes the modal. If you want to handle this yourself you can use this callback function */
+  onEscapePress?: (event: KeyboardEvent) => void;
 }
 
 export enum ModalVariant {
@@ -93,8 +95,9 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   handleEscKeyClick = (event: KeyboardEvent): void => {
+    const { onEscapePress } = this.props;
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
-      this.props.onClose();
+      onEscapePress ? onEscapePress(event) : this.props.onClose();
     }
   };
 
@@ -181,6 +184,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     const {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       appendTo,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onEscapePress,
       'aria-labelledby': ariaLabelledby,
       'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedby,

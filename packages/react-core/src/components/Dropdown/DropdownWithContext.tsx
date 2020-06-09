@@ -6,10 +6,14 @@ import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
+import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
+import { Instance as TippyInstance } from 'tippy.js';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
+  tip: TippyInstance;
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
+  menuComponentRef = React.createRef<any>();
 
   // seed for the aria-labelledby ID
   static currentId = 0;
@@ -24,6 +28,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     direction: DropdownDirection.down,
     onSelect: (): void => undefined,
     autoFocus: true,
+    menuAppendTo: 'inline',
     ouiaComponentType: 'Dropdown'
   };
 
@@ -47,6 +52,17 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     }
   }
 
+  setMenuComponentRef = (element: any) => {
+    this.menuComponentRef = element;
+  };
+
+  getMenuComponentRef = () => this.menuComponentRef;
+
+  getPlacement = (position: 'right' | 'left', direction: 'up' | 'down') => {
+    const placement = `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
+    return placement;
+  };
+
   render() {
     const {
       children,
@@ -62,6 +78,8 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       toggle,
       autoFocus,
       ouiaId,
+      menuAppendTo,
+      menuTippyProps,
       ouiaComponentType,
       ...props
     } = this.props;
@@ -82,7 +100,37 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       <DropdownContext.Consumer>
         {({ baseClass, baseComponent, id: contextId }) => {
           const BaseComponent = baseComponent as any;
-          return (
+          const menuComponent = (
+            <DropdownMenu
+              setMenuComponentRef={this.setMenuComponentRef}
+              component={component}
+              isOpen={isOpen}
+              position={position}
+              aria-labelledby={contextId ? `${contextId}-toggle` : id}
+              openedOnEnter={openedOnEnter}
+              isGrouped={isGrouped}
+              autoFocus={openedOnEnter && autoFocus}
+            >
+              {renderedContent}
+            </DropdownMenu>
+          );
+          const popoverContent = (
+            <div
+              className={css(
+                baseClass,
+                direction === DropdownDirection.up && styles.modifiers.top,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                isOpen && styles.modifiers.expanded,
+                className
+              )}
+              // temporary fix until Core adds a modifier
+              // https://github.com/patternfly/patternfly-react/pull/4348#discussion_r436924794
+              style={{ display: 'block' }}
+            >
+              {isOpen && menuComponent}
+            </div>
+          );
+          const mainComponent = (
             <BaseComponent
               {...props}
               className={css(
@@ -98,6 +146,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {
                   parentRef: this.baseComponentRef,
+                  getMenuRef: this.getMenuComponentRef,
                   isOpen,
                   id,
                   isPlain,
@@ -105,20 +154,36 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                   onEnter: () => this.onEnter()
                 })
               )}
-              {isOpen && (
-                <DropdownMenu
-                  component={component}
-                  isOpen={isOpen}
-                  position={position}
-                  aria-labelledby={contextId ? `${contextId}-toggle` : id}
-                  openedOnEnter={openedOnEnter}
-                  isGrouped={isGrouped}
-                  autoFocus={openedOnEnter && autoFocus}
-                >
-                  {renderedContent}
-                </DropdownMenu>
-              )}
+              {menuAppendTo === 'inline' && isOpen && menuComponent}
             </BaseComponent>
+          );
+          return menuAppendTo === 'inline' ? (
+            mainComponent
+          ) : (
+            <PopoverBase
+              content={popoverContent}
+              onCreate={(tip: TippyInstance) => (this.tip = tip)}
+              isVisible={isOpen}
+              trigger={'manual'}
+              arrow={false}
+              interactive
+              interactiveBorder={0}
+              maxWidth="none"
+              distance={0}
+              appendTo={menuAppendTo}
+              boundary="window"
+              flip={false}
+              placement={this.getPlacement(position, direction)}
+              hideOnClick={false}
+              theme="pf-popover"
+              lazy
+              duration={0}
+              animation="none"
+              showOnCreate
+              {...menuTippyProps}
+            >
+              {mainComponent}
+            </PopoverBase>
           );
         }}
       </DropdownContext.Consumer>

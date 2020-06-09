@@ -27,6 +27,7 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={true}
+    menuAppendTo="inline"
     onSelect={[Function]}
     ouiaComponentType="Dropdown"
     position="right"

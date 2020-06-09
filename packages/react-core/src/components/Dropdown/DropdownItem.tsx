@@ -34,6 +34,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   tabIndex?: number | null;
   /** An image to display within the DropdownItem, appearing before any component children */
   icon?: React.ReactNode;
+  /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
+  autoFocus?: boolean;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
@@ -54,6 +56,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   customChild,
   tabIndex = -1,
   icon = null,
+  autoFocus,
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
@@ -75,6 +78,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         additionalChild={additionalChild}
         customChild={customChild}
         icon={icon}
+        autoFocus={autoFocus}
         {...props}
       >
         {children}
