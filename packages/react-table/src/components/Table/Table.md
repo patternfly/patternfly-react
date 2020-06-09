@@ -1438,8 +1438,6 @@ class EditableRowsTable extends React.Component {
                   cellIndex={cellIndex}
                   props={props}
                   onSelect={this.onSelect}
-                  clearSelection={this.clearSelection}
-                  inputAriaLabel="Row 1 cell 4 content"
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
                     <SelectOption
@@ -1454,10 +1452,10 @@ class EditableRowsTable extends React.Component {
                 />
               ),
               props: {
-                value: 'Option 1',
+                value: ['Option 1'],
                 name: 'uniqueIdRow1Cell4',
                 isSelectOpen: props.isSelectOpen || false,
-                selected: props.selected || [],
+                selected: props.selected || ['Option 1'],
                 options: [
                   {value: 'Placeholder...', isPlaceholder: true},
                   {value: 'Option 1'},
@@ -1467,7 +1465,8 @@ class EditableRowsTable extends React.Component {
                   {value: 'Option 5'}
                 ],
                 editableSelectProps: {
-                  variant: 'single'
+                  variant: 'single',
+                  'aria-label': "Row 1 cell 4 content",
                 }
               }
             },
@@ -1530,7 +1529,6 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
-                  inputAriaLabel="Row 2 cell 4 content"
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => {
                     return (
@@ -1560,7 +1558,8 @@ class EditableRowsTable extends React.Component {
                   {value: 'Option 5'}
                 ],
                 editableSelectProps: {
-                  variant: 'typeaheadmulti'
+                  variant: 'typeaheadmulti',
+                  'aria-label': "Row 2 cell 4 content",
                 }
               }
             },
@@ -1645,7 +1644,6 @@ class EditableRowsTable extends React.Component {
                   props={props}
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
-                  inputAriaLabel="Row 3 cell 4 content"
                   isOpen={props.isSelectOpen}
                   options={props.options.map((option, index) => (
                     <SelectOption
@@ -1673,7 +1671,8 @@ class EditableRowsTable extends React.Component {
                   {value: 'Option 5'}
                 ],
                 editableSelectProps: {
-                  variant: 'typeaheadmulti'
+                  variant: 'checkbox',
+                  'aria-label': "Row 3 cell 4 content",
                 }
               }
             }
@@ -1715,8 +1714,8 @@ class EditableRowsTable extends React.Component {
       const newCellProps = newRows[rowIndex].cells[cellIndex].props;
 
       if (isPlaceholder) {
-        newCellProps.editableValue = [''];
-        newCellProps.selected = [''];
+        newCellProps.editableValue = [];
+        newCellProps.selected = [];
       } else {
         if (newCellProps.editableValue === undefined) {
           newCellProps.editableValue = [];
@@ -1725,7 +1724,8 @@ class EditableRowsTable extends React.Component {
         let newSelected = Array.from(newCellProps.selected);
 
         switch (newCellProps.editableSelectProps.variant) {
-          case 'typeaheadmulti': {
+          case 'typeaheadmulti':
+          case 'checkbox': {
             if (!newSelected.includes(newValue)) {
               newSelected.push(newValue);
             } else {
@@ -1759,7 +1759,7 @@ class EditableRowsTable extends React.Component {
 
     this.onToggle = (isOpen, rowIndex, cellIndex) => {
       let newRows = Array.from(this.state.rows);
-      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;;
+      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
       this.setState({
         rows: newRows
       });

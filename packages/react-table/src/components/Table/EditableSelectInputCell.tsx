@@ -18,6 +18,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
     isSelectOpen: boolean;
     selected: string | SelectOptionObject | (string | SelectOptionObject)[];
     options: React.ReactElement[];
+    /** props to be passed down to the Select component housed inside this editable select input cell */
     editableSelectProps?: SelectProps;
     [key: string]: any;
   };
@@ -31,8 +32,6 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   ) => void;
   /** Options to display in the expandable select menu */
   options?: React.ReactElement[];
-  /** accessible aria label for the select in the select input cell */
-  inputAriaLabel?: string;
   /** Flag indicating the select input is disabled */
   isDisabled?: boolean;
   /** Current selected options to display as the read only value of the table cell */
@@ -50,9 +49,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   rowIndex,
   cellIndex,
   onSelect = () => {},
-  clearSelection = () => {},
-  inputAriaLabel = '',
-  isDisabled = false,
+  clearSelection,
   isOpen = false,
   onToggle = () => {},
   selections = [''],
@@ -75,9 +72,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
     <Select
       {...props.editableSelectProps}
       onSelect={onSelectHandler}
-      onClear={onClear}
-      aria-label={inputAriaLabel}
-      isDisabled={isDisabled}
+      {...(clearSelection && { onClear })}
       isOpen={isOpen}
       onToggle={onToggle}
       selections={selections}

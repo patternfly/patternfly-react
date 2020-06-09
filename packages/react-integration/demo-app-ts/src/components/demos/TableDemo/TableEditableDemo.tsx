@@ -154,9 +154,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   props={updatedProps}
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
-                  inputAriaLabel="Row 1 cell 5 content"
                   isOpen={updatedProps.isSelectOpen}
-                  options={this.options.map((option, index) => (
+                  options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow1Cell5Option' + index} />
                   ))}
                   onToggle={isOpen => {
@@ -166,10 +165,22 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 />
               ),
               props: {
-                value: 'Option 1',
+                value: ['Option 1'],
                 name: 'uniqueIdRow1Cell5',
                 isSelectOpen: (props as any).isSelectOpen || false,
-                selected: (props as any).selected || 'Option 1'
+                selected: (props as any).selected || ['Option 1'],
+                options: [
+                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Option 1' },
+                  { value: 'Option 2' },
+                  { value: 'Option 3' },
+                  { value: 'Option 4' },
+                  { value: 'Option 5' }
+                ],
+                editableSelectProps: {
+                  variant: 'checkbox',
+                  'aria-label': 'Row 1 cell 5 content'
+                }
               }
             }
           ]
@@ -254,9 +265,8 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                   props={updatedProps}
                   onSelect={this.onSelect}
                   clearSelection={this.clearSelection}
-                  inputAriaLabel="Row 2 cell 5 content"
                   isOpen={updatedProps.isSelectOpen}
-                  options={this.options.map((option, index) => (
+                  options={(updatedProps as any).options.map((option: any, index: number) => (
                     <SelectOption key={index} value={option.value} id={'uniqueIdRow2Cell5Option' + index} />
                   ))}
                   onToggle={(isOpen: boolean) => {
@@ -266,18 +276,22 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
                 />
               ),
               props: {
-                value: ['Option 2'],
+                value: 'Option 2',
                 name: 'uniqueIdRow2Cell5',
                 isSelectOpen: (props as any).isSelectOpen || false,
                 selected: (props as any).selected || ['Option 2'],
                 options: [
-                  {value: 'Placeholder...', isPlaceholder: true},
-                  {value: 'Option 1'},
-                  {value: 'Option 2'},
-                  {value: 'Option 3'},
-                  {value: 'Option 4'},
-                  {value: 'Option 5'}
-                ]
+                  { value: 'Placeholder...', isPlaceholder: true },
+                  { value: 'Option 1' },
+                  { value: 'Option 2' },
+                  { value: 'Option 3' },
+                  { value: 'Option 4' },
+                  { value: 'Option 5' }
+                ],
+                editableSelectProps: {
+                  variant: 'single',
+                  'aria-label': 'Row 2 cell 5 content'
+                }
               }
             }
           ]
@@ -331,14 +345,36 @@ export class TableEditableDemo extends React.Component<TableProps, TableState> {
 
   onSelect = (newValue: string, evt: React.FormEvent, rowIndex: number, cellIndex: number, isPlaceholder?: boolean) => {
     const newRows = Array.from(this.state.rows);
+    const newCellProps = (newRows[rowIndex].cells[cellIndex] as IRowCell).props;
 
     if (isPlaceholder) {
-      (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = '';
-      (newRows[rowIndex].cells[cellIndex] as IRowCell).props.selected = null;
+      newCellProps.editableValue = [];
+      newCellProps.selected = [];
     } else {
-      (newRows[rowIndex].cells[cellIndex] as IRowCell).props.editableValue = newValue;
-      (newRows[rowIndex].cells[cellIndex] as IRowCell).props.selected = newValue;
+      if (newCellProps.editableValue === undefined) {
+        newCellProps.editableValue = [];
+      }
+
+      let newSelected = Array.from(newCellProps.selected) as string[];
+
+      switch (newCellProps.editableSelectProps.variant) {
+        case 'checkbox': {
+          if (!newSelected.includes(newValue)) {
+            newSelected.push(newValue);
+          } else {
+            newSelected = newSelected.filter(el => el !== newValue);
+          }
+          break;
+        }
+        default: {
+          newSelected = [newValue];
+        }
+      }
+
+      newCellProps.editableValue = newSelected;
+      newCellProps.selected = newSelected;
     }
+
     this.setState({
       rows: newRows
     });

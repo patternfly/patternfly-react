@@ -26,11 +26,19 @@ describe('Table Simple Test', () => {
       '.pf-m-inline-editable > [data-label="Text input col 1"] > .pf-c-inline-edit__input > .pf-c-form-control'
     ).type('test');
     cy.get(
+      '.pf-m-inline-editable > [data-label="Dropdown col 5"] > .pf-c-inline-edit__input > .pf-c-select > .pf-c-select__toggle > .pf-c-select__toggle-button'
+    ).click();
+    cy.get('label#uniqueIdRow1Cell5Option3 > .pf-c-check__input').click();
+    cy.get(
       '.pf-m-inline-editable > .pf-c-table__inline-edit-action > .pf-c-inline-edit__group > :nth-child(1) > .pf-c-button'
     ).click();
     cy.get(':nth-child(1) > [data-label="Text input col 1"] > .pf-c-inline-edit__value').should(
       'have.text',
       'Row 1 cell 1 contenttest'
+    );
+    cy.get(':nth-child(1) > [data-label="Dropdown col 5"] > .pf-c-inline-edit__value').should(
+      'have.text',
+      'Option 1, Option 3'
     );
   });
 
@@ -44,7 +52,7 @@ describe('Table Simple Test', () => {
       .clear()
       .type('xyz');
     cy.get(
-      '.pf-m-inline-editable:nth-of-type(2) > [data-label="Dropdown col 5"] > .pf-c-inline-edit__input > .pf-c-select'
+      '.pf-m-inline-editable:nth-of-type(2) > [data-label="Dropdown col 5"] > .pf-c-inline-edit__input > .pf-c-select > .pf-c-select__toggle > .pf-c-select__toggle-button'
     ).click();
     cy.get('button#uniqueIdRow2Cell5Option3-3').click();
     cy.get(
