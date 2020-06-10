@@ -1,3 +1,4 @@
+#! /bin/bash
 if [ -z $1 ]
 then
   echo 'Usage: changelog.sh @patternfly/react-core@version';
