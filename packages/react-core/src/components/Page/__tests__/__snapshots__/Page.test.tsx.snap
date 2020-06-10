@@ -303,11 +303,24 @@ exports[`Check page to verify breadcrumb is created 1`] = `
               <ol
                 className="pf-c-breadcrumb__list"
               >
-                <BreadcrumbItem>
+                <BreadcrumbItem
+                  key=".0"
+                  showDivider={false}
+                >
                   <li
                     className="pf-c-breadcrumb__item"
                   >
                     Section Home
+                  </li>
+                </BreadcrumbItem>
+                <BreadcrumbItem
+                  key=".1"
+                  showDivider={true}
+                  to="#"
+                >
+                  <li
+                    className="pf-c-breadcrumb__item"
+                  >
                     <span
                       className="pf-c-breadcrumb__item-divider"
                     >
@@ -337,14 +350,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                         </svg>
                       </AngleRightIcon>
                     </span>
-                  </li>
-                </BreadcrumbItem>
-                <BreadcrumbItem
-                  to="#"
-                >
-                  <li
-                    className="pf-c-breadcrumb__item"
-                  >
                     <a
                       className="pf-c-breadcrumb__link"
                       href="#"
@@ -352,6 +357,16 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     >
                       Section Title
                     </a>
+                  </li>
+                </BreadcrumbItem>
+                <BreadcrumbItem
+                  key=".2"
+                  showDivider={true}
+                  to="#"
+                >
+                  <li
+                    className="pf-c-breadcrumb__item"
+                  >
                     <span
                       className="pf-c-breadcrumb__item-divider"
                     >
@@ -381,14 +396,6 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                         </svg>
                       </AngleRightIcon>
                     </span>
-                  </li>
-                </BreadcrumbItem>
-                <BreadcrumbItem
-                  to="#"
-                >
-                  <li
-                    className="pf-c-breadcrumb__item"
-                  >
                     <a
                       className="pf-c-breadcrumb__link"
                       href="#"
@@ -396,44 +403,46 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     >
                       Section Title
                     </a>
-                    <span
-                      className="pf-c-breadcrumb__item-divider"
-                    >
-                      <AngleRightIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
-                          }
-                          viewBox="0 0 256 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                            transform=""
-                          />
-                        </svg>
-                      </AngleRightIcon>
-                    </span>
                   </li>
                 </BreadcrumbItem>
                 <BreadcrumbItem
                   isActive={true}
+                  key=".3"
+                  showDivider={true}
                   to="#"
                 >
                   <li
                     className="pf-c-breadcrumb__item"
                   >
+                    <span
+                      className="pf-c-breadcrumb__item-divider"
+                    >
+                      <AngleRightIcon
+                        color="currentColor"
+                        noVerticalAlign={false}
+                        size="sm"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
+                            }
+                          }
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                            transform=""
+                          />
+                        </svg>
+                      </AngleRightIcon>
+                    </span>
                     <a
                       aria-current="page"
                       className="pf-c-breadcrumb__link pf-m-current"
@@ -616,11 +625,24 @@ exports[`Check page to verify skip to content points to main content region 1`] 
             <ol
               className="pf-c-breadcrumb__list"
             >
-              <BreadcrumbItem>
+              <BreadcrumbItem
+                key=".0"
+                showDivider={false}
+              >
                 <li
                   className="pf-c-breadcrumb__item"
                 >
                   Section Home
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                key=".1"
+                showDivider={true}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
                   <span
                     className="pf-c-breadcrumb__item-divider"
                   >
@@ -650,14 +672,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                       </svg>
                     </AngleRightIcon>
                   </span>
-                </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                to="#"
-              >
-                <li
-                  className="pf-c-breadcrumb__item"
-                >
                   <a
                     className="pf-c-breadcrumb__link"
                     href="#"
@@ -665,6 +679,16 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   >
                     Section Title
                   </a>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                key=".2"
+                showDivider={true}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
                   <span
                     className="pf-c-breadcrumb__item-divider"
                   >
@@ -694,14 +718,6 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                       </svg>
                     </AngleRightIcon>
                   </span>
-                </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                to="#"
-              >
-                <li
-                  className="pf-c-breadcrumb__item"
-                >
                   <a
                     className="pf-c-breadcrumb__link"
                     href="#"
@@ -709,44 +725,46 @@ exports[`Check page to verify skip to content points to main content region 1`] 
                   >
                     Section Title
                   </a>
-                  <span
-                    className="pf-c-breadcrumb__item-divider"
-                  >
-                    <AngleRightIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
-                        }
-                        viewBox="0 0 256 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                          transform=""
-                        />
-                      </svg>
-                    </AngleRightIcon>
-                  </span>
                 </li>
               </BreadcrumbItem>
               <BreadcrumbItem
                 isActive={true}
+                key=".3"
+                showDivider={true}
                 to="#"
               >
                 <li
                   className="pf-c-breadcrumb__item"
                 >
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
                   <a
                     aria-current="page"
                     className="pf-c-breadcrumb__link pf-m-current"
