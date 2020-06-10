@@ -1,4 +1,5 @@
 import * as React from 'react';
+import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
@@ -13,6 +14,8 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
   component?: React.ReactNode;
+  /** Internal prop set by Breadcrumb on all but the first crumb */
+  showDivider?: boolean;
 }
 
 export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
@@ -21,12 +24,18 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
   to = null,
   target = null,
   component = 'a',
+  showDivider,
   ...props
 }: BreadcrumbHeadingProps) => {
   const Component = component as any;
   return (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
-      <h1 className={css(styles.breadcrumbHeading)}>
+      <h1 className={styles.breadcrumbHeading}>
+        {showDivider && (
+          <span className={styles.breadcrumbItemDivider}>
+            <AngleRightIcon />
+          </span>
+        )}
         {to && (
           <Component
             href={to}

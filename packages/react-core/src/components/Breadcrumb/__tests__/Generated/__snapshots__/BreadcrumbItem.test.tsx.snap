@@ -11,14 +11,5 @@ exports[`BreadcrumbItem should match snapshot (auto-generated) 1`] = `
   >
     ReactNode
   </a>
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
