@@ -37,9 +37,10 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   keyHandler?: (index: number, position: string) => void;
   /** Flag indicating select has an inline text input for filtering */
   hasInlineFilter?: boolean;
+  innerRef?: any;
 }
 
-export class SelectMenu extends React.Component<SelectMenuProps> {
+class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   static defaultProps: PickOptional<SelectMenuProps> = {
     className: '',
     isExpanded: false,
@@ -142,6 +143,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
       hasInlineFilter,
+      innerRef,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -151,6 +153,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
           <React.Fragment>
             {isCustomContent && (
               <div
+                ref={innerRef}
                 className={css(styles.selectMenu, className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 {...props}
@@ -160,6 +163,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             )}
             {variant !== SelectVariant.checkbox && !isCustomContent && (
               <ul
+                ref={innerRef}
                 className={css(styles.selectMenu, className)}
                 role="listbox"
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
@@ -171,6 +175,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
                 <div
+                  ref={innerRef}
                   className={css(styles.selectMenu, className)}
                   {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 >
@@ -191,6 +196,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) === 0 && (
               <div
+                ref={innerRef}
                 className={css(styles.selectMenu, className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
@@ -203,3 +209,9 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     );
   }
 }
+
+export const SelectMenu = React.forwardRef((props, ref) => (
+  <SelectMenuWithRef innerRef={ref} {...props}>
+    {props.children}
+  </SelectMenuWithRef>
+));

@@ -12,6 +12,8 @@ import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selec
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
 import { Divider } from '../Divider';
+import { Props as TippyProps } from 'tippy.js';
+import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -88,6 +90,16 @@ export interface SelectProps
   inlineFilterPlaceholderText?: string;
   /** Custom text for select badge */
   customBadgeText?: string | number;
+  /** The parent container to append the Select menu to. Defaults to 'inline'
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
+  /** additional tippy.js props to pass through to the select menu */
+  menuTippyProps?: Partial<TippyProps>;
 }
 
 export interface SelectState {
@@ -97,13 +109,16 @@ export interface SelectState {
   typeaheadFilteredChildren: React.ReactNode[];
   typeaheadCurrIndex: number;
   creatableValue: string;
+  menuMinWidth: string;
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
+  private menuComponentRef = React.createRef<HTMLElement>();
   private filterRef = React.createRef<HTMLInputElement>();
   private clearRef = React.createRef<HTMLButtonElement>();
   private refCollection: HTMLElement[] = [];
+  private resizeObserver: ResizeObserver = null;
 
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
@@ -134,7 +149,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     customContent: null,
     hasInlineFilter: false,
     inlineFilterPlaceholderText: null,
-    customBadgeText: null
+    customBadgeText: null,
+    menuAppendTo: 'inline'
   };
 
   state: SelectState = {
@@ -143,7 +159,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     typeaheadActiveChild: null as HTMLElement,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     typeaheadCurrIndex: -1,
-    creatableValue: ''
+    creatableValue: '',
+    menuMinWidth: ''
   };
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
@@ -164,6 +181,31 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
       this.setState({
         typeaheadInputValue: this.props.selections as string
+      });
+    }
+  };
+
+  componentDidMount() {
+    if (this.props.menuAppendTo !== 'inline') {
+      this.resizeObserver = new ResizeObserver(() => {
+        this.setMenuMinWidth();
+      });
+      this.resizeObserver.observe(this.parentRef.current);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+    }
+  }
+
+  setMenuMinWidth = () => {
+    const menuMinWidth =
+      (this.parentRef && this.parentRef.current && `${this.parentRef.current.offsetWidth}px`) || null;
+    if (menuMinWidth !== this.state.menuMinWidth) {
+      this.setState({
+        menuMinWidth
       });
     }
   };
@@ -356,6 +398,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     return null;
   };
 
+  getPlacement = (direction: 'up' | 'down') => {
+    const placement = `${direction === 'up' ? 'top' : 'bottom'}-start`;
+    return placement;
+  };
+
   render() {
     const {
       children,
@@ -394,9 +441,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       noResultsFoundText,
       customBadgeText,
       /* eslint-enable @typescript-eslint/no-unused-vars */
+      menuAppendTo,
+      menuTippyProps,
       ...props
     } = this.props;
-    const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
+    const {
+      openedOnEnter,
+      typeaheadInputValue,
+      typeaheadActiveChild,
+      typeaheadFilteredChildren,
+      menuMinWidth
+    } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
@@ -526,7 +581,43 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    return (
+    const menuComponent = (
+      <SelectMenu
+        {...props}
+        isGrouped={isGrouped}
+        selected={selections}
+        {...variantProps}
+        openedOnEnter={openedOnEnter}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        sendRef={this.sendRef}
+        keyHandler={this.handleArrowKeys}
+        maxHeight={maxHeight}
+        ref={this.menuComponentRef}
+        // need to get the parent width programmatically and apply to the menu
+        style={menuMinWidth ? { minWidth: menuMinWidth } : null}
+      >
+        {variantChildren}
+      </SelectMenu>
+    );
+
+    const popoverContent = (
+      <div
+        className={css(
+          styles.select,
+          isOpen && styles.modifiers.expanded,
+          direction === SelectDirection.up && styles.modifiers.top,
+          className
+        )}
+        // temporary fix until Core adds a modifier
+        // https://github.com/patternfly/patternfly-react/pull/4348#discussion_r436924794
+        style={{ display: 'block' }}
+      >
+        {isOpen && menuComponent}
+      </div>
+    );
+
+    const mainComponent = (
       <div
         className={css(
           styles.select,
@@ -535,126 +626,141 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         ref={this.parentRef}
-        style={{ width }}
         {...getOUIAProps('Select', ouiaId)}
       >
-        <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
-          <SelectToggle
-            id={selectToggleId}
-            parentRef={this.parentRef}
-            isOpen={isOpen}
-            isPlain={isPlain}
-            onToggle={onToggle}
-            onEnter={this.onEnter}
-            onClose={this.onClose}
-            variant={variant}
-            aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
-            aria-label={toggleAriaLabel}
-            handleTypeaheadKeys={this.handleTypeaheadKeys}
-            isDisabled={isDisabled}
-            hasClearButton={hasOnClear}
-          >
-            {customContent && (
+        <SelectToggle
+          id={selectToggleId}
+          parentRef={this.parentRef}
+          menuRef={this.menuComponentRef}
+          isOpen={isOpen}
+          isPlain={isPlain}
+          onToggle={onToggle}
+          onEnter={this.onEnter}
+          onClose={this.onClose}
+          variant={variant}
+          aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
+          aria-label={toggleAriaLabel}
+          handleTypeaheadKeys={this.handleTypeaheadKeys}
+          isDisabled={isDisabled}
+          hasClearButton={hasOnClear}
+        >
+          {customContent && (
+            <div className={css(styles.selectToggleWrapper)}>
+              {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+              <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+            </div>
+          )}
+          {variant === SelectVariant.single && !customContent && (
+            <React.Fragment>
+              <div className={css(styles.selectToggleWrapper)}>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                <span className={css(styles.selectToggleText)}>
+                  {this.getDisplay(selections[0] as string, 'node') || placeholderText || childPlaceholderText}
+                </span>
+              </div>
+              {hasOnClear && hasAnySelections && clearBtn}
+            </React.Fragment>
+          )}
+          {variant === SelectVariant.checkbox && !customContent && (
+            <React.Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+                {!isCheckboxSelectionBadgeHidden && hasAnySelections && (
+                  <div className={css(styles.selectToggleBadge)}>
+                    <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
+                      {this.generateSelectedBadge()}
+                    </span>
+                  </div>
+                )}
               </div>
-            )}
-            {variant === SelectVariant.single && !customContent && (
-              <React.Fragment>
-                <div className={css(styles.selectToggleWrapper)}>
-                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <span className={css(styles.selectToggleText)}>
-                    {this.getDisplay(selections[0] as string, 'node') || placeholderText || childPlaceholderText}
-                  </span>
-                </div>
-                {hasOnClear && hasAnySelections && clearBtn}
-              </React.Fragment>
-            )}
-            {variant === SelectVariant.checkbox && !customContent && (
-              <React.Fragment>
-                <div className={css(styles.selectToggleWrapper)}>
-                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {!isCheckboxSelectionBadgeHidden && hasAnySelections && (
-                    <div className={css(styles.selectToggleBadge)}>
-                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>
-                        {this.generateSelectedBadge()}
-                      </span>
-                    </div>
-                  )}
-                </div>
-                {hasOnClear && hasAnySelections && clearBtn}
-              </React.Fragment>
-            )}
-            {variant === SelectVariant.typeahead && !customContent && (
-              <React.Fragment>
-                <div className={css(styles.selectToggleWrapper)}>
-                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <input
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id={`${selectToggleId}-select-typeahead`}
-                    aria-label={typeAheadAriaLabel}
-                    placeholder={placeholderText as string}
-                    value={
-                      typeaheadInputValue !== null
-                        ? typeaheadInputValue
-                        : this.getDisplay(selections[0] as string, 'text') || ''
-                    }
-                    type="text"
-                    onClick={this.onClick}
-                    onChange={this.onChange}
-                    onFocus={this.handleFocus}
-                    autoComplete="off"
-                    disabled={isDisabled}
-                  />
-                </div>
-                {(selections[0] || typeaheadInputValue) && clearBtn}
-              </React.Fragment>
-            )}
-            {variant === SelectVariant.typeaheadMulti && !customContent && (
-              <React.Fragment>
-                <div className={css(styles.selectToggleWrapper)}>
-                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
-                  <input
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id={`${selectToggleId}-select-multi-typeahead-typeahead`}
-                    aria-label={typeAheadAriaLabel}
-                    placeholder={placeholderText as string}
-                    value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
-                    type="text"
-                    onChange={this.onChange}
-                    onClick={this.onClick}
-                    onFocus={this.handleFocus}
-                    autoComplete="off"
-                    disabled={isDisabled}
-                  />
-                </div>
-                {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
-              </React.Fragment>
-            )}
-          </SelectToggle>
-          {isOpen && (
-            <SelectMenu
-              {...props}
-              isGrouped={isGrouped}
-              selected={selections}
-              {...variantProps}
-              openedOnEnter={openedOnEnter}
-              aria-label={ariaLabel}
-              aria-labelledby={ariaLabelledBy}
-              sendRef={this.sendRef}
-              keyHandler={this.handleArrowKeys}
-              maxHeight={maxHeight}
-            >
-              {variantChildren}
-            </SelectMenu>
+              {hasOnClear && hasAnySelections && clearBtn}
+            </React.Fragment>
           )}
-        </SelectContext.Provider>
+          {variant === SelectVariant.typeahead && !customContent && (
+            <React.Fragment>
+              <div className={css(styles.selectToggleWrapper)}>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                <input
+                  className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                  aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                  id={`${selectToggleId}-select-typeahead`}
+                  aria-label={typeAheadAriaLabel}
+                  placeholder={placeholderText as string}
+                  value={
+                    typeaheadInputValue !== null
+                      ? typeaheadInputValue
+                      : this.getDisplay(selections[0] as string, 'text') || ''
+                  }
+                  type="text"
+                  onClick={this.onClick}
+                  onChange={this.onChange}
+                  onFocus={this.handleFocus}
+                  autoComplete="off"
+                  disabled={isDisabled}
+                />
+              </div>
+              {(selections[0] || typeaheadInputValue) && clearBtn}
+            </React.Fragment>
+          )}
+          {variant === SelectVariant.typeaheadMulti && !customContent && (
+            <React.Fragment>
+              <div className={css(styles.selectToggleWrapper)}>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
+                {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
+                <input
+                  className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                  aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                  id={`${selectToggleId}-select-multi-typeahead-typeahead`}
+                  aria-label={typeAheadAriaLabel}
+                  placeholder={placeholderText as string}
+                  value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
+                  type="text"
+                  onChange={this.onChange}
+                  onClick={this.onClick}
+                  onFocus={this.handleFocus}
+                  autoComplete="off"
+                  disabled={isDisabled}
+                />
+              </div>
+              {((selections && selections.length > 0) || typeaheadInputValue) && clearBtn}
+            </React.Fragment>
+          )}
+        </SelectToggle>
+        {isOpen && menuAppendTo === 'inline' && menuComponent}
       </div>
+    );
+
+    return (
+      <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
+        {menuAppendTo === 'inline' ? (
+          mainComponent
+        ) : (
+          <PopoverBase
+            content={popoverContent}
+            isVisible={isOpen}
+            trigger={'manual'}
+            arrow={false}
+            interactive
+            interactiveBorder={0}
+            maxWidth="none"
+            distance={0}
+            appendTo={menuAppendTo}
+            boundary="window"
+            flip={false}
+            placement={this.getPlacement(direction)}
+            hideOnClick={false}
+            theme="pf-popover"
+            lazy
+            duration={0}
+            animation="none"
+            showOnCreate
+            {...menuTippyProps}
+          >
+            {mainComponent}
+          </PopoverBase>
+        )}
+      </SelectContext.Provider>
     );
   }
 }
