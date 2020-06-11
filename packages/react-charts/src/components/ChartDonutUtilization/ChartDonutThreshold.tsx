@@ -53,7 +53,8 @@ export enum ChartDonutThresholdSubTitlePosition {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
  */
 export interface ChartDonutThresholdProps extends ChartDonutProps {
   /**

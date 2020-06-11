@@ -6,9 +6,10 @@ import {
   OriginType,
   StringOrNumberOrCallback,
   TextAnchorType,
-  VerticalAnchorType
+  VerticalAnchorType,
+  VictoryLabel,
+  VictoryLabelProps
 } from 'victory-core';
-import { VictoryLabel, VictoryLabelProps } from 'victory-core';
 import { ChartCommonStyles } from '../ChartTheme';
 
 export enum ChartLabelDirection {
@@ -24,7 +25,7 @@ export enum ChartLabelPlacement {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  */
 export interface ChartLabelProps extends VictoryLabelProps {
   /**

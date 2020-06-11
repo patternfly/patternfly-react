@@ -2,7 +2,6 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType } from 'victory-core';
 import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
-import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -13,7 +12,8 @@ export enum ChartVoronoiDimension {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-voronoi-container/src/index.d.ts
  */
 export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps {
   /**
