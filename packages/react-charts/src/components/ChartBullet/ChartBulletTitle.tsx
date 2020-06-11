@@ -7,7 +7,7 @@ import { ChartBulletStyles, ChartCommonStyles, ChartThemeDefinition } from '../C
 import { getBulletTheme, getBulletLabelX, getBulletLabelY, getPaddingForSide } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  */
 export interface ChartBulletTitleProps {
   /**

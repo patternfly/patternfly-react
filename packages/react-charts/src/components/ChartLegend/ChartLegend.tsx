@@ -41,7 +41,8 @@ export enum ChartLegendRowGutter {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and See https://github.com/FormidableLabs/victory/blob/master/packages/victory-legend/src/index.d.ts
  */
 export interface ChartLegendProps extends VictoryLegendProps {
   /**

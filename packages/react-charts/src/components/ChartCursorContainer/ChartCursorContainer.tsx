@@ -4,11 +4,11 @@ import { CoordinatesPropType, OriginType } from 'victory-core';
 import { VictoryCursorContainer, VictoryCursorContainerProps } from 'victory-cursor-container';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { ChartCursorTooltip } from '../ChartTooltip';
 import { getClassName, getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-cursor-container/src/index.d.ts
  */
 export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   /**

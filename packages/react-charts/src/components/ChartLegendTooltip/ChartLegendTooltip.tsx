@@ -15,7 +15,8 @@ import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartTooltip';
 import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   /**

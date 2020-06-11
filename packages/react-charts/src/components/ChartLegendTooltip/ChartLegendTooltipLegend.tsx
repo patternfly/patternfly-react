@@ -22,7 +22,8 @@ import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-legend/src/index.d.ts
  */
 // Overriding title prop
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore

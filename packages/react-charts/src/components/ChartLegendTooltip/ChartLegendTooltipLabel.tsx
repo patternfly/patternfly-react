@@ -7,14 +7,15 @@ import {
   OriginType,
   StringOrNumberOrCallback,
   TextAnchorType,
-  VerticalAnchorType
+  VerticalAnchorType,
+  VictoryLabel,
+  VictoryLabelProps
 } from 'victory-core';
-import { VictoryLabel, VictoryLabelProps } from 'victory-core';
 import { ChartLabel } from '../ChartLabel';
 import { ChartLegendTooltipStyles } from '../ChartTheme';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  */
 export interface ChartLegendLabelProps extends VictoryLabelProps {
   /**
