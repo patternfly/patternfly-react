@@ -12,7 +12,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartBar, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartTooltip, createContainer } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -284,7 +284,7 @@ class MonthlyResponsiveStack extends React.Component {
 
 ```js title=Multi--color-(unordered)-responsive-container
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
@@ -312,14 +312,27 @@ class MultiColorChart extends React.Component {
   render() {
     const { width } = this.state;
     
+    // Note: Container order is important
+    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }];
+
     return (
       <div ref={this.containerRef}>
         <div style={{ height: '225px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
-            containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-            legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
+            containerComponent={
+              <CursorVoronoiContainer
+                cursorDimension="x"
+                labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
+                labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
+                mouseFollowTooltips
+                voronoiDimension="x"
+                voronoiPadding={50}
+              />
+            }
+            legendData={legendData}
             legendPosition="bottom-left"
             height={225}
             padding={{

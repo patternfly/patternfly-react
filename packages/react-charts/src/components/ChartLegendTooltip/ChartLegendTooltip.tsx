@@ -9,12 +9,15 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
-import { ChartLegendTooltipLegend, defaultLegendProps } from './ChartLegendTooltipLegend';
+import { ChartLegendTooltipContent, defaultLegendProps } from './ChartLegendTooltipContent';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartTooltip';
+import { ChartCursorTooltip, ChartCursorTooltipProps, ChartTooltip } from '../ChartTooltip';
 import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 
 /**
+ * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
+ * container. This works best with charts such as area and line, for example.
+ *
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
  */
@@ -132,6 +135,11 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    */
   horizontal?: boolean;
   /**
+   * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
+   * container. When isCursorTooltip is true (default), ChartCursorTooltip is used. If false, ChartTooltip is used.
+   */
+  isCursorTooltip?: boolean;
+  /**
    * The index prop represents the index of the datum in the data array.
    */
   index?: number | string;
@@ -241,7 +249,8 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
 
 export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
   datum,
-  labelComponent = <ChartLegendTooltipLegend />,
+  isCursorTooltip = true,
+  labelComponent = <ChartLegendTooltipContent />,
   legendData,
   themeColor,
   themeVariant,
@@ -251,17 +260,18 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartLegendTooltipProps) => {
-  // Returns the tooltip legend component
-  const getTooltipLegendComponent = () =>
+  // Returns the tooltip content component
+  const getTooltipContentComponent = () =>
     React.cloneElement(labelComponent, {
       data: legendData,
+      isCursorTooltip,
       title,
       ...labelComponent.props
     });
 
   // Returns legend dimensions
   const getLegendDimensions = (props: any) => {
-    const legendComponent = getTooltipLegendComponent();
+    const legendComponent = getTooltipContentComponent();
     const getKeyValue = (key: string) =>
       legendComponent.props[key] ? legendComponent.props[key] : (defaultLegendProps as any)[key];
 
@@ -285,29 +295,31 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   // Returns flyout height based on legend size
   const getFlyoutHeight = (props: any) => {
-    const legendComponent = getTooltipLegendComponent();
+    const legendComponent = getTooltipContentComponent();
     const height = getLegendDimensions(props).height + ChartLegendTooltipStyles.flyout.padding;
     return legendComponent.props.title ? height : height - 10;
   };
 
   // Returns flyout width based on legend size
   const getFlyoutWidth = (props: any) => {
-    const legendComponent = getTooltipLegendComponent();
+    const legendComponent = getTooltipContentComponent();
     return getLegendDimensions(props).width + ChartLegendTooltipStyles.flyout.padding;
   };
 
-  return (
-    <React.Fragment>
-      <ChartCursorTooltip
-        datum={datum}
-        flyoutHeight={getFlyoutHeight}
-        flyoutWidth={getFlyoutWidth}
-        labelComponent={getTooltipLegendComponent()}
-        theme={theme}
-        {...rest}
-      />
-    </React.Fragment>
-  );
+  // Returns the tooltip component
+  const getTooltipComponent = () => {
+    const tooltipComponent = isCursorTooltip ? <ChartCursorTooltip /> : <ChartTooltip />;
+    return React.cloneElement(tooltipComponent, {
+      datum,
+      flyoutHeight: getFlyoutHeight,
+      flyoutWidth: getFlyoutWidth,
+      labelComponent: getTooltipContentComponent(),
+      theme,
+      ...rest
+    });
+  };
+
+  return getTooltipComponent();
 };
 
 // Note: VictoryTooltip.defaultEvents must be hoisted

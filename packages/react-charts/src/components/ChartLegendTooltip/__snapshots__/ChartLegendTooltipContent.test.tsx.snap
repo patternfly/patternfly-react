@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLegendTooltipLegend 1`] = `
+exports[`ChartLegendTooltipContent 1`] = `
 <Fragment>
   <ChartLabel
     style={
@@ -500,7 +500,7 @@ exports[`ChartLegendTooltipLegend 1`] = `
 </Fragment>
 `;
 
-exports[`ChartLegendTooltipLegend 2`] = `
+exports[`ChartLegendTooltipContent 2`] = `
 <Fragment>
   <ChartLabel
     style={

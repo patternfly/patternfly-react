@@ -28,7 +28,7 @@ import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 // Overriding title prop
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
-export interface ChartLegendTooltipLegendProps extends ChartLegendProps {
+export interface ChartLegendTooltipContentProps extends ChartLegendProps {
   /**
    * The borderComponent prop takes a component instance which will be responsible
    * for rendering a border around the legend. The new element created from the passed
@@ -326,7 +326,7 @@ export const defaultLegendProps = {
   }
 };
 
-export const ChartLegendTooltipLegend: React.FunctionComponent<ChartLegendTooltipLegendProps> = ({
+export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
   borderPadding = defaultLegendProps.borderPadding,
   data,
   datum,
@@ -350,11 +350,11 @@ export const ChartLegendTooltipLegend: React.FunctionComponent<ChartLegendToolti
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartLegendTooltipLegendProps) => {
+}: ChartLegendTooltipContentProps) => {
   const offsetY = 10 * (Array.isArray(text) ? text.length : 1);
 
   // Component offsets
-  const legendOffsetX = -50;
+  const legendOffsetX = -50; // Todo: base this on the flyout edge
   const legendOffsetY = -offsetY + 5 + (title ? 0 : -10);
   const titleOffsetX = -40;
   const titleOffsetY = -offsetY;
@@ -435,4 +435,4 @@ export const ChartLegendTooltipLegend: React.FunctionComponent<ChartLegendToolti
 };
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
-hoistNonReactStatics(ChartLegendTooltipLegend, VictoryLegend, { getBaseProps: true });
+hoistNonReactStatics(ChartLegendTooltipContent, VictoryLegend, { getBaseProps: true });

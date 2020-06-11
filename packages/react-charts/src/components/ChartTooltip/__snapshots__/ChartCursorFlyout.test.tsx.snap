@@ -12,6 +12,8 @@ exports[`ChartTooltip 1`] = `
   flyoutComponent={
     <ChartCursorFlyout
       pathComponent={<Path />}
+      pointerLength={10}
+      pointerWidth={20}
       role="presentation"
       shapeRendering="auto"
     />
@@ -489,6 +491,8 @@ exports[`ChartTooltip 2`] = `
   flyoutComponent={
     <ChartCursorFlyout
       pathComponent={<Path />}
+      pointerLength={10}
+      pointerWidth={20}
       role="presentation"
       shapeRendering="auto"
     />
