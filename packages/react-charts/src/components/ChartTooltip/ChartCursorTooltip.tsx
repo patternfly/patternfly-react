@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
+  Helpers,
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
@@ -223,6 +224,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
 
 export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
   constrainToVisibleArea = true,
+  flyoutComponent = <ChartCursorFlyout />,
   labelComponent = <ChartLabel />,
   labelTextAnchor = 'start',
   style,
@@ -244,16 +246,20 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   });
   const newStyle: any = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
+  const getFlyoutComponent = () => {
+    const _pointerLength = Helpers.evaluateProp(pointerLength);
+    return React.cloneElement(flyoutComponent, {
+      pointerLength: _pointerLength > 0 ? _pointerLength : theme.tooltip.pointerLength,
+      pointerWidth,
+      ...flyoutComponent.props
+    });
+  };
+
   return (
     <ChartTooltip
       centerOffset={centerOffset}
       constrainToVisibleArea={constrainToVisibleArea}
-      flyoutComponent={
-        <ChartCursorFlyout
-          pointerLength={pointerLength > 0 ? pointerLength : theme.tooltip.pointerLength}
-          pointerWidth={pointerWidth}
-        />
-      }
+      flyoutComponent={getFlyoutComponent()}
       labelComponent={labelComponent}
       labelTextAnchor={labelTextAnchor}
       pointerOrientation={pointerOrientation}
