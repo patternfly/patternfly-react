@@ -13,15 +13,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with className 1`
   className="pf-c-breadcrumb__item Class"
 >
   Item
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
 
@@ -30,15 +21,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with component 1`
   className="pf-c-breadcrumb__item"
 >
   Stuff
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
 
@@ -49,15 +31,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with custom eleme
   <h1>
     Header
   </h1>
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
 
@@ -67,15 +40,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
   id="Item 1"
 >
   Item
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
 
@@ -84,15 +48,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] =
   className="pf-c-breadcrumb__item"
 >
   Item
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
 
@@ -101,15 +56,6 @@ exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
   className="pf-c-breadcrumb__item"
 >
   Item
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
 
@@ -124,14 +70,5 @@ exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
   >
     Item
   </a>
-  <span
-    className="pf-c-breadcrumb__item-divider"
-  >
-    <AngleRightIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </span>
 </li>
 `;
