@@ -12,14 +12,14 @@ import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selec
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
 import { Divider } from '../Divider';
-import { Props as TippyProps } from 'tippy.js';
-import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
+import { ToggleMenuBaseProps, ToggleMenuComponent } from '../../helpers/PopoverBase/ToggleMenu';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
 
 export interface SelectProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
+  extends ToggleMenuBaseProps,
+    Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
   /** Content rendered inside the Select */
   children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
@@ -90,16 +90,6 @@ export interface SelectProps
   inlineFilterPlaceholderText?: string;
   /** Custom text for select badge */
   customBadgeText?: string | number;
-  /** The parent container to append the Select menu to. Defaults to 'inline'
-   * If your menu is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * menuAppendTo="parent"
-   * menuAppendTo={() => document.body}
-   * menuAppendTo={document.getElementById('target')}
-   */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
-  /** additional tippy.js props to pass through to the select menu */
-  menuTippyProps?: Partial<TippyProps>;
 }
 
 export interface SelectState {
@@ -396,11 +386,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       return selections.length;
     }
     return null;
-  };
-
-  getPlacement = (direction: 'up' | 'down') => {
-    const placement = `${direction === 'up' ? 'top' : 'bottom'}-start`;
-    return placement;
   };
 
   render() {
@@ -736,29 +721,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         {menuAppendTo === 'inline' ? (
           mainComponent
         ) : (
-          <PopoverBase
-            content={popoverContent}
-            isVisible={isOpen}
-            trigger={'manual'}
-            arrow={false}
-            interactive
-            interactiveBorder={0}
-            maxWidth="none"
-            distance={0}
-            appendTo={menuAppendTo}
-            boundary="window"
-            flip={false}
-            placement={this.getPlacement(direction)}
-            hideOnClick={false}
-            theme="pf-popover"
-            lazy
-            duration={0}
-            animation="none"
-            showOnCreate
-            {...menuTippyProps}
-          >
-            {mainComponent}
-          </PopoverBase>
+          <ToggleMenuComponent
+            toggle={mainComponent}
+            menu={popoverContent}
+            direction={direction}
+            menuAppendTo={menuAppendTo}
+            isOpen={isOpen}
+            menuTippyProps={menuTippyProps}
+          />
         )}
       </SelectContext.Provider>
     );

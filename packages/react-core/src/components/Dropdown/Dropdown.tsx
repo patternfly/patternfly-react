@@ -2,9 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
-import { Props as TippyProps } from 'tippy.js';
+import { ToggleMenuBaseProps } from '../../helpers/PopoverBase/ToggleMenu';
 
-export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
+export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Anything which can be rendered in a dropdown */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown */
@@ -29,16 +29,6 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
   autoFocus?: boolean;
-  /** The parent container to append the dropdown menu to. Defaults to 'inline'
-   * If your menu is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * menuAppendTo="parent"
-   * menuAppendTo={() => document.body}
-   * menuAppendTo={document.getElementById('target')}
-   */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
-  /** additional tippy.js props to pass through to the dropdown menu */
-  menuTippyProps?: Partial<TippyProps>;
   ouiaComponentType?: string;
 }
 
