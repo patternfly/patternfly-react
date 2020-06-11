@@ -56,6 +56,7 @@ module.exports = {
           /.*react-styles.*/,
           /.*react-docs.*/,
           /.*react-integration.*/,
+          /.*eslint-plugin-patternfly-react.*/,
           '**/\\..*', // dotfiles
           '**/*.d.ts',
           '**/*.test.*',

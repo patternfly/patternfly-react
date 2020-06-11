@@ -328,7 +328,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
           title="Section 1"
         >
           <li
-            className="pf-c-nav__item pf-m-expanded expandable-group"
+            className="pf-c-nav__item pf-m-expandable pf-m-expanded expandable-group"
             onClick={[Function]}
           >
             <a
@@ -492,7 +492,7 @@ exports[`Expandable Nav List 1`] = `
           title="Section 1"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item pf-m-expandable"
             onClick={[Function]}
           >
             <a
@@ -657,7 +657,7 @@ exports[`Expandable Nav List with aria label 1`] = `
           title="Section 1"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item pf-m-expandable"
             onClick={[Function]}
           >
             <a
