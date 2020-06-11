@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.33...@patternfly/react-docs@5.3.34) (2020-06-11)
+
+
+### Bug Fixes
+
+* **breadcrumb:** temp fix for spacing ([#4368](https://github.com/patternfly/patternfly-react/issues/4368)) ([7010497](https://github.com/patternfly/patternfly-react/commit/7010497c74efbd2dbf91629751dbf5d833c385ad))
+
+
+
+
+
 ## [5.3.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.32...@patternfly/react-docs@5.3.33) (2020-06-11)
 
 

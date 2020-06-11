@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.12...@patternfly/react-core@4.18.13) (2020-06-11)
+
+
+### Bug Fixes
+
+* **breadcrumb:** temp fix for spacing ([#4368](https://github.com/patternfly/patternfly-react/issues/4368)) ([7010497](https://github.com/patternfly/patternfly-react/commit/7010497c74efbd2dbf91629751dbf5d833c385ad))
+
+
+
+
+
 ## [4.18.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.11...@patternfly/react-core@4.18.12) (2020-06-11)
 
 
