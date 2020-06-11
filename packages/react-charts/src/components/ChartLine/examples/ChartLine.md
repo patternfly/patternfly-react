@@ -12,7 +12,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 
 ## Introduction
@@ -97,12 +97,13 @@ BasicRightAligned = (
 
 ```js title=Green-with-bottom-aligned-legend
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
 class BottomAlignedLegend extends React.Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }];
 
     return (
       <div>
@@ -113,15 +114,15 @@ class BottomAlignedLegend extends React.Component {
             ariaTitle="Line chart example"
             containerComponent={
               <CursorVoronoiContainer
-                constrainToVisibleArea
                 cursorDimension="x"
-                labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                labels={({ datum }) => `${datum.y}`}
+                labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
                 mouseFollowTooltips
                 voronoiDimension="x"
                 voronoiPadding={50}
               />
             }
-            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+            legendData={legendData}
             legendPosition="bottom"
             height={275}
             maxDomain={{y: 10}}

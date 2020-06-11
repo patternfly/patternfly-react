@@ -1,36 +1,16 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { OriginType } from 'victory-core';
-import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory-voronoi-container';
+import { CoordinatesPropType, OriginType } from 'victory-core';
+import { VictoryCursorContainer, VictoryCursorContainerProps } from 'victory-cursor-container';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
+import { ChartCursorTooltip } from '../ChartTooltip';
 import { getClassName, getTheme } from '../ChartUtils';
-
-export enum ChartVoronoiDimension {
-  x = 'x',
-  y = 'y'
-}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps {
-  /**
-   * When the activateData prop is set to true, the active prop will be set to true on all
-   * data components within a voronoi area. When this prop is set to false, the onActivated
-   * and onDeactivated callbacks will still fire, but no mutations to data components will
-   * occur via Victory’s event system.
-   */
-  activateData?: boolean;
-  /**
-   * When the activateLabels prop is set to true, the active prop will be set to true on all
-   * labels corresponding to points within a voronoi area. When this prop is set to false,
-   * the onActivated and onDeactivated callbacks will still fire, but no mutations to label
-   * components will occur via Victory’s event system. Labels defined directly on
-   * ChartVoronoiContainer via the labels prop will still appear when this prop is set to false.
-   */
-  activateLabels?: boolean;
+export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   /**
    * he children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
@@ -48,11 +28,43 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   containerId?: number | string;
   /**
-   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
-   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
-   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   * The cursorComponent prop takes a component instance which will be used to render a cursor element. The new element
+   * created will be supplied with x1, y1, x2 and y2 positioning props.
    */
-  constrainToVisibleArea?: boolean;
+  cursorComponent?: React.ReactElement<any>;
+  /**
+   * When the cursorDimension prop is set, the cursor will be a line to inspect the given dimension (either "x" or "y").
+   * When this prop is not specified, the cursor will be a 2-dimensional crosshair. For example, if you would like to
+   * inspect the time of time-series data, set dimension={"x"}; the cursor will then be a vertical line that will
+   * inspect the time value of the current mouse position.
+   */
+  cursorDimension?: 'x' | 'y';
+  /**
+   * The cursorLabel prop defines the label that will appear next to the cursor. A label will only appear if cursorLabel
+   * is set. This prop should be given as a function of a point (an Object with x and y properties).
+   *
+   * example: cursorLabel={(point) => point.x}
+   */
+  cursorLabel?: (point: CoordinatesPropType) => any | void;
+  /**
+   * The cursorLabelComponent prop takes a component instance which will be used to render a label for the cursor. The
+   * new element created from the passed cursorLabelComponent will be supplied with the following props: x, y, active,
+   * text. If cursorLabelComponent is omitted, a new ChartLabel will be created with the props described above.
+   */
+  cursorLabelComponent?: React.ReactElement;
+  /**
+   * The cursorLabelOffset prop determines the pixel offset of the cursor label from the cursor point. This prop should
+   * be an Object with x and y properties, or a number to be used for both dimensions.
+   */
+  cursorLabelOffset?: number | CoordinatesPropType;
+  /**
+   * Whenever the mouse is not over the chart, the cursor will not be displayed. If instead you would like to keep it
+   * displayed, use the defaultCursorValue prop to set the default value. The prop should be a point (an Object with x
+   * and y properties) for 2-dimensional cursors, or a number for 1-dimensional cursors.
+   *
+   * examples: defaultCursorValue={{x: 1, y: 1}}, defaultCursorValue={0}
+   */
+  defaultCursorValue?: number | CoordinatesPropType;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -64,7 +76,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   desc?: string;
   /**
-   * When the disable prop is set to true, ChartVoronoiContainer events will not fire.
+   * When the disable prop is set to true, ChartCursorContainer events will not fire.
    */
   disable?: boolean;
   /**
@@ -84,40 +96,17 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   height?: number;
   /**
-   * When a labels prop is provided to ChartVoronoiContainer it will render a label component
-   * rather than activating labels on the child components it renders. This is useful for
-   * creating multi- point tooltips. This prop should be given as a function which will be called
-   * once for each active point. The labels function will be called with the arguments point,
-   * index, and points, where point refers to a single active point, index refers to the position
-   * of that point in the array of active points, and points is an array of all active points.
-   */
-  labels?: (point: any, index: number, points: any[]) => string;
-  /**
-   * The labelComponent prop specified the component that will be rendered when labels are defined
-   * on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
-   */
-  labelComponent?: React.ReactElement<any>;
-  /**
-   * When the mouseFollowTooltip prop is set on ChartVoronoiContainer, The position of the center of the tooltip
-   * follows the position of the mouse.
-   */
-  mouseFollowTooltips?: boolean;
-  /**
    * The name prop is used to reference a component instance when defining shared events.
    */
   name?: string;
   /**
-   * The onActivated prop accepts a function to be called whenever new data points are activated.
-   * The function is called with the parameters points (an array of active data objects) and props
-   * (the props used by ChartVoronoiContainer).
+   * If provided, the onCursorChange function will be called every time the cursor value changes. onCursorChange is
+   * called with value (the updated cursor value) and props (the props used by ChartCursorContainer). A common use for
+   * onCursorChange is to save the cursor value to state and use it in another part of the view.
+   *
+   * example: onCursorChange={(value, props) => this.setState({cursorValue: value})}
    */
-  onActivated?: (points: any[], props: VictoryVoronoiContainerProps) => void;
-  /**
-   * The onDeactivated prop accepts a function to be called whenever points are deactivated. The
-   * function is called with the parameters points (an array of the newly-deactivated data objects)
-   * and props (the props used by ChartVoronoiContainer).
-   */
-  onDeactivated?: (points: any[], props: VictoryVoronoiContainerProps) => void;
+  onCursorChange?: (value: CoordinatesPropType, props: VictoryCursorContainerProps) => void;
   /**
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    *
@@ -143,11 +132,6 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * not set, the z-index of the enclosing div will be set to 99.
    */
   portalZIndex?: number;
-  /**
-   * When the radius prop is set, the voronoi areas associated with each data point will be no larger
-   * than the given radius. This prop should be given as a number.
-   */
-  radius?: number;
   /**
    * The responsive prop specifies whether the rendered container should be a responsive container
    * with a viewBox attribute, or a static container with absolute width and height.
@@ -191,26 +175,6 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   themeVariant?: string;
   /**
-   * The voronoiBlacklist prop is used to specify a list of components to ignore when calculating a
-   * shared voronoi diagram. Components with a name prop matching an element in the voronoiBlacklist
-   * array will be ignored by ChartVoronoiContainer. Ignored components will never be flagged as
-   * active, and will not contribute date to shared tooltips or labels.
-   */
-  voronoiBlacklist?: string[];
-  /**
-   * When the voronoiDimension prop is set, voronoi selection will only take the given dimension into
-   * account. For example, when dimension is set to “x”, all data points matching a particular x mouse
-   * position will be activated regardless of y value. When this prop is not given, voronoi selection
-   * is determined by both x any y values.
-   */
-  voronoiDimension?: 'x' | 'y';
-  /**
-   * When the voronoiPadding prop is given, the area of the chart that will trigger voronoi events is
-   * reduced by the given padding on every side. By default, no padding is applied, and the entire range
-   * of a given chart may trigger voronoi events. This prop should be given as a number.
-   */
-  voronoiPadding?: number;
-  /**
    * The width props specifies the width of the svg viewBox of the container
    * This value should be given as a number of pixels. If no width prop
    * is given, the width prop from the child component passed will be used.
@@ -218,22 +182,20 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   width?: number;
 }
 
-export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContainerProps> = ({
+export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerProps> = ({
   className,
-  constrainToVisibleArea = false,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  labelComponent = <ChartTooltip />, // Note that Victory provides its own tooltip component here
+  cursorLabelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   ...rest
-}: ChartVoronoiContainerProps) => {
+}: ChartCursorContainerProps) => {
   const chartClassName = getClassName({ className });
-  const chartLabelComponent = React.cloneElement(labelComponent, {
-    constrainToVisibleArea,
+  const chartCursorLabelComponent = React.cloneElement(cursorLabelComponent, {
     theme,
-    ...labelComponent.props
+    ...cursorLabelComponent.props
   });
 
   // Note: theme is required by voronoiContainerMixin
@@ -241,10 +203,15 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
     // Note: className is valid, but Victory is missing a type
     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
-    <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
+    <VictoryCursorContainer
+      className={chartClassName}
+      cursorLabelComponent={chartCursorLabelComponent}
+      theme={theme}
+      {...rest}
+    />
   );
 };
-ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
+ChartCursorContainer.defaultProps = (VictoryCursorContainer as any).defaultProps;
 
-// Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted
-hoistNonReactStatics(ChartVoronoiContainer, VictoryVoronoiContainer);
+// Note: VictoryCursorContainer.defaultEvents & VictoryContainer.role must be hoisted
+hoistNonReactStatics(ChartCursorContainer, VictoryCursorContainer);

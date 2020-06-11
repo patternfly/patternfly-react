@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartLegendTooltipLabel 1`] = `
+<Fragment>
+  <ChartLabel
+    style={
+      Object {
+        "fill": "#f0f0f0",
+      }
+    }
+    textAnchor="start"
+  />
+  <ChartLabel
+    style={
+      Object {
+        "fill": "#f0f0f0",
+      }
+    }
+    textAnchor="end"
+    x={NaN}
+  />
+</Fragment>
+`;
+
+exports[`ChartLegendTooltipLabel 2`] = `
+<Fragment>
+  <ChartLabel
+    style={
+      Object {
+        "fill": "#f0f0f0",
+      }
+    }
+    textAnchor="start"
+  />
+  <ChartLabel
+    style={
+      Object {
+        "fill": "#f0f0f0",
+      }
+    }
+    textAnchor="end"
+    x={NaN}
+  />
+</Fragment>
+`;
+
+exports[`renders component text 1`] = `
+<Fragment>
+  <ChartLabel
+    style={
+      Object {
+        "fill": "#f0f0f0",
+      }
+    }
+    text="Cats"
+    textAnchor="start"
+  />
+  <ChartLabel
+    style={
+      Object {
+        "fill": "#f0f0f0",
+      }
+    }
+    text={
+      Array [
+        "1, 2, 3, 4",
+      ]
+    }
+    textAnchor="end"
+    x={NaN}
+  />
+</Fragment>
+`;

@@ -2,6 +2,7 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { defaults } from 'lodash';
 import {
+  Helpers,
   LabelOrientationType,
   OriginType,
   StringOrNumberOrCallback,
@@ -9,24 +10,13 @@ import {
   VerticalAnchorType
 } from 'victory-core';
 import { VictoryLabel, VictoryLabelProps } from 'victory-core';
-import { ChartCommonStyles } from '../ChartTheme';
-
-export enum ChartLabelDirection {
-  rtl = 'rtl',
-  ltr = 'ltr',
-  inherit = 'inherit'
-}
-
-export enum ChartLabelPlacement {
-  parallel = 'parallel',
-  perpendicular = 'perpendicular',
-  vertical = 'vertical'
-}
+import { ChartLabel } from '../ChartLabel';
+import { ChartLegendTooltipStyles } from '../ChartTheme';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartLabelProps extends VictoryLabelProps {
+export interface ChartLegendLabelProps extends VictoryLabelProps {
   /**
    * The active prop specifies whether the label is active or not. The active prop is set by defaultEvents in components
    * like ChartTooltip and VictorySelectionContainer. The active prop is used when evaluating functional styles and
@@ -104,6 +94,24 @@ export interface ChartLabelProps extends VictoryLabelProps {
    */
   labelPlacement?: LabelOrientationType;
   /**
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
+   *
+   * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   */
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
+  /**
+   * The valueLabelComponent prop takes a component instance which will be used to render each legend tooltip.
+   */
+  legendLabelComponent?: React.ReactElement<any>;
+  /**
    * The lineHeight prop defines how much space a single line of text should take up.
    * Note that SVG has no notion of line-height, so the positioning may differ slightly from what you would expect with CSS,
    * but the result is similar: a roughly equal amount of extra space is distributed above and below the line of text.
@@ -176,27 +184,59 @@ export interface ChartLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
+export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelProps> = ({
+  dx = 0,
+  index = 0,
+  legendData,
+  legendLabelComponent = <ChartLabel />,
   style,
-  textAnchor,
-  ...rest
-}: ChartLabelProps) => {
-  const applyDefaultStyle = (customStyle: React.CSSProperties) =>
-    defaults(
-      {
-        ...customStyle,
-        textAnchor // textAnchor prop must override given theme styles
-      },
-      {
-        fontFamily: ChartCommonStyles.label.fontFamily,
-        fontSize: ChartCommonStyles.label.fontSize,
-        letterSpacing: ChartCommonStyles.label.letterSpacing
-      }
-    );
-  const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
+  text,
+  textAnchor = 'end',
+  x,
+  y,
 
-  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} />;
+  // destructure last
+  ...rest
+}: ChartLegendLabelProps) => {
+  const getStyle = (styles: any) => {
+    const applyDefaultStyle = (customStyle: React.CSSProperties) =>
+      defaults(
+        {
+          ...customStyle
+        },
+        {
+          fill: ChartLegendTooltipStyles.label.fill
+        }
+      );
+    return Array.isArray(styles) ? styles.map(applyDefaultStyle) : applyDefaultStyle(styles);
+  };
+
+  const getLegendLabelComponent = () => {
+    const label = legendData && legendData.length ? legendData[index as any].name : undefined;
+
+    return React.cloneElement(legendLabelComponent, {
+      style: getStyle({}),
+      text: label,
+      textAnchor: 'start',
+      x,
+      y
+    });
+  };
+
+  const getValueLabelComponent = () => {
+    const _x = x + Helpers.evaluateProp(dx);
+    return <ChartLabel style={getStyle(style)} text={text} textAnchor={textAnchor} x={_x} y={y} {...rest} />;
+  };
+
+  const legendLabel = getLegendLabelComponent();
+  const valueLabel = getValueLabelComponent();
+  return (
+    <React.Fragment>
+      {legendLabel}
+      {valueLabel}
+    </React.Fragment>
+  );
 };
 
 // Note: VictoryLabel.role must be hoisted
-hoistNonReactStatics(ChartLabel, VictoryLabel);
+hoistNonReactStatics(ChartLegendTooltipLabel, VictoryLabel);

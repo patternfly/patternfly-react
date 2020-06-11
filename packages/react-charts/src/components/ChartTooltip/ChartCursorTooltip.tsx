@@ -8,15 +8,19 @@ import {
   VictoryNumberCallback,
   VictoryStyleObject
 } from 'victory-core';
-import { VictoryTooltip, VictoryTooltipProps } from 'victory-tooltip';
+import { VictoryTooltip } from 'victory-tooltip';
 import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip';
+import { getTheme, getCursorTooltipCenterOffset, getCursorTooltipPoniterOrientation } from '../ChartUtils';
+import { ChartCursorFlyout } from './ChartCursorFlyout';
 
 /**
+ * This tooltip has default values intended for use with a cursor container.
+ *
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartTooltipProps extends VictoryTooltipProps {
+export interface ChartCursorTooltipProps extends ChartTooltipProps {
   /**
    * The active prop specifies whether the tooltip component should be displayed.
    */
@@ -144,7 +148,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   labelComponent?: React.ReactElement<any>;
   /**
    * Defines how the labelComponent text is horizontally positioned relative to its `x` and `y` coordinates. Valid
-   * values are 'start', 'middle', 'end', and 'inherit'.
+   * values are 'start' (default), 'middle', 'end', and 'inherit'. Note that this overrides the style prop.
    */
   labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
@@ -216,27 +220,43 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   y?: number;
 }
 
-export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
-  constrainToVisibleArea = false,
-  labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
-  labelTextAnchor,
+export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
+  constrainToVisibleArea = true,
+  labelComponent = <ChartLabel />,
+  labelTextAnchor = 'start',
+  style,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
+  centerOffset = getCursorTooltipCenterOffset({ offsetCursorDimensionX: true, theme }),
+  pointerOrientation = getCursorTooltipPoniterOrientation({ horizontal: true, theme }),
+  pointerLength = theme.tooltip.pointerLength,
+  pointerWidth = (theme.tooltip as any).pointerWidth,
   ...rest
-}: ChartTooltipProps) => {
-  const chartLabelComponent = React.cloneElement(labelComponent, {
-    textAnchor: labelTextAnchor,
-    theme,
-    ...labelComponent.props
+}: ChartCursorTooltipProps) => {
+  // Apply text anchor style
+  const applyDefaultStyle = (customStyle: React.CSSProperties) => ({
+    ...customStyle,
+    textAnchor: labelTextAnchor // Workaround for VictoryTooltip.getLabelProps referencing the theme style only
   });
+  const newStyle: any = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
   return (
-    <VictoryTooltip
+    <ChartTooltip
+      centerOffset={centerOffset}
       constrainToVisibleArea={constrainToVisibleArea}
-      labelComponent={chartLabelComponent}
+      flyoutComponent={
+        <ChartCursorFlyout
+          pointerLength={pointerLength > 0 ? pointerLength : theme.tooltip.pointerLength}
+          pointerWidth={pointerWidth}
+        />
+      }
+      labelComponent={labelComponent}
+      labelTextAnchor={labelTextAnchor}
+      pointerOrientation={pointerOrientation}
+      style={newStyle}
       theme={theme}
       {...rest}
     />
@@ -244,4 +264,4 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
 };
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
-hoistNonReactStatics(ChartTooltip, VictoryTooltip);
+hoistNonReactStatics(ChartCursorTooltip, VictoryTooltip);
