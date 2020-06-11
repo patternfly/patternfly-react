@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.3.12...@patternfly/react-charts@6.4.0) (2020-06-11)
+
+
+### Features
+
+* **charts:** Added support for a legend tooltip ([#4371](https://github.com/patternfly/patternfly-react/issues/4371)) ([f9ec3b0](https://github.com/patternfly/patternfly-react/commit/f9ec3b007a6b9e658dcdf624d29fa3cb714db3d1))
+
+
+
+
+
 ## [6.3.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.3.11...@patternfly/react-charts@6.3.12) (2020-06-09)
 
 **Note:** Version bump only for package @patternfly/react-charts
