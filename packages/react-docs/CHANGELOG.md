@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.32...@patternfly/react-docs@5.3.33) (2020-06-11)
+
+
+### Bug Fixes
+
+* **NavExpandable:** add style.modifiers.expandable ([#4362](https://github.com/patternfly/patternfly-react/issues/4362)) ([eb5bc98](https://github.com/patternfly/patternfly-react/commit/eb5bc98f38e250e824e959c9619ee33b0c6210b2))
+
+
+
+
+
 ## [5.3.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.31...@patternfly/react-docs@5.3.32) (2020-06-11)
 
 **Note:** Version bump only for package @patternfly/react-docs

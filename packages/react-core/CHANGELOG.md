@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.11...@patternfly/react-core@4.18.12) (2020-06-11)
+
+
+### Bug Fixes
+
+* **NavExpandable:** add style.modifiers.expandable ([#4362](https://github.com/patternfly/patternfly-react/issues/4362)) ([eb5bc98](https://github.com/patternfly/patternfly-react/commit/eb5bc98f38e250e824e959c9619ee33b0c6210b2))
+
+
+
+
+
 ## [4.18.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.10...@patternfly/react-core@4.18.11) (2020-06-09)
 
 
