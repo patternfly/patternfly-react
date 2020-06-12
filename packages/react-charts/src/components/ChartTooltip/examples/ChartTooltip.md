@@ -6,12 +6,9 @@ propComponents: ['ChartTooltip']
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, ChartLabel, ChartLegend, ChartLegendTooltip, ChartLine, ChartStack, ChartThemeColor, ChartTooltip, createContainer, getCustomTheme } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartBar, ChartCursorFlyout, ChartCursorTooltip, ChartDonut, ChartGroup, ChartLabel, ChartLegend, ChartLegendTooltip, ChartLine, ChartPoint, ChartStack, ChartThemeColor, ChartTooltip, createContainer, getCustomTheme } from '@patternfly/react-charts';
 import { Button, Tooltip } from '@patternfly/react-core';
 import './chart-tooltip.css';
-
-import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/js/chart_voronoi_labels_Fill';
-import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_FontWeight_bold';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -179,7 +176,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartTheme
 import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/js/chart_voronoi_labels_Fill';
 import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_FontWeight_bold';
 
-class CombinedCursorVoronoiContainer extends React.Component {
+class EmbeddedLegend extends React.Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
@@ -254,6 +251,135 @@ class CombinedCursorVoronoiContainer extends React.Component {
                   { name: 'Mice', x: '2017', y: 8 },
                   { name: 'Mice', x: '2018', y: 7 }
                 ]}
+              />
+            </ChartGroup>
+          </Chart>
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Embedded-HTML
+import React from 'react';
+import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
+
+class EmbeddedHtml extends React.Component {
+  constructor(props) {
+    super(props);
+    this.baseStyles = { 
+      color: '#f0f0f0', 
+      fontFamily: 'RedHatText, Overpass, overpass, helvetica, arial, sans-serif',
+      fontSize: '14px'
+    };
+  }
+
+  render() {
+    // Note: Container order is important
+    const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const legendData = [{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }];
+
+    // Custom HTML component to create a legend layout
+    const HtmlLegendContent = ({datum, legendData, text, theme, title, x, y, ...rest}) => (
+      <g>
+        <foreignObject height="100%" width="100%" x={x - 40} y={y - 45} >
+          <table>
+            <thead>
+              <th colSpan={2} style={{...this.baseStyles, fontWeight: 700}}>{title(datum)}</th>
+            </thead>
+            <tbody>
+              {text.map((val, index) => (
+                <tr style={this.baseStyles}>
+                  <th width="20px">
+                    <svg height="9.74" width="9.74" role="img">
+                      {<ChartPoint x={0} y={0}
+                         style={{ fill: theme.legend.colorScale[index] }}
+                         symbol={legendData[index].symbol ? legendData[index].symbol.type : 'square'}
+                         size={10}
+                      />}
+                    </svg>
+                  </th>
+                  <td width="55px">{legendData[index].name}</td>
+                  <td style={{textAlign: 'right'}}>{val}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </foreignObject>
+      </g>
+    );
+
+    return (
+      <div>
+        <p>This demonstrates how to embed HTML within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.</p>
+        <div ref={this.containerRef} style={{ height: '225px', width: '650px' }}>
+          <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Area chart example"
+            containerComponent={
+              <CursorVoronoiContainer
+                cursorDimension="x"
+                labels={({ datum }) => `${datum.y}`}
+                labelComponent={
+                  <ChartCursorTooltip
+                    centerOffset={{x: ({ flyoutWidth, width, x, offset = flyoutWidth / 2 + 10 }) => width > offset + x ? offset : -offset}}
+                    flyout={<ChartCursorFlyout />}
+                    flyoutHeight={110}
+                    flyoutWidth={125}
+                    labelComponent={<HtmlLegendContent legendData={legendData} title={(datum) => datum.x} />}
+                  />
+                }
+                mouseFollowTooltips
+                voronoiDimension="x"
+                voronoiPadding={50}
+              />
+            }
+            legendData={legendData}
+            legendPosition="bottom-left"
+            height={225}
+            padding={{
+              bottom: 75, // Adjusted to accommodate legend
+              left: 50,
+              right: 50,
+              top: 50,
+            }}
+            maxDomain={{y: 9}}
+            themeColor={ChartThemeColor.multiUnordered}
+            width={650}
+          >
+            <ChartAxis />
+            <ChartAxis dependentAxis showGrid />
+            <ChartGroup>
+              <ChartArea
+                data={[
+                  { name: 'Cats', x: '2015', y: 3 },
+                  { name: 'Cats', x: '2016', y: 4 },
+                  { name: 'Cats', x: '2017', y: 8 },
+                  { name: 'Cats', x: '2018', y: 6 }
+                ]}
+                interpolation="monotoneX"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Dogs', x: '2015', y: 2 },
+                  { name: 'Dogs', x: '2016', y: 3 },
+                  { name: 'Dogs', x: '2017', y: 4 },
+                  { name: 'Dogs', x: '2018', y: 5 },
+                  { name: 'Dogs', x: '2019', y: 6 }
+                ]}
+                interpolation="monotoneX"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Birds', x: '2015', y: 1 },
+                  { name: 'Birds', x: '2016', y: 2 },
+                  { name: 'Birds', x: '2017', y: 3 },
+                  { name: 'Birds', x: '2018', y: 2 },
+                  { name: 'Birds', x: '2019', y: 4 }
+                ]}
+                interpolation="monotoneX"
               />
             </ChartGroup>
           </Chart>
