@@ -6,6 +6,7 @@ export * from './ChartBar';
 export * from './ChartBullet';
 export * from './ChartContainer';
 export * from './ChartCursorContainer';
+export * from './ChartCursorTooltip';
 export * from './ChartDonut';
 export * from './ChartDonutUtilization';
 export * from './ChartGroup';
