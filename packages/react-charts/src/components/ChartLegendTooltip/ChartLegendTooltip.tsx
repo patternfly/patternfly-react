@@ -9,9 +9,10 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
+import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip';
 import { ChartLegendTooltipContent, defaultLegendProps } from './ChartLegendTooltipContent';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartCursorTooltip, ChartCursorTooltipProps, ChartTooltip } from '../ChartTooltip';
+import { ChartTooltip } from '../ChartTooltip';
 import { getLegendTooltipSize, getTheme } from '../ChartUtils';
 
 /**
