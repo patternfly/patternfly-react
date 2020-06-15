@@ -25,7 +25,7 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
 export function DataListCheck({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {},
+  onChange = () => {},
   isValid = true,
   isDisabled = false,
   isChecked = null,

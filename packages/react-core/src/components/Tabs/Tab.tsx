@@ -19,4 +19,9 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   isHidden?: boolean;
 }
 
-export function Tab  ()  null;
+/**
+ * @param _props
+ */
+export function Tab(_props: TabProps) {
+  return null as JSX.Element;
+}
