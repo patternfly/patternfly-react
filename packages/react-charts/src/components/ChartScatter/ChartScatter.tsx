@@ -411,7 +411,10 @@ export interface ChartScatterProps extends VictoryScatterProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
+/**
+ *
+ */
+export function ChartScatter({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
@@ -420,7 +423,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
   theme = getTheme(themeColor, themeVariant),
   size = ({ active }) => (active ? ChartScatterStyles.activeSize : ChartScatterStyles.size),
   ...rest
-}: ChartScatterProps) => {
+}: ChartScatterProps) {
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     theme,
@@ -429,7 +432,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
 
   // Note: containerComponent is required for theme
   return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
-};
+}
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartScatter, VictoryScatter);

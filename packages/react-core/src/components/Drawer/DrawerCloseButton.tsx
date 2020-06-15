@@ -13,16 +13,21 @@ export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> 
   'aria-label'?: string;
 }
 
-export const DrawerCloseButton: React.SFC<DrawerCloseButtonProps> = ({
+/**
+ *
+ */
+export function DrawerCloseButton({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = 'Close drawer panel',
   ...props
-}: DrawerCloseButtonProps) => (
-  <div className={css(styles.drawerClose, className)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
-      <TimesIcon />
-    </Button>
-  </div>
-);
+}: DrawerCloseButtonProps) {
+  return (
+    <div className={css(styles.drawerClose, className)} {...props}>
+      <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
+        <TimesIcon />
+      </Button>
+    </div>
+  );
+}

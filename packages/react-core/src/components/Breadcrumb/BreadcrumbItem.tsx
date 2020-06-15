@@ -20,7 +20,10 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   component?: React.ElementType;
 }
 
-export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
+/**
+ *
+ */
+export function BreadcrumbItem({
   children = null,
   className = '',
   to = null,
@@ -29,7 +32,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   target = null,
   component = 'a',
   ...props
-}: BreadcrumbItemProps) => {
+}: BreadcrumbItemProps) {
   const Component = component;
   return (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
@@ -51,4 +54,4 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
       {!to && <React.Fragment>{children}</React.Fragment>}
     </li>
   );
-};
+}

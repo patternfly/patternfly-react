@@ -11,14 +11,19 @@ export interface DrawerPanelBodyProps extends React.HTMLProps<HTMLDivElement> {
   hasNoPadding?: boolean;
 }
 
-export const DrawerPanelBody: React.SFC<DrawerPanelBodyProps> = ({
+/**
+ *
+ */
+export function DrawerPanelBody({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   hasNoPadding = false,
   ...props
-}: DrawerPanelBodyProps) => (
-  <div className={css(styles.drawerBody, hasNoPadding && styles.modifiers.noPadding, className)} {...props}>
-    {children}
-  </div>
-);
+}: DrawerPanelBodyProps) {
+  return (
+    <div className={css(styles.drawerBody, hasNoPadding && styles.modifiers.noPadding, className)} {...props}>
+      {children}
+    </div>
+  );
+}

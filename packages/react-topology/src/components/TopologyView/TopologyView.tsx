@@ -18,7 +18,10 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   sideBarOpen?: boolean;
 }
 
-export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
+/**
+ *
+ */
+export function TopologyView({
   className = '',
   contextToolbar = null,
   viewToolbar = null,
@@ -27,7 +30,7 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   sideBar = null,
   sideBarOpen = false,
   ...props
-}: TopologyViewProps) => {
+}: TopologyViewProps) {
   const containerClasses =
     'pf-topology-container' +
     `${sideBar ? ' pf-topology-container__with-sidebar' : ''}` +
@@ -63,4 +66,4 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
       </StackItem>
     </Stack>
   );
-};
+}

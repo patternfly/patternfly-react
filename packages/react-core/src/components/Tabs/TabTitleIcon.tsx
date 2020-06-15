@@ -9,12 +9,13 @@ export interface TabTitleIconProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
 }
 
-export const TabTitleIcon: React.FunctionComponent<TabTitleIconProps> = ({
-  children,
-  className = '',
-  ...props
-}: TabTitleIconProps) => (
-  <span className={css(styles.tabsItemIcon, className)} {...props}>
-    {children}
-  </span>
-);
+/**
+ *
+ */
+export function TabTitleIcon({ children, className = '', ...props }: TabTitleIconProps) {
+  return (
+    <span className={css(styles.tabsItemIcon, className)} {...props}>
+      {children}
+    </span>
+  );
+}

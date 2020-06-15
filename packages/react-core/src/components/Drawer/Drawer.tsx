@@ -31,7 +31,10 @@ export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isStatic: false
 });
 
-export const Drawer: React.SFC<DrawerProps> = ({
+/**
+ *
+ */
+export function Drawer({
   className = '',
   children,
   isExpanded = false,
@@ -41,7 +44,7 @@ export const Drawer: React.SFC<DrawerProps> = ({
   onMount = () => {},
   onUnmount = () => {},
   ...props
-}: DrawerProps) => {
+}: DrawerProps) {
   React.useEffect(() => {
     onMount();
     return () => {
@@ -66,4 +69,4 @@ export const Drawer: React.SFC<DrawerProps> = ({
       </div>
     </DrawerContext.Provider>
   );
-};
+}

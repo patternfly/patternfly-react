@@ -9,21 +9,21 @@ export const PopoverPosition = {
   right: 'right'
 };
 
-export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
-  position = 'top',
-  children = null,
-  className = null,
-  ...props
-}: PopoverDialogProps) => (
-  <div
-    className={css(styles.popover, styles.modifiers[position] || styles.modifiers.top, className)}
-    role="dialog"
-    aria-modal="true"
-    {...props}
-  >
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function PopoverDialog({ position = 'top', children = null, className = null, ...props }: PopoverDialogProps) {
+  return (
+    <div
+      className={css(styles.popover, styles.modifiers[position] || styles.modifiers.top, className)}
+      role="dialog"
+      aria-modal="true"
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
 
 export interface PopoverDialogProps extends React.HTMLProps<HTMLDivElement> {
   /** PopoverDialog position */

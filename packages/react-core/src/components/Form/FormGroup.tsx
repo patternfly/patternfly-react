@@ -36,7 +36,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   fieldId: string;
 }
 
-export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
+/**
+ *
+ */
+export function FormGroup({
   children = null,
   className = '',
   label,
@@ -51,7 +54,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   helperTextInvalidIcon,
   fieldId,
   ...props
-}: FormGroupProps) => {
+}: FormGroupProps) {
   const validHelperText =
     typeof helperText !== 'string' ? (
       helperText
@@ -102,4 +105,4 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       </div>
     </div>
   );
-};
+}

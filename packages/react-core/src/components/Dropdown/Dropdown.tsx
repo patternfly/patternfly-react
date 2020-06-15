@@ -42,30 +42,35 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
   ouiaComponentType?: string;
 }
 
-export const Dropdown: React.FunctionComponent<DropdownProps> = ({
+/**
+ *
+ */
+export function Dropdown({
   onSelect,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
-}: DropdownProps) => (
-  <DropdownContext.Provider
-    value={{
-      onSelect: event => onSelect && onSelect(event),
-      toggleTextClass: styles.dropdownToggleText,
-      toggleIconClass: styles.dropdownToggleImage,
-      toggleIndicatorClass: styles.dropdownToggleIcon,
-      menuClass: styles.dropdownMenu,
-      itemClass: styles.dropdownMenuItem,
-      toggleClass: styles.dropdownToggle,
-      baseClass: styles.dropdown,
-      baseComponent: 'div',
-      sectionClass: styles.dropdownGroup,
-      sectionTitleClass: styles.dropdownGroupTitle,
-      sectionComponent: 'section',
-      disabledClass: styles.modifiers.disabled,
-      plainTextClass: styles.modifiers.text
-    }}
-  >
-    <DropdownWithContext {...props} />
-  </DropdownContext.Provider>
-);
+}: DropdownProps) {
+  return (
+    <DropdownContext.Provider
+      value={{
+        onSelect: event => onSelect && onSelect(event),
+        toggleTextClass: styles.dropdownToggleText,
+        toggleIconClass: styles.dropdownToggleImage,
+        toggleIndicatorClass: styles.dropdownToggleIcon,
+        menuClass: styles.dropdownMenu,
+        itemClass: styles.dropdownMenuItem,
+        toggleClass: styles.dropdownToggle,
+        baseClass: styles.dropdown,
+        baseComponent: 'div',
+        sectionClass: styles.dropdownGroup,
+        sectionTitleClass: styles.dropdownGroupTitle,
+        sectionComponent: 'section',
+        disabledClass: styles.modifiers.disabled,
+        plainTextClass: styles.modifiers.text
+      }}
+    >
+      <DropdownWithContext {...props} />
+    </DropdownContext.Provider>
+  );
+}

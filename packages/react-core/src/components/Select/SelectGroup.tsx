@@ -13,17 +13,22 @@ export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
   titleId?: string;
 }
 
-export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
+/**
+ *
+ */
+export function SelectGroup({
   children = [] as React.ReactElement[],
   className = '',
   label = '',
   titleId = '',
   ...props
-}: SelectGroupProps) => (
-  <div {...props} className={css(styles.selectMenuGroup, className)}>
-    <div className={css(styles.selectMenuGroupTitle)} id={titleId} aria-hidden>
-      {label}
+}: SelectGroupProps) {
+  return (
+    <div {...props} className={css(styles.selectMenuGroup, className)}>
+      <div className={css(styles.selectMenuGroupTitle)} id={titleId} aria-hidden>
+        {label}
+      </div>
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+}

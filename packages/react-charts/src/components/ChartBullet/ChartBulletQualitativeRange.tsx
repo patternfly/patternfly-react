@@ -174,7 +174,10 @@ export interface ChartBulletQualitativeRangeProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQualitativeRangeProps> = ({
+/**
+ *
+ */
+export function ChartBulletQualitativeRange({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -198,7 +201,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   height = theme.group.height,
   width = theme.group.width,
   labelComponent = <ChartTooltip />
-}: ChartBulletQualitativeRangeProps) => {
+}: ChartBulletQualitativeRangeProps) {
   const computedData = getQualitativeRangeData({
     data,
     invert,
@@ -263,7 +266,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   ) : (
     <React.Fragment>{measure}</React.Fragment>
   );
-};
+}
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletQualitativeRange, VictoryBar);

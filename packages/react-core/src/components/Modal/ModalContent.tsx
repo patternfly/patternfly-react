@@ -56,7 +56,10 @@ export interface ModalContentProps {
   hasNoBodyWrapper?: boolean;
 }
 
-export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
+/**
+ *
+ */
+export function ModalContent({
   children,
   className = '',
   isOpen = false,
@@ -78,7 +81,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   disableFocusTrap = false,
   hasNoBodyWrapper = false,
   ...props
-}: ModalContentProps) => {
+}: ModalContentProps) {
   if (!isOpen) {
     return null;
   }
@@ -152,4 +155,4 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       </FocusTrap>
     </Backdrop>
   );
-};
+}

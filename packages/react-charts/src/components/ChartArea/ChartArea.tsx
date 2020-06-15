@@ -394,7 +394,10 @@ export interface ChartAreaProps extends VictoryAreaProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
+/**
+ *
+ */
+export function ChartArea({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
@@ -403,7 +406,7 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
   theme = getTheme(themeColor, themeVariant),
 
   ...rest
-}: ChartAreaProps) => {
+}: ChartAreaProps) {
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     theme,
@@ -412,7 +415,7 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
 
   // Note: containerComponent is required for theme
   return <VictoryArea containerComponent={container} theme={theme} {...rest} />;
-};
+}
 
 // Note: VictoryArea.role must be hoisted
 hoistNonReactStatics(ChartArea, VictoryArea);

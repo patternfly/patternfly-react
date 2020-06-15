@@ -11,24 +11,25 @@ export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>
   label?: React.ReactNode;
 }
 
-export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
-  children = null,
-  className = '',
-  label = ''
-}: DropdownGroupProps) => (
-  <DropdownContext.Consumer>
-    {({ sectionClass, sectionTitleClass, sectionComponent }) => {
-      const SectionComponent = sectionComponent as any;
-      return (
-        <SectionComponent className={css(sectionClass, className)}>
-          {label && (
-            <h1 className={css(sectionTitleClass)} aria-hidden>
-              {label}
-            </h1>
-          )}
-          <ul role="none">{children}</ul>
-        </SectionComponent>
-      );
-    }}
-  </DropdownContext.Consumer>
-);
+/**
+ *
+ */
+export function DropdownGroup({ children = null, className = '', label = '' }: DropdownGroupProps) {
+  return (
+    <DropdownContext.Consumer>
+      {({ sectionClass, sectionTitleClass, sectionComponent }) => {
+        const SectionComponent = sectionComponent as any;
+        return (
+          <SectionComponent className={css(sectionClass, className)}>
+            {label && (
+              <h1 className={css(sectionTitleClass)} aria-hidden>
+                {label}
+              </h1>
+            )}
+            <ul role="none">{children}</ul>
+          </SectionComponent>
+        );
+      }}
+    </DropdownContext.Consumer>
+  );
+}

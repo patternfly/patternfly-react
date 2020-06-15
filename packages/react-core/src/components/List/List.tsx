@@ -31,7 +31,7 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   component?: 'ol' | 'ul';
 }
 
-export const List: React.FunctionComponent<ListProps> = ({
+export function List({
   className = '',
   children = null,
   variant = null,
@@ -39,22 +39,22 @@ export const List: React.FunctionComponent<ListProps> = ({
   ref = null,
   component = ListComponent.ul,
   ...props
-}: ListProps) =>
-  component === ListComponent.ol ? (
-    <ol
-      ref={ref as React.LegacyRef<HTMLOListElement>}
-      type={type}
-      {...props}
-      className={css(styles.list, variant && styles.modifiers[variant], className)}
-    >
-      {children}
-    </ol>
-  ) : (
-    <ul
-      ref={ref as React.LegacyRef<HTMLUListElement>}
-      {...props}
-      className={css(styles.list, variant && styles.modifiers[variant], className)}
-    >
-      {children}
-    </ul>
-  );
+}: ListProps);
+component === ListComponent.ol ? (
+  <ol
+    ref={ref as React.LegacyRef<HTMLOListElement>}
+    type={type}
+    {...props}
+    className={css(styles.list, variant && styles.modifiers[variant], className)}
+  >
+    {children}
+  </ol>
+) : (
+  <ul
+    ref={ref as React.LegacyRef<HTMLUListElement>}
+    {...props}
+    className={css(styles.list, variant && styles.modifiers[variant], className)}
+  >
+    {children}
+  </ul>
+);

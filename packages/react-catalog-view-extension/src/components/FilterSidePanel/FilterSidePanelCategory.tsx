@@ -27,7 +27,10 @@ export interface FilterSidePanelCategoryProps extends Omit<React.HTMLProps<HTMLF
   hideText?: string;
 }
 
-export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCategoryProps> = ({
+/**
+ *
+ */
+export function FilterSidePanelCategory({
   children = null,
   className = '',
   title = null,
@@ -38,7 +41,7 @@ export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCat
   showText = null,
   hideText = null,
   ...props
-}: FilterSidePanelCategoryProps) => {
+}: FilterSidePanelCategoryProps) {
   const classes = classNames('filter-panel-pf-category', className);
   const childrenArray = childrenToArray(children);
   const itemCount = childrenArray.length;
@@ -75,6 +78,6 @@ export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCat
       </fieldset>
     </form>
   );
-};
+}
 
 export default FilterSidePanelCategory;

@@ -11,16 +11,16 @@ export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
 }
 
-export const Badge: React.FunctionComponent<BadgeProps> = ({
-  isRead = false,
-  className = '',
-  children = '',
-  ...props
-}: BadgeProps) => (
-  <span
-    {...props}
-    className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}
-  >
-    {children}
-  </span>
-);
+/**
+ *
+ */
+export function Badge({ isRead = false, className = '', children = '', ...props }: BadgeProps) {
+  return (
+    <span
+      {...props}
+      className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}
+    >
+      {children}
+    </span>
+  );
+}

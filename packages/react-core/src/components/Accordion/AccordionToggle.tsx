@@ -17,32 +17,37 @@ export interface AccordionToggleProps extends Omit<React.HTMLProps<HTMLButtonEle
   component?: React.ElementType;
 }
 
-export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
+/**
+ *
+ */
+export function AccordionToggle({
   className = '',
   id,
   isExpanded = false,
   children = null,
   component,
   ...props
-}: AccordionToggleProps) => (
-  <AccordionContext.Consumer>
-    {({ ToggleContainer }) => {
-      const Container = component || ToggleContainer;
-      return (
-        <Container>
-          <button
-            id={id}
-            className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
-            {...props}
-            aria-expanded={isExpanded}
-          >
-            <span className={css(styles.accordionToggleText)}>{children}</span>
-            <span className={css(styles.accordionToggleIcon)}>
-              <AngleRightIcon />
-            </span>
-          </button>
-        </Container>
-      );
-    }}
-  </AccordionContext.Consumer>
-);
+}: AccordionToggleProps) {
+  return (
+    <AccordionContext.Consumer>
+      {({ ToggleContainer }) => {
+        const Container = component || ToggleContainer;
+        return (
+          <Container>
+            <button
+              id={id}
+              className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
+              {...props}
+              aria-expanded={isExpanded}
+            >
+              <span className={css(styles.accordionToggleText)}>{children}</span>
+              <span className={css(styles.accordionToggleIcon)}>
+                <AngleRightIcon />
+              </span>
+            </button>
+          </Container>
+        );
+      }}
+    </AccordionContext.Consumer>
+  );
+}

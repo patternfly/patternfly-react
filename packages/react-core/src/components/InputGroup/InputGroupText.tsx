@@ -11,16 +11,14 @@ export interface InputGroupTextProps extends React.HTMLProps<HTMLSpanElement | H
   component?: React.ReactNode;
 }
 
-export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
-  className = '',
-  component = 'span',
-  children,
-  ...props
-}: InputGroupTextProps) => {
+/**
+ *
+ */
+export function InputGroupText({ className = '', component = 'span', children, ...props }: InputGroupTextProps) {
   const Component = component as any;
   return (
     <Component className={css(styles.inputGroupText, className)} {...props}>
       {children}
     </Component>
   );
-};
+}

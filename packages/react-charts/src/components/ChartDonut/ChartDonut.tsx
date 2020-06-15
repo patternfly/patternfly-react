@@ -516,7 +516,10 @@ interface ChartDonutTitleInterface {
   titles?: string | string[];
 }
 
-export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
+/**
+ *
+ */
+export function ChartDonut({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -541,7 +544,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest
-}: ChartDonutProps) => {
+}: ChartDonutProps) {
   const defaultPadding = {
     bottom: getPaddingForSide('bottom', padding, theme.pie.padding),
     left: getPaddingForSide('left', padding, theme.pie.padding),
@@ -676,7 +679,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       {getAllTitles()}
     </React.Fragment>
   );
-};
+}
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonut, VictoryPie);

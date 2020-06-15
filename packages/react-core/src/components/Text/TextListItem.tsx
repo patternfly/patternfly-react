@@ -16,12 +16,15 @@ export interface TextListItemProps extends React.HTMLProps<HTMLElement> {
   component?: 'li' | 'dt' | 'dd';
 }
 
-export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
+/**
+ *
+ */
+export function TextListItem({
   children = null,
   className = '',
   component = TextListItemVariants.li,
   ...props
-}: TextListItemProps) => {
+}: TextListItemProps) {
   const Component: any = component;
 
   return (
@@ -29,4 +32,4 @@ export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
       {children}
     </Component>
   );
-};
+}

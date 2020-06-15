@@ -17,7 +17,10 @@ export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>,
   isIcon?: boolean;
 }
 
-export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
+/**
+ *
+ */
+export function DataListCell({
   children = null,
   className = '',
   width = 1,
@@ -25,18 +28,20 @@ export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
   alignRight = false,
   isIcon = false,
   ...props
-}: DataListCellProps) => (
-  <div
-    className={css(
-      styles.dataListCell,
-      width > 1 && styles.modifiers[`flex_${width}` as 'flex_2' | 'flex_3' | 'flex_4' | 'flex_5'],
-      !isFilled && styles.modifiers.noFill,
-      alignRight && styles.modifiers.alignRight,
-      isIcon && styles.modifiers.icon,
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </div>
-);
+}: DataListCellProps) {
+  return (
+    <div
+      className={css(
+        styles.dataListCell,
+        width > 1 && styles.modifiers[`flex_${width}` as 'flex_2' | 'flex_3' | 'flex_4' | 'flex_5'],
+        !isFilled && styles.modifiers.noFill,
+        alignRight && styles.modifiers.alignRight,
+        isIcon && styles.modifiers.icon,
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}

@@ -16,18 +16,23 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
   noAboutModalBoxContentContainer?: boolean;
 }
 
-export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentProps> = ({
+/**
+ *
+ */
+export function AboutModalBoxContent({
   children,
   className = '',
   trademark,
   id,
   noAboutModalBoxContentContainer = false,
   ...props
-}: AboutModalBoxContentProps) => (
-  <div className={css(styles.aboutModalBoxContent, className)} id={id} {...props}>
-    <div className={css('pf-c-about-modal-box__body')}>
-      {noAboutModalBoxContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
+}: AboutModalBoxContentProps) {
+  return (
+    <div className={css(styles.aboutModalBoxContent, className)} id={id} {...props}>
+      <div className={css('pf-c-about-modal-box__body')}>
+        {noAboutModalBoxContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
+      </div>
+      <p className={css(styles.aboutModalBoxStrapline)}>{trademark}</p>
     </div>
-    <p className={css(styles.aboutModalBoxStrapline)}>{trademark}</p>
-  </div>
-);
+  );
+}

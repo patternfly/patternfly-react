@@ -9,13 +9,18 @@ export interface DrawerMainProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const DrawerMain: React.SFC<DrawerMainProps> = ({
+/**
+ *
+ */
+export function DrawerMain({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   ...props
-}: DrawerMainProps) => (
-  <div className={css(styles.drawerMain, className)} {...props}>
-    {children}
-  </div>
-);
+}: DrawerMainProps) {
+  return (
+    <div className={css(styles.drawerMain, className)} {...props}>
+      {children}
+    </div>
+  );
+}

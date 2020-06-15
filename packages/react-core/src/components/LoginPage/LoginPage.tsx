@@ -43,7 +43,10 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   socialMediaLoginContent?: React.ReactNode;
 }
 
-export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
+/**
+ *
+ */
+export function LoginPage({
   children = null,
   className = '',
   brandImgSrc = '',
@@ -59,7 +62,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   forgotCredentials = null,
   socialMediaLoginContent = null,
   ...props
-}: LoginPageProps) => {
+}: LoginPageProps) {
   const HeaderBrand = (
     <React.Fragment>
       <Brand src={brandImgSrc} alt={brandImgAlt} />
@@ -89,4 +92,4 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
       </Login>
     </React.Fragment>
   );
-};
+}

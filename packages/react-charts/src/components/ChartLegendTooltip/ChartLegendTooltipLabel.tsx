@@ -185,7 +185,10 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelProps> = ({
+/**
+ *
+ */
+export function ChartLegendTooltipLabel({
   dx = 0,
   index = 0,
   legendData,
@@ -198,7 +201,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
 
   // destructure last
   ...rest
-}: ChartLegendLabelProps) => {
+}: ChartLegendLabelProps) {
   const getStyle = (styles: any) => {
     const applyDefaultStyle = (customStyle: React.CSSProperties) =>
       defaults(
@@ -237,7 +240,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
       {valueLabel}
     </React.Fragment>
   );
-};
+}
 
 // Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLegendTooltipLabel, VictoryLabel);

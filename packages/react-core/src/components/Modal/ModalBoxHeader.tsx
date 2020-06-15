@@ -8,12 +8,13 @@ export interface ModalBoxHeaderProps {
   className?: string;
 }
 
-export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: ModalBoxHeaderProps) => (
-  <header className={css('pf-c-modal-box__header', className)} {...props}>
-    {children}
-  </header>
-);
+/**
+ *
+ */
+export function ModalBoxHeader({ children = null, className = '', ...props }: ModalBoxHeaderProps) {
+  return (
+    <header className={css('pf-c-modal-box__header', className)} {...props}>
+      {children}
+    </header>
+  );
+}

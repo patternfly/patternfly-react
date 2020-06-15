@@ -19,7 +19,10 @@ export interface WizardNavItemProps {
   navItemComponent?: React.ReactNode;
 }
 
-export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
+/**
+ *
+ */
+export function WizardNavItem({
   children = null,
   content = '',
   isCurrent = false,
@@ -27,7 +30,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   step,
   onNavItemClick = () => undefined,
   navItemComponent = 'a'
-}: WizardNavItemProps) => {
+}: WizardNavItemProps) {
   const NavItemComponent = navItemComponent as any;
 
   return (
@@ -44,4 +47,4 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       {children}
     </li>
   );
-};
+}

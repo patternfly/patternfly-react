@@ -31,7 +31,10 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   onMouseEnter?: (event: any) => void;
 }
 
-export const TableText: React.FunctionComponent<TableTextProps> = ({
+/**
+ *
+ */
+export function TableText({
   children = null,
   className = '',
   variant = 'span',
@@ -39,7 +42,7 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   tooltip: tooltipProp = '',
   onMouseEnter: onMouseEnterProp = () => {},
   ...props
-}: TableTextProps) => {
+}: TableTextProps) {
   const Component: TableTextVariant | 'span' | 'div' = variant;
 
   const [tooltip, setTooltip] = React.useState('');
@@ -63,4 +66,4 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
   );
 
   return tooltip !== '' ? <Tooltip content={tooltip}>{text}</Tooltip> : text;
-};
+}

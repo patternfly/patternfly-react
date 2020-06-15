@@ -15,20 +15,25 @@ export interface SimpleListGroupProps extends Omit<React.HTMLProps<HTMLTableSect
   id?: string;
 }
 
-export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
+/**
+ *
+ */
+export function SimpleListGroup({
   children = null,
   className = '',
   title = '',
   titleClassName = '',
   id = '',
   ...props
-}: SimpleListGroupProps) => (
-  <section className={css(styles.simpleListSection)} {...props}>
-    <h2 id={id} className={css(styles.simpleListTitle, titleClassName)} aria-hidden="true">
-      {title}
-    </h2>
-    <ul className={css(className)} aria-labelledby={id}>
-      {children}
-    </ul>
-  </section>
-);
+}: SimpleListGroupProps) {
+  return (
+    <section className={css(styles.simpleListSection)} {...props}>
+      <h2 id={id} className={css(styles.simpleListTitle, titleClassName)} aria-hidden="true">
+        {title}
+      </h2>
+      <ul className={css(className)} aria-labelledby={id}>
+        {children}
+      </ul>
+    </section>
+  );
+}

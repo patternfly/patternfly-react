@@ -25,7 +25,10 @@ export interface WizardToggleProps {
   'aria-label'?: string;
 }
 
-export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
+/**
+ *
+ */
+export function WizardToggle({
   isNavOpen,
   onNavToggle,
   nav,
@@ -34,7 +37,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   children,
   hasNoBodyPadding = false,
   'aria-label': ariaLabel = 'Wizard Toggle'
-}: WizardToggleProps) => {
+}: WizardToggleProps) {
   let activeStepIndex;
   let activeStepName;
   let activeStepSubName;
@@ -82,4 +85,4 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       </div>
     </React.Fragment>
   );
-};
+}

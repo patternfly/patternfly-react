@@ -20,7 +20,10 @@ export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement
   onActivate?: () => void;
 }
 
-export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
+/**
+ *
+ */
+export function VerticalTabsTab({
   children = null,
   className = '',
   title = null,
@@ -30,7 +33,7 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   shown = false,
   onActivate = null,
   ...props
-}: VerticalTabsTabProps) => {
+}: VerticalTabsTabProps) {
   const classes = classNames(
     'vertical-tabs-pf-tab',
     { active, 'active-descendant': hasActiveDescendant, shown },
@@ -57,4 +60,4 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
       {children}
     </li>
   );
-};
+}

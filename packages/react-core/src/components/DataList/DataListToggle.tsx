@@ -21,7 +21,10 @@ export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {
   'aria-controls'?: string;
 }
 
-export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
+/**
+ *
+ */
+export function DataListToggle({
   className = '',
   isExpanded = false,
   'aria-controls': ariaControls = '',
@@ -29,21 +32,23 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
   rowid = '',
   id,
   ...props
-}: DataListToggleProps) => (
-  <div className={css(styles.dataListItemControl, className)} {...props}>
-    <div className={css(styles.dataListToggle)}>
-      <Button
-        id={id}
-        variant={ButtonVariant.plain}
-        aria-controls={ariaControls !== '' && ariaControls}
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabel !== 'Details' ? null : `${rowid} ${id}`}
-        aria-expanded={isExpanded}
-      >
-        <div className={css(styles.dataListToggleIcon)}>
-          <AngleRightIcon />
-        </div>
-      </Button>
+}: DataListToggleProps) {
+  return (
+    <div className={css(styles.dataListItemControl, className)} {...props}>
+      <div className={css(styles.dataListToggle)}>
+        <Button
+          id={id}
+          variant={ButtonVariant.plain}
+          aria-controls={ariaControls !== '' && ariaControls}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabel !== 'Details' ? null : `${rowid} ${id}`}
+          aria-expanded={isExpanded}
+        >
+          <div className={css(styles.dataListToggleIcon)}>
+            <AngleRightIcon />
+          </div>
+        </Button>
+      </div>
     </div>
-  </div>
-);
+  );
+}

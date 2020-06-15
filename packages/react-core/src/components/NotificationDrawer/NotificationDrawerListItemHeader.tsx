@@ -32,7 +32,10 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
 }
 
-export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
+/**
+ *
+ */
+export function NotificationDrawerListItemHeader({
   children,
   className = '',
   icon = null,
@@ -40,7 +43,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   title,
   variant = 'default',
   ...props
-}: NotificationDrawerListItemHeaderProps) => {
+}: NotificationDrawerListItemHeaderProps) {
   const Icon = variantIcons[variant];
 
   return (
@@ -55,4 +58,4 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
       {children && <div className={css(styles.notificationDrawerListItemAction)}>{children}</div>}
     </React.Fragment>
   );
-};
+}

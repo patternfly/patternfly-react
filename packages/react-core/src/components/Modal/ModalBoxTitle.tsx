@@ -13,12 +13,10 @@ export interface ModalBoxTitleProps {
   id: string;
 }
 
-export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
-  className = '',
-  id,
-  title,
-  ...props
-}: ModalBoxTitleProps) => {
+/**
+ *
+ */
+export function ModalBoxTitle({ className = '', id, title, ...props }: ModalBoxTitleProps) {
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   const h1 = React.useRef<HTMLHeadingElement>();
 
@@ -37,4 +35,4 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
       {title}
     </h1>
   );
-};
+}

@@ -19,7 +19,10 @@ export interface BodyWrapperProps {
   headerRows?: IHeaderRow[];
 }
 
-export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
+/**
+ *
+ */
+export function BodyWrapper({
   mappedRows,
   tbodyRef,
   /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -28,7 +31,7 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
   headerRows,
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
-}: BodyWrapperProps) => {
+}: BodyWrapperProps) {
   if (mappedRows && mappedRows.some(row => row.hasOwnProperty('parent'))) {
     return (
       <React.Fragment>
@@ -46,4 +49,4 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
     );
   }
   return <tbody {...props} ref={tbodyRef as React.Ref<any>} />;
-};
+}

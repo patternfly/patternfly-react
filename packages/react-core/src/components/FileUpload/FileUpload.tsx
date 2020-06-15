@@ -74,7 +74,10 @@ export interface FileUploadProps
   dropzoneProps?: DropzoneProps;
 }
 
-export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
+/**
+ *
+ */
+export function FileUpload({
   id,
   type,
   value = type === fileReaderType.text || type === fileReaderType.dataURL ? '' : null,
@@ -86,7 +89,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   onReadFailed = () => {},
   dropzoneProps = {},
   ...props
-}: FileUploadProps) => {
+}: FileUploadProps) {
   const onDropAccepted: DropFileEventHandler = (acceptedFiles: File[], event: React.DragEvent<HTMLElement>) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
@@ -146,4 +149,4 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
       )}
     </Dropzone>
   );
-};
+}

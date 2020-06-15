@@ -12,24 +12,29 @@ export interface ClipboardCopyToggleProps
   className?: string;
 }
 
-export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyToggleProps> = ({
+/**
+ *
+ */
+export function ClipboardCopyToggle({
   onClick,
   id,
   textId,
   contentId,
   isExpanded = false,
   ...props
-}: ClipboardCopyToggleProps) => (
-  <Button
-    type="button"
-    variant="control"
-    onClick={onClick}
-    id={id}
-    aria-labelledby={`${id} ${textId}`}
-    aria-controls={`${id} ${contentId}`}
-    aria-expanded={isExpanded}
-    {...props}
-  >
-    <AngleRightIcon aria-hidden="true" />
-  </Button>
-);
+}: ClipboardCopyToggleProps) {
+  return (
+    <Button
+      type="button"
+      variant="control"
+      onClick={onClick}
+      id={id}
+      aria-labelledby={`${id} ${textId}`}
+      aria-controls={`${id} ${contentId}`}
+      aria-expanded={isExpanded}
+      {...props}
+    >
+      <AngleRightIcon aria-hidden="true" />
+    </Button>
+  );
+}

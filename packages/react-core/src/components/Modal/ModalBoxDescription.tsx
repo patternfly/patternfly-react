@@ -11,13 +11,13 @@ export interface ModalBoxDescriptionProps {
   id?: string;
 }
 
-export const ModalBoxDescription: React.FunctionComponent<ModalBoxDescriptionProps> = ({
-  children = null,
-  className = '',
-  id = '',
-  ...props
-}: ModalBoxDescriptionProps) => (
-  <div {...props} id={id} className={css(styles.modalBoxDescription, className)}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function ModalBoxDescription({ children = null, className = '', id = '', ...props }: ModalBoxDescriptionProps) {
+  return (
+    <div {...props} id={id} className={css(styles.modalBoxDescription, className)}>
+      {children}
+    </div>
+  );
+}

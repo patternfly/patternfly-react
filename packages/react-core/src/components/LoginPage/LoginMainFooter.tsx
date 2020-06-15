@@ -15,22 +15,27 @@ export interface LoginMainFooterProps extends React.HTMLProps<HTMLDivElement> {
   forgotCredentials?: React.ReactNode;
 }
 
-export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
+/**
+ *
+ */
+export function LoginMainFooter({
   children = null,
   socialMediaLoginContent = null,
   signUpForAccountMessage = null,
   forgotCredentials = null,
   className = '',
   ...props
-}: LoginMainFooterProps) => (
-  <div className={css(styles.loginMainFooter, className)} {...props}>
-    {children}
-    {socialMediaLoginContent && <ul className={css(styles.loginMainFooterLinks)}>{socialMediaLoginContent}</ul>}
-    {(signUpForAccountMessage || forgotCredentials) && (
-      <div className={css(styles.loginMainFooterBand)}>
-        {signUpForAccountMessage}
-        {forgotCredentials}
-      </div>
-    )}
-  </div>
-);
+}: LoginMainFooterProps) {
+  return (
+    <div className={css(styles.loginMainFooter, className)} {...props}>
+      {children}
+      {socialMediaLoginContent && <ul className={css(styles.loginMainFooterLinks)}>{socialMediaLoginContent}</ul>}
+      {(signUpForAccountMessage || forgotCredentials) && (
+        <div className={css(styles.loginMainFooterBand)}>
+          {signUpForAccountMessage}
+          {forgotCredentials}
+        </div>
+      )}
+    </div>
+  );
+}

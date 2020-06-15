@@ -15,7 +15,10 @@ export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   sortDirection?: string;
 }
 
-export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
+/**
+ *
+ */
+export function SortColumn({
   children = null,
   className = '',
   isSortedBy = false,
@@ -23,7 +26,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   sortDirection = '',
   type = 'button',
   ...props
-}: SortColumnProps) => {
+}: SortColumnProps) {
   let SortedByIcon;
   if (isSortedBy) {
     SortedByIcon = sortDirection === SortByDirection.asc ? LongArrowAltUpIcon : LongArrowAltDownIcon;
@@ -45,4 +48,4 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
       </div>
     </button>
   );
-};
+}

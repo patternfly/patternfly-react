@@ -7,15 +7,20 @@ export interface SelectColumnProps {
   onSelect?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
-export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
+/**
+ *
+ */
+export function SelectColumn({
   children = null as React.ReactNode,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   onSelect = null as (event: React.FormEvent<HTMLInputElement>) => void,
   ...props
-}: SelectColumnProps) => (
-  <React.Fragment>
-    <input {...props} type="checkbox" onChange={onSelect} />
-    {children}
-  </React.Fragment>
-);
+}: SelectColumnProps) {
+  return (
+    <React.Fragment>
+      <input {...props} type="checkbox" onChange={onSelect} />
+      {children}
+    </React.Fragment>
+  );
+}

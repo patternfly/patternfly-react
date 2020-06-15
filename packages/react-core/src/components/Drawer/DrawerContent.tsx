@@ -12,17 +12,22 @@ export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   panelContent: React.ReactNode;
 }
 
-export const DrawerContent: React.SFC<DrawerContentProps> = ({
+/**
+ *
+ */
+export function DrawerContent({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   panelContent,
   ...props
-}: DrawerContentProps) => (
-  <DrawerMain>
-    <div className={css(styles.drawerContent, className)} {...props}>
-      {children}
-    </div>
-    {panelContent}
-  </DrawerMain>
-);
+}: DrawerContentProps) {
+  return (
+    <DrawerMain>
+      <div className={css(styles.drawerContent, className)} {...props}>
+        {children}
+      </div>
+      {panelContent}
+    </DrawerMain>
+  );
+}

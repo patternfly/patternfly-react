@@ -9,12 +9,13 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: CardHeaderProps) => (
-  <div className={css(styles.cardHeader, className)} {...props}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function CardHeader({ children = null, className = '', ...props }: CardHeaderProps) {
+  return (
+    <div className={css(styles.cardHeader, className)} {...props}>
+      {children}
+    </div>
+  );
+}

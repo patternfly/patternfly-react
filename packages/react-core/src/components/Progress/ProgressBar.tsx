@@ -21,16 +21,21 @@ export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   progressBarAriaProps?: AriaProps;
 }
 
-export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
+/**
+ *
+ */
+export function ProgressBar({
   progressBarAriaProps,
   className = '',
   children = null,
   value,
   ...props
-}: ProgressBarProps) => (
-  <div {...props} className={css(styles.progressBar, className)} {...progressBarAriaProps}>
-    <div className={css(styles.progressIndicator)} style={{ width: `${value}%` }}>
-      <span className={css(styles.progressMeasure)}>{children}</span>
+}: ProgressBarProps) {
+  return (
+    <div {...props} className={css(styles.progressBar, className)} {...progressBarAriaProps}>
+      <div className={css(styles.progressIndicator)} style={{ width: `${value}%` }}>
+        <span className={css(styles.progressMeasure)}>{children}</span>
+      </div>
     </div>
-  </div>
-);
+  );
+}

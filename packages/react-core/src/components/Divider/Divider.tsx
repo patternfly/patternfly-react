@@ -17,12 +17,10 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   isVertical?: boolean;
 }
 
-export const Divider: React.FunctionComponent<DividerProps> = ({
-  className = '',
-  component = DividerVariant.hr,
-  isVertical = false,
-  ...props
-}: DividerProps) => {
+/**
+ *
+ */
+export function Divider({ className = '', component = DividerVariant.hr, isVertical = false, ...props }: DividerProps) {
   const Component: any = component;
 
   return (
@@ -32,4 +30,4 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
       {...props}
     />
   );
-};
+}

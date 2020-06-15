@@ -17,7 +17,10 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   'aria-describedby': string;
 }
 
-export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
+/**
+ *
+ */
+export function ModalBox({
   children,
   className = '',
   variant = 'default',
@@ -25,21 +28,23 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   'aria-label': ariaLabel = '',
   'aria-describedby': ariaDescribedby,
   ...props
-}: ModalBoxProps) => (
-  <div
-    {...props}
-    role="dialog"
-    aria-label={ariaLabel || null}
-    aria-labelledby={ariaLabelledby || null}
-    aria-describedby={ariaDescribedby}
-    aria-modal="true"
-    className={css(
-      styles.modalBox,
-      className,
-      variant === 'large' && styles.modifiers.lg,
-      variant === 'small' && styles.modifiers.sm
-    )}
-  >
-    {children}
-  </div>
-);
+}: ModalBoxProps) {
+  return (
+    <div
+      {...props}
+      role="dialog"
+      aria-label={ariaLabel || null}
+      aria-labelledby={ariaLabelledby || null}
+      aria-describedby={ariaDescribedby}
+      aria-modal="true"
+      className={css(
+        styles.modalBox,
+        className,
+        variant === 'large' && styles.modifiers.lg,
+        variant === 'small' && styles.modifiers.sm
+      )}
+    >
+      {children}
+    </div>
+  );
+}

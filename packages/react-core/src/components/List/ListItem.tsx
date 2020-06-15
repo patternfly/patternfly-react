@@ -5,6 +5,9 @@ export interface ListItemProps extends React.HTMLProps<HTMLLIElement> {
   children: React.ReactNode;
 }
 
-export const ListItem: React.FunctionComponent<ListItemProps> = ({ children = null, ...props }: ListItemProps) => (
-  <li {...props}>{children}</li>
-);
+/**
+ *
+ */
+export function ListItem({ children = null, ...props }: ListItemProps) {
+  return <li {...props}>{children}</li>;
+}

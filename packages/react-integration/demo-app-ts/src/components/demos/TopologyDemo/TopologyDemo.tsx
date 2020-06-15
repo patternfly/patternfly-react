@@ -15,7 +15,10 @@ import { CollapsibleGroups } from './CollapsibleGroups';
 
 import './TopologyDemo.css';
 
-export const TopologyDemo: React.FC = () => {
+/**
+ *
+ */
+export function TopologyDemo() {
   const [activeKey, setActiveKey] = React.useState<number>(0);
   const [activeSecondaryKey, setActiveSecondaryKey] = React.useState<number>(0);
 
@@ -143,4 +146,4 @@ export const TopologyDemo: React.FC = () => {
       </Tabs>
     </div>
   );
-};
+}

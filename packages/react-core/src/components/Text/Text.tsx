@@ -24,12 +24,10 @@ export interface TextProps extends React.HTMLProps<HTMLElement> {
   className?: string;
 }
 
-export const Text: React.FunctionComponent<TextProps> = ({
-  children = null,
-  className = '',
-  component = TextVariants.p,
-  ...props
-}: TextProps) => {
+/**
+ *
+ */
+export function Text({ children = null, className = '', component = TextVariants.p, ...props }: TextProps) {
   const Component: any = component;
 
   return (
@@ -37,4 +35,4 @@ export const Text: React.FunctionComponent<TextProps> = ({
       {children}
     </Component>
   );
-};
+}

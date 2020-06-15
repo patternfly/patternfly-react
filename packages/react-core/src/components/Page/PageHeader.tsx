@@ -35,7 +35,10 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
 }
 
-export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
+/**
+ *
+ */
+export function PageHeader({
   className = '',
   logo = null as React.ReactNode,
   logoProps = null as object,
@@ -48,7 +51,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   onNavToggle = () => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
   ...props
-}: PageHeaderProps) => {
+}: PageHeaderProps) {
   const LogoComponent = logoComponent as any;
   return (
     <PageContextConsumer>
@@ -92,4 +95,4 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
       }}
     </PageContextConsumer>
   );
-};
+}

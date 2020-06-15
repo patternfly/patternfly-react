@@ -11,7 +11,12 @@ export interface BrandProps
   alt: string;
 }
 
-export const Brand: React.FunctionComponent<BrandProps> = ({ className = '', src = '', alt, ...props }: BrandProps) => (
-  /** the brand component currently contains no styling the 'pf-c-brand' string will be used for the className */
-  <img {...props} className={css('pf-c-brand', className)} src={src} alt={alt} />
-);
+/**
+ *
+ */
+export function Brand({ className = '', src = '', alt, ...props }: BrandProps) {
+  return (
+    /** the brand component currently contains no styling the 'pf-c-brand' string will be used for the className */
+    <img {...props} className={css('pf-c-brand', className)} src={src} alt={alt} />
+  );
+}

@@ -12,15 +12,15 @@ export interface AboutModalBoxHeaderProps extends React.HTMLProps<HTMLDivElement
   id: string;
 }
 
-export const AboutModalBoxHeader: React.FunctionComponent<AboutModalBoxHeaderProps> = ({
-  className = '',
-  productName = '',
-  id,
-  ...props
-}: AboutModalBoxHeaderProps) => (
-  <div className={css(styles.aboutModalBoxHeader, className)} {...props}>
-    <Title headingLevel="h1" size="4xl" id={id}>
-      {productName}
-    </Title>
-  </div>
-);
+/**
+ *
+ */
+export function AboutModalBoxHeader({ className = '', productName = '', id, ...props }: AboutModalBoxHeaderProps) {
+  return (
+    <div className={css(styles.aboutModalBoxHeader, className)} {...props}>
+      <Title headingLevel="h1" size="4xl" id={id}>
+        {productName}
+      </Title>
+    </div>
+  );
+}

@@ -134,7 +134,10 @@ const getPath = (props: ChartPointProps) => {
   return symbolFunction(x, y, size);
 };
 
-export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
+/**
+ *
+ */
+export function ChartPoint({
   active,
   className,
   clipPath,
@@ -147,7 +150,7 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
   tabIndex,
   transform,
   ...rest
-}: ChartPointProps) => {
+}: ChartPointProps) {
   const props = {
     active,
     className,
@@ -174,4 +177,4 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
     tabIndex: Helpers.evaluateProp(tabIndex, props),
     transform
   });
-};
+}

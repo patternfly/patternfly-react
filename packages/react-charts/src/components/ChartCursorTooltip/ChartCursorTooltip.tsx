@@ -222,7 +222,10 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
   y?: number;
 }
 
-export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
+/**
+ *
+ */
+export function ChartCursorTooltip({
   constrainToVisibleArea = true,
   flyoutComponent = <ChartCursorFlyout />,
   labelComponent = <ChartLabel />,
@@ -238,7 +241,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   pointerLength = theme.tooltip.pointerLength,
   pointerWidth = (theme.tooltip as any).pointerWidth,
   ...rest
-}: ChartCursorTooltipProps) => {
+}: ChartCursorTooltipProps) {
   // Apply text anchor style
   const applyDefaultStyle = (customStyle: React.CSSProperties) => ({
     ...customStyle,
@@ -268,7 +271,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
       {...rest}
     />
   );
-};
+}
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartCursorTooltip, VictoryTooltip);

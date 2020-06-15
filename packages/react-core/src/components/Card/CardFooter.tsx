@@ -11,16 +11,14 @@ export interface CardFooterProps extends React.HTMLProps<HTMLDivElement> {
   component?: keyof JSX.IntrinsicElements;
 }
 
-export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
-  children = null,
-  className = '',
-  component = 'div',
-  ...props
-}: CardFooterProps) => {
+/**
+ *
+ */
+export function CardFooter({ children = null, className = '', component = 'div', ...props }: CardFooterProps) {
   const Component = component as any;
   return (
     <Component className={css(styles.cardFooter, className)} {...props}>
       {children}
     </Component>
   );
-};
+}

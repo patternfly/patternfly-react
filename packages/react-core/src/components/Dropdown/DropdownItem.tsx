@@ -38,7 +38,10 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   autoFocus?: boolean;
 }
 
-export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
+/**
+ *
+ */
+export function DropdownItem({
   children,
   className,
   component = 'a',
@@ -58,31 +61,33 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   icon = null,
   autoFocus,
   ...props
-}: DropdownItemProps) => (
-  <DropdownArrowContext.Consumer>
-    {context => (
-      <InternalDropdownItem
-        context={context}
-        role="menuitem"
-        tabIndex={tabIndex}
-        className={className}
-        component={component}
-        isDisabled={isDisabled}
-        isPlainText={isPlainText}
-        isHovered={isHovered}
-        href={href}
-        tooltip={tooltip}
-        tooltipProps={tooltipProps}
-        listItemClassName={listItemClassName}
-        onClick={onClick}
-        additionalChild={additionalChild}
-        customChild={customChild}
-        icon={icon}
-        autoFocus={autoFocus}
-        {...props}
-      >
-        {children}
-      </InternalDropdownItem>
-    )}
-  </DropdownArrowContext.Consumer>
-);
+}: DropdownItemProps) {
+  return (
+    <DropdownArrowContext.Consumer>
+      {context => (
+        <InternalDropdownItem
+          context={context}
+          role="menuitem"
+          tabIndex={tabIndex}
+          className={className}
+          component={component}
+          isDisabled={isDisabled}
+          isPlainText={isPlainText}
+          isHovered={isHovered}
+          href={href}
+          tooltip={tooltip}
+          tooltipProps={tooltipProps}
+          listItemClassName={listItemClassName}
+          onClick={onClick}
+          additionalChild={additionalChild}
+          customChild={customChild}
+          icon={icon}
+          autoFocus={autoFocus}
+          {...props}
+        >
+          {children}
+        </InternalDropdownItem>
+      )}
+    </DropdownArrowContext.Consumer>
+  );
+}

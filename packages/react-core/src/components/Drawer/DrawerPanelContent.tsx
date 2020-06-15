@@ -20,27 +20,32 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   };
 }
 
-export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
+/**
+ *
+ */
+export function DrawerPanelContent({
   className = '',
   children,
   hasNoBorder = false,
   widths,
   ...props
-}: DrawerPanelContentProps) => (
-  <DrawerContext.Consumer>
-    {({ isExpanded, isStatic }) => (
-      <div
-        className={css(
-          styles.drawerPanel,
-          hasNoBorder && styles.modifiers.noBorder,
-          formatBreakpointMods(widths, styles),
-          className
-        )}
-        hidden={isStatic ? false : !isExpanded}
-        {...props}
-      >
-        {children}
-      </div>
-    )}
-  </DrawerContext.Consumer>
-);
+}: DrawerPanelContentProps) {
+  return (
+    <DrawerContext.Consumer>
+      {({ isExpanded, isStatic }) => (
+        <div
+          className={css(
+            styles.drawerPanel,
+            hasNoBorder && styles.modifiers.noBorder,
+            formatBreakpointMods(widths, styles),
+            className
+          )}
+          hidden={isStatic ? false : !isExpanded}
+          {...props}
+        >
+          {children}
+        </div>
+      )}
+    </DrawerContext.Consumer>
+  );
+}

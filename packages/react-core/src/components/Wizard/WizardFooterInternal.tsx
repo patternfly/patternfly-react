@@ -16,7 +16,10 @@ export interface WizardFooterInternalProps {
   cancelButtonText: React.ReactNode;
 }
 
-export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalProps> = ({
+/**
+ *
+ */
+export function WizardFooterInternal({
   onNext,
   onBack,
   onClose,
@@ -26,20 +29,22 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
   nextButtonText,
   backButtonText,
   cancelButtonText
-}: WizardFooterInternalProps) => (
-  <footer className={css(styles.wizardFooter)}>
-    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
-      {nextButtonText}
-    </Button>
-    {!activeStep.hideBackButton && (
-      <Button variant={ButtonVariant.secondary} onClick={onBack} className={css(firstStep && 'pf-m-disabled')}>
-        {backButtonText}
+}: WizardFooterInternalProps) {
+  return (
+    <footer className={css(styles.wizardFooter)}>
+      <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
+        {nextButtonText}
       </Button>
-    )}
-    {!activeStep.hideCancelButton && (
-      <Button variant={ButtonVariant.link} onClick={onClose}>
-        {cancelButtonText}
-      </Button>
-    )}
-  </footer>
-);
+      {!activeStep.hideBackButton && (
+        <Button variant={ButtonVariant.secondary} onClick={onBack} className={css(firstStep && 'pf-m-disabled')}>
+          {backButtonText}
+        </Button>
+      )}
+      {!activeStep.hideCancelButton && (
+        <Button variant={ButtonVariant.link} onClick={onClose}>
+          {cancelButtonText}
+        </Button>
+      )}
+    </footer>
+  );
+}

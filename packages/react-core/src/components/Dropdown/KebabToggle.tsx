@@ -32,7 +32,10 @@ export interface KebabToggleProps extends DropdownToggleProps {
   bubbleEvent?: boolean;
 }
 
-export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
+/**
+ *
+ */
+export function KebabToggle({
   id = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   children = null,
@@ -49,21 +52,23 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
-}: KebabToggleProps) => (
-  <Toggle
-    id={id}
-    className={className}
-    isOpen={isOpen}
-    aria-label={ariaLabel}
-    parentRef={parentRef}
-    getMenuRef={getMenuRef}
-    isActive={isActive}
-    isPlain={isPlain}
-    isDisabled={isDisabled}
-    onToggle={onToggle}
-    bubbleEvent={bubbleEvent}
-    {...props}
-  >
-    <EllipsisVIcon />
-  </Toggle>
-);
+}: KebabToggleProps) {
+  return (
+    <Toggle
+      id={id}
+      className={className}
+      isOpen={isOpen}
+      aria-label={ariaLabel}
+      parentRef={parentRef}
+      getMenuRef={getMenuRef}
+      isActive={isActive}
+      isPlain={isPlain}
+      isDisabled={isDisabled}
+      onToggle={onToggle}
+      bubbleEvent={bubbleEvent}
+      {...props}
+    >
+      <EllipsisVIcon />
+    </Toggle>
+  );
+}

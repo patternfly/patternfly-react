@@ -160,9 +160,10 @@ export interface ChartBulletComparativeWarningMeasureProps {
   y?: DataGetterPropType;
 }
 
-export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
-  ChartBulletComparativeWarningMeasureProps
-> = ({
+/**
+ *
+ */
+export function ChartBulletComparativeWarningMeasure({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -184,7 +185,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
   theme = getBulletComparativeWarningMeasureTheme(themeColor, themeVariant),
   height = theme.bar.height,
   width = theme.bar.width
-}: ChartBulletComparativeWarningMeasureProps) => {
+}: ChartBulletComparativeWarningMeasureProps) {
   // Comparative measure component
   const measure = React.cloneElement(measureComponent, {
     allowTooltip,
@@ -213,7 +214,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
   ) : (
     <React.Fragment>{measure}</React.Fragment>
   );
-};
+}
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeWarningMeasure, VictoryBar);

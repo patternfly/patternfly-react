@@ -11,18 +11,18 @@ export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement>
   target?: string;
 }
 
-export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
+export function LoginFooterItem({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children = null,
   href = '#',
   target = '_blank',
   ...props
-}: LoginFooterItemProps) =>
-  React.isValidElement(children) ? (
-    children
-  ) : (
-    <a target={target} href={href} {...props}>
-      {children}
-    </a>
-  );
+}: LoginFooterItemProps);
+React.isValidElement(children) ? (
+  children
+) : (
+  <a target={target} href={href} {...props}>
+    {children}
+  </a>
+);

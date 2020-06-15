@@ -111,7 +111,10 @@ export interface ChartBulletGroupTitleProps {
   width?: number;
 }
 
-export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitleProps> = ({
+/**
+ *
+ */
+export function ChartBulletGroupTitle({
   ariaDesc,
   ariaTitle,
   capHeight = 1.1,
@@ -128,7 +131,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   theme = getBulletGroupTitleTheme(themeColor, themeVariant),
   height = theme.chart.height,
   width = theme.chart.width
-}: ChartBulletGroupTitleProps) => {
+}: ChartBulletGroupTitleProps) {
   const defaultPadding = {
     bottom: getPaddingForSide('bottom', padding, theme.chart.padding),
     left: getPaddingForSide('left', padding, theme.chart.padding),
@@ -199,4 +202,4 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   ) : (
     <React.Fragment>{groupTitle}</React.Fragment>
   );
-};
+}

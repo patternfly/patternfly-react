@@ -16,7 +16,10 @@ export interface HeaderCellProps {
   children: React.ReactNode;
 }
 
-export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
+/**
+ *
+ */
+export function HeaderCell({
   className = '',
   component = 'th',
   scope = '',
@@ -29,7 +32,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   dataLabel = '',
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
-}: HeaderCellProps) => {
+}: HeaderCellProps) {
   const mappedProps = {
     ...(scope ? { scope } : {}),
     ...props
@@ -57,4 +60,4 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   );
 
   return tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
-};
+}

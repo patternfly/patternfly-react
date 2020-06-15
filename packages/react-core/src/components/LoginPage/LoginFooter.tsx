@@ -9,12 +9,13 @@ export interface LoginFooterProps extends React.HTMLProps<HTMLElement> {
   className?: string;
 }
 
-export const LoginFooter: React.FunctionComponent<LoginFooterProps> = ({
-  className = '',
-  children = null,
-  ...props
-}: LoginFooterProps) => (
-  <footer className={css(styles.loginFooter, className)} {...props}>
-    {children}
-  </footer>
-);
+/**
+ *
+ */
+export function LoginFooter({ className = '', children = null, ...props }: LoginFooterProps) {
+  return (
+    <footer className={css(styles.loginFooter, className)} {...props}>
+      {children}
+    </footer>
+  );
+}

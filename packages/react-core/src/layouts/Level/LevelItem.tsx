@@ -5,6 +5,9 @@ export interface LevelItemProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const LevelItem: React.FunctionComponent<LevelItemProps> = ({ children = null, ...props }: LevelItemProps) => (
-  <div {...props}>{children}</div>
-);
+/**
+ *
+ */
+export function LevelItem({ children = null, ...props }: LevelItemProps) {
+  return <div {...props}>{children}</div>;
+}

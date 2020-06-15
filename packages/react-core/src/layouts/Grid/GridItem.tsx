@@ -48,14 +48,17 @@ export interface GridItemProps extends React.HTMLProps<HTMLDivElement> {
   xl2Offset?: gridSpans;
 }
 
-export const GridItem: React.FunctionComponent<GridItemProps> = ({
+/**
+ *
+ */
+export function GridItem({
   children = null,
   className = '',
   span = null,
   rowSpan = null,
   offset = null,
   ...props
-}: GridItemProps) => {
+}: GridItemProps) {
   const classes = [
     styles.gridItem,
     span && styles.modifiers[`${span}Col` as keyof typeof styles.modifiers],
@@ -92,4 +95,4 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
       {children}
     </div>
   );
-};
+}

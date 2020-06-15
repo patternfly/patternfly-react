@@ -9,11 +9,13 @@ export interface WizardBodyProps {
   hasNoBodyPadding: boolean;
 }
 
-export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
-  children,
-  hasNoBodyPadding = false
-}: WizardBodyProps) => (
-  <main className={css(styles.wizardMain)}>
-    <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
-  </main>
-);
+/**
+ *
+ */
+export function WizardBody({ children, hasNoBodyPadding = false }: WizardBodyProps) {
+  return (
+    <main className={css(styles.wizardMain)}>
+      <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
+    </main>
+  );
+}

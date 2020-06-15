@@ -11,18 +11,19 @@ export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivEl
   index?: number;
 }
 
-export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({
-  children,
-  isShared = false,
-  index
-}: OverflowMenuDropdownItemProps) => (
-  <OverflowMenuContext.Consumer>
-    {value =>
-      (!isShared || value.isBelowBreakpoint) && (
-        <DropdownItem component="button" index={index}>
-          {children}
-        </DropdownItem>
-      )
-    }
-  </OverflowMenuContext.Consumer>
-);
+/**
+ *
+ */
+export function OverflowMenuDropdownItem({ children, isShared = false, index }: OverflowMenuDropdownItemProps) {
+  return (
+    <OverflowMenuContext.Consumer>
+      {value =>
+        (!isShared || value.isBelowBreakpoint) && (
+          <DropdownItem component="button" index={index}>
+            {children}
+          </DropdownItem>
+        )
+      }
+    </OverflowMenuContext.Consumer>
+  );
+}

@@ -352,7 +352,10 @@ export interface ChartStackProps extends VictoryStackProps {
   xOffset?: number;
 }
 
-export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
+/**
+ *
+ */
+export function ChartStack({
   ariaDesc,
   ariaTitle,
   children,
@@ -363,7 +366,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartStackProps) => {
+}: ChartStackProps) {
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
@@ -379,7 +382,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
       {children}
     </VictoryStack>
   );
-};
+}
 
 // Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
 hoistNonReactStatics(ChartStack, VictoryStack);

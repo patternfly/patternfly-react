@@ -8,12 +8,13 @@ export interface AlertActionLinkProps extends ButtonProps {
   className?: string;
 }
 
-export const AlertActionLink: React.FunctionComponent<AlertActionLinkProps> = ({
-  className = '',
-  children,
-  ...props
-}: AlertActionLinkProps) => (
-  <Button variant={ButtonVariant.link} isInline className={className} {...props}>
-    {children}
-  </Button>
-);
+/**
+ *
+ */
+export function AlertActionLink({ className = '', children, ...props }: AlertActionLinkProps) {
+  return (
+    <Button variant={ButtonVariant.link} isInline className={className} {...props}>
+      {children}
+    </Button>
+  );
+}

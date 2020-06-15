@@ -5,7 +5,9 @@ export interface GalleryItemProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const GalleryItem: React.FunctionComponent<GalleryItemProps> = ({
-  children = null,
-  ...props
-}: GalleryItemProps) => <div {...props}>{children}</div>;
+/**
+ *
+ */
+export function GalleryItem({ children = null, ...props }: GalleryItemProps) {
+  return <div {...props}>{children}</div>;
+}

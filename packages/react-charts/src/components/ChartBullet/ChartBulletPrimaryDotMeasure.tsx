@@ -170,7 +170,10 @@ export interface ChartBulletPrimaryDotMeasureProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPrimaryDotMeasureProps> = ({
+/**
+ *
+ */
+export function ChartBulletPrimaryDotMeasure({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -194,7 +197,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   labelComponent = <ChartTooltip />,
   height = theme.group.height,
   width = theme.group.width
-}: ChartBulletPrimaryDotMeasureProps) => {
+}: ChartBulletPrimaryDotMeasureProps) {
   const computedData = getPrimaryDotMeasureData({
     data,
     invert,
@@ -244,7 +247,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   ) : (
     <React.Fragment>{measure}</React.Fragment>
   );
-};
+}
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletPrimaryDotMeasure, VictoryScatter);

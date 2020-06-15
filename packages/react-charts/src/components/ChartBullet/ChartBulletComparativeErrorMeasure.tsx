@@ -160,7 +160,10 @@ export interface ChartBulletComparativeErrorMeasureProps {
   y?: DataGetterPropType;
 }
 
-export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBulletComparativeErrorMeasureProps> = ({
+/**
+ *
+ */
+export function ChartBulletComparativeErrorMeasure({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -182,7 +185,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
   theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant),
   height = theme.bar.height,
   width = theme.bar.width
-}: ChartBulletComparativeErrorMeasureProps) => {
+}: ChartBulletComparativeErrorMeasureProps) {
   // Comparative measure component
   const measure = React.cloneElement(measureComponent, {
     allowTooltip,
@@ -211,7 +214,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
   ) : (
     <React.Fragment>{measure}</React.Fragment>
   );
-};
+}
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeErrorMeasure, VictoryBar);

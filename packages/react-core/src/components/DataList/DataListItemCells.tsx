@@ -11,14 +11,19 @@ export interface DataListItemCellsProps extends React.HTMLProps<HTMLDivElement> 
   rowid?: string;
 }
 
-export const DataListItemCells: React.FunctionComponent<DataListItemCellsProps> = ({
+/**
+ *
+ */
+export function DataListItemCells({
   className = '',
   dataListCells,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowid = '',
   ...props
-}: DataListItemCellsProps) => (
-  <div className={css(styles.dataListItemContent, className)} {...props}>
-    {dataListCells}
-  </div>
-);
+}: DataListItemCellsProps) {
+  return (
+    <div className={css(styles.dataListItemContent, className)} {...props}>
+      {dataListCells}
+    </div>
+  );
+}

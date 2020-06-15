@@ -19,13 +19,13 @@ export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElemen
   };
 }
 
-export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupProps> = ({
-  children,
-  className,
-  visibility,
-  ...props
-}: PageHeaderToolsGroupProps) => (
-  <div className={css(styles.pageHeaderToolsGroup, formatBreakpointMods(visibility, styles), className)} {...props}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function PageHeaderToolsGroup({ children, className, visibility, ...props }: PageHeaderToolsGroupProps) {
+  return (
+    <div className={css(styles.pageHeaderToolsGroup, formatBreakpointMods(visibility, styles), className)} {...props}>
+      {children}
+    </div>
+  );
+}

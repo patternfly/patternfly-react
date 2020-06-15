@@ -58,7 +58,10 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
+/**
+ *
+ */
+export function ToolbarItem({
   className,
   variant,
   visiblity,
@@ -67,7 +70,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   id,
   children,
   ...props
-}: ToolbarItemProps) => {
+}: ToolbarItemProps) {
   if (variant === ToolbarItemVariant.separator) {
     return <Divider className={css(styles.modifiers.vertical, className)} {...props} />;
   }
@@ -92,4 +95,4 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
       {children}
     </div>
   );
-};
+}

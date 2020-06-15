@@ -34,7 +34,10 @@ export interface ApplicationLauncherItemProps {
   enterTriggersArrowDown?: boolean;
 }
 
-export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
+/**
+ *
+ */
+export function ApplicationLauncherItem({
   className = '',
   id,
   children,
@@ -50,42 +53,47 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   customChild,
   enterTriggersArrowDown = false,
   ...props
-}: ApplicationLauncherItemProps & DropdownItemProps) => (
-  <ApplicationLauncherItemContext.Provider value={{ isExternal, icon }}>
-    <ApplicationLauncherContext.Consumer>
-      {({ onFavorite }) => (
-        <DropdownItem
-          id={id}
-          component={component}
-          href={href || null}
-          className={css(
-            isExternal && styles.modifiers.external,
-            isFavorite !== null && styles.modifiers.link,
-            className
-          )}
-          listItemClassName={css(onFavorite && styles.appLauncherMenuWrapper, isFavorite && styles.modifiers.favorite)}
-          tooltip={tooltip}
-          tooltipProps={tooltipProps}
-          {...(enterTriggersArrowDown === true && { enterTriggersArrowDown })}
-          {...(customChild && { customChild })}
-          {...(isFavorite !== null && {
-            additionalChild: (
-              <button
-                className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
-                aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
-                onClick={() => {
-                  onFavorite(id, isFavorite);
-                }}
-              >
-                <StarIcon />
-              </button>
-            )
-          })}
-          {...props}
-        >
-          {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}
-        </DropdownItem>
-      )}
-    </ApplicationLauncherContext.Consumer>
-  </ApplicationLauncherItemContext.Provider>
-);
+}: ApplicationLauncherItemProps & DropdownItemProps) {
+  return (
+    <ApplicationLauncherItemContext.Provider value={{ isExternal, icon }}>
+      <ApplicationLauncherContext.Consumer>
+        {({ onFavorite }) => (
+          <DropdownItem
+            id={id}
+            component={component}
+            href={href || null}
+            className={css(
+              isExternal && styles.modifiers.external,
+              isFavorite !== null && styles.modifiers.link,
+              className
+            )}
+            listItemClassName={css(
+              onFavorite && styles.appLauncherMenuWrapper,
+              isFavorite && styles.modifiers.favorite
+            )}
+            tooltip={tooltip}
+            tooltipProps={tooltipProps}
+            {...(enterTriggersArrowDown === true && { enterTriggersArrowDown })}
+            {...(customChild && { customChild })}
+            {...(isFavorite !== null && {
+              additionalChild: (
+                <button
+                  className={css(styles.appLauncherMenuItem, styles.modifiers.action)}
+                  aria-label={isFavorite ? ariaIsFavoriteLabel : ariaIsNotFavoriteLabel}
+                  onClick={() => {
+                    onFavorite(id, isFavorite);
+                  }}
+                >
+                  <StarIcon />
+                </button>
+              )
+            })}
+            {...props}
+          >
+            {children && <ApplicationLauncherContent>{children}</ApplicationLauncherContent>}
+          </DropdownItem>
+        )}
+      </ApplicationLauncherContext.Consumer>
+    </ApplicationLauncherItemContext.Provider>
+  );
+}

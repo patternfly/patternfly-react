@@ -14,20 +14,25 @@ export interface LoginMainHeaderProps extends React.HTMLProps<HTMLDivElement> {
   subtitle?: string;
 }
 
-export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
+/**
+ *
+ */
+export function LoginMainHeader({
   children = null,
   className = '',
   title = '',
   subtitle = '',
   ...props
-}: LoginMainHeaderProps) => (
-  <header className={css(styles.loginMainHeader, className)} {...props}>
-    {title && (
-      <Title headingLevel="h2" size={TitleSizes['3xl']}>
-        {title}
-      </Title>
-    )}
-    {subtitle && <p className={css(styles.loginMainHeaderDesc)}>{subtitle}</p>}
-    {children}
-  </header>
-);
+}: LoginMainHeaderProps) {
+  return (
+    <header className={css(styles.loginMainHeader, className)} {...props}>
+      {title && (
+        <Title headingLevel="h2" size={TitleSizes['3xl']}>
+          {title}
+        </Title>
+      )}
+      {subtitle && <p className={css(styles.loginMainHeaderDesc)}>{subtitle}</p>}
+      {children}
+    </header>
+  );
+}

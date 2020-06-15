@@ -18,21 +18,26 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
   'aria-valuetext'?: string;
 }
 
-export const Spinner: React.FunctionComponent<SpinnerProps> = ({
+/**
+ *
+ */
+export function Spinner({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   size = 'xl',
   'aria-valuetext': ariaValueText = 'Loading...',
   ...props
-}: SpinnerProps) => (
-  <span
-    className={css(styles.spinner, styles.modifiers[size])}
-    role="progressbar"
-    aria-valuetext={ariaValueText}
-    {...props}
-  >
-    <span className={css(styles.spinnerClipper)} />
-    <span className={css(styles.spinnerLeadBall)} />
-    <span className={css(styles.spinnerTailBall)} />
-  </span>
-);
+}: SpinnerProps) {
+  return (
+    <span
+      className={css(styles.spinner, styles.modifiers[size])}
+      role="progressbar"
+      aria-valuetext={ariaValueText}
+      {...props}
+    >
+      <span className={css(styles.spinnerClipper)} />
+      <span className={css(styles.spinnerLeadBall)} />
+      <span className={css(styles.spinnerTailBall)} />
+    </span>
+  );
+}

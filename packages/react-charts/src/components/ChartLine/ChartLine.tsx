@@ -394,7 +394,10 @@ export interface ChartLineProps extends VictoryLineProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
+/**
+ *
+ */
+export function ChartLine({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
@@ -402,7 +405,7 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartLineProps) => {
+}: ChartLineProps) {
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     theme,
@@ -410,7 +413,7 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   });
   // Note: containerComponent is required for theme
   return <VictoryLine containerComponent={container} theme={theme} {...rest} />;
-};
+}
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);

@@ -12,23 +12,26 @@ export interface ApplicationLauncherContentProps {
   children: React.ReactNode;
 }
 
-export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLauncherContentProps> = ({
-  children
-}: ApplicationLauncherContentProps) => (
-  <ApplicationLauncherItemContext.Consumer>
-    {({ isExternal, icon }) => (
-      <>
-        {icon && <ApplicationLauncherIcon>{icon}</ApplicationLauncherIcon>}
-        {icon ? <ApplicationLauncherText>{children}</ApplicationLauncherText> : children}
-        {isExternal && (
-          <>
-            <span className={css(styles.appLauncherMenuItemExternalIcon)}>
-              <ExternalLinkAltIcon />
-            </span>
-            <span className={css(accessibleStyles.screenReader)}>(opens new window)</span>
-          </>
-        )}
-      </>
-    )}
-  </ApplicationLauncherItemContext.Consumer>
-);
+/**
+ *
+ */
+export function ApplicationLauncherContent({ children }: ApplicationLauncherContentProps) {
+  return (
+    <ApplicationLauncherItemContext.Consumer>
+      {({ isExternal, icon }) => (
+        <>
+          {icon && <ApplicationLauncherIcon>{icon}</ApplicationLauncherIcon>}
+          {icon ? <ApplicationLauncherText>{children}</ApplicationLauncherText> : children}
+          {isExternal && (
+            <>
+              <span className={css(styles.appLauncherMenuItemExternalIcon)}>
+                <ExternalLinkAltIcon />
+              </span>
+              <span className={css(accessibleStyles.screenReader)}>(opens new window)</span>
+            </>
+          )}
+        </>
+      )}
+    </ApplicationLauncherItemContext.Consumer>
+  );
+}

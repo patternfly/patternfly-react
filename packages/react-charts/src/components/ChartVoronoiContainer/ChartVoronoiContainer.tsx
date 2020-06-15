@@ -218,7 +218,10 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   width?: number;
 }
 
-export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContainerProps> = ({
+/**
+ *
+ */
+export function ChartVoronoiContainer({
   className,
   constrainToVisibleArea = false,
   themeColor,
@@ -228,7 +231,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   theme = getTheme(themeColor, themeVariant),
   labelComponent = <ChartTooltip />, // Note that Victory provides its own tooltip component here
   ...rest
-}: ChartVoronoiContainerProps) => {
+}: ChartVoronoiContainerProps) {
   const chartClassName = getClassName({ className });
   const chartLabelComponent = React.cloneElement(labelComponent, {
     constrainToVisibleArea,
@@ -243,7 +246,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
     // @ts-ignore
     <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
   );
-};
+}
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted

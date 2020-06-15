@@ -11,13 +11,13 @@ export interface FormProps extends React.HTMLProps<HTMLFormElement> {
   isHorizontal?: boolean;
 }
 
-export const Form: React.FunctionComponent<FormProps> = ({
-  children = null,
-  className = '',
-  isHorizontal = false,
-  ...props
-}: FormProps) => (
-  <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, className)}>
-    {children}
-  </form>
-);
+/**
+ *
+ */
+export function Form({ children = null, className = '', isHorizontal = false, ...props }: FormProps) {
+  return (
+    <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, className)}>
+      {children}
+    </form>
+  );
+}

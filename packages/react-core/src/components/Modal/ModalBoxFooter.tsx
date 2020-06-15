@@ -9,12 +9,13 @@ export interface ModalBoxFooterProps {
   className?: string;
 }
 
-export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: ModalBoxFooterProps) => (
-  <footer {...props} className={css(styles.modalBoxFooter, className)}>
-    {children}
-  </footer>
-);
+/**
+ *
+ */
+export function ModalBoxFooter({ children = null, className = '', ...props }: ModalBoxFooterProps) {
+  return (
+    <footer {...props} className={css(styles.modalBoxFooter, className)}>
+      {children}
+    </footer>
+  );
+}

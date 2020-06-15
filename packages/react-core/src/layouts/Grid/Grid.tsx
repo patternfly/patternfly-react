@@ -26,13 +26,10 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   xl2?: gridItemSpanValueShape;
 }
 
-export const Grid: React.FunctionComponent<GridProps> = ({
-  children = null,
-  className = '',
-  hasGutter,
-  span = null,
-  ...props
-}: GridProps) => {
+/**
+ *
+ */
+export function Grid({ children = null, className = '', hasGutter, span = null, ...props }: GridProps) {
   const classes = [styles.grid, span && styles.modifiers[`all_${span}Col` as keyof typeof styles.modifiers]];
 
   Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
@@ -49,4 +46,4 @@ export const Grid: React.FunctionComponent<GridProps> = ({
       {children}
     </div>
   );
-};
+}

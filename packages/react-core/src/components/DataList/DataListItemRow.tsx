@@ -8,20 +8,20 @@ export interface DataListItemRowProps extends Omit<React.HTMLProps<HTMLDivElemen
   rowid?: string;
 }
 
-export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({
-  children,
-  className = '',
-  rowid = '',
-  ...props
-}: DataListItemRowProps) => (
-  <div className={css(styles.dataListItemRow, className)} {...props}>
-    {React.Children.map(
-      children,
-      child =>
-        React.isValidElement(child) &&
-        React.cloneElement(child as React.ReactElement<any>, {
-          rowid
-        })
-    )}
-  </div>
-);
+/**
+ *
+ */
+export function DataListItemRow({ children, className = '', rowid = '', ...props }: DataListItemRowProps) {
+  return (
+    <div className={css(styles.dataListItemRow, className)} {...props}>
+      {React.Children.map(
+        children,
+        child =>
+          React.isValidElement(child) &&
+          React.cloneElement(child as React.ReactElement<any>, {
+            rowid
+          })
+      )}
+    </div>
+  );
+}

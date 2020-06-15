@@ -182,7 +182,10 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
+/**
+ *
+ */
+export function ChartBulletPrimarySegmentedMeasure({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -207,7 +210,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   height = theme.group.height,
   width = theme.group.width,
   labelComponent = <ChartTooltip />
-}: ChartBulletPrimarySegmentedMeasureProps) => {
+}: ChartBulletPrimarySegmentedMeasureProps) {
   const computedData = getPrimarySegmentedMeasureData({
     data,
     invert,
@@ -270,7 +273,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   ) : (
     <React.Fragment>{measure}</React.Fragment>
   );
-};
+}
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletPrimarySegmentedMeasure, VictoryBar);

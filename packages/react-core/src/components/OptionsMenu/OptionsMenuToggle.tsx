@@ -27,7 +27,10 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   toggleTemplate?: React.ReactNode;
 }
 
-export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({
+/**
+ *
+ */
+export function OptionsMenuToggle({
   isPlain = false,
   isDisabled = false,
   isOpen = false,
@@ -42,22 +45,24 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
   type,
   'aria-label': ariaLabel = 'Options menu',
   ...props
-}: OptionsMenuToggleProps) => (
-  <DropdownContext.Consumer>
-    {({ id: contextId }) => (
-      <DropdownToggle
-        {...((isPlain || hideCaret) && { toggleIndicator: null })}
-        {...props}
-        isPlain={isPlain}
-        isOpen={isOpen}
-        isDisabled={isDisabled}
-        isActive={isActive}
-        id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
-        aria-haspopup="listbox"
-        aria-label={ariaLabel}
-        aria-expanded={isOpen}
-        {...(toggleTemplate ? { children: toggleTemplate } : {})}
-      />
-    )}
-  </DropdownContext.Consumer>
-);
+}: OptionsMenuToggleProps) {
+  return (
+    <DropdownContext.Consumer>
+      {({ id: contextId }) => (
+        <DropdownToggle
+          {...((isPlain || hideCaret) && { toggleIndicator: null })}
+          {...props}
+          isPlain={isPlain}
+          isOpen={isOpen}
+          isDisabled={isDisabled}
+          isActive={isActive}
+          id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
+          aria-haspopup="listbox"
+          aria-label={ariaLabel}
+          aria-expanded={isOpen}
+          {...(toggleTemplate ? { children: toggleTemplate } : {})}
+        />
+      )}
+    </DropdownContext.Consumer>
+  );
+}

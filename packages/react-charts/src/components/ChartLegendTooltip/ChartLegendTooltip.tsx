@@ -248,7 +248,10 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   y?: number;
 }
 
-export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
+/**
+ *
+ */
+export function ChartLegendTooltip({
   datum,
   isCursorTooltip = true,
   labelComponent = <ChartLegendTooltipContent />,
@@ -260,7 +263,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartLegendTooltipProps) => {
+}: ChartLegendTooltipProps) {
   // Returns the tooltip content component
   const getTooltipContentComponent = () =>
     React.cloneElement(labelComponent, {
@@ -321,7 +324,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   };
 
   return getTooltipComponent();
-};
+}
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartLegendTooltip, VictoryTooltip);

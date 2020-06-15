@@ -9,12 +9,13 @@ export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const TextContent: React.FunctionComponent<TextContentProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: TextContentProps) => (
-  <div {...props} className={css(styles.content, className)}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function TextContent({ children = null, className = '', ...props }: TextContentProps) {
+  return (
+    <div {...props} className={css(styles.content, className)}>
+      {children}
+    </div>
+  );
+}

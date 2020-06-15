@@ -182,7 +182,10 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   width?: number;
 }
 
-export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerProps> = ({
+/**
+ *
+ */
+export function ChartCursorContainer({
   className,
   themeColor,
   themeVariant,
@@ -191,7 +194,7 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   theme = getTheme(themeColor, themeVariant),
   cursorLabelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   ...rest
-}: ChartCursorContainerProps) => {
+}: ChartCursorContainerProps) {
   const chartClassName = getClassName({ className });
   const chartCursorLabelComponent = React.cloneElement(cursorLabelComponent, {
     theme,
@@ -210,7 +213,7 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
       {...rest}
     />
   );
-};
+}
 ChartCursorContainer.defaultProps = (VictoryCursorContainer as any).defaultProps;
 
 // Note: VictoryCursorContainer.defaultEvents & VictoryContainer.role must be hoisted

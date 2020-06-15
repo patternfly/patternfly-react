@@ -22,7 +22,10 @@ export interface BodyCellProps {
   onMouseEnter?: (event: any) => void;
   children: React.ReactNode;
 }
-export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
+/**
+ *
+ */
+export function BodyCell({
   'data-label': dataLabel = '',
   className = '',
   colSpan,
@@ -43,7 +46,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   name,
   /* eslint-enable @typescript-eslint/no-unused-vars */
   ...props
-}: BodyCellProps) => {
+}: BodyCellProps) {
   const mappedProps = {
     ...(dataLabel && !parentId ? { 'data-label': dataLabel } : {}),
     ...props
@@ -74,4 +77,4 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   const bodyCell = tooltip !== '' ? <Tooltip content={tooltip}>{cell}</Tooltip> : cell;
 
   return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : bodyCell;
-};
+}

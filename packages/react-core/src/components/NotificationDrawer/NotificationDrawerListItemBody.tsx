@@ -12,16 +12,21 @@ export interface NotificationDrawerListItemBodyProps extends React.HTMLProps<HTM
   timestamp?: React.ReactNode;
 }
 
-export const NotificationDrawerListItemBody: React.FunctionComponent<NotificationDrawerListItemBodyProps> = ({
+/**
+ *
+ */
+export function NotificationDrawerListItemBody({
   children,
   className = '',
   timestamp,
   ...props
-}: NotificationDrawerListItemBodyProps) => (
-  <React.Fragment>
-    <div {...props} className={css(styles.notificationDrawerListItemDescription, className)}>
-      {children}
-    </div>
-    {timestamp && <div className={css(styles.notificationDrawerListItemTimestamp, className)}>{timestamp}</div>}
-  </React.Fragment>
-);
+}: NotificationDrawerListItemBodyProps) {
+  return (
+    <React.Fragment>
+      <div {...props} className={css(styles.notificationDrawerListItemDescription, className)}>
+        {children}
+      </div>
+      {timestamp && <div className={css(styles.notificationDrawerListItemTimestamp, className)}>{timestamp}</div>}
+    </React.Fragment>
+  );
+}

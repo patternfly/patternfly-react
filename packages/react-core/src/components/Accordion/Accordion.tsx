@@ -16,14 +16,17 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   asDefinitionList?: boolean;
 }
 
-export const Accordion: React.FunctionComponent<AccordionProps> = ({
+/**
+ *
+ */
+export function Accordion({
   children = null,
   className = '',
   'aria-label': ariaLabel = '',
   headingLevel = 'h3',
   asDefinitionList = true,
   ...props
-}: AccordionProps) => {
+}: AccordionProps) {
   const AccordionList: any = asDefinitionList ? 'dl' : 'div';
   return (
     <AccordionList className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
@@ -37,4 +40,4 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
       </AccordionContext.Provider>
     </AccordionList>
   );
-};
+}

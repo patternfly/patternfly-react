@@ -390,7 +390,10 @@ export interface ChartThresholdProps extends VictoryLineProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
+/**
+ *
+ */
+export function ChartThreshold({
   style = {},
   themeColor,
   themeVariant,
@@ -398,7 +401,7 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
   // destructure last
   theme = getThresholdTheme(themeColor, themeVariant),
   ...rest
-}: ChartThresholdProps) => {
+}: ChartThresholdProps) {
   // Returned style prop takes precedence over default theme
   const getStrokeDasharray = () => {
     if (style && style.data && style.data.strokeDasharray) {
@@ -425,7 +428,7 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
     };
   }
   return <ChartLine style={thresholdStyle} theme={theme} {...rest} />;
-};
+}
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartThreshold, VictoryLine);

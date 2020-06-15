@@ -461,7 +461,10 @@ export interface ChartBulletProps {
   width?: number;
 }
 
-export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
+/**
+ *
+ */
+export function ChartBullet({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -544,7 +547,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   height = horizontal ? theme.chart.height : theme.chart.width,
   width = horizontal ? theme.chart.width : theme.chart.height,
   bulletSize = theme.chart.height
-}: ChartBulletProps) => {
+}: ChartBulletProps) {
   // Note that we're using a fixed bullet height width to align components.
   const chartSize = {
     height: horizontal ? bulletSize : height,
@@ -825,6 +828,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   ) : (
     <React.Fragment>{bulletChart}</React.Fragment>
   );
-};
+}
 
 hoistNonReactStatics(ChartBullet, VictoryChart);

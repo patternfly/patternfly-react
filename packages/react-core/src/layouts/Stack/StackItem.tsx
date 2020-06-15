@@ -11,13 +11,13 @@ export interface StackItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const StackItem: React.FunctionComponent<StackItemProps> = ({
-  isFilled = false,
-  className = '',
-  children = null,
-  ...props
-}: StackItemProps) => (
-  <div {...props} className={css(styles.stackItem, isFilled && styles.modifiers.fill, className)}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function StackItem({ isFilled = false, className = '', children = null, ...props }: StackItemProps) {
+  return (
+    <div {...props} className={css(styles.stackItem, isFilled && styles.modifiers.fill, className)}>
+      {children}
+    </div>
+  );
+}

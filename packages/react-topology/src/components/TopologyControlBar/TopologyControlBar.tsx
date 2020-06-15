@@ -246,12 +246,15 @@ export interface TopologyControlBarProps extends React.HTMLProps<HTMLDivElement>
   onButtonClick?: (id: any) => void;
 }
 
-export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps> = ({
+/**
+ *
+ */
+export function TopologyControlBar({
   className = null,
   children = null,
   controlButtons = [],
   onButtonClick = () => undefined
-}: TopologyControlBarProps) => {
+}: TopologyControlBarProps) {
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, button: TopologyControlButton) => {
     event.preventDefault();
     onButtonClick(button.id);
@@ -304,4 +307,4 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
       )}
     </GenerateId>
   );
-};
+}

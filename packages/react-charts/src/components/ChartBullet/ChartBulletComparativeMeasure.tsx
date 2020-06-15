@@ -162,7 +162,10 @@ export interface ChartBulletComparativeMeasureProps {
   y?: DataGetterPropType;
 }
 
-export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletComparativeMeasureProps> = ({
+/**
+ *
+ */
+export function ChartBulletComparativeMeasure({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
@@ -184,7 +187,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
   height = theme.bar.height,
   width = theme.bar.width,
   labelComponent = <ChartTooltip />
-}: ChartBulletComparativeMeasureProps) => {
+}: ChartBulletComparativeMeasureProps) {
   const computedData = getComparativeMeasureData({
     data,
     theme,
@@ -239,7 +242,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
   ) : (
     <React.Fragment>{measure}</React.Fragment>
   );
-};
+}
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeMeasure, VictoryBar);

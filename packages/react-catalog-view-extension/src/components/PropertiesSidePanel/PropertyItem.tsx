@@ -12,12 +12,10 @@ export interface PropertyItemProps extends Omit<React.HTMLProps<HTMLDivElement>,
   value: string | React.ReactNode;
 }
 
-export const PropertyItem: React.FunctionComponent<PropertyItemProps> = ({
-  className = '',
-  label,
-  value = null,
-  ...props
-}: PropertyItemProps) => {
+/**
+ *
+ */
+export function PropertyItem({ className = '', label, value = null, ...props }: PropertyItemProps) {
   const classes = classNames('properties-side-panel-pf-property', className);
   return (
     <div className={classes} {...props}>
@@ -27,4 +25,4 @@ export const PropertyItem: React.FunctionComponent<PropertyItemProps> = ({
       <div className="properties-side-panel-pf-property-value">{value}</div>
     </div>
   );
-};
+}

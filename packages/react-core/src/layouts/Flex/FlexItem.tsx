@@ -128,7 +128,10 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
   };
 }
 
-export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
+/**
+ *
+ */
+export function FlexItem({
   children = null,
   className = '',
   spacer,
@@ -139,20 +142,22 @@ export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
   align,
   fullWidth,
   ...props
-}: FlexItemProps) => (
-  <div
-    {...props}
-    className={css(
-      formatBreakpointMods(spacer, styles),
-      formatBreakpointMods(grow, styles),
-      formatBreakpointMods(shrink, styles),
-      formatBreakpointMods(flex, styles),
-      formatBreakpointMods(alignSelf, styles),
-      formatBreakpointMods(align, styles),
-      formatBreakpointMods(fullWidth, styles),
-      className
-    )}
-  >
-    {children}
-  </div>
-);
+}: FlexItemProps) {
+  return (
+    <div
+      {...props}
+      className={css(
+        formatBreakpointMods(spacer, styles),
+        formatBreakpointMods(grow, styles),
+        formatBreakpointMods(shrink, styles),
+        formatBreakpointMods(flex, styles),
+        formatBreakpointMods(alignSelf, styles),
+        formatBreakpointMods(align, styles),
+        formatBreakpointMods(fullWidth, styles),
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}

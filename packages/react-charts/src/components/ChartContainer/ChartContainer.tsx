@@ -143,7 +143,10 @@ export interface ChartContainerProps extends VictoryContainerProps {
   width?: number;
 }
 
-export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
+/**
+ *
+ */
+export function ChartContainer({
   className,
   themeColor,
   themeVariant,
@@ -151,14 +154,14 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartContainerProps) => {
+}: ChartContainerProps) {
   const chartClassName = getClassName({ className });
 
   // Note: className is valid, but Victory is missing a type
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
-};
+}
 
 // Note: VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartContainer, VictoryContainer);

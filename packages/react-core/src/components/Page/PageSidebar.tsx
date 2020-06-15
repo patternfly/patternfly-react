@@ -19,32 +19,31 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   theme?: 'dark' | 'light';
 }
 
-export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
-  className = '',
-  nav,
-  isNavOpen = true,
-  theme = 'dark',
-  ...props
-}: PageSidebarProps) => (
-  <PageContextConsumer>
-    {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageSidebarProps) => {
-      const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+/**
+ *
+ */
+export function PageSidebar({ className = '', nav, isNavOpen = true, theme = 'dark', ...props }: PageSidebarProps) {
+  return (
+    <PageContextConsumer>
+      {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageSidebarProps) => {
+        const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
-      return (
-        <div
-          id="page-sidebar"
-          className={css(
-            styles.pageSidebar,
-            theme === 'light' && styles.modifiers.light,
-            navOpen && styles.modifiers.expanded,
-            !navOpen && styles.modifiers.collapsed,
-            className
-          )}
-          {...props}
-        >
-          <div className={css(styles.pageSidebarBody)}>{nav}</div>
-        </div>
-      );
-    }}
-  </PageContextConsumer>
-);
+        return (
+          <div
+            id="page-sidebar"
+            className={css(
+              styles.pageSidebar,
+              theme === 'light' && styles.modifiers.light,
+              navOpen && styles.modifiers.expanded,
+              !navOpen && styles.modifiers.collapsed,
+              className
+            )}
+            {...props}
+          >
+            <div className={css(styles.pageSidebarBody)}>{nav}</div>
+          </div>
+        );
+      }}
+    </PageContextConsumer>
+  );
+}

@@ -9,11 +9,10 @@ export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: ActionGroupProps) => {
+/**
+ *
+ */
+export function ActionGroup({ children = null, className = '', ...props }: ActionGroupProps) {
   const customClassName = css(styles.formGroup, styles.modifiers.action, className);
 
   const formActionsComponent = <div className={css(styles.formActions)}>{children}</div>;
@@ -22,4 +21,4 @@ export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
       {formActionsComponent}
     </div>
   );
-};
+}

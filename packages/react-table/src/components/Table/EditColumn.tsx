@@ -18,7 +18,10 @@ export interface EditColumnProps {
   editAriaLabel: string;
 }
 
-export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
+/**
+ *
+ */
+export function EditColumn({
   onClick = null,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   className = '',
@@ -29,24 +32,26 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
   cancelAriaLabel,
   editAriaLabel,
   ...props
-}: EditColumnProps) => (
-  <React.Fragment>
-    <div className={classNames(inlineStyles.inlineEditGroup, inlineStyles.modifiers.iconGroup, 'pf-m-action-group')}>
-      <div className={classNames(inlineStyles.inlineEditAction)}>
-        <Button aria-label={saveAriaLabel} {...props} onClick={e => onClick(e, 'save')} variant="plain">
-          <CheckIcon />
+}: EditColumnProps) {
+  return (
+    <React.Fragment>
+      <div className={classNames(inlineStyles.inlineEditGroup, inlineStyles.modifiers.iconGroup, 'pf-m-action-group')}>
+        <div className={classNames(inlineStyles.inlineEditAction)}>
+          <Button aria-label={saveAriaLabel} {...props} onClick={e => onClick(e, 'save')} variant="plain">
+            <CheckIcon />
+          </Button>
+        </div>
+        <div className={classNames(inlineStyles.inlineEditAction)}>
+          <Button aria-label={cancelAriaLabel} {...props} onClick={e => onClick(e, 'cancel')} variant="plain">
+            <TimesIcon />
+          </Button>
+        </div>
+      </div>
+      <div className={classNames(inlineStyles.inlineEditAction, inlineStyles.modifiers.enableEditable)}>
+        <Button aria-label={editAriaLabel} {...props} onClick={e => onClick(e, 'edit')} variant="plain">
+          <PencilAltIcon />
         </Button>
       </div>
-      <div className={classNames(inlineStyles.inlineEditAction)}>
-        <Button aria-label={cancelAriaLabel} {...props} onClick={e => onClick(e, 'cancel')} variant="plain">
-          <TimesIcon />
-        </Button>
-      </div>
-    </div>
-    <div className={classNames(inlineStyles.inlineEditAction, inlineStyles.modifiers.enableEditable)}>
-      <Button aria-label={editAriaLabel} {...props} onClick={e => onClick(e, 'edit')} variant="plain">
-        <PencilAltIcon />
-      </Button>
-    </div>
-  </React.Fragment>
-);
+    </React.Fragment>
+  );
+}

@@ -36,7 +36,10 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
   direction?: 'up' | 'down';
 }
 
-export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
+/**
+ *
+ */
+export function OptionsMenu({
   className = '',
   menuItems,
   toggle,
@@ -46,29 +49,31 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref,
   ...props
-}: OptionsMenuProps) => (
-  <DropdownContext.Provider
-    value={{
-      id,
-      onSelect: () => undefined,
-      toggleIndicatorClass: styles.optionsMenuToggleIcon,
-      toggleTextClass: styles.optionsMenuToggleText,
-      menuClass: styles.optionsMenuMenu,
-      itemClass: styles.optionsMenuMenuItem,
-      toggleClass: isText ? styles.optionsMenuToggleButton : styles.optionsMenuToggle,
-      baseClass: styles.optionsMenu,
-      disabledClass: styles.modifiers.disabled,
-      menuComponent: isGrouped ? 'div' : 'ul',
-      baseComponent: 'div'
-    }}
-  >
-    <DropdownWithContext
-      {...props}
-      id={id}
-      dropdownItems={menuItems}
-      className={className}
-      isGrouped={isGrouped}
-      toggle={toggle}
-    />
-  </DropdownContext.Provider>
-);
+}: OptionsMenuProps) {
+  return (
+    <DropdownContext.Provider
+      value={{
+        id,
+        onSelect: () => undefined,
+        toggleIndicatorClass: styles.optionsMenuToggleIcon,
+        toggleTextClass: styles.optionsMenuToggleText,
+        menuClass: styles.optionsMenuMenu,
+        itemClass: styles.optionsMenuMenuItem,
+        toggleClass: isText ? styles.optionsMenuToggleButton : styles.optionsMenuToggle,
+        baseClass: styles.optionsMenu,
+        disabledClass: styles.modifiers.disabled,
+        menuComponent: isGrouped ? 'div' : 'ul',
+        baseComponent: 'div'
+      }}
+    >
+      <DropdownWithContext
+        {...props}
+        id={id}
+        dropdownItems={menuItems}
+        className={className}
+        isGrouped={isGrouped}
+        toggle={toggle}
+      />
+    </DropdownContext.Provider>
+  );
+}

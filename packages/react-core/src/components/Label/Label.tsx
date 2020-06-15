@@ -35,7 +35,10 @@ const colorStyles = {
   grey: ''
 };
 
-export const Label: React.FunctionComponent<LabelProps> = ({
+/**
+ *
+ */
+export function Label({
   children,
   className = '',
   color = 'grey',
@@ -46,7 +49,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   closeBtnProps,
   href,
   ...props
-}: LabelProps) => {
+}: LabelProps) {
   const Component = href ? 'a' : 'span';
   const button = closeBtn ? (
     closeBtn
@@ -73,4 +76,4 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       {onClose && button}
     </span>
   );
-};
+}

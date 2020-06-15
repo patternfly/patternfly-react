@@ -9,13 +9,18 @@ export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const DrawerSection: React.SFC<DrawerSectionProps> = ({
+/**
+ *
+ */
+export function DrawerSection({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   ...props
-}: DrawerSectionProps) => (
-  <div className={css(styles.drawerSection, className)} {...props}>
-    {children}
-  </div>
-);
+}: DrawerSectionProps) {
+  return (
+    <div className={css(styles.drawerSection, className)} {...props}>
+      {children}
+    </div>
+  );
+}

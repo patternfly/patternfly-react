@@ -13,15 +13,20 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
   'aria-label'?: string;
 }
 
-export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
+/**
+ *
+ */
+export function AboutModalBoxCloseButton({
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = 'Close Dialog',
   ...props
-}: AboutModalBoxCloseButtonProps) => (
-  <div className={css(styles.aboutModalBoxClose, className)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
-      <TimesIcon />
-    </Button>
-  </div>
-);
+}: AboutModalBoxCloseButtonProps) {
+  return (
+    <div className={css(styles.aboutModalBoxClose, className)} {...props}>
+      <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
+        <TimesIcon />
+      </Button>
+    </div>
+  );
+}

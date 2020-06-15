@@ -8,12 +8,13 @@ export interface ApplicationLauncherTextProps extends React.HTMLProps<HTMLSpanEl
   className?: string;
 }
 
-export const ApplicationLauncherText: React.FunctionComponent<ApplicationLauncherTextProps> = ({
-  className = '',
-  children,
-  ...props
-}: ApplicationLauncherTextProps) => (
-  <span className={css('pf-c-app-launcher__menu-item-text', className)} {...props}>
-    {children}
-  </span>
-);
+/**
+ *
+ */
+export function ApplicationLauncherText({ className = '', children, ...props }: ApplicationLauncherTextProps) {
+  return (
+    <span className={css('pf-c-app-launcher__menu-item-text', className)} {...props}>
+      {children}
+    </span>
+  );
+}

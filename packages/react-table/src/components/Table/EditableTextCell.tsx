@@ -20,7 +20,10 @@ export interface IEditableTextCell {
   isDisabled?: boolean;
 }
 
-export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
+/**
+ *
+ */
+export function EditableTextCell({
   value,
   rowIndex,
   cellIndex,
@@ -28,23 +31,25 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
   handleTextInputChange,
   inputAriaLabel,
   isDisabled
-}) => (
-  <React.Fragment>
-    <div className={inlineStyles.inlineEditValue}>{value}</div>
-    <div className={inlineStyles.inlineEditInput}>
-      <TextInput
-        isDisabled={isDisabled}
-        value={props.editableValue !== undefined ? props.editableValue : value}
-        validated={props.isValid !== false ? 'default' : 'error'}
-        type="text"
-        onChange={(newValue, event) => {
-          handleTextInputChange(newValue, event, rowIndex, cellIndex);
-        }}
-        aria-label={inputAriaLabel}
-      />
-      <div className={classNames(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
-        {props.errorText}
+}) {
+  return (
+    <React.Fragment>
+      <div className={inlineStyles.inlineEditValue}>{value}</div>
+      <div className={inlineStyles.inlineEditInput}>
+        <TextInput
+          isDisabled={isDisabled}
+          value={props.editableValue !== undefined ? props.editableValue : value}
+          validated={props.isValid !== false ? 'default' : 'error'}
+          type="text"
+          onChange={(newValue, event) => {
+            handleTextInputChange(newValue, event, rowIndex, cellIndex);
+          }}
+          aria-label={inputAriaLabel}
+        />
+        <div className={classNames(formStyles.formHelperText, formStyles.modifiers.error)} aria-live="polite">
+          {props.errorText}
+        </div>
       </div>
-    </div>
-  </React.Fragment>
-);
+    </React.Fragment>
+  );
+}

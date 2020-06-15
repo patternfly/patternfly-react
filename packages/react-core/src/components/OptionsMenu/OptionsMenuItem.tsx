@@ -20,27 +20,32 @@ export interface OptionsMenuItemProps
   id?: string;
 }
 
-export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
+/**
+ *
+ */
+export function OptionsMenuItem({
   children = null as React.ReactNode,
   isSelected = false,
   onSelect = () => null as any,
   id = '',
   isDisabled,
   ...props
-}: OptionsMenuItemProps) => (
-  <DropdownItem
-    id={id}
-    component="button"
-    isDisabled={isDisabled}
-    onClick={(event: any) => onSelect(event)}
-    {...(isDisabled && { 'aria-disabled': true })}
-    {...props}
-  >
-    {children}
-    {isSelected && (
-      <span className={css(styles.optionsMenuMenuItemIcon)}>
-        <CheckIcon aria-hidden={isSelected} />
-      </span>
-    )}
-  </DropdownItem>
-);
+}: OptionsMenuItemProps) {
+  return (
+    <DropdownItem
+      id={id}
+      component="button"
+      isDisabled={isDisabled}
+      onClick={(event: any) => onSelect(event)}
+      {...(isDisabled && { 'aria-disabled': true })}
+      {...props}
+    >
+      {children}
+      {isSelected && (
+        <span className={css(styles.optionsMenuMenuItemIcon)}>
+          <CheckIcon aria-hidden={isSelected} />
+        </span>
+      )}
+    </DropdownItem>
+  );
+}

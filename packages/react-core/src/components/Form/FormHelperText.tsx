@@ -15,24 +15,29 @@ export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   icon?: React.ReactNode;
 }
 
-export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
+/**
+ *
+ */
+export function FormHelperText({
   children = null,
   isError = false,
   isHidden = true,
   className = '',
   icon = null,
   ...props
-}: FormHelperTextProps) => (
-  <p
-    className={css(
-      styles.formHelperText,
-      isError && styles.modifiers.error,
-      isHidden && styles.modifiers.hidden,
-      className
-    )}
-    {...props}
-  >
-    {icon && <span className={css(styles.formHelperTextIcon)}>{icon}</span>}
-    {children}
-  </p>
-);
+}: FormHelperTextProps) {
+  return (
+    <p
+      className={css(
+        styles.formHelperText,
+        isError && styles.modifiers.error,
+        isHidden && styles.modifiers.hidden,
+        className
+      )}
+      {...props}
+    >
+      {icon && <span className={css(styles.formHelperTextIcon)}>{icon}</span>}
+      {children}
+    </p>
+  );
+}

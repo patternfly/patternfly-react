@@ -9,13 +9,18 @@ export interface ApplicationLauncherIconProps extends React.HTMLProps<HTMLSpanEl
   className?: string;
 }
 
-export const ApplicationLauncherIcon: React.FunctionComponent<ApplicationLauncherIconProps> = ({
+/**
+ *
+ */
+export function ApplicationLauncherIcon({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,
   ...props
-}: ApplicationLauncherIconProps) => (
-  <span className={css(styles.appLauncherMenuItemIcon)} {...props}>
-    {children}
-  </span>
-);
+}: ApplicationLauncherIconProps) {
+  return (
+    <span className={css(styles.appLauncherMenuItemIcon)} {...props}>
+      {children}
+    </span>
+  );
+}

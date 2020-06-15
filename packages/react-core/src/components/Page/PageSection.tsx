@@ -49,7 +49,10 @@ const variantStyle = {
   [PageSectionVariants.darker]: styles.modifiers.dark_100
 };
 
-export const PageSection: React.FunctionComponent<PageSectionProps> = ({
+/**
+ *
+ */
+export function PageSection({
   className = '',
   children,
   variant = 'default',
@@ -57,18 +60,20 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   padding,
   isFilled,
   ...props
-}: PageSectionProps) => (
-  <section
-    {...props}
-    className={css(
-      variantType[type],
-      formatBreakpointMods(padding, styles),
-      variantStyle[variant],
-      isFilled === false && styles.modifiers.noFill,
-      isFilled === true && styles.modifiers.fill,
-      className
-    )}
-  >
-    {children}
-  </section>
-);
+}: PageSectionProps) {
+  return (
+    <section
+      {...props}
+      className={css(
+        variantType[type],
+        formatBreakpointMods(padding, styles),
+        variantStyle[variant],
+        isFilled === false && styles.modifiers.noFill,
+        isFilled === true && styles.modifiers.fill,
+        className
+      )}
+    >
+      {children}
+    </section>
+  );
+}

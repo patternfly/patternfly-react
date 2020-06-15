@@ -11,14 +11,19 @@ export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionEl
   isDisabled?: boolean;
 }
 
-export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = ({
+/**
+ *
+ */
+export function FormSelectOption({
   className = '',
   value = '',
   isDisabled = false,
   label,
   ...props
-}: FormSelectOptionProps) => (
-  <option {...props} className={className} value={value} disabled={isDisabled}>
-    {label}
-  </option>
-);
+}: FormSelectOptionProps) {
+  return (
+    <option {...props} className={className} value={value} disabled={isDisabled}>
+      {label}
+    </option>
+  );
+}

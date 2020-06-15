@@ -9,12 +9,13 @@ export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const CardActions: React.FunctionComponent<CardActionsProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: CardActionsProps) => (
-  <div className={css(styles.cardActions, className)} {...props}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function CardActions({ children = null, className = '', ...props }: CardActionsProps) {
+  return (
+    <div className={css(styles.cardActions, className)} {...props}>
+      {children}
+    </div>
+  );
+}

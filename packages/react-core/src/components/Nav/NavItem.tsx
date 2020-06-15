@@ -26,7 +26,10 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   component?: React.ReactNode;
 }
 
-export const NavItem: React.FunctionComponent<NavItemProps> = ({
+/**
+ *
+ */
+export function NavItem({
   children,
   styleChildren = true,
   className,
@@ -38,7 +41,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   onClick = null as NavSelectClickHandler,
   component = 'a',
   ...props
-}: NavItemProps) => {
+}: NavItemProps) {
   const Component = component as any;
 
   const renderDefaultLink = (context: any): React.ReactNode => {
@@ -79,4 +82,4 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       </NavContext.Consumer>
     </li>
   );
-};
+}

@@ -327,7 +327,10 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   };
 }
 
-export const Flex: React.FunctionComponent<FlexProps> = ({
+/**
+ *
+ */
+export function Flex({
   children = null,
   className = '',
   spacer,
@@ -345,28 +348,30 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
   fullWidth,
   flexWrap,
   ...props
-}: FlexProps) => (
-  <div
-    className={css(
-      styles.flex,
-      formatBreakpointMods(spacer, styles),
-      formatBreakpointMods(spaceItems, styles),
-      formatBreakpointMods(grow, styles),
-      formatBreakpointMods(shrink, styles),
-      formatBreakpointMods(flex, styles),
-      formatBreakpointMods(direction, styles),
-      formatBreakpointMods(alignItems, styles),
-      formatBreakpointMods(alignContent, styles),
-      formatBreakpointMods(alignSelf, styles),
-      formatBreakpointMods(align, styles),
-      formatBreakpointMods(justifyContent, styles),
-      formatBreakpointMods(display, styles),
-      formatBreakpointMods(fullWidth, styles),
-      formatBreakpointMods(flexWrap, styles),
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </div>
-);
+}: FlexProps) {
+  return (
+    <div
+      className={css(
+        styles.flex,
+        formatBreakpointMods(spacer, styles),
+        formatBreakpointMods(spaceItems, styles),
+        formatBreakpointMods(grow, styles),
+        formatBreakpointMods(shrink, styles),
+        formatBreakpointMods(flex, styles),
+        formatBreakpointMods(direction, styles),
+        formatBreakpointMods(alignItems, styles),
+        formatBreakpointMods(alignContent, styles),
+        formatBreakpointMods(alignSelf, styles),
+        formatBreakpointMods(align, styles),
+        formatBreakpointMods(justifyContent, styles),
+        formatBreakpointMods(display, styles),
+        formatBreakpointMods(fullWidth, styles),
+        formatBreakpointMods(flexWrap, styles),
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}

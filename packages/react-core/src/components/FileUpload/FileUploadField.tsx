@@ -76,7 +76,10 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   containerRef?: React.Ref<HTMLDivElement>;
 }
 
-export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
+/**
+ *
+ */
+export function FileUploadField({
   id,
   type,
   value = '',
@@ -103,7 +106,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   hideDefaultPreview = false,
   children = null,
   ...props
-}: FileUploadFieldProps) => {
+}: FileUploadFieldProps) {
   const onTextAreaChange = (newValue: string, event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChange(newValue, filename, event);
   };
@@ -172,4 +175,4 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
       {children}
     </div>
   );
-};
+}

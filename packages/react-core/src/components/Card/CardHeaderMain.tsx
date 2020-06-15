@@ -7,12 +7,13 @@ export interface CardHeaderMainProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const CardHeaderMain: React.FunctionComponent<CardHeaderMainProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: CardHeaderMainProps) => (
-  <div className={className} {...props}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function CardHeaderMain({ children = null, className = '', ...props }: CardHeaderMainProps) {
+  return (
+    <div className={className} {...props}>
+      {children}
+    </div>
+  );
+}

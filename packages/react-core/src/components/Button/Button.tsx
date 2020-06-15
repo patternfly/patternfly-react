@@ -48,7 +48,10 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   tabIndex?: number;
 }
 
-export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
+/**
+ *
+ */
+export function Button({
   children = null,
   className = '',
   component = 'button',
@@ -64,7 +67,7 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
   ouiaId = null,
   tabIndex = null as number,
   ...props
-}: ButtonProps & OUIAProps) => {
+}: ButtonProps & OUIAProps) {
   const Component = component as any;
   const isButtonElement = Component === 'button';
   return (
@@ -95,4 +98,4 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
       )}
     </Component>
   );
-};
+}

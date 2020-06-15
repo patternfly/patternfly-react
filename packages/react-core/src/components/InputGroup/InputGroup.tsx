@@ -12,11 +12,10 @@ export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
-  className = '',
-  children,
-  ...props
-}: InputGroupProps) => {
+/**
+ *
+ */
+export function InputGroup({ className = '', children, ...props }: InputGroupProps) {
   const formCtrls = [FormSelect, TextArea, TextInput].map(comp => comp.toString());
   const idItem = React.Children.toArray(children).find(
     (child: any) => !formCtrls.includes(child.type.toString()) && child.props.id
@@ -32,4 +31,4 @@ export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
         : children}
     </div>
   );
-};
+}

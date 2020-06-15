@@ -8,17 +8,16 @@ export interface FilterSidePanelProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const FilterSidePanel: React.FunctionComponent<FilterSidePanelProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: FilterSidePanelProps) => {
+/**
+ *
+ */
+export function FilterSidePanel({ children = null, className = '', ...props }: FilterSidePanelProps) {
   const classes = classNames('filter-panel-pf', className);
   return (
     <div className={classes} {...props}>
       {children}
     </div>
   );
-};
+}
 
 export default FilterSidePanel;

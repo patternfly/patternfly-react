@@ -21,7 +21,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement> {
   isFlat?: boolean;
 }
 
-export const Card: React.FunctionComponent<CardProps> = ({
+/**
+ *
+ */
+export function Card({
   children = null,
   className = '',
   component = 'article',
@@ -31,7 +34,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelected = false,
   isFlat = false,
   ...props
-}: CardProps) => {
+}: CardProps) {
   const Component = component as any;
   return (
     <Component
@@ -50,4 +53,4 @@ export const Card: React.FunctionComponent<CardProps> = ({
       {children}
     </Component>
   );
-};
+}

@@ -11,13 +11,13 @@ export interface SplitItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const SplitItem: React.FunctionComponent<SplitItemProps> = ({
-  isFilled = false,
-  className = '',
-  children = null,
-  ...props
-}: SplitItemProps) => (
-  <div {...props} className={css(styles.splitItem, isFilled && styles.modifiers.fill, className)}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function SplitItem({ isFilled = false, className = '', children = null, ...props }: SplitItemProps) {
+  return (
+    <div {...props} className={css(styles.splitItem, isFilled && styles.modifiers.fill, className)}>
+      {children}
+    </div>
+  );
+}

@@ -11,16 +11,21 @@ export interface ToggleTemplateProps {
   itemsTitle?: string;
 }
 
-export const ToggleTemplate: React.FunctionComponent<ToggleTemplateProps> = ({
+/**
+ *
+ */
+export function ToggleTemplate({
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
   itemsTitle = 'items'
-}: ToggleTemplateProps) => (
-  <React.Fragment>
-    <b>
-      {firstIndex} - {lastIndex}
-    </b>{' '}
-    of <b>{itemCount}</b> {itemsTitle}
-  </React.Fragment>
-);
+}: ToggleTemplateProps) {
+  return (
+    <React.Fragment>
+      <b>
+        {firstIndex} - {lastIndex}
+      </b>{' '}
+      of <b>{itemCount}</b> {itemsTitle}
+    </React.Fragment>
+  );
+}

@@ -13,18 +13,17 @@ export interface LoginProps extends React.HTMLProps<HTMLDivElement> {
   header?: React.ReactNode;
 }
 
-export const Login: React.FunctionComponent<LoginProps> = ({
-  className = '',
-  children = null,
-  footer = null,
-  header = null,
-  ...props
-}: LoginProps) => (
-  <div {...props} className={css(styles.login, className)}>
-    <div className={css(styles.loginContainer)}>
-      {header}
-      <main className={css(styles.loginMain)}>{children}</main>
-      {footer}
+/**
+ *
+ */
+export function Login({ className = '', children = null, footer = null, header = null, ...props }: LoginProps) {
+  return (
+    <div {...props} className={css(styles.login, className)}>
+      <div className={css(styles.loginContainer)}>
+        {header}
+        <main className={css(styles.loginMain)}>{children}</main>
+        {footer}
+      </div>
     </div>
-  </div>
-);
+  );
+}

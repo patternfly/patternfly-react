@@ -10,21 +10,26 @@ export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement> {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => void;
 }
 
-export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
+/**
+ *
+ */
+export function DropdownSeparator({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
-}: SeparatorProps) => (
-  <DropdownArrowContext.Consumer>
-    {context => (
-      <InternalDropdownItem
-        {...props}
-        context={context}
-        component={<Divider component={DividerVariant.div} />}
-        className={className}
-        role="separator"
-      />
-    )}
-  </DropdownArrowContext.Consumer>
-);
+}: SeparatorProps) {
+  return (
+    <DropdownArrowContext.Consumer>
+      {context => (
+        <InternalDropdownItem
+          {...props}
+          context={context}
+          component={<Divider component={DividerVariant.div} />}
+          className={className}
+          role="separator"
+        />
+      )}
+    </DropdownArrowContext.Consumer>
+  );
+}

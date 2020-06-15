@@ -10,12 +10,13 @@ export interface NotificationDrawerBodyProps extends React.HTMLProps<HTMLDivElem
   className?: string;
 }
 
-export const NotificationDrawerBody: React.FunctionComponent<NotificationDrawerBodyProps> = ({
-  children,
-  className = '',
-  ...props
-}: NotificationDrawerBodyProps) => (
-  <div {...props} className={css(styles.notificationDrawerBody, className)}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function NotificationDrawerBody({ children, className = '', ...props }: NotificationDrawerBodyProps) {
+  return (
+    <div {...props} className={css(styles.notificationDrawerBody, className)}>
+      {children}
+    </div>
+  );
+}

@@ -326,7 +326,10 @@ export const defaultLegendProps = {
   }
 };
 
-export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
+/**
+ *
+ */
+export function ChartLegendTooltipContent({
   borderPadding = defaultLegendProps.borderPadding,
   data,
   datum,
@@ -350,7 +353,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartLegendTooltipContentProps) => {
+}: ChartLegendTooltipContentProps) {
   const offsetY = 10 * (Array.isArray(text) ? text.length : 1);
 
   // Component offsets
@@ -432,7 +435,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       />
     </React.Fragment>
   );
-};
+}
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegendTooltipContent, VictoryLegend, { getBaseProps: true });

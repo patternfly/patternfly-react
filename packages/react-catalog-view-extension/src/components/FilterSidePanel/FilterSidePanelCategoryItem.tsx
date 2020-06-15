@@ -19,7 +19,10 @@ export interface FilterSidePanelCategoryItemProps extends React.Component<Checkb
   checked?: boolean;
 }
 
-export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePanelCategoryItemProps> = ({
+/**
+ *
+ */
+export function FilterSidePanelCategoryItem({
   children = null,
   className = '',
   icon = null,
@@ -27,7 +30,7 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
   onClick = null,
   checked = false,
   ...props
-}: FilterSidePanelCategoryItemProps) => {
+}: FilterSidePanelCategoryItemProps) {
   const classes = classNames('filter-panel-pf-category-item', className);
   const label = (
     <React.Fragment>
@@ -41,6 +44,6 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
       <Checkbox onClick={onClick} checked={checked} id={getUniqueId()} label={label} {...props} />
     </div>
   );
-};
+}
 
 export default FilterSidePanelCategoryItem;

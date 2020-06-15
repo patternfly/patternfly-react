@@ -20,7 +20,10 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   component?: React.ElementType;
 }
 
-export const AccordionContent: React.FunctionComponent<AccordionContentProps> = ({
+/**
+ *
+ */
+export function AccordionContent({
   className = '',
   children = null,
   id = '',
@@ -29,26 +32,28 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   'aria-label': ariaLabel = '',
   component,
   ...props
-}: AccordionContentProps) => (
-  <AccordionContext.Consumer>
-    {({ ContentContainer }) => {
-      const Container = component || ContentContainer;
-      return (
-        <Container
-          id={id}
-          className={css(
-            styles.accordionExpandedContent,
-            isFixed && styles.modifiers.fixed,
-            !isHidden && styles.modifiers.expanded,
-            className
-          )}
-          hidden={isHidden}
-          aria-label={ariaLabel}
-          {...props}
-        >
-          <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
-        </Container>
-      );
-    }}
-  </AccordionContext.Consumer>
-);
+}: AccordionContentProps) {
+  return (
+    <AccordionContext.Consumer>
+      {({ ContentContainer }) => {
+        const Container = component || ContentContainer;
+        return (
+          <Container
+            id={id}
+            className={css(
+              styles.accordionExpandedContent,
+              isFixed && styles.modifiers.fixed,
+              !isHidden && styles.modifiers.expanded,
+              className
+            )}
+            hidden={isHidden}
+            aria-label={ariaLabel}
+            {...props}
+          >
+            <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
+          </Container>
+        );
+      }}
+    </AccordionContext.Consumer>
+  );
+}

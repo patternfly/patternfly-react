@@ -10,13 +10,13 @@ export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
   /** Adds space between children. */
   hasGutter?: boolean;
 }
-export const Gallery: React.FunctionComponent<GalleryProps> = ({
-  children = null,
-  className = '',
-  hasGutter = false,
-  ...props
-}: GalleryProps) => (
-  <div className={css(styles.gallery, hasGutter && styles.modifiers.gutter, className)} {...props}>
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function Gallery({ children = null, className = '', hasGutter = false, ...props }: GalleryProps) {
+  return (
+    <div className={css(styles.gallery, hasGutter && styles.modifiers.gutter, className)} {...props}>
+      {children}
+    </div>
+  );
+}

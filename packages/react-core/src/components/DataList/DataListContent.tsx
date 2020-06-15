@@ -19,7 +19,10 @@ export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
   'aria-label': string;
 }
 
-export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
+/**
+ *
+ */
+export function DataListContent({
   className = '',
   children = null,
   id = '',
@@ -29,16 +32,18 @@ export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowid = '',
   ...props
-}: DataListContentProps) => (
-  <section
-    id={id}
-    className={css(styles.dataListExpandableContent, className)}
-    hidden={isHidden}
-    aria-label={ariaLabel}
-    {...props}
-  >
-    <div className={css(styles.dataListExpandableContentBody, hasNoPadding && styles.modifiers.noPadding)}>
-      {children}
-    </div>
-  </section>
-);
+}: DataListContentProps) {
+  return (
+    <section
+      id={id}
+      className={css(styles.dataListExpandableContent, className)}
+      hidden={isHidden}
+      aria-label={ariaLabel}
+      {...props}
+    >
+      <div className={css(styles.dataListExpandableContentBody, hasNoPadding && styles.modifiers.noPadding)}>
+        {children}
+      </div>
+    </section>
+  );
+}

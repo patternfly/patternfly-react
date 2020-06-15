@@ -13,12 +13,10 @@ export interface WizardNavProps {
   returnList?: boolean;
 }
 
-export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
-  children,
-  'aria-label': ariaLabel,
-  isOpen = false,
-  returnList = false
-}: WizardNavProps) => {
+/**
+ *
+ */
+export function WizardNav({ children, 'aria-label': ariaLabel, isOpen = false, returnList = false }: WizardNavProps) {
   const innerList = <ol className={css(styles.wizardNavList)}>{children}</ol>;
 
   if (returnList) {
@@ -30,4 +28,4 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
       <ol className={css(styles.wizardNavList)}>{children}</ol>
     </nav>
   );
-};
+}

@@ -22,7 +22,10 @@ export interface WizardHeaderProps {
   descriptionId?: string;
 }
 
-export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
+/**
+ *
+ */
+export function WizardHeader({
   onClose = () => undefined,
   title,
   description,
@@ -30,20 +33,22 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   closeButtonAriaLabel,
   titleId,
   descriptionId
-}: WizardHeaderProps) => (
-  <div className={css(styles.wizardHeader)}>
-    {!hideClose && (
-      <Button variant="plain" className={css(styles.wizardClose)} aria-label={closeButtonAriaLabel} onClick={onClose}>
-        <TimesIcon aria-hidden="true" />
-      </Button>
-    )}
-    <Title headingLevel="h2" size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>
-      {title || <>&nbsp;</>}
-    </Title>
-    {description && (
-      <p className={css(styles.wizardDescription)} id={descriptionId}>
-        {description}
-      </p>
-    )}
-  </div>
-);
+}: WizardHeaderProps) {
+  return (
+    <div className={css(styles.wizardHeader)}>
+      {!hideClose && (
+        <Button variant="plain" className={css(styles.wizardClose)} aria-label={closeButtonAriaLabel} onClick={onClose}>
+          <TimesIcon aria-hidden="true" />
+        </Button>
+      )}
+      <Title headingLevel="h2" size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>
+        {title || <>&nbsp;</>}
+      </Title>
+      {description && (
+        <p className={css(styles.wizardDescription)} id={descriptionId}>
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}

@@ -119,7 +119,10 @@ export interface ChartBulletTitleProps {
   width?: number;
 }
 
-export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = ({
+/**
+ *
+ */
+export function ChartBulletTitle({
   ariaDesc,
   ariaTitle,
   capHeight = 1.1,
@@ -138,7 +141,7 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   theme = getBulletTheme(themeColor, themeVariant),
   height = horizontal ? theme.chart.height : theme.chart.width,
   width = horizontal ? theme.chart.width : theme.chart.height
-}: ChartBulletTitleProps) => {
+}: ChartBulletTitleProps) {
   const chartSize = {
     height: horizontal ? theme.chart.height : height,
     width: horizontal ? width : theme.chart.height
@@ -209,4 +212,4 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   ) : (
     <React.Fragment>{getTitle()}</React.Fragment>
   );
-};
+}

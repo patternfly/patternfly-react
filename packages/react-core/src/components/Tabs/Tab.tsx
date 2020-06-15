@@ -19,4 +19,4 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   isHidden?: boolean;
 }
 
-export const Tab: React.FunctionComponent<TabProps> = () => null;
+export function Tab  ()  null;

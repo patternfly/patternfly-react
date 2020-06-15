@@ -28,7 +28,10 @@ export const DataListContext = React.createContext<Partial<DataListContextProps>
   isSelectable: false
 });
 
-export const DataList: React.FunctionComponent<DataListProps> = ({
+/**
+ *
+ */
+export function DataList({
   children = null,
   className = '',
   'aria-label': ariaLabel,
@@ -36,7 +39,7 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   onSelectDataListItem,
   isCompact = false,
   ...props
-}: DataListProps) => {
+}: DataListProps) {
   const isSelectable = onSelectDataListItem !== undefined;
 
   const updateSelectedDataListItem = (id: string) => {
@@ -60,4 +63,4 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
       </ul>
     </DataListContext.Provider>
   );
-};
+}

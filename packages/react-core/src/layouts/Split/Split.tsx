@@ -13,17 +13,14 @@ export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   component?: React.ReactNode;
 }
 
-export const Split: React.FunctionComponent<SplitProps> = ({
-  hasGutter = false,
-  className = '',
-  children = null,
-  component = 'div',
-  ...props
-}: SplitProps) => {
+/**
+ *
+ */
+export function Split({ hasGutter = false, className = '', children = null, component = 'div', ...props }: SplitProps) {
   const Component = component as any;
   return (
     <Component {...props} className={css(styles.split, hasGutter && styles.modifiers.gutter, className)}>
       {children}
     </Component>
   );
-};
+}

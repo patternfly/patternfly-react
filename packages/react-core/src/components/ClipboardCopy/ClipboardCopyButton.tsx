@@ -17,7 +17,10 @@ export interface ClipboardCopyButtonProps
   'aria-label'?: string;
 }
 
-export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
+/**
+ *
+ */
+export function ClipboardCopyButton({
   onClick,
   exitDelay = 100,
   entryDelay = 100,
@@ -28,25 +31,27 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   textId,
   children,
   ...props
-}: ClipboardCopyButtonProps) => (
-  <Tooltip
-    trigger="mouseenter focus click"
-    exitDelay={exitDelay}
-    entryDelay={entryDelay}
-    maxWidth={maxWidth}
-    position={position}
-    content={<div>{children}</div>}
-  >
-    <Button
-      type="button"
-      variant="control"
-      onClick={onClick}
-      aria-label={ariaLabel}
-      id={id}
-      aria-labelledby={`${id} ${textId}`}
-      {...props}
+}: ClipboardCopyButtonProps) {
+  return (
+    <Tooltip
+      trigger="mouseenter focus click"
+      exitDelay={exitDelay}
+      entryDelay={entryDelay}
+      maxWidth={maxWidth}
+      position={position}
+      content={<div>{children}</div>}
     >
-      <CopyIcon />
-    </Button>
-  </Tooltip>
-);
+      <Button
+        type="button"
+        variant="control"
+        onClick={onClick}
+        aria-label={ariaLabel}
+        id={id}
+        aria-labelledby={`${id} ${textId}`}
+        {...props}
+      >
+        <CopyIcon />
+      </Button>
+    </Tooltip>
+  );
+}

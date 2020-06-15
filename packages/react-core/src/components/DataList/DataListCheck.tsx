@@ -19,7 +19,10 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
   'aria-labelledby': string;
 }
 
-export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
+/**
+ *
+ */
+export function DataListCheck({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {},
@@ -28,17 +31,19 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   isChecked = null,
   checked = null,
   ...props
-}: DataListCheckProps) => (
-  <div className={css(styles.dataListItemControl, className)}>
-    <div className={css('pf-c-data-list__check')}>
-      <input
-        {...props}
-        type="checkbox"
-        onChange={event => onChange(event.currentTarget.checked, event)}
-        aria-invalid={!isValid}
-        disabled={isDisabled}
-        checked={isChecked || checked}
-      />
+}: DataListCheckProps) {
+  return (
+    <div className={css(styles.dataListItemControl, className)}>
+      <div className={css('pf-c-data-list__check')}>
+        <input
+          {...props}
+          type="checkbox"
+          onChange={event => onChange(event.currentTarget.checked, event)}
+          aria-invalid={!isValid}
+          disabled={isDisabled}
+          checked={isChecked || checked}
+        />
+      </div>
     </div>
-  </div>
-);
+  );
+}

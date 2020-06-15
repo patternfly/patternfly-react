@@ -9,12 +9,13 @@ export interface LoginMainFooterBandItemProps extends React.HTMLProps<HTMLParagr
   className?: string;
 }
 
-export const LoginMainFooterBandItem: React.FunctionComponent<LoginMainFooterBandItemProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: LoginMainFooterBandItemProps) => (
-  <p className={css(`${styles.loginMainFooterBand}-item`, className)} {...props}>
-    {children}
-  </p>
-);
+/**
+ *
+ */
+export function LoginMainFooterBandItem({ children = null, className = '', ...props }: LoginMainFooterBandItemProps) {
+  return (
+    <p className={css(`${styles.loginMainFooterBand}-item`, className)} {...props}>
+      {children}
+    </p>
+  );
+}

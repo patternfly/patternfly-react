@@ -21,20 +21,20 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   isSelected?: boolean;
 }
 
-export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
-  children,
-  className,
-  visibility,
-  isSelected
-}: PageHeaderToolsItemProps) => (
-  <div
-    className={css(
-      styles.pageHeaderToolsItem,
-      isSelected && styles.modifiers.selected,
-      formatBreakpointMods(visibility, styles),
-      className
-    )}
-  >
-    {children}
-  </div>
-);
+/**
+ *
+ */
+export function PageHeaderToolsItem({ children, className, visibility, isSelected }: PageHeaderToolsItemProps) {
+  return (
+    <div
+      className={css(
+        styles.pageHeaderToolsItem,
+        isSelected && styles.modifiers.selected,
+        formatBreakpointMods(visibility, styles),
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}

@@ -19,7 +19,10 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   variant?: 'success' | 'danger' | 'warning' | 'info';
 }
 
-export const NotificationDrawerListItem: React.FunctionComponent<NotificationDrawerListItemProps> = ({
+/**
+ *
+ */
+export function NotificationDrawerListItem({
   children = null,
   className = '',
   isHoverable = true,
@@ -29,19 +32,21 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   tabIndex = 0,
   variant,
   ...props
-}: NotificationDrawerListItemProps) => (
-  <li
-    {...props}
-    className={css(
-      styles.notificationDrawerListItem,
-      isHoverable && styles.modifiers.hoverable,
-      styles.modifiers[variant],
-      isRead && styles.modifiers.read,
-      className
-    )}
-    tabIndex={tabIndex}
-    onClick={e => onClick(e)}
-  >
-    {children}
-  </li>
-);
+}: NotificationDrawerListItemProps) {
+  return (
+    <li
+      {...props}
+      className={css(
+        styles.notificationDrawerListItem,
+        isHoverable && styles.modifiers.hoverable,
+        styles.modifiers[variant],
+        isRead && styles.modifiers.read,
+        className
+      )}
+      tabIndex={tabIndex}
+      onClick={e => onClick(e)}
+    >
+      {children}
+    </li>
+  );
+}

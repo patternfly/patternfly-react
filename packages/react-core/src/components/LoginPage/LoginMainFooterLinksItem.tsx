@@ -17,7 +17,10 @@ export interface LoginMainFooterLinksItemProps extends React.HTMLProps<HTMLLIEle
   linkComponentProps?: any;
 }
 
-export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLinksItemProps> = ({
+/**
+ *
+ */
+export function LoginMainFooterLinksItem({
   children = null,
   href = '',
   target = '',
@@ -25,7 +28,7 @@ export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLi
   linkComponent = 'a',
   linkComponentProps,
   ...props
-}: LoginMainFooterLinksItemProps) => {
+}: LoginMainFooterLinksItemProps) {
   const LinkComponent = linkComponent as any;
 
   return (
@@ -40,4 +43,4 @@ export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLi
       </LinkComponent>
     </li>
   );
-};
+}

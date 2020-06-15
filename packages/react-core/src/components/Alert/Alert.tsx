@@ -37,7 +37,10 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
 }
 
-export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
+/**
+ *
+ */
+export function Alert({
   variant = AlertVariant.default,
   isInline = false,
   isLiveRegion = false,
@@ -50,7 +53,7 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
   className = '',
   ouiaId,
   ...props
-}: AlertProps & OUIAProps) => {
+}: AlertProps & OUIAProps) {
   const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
@@ -87,4 +90,4 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
       {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
     </div>
   );
-};
+}

@@ -23,7 +23,10 @@ export interface NotificationDrawerGroupProps extends React.HTMLProps<HTMLElemen
   title: string;
 }
 
-export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawerGroupProps> = ({
+/**
+ *
+ */
+export function NotificationDrawerGroup({
   children,
   className = '',
   count,
@@ -33,26 +36,28 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   onExpand = (event: any, expanded: boolean) => undefined as any,
   title,
   ...props
-}: NotificationDrawerGroupProps) => (
-  <section
-    {...props}
-    className={css(styles.notificationDrawerGroup, isExpanded && styles.modifiers.expanded, className)}
-  >
-    <h1>
-      <button
-        className={css(styles.notificationDrawerGroupToggle)}
-        aria-expanded={isExpanded}
-        onClick={e => onExpand(e, !isExpanded)}
-      >
-        <div>{title}</div>
-        <div className={css(styles.notificationDrawerGroupToggleCount)}>
-          <Badge isRead={isRead}>{count}</Badge>
-        </div>
-        <span className="pf-c-notification-drawer__group-toggle-icon">
-          <AngleRightIcon />
-        </span>
-      </button>
-    </h1>
-    {children}
-  </section>
-);
+}: NotificationDrawerGroupProps) {
+  return (
+    <section
+      {...props}
+      className={css(styles.notificationDrawerGroup, isExpanded && styles.modifiers.expanded, className)}
+    >
+      <h1>
+        <button
+          className={css(styles.notificationDrawerGroupToggle)}
+          aria-expanded={isExpanded}
+          onClick={e => onExpand(e, !isExpanded)}
+        >
+          <div>{title}</div>
+          <div className={css(styles.notificationDrawerGroupToggleCount)}>
+            <Badge isRead={isRead}>{count}</Badge>
+          </div>
+          <span className="pf-c-notification-drawer__group-toggle-icon">
+            <AngleRightIcon />
+          </span>
+        </button>
+      </h1>
+      {children}
+    </section>
+  );
+}

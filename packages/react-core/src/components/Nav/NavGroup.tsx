@@ -14,17 +14,16 @@ export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
   id?: string;
 }
 
-export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
-  title,
-  children = null,
-  className = '',
-  id = getUniqueId(),
-  ...props
-}: NavGroupProps) => (
-  <section className={css(styles.navSection, className)} aria-labelledby={id} {...props}>
-    <h2 className={css(styles.navSectionTitle)} id={id}>
-      {title}
-    </h2>
-    <ul>{children}</ul>
-  </section>
-);
+/**
+ *
+ */
+export function NavGroup({ title, children = null, className = '', id = getUniqueId(), ...props }: NavGroupProps) {
+  return (
+    <section className={css(styles.navSection, className)} aria-labelledby={id} {...props}>
+      <h2 className={css(styles.navSectionTitle)} id={id}>
+        {title}
+      </h2>
+      <ul>{children}</ul>
+    </section>
+  );
+}

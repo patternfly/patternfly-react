@@ -419,7 +419,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
   width?: number;
 }
 
-export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+/**
+ *
+ */
+export function ChartAxis({
   containerComponent = <ChartContainer />,
   showGrid = false,
   themeColor,
@@ -428,7 +431,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartAxisProps) => {
+}: ChartAxisProps) {
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     theme,
@@ -443,6 +446,6 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
       {...rest}
     />
   );
-};
+}
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);

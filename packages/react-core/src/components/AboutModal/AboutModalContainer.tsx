@@ -38,7 +38,10 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   closeButtonAriaLabel?: string;
 }
 
-export const AboutModalContainer: React.FunctionComponent<AboutModalContainerProps> = ({
+/**
+ *
+ */
+export function AboutModalContainer({
   children,
   className = '',
   isOpen = false,
@@ -52,7 +55,7 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   aboutModalBoxHeaderId,
   aboutModalBoxContentId,
   ...props
-}: AboutModalContainerProps) => {
+}: AboutModalContainerProps) {
   if (!isOpen) {
     return null;
   }
@@ -80,4 +83,4 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
       </FocusTrap>
     </Backdrop>
   );
-};
+}

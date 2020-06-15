@@ -16,19 +16,24 @@ export interface OptionsMenuItemGroupProps extends React.HTMLProps<HTMLElement> 
   hasSeparator?: boolean;
 }
 
-export const OptionsMenuItemGroup: React.FunctionComponent<OptionsMenuItemGroupProps> = ({
+/**
+ *
+ */
+export function OptionsMenuItemGroup({
   className = '',
   'aria-label': ariaLabel = '',
   groupTitle = '',
   children = null,
   hasSeparator = false,
   ...props
-}: OptionsMenuItemGroupProps) => (
-  <section {...props} className={css(styles.optionsMenuGroup)}>
-    {groupTitle && <h1 className={css(styles.optionsMenuGroupTitle)}>{groupTitle}</h1>}
-    <ul className={className} aria-label={ariaLabel}>
-      {children}
-      {hasSeparator && <Divider component="li" role="separator" />}
-    </ul>
-  </section>
-);
+}: OptionsMenuItemGroupProps) {
+  return (
+    <section {...props} className={css(styles.optionsMenuGroup)}>
+      {groupTitle && <h1 className={css(styles.optionsMenuGroupTitle)}>{groupTitle}</h1>}
+      <ul className={className} aria-label={ariaLabel}>
+        {children}
+        {hasSeparator && <Divider component="li" role="separator" />}
+      </ul>
+    </section>
+  );
+}

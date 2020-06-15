@@ -14,20 +14,25 @@ export interface CatalogItemHeaderProps extends Omit<React.HTMLProps<HTMLElement
   vendor?: string | React.ReactNode;
 }
 
-export const CatalogItemHeader: React.FunctionComponent<CatalogItemHeaderProps> = ({
+/**
+ *
+ */
+export function CatalogItemHeader({
   className = '',
   iconImg = null,
   iconClass = null,
   title,
   vendor = null,
   ...props
-}: CatalogItemHeaderProps) => (
-  <header className={classNames('catalog-item-header-pf', className)} {...props}>
-    {iconImg && <img className="catalog-item-header-pf-icon" src={iconImg} alt="" />}
-    {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
-    <div className="catalog-item-header-pf-text">
-      <h1 className="catalog-item-header-pf-title">{title}</h1>
-      {vendor && <h5 className="catalog-item-header-pf-subtitle">{vendor}</h5>}
-    </div>
-  </header>
-);
+}: CatalogItemHeaderProps) {
+  return (
+    <header className={classNames('catalog-item-header-pf', className)} {...props}>
+      {iconImg && <img className="catalog-item-header-pf-icon" src={iconImg} alt="" />}
+      {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
+      <div className="catalog-item-header-pf-text">
+        <h1 className="catalog-item-header-pf-title">{title}</h1>
+        {vendor && <h5 className="catalog-item-header-pf-subtitle">{vendor}</h5>}
+      </div>
+    </header>
+  );
+}

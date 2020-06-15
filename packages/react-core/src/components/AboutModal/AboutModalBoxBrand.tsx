@@ -11,13 +11,13 @@ export interface AboutModalBoxBrandProps extends React.HTMLProps<HTMLDivElement>
   alt: string;
 }
 
-export const AboutModalBoxBrand: React.FunctionComponent<AboutModalBoxBrandProps> = ({
-  className = '',
-  src = '',
-  alt,
-  ...props
-}: AboutModalBoxBrandProps) => (
-  <div className={css(styles.aboutModalBoxBrand, className)} {...props}>
-    <img className={css(styles.aboutModalBoxBrandImage)} src={src} alt={alt} />
-  </div>
-);
+/**
+ *
+ */
+export function AboutModalBoxBrand({ className = '', src = '', alt, ...props }: AboutModalBoxBrandProps) {
+  return (
+    <div className={css(styles.aboutModalBoxBrand, className)} {...props}>
+      <img className={css(styles.aboutModalBoxBrandImage)} src={src} alt={alt} />
+    </div>
+  );
+}

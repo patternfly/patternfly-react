@@ -18,19 +18,24 @@ export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivEl
   unreadText?: string;
 }
 
-export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawerHeaderProps> = ({
+/**
+ *
+ */
+export function NotificationDrawerHeader({
   children,
   className = '',
   count,
   title = 'Notifications',
   unreadText = 'unread',
   ...props
-}: NotificationDrawerHeaderProps) => (
-  <div {...props} className={css(styles.notificationDrawerHeader, className)}>
-    <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
-      {title}
-    </Text>
-    {count && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unreadText}`}</span>}
-    {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
-  </div>
-);
+}: NotificationDrawerHeaderProps) {
+  return (
+    <div {...props} className={css(styles.notificationDrawerHeader, className)}>
+      <Text component={TextVariants.h1} className={css(styles.notificationDrawerHeaderTitle)}>
+        {title}
+      </Text>
+      {count && <span className={css(styles.notificationDrawerHeaderStatus)}>{`${count} ${unreadText}`}</span>}
+      {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
+    </div>
+  );
+}

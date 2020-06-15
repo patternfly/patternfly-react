@@ -33,7 +33,10 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   'aria-label'?: string;
 }
 
-export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggleWithTextProps> = ({
+/**
+ *
+ */
+export function OptionsMenuToggleWithText({
   parentId = '',
   toggleText,
   toggleTextClassName = '',
@@ -51,27 +54,29 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   /* eslint-enable @typescript-eslint/no-unused-vars */
   'aria-label': ariaLabel = 'Options menu',
   ...props
-}: OptionsMenuToggleWithTextProps) => (
-  <div
-    className={css(
-      styles.optionsMenuToggle,
-      styles.modifiers.text,
-      isPlain && styles.modifiers.plain,
-      isDisabled && styles.modifiers.disabled,
-      isActive && styles.modifiers.active
-    )}
-    {...props}
-  >
-    <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
-    <button
-      className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
-      id={`${parentId}-toggle`}
-      aria-haspopup="listbox"
-      aria-label={ariaLabel}
-      aria-expanded={isOpen}
-      onClick={() => onToggle(!isOpen)}
+}: OptionsMenuToggleWithTextProps) {
+  return (
+    <div
+      className={css(
+        styles.optionsMenuToggle,
+        styles.modifiers.text,
+        isPlain && styles.modifiers.plain,
+        isDisabled && styles.modifiers.disabled,
+        isActive && styles.modifiers.active
+      )}
+      {...props}
     >
-      <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
-    </button>
-  </div>
-);
+      <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
+      <button
+        className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
+        id={`${parentId}-toggle`}
+        aria-haspopup="listbox"
+        aria-label={ariaLabel}
+        aria-expanded={isOpen}
+        onClick={() => onToggle(!isOpen)}
+      >
+        <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
+      </button>
+    </div>
+  );
+}

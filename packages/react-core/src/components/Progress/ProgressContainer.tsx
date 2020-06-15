@@ -39,7 +39,10 @@ const variantToIcon = {
   success: CheckCircleIcon
 };
 
-export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({
+/**
+ *
+ */
+export function ProgressContainer({
   progressBarAriaProps,
   value,
   title = '',
@@ -47,7 +50,7 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   label = null,
   variant = null,
   measureLocation = ProgressMeasureLocation.top
-}: ProgressContainerProps) => {
+}: ProgressContainerProps) {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
     <React.Fragment>
@@ -69,4 +72,4 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
       </ProgressBar>
     </React.Fragment>
   );
-};
+}
