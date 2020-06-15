@@ -31,7 +31,7 @@ export function EditableTextCell({
   handleTextInputChange,
   inputAriaLabel,
   isDisabled
-}) {
+}: IEditableTextCell) {
   return (
     <React.Fragment>
       <div className={inlineStyles.inlineEditValue}>{value}</div>
