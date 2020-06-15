@@ -201,7 +201,7 @@ class LargeModal extends React.Component {
           Show Large Modal
         </Button>
         <Modal
-          size={ModalVariant.large}
+          variant={ModalVariant.large}
           title="Large modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
