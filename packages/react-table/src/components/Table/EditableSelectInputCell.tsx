@@ -10,15 +10,20 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   rowIndex: number;
   /** Cell index of this select input cell */
   cellIndex: number;
-  /** Data structure containing the value to display in the cell, the name of the select input,
-   * and arbitrary data to pass to the internal select component in the editable select input cell */
+  /** Data structure containing:
+   * value - to display in the cell,
+   * name - of the select input,
+   * isSelectOpen - flag controlling isOpen state of select,
+   * selected - string or SelectOptionObject, or an array of strings or SelectOptionObjects representing current selections
+   * options - Array of react elements to display in the select menu,
+   * editableSelectProps - props to be passed down to the Select component housed inside this editable select input cell
+   * arbitrary data to pass to the internal select component in the editable select input cell */
   props: {
     name: string;
     value: string | string[];
     isSelectOpen: boolean;
     selected: string | SelectOptionObject | (string | SelectOptionObject)[];
     options: React.ReactElement[];
-    /** props to be passed down to the Select component housed inside this editable select input cell */
     editableSelectProps?: SelectProps;
     [key: string]: any;
   };
@@ -55,7 +60,7 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
   selections = [''],
   options = [] as React.ReactElement[],
   props
-}) => {
+}: IEditableSelectInputCell) => {
   const onSelectHandler = (
     event: React.MouseEvent | React.ChangeEvent,
     newValue: string | SelectOptionObject,
