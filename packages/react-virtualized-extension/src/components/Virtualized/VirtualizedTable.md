@@ -763,7 +763,7 @@ class FilterExample extends React.Component {
     };
 
     this.onInputChange = newValue => {
-      //this.setState({ inputValue: newValue });
+      // this.setState({ inputValue: newValue });
       if (newValue === '') {
         this.onDelete();
         this.setState({
@@ -933,12 +933,12 @@ class FilterExample extends React.Component {
               onChange={this.onInputChange}
               value={inputValue}
               placeholder="Filter by name..."
-              //onKeyDown={this.onNameInput}
+              // onKeyDown={this.onNameInput}
             />
             <Button
               variant={ButtonVariant.control}
               aria-label="search button for search input"
-              //onClick={this.onNameInput}
+              // onClick={this.onNameInput}
             >
               <SearchIcon />
             </Button>
