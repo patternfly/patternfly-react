@@ -413,6 +413,7 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryArea containerComponent={container} theme={theme} {...rest} />;
 };
+ChartArea.displayName = 'ChartArea';
 
 // Note: VictoryArea.role must be hoisted
 hoistNonReactStatics(ChartArea, VictoryArea);

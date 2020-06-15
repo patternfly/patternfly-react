@@ -15,6 +15,7 @@ interface ModalDemoState {
 }
 
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
+  static displayName = 'ModalDemo';
   state = {
     isModalOpen: false,
     isModalDescriptionOpen: false,

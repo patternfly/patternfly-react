@@ -25,6 +25,7 @@ interface InputGroupState {
 }
 
 export class InputGroupDemo extends React.Component<{}, InputGroupState> {
+  static displayName = 'InputGroupDemo';
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
   constructor(props: {}) {

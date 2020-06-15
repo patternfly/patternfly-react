@@ -7,3 +7,4 @@ export const ConfirmButton: React.FunctionComponent<ButtonProps> = ({ variant = 
     <CheckIcon />
   </Button>
 );
+ConfirmButton.displayName = 'ConfirmButton';

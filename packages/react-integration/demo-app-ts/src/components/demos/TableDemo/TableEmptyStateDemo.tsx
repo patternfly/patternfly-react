@@ -11,6 +11,7 @@ import {
 import CubesIcon from '@patternfly/react-icons/dist/js/icons/cubes-icon';
 
 export class EmptyStateTable extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+  static displayName = 'EmptyStateTable';
   constructor(props: TableProps) {
     super(props);
     this.state = {

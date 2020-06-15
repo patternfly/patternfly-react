@@ -7,6 +7,7 @@ interface TableState {
 }
 
 export class TableHeadersWrappableDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableHeadersWrappableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

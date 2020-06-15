@@ -50,3 +50,4 @@ export const Grid: React.FunctionComponent<GridProps> = ({
     </div>
   );
 };
+Grid.displayName = 'Grid';

@@ -19,3 +19,4 @@ export const NotificationDrawerBody: React.FunctionComponent<NotificationDrawerB
     {children}
   </div>
 );
+NotificationDrawerBody.displayName = 'NotificationDrawerBody';

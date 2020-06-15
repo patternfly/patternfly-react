@@ -24,3 +24,4 @@ export const AboutModalBoxHeader: React.FunctionComponent<AboutModalBoxHeaderPro
     </Title>
   </div>
 );
+AboutModalBoxHeader.displayName = 'AboutModalBoxHeader';

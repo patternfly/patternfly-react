@@ -47,3 +47,4 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
     </div>
   </div>
 );
+DataListToggle.displayName = 'DataListToggle';

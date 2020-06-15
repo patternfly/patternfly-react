@@ -264,6 +264,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletQualitativeRange.displayName = 'ChartBulletQualitativeRange';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletQualitativeRange, VictoryBar);

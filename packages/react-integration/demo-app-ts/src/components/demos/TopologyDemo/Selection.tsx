@@ -71,6 +71,7 @@ export const UncontrolledSelection: React.FC = withTopologySetup(() => {
   useModel(twoNodeModel);
   return null;
 });
+UncontrolledSelection.displayName = 'UncontrolledSelection';
 
 export const ControlledSelection = withTopologySetup(() => {
   const [, setSelectedIds] = useVisualizationState(SELECTION_STATE);
@@ -120,6 +121,7 @@ export const MultiSelect: React.FC = withTopologySetup(() => {
   );
   return null;
 });
+MultiSelect.displayName = 'MultiSelect';
 
 const perfModel: Model = {
   graph: {
@@ -156,3 +158,4 @@ export const Performance: React.FC = withTopologySetup(() => {
   );
   return null;
 });
+Performance.displayName = 'Performance';

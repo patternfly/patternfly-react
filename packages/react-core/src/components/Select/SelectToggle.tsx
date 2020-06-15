@@ -44,6 +44,7 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
 }
 
 export class SelectToggle extends React.Component<SelectToggleProps> {
+  static displayName = 'SelectToggle';
   private toggle: React.RefObject<HTMLDivElement> | React.RefObject<HTMLButtonElement>;
 
   static defaultProps: PickOptional<SelectToggleProps> = {

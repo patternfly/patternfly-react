@@ -10,6 +10,7 @@ import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
+  static displayName = 'DropdownWithContext';
   tip: TippyInstance;
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();

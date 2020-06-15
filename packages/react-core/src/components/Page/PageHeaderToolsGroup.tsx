@@ -29,3 +29,4 @@ export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupP
     {children}
   </div>
 );
+PageHeaderToolsGroup.displayName = 'PageHeaderToolsGroup';

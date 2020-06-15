@@ -37,3 +37,4 @@ export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
     }
   </OverflowMenuContext.Consumer>
 );
+OverflowMenuGroup.displayName = 'OverflowMenuGroup';

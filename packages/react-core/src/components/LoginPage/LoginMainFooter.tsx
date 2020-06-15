@@ -34,3 +34,4 @@ export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
     )}
   </div>
 );
+LoginMainFooter.displayName = 'LoginMainFooter';

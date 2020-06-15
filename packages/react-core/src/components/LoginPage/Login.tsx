@@ -28,3 +28,4 @@ export const Login: React.FunctionComponent<LoginProps> = ({
     </div>
   </div>
 );
+Login.displayName = 'Login';

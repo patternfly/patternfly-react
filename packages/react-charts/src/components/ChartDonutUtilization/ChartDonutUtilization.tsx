@@ -646,6 +646,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   return standalone ? <React.Fragment>{container}</React.Fragment> : <React.Fragment>{chart}</React.Fragment>;
 };
+ChartDonutUtilization.displayName = 'ChartDonutUtilization';
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonutUtilization, VictoryPie);

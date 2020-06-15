@@ -41,3 +41,4 @@ export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLi
     </li>
   );
 };
+LoginMainFooterLinksItem.displayName = 'LoginMainFooterLinksItem';

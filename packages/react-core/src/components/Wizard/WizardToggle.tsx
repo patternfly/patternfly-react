@@ -83,3 +83,4 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
     </React.Fragment>
   );
 };
+WizardToggle.displayName = 'WizardToggle';

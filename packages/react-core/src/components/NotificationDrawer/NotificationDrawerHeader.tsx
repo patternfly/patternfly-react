@@ -34,3 +34,4 @@ export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawe
     {children && <div className={css(styles.notificationDrawerHeaderAction)}>{children}</div>}
   </div>
 );
+NotificationDrawerHeader.displayName = 'NotificationDrawerHeader';

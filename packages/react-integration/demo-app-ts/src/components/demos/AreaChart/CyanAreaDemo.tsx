@@ -9,6 +9,7 @@ import {
 } from '@patternfly/react-charts';
 
 export class CyanAreaDemo extends React.Component {
+  static displayName = 'CyanAreaDemo';
   render() {
     return (
       <div>

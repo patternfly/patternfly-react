@@ -9,6 +9,7 @@ interface ContextSelectorState {
 }
 
 export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
+  static displayName = 'ContextSelectorDemo';
   items = [
     'My Project',
     'OpenShift Cluster',

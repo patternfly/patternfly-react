@@ -88,3 +88,4 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
     </div>
   );
 };
+Alert.displayName = 'Alert';

@@ -30,6 +30,7 @@ interface DataListActionState {
 }
 
 export class DataListAction extends React.Component<DataListActionProps, DataListActionState> {
+  static displayName = 'DataListAction';
   state = {
     isOpen: false
   };

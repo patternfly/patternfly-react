@@ -8,6 +8,7 @@ export interface TableTextInputProps extends Omit<TextInputProps, 'defaultValue'
 }
 
 export class TableTextInput extends React.Component<TableTextInputProps> {
+  static displayName = 'TableTextInput';
   static defaultProps = {
     autoFocus: false
   };

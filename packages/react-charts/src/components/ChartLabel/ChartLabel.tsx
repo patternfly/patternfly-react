@@ -198,6 +198,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
 
   return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} />;
 };
+ChartLabel.displayName = 'ChartLabel';
 
 // Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLabel, VictoryLabel);

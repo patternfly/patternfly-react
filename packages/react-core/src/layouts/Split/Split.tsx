@@ -27,3 +27,4 @@ export const Split: React.FunctionComponent<SplitProps> = ({
     </Component>
   );
 };
+Split.displayName = 'Split';

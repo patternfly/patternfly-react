@@ -18,3 +18,4 @@ export const EmptyStatePrimary: React.FunctionComponent<EmptyStatePrimaryProps> 
     {children}
   </div>
 );
+EmptyStatePrimary.displayName = 'EmptyStatePrimary';

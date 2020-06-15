@@ -23,3 +23,4 @@ export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
     </div>
   );
 };
+ActionGroup.displayName = 'ActionGroup';

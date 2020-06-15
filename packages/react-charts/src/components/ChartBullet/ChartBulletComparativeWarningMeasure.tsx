@@ -214,6 +214,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletComparativeWarningMeasure.displayName = 'ChartBulletComparativeWarningMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeWarningMeasure, VictoryBar);

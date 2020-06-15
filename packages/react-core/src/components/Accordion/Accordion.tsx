@@ -38,3 +38,4 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
     </AccordionList>
   );
 };
+Accordion.displayName = 'Accordion';

@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
 export class PieBlueDemo extends React.Component {
+  static displayName = 'PieBlueDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

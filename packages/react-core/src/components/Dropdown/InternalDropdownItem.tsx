@@ -52,6 +52,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
+  static displayName = 'InternalDropdownItem';
   ref = React.createRef<HTMLLIElement>();
   additionalRef = React.createRef<any>();
 

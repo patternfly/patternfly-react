@@ -32,3 +32,4 @@ export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
     </ul>
   </section>
 );
+SimpleListGroup.displayName = 'SimpleListGroup';

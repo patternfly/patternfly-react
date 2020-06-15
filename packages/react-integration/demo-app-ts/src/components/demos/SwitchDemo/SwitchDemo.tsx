@@ -13,6 +13,7 @@ interface SwitchState {
 }
 
 export class SwitchDemo extends React.Component<{}, SwitchState> {
+  static displayName = 'SwitchDemo';
   state = {
     simple: {
       isChecked: true

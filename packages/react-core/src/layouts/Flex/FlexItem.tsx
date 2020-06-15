@@ -156,3 +156,4 @@ export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
     {children}
   </div>
 );
+FlexItem.displayName = 'FlexItem';

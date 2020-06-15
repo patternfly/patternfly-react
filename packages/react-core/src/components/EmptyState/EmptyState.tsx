@@ -41,3 +41,4 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
     <div className={css(styles.emptyStateContent)}>{children}</div>
   </div>
 );
+EmptyState.displayName = 'EmptyState';

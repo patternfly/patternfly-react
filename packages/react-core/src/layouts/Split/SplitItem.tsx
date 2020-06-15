@@ -21,3 +21,4 @@ export const SplitItem: React.FunctionComponent<SplitItemProps> = ({
     {children}
   </div>
 );
+SplitItem.displayName = 'SplitItem';

@@ -531,6 +531,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     </React.Fragment>
   );
 };
+ChartPie.displayName = 'ChartPie';
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);

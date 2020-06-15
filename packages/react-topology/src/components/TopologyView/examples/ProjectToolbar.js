@@ -18,6 +18,7 @@ const applications = [
 ];
 
 export class ProjectToolbar extends React.Component {
+  static displayName = 'ProjectToolbar';
   state = {
     selectedProject: projects[4],
     selectedApplication: applications[4],

@@ -22,3 +22,4 @@ export const DrawerContentBody: React.SFC<DrawerContentBodyProps> = ({
     {children}
   </div>
 );
+DrawerContentBody.displayName = 'DrawerContentBody';

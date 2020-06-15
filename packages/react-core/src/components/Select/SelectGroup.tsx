@@ -27,3 +27,4 @@ export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
     {children}
   </div>
 );
+SelectGroup.displayName = 'SelectGroup';

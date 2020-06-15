@@ -18,3 +18,4 @@ export const LoginMainFooterBandItem: React.FunctionComponent<LoginMainFooterBan
     {children}
   </p>
 );
+LoginMainFooterBandItem.displayName = 'LoginMainFooterBandItem';

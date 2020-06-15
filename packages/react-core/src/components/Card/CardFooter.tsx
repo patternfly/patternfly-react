@@ -24,3 +24,4 @@ export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
     </Component>
   );
 };
+CardFooter.displayName = 'CardFooter';

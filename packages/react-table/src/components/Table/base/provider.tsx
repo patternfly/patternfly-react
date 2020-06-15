@@ -19,6 +19,7 @@ export const ProviderContext = React.createContext({
 });
 
 export class Provider extends React.Component<ProviderProps, {}> {
+  static displayName = 'Provider';
   static defaultProps = {
     renderers: TableDefaults.renderers
   };

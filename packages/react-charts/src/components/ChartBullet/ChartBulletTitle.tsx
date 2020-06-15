@@ -210,3 +210,4 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
     <React.Fragment>{getTitle()}</React.Fragment>
   );
 };
+ChartBulletTitle.displayName = 'ChartBulletTitle';

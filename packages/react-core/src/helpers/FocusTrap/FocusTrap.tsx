@@ -11,6 +11,7 @@ interface FocusTrapProps {
 }
 
 export class FocusTrap extends React.Component<FocusTrapProps> {
+  static displayName = 'FocusTrap';
   previouslyFocusedElement: HTMLElement;
   focusTrap: IFocusTrap;
   divRef = React.createRef<HTMLDivElement>();

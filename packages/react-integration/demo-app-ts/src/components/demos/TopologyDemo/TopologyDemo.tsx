@@ -144,3 +144,4 @@ export const TopologyDemo: React.FC = () => {
     </div>
   );
 };
+TopologyDemo.displayName = 'TopologyDemo';

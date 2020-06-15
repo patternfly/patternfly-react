@@ -9,6 +9,7 @@ interface OptionsMenuDemoState {
 }
 
 export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
+  static displayName = 'PaginationDemo';
   state = {
     topPage: 1,
     bottomPage: 1,

@@ -25,3 +25,4 @@ export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({
     )}
   </div>
 );
+DataListItemRow.displayName = 'DataListItemRow';

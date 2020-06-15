@@ -32,3 +32,4 @@ export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLaun
     )}
   </ApplicationLauncherItemContext.Consumer>
 );
+ApplicationLauncherContent.displayName = 'ApplicationLauncherContent';

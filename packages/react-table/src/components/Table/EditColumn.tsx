@@ -50,3 +50,4 @@ export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
     </div>
   </React.Fragment>
 );
+EditColumn.displayName = 'EditColumn';

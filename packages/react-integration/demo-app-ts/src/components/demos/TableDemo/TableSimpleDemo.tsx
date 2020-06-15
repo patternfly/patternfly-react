@@ -5,6 +5,7 @@ export class TableSimpleDemo extends React.Component<
   TableProps,
   { columns: (ICell | string)[]; rows: (IRow | string[])[] }
 > {
+  static displayName = 'TableSimpleDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

@@ -72,3 +72,4 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
     {children}
   </section>
 );
+PageSection.displayName = 'PageSection';

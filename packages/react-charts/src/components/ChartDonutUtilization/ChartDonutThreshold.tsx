@@ -537,6 +537,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     </React.Fragment>
   );
 };
+ChartDonutThreshold.displayName = 'ChartDonutThreshold';
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonutThreshold, VictoryPie);

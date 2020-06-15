@@ -69,6 +69,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
 }
 
 export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
+  static displayName = 'ClipboardCopy';
   timer = null as number;
   constructor(props: ClipboardCopyProps) {
     super(props);

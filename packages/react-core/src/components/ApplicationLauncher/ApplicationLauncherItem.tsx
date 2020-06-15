@@ -89,3 +89,4 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
     </ApplicationLauncherContext.Consumer>
   </ApplicationLauncherItemContext.Provider>
 );
+ApplicationLauncherItem.displayName = 'ApplicationLauncherItem';

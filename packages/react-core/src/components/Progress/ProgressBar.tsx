@@ -34,3 +34,4 @@ export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
     </div>
   </div>
 );
+ProgressBar.displayName = 'ProgressBar';

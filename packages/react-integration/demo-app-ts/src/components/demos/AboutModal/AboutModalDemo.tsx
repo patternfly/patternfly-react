@@ -7,6 +7,7 @@ interface AboutModalState {
 }
 
 export class AboutModalDemo extends React.Component<{}, AboutModalState> {
+  static displayName = 'AboutModalDemo';
   constructor(props: {}) {
     super(props);
     this.state = {

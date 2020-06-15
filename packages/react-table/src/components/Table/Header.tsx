@@ -24,3 +24,4 @@ export const TableHeader: React.FunctionComponent<HeaderProps> = ({ ...props }: 
     {({ headerRows }) => <ContextHeader {...props} headerRows={headerRows} />}
   </TableContext.Consumer>
 );
+TableHeader.displayName = 'TableHeader';

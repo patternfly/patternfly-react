@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 export class PieColorDemo extends React.Component {
+  static displayName = 'PieColorDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

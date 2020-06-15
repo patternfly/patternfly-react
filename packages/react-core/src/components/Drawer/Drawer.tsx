@@ -67,3 +67,4 @@ export const Drawer: React.SFC<DrawerProps> = ({
     </DrawerContext.Provider>
   );
 };
+Drawer.displayName = 'Drawer';

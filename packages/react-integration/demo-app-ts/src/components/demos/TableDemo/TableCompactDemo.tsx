@@ -7,6 +7,7 @@ interface TableState {
 }
 
 export class TableCompactDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableCompactDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

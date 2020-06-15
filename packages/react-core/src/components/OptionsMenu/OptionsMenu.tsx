@@ -72,3 +72,4 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
     />
   </DropdownContext.Provider>
 );
+OptionsMenu.displayName = 'OptionsMenu';

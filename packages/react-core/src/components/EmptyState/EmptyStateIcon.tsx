@@ -36,3 +36,4 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
     </div>
   );
 };
+EmptyStateIcon.displayName = 'EmptyStateIcon';

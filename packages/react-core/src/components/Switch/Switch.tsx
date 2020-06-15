@@ -26,6 +26,7 @@ export interface SwitchProps
 }
 
 export class Switch extends React.Component<SwitchProps & OUIAProps> {
+  static displayName = 'Switch';
   id: string;
 
   static defaultProps: SwitchProps = {

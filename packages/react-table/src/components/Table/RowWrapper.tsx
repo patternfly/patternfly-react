@@ -25,6 +25,7 @@ export interface RowWrapperProps extends OUIAProps {
 }
 
 export class RowWrapper extends React.Component<RowWrapperProps, {}> {
+  static displayName = 'RowWrapper';
   static defaultProps = {
     className: '' as string,
     row: {

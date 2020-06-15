@@ -426,6 +426,7 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
   }
   return <ChartLine style={thresholdStyle} theme={theme} {...rest} />;
 };
+ChartThreshold.displayName = 'ChartThreshold';
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartThreshold, VictoryLine);

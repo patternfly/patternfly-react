@@ -19,3 +19,4 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
     {children}
   </React.Fragment>
 );
+SelectColumn.displayName = 'SelectColumn';

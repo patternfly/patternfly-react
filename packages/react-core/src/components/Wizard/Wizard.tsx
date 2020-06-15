@@ -96,6 +96,7 @@ interface WizardState {
 }
 
 export class Wizard extends React.Component<WizardProps, WizardState> {
+  static displayName = 'Wizard';
   private static currentId = 0;
   static defaultProps: PickOptional<WizardProps> = {
     title: '',

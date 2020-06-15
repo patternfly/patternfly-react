@@ -11,6 +11,7 @@ export const PopoverFooter: React.FunctionComponent<PopoverFooterProps> = ({
     {children}
   </footer>
 );
+PopoverFooter.displayName = 'PopoverFooter';
 
 export interface PopoverFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Popover Footer */

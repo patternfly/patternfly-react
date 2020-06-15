@@ -16,6 +16,7 @@ export interface SkipToContentProps extends React.HTMLProps<HTMLAnchorElement> {
 }
 
 export class SkipToContent extends React.Component<SkipToContentProps> {
+  static displayName = 'SkipToContent';
   static defaultProps: PickOptional<SkipToContentProps> = {
     show: false
   };

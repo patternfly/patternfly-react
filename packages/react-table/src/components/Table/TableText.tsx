@@ -64,3 +64,4 @@ export const TableText: React.FunctionComponent<TableTextProps> = ({
 
   return tooltip !== '' ? <Tooltip content={tooltip}>{text}</Tooltip> : text;
 };
+TableText.displayName = 'TableText';

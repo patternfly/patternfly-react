@@ -2,6 +2,7 @@ import React from 'react';
 import { SimpleList, SimpleListGroup, SimpleListItem } from '@patternfly/react-core';
 
 export class SimpleListDemo extends React.Component {
+  static displayName = 'SimpleListDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

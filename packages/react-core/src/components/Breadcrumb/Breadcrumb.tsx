@@ -37,3 +37,4 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps & OUIAProps> = 
     </ol>
   </nav>
 );
+Breadcrumb.displayName = 'Breadcrumb';

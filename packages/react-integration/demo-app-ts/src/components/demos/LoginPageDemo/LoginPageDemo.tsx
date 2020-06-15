@@ -40,6 +40,7 @@ export interface LoginPageDemoState {
 }
 
 export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElement>, LoginPageDemoState> {
+  static displayName = 'LoginPageDemo';
   state = {
     showHelperText: false,
     usernameValue: '',

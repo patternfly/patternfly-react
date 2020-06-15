@@ -17,3 +17,4 @@ export const ApplicationLauncherText: React.FunctionComponent<ApplicationLaunche
     {children}
   </span>
 );
+ApplicationLauncherText.displayName = 'ApplicationLauncherText';

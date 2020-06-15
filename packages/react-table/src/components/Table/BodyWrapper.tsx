@@ -47,3 +47,4 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
   }
   return <tbody {...props} ref={tbodyRef as React.Ref<any>} />;
 };
+BodyWrapper.displayName = 'BodyWrapper';

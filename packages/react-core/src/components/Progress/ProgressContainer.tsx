@@ -70,3 +70,4 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
     </React.Fragment>
   );
 };
+ProgressContainer.displayName = 'ProgressContainer';

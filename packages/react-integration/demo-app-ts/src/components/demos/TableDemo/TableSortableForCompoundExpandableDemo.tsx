@@ -27,6 +27,7 @@ interface DemoSortableTableState {
 }
 
 export class DemoSortableTable extends React.Component<DemoSortableTableProps, DemoSortableTableState> {
+  static displayName = 'DemoSortableTable';
   constructor(props: TableProps) {
     super(props);
     this.state = {

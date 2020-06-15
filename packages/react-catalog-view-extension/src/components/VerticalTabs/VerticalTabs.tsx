@@ -26,3 +26,4 @@ export const VerticalTabs: React.FunctionComponent<VerticalTabsProps> = ({
     </ul>
   );
 };
+VerticalTabs.displayName = 'VerticalTabs';

@@ -30,3 +30,4 @@ export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
     </Component>
   );
 };
+TextListItem.displayName = 'TextListItem';

@@ -476,5 +476,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     </VictoryChartWithContainerComponent>
   );
 };
+Chart.displayName = 'Chart';
 
 hoistNonReactStatics(Chart, VictoryChart);

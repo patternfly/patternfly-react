@@ -34,6 +34,7 @@ interface NavExpandableState {
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
+  static displayName = 'NavExpandable';
   static defaultProps: PickOptional<NavExpandableProps> = {
     srText: '',
     isExpanded: false,

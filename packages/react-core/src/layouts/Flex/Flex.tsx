@@ -370,3 +370,4 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
     {children}
   </div>
 );
+Flex.displayName = 'Flex';

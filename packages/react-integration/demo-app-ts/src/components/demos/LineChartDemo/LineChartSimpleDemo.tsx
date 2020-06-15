@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine } from '@patternfly/react-charts';
 
 export class LineChartSimpleDemo extends React.Component {
+  static displayName = 'LineChartSimpleDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

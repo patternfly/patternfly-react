@@ -57,6 +57,7 @@ export interface PageState {
 }
 
 export class Page extends React.Component<PageProps, PageState> {
+  static displayName = 'Page';
   static defaultProps: PageProps = {
     isManagedSidebar: false,
     defaultManagedSidebarIsOpen: true,

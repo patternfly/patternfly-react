@@ -11,6 +11,7 @@ export const PopoverBody: React.FunctionComponent<PopoverBodyProps> = ({
     {children}
   </div>
 );
+PopoverBody.displayName = 'PopoverBody';
 
 export interface PopoverBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** PopoverBody id */

@@ -22,3 +22,4 @@ export const DrawerPanelBody: React.SFC<DrawerPanelBodyProps> = ({
     {children}
   </div>
 );
+DrawerPanelBody.displayName = 'DrawerPanelBody';

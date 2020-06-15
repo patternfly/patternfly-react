@@ -18,3 +18,4 @@ export const TextContent: React.FunctionComponent<TextContentProps> = ({
     {children}
   </div>
 );
+TextContent.displayName = 'TextContent';

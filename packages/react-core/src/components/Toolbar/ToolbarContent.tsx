@@ -39,6 +39,7 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export class ToolbarContent extends React.Component<ToolbarContentProps> {
+  static displayName = 'ToolbarContent';
   private expandableContentRef = React.createRef<HTMLDivElement>();
   private chipContainerRef = React.createRef<HTMLDivElement>();
   private static currentId = 0;

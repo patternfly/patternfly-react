@@ -26,3 +26,4 @@ export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> 
     }
   </OverflowMenuContext.Consumer>
 );
+OverflowMenuDropdownItem.displayName = 'OverflowMenuDropdownItem';

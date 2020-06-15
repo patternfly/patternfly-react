@@ -21,3 +21,4 @@ export const StackItem: React.FunctionComponent<StackItemProps> = ({
     {children}
   </div>
 );
+StackItem.displayName = 'StackItem';

@@ -22,3 +22,4 @@ export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = 
     {label}
   </option>
 );
+FormSelectOption.displayName = 'FormSelectOption';

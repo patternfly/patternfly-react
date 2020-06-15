@@ -28,3 +28,4 @@ export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
     <ul>{children}</ul>
   </section>
 );
+NavGroup.displayName = 'NavGroup';

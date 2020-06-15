@@ -17,3 +17,4 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
     {children}
   </header>
 );
+ModalBoxHeader.displayName = 'ModalBoxHeader';

@@ -17,3 +17,4 @@ export const EmptyStateSecondaryActions: React.FunctionComponent<EmptyStateSecon
     {children}
   </div>
 );
+EmptyStateSecondaryActions.displayName = 'EmptyStateSecondaryActions';

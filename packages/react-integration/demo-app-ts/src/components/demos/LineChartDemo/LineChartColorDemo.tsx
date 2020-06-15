@@ -3,6 +3,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patte
 import { VictoryZoomContainer } from 'victory';
 
 export class LineChartColorDemo extends React.Component {
+  static displayName = 'LineChartColorDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

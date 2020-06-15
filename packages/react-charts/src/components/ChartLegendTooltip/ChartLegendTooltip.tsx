@@ -322,6 +322,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   return getTooltipComponent();
 };
+ChartLegendTooltip.displayName = 'ChartLegendTooltip';
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartLegendTooltip, VictoryTooltip);

@@ -380,6 +380,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
     </VictoryStack>
   );
 };
+ChartStack.displayName = 'ChartStack';
 
 // Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
 hoistNonReactStatics(ChartStack, VictoryStack);

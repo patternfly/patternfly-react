@@ -122,3 +122,4 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
     </ActionGroup>
   </Form>
 );
+LoginForm.displayName = 'LoginForm';

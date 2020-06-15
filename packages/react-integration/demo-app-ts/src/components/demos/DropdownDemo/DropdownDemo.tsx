@@ -23,6 +23,7 @@ interface DropdownState {
 }
 
 export class DropdownDemo extends React.Component<{}, DropdownState> {
+  static displayName = 'DropdownDemo';
   onToggle: (isOpen: boolean) => void;
   onSelect: (event?: React.SyntheticEvent<HTMLDivElement>) => void;
   onFocus: () => void;

@@ -73,3 +73,4 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
     </div>
   );
 };
+BackgroundImage.displayName = 'BackgroundImage';

@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartArea, ChartGroup, ChartLabel } from '@patternfly/react-charts';
 
 export class SparklineDemo extends React.Component {
+  static displayName = 'SparklineDemo';
   render() {
     return (
       <div>

@@ -37,3 +37,4 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
     {children}
   </React.Fragment>
 );
+CollapseColumn.displayName = 'CollapseColumn';

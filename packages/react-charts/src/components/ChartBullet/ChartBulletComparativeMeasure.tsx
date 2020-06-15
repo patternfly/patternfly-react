@@ -240,6 +240,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletComparativeMeasure.displayName = 'ChartBulletComparativeMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeMeasure, VictoryBar);

@@ -47,3 +47,4 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
     )}
   </div>
 );
+WizardHeader.displayName = 'WizardHeader';

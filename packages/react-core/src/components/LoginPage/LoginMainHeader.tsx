@@ -31,3 +31,4 @@ export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
     {children}
   </header>
 );
+LoginMainHeader.displayName = 'LoginMainHeader';

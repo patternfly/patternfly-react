@@ -48,3 +48,4 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
     }}
   </PageContextConsumer>
 );
+PageSidebar.displayName = 'PageSidebar';

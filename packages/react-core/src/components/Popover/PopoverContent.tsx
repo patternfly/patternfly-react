@@ -11,6 +11,7 @@ export const PopoverContent: React.FunctionComponent<PopoverContentProps> = ({
     {children}
   </div>
 );
+PopoverContent.displayName = 'PopoverContent';
 
 export interface PopoverContentProps extends React.HTMLProps<HTMLDivElement> {
   /** PopoverContent additional class */

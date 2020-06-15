@@ -29,6 +29,7 @@ export interface OverflowMenuState extends React.HTMLProps<HTMLDivElement> {
 }
 
 export class OverflowMenu extends React.Component<OverflowMenuProps, OverflowMenuState> {
+  static displayName = 'OverflowMenu';
   constructor(props: OverflowMenuProps) {
     super(props);
     this.state = {

@@ -52,3 +52,4 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
     }}
   </AccordionContext.Consumer>
 );
+AccordionContent.displayName = 'AccordionContent';

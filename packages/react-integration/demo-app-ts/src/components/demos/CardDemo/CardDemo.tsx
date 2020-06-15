@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 export class CardDemo extends React.Component {
+  static displayName = 'CardDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

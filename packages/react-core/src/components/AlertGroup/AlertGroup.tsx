@@ -19,6 +19,7 @@ interface AlertGroupState {
 }
 
 export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState> {
+  static displayName = 'AlertGroup';
   state = {
     container: undefined
   } as AlertGroupState;

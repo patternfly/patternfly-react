@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartAxis } from '@patternfly/react-charts';
 
 export class StackColorZoomDemo extends React.Component {
+  static displayName = 'StackColorZoomDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

@@ -677,6 +677,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     </React.Fragment>
   );
 };
+ChartDonut.displayName = 'ChartDonut';
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonut, VictoryPie);

@@ -7,6 +7,7 @@ interface TableState {
 }
 
 export class TableFirstCellAsHeaderDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableFirstCellAsHeaderDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

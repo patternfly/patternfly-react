@@ -147,3 +147,4 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     </Dropzone>
   );
 };
+FileUpload.displayName = 'FileUpload';

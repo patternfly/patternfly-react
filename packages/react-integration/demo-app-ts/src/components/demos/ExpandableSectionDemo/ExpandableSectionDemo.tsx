@@ -6,6 +6,7 @@ interface ExpandableSectionState {
 }
 
 export class ExpandableSectionDemo extends React.Component<null, ExpandableSectionState> {
+  static displayName = 'ExpandableSectionDemo';
   state = {
     isExpanded: false
   };

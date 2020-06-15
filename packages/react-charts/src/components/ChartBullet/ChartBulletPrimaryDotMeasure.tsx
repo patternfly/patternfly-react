@@ -245,6 +245,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletPrimaryDotMeasure.displayName = 'ChartBulletPrimaryDotMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletPrimaryDotMeasure, VictoryScatter);

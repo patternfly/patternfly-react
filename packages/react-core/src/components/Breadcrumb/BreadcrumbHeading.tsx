@@ -51,3 +51,4 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
     </li>
   );
 };
+BreadcrumbHeading.displayName = 'BreadcrumbHeading';
