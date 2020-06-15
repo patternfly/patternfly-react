@@ -36,3 +36,4 @@ export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
     {children}
   </p>
 );
+FormHelperText.displayName = 'FormHelperText';

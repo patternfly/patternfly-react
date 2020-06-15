@@ -90,3 +90,4 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
     </React.Fragment>
   );
 };
+LoginPage.displayName = 'LoginPage';

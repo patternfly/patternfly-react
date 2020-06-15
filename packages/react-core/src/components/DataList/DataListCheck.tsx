@@ -42,3 +42,4 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
     </div>
   </div>
 );
+DataListCheck.displayName = 'DataListCheck';

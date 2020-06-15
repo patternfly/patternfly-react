@@ -159,6 +159,7 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
 };
+ChartContainer.displayName = 'ChartContainer';
 
 // Note: VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartContainer, VictoryContainer);

@@ -25,6 +25,7 @@ export interface SimpleListItemProps {
 }
 
 export class SimpleListItem extends React.Component<SimpleListItemProps> {
+  static displayName = 'SimpleListItem';
   ref = React.createRef<any>();
   static defaultProps: SimpleListItemProps = {
     children: null,

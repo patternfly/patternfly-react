@@ -58,6 +58,7 @@ export interface NavigationState {
 }
 
 export class Navigation extends React.Component<NavigationProps, NavigationState> {
+  static displayName = 'Navigation';
   constructor(props: NavigationProps) {
     super(props);
     this.state = { userInputPage: this.props.page };

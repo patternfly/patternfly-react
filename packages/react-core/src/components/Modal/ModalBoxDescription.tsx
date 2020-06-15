@@ -21,3 +21,4 @@ export const ModalBoxDescription: React.FunctionComponent<ModalBoxDescriptionPro
     {children}
   </div>
 );
+ModalBoxDescription.displayName = 'ModalBoxDescription';

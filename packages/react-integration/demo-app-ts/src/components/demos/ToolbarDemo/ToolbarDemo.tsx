@@ -44,6 +44,7 @@ interface ToolbarState {
 }
 
 export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
+  static displayName = 'ToolbarDemo';
   constructor(props: ToolbarProps) {
     super(props);
     this.state = {

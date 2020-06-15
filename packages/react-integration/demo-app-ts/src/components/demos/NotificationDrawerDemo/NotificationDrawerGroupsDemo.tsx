@@ -38,6 +38,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
   NotificationDrawerProps,
   GroupsNotificationDrawerDemoState
 > {
+  static displayName = 'GroupsNotificationDrawerDemo';
   constructor(props: NotificationDrawerProps) {
     super(props);
     this.state = {

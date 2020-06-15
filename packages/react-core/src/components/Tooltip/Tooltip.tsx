@@ -75,6 +75,7 @@ export interface TooltipProps {
 }
 
 export class Tooltip extends React.Component<TooltipProps> {
+  static displayName = 'Tooltip';
   private tip: TippyInstance;
   static defaultProps: PickOptional<TooltipProps> = {
     position: 'top',

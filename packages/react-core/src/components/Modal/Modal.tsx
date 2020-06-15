@@ -59,6 +59,7 @@ interface ModalState {
 }
 
 export class Modal extends React.Component<ModalProps, ModalState> {
+  static displayName = 'Modal';
   static currentId = 0;
   boxId = '';
   labelId = '';

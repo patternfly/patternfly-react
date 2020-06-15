@@ -117,3 +117,4 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
 
   return toggle;
 };
+DropdownToggle.displayName = 'DropdownToggle';

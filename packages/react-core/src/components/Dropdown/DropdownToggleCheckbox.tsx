@@ -26,6 +26,7 @@ export interface DropdownToggleCheckboxProps
 }
 
 export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps> {
+  static displayName = 'DropdownToggleCheckbox';
   static defaultProps: PickOptional<DropdownToggleCheckboxProps> = {
     className: '',
     isValid: true,

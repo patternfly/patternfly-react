@@ -11,3 +11,4 @@ export const TooltipArrow: React.FunctionComponent<TooltipArrowProps> = ({
   className,
   ...props
 }: TooltipArrowProps) => <div className={css(styles.tooltipArrow, className)} {...props} />;
+TooltipArrow.displayName = 'TooltipArrow';

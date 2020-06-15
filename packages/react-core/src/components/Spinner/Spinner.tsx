@@ -36,3 +36,4 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     <span className={css(styles.spinnerTailBall)} />
   </span>
 );
+Spinner.displayName = 'Spinner';

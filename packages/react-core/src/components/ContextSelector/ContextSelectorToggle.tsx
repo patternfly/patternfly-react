@@ -25,6 +25,7 @@ export interface ContextSelectorToggleProps {
 }
 
 export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
+  static displayName = 'ContextSelectorToggle';
   static defaultProps: PickOptional<ContextSelectorToggleProps> = {
     className: '',
     toggleText: '',

@@ -433,6 +433,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     </React.Fragment>
   );
 };
+ChartLegendTooltipContent.displayName = 'ChartLegendTooltipContent';
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegendTooltipContent, VictoryLegend, { getBaseProps: true });

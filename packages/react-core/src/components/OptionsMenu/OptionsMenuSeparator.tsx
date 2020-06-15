@@ -5,3 +5,4 @@ export const OptionsMenuSeparator: React.FunctionComponent<DividerProps> = ({
   component = 'li',
   ...props
 }: DividerProps) => <Divider component={component} {...props} />;
+OptionsMenuSeparator.displayName = 'OptionsMenuSeparator';

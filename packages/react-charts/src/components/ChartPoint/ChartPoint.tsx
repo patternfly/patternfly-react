@@ -175,3 +175,4 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
     transform
   });
 };
+ChartPoint.displayName = 'ChartPoint';

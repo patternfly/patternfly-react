@@ -33,3 +33,4 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
     />
   );
 };
+Divider.displayName = 'Divider';

@@ -18,3 +18,4 @@ export const ModalBoxBody: React.FunctionComponent<ModalBoxBodyProps> = ({
     {children}
   </div>
 );
+ModalBoxBody.displayName = 'ModalBoxBody';

@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 export class DonutSmallDemo extends React.Component {
+  static displayName = 'DonutSmallDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

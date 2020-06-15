@@ -200,3 +200,4 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
     <React.Fragment>{groupTitle}</React.Fragment>
   );
 };
+ChartBulletGroupTitle.displayName = 'ChartBulletGroupTitle';

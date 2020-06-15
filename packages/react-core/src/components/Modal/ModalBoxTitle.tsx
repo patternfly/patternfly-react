@@ -38,3 +38,4 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     </h1>
   );
 };
+ModalBoxTitle.displayName = 'ModalBoxTitle';

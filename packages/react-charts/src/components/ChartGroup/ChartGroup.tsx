@@ -440,6 +440,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     </VictoryGroup>
   );
 };
+ChartGroup.displayName = 'ChartGroup';
 
 // Note: VictoryGroup.role must be hoisted
 hoistNonReactStatics(ChartGroup, VictoryGroup);

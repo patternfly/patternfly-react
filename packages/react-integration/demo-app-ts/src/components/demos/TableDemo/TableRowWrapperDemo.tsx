@@ -10,6 +10,7 @@ interface ITableRowWrapperDemoState {
 }
 
 export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWrapperDemoState> {
+  static displayName = 'TableRowWrapperDemo';
   customRowWrapper: (props: RowWrapperProps) => JSX.Element;
   constructor(props: TableProps) {
     super(props);

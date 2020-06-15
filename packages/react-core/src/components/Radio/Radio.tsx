@@ -34,6 +34,7 @@ export interface RadioProps
 }
 
 export class Radio extends React.Component<RadioProps> {
+  static displayName = 'Radio';
   static defaultProps: PickOptional<RadioProps> = {
     className: '',
     isDisabled: false,

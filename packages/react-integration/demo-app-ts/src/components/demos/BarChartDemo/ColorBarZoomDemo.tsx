@@ -3,6 +3,7 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartAxis } from '@patter
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 export class ColorBarZoomDemo extends React.Component {
+  static displayName = 'ColorBarZoomDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

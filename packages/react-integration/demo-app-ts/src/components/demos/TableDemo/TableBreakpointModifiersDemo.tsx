@@ -16,6 +16,7 @@ interface TableState {
 }
 
 export class TableBreakpointModifersDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableBreakpointModifersDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

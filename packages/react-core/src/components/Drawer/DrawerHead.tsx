@@ -25,3 +25,4 @@ export const DrawerHead: React.SFC<DrawerHeadProps> = ({
     </div>
   </DrawerPanelBody>
 );
+DrawerHead.displayName = 'DrawerHead';

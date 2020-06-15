@@ -269,6 +269,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
     />
   );
 };
+ChartCursorTooltip.displayName = 'ChartCursorTooltip';
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartCursorTooltip, VictoryTooltip);

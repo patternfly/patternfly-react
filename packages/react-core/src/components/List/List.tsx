@@ -58,3 +58,4 @@ export const List: React.FunctionComponent<ListProps> = ({
       {children}
     </ul>
   );
+List.displayName = 'List';

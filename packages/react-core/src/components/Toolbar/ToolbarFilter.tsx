@@ -39,6 +39,7 @@ interface ToolbarFilterState {
 }
 
 export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFilterState> {
+  static displayName = 'ToolbarFilter';
   static contextType: any = ToolbarContext;
   static defaultProps: PickOptional<ToolbarFilterProps> = {
     chips: [] as (string | ToolbarChip)[],

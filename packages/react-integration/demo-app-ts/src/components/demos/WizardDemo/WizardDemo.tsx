@@ -6,6 +6,7 @@ interface WizardDemoState {
 }
 
 export class WizardDemo extends React.Component<React.HTMLProps<HTMLDivElement>, WizardDemoState> {
+  static displayName = 'WizardDemo';
   state = {
     isOpen: false
   };

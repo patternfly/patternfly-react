@@ -18,3 +18,4 @@ export const Backdrop: React.FunctionComponent<BackdropProps> = ({
     {children}
   </div>
 );
+Backdrop.displayName = 'Backdrop';

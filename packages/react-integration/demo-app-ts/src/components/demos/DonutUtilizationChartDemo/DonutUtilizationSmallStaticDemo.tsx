@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
 export class DonutUtilizationSmallStaticDemo extends React.Component {
+  static displayName = 'DonutUtilizationSmallStaticDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

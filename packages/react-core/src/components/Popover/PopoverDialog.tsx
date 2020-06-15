@@ -24,6 +24,7 @@ export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
     {children}
   </div>
 );
+PopoverDialog.displayName = 'PopoverDialog';
 
 export interface PopoverDialogProps extends React.HTMLProps<HTMLDivElement> {
   /** PopoverDialog position */

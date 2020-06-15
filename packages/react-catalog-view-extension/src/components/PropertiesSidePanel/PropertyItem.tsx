@@ -28,3 +28,4 @@ export const PropertyItem: React.FunctionComponent<PropertyItemProps> = ({
     </div>
   );
 };
+PropertyItem.displayName = 'PropertyItem';

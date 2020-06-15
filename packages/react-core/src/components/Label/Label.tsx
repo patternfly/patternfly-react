@@ -74,3 +74,4 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </span>
   );
 };
+Label.displayName = 'Label';

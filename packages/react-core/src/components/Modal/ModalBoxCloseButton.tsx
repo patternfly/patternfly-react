@@ -18,3 +18,4 @@ export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonPro
     <TimesIcon />
   </Button>
 );
+ModalBoxCloseButton.displayName = 'ModalBoxCloseButton';

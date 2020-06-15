@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 export class DonutRightAlignedLegendDemo extends React.Component {
+  static displayName = 'DonutRightAlignedLegendDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

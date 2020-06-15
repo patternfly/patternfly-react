@@ -17,3 +17,4 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
     <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
   </main>
 );
+WizardBody.displayName = 'WizardBody';

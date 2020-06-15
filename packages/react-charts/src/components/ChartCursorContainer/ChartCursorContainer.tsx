@@ -211,6 +211,7 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
     />
   );
 };
+ChartCursorContainer.displayName = 'ChartCursorContainer';
 ChartCursorContainer.defaultProps = (VictoryCursorContainer as any).defaultProps;
 
 // Note: VictoryCursorContainer.defaultEvents & VictoryContainer.role must be hoisted

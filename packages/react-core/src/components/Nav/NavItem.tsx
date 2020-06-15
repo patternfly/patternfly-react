@@ -80,3 +80,4 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     </li>
   );
 };
+NavItem.displayName = 'NavItem';

@@ -41,6 +41,7 @@ interface ChipGroupState {
 }
 
 export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
+  static displayName = 'ChipGroup';
   constructor(props: ChipGroupProps) {
     super(props);
     this.state = {

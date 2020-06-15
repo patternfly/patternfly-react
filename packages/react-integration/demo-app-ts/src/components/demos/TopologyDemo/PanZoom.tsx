@@ -75,3 +75,4 @@ export const PanZoom: React.FC = withTopologySetup(() => {
   useModel(model);
   return null;
 });
+PanZoom.displayName = 'PanZoom';

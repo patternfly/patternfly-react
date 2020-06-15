@@ -6,6 +6,7 @@ interface ApplicationLauncherState {
 }
 
 export class ApplicationLauncherDemo extends React.Component<{}, ApplicationLauncherState> {
+  static displayName = 'ApplicationLauncherDemo';
   onToggle: (isOpen: boolean) => void;
   onSelect: (event: any) => void;
   constructor(props: {}) {

@@ -8,6 +8,7 @@ const pfbg_576 = require('../LoginPageDemo/images/pfbg_576.jpg');
 const pfbg_576_2x = require('../LoginPageDemo/images/pfbg_576@2x.jpg');
 
 export class BackgroundImageDemo extends React.Component {
+  static displayName = 'BackgroundImageDemo';
   myBackgroundProps: BackgroundImageProps = {
     /**
      * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier

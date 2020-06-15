@@ -81,3 +81,4 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
     </Backdrop>
   );
 };
+AboutModalContainer.displayName = 'AboutModalContainer';

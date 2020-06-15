@@ -826,5 +826,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     <React.Fragment>{bulletChart}</React.Fragment>
   );
 };
+ChartBullet.displayName = 'ChartBullet';
 
 hoistNonReactStatics(ChartBullet, VictoryChart);

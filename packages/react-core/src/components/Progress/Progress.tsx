@@ -37,6 +37,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
 }
 
 export class Progress extends React.Component<ProgressProps> {
+  static displayName = 'Progress';
   static defaultProps: ProgressProps = {
     className: '',
     measureLocation: ProgressMeasureLocation.top,

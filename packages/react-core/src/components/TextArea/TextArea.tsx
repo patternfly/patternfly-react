@@ -31,6 +31,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
 }
 
 export class TextArea extends React.Component<TextAreaProps> {
+  static displayName = 'TextArea';
   static defaultProps: TextAreaProps = {
     className: '',
     isRequired: false,

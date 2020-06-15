@@ -2,6 +2,7 @@ import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 export class ClipboardCopyExpandedDemo extends React.Component {
+  static displayName = 'ClipboardCopyExpandedDemo';
   render() {
     return (
       <ClipboardCopy isExpanded variant={ClipboardCopyVariant.expansion}>

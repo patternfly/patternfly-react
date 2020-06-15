@@ -83,3 +83,4 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
     }}
   </DataListContext.Consumer>
 );
+DataListItem.displayName = 'DataListItem';

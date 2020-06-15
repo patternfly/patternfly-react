@@ -24,3 +24,4 @@ export const ToggleTemplate: React.FunctionComponent<ToggleTemplateProps> = ({
     of <b>{itemCount}</b> {itemsTitle}
   </React.Fragment>
 );
+ToggleTemplate.displayName = 'ToggleTemplate';

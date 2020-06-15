@@ -19,3 +19,4 @@ export const DrawerActions: React.SFC<DrawerActionsProps> = ({
     {children}
   </div>
 );
+DrawerActions.displayName = 'DrawerActions';

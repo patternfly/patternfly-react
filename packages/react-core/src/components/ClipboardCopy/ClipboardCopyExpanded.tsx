@@ -13,6 +13,7 @@ export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'on
 }
 
 export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
+  static displayName = 'ClipboardCopyExpanded';
   constructor(props: any) {
     super(props);
   }

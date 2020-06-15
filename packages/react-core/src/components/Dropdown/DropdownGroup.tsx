@@ -32,3 +32,4 @@ export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
     }}
   </DropdownContext.Consumer>
 );
+DropdownGroup.displayName = 'DropdownGroup';

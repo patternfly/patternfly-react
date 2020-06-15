@@ -6,6 +6,7 @@ export const PopoverArrow: React.FunctionComponent<PopoverArrowProps> = ({
   className = '',
   ...props
 }: PopoverArrowProps) => <div className={css(styles.popoverArrow, className)} {...props} />;
+PopoverArrow.displayName = 'PopoverArrow';
 
 export interface PopoverArrowProps extends React.HTMLProps<HTMLDivElement> {
   /** Popover arrow additional className */

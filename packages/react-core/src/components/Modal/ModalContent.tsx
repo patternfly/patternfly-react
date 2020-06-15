@@ -153,3 +153,4 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </Backdrop>
   );
 };
+ModalContent.displayName = 'ModalContent';

@@ -12,6 +12,7 @@ export interface ContextSelectorMenuListProps {
 }
 
 export class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListProps> {
+  static displayName = 'ContextSelectorMenuList';
   static defaultProps: ContextSelectorMenuListProps = {
     children: null as React.ReactNode,
     className: '',

@@ -411,6 +411,7 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryLine containerComponent={container} theme={theme} {...rest} />;
 };
+ChartLine.displayName = 'ChartLine';
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);

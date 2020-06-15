@@ -18,3 +18,4 @@ export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
     {children}
   </div>
 );
+CardHeader.displayName = 'CardHeader';

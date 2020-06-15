@@ -45,3 +45,4 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
     </li>
   );
 };
+WizardNavItem.displayName = 'WizardNavItem';

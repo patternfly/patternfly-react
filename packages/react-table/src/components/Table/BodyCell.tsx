@@ -75,3 +75,4 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
 
   return (parentId !== undefined && colSpan === undefined) || !isVisible ? null : bodyCell;
 };
+BodyCell.displayName = 'BodyCell';

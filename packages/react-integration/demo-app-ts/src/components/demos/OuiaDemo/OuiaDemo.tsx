@@ -5,6 +5,7 @@ interface SwitchState {
   isChecked: boolean;
 }
 export class OuiaDemo extends React.Component<SwitchProps, SwitchState> {
+  static displayName = 'OuiaDemo';
   constructor(props: SwitchProps) {
     super(props);
     this.state = {

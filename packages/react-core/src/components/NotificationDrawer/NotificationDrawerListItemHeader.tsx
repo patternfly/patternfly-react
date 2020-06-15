@@ -56,3 +56,4 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
     </React.Fragment>
   );
 };
+NotificationDrawerListItemHeader.displayName = 'NotificationDrawerListItemHeader';

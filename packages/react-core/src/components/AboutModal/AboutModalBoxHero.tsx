@@ -28,3 +28,4 @@ export const AboutModalBoxHero: React.FunctionComponent<AboutModalBoxHeroProps> 
     {...props}
   />
 );
+AboutModalBoxHero.displayName = 'AboutModalBoxHero';

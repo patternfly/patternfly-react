@@ -52,3 +52,4 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
       );
     })
   );
+HeaderRow.displayName = 'HeaderRow';

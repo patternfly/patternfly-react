@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { used: number; spacer: string }> {
+  static displayName = 'DonutUtilizationSimpleRightGreenDemo';
   interval: number = 0;
   constructor(props: {}) {
     super(props);

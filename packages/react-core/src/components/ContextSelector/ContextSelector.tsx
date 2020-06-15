@@ -43,6 +43,7 @@ export interface ContextSelectorProps {
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps> {
+  static displayName = 'ContextSelector';
   static defaultProps: ContextSelectorProps = {
     children: null as React.ReactNode,
     className: '',

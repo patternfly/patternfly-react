@@ -37,6 +37,7 @@ interface FilterInfo {
 }
 
 export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
+  static displayName = 'Toolbar';
   chipGroupContentRef = React.createRef<HTMLDivElement>();
   staticFilterInfo = {};
   state = {

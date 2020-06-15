@@ -27,3 +27,4 @@ export const CardBody: React.FunctionComponent<CardBodyProps> = ({
     </Component>
   );
 };
+CardBody.displayName = 'CardBody';

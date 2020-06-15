@@ -21,3 +21,4 @@ export const TooltipContent: React.FunctionComponent<TooltipContentProps> = ({
     {children}
   </div>
 );
+TooltipContent.displayName = 'TooltipContent';

@@ -93,3 +93,4 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
     </div>
   );
 };
+GridItem.displayName = 'GridItem';

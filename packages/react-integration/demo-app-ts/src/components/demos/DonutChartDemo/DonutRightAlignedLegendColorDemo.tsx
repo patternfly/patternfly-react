@@ -2,6 +2,7 @@ import React from 'react';
 import { ChartDonut, ChartThemeVariant, ChartThemeColor } from '@patternfly/react-charts';
 
 export class DonutRightAlignedLegendColorDemo extends React.Component {
+  static displayName = 'DonutRightAlignedLegendColorDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

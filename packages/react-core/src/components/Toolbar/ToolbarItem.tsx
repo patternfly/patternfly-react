@@ -93,3 +93,4 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     </div>
   );
 };
+ToolbarItem.displayName = 'ToolbarItem';

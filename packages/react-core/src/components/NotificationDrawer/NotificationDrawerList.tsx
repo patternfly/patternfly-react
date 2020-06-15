@@ -22,3 +22,4 @@ export const NotificationDrawerList: React.FunctionComponent<NotificationDrawerL
     {children}
   </ul>
 );
+NotificationDrawerList.displayName = 'NotificationDrawerList';

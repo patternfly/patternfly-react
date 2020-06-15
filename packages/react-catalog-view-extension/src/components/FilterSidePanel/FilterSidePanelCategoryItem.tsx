@@ -42,5 +42,6 @@ export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePane
     </div>
   );
 };
+FilterSidePanelCategoryItem.displayName = 'FilterSidePanelCategoryItem';
 
 export default FilterSidePanelCategoryItem;

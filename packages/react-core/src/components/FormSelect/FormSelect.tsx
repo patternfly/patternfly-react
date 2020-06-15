@@ -32,6 +32,7 @@ export interface FormSelectProps
 }
 
 export class FormSelect extends React.Component<FormSelectProps> {
+  static displayName = 'FormSelect';
   constructor(props: FormSelectProps) {
     super(props);
     if (!props.id && !props['aria-label']) {

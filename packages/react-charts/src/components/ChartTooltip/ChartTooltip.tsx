@@ -243,6 +243,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
     />
   );
 };
+ChartTooltip.displayName = 'ChartTooltip';
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

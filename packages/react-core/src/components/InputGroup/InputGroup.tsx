@@ -33,3 +33,4 @@ export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
     </div>
   );
 };
+InputGroup.displayName = 'InputGroup';

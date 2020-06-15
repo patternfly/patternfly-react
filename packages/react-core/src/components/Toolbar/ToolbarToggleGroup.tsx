@@ -49,6 +49,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
 }
 
 export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps> {
+  static displayName = 'ToolbarToggleGroup';
   isContentPopup = () => {
     const viewportSize = window.innerWidth;
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);

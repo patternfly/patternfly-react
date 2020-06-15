@@ -31,6 +31,7 @@ interface ChipState {
 }
 
 export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
+  static displayName = 'Chip';
   constructor(props: ChipProps & OUIAProps) {
     super(props);
     this.state = {

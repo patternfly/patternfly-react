@@ -31,3 +31,4 @@ export const AboutModalBoxContent: React.FunctionComponent<AboutModalBoxContentP
     <p className={css(styles.aboutModalBoxStrapline)}>{trademark}</p>
   </div>
 );
+AboutModalBoxContent.displayName = 'AboutModalBoxContent';

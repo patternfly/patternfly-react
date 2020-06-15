@@ -13,6 +13,7 @@ interface TableState {
 }
 
 export class TableCompoundExpandableDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableCompoundExpandableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

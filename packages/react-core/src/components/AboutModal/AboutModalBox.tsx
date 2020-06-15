@@ -18,3 +18,4 @@ export const AboutModalBox: React.FunctionComponent<AboutModalBoxProps> = ({
     {children}
   </div>
 );
+AboutModalBox.displayName = 'AboutModalBox';

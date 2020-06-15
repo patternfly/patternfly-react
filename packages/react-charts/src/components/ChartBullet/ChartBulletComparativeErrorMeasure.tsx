@@ -212,6 +212,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletComparativeErrorMeasure.displayName = 'ChartBulletComparativeErrorMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeErrorMeasure, VictoryBar);

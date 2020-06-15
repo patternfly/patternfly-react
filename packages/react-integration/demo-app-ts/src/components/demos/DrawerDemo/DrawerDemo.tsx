@@ -17,6 +17,7 @@ export interface DrawerDemoState {
 }
 
 export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
+  static displayName = 'DrawerDemo';
   constructor(props: DrawerProps) {
     super(props);
     this.state = {

@@ -244,6 +244,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
     <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
   );
 };
+ChartVoronoiContainer.displayName = 'ChartVoronoiContainer';
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted

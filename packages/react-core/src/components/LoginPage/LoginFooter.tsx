@@ -18,3 +18,4 @@ export const LoginFooter: React.FunctionComponent<LoginFooterProps> = ({
     {children}
   </footer>
 );
+LoginFooter.displayName = 'LoginFooter';

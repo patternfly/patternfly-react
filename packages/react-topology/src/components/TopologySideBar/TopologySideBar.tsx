@@ -22,6 +22,7 @@ interface TopologySideBarState {
 }
 
 export class TopologySideBar extends React.Component<TopologySideBarProps, TopologySideBarState> {
+  static displayName = 'TopologySideBar';
   timer: any = null;
 
   constructor(props: TopologySideBarProps) {

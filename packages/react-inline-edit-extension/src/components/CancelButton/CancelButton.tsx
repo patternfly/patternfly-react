@@ -7,3 +7,4 @@ export const CancelButton: React.FunctionComponent<ButtonProps> = ({ variant = '
     <CloseIcon />
   </Button>
 );
+CancelButton.displayName = 'CancelButton';

@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 export class GridDemo extends React.Component {
+  static displayName = 'GridDemo';
   render() {
     return (
       <Grid>

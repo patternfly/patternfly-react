@@ -330,6 +330,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     />
   );
 };
+ChartLegend.displayName = 'ChartLegend';
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });

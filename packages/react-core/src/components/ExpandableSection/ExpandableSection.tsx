@@ -28,6 +28,7 @@ interface ExpandableSectionState {
 }
 
 export class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
+  static displayName = 'ExpandableSection';
   constructor(props: ExpandableSectionProps) {
     super(props);
 

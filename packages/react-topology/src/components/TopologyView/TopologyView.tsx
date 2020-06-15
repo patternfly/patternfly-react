@@ -64,3 +64,4 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
     </Stack>
   );
 };
+TopologyView.displayName = 'TopologyView';

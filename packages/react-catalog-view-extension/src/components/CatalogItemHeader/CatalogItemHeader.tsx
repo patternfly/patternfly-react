@@ -31,3 +31,4 @@ export const CatalogItemHeader: React.FunctionComponent<CatalogItemHeaderProps> 
     </div>
   </header>
 );
+CatalogItemHeader.displayName = 'CatalogItemHeader';

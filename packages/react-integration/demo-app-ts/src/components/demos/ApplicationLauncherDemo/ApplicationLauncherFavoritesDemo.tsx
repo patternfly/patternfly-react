@@ -13,6 +13,7 @@ interface ApplicationLauncherFavoritesDemoState {
 }
 
 export class ApplicationLauncherFavoritesDemo extends React.Component<null, ApplicationLauncherFavoritesDemoState> {
+  static displayName = 'ApplicationLauncherFavoritesDemo';
   state: ApplicationLauncherFavoritesDemoState = {
     isOpen: false,
     favorites: [''],

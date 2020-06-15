@@ -14,6 +14,7 @@ import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon
 import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
 import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
 export class OverflowMenuDemo extends React.Component {
+  static displayName = 'OverflowMenuDemo';
   state = {
     isSimpleOpen: false,
     isAdditionalOptionsOpen: false,

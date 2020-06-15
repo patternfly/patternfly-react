@@ -9,6 +9,7 @@ import {
 } from '@patternfly/react-charts';
 
 export class LineChartGreenDemo extends React.Component {
+  static displayName = 'LineChartGreenDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

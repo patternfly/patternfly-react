@@ -21,3 +21,4 @@ export const Form: React.FunctionComponent<FormProps> = ({
     {children}
   </form>
 );
+Form.displayName = 'Form';

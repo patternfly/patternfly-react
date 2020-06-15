@@ -19,6 +19,7 @@ export interface NavListProps
 }
 
 export class NavList extends React.Component<NavListProps> {
+  static displayName = 'NavList';
   static contextType = NavContext;
 
   static defaultProps: NavListProps = {

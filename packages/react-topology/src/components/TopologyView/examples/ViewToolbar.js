@@ -14,6 +14,7 @@ import {
 import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
 
 export class ViewToolbar extends React.Component {
+  static displayName = 'ViewToolbar';
   state = {
     filterType: 'Name',
     filterValue: '',

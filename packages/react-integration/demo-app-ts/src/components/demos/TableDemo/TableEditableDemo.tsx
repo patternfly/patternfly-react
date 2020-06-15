@@ -41,6 +41,7 @@ const rowLevelValidationRules: IValidatorDef[] = [
 ];
 
 export class TableEditableDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+  static displayName = 'TableEditableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

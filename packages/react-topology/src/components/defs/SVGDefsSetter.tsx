@@ -2,6 +2,7 @@ import * as React from 'react';
 import SVGDefsContext from './SVGDefsContext';
 import { SVGDefsSetterProps } from './SVGDefs';
 export class SVGDefsSetter extends React.Component<SVGDefsSetterProps> {
+  static displayName = 'SVGDefsSetter';
   static contextType = SVGDefsContext;
   componentDidMount() {
     const { addDef, id, children } = this.props;

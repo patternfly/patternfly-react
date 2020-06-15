@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartAxis, ChartThemeColor } from '@patternfly/react-charts';
 
 export class StackGoldBottomLegendDemo extends React.Component {
+  static displayName = 'StackGoldBottomLegendDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

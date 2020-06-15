@@ -15,6 +15,7 @@ export class TableSortableDemo extends React.Component<
   TableProps,
   { columns: (ICell | string)[]; rows: IRow[]; sortBy: ISortBy }
 > {
+  static displayName = 'TableSortableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

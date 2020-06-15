@@ -444,5 +444,6 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     />
   );
 };
+ChartAxis.displayName = 'ChartAxis';
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);

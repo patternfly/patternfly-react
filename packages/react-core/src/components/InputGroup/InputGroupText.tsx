@@ -24,3 +24,4 @@ export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
     </Component>
   );
 };
+InputGroupText.displayName = 'InputGroupText';

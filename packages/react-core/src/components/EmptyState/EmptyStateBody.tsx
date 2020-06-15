@@ -18,3 +18,4 @@ export const EmptyStateBody: React.FunctionComponent<EmptyStateBodyProps> = ({
     {children}
   </div>
 );
+EmptyStateBody.displayName = 'EmptyStateBody';

@@ -30,6 +30,7 @@ export interface CheckboxProps
 const defaultOnChange = () => {};
 
 export class Checkbox extends React.Component<CheckboxProps> {
+  static displayName = 'Checkbox';
   static defaultProps: PickOptional<CheckboxProps> = {
     className: '',
     isValid: true,

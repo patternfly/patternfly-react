@@ -238,6 +238,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
     </React.Fragment>
   );
 };
+ChartLegendTooltipLabel.displayName = 'ChartLegendTooltipLabel';
 
 // Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLegendTooltipLabel, VictoryLabel);

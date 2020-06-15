@@ -20,3 +20,4 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
 }
 
 export const Tab: React.FunctionComponent<TabProps> = () => null;
+Tab.displayName = 'Tab';

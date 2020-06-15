@@ -14,3 +14,4 @@ export const ExpandableRowContent: React.FunctionComponent<ExpandableRowContentP
     {children}
   </div>
 );
+ExpandableRowContent.displayName = 'ExpandableRowContent';

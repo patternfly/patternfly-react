@@ -32,3 +32,4 @@ export const OptionsMenuItemGroup: React.FunctionComponent<OptionsMenuItemGroupP
     </ul>
   </section>
 );
+OptionsMenuItemGroup.displayName = 'OptionsMenuItemGroup';

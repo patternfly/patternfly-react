@@ -430,6 +430,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
 };
+ChartScatter.displayName = 'ChartScatter';
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartScatter, VictoryScatter);

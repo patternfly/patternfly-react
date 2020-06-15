@@ -442,6 +442,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryBar containerComponent={container} theme={theme} {...rest} />;
 };
+ChartBar.displayName = 'ChartBar';
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBar, VictoryBar);

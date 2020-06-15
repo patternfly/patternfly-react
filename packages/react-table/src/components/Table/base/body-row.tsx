@@ -22,6 +22,7 @@ export interface BodyRowProps {
 }
 
 export class BodyRow extends React.Component<BodyRowProps, {}> {
+  static displayName = 'BodyRow';
   static defaultProps = {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onRow: (...args: any) => Object

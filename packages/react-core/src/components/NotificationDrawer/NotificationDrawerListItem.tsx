@@ -45,3 +45,4 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
     {children}
   </li>
 );
+NotificationDrawerListItem.displayName = 'NotificationDrawerListItem';

@@ -271,6 +271,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletPrimarySegmentedMeasure.displayName = 'ChartBulletPrimarySegmentedMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletPrimarySegmentedMeasure, VictoryBar);

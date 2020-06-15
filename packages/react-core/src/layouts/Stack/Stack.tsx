@@ -27,3 +27,4 @@ export const Stack: React.FunctionComponent<StackProps> = ({
     </Component>
   );
 };
+Stack.displayName = 'Stack';

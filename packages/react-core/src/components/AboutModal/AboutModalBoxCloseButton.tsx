@@ -25,3 +25,4 @@ export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxClos
     </Button>
   </div>
 );
+AboutModalBoxCloseButton.displayName = 'AboutModalBoxCloseButton';
