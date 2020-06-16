@@ -1026,7 +1026,7 @@ exports[`renders component text 1`] = `
     gutter={0}
     labelComponent={
       <ChartLegendTooltipLabel
-        dx={128.5024154589372}
+        dx={121.73913043478262}
         legendData={
           Array [
             Object {

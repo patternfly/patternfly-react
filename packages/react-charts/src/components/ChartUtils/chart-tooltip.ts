@@ -74,21 +74,20 @@ export const getLegendTooltipSize = ({
   const textEvaluated = Helpers.evaluateProp(text);
   const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
 
-  // Find max data char length
+  // Find max char lengths
   let maxDataLength = 0;
-  if (legendData) {
-    legendData.map((data: any) => {
-      if (data.name && data.name.length > maxDataLength) {
-        maxDataLength = data.name.length;
-      }
-    });
-  }
-
-  // Find max text char length
   let maxTextLength = 0;
-  _text.map((name: string) => {
-    if (name && name.length > maxTextLength) {
-      maxTextLength = name.length;
+  _text.map((name: string, index: number) => {
+    if (name) {
+      if (name.length > maxTextLength) {
+        maxTextLength = name.length;
+      }
+      const hasData = legendData && legendData[index] && legendData[index].name;
+      if (hasData) {
+        if (legendData[index].name.length > maxDataLength) {
+          maxDataLength = legendData[index].name.length;
+        }
+      }
     }
   });
 
@@ -118,10 +117,10 @@ export const getLegendTooltipSize = ({
   // {name: "Birds        4"}
   // {name: "Mice         3"}
   const data = _text.map((label: string, index: number) => {
-    const hasLegendData = legendData && legendData[index] && legendData[index].name;
-    const spacer = hasLegendData ? getSpacer(legendData[index].name, label) : '';
+    const hasData = legendData && legendData[index] && legendData[index].name;
+    const spacer = hasData ? getSpacer(legendData[index].name, label) : '';
     return {
-      name: `${hasLegendData ? legendData[index].name : ''}${spacer}${label}`
+      name: `${hasData ? legendData[index].name : ''}${spacer}${label}`
     };
   });
 

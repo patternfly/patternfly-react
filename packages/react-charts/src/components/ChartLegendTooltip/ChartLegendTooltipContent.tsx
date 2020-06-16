@@ -51,6 +51,14 @@ export interface ChartLegendTooltipContentProps extends ChartLegendProps {
    */
   borderPadding?: PaddingProps;
   /**
+   * The center prop determines the position of the center of the tooltip flyout. This prop should be given as an object
+   * that describes the desired x and y svg coordinates of the center of the tooltip. This prop is useful for
+   * positioning the flyout of a tooltip independent from the pointer. When ChartTooltip is used with
+   * ChartVoronoiContainer, the center prop is what enables the mouseFollowTooltips option. When this prop is set,
+   * non-zero pointerLength values will no longer be respected.
+   */
+  center?: { x: number; y: number };
+  /**
    * The centerTitle boolean prop specifies whether a legend title should be centered.
    */
   centerTitle?: boolean;
@@ -135,17 +143,17 @@ export interface ChartLegendTooltipContentProps extends ChartLegendProps {
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
-   * The flyoutX and flyoutX props define the base position of the flyout.
-   *
-   * *This prop should not be set manually.**
+   * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
+   * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
+   * text and style props provided to ChartTooltip.
    */
-  flyoutX?: number;
+  flyoutHeight?: NumberOrCallback;
   /**
-   * The flyoutX and flyoutX props define the base position of the flyout.
-   *
-   * *This prop should not be set manually.**
+   * The flyoutWidth prop defines the width of the tooltip flyout. This prop may be given as a positive number or a
+   * function of datum. If this prop is not set, flyoutWidth will be determined based on an approximate text size
+   * calculated from the text and style props provided to VictoryTooltip.
    */
-  flyoutY?: number;
+  flyoutWidth?: NumberOrCallback;
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -224,12 +232,6 @@ export interface ChartLegendTooltipContentProps extends ChartLegendProps {
    * **This prop should not be set manually.**
    */
   sharedEvents?: { events: any[]; getEventState: Function };
-  /**
-   * The standalone prop determines whether the component will render a standalone svg
-   * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose ChartLegend with other components within an enclosing <svg> tag.
-   */
-  standalone?: boolean;
   /**
    * The style prop specifies styles for your pie. ChartLegend relies on Radium,
    * so valid Radium style objects should work for this prop. Height, width, and
@@ -311,10 +313,18 @@ export interface ChartLegendTooltipContentProps extends ChartLegendProps {
   width?: number;
   /**
    * The x and y props define the base position of the legend element.
+   *
+   * Note: When the center, flyoutWidth, and width props are provided, the x prop will be overridden.
+   *
+   * **This prop should not be set manually.**
    */
   x?: number;
   /**
    * The x and y props define the base position of the legend element.
+   *
+   * Note: When the center, flyoutWidth, and height props are provided, the y prop will be overridden.
+   *
+   * **This prop should not be set manually.**
    */
   y?: number;
 }
@@ -325,7 +335,6 @@ export const defaultLegendProps = {
   orientation: 'vertical' as any,
   padding: 0,
   rowGutter: -12,
-  standalone: false,
   style: {
     labels: {
       fill: ChartLegendTooltipStyles.label.fill,
@@ -340,31 +349,35 @@ export const defaultLegendProps = {
 
 export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
   borderPadding = defaultLegendProps.borderPadding,
+  center,
   data,
   datum,
   dx = 0,
   dy = 0,
+  flyoutHeight,
+  flyoutWidth,
+  height,
   gutter = defaultLegendProps.gutter,
   labelComponent = <ChartLegendTooltipLabel />,
   orientation = defaultLegendProps.orientation,
   padding = defaultLegendProps.padding,
   rowGutter = defaultLegendProps.rowGutter,
-  standalone = defaultLegendProps.standalone,
   style = defaultLegendProps.style,
   text,
   themeColor,
   themeVariant,
   title,
   titleComponent = <ChartLabel />,
+  width,
   x,
   y,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  flyoutX = x,
-  flyoutY = y,
   ...rest
 }: ChartLegendTooltipContentProps) => {
+  const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
+
   // Component offsets
   const legendOffsetX = 0;
   const legendOffsetY = title ? 5 : -10;
@@ -378,20 +391,53 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     orientation,
     padding,
     rowGutter,
-    standalone,
     style: Array.isArray(style) ? defaultLegendProps.style : style
   };
-  const emptyLegendDimensions = getLegendTooltipSize({
-    legendData: [{ name: '' }],
-    legendProps,
-    theme
-  });
+
+  // Min & max dimensions do not include flyout padding
   const maxLegendDimensions = getLegendTooltipSize({
     legendData: data,
     legendProps,
     text,
     theme
   });
+  const minLegendDimensions = getLegendTooltipSize({
+    legendData: [{ name: '' }],
+    legendProps,
+    theme
+  });
+
+  // Returns x position of flyout
+  const getX = () => {
+    if (!(center && flyoutWidth && width)) {
+      return x;
+    }
+    const _flyoutWidth = Helpers.evaluateProp(flyoutWidth);
+    if (width > center.x + _flyoutWidth + pointerLength) {
+      return center.x + ChartLegendTooltipStyles.flyout.padding / 2;
+    } else {
+      if (center.x < _flyoutWidth + pointerLength) {
+        return ChartLegendTooltipStyles.flyout.padding / 2 - pointerLength;
+      } else {
+        return center.x - _flyoutWidth;
+      }
+    }
+  };
+
+  // Returns y position
+  const getY = () => {
+    if (!(center && flyoutHeight && height)) {
+      return y;
+    }
+    const _flyoutHeight = Helpers.evaluateProp(flyoutHeight);
+    if (center.y < _flyoutHeight / 2) {
+      return ChartLegendTooltipStyles.flyout.padding / 2;
+    } else if (center.y > height - _flyoutHeight / 2) {
+      return height - _flyoutHeight + ChartLegendTooltipStyles.flyout.padding / 2;
+    } else {
+      return center.y - _flyoutHeight / 2 + ChartLegendTooltipStyles.flyout.padding / 2;
+    }
+  };
 
   // Returns text prop as legend data so y values can be passed individually to the label component
   const getLegendData = () => {
@@ -403,7 +449,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   // Returns the label component
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
-      dx: maxLegendDimensions.width - emptyLegendDimensions.width,
+      dx: maxLegendDimensions.width - minLegendDimensions.width,
       legendData: data,
       ...labelComponent.props
     });
@@ -419,8 +465,8 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       },
       text: _title,
       textAnchor: 'start',
-      x: flyoutX + titleOffsetX + Helpers.evaluateProp(dx),
-      y: flyoutY + titleOffsetY + Helpers.evaluateProp(dy),
+      x: getX() + titleOffsetX + Helpers.evaluateProp(dx),
+      y: getY() + titleOffsetY + Helpers.evaluateProp(dy),
       ...titleComponent.props
     });
   };
@@ -431,9 +477,10 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       <ChartLegend
         data={getLegendData()}
         labelComponent={getLabelComponent()}
+        standalone={false}
         theme={theme}
-        x={flyoutX + legendOffsetX + Helpers.evaluateProp(dx)}
-        y={flyoutY + legendOffsetY + Helpers.evaluateProp(dy)}
+        x={getX() + legendOffsetX + Helpers.evaluateProp(dx)}
+        y={getY() + legendOffsetY + Helpers.evaluateProp(dy)}
         {...legendProps}
         {...rest}
       />

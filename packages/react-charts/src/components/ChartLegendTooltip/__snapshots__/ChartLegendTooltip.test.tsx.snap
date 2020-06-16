@@ -8,12 +8,18 @@ exports[`ChartLegendTooltip 1`] = `
       "y": 0,
     }
   }
-  flyoutHeight={[Function]}
-  flyoutWidth={[Function]}
+  flyoutHeight={48.905}
+  flyoutWidth={174.575845410628}
   labelComponent={
     <ChartLegendTooltipContent
-      flyoutX={10}
-      flyoutY={-4.452500000000001}
+      center={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      flyoutHeight={48.905}
+      flyoutWidth={174.575845410628}
     />
   }
   showPointer={false}
@@ -478,12 +484,18 @@ exports[`ChartLegendTooltip 2`] = `
       "y": 0,
     }
   }
-  flyoutHeight={[Function]}
-  flyoutWidth={[Function]}
+  flyoutHeight={48.905}
+  flyoutWidth={174.575845410628}
   labelComponent={
     <ChartLegendTooltipContent
-      flyoutX={10}
-      flyoutY={-4.452500000000001}
+      center={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      flyoutHeight={48.905}
+      flyoutWidth={174.575845410628}
     />
   }
   showPointer={false}
