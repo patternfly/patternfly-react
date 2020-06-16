@@ -122,9 +122,9 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
-   * This prop refers to the height of the svg that VictoryLabel is rendered within. This prop is passed from parents
-   * of VictoryLabel, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
-   * tooltip flyout. Please use flyoutHeight instead
+   * This prop refers to the height of the svg that ChartCursorTooltip is rendered within. This prop is passed from
+   * parents of ChartCursorTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to
+   * the height of the tooltip flyout. Please use flyoutHeight instead
    *
    * **This prop should not be set manually.**
    */
@@ -182,6 +182,11 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    */
   renderInPortal?: boolean;
   /**
+   * Flag to force flyout pointer to be shown. Victory provides pointerLength=0 when using a voronoi container with
+   * voronoiDimension="x"
+   */
+  showPointer?: boolean;
+  /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
   style?: React.CSSProperties | React.CSSProperties[];
@@ -213,6 +218,14 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    */
   themeVariant?: string;
   /**
+   * This prop refers to the width of the svg that ChartCursorTooltip is rendered within. This prop is passed from
+   * parents of ChartCursorTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the
+   * width of the tooltip flyout. Please use flyoutWidth instead
+   *
+   * **This prop should not be set manually.**
+   */
+  width?: number;
+  /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */
   x?: number;
@@ -227,6 +240,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   flyoutComponent = <ChartCursorFlyout />,
   labelComponent = <ChartLabel />,
   labelTextAnchor = 'start',
+  showPointer = true,
   style,
   themeColor,
   themeVariant,
@@ -235,7 +249,7 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   theme = getTheme(themeColor, themeVariant),
   centerOffset = getCursorTooltipCenterOffset({ offsetCursorDimensionX: true, theme }),
   pointerOrientation = getCursorTooltipPoniterOrientation({ horizontal: true, theme }),
-  pointerLength = theme.tooltip.pointerLength,
+  pointerLength = showPointer ? theme.tooltip.pointerLength : 0,
   pointerWidth = (theme.tooltip as any).pointerWidth,
   ...rest
 }: ChartCursorTooltipProps) => {
@@ -247,9 +261,12 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   const newStyle: any = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
   const getFlyoutComponent = () => {
-    const _pointerLength = Helpers.evaluateProp(pointerLength);
+    let _pointerLength = Helpers.evaluateProp(pointerLength);
+    if (showPointer && _pointerLength === 0) {
+      _pointerLength = theme.tooltip.pointerLength;
+    }
     return React.cloneElement(flyoutComponent, {
-      pointerLength: _pointerLength > 0 ? _pointerLength : theme.tooltip.pointerLength,
+      pointerLength: _pointerLength,
       pointerWidth,
       ...flyoutComponent.props
     });

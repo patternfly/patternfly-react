@@ -31,7 +31,7 @@ exports[`ChartLegendTooltipContent 1`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-10}
+    rowGutter={-12}
     standalone={false}
     style={
       Object {
@@ -531,7 +531,7 @@ exports[`ChartLegendTooltipContent 2`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-10}
+    rowGutter={-12}
     standalone={false}
     style={
       Object {
@@ -1026,7 +1026,7 @@ exports[`renders component text 1`] = `
     gutter={0}
     labelComponent={
       <ChartLegendTooltipLabel
-        dx={137.2549019607843}
+        dx={128.5024154589372}
         legendData={
           Array [
             Object {
@@ -1050,7 +1050,7 @@ exports[`renders component text 1`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-10}
+    rowGutter={-12}
     standalone={false}
     style={
       Object {

@@ -1,6 +1,6 @@
 import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getLegendDimensions } from './chart-legend';
+import { getLegendDimensions, getTextSizeWorkAround } from './chart-legend';
 
 interface ChartCursorTooltipCenterOffsetInterface {
   offsetCursorDimensionX?: boolean; // Adjust the tooltip to appear to the right of the vertical cursor
@@ -32,13 +32,13 @@ export const getCursorTooltipCenterOffset = ({
   theme
 }: ChartCursorTooltipCenterOffsetInterface) => {
   const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
-  const offsetX = ({ flyoutWidth, width, x }: any) => {
+  const offsetX = ({ center, flyoutWidth, width }: any) => {
     const offset = flyoutWidth / 2 + pointerLength;
-    return width > flyoutWidth + x ? offset : -offset;
+    return width > center.x + flyoutWidth + pointerLength ? offset : -offset;
   };
-  const offsetY = ({ flyoutHeight, width, y }: any) => {
+  const offsetY = ({ center, flyoutHeight, width }: any) => {
     const offset = flyoutHeight / 2 + pointerLength;
-    return width > flyoutHeight + y ? -offset : offset;
+    return width > center.y + flyoutHeight + pointerLength ? -offset : offset;
   };
   return {
     x: offsetCursorDimensionX ? offsetX : 0,
@@ -56,10 +56,10 @@ export const getCursorTooltipPoniterOrientation = ({
   theme
 }: ChartCursorTooltipPoniterOrientationInterface): ((props: any) => OrientationTypes) => {
   const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
-  const orientationX = ({ flyoutWidth, width, x }: any): OrientationTypes =>
-    width > flyoutWidth + pointerLength + x ? 'left' : 'right';
-  const orientationY = ({ flyoutHeight, height, y }: any): OrientationTypes =>
-    height > flyoutHeight + pointerLength + y ? 'top' : 'bottom';
+  const orientationX = ({ center, flyoutWidth, width }: any): OrientationTypes =>
+    width > center.x + flyoutWidth + pointerLength ? 'left' : 'right';
+  const orientationY = ({ center, flyoutHeight, height }: any): OrientationTypes =>
+    height > center.y + flyoutHeight + pointerLength ? 'top' : 'bottom';
   return horizontal ? orientationX : orientationY;
 };
 
@@ -92,15 +92,20 @@ export const getLegendTooltipSize = ({
     }
   });
 
+  let maxLength = maxDataLength + maxTextLength;
+  maxLength += maxLength > 20 ? 1 : maxLength > 15 ? 2 : 4;
+
   // Adds spacing to help align legend labels and text values
-  const maxLength = maxDataLength + maxTextLength;
-  const getSpacer = (chars: number) => {
+  const getSpacer = (legendLabel: string, textLabel: string) => {
     let spacer = '';
     if (maxLength === 0) {
       return spacer;
     }
-    const charsToAppend = (_text && _text.length !== 0 ? 2 : 0) + maxLength - chars;
-    while (spacer.length < charsToAppend) {
+    const legendLabelChars = legendLabel ? legendLabel.length : 0;
+    const textLabelChars = textLabel ? textLabel.length : 0;
+    const maxChars = legendLabelChars + textLabelChars;
+
+    while (spacer.length < maxLength - maxChars) {
       spacer = ` ${spacer}`;
     }
     return spacer;
@@ -114,10 +119,9 @@ export const getLegendTooltipSize = ({
   // {name: "Mice         3"}
   const data = _text.map((label: string, index: number) => {
     const hasLegendData = legendData && legendData[index] && legendData[index].name;
-    const dataLength = hasLegendData ? legendData[index].name.length : 0;
-    const chars = dataLength + label.length;
+    const spacer = hasLegendData ? getSpacer(legendData[index].name, label) : '';
     return {
-      name: `${hasLegendData ? legendData[index].name : ''}${getSpacer(chars)}${label}`
+      name: `${hasLegendData ? legendData[index].name : ''}${spacer}${label}`
     };
   });
 
@@ -127,5 +131,13 @@ export const getLegendTooltipSize = ({
     legendProps,
     theme
   });
-  return legendDimensions;
+  const textSizeWorkAround = getTextSizeWorkAround({
+    legendData: data,
+    legendOrientation,
+    theme
+  });
+  return {
+    height: legendDimensions.height,
+    width: legendDimensions.width - textSizeWorkAround > 0 ? legendDimensions.width - textSizeWorkAround : 0
+  };
 };

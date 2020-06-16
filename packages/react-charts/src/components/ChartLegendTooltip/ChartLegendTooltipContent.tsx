@@ -135,6 +135,18 @@ export interface ChartLegendTooltipContentProps extends ChartLegendProps {
    */
   externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
+   * The flyoutX and flyoutX props define the base position of the flyout.
+   *
+   * *This prop should not be set manually.**
+   */
+  flyoutX?: number;
+  /**
+   * The flyoutX and flyoutX props define the base position of the flyout.
+   *
+   * *This prop should not be set manually.**
+   */
+  flyoutY?: number;
+  /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
@@ -312,7 +324,7 @@ export const defaultLegendProps = {
   gutter: 0,
   orientation: 'vertical' as any,
   padding: 0,
-  rowGutter: -10,
+  rowGutter: -12,
   standalone: false,
   style: {
     labels: {
@@ -349,15 +361,15 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
+  flyoutX = x,
+  flyoutY = y,
   ...rest
 }: ChartLegendTooltipContentProps) => {
-  const offsetY = 10 * (Array.isArray(text) ? text.length : 1);
-
   // Component offsets
-  const legendOffsetX = -50; // Todo: base this on the flyout edge
-  const legendOffsetY = -offsetY + 5 + (title ? 0 : -10);
-  const titleOffsetX = -40;
-  const titleOffsetY = -offsetY;
+  const legendOffsetX = 0;
+  const legendOffsetY = title ? 5 : -10;
+  const titleOffsetX = 10;
+  const titleOffsetY = 0;
 
   // Legend properties
   const legendProps = {
@@ -378,11 +390,6 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     legendData: data,
     legendProps,
     text,
-    theme
-  });
-  const minLegendDimensions = getLegendTooltipSize({
-    legendData: data,
-    legendProps,
     theme
   });
 
@@ -412,8 +419,8 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       },
       text: _title,
       textAnchor: 'start',
-      x: x + titleOffsetX + Helpers.evaluateProp(dx),
-      y: y + titleOffsetY + Helpers.evaluateProp(dy),
+      x: flyoutX + titleOffsetX + Helpers.evaluateProp(dx),
+      y: flyoutY + titleOffsetY + Helpers.evaluateProp(dy),
       ...titleComponent.props
     });
   };
@@ -425,8 +432,8 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
         data={getLegendData()}
         labelComponent={getLabelComponent()}
         theme={theme}
-        x={x + legendOffsetX + Helpers.evaluateProp(dx)}
-        y={y + legendOffsetY + Helpers.evaluateProp(dy)}
+        x={flyoutX + legendOffsetX + Helpers.evaluateProp(dx)}
+        y={flyoutY + legendOffsetY + Helpers.evaluateProp(dy)}
         {...legendProps}
         {...rest}
       />

@@ -324,7 +324,7 @@ class EmbeddedHtml extends React.Component {
                 labels={({ datum }) => `${datum.y}`}
                 labelComponent={
                   <ChartCursorTooltip
-                    centerOffset={{x: ({ flyoutWidth, width, x, offset = flyoutWidth / 2 + 10 }) => width > offset + x ? offset : -offset}}
+                    centerOffset={{x: ({ center, flyoutWidth, width, offset = flyoutWidth / 2 + 10 }) => width > center.x + flyoutWidth + 10 ? offset : -offset}}
                     flyout={<ChartCursorFlyout />}
                     flyoutHeight={110}
                     flyoutWidth={125}

@@ -117,8 +117,8 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
-   * This prop refers to the height of the svg that VictoryLabel is rendered within. This prop is passed from parents
-   * of VictoryLabel, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
+   * This prop refers to the height of the svg that ChartTooltip is rendered within. This prop is passed from parents
+   * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
    * tooltip flyout. Please use flyoutHeight instead
    *
    * **This prop should not be set manually.**
@@ -207,6 +207,14 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * @example themeVariant={ChartThemeVariant.light}
    */
   themeVariant?: string;
+  /**
+   * This prop refers to the width of the svg that ChartTooltip is rendered within. This prop is passed from parents
+   * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the width of the
+   * tooltip flyout. Please use flyoutWidth instead
+   *
+   * **This prop should not be set manually.**
+   */
+  width?: number;
   /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */
