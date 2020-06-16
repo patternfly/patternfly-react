@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.15...@patternfly/react-core@4.18.16) (2020-06-16)
+
+
+### Bug Fixes
+
+* **Spinner:** className prop not getting applied properly ([#4380](https://github.com/patternfly/patternfly-react/issues/4380)) ([27330d5](https://github.com/patternfly/patternfly-react/commit/27330d5f531cbc046b68e584269c8651bc2068ed))
+
+
+
+
+
 ## [4.18.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.14...@patternfly/react-core@4.18.15) (2020-06-16)
 
 **Note:** Version bump only for package @patternfly/react-core
