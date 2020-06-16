@@ -6,11 +6,9 @@ import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
-import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
-import { Instance as TippyInstance } from 'tippy.js';
+import { ToggleMenuComponent } from '../../helpers/PopoverBase/ToggleMenu';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
-  tip: TippyInstance;
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
   menuComponentRef = React.createRef<any>();
@@ -58,11 +56,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
 
   getMenuComponentRef = () => this.menuComponentRef;
 
-  getPlacement = (position: 'right' | 'left', direction: 'up' | 'down') => {
-    const placement = `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
-    return placement;
-  };
-
   render() {
     const {
       children,
@@ -79,7 +72,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       autoFocus,
       ouiaId,
       menuAppendTo,
-      menuTippyProps,
       ouiaComponentType,
       ...props
     } = this.props;
@@ -160,30 +152,14 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
           return menuAppendTo === 'inline' ? (
             mainComponent
           ) : (
-            <PopoverBase
-              content={popoverContent}
-              onCreate={(tip: TippyInstance) => (this.tip = tip)}
-              isVisible={isOpen}
-              trigger={'manual'}
-              arrow={false}
-              interactive
-              interactiveBorder={0}
-              maxWidth="none"
-              distance={0}
-              appendTo={menuAppendTo}
-              boundary="window"
-              flip={false}
-              placement={this.getPlacement(position, direction)}
-              hideOnClick={false}
-              theme="pf-popover"
-              lazy
-              duration={0}
-              animation="none"
-              showOnCreate
-              {...menuTippyProps}
-            >
-              {mainComponent}
-            </PopoverBase>
+            <ToggleMenuComponent
+              toggle={mainComponent}
+              menu={popoverContent}
+              direction={direction}
+              position={position}
+              menuAppendTo={menuAppendTo}
+              isOpen={isOpen}
+            />
           );
         }}
       </DropdownContext.Consumer>

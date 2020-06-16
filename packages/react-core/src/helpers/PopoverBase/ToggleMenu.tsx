@@ -1,29 +1,5 @@
 import * as React from 'react';
-import { Props as TippyProps } from 'tippy.js';
 import PopoverBase from './PopoverBase';
-import { usePopper } from 'react-popper';
-
-export const PatternFlyPopper = () => {
-  const [referenceElement, setReferenceElement] = React.useState(null);
-  const [popperElement, setPopperElement] = React.useState(null);
-  const [arrowElement, setArrowElement] = React.useState(null);
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    modifiers: [{ name: 'arrow', options: { element: arrowElement } }]
-  });
-
-  return (
-    <>
-      <button type="button" ref={setReferenceElement}>
-        Reference element
-      </button>
-
-      <div ref={setPopperElement} style={styles.popper} {...attributes.popper}>
-        Popper element
-        <div ref={setArrowElement} style={styles.arrow} />
-      </div>
-    </>
-  );
-};
 
 export interface ToggleMenuBaseProps {
   /** The parent container to append the menu to. Defaults to 'inline'
@@ -34,11 +10,9 @@ export interface ToggleMenuBaseProps {
    * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
-  /** additional tippy.js props to pass through to the menu */
-  menuTippyProps?: Partial<TippyProps>;
 }
 
-export interface ToggleMenuComponentProps extends ToggleMenuBaseProps, Partial<TippyProps> {
+export interface ToggleMenuComponentProps extends ToggleMenuBaseProps {
   /** The toggle element */
   toggle: React.ReactNode;
   /** The menu element */
@@ -57,8 +31,7 @@ export const ToggleMenuComponent: React.FunctionComponent<ToggleMenuComponentPro
   isOpen,
   menuAppendTo,
   direction = 'down',
-  position = 'left',
-  ...menuTippyProps
+  position = 'left'
 }) => {
   const getPlacement = () => `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
   return (
@@ -81,7 +54,6 @@ export const ToggleMenuComponent: React.FunctionComponent<ToggleMenuComponentPro
       duration={0}
       animation="none"
       showOnCreate
-      {...menuTippyProps}
     >
       {toggle}
     </PopoverBase>

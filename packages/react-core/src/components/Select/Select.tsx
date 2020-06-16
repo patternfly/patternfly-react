@@ -427,7 +427,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       customBadgeText,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
-      menuTippyProps,
       ...props
     } = this.props;
     const {
@@ -727,7 +726,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             direction={direction}
             menuAppendTo={menuAppendTo}
             isOpen={isOpen}
-            menuTippyProps={menuTippyProps}
           />
         )}
       </SelectContext.Provider>
