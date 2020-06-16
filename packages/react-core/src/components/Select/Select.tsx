@@ -12,7 +12,7 @@ import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selec
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
 import { Divider } from '../Divider';
-import { ToggleMenuBaseProps, Popper } from '../../helpers/PopoverBase/Popper';
+import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -108,7 +108,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   private filterRef = React.createRef<HTMLInputElement>();
   private clearRef = React.createRef<HTMLButtonElement>();
   private refCollection: HTMLElement[] = [];
-  private resizeObserver: ResizeObserver = null;
 
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
@@ -173,12 +172,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       });
     }
   };
-
-  componentWillUnmount() {
-    if (this.resizeObserver) {
-      this.resizeObserver.disconnect();
-    }
-  }
 
   onEnter = () => {
     this.setState({ openedOnEnter: true });

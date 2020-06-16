@@ -28,6 +28,8 @@ export interface PopperProps {
   position?: 'right' | 'left';
   /** The container to append the popper to. Defaults to 'document.body' */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** z-index of the popper element */
+  zIndex?: number;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -36,7 +38,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   popperMatchesTriggerWidth = false,
   direction = 'down',
   position = 'left',
-  appendTo = () => document.body
+  appendTo = () => document.body,
+  zIndex = 9999
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
@@ -82,7 +85,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     style: {
       ...((popper.props && popper.props.style) || {}),
       ...popperStyles.popper,
-      zIndex: 9999
+      zIndex
     },
     ...attributes.popper
   });

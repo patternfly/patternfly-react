@@ -6,7 +6,7 @@ import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
-import { Popper } from '../../helpers/PopoverBase/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
   static displayName = 'DropdownWithContext';

@@ -7,12 +7,12 @@ interface FindRefWrapperProps {
 }
 
 /**
- * This component wraps any toggle and gives us a ref to it
+ * This component wraps any ReactNode and finds its ref
  * It has to be a class for findDOMNode to work
- * Ideally, all components used as toggles are either:
+ * Ideally, all components used as triggers/toggles are either:
  * - class based components we can assign our own ref to
  * - functional components that have forwardRef implemented
- * However, there is no guarantee that is what will get passed in as toggle in the case of tooltips and popovers
+ * However, there is no guarantee that is what will get passed in as trigger/toggle in the case of tooltips and popovers
  */
 export class FindRefWrapper extends React.Component<FindRefWrapperProps> {
   static displayName = 'FindRefWrapper';
