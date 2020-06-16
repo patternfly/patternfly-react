@@ -17,7 +17,7 @@ exports[`CatalogTile href renders properly 1`] = `
   title="Patternfly"
   vendor="Provided by Red Hat"
 >
-  <Card
+  <Component
     className="catalog-tile-pf featured"
     component="a"
     href="http://patternfly.org"
@@ -31,7 +31,7 @@ exports[`CatalogTile href renders properly 1`] = `
       id="test-href"
       onClick={[Function]}
     >
-      <CardTitle
+      <Component
         className="catalog-tile-pf-header"
       >
         <div
@@ -48,8 +48,8 @@ exports[`CatalogTile href renders properly 1`] = `
             Provided by Red Hat
           </div>
         </div>
-      </CardTitle>
-      <CardBody
+      </Component>
+      <Component
         className="catalog-tile-pf-body"
       >
         <div
@@ -65,9 +65,9 @@ exports[`CatalogTile href renders properly 1`] = `
             </span>
           </div>
         </div>
-      </CardBody>
+      </Component>
     </a>
-  </Card>
+  </Component>
 </CatalogTile>
 `;
 
@@ -120,7 +120,7 @@ exports[`CatalogTile renders properly 1`] = `
       </span>
     }
   >
-    <Card
+    <Component
       className="catalog-tile-pf featured"
       component="div"
       href="#"
@@ -134,11 +134,11 @@ exports[`CatalogTile renders properly 1`] = `
         id="single-badge-test"
         onClick={[Function]}
       >
-        <CardHeader>
+        <Component>
           <div
             className="pf-c-card__header"
           >
-            <CardActions>
+            <Component>
               <div
                 className="pf-c-card__actions"
               >
@@ -195,11 +195,11 @@ exports[`CatalogTile renders properly 1`] = `
                               id="certified"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Unknown
                                 isLeftAligned={false}
                               >
                                 Certified
-                              </TooltipContent>
+                              </Unknown>
                             </div>
                           }
                           delay={
@@ -298,7 +298,7 @@ exports[`CatalogTile renders properly 1`] = `
                               id="certified"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Component
                                 isLeftAligned={false}
                               >
                                 <div
@@ -306,7 +306,7 @@ exports[`CatalogTile renders properly 1`] = `
                                 >
                                   Certified
                                 </div>
-                              </TooltipContent>
+                              </Component>
                             </div>
                           </Portal>
                         </PopoverBase>
@@ -353,10 +353,10 @@ exports[`CatalogTile renders properly 1`] = `
                   </span>
                 </div>
               </div>
-            </CardActions>
+            </Component>
           </div>
-        </CardHeader>
-        <CardTitle
+        </Component>
+        <Component
           className="catalog-tile-pf-header"
         >
           <div
@@ -380,8 +380,8 @@ exports[`CatalogTile renders properly 1`] = `
               </span>
             </div>
           </div>
-        </CardTitle>
-        <CardBody
+        </Component>
+        <Component
           className="catalog-tile-pf-body"
         >
           <div
@@ -397,9 +397,9 @@ exports[`CatalogTile renders properly 1`] = `
               </span>
             </div>
           </div>
-        </CardBody>
+        </Component>
       </div>
-    </Card>
+    </Component>
   </CatalogTile>
   <CatalogTile
     badges={
@@ -440,7 +440,7 @@ exports[`CatalogTile renders properly 1`] = `
     title="GitHub Desktop"
     vendor="provided by GitHub"
   >
-    <Card
+    <Component
       className="catalog-tile-pf"
       component="div"
       href="#"
@@ -454,11 +454,11 @@ exports[`CatalogTile renders properly 1`] = `
         id="multi-badge-test"
         onClick={[Function]}
       >
-        <CardHeader>
+        <Component>
           <div
             className="pf-c-card__header"
           >
-            <CardActions>
+            <Component>
               <div
                 className="pf-c-card__actions"
               >
@@ -515,11 +515,11 @@ exports[`CatalogTile renders properly 1`] = `
                               id="certified"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Unknown
                                 isLeftAligned={false}
                               >
                                 Certified
-                              </TooltipContent>
+                              </Unknown>
                             </div>
                           }
                           delay={
@@ -618,7 +618,7 @@ exports[`CatalogTile renders properly 1`] = `
                               id="certified"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Component
                                 isLeftAligned={false}
                               >
                                 <div
@@ -626,7 +626,7 @@ exports[`CatalogTile renders properly 1`] = `
                                 >
                                   Certified
                                 </div>
-                              </TooltipContent>
+                              </Component>
                             </div>
                           </Portal>
                         </PopoverBase>
@@ -683,11 +683,11 @@ exports[`CatalogTile renders properly 1`] = `
                               id="approved"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Unknown
                                 isLeftAligned={false}
                               >
                                 USDA Approved
-                              </TooltipContent>
+                              </Unknown>
                             </div>
                           }
                           delay={
@@ -786,7 +786,7 @@ exports[`CatalogTile renders properly 1`] = `
                               id="approved"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Component
                                 isLeftAligned={false}
                               >
                                 <div
@@ -794,7 +794,7 @@ exports[`CatalogTile renders properly 1`] = `
                                 >
                                   USDA Approved
                                 </div>
-                              </TooltipContent>
+                              </Component>
                             </div>
                           </Portal>
                         </PopoverBase>
@@ -803,10 +803,10 @@ exports[`CatalogTile renders properly 1`] = `
                   </span>
                 </div>
               </div>
-            </CardActions>
+            </Component>
           </div>
-        </CardHeader>
-        <CardTitle
+        </Component>
+        <Component
           className="catalog-tile-pf-header"
         >
           <div
@@ -823,8 +823,8 @@ exports[`CatalogTile renders properly 1`] = `
               provided by GitHub
             </div>
           </div>
-        </CardTitle>
-        <CardBody
+        </Component>
+        <Component
           className="catalog-tile-pf-body"
         >
           <div
@@ -840,9 +840,9 @@ exports[`CatalogTile renders properly 1`] = `
               </span>
             </div>
           </div>
-        </CardBody>
+        </Component>
       </div>
-    </Card>
+    </Component>
   </CatalogTile>
   <CatalogTile
     badges={
@@ -873,7 +873,7 @@ exports[`CatalogTile renders properly 1`] = `
     title="CodePen"
     vendor="provided by CodePen"
   >
-    <Card
+    <Component
       className="catalog-tile-pf"
       component="div"
       href="#"
@@ -887,14 +887,14 @@ exports[`CatalogTile renders properly 1`] = `
         id="test-iconClass"
         onClick={[Function]}
       >
-        <CardHeader>
+        <Component>
           <div
             className="pf-c-card__header"
           >
             <span
               className="catalog-tile-pf-icon fa fa-codepen"
             />
-            <CardActions>
+            <Component>
               <div
                 className="pf-c-card__actions"
               >
@@ -951,11 +951,11 @@ exports[`CatalogTile renders properly 1`] = `
                               id="approved"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Unknown
                                 isLeftAligned={false}
                               >
                                 USDA Approved
-                              </TooltipContent>
+                              </Unknown>
                             </div>
                           }
                           delay={
@@ -1054,7 +1054,7 @@ exports[`CatalogTile renders properly 1`] = `
                               id="approved"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Component
                                 isLeftAligned={false}
                               >
                                 <div
@@ -1062,7 +1062,7 @@ exports[`CatalogTile renders properly 1`] = `
                                 >
                                   USDA Approved
                                 </div>
-                              </TooltipContent>
+                              </Component>
                             </div>
                           </Portal>
                         </PopoverBase>
@@ -1071,10 +1071,10 @@ exports[`CatalogTile renders properly 1`] = `
                   </span>
                 </div>
               </div>
-            </CardActions>
+            </Component>
           </div>
-        </CardHeader>
-        <CardTitle
+        </Component>
+        <Component
           className="catalog-tile-pf-header"
         >
           <div
@@ -1091,8 +1091,8 @@ exports[`CatalogTile renders properly 1`] = `
               provided by CodePen
             </div>
           </div>
-        </CardTitle>
-        <CardBody
+        </Component>
+        <Component
           className="catalog-tile-pf-body"
         >
           <div
@@ -1108,9 +1108,9 @@ exports[`CatalogTile renders properly 1`] = `
               </span>
             </div>
           </div>
-        </CardBody>
+        </Component>
       </div>
-    </Card>
+    </Component>
   </CatalogTile>
   <CatalogTile
     badges={
@@ -1150,7 +1150,7 @@ exports[`CatalogTile renders properly 1`] = `
     title="Patternfly-React"
     vendor="provided by Red Hat"
   >
-    <Card
+    <Component
       className="catalog-tile-pf featured"
       component="a"
       href="https://github.com/patternfly/patternfly-react"
@@ -1164,11 +1164,11 @@ exports[`CatalogTile renders properly 1`] = `
         id="tile-footer-test"
         onClick={[Function]}
       >
-        <CardHeader>
+        <Component>
           <div
             className="pf-c-card__header"
           >
-            <CardActions>
+            <Component>
               <div
                 className="pf-c-card__actions"
               >
@@ -1225,11 +1225,11 @@ exports[`CatalogTile renders properly 1`] = `
                               id="certified"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Unknown
                                 isLeftAligned={false}
                               >
                                 Certified
-                              </TooltipContent>
+                              </Unknown>
                             </div>
                           }
                           delay={
@@ -1328,7 +1328,7 @@ exports[`CatalogTile renders properly 1`] = `
                               id="certified"
                               role="tooltip"
                             >
-                              <TooltipContent
+                              <Component
                                 isLeftAligned={false}
                               >
                                 <div
@@ -1336,7 +1336,7 @@ exports[`CatalogTile renders properly 1`] = `
                                 >
                                   Certified
                                 </div>
-                              </TooltipContent>
+                              </Component>
                             </div>
                           </Portal>
                         </PopoverBase>
@@ -1345,10 +1345,10 @@ exports[`CatalogTile renders properly 1`] = `
                   </span>
                 </div>
               </div>
-            </CardActions>
+            </Component>
           </div>
-        </CardHeader>
-        <CardTitle
+        </Component>
+        <Component
           className="catalog-tile-pf-header"
         >
           <div
@@ -1365,8 +1365,8 @@ exports[`CatalogTile renders properly 1`] = `
               provided by Red Hat
             </div>
           </div>
-        </CardTitle>
-        <CardBody
+        </Component>
+        <Component
           className="catalog-tile-pf-body"
         >
           <div
@@ -1382,8 +1382,8 @@ exports[`CatalogTile renders properly 1`] = `
               </span>
             </div>
           </div>
-        </CardBody>
-        <CardFooter
+        </Component>
+        <Component
           className="catalog-tile-pf-footer"
         >
           <div
@@ -1418,9 +1418,9 @@ exports[`CatalogTile renders properly 1`] = `
                Enabled
             </span>
           </div>
-        </CardFooter>
+        </Component>
       </a>
-    </Card>
+    </Component>
   </CatalogTile>
   <CatalogTile
     badges={Array []}
@@ -1452,7 +1452,7 @@ exports[`CatalogTile renders properly 1`] = `
     title="Custom SVG"
     vendor={null}
   >
-    <Card
+    <Component
       className="catalog-tile-pf featured"
       component="a"
       href="https://github.com/patternfly/patternfly-react"
@@ -1466,7 +1466,7 @@ exports[`CatalogTile renders properly 1`] = `
         id="custom-icon-svg-test"
         onClick={[Function]}
       >
-        <CardHeader>
+        <Component>
           <div
             className="pf-c-card__header"
           >
@@ -1488,8 +1488,8 @@ exports[`CatalogTile renders properly 1`] = `
               </svg>
             </span>
           </div>
-        </CardHeader>
-        <CardTitle
+        </Component>
+        <Component
           className="catalog-tile-pf-header"
         >
           <div
@@ -1501,9 +1501,9 @@ exports[`CatalogTile renders properly 1`] = `
               Custom SVG
             </div>
           </div>
-        </CardTitle>
+        </Component>
       </a>
-    </Card>
+    </Component>
   </CatalogTile>
 </div>
 `;
