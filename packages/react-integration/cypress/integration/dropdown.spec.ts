@@ -431,13 +431,9 @@ describe('Dropdown with menu on document body demo test', () => {
     cy.get('#dropdown-document-body').should('have.class', 'pf-m-expanded');
   });
 
-  it('Verify dropdown menu tippy exists', () => {
-    cy.get('.tippy-popper').should('exist');
-  });
-
   it('Verify dropdown menu is on document.body', () => {
     cy.get('body')
-      .children('.tippy-popper')
+      .children('.pf-c-dropdown')
       .should('exist');
   });
 

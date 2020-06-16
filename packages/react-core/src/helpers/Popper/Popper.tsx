@@ -43,6 +43,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
+  const [ready, setReady] = React.useState(false);
+  React.useEffect(() => setReady(true));
   const getPlacement = () =>
     `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}` as Placement;
   const sameWidthMod: Modifier<'sameWidth', {}> = React.useMemo(
@@ -100,10 +102,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   return (
     <>
       <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
-      {ReactDOM.createPortal(
-        <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>,
-        getTarget()
-      )}
+      {ready &&
+        ReactDOM.createPortal(
+          <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>,
+          getTarget()
+        )}
     </>
   );
 };
