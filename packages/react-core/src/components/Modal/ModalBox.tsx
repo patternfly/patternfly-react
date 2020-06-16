@@ -43,3 +43,4 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
     {children}
   </div>
 );
+ModalBox.displayName = 'ModalBox';

@@ -5,7 +5,7 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  *
  * Note: VictoryContainer may support other props (e.g., children), but they're undocumented and not typed
  */
@@ -159,6 +159,7 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
 };
+ChartContainer.displayName = 'ChartContainer';
 
 // Note: VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartContainer, VictoryContainer);

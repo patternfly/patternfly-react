@@ -45,17 +45,18 @@ module.exports = {
         /* Files we never care to pull data from
          * Matched by https://github.com/paulmillr/chokidar */
         ignore: [
-          '**/dist',
-          '**/helpers',
-          '**/scripts',
-          '**/styles',
-          '**/build',
-          '**/utils',
-          '**/public',
+          /.*dist.*/,
+          /.*helpers.*/,
+          /.*scripts.*/,
+          /.*styles.*/,
+          /.*build.*/,
+          /.*utils.*/,
+          /.*public.*/,
           '**/test-helpers',
           /.*react-styles.*/,
           /.*react-docs.*/,
           /.*react-integration.*/,
+          /.*eslint-plugin-patternfly-react.*/,
           '**/\\..*', // dotfiles
           '**/*.d.ts',
           '**/*.test.*',

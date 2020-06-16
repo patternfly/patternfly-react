@@ -18,3 +18,4 @@ export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
     {children}
   </footer>
 );
+ModalBoxFooter.displayName = 'ModalBoxFooter';

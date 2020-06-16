@@ -30,6 +30,7 @@ export class LightweightNotificationDrawerDemo extends React.Component<
   NotificationDrawerProps,
   GroupsNotificationDrawerDemoState
 > {
+  static displayName = 'LightweightNotificationDrawerDemo';
   constructor(props: NotificationDrawerProps) {
     super(props);
     this.state = {

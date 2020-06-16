@@ -51,6 +51,7 @@ interface PaginationOptionsMenuState {
 }
 
 export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenuProps, PaginationOptionsMenuState> {
+  static displayName = 'PaginationOptionsMenu';
   private parentRef = React.createRef<HTMLDivElement>();
   static defaultProps: PaginationOptionsMenuProps = {
     className: '',

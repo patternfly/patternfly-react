@@ -18,3 +18,4 @@ export const PageHeaderTools: React.FunctionComponent<PageHeaderToolsProps> = ({
     {children}
   </div>
 );
+PageHeaderTools.displayName = 'PageHeaderTools';

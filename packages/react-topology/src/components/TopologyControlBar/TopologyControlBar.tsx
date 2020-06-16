@@ -305,3 +305,4 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
     </GenerateId>
   );
 };
+TopologyControlBar.displayName = 'TopologyControlBar';

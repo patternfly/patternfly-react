@@ -6,6 +6,7 @@ interface AccordionDemoState {
 }
 
 export class AccordionDemo extends React.Component<null, AccordionDemoState> {
+  static displayName = 'AccordionDemo';
   state: AccordionDemoState = {
     expanded: ''
   };

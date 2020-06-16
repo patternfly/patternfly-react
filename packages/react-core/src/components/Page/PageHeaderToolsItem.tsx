@@ -38,3 +38,4 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
     {children}
   </div>
 );
+PageHeaderToolsItem.displayName = 'PageHeaderToolsItem';

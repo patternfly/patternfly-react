@@ -31,3 +31,4 @@ export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
     </nav>
   );
 };
+WizardNav.displayName = 'WizardNav';

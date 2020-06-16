@@ -13,6 +13,7 @@ interface DataListState {
 }
 
 export class DataListDemo extends React.Component<DataListProps, DataListState> {
+  static displayName = 'DataListDemo';
   constructor(props: DataListProps) {
     super(props);
     this.state = {

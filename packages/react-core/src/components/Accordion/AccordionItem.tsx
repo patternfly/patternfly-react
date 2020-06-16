@@ -8,3 +8,4 @@ export interface AccordionItemProps {
 export const AccordionItem: React.FunctionComponent<AccordionItemProps> = ({ children = null }: AccordionItemProps) => (
   <React.Fragment>{children}</React.Fragment>
 );
+AccordionItem.displayName = 'AccordionItem';

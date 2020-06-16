@@ -4,6 +4,7 @@ import { Title, TitleSizes } from '@patternfly/react-core';
 import { TopologySideBar } from '@patternfly/react-topology';
 
 export class ItemDetails extends React.Component {
+  static displayName = 'ItemDetails';
   render() {
     const { show, onClose } = this.props;
 

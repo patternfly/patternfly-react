@@ -18,3 +18,4 @@ export const LoginMainBody: React.FunctionComponent<LoginMainBodyProps> = ({
     {children}
   </div>
 );
+LoginMainBody.displayName = 'LoginMainBody';

@@ -17,3 +17,4 @@ export const AlertActionLink: React.FunctionComponent<AlertActionLinkProps> = ({
     {children}
   </Button>
 );
+AlertActionLink.displayName = 'AlertActionLink';

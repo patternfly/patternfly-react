@@ -12,7 +12,8 @@ export enum ChartVoronoiDimension {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-voronoi-container/src/index.d.ts
  */
 export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps {
   /**
@@ -243,6 +244,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
     <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
   );
 };
+ChartVoronoiContainer.displayName = 'ChartVoronoiContainer';
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted

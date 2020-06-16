@@ -29,6 +29,7 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
 }
 
 export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
+  static displayName = 'ToolbarChipGroupContent';
   static defaultProps: PickOptional<ToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
     collapseListedFiltersBreakpoint: 'lg'

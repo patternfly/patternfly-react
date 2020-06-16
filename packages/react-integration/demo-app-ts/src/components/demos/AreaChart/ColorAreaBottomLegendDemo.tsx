@@ -9,6 +9,7 @@ import {
 } from '@patternfly/react-charts';
 
 export class ColorAreaBottomLegendDemo extends React.Component {
+  static displayName = 'ColorAreaBottomLegendDemo';
   render() {
     return (
       <div>

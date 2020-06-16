@@ -47,7 +47,8 @@ export enum ChartPieSortOrder {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
  */
 export interface ChartPieProps extends VictoryPieProps {
   /**
@@ -530,6 +531,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     </React.Fragment>
   );
 };
+ChartPie.displayName = 'ChartPie';
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);

@@ -30,7 +30,8 @@ export enum ChartGroupSortOrder {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-group/src/index.d.ts
  */
 export interface ChartGroupProps extends VictoryGroupProps {
   /**
@@ -439,6 +440,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     </VictoryGroup>
   );
 };
+ChartGroup.displayName = 'ChartGroup';
 
 // Note: VictoryGroup.role must be hoisted
 hoistNonReactStatics(ChartGroup, VictoryGroup);

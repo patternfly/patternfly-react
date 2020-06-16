@@ -13,7 +13,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
 
 ## Introduction
@@ -90,13 +90,14 @@ BasicRightAlignedLegend = (
 
 ```js title=Cyan-with-bottom-aligned-legend-and-axis-label
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class BottomAlignedLegend extends React.Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
+    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }];
 
     return (
       <div>
@@ -107,15 +108,15 @@ class BottomAlignedLegend extends React.Component {
             ariaTitle="Area chart example"
             containerComponent={
               <CursorVoronoiContainer
-                constrainToVisibleArea
                 cursorDimension="x"
-                labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                labels={({ datum }) => `${datum.y}`}
+                labelComponent={<ChartLegendTooltip legendData={legendData} title={(datum) => datum.x}/>}
                 mouseFollowTooltips
                 voronoiDimension="x"
                 voronoiPadding={50}
               />
             }
-            legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+            legendData={legendData}
             legendPosition="bottom"
             height={250}
             padding={{

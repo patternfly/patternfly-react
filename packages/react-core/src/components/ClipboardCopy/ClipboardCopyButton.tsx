@@ -50,3 +50,4 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
     </Button>
   </Tooltip>
 );
+ClipboardCopyButton.displayName = 'ClipboardCopyButton';

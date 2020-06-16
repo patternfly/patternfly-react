@@ -57,6 +57,7 @@ export const NavContext = React.createContext<{
 }>({});
 
 export class Nav extends React.Component<NavProps & OUIAProps> {
+  static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
     onToggle: () => undefined,

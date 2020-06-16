@@ -46,3 +46,4 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
     }}
   </AccordionContext.Consumer>
 );
+AccordionToggle.displayName = 'AccordionToggle';

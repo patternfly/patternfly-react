@@ -25,3 +25,4 @@ export const NotificationDrawerListItemBody: React.FunctionComponent<Notificatio
     {timestamp && <div className={css(styles.notificationDrawerListItemTimestamp, className)}>{timestamp}</div>}
   </React.Fragment>
 );
+NotificationDrawerListItemBody.displayName = 'NotificationDrawerListItemBody';

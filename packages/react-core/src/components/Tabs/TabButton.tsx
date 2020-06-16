@@ -20,3 +20,4 @@ export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   const Component = (props.href ? 'a' : 'button') as any;
   return <Component {...props}>{children}</Component>;
 };
+TabButton.displayName = 'TabButton';

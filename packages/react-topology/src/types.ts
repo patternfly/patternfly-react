@@ -207,6 +207,7 @@ export type ElementFactory = (kind: ModelKind, type: string) => GraphElement | u
 export interface Controller extends WithState {
   getStore<S extends {} = {}>(): S;
   fromModel(model: Model): void;
+  hasGraph(): boolean;
   getGraph(): Graph;
   setGraph(graph: Graph): void;
   getLayout(type: string | undefined): Layout | undefined;

@@ -18,3 +18,4 @@ export const TabTitleIcon: React.FunctionComponent<TabTitleIconProps> = ({
     {children}
   </span>
 );
+TabTitleIcon.displayName = 'TabTitleIcon';

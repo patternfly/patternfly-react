@@ -1,60 +1,55 @@
 :root {
-    --pf-topology-create-connector-color: var(--pf-global--active-color--400);
-    --pf-topology-create-connector-bg-color: var(--pf-global--BackgroundColor--light-100);
+  --pf-topology-create-connector-color: var(--pf-global--active-color--400);
+  --pf-topology-create-connector-bg-color: var(--pf-global--BackgroundColor--light-100);
 }
 
-
 .pf-topology-connector-arrow {
-    stroke-width: 1;
-    stroke: var(--create-connector-color);
-    fill: var(--create-connector-color);
+  stroke-width: 1;
+  stroke: var(--pf-global--BackgroundColor--dark-200);
 }
 
 .pf-topology-default-create-connector__line {
-    stroke: var(--create-connector-color);
-    stroke-width: 2px;
-    stroke-dasharray: 5px, 5px;
+  stroke: var(--pf-topology-create-connector-color);
+  stroke-width: 2px;
+  stroke-dasharray: 5px, 5px;
 }
 
 .pf-topology-default-create-connector__create__bg {
-    stroke: var(--create-connector-color);
-    fill: var(--create-connector-bg-color);
-    stroke-width: 2px;
+  stroke: var(--pf-topology-create-connector-color);
+  fill: var(--pf-topology-create-connector-bg-color);
+  stroke-width: 2px;
 }
 
 .pf-topology-default-create-connector__create__cursor {
-    fill: var(--create-connector-color);
+  fill: var(--pf-topology-create-connector-color);
 }
 
 .pf-topology-visualization-surface {
-    height: 100%;
-    flex-grow: 1;
-    flex-shrink: 1;
-    overflow: hidden;
-    position: relative;
+  height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+  position: relative;
 }
 
 .pf-topology-visualization-surface__svg {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .pf-topology-context-menu__c-dropdown__menu {
-      position: initial !important;
-    
+  position: initial !important;
 }
 
 .pf-topology-context-sub-menu {
-    position: relative;
-    padding-right: var(--pf-global--spacer--lg);    
+  position: relative;
+  padding-right: var(--pf-global--spacer--lg);
 }
 
 .pf-topology-context-sub-menu__arrow {
-    position: absolute;
-    right: var(--pf-global--spacer--xs);
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  right: var(--pf-global--spacer--xs);
+  top: 50%;
+  transform: translateY(-50%);
 }
-  
-  

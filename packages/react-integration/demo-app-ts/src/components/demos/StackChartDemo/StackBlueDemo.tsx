@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 
 export class StackBlueDemo extends React.Component {
+  static displayName = 'StackBlueDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

@@ -5,3 +5,4 @@ export const ApplicationLauncherGroup: React.FunctionComponent<DropdownGroupProp
   children,
   ...props
 }: DropdownGroupProps) => <DropdownGroup {...props}>{children}</DropdownGroup>;
+ApplicationLauncherGroup.displayName = 'ApplicationLauncherGroup';

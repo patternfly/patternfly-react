@@ -10,6 +10,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
     {children}
   </Title>
 );
+PopoverHeader.displayName = 'PopoverHeader';
 
 export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size'> {
   /** popover id */

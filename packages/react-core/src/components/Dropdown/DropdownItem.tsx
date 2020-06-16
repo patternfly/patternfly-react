@@ -86,3 +86,4 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
     )}
   </DropdownArrowContext.Consumer>
 );
+DropdownItem.displayName = 'DropdownItem';

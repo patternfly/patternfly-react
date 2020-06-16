@@ -15,6 +15,7 @@ interface FindRefWrapperProps {
  * However, there is no guarantee that is what will get passed in as toggle in the case of tooltips and popovers
  */
 export class FindRefWrapper extends React.Component<FindRefWrapperProps> {
+  static displayName = 'FindRefWrapper';
   componentDidMount() {
     // eslint-disable-next-line react/no-find-dom-node
     const root = ReactDOM.findDOMNode(this);

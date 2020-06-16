@@ -24,3 +24,4 @@ export const Bullseye: React.FunctionComponent<BullseyeProps> = ({
     </Component>
   );
 };
+Bullseye.displayName = 'Bullseye';

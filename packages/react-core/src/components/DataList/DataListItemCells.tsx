@@ -22,3 +22,4 @@ export const DataListItemCells: React.FunctionComponent<DataListItemCellsProps> 
     {dataListCells}
   </div>
 );
+DataListItemCells.displayName = 'DataListItemCells';

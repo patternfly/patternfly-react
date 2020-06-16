@@ -104,6 +104,7 @@ export interface PopoverState {
 }
 
 export class Popover extends React.Component<PopoverProps, PopoverState> {
+  static displayName = 'Popover';
   private tip: TippyInstance;
   static defaultProps: PickOptional<PopoverProps> = {
     position: 'top',

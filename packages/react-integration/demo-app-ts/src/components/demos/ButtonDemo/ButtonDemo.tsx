@@ -4,6 +4,7 @@ import { Button, ButtonProps } from '@patternfly/react-core';
 const href = 'https://www.google.com';
 
 export class ButtonDemo extends React.Component {
+  static displayName = 'ButtonDemo';
   myButtonProps: ButtonProps = {
     component: 'button',
     href,

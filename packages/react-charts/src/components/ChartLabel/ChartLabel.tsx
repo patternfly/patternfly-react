@@ -6,9 +6,10 @@ import {
   OriginType,
   StringOrNumberOrCallback,
   TextAnchorType,
-  VerticalAnchorType
+  VerticalAnchorType,
+  VictoryLabel,
+  VictoryLabelProps
 } from 'victory-core';
-import { VictoryLabel, VictoryLabelProps } from 'victory-core';
 import { ChartCommonStyles } from '../ChartTheme';
 
 export enum ChartLabelDirection {
@@ -24,7 +25,7 @@ export enum ChartLabelPlacement {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  */
 export interface ChartLabelProps extends VictoryLabelProps {
   /**
@@ -146,6 +147,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
   text?: string[] | StringOrNumberOrCallback;
   /**
    * The textAnchor prop defines how the text is horizontally positioned relative to the given `x` and `y` coordinates.
+   * Options are "start", "middle" and "end". Note that this overrides the style prop.
    */
   textAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
@@ -154,7 +156,8 @@ export interface ChartLabelProps extends VictoryLabelProps {
    */
   transform?: string | {} | (() => string | {});
   /**
-   * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y` coordinates
+   * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y`
+   * coordinates. Options are "start", "middle" and "end".
    */
   verticalAnchor?: VerticalAnchorType | (() => VerticalAnchorType);
   /**
@@ -174,16 +177,28 @@ export interface ChartLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({ style, ...rest }: ChartLabelProps) => {
+export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
+  style,
+  textAnchor,
+  ...rest
+}: ChartLabelProps) => {
   const applyDefaultStyle = (customStyle: React.CSSProperties) =>
-    defaults(customStyle, {
-      fontFamily: ChartCommonStyles.label.fontFamily,
-      fontSize: ChartCommonStyles.label.fontSize,
-      letterSpacing: ChartCommonStyles.label.letterSpacing
-    });
+    defaults(
+      {
+        ...customStyle,
+        textAnchor // textAnchor prop must override given theme styles
+      },
+      {
+        fontFamily: ChartCommonStyles.label.fontFamily,
+        fontSize: ChartCommonStyles.label.fontSize,
+        letterSpacing: ChartCommonStyles.label.letterSpacing
+      }
+    );
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
-  return <VictoryLabel style={newStyle as any} {...rest} />;
+
+  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} />;
 };
+ChartLabel.displayName = 'ChartLabel';
 
 // Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLabel, VictoryLabel);

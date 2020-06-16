@@ -104,3 +104,4 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     </>
   );
 };
+Popper.displayName = 'Popper';

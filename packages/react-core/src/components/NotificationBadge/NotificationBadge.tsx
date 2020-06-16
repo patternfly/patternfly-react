@@ -26,3 +26,4 @@ export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> 
     </span>
   </Button>
 );
+NotificationBadge.displayName = 'NotificationBadge';

@@ -10,7 +10,8 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletComparativeMeasureTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletComparativeMeasureProps {
   /**
@@ -239,6 +240,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletComparativeMeasure.displayName = 'ChartBulletComparativeMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeMeasure, VictoryBar);

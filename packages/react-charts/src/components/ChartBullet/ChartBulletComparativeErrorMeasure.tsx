@@ -8,7 +8,8 @@ import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletComparativeErrorMeasureProps {
   /**
@@ -211,6 +212,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletComparativeErrorMeasure.displayName = 'ChartBulletComparativeErrorMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletComparativeErrorMeasure, VictoryBar);

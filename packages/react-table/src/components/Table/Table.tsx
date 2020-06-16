@@ -311,6 +311,7 @@ export const TableContext = React.createContext({
 });
 
 export class Table extends React.Component<TableProps & OUIAProps, {}> {
+  static displayName = 'Table';
   static hasWarnBeta = false;
   static defaultProps = {
     children: null as React.ReactNode,

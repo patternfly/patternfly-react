@@ -12,7 +12,7 @@ import {
 } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  */
 export interface ChartBulletGroupTitleProps {
   /**
@@ -200,3 +200,4 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
     <React.Fragment>{groupTitle}</React.Fragment>
   );
 };
+ChartBulletGroupTitle.displayName = 'ChartBulletGroupTitle';

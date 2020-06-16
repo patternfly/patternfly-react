@@ -6,23 +6,23 @@ typescript: true
 propComponents: ['Tooltip']
 ---
 
-import { TooltipPopper, Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
 
 ```js title=Basic
 import React from 'react';
-import { TooltipPopper, Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
 BasicTooltip = () => (
-  <TooltipPopper
+  <Tooltip
     content={
-      <div>TooltipPopper Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
   >
-    <span tabIndex="0">TooltipPopper I have a tooltip!</span>
-  </TooltipPopper>
+    <span tabIndex="0">I have a tooltip!</span>
+  </Tooltip>
 )
 ```
 

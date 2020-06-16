@@ -21,6 +21,7 @@ interface OptionsMenuDemoState {
 }
 
 export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
+  static displayName = 'OptionsMenuDemo';
   state = {
     singleOptionIsOpen: false,
     modifiedIsOpen: false,

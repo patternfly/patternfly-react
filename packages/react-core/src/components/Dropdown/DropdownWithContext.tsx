@@ -9,6 +9,8 @@ import { PickOptional } from '../../helpers/typeUtils';
 import { Popper } from '../../helpers/PopoverBase/Popper';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
+  static displayName = 'DropdownWithContext';
+
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
   menuComponentRef = React.createRef<any>();

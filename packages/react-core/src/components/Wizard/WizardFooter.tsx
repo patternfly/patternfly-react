@@ -10,3 +10,4 @@ export interface WizardFooterProps {
 export const WizardFooter: React.FunctionComponent<WizardFooterProps> = ({ children }: WizardFooterProps) => (
   <footer className={css(styles.wizardFooter)}>{children}</footer>
 );
+WizardFooter.displayName = 'WizardFooter';

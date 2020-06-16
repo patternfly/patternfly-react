@@ -7,6 +7,7 @@ interface TableState {
 }
 
 export class TableCompactBorderlessRowsDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableCompactBorderlessRowsDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

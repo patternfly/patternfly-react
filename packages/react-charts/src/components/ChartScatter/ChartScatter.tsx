@@ -30,7 +30,8 @@ export enum ChartScatterSortOrder {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-scatter/src/index.d.ts
  */
 export interface ChartScatterProps extends VictoryScatterProps {
   /**
@@ -429,6 +430,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
 };
+ChartScatter.displayName = 'ChartScatter';
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartScatter, VictoryScatter);

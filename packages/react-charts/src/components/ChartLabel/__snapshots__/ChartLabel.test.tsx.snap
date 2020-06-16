@@ -10,6 +10,7 @@ exports[`ChartLabel 1`] = `
       "fontFamily": "var(--pf-chart-global--FontFamily)",
       "fontSize": 14,
       "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+      "textAnchor": undefined,
     }
   }
   textComponent={<Text />}
@@ -27,6 +28,7 @@ exports[`ChartLabel 2`] = `
       "fontFamily": "var(--pf-chart-global--FontFamily)",
       "fontSize": 14,
       "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+      "textAnchor": undefined,
     }
   }
   textComponent={<Text />}
@@ -44,6 +46,7 @@ exports[`renders component text 1`] = `
       "fontFamily": "var(--pf-chart-global--FontFamily)",
       "fontSize": 14,
       "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+      "textAnchor": undefined,
     }
   }
   text="This is a test"

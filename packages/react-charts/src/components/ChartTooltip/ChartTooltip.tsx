@@ -14,7 +14,8 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
@@ -116,8 +117,8 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
-   * This prop refers to the height of the svg that VictoryLabel is rendered within. This prop is passed from parents
-   * of VictoryLabel, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
+   * This prop refers to the height of the svg that ChartTooltip is rendered within. This prop is passed from parents
+   * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the height of the
    * tooltip flyout. Please use flyoutHeight instead
    *
    * **This prop should not be set manually.**
@@ -207,6 +208,14 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   themeVariant?: string;
   /**
+   * This prop refers to the width of the svg that ChartTooltip is rendered within. This prop is passed from parents
+   * of ChartTooltip, and should not be set manually. In versions before ^33.0.0 this prop referred to the width of the
+   * tooltip flyout. Please use flyoutWidth instead
+   *
+   * **This prop should not be set manually.**
+   */
+  width?: number;
+  /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */
   x?: number;
@@ -229,6 +238,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
 }: ChartTooltipProps) => {
   const chartLabelComponent = React.cloneElement(labelComponent, {
     textAnchor: labelTextAnchor,
+    theme,
     ...labelComponent.props
   });
 
@@ -241,6 +251,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
     />
   );
 };
+ChartTooltip.displayName = 'ChartTooltip';
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

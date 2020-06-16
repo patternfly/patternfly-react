@@ -25,6 +25,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
   NotificationDrawerProps,
   BasicNotificationDrawerDemoState
 > {
+  static displayName = 'BasicNotificationDrawerDemo';
   constructor(props: NotificationDrawerProps) {
     super(props);
     this.state = {

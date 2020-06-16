@@ -40,3 +40,4 @@ export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
     {children}
   </div>
 );
+DataListCell.displayName = 'DataListCell';

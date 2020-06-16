@@ -17,6 +17,7 @@ interface ITableRowClickDemoState {
 }
 
 export class TableRowClickDemo extends React.Component<TableProps, ITableRowClickDemoState> {
+  static displayName = 'TableRowClickDemo';
   rowClickHandler: (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => void;
   constructor(props: TableProps) {
     super(props);

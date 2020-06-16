@@ -38,3 +38,4 @@ export const Text: React.FunctionComponent<TextProps> = ({
     </Component>
   );
 };
+Text.displayName = 'Text';

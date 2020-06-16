@@ -46,3 +46,4 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     </button>
   );
 };
+SortColumn.displayName = 'SortColumn';

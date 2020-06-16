@@ -40,3 +40,4 @@ export const CatalogTileBadge: React.FunctionComponent<CatalogTileBadgeProps> = 
     </span>
   );
 };
+CatalogTileBadge.displayName = 'CatalogTileBadge';

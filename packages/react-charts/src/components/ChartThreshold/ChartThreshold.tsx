@@ -26,7 +26,8 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getThresholdTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-line/src/index.d.ts
  */
 export interface ChartThresholdProps extends VictoryLineProps {
   /**
@@ -425,6 +426,7 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
   }
   return <ChartLine style={thresholdStyle} theme={theme} {...rest} />;
 };
+ChartThreshold.displayName = 'ChartThreshold';
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartThreshold, VictoryLine);

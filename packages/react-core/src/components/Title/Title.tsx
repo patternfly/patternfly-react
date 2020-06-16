@@ -44,3 +44,4 @@ export const Title: React.FunctionComponent<TitleProps> = ({
     {children}
   </HeadingLevel>
 );
+Title.displayName = 'Title';

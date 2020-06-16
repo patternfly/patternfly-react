@@ -10,6 +10,7 @@ interface TableState {
 }
 
 export class TableSelectableDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableSelectableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

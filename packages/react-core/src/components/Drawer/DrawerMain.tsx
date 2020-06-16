@@ -19,3 +19,4 @@ export const DrawerMain: React.SFC<DrawerMainProps> = ({
     {children}
   </div>
 );
+DrawerMain.displayName = 'DrawerMain';

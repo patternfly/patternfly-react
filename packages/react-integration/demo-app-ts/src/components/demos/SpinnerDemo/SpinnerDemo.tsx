@@ -2,6 +2,7 @@ import React from 'react';
 import { Spinner, SpinnerProps } from '@patternfly/react-core';
 
 export class SpinnerDemo extends React.Component<SpinnerProps> {
+  static displayName = 'SpinnerDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

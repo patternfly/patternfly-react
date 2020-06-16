@@ -41,6 +41,7 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
 }
 
 class SelectMenuWithRef extends React.Component<SelectMenuProps> {
+  static displayName = 'SelectMenu';
   static defaultProps: PickOptional<SelectMenuProps> = {
     className: '',
     isExpanded: false,

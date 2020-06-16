@@ -2,6 +2,8 @@ const regFetch = require('libnpm/fetch');
 const npa = require('libnpm/parse-arg');
 const Project = require('@lerna/project');
 
+const prereleaseTag = 'prerelease';
+
 // Reverse engineered `npm dist-tag ls` a little bit
 async function fetchTags(spec) {
   spec = npa(spec);
@@ -20,7 +22,7 @@ async function getPrereleasePackages() {
   const packages = (await new Project(__dirname).getPackages())
     .filter(p => p.private !== true) // Only packages that are published
     .filter(p => p.name.includes('@patternfly')) // Only PF4 packages
-    .filter(p => p.get('publishConfig') && p.get('publishConfig').tag === 'prerelease');
+    .filter(p => p.get('publishConfig') && p.get('publishConfig').tag === prereleaseTag);
 
   return packages;
 }
@@ -29,8 +31,8 @@ async function printPublishCommand() {
   const packages = await getPrereleasePackages();
   for (let package of packages) {
     const currentTags = await fetchTags(package.name);
-    console.log(`Promoting ${package.name} from ${currentTags.latest} to ${currentTags.prerelease}`);
-    console.log(`npm dist-tag add ${package.name}@${currentTags.prerelease} latest`);
+    console.log(`Promoting ${package.name} from ${currentTags.latest} to ${currentTags[prereleaseTag]}`);
+    console.log(`npm dist-tag add ${package.name}@${currentTags[prereleaseTag]} latest\n`);
   }
 }
 
@@ -47,7 +49,7 @@ async function printList() {
   const packageNames = await getReleasePackageNames();
   for (let packageName of packageNames) {
     const currentTags = await fetchTags(packageName);
-    console.log(`"${packageName}": "${currentTags['prerelease-v4'] || currentTags.latest}",`);
+    console.log(`"${packageName}": "${currentTags[prereleaseTag] || currentTags.latest}",`);
   }
 }
 

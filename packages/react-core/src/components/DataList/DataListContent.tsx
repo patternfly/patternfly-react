@@ -42,3 +42,4 @@ export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
     </div>
   </section>
 );
+DataListContent.displayName = 'DataListContent';

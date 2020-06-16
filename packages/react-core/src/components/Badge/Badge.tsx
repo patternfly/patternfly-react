@@ -24,3 +24,4 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
     {children}
   </span>
 );
+Badge.displayName = 'Badge';

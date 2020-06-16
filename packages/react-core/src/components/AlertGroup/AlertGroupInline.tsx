@@ -15,3 +15,4 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
     ))}
   </ul>
 );
+AlertGroupInline.displayName = 'AlertGroupInline';

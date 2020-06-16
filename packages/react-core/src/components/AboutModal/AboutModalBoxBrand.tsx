@@ -21,3 +21,4 @@ export const AboutModalBoxBrand: React.FunctionComponent<AboutModalBoxBrandProps
     <img className={css(styles.aboutModalBoxBrandImage)} src={src} alt={alt} />
   </div>
 );
+AboutModalBoxBrand.displayName = 'AboutModalBoxBrand';

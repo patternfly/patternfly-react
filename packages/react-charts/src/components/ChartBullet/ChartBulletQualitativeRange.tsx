@@ -10,7 +10,8 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletQualitativeRangeTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletQualitativeRangeProps {
   /**
@@ -263,6 +264,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletQualitativeRange.displayName = 'ChartBulletQualitativeRange';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletQualitativeRange, VictoryBar);

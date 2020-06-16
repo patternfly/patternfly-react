@@ -21,3 +21,4 @@ export const Level: React.FunctionComponent<LevelProps> = ({
     {children}
   </div>
 );
+Level.displayName = 'Level';

@@ -2,6 +2,7 @@ import React from 'react';
 import { Badge } from '@patternfly/react-core';
 
 export class BadgeDemo extends React.Component {
+  static displayName = 'BadgeDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

@@ -44,6 +44,7 @@ export interface ToggleProps {
 }
 
 export class Toggle extends React.Component<ToggleProps> {
+  static displayName = 'Toggle';
   private buttonRef = React.createRef<HTMLButtonElement>();
 
   static defaultProps: PickOptional<ToggleProps> = {

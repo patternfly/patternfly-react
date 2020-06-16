@@ -18,3 +18,4 @@ export const TabTitleText: React.FunctionComponent<TabTitleTextProps> = ({
     {children}
   </span>
 );
+TabTitleText.displayName = 'TabTitleText';

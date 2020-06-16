@@ -48,3 +48,4 @@ export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
     </div>
   </React.Fragment>
 );
+EditableTextCell.displayName = 'EditableTextCell';

@@ -25,3 +25,4 @@ export const OverflowMenuContent: React.SFC<OverflowMenuContentProps> = ({
     }
   </OverflowMenuContext.Consumer>
 );
+OverflowMenuContent.displayName = 'OverflowMenuContent';

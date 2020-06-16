@@ -9,6 +9,7 @@ import {
 } from '@patternfly/react-charts';
 
 export class PurpleBarGroupedDemo extends React.Component {
+  static displayName = 'PurpleBarGroupedDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

@@ -7,6 +7,7 @@ interface TableState {
 }
 
 export class TableCollapsibleDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableCollapsibleDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

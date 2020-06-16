@@ -59,3 +59,4 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     <DropdownWithContext {...props} />
   </DropdownContext.Provider>
 );
+Dropdown.displayName = 'Dropdown';

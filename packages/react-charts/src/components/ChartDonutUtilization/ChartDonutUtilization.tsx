@@ -52,7 +52,8 @@ export enum ChartDonutUtilizationSubTitlePosition {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
  */
 export interface ChartDonutUtilizationProps extends ChartDonutProps {
   /**
@@ -645,6 +646,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   return standalone ? <React.Fragment>{container}</React.Fragment> : <React.Fragment>{chart}</React.Fragment>;
 };
+ChartDonutUtilization.displayName = 'ChartDonutUtilization';
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonutUtilization, VictoryPie);

@@ -173,3 +173,4 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
     </div>
   );
 };
+FileUploadField.displayName = 'FileUploadField';

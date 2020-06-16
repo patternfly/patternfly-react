@@ -9,6 +9,7 @@ interface ITableState {
 }
 
 export class TableSimpleActionsDemo extends React.Component<TableProps, ITableState> {
+  static displayName = 'TableSimpleActionsDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

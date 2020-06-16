@@ -52,6 +52,7 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
 }
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
+  static displayName = 'ApplicationLauncher';
   static defaultProps: ApplicationLauncherProps = {
     className: '',
     isDisabled: false,

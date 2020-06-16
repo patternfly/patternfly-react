@@ -28,3 +28,4 @@ export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
     )}
   </DropdownArrowContext.Consumer>
 );
+DropdownSeparator.displayName = 'DropdownSeparator';

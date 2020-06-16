@@ -26,7 +26,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   ...props
 }: SpinnerProps) => (
   <span
-    className={css(styles.spinner, styles.modifiers[size])}
+    className={css(styles.spinner, styles.modifiers[size], className)}
     role="progressbar"
     aria-valuetext={ariaValueText}
     {...props}
@@ -36,3 +36,4 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = ({
     <span className={css(styles.spinnerTailBall)} />
   </span>
 );
+Spinner.displayName = 'Spinner';

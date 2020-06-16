@@ -2,6 +2,7 @@ import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
 export class GalleryDemo extends React.Component {
+  static displayName = 'GalleryDemo';
   render() {
     return (
       <Gallery hasGutter>

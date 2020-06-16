@@ -58,3 +58,4 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
     </li>
   );
 };
+VerticalTabsTab.displayName = 'VerticalTabsTab';

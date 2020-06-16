@@ -96,3 +96,4 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
     </Component>
   );
 };
+Button.displayName = 'Button';

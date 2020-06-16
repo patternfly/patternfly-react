@@ -5,6 +5,7 @@ export class TableWidthModifiersDemo extends React.Component<
   TableProps,
   { columns: (ICell | string)[]; rows: IRow[] }
 > {
+  static displayName = 'TableWidthModifiersDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

@@ -6,3 +6,4 @@ export const ApplicationLauncherSeparator: React.FunctionComponent<SeparatorProp
   children,
   ...props
 }: SeparatorProps) => <DropdownSeparator {...props} />;
+ApplicationLauncherSeparator.displayName = 'ApplicationLauncherSeparator';

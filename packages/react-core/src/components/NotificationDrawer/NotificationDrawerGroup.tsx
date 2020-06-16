@@ -56,3 +56,4 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
     {children}
   </section>
 );
+NotificationDrawerGroup.displayName = 'NotificationDrawerGroup';

@@ -10,6 +10,7 @@ export const PopoverCloseButton: React.FunctionComponent<PopoverCloseButtonProps
     <TimesIcon />
   </Button>
 );
+PopoverCloseButton.displayName = 'PopoverCloseButton';
 
 export interface PopoverCloseButtonProps {
   /** PopoverCloseButton onClose function */

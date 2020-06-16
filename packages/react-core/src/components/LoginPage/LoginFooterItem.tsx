@@ -26,3 +26,4 @@ export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
       {children}
     </a>
   );
+LoginFooterItem.displayName = 'LoginFooterItem';

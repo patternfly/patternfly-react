@@ -30,7 +30,8 @@ export enum ChartAreaSortOrder {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-area/src/index.d.ts
  */
 export interface ChartAreaProps extends VictoryAreaProps {
   /**
@@ -412,6 +413,7 @@ export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryArea containerComponent={container} theme={theme} {...rest} />;
 };
+ChartArea.displayName = 'ChartArea';
 
 // Note: VictoryArea.role must be hoisted
 hoistNonReactStatics(ChartArea, VictoryArea);

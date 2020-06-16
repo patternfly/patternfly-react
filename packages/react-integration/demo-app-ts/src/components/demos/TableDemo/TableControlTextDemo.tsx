@@ -14,6 +14,7 @@ import {
 } from '@patternfly/react-table';
 
 export class TableControlTextDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
+  static displayName = 'TableControlTextDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

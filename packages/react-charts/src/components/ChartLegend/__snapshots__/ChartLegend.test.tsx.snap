@@ -475,15 +475,7 @@ exports[`ChartLegend 1`] = `
   }
   dataComponent={<ChartPoint />}
   groupComponent={<g />}
-  labelComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  labelComponent={<ChartLabel />}
   standalone={true}
   theme={
     Object {
@@ -934,15 +926,7 @@ exports[`ChartLegend 1`] = `
       },
     }
   }
-  titleComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  titleComponent={<ChartLabel />}
 />
 `;
 
@@ -1421,15 +1405,7 @@ exports[`ChartLegend 2`] = `
   }
   dataComponent={<ChartPoint />}
   groupComponent={<g />}
-  labelComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  labelComponent={<ChartLabel />}
   standalone={true}
   theme={
     Object {
@@ -1880,15 +1856,7 @@ exports[`ChartLegend 2`] = `
       },
     }
   }
-  titleComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  titleComponent={<ChartLabel />}
 />
 `;
 
@@ -2368,15 +2336,7 @@ exports[`renders component data 1`] = `
   dataComponent={<ChartPoint />}
   groupComponent={<g />}
   height={50}
-  labelComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  labelComponent={<ChartLabel />}
   standalone={true}
   theme={
     Object {
@@ -2828,15 +2788,7 @@ exports[`renders component data 1`] = `
     }
   }
   title="Average number of pets"
-  titleComponent={
-    <VictoryLabel
-      capHeight={0.71}
-      direction="inherit"
-      lineHeight={1}
-      textComponent={<Text />}
-      tspanComponent={<TSpan />}
-    />
-  }
+  titleComponent={<ChartLabel />}
   width={200}
 />
 `;

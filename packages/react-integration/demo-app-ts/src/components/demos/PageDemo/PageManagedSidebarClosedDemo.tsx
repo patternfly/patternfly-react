@@ -9,6 +9,7 @@ import {
 } from '@patternfly/react-core';
 
 export class PageManagedSidebarClosedDemo extends React.Component {
+  static displayName = 'PageManagedSidebarClosedDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

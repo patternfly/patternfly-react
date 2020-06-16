@@ -19,7 +19,9 @@ import {
   VisualizationSurface,
   SELECTION_EVENT,
   SelectionEventListener,
-  withSelection
+  withSelection,
+  VisualizationProvider,
+  useEventListener
 } from '@patternfly/react-topology';
 import {
   Toolbar,
@@ -133,7 +135,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
   const [layout, setLayout] = React.useState('Force');
 
-  vis.addEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
+  useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
   });
 
@@ -211,7 +213,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
       sideBar={useSidebar && topologySideBar}
       sideBarOpen={useSidebar && _.size(selectedIds) > 0}
     >
-      <VisualizationSurface visualization={vis} state={{ selectedIds }} />
+      <VisualizationSurface state={{ selectedIds }} />
     </TopologyView>
   );
 };
@@ -219,10 +221,18 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
 export const Topology = () => {
   const vis: Visualization = getVisualization(getModel('Force'));
 
-  return <TopologyViewComponent useSidebar={false} vis={vis} />;
+  return (
+    <VisualizationProvider controller={vis}>
+      <TopologyViewComponent useSidebar={false} vis={vis} />
+    </VisualizationProvider>
+  );
 };
 
 export const WithSideBar = () => {
   const vis: Visualization = getVisualization(getModel('Force'));
-  return <TopologyViewComponent useSidebar vis={vis} />;
+  return (
+    <VisualizationProvider controller={vis}>
+      <TopologyViewComponent useSidebar vis={vis} />
+    </VisualizationProvider>
+  );
 };

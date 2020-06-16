@@ -21,3 +21,4 @@ export const PropertiesSidePanel: React.FunctionComponent<PropertySidePanelProps
     </div>
   );
 };
+PropertiesSidePanel.displayName = 'PropertiesSidePanel';

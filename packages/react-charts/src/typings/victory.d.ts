@@ -1,6 +1,7 @@
 import 'victory-core';
 
 declare module 'victory-core' {
+  export const CommonProps: any;
   export const Data: any;
   export const Helpers: any;
   export const Line: any;

@@ -92,3 +92,4 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
     )}
   </div>
 );
+OptionsToggle.displayName = 'OptionsToggle';

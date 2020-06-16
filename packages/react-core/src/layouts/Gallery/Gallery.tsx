@@ -20,3 +20,4 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
     {children}
   </div>
 );
+Gallery.displayName = 'Gallery';

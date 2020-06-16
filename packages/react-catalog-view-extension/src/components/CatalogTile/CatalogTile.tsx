@@ -34,6 +34,7 @@ export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'ti
 }
 
 export class CatalogTile extends React.Component<CatalogTileProps> {
+  static displayName = 'CatalogTile';
   static defaultProps = {
     id: null as any,
     className: '',

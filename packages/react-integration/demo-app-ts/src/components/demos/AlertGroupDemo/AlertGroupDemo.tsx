@@ -13,6 +13,7 @@ interface AlertGroupDemoState {
 }
 
 export class AlertGroupDemo extends React.Component<{}, AlertGroupDemoState> {
+  static displayName = 'AlertGroupDemo';
   stopAsyncAlerts: () => void;
   removeAlert: (key: React.ReactText) => void;
 

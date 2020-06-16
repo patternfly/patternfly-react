@@ -18,3 +18,4 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
   alt,
   ...props
 }: AvatarProps) => <img {...props} src={src} alt={alt} className={css(styles.avatar, className)} />;
+Avatar.displayName = 'Avatar';

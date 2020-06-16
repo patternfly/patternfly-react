@@ -10,6 +10,7 @@ import {
 } from '@patternfly/react-core';
 
 export class PageDemo extends React.Component {
+  static displayName = 'PageDemo';
   state = {
     isNavOpen: true
   };

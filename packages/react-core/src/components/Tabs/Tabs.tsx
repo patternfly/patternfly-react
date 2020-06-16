@@ -65,6 +65,7 @@ interface TabsState {
 }
 
 export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
+  static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
   constructor(props: TabsProps & OUIAProps) {
     super(props);

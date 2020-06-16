@@ -14,6 +14,7 @@ export class TableCompactExpandableDemo extends React.Component<
   TableProps,
   { columns: (ICell | string)[]; rows: IRow[] }
 > {
+  static displayName = 'TableCompactExpandableDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {

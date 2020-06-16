@@ -5,7 +5,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
   className="my-test-class"
   id="simple-test-id"
 >
-  <Component
+  <Stack
     className="my-test-class"
     id="simple-test-id"
   >
@@ -13,7 +13,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <Component
+      <StackItem
         isFilled={false}
       >
         <div
@@ -29,11 +29,11 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
                 className="pf-c-toolbar"
                 id="pf-topology-view-0"
               >
-                <Component>
+                <Divider>
                   <hr
                     className="pf-c-divider"
                   />
-                </Component>
+                </Divider>
                 <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -75,8 +75,8 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
             </Toolbar>
           </GenerateId>
         </div>
-      </Component>
-      <Component
+      </StackItem>
+      <StackItem
         className="pf-topology-container"
         isFilled={true}
       >
@@ -87,9 +87,9 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
             className="pf-topology-content"
           />
         </div>
-      </Component>
+      </StackItem>
     </div>
-  </Component>
+  </Stack>
 </TopologyView>
 `;
 
@@ -113,7 +113,7 @@ exports[`TopologyView should display topology correctly 1`] = `
     />
   }
 >
-  <Component
+  <Stack
     className="my-test-class"
     id="simple-test-id"
   >
@@ -121,7 +121,7 @@ exports[`TopologyView should display topology correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <Component
+      <StackItem
         isFilled={false}
       >
         <div
@@ -271,11 +271,11 @@ exports[`TopologyView should display topology correctly 1`] = `
                     </ToolbarExpandableContent>
                   </div>
                 </ToolbarContent>
-                <Component>
+                <Divider>
                   <hr
                     className="pf-c-divider"
                   />
-                </Component>
+                </Divider>
                 <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -317,8 +317,8 @@ exports[`TopologyView should display topology correctly 1`] = `
             </Toolbar>
           </GenerateId>
         </div>
-      </Component>
-      <Component
+      </StackItem>
+      <StackItem
         className="pf-topology-container"
         isFilled={true}
       >
@@ -340,9 +340,9 @@ exports[`TopologyView should display topology correctly 1`] = `
             </span>
           </div>
         </div>
-      </Component>
+      </StackItem>
     </div>
-  </Component>
+  </Stack>
 </TopologyView>
 `;
 
@@ -372,7 +372,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
     />
   }
 >
-  <Component
+  <Stack
     className="my-test-class"
     id="simple-test-id"
   >
@@ -380,7 +380,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <Component
+      <StackItem
         isFilled={false}
       >
         <div
@@ -530,11 +530,11 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                     </ToolbarExpandableContent>
                   </div>
                 </ToolbarContent>
-                <Component>
+                <Divider>
                   <hr
                     className="pf-c-divider"
                   />
-                </Component>
+                </Divider>
                 <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -576,8 +576,8 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             </Toolbar>
           </GenerateId>
         </div>
-      </Component>
-      <Component
+      </StackItem>
+      <StackItem
         className="pf-topology-container pf-topology-container__with-sidebar"
         isFilled={true}
       >
@@ -602,9 +602,9 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
             Test SideBar
           </div>
         </div>
-      </Component>
+      </StackItem>
     </div>
-  </Component>
+  </Stack>
 </TopologyView>
 `;
 
@@ -634,7 +634,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
     />
   }
 >
-  <Component
+  <Stack
     className="my-test-class"
     id="simple-test-id"
   >
@@ -642,7 +642,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
       className="pf-l-stack my-test-class"
       id="simple-test-id"
     >
-      <Component
+      <StackItem
         isFilled={false}
       >
         <div
@@ -792,11 +792,11 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                     </ToolbarExpandableContent>
                   </div>
                 </ToolbarContent>
-                <Component>
+                <Divider>
                   <hr
                     className="pf-c-divider"
                   />
-                </Component>
+                </Divider>
                 <ToolbarChipGroupContent
                   chipGroupContentRef={
                     Object {
@@ -838,8 +838,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             </Toolbar>
           </GenerateId>
         </div>
-      </Component>
-      <Component
+      </StackItem>
+      <StackItem
         className="pf-topology-container pf-topology-container__with-sidebar pf-topology-container__with-sidebar--open"
         isFilled={true}
       >
@@ -864,8 +864,8 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
             Test SideBar
           </div>
         </div>
-      </Component>
+      </StackItem>
     </div>
-  </Component>
+  </Stack>
 </TopologyView>
 `;

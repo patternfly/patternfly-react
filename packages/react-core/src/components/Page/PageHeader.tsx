@@ -93,3 +93,4 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
     </PageContextConsumer>
   );
 };
+PageHeader.displayName = 'PageHeader';

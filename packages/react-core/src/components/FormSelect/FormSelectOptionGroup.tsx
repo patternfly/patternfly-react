@@ -22,3 +22,4 @@ export const FormSelectOptionGroup: React.FunctionComponent<FormSelectOptionGrou
     {children}
   </optgroup>
 );
+FormSelectOptionGroup.displayName = 'FormSelectOptionGroup';

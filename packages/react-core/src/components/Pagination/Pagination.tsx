@@ -136,6 +136,7 @@ const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
 
 let paginationId = 0;
 export class Pagination extends React.Component<PaginationProps & OUIAProps> {
+  static displayName = 'Pagination';
   paginationRef = React.createRef<HTMLDivElement>();
   static defaultProps: PickOptional<PaginationProps & OUIAProps> = {
     children: null,

@@ -9,3 +9,4 @@ export const GalleryItem: React.FunctionComponent<GalleryItemProps> = ({
   children = null,
   ...props
 }: GalleryItemProps) => <div {...props}>{children}</div>;
+GalleryItem.displayName = 'GalleryItem';

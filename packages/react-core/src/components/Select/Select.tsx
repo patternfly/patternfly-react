@@ -102,6 +102,7 @@ export interface SelectState {
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
+  static displayName = 'Select';
   private parentRef = React.createRef<HTMLDivElement>();
   private menuComponentRef = React.createRef<HTMLElement>();
   private filterRef = React.createRef<HTMLInputElement>();

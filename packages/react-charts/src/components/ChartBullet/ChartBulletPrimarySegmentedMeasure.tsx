@@ -10,7 +10,8 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletPrimarySegmentedMeasureProps {
   /**
@@ -270,6 +271,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
     <React.Fragment>{measure}</React.Fragment>
   );
 };
+ChartBulletPrimarySegmentedMeasure.displayName = 'ChartBulletPrimarySegmentedMeasure';
 
 // Note: VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBulletPrimarySegmentedMeasure, VictoryBar);

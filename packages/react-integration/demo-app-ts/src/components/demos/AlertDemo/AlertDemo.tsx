@@ -7,6 +7,7 @@ interface AlertDemoState {
 }
 
 export class AlertDemo extends React.Component<{}, AlertDemoState> {
+  static displayName = 'AlertDemo';
   constructor(props: {}) {
     super(props);
     this.state = { alertOneVisible: true, alertTwoVisible: true };

@@ -26,3 +26,4 @@ export const DrawerCloseButton: React.SFC<DrawerCloseButtonProps> = ({
     </Button>
   </div>
 );
+DrawerCloseButton.displayName = 'DrawerCloseButton';

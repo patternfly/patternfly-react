@@ -19,3 +19,4 @@ export const NotificationDrawerGroupList: React.FunctionComponent<NotificationDr
     {children}
   </div>
 );
+NotificationDrawerGroupList.displayName = 'NotificationDrawerGroupList';

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
+import { ChartCursorTooltip } from '../ChartCursorTooltip';
 import { ChartLabel } from '../ChartLabel';
-import { ChartTooltip } from '../ChartTooltip';
-import { getTooltipCenterOffset } from './chart-tooltip';
 
 /**
  * Makes a container component with multiple behaviors. It allows you to effectively combine any two
@@ -27,15 +26,10 @@ export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerTy
   const isVoronoi = behaviorA === 'voronoi' || behaviorB === 'voronoi';
 
   if (isCursor) {
-    container.defaultProps.cursorLabelComponent = <ChartLabel />;
+    container.defaultProps.cursorLabelComponent = <ChartLabel textAnchor="start" />;
   }
   if (isVoronoi) {
-    const labelTextAnchor = isCursor ? 'start' : undefined; // Left align tooltip text
-    const centerOffset = isCursor ? getTooltipCenterOffset(true) : undefined;
-
-    container.defaultProps.labelComponent = (
-      <ChartTooltip labelTextAnchor={labelTextAnchor} centerOffset={centerOffset} />
-    );
+    container.defaultProps.labelComponent = <ChartCursorTooltip />;
   }
   return container;
 };

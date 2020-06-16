@@ -3,6 +3,7 @@ import { Brand } from '@patternfly/react-core';
 const pfLogo = './images/pfLogo.svg';
 
 export class BrandDemo extends React.Component {
+  static displayName = 'BrandDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }

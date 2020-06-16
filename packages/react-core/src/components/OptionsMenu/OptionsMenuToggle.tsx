@@ -61,3 +61,4 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
     )}
   </DropdownContext.Consumer>
 );
+OptionsMenuToggle.displayName = 'OptionsMenuToggle';

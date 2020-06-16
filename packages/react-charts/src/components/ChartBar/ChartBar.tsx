@@ -25,7 +25,8 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBarProps extends VictoryBarProps {
   /**
@@ -441,6 +442,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryBar containerComponent={container} theme={theme} {...rest} />;
 };
+ChartBar.displayName = 'ChartBar';
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBar, VictoryBar);

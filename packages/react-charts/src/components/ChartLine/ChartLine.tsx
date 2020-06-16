@@ -30,7 +30,8 @@ export enum ChartLineSortOrder {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-line/src/index.d.ts
  */
 export interface ChartLineProps extends VictoryLineProps {
   /**
@@ -410,6 +411,7 @@ export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   // Note: containerComponent is required for theme
   return <VictoryLine containerComponent={container} theme={theme} {...rest} />;
 };
+ChartLine.displayName = 'ChartLine';
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);

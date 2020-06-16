@@ -43,3 +43,4 @@ export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalP
     )}
   </footer>
 );
+WizardFooterInternal.displayName = 'WizardFooterInternal';

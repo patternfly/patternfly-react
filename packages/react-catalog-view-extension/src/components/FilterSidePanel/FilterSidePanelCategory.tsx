@@ -76,5 +76,6 @@ export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCat
     </form>
   );
 };
+FilterSidePanelCategory.displayName = 'FilterSidePanelCategory';
 
 export default FilterSidePanelCategory;

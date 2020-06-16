@@ -43,6 +43,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
+  static displayName = 'SelectOption';
   private ref = React.createRef<any>();
   static defaultProps: SelectOptionProps = {
     className: '',

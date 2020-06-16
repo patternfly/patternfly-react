@@ -41,7 +41,8 @@ export enum ChartLegendRowGutter {
 }
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and See https://github.com/FormidableLabs/victory/blob/master/packages/victory-legend/src/index.d.ts
  */
 export interface ChartLegendProps extends VictoryLegendProps {
   /**
@@ -300,9 +301,11 @@ export interface ChartLegendProps extends VictoryLegendProps {
 export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
+  labelComponent = <ChartLabel />,
   responsive = true,
   themeColor,
   themeVariant,
+  titleComponent = <ChartLabel />,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
@@ -316,8 +319,18 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   });
 
   // Note: containerComponent is required for theme
-  return <VictoryLegend containerComponent={container} dataComponent={dataComponent} theme={theme} {...rest} />;
+  return (
+    <VictoryLegend
+      containerComponent={container}
+      dataComponent={dataComponent}
+      labelComponent={labelComponent}
+      theme={theme}
+      titleComponent={titleComponent}
+      {...rest}
+    />
+  );
 };
+ChartLegend.displayName = 'ChartLegend';
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });

@@ -18,3 +18,4 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
     {children}
   </div>
 );
+CardTitle.displayName = 'CardTitle';

@@ -19,3 +19,4 @@ export const DrawerSection: React.SFC<DrawerSectionProps> = ({
     {children}
   </div>
 );
+DrawerSection.displayName = 'DrawerSection';

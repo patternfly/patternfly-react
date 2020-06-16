@@ -9,6 +9,7 @@ import {
 } from '@patternfly/react-charts';
 
 export class StackedAreaDemo extends React.Component {
+  static displayName = 'StackedAreaDemo';
   render() {
     return (
       <div>

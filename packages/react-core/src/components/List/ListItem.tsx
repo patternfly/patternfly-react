@@ -8,3 +8,4 @@ export interface ListItemProps extends React.HTMLProps<HTMLLIElement> {
 export const ListItem: React.FunctionComponent<ListItemProps> = ({ children = null, ...props }: ListItemProps) => (
   <li {...props}>{children}</li>
 );
+ListItem.displayName = 'ListItem';

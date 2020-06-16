@@ -103,3 +103,4 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
     </div>
   );
 };
+FormGroup.displayName = 'FormGroup';

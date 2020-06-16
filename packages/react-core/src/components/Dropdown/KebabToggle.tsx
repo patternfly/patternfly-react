@@ -67,3 +67,4 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
     <EllipsisVIcon />
   </Toggle>
 );
+KebabToggle.displayName = 'KebabToggle';

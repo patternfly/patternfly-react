@@ -44,3 +44,4 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
     )}
   </DrawerContext.Consumer>
 );
+DrawerPanelContent.displayName = 'DrawerPanelContent';

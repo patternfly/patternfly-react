@@ -7,6 +7,7 @@ import {
 } from '@patternfly/react-charts';
 
 export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { used: number }> {
+  static displayName = 'DonutUtilizationGreenStaticRightDemo';
   interval: number = 0;
   constructor(props: {}) {
     super(props);

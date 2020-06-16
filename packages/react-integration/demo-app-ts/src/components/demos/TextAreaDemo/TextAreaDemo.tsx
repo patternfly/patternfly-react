@@ -15,6 +15,7 @@ interface TextAreaState {
 }
 
 export class TextAreaDemo extends React.Component<{}, TextAreaState> {
+  static displayName = 'TextAreaDemo';
   state = {
     textAreaValue: '',
     requiredTextAreaValue: '',

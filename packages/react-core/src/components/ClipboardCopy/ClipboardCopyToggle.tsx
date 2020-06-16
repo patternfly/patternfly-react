@@ -33,3 +33,4 @@ export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyTogglePro
     <AngleRightIcon aria-hidden="true" />
   </Button>
 );
+ClipboardCopyToggle.displayName = 'ClipboardCopyToggle';

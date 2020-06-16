@@ -19,3 +19,4 @@ export const ApplicationLauncherIcon: React.FunctionComponent<ApplicationLaunche
     {children}
   </span>
 );
+ApplicationLauncherIcon.displayName = 'ApplicationLauncherIcon';
