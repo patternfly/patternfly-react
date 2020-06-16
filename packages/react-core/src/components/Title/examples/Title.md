@@ -11,7 +11,7 @@ import { Title, TitleSizes } from '@patternfly/react-core';
 ## Examples
 ```js title=Sizes
 import React from 'react';
-import { Title } from '@patternfly/react-core';
+import { Title, TitleSizes } from '@patternfly/react-core';
 
 <React.Fragment>
   <Title headingLevel="h1" size={TitleSizes['4xl']}>
