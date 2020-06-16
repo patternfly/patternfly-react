@@ -94,7 +94,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     if (typeof appendTo === 'function') {
       return appendTo();
     }
-    return appendTo || document.body;
+    return appendTo;
   };
 
   return (

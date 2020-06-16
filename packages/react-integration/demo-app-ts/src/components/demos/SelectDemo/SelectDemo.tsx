@@ -47,6 +47,8 @@ export interface SelectDemoState {
   customContentisOpen: boolean;
   noBadgeCheckIsOpen: boolean;
   noBadgeCheckSelected: string[];
+  menuDocumentBodyisOpen: boolean;
+  menuDocumentBodySelected: string[];
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -82,7 +84,9 @@ export class SelectDemo extends Component<SelectDemoState> {
     ],
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false,
-    customContentisOpen: false
+    customContentisOpen: false,
+    menuDocumentBodyisOpen: false,
+    menuDocumentBodySelected: ['']
   };
 
   singleOptions = [
@@ -166,6 +170,12 @@ export class SelectDemo extends Component<SelectDemoState> {
   checkOnToggle = (checkisOpen: boolean) => {
     this.setState({
       checkisOpen
+    });
+  };
+
+  documentBodyOnToggle = (menuDocumentBodyisOpen: boolean) => {
+    this.setState({
+      menuDocumentBodyisOpen
     });
   };
 
@@ -270,6 +280,25 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState(
         (prevState: SelectDemoState) => ({ checkSelected: [...prevState.checkSelected, selection] }),
         () => console.log('selections: ', this.state.checkSelected)
+      );
+    }
+  };
+
+  documentBodyOnSelect = (_event: React.MouseEvent | React.ChangeEvent, selection: string | SelectOptionObject) => {
+    const { menuDocumentBodySelected } = this.state;
+    if (menuDocumentBodySelected.includes(selection.toString())) {
+      this.setState(
+        (prevState: SelectDemoState) => ({
+          menuDocumentBodySelected: prevState.menuDocumentBodySelected.filter(item => item !== selection)
+        }),
+        () => console.log('selections: ', this.state.menuDocumentBodySelected)
+      );
+    } else {
+      this.setState(
+        (prevState: SelectDemoState) => ({
+          menuDocumentBodySelected: [...prevState.menuDocumentBodySelected, selection]
+        }),
+        () => console.log('selections: ', this.state.menuDocumentBodySelected)
       );
     }
   };
@@ -892,6 +921,38 @@ export class SelectDemo extends Component<SelectDemoState> {
     );
   }
 
+  renderMenuOnDocumentBodySelect() {
+    const { menuDocumentBodyisOpen, menuDocumentBodySelected } = this.state;
+    const titleId = 'select-document-body-title';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Checkbox Select with menu on document body
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Checkbox Title
+          </span>
+          <Select
+            direction="up"
+            toggleId="select-document-body-toggle"
+            variant={SelectVariant.checkbox}
+            aria-label="Select Input"
+            onToggle={this.documentBodyOnToggle}
+            onSelect={this.documentBodyOnSelect}
+            selections={menuDocumentBodySelected.filter(string => string)}
+            isOpen={menuDocumentBodyisOpen}
+            placeholderText="Filter by status"
+            aria-labelledby={titleId}
+            menuAppendTo={() => document.body}
+          >
+            {this.checkboxOptions}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
     return (
       <Stack hasGutter>
@@ -907,6 +968,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderPlainTypeaheadMultiSelect()}
         {this.renderSelectCustomContent()}
         {this.renderTypeaheadSelectInForm()}
+        {this.renderMenuOnDocumentBodySelect()}
       </Stack>
     );
   }

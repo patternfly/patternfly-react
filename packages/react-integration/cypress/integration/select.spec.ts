@@ -140,4 +140,19 @@ describe('Select Test', () => {
     cy.get('#form-typeahead-button').click();
     cy.url().should('match', /select-demo-nav-link/);
   });
+
+  it('Verify Checkbox Select on document body', () => {
+    cy.get('#select-document-body-toggle').click();
+    cy.get('input#Active').click();
+    cy.get('#select-document-body-toggle')
+      .contains('1')
+      .should('exist');
+    cy.get('#select-document-body-toggle .pf-c-select__toggle-badge').should('exist');
+    cy.get('input#Cancelled').click();
+    cy.get('#select-document-body-toggle')
+      .contains('2')
+      .should('exist');
+    cy.get('#select-document-body-toggle').click();
+    cy.get('.pf-c-select__menu').should('not.exist');
+  });
 });
