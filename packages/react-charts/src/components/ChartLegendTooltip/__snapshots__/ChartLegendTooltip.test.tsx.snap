@@ -2,13 +2,21 @@
 
 exports[`ChartLegendTooltip 1`] = `
 <ChartCursorTooltip
+  center={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
   flyoutHeight={[Function]}
   flyoutWidth={[Function]}
   labelComponent={
     <ChartLegendTooltipContent
-      isCursorTooltip={true}
+      flyoutX={10}
+      flyoutY={-4.452500000000001}
     />
   }
+  showPointer={false}
   text="This is a tooltip"
   theme={
     Object {
@@ -464,13 +472,21 @@ exports[`ChartLegendTooltip 1`] = `
 
 exports[`ChartLegendTooltip 2`] = `
 <ChartCursorTooltip
+  center={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
   flyoutHeight={[Function]}
   flyoutWidth={[Function]}
   labelComponent={
     <ChartLegendTooltipContent
-      isCursorTooltip={true}
+      flyoutX={10}
+      flyoutY={-4.452500000000001}
     />
   }
+  showPointer={false}
   text="This is a tooltip"
   theme={
     Object {

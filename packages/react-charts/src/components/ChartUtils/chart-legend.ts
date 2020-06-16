@@ -456,7 +456,7 @@ export const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSi
 // Returns an approximation of over-sized text width due to growing character count
 //
 // See https://github.com/FormidableLabs/victory/issues/864
-const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
+export const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
   const style: any = theme && theme.legend && theme.legend.style ? theme.legend.style.labels : undefined;
   if (!(legendData && legendData.length)) {
     return 0;
