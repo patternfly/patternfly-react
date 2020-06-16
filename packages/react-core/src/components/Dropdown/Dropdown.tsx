@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
-import { ToggleMenuBaseProps } from '../../helpers/PopoverBase/ToggleMenu';
+import { ToggleMenuBaseProps } from '../../helpers/PopoverBase/Popper';
 
 export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Anything which can be rendered in a dropdown */

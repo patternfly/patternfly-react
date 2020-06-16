@@ -12,7 +12,7 @@ import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selec
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
 import { Divider } from '../Divider';
-import { ToggleMenuBaseProps, ToggleMenuComponent } from '../../helpers/PopoverBase/ToggleMenu';
+import { ToggleMenuBaseProps, Popper } from '../../helpers/PopoverBase/Popper';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -99,7 +99,6 @@ export interface SelectState {
   typeaheadFilteredChildren: React.ReactNode[];
   typeaheadCurrIndex: number;
   creatableValue: string;
-  menuMinWidth: string;
 }
 
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
@@ -149,8 +148,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     typeaheadActiveChild: null as HTMLElement,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
     typeaheadCurrIndex: -1,
-    creatableValue: '',
-    menuMinWidth: ''
+    creatableValue: ''
   };
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
@@ -175,30 +173,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
   };
 
-  componentDidMount() {
-    if (this.props.menuAppendTo !== 'inline') {
-      this.resizeObserver = new ResizeObserver(() => {
-        this.setMenuMinWidth();
-      });
-      this.resizeObserver.observe(this.parentRef.current);
-    }
-  }
-
   componentWillUnmount() {
     if (this.resizeObserver) {
       this.resizeObserver.disconnect();
     }
   }
-
-  setMenuMinWidth = () => {
-    const menuMinWidth =
-      (this.parentRef && this.parentRef.current && `${this.parentRef.current.offsetWidth}px`) || null;
-    if (menuMinWidth !== this.state.menuMinWidth) {
-      this.setState({
-        menuMinWidth
-      });
-    }
-  };
 
   onEnter = () => {
     this.setState({ openedOnEnter: true });
@@ -429,13 +408,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       menuAppendTo,
       ...props
     } = this.props;
-    const {
-      openedOnEnter,
-      typeaheadInputValue,
-      typeaheadActiveChild,
-      typeaheadFilteredChildren,
-      menuMinWidth
-    } = this.state;
+    const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
@@ -578,8 +551,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         keyHandler={this.handleArrowKeys}
         maxHeight={maxHeight}
         ref={this.menuComponentRef}
-        // need to get the parent width programmatically and apply to the menu
-        style={menuMinWidth ? { minWidth: menuMinWidth } : null}
       >
         {variantChildren}
       </SelectMenu>
@@ -593,9 +564,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           direction === SelectDirection.up && styles.modifiers.top,
           className
         )}
-        // temporary fix until Core adds a modifier
-        // https://github.com/patternfly/patternfly-react/pull/4348#discussion_r436924794
-        style={{ display: 'block' }}
       >
         {isOpen && menuComponent}
       </div>
@@ -715,17 +683,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       </div>
     );
 
+    const getParentElement = () => {
+      if (this.parentRef && this.parentRef.current) {
+        return this.parentRef.current.parentElement;
+      }
+      return null;
+    };
+
     return (
       <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
         {menuAppendTo === 'inline' ? (
           mainComponent
         ) : (
-          <ToggleMenuComponent
-            toggle={mainComponent}
-            menu={popoverContent}
+          <Popper
+            trigger={mainComponent}
+            popper={popoverContent}
             direction={direction}
-            menuAppendTo={menuAppendTo}
-            isOpen={isOpen}
+            appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
+            popperMatchesTriggerWidth
           />
         )}
       </SelectContext.Provider>

@@ -6,7 +6,7 @@ import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
-import { ToggleMenuComponent } from '../../helpers/PopoverBase/ToggleMenu';
+import { Popper } from '../../helpers/PopoverBase/Popper';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
   openedOnEnter = false;
@@ -115,9 +115,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 isOpen && styles.modifiers.expanded,
                 className
               )}
-              // temporary fix until Core adds a modifier
-              // https://github.com/patternfly/patternfly-react/pull/4348#discussion_r436924794
-              style={{ display: 'block' }}
             >
               {isOpen && menuComponent}
             </div>
@@ -149,16 +146,21 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               {menuAppendTo === 'inline' && isOpen && menuComponent}
             </BaseComponent>
           );
+          const getParentElement = () => {
+            if (this.baseComponentRef && this.baseComponentRef.current) {
+              return this.baseComponentRef.current.parentElement;
+            }
+            return null;
+          };
           return menuAppendTo === 'inline' ? (
             mainComponent
           ) : (
-            <ToggleMenuComponent
-              toggle={mainComponent}
-              menu={popoverContent}
+            <Popper
+              trigger={mainComponent}
+              popper={popoverContent}
               direction={direction}
               position={position}
-              menuAppendTo={menuAppendTo}
-              isOpen={isOpen}
+              appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
             />
           );
         }}
