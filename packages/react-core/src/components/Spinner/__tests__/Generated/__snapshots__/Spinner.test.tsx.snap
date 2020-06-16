@@ -3,7 +3,7 @@
 exports[`Spinner should match snapshot (auto-generated) 1`] = `
 <span
   aria-valuetext="'Loading...'"
-  className="pf-c-spinner pf-m-xl"
+  className="pf-c-spinner pf-m-xl test"
   role="progressbar"
 >
   <span

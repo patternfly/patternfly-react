@@ -8,6 +8,6 @@ import { Spinner } from '../../Spinner';
 import {} from '../..';
 
 it('Spinner should match snapshot (auto-generated)', () => {
-  const view = shallow(<Spinner className={"''"} size={'xl'} aria-valuetext={"'Loading...'"} />);
+  const view = shallow(<Spinner className={"test"} size={'xl'} aria-valuetext={"'Loading...'"} />);
   expect(view).toMatchSnapshot();
 });
