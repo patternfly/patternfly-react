@@ -287,11 +287,13 @@ class EmbeddedHtml extends React.Component {
         <foreignObject height="100%" width="100%" x={x - 40} y={y - 45} >
           <table>
             <thead>
-              <th colSpan={2} style={{...this.baseStyles, fontWeight: 700}}>{title(datum)}</th>
+              <tr>
+                <th colSpan={2} style={{...this.baseStyles, fontWeight: 700}}>{title(datum)}</th>
+              </tr>
             </thead>
             <tbody>
               {text.map((val, index) => (
-                <tr style={this.baseStyles}>
+                <tr key={`tbody-tr-${index}`} style={this.baseStyles}>
                   <th width="20px">
                     <svg height="9.74" width="9.74" role="img">
                       {<ChartPoint x={0} y={0}

@@ -1,4 +1,6 @@
-import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
+/* eslint-disable camelcase */
+import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
+import { ColorScalePropType, Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getLegendDimensions, getTextSizeWorkAround } from './chart-legend';
 
@@ -19,6 +21,19 @@ interface ChartLegendTooltipFlyoutInterface {
   legendProps?: any;
   text?: StringOrNumberOrCallback | string[] | number[];
   theme: ChartThemeDefinition;
+}
+
+interface ChartLegendTooltipVisibleDataInterface {
+  colorScale?: ColorScalePropType;
+  legendData: any;
+  text?: StringOrNumberOrCallback | string[] | number[];
+  textAsLegendData?: boolean;
+  theme: ChartThemeDefinition;
+}
+
+interface ChartLegendTooltipVisibleTextInterface {
+  legendData: any;
+  text: StringOrNumberOrCallback | string[] | number[];
 }
 
 /**
@@ -74,21 +89,20 @@ export const getLegendTooltipSize = ({
   const textEvaluated = Helpers.evaluateProp(text);
   const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
 
-  // Find max data char length
+  // Find max char lengths
   let maxDataLength = 0;
-  if (legendData) {
-    legendData.map((data: any) => {
-      if (data.name && data.name.length > maxDataLength) {
-        maxDataLength = data.name.length;
-      }
-    });
-  }
-
-  // Find max text char length
   let maxTextLength = 0;
-  _text.map((name: string) => {
-    if (name && name.length > maxTextLength) {
-      maxTextLength = name.length;
+  _text.map((name: string, index: number) => {
+    if (name) {
+      if (name.length > maxTextLength) {
+        maxTextLength = name.length;
+      }
+      const hasData = legendData && legendData[index] && legendData[index].name;
+      if (hasData) {
+        if (legendData[index].name.length > maxDataLength) {
+          maxDataLength = legendData[index].name.length;
+        }
+      }
     }
   });
 
@@ -118,10 +132,10 @@ export const getLegendTooltipSize = ({
   // {name: "Birds        4"}
   // {name: "Mice         3"}
   const data = _text.map((label: string, index: number) => {
-    const hasLegendData = legendData && legendData[index] && legendData[index].name;
-    const spacer = hasLegendData ? getSpacer(legendData[index].name, label) : '';
+    const hasData = legendData && legendData[index] && legendData[index].name;
+    const spacer = hasData ? getSpacer(legendData[index].name, label) : '';
     return {
-      name: `${hasLegendData ? legendData[index].name : ''}${spacer}${label}`
+      name: `${hasData ? legendData[index].name : ''}${spacer}${label}`
     };
   });
 
@@ -140,4 +154,62 @@ export const getLegendTooltipSize = ({
     height: legendDimensions.height,
     width: legendDimensions.width - textSizeWorkAround > 0 ? legendDimensions.width - textSizeWorkAround : 0
   };
+};
+
+// Returns visible legend data, while syncing color scale. If textAsLegendData is true, the text prop is used as
+// legend data so y values can be passed individually to the label component
+export const getLegendTooltipVisibleData = ({
+  colorScale,
+  legendData,
+  text,
+  textAsLegendData = false,
+  theme
+}: ChartLegendTooltipVisibleDataInterface) => {
+  const textEvaluated = Helpers.evaluateProp(text);
+  const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
+  const result = [];
+
+  // Sync data with interactive legends
+  if (legendData) {
+    let index = -1;
+    for (let i = 0; i < legendData.length; i++) {
+      const data = legendData[i];
+      if (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value) {
+        continue; // Skip hidden data
+      }
+      if (index++ < _text.length - 1) {
+        const themeColor =
+          theme && theme.legend && theme.legend.colorScale
+            ? theme.legend.colorScale[i % theme.legend.colorScale.length]
+            : undefined;
+        result.push({
+          name: textAsLegendData ? _text[index] : data.name,
+          symbol: {
+            fill: colorScale ? colorScale[i % colorScale.length] : themeColor, // Sync color scale
+            ...data.symbol
+          }
+        });
+      }
+    }
+  }
+  return result;
+};
+
+// Returns visible text for interactive legends
+export const getLegendTooltipVisibleText = ({ legendData, text }: ChartLegendTooltipVisibleTextInterface) => {
+  const textEvaluated = Helpers.evaluateProp(text);
+  const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
+  const result = [];
+  if (legendData) {
+    let index = -1;
+    for (const data of legendData) {
+      if (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value) {
+        continue; // Skip hidden data
+      }
+      if (index++ < _text.length - 1) {
+        result.push(_text[index]);
+      }
+    }
+  }
+  return result;
 };

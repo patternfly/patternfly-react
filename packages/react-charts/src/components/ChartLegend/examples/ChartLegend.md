@@ -14,11 +14,13 @@ import {
   ChartAxis, 
   ChartBullet, 
   ChartGroup, 
-  ChartLegend, 
+  ChartLegend,
+  ChartLegendTooltip,
   ChartLine, 
   ChartPie, 
   ChartScatter, 
   ChartThemeColor, 
+  createContainer,
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles 
 } from '@patternfly/react-charts';
@@ -245,9 +247,11 @@ import {
   ChartAxis, 
   ChartGroup, 
   ChartLegend,
+  ChartLegendTooltip,
   ChartScatter, 
   ChartThemeColor,
-  ChartVoronoiContainer, 
+  ChartVoronoiContainer,
+  createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles 
 } from '@patternfly/react-charts';
@@ -338,6 +342,9 @@ class InteractiveLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
+
+    // Note: Container order is important
+    this.CursorVoronoiContainer = createContainer("cursor", "voronoi");
   };
 
   componentDidMount() {
@@ -357,7 +364,7 @@ class InteractiveLegendChart extends React.Component {
   render() {
     const { hiddenSeries, width } = this.state;
     const allHidden = hiddenSeries.length === this.series.length;
-    const tootlip = ({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.name}: ${datum.y}` : null;
+    const tootlip = ({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null;
 
     return (
       <div ref={this.containerRef}>
@@ -367,9 +374,13 @@ class InteractiveLegendChart extends React.Component {
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
             containerComponent={
-              <ChartVoronoiContainer
-                labels={!allHidden ? tootlip : undefined} 
-                constrainToVisibleArea 
+              <this.CursorVoronoiContainer
+                cursorDimension="x"
+                labels={!allHidden ? tootlip : undefined}
+                labelComponent={<ChartLegendTooltip legendData={this.getLegendData()} title={(datum) => datum.x}/>}
+                mouseFollowTooltips
+                voronoiDimension="x"
+                voronoiPadding={50}
               />
             }
             events={this.getEvents()}

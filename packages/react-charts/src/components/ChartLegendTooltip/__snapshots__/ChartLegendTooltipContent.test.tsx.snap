@@ -15,18 +15,12 @@ exports[`ChartLegendTooltipContent 1`] = `
   />
   <ChartLegend
     borderPadding={0}
-    data={
-      Array [
-        Object {
-          "name": undefined,
-          "symbol": undefined,
-        },
-      ]
-    }
+    data={Array []}
     gutter={0}
     labelComponent={
       <ChartLegendTooltipLabel
-        dx={0}
+        dx={-19.6}
+        legendData={Array []}
       />
     }
     orientation="vertical"
@@ -515,18 +509,12 @@ exports[`ChartLegendTooltipContent 2`] = `
   />
   <ChartLegend
     borderPadding={0}
-    data={
-      Array [
-        Object {
-          "name": undefined,
-          "symbol": undefined,
-        },
-      ]
-    }
+    data={Array []}
     gutter={0}
     labelComponent={
       <ChartLegendTooltipLabel
-        dx={0}
+        dx={-19.6}
+        legendData={Array []}
       />
     }
     orientation="vertical"
@@ -1019,30 +1007,23 @@ exports[`renders component text 1`] = `
       Array [
         Object {
           "name": "1, 2, 3, 4",
-          "symbol": undefined,
+          "symbol": Object {
+            "fill": "#06c",
+          },
         },
       ]
     }
     gutter={0}
     labelComponent={
       <ChartLegendTooltipLabel
-        dx={128.5024154589372}
+        dx={121.73913043478262}
         legendData={
           Array [
             Object {
               "name": "Cats",
-            },
-            Object {
-              "name": "Dogs",
               "symbol": Object {
-                "type": "dash",
+                "fill": "#06c",
               },
-            },
-            Object {
-              "name": "Birds",
-            },
-            Object {
-              "name": "Mice",
             },
           ]
         }
