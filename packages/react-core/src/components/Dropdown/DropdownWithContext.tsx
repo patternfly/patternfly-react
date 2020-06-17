@@ -163,6 +163,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               direction={direction}
               position={position}
               appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
+              isVisible={isOpen}
             />
           );
         }}

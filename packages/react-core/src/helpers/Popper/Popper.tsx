@@ -30,6 +30,8 @@ export interface PopperProps {
   appendTo?: HTMLElement | (() => HTMLElement);
   /** z-index of the popper element */
   zIndex?: number;
+  /** True to make the popper visible */
+  isVisible?: boolean;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -39,7 +41,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   direction = 'down',
   position = 'left',
   appendTo = () => document.body,
-  zIndex = 9999
+  zIndex = 9999,
+  isVisible = true
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
@@ -79,6 +82,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         name: 'hide',
         enabled: false
       },
+      {
+        name: 'flip',
+        enabled: false
+      },
       sameWidthMod
     ]
   });
@@ -103,6 +110,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     <>
       <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
       {ready &&
+        isVisible &&
         ReactDOM.createPortal(
           <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>,
           getTarget()

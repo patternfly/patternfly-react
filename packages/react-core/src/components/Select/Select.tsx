@@ -695,6 +695,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             direction={direction}
             appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
             popperMatchesTriggerWidth
+            isVisible={isOpen}
           />
         )}
       </SelectContext.Provider>
