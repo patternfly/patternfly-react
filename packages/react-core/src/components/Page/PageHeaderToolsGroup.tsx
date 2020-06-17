@@ -10,12 +10,12 @@ export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElemen
   className?: string;
   /** Visibility at various breakpoints. */
   visibility?: {
-    default: 'hidden' | 'visible';
-    sm: 'hidden' | 'visible';
-    md: 'hidden' | 'visible';
-    lg: 'hidden' | 'visible';
-    xl: 'hidden' | 'visible';
-    '2xl': 'hidden' | 'visible';
+    default?: 'hidden' | 'visible';
+    sm?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
   };
 }
 
