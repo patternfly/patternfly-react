@@ -1,6 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
+  Helpers,
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
@@ -13,7 +14,12 @@ import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorToolt
 import { ChartLegendTooltipContent, defaultLegendProps } from './ChartLegendTooltipContent';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getLegendTooltipSize, getTheme } from '../ChartUtils';
+import {
+  getLegendTooltipSize,
+  getLegendTooltipVisibleData,
+  getLegendTooltipVisibleText,
+  getTheme
+} from '../ChartUtils';
 
 /**
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
@@ -277,25 +283,12 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 }: ChartLegendTooltipProps) => {
   const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
 
-  // Returns the tooltip content component
-  const getTooltipContentComponent = () =>
-    React.cloneElement(labelComponent, {
-      center,
-      data: legendData,
-      flyoutHeight: flyoutHeight || getFlyoutHeight(),
-      flyoutWidth: flyoutWidth || getFlyoutWidth(),
-      height,
-      title,
-      width,
-      ...labelComponent.props
-    });
-
   // Returns legend props
   const getLegendProps = () => {
     const getKeyValue = (key: string) =>
       labelComponent.props[key] ? labelComponent.props[key] : (defaultLegendProps as any)[key];
     return {
-      legendData,
+      legendData: getLegendTooltipVisibleData({ legendData, text, theme }),
       legendProps: {
         borderPadding: getKeyValue('borderPadding'),
         gutter: getKeyValue('gutter'),
@@ -304,7 +297,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
         rowGutter: getKeyValue('rowGutter'),
         style: getKeyValue('style')
       },
-      text,
+      text: getLegendTooltipVisibleText({ legendData, text }),
       theme
     };
   };
@@ -317,6 +310,19 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
 
   // Returns flyout width based on legend size
   const getFlyoutWidth = () => getLegendTooltipSize(getLegendProps()).width + ChartLegendTooltipStyles.flyout.padding;
+
+  // Returns the tooltip content component
+  const getTooltipContentComponent = () =>
+    React.cloneElement(labelComponent, {
+      center,
+      data: legendData,
+      flyoutHeight: flyoutHeight || getFlyoutHeight(),
+      flyoutWidth: flyoutWidth || getFlyoutWidth(),
+      height,
+      title,
+      width,
+      ...labelComponent.props
+    });
 
   // Returns the tooltip component
   const getTooltipComponent = () => {

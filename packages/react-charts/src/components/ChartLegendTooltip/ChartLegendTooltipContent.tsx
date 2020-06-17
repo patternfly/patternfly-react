@@ -19,7 +19,12 @@ import { ChartLabel } from '../ChartLabel';
 import { ChartLegend, ChartLegendProps } from '../ChartLegend';
 import { ChartLegendTooltipLabel } from './ChartLegendTooltipLabel';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getLegendTooltipSize, getTheme } from '../ChartUtils';
+import {
+  getLegendTooltipSize,
+  getLegendTooltipVisibleData,
+  getLegendTooltipVisibleText,
+  getTheme
+} from '../ChartUtils';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
@@ -350,6 +355,7 @@ export const defaultLegendProps = {
 export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
   borderPadding = defaultLegendProps.borderPadding,
   center,
+  colorScale,
   data,
   datum,
   dx = 0,
@@ -384,29 +390,6 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   const titleOffsetX = 10;
   const titleOffsetY = 0;
 
-  // Legend properties
-  const legendProps = {
-    borderPadding,
-    gutter,
-    orientation,
-    padding,
-    rowGutter,
-    style: Array.isArray(style) ? defaultLegendProps.style : style
-  };
-
-  // Min & max dimensions do not include flyout padding
-  const maxLegendDimensions = getLegendTooltipSize({
-    legendData: data,
-    legendProps,
-    text,
-    theme
-  });
-  const minLegendDimensions = getLegendTooltipSize({
-    legendData: [{ name: '' }],
-    legendProps,
-    theme
-  });
-
   // Returns x position of flyout
   const getX = () => {
     if (!(center && flyoutWidth && width)) {
@@ -439,18 +422,32 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     }
   };
 
-  // Returns text prop as legend data so y values can be passed individually to the label component
-  const getLegendData = () => {
-    const textEvaluated = Helpers.evaluateProp(text);
-    const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
-    return _text.map((name, index) => ({ name, symbol: data && data[index] ? data[index].symbol : undefined }));
+  // Min & max dimensions do not include flyout padding
+  const legendProps = {
+    borderPadding,
+    gutter,
+    orientation,
+    padding,
+    rowGutter,
+    style: Array.isArray(style) ? defaultLegendProps.style : style
   };
+  const maxLegendDimensions = getLegendTooltipSize({
+    legendData: getLegendTooltipVisibleData({ colorScale, legendData: data, text, theme }),
+    legendProps,
+    text: getLegendTooltipVisibleText({ legendData: data, text }),
+    theme
+  });
+  const minLegendDimensions = getLegendTooltipSize({
+    legendData: [{ name: '' }],
+    legendProps,
+    theme
+  });
 
   // Returns the label component
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
       dx: maxLegendDimensions.width - minLegendDimensions.width,
-      legendData: data,
+      legendData: getLegendTooltipVisibleData({ colorScale, legendData: data, text, theme }),
       ...labelComponent.props
     });
 
@@ -475,7 +472,8 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     <React.Fragment>
       {getTitleComponent()}
       <ChartLegend
-        data={getLegendData()}
+        colorScale={colorScale}
+        data={getLegendTooltipVisibleData({ colorScale, legendData: data, text, textAsLegendData: true, theme })}
         labelComponent={getLabelComponent()}
         standalone={false}
         theme={theme}
