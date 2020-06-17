@@ -7,9 +7,9 @@ export interface BannerProps extends React.HTMLProps<HTMLButtonElement> {
   children?: React.ReactNode;
   /** Additional classes added to the banner */
   className?: string;
-  /** Adds banner variant styles */
+  /** Variant styles for the banner */
   variant?: 'default' | 'info' | 'danger' | 'success' | 'warning';
-  /** Sticks the banner to the top of its container if true */
+  /** If set to true, the banner sticks to the top of its container */
   isSticky?: boolean;
 }
 
@@ -25,9 +25,10 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
   children,
   className,
   variant = 'default',
-  isSticky = true
+  isSticky = false
 }: BannerProps) => (
   <div className={css(styles.banner, variantStyle[variant], isSticky && styles.modifiers.sticky, className)}>
     {children}
   </div>
 );
+Banner.displayName = 'Banner';

@@ -81,6 +81,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BadgeDemo
   },
   {
+    id: 'banner-demo',
+    name: 'Banner Demo',
+    componentType: Examples.BannerDemo
+  },
+  {
     id: 'purple-bar-grouped-demo',
     name: 'Bar Chart Grouped Purple Demo',
     componentType: Examples.PurpleBarGroupedDemo
