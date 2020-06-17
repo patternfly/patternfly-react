@@ -15,16 +15,16 @@ export class FilteringSelectDemo extends Component<FilteringSelectDemoState> {
 
   options = [
     <SelectGroup label="Status" key="group1">
-      <SelectOption key={0} value="Running" />
-      <SelectOption key={1} value="Stopped" />
-      <SelectOption key={2} value="Down" />
-      <SelectOption key={3} value="Degraded" />
-      <SelectOption key={4} value="Needs Maintenence" />
+      <SelectOption key={0} value="Running" inputId="Running" />
+      <SelectOption key={1} value="Stopped" inputId="Stopped" />
+      <SelectOption key={2} value="Down" inputId="Down" />
+      <SelectOption key={3} value="Degraded" inputId="Degraded" />
+      <SelectOption key={4} value="Needs Maintenence" inputId="Needs-Maintenence" />
     </SelectGroup>,
     <SelectGroup label="Vendor Names" key="group2">
-      <SelectOption key={5} value="Dell" />
-      <SelectOption key={6} value="Samsung" isDisabled />
-      <SelectOption key={7} value="Hewlett-Packard" />
+      <SelectOption key={5} value="Dell" inputId="Dell" />
+      <SelectOption key={6} value="Samsung" isDisabled inputId="Samsung" />
+      <SelectOption key={7} value="Hewlett-Packard" inputId="Hewlett-Packard" />
     </SelectGroup>
   ];
 

@@ -6,7 +6,14 @@ import Point from '../geom/Point';
 import Layer from '../components/layers/Layer';
 import { ContextMenu, ContextMenuItem } from '../components/contextmenu';
 import { Node, isNode, AnchorEnd, GraphElement, isGraph, Graph } from '../types';
-import { DragSourceSpec, DragSourceMonitor, DragEvent } from './dnd-types';
+import {
+  DragSourceSpec,
+  DragSourceMonitor,
+  DragEvent,
+  DragObjectWithType,
+  DragSpecOperationType,
+  DragOperationWithType
+} from './dnd-types';
 import { useDndDrag } from './useDndDrag';
 
 export const CREATE_CONNECTOR_OPERATION = '#createconnector#';
@@ -30,6 +37,8 @@ interface ConnectorComponentProps {
 
 type CreateConnectorRenderer = React.ComponentType<ConnectorComponentProps>;
 
+type OnCreateResult = ConnectorChoice[] | void | undefined | null;
+
 type CreateConnectorWidgetProps = {
   element: Node;
   onKeepAlive: (isAlive: boolean) => void;
@@ -37,8 +46,9 @@ type CreateConnectorWidgetProps = {
     element: Node,
     target: Node | Graph,
     event: DragEvent,
+    dropHints?: string[] | undefined,
     choice?: ConnectorChoice
-  ) => ConnectorChoice[] | void | undefined | null | React.ReactElement[];
+  ) => Promise<OnCreateResult> | OnCreateResult;
   ConnectorComponent: CreateConnectorRenderer;
   contextMenuClass?: string;
 } & CreateConnectorOptions;
@@ -74,20 +84,26 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
   const hintsRef = React.useRef<string[] | undefined>();
 
   const spec = React.useMemo(() => {
-    const dragSourceSpec: DragSourceSpec<any, any, any, CollectProps> = {
+    const dragSourceSpec: DragSourceSpec<
+      DragObjectWithType,
+      DragSpecOperationType<DragOperationWithType>,
+      GraphElement,
+      CollectProps,
+      CreateConnectorWidgetProps
+    > = {
       item: { type: CREATE_CONNECTOR_DROP_TYPE },
       operation: { type: CREATE_CONNECTOR_OPERATION },
       begin: (monitor: DragSourceMonitor, dragProps: any) => {
         setActive(true);
         return dragProps.element;
       },
-      drag: (event: DragEvent, monitor: DragSourceMonitor, p: any) => {
+      drag: (event: DragEvent, monitor: DragSourceMonitor, p: CreateConnectorWidgetProps) => {
         p.element.raise();
       },
-      end: (dropResult: GraphElement, monitor: DragSourceMonitor, dragProps: any) => {
+      end: async (dropResult: GraphElement, monitor: DragSourceMonitor, dragProps: CreateConnectorWidgetProps) => {
         const event = monitor.getDragEvent();
         if ((isNode(dropResult) || isGraph(dropResult)) && event) {
-          const choices = dragProps.onCreate(dragProps.element, dropResult, event);
+          const choices = await dragProps.onCreate(dragProps.element, dropResult, event, monitor.getDropHints());
           if (choices && choices.length) {
             setPrompt({ element: dragProps.element, target: dropResult, event, choices });
             return;
@@ -175,7 +191,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
             <ContextMenuItem
               key={c.label}
               onClick={() => {
-                onCreate(prompt.element, prompt.target, prompt.event, c);
+                onCreate(prompt.element, prompt.target, prompt.event, hintsRef.current, c);
               }}
             >
               {c.label}

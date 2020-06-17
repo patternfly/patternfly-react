@@ -55,31 +55,33 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     hasInlineFilter: false
   };
 
-  extendChildren() {
+  extendChildren(randomId: string) {
     const { children, isGrouped } = this.props;
     const childrenArray: React.ReactElement[] = children as React.ReactElement[];
     if (isGrouped) {
-      let index = 0;
-      return React.Children.map(childrenArray, (group: React.ReactElement) =>
+      return React.Children.map(childrenArray, (group: React.ReactElement, index: number) =>
         React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
-          children: group.props.children.map((option: React.ReactElement) => this.cloneOption(option, index++))
+          children: group.props.children.map((option: React.ReactElement) =>
+            this.cloneOption(option, index++, randomId)
+          )
         })
       );
     }
     return React.Children.map(childrenArray, (child: React.ReactElement, index: number) =>
-      this.cloneOption(child, index)
+      this.cloneOption(child, index, randomId)
     );
   }
 
-  cloneOption(child: React.ReactElement, index: number) {
+  cloneOption(child: React.ReactElement, index: number, randomId: string) {
     const { selected, sendRef, keyHandler } = this.props;
     const isSelected =
       selected && selected.constructor === Array
         ? selected && (Array.isArray(selected) && selected.includes(child.props.value))
         : selected === child.props.value;
     return React.cloneElement(child, {
-      id: `${child.props.value ? child.props.value.toString() : ''}-${index}`,
+      inputId: `${randomId}-${index}`,
+      id: `${randomId}-${index}`,
       isSelected,
       sendRef,
       keyHandler,
@@ -102,7 +104,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
               aria-labelledby={group.props.label.replace(/\W/g, '-')}
               className={css(styles.selectMenuFieldset)}
             >
-              {group.props.children.map((option: React.ReactElement) =>
+              {React.Children.map(group.props.children, (option: React.ReactElement) =>
                 React.cloneElement(option, {
                   isChecked: checked && checked.includes(option.props.value),
                   sendRef,
@@ -150,7 +152,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     /* eslint-enable @typescript-eslint/no-unused-vars */
     return (
       <SelectConsumer>
-        {({ variant }) => (
+        {({ variant, inputIdPrefix }) => (
           <React.Fragment>
             {isCustomContent && (
               <div
@@ -170,7 +172,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 {...props}
               >
-                {this.extendChildren()}
+                {this.extendChildren(inputIdPrefix)}
               </ul>
             )}
             {variant === SelectVariant.checkbox && !isCustomContent && React.Children.count(children) > 0 && (

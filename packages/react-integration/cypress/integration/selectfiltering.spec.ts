@@ -16,7 +16,7 @@ describe('Select with Filtering Test', () => {
   it('Verify filtering works', () => {
     cy.get('.pf-c-form-control').type('run');
     cy.get('#Running').should('exist');
-    cy.get('#Degraded').should('not.exist');
+    cy.get('#Hewlett-Packard').should('not.exist');
     cy.get('.pf-c-form-control').type('{backspace}{backspace}{backspace}degr');
     cy.get('#Running').should('not.exist');
     cy.get('#Degraded').should('exist');

@@ -10,7 +10,7 @@ import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
-import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional } from '../../helpers';
+import { keyHandler, getNextIndex, getOUIAProps, OUIAProps, PickOptional, GenerateId } from '../../helpers';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 
@@ -90,6 +90,8 @@ export interface SelectProps
   inlineFilterPlaceholderText?: string;
   /** Custom text for select badge */
   customBadgeText?: string | number;
+  /** Prefix for the id of the input in the checkbox select variant*/
+  inputIdPrefix?: string;
 }
 
 export interface SelectState {
@@ -139,6 +141,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     hasInlineFilter: false,
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
+    inputIdPrefix: '',
     menuAppendTo: 'inline'
   };
 
@@ -398,6 +401,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       createText,
       noResultsFoundText,
       customBadgeText,
+      inputIdPrefix,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
       ...props
@@ -406,7 +410,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
-    let childPlaceholderText = null;
+    let childPlaceholderText = null as string;
     if (!customContent) {
       if (!hasAnySelections && !placeholderText) {
         const childPlaceholder = React.Children.toArray(children).filter(
@@ -440,7 +444,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       </button>
     );
 
-    let selectedChips = null;
+    let selectedChips = null as any;
     if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
         <ChipGroup>
@@ -685,20 +689,26 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     };
 
     return (
-      <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
-        {menuAppendTo === 'inline' ? (
-          mainComponent
-        ) : (
-          <Popper
-            trigger={mainComponent}
-            popper={popoverContent}
-            direction={direction}
-            appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
-            popperMatchesTriggerWidth
-            isVisible={isOpen}
-          />
+      <GenerateId>
+        {randomId => (
+          <SelectContext.Provider
+            value={{ onSelect, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
+          >
+            {menuAppendTo === 'inline' ? (
+              mainComponent
+            ) : (
+              <Popper
+                trigger={mainComponent}
+                popper={popoverContent}
+                direction={direction}
+                appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
+                popperMatchesTriggerWidth
+                isVisible={isOpen}
+              />
+            )}
+          </SelectContext.Provider>
         )}
-      </SelectContext.Provider>
+      </GenerateId>
     );
   }
 }

@@ -9,6 +9,7 @@ export interface SelectContextInterface {
   ) => void;
   onClose: () => void;
   variant: string;
+  inputIdPrefix: string;
 }
 
 export const SelectContext = React.createContext<SelectContextInterface | null>(null);
