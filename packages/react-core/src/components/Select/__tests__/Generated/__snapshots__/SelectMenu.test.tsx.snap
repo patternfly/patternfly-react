@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SelectMenu should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<SelectMenu
+  checked={Array []}
+  className="''"
+  createText="string"
+  hasInlineFilter={false}
+  innerRef={null}
+  isCustomContent={false}
+  isExpanded={false}
+  isGrouped={false}
+  keyHandler={[Function]}
+  maxHeight=""
+  noResultsFoundText="string"
+  openedOnEnter={false}
+  selected=""
+  sendRef={[Function]}
+/>
 `;

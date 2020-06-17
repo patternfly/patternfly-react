@@ -6,12 +6,11 @@ import { DropdownProps } from './Dropdown';
 import { DropdownContext, DropdownDirection, DropdownPosition } from './dropdownConstants';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 import { PickOptional } from '../../helpers/typeUtils';
-import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
-import { Instance as TippyInstance } from 'tippy.js';
+import { Popper } from '../../helpers/Popper/Popper';
 
 export class DropdownWithContext extends React.Component<DropdownProps & OUIAProps> {
   static displayName = 'DropdownWithContext';
-  tip: TippyInstance;
+
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
   menuComponentRef = React.createRef<any>();
@@ -59,11 +58,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
 
   getMenuComponentRef = () => this.menuComponentRef;
 
-  getPlacement = (position: 'right' | 'left', direction: 'up' | 'down') => {
-    const placement = `${direction === 'up' ? 'top' : 'bottom'}-${position === 'right' ? 'end' : 'start'}`;
-    return placement;
-  };
-
   render() {
     const {
       children,
@@ -80,7 +74,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       autoFocus,
       ouiaId,
       menuAppendTo,
-      menuTippyProps,
       ouiaComponentType,
       ...props
     } = this.props;
@@ -124,9 +117,6 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 isOpen && styles.modifiers.expanded,
                 className
               )}
-              // temporary fix until Core adds a modifier
-              // https://github.com/patternfly/patternfly-react/pull/4348#discussion_r436924794
-              style={{ display: 'block' }}
             >
               {isOpen && menuComponent}
             </div>
@@ -158,33 +148,23 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               {menuAppendTo === 'inline' && isOpen && menuComponent}
             </BaseComponent>
           );
+          const getParentElement = () => {
+            if (this.baseComponentRef && this.baseComponentRef.current) {
+              return this.baseComponentRef.current.parentElement;
+            }
+            return null;
+          };
           return menuAppendTo === 'inline' ? (
             mainComponent
           ) : (
-            <PopoverBase
-              content={popoverContent}
-              onCreate={(tip: TippyInstance) => (this.tip = tip)}
+            <Popper
+              trigger={mainComponent}
+              popper={popoverContent}
+              direction={direction}
+              position={position}
+              appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
               isVisible={isOpen}
-              trigger={'manual'}
-              arrow={false}
-              interactive
-              interactiveBorder={0}
-              maxWidth="none"
-              distance={0}
-              appendTo={menuAppendTo}
-              boundary="window"
-              flip={false}
-              placement={this.getPlacement(position, direction)}
-              hideOnClick={false}
-              theme="pf-popover"
-              lazy
-              duration={0}
-              animation="none"
-              showOnCreate
-              {...menuTippyProps}
-            >
-              {mainComponent}
-            </PopoverBase>
+            />
           );
         }}
       </DropdownContext.Consumer>

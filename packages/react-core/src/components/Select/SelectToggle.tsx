@@ -25,6 +25,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   handleTypeaheadKeys?: (position: string) => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
+  /** The menu element */
+  menuRef?: React.RefObject<HTMLElement>;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -83,8 +85,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 
   onDocClick = (event: Event) => {
-    const { parentRef, isOpen, onToggle, onClose } = this.props;
-    if (isOpen && parentRef && !parentRef.current.contains(event.target as Node)) {
+    const { parentRef, menuRef, isOpen, onToggle, onClose } = this.props;
+    const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
+    const clickedWithinMenu =
+      menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
+    if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       onToggle(false);
       onClose();
       this.toggle.current.focus();
@@ -92,15 +97,17 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   onEscPress = (event: KeyboardEvent) => {
-    const { parentRef, isOpen, variant, onToggle, onClose } = this.props;
+    const { parentRef, menuRef, isOpen, variant, onToggle, onClose } = this.props;
     if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
       return;
     }
+    const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
+    const escFromWithinMenu =
+      menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
     if (
       isOpen &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
-      parentRef &&
-      parentRef.current.contains(event.target as Node)
+      (escFromToggle || escFromWithinMenu)
     ) {
       onToggle(false);
       onClose();
@@ -162,6 +169,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose,
       handleTypeaheadKeys,
       parentRef,
+      menuRef,
       id,
       type,
       hasClearButton,

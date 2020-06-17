@@ -38,8 +38,10 @@
     "@patternfly/react-icons": "^4.3.6",
     "@patternfly/react-styles": "^4.3.7",
     "@patternfly/react-tokens": "^4.4.5",
+    "@popperjs/core": "2.4.2",
     "focus-trap": "4.0.2",
     "react-dropzone": "9.0.0",
+    "react-popper": "2.2.3",
     "tippy.js": "5.1.2",
     "tslib": "^1.11.1"
   },
