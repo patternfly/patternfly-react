@@ -625,7 +625,7 @@ class ActionsExample extends React.Component {
 }
 ```
 
-```js title=Filterable
+```js title=Filterable-with-WindowScroller
 import * as React from 'react';
 import {
   Button,
@@ -676,8 +676,11 @@ class FilterExample extends React.Component {
       }
       rows.push(data);
     }
+    this.scrollableElement = React.createRef();
 
     this.state = {
+      scrollableElement: null,
+
       filters: {
         location: [],
         name: [],
@@ -840,9 +843,20 @@ class FilterExample extends React.Component {
       });
       this.onFilterSelect();
     };
+
+    this._handleResize = debounce(this._handleResize.bind(this), 100);
+    this._bindBodyRef = this._bindBodyRef.bind(this);
   }
 
   componentDidMount() {
+    // re-render after resize
+    window.addEventListener('resize', this._handleResize);
+
+    setTimeout(() => {
+      const scollableElement = document.getElementById('content-scrollable-1');
+      this.setState({ scollableElement });
+    });
+
     // re-render after resize
     window.addEventListener('resize', this._handleResize);
   }
@@ -852,7 +866,12 @@ class FilterExample extends React.Component {
   }
 
   _handleResize() {
-    this.forceUpdate();
+    this._cellMeasurementCache.clearAll();
+    this._bodyRef.recomputeVirtualGridSize();
+  }
+
+  _bindBodyRef(ref) {
+    this._bodyRef = ref;
   }
 
   buildCategoryDropdown() {
@@ -983,7 +1002,7 @@ class FilterExample extends React.Component {
   }
 
   render() {
-    const { loading, rows, columns, actions, filters } = this.state;
+    const { loading, rows, columns, actions, filters, scollableElement } = this.state;
 
     const filteredRows =
       filters.name.length > 0 || filters.location.length > 0 || filters.status.length > 0
@@ -996,7 +1015,6 @@ class FilterExample extends React.Component {
             );
           })
         : rows;
-
     const measurementCache = new CellMeasurerCache({
       fixedWidth: true,
       minHeight: 44,
@@ -1030,87 +1048,62 @@ class FilterExample extends React.Component {
     return (
       <React.Fragment>
         {this.renderToolbar()}
-        {!loading && filteredRows.length > 0 && (
-          <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
-            <Table cells={columns} rows={filteredRows} actions={actions} aria-label="Filterable Table Demo">
-              <TableHeader />
-            </Table>
-            <AutoSizer disableHeight>
-              {({ width }) => (
-                <VirtualTableBody
-                  ref={ref => (this.actionsVirtualBody = ref)}
-                  className="pf-c-table pf-c-virtualized pf-c-window-scroller"
-                  deferredMeasurementCache={measurementCache}
-                  rowHeight={measurementCache.rowHeight}
-                  height={400}
-                  overscanRowCount={10}
-                  columnCount={6}
-                  rows={filteredRows}
-                  rowCount={filteredRows.length}
-                  rowRenderer={rowRenderer}
-                  width={width}
-                />
-              )}
-            </AutoSizer>
-          </div>
-        )}
-        {!loading && filteredRows.length === 0 && (
-          <React.Fragment>
-            <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
-              <Table
-                caption="Actions Virtualized Table"
-                cells={columns}
-                rows={filteredRows}
-                actions={actions}
-                gridBreakPoint={TableGridBreakpoint.none}
-                role="presentation"
-                aria-label="Filterable Table Demo"
+
+        <div
+          id="content-scrollable-1"
+          aria-label="Scrollable Table"
+          role="grid"
+          className="pf-c-scrollablegrid"
+          aria-rowcount={rows.length}
+          style={{
+            height: 500 /* important note: the scrollable container should have some sort of fixed height, or it should be wrapped in container that is smaller than ReactVirtualized__VirtualGrid container and has overflow visible if using the Window Scroller. See WindowScroller.example.css */,
+            overflowX: 'auto',
+            overflowY: 'scroll',
+            scrollBehavior: 'smooth',
+            WebkitOverflowScrolling: 'touch',
+            position: 'relative'
+          }}
+        >
+          <div style={{ padding: 15 }}>
+            {!loading && filteredRows.length > 0 && (
+              <div
+                aria-label="Scrollable Table"
+                role="grid"
+                className="pf-c-scrollablegrid"
+                aria-rowcount={rows.length}
               >
-                <TableHeader />
-              </Table>
-              <AutoSizer disableHeight>
-                {({ width }) => (
-                  <VirtualTableBody
-                    ref={ref => (this.actionsVirtualBody = ref)}
-                    className="pf-c-table pf-c-virtualized pf-c-window-scroller"
-                    deferredMeasurementCache={measurementCache}
-                    rowHeight={measurementCache.rowHeight}
-                    height={400}
-                    overscanRowCount={10}
-                    columnCount={6}
-                    rows={filteredRows}
-                    rowCount={filteredRows.length}
-                    rowRenderer={rowRenderer}
-                    width={width}
-                  />
-                )}
-              </AutoSizer>
-            </div>
-            <Bullseye>
-              <EmptyState>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h5" size="lg">
-                  No results found
-                </Title>
-                <EmptyStateBody>
-                  No results match this filter criteria. Remove all filters or clear all filters to show results.
-                </EmptyStateBody>
-                <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => this.onDelete(null)}>
-                    Clear all filters
-                  </Button>
-                </EmptyStateSecondaryActions>
-              </EmptyState>
-            </Bullseye>
-          </React.Fragment>
-        )}
-        {loading && (
-          <center>
-            <Title headingLevel="h2" size="3xl">
-              Please wait while loading data
-            </Title>
-          </center>
-        )}
+                <Table cells={columns} rows={filteredRows} actions={actions} aria-label="Filterable Table Demo">
+                  <TableHeader />
+                </Table>
+                <WindowScroller scrollElement={scollableElement}>
+                  {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
+                    <AutoSizer disableHeight>
+                      {({ width }) => (
+                        <div ref={registerChild}>
+                          <VirtualTableBody
+                            ref={ref => (this.actionsVirtualBody = ref)}
+                            autoHeight
+                            className="pf-c-table pf-c-virtualized pf-c-window-scroller"
+                            deferredMeasurementCache={measurementCache}
+                            rowHeight={measurementCache.rowHeight}
+                            height={height || 0}
+                            overscanRowCount={10}
+                            columnCount={6}
+                            rows={filteredRows}
+                            rowCount={filteredRows.length}
+                            rowRenderer={rowRenderer}
+                            scrollTop={scrollTop}
+                            width={width}
+                          />
+                        </div>
+                      )}
+                    </AutoSizer>
+                  )}
+                </WindowScroller>
+              </div>
+            )}
+          </div>
+        </div>
       </React.Fragment>
     );
   }
