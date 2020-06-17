@@ -36,7 +36,7 @@ EmptyStateSecondaryActions
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, headerCol, sortable, SortByDirection, TextInput } from '@patternfly/react-table';
 import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
-import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
+import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import virtualGridStyles from './VirtualGrid.example.css';
 
 ## Examples
@@ -655,7 +655,7 @@ import { debounce } from 'lodash';
 import { SearchIcon, FilterIcon } from '@patternfly/react-icons';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, TextInput } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
-import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
+import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import virtualGridStyles from './VirtualGrid.example.css';
 
 class FilterExample extends React.Component {
