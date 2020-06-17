@@ -59,7 +59,11 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
           )}
         </g>
       ) : (
-        <ConnectorArrow startPoint={startPoint} endPoint={endPoint} />
+        <ConnectorArrow
+          className="pf-topology-default-create-connector__arrow"
+          startPoint={startPoint}
+          endPoint={endPoint}
+        />
       )}
     </g>
   );

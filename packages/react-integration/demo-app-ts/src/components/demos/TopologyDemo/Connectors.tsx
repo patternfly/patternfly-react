@@ -210,7 +210,13 @@ export const CreateConnector = withTopologySetup(() => {
         }
         if (kind === ModelKind.node) {
           return withCreateConnector(
-            (source: Node, target: Node | Graph, event: DragEvent, choice: ColorChoice | undefined): any[] | null => {
+            (
+              source: Node,
+              target: Node | Graph,
+              event: DragEvent,
+              dropHints: string[],
+              choice: ColorChoice | undefined
+            ): ColorChoice[] | void => {
               if (!choice) {
                 return [{ label: 'Create Annotation', color: 'red' }, { label: 'Create Binding', color: 'green' }];
               }
@@ -246,7 +252,6 @@ export const CreateConnector = withTopologySetup(() => {
                 }
               });
               controller.fromModel(model);
-              return null;
             }
           )(
             withDndDrop<Node, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeProps>({

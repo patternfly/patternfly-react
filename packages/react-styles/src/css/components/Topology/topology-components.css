@@ -14,6 +14,11 @@
   stroke-dasharray: 5px, 5px;
 }
 
+.pf-topology-default-create-connector__arrow {
+  fill: var(--pf-topology-create-connector-color);
+  stroke: var(--pf-topology-create-connector-color);
+}
+
 .pf-topology-default-create-connector__create__bg {
   stroke: var(--pf-topology-create-connector-color);
   fill: var(--pf-topology-create-connector-bg-color);
