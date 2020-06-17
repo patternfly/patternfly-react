@@ -19,7 +19,7 @@ export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
   const formActionsComponent = <div className={css(styles.formActions)}>{children}</div>;
   return (
     <div {...props} className={customClassName}>
-      {formActionsComponent}
+      <div className={css(styles.formGroupControl)}>{formActionsComponent}</div>
     </div>
   );
 };
