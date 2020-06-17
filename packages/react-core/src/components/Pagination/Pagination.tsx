@@ -67,7 +67,7 @@ export type OnPerPageSelect = (
   endIdx?: number
 ) => void;
 
-export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
+export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** What should be rendered inside */
   children?: React.ReactNode;
   /** Additional classes for the container. */
@@ -135,10 +135,10 @@ const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
 };
 
 let paginationId = 0;
-export class Pagination extends React.Component<PaginationProps & OUIAProps> {
+export class Pagination extends React.Component<PaginationProps> {
   static displayName = 'Pagination';
   paginationRef = React.createRef<HTMLDivElement>();
-  static defaultProps: PickOptional<PaginationProps & OUIAProps> = {
+  static defaultProps: PickOptional<PaginationProps> = {
     children: null,
     className: '',
     variant: PaginationVariant.top,
@@ -174,7 +174,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
     onNextClick: () => undefined,
     onPageInput: () => undefined,
     onLastClick: () => undefined,
-    ouiaId: null
+    ouiaSafe: true
   };
 
   getLastPage() {
@@ -222,6 +222,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
       onPageInput,
       onLastClick,
       ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
     const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
@@ -257,7 +258,7 @@ export class Pagination extends React.Component<PaginationProps & OUIAProps> {
           className
         )}
         id={`${widgetId}-${paginationId++}`}
-        {...getOUIAProps('Pagination', ouiaId)}
+        {...getOUIAProps(Pagination.displayName, ouiaId, ouiaSafe)}
         {...props}
       >
         {variant === PaginationVariant.top && (

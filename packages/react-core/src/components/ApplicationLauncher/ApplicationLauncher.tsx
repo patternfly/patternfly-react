@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
-import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
+import { Dropdown, DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
@@ -204,7 +204,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             sectionClass: styles.appLauncherGroup,
             sectionTitleClass: styles.appLauncherGroupTitle,
             sectionComponent: 'section',
-            disabledClass: styles.modifiers.disabled
+            disabledClass: styles.modifiers.disabled,
+            ouiaComponentType: ApplicationLauncher.displayName
           }}
         >
           <DropdownWithContext

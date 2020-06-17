@@ -3,6 +3,7 @@ import { FocusTrap } from '../../helpers';
 import modalStyles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 import bullsEyeStyles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 import { Backdrop } from '../Backdrop/Backdrop';
 import { ModalBoxBody } from './ModalBoxBody';
@@ -13,7 +14,7 @@ import { ModalBoxDescription } from './ModalBoxDescription';
 import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxTitle } from './ModalBoxTitle';
 
-export interface ModalContentProps {
+export interface ModalContentProps extends OUIAProps {
   /** Content rendered inside the Modal. */
   children: React.ReactNode;
   /** Additional classes added to the button */
@@ -77,6 +78,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   descriptorId,
   disableFocusTrap = false,
   hasNoBodyWrapper = false,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: ModalContentProps) => {
   if (!isOpen) {
@@ -134,6 +137,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledbyFormatted()}
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
+      {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
     >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}

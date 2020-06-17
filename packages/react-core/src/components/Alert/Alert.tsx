@@ -14,7 +14,7 @@ export enum AlertVariant {
   default = 'default'
 }
 
-export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
+export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'>, OUIAProps {
   /** Adds Alert variant styles  */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** Flag to indicate if the Alert is inline */
@@ -37,7 +37,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isLiveRegion?: boolean;
 }
 
-export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
+export const Alert: React.FunctionComponent<AlertProps> = ({
   variant = AlertVariant.default,
   isInline = false,
   isLiveRegion = false,
@@ -49,8 +49,9 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
   children = '',
   className = '',
   ouiaId,
+  ouiaSafe = true,
   ...props
-}: AlertProps & OUIAProps) => {
+}: AlertProps) => {
   const getHeadingContent = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
@@ -70,7 +71,7 @@ export const Alert: React.FunctionComponent<AlertProps & OUIAProps> = ({
       {...props}
       className={customClassName}
       aria-label={ariaLabel}
-      {...getOUIAProps('Alert', ouiaId)}
+      {...getOUIAProps(Alert.displayName, ouiaId, ouiaSafe)}
       {...(isLiveRegion && {
         'aria-live': 'polite',
         'aria-atomic': 'false'

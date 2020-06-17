@@ -4,6 +4,7 @@ cssPrefix: 'pf-c-table'
 section: 'components'
 typescript: true
 propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell']
+ouia: true
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!

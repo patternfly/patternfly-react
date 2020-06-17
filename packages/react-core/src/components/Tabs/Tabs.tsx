@@ -15,7 +15,7 @@ export enum TabsComponent {
   nav = 'nav'
 }
 
-export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
+export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
   /** Content rendered inside the tabs component. */
   children: React.ReactNode;
   /** Additional classes added to the tabs */
@@ -64,10 +64,10 @@ interface TabsState {
   shownKeys: (string | number)[];
 }
 
-export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
+export class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
-  constructor(props: TabsProps & OUIAProps) {
+  constructor(props: TabsProps) {
     super(props);
     this.state = {
       showScrollButtons: false,
@@ -88,7 +88,8 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
     rightScrollAriaLabel: 'Scroll right',
     component: TabsComponent.div,
     mountOnEnter: false,
-    unmountOnExit: false
+    unmountOnExit: false,
+    ouiaSafe: true
   };
 
   handleTabClick(
@@ -206,6 +207,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
       'aria-label': ariaLabel,
       component,
       ouiaId,
+      ouiaSafe,
       mountOnEnter,
       unmountOnExit,
       inset,
@@ -230,7 +232,7 @@ export class Tabs extends React.Component<TabsProps & OUIAProps, TabsState> {
             formatBreakpointMods(inset, styles),
             className
           )}
-          {...getOUIAProps('Tabs', ouiaId)}
+          {...getOUIAProps(Tabs.displayName, ouiaId, ouiaSafe)}
           id={id && id}
           {...props}
         >

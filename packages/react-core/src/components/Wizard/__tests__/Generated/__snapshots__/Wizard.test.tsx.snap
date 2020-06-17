@@ -11,6 +11,7 @@ exports[`Wizard should match snapshot (auto-generated) 1`] = `
   hasNoBodyWrapper={true}
   isOpen={true}
   onClose={[Function]}
+  ouiaSafe={true}
   showClose={false}
   title=""
   variant="large"

@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-button'
 typescript: true
 propComponents: ['Button']
+ouia: true
 ---
 
 import { Button, Tooltip } from '@patternfly/react-core';

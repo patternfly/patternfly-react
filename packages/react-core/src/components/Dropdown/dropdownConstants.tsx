@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { OUIAProps } from '../../helpers';
 
 export enum DropdownPosition {
   right = 'right',
@@ -10,24 +11,27 @@ export enum DropdownDirection {
   down = 'down'
 }
 
-export const DropdownContext = React.createContext<{
-  onSelect?: (event?: any) => void;
-  id?: string;
-  toggleIndicatorClass?: string;
-  toggleIconClass?: string;
-  toggleTextClass?: string;
-  menuClass?: string;
-  itemClass?: string;
-  toggleClass?: string;
-  baseClass?: string;
-  baseComponent?: string;
-  sectionClass?: string;
-  sectionTitleClass?: string;
-  sectionComponent?: string;
-  disabledClass?: string;
-  plainTextClass?: string;
-  menuComponent?: string;
-}>({
+export const DropdownContext = React.createContext<
+  {
+    onSelect?: (event?: any) => void;
+    id?: string;
+    toggleIndicatorClass?: string;
+    toggleIconClass?: string;
+    toggleTextClass?: string;
+    menuClass?: string;
+    itemClass?: string;
+    toggleClass?: string;
+    baseClass?: string;
+    baseComponent?: string;
+    sectionClass?: string;
+    sectionTitleClass?: string;
+    sectionComponent?: string;
+    disabledClass?: string;
+    plainTextClass?: string;
+    menuComponent?: string;
+    ouiaComponentType?: string;
+  } & OUIAProps
+>({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onSelect: (event?: any) => undefined as any,
   id: '',

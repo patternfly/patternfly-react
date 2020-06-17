@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { getOUIAProps, OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
+import { getOUIAProps, OUIAProps } from '@patternfly/react-core';
 import {
   DropdownDirection,
   DropdownPosition
@@ -243,7 +243,7 @@ export interface IRow extends RowType {
   disableCheckbox?: boolean;
 }
 
-export interface TableProps {
+export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
   'aria-label'?: string;
   /** Content rendered inside the Table */
@@ -310,10 +310,10 @@ export const TableContext = React.createContext({
   rows: [] as (IRow | string[])[]
 });
 
-export class Table extends React.Component<TableProps & OUIAProps, {}> {
+export class Table extends React.Component<TableProps, {}> {
   static displayName = 'Table';
   static hasWarnBeta = false;
-  static defaultProps = {
+  static defaultProps: Partial<TableProps> = {
     children: null as React.ReactNode,
     className: '',
     variant: null as TableVariant,
@@ -328,7 +328,8 @@ export class Table extends React.Component<TableProps & OUIAProps, {}> {
     'aria-label': undefined as string,
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
-    canSelectAll: true
+    canSelectAll: true,
+    ouiaSafe: true
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -381,6 +382,7 @@ export class Table extends React.Component<TableProps & OUIAProps, {}> {
       borders,
       role,
       ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
 
@@ -444,7 +446,7 @@ export class Table extends React.Component<TableProps & OUIAProps, {}> {
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className
           )}
-          {...getOUIAProps('Table', ouiaId)}
+          {...getOUIAProps(Table.displayName, ouiaId, ouiaSafe)}
         >
           {caption && <caption>{caption}</caption>}
           {children}

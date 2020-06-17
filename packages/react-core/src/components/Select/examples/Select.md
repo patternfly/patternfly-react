@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-select'
 propComponents: ['Select', 'SelectOption', 'SelectGroup', 'SelectOptionObject']
 typescript: true
+ouia: true
 ---
 
 import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';

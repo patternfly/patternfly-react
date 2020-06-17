@@ -99,7 +99,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -122,7 +121,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-expanded"
       data-ouia-component-id={5}
-      data-ouia-component-type="PF4/Dropdown"
+      data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -142,7 +141,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-expanded"
               data-ouia-component-id="5"
-              data-ouia-component-type="PF4/Dropdown"
+              data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
               <button
@@ -278,7 +277,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-expanded"
                 data-ouia-component-id="5"
-                data-ouia-component-type="PF4/Dropdown"
+                data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
                 <button
@@ -955,7 +954,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <DropdownToggle
@@ -977,7 +975,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-top pf-m-align-right"
       data-ouia-component-id={3}
-      data-ouia-component-type="PF4/Dropdown"
+      data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -997,7 +995,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-top pf-m-align-right"
               data-ouia-component-id="3"
-              data-ouia-component-type="PF4/Dropdown"
+              data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
               <button
@@ -1051,7 +1049,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-top pf-m-align-right"
                 data-ouia-component-id="3"
-                data-ouia-component-type="PF4/Dropdown"
+                data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
                 <button
@@ -1229,7 +1227,6 @@ exports[`ApplicationLauncher dropup 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -1251,7 +1248,7 @@ exports[`ApplicationLauncher dropup 1`] = `
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-top"
       data-ouia-component-id={2}
-      data-ouia-component-type="PF4/Dropdown"
+      data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -1271,7 +1268,7 @@ exports[`ApplicationLauncher dropup 1`] = `
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-top"
               data-ouia-component-id="2"
-              data-ouia-component-type="PF4/Dropdown"
+              data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
               <button
@@ -1325,7 +1322,7 @@ exports[`ApplicationLauncher dropup 1`] = `
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-top"
                 data-ouia-component-id="2"
-                data-ouia-component-type="PF4/Dropdown"
+                data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
                 <button
@@ -1503,7 +1500,6 @@ exports[`ApplicationLauncher expanded 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -1525,7 +1521,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-expanded"
       data-ouia-component-id={4}
-      data-ouia-component-type="PF4/Dropdown"
+      data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -1545,7 +1541,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-expanded"
               data-ouia-component-id="4"
-              data-ouia-component-type="PF4/Dropdown"
+              data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
               <button
@@ -1680,7 +1676,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-expanded"
                 data-ouia-component-id="4"
-                data-ouia-component-type="PF4/Dropdown"
+                data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
                 <button
@@ -2354,7 +2350,6 @@ exports[`ApplicationLauncher regular 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -2376,7 +2371,7 @@ exports[`ApplicationLauncher regular 1`] = `
       aria-label="Application launcher"
       className="pf-c-app-launcher"
       data-ouia-component-id={0}
-      data-ouia-component-type="PF4/Dropdown"
+      data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -2396,7 +2391,7 @@ exports[`ApplicationLauncher regular 1`] = `
               aria-label="Application launcher"
               class="pf-c-app-launcher"
               data-ouia-component-id="0"
-              data-ouia-component-type="PF4/Dropdown"
+              data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
               <button
@@ -2450,7 +2445,7 @@ exports[`ApplicationLauncher regular 1`] = `
                 aria-label="Application launcher"
                 class="pf-c-app-launcher"
                 data-ouia-component-id="0"
-                data-ouia-component-type="PF4/Dropdown"
+                data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
                 <button
@@ -2628,7 +2623,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <DropdownToggle
@@ -2650,7 +2644,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-align-right"
       data-ouia-component-id={1}
-      data-ouia-component-type="PF4/Dropdown"
+      data-ouia-component-type="PF4/ApplicationLauncher"
       data-ouia-safe={true}
     >
       <DropdownToggle
@@ -2670,7 +2664,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
               aria-label="Application launcher"
               class="pf-c-app-launcher pf-m-align-right"
               data-ouia-component-id="1"
-              data-ouia-component-type="PF4/Dropdown"
+              data-ouia-component-type="PF4/ApplicationLauncher"
               data-ouia-safe="true"
             >
               <button
@@ -2724,7 +2718,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 aria-label="Application launcher"
                 class="pf-c-app-launcher pf-m-align-right"
                 data-ouia-component-id="1"
-                data-ouia-component-type="PF4/Dropdown"
+                data-ouia-component-type="PF4/ApplicationLauncher"
                 data-ouia-safe="true"
               >
                 <button

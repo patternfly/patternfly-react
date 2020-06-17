@@ -11,7 +11,8 @@ export type NavSelectClickHandler = (
 ) => void;
 
 export interface NavProps
-  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'> {
+  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'>,
+    OUIAProps {
   /** Anything that can be rendered inside of the nav */
   children?: React.ReactNode;
   /** Additional classes added to the container */
@@ -56,12 +57,13 @@ export const NavContext = React.createContext<{
   isHorizontal?: boolean;
 }>({});
 
-export class Nav extends React.Component<NavProps & OUIAProps> {
+export class Nav extends React.Component<NavProps> {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
     onToggle: () => undefined,
-    theme: 'dark'
+    theme: 'dark',
+    ouiaSafe: true
   };
 
   state = {
@@ -108,6 +110,7 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
       onToggle,
       theme,
       ouiaId,
+      ouiaSafe,
       variant,
       ...props
     } = this.props;
@@ -145,7 +148,7 @@ export class Nav extends React.Component<NavProps & OUIAProps> {
             className
           )}
           aria-label={ariaLabel || variant === 'tertiary' ? 'Local' : 'Global'}
-          {...getOUIAProps('Nav', ouiaId)}
+          {...getOUIAProps(Nav.displayName, ouiaId, ouiaSafe)}
           {...props}
         >
           {children}
