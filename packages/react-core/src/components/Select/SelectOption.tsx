@@ -26,7 +26,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isDisabled?: boolean;
   /** Flag indicating if the option acts as a placeholder */
   isPlaceholder?: boolean;
-  /** Flad indicating if the option acts as a "no results" indicator */
+  /** Flag indicating if the option acts as a "no results" indicator */
   isNoResultsOption?: boolean;
   /** Internal flag indicating if the option is selected */
   isSelected?: boolean;
@@ -40,6 +40,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   keyHandler?: (index: number, position: string) => void;
   /** Optional callback for click event */
   onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
+  /** Id of the checkbox input */
+  inputId?: string;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -57,7 +59,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     component: 'button',
     onClick: () => {},
     sendRef: () => {},
-    keyHandler: () => {}
+    keyHandler: () => {},
+    inputId: ''
   };
 
   componentDidMount() {
@@ -102,13 +105,14 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       keyHandler,
       index,
       component,
+      inputId,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
     const Component = component as any;
     return (
       <SelectConsumer>
-        {({ onSelect, onClose, variant }) => (
+        {({ onSelect, onClose, variant, inputIdPrefix }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
               <li role="presentation">
@@ -156,7 +160,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 onKeyDown={this.onKeyDown}
               >
                 <input
-                  id={value.toString()}
+                  id={inputId || `${inputIdPrefix}-${value.toString()}`}
                   className={css(checkStyles.checkInput)}
                   type="checkbox"
                   onChange={event => {
