@@ -61,6 +61,7 @@ import {
   DropdownToggle,
   DropdownItem,
   DropdownSeparator,
+  Flex,
   Gallery,
   GalleryItem,
   KebabToggle,
