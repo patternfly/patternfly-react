@@ -1,1 +1,1 @@
-export { Tooltip, TooltipPosition } from './Tooltip';
+export { Tooltip, TooltipPosition, TooltipPopper } from './Tooltip';

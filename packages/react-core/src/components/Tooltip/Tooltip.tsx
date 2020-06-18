@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 import * as React from 'react';
 import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
@@ -6,10 +7,142 @@ import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
+import { TooltipArrow } from './TooltipArrow';
 import { KEY_CODES } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { PickOptional } from '../../helpers/typeUtils';
+import { Popper } from '../../helpers/Popper/Popper';
+import { Button } from '../Button';
+
+export const TooltipPopper: React.FunctionComponent<TooltipProps> = ({
+  content: bodyContent,
+  // position = 'top',
+  trigger = 'mouseenter focus',
+  hideOnClick = true,
+  isVisible = false,
+  isContentLeftAligned = false,
+  // enableFlip = true,
+  className = '',
+  // entryDelay = 500,
+  // exitDelay = 500,
+  appendTo = () => document.body,
+  // zIndex = 9999,
+  // maxWidth = tooltipMaxWidth && tooltipMaxWidth.value,
+  // isAppLauncher = false,
+  distance = 15,
+  // aria = 'describedby',
+  // boundary = 'window',
+  // For every initial starting position, there are 3 escape positions
+  // flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+  // tippyProps = {},
+  id = '',
+  children,
+  ...rest
+}) => {
+  const triggerOnMouseenter = trigger.includes('mouseenter');
+  const triggerOnFocus = trigger.includes('focus');
+  const triggerOnClick = trigger.includes('click');
+  const [visible, setVisible] = React.useState(false);
+  const onDocumentClick = (event: any) => {
+    if (!visible) {
+      return;
+    }
+    if (event.target !== event.currentTarget) {
+      console.log('outside click: hide tip');
+      setVisible(false);
+    } else {
+      console.log('inside click');
+    }
+  }
+  const positionModifiers = {
+    top: styles.modifiers.top,
+    bottom: styles.modifiers.bottom,
+    left: styles.modifiers.left,
+    right: styles.modifiers.right
+  };
+
+  const content = (
+    <div
+      className={css(
+        styles.tooltip,
+        // !enableFlip && modifierFromPopperPosition(),
+        className
+      )}
+      role="tooltip"
+      id={id}
+    >
+      <TooltipArrow />
+      <TooltipContent isLeftAligned={isContentLeftAligned}>{bodyContent}</TooltipContent>
+    </div>
+  );
+
+  const appendToDocumentBody = () => document.body;
+  const onMouseEnter = () => setVisible(true);
+  const onMouseLeave = () => setVisible(false);
+  const onFocus = () => setVisible(true);
+  const onBlur = () => setVisible(false);
+  const onClick = (event: any, triggerElement: any) => {
+    // event.currentTarget = document
+    // event.target could be triggerElement or something else
+    if (hideOnClick === true) {
+      // hide on inside the toggle as well as outside clicks
+      if (visible) {
+        setVisible(false);
+      } else if (event.target === triggerElement) {
+        setVisible(true);
+      }
+    } else if (hideOnClick === false) {
+      // do nothing
+    } else if (hideOnClick === 'toggle') {
+      setVisible(!visible);
+    }
+  }
+
+  return (
+    <>
+      <Button onClick={() => setVisible(!visible)}>Visible: {visible}</Button>
+      <Popper
+        trigger={children}
+        popper={content}
+        appendTo={appendTo || appendToDocumentBody}
+        isVisible={visible}
+        positionModifiers={positionModifiers}
+        distance={distance}
+        position="center"
+        onMouseEnter={triggerOnMouseenter && onMouseEnter}
+        onMouseLeave={triggerOnMouseenter && onMouseLeave}
+        onFocus={triggerOnFocus && onFocus}
+        onBlur={triggerOnFocus && onBlur}
+        onClick={triggerOnClick && onClick}
+      />
+    </>
+  );
+
+  // return (
+  //   <>
+  //     <ChildWrapperComponent onFoundRef={(foundRef: any) => setReferenceElement(foundRef)}>
+  //       {children}
+  //     </ChildWrapperComponent>
+  //     {ReactDOM.createPortal(
+  //       <div
+  //         ref={setPopperElement}
+  //         style={{
+  //           ...popperStyles.popper,
+  //           zIndex: 9999
+  //         }}
+  //         {...attributes.popper}
+  //         className={css(styles.tooltip, modifierFromPopperPosition())}
+  //         role="tooltip"
+  //       >
+  //         <TooltipArrow />
+  //         <TooltipContent isLeftAligned={isContentLeftAligned}>{content}</TooltipContent>
+  //       </div>,
+  //       document.body
+  //     )}
+  //   </>
+  // );
+};
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -21,7 +154,7 @@ export enum TooltipPosition {
 
 export interface TooltipProps {
   /** The element to append the tooltip to, defaults to body */
-  appendTo?: Element | ((ref: Element) => Element);
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /** Aria-labelledby or aria-describedby for tooltip */
   aria?: 'describedby' | 'labelledby';
   /** If enableFlip is true, the tooltip responds to this boundary */
@@ -62,6 +195,7 @@ export interface TooltipProps {
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Tooltip trigger: click, mouseenter, focus, manual  */
   trigger?: string;
+  hideOnClick?: true | false | 'toggle';
   /** Flag to indicate that the text content is left aligned */
   isContentLeftAligned?: boolean;
   /** value for visibility when trigger is 'manual' */
