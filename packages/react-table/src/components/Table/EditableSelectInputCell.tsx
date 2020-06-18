@@ -46,7 +46,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   isOpen?: boolean;
   /** Event handler which fires when the select toggle is toggled */
   onToggle?: (isExpanded: boolean) => void;
-  /** */
+  /** Event handler which fires when the user clears the selections */
   clearSelection?: (rowIndex: number, cellIndex: number, event?: React.MouseEvent) => void;
 }
 
