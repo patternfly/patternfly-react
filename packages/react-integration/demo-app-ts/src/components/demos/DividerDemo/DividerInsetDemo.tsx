@@ -20,6 +20,17 @@ export class DividerInsetDemo extends React.Component {
             '2xl': 'insetNone'
           }}
         />
+        inset xs
+        <Divider
+          id="insetXs"
+          inset={{
+            default: 'insetXs',
+            md: 'insetXs',
+            lg: 'insetXs',
+            xl: 'insetXs',
+            '2xl': 'insetXs'
+          }}
+        />
         inset sm
         <Divider
           id="insetSm"
@@ -53,6 +64,7 @@ export class DividerInsetDemo extends React.Component {
             '2xl': 'insetLg'
           }}
         />
+        inset Xl
         <Divider
           id="insetXl"
           inset={{
@@ -63,7 +75,7 @@ export class DividerInsetDemo extends React.Component {
             '2xl': 'insetXl'
           }}
         />
-        inset XL
+        inset 2Xl
         <Divider
           id="inset2Xl"
           inset={{
@@ -74,7 +86,7 @@ export class DividerInsetDemo extends React.Component {
             '2xl': 'inset2xl'
           }}
         />
-        inset 2XL
+        inset 3XL
         <Divider
           id="inset3Xl"
           inset={{
@@ -85,7 +97,6 @@ export class DividerInsetDemo extends React.Component {
             '2xl': 'inset3xl'
           }}
         />
-        inset 3XL
         <Flex>
           <FlexItem>first item</FlexItem>
           <Divider
@@ -101,6 +112,18 @@ export class DividerInsetDemo extends React.Component {
           />
           <FlexItem>second item</FlexItem>
           <Divider
+            id="verticalInsetXs"
+            isVertical
+            inset={{
+              default: 'insetXs',
+              md: 'insetXs',
+              lg: 'insetXs',
+              xl: 'insetXs',
+              '2xl': 'insetXs'
+            }}
+          />
+          <FlexItem>third item</FlexItem>
+          <Divider
             id="verticalInsetSm"
             isVertical
             inset={{
@@ -111,7 +134,7 @@ export class DividerInsetDemo extends React.Component {
               '2xl': 'insetSm'
             }}
           />
-          <FlexItem>third item</FlexItem>
+          <FlexItem>fourth item</FlexItem>
           <Divider
             id="verticalInsetMd"
             isVertical
@@ -123,7 +146,7 @@ export class DividerInsetDemo extends React.Component {
               '2xl': 'insetMd'
             }}
           />
-          <FlexItem>fourth item</FlexItem>
+          <FlexItem>fifth item</FlexItem>
           <Divider
             id="verticalInsetLg"
             isVertical
@@ -135,7 +158,7 @@ export class DividerInsetDemo extends React.Component {
               '2xl': 'insetLg'
             }}
           />
-          <FlexItem>fifth item</FlexItem>
+          <FlexItem>sixth item</FlexItem>
           <Divider
             id="verticalInsetXl"
             isVertical
@@ -147,7 +170,7 @@ export class DividerInsetDemo extends React.Component {
               '2xl': 'insetXl'
             }}
           />
-          <FlexItem>sixth item</FlexItem>
+          <FlexItem>seventh item</FlexItem>
           <Divider
             id="verticalInset2Xl"
             isVertical
@@ -159,7 +182,7 @@ export class DividerInsetDemo extends React.Component {
               '2xl': 'inset2xl'
             }}
           />
-          <FlexItem>seventh item</FlexItem>
+          <FlexItem>eighth item</FlexItem>
           <Divider
             id="verticalInset3Xl"
             isVertical
@@ -171,7 +194,7 @@ export class DividerInsetDemo extends React.Component {
               '2xl': 'inset3xl'
             }}
           />
-          <FlexItem>eighth item</FlexItem>
+          <FlexItem>ninth item</FlexItem>
         </Flex>
       </React.Fragment>
     );

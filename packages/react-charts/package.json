@@ -29,8 +29,10 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/patternfly": "4.10.31",
+    "@patternfly/patternfly": "4.14.0",
     "@patternfly/react-styles": "^4.3.7",
+    "@patternfly/patternfly": "4.14.0",
+    "@patternfly/react-styles": "^4.3.6",
     "@patternfly/react-tokens": "^4.4.5",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.15",

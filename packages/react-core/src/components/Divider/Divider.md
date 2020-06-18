@@ -79,7 +79,7 @@ DividerVertical = () => (
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-DividerVerticalInsetMedium = () => (
+DividerVerticalInsetMd = () => (
   <Flex>
     <FlexItem>first item</FlexItem>
     <Divider isVertical inset={{default: 'insetMd'}}/>
@@ -99,8 +99,8 @@ DividerVerticalInsetVarious = () => (
       inset={{
         default: 'insetMd',
         md: 'insetNone',
-        lg: 'inset3xl',
-        xl: 'insetLg'
+        lg: 'insetSm',
+        xl: 'insetXs'
       }}
     />
     <FlexItem>first item</FlexItem>

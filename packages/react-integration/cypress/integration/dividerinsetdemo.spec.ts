@@ -13,6 +13,14 @@ describe('Divider Inset Demo Test', () => {
     cy.get('#insetNone.pf-m-inset-none-on-2xl').should('exist');
   });
 
+  it('Verify Xs inset applied for all viewport sizes ', () => {
+    cy.get('#insetXs.pf-m-inset-xs').should('exist');
+    cy.get('#insetXs.pf-m-inset-xs-on-md').should('exist');
+    cy.get('#insetXs.pf-m-inset-xs-on-lg').should('exist');
+    cy.get('#insetXs.pf-m-inset-xs-on-xl').should('exist');
+    cy.get('#insetXs.pf-m-inset-xs-on-2xl').should('exist');
+  });
+
   it('Verify Small inset applied for all viewport sizes ', () => {
     cy.get('#insetSm.pf-m-inset-sm').should('exist');
     cy.get('#insetSm.pf-m-inset-sm-on-md').should('exist');
@@ -67,6 +75,14 @@ describe('Divider Inset Demo Test', () => {
     cy.get('#verticalInsetNone.pf-m-inset-none-on-lg').should('exist');
     cy.get('#verticalInsetNone.pf-m-inset-none-on-xl').should('exist');
     cy.get('#verticalInsetNone.pf-m-inset-none-on-2xl').should('exist');
+  });
+
+  it('Verify Xs inset applied for all viewport sizes for Vertical Divider ', () => {
+    cy.get('#verticalInsetXs.pf-m-inset-xs').should('exist');
+    cy.get('#verticalInsetXs.pf-m-inset-xs-on-md').should('exist');
+    cy.get('#verticalInsetXs.pf-m-inset-xs-on-lg').should('exist');
+    cy.get('#verticalInsetXs.pf-m-inset-xs-on-xl').should('exist');
+    cy.get('#verticalInsetXs.pf-m-inset-xs-on-2xl').should('exist');
   });
 
   it('Verify Small inset applied for all viewport sizes for Vertical Divider ', () => {
