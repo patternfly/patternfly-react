@@ -1,7 +1,8 @@
 /* eslint-disable camelcase */
 import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
 import { ColorScalePropType, Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendProps } from '../ChartLegend';
+import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLegendDimensions, getTextSizeWorkAround } from './chart-legend';
 
 interface ChartCursorTooltipCenterOffsetInterface {
@@ -79,6 +80,26 @@ export const getCursorTooltipPoniterOrientation = ({
     height > center.y + flyoutHeight + pointerLength ? 'top' : 'bottom';
   return horizontal ? orientationX : orientationY;
 };
+
+// Returns props associated with legend data
+export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) => ({
+  borderPadding: 0,
+  gutter: 0,
+  orientation: 'vertical',
+  padding: 0,
+  rowGutter: -12,
+  style: {
+    labels: {
+      fill: ChartLegendTooltipStyles.label.fill,
+      padding: 0
+    },
+    title: {
+      fill: ChartLegendTooltipStyles.label.fill,
+      padding: 0
+    }
+  },
+  ...defaultProps
+});
 
 // Returns the legend height and width
 export const getLegendTooltipSize = ({
