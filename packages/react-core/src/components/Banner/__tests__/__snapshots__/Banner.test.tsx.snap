@@ -42,6 +42,19 @@ exports[`info banner 1`] = `
 </Banner>
 `;
 
+exports[`sticky banner 1`] = `
+<Banner
+  aria-label="sticky"
+  isSticky={true}
+>
+  <div
+    className="pf-c-banner pf-m-sticky"
+  >
+    Sticky Banner
+  </div>
+</Banner>
+`;
+
 exports[`success banner 1`] = `
 <Banner
   aria-label="success"

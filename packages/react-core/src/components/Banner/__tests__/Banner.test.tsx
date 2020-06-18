@@ -14,3 +14,12 @@ import { mount } from 'enzyme';
     });
   }
 );
+
+test(`sticky banner`, () => {
+  const view = mount(
+    <Banner aria-label="sticky" isSticky>
+      Sticky Banner
+    </Banner>
+  );
+  expect(view).toMatchSnapshot();
+});
