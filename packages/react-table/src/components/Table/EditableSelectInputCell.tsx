@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { Select, SelectOptionObject, SelectProps } from '@patternfly/react-core';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
+import { EditableTextCell } from './EditableTextCell';
 
 // eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
@@ -98,3 +99,4 @@ export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInp
     </React.Fragment>
   );
 };
+EditableSelectInputCell.displayName = 'EditableSelectInputCell';
