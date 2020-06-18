@@ -314,8 +314,8 @@ class MultiColorChart extends React.Component {
     
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
-    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }];
-
+    const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs' }, { childName: 'birds', name: 'Birds' }];
+    
     return (
       <div ref={this.containerRef}>
         <div style={{ height: '225px' }}>
@@ -350,39 +350,42 @@ class MultiColorChart extends React.Component {
             <ChartStack>
               <ChartArea
                 data={[
-                  { name: 'Cats', x: 'Sunday', y: 6 },
-                  { name: 'Cats', x: 'Monday', y: 2 },
-                  { name: 'Cats', x: 'Tuesday', y: 8 },
-                  { name: 'Cats', x: 'Wednesday', y: 15 },
-                  { name: 'Cats', x: 'Thursday', y: 6 },
-                  { name: 'Cats', x: 'Friday', y: 2 },
-                  { name: 'Cats', x: 'Saturday', y: 0 }
+                  { x: 'Sunday', y: 6 },
+                  { x: 'Monday', y: 2 },
+                  { x: 'Tuesday', y: 8 },
+                  { x: 'Wednesday', y: 15 },
+                  { x: 'Thursday', y: 6 },
+                  { x: 'Friday', y: 2 },
+                  { x: 'Saturday', y: 0 }
                 ]}
                 interpolation="monotoneX"
+                name="cats"
               />
              <ChartArea
                data={[
-                  { name: 'Birds', x: 'Sunday', y: 4 },
-                  { name: 'Birds', x: 'Monday', y: 5 },
-                  { name: 'Birds', x: 'Tuesday', y: 7 },
-                  { name: 'Birds', x: 'Wednesday', y: 6 },
-                  { name: 'Birds', x: 'Thursday', y: 10 },
-                  { name: 'Birds', x: 'Friday', y: 3 },
-                  { name: 'Birds', x: 'Saturday', y: 5 }
+                  { x: 'Sunday', y: 4 },
+                  { x: 'Monday', y: 5 },
+                  { x: 'Tuesday', y: 7 },
+                  { x: 'Wednesday', y: 6 },
+                  { x: 'Thursday', y: 10 },
+                  { x: 'Friday', y: 3 },
+                  { x: 'Saturday', y: 5 }
                 ]}
                 interpolation="monotoneX"
+                name="dogs"
               />
               <ChartArea
                 data={[
-                  { name: 'Dogs', x: 'Sunday', y: 8 },
-                  { name: 'Dogs', x: 'Monday', y: 18 },
-                  { name: 'Dogs', x: 'Tuesday', y: 14 },
-                  { name: 'Dogs', x: 'Wednesday', y: 8 },
-                  { name: 'Dogs', x: 'Thursday', y: 6 },
-                  { name: 'Dogs', x: 'Friday', y: 8 },
-                  { name: 'Dogs', x: 'Saturday', y: 12 }
+                  { x: 'Sunday', y: 8 },
+                  { x: 'Monday', y: 18 },
+                  { x: 'Tuesday', y: 14 },
+                  { x: 'Wednesday', y: 8 },
+                  { x: 'Thursday', y: 6 },
+                  { x: 'Friday', y: 8 },
+                  { x: 'Saturday', y: 12 }
                 ]}
                 interpolation="monotoneX"
+                name="birds"
               />
             </ChartStack>
           </Chart>

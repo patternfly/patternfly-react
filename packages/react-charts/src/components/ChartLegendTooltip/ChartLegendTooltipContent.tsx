@@ -35,6 +35,12 @@ import {
 // @ts-ignore
 export interface ChartLegendTooltipContentProps extends ChartLegendProps {
   /**
+   * The activePoints prop specifies the active data
+   *
+   * **This prop should not be set manually.**
+   */
+  activePoints?: any[];
+  /**
    * The borderComponent prop takes a component instance which will be responsible
    * for rendering a border around the legend. The new element created from the passed
    * borderComponent will be provided with the following properties calculated by
@@ -99,7 +105,17 @@ export interface ChartLegendTooltipContentProps extends ChartLegendProps {
    * array of objects with name (required), symbol, and labels properties.
    * The data prop must be given as an array.
    */
+  /**
+   * Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and
+   * labels properties. The childName is used to sync the data series associated with the given chart child name.
+   *
+   * The data prop must be given as an array.
+   *
+   * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   * @example legendData={[{ childName: `cats`, name: `Total cats` }, { childName: `dogs`, name: 'Total dogs' }]}
+   */
   data?: {
+    childName?: string;
     name?: string;
     labels?: {
       fill?: string;
@@ -353,6 +369,7 @@ export const defaultLegendProps = {
 };
 
 export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
+  activePoints,
   borderPadding = defaultLegendProps.borderPadding,
   center,
   colorScale,
@@ -398,12 +415,10 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     const _flyoutWidth = Helpers.evaluateProp(flyoutWidth);
     if (width > center.x + _flyoutWidth + pointerLength) {
       return center.x + ChartLegendTooltipStyles.flyout.padding / 2;
+    } else if (center.x < _flyoutWidth + pointerLength) {
+      return ChartLegendTooltipStyles.flyout.padding / 2 - pointerLength;
     } else {
-      if (center.x < _flyoutWidth + pointerLength) {
-        return ChartLegendTooltipStyles.flyout.padding / 2 - pointerLength;
-      } else {
-        return center.x - _flyoutWidth;
-      }
+      return center.x - _flyoutWidth;
     }
   };
 
@@ -432,9 +447,9 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
     style: Array.isArray(style) ? defaultLegendProps.style : style
   };
   const maxLegendDimensions = getLegendTooltipSize({
-    legendData: getLegendTooltipVisibleData({ colorScale, legendData: data, text, theme }),
+    legendData: getLegendTooltipVisibleData({ activePoints, colorScale, legendData: data, text, theme }),
     legendProps,
-    text: getLegendTooltipVisibleText({ legendData: data, text }),
+    text: getLegendTooltipVisibleText({ activePoints, legendData: data, text }),
     theme
   });
   const minLegendDimensions = getLegendTooltipSize({
@@ -447,7 +462,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
       dx: maxLegendDimensions.width - minLegendDimensions.width,
-      legendData: getLegendTooltipVisibleData({ colorScale, legendData: data, text, theme }),
+      legendData: getLegendTooltipVisibleData({ activePoints, colorScale, legendData: data, text, theme }),
       ...labelComponent.props
     });
 
@@ -473,7 +488,14 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
       {getTitleComponent()}
       <ChartLegend
         colorScale={colorScale}
-        data={getLegendTooltipVisibleData({ colorScale, legendData: data, text, textAsLegendData: true, theme })}
+        data={getLegendTooltipVisibleData({
+          activePoints,
+          colorScale,
+          legendData: data,
+          text,
+          textAsLegendData: true,
+          theme
+        })}
         labelComponent={getLabelComponent()}
         standalone={false}
         theme={theme}
