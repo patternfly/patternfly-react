@@ -13,21 +13,20 @@ export interface BannerProps extends React.HTMLProps<HTMLButtonElement> {
   isSticky?: boolean;
 }
 
-const variantStyle = {
-  ['default']: '',
-  ['info']: styles.modifiers.info,
-  ['danger']: styles.modifiers.danger,
-  ['success']: styles.modifiers.success,
-  ['warning']: styles.modifiers.warning
-};
-
 export const Banner: React.FunctionComponent<BannerProps> = ({
   children,
   className,
   variant = 'default',
   isSticky = false
 }: BannerProps) => (
-  <div className={css(styles.banner, variantStyle[variant], isSticky && styles.modifiers.sticky, className)}>
+  <div
+    className={css(
+      styles.banner,
+      styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
+      isSticky && styles.modifiers.sticky,
+      className
+    )}
+  >
     {children}
   </div>
 );
