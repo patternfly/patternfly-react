@@ -5,9 +5,13 @@ exports[`ActionGroup should match snapshot (auto-generated) 1`] = `
   className="pf-c-form__group pf-m-action ''"
 >
   <div
-    className="pf-c-form__actions"
+    className="pf-c-form__group-control"
   >
-    ReactNode
+    <div
+      className="pf-c-form__actions"
+    >
+      ReactNode
+    </div>
   </div>
 </div>
 `;

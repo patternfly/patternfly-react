@@ -6,10 +6,14 @@ exports[`ActionGroup component should render default action group variant 1`] = 
     className="pf-c-form__group pf-m-action"
   >
     <div
-      className="pf-c-form__actions"
+      className="pf-c-form__group-control"
     >
-      <div>
-        Hello
+      <div
+        className="pf-c-form__actions"
+      >
+        <div>
+          Hello
+        </div>
       </div>
     </div>
   </div>
@@ -29,8 +33,12 @@ exports[`ActionGroup component should render horizontal form ActionGroup variant
         className="pf-c-form__group pf-m-action"
       >
         <div
-          className="pf-c-form__actions"
-        />
+          className="pf-c-form__group-control"
+        >
+          <div
+            className="pf-c-form__actions"
+          />
+        </div>
       </div>
     </ActionGroup>
   </form>
