@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.44...@patternfly/react-docs@5.3.45) (2020-06-18)
+
+
+### Bug Fixes
+
+* **Docs:** Removed training.md since it is moved to patternfly-org repo ([#4382](https://github.com/patternfly/patternfly-react/issues/4382)) ([6a5c48b](https://github.com/patternfly/patternfly-react/commit/6a5c48b85f8e37864dd0d17385dd99404e02cf30))
+
+
+
+
+
 ## [5.3.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.43...@patternfly/react-docs@5.3.44) (2020-06-18)
 
 **Note:** Version bump only for package @patternfly/react-docs

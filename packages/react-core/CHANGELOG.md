@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.19...@patternfly/react-core@4.18.20) (2020-06-18)
+
+
+### Bug Fixes
+
+* **Form:** Added .pf-c-form__group-control wrapper to .pf-c-form__actions ([#4405](https://github.com/patternfly/patternfly-react/issues/4405)) ([deed0d0](https://github.com/patternfly/patternfly-react/commit/deed0d0435a71b38e646dee1b767f7e86dc7d888))
+
+
+
+
+
 ## [4.18.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.18...@patternfly/react-core@4.18.19) (2020-06-17)
 
 **Note:** Version bump only for package @patternfly/react-core
