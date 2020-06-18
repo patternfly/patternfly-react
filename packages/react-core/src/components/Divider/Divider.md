@@ -54,7 +54,7 @@ import { Divider } from '@patternfly/react-core';
 DividerInsetVarious = () => (
   <Divider inset={{
           default: 'insetMd',
-          md: 'none',
+          md: 'insetNone',
           lg: 'inset3xl',
           xl: 'insetLg'
         }}
@@ -98,7 +98,7 @@ DividerVerticalInsetVarious = () => (
     <Divider isVertical 
       inset={{
         default: 'insetMd',
-        md: 'none',
+        md: 'insetNone',
         lg: 'inset3xl',
         xl: 'insetLg'
       }}
