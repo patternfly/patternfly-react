@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 export class DividerInsetDemo extends React.Component {
+  static displayName = 'DividerInsetDemo';
   componentDidMount() {
     window.scrollTo(0, 0);
   }
