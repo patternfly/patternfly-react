@@ -267,28 +267,28 @@ class InteractiveLegendChart extends React.Component {
     };
     this.series = [{
       datapoints: [
-        { name: 'Cats', x: '2015', y: 3 },
-        { name: 'Cats', x: '2016', y: 4 },
-        { name: 'Cats', x: '2017', y: 8 },
-        { name: 'Cats', x: '2018', y: 6 }
+        { x: '2015', y: 3 },
+        { x: '2016', y: 4 },
+        { x: '2017', y: 8 },
+        { x: '2018', y: 6 }
       ],
       legendItem: { name: 'Cats' }
     }, {
       datapoints: [
-        { name: 'Dogs', x: '2015', y: 2 },
-        { name: 'Dogs', x: '2016', y: 3 },
-        { name: 'Dogs', x: '2017', y: 4 },
-        { name: 'Dogs', x: '2018', y: 5 },
-        { name: 'Dogs', x: '2019', y: 6 }
+        { x: '2015', y: 2 },
+        { x: '2016', y: 3 },
+        { x: '2017', y: 4 },
+        { x: '2018', y: 5 },
+        { x: '2019', y: 6 }
       ],
       legendItem: { name: 'Dogs' }
     }, {
       datapoints: [
-        { name: 'Birds', x: '2015', y: 1 },
-        { name: 'Birds', x: '2016', y: 2 },
-        { name: 'Birds', x: '2017', y: 3 },
-        { name: 'Birds', x: '2018', y: 2 },
-        { name: 'Birds', x: '2019', y: 4 }
+        { x: '2015', y: 1 },
+        { x: '2016', y: 2 },
+        { x: '2017', y: 3 },
+        { x: '2018', y: 2 },
+        { x: '2019', y: 4 }
       ],
       legendItem: { name: 'Birds' }
     }];
@@ -316,6 +316,7 @@ class InteractiveLegendChart extends React.Component {
       const { hiddenSeries } = this.state;
       return this.series.map((s, index) => {
         return {
+          childName: `area-${index}`, // Sync tooltip legend with the series associated with given chart name
           ...s.legendItem, // name property
           ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
         };
@@ -364,7 +365,7 @@ class InteractiveLegendChart extends React.Component {
   render() {
     const { hiddenSeries, width } = this.state;
     const allHidden = hiddenSeries.length === this.series.length;
-    const tootlip = ({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null;
+    const tooltip = ({ datum }) => datum.childName.includes('area-') && datum.y !== null ? `${datum.y}` : null;
 
     return (
       <div ref={this.containerRef}>
@@ -376,7 +377,7 @@ class InteractiveLegendChart extends React.Component {
             containerComponent={
               <this.CursorVoronoiContainer
                 cursorDimension="x"
-                labels={!allHidden ? tootlip : undefined}
+                labels={!allHidden ? tooltip : undefined}
                 labelComponent={<ChartLegendTooltip legendData={this.getLegendData()} title={(datum) => datum.x}/>}
                 mouseFollowTooltips
                 voronoiDimension="x"

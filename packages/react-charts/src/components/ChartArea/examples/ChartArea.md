@@ -97,7 +97,7 @@ class BottomAlignedLegend extends React.Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
-    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }];
+    const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs' }, { childName: 'birds', name: 'Birds' }];
 
     return (
       <div>
@@ -134,32 +134,35 @@ class BottomAlignedLegend extends React.Component {
             <ChartGroup>
               <ChartArea
                 data={[
-                  { name: 'Cats', x: '2015', y: 3 },
-                  { name: 'Cats', x: '2016', y: 4 },
-                  { name: 'Cats', x: '2017', y: 8 },
-                  { name: 'Cats', x: '2018', y: 6 }
+                  { x: '2015', y: 3 },
+                  { x: '2016', y: 4 },
+                  { x: '2017', y: 8 },
+                  { x: '2018', y: 6 }
                 ]}
                 interpolation="monotoneX"
+                name="cats"
               />
               <ChartArea
                 data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 3 },
-                  { name: 'Dogs', x: '2017', y: 4 },
-                  { name: 'Dogs', x: '2018', y: 5 },
-                  { name: 'Dogs', x: '2019', y: 6 }
+                  { x: '2015', y: 2 },
+                  { x: '2016', y: 3 },
+                  { x: '2017', y: 4 },
+                  { x: '2018', y: 5 },
+                  { x: '2019', y: 6 }
                 ]}
                 interpolation="monotoneX"
+                name="dogs"
               />
               <ChartArea
                 data={[
-                  { name: 'Birds', x: '2015', y: 1 },
-                  { name: 'Birds', x: '2016', y: 2 },
-                  { name: 'Birds', x: '2017', y: 3 },
-                  { name: 'Birds', x: '2018', y: 2 },
-                  { name: 'Birds', x: '2019', y: 4 }
+                  { x: '2015', y: 1 },
+                  { x: '2016', y: 2 },
+                  { x: '2017', y: 3 },
+                  { x: '2018', y: 2 },
+                  { x: '2019', y: 4 }
                 ]}
                 interpolation="monotoneX"
+                name="birds"
               />
             </ChartGroup>
           </Chart>

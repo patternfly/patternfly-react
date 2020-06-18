@@ -180,8 +180,8 @@ class EmbeddedLegend extends React.Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
-    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }];
-
+    const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
+    
     return (
       <div>
         <p>This demonstrates how to embed a legend within a tooltip. Combining cursor and voronoi containers is required to display tooltips with a vertical cursor.</p>
@@ -222,6 +222,7 @@ class EmbeddedLegend extends React.Component {
                   { name: 'Cats', x: '2017', y: 5 },
                   { name: 'Cats', x: '2018', y: 3 }
                 ]}
+                name="cats"
               />
               <ChartLine
                 data={[
@@ -230,6 +231,7 @@ class EmbeddedLegend extends React.Component {
                   { name: 'Dogs', x: '2017', y: 7 },
                   { name: 'Dogs', x: '2018', y: 4 }
                 ]}
+                name="dogs"
                 style={{
                   data: {
                     strokeDasharray: '3,3'
@@ -243,6 +245,7 @@ class EmbeddedLegend extends React.Component {
                   { name: 'Birds', x: '2017', y: 9 },
                   { name: 'Birds', x: '2018', y: 5 }
                 ]}
+                name="birds"
               />
               <ChartLine
                 data={[
@@ -251,6 +254,7 @@ class EmbeddedLegend extends React.Component {
                   { name: 'Mice', x: '2017', y: 8 },
                   { name: 'Mice', x: '2018', y: 7 }
                 ]}
+                name="mice"
               />
             </ChartGroup>
           </Chart>

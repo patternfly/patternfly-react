@@ -6,7 +6,7 @@ import { isPlainObject, assign } from 'lodash';
 const getVerticalPath = (props: any) => {
   const { pointerWidth, cornerRadius, orientation, width, height, center } = props;
   const sign = orientation === 'bottom' ? 1 : -1;
-  const x = props.x + (props.dx || 0);
+  // const x = props.x + (props.dx || 0);
   // const y = props.y + (props.dy || 0);
   const centerX = isPlainObject(center) && center.x;
   const centerY = isPlainObject(center) && center.y;
@@ -16,6 +16,7 @@ const getVerticalPath = (props: any) => {
   const leftEdge = centerX - width / 2;
 
   // This has been overridden so the pointer does not stick to data points -- want pointerLength to take precedence
+  const x = center.x + (props.dx || 0);
   const y =
     orientation === 'bottom'
       ? pointerEdge + props.pointerLength + (props.dy || 0)
@@ -42,7 +43,7 @@ const getHorizontalPath = (props: any) => {
   const { pointerWidth, cornerRadius, orientation, width, height, center } = props;
   const sign = orientation === 'left' ? 1 : -1;
   // const x = props.x + (props.dx || 0);
-  const y = props.y + (props.dy || 0);
+  // const y = props.y + (props.dy || 0);
   const centerX = isPlainObject(center) && center.x;
   const centerY = isPlainObject(center) && center.y;
   const pointerEdge = centerX - sign * (width / 2);
@@ -55,6 +56,7 @@ const getHorizontalPath = (props: any) => {
     orientation === 'left'
       ? pointerEdge - props.pointerLength + (props.dx || 0)
       : pointerEdge + props.pointerLength + (props.dx || 0);
+  const y = center.y + (props.dy || 0);
 
   const pointerLength = sign * (x - pointerEdge) > 0 ? 0 : props.pointerLength;
   const direction = orientation === 'left' ? '0 0 0' : '0 0 1';
