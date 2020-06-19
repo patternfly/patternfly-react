@@ -1270,21 +1270,7 @@ class MenuOnDocumentBodyDropdown extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
-        Separated Action
-      </DropdownItem>
+      <DropdownItem key="link">1</DropdownItem>
     ];
     return (
       <div style={{ height: '50px', overflow: 'hidden' }}>
