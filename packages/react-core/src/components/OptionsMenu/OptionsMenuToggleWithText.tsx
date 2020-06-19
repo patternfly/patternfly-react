@@ -127,3 +127,4 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
     </div>
   );
 };
+OptionsMenuToggleWithText.displayName = 'OptionsMenuToggleWithText';
