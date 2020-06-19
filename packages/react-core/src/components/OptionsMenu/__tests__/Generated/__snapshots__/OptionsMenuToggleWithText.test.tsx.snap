@@ -18,6 +18,7 @@ exports[`OptionsMenuToggleWithText should match snapshot (auto-generated) 1`] = 
     aria-haspopup="listbox"
     aria-label="'Options menu'"
     className="pf-c-options-menu__toggle-button ''"
+    disabled={false}
     id="''-toggle"
     onClick={[Function]}
     onKeyDown={[Function]}
