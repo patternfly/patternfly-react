@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.6.0...@patternfly/react-table@4.7.0) (2020-06-19)
+
+
+### Features
+
+* **button:** add isAriaDisabled ([#3801](https://github.com/patternfly/patternfly-react/issues/3801)) ([a6ef254](https://github.com/patternfly/patternfly-react/commit/a6ef2545833f3cf6b98ad0736719975cc0a9c6dd))
+
+
+
+
+
 # [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.5.22...@patternfly/react-table@4.6.0) (2020-06-19)
 
 
