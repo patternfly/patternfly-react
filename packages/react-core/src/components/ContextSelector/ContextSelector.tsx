@@ -10,12 +10,14 @@ import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
 import { FocusTrap } from '../../helpers';
+import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
+import { Popper } from '../../helpers/Popper/Popper';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
 const newId = currentId++;
 
-export interface ContextSelectorProps {
+export interface ContextSelectorProps extends ToggleMenuBaseProps {
   /** content rendered inside the Context Selector */
   children?: React.ReactNode;
   /** Classes applied to root element of Context Selector */
@@ -56,7 +58,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     searchInputValue: '',
     onSearchInputChange: () => undefined as any,
     searchInputPlaceholder: 'Search',
-    onSearchButtonClick: () => undefined as any
+    onSearchButtonClick: () => undefined as any,
+    menuAppendTo: 'inline'
   };
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
@@ -84,9 +87,50 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       onSearchInputChange,
       searchInputPlaceholder,
       onSearchButtonClick,
+      menuAppendTo,
       ...props
     } = this.props;
-    return (
+    const menuContainer = (
+      <div className={css(styles.contextSelectorMenu)}>
+        {isOpen && (
+          <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+            <div className={css(styles.contextSelectorMenuSearch)}>
+              <InputGroup>
+                <TextInput
+                  value={searchInputValue}
+                  type="search"
+                  placeholder={searchInputPlaceholder}
+                  onChange={onSearchInputChange}
+                  onKeyPress={this.onEnterPressed}
+                  aria-labelledby={searchButtonId}
+                />
+                <Button
+                  variant={ButtonVariant.control}
+                  aria-label={searchButtonAriaLabel}
+                  id={searchButtonId}
+                  onClick={onSearchButtonClick}
+                >
+                  <SearchIcon aria-hidden="true" />
+                </Button>
+              </InputGroup>
+            </div>
+            <ContextSelectorContext.Provider value={{ onSelect }}>
+              <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
+            </ContextSelectorContext.Provider>
+          </FocusTrap>
+        )}
+      </div>
+    );
+    const popperContainer = (
+      <div
+        className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
+        ref={this.parentRef}
+        {...props}
+      >
+        {isOpen && menuContainer}
+      </div>
+    );
+    const mainContainer = (
       <div
         className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
         ref={this.parentRef}
@@ -105,38 +149,24 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
           parentRef={this.parentRef.current}
           aria-labelledby={`${screenReaderLabelId} ${toggleId}`}
         />
-        {isOpen && (
-          <div className={css(styles.contextSelectorMenu)}>
-            {isOpen && (
-              <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-                <div className={css(styles.contextSelectorMenuSearch)}>
-                  <InputGroup>
-                    <TextInput
-                      value={searchInputValue}
-                      type="search"
-                      placeholder={searchInputPlaceholder}
-                      onChange={onSearchInputChange}
-                      onKeyPress={this.onEnterPressed}
-                      aria-labelledby={searchButtonId}
-                    />
-                    <Button
-                      variant={ButtonVariant.control}
-                      aria-label={searchButtonAriaLabel}
-                      id={searchButtonId}
-                      onClick={onSearchButtonClick}
-                    >
-                      <SearchIcon aria-hidden="true" />
-                    </Button>
-                  </InputGroup>
-                </div>
-                <ContextSelectorContext.Provider value={{ onSelect }}>
-                  <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
-                </ContextSelectorContext.Provider>
-              </FocusTrap>
-            )}
-          </div>
-        )}
+        {isOpen && menuAppendTo === 'inline' && menuContainer}
       </div>
+    );
+    const getParentElement = () => {
+      if (this.parentRef && this.parentRef.current) {
+        return this.parentRef.current.parentElement;
+      }
+      return null;
+    };
+    return menuAppendTo === 'inline' ? (
+      mainContainer
+    ) : (
+      <Popper
+        trigger={mainContainer}
+        popper={popperContainer}
+        appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
+        isVisible={isOpen}
+      />
     );
   }
 }

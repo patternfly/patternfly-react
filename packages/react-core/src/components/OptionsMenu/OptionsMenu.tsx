@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
+import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
 export enum OptionsMenuPosition {
   right = 'right',
@@ -13,7 +14,7 @@ export enum OptionsMenuDirection {
   down = 'down'
 }
 
-export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
+export interface OptionsMenuProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the options menu */
   className?: string;
   /** Id of the root element of the options menu */
@@ -45,6 +46,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   id,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref,
+  menuAppendTo = 'inline',
   ...props
 }: OptionsMenuProps) => (
   <DropdownContext.Provider
@@ -69,6 +71,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       className={className}
       isGrouped={isGrouped}
       toggle={toggle}
+      menuAppendTo={menuAppendTo}
     />
   </DropdownContext.Provider>
 );

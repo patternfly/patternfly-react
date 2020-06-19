@@ -9,8 +9,9 @@ import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
+import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
-export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
+export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
   className?: string;
   /** Display menu above or below dropdown toggle */
@@ -69,7 +70,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     toggleIcon: <ThIcon />,
     searchPlaceholderText: 'Filter by name...',
     searchNoResultsText: 'No results found',
-    favoritesLabel: 'Favorites'
+    favoritesLabel: 'Favorites',
+    menuAppendTo: 'inline'
   };
 
   createSearchBox = () => {
@@ -153,6 +155,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       /* eslint-enable @typescript-eslint/no-unused-vars */
       favoritesLabel,
       searchNoResultsText,
+      menuAppendTo,
       ...props
     } = this.props;
     let renderableItems: React.ReactNode[] = [];
@@ -210,6 +213,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             isOpen={isOpen}
             className={className}
             aria-label={ariaLabel}
+            menuAppendTo={menuAppendTo}
             toggle={
               <DropdownToggle
                 id={toggleId}

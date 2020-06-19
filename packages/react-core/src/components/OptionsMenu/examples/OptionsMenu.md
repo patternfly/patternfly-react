@@ -519,3 +519,53 @@ class GroupedItems extends React.Component {
 }
 
 ```
+
+```js title=Single-option-with-menu-on-document-body
+import React from 'react';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+
+class SingleOption extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        isOpen: false,
+        toggleTemplateText: "Options menu",
+        selectedOption: "singleOption1"
+      };
+
+      this.onToggle = () => {
+          this.setState({
+              isOpen: !this.state.isOpen
+          });
+      };
+      
+      this.onSelect = event => {
+        const id = event.currentTarget.id;
+        this.setState(() => {
+          return { selectedOption: id };
+        });
+      };
+      
+    }
+    
+  render() {
+    const { selectedOption, toggleTemplateText, isOpen } = this.state;
+    const menuItems = [
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "singleOption1"} id="singleOption1" key="option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "singleOption2"} id="singleOption2" key="option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "singleOption3"} id="singleOption3" key="option 3">Option 3</OptionsMenuItem>
+    ];
+    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
+
+    return (
+      <OptionsMenu 
+        id="options-menu-single-option-example" 
+        menuItems={menuItems} 
+        isOpen={isOpen} 
+        toggle={toggle}
+        menuAppendTo={() => document.body}
+      />
+    );
+  }
+}
+```

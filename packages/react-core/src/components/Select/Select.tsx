@@ -536,7 +536,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    const menuComponent = (
+    const menuContainer = (
       <SelectMenu
         {...props}
         isGrouped={isGrouped}
@@ -554,7 +554,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       </SelectMenu>
     );
 
-    const popoverContent = (
+    const popperContainer = (
       <div
         className={css(
           styles.select,
@@ -563,11 +563,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
       >
-        {isOpen && menuComponent}
+        {isOpen && menuContainer}
       </div>
     );
 
-    const mainComponent = (
+    const mainContainer = (
       <div
         className={css(
           styles.select,
@@ -677,7 +677,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             </React.Fragment>
           )}
         </SelectToggle>
-        {isOpen && menuAppendTo === 'inline' && menuComponent}
+        {isOpen && menuAppendTo === 'inline' && menuContainer}
       </div>
     );
 
@@ -695,14 +695,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             value={{ onSelect, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
           >
             {menuAppendTo === 'inline' ? (
-              mainComponent
+              mainContainer
             ) : (
               <Popper
-                trigger={mainComponent}
-                popper={popoverContent}
+                trigger={mainContainer}
+                popper={popperContainer}
                 direction={direction}
                 appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
-                popperMatchesTriggerWidth
                 isVisible={isOpen}
               />
             )}

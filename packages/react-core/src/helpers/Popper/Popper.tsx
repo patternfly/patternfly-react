@@ -37,7 +37,7 @@ export interface PopperProps {
 export const Popper: React.FunctionComponent<PopperProps> = ({
   trigger,
   popper,
-  popperMatchesTriggerWidth = false,
+  popperMatchesTriggerWidth = true,
   direction = 'down',
   position = 'left',
   appendTo = () => document.body,
@@ -57,10 +57,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       phase: 'beforeWrite',
       requires: ['computeStyles'],
       fn: ({ state }) => {
-        state.styles.popper.width = `${state.rects.reference.width}px`;
+        state.styles.popper.width = 'auto';
+        state.styles.popper.minWidth = `${state.rects.reference.width}px`;
       },
       effect: ({ state }) => () => {
-        state.elements.popper.style.width = `${(state.elements.reference as HTMLElement).offsetWidth}px`;
+        state.elements.popper.style.width = 'auto';
+        state.elements.popper.style.minWidth = `${(state.elements.reference as HTMLElement).offsetWidth}px`;
       }
     }),
     [popperMatchesTriggerWidth]
