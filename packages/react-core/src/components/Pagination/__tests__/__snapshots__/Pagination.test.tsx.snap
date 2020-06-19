@@ -486,9 +486,9 @@ exports[`component render custom pagination toggle 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -537,9 +537,9 @@ exports[`component render custom pagination toggle 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -609,7 +609,7 @@ exports[`component render custom pagination toggle 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -618,7 +618,6 @@ exports[`component render custom pagination toggle 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -660,7 +659,7 @@ exports[`component render custom pagination toggle 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -669,7 +668,6 @@ exports[`component render custom pagination toggle 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -1182,9 +1180,9 @@ exports[`component render custom perPageOptions 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -1233,9 +1231,9 @@ exports[`component render custom perPageOptions 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -1305,7 +1303,7 @@ exports[`component render custom perPageOptions 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -1314,7 +1312,6 @@ exports[`component render custom perPageOptions 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -1356,7 +1353,7 @@ exports[`component render custom perPageOptions 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -1365,7 +1362,6 @@ exports[`component render custom perPageOptions 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -1938,7 +1934,7 @@ exports[`component render custom start end 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain"
               data-action="first"
@@ -1947,7 +1943,6 @@ exports[`component render custom start end 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleLeftIcon
@@ -1989,7 +1984,7 @@ exports[`component render custom start end 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain"
               data-action="previous"
@@ -1998,7 +1993,6 @@ exports[`component render custom start end 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleLeftIcon
@@ -2061,7 +2055,7 @@ exports[`component render custom start end 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -2070,7 +2064,6 @@ exports[`component render custom start end 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -2112,7 +2105,7 @@ exports[`component render custom start end 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -2121,7 +2114,6 @@ exports[`component render custom start end 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -2362,9 +2354,9 @@ exports[`component render empty per page options 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -2413,9 +2405,9 @@ exports[`component render empty per page options 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -2485,7 +2477,7 @@ exports[`component render empty per page options 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -2494,7 +2486,6 @@ exports[`component render empty per page options 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -2536,7 +2527,7 @@ exports[`component render empty per page options 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -2545,7 +2536,6 @@ exports[`component render empty per page options 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -3118,7 +3108,7 @@ exports[`component render last page 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to first page"
               className="pf-c-button pf-m-plain"
               data-action="first"
@@ -3127,7 +3117,6 @@ exports[`component render last page 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleLeftIcon
@@ -3169,7 +3158,7 @@ exports[`component render last page 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to previous page"
               className="pf-c-button pf-m-plain"
               data-action="previous"
@@ -3178,7 +3167,6 @@ exports[`component render last page 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleLeftIcon
@@ -3241,9 +3229,9 @@ exports[`component render last page 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to next page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -3292,9 +3280,9 @@ exports[`component render last page 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to last page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -3874,9 +3862,9 @@ exports[`component render limited number of pages 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -3925,9 +3913,9 @@ exports[`component render limited number of pages 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -3997,9 +3985,9 @@ exports[`component render limited number of pages 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to next page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -4048,9 +4036,9 @@ exports[`component render limited number of pages 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to last page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -4633,9 +4621,9 @@ exports[`component render no items 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -4684,9 +4672,9 @@ exports[`component render no items 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -4756,9 +4744,9 @@ exports[`component render no items 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to next page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -4807,9 +4795,9 @@ exports[`component render no items 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to last page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -5367,9 +5355,9 @@ exports[`component render should render correctly bottom 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -5418,9 +5406,9 @@ exports[`component render should render correctly bottom 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -5490,7 +5478,7 @@ exports[`component render should render correctly bottom 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -5499,7 +5487,6 @@ exports[`component render should render correctly bottom 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -5541,7 +5528,7 @@ exports[`component render should render correctly bottom 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -5550,7 +5537,6 @@ exports[`component render should render correctly bottom 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -6123,9 +6109,9 @@ exports[`component render should render correctly compact 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -6174,7 +6160,7 @@ exports[`component render should render correctly compact 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -6183,7 +6169,6 @@ exports[`component render should render correctly compact 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -6759,9 +6744,9 @@ exports[`component render should render correctly disabled 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -6810,9 +6795,9 @@ exports[`component render should render correctly disabled 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -6882,9 +6867,9 @@ exports[`component render should render correctly disabled 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to next page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -6933,9 +6918,9 @@ exports[`component render should render correctly disabled 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to last page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -7515,9 +7500,9 @@ exports[`component render should render correctly top 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -7566,9 +7551,9 @@ exports[`component render should render correctly top 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -7638,7 +7623,7 @@ exports[`component render should render correctly top 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -7647,7 +7632,6 @@ exports[`component render should render correctly top 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -7689,7 +7673,7 @@ exports[`component render should render correctly top 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -7698,7 +7682,6 @@ exports[`component render should render correctly top 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -8264,9 +8247,9 @@ exports[`component render titles 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -8315,9 +8298,9 @@ exports[`component render titles 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -8387,7 +8370,7 @@ exports[`component render titles 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -8396,7 +8379,6 @@ exports[`component render titles 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -8438,7 +8420,7 @@ exports[`component render titles 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -8447,7 +8429,6 @@ exports[`component render titles 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -9021,9 +9002,9 @@ exports[`component render up drop direction 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -9072,9 +9053,9 @@ exports[`component render up drop direction 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -9144,7 +9125,7 @@ exports[`component render up drop direction 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to next page"
               className="pf-c-button pf-m-plain"
               data-action="next"
@@ -9153,7 +9134,6 @@ exports[`component render up drop direction 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleRightIcon
@@ -9195,7 +9175,7 @@ exports[`component render up drop direction 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={false}
               aria-label="Go to last page"
               className="pf-c-button pf-m-plain"
               data-action="last"
@@ -9204,7 +9184,6 @@ exports[`component render up drop direction 1`] = `
               data-ouia-safe={true}
               disabled={false}
               onClick={[Function]}
-              tabIndex={null}
               type="button"
             >
               <AngleDoubleRightIcon
@@ -9780,9 +9759,9 @@ exports[`component render zero results 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to first page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="first"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -9831,9 +9810,9 @@ exports[`component render zero results 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to previous page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="previous"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -9903,9 +9882,9 @@ exports[`component render zero results 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to next page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="next"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
@@ -9954,9 +9933,9 @@ exports[`component render zero results 1`] = `
             variant="plain"
           >
             <button
-              aria-disabled={null}
+              aria-disabled={true}
               aria-label="Go to last page"
-              className="pf-c-button pf-m-plain"
+              className="pf-c-button pf-m-plain pf-m-disabled"
               data-action="last"
               data-ouia-component-id={null}
               data-ouia-component-type="PF4/Button"
