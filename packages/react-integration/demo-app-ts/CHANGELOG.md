@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.17.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.16.0...demo-app-ts@4.17.0) (2020-06-19)
+
+
+### Bug Fixes
+
+* **OptionsMenu:** fix accessibility issue in plain with text ([#4352](https://github.com/patternfly/patternfly-react/issues/4352)) ([2bcf204](https://github.com/patternfly/patternfly-react/commit/2bcf204e8b6c9ce56dd0824e0d317baea313f08d))
+
+
+### Features
+
+* **Banner:** add banner component ([#4408](https://github.com/patternfly/patternfly-react/issues/4408)) ([d783fc7](https://github.com/patternfly/patternfly-react/commit/d783fc708a6ed8e725af858b913ff9fbcfb742c6))
+
+
+
+
+
 # [4.16.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.15.0...demo-app-ts@4.16.0) (2020-06-19)
 
 
