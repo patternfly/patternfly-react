@@ -239,7 +239,7 @@ class BannerDemo extends React.Component {
             >
               <div className="pf-u-display-none pf-u-display-block-on-lg">Localhost</div>
               <div className="pf-u-display-none pf-u-display-block-on-lg">
-                This message is sticky to the top or bottom of the page.
+                This message is sticky to the top of the page.
               </div>
               <div className="pf-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
               <div className="pf-u-display-none pf-u-display-block-on-lg">Ned Username</div>
@@ -468,7 +468,7 @@ class BannerDemo extends React.Component {
               >
                 <div className="pf-u-display-none pf-u-display-block-on-lg">Localhost</div>
                 <div className="pf-u-display-none pf-u-display-block-on-lg">
-                  This message is sticky to the top or bottom of the page.
+                  This message is sticky to the top of the page.
                 </div>
                 <div className="pf-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
                 <div className="pf-u-display-none pf-u-display-block-on-lg">Ned Username</div>
@@ -513,7 +513,7 @@ class BannerDemo extends React.Component {
               >
                 <div className="pf-u-display-none pf-u-display-block-on-lg">Localhost</div>
                 <div className="pf-u-display-none pf-u-display-block-on-lg">
-                  This message is sticky to the top or bottom of the page.
+                  This message is sticky to the bottom of the page.
                 </div>
                 <div className="pf-u-display-none-on-lg">Drop some text on mobile, truncate if needed.</div>
                 <div className="pf-u-display-none pf-u-display-block-on-lg">Ned Username</div>
