@@ -42,6 +42,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       </ApplicationLauncherItem>,
     ]
   }
+  menuAppendTo="inline"
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -898,6 +899,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       </ApplicationLauncherItem>,
     ]
   }
+  menuAppendTo="inline"
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
@@ -1171,6 +1173,7 @@ exports[`ApplicationLauncher dropup 1`] = `
       </ApplicationLauncherItem>,
     ]
   }
+  menuAppendTo="inline"
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -1444,6 +1447,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       </ApplicationLauncherItem>,
     ]
   }
+  menuAppendTo="inline"
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -2294,6 +2298,7 @@ exports[`ApplicationLauncher regular 1`] = `
       </ApplicationLauncherItem>,
     ]
   }
+  menuAppendTo="inline"
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -2567,6 +2572,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
       </ApplicationLauncherItem>,
     ]
   }
+  menuAppendTo="inline"
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
