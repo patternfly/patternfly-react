@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.21...demo-app-ts@4.14.0) (2020-06-19)
+
+
+### Features
+
+* **Divider:** Add support for insets to the Divider ([#4410](https://github.com/patternfly/patternfly-react/issues/4410)) ([32916b8](https://github.com/patternfly/patternfly-react/commit/32916b89fcf631eb498ae0b64faffec756242127))
+
+
+
+
+
 ## [4.13.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.20...demo-app-ts@4.13.21) (2020-06-18)
 
 **Note:** Version bump only for package demo-app-ts
