@@ -246,6 +246,7 @@ export const formatBreakpointMods = (
     lg?: string;
     xl?: string;
     '2xl'?: string;
+    '3xl'?: string;
   },
   styles: any
 ) =>

@@ -30,6 +30,7 @@ export * from './DataListDemo/DataListDemo';
 export * from './DataListDemo/DataListCompactDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './DividerDemo/DividerDemo';
+export * from './DividerDemo/DividerInsetDemo';
 export * from './DonutChartDemo/DonutBottomAlignedLegendDemo';
 export * from './DonutChartDemo/DonutSmallBottomAlignedLegend';
 export * from './DonutChartDemo/DonutSmallDemo';

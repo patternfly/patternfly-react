@@ -171,6 +171,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DividerDemo
   },
   {
+    id: 'divider-inset-demo',
+    name: 'Divider Inset Demo',
+    componentType: Examples.DividerInsetDemo
+  },
+  {
     id: 'donut-chart-bottom-legend-demo',
     name: 'Donut Chart with Bottom Aligned Legend Demo',
     componentType: Examples.DonutBottomAlignedLegendDemo
