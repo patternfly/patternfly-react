@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.5.0...@patternfly/react-charts@6.5.1) (2020-06-19)
+
+
+### Bug Fixes
+
+* **charts:** set fixed line height for various text legend labels ([#4419](https://github.com/patternfly/patternfly-react/issues/4419)) ([8df0e5b](https://github.com/patternfly/patternfly-react/commit/8df0e5bca8d104d55c751561d020f2f778fd4e3a))
+
+
+
+
+
 # [6.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.4.8...@patternfly/react-charts@6.5.0) (2020-06-19)
 
 
