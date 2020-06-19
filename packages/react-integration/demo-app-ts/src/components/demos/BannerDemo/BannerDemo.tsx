@@ -10,7 +10,7 @@ export class BannerDemo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Banner>Default banner</Banner>
+        <Banner isSticky>Default banner</Banner>
         <br />
         <Banner variant="info">Info banner</Banner>
         <br />

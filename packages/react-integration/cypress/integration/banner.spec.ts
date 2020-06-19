@@ -7,5 +7,6 @@ describe('Banner Demo Test', () => {
 
   it('Verify banner', () => {
     cy.get('.pf-c-banner').should('exist');
+    cy.get('.pf-c-banner').should('have.class', 'pf-m-sticky');
   });
 });
