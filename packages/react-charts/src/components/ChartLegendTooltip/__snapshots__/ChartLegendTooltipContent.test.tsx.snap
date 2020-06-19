@@ -25,12 +25,13 @@ exports[`ChartLegendTooltipContent 1`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-12}
+    rowGutter={0}
     standalone={false}
     style={
       Object {
         "labels": Object {
           "fill": "#f0f0f0",
+          "lineHeight": 0.275,
           "padding": 0,
         },
         "title": Object {
@@ -519,12 +520,13 @@ exports[`ChartLegendTooltipContent 2`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-12}
+    rowGutter={0}
     standalone={false}
     style={
       Object {
         "labels": Object {
           "fill": "#f0f0f0",
+          "lineHeight": 0.275,
           "padding": 0,
         },
         "title": Object {
@@ -1013,12 +1015,13 @@ exports[`renders component text 1`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-12}
+    rowGutter={0}
     standalone={false}
     style={
       Object {
         "labels": Object {
           "fill": "#f0f0f0",
+          "lineHeight": 0.275,
           "padding": 0,
         },
         "title": Object {
