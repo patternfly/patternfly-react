@@ -612,6 +612,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableSortableDemo
   },
   {
+    id: 'table-sticky-header-demo',
+    name: 'Table Sticky Header Demo',
+    componentType: Examples.TableStickyHeaderDemo
+  },
+  {
     id: 'table-width-modifiers-demo',
     name: 'Table Width Modifers Demo',
     componentType: Examples.TableWidthModifiersDemo

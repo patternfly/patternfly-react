@@ -225,19 +225,15 @@ class PageLayoutDefaultNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-          <Gallery>
-             <Card>
-                <Table
-                  cells={['Title', 'Body']}
-                  rows={res.map(post => [post.title, post.body])}
-                  aria-label="Sticky Header Table Demo"
-                  isStickyHeader
-                >
-                  <TableHeader />
-                  <TableBody />
-                </Table>
-              </Card>
-            </Gallery>
+            <Table
+              cells={['Title', 'Body']}
+              rows={res.map(post => [post.title, post.body])}
+              aria-label="Sticky Header Table Demo"
+              isStickyHeader
+            >
+              <TableHeader />
+              <TableBody />
+            </Table>
           </PageSection>
         </Page>
       </React.Fragment>
