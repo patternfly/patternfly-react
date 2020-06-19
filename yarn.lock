@@ -3237,10 +3237,23 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
+<<<<<<< HEAD
 "@patternfly/patternfly@4.16.5":
   version "4.16.5"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.16.5.tgz#6194725cb5f9c84c9fec1f62d66b0080a8d3c764"
   integrity sha512-BsKyhqB6TgqzkCpU1IKbFGwHI780I4XpniMJcXl/69Q+s4xHNiiJdG2Il9cEmOyvdX9v2XOqCoxvGbtcHbPvUA==
+=======
+<<<<<<< HEAD
+"@patternfly/patternfly@4.14.0":
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.14.0.tgz#586f9b71bebdd5a5fbcce913b5283d7e1f4d4abd"
+=======
+"@patternfly/patternfly@4.12.0":
+  version "4.12.0"
+  resolved "https://registry.npmjs.org/@patternfly/patternfly/-/patternfly-4.12.0.tgz#feff1b2257dc77bd95898a315f48ac0ef0ebeffc"
+  integrity sha512-Q44Ho51VtUpFgkOILy01LmnAhb7nOi/1bA6sbJUe6L4Pt+qx6zH0hljPrVCFaLE7HRDEmV/rS5L7e4maltyA/A==
+>>>>>>> adds sticky header prop and table demo
+>>>>>>> adds sticky header prop and table demo
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
