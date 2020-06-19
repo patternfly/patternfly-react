@@ -11,6 +11,7 @@ export * from './AvatarDemo/AvatarDemo';
 export * from './BackdropDemo/BackdropDemo';
 export * from './BackgroundImageDemo/BackgroundImageDemo';
 export * from './BadgeDemo/BadgeDemo';
+export * from './BannerDemo/BannerDemo';
 export * from './BarChartDemo/PurpleBarGroupedDemo';
 export * from './BarChartDemo/ColorBarZoomDemo';
 export * from './BarChartDemo/SimpleBarDemo';

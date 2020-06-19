@@ -8,6 +8,7 @@ export * from './Avatar';
 export * from './Backdrop';
 export * from './BackgroundImage';
 export * from './Badge';
+export * from './Banner';
 export * from './Brand';
 export * from './Breadcrumb';
 export * from './Button';
