@@ -16,7 +16,9 @@ export interface WizardNavItemProps {
   /** Callback for when the nav item is clicked */
   onNavItemClick?: (step: number) => any;
   /** Component used to render WizardNavItem */
-  navItemComponent?: React.ReactNode;
+  navItemComponent?: 'button' | 'a';
+  /** An optional url to use for when using an anchor component */
+  href?: string;
 }
 
 export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
@@ -26,18 +28,35 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   isDisabled = false,
   step,
   onNavItemClick = () => undefined,
-  navItemComponent = 'a'
+  navItemComponent = 'button',
+  href = null,
+  ...rest
 }: WizardNavItemProps) => {
-  const NavItemComponent = navItemComponent as any;
+  const NavItemComponent = navItemComponent;
+
+  if (navItemComponent === 'a' && !href && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.error('WizardNavItem: When using an anchor, please provide an href');
+  }
+
+  const btnProps = {
+    disabled: isDisabled
+  };
+
+  const linkProps = {
+    tabIndex: isDisabled ? -1 : undefined,
+    href
+  };
 
   return (
     <li className={css(styles.wizardNavItem)}>
       <NavItemComponent
-        aria-current={isCurrent && !children ? 'page' : false}
+        {...rest}
+        {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
         onClick={() => onNavItemClick(step)}
         className={css(styles.wizardNavLink, isCurrent && 'pf-m-current', isDisabled && 'pf-m-disabled')}
-        aria-disabled={isDisabled ? true : false}
-        tabIndex={isDisabled ? -1 : undefined}
+        aria-disabled={isDisabled ? true : null}
+        aria-current={isCurrent && !children ? 'page' : false}
       >
         {content}
       </NavItemComponent>

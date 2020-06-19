@@ -5,6 +5,8 @@ cssPrefix: pf-c-wizard
 propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle']
 ---
 
+import { Button, Wizard, WizardFooter, WizardContextConsumer, ModalVariant, Alert, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondaryActions, Title, Progress } from '@patternfly/react-core';
+import { ExternalLinkAltIcon, SlackHashIcon, CogsIcon } from '@patternfly/react-icons';
 import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
@@ -21,15 +23,58 @@ class SimpleWizard extends React.Component {
 
   render() {
     const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
-      { name: 'Step 3', component: <p>Step 3</p> },
-      { name: 'Step 4', component: <p>Step 4</p> },
-      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
+      { name: 'First step', component: <p>Step 1 content</p> },
+      { name: 'Second step', component: <p>Step 2 content</p> },
+      { name: 'Third step', component: <p>Step 3 content</p> },
+      { name: 'Fourth step', component: <p>Step 4 content</p> },
+      { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-
+    const title = 'Basic wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
+        steps={steps}
+        height={400}
+      />
+    );
+  }
+}
+```
+
+```js title=Anchors-for-nav-items
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+import { ExternalLinkAltIcon, SlackHashIcon } from '@patternfly/react-icons';
+
+class WizardWithNavAnchors extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const steps = [
+      {
+        name: <div><ExternalLinkAltIcon /> PF3</div>,
+        component: <p>Step 1: Read about PF3</p>,
+        stepNavItemProps: { navItemComponent: 'a', href: 'https://www.patternfly.org/v3/', target: '_blank' }
+      },
+      {
+        name: <div><ExternalLinkAltIcon /> PF4</div>,
+        component: <p>Step 2: Read about PF4</p>,
+        stepNavItemProps: { navItemComponent: 'a', href: 'https://www.patternfly.org/v4/', target: '_blank' }
+      },
+      {
+        name: <div><SlackHashIcon /> Join us on slack</div>,
+        component: <Button variant="link" component="a" target="_blank" href="https://patternfly.slack.com/">Join the conversation</Button>,
+        stepNavItemProps: { navItemComponent: 'a', href: 'https://patternfly.slack.com/', target: '_blank' }
+      }
+    ];
+    const title = 'Anchor link wizard';
+    return (
+      <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         steps={steps}
         height={400}
       />
@@ -43,7 +88,7 @@ class SimpleWizard extends React.Component {
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
-class DisabledStepsWizard extends React.Component {
+class IncrementallyEnabledStepsWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,15 +108,17 @@ class DisabledStepsWizard extends React.Component {
     const { stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'Step 1', component: <p>Step 1</p> },
-      { id: 2, name: 'Step 2', component: <p>Step 2</p>, canJumpTo: stepIdReached >= 2 },
-      { id: 3, name: 'Step 3', component: <p>Step 3</p>, canJumpTo: stepIdReached >= 3 },
-      { id: 4, name: 'Step 4', component: <p>Step 4</p>, canJumpTo: stepIdReached >= 4 },
-      { id: 5, name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish', canJumpTo: stepIdReached >= 5 }
+      { id: 1, name: 'First step', component: <p>Step 1 content</p> },
+      { id: 2, name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
+      { id: 3, name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
+      { id: 4, name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
+      { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish', canJumpTo: stepIdReached >= 5 }
     ];
-
+    const title = 'Incrementally enabled wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         onClose={this.closeWizard}
         steps={steps}
         onNext={this.onNext}
@@ -91,7 +138,7 @@ import FinishedStep from './examples/FinishedStep';
 class FinishedStepWizard extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.closeWizard = () => {
       console.log("close wizard");
     }
@@ -100,16 +147,18 @@ class FinishedStepWizard extends React.Component {
   render() {
 
     const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
-      { name: 'Step 3', component: <p>Step 3</p> },
-      { name: 'Step 4', component: <p>Step 4</p> },
-      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' },
+      { name: 'First step', component: <p>Step 1 content</p> },
+      { name: 'Second step', component: <p>Step 2 content</p> },
+      { name: 'Third step', component: <p>Step 3 content</p> },
+      { name: 'Fourth step', component: <p>Step 4 content</p> },
+      { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' },
       { name: 'Finish', component: <FinishedStep onClose={this.closeWizard} />, isFinishedStep: true }
     ];
-
+    const title = 'Finished wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         onClose={this.closeWizard}
         steps={steps}
         height={400}
@@ -134,7 +183,7 @@ class ValidationWizard extends React.Component {
       allStepsValid: false,
       stepIdReached: 1
     };
-    
+
     this.closeWizard = () => {
       console.log("close wizard");
     }
@@ -184,7 +233,7 @@ class ValidationWizard extends React.Component {
     const { isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'Information', component: <p>Step 1</p> },
+      { id: 1, name: 'Information', component: <p>Step 1 content</p> },
       {
         name: 'Configuration',
         steps: [
@@ -200,12 +249,14 @@ class ValidationWizard extends React.Component {
           { id: 3, name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
         ]
       },
-      { id: 4, name: 'Additional', component: <p>Step 3</p>, enableNext: allStepsValid, canJumpTo: stepIdReached >= 4 },
-      { id: 5, name: 'Review', component: <p>Step 4</p>, nextButtonText: 'Close', canJumpTo: stepIdReached >= 5 }
+      { id: 4, name: 'Additional', component: <p>Step 3 content</p>, enableNext: allStepsValid, canJumpTo: stepIdReached >= 4 },
+      { id: 5, name: 'Review', component: <p>Step 4 content</p>, nextButtonText: 'Close', canJumpTo: stepIdReached >= 5 }
     ];
-
+    const title = 'Enabled on form validation wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         onClose={this.closeWizard}
         onSave={this.onSave}
         steps={steps}
@@ -232,11 +283,11 @@ class ValidateButtonPressWizard extends React.Component {
     this.state = {
       stepsValid: 0
     };
-    
+
     this.closeWizard = () => {
       console.log("close wizard");
     }
-    
+
     this.validateLastStep = onNext => {
       const { stepsValid } = this.state;
       if (stepsValid !== 1) {
@@ -253,8 +304,8 @@ class ValidateButtonPressWizard extends React.Component {
     const { stepsValid } = this.state;
 
     const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
+      { name: 'First step', component: <p>Step 1 content</p> },
+      { name: 'Second step', component: <p>Step 2 content</p> },
       {
         name: 'Final Step',
         component: (
@@ -296,9 +347,11 @@ class ValidateButtonPressWizard extends React.Component {
         </WizardContextConsumer>
       </WizardFooter>
     );
-
+    const title = 'Validate on button press wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         onClose={this.closeWizard}
         footer={CustomFooter}
         steps={steps}
@@ -560,9 +613,11 @@ class ProgressiveWizard extends React.Component {
         </WizardContextConsumer>
       </WizardFooter>
     );
-
+    const title = 'Progressive wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         onClose={this.closeWizard}
         footer={CustomFooter}
         onGoToStep={this.onGoToStep}
@@ -579,7 +634,7 @@ class ProgressiveWizard extends React.Component {
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
-class SimpleWizard extends React.Component {
+class RememberLastStepWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -604,15 +659,17 @@ class SimpleWizard extends React.Component {
     const { step } = this.state;
 
     const steps = [
-      { id: 1, name: 'Step 1', component: <p>Step 1</p> },
-      { id: 2, name: 'Step 2', component: <p>Step 2</p> },
-      { id: 3, name: 'Step 3', component: <p>Step 3</p> },
-      { id: 4, name: 'Step 4', component: <p>Step 4</p> },
-      { id: 5, name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
+      { id: 1, name: 'First step', component: <p>Step 1 content</p> },
+      { id: 2, name: 'Second step', component: <p>Step 2 content</p> },
+      { id: 3, name: 'Third step', component: <p>Step 3 content</p> },
+      { id: 4, name: 'Fourth step', component: <p>Step 4 content</p> },
+      { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-
+    const title = 'Remember last step wizard';
     return (
       <Wizard
+        navAriaLabel={`${title} steps`}
+        mainAriaLabel={`${title} content`}
         startAtStep={step}
         onNext={this.onMove}
         onBack={this.onMove}
@@ -646,22 +703,22 @@ class WizardInModal extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    
-    const steps = [
-      { name: 'Step 1', component: <p>Step 1</p> },
-      { name: 'Step 2', component: <p>Step 2</p> },
-      { name: 'Step 3', component: <p>Step 3</p> },
-      { name: 'Step 4', component: <p>Step 4</p> },
-      { name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
-    ];
 
+    const steps = [
+      { name: 'First step', component: <p>Step 1 content</p> },
+      { name: 'Second step', component: <p>Step 2 content</p> },
+      { name: 'Third step', component: <p>Step 3 content</p> },
+      { name: 'Fourth step', component: <p>Step 4 content</p> },
+      { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
+    ];
+    const title = 'Wizard in modal';
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
           Show Modal
         </Button>
         <Wizard
-          title="Simple Wizard"
+          title={title}
           description="Simple Wizard Description"
           steps={steps}
           onClose={this.handleModalToggle}

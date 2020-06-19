@@ -38,7 +38,10 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
       className="pf-c-wizard__inner-wrap"
     >
       <WizardBody
+        aria-label="null"
+        aria-labelledby="null"
         hasNoBodyPadding={false}
+        mainComponent="div"
       />
     </div>
     <div>
