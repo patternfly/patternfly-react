@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.15.0...@patternfly/react-integration@4.16.0) (2020-06-19)
+
+
+### Features
+
+* **Table:** Add inline editable dropdown ([#4262](https://github.com/patternfly/patternfly-react/issues/4262)) ([9cd5360](https://github.com/patternfly/patternfly-react/commit/9cd53600a7f7bcc786772ebae0dc8b2c579e782a))
+
+
+
+
+
 # [4.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.14.0...@patternfly/react-integration@4.15.0) (2020-06-19)
 
 

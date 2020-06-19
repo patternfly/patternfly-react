@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.20.0...@patternfly/react-core@4.21.0) (2020-06-19)
+
+
+### Features
+
+* **Table:** Add inline editable dropdown ([#4262](https://github.com/patternfly/patternfly-react/issues/4262)) ([9cd5360](https://github.com/patternfly/patternfly-react/commit/9cd53600a7f7bcc786772ebae0dc8b2c579e782a))
+
+
+
+
+
 # [4.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.19.0...@patternfly/react-core@4.20.0) (2020-06-19)
 
 
