@@ -87,10 +87,11 @@ export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) => ({
   gutter: 0,
   orientation: 'vertical',
   padding: 0,
-  rowGutter: -12,
+  rowGutter: 0,
   style: {
     labels: {
       fill: ChartLegendTooltipStyles.label.fill,
+      lineHeight: 0.275,
       padding: 0
     },
     title: {
@@ -162,8 +163,16 @@ export const getLegendTooltipSize = ({
     };
   });
 
-  const legendDimensions = getLegendDimensions({
+  // This should include both legend data and text
+  const widthDimensions = getLegendDimensions({
     legendData: data,
+    legendOrientation,
+    legendProps,
+    theme
+  });
+  // This should only use text. The row gutter changes when displaying all "no data" messages
+  const heightDimensions = getLegendDimensions({
+    legendData: _text.map((name: string) => ({ name })),
     legendOrientation,
     legendProps,
     theme
@@ -174,8 +183,8 @@ export const getLegendTooltipSize = ({
     theme
   });
   return {
-    height: legendDimensions.height,
-    width: legendDimensions.width - textSizeWorkAround > 0 ? legendDimensions.width - textSizeWorkAround : 0
+    height: heightDimensions.height,
+    width: widthDimensions.width - textSizeWorkAround > 0 ? widthDimensions.width - textSizeWorkAround : 0
   };
 };
 
