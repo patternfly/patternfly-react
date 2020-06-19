@@ -46,6 +46,10 @@ export const cancelCellEdits = (row: IRow) => {
     delete cell.props.errorText;
     delete cell.props.editableValue;
     cell.props.isValid = true;
+    // for editable selects, revert the selected property to its original value
+    if (cell.props.selected) {
+      cell.props.selected = cell.props.value;
+    }
   });
 
   row.isEditable = !row.isEditable;
@@ -94,6 +98,11 @@ export const applyCellEdits = (row: IRow, type: RowEditType) => {
     delete cell.props.errorText;
     const hasValue = cell.props.value !== undefined && cell.props.value !== null;
     const hasEditableValue = cell.props.editableValue !== undefined && cell.props.editableValue !== null;
+
+    // sync for validation
+    if (hasValue && !hasEditableValue) {
+      cell.props.editableValue = cell.props.value;
+    }
 
     if (cell.props && hasValue && hasEditableValue) {
       if (type === 'save') {

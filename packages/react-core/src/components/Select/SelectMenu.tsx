@@ -81,7 +81,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
         : selected === child.props.value;
     return React.cloneElement(child, {
       inputId: `${randomId}-${index}`,
-      id: `${randomId}-${index}`,
+      id: `${child.props.id ? child.props.id : randomId}-${index}`,
       isSelected,
       sendRef,
       keyHandler,
