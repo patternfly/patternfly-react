@@ -19,9 +19,9 @@ class SimpleExpandableSection extends React.Component {
     this.state = {
       isExpanded: false
     };
-    this.onToggle = () => {
+    this.onToggle = (isExpanded) => {
       this.setState({
-        isExpanded: !this.state.isExpanded
+        isExpanded
       });
     };
   }
