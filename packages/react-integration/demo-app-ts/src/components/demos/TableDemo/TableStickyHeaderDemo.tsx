@@ -8,6 +8,7 @@ interface TableState {
 }
 
 export class TableStickyHeaderDemo extends React.Component<TableProps, TableState> {
+  static displayName = 'TableStickyHeaderDemo';
   constructor(props: TableProps) {
     super(props);
     this.state = {
