@@ -50,6 +50,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   icon?: React.ReactNode | null;
   /** Sets the button tabindex. */
   tabIndex?: number;
+  /** Adds small styling to the button */
+  isSmall?: boolean;
 }
 
 export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
@@ -60,6 +62,7 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
   isBlock = false,
   isDisabled = false,
   isAriaDisabled = false,
+  isSmall = false,
   inoperableEvents = ['onClick', 'onKeyPress'],
   isInline = false,
   type = ButtonType.button,
@@ -113,6 +116,7 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
         isAriaDisabled && styles.modifiers.ariaDisabled,
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        isSmall && styles.modifiers.small,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}
