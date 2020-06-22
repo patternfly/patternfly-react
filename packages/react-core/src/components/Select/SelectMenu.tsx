@@ -77,7 +77,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     const { selected, sendRef, keyHandler } = this.props;
     const isSelected =
       selected && selected.constructor === Array
-        ? selected && (Array.isArray(selected) && selected.includes(child.props.value))
+        ? selected && Array.isArray(selected) && selected.includes(child.props.value)
         : selected === child.props.value;
     return React.cloneElement(child, {
       inputId: `${randomId}-${index}`,

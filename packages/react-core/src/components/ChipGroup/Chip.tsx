@@ -7,7 +7,7 @@ import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
+export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Content rendered inside the chip text */
   children?: React.ReactNode;
   /** Aria Label for close button */
@@ -30,9 +30,9 @@ interface ChipState {
   isTooltipVisible: boolean;
 }
 
-export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
+export class Chip extends React.Component<ChipProps, ChipState> {
   static displayName = 'Chip';
-  constructor(props: ChipProps & OUIAProps) {
+  constructor(props: ChipProps) {
     super(props);
     this.state = {
       isTooltipVisible: false
@@ -78,7 +78,7 @@ export class Chip extends React.Component<ChipProps & OUIAProps, ChipState> {
       <Component
         className={css(styles.chip, className)}
         {...(this.state.isTooltipVisible && { tabIndex: 0 })}
-        {...getOUIAProps('Chip', ouiaId)}
+        {...getOUIAProps(Chip.displayName, ouiaId)}
       >
         <span ref={this.span} className={css(styles.chipText)} id={id}>
           {children}

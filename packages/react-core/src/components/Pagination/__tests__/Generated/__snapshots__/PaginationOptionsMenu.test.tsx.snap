@@ -12,6 +12,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
       "menuClass": "pf-c-options-menu__menu",
       "menuComponent": "ul",
       "onSelect": [Function],
+      "ouiaComponentType": "PaginationOptionsMenu",
       "toggleClass": " ",
       "toggleIndicatorClass": "pf-c-options-menu__toggle-button-icon",
       "toggleTextClass": "pf-c-options-menu__toggle-text",
@@ -28,7 +29,6 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     isPlain={true}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <OptionsToggle

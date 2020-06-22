@@ -33,6 +33,7 @@ exports[`Modal should match snapshot (auto-generated) 1`] = `
     isOpen={false}
     labelId="pf-modal-part-1"
     onClose={[Function]}
+    ouiaSafe={true}
     showClose={true}
     title="''"
     variant="default"

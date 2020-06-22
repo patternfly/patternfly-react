@@ -10,6 +10,9 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
       "itemClass": "pf-c-dropdown__menu-item",
       "menuClass": "pf-c-dropdown__menu",
       "onSelect": [Function],
+      "ouiaComponentType": "Dropdown",
+      "ouiaId": undefined,
+      "ouiaSafe": undefined,
       "plainTextClass": "pf-m-text",
       "sectionClass": "pf-c-dropdown__group",
       "sectionComponent": "section",
@@ -31,7 +34,6 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     isPlain={true}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <p>

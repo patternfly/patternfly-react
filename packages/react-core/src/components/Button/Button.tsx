@@ -19,7 +19,7 @@ export enum ButtonType {
   reset = 'reset'
 }
 
-export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAProps {
   /** Content rendered inside the button */
   children?: React.ReactNode;
   /** Additional classes added to the button */
@@ -52,7 +52,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   tabIndex?: number;
 }
 
-export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
+export const Button: React.FunctionComponent<ButtonProps> = ({
   children = null,
   className = '',
   component = 'button',
@@ -67,10 +67,11 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
   iconPosition = 'left',
   'aria-label': ariaLabel = null,
   icon = null,
-  ouiaId = null,
+  ouiaId,
+  ouiaSafe = true,
   tabIndex = null,
   ...props
-}: ButtonProps & OUIAProps) => {
+}: ButtonProps) => {
   const Component = component as any;
   const isButtonElement = Component === 'button';
 
@@ -118,7 +119,7 @@ export const Button: React.FunctionComponent<ButtonProps & OUIAProps> = ({
       disabled={isButtonElement ? isDisabled : null}
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement ? type : null}
-      {...getOUIAProps('Button', ouiaId)}
+      {...getOUIAProps(Button.displayName, ouiaId, ouiaSafe)}
     >
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>

@@ -4,6 +4,7 @@ section: components
 cssPrefix: "pf-c-options-menu"
 propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
 typescript: true
+ouia: true
 ---
 import React from 'react';
 import {

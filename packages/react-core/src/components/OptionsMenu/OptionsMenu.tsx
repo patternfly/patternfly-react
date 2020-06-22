@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
+import { OUIAProps } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
 export enum OptionsMenuPosition {
@@ -14,7 +15,7 @@ export enum OptionsMenuDirection {
   down = 'down'
 }
 
-export interface OptionsMenuProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
+export interface OptionsMenuProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Classes applied to root element of the options menu */
   className?: string;
   /** Id of the root element of the options menu */
@@ -47,6 +48,8 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref,
   menuAppendTo = 'inline',
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: OptionsMenuProps) => (
   <DropdownContext.Provider
@@ -61,7 +64,10 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
       baseClass: styles.optionsMenu,
       disabledClass: styles.modifiers.disabled,
       menuComponent: isGrouped ? 'div' : 'ul',
-      baseComponent: 'div'
+      baseComponent: 'div',
+      ouiaId,
+      ouiaSafe,
+      ouiaComponentType: OptionsMenu.displayName
     }}
   >
     <DropdownWithContext

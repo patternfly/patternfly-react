@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-chip'
 typescript: true
 propComponents: ['Chip', 'ChipGroup']
+ouia: true
 ---
 
 import { Badge, Chip, ChipGroup } from '@patternfly/react-core';

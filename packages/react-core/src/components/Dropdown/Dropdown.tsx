@@ -3,8 +3,9 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 import { DropdownWithContext } from './DropdownWithContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
+import { OUIAProps } from '../../helpers';
 
-export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
+export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Anything which can be rendered in a dropdown */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown */
@@ -29,13 +30,14 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
   autoFocus?: boolean;
-  ouiaComponentType?: string;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   onSelect,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FC vs React.Component
+  ouiaId,
+  ouiaSafe,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -53,7 +55,10 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       sectionTitleClass: styles.dropdownGroupTitle,
       sectionComponent: 'section',
       disabledClass: styles.modifiers.disabled,
-      plainTextClass: styles.modifiers.text
+      plainTextClass: styles.modifiers.text,
+      ouiaId,
+      ouiaSafe,
+      ouiaComponentType: Dropdown.displayName
     }}
   >
     <DropdownWithContext {...props} />

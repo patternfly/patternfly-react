@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-app-launcher'
 propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem']
 typescript: true
+ouia: true
 ---
 
 import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator, Text } from '@patternfly/react-core';

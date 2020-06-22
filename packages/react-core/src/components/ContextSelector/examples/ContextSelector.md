@@ -3,6 +3,7 @@ title: 'Context selector'
 section: components
 propComponents: ['ContextSelector', 'ContextSelectorItem']
 typescript: true
+ouia: true
 ---
 
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';

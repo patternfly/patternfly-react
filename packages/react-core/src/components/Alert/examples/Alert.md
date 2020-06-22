@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-alert'
 typescript: true
 propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
+ouia: true
 ---
 
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
