@@ -3,9 +3,11 @@ import styles from '@patternfly/react-styles/css/components/FormControl/form-con
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { ValidatedOptions } from '../../helpers/constants';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface FormSelectProps
-  extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
+  extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'>,
+    OUIAProps {
   /** content rendered inside the FormSelect */
   children: React.ReactNode;
   /** additional classes added to the FormSelect control */
@@ -49,7 +51,8 @@ export class FormSelect extends React.Component<FormSelectProps> {
     isRequired: false,
     onBlur: (): any => undefined,
     onFocus: (): any => undefined,
-    onChange: (): any => undefined
+    onChange: (): any => undefined,
+    ouiaSafe: true
   };
 
   handleChange = (event: any) => {
@@ -57,7 +60,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
   };
 
   render() {
-    const { children, className, value, validated, isDisabled, isRequired, ...props } = this.props;
+    const { children, className, value, validated, isDisabled, isRequired, ouiaId, ouiaSafe, ...props } = this.props;
     return (
       <select
         {...props}
@@ -67,6 +70,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
           validated === ValidatedOptions.success && styles.modifiers.success
         )}
         aria-invalid={validated === ValidatedOptions.error}
+        {...getOUIAProps(FormSelect.displayName, ouiaId, ouiaSafe)}
         onChange={this.handleChange}
         disabled={isDisabled}
         required={isRequired}

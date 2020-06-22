@@ -4,8 +4,9 @@ import { canUseDOM, KEY_CODES, PickOptional } from '../../helpers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { ModalContent } from './ModalContent';
+import { OUIAProps } from '../../helpers';
 
-export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
+export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Content rendered inside the Modal. */
   children: React.ReactNode;
   /** Additional classes added to the Modal */
@@ -78,7 +79,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     onClose: () => undefined as any,
     variant: 'default',
     hasNoBodyWrapper: false,
-    appendTo: (typeof document !== 'undefined' && document.body) || null
+    appendTo: (typeof document !== 'undefined' && document.body) || null,
+    ouiaSafe: true
   };
 
   constructor(props: ModalProps) {
@@ -191,6 +193,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedby,
       title,
+      ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
     const { container } = this.state;
@@ -209,6 +213,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedby}
         aria-labelledby={ariaLabelledby}
+        ouiaId={ouiaId}
+        ouiaSafe={ouiaSafe}
       />,
       container
     );

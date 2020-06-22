@@ -19,7 +19,6 @@ exports[`KebabToggle basic 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <KebabToggle
@@ -488,7 +487,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <KebabToggle
@@ -919,7 +917,6 @@ exports[`KebabToggle dropup 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <KebabToggle
@@ -1350,7 +1347,6 @@ exports[`KebabToggle expanded 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <KebabToggle
@@ -2206,7 +2202,6 @@ exports[`KebabToggle plain 1`] = `
     isPlain={true}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <KebabToggle
@@ -2636,7 +2631,6 @@ exports[`KebabToggle regular 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <KebabToggle
@@ -3067,7 +3061,6 @@ exports[`KebabToggle right aligned 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <KebabToggle
@@ -3239,7 +3232,6 @@ exports[`dropdown basic 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -3735,7 +3727,6 @@ exports[`dropdown dropup + right aligned 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <DropdownToggle
@@ -4193,7 +4184,6 @@ exports[`dropdown dropup 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -4651,7 +4641,6 @@ exports[`dropdown expanded 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -5534,7 +5523,6 @@ exports[`dropdown primary 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -5993,7 +5981,6 @@ exports[`dropdown regular 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="left"
     toggle={
       <DropdownToggle
@@ -6451,7 +6438,6 @@ exports[`dropdown right aligned 1`] = `
     isPlain={false}
     menuAppendTo="inline"
     onSelect={[Function]}
-    ouiaComponentType="Dropdown"
     position="right"
     toggle={
       <DropdownToggle

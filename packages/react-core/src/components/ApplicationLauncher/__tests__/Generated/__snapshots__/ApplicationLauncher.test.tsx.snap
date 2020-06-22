@@ -17,6 +17,7 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
         "itemClass": "pf-c-app-launcher__menu-item",
         "menuClass": "pf-c-app-launcher__menu",
         "onSelect": [Function],
+        "ouiaComponentType": "ApplicationLauncher",
         "sectionClass": "pf-c-app-launcher__group",
         "sectionComponent": "section",
         "sectionTitleClass": "pf-c-app-launcher__group-title",
@@ -60,7 +61,6 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
       isPlain={false}
       menuAppendTo="inline"
       onSelect={[Function]}
-      ouiaComponentType="Dropdown"
       position="right"
       toggle={
         <DropdownToggle

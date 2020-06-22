@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-form-control'
 typescript: true
 propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
+ouia: true
 ---
 
 import { FormSelect, FormSelectOption, FormSelectOptionGroup, ValidatedOptions } from '@patternfly/react-core';

@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-breadcrumb'
 typescript: true
 propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
+ouia: true
 ---
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 

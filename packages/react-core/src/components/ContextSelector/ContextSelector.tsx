@@ -12,12 +12,13 @@ import { KEY_CODES } from '../../helpers/constants';
 import { FocusTrap } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
 const newId = currentId++;
 
-export interface ContextSelectorProps extends ToggleMenuBaseProps {
+export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   /** content rendered inside the Context Selector */
   children?: React.ReactNode;
   /** Classes applied to root element of Context Selector */
@@ -59,7 +60,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     onSearchInputChange: () => undefined as any,
     searchInputPlaceholder: 'Search',
     onSearchButtonClick: () => undefined as any,
-    menuAppendTo: 'inline'
+    menuAppendTo: 'inline',
+    ouiaSafe: true
   };
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
@@ -88,6 +90,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       searchInputPlaceholder,
       onSearchButtonClick,
       menuAppendTo,
+      ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
     const menuContainer = (
@@ -134,6 +138,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       <div
         className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
         ref={this.parentRef}
+        {...getOUIAProps(ContextSelector.displayName, ouiaId, ouiaSafe)}
         {...props}
       >
         {screenReaderLabel && (
