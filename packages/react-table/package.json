@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "4.8.3",
+  "version": "4.8.4",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -31,10 +31,10 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.16.5",
-    "@patternfly/react-core": "^4.22.2",
-    "@patternfly/react-icons": "^4.4.0",
-    "@patternfly/react-styles": "^4.4.0",
-    "@patternfly/react-tokens": "^4.5.0",
+    "@patternfly/react-core": "^4.22.3",
+    "@patternfly/react-icons": "^4.4.1",
+    "@patternfly/react-styles": "^4.4.1",
+    "@patternfly/react-tokens": "^4.5.1",
     "@types/classnames": "^2.2.9",
     "classnames": "^2.2.5",
     "lodash": "^4.17.15",
