@@ -4,8 +4,17 @@ section: overview
 releaseNoteTOC: true
 ---
 
-## 2020.07 release notes (2020-06-24)
-Packages released:
+## 2020.078 release notes (2020-06-24)
+- [@patternfly/react-catalog-view-extension@4.4.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.4.5)
+- [@patternfly/react-charts@6.5.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.5.3)
+- [@patternfly/react-core@4.22.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.22.2)
+- [@patternfly/react-icons@4.4.4](https://www.npmjs.com/package/@patternfly/react-icons/v/4.4.1)
+- [@patternfly/react-inline-edit-extension@4.5.4](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.4)
+- [@patternfly/react-styles@4.4.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.4.1)
+- [@patternfly/react-table@4.8.3](https://www.npmjs.com/package/@patternfly/react-table/v/4.8.3)
+- [@patternfly/react-tokens@4.5.1](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.5.1)
+- [@patternfly/react-topology@4.4.4](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.4)
+- [@patternfly/react-virtualized-extension@4.4.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.4.5)
 
 ### Components
 - **Application launcher:**
@@ -89,6 +98,7 @@ Packages released:
 - Publish v3 branch to v3 tag to NPM ([#4354](https://github.com/patternfly/patternfly-react/pull/4354))
 - Removed call for yarn clean:pf3 fro package.json ([#4356](https://github.com/patternfly/patternfly-react/pull/4356))
 - Fixed no anonymous functions ([#4391](https://github.com/patternfly/patternfly-react/pull/4391))
+- Updates from OUIA audit ([#4401](https://github.com/patternfly/patternfly-react/pull/4401))
 - **Docs:**
   - Updated the git workflow in CONTRIBUTING.md ([#4319](https://github.com/patternfly/patternfly-react/pull/4319))
   - Added upgrade guide ([#4298](https://github.com/patternfly/patternfly-react/pull/4298))
