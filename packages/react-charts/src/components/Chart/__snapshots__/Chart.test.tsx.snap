@@ -477,8 +477,10 @@ exports[`Chart 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -1018,8 +1020,10 @@ exports[`Chart 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -1037,8 +1041,10 @@ exports[`Chart 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -1577,8 +1583,10 @@ exports[`Chart 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -1600,8 +1608,10 @@ exports[`Chart 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -2159,8 +2169,10 @@ exports[`Chart 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -2178,8 +2190,10 @@ exports[`Chart 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -2736,8 +2750,10 @@ exports[`Chart 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -3687,8 +3703,10 @@ exports[`Chart 2`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -4228,8 +4246,10 @@ exports[`Chart 2`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -4247,8 +4267,10 @@ exports[`Chart 2`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -4787,8 +4809,10 @@ exports[`Chart 2`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -4810,8 +4834,10 @@ exports[`Chart 2`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -5369,8 +5395,10 @@ exports[`Chart 2`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -5388,8 +5416,10 @@ exports[`Chart 2`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -5946,8 +5976,10 @@ exports[`Chart 2`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -6897,8 +6929,10 @@ exports[`renders axis and component children 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -7438,8 +7472,10 @@ exports[`renders axis and component children 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -7457,8 +7493,10 @@ exports[`renders axis and component children 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -7997,8 +8035,10 @@ exports[`renders axis and component children 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -8020,8 +8060,10 @@ exports[`renders axis and component children 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -8579,8 +8621,10 @@ exports[`renders axis and component children 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -8598,8 +8642,10 @@ exports[`renders axis and component children 1`] = `
         }
         axisLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}
@@ -9156,8 +9202,10 @@ exports[`renders axis and component children 1`] = `
         }
         tickLabelComponent={
           <VictoryLabel
+            backgroundComponent={<Rect />}
             capHeight={0.71}
             direction="inherit"
+            groupComponent={<g />}
             lineHeight={1}
             textComponent={<Text />}
             tspanComponent={<TSpan />}

@@ -31,7 +31,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * @example containerRef={(ref) => { this.chartRef = ref; }}
    */
-  containerRef?: Function;
+  containerRef?: React.RefObject<HTMLElement>;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
