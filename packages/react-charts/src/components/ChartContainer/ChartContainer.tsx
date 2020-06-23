@@ -3,13 +3,14 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { OriginType, VictoryContainer, VictoryContainerProps } from 'victory-core';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
+import { getOUIAProps, OUIAProps } from '@patternfly/react-core';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  *
  * Note: VictoryContainer may support other props (e.g., children), but they're undocumented and not typed
  */
-export interface ChartContainerProps extends VictoryContainerProps {
+export interface ChartContainerProps extends VictoryContainerProps, OUIAProps {
   /**
    * The children prop specifies the child or children that will be rendered within the container. It will be set by
    * whatever Victory component is rendering the container.
@@ -141,12 +142,16 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * is given, the width prop from the child component passed will be used.
    */
   width?: number;
+  ouiaComponentType?: string;
 }
 
 export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   className,
   themeColor,
   themeVariant,
+  ouiaSafe = true,
+  ouiaId,
+  ouiaComponentType,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
@@ -157,7 +162,14 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   // Note: className is valid, but Victory is missing a type
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
-  return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
+  return (
+    <VictoryContainer
+      className={chartClassName}
+      theme={theme}
+      {...getOUIAProps(ChartContainer.displayName, ouiaId, ouiaSafe)}
+      {...rest}
+    />
+  );
 };
 ChartContainer.displayName = 'ChartContainer';
 

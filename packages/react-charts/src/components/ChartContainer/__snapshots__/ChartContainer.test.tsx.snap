@@ -3,6 +3,9 @@
 exports[`ChartContainer 1`] = `
 <VictoryContainer
   className="pf-c-chart"
+  data-ouia-component-id={0}
+  data-ouia-component-type="PF4/ChartContainer"
+  data-ouia-safe={true}
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
@@ -461,6 +464,9 @@ exports[`ChartContainer 1`] = `
 exports[`ChartContainer 2`] = `
 <VictoryContainer
   className="pf-c-chart"
+  data-ouia-component-id={1}
+  data-ouia-component-type="PF4/ChartContainer"
+  data-ouia-safe={true}
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}
@@ -919,6 +925,9 @@ exports[`ChartContainer 2`] = `
 exports[`renders container via ChartLegend 1`] = `
 <VictoryContainer
   className="pf-c-chart"
+  data-ouia-component-id={2}
+  data-ouia-component-type="PF4/ChartContainer"
+  data-ouia-safe={true}
   portalComponent={<Portal />}
   portalZIndex={99}
   responsive={true}

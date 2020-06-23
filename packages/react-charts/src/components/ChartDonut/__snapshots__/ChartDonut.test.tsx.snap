@@ -4,6 +4,7 @@ exports[`ChartDonut 1`] = `
 <Fragment>
   <ChartContainer
     height={230}
+    ouiaComponentType="ChartDonut"
     theme={
       Object {
         "area": Object {
@@ -924,6 +925,7 @@ exports[`ChartDonut 2`] = `
 <Fragment>
   <ChartContainer
     height={230}
+    ouiaComponentType="ChartDonut"
     theme={
       Object {
         "area": Object {
@@ -1844,6 +1846,7 @@ exports[`renders component data 1`] = `
 <Fragment>
   <ChartContainer
     height={200}
+    ouiaComponentType="ChartDonut"
     theme={
       Object {
         "area": Object {

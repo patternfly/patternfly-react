@@ -24,6 +24,7 @@ import { ChartLabel } from '../ChartLabel';
 import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
+import { getOUIAProps, OUIAProps } from '@patternfly/react-core';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
@@ -57,7 +58,7 @@ export enum ChartDonutSubTitlePosition {
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
  * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
  */
-export interface ChartDonutProps extends ChartPieProps {
+export interface ChartDonutProps extends ChartPieProps, OUIAProps {
   /**
    * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
    * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
@@ -535,6 +536,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   themeVariant,
   title,
   titleComponent = <ChartLabel />,
+  ouiaId,
+  ouiaSafe = true,
 
   // destructure last
   theme = getDonutTheme(themeColor, themeVariant),
@@ -663,6 +666,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       title: ariaTitle,
       width,
       theme,
+      ouiaId,
+      ouiaComponentType: ChartDonut.displayName,
       ...containerComponent.props
     },
     [chart, getAllTitles()]
