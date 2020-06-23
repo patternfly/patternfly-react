@@ -19,8 +19,10 @@ exports[`ChartVoronoiContainer 1`] = `
       groupComponent={<g />}
       labelComponent={
         <VictoryLabel
+          backgroundComponent={<Rect />}
           capHeight={0.71}
           direction="inherit"
+          groupComponent={<g />}
           lineHeight={1}
           textComponent={<Text />}
           tspanComponent={<TSpan />}
@@ -953,8 +955,10 @@ exports[`ChartVoronoiContainer 2`] = `
       groupComponent={<g />}
       labelComponent={
         <VictoryLabel
+          backgroundComponent={<Rect />}
           capHeight={0.71}
           direction="inherit"
+          groupComponent={<g />}
           lineHeight={1}
           textComponent={<Text />}
           tspanComponent={<TSpan />}
@@ -1888,8 +1892,10 @@ exports[`renders container via ChartGroup 1`] = `
           groupComponent={<g />}
           labelComponent={
             <VictoryLabel
+              backgroundComponent={<Rect />}
               capHeight={0.71}
               direction="inherit"
+              groupComponent={<g />}
               lineHeight={1}
               textComponent={<Text />}
               tspanComponent={<TSpan />}

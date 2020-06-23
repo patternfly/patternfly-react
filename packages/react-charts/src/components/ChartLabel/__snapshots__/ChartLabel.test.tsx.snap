@@ -2,8 +2,10 @@
 
 exports[`ChartLabel 1`] = `
 <VictoryLabel
+  backgroundComponent={<Rect />}
   capHeight={0.71}
   direction="inherit"
+  groupComponent={<g />}
   lineHeight={1}
   style={
     Object {
@@ -20,8 +22,10 @@ exports[`ChartLabel 1`] = `
 
 exports[`ChartLabel 2`] = `
 <VictoryLabel
+  backgroundComponent={<Rect />}
   capHeight={0.71}
   direction="inherit"
+  groupComponent={<g />}
   lineHeight={1}
   style={
     Object {
@@ -38,8 +42,10 @@ exports[`ChartLabel 2`] = `
 
 exports[`renders component text 1`] = `
 <VictoryLabel
+  backgroundComponent={<Rect />}
   capHeight={0.71}
   direction="inherit"
+  groupComponent={<g />}
   lineHeight={1}
   style={
     Object {

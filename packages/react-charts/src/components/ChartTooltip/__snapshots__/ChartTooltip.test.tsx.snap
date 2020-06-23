@@ -1858,8 +1858,10 @@ exports[`allows tooltip via container component 1`] = `
           groupComponent={<g />}
           labelComponent={
             <VictoryLabel
+              backgroundComponent={<Rect />}
               capHeight={0.71}
               direction="inherit"
+              groupComponent={<g />}
               lineHeight={1}
               textComponent={<Text />}
               tspanComponent={<TSpan />}
