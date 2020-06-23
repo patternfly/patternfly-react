@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.22.3...@patternfly/react-core@4.23.0) (2020-06-23)
+
+
+### Features
+
+* **Banner:** clean up commit ([#4439](https://github.com/patternfly/patternfly-react/issues/4439)) ([4362966](https://github.com/patternfly/patternfly-react/commit/4362966766d57a70c1c97a242a0db71b4e104f8f))
+
+
+
+
+
 ## [4.22.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.22.2...@patternfly/react-core@4.22.3) (2020-06-22)
 
 **Note:** Version bump only for package @patternfly/react-core
