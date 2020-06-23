@@ -300,8 +300,10 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                 class="pf-c-alert__action"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Close"
                   class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="3"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -379,8 +381,10 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                 class="pf-c-alert__action"
               >
                 <button
+                  aria-disabled="false"
                   aria-label="Close"
                   class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="3"
                   data-ouia-component-type="PF4/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -493,15 +497,14 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                     variant="plain"
                   >
                     <button
-                      aria-disabled={null}
+                      aria-disabled={false}
                       aria-label="Close"
                       className="pf-c-button pf-m-plain"
-                      data-ouia-component-id={null}
+                      data-ouia-component-id={3}
                       data-ouia-component-type="PF4/Button"
                       data-ouia-safe={true}
                       disabled={false}
                       onClick={[MockFunction]}
-                      tabIndex={null}
                       type="button"
                     >
                       <TimesIcon

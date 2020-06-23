@@ -50,7 +50,7 @@ export interface PopperProps {
 export const Popper: React.FunctionComponent<PopperProps> = ({
   trigger,
   popper,
-  popperMatchesTriggerWidth = false,
+  popperMatchesTriggerWidth = true,
   direction = 'down',
   position = 'left',
   appendTo = () => document.body,

@@ -36,7 +36,7 @@ export const DEFAULT_SCROLLING_RESET_TIME_INTERVAL = 150;
 let size = 0;
 
 function scrollbarSize(recalc: boolean) {
-  if ((!size && size !== 0 || recalc) && canUseDOM) {
+  if (((!size && size !== 0) || recalc) && canUseDOM) {
     const scrollDiv = document.createElement('div');
     scrollDiv.style.position = 'absolute';
     scrollDiv.style.top = '-9999px';
@@ -50,7 +50,6 @@ function scrollbarSize(recalc: boolean) {
 
   return size;
 }
-
 
 /**
  * Controls whether the VirtualGrid updates the DOM element's scrollLeft/scrollTop based on the current state or just observes it.
@@ -249,8 +248,6 @@ interface InstanceProps {
   prevIsScrolling: boolean;
   prevScrollToColumn: number;
   prevScrollToRow: number;
-  prevScrollLeft?: number;
-  prevScrollTop?: number;
 
   columnSizeAndPositionManager: ScalingCellSizeAndPositionManager;
   rowSizeAndPositionManager: ScalingCellSizeAndPositionManager;
@@ -364,8 +361,6 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
         prevIsScrolling: props.isScrolling === true,
         prevScrollToColumn: props.scrollToColumn,
         prevScrollToRow: props.scrollToRow,
-        prevScrollLeft: props.scrollLeft,
-        prevScrollTop: props.scrollTop,
 
         scrollbarSize: 0,
         scrollbarSizeMeasured: false
@@ -373,8 +368,8 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
       isScrolling: false,
       scrollDirectionHorizontal: SCROLL_DIRECTION_FORWARD,
       scrollDirectionVertical: SCROLL_DIRECTION_FORWARD,
-      scrollLeft: props.scrollLeft || 0,
-      scrollTop: props.scrollTop || 0,
+      scrollLeft: 0,
+      scrollTop: 0,
       scrollPositionChangeReason: null,
 
       needToResetStyleCache: false
@@ -794,7 +789,6 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
    */
   static getDerivedStateFromProps(nextProps: VirtualGridProps, prevState: VirtualGridState): VirtualGridState {
     const newState: VirtualGridState = {};
-    const { instanceProps } = prevState;
 
     if (
       (nextProps.columnCount === 0 && prevState.scrollLeft !== 0) ||
@@ -806,8 +800,8 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
       // only use scroll{Left,Top} from props if scrollTo{Column,Row} isn't specified
       // scrollTo{Column,Row} should override scroll{Left,Top}
     } else if (
-      (nextProps.scrollLeft !== instanceProps.prevScrollLeft && nextProps.scrollToColumn < 0) ||
-      (nextProps.scrollTop !== instanceProps.prevScrollTop && nextProps.scrollToRow < 0)
+      (nextProps.scrollLeft !== prevState.scrollLeft && nextProps.scrollToColumn < 0) ||
+      (nextProps.scrollTop !== prevState.scrollTop && nextProps.scrollToRow < 0)
     ) {
       Object.assign(
         newState,
@@ -818,6 +812,8 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
         })
       );
     }
+
+    let { instanceProps } = prevState;
 
     // Initially we should not clearStyleCache
     newState.needToResetStyleCache = false;
@@ -890,8 +886,6 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
     instanceProps.prevRowHeight = nextProps.rowHeight;
     instanceProps.prevScrollToColumn = nextProps.scrollToColumn;
     instanceProps.prevScrollToRow = nextProps.scrollToRow;
-    instanceProps.prevScrollLeft = nextProps.scrollLeft;
-    instanceProps.prevScrollTop = nextProps.scrollTop;
 
     // getting scrollBarSize (moved from componentWillMount)
     instanceProps.scrollbarSize = nextProps.getScrollbarSize();
@@ -1386,7 +1380,10 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
     return VirtualGrid._getCalculatedScrollLeft(props, state);
   }
 
-  static _getScrollLeftForScrollToColumnStateUpdate(nextProps: VirtualGridProps, prevState: VirtualGridState): VirtualGridState {
+  static _getScrollLeftForScrollToColumnStateUpdate(
+    nextProps: VirtualGridProps,
+    prevState: VirtualGridState
+  ): VirtualGridState {
     const { scrollLeft } = prevState;
     const calculatedScrollLeft = VirtualGrid._getCalculatedScrollLeft(nextProps, prevState);
 
@@ -1460,7 +1457,10 @@ export class VirtualGrid extends React.Component<VirtualGridProps, VirtualGridSt
     }
   }
 
-  static _getScrollTopForScrollToRowStateUpdate(nextProps: VirtualGridProps, prevState: VirtualGridState): VirtualGridState {
+  static _getScrollTopForScrollToRowStateUpdate(
+    nextProps: VirtualGridProps,
+    prevState: VirtualGridState
+  ): VirtualGridState {
     const { scrollTop } = prevState;
     const calculatedScrollTop = VirtualGrid._getCalculatedScrollTop(nextProps, prevState);
 

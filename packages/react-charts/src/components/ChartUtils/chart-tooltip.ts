@@ -1,7 +1,8 @@
 /* eslint-disable camelcase */
 import chart_color_black_500 from '@patternfly/react-tokens/dist/js/chart_color_black_500';
 import { ColorScalePropType, Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-core';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartLegendProps } from '../ChartLegend';
+import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLegendDimensions, getTextSizeWorkAround } from './chart-legend';
 
 interface ChartCursorTooltipCenterOffsetInterface {
@@ -24,6 +25,7 @@ interface ChartLegendTooltipFlyoutInterface {
 }
 
 interface ChartLegendTooltipVisibleDataInterface {
+  activePoints?: any[];
   colorScale?: ColorScalePropType;
   legendData: any;
   text?: StringOrNumberOrCallback | string[] | number[];
@@ -32,6 +34,7 @@ interface ChartLegendTooltipVisibleDataInterface {
 }
 
 interface ChartLegendTooltipVisibleTextInterface {
+  activePoints?: any[];
   legendData: any;
   text: StringOrNumberOrCallback | string[] | number[];
 }
@@ -78,6 +81,27 @@ export const getCursorTooltipPoniterOrientation = ({
   return horizontal ? orientationX : orientationY;
 };
 
+// Returns props associated with legend data
+export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) => ({
+  borderPadding: 0,
+  gutter: 0,
+  orientation: 'vertical',
+  padding: 0,
+  rowGutter: 0,
+  style: {
+    labels: {
+      fill: ChartLegendTooltipStyles.label.fill,
+      lineHeight: 0.275,
+      padding: 0
+    },
+    title: {
+      fill: ChartLegendTooltipStyles.label.fill,
+      padding: 0
+    }
+  },
+  ...defaultProps
+});
+
 // Returns the legend height and width
 export const getLegendTooltipSize = ({
   legendData,
@@ -107,7 +131,7 @@ export const getLegendTooltipSize = ({
   });
 
   let maxLength = maxDataLength + maxTextLength;
-  maxLength += maxLength > 20 ? 1 : maxLength > 15 ? 2 : 4;
+  maxLength += maxDataLength > 10 ? 2 : 4;
 
   // Adds spacing to help align legend labels and text values
   const getSpacer = (legendLabel: string, textLabel: string) => {
@@ -139,8 +163,16 @@ export const getLegendTooltipSize = ({
     };
   });
 
-  const legendDimensions = getLegendDimensions({
+  // This should include both legend data and text
+  const widthDimensions = getLegendDimensions({
     legendData: data,
+    legendOrientation,
+    legendProps,
+    theme
+  });
+  // This should only use text. The row gutter changes when displaying all "no data" messages
+  const heightDimensions = getLegendDimensions({
+    legendData: _text.map((name: string) => ({ name })),
     legendOrientation,
     legendProps,
     theme
@@ -151,14 +183,15 @@ export const getLegendTooltipSize = ({
     theme
   });
   return {
-    height: legendDimensions.height,
-    width: legendDimensions.width - textSizeWorkAround > 0 ? legendDimensions.width - textSizeWorkAround : 0
+    height: heightDimensions.height,
+    width: widthDimensions.width - textSizeWorkAround > 0 ? widthDimensions.width - textSizeWorkAround : 0
   };
 };
 
 // Returns visible legend data, while syncing color scale. If textAsLegendData is true, the text prop is used as
 // legend data so y values can be passed individually to the label component
 export const getLegendTooltipVisibleData = ({
+  activePoints,
   colorScale,
   legendData,
   text,
@@ -174,7 +207,11 @@ export const getLegendTooltipVisibleData = ({
     let index = -1;
     for (let i = 0; i < legendData.length; i++) {
       const data = legendData[i];
-      if (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value) {
+      const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
+      if (
+        !activePoint ||
+        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value)
+      ) {
         continue; // Skip hidden data
       }
       if (index++ < _text.length - 1) {
@@ -196,14 +233,22 @@ export const getLegendTooltipVisibleData = ({
 };
 
 // Returns visible text for interactive legends
-export const getLegendTooltipVisibleText = ({ legendData, text }: ChartLegendTooltipVisibleTextInterface) => {
+export const getLegendTooltipVisibleText = ({
+  activePoints,
+  legendData,
+  text
+}: ChartLegendTooltipVisibleTextInterface) => {
   const textEvaluated = Helpers.evaluateProp(text);
   const _text = Array.isArray(textEvaluated) ? textEvaluated : [textEvaluated];
   const result = [];
   if (legendData) {
     let index = -1;
     for (const data of legendData) {
-      if (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value) {
+      const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
+      if (
+        !activePoint ||
+        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value)
+      ) {
         continue; // Skip hidden data
       }
       if (index++ < _text.length - 1) {

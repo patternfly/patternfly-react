@@ -3,14 +3,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
-import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
+import { Dropdown, DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 import { ApplicationLauncherGroup } from './ApplicationLauncherGroup';
 import { ApplicationLauncherSeparator } from './ApplicationLauncherSeparator';
 import { ApplicationLauncherItem } from './ApplicationLauncherItem';
 import { ApplicationLauncherContext } from './ApplicationLauncherContext';
+import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 
-export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
+export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
   className?: string;
   /** Display menu above or below dropdown toggle */
@@ -69,7 +70,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     toggleIcon: <ThIcon />,
     searchPlaceholderText: 'Filter by name...',
     searchNoResultsText: 'No results found',
-    favoritesLabel: 'Favorites'
+    favoritesLabel: 'Favorites',
+    menuAppendTo: 'inline'
   };
 
   createSearchBox = () => {
@@ -153,6 +155,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       /* eslint-enable @typescript-eslint/no-unused-vars */
       favoritesLabel,
       searchNoResultsText,
+      menuAppendTo,
       ...props
     } = this.props;
     let renderableItems: React.ReactNode[] = [];
@@ -201,7 +204,8 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             sectionClass: styles.appLauncherGroup,
             sectionTitleClass: styles.appLauncherGroupTitle,
             sectionComponent: 'section',
-            disabledClass: styles.modifiers.disabled
+            disabledClass: styles.modifiers.disabled,
+            ouiaComponentType: ApplicationLauncher.displayName
           }}
         >
           <DropdownWithContext
@@ -210,6 +214,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
             isOpen={isOpen}
             className={className}
             aria-label={ariaLabel}
+            menuAppendTo={menuAppendTo}
             toggle={
               <DropdownToggle
                 id={toggleId}

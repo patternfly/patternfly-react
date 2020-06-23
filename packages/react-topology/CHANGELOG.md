@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.4...@patternfly/react-topology@4.4.5) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.3...@patternfly/react-topology@4.4.4) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.2...@patternfly/react-topology@4.4.3) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.1...@patternfly/react-topology@4.4.2) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.0...@patternfly/react-topology@4.4.1) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.3.30...@patternfly/react-topology@4.4.0) (2020-06-19)
+
+
+### Features
+
+* **button:** add isAriaDisabled ([#3801](https://github.com/patternfly/patternfly-react/issues/3801)) ([a6ef254](https://github.com/patternfly/patternfly-react/commit/a6ef2545833f3cf6b98ad0736719975cc0a9c6dd))
+
+
+
+
+
+## [4.3.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.3.29...@patternfly/react-topology@4.3.30) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.3.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.3.28...@patternfly/react-topology@4.3.29) (2020-06-18)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## [4.3.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.3.27...@patternfly/react-topology@4.3.28) (2020-06-17)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [4.3.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.3.26...@patternfly/react-topology@4.3.27) (2020-06-17)
 
 **Note:** Version bump only for package @patternfly/react-topology

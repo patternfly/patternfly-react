@@ -28,8 +28,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     direction: DropdownDirection.down,
     onSelect: (): void => undefined,
     autoFocus: true,
-    menuAppendTo: 'inline',
-    ouiaComponentType: 'Dropdown'
+    menuAppendTo: 'inline'
   };
 
   constructor(props: DropdownProps & OUIAProps) {
@@ -72,9 +71,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       position,
       toggle,
       autoFocus,
-      ouiaId,
       menuAppendTo,
-      ouiaComponentType,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-toggle-id-${DropdownWithContext.currentId++}`;
@@ -92,9 +89,9 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     const openedOnEnter = this.openedOnEnter;
     return (
       <DropdownContext.Consumer>
-        {({ baseClass, baseComponent, id: contextId }) => {
+        {({ baseClass, baseComponent, id: contextId, ouiaId, ouiaComponentType, ouiaSafe }) => {
           const BaseComponent = baseComponent as any;
-          const menuComponent = (
+          const menuContainer = (
             <DropdownMenu
               setMenuComponentRef={this.setMenuComponentRef}
               component={component}
@@ -108,7 +105,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               {renderedContent}
             </DropdownMenu>
           );
-          const popoverContent = (
+          const popperContainer = (
             <div
               className={css(
                 baseClass,
@@ -118,10 +115,10 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 className
               )}
             >
-              {isOpen && menuComponent}
+              {isOpen && menuContainer}
             </div>
           );
-          const mainComponent = (
+          const mainContainer = (
             <BaseComponent
               {...props}
               className={css(
@@ -132,7 +129,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 className
               )}
               ref={this.baseComponentRef}
-              {...getOUIAProps(ouiaComponentType, ouiaId)}
+              {...getOUIAProps(ouiaComponentType, ouiaId, ouiaSafe)}
             >
               {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {
@@ -145,7 +142,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                   onEnter: () => this.onEnter()
                 })
               )}
-              {menuAppendTo === 'inline' && isOpen && menuComponent}
+              {menuAppendTo === 'inline' && isOpen && menuContainer}
             </BaseComponent>
           );
           const getParentElement = () => {
@@ -155,11 +152,11 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
             return null;
           };
           return menuAppendTo === 'inline' ? (
-            mainComponent
+            mainContainer
           ) : (
             <Popper
-              trigger={mainComponent}
-              popper={popoverContent}
+              trigger={mainContainer}
+              popper={popperContainer}
               direction={direction}
               position={position}
               appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}

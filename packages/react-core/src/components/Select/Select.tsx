@@ -19,7 +19,8 @@ let currentId = 0;
 
 export interface SelectProps
   extends ToggleMenuBaseProps,
-    Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
+    Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
+    OUIAProps {
   /** Content rendered inside the Select */
   children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
@@ -142,7 +143,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
     inputIdPrefix: '',
-    menuAppendTo: 'inline'
+    menuAppendTo: 'inline',
+    ouiaSafe: true
   };
 
   state: SelectState = {
@@ -391,6 +393,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       maxHeight,
       toggleIcon,
       ouiaId,
+      ouiaSafe,
       hasInlineFilter,
       isCheckboxSelectionBadgeHidden,
       inlineFilterPlaceholderText,
@@ -536,7 +539,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
 
-    const menuComponent = (
+    const menuContainer = (
       <SelectMenu
         {...props}
         isGrouped={isGrouped}
@@ -554,7 +557,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       </SelectMenu>
     );
 
-    const popoverContent = (
+    const popperContainer = (
       <div
         className={css(
           styles.select,
@@ -563,11 +566,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
       >
-        {isOpen && menuComponent}
+        {isOpen && menuContainer}
       </div>
     );
 
-    const mainComponent = (
+    const mainContainer = (
       <div
         className={css(
           styles.select,
@@ -576,7 +579,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         ref={this.parentRef}
-        {...getOUIAProps('Select', ouiaId)}
+        {...getOUIAProps(Select.displayName, ouiaId, ouiaSafe)}
       >
         <SelectToggle
           id={selectToggleId}
@@ -657,7 +660,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             <React.Fragment>
               <div className={css(styles.selectToggleWrapper)}>
                 {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
+                {selections && Array.isArray(selections) && selections.length > 0 && selectedChips}
                 <input
                   className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                   aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
@@ -677,7 +680,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             </React.Fragment>
           )}
         </SelectToggle>
-        {isOpen && menuAppendTo === 'inline' && menuComponent}
+        {isOpen && menuAppendTo === 'inline' && menuContainer}
       </div>
     );
 
@@ -695,14 +698,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             value={{ onSelect, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
           >
             {menuAppendTo === 'inline' ? (
-              mainComponent
+              mainContainer
             ) : (
               <Popper
-                trigger={mainComponent}
-                popper={popoverContent}
+                trigger={mainContainer}
+                popper={popperContainer}
                 direction={direction}
                 appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
-                popperMatchesTriggerWidth
                 isVisible={isOpen}
               />
             )}

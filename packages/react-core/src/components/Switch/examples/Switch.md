@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-switch'
 propComponents: ['Switch']
 typescript: true
+ouia: true
 ---
 
 import { Switch } from '@patternfly/react-core';

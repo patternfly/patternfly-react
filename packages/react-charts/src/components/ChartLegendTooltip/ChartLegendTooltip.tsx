@@ -1,7 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
-  Helpers,
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
@@ -11,10 +10,11 @@ import {
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
 import { ChartCursorTooltip, ChartCursorTooltipProps } from '../ChartCursorTooltip';
-import { ChartLegendTooltipContent, defaultLegendProps } from './ChartLegendTooltipContent';
+import { ChartLegendTooltipContent } from './ChartLegendTooltipContent';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import {
+  getLegendTooltipDataProps,
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
@@ -37,6 +37,12 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * When true, tooltip events will set the active prop on both data and label elements.
    */
   activateData?: boolean;
+  /**
+   * The activePoints prop specifies the active data
+   *
+   * **This prop should not be set manually.**
+   */
+  activePoints?: any[];
   /**
    * The angle prop specifies the angle to rotate the tooltip around its origin point.
    */
@@ -165,14 +171,20 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    */
   labelTextAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
-   * Specify data via the data prop. ChartLegend expects data as an
-   * array of objects with name (required), symbol, and labels properties.
+   * Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and
+   * labels properties. The childName is used to sync the data series associated with the given chart child name.
+   *
    * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   * @example legendData={[{ childName: `cats`, name: `Total cats` }, { childName: `dogs`, name: 'Total dogs' }]}
    */
   legendData?: {
+    childName?: string;
     name?: string;
+    labels?: {
+      fill?: string;
+    };
     symbol?: {
       fill?: string;
       type?: string;
@@ -263,6 +275,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
 }
 
 export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
+  activePoints,
   datum,
   center = { x: 0, y: 0 },
   flyoutHeight,
@@ -282,43 +295,30 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   ...rest
 }: ChartLegendTooltipProps) => {
   const pointerLength = theme && theme.tooltip ? theme.tooltip.pointerLength : 10;
-
-  // Returns legend props
-  const getLegendProps = () => {
-    const getKeyValue = (key: string) =>
-      labelComponent.props[key] ? labelComponent.props[key] : (defaultLegendProps as any)[key];
-    return {
-      legendData: getLegendTooltipVisibleData({ legendData, text, theme }),
-      legendProps: {
-        borderPadding: getKeyValue('borderPadding'),
-        gutter: getKeyValue('gutter'),
-        orientation: getKeyValue('orientation'),
-        padding: getKeyValue('padding'),
-        rowGutter: getKeyValue('rowGutter'),
-        style: getKeyValue('style')
-      },
-      text: getLegendTooltipVisibleText({ legendData, text }),
-      theme
-    };
+  const legendTooltipProps = {
+    legendData: getLegendTooltipVisibleData({ activePoints, legendData, text, theme }),
+    legendProps: getLegendTooltipDataProps(labelComponent.props.legendComponent),
+    text: getLegendTooltipVisibleText({ activePoints, legendData, text }),
+    theme
   };
 
   // Returns flyout height based on legend size
   const getFlyoutHeight = () => {
-    const _flyoutHeight = getLegendTooltipSize(getLegendProps()).height + ChartLegendTooltipStyles.flyout.padding;
+    const _flyoutHeight = getLegendTooltipSize(legendTooltipProps).height + ChartLegendTooltipStyles.flyout.padding;
     return title ? _flyoutHeight : _flyoutHeight - 10;
   };
 
   // Returns flyout width based on legend size
-  const getFlyoutWidth = () => getLegendTooltipSize(getLegendProps()).width + ChartLegendTooltipStyles.flyout.padding;
+  const getFlyoutWidth = () => getLegendTooltipSize(legendTooltipProps).width + ChartLegendTooltipStyles.flyout.padding;
 
   // Returns the tooltip content component
   const getTooltipContentComponent = () =>
     React.cloneElement(labelComponent, {
       center,
-      data: legendData,
       flyoutHeight: flyoutHeight || getFlyoutHeight(),
       flyoutWidth: flyoutWidth || getFlyoutWidth(),
       height,
+      legendData,
       title,
       width,
       ...labelComponent.props
@@ -329,6 +329,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
     const _flyoutWidth = getFlyoutWidth();
     const tooltipComponent = isCursorTooltip ? <ChartCursorTooltip /> : <ChartTooltip />;
     return React.cloneElement(tooltipComponent, {
+      activePoints,
       center,
       datum,
       flyoutHeight: flyoutHeight || getFlyoutHeight(),

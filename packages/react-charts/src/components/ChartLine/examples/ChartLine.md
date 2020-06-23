@@ -103,7 +103,7 @@ class BottomAlignedLegend extends React.Component {
   render() {
     // Note: Container order is important
     const CursorVoronoiContainer = createContainer("cursor", "voronoi");
-    const legendData = [{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }];
+    const legendData = [{ childName: 'cats', name: 'Cats' }, { childName: 'dogs', name: 'Dogs', symbol: { type: 'dash' }}, { childName: 'birds', name: 'Birds' }, { childName: 'mice', name: 'Mice' }];
 
     return (
       <div>
@@ -141,19 +141,21 @@ class BottomAlignedLegend extends React.Component {
             <ChartGroup>
               <ChartLine
                 data={[
-                  { name: 'Cats', x: '2015', y: 1 },
-                  { name: 'Cats', x: '2016', y: 2 },
-                  { name: 'Cats', x: '2017', y: 5 },
-                  { name: 'Cats', x: '2018', y: 3 }
+                  { x: '2015', y: 1 },
+                  { x: '2016', y: 2 },
+                  { x: '2017', y: 5 },
+                  { x: '2018', y: 3 }
                 ]}
+                name="cats"
               />
               <ChartLine
                 data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 1 },
-                  { name: 'Dogs', x: '2017', y: 7 },
-                  { name: 'Dogs', x: '2018', y: 4 }
+                  { x: '2015', y: 2 },
+                  { x: '2016', y: 1 },
+                  { x: '2017', y: 7 },
+                  { x: '2018', y: 4 }
                 ]}
+                name="dogs"
                 style={{
                   data: {
                     strokeDasharray: '3,3'
@@ -162,19 +164,21 @@ class BottomAlignedLegend extends React.Component {
               />
               <ChartLine
                 data={[
-                  { name: 'Birds', x: '2015', y: 3 },
-                  { name: 'Birds', x: '2016', y: 4 },
-                  { name: 'Birds', x: '2017', y: 9 },
-                  { name: 'Birds', x: '2018', y: 5 }
+                  { x: '2015', y: 3 },
+                  { x: '2016', y: 4 },
+                  { x: '2017', y: 9 },
+                  { x: '2018', y: 5 }
                 ]}
+                name="birds"
               />
               <ChartLine
                 data={[
-                  { name: 'Mice', x: '2015', y: 3 },
-                  { name: 'Mice', x: '2016', y: 3 },
-                  { name: 'Mice', x: '2017', y: 8 },
-                  { name: 'Mice', x: '2018', y: 7 }
+                  { x: '2015', y: 3 },
+                  { x: '2016', y: 3 },
+                  { x: '2017', y: 8 },
+                  { x: '2018', y: 7 }
                 ]}
+                name="mice"
               />
             </ChartGroup>
           </Chart>

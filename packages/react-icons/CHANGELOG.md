@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.4.0...@patternfly/react-icons@4.4.1) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.3.6...@patternfly/react-icons@4.4.0) (2020-06-19)
+
+
+### Features
+
+* **Divider:** Add support for insets to the Divider ([#4410](https://github.com/patternfly/patternfly-react/issues/4410)) ([32916b8](https://github.com/patternfly/patternfly-react/commit/32916b89fcf631eb498ae0b64faffec756242127))
+
+
+
+
+
 ## [4.3.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@4.3.5...@patternfly/react-icons@4.3.6) (2020-06-09)
 
 **Note:** Version bump only for package @patternfly/react-icons

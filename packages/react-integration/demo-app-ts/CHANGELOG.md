@@ -3,6 +3,95 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.17.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.2...demo-app-ts@4.17.3) (2020-06-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.17.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.1...demo-app-ts@4.17.2) (2020-06-22)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.17.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.0...demo-app-ts@4.17.1) (2020-06-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.17.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.16.0...demo-app-ts@4.17.0) (2020-06-19)
+
+
+### Bug Fixes
+
+* **OptionsMenu:** fix accessibility issue in plain with text ([#4352](https://github.com/patternfly/patternfly-react/issues/4352)) ([2bcf204](https://github.com/patternfly/patternfly-react/commit/2bcf204e8b6c9ce56dd0824e0d317baea313f08d))
+
+
+### Features
+
+* **Banner:** add banner component ([#4408](https://github.com/patternfly/patternfly-react/issues/4408)) ([d783fc7](https://github.com/patternfly/patternfly-react/commit/d783fc708a6ed8e725af858b913ff9fbcfb742c6))
+
+
+
+
+
+# [4.16.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.15.0...demo-app-ts@4.16.0) (2020-06-19)
+
+
+### Features
+
+* **Table:** Add inline editable dropdown ([#4262](https://github.com/patternfly/patternfly-react/issues/4262)) ([9cd5360](https://github.com/patternfly/patternfly-react/commit/9cd53600a7f7bcc786772ebae0dc8b2c579e782a))
+
+
+
+
+
+# [4.15.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.14.0...demo-app-ts@4.15.0) (2020-06-19)
+
+
+### Features
+
+* **button:** add isAriaDisabled ([#3801](https://github.com/patternfly/patternfly-react/issues/3801)) ([a6ef254](https://github.com/patternfly/patternfly-react/commit/a6ef2545833f3cf6b98ad0736719975cc0a9c6dd))
+
+
+
+
+
+# [4.14.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.21...demo-app-ts@4.14.0) (2020-06-19)
+
+
+### Features
+
+* **Divider:** Add support for insets to the Divider ([#4410](https://github.com/patternfly/patternfly-react/issues/4410)) ([32916b8](https://github.com/patternfly/patternfly-react/commit/32916b89fcf631eb498ae0b64faffec756242127))
+
+
+
+
+
+## [4.13.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.20...demo-app-ts@4.13.21) (2020-06-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.19...demo-app-ts@4.13.20) (2020-06-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [4.13.19](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.18...demo-app-ts@4.13.19) (2020-06-17)
 
 **Note:** Version bump only for package demo-app-ts

@@ -25,6 +25,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -1026,6 +1027,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={
@@ -1226,6 +1228,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={
@@ -1408,6 +1411,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -1572,6 +1576,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -2126,6 +2131,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -2627,6 +2633,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -3245,6 +3252,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -3415,6 +3423,7 @@ exports[`select custom select filter filters properly 1`] = `
   onFilter={[Function]}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -3915,6 +3924,7 @@ exports[`select renders select groups successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -4779,6 +4789,7 @@ exports[`select renders up direction successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -4948,6 +4959,7 @@ exports[`select single select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -5117,6 +5129,7 @@ exports[`select single select renders disabled successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -5287,6 +5300,7 @@ exports[`select single select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -5779,6 +5793,7 @@ exports[`select single select renders expanded successfully with custom objects 
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -6225,6 +6240,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -6240,7 +6256,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   >
     <div
       className="pf-c-select"
-      data-ouia-component-id={39}
+      data-ouia-component-id={43}
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -6267,7 +6283,7 @@ exports[`select with custom content renders closed successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select"
-              data-ouia-component-id="39"
+              data-ouia-component-id="43"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -6389,6 +6405,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -6404,7 +6421,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
-      data-ouia-component-id={40}
+      data-ouia-component-id={44}
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -6435,7 +6452,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="40"
+              data-ouia-component-id="44"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -6643,6 +6660,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -6831,6 +6849,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -7347,6 +7366,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={
@@ -7508,7 +7528,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         <div
                           class="pf-c-chip"
-                          data-ouia-component-id="28"
+                          data-ouia-component-id="30"
                           data-ouia-component-type="PF4/Chip"
                           data-ouia-safe="true"
                         >
@@ -7519,9 +7539,11 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             Mr
                           </span>
                           <button
+                            aria-disabled="false"
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                             class="pf-c-button pf-m-plain"
+                            data-ouia-component-id="31"
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe="true"
                             id="remove_pf-random-id-24"
@@ -7549,7 +7571,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         <div
                           class="pf-c-chip"
-                          data-ouia-component-id="29"
+                          data-ouia-component-id="32"
                           data-ouia-component-type="PF4/Chip"
                           data-ouia-safe="true"
                         >
@@ -7560,9 +7582,11 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             Mrs
                           </span>
                           <button
+                            aria-disabled="false"
                             aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                             class="pf-c-button pf-m-plain"
+                            data-ouia-component-id="33"
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe="true"
                             id="remove_pf-random-id-25"
@@ -7790,7 +7814,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <div
                             className="pf-c-chip"
-                            data-ouia-component-id={28}
+                            data-ouia-component-id={30}
                             data-ouia-component-type="PF4/Chip"
                             data-ouia-safe={true}
                           >
@@ -7808,17 +7832,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               variant="plain"
                             >
                               <button
-                                aria-disabled={null}
+                                aria-disabled={false}
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                                 className="pf-c-button pf-m-plain"
-                                data-ouia-component-id={null}
+                                data-ouia-component-id={31}
                                 data-ouia-component-type="PF4/Button"
                                 data-ouia-safe={true}
                                 disabled={false}
                                 id="remove_pf-random-id-24"
                                 onClick={[Function]}
-                                tabIndex={null}
                                 type="button"
                               >
                                 <TimesIcon
@@ -7872,7 +7895,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <div
                             className="pf-c-chip"
-                            data-ouia-component-id={29}
+                            data-ouia-component-id={32}
                             data-ouia-component-type="PF4/Chip"
                             data-ouia-safe={true}
                           >
@@ -7890,17 +7913,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               variant="plain"
                             >
                               <button
-                                aria-disabled={null}
+                                aria-disabled={false}
                                 aria-label="Remove"
                                 aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
                                 className="pf-c-button pf-m-plain"
-                                data-ouia-component-id={null}
+                                data-ouia-component-id={33}
                                 data-ouia-component-type="PF4/Button"
                                 data-ouia-safe={true}
                                 disabled={false}
                                 id="remove_pf-random-id-25"
                                 onClick={[Function]}
-                                tabIndex={null}
                                 type="button"
                               >
                                 <TimesIcon
@@ -8391,6 +8413,7 @@ exports[`typeahead multi select test onChange 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -8406,7 +8429,7 @@ exports[`typeahead multi select test onChange 1`] = `
   >
     <div
       className="pf-c-select pf-m-expanded"
-      data-ouia-component-id={31}
+      data-ouia-component-id={35}
       data-ouia-component-type="PF4/Select"
       data-ouia-safe={true}
     >
@@ -8449,7 +8472,7 @@ exports[`typeahead multi select test onChange 1`] = `
           Object {
             "current": <div
               class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="31"
+              data-ouia-component-id="35"
               data-ouia-component-type="PF4/Select"
               data-ouia-safe="true"
             >
@@ -8751,6 +8774,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -8939,6 +8963,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -9454,6 +9479,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections="Mr"
@@ -10111,6 +10137,7 @@ exports[`typeahead select test creatable option 1`] = `
   onCreateOption={[Function]}
   onFilter={null}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}
@@ -10483,6 +10510,7 @@ exports[`typeahead select test onChange 1`] = `
   onFilter={null}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  ouiaSafe={true}
   placeholderText=""
   removeSelectionAriaLabel="Remove"
   selections={Array []}

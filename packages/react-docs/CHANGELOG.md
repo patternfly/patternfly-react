@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.8...@patternfly/react-docs@5.4.9) (2020-06-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.7...@patternfly/react-docs@5.4.8) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.6...@patternfly/react-docs@5.4.7) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.5...@patternfly/react-docs@5.4.6) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.4...@patternfly/react-docs@5.4.5) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.3...@patternfly/react-docs@5.4.4) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.2...@patternfly/react-docs@5.4.3) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.1...@patternfly/react-docs@5.4.2) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.0...@patternfly/react-docs@5.4.1) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [5.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.45...@patternfly/react-docs@5.4.0) (2020-06-19)
+
+
+### Features
+
+* **Divider:** Add support for insets to the Divider ([#4410](https://github.com/patternfly/patternfly-react/issues/4410)) ([32916b8](https://github.com/patternfly/patternfly-react/commit/32916b89fcf631eb498ae0b64faffec756242127))
+
+
+
+
+
+## [5.3.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.44...@patternfly/react-docs@5.3.45) (2020-06-18)
+
+
+### Bug Fixes
+
+* **Docs:** Removed training.md since it is moved to patternfly-org repo ([#4382](https://github.com/patternfly/patternfly-react/issues/4382)) ([6a5c48b](https://github.com/patternfly/patternfly-react/commit/6a5c48b85f8e37864dd0d17385dd99404e02cf30))
+
+
+
+
+
+## [5.3.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.43...@patternfly/react-docs@5.3.44) (2020-06-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.3.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.42...@patternfly/react-docs@5.3.43) (2020-06-17)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.3.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.3.41...@patternfly/react-docs@5.3.42) (2020-06-17)
 
 **Note:** Version bump only for package @patternfly/react-docs

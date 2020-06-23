@@ -81,6 +81,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BadgeDemo
   },
   {
+    id: 'banner-demo',
+    name: 'Banner Demo',
+    componentType: Examples.BannerDemo
+  },
+  {
     id: 'purple-bar-grouped-demo',
     name: 'Bar Chart Grouped Purple Demo',
     componentType: Examples.PurpleBarGroupedDemo
@@ -169,6 +174,11 @@ export const Demos: DemoInterface[] = [
     id: 'divider-demo',
     name: 'Divider Demo',
     componentType: Examples.DividerDemo
+  },
+  {
+    id: 'divider-inset-demo',
+    name: 'Divider Inset Demo',
+    componentType: Examples.DividerInsetDemo
   },
   {
     id: 'donut-chart-bottom-legend-demo',

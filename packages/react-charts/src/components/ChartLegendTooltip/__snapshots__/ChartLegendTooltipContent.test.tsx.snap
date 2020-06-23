@@ -25,12 +25,13 @@ exports[`ChartLegendTooltipContent 1`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-12}
+    rowGutter={0}
     standalone={false}
     style={
       Object {
         "labels": Object {
           "fill": "#f0f0f0",
+          "lineHeight": 0.275,
           "padding": 0,
         },
         "title": Object {
@@ -519,12 +520,13 @@ exports[`ChartLegendTooltipContent 2`] = `
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-12}
+    rowGutter={0}
     standalone={false}
     style={
       Object {
         "labels": Object {
           "fill": "#f0f0f0",
+          "lineHeight": 0.275,
           "padding": 0,
         },
         "title": Object {
@@ -1003,40 +1005,23 @@ exports[`renders component text 1`] = `
   />
   <ChartLegend
     borderPadding={0}
-    data={
-      Array [
-        Object {
-          "name": "1, 2, 3, 4",
-          "symbol": Object {
-            "fill": "#06c",
-          },
-        },
-      ]
-    }
+    data={Array []}
     gutter={0}
     labelComponent={
       <ChartLegendTooltipLabel
-        dx={121.73913043478262}
-        legendData={
-          Array [
-            Object {
-              "name": "Cats",
-              "symbol": Object {
-                "fill": "#06c",
-              },
-            },
-          ]
-        }
+        dx={-19.6}
+        legendData={Array []}
       />
     }
     orientation="vertical"
     padding={0}
-    rowGutter={-12}
+    rowGutter={0}
     standalone={false}
     style={
       Object {
         "labels": Object {
           "fill": "#f0f0f0",
+          "lineHeight": 0.275,
           "padding": 0,
         },
         "title": Object {

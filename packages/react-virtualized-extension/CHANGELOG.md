@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.4.5...@patternfly/react-virtualized-extension@4.4.6) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.4.4...@patternfly/react-virtualized-extension@4.4.5) (2020-06-22)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.4.3...@patternfly/react-virtualized-extension@4.4.4) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.4.2...@patternfly/react-virtualized-extension@4.4.3) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.4.1...@patternfly/react-virtualized-extension@4.4.2) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.4.0...@patternfly/react-virtualized-extension@4.4.1) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.30...@patternfly/react-virtualized-extension@4.4.0) (2020-06-19)
+
+
+### Features
+
+* **react-virtualized-extension docs:** add filterable demo, fix for filtering+scrolling ([#4389](https://github.com/patternfly/patternfly-react/issues/4389)) ([5b3d07d](https://github.com/patternfly/patternfly-react/commit/5b3d07d435f7ca5fe48a104143de0f8eef128bc2))
+
+
+
+
+
+## [4.3.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.29...@patternfly/react-virtualized-extension@4.3.30) (2020-06-19)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.3.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.28...@patternfly/react-virtualized-extension@4.3.29) (2020-06-18)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+## [4.3.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.27...@patternfly/react-virtualized-extension@4.3.28) (2020-06-17)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
 ## [4.3.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@4.3.26...@patternfly/react-virtualized-extension@4.3.27) (2020-06-17)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

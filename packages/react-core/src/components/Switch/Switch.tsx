@@ -6,7 +6,8 @@ import { getUniqueId } from '../../helpers/util';
 import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface SwitchProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'>,
+    OUIAProps {
   /** id for the label. */
   id?: string;
   /** Additional classes added to the Switch */
@@ -56,12 +57,17 @@ export class Switch extends React.Component<SwitchProps & OUIAProps> {
       isDisabled,
       onChange,
       ouiaId,
+      ouiaSafe,
       ...props
     } = this.props;
 
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
-      <label className={css(styles.switch, className)} htmlFor={this.id} {...getOUIAProps('Switch', ouiaId)}>
+      <label
+        className={css(styles.switch, className)}
+        htmlFor={this.id}
+        {...getOUIAProps(Switch.displayName, ouiaId, ouiaSafe)}
+      >
         <input
           id={this.id}
           className={css(styles.switchInput)}

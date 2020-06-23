@@ -48,15 +48,14 @@ exports[`ConfirmButtons renders correctly 1`] = `
         variant="primary"
       >
         <button
-          aria-disabled={null}
+          aria-disabled={false}
           aria-label="Confirm"
           className="pf-c-button pf-m-primary"
-          data-ouia-component-id={null}
+          data-ouia-component-id={0}
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
           onMouseUp={[MockFunction]}
-          tabIndex={null}
           type="button"
         >
           <CheckIcon
@@ -98,15 +97,14 @@ exports[`ConfirmButtons renders correctly 1`] = `
         variant="plain"
       >
         <button
-          aria-disabled={null}
+          aria-disabled={false}
           aria-label="Discard"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={null}
+          data-ouia-component-id={1}
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
           onMouseUp={[MockFunction]}
-          tabIndex={null}
           type="button"
         >
           <CloseIcon

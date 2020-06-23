@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css } from '@patternfly/react-styles';
-import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
+import { Dropdown, DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
 import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 import { OptionsToggle } from './OptionsToggle';
 import { ToggleTemplateProps } from './ToggleTemplate';
@@ -165,7 +165,8 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
           baseClass: styles.optionsMenu,
           disabledClass: styles.modifiers.disabled,
           menuComponent: 'ul',
-          baseComponent: 'div'
+          baseComponent: 'div',
+          ouiaComponentType: PaginationOptionsMenu.displayName
         }}
       >
         <DropdownWithContext

@@ -12,7 +12,6 @@ module.exports = {
       options: {
         context: 'react', // For global items that need sideNav
         showGdprBanner: false, // GDPR banner
-        hiddenPages: ['Training'], // By title
         showFooter: false,
         sideNav: {
           react: [
@@ -81,14 +80,6 @@ module.exports = {
       options: {
         name: 'react', // This goes in URLs
         path: path.resolve(__dirname, './UPGRADE-GUIDE.md')
-      }
-    },
-    // Source training
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'react', // This goes in URLs
-        path: path.resolve(__dirname, './src/training.md')
       }
     },
     // Our custom plugin for *.js?x *.ts?x files to get prop types

@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-app-launcher'
 propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem']
 typescript: true
+ouia: true
 ---
 
 import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator, Text } from '@patternfly/react-core';
@@ -561,6 +562,54 @@ class ApplicationLauncheIcon extends React.Component {
         isOpen={isOpen}
         items={appLauncherItems}
         toggleIcon={<HelpIcon />}
+      />
+    );
+  }
+}
+```
+
+```js title=Basic-with-menu-appended-to-document-body
+import React from 'react';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
+
+class ApplicationLauncherDocumentBody extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const appLauncherItems = [
+      <ApplicationLauncherItem key="application_1a" href="#">
+        Application 1 (anchor link)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_2a" component="button" onClick={() => alert('Clicked item 2')}>
+        Application 2 (button with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
+        Unavailable Application
+      </ApplicationLauncherItem>
+    ];
+    return (
+      <ApplicationLauncher 
+        menuAppendTo={() => document.body} 
+        onSelect={this.onSelect} 
+        onToggle={this.onToggle} 
+        isOpen={isOpen} 
+        items={appLauncherItems}
       />
     );
   }

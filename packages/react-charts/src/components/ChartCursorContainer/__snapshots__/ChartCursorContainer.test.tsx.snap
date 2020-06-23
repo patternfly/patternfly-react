@@ -12,8 +12,10 @@ exports[`ChartVoronoiContainer 1`] = `
   }
   cursorLabelComponent={
     <VictoryLabel
+      backgroundComponent={<Rect />}
       capHeight={0.71}
       direction="inherit"
+      groupComponent={<g />}
       lineHeight={1}
       textComponent={<Text />}
       theme={
@@ -941,8 +943,10 @@ exports[`ChartVoronoiContainer 2`] = `
   }
   cursorLabelComponent={
     <VictoryLabel
+      backgroundComponent={<Rect />}
       capHeight={0.71}
       direction="inherit"
+      groupComponent={<g />}
       lineHeight={1}
       textComponent={<Text />}
       theme={
@@ -1872,8 +1876,10 @@ exports[`renders container via ChartGroup 1`] = `
       }
       cursorLabelComponent={
         <VictoryLabel
+          backgroundComponent={<Rect />}
           capHeight={0.71}
           direction="inherit"
+          groupComponent={<g />}
           lineHeight={1}
           textComponent={<Text />}
           tspanComponent={<TSpan />}

@@ -16,7 +16,7 @@ exports[`Chip closable 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={3}
+      data-ouia-component-id={4}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >
@@ -34,17 +34,16 @@ exports[`Chip closable 1`] = `
         variant="plain"
       >
         <button
-          aria-disabled={null}
+          aria-disabled={false}
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={null}
+          data-ouia-component-id={5}
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
           id="remove_chip_one"
           onClick={[Function]}
-          tabIndex={null}
           type="button"
         >
           <TimesIcon
@@ -96,7 +95,7 @@ exports[`Chip closable with tooltip 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={5}
+      data-ouia-component-id={8}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >
@@ -114,17 +113,16 @@ exports[`Chip closable with tooltip 1`] = `
         variant="plain"
       >
         <button
-          aria-disabled={null}
+          aria-disabled={false}
           aria-label="close"
           aria-labelledby="remove_chip_one chip_one"
           className="pf-c-button pf-m-plain"
-          data-ouia-component-id={null}
+          data-ouia-component-id={9}
           data-ouia-component-type="PF4/Button"
           data-ouia-safe={true}
           disabled={false}
           id="remove_chip_one"
           onClick={[Function]}
-          tabIndex={null}
           type="button"
         >
           <TimesIcon
@@ -205,7 +203,7 @@ exports[`Chip readonly 1`] = `
   >
     <div
       className="pf-c-chip my-chp-cls"
-      data-ouia-component-id={7}
+      data-ouia-component-id={11}
       data-ouia-component-type="PF4/Chip"
       data-ouia-safe={true}
     >

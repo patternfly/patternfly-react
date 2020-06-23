@@ -9,7 +9,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
     aria-disabled={true}
     aria-label={null}
     className="pf-c-button pf-m-primary pf-m-disabled"
-    data-ouia-component-id={null}
+    data-ouia-component-id={16}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={null}
@@ -27,14 +27,13 @@ exports[`control button 1`] = `
   variant="control"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="control"
     className="pf-c-button pf-m-control"
-    data-ouia-component-id={null}
+    data-ouia-component-id={6}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     control
@@ -49,14 +48,13 @@ exports[`danger button 1`] = `
   variant="danger"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="danger"
     className="pf-c-button pf-m-danger"
-    data-ouia-component-id={null}
+    data-ouia-component-id={3}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     danger
@@ -65,19 +63,63 @@ exports[`danger button 1`] = `
 </Button>
 `;
 
+exports[`isAriaDisabled button 1`] = `
+<Button
+  isAriaDisabled={true}
+>
+  <button
+    aria-disabled={true}
+    aria-label={null}
+    className="pf-c-button pf-m-primary pf-m-aria-disabled"
+    data-ouia-component-id={11}
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={false}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={null}
+    type="button"
+  >
+    Disabled yet focusable button
+  </button>
+</Button>
+`;
+
+exports[`isAriaDisabled link button 1`] = `
+<Button
+  component="a"
+  isAriaDisabled={true}
+>
+  <a
+    aria-disabled={true}
+    aria-label={null}
+    className="pf-c-button pf-m-primary pf-m-aria-disabled"
+    data-ouia-component-id={12}
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={null}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    tabIndex={null}
+    type={null}
+  >
+    Disabled yet focusable button
+  </a>
+</Button>
+`;
+
 exports[`isBlock 1`] = `
 <Button
   isBlock={true}
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label={null}
     className="pf-c-button pf-m-primary pf-m-block"
-    data-ouia-component-id={null}
+    data-ouia-component-id={9}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     Block Button
@@ -90,10 +132,10 @@ exports[`isDisabled 1`] = `
   isDisabled={true}
 >
   <button
-    aria-disabled={null}
+    aria-disabled={true}
     aria-label={null}
-    className="pf-c-button pf-m-primary"
-    data-ouia-component-id={null}
+    className="pf-c-button pf-m-primary pf-m-disabled"
+    data-ouia-component-id={10}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={true}
@@ -105,62 +147,19 @@ exports[`isDisabled 1`] = `
 </Button>
 `;
 
-exports[`isFocus 1`] = `
-<Button
-  isFocus={true}
->
-  <button
-    aria-disabled={null}
-    aria-label={null}
-    className="pf-c-button pf-m-primary"
-    data-ouia-component-id={null}
-    data-ouia-component-type="PF4/Button"
-    data-ouia-safe={true}
-    disabled={false}
-    isFocus={true}
-    tabIndex={null}
-    type="button"
-  >
-    Focused Button
-  </button>
-</Button>
-`;
-
-exports[`isHover 1`] = `
-<Button
-  isHover={true}
->
-  <button
-    aria-disabled={null}
-    aria-label={null}
-    className="pf-c-button pf-m-primary"
-    data-ouia-component-id={null}
-    data-ouia-component-type="PF4/Button"
-    data-ouia-safe={true}
-    disabled={false}
-    isHover={true}
-    tabIndex={null}
-    type="button"
-  >
-    Hovered Button
-  </button>
-</Button>
-`;
-
 exports[`isInline 1`] = `
 <Button
   isInline={true}
   variant="link"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label={null}
     className="pf-c-button pf-m-link pf-m-inline"
-    data-ouia-component-id={null}
+    data-ouia-component-id={13}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     Hovered Button
@@ -174,14 +173,13 @@ exports[`link button 1`] = `
   variant="link"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="link"
     className="pf-c-button pf-m-link"
-    data-ouia-component-id={null}
+    data-ouia-component-id={4}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     link
@@ -202,14 +200,13 @@ exports[`link with icon 1`] = `
   variant="link"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label={null}
     className="pf-c-button pf-m-link"
-    data-ouia-component-id={null}
+    data-ouia-component-id={8}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     <span
@@ -252,14 +249,13 @@ exports[`plain button 1`] = `
   variant="plain"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="plain"
     className="pf-c-button pf-m-plain"
-    data-ouia-component-id={null}
+    data-ouia-component-id={5}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     plain
@@ -274,14 +270,13 @@ exports[`primary button 1`] = `
   variant="primary"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="primary"
     className="pf-c-button pf-m-primary"
-    data-ouia-component-id={null}
+    data-ouia-component-id={0}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     primary
@@ -296,14 +291,13 @@ exports[`secondary button 1`] = `
   variant="secondary"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="secondary"
     className="pf-c-button pf-m-secondary"
-    data-ouia-component-id={null}
+    data-ouia-component-id={1}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     secondary
@@ -318,14 +312,13 @@ exports[`tertiary button 1`] = `
   variant="tertiary"
 >
   <button
-    aria-disabled={null}
+    aria-disabled={false}
     aria-label="tertiary"
     className="pf-c-button pf-m-tertiary"
-    data-ouia-component-id={null}
+    data-ouia-component-id={2}
     data-ouia-component-type="PF4/Button"
     data-ouia-safe={true}
     disabled={false}
-    tabIndex={null}
     type="button"
   >
     tertiary

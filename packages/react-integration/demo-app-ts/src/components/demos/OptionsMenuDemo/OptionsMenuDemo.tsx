@@ -110,6 +110,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         />
       ),
       isOpen: this.state.modifiedIsOpen,
+      isGrouped: true,
       isPlain: true,
       direction: OptionsMenuDirection.up,
       position: OptionsMenuPosition.right
@@ -143,6 +144,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
           isOpen={myModifiedMenuProps.isOpen}
           toggle={myModifiedMenuProps.toggle}
           isPlain={myModifiedMenuProps.isPlain}
+          isGrouped={myModifiedMenuProps.isGrouped}
           direction={myModifiedMenuProps.direction}
           position={myModifiedMenuProps.position}
         />

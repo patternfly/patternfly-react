@@ -3,7 +3,8 @@ title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
 typescript: true
-propComponents: ['Table', 'TableHeader', 'TableBody']
+propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell']
+ouia: true
 ---
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
@@ -32,7 +33,8 @@ import {
   cancelCellEdits,
   validateCellEdits,
   applyCellEdits,
-  EditableTextCell
+  EditableTextCell,
+  EditableSelectInputCell
 } from '@patternfly/react-table';
 
 import {
@@ -42,6 +44,7 @@ import {
     EmptyStateBody,
     EmptyStatePrimary,
     Bullseye,
+    SelectOption
 } from '@patternfly/react-core';
 
 import {
@@ -1235,15 +1238,15 @@ class ControllingText extends React.Component {
       ],
       rows: [
         [
-          'This text will truncate instead of wrap.', 
-          {title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>}, 
+          'This text will truncate instead of wrap.',
+          {title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>},
           {title: <p>By default,
             <code>thead</code> cells will truncate and
             <code>tbody</code> cells will wrap. Use
             <code>.pf-m-wrap</code> on a
             <code>th</code> to change its behavior.</p>
-          }, 
-          'This cell\'s content will adjust itself to the parent th width. This modifier only affects table layouts.', 
+          },
+          'This cell\'s content will adjust itself to the parent th width. This modifier only affects table layouts.',
           {title: <a href="#">No wrap</a>}
         ]
       ]
@@ -1287,8 +1290,8 @@ class ModifiersWithTableText extends React.Component {
         {title: 'Wrapping table header text. This th text will wrap instead of truncate.'},
       ],
       rows: [
-        [ 
-          {title: <TableText wrapModifier='truncate'>This text will truncate instead of wrap.</TableText>}, 
+        [
+          {title: <TableText wrapModifier='truncate'>This text will truncate instead of wrap.</TableText>},
           {title: <TableText wrapModifier='nowrap'><a href="#">This is a link that needs to be on one line and fully readable.</a></TableText>},
         ]
       ]
@@ -1340,7 +1343,7 @@ EmptyStateTable = () => {
 
 ```js title=Editable-rows isBeta
 import React from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput, SelectOption } from '@patternfly/react-core';
 import {
   Table,
   TableHeader,
@@ -1350,12 +1353,14 @@ import {
   cancelCellEdits,
   validateCellEdits,
   applyCellEdits,
-  EditableTextCell
+  EditableTextCell,
+  EditableSelectInputCell
 } from '@patternfly/react-table';
 
 class EditableRowsTable extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       columns: [
         'Text input col 1',
@@ -1428,17 +1433,42 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
                   props={props}
-                  handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 1 cell 4 content" />
+                  onSelect={this.onSelect}
+                  isOpen={props.isSelectOpen}
+                  options={props.options.map((option, index) => (
+                    <SelectOption
+                      key={index}
+                      value={option.value}
+                      id={'uniqueIdRow1Cell4Option' + index}
+                      isPlaceholder={option.isPlaceholder}
+                    />
+                  ))}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  selections={props.selected}
+                />
               ),
               props: {
-                value: 'Row 1 cell 4 content',
-                name: 'uniqueIdRow1Cell4'
+                value: ['Option 1'],
+                name: 'uniqueIdRow1Cell4',
+                isSelectOpen: props.isSelectOpen || false,
+                selected: props.selected || ['Option 1'],
+                options: [
+                  {value: 'Placeholder...', isPlaceholder: true},
+                  {value: 'Option 1'},
+                  {value: 'Option 2'},
+                  {value: 'Option 3'},
+                  {value: 'Option 4'},
+                  {value: 'Option 5'}
+                ],
+                editableSelectProps: {
+                  variant: 'single',
+                  'aria-label': "Row 1 cell 4 content",
+                }
               }
             },
           ]
@@ -1493,17 +1523,45 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
                   props={props}
-                  handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 2 cell 4 content" />
+                  onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
+                  isOpen={props.isSelectOpen}
+                  options={props.options.map((option, index) => {
+                    return (
+                    <SelectOption
+                      key={index}
+                      value={option.value}
+                      id={'uniqueIdRow2Cell4Option' + index}
+                      isPlaceholder={option.isPlaceholder}
+                    />
+                  )
+                  })}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  selections={props.selected}
+                  />
               ),
               props: {
-                value: 'Row 2 cell 4 content',
-                name: 'uniqueIdRow2Cell4'
+                value: ['Placeholder...'],
+                name: 'uniqueIdRow2Cell4',
+                isSelectOpen: props.isSelectOpen || false,
+                selected: props.selected || [],
+                options: [
+                  {value: 'Placeholder...', isPlaceholder: true},
+                  {value: 'Option 1'},
+                  {value: 'Option 2'},
+                  {value: 'Option 3'},
+                  {value: 'Option 4'},
+                  {value: 'Option 5'}
+                ],
+                editableSelectProps: {
+                  variant: 'typeaheadmulti',
+                  'aria-label': "Row 2 cell 4 content",
+                }
               }
             },
           ]
@@ -1580,17 +1638,43 @@ class EditableRowsTable extends React.Component {
             },
             {
               title: (value, rowIndex, cellIndex, props) => (
-                <EditableTextCell
+                <EditableSelectInputCell
                   value={value}
                   rowIndex={rowIndex}
                   cellIndex={cellIndex}
                   props={props}
-                  handleTextInputChange={this.handleTextInputChange}
-                  inputAriaLabel="Row 3 cell 4 content" />
+                  onSelect={this.onSelect}
+                  clearSelection={this.clearSelection}
+                  isOpen={props.isSelectOpen}
+                  options={props.options.map((option, index) => (
+                    <SelectOption
+                      key={index}
+                      value={option.value}
+                      id={'uniqueIdRow3Cell4Option' + index}
+                      isPlaceholder={option.isPlaceholder}
+                    />
+                  ))}
+                  onToggle={(isOpen) => {this.onToggle(isOpen, rowIndex, cellIndex)}}
+                  selections={props.selected}
+                  />
               ),
               props: {
-                value: 'Row 3 cell 4 content',
-                name: 'uniqueIdRow3Cell4'
+                value: ['Option 3'],
+                name: 'uniqueIdRow3Cell4',
+                isSelectOpen: props.isSelectOpen || false,
+                selected: props.selected || ['Option 3'],
+                options: [
+                  {value: 'Placeholder...', isPlaceholder: true},
+                  {value: 'Option 1'},
+                  {value: 'Option 2'},
+                  {value: 'Option 3'},
+                  {value: 'Option 4'},
+                  {value: 'Option 5'}
+                ],
+                editableSelectProps: {
+                  variant: 'checkbox',
+                  'aria-label': "Row 3 cell 4 content",
+                }
               }
             }
           ]
@@ -1599,7 +1683,6 @@ class EditableRowsTable extends React.Component {
     };
 
     this.updateEditableRows = (evt, type, isEditable, rowIndex, validationErrors) => {
-
       let newRows = Array.from(this.state.rows);
 
       if (validationErrors && Object.keys(validationErrors).length) {
@@ -1622,6 +1705,62 @@ class EditableRowsTable extends React.Component {
     this.handleTextInputChange = (newValue, evt, rowIndex, cellIndex) => {
       let newRows = Array.from(this.state.rows);
       newRows[rowIndex].cells[cellIndex].props.editableValue = newValue;
+      this.setState({
+        rows: newRows
+      });
+    };
+
+    this.onSelect = (newValue, evt, rowIndex, cellIndex, isPlaceholder) => {
+      const newRows = Array.from(this.state.rows);
+      const newCellProps = newRows[rowIndex].cells[cellIndex].props;
+
+      if (isPlaceholder) {
+        newCellProps.editableValue = [];
+        newCellProps.selected = [];
+      } else {
+        if (newCellProps.editableValue === undefined) {
+          newCellProps.editableValue = [];
+        }
+
+        let newSelected = Array.from(newCellProps.selected);
+
+        switch (newCellProps.editableSelectProps.variant) {
+          case 'typeaheadmulti':
+          case 'checkbox': {
+            if (!newSelected.includes(newValue)) {
+              newSelected.push(newValue);
+            } else {
+              newSelected = newSelected.filter(el => el !== newValue);
+            }
+            break;
+          }
+          default: {
+            newSelected = newValue;
+          }
+        }
+
+        newCellProps.editableValue = newSelected;
+        newCellProps.selected = newSelected;
+      }
+
+      this.setState({
+        rows: newRows
+      });
+    };
+    
+    this.clearSelection = (rowIndex, cellIndex) => {
+      const newRows = Array.from(this.state.rows);
+      const newCellProps = newRows[rowIndex].cells[cellIndex].props;
+      newCellProps.editableValue = [];
+      newCellProps.selected = [];
+      this.setState({
+        rows: newRows
+      });
+    };
+
+    this.onToggle = (isOpen, rowIndex, cellIndex) => {
+      let newRows = Array.from(this.state.rows);
+      newRows[rowIndex].cells[cellIndex].props.isSelectOpen = isOpen;
       this.setState({
         rows: newRows
       });

@@ -5,6 +5,7 @@ exports[`Dark Nav List 1`] = `
   className="test=nav-class"
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -105,6 +106,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -201,6 +203,7 @@ exports[`Default Nav List 1`] = `
   className="test=nav-class"
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -301,6 +304,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -465,6 +469,7 @@ exports[`Expandable Nav List 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -630,6 +635,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   aria-label="Test"
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -800,6 +806,7 @@ exports[`Horizontal Nav List 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -897,6 +904,7 @@ exports[`Nav Grouped List 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -1106,6 +1114,7 @@ exports[`Nav List with custom item nodes 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -1151,6 +1160,7 @@ exports[`Simple Nav List 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
@@ -1248,6 +1258,7 @@ exports[`Tertiary Nav List 1`] = `
 <Nav
   onSelect={[Function]}
   onToggle={[Function]}
+  ouiaSafe={true}
   theme="dark"
 >
   <nav
