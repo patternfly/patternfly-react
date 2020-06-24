@@ -13,7 +13,7 @@ releaseNoteTOC: true
 - [@patternfly/react-styles@4.4.2](https://www.npmjs.com/package/@patternfly/react-styles/v/4.4.2)
 - [@patternfly/react-table@4.8.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.8.6)
 - [@patternfly/react-tokens@4.5.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.5.2)
-- [@patternfly/react-topology@4.4.7](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.7)
+- [@patternfly/react-topology@4.4.8](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.8)
 - [@patternfly/react-virtualized-extension@4.4.8](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.4.8)
 
 ### Components
