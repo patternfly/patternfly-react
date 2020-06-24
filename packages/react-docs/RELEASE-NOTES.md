@@ -5,22 +5,23 @@ releaseNoteTOC: true
 ---
 
 ## 2020.078 release notes (2020-06-24)
-- [@patternfly/react-catalog-view-extension@4.4.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.4.5)
-- [@patternfly/react-charts@6.5.3](https://www.npmjs.com/package/@patternfly/react-charts/v/6.5.3)
-- [@patternfly/react-core@4.22.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.22.2)
-- [@patternfly/react-icons@4.4.4](https://www.npmjs.com/package/@patternfly/react-icons/v/4.4.1)
-- [@patternfly/react-inline-edit-extension@4.5.4](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.4)
-- [@patternfly/react-styles@4.4.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.4.1)
-- [@patternfly/react-table@4.8.3](https://www.npmjs.com/package/@patternfly/react-table/v/4.8.3)
-- [@patternfly/react-tokens@4.5.1](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.5.1)
-- [@patternfly/react-topology@4.4.4](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.4)
-- [@patternfly/react-virtualized-extension@4.4.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.4.5)
+- [@patternfly/react-catalog-view-extension@4.4.8](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.4.8)
+- [@patternfly/react-charts@6.5.4](https://www.npmjs.com/package/@patternfly/react-charts/v/6.5.4)
+- [@patternfly/react-core@4.23.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.23.1)
+- [@patternfly/react-icons@4.4.2](https://www.npmjs.com/package/@patternfly/react-icons/v/4.4.2)
+- [@patternfly/react-inline-edit-extension@4.5.7](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.5.7)
+- [@patternfly/react-styles@4.4.2](https://www.npmjs.com/package/@patternfly/react-styles/v/4.4.2)
+- [@patternfly/react-table@4.8.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.8.6)
+- [@patternfly/react-tokens@4.5.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.5.2)
+- [@patternfly/react-topology@4.4.7](https://www.npmjs.com/package/@patternfly/react-topology/v/4.4.7)
+- [@patternfly/react-virtualized-extension@4.4.8](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.4.8)
 
 ### Components
 - **Application launcher:**
   - Updates for menuAppendTo prop in several components ([#4414](https://github.com/patternfly/patternfly-react/pull/4414))
 - **Banner:** 
   - Added banner component ([#4408](https://github.com/patternfly/patternfly-react/pull/4408))
+  - Added beta bete flag to docs ([#4439](https://github.com/patternfly/patternfly-react/pull/4439))
 - **Breadcrumb:** 
   - Made temporary fix for spacing ([#4368](https://github.com/patternfly/patternfly-react/pull/4368))
   - Fixed console.warn when using a BreadcrumbItem component ([#4288](https://github.com/patternfly/patternfly-react/pull/4288))
@@ -76,6 +77,7 @@ releaseNoteTOC: true
 - Fixed line height for the labels shown with the chart's tooltip legend. ([#4419](https://github.com/patternfly/patternfly-react/pull/4419))
 - Added support for a legend tooltip ([#4371](https://github.com/patternfly/patternfly-react/pull/4371))
 - Updated chart tooltip legend ([#4375](https://github.com/patternfly/patternfly-react/pull/4375))
+- Bumped Victory packages to version 34.3.12 ([#4438](https://github.com/patternfly/patternfly-react/pull/4438))
 
 ### Table
   - Added inline editable dropdown ([#4262](https://github.com/patternfly/patternfly-react/pull/4262))
