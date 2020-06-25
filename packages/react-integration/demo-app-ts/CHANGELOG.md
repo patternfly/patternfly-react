@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.18.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.5...demo-app-ts@4.18.0) (2020-06-25)
+
+
+### Features
+
+* **Table:** adds sticky header prop and demo ([#4417](https://github.com/patternfly/patternfly-react/issues/4417)) ([6a58f1f](https://github.com/patternfly/patternfly-react/commit/6a58f1f91a6c4cde53be562b6e740e6fe33a8b33))
+
+
+
+
+
 ## [4.17.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.4...demo-app-ts@4.17.5) (2020-06-24)
 
 **Note:** Version bump only for package demo-app-ts

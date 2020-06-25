@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.23.1...@patternfly/react-core@4.24.0) (2020-06-25)
+
+
+### Bug Fixes
+
+* **alert:** add display name to the close action button ([#4426](https://github.com/patternfly/patternfly-react/issues/4426)) ([b5f6e9d](https://github.com/patternfly/patternfly-react/commit/b5f6e9de4cbcc960c2232bc000591dff584b9553))
+* **OptionsMenu:** fix accessibility bug in plain with text disabled part ([#4424](https://github.com/patternfly/patternfly-react/issues/4424)) ([310738f](https://github.com/patternfly/patternfly-react/commit/310738f2802a0e0bfb8a923e29c448e9590edb4e))
+
+
+### Features
+
+* **Table:** adds sticky header prop and demo ([#4417](https://github.com/patternfly/patternfly-react/issues/4417)) ([6a58f1f](https://github.com/patternfly/patternfly-react/commit/6a58f1f91a6c4cde53be562b6e740e6fe33a8b33))
+
+
+
+
+
 ## [4.23.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.23.0...@patternfly/react-core@4.23.1) (2020-06-24)
 
 **Note:** Version bump only for package @patternfly/react-core

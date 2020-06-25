@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.8.6...@patternfly/react-table@4.9.0) (2020-06-25)
+
+
+### Features
+
+* **Table:** adds sticky header prop and demo ([#4417](https://github.com/patternfly/patternfly-react/issues/4417)) ([6a58f1f](https://github.com/patternfly/patternfly-react/commit/6a58f1f91a6c4cde53be562b6e740e6fe33a8b33))
+
+
+
+
+
 ## [4.8.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.8.5...@patternfly/react-table@4.8.6) (2020-06-24)
 
 **Note:** Version bump only for package @patternfly/react-table
