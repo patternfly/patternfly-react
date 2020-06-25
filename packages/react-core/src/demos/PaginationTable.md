@@ -4,10 +4,13 @@ section: 'demos'
 ---
 
 ## Examples
-import { 
-  Pagination, 
-  PaginationVariant, 
-  Title, 
+import {
+  Pagination,
+  PaginationVariant,
+  Title,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -23,8 +26,10 @@ import { Spinner } from '@patternfly/react-core';
 import React from 'react';
 import {
   Checkbox,
-  Pagination, 
-  Title, 
+  Pagination,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -66,24 +71,12 @@ class ComplexPaginationTableDemo extends React.Component {
   componentDidMount() {
     this.fetch(this.state.page || 1, this.state.perPage || 20);
   }
-  
-  renderLoadingStateCheckbox() {
-    return (
-      <Checkbox
-        label="View loading state"
-        isChecked={this.state.forceLoadingState}
-        onChange={this.handleCheckboxChange}
-        aria-label="view loading state checkbox"
-        id="check"
-        name="check"
-      />
-    )
-  }
 
   renderPagination(variant = 'top') {
     const { page, perPage, total } = this.state;
     return (
       <Pagination
+        isCompact
         itemCount={total}
         page={page}
         perPage={perPage}
@@ -95,7 +88,29 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
+
     const { loading, res, error, forceLoadingState } = this.state;
+
+    const toolbarItems = (
+    <React.Fragment>
+      <ToolbarContent>
+        <ToolbarItem>
+          <Checkbox
+            label="View loading state"
+            isChecked={this.state.forceLoadingState}
+            onChange={this.handleCheckboxChange}
+            aria-label="view loading state checkbox"
+            id="check"
+            name="check"
+          />
+        </ToolbarItem>
+        <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
+          {this.renderPagination()}
+        </ToolbarItem>
+      </ToolbarContent>
+    </React.Fragment>
+  );
+
     if (error) {
       const noResultsRows = [{
         heightAuto: true,
@@ -145,8 +160,7 @@ class ComplexPaginationTableDemo extends React.Component {
     
     return (
       <React.Fragment>
-        {this.renderLoadingStateCheckbox()}
-        {this.renderPagination()}
+      <Toolbar>{toolbarItems}</Toolbar>
         {!(loading || forceLoadingState) && (
           <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
             <TableHeader />
@@ -276,6 +290,7 @@ class ComplexPaginationTableDemo extends React.Component {
     const { page, perPage } = this.state;
     return (
       <Pagination
+        isCompact
         itemCount={this.defaultRows.length}
         page={page}
         perPage={perPage}

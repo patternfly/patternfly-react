@@ -109,7 +109,7 @@ class OverflowMenuGroupTypes extends React.Component {
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
-          <OverflowMenuGroup> 
+          <OverflowMenuGroup>
             <OverflowMenuItem>Item</OverflowMenuItem>
             <OverflowMenuItem>Item</OverflowMenuItem>
             <OverflowMenuItem>Item</OverflowMenuItem>

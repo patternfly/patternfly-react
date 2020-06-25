@@ -118,6 +118,7 @@ class BulkSelectTableDemo extends React.Component {
     const { page, perPage } = this.state;
     return (
       <Pagination
+        isCompact
         itemCount={100}
         page={page}
         perPage={perPage}
@@ -186,9 +187,9 @@ class BulkSelectTableDemo extends React.Component {
         <Toolbar className="pf-l-toolbar pf-u-justify-content-space-between pf-u-mx-xl pf-u-my-md">
           <ToolbarGroup>
             <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
+            <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>{this.renderPagination('top')}</ToolbarItem>
           </ToolbarGroup>
         </Toolbar>
-        {this.renderPagination('top')}
       </React.Fragment>
     );
   }

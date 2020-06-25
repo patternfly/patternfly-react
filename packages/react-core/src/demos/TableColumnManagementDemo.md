@@ -18,9 +18,12 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
+  ToolbarToggleGroup,
   Modal,
   OptionsMenu,
   OptionsMenuToggle,
+  OverflowMenu,
+  OverflowMenuItem,
   Pagination,
   PaginationVariant,
   Text,
@@ -53,12 +56,15 @@ import {
   ToolbarGroup,
   ToolbarItem,
   Modal,
+  OverflowMenu,
+  OverflowMenuItem,
   OptionsMenu,
   OptionsMenuToggle,
   Pagination,
   PaginationVariant,
   Text,
   TextContent,
+  ToolbarToggleGroup,
   Select,
   SelectVariant
 } from '@patternfly/react-core';
@@ -522,15 +528,17 @@ class ColumnManagementAction extends React.Component {
     const toolbarItems = <React.Fragment>
       <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>Choose one</span>
       <ToolbarContent>
-      <ToolbarItem>
-        <Select
-          id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-          placeholderText={<><FilterIcon /> Name</>}
-        />
-      </ToolbarItem>
+      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+        <ToolbarItem>
+          <Select
+            id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+            placeholderText={<><FilterIcon /> Name</>}
+          />
+        </ToolbarItem>
+      </ToolbarToggleGroup>
       <ToolbarItem>
         <OptionsMenu
           id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
@@ -544,10 +552,25 @@ class ColumnManagementAction extends React.Component {
           }
         />
       </ToolbarItem>
-      <ToolbarGroup variant="button-group">
-      <ToolbarItem><Button variant="primary">Action</Button></ToolbarItem>
-      <ToolbarItem><Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button></ToolbarItem>
-      </ToolbarGroup>
+      <ToolbarItem>
+        <OverflowMenu breakpoint="xl">
+          <OverflowMenuItem>
+            <Button variant="primary">Action</Button>
+          </OverflowMenuItem>
+          <OverflowMenuItem>
+            <Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button>
+          </OverflowMenuItem>
+        </OverflowMenu>
+      </ToolbarItem>
+            <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
+              <Pagination
+                itemCount={37}
+                widgetId="pagination-options-menu-bottom"
+                page={1}
+                variant={PaginationVariant.top}
+                isCompact
+              />
+            </ToolbarItem>
       </ToolbarContent>
     </React.Fragment>;
 
@@ -555,13 +578,9 @@ class ColumnManagementAction extends React.Component {
       <Table
         gridBreakPoint='grid-xl'
         header={<React.Fragment>
-          <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
-          <Pagination
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-          />
+          <Toolbar id="page-layout-table-column-management-action-toolbar-top">
+          {toolbarItems}
+          </Toolbar>
         </React.Fragment>}
         aria-label="This is a table with checkboxes"
         id="page-layout-table-column-management-action-table"
@@ -575,6 +594,7 @@ class ColumnManagementAction extends React.Component {
         <TableBody />
       </Table>
       <Pagination
+        isCompact
         id="page-layout-table-column-management-action-toolbar-bottom"
         itemCount={37}
         widgetId="pagination-options-menu-bottom"
