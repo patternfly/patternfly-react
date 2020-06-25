@@ -119,6 +119,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
         aria-label={ariaLabel}
         aria-expanded={isOpen}
         ref={buttonRef}
+        disabled={isDisabled}
         onClick={() => onToggle(!isOpen)}
         onKeyDown={onKeyDown}
       >
