@@ -3,6 +3,8 @@ import * as ReactDOM from 'react-dom';
 import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from 'react-popper';
 import { Placement, Modifier } from '@popperjs/core';
+import { Options as FlipOptions } from '@popperjs/core/lib/modifiers/flip';
+import getOppositePlacement from '@popperjs/core/lib/utils/getOppositePlacement';
 import { css } from '@patternfly/react-styles';
 
 export interface ToggleMenuBaseProps {
@@ -45,6 +47,10 @@ export interface PopperProps {
   onFocus?: any;
   onBlur?: any;
   onClick?: any;
+  onKeyDown?: any;
+  enableFlip?: boolean;
+  placement?: Placement;
+  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -53,6 +59,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   popperMatchesTriggerWidth = true,
   direction = 'down',
   position = 'left',
+  placement,
   appendTo = () => document.body,
   zIndex = 9999,
   isVisible = true,
@@ -62,11 +69,15 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onMouseLeave,
   onFocus,
   onBlur,
-  onClick
+  onClick,
+  onKeyDown,
+  enableFlip = true,
+  flipBehavior
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
+  const onClickCallback = (event: any) => onClick(event, triggerElement);
   React.useEffect(() => {
     setReady(true);
   });
@@ -75,21 +86,23 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     onMouseLeave && triggerElement && triggerElement.addEventListener('mouseleave', onMouseLeave);
     onFocus && triggerElement && triggerElement.addEventListener('focus', onFocus);
     onBlur && triggerElement && triggerElement.addEventListener('blur', onBlur);
-    onClick && triggerElement && document.addEventListener('click', event => onClick(event, triggerElement));
+    onClick && triggerElement && document.addEventListener('click', onClickCallback);
+    onKeyDown && triggerElement && document.addEventListener('keydown', onKeyDown, false);
     return () => {
       onMouseEnter && triggerElement && triggerElement.removeEventListener('mouseenter', onMouseEnter);
       onMouseLeave && triggerElement && triggerElement.removeEventListener('mouseleave', onMouseLeave);
       onFocus && triggerElement && triggerElement.removeEventListener('focus', onFocus);
       onBlur && triggerElement && triggerElement.removeEventListener('blur', onBlur);
-      onClick && triggerElement && document.removeEventListener('click', event => onClick(event, triggerElement));
+      onClick && triggerElement && document.removeEventListener('click', onClickCallback);
+      onKeyDown && triggerElement && document.removeEventListener('keydown', onKeyDown, false);
     };
   }, [triggerElement, onMouseEnter, onMouseLeave, onFocus, onBlur, onClick]);
   const getPlacement = () => {
-    let placement = direction === 'up' ? 'top' : 'bottom';
+    let convertedPlacement = direction === 'up' ? 'top' : 'bottom';
     if (position !== 'center') {
-      placement = `${placement}-${position === 'right' ? 'end' : 'start'}`;
+      convertedPlacement = `${placement}-${position === 'right' ? 'end' : 'start'}`;
     }
-    return placement as Placement;
+    return convertedPlacement as Placement;
   };
   const sameWidthMod: Modifier<'sameWidth', {}> = React.useMemo(
     () => ({
@@ -107,8 +120,34 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }),
     [popperMatchesTriggerWidth]
   );
+  // Perhaps to be added in the future to the preventOverflow modifier for backwards compatibility reasons
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const mapBoundaryOptions: (
+    boundary: 'scrollParent' | 'window' | 'viewport' | HTMLElement
+  ) => Partial<FlipOptions> = boundary => {
+    if (boundary === 'window') {
+      return {
+        // equivalent to boundary: 'window' in v1, usually NOT necessary in v2
+        rootBoundary: 'document'
+      };
+    } else if (boundary === 'scrollParent') {
+      return {
+        // check the reference's/trigger's boundary context instead of popper's
+        altBoundary: true,
+        boundary: 'clippingParents'
+      };
+    } else if (boundary === 'viewport') {
+      return {
+        rootBoundary: 'viewport'
+      };
+    } else {
+      return {
+        boundary
+      };
+    }
+  };
   const { styles: popperStyles, attributes } = usePopper(triggerElement, popperElement, {
-    placement: getPlacement(),
+    placement: placement || getPlacement(),
     modifiers: [
       {
         name: 'offset',
@@ -118,15 +157,19 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       },
       {
         name: 'preventOverflow',
-        enabled: true
+        enabled: false
       },
       {
         name: 'hide',
-        enabled: true
+        enabled: false
       },
       {
         name: 'flip',
-        enabled: true
+        enabled: enableFlip,
+        options: {
+          fallbackPlacements:
+            flipBehavior === 'flip' ? [getOppositePlacement(placement || getPlacement())] : flipBehavior
+        }
       },
       sameWidthMod
     ]
@@ -134,18 +177,14 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   const modifierFromPopperPosition = () => {
     if (attributes && attributes.popper && attributes.popper['data-popper-placement']) {
-      const placement = attributes.popper['data-popper-placement'];
-      if (placement.startsWith('top') /* && position !== 'top'*/) {
-        console.log(`top`);
+      const popperPlacement = attributes.popper['data-popper-placement'];
+      if (popperPlacement.startsWith('top')) {
         return positionModifiers.top || '';
-      } else if (placement.startsWith('bottom') /* && position !== 'bottom'*/) {
-        console.log(`bottom`);
+      } else if (popperPlacement.startsWith('bottom')) {
         return positionModifiers.bottom || '';
-      } else if (placement.startsWith('left') /* && position !== 'left'*/) {
-        console.log(`left`);
+      } else if (popperPlacement.startsWith('left')) {
         return positionModifiers.left || '';
-      } else if (placement.startsWith('right') /* && position !== 'right'*/) {
-        console.log(`right`);
+      } else if (popperPlacement.startsWith('right')) {
         return positionModifiers.right || '';
       }
     }

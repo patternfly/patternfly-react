@@ -257,7 +257,10 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     const content = this.state.isOpen ? (
       <GenerateId>
         {randomId => (
-          <FocusTrap active={this.state.focusTrapActive} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <FocusTrap
+            active={this.state.focusTrapActive}
+            focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}
+          >
             <div
               className={css(
                 !enableFlip &&

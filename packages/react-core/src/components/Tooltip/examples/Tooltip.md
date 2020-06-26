@@ -6,43 +6,126 @@ typescript: true
 propComponents: ['Tooltip']
 ---
 
-import { TooltipPopper, Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { TooltipPopper, Button, Tooltip, TooltipPosition, Checkbox, Select, SelectOption } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
 
 ```js title=Basic
 import React from 'react';
-import { TooltipPopper, Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { TooltipPopper, Tooltip, TooltipPosition, Checkbox, Select, SelectOption } from '@patternfly/react-core';
 
-BasicTooltip = () => (
-  <>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <Tooltip
-      content={
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-      }
-    >
-      <span tabIndex="0">Old tooltip</span>
-    </Tooltip>
-    <TooltipPopper
-      trigger="click"
-      content={
-        <div>TooltipPopper Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-      }
-    >
-      <Button>Popper tooltip</Button>
-    </TooltipPopper>
-  </>
-)
+BasicTooltip = () => {
+  const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [enableFlip, setEnableFlip] = React.useState(true);
+  const [position, setPosition] = React.useState('top');
+  const [positionSelectOpen, setPositionSelectOpen] = React.useState(false);
+  return (
+    <>
+      <div>
+        <div style={{ border: '1px solid'}}>
+          <Checkbox
+            label="trigger: mouseenter"
+            isChecked={trigger.includes('mouseenter')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('mouseenter'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'mouseenter'));
+              setTrigger(updatedTrigger);
+            }}
+          />
+          <Checkbox
+            label="trigger: focus"
+            isChecked={trigger.includes('focus')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('focus'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'focus'));
+              setTrigger(updatedTrigger);
+            }}
+          />
+          <Checkbox
+            label="trigger: click"
+            isChecked={trigger.includes('click')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('click'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'click'));
+              setTrigger(updatedTrigger);
+            }}
+          />
+          <Checkbox
+            label="trigger: manual"
+            isChecked={trigger.includes('manual')}
+            onChange={(checked) => {
+              let updatedTrigger;
+              checked && (updatedTrigger = trigger.concat('manual'));
+              !checked && (updatedTrigger = trigger.filter(t => t !== 'manual'));
+              setTrigger(updatedTrigger);
+            }}
+          />
+        </div>
+        <div style={{ border: '1px solid'}}>
+          <Checkbox
+            label="enableFlip"
+            isChecked={enableFlip}
+            onChange={(checked) => setEnableFlip(checked)}
+          />
+        </div>
+        <div style={{ border: '1px solid'}}>
+          position (will flip if enableFlip is true)
+          <Select
+            onToggle={() => setPositionSelectOpen(!positionSelectOpen)}
+            onSelect={(event, selection) => {
+              setPosition(selection);
+              setPositionSelectOpen(false);
+            }}
+            isOpen={positionSelectOpen}
+            selections={position}
+          >
+            <SelectOption value="auto" />
+            <SelectOption value="top" />
+            <SelectOption value="bottom" />
+            <SelectOption value="left" />
+            <SelectOption value="right" />
+          </Select>
+        </div>
+        <div style={{ border: '1px solid'}}>
+          <Checkbox
+            label="isVisible (also set trigger to only manual to programmatically control it)"
+            isChecked={isVisible}
+            onChange={(checked) => setIsVisible(checked)}
+          />
+        </div>
+      </div>
+      <div style={{ margin: '150px'}}>
+        <Tooltip
+          content={
+            <div>Old Tip Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+          }
+          trigger={trigger.join(' ')}
+          enableFlip={enableFlip}
+          position={position}
+          isVisible={isVisible}
+        >
+          <span tabIndex="0">Old tooltip</span>
+        </Tooltip>
+        <TooltipPopper
+          content={
+            <div>TooltipPopper Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+          }
+          trigger={trigger.join(' ')}
+          enableFlip={enableFlip}
+          position={position}
+          isVisible={isVisible}
+        >
+          <Button>Popper tooltip</Button>
+        </TooltipPopper>
+      </div>
+    </>
+  );
+}
 ```
 
 ```js title=With-left-aligned-text
