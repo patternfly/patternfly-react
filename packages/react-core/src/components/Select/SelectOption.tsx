@@ -17,7 +17,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   /** Additional classes added to the Select Option */
   className?: string;
   /** Description of the item for single and both typeahead select variants */
-  description?: string;
+  description?: React.ReactNode;
   /** Internal index of the option */
   index?: number;
   /** Indicates which component will be used as select item */
@@ -197,6 +197,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
                   {children || value.toString()}
                 </span>
+                {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
               </label>
             )}
             {variant === SelectVariant.checkbox && isNoResultsOption && (
