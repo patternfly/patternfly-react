@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-banner'
 typescript: true
 propComponents: ['Banner']
+beta: true
 ---
 
 import { Banner } from '@patternfly/react-core';

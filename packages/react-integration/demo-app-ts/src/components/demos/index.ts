@@ -117,6 +117,7 @@ export * from './TableDemo/TableRowClickDemo';
 export * from './TableDemo/TableSelectableDemo';
 export * from './TableDemo/TableSimpleActionsDemo';
 export * from './TableDemo/TableSimpleDemo';
+export * from './TableDemo/TableStickyHeaderDemo';
 export * from './TableDemo/TableSortableDemo';
 export * from './TableDemo/TableWidthModifiersDemo';
 export * from './TabsDemo/TabsDemo';

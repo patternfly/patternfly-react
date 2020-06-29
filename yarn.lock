@@ -3237,10 +3237,10 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
-"@patternfly/patternfly@4.16.5":
-  version "4.16.5"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.16.5.tgz#6194725cb5f9c84c9fec1f62d66b0080a8d3c764"
-  integrity sha512-BsKyhqB6TgqzkCpU1IKbFGwHI780I4XpniMJcXl/69Q+s4xHNiiJdG2Il9cEmOyvdX9v2XOqCoxvGbtcHbPvUA==
+"@patternfly/patternfly@4.16.7":
+  version "4.16.7"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.16.7.tgz#6343eb530528e5b6c2670d24b115031e135f15ad"
+  integrity sha512-B5jP/xG1MxNNDO3p52rx7a2DJspq8aUJFixYdPk1peK7SaC5X9ju2oCyE9xN1Nfe1AjlPxAOpNWPd9TWw88yLQ==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
@@ -16384,13 +16384,15 @@ mobx-react-lite@2:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-2.0.6.tgz#e1307a2b271c6a6016c8ad815a25014b7f95997d"
 
-mobx-react-lite@^1.4.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.5.2.tgz#c4395b0568b9cb16f07669d8869cc4efa1b8656d"
+mobx-react-lite@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-2.0.5.tgz#a17296938d34c5dd5e1f2666d57e8f799741cad3"
+  integrity sha512-7ifvIAHqxGDgVidRiSNIKLenZaspfhSDz9nkyWiyyZlqHbVTnxqNcB1jnQHEE9Kycl75Z//dN3IoQNeqWWsZ4g==
 
-mobx-react@^6.1.4:
+mobx-react@^6.2.0:
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.2.2.tgz#45e8e7c4894cac8399bba0a91060d7cfb8ea084b"
+  integrity sha512-Us6V4ng/iKIRJ8pWxdbdysC6bnS53ZKLKlVGBqzHx6J+gYPYbOotWvhHZnzh/W5mhpYXxlXif4kL2cxoWJOplQ==
   dependencies:
     mobx-react-lite "2"
 

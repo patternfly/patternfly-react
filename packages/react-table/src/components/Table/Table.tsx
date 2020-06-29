@@ -302,6 +302,8 @@ export interface TableProps extends OUIAProps {
   rowWrapper?: (props: RowWrapperProps) => JSX.Element;
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
+  /** If set to true, the table header sticks to the top of its container */
+  isStickyHeader?: boolean;
 }
 
 export const TableContext = React.createContext({
@@ -329,7 +331,8 @@ export class Table extends React.Component<TableProps, {}> {
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true,
-    ouiaSafe: true
+    ouiaSafe: true,
+    isStickyHeader: false
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -383,6 +386,7 @@ export class Table extends React.Component<TableProps, {}> {
       role,
       ouiaId,
       ouiaSafe,
+      isStickyHeader,
       ...props
     } = this.props;
 
@@ -444,6 +448,7 @@ export class Table extends React.Component<TableProps, {}> {
             styles.modifiers[variant],
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
+            isStickyHeader && styles.modifiers.stickyHeader,
             className
           )}
           {...getOUIAProps(Table.displayName, ouiaId, ouiaSafe)}
