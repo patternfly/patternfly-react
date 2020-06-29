@@ -309,6 +309,79 @@ exports[`select options renders with custom user object successfully 1`] = `
 </SelectOption>
 `;
 
+exports[`select options renders with description successfully 1`] = `
+<SelectOption
+  className=""
+  component="button"
+  description="This is a description"
+  index={0}
+  inputId=""
+  isChecked={false}
+  isDisabled={false}
+  isNoResultsOption={false}
+  isPlaceholder={false}
+  isSelected={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <button
+            class="pf-c-select__menu-item pf-m-description"
+            role="option"
+            type="button"
+          >
+            <div
+              class="pf-c-select__menu-item-main"
+            >
+              test
+            </div>
+            <div
+              class="pf-c-select__menu-item-description"
+            >
+              This is a description
+            </div>
+          </button>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value="test"
+>
+  <li
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item pf-m-description"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      <div
+        className="pf-c-select__menu-item-main"
+      >
+        test
+      </div>
+      <div
+        className="pf-c-select__menu-item-description"
+      >
+        This is a description
+      </div>
+    </button>
+  </li>
+</SelectOption>
+`;
+
 exports[`select options renders with value parameter successfully 1`] = `
 <SelectOption
   className=""

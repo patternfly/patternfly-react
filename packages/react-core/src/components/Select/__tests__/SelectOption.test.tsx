@@ -20,7 +20,7 @@ class User implements SelectOptionObject {
 describe('select options', () => {
   test('renders with value parameter successfully', () => {
     const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
         <SelectOption value="test" sendRef={jest.fn()} />
       </SelectProvider>
     );
@@ -28,9 +28,18 @@ describe('select options', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders with description successfully', () => {
+    const view = mount(
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+        <SelectOption value="test" description="This is a description" sendRef={jest.fn()} />
+      </SelectProvider>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('renders with custom display successfully', () => {
     const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
         <SelectOption value="test" sendRef={jest.fn()}>
           <div>test display</div>
         </SelectOption>
@@ -41,7 +50,7 @@ describe('select options', () => {
 
   test('renders with custom user object successfully', () => {
     const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
         <SelectOption value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} />
       </SelectProvider>
     );
@@ -50,7 +59,7 @@ describe('select options', () => {
 
   test('renders with custom display and custom user object successfully', () => {
     const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
         <SelectOption value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()}>
           <div>test display</div>
         </SelectOption>
@@ -61,7 +70,7 @@ describe('select options', () => {
 
   test('renders custom component', () => {
     const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
         <SelectOption value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} component="div">
           <div>test display</div>
         </SelectOption>
@@ -73,7 +82,7 @@ describe('select options', () => {
   describe('disabled', () => {
     test('renders disabled successfully', () => {
       const view = mount(
-        <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+        <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
           <SelectOption isDisabled value="test" sendRef={jest.fn()} />
         </SelectProvider>
       );

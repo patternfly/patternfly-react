@@ -145,6 +145,88 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
+```js title=Single-with-description
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class SingleSelectDescription extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      { value: 'Mr', disabled: false },
+      { value: 'Miss', disabled: false },
+      { value: 'Mrs', disabled: false },
+      { value: 'Ms', disabled: false },
+      { value: 'Dr', disabled: false },
+      { value: 'Other', disabled: false }
+    ];
+
+    this.state = {
+      isOpen: false,
+      selected: null,
+      isDisabled: false
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isOpen: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isOpen: false
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const titleId = 'select-descriptions-title';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          placeholderText="Select an option"
+          aria-label="Select Input with descriptions"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
+          isDisabled={isDisabled}
+        >
+          {this.options.map((option, index) => (
+            <SelectOption
+              isDisabled={option.disabled}
+              key={index}
+              value={option.value}
+              isPlaceholder={option.isPlaceholder}
+              description="This is a description"
+            />
+          ))}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
 ```js title=Grouped-single
 import React from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
