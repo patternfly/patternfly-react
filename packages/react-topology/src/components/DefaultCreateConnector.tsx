@@ -45,7 +45,14 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
             r={cursorSize / 2}
           />
           {tipContents ? (
-            <Tooltip content={tipContents} trigger="manual" isVisible tippyProps={{ duration: 0, delay: 0 }}>
+            <Tooltip
+              content={tipContents}
+              trigger="manual"
+              isVisible
+              animationDuration={0}
+              entryDelay={0}
+              exitDelay={0}
+            >
               <AddCircleOIcon
                 className="pf-topology-default-create-connector__create__cursor"
                 style={{ fontSize: cursorSize }}

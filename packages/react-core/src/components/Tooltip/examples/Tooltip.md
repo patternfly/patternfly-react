@@ -63,6 +63,7 @@ OptionsTooltip = () => {
   const [boundarySelectOpen, setBoundarySelectOpen] = React.useState(false);
   const [entryDelayInput, setEntryDelayInput] = React.useState(500);
   const [exitDelayInput, setExitDelayInput] = React.useState(500);
+  const [animationDuration, setAnimationDuration] = React.useState(300);
   const tipBoxRef = React.useRef(null);
   const scrollToRef = ref => ref && ref.current && (ref.current.scrollTop = 400);
   React.useEffect(() => {
@@ -178,6 +179,7 @@ OptionsTooltip = () => {
         <div style={{ border: '1px solid'}}>
           Entry delay <TextInput value={entryDelayInput} type="number" onChange={val => setEntryDelayInput(val)} aria-label="entry delay" />
           Exit delay <TextInput value={exitDelayInput} type="number" onChange={val => setExitDelayInput(val)} aria-label="exit delay" />
+          Animation duration <TextInput value={animationDuration} type="number" onChange={val => setAnimationDuration(val)} aria-label="animation duration" />
         </div>
         <div style={{ border: '1px solid'}}>
           flip behavior examples (enableFlip has to be true). "flip" will try to flip the tooltip to the opposite of the starting position. The second option ensures that there are 3 escape positions for every possible starting position (default). This setting is ignored if position prop is set to 'auto'.
@@ -210,6 +212,7 @@ OptionsTooltip = () => {
           appendTo={() => document.getElementById('tooltip-boundary')}
           entryDelay={entryDelayInput}
           exitDelay={exitDelayInput}
+          animationDuration={animationDuration}
           isContentLeftAligned={contentLeftAligned}
         >
           <Button className="tooltip-button">Tooltip</Button>

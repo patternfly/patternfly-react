@@ -11,6 +11,14 @@ import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth
 import { ReactElement } from 'react';
 import { Popper } from '../../helpers/Popper/Popper';
 
+export enum TooltipPosition {
+  auto = 'auto',
+  top = 'top',
+  bottom = 'bottom',
+  left = 'left',
+  right = 'right'
+}
+
 export interface TooltipProps {
   /** The element to append the tooltip to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
@@ -75,6 +83,8 @@ export interface TooltipProps {
    * HTMLElement: Can cause the tooltip to flip when it overflows this HTMLElement
    */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  /** CSS fade transition animation duration */
+  animationDuration?: number;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
@@ -100,11 +110,11 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
   children,
   boundary = 'viewport',
+  animationDuration = 300,
   ...rest
 }) => {
   // could make this a prop in the future (true | false | 'toggle')
   const hideOnClick = true;
-  const transitionDuration = 300;
   const triggerOnMouseenter = trigger.includes('mouseenter');
   const triggerOnFocus = trigger.includes('focus');
   const triggerOnClick = trigger.includes('click');
@@ -114,9 +124,11 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
-  const handleEscKeyClick = (event: KeyboardEvent) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
       hide();
+    } else if (event.keyCode === KEY_CODES.ENTER && !visible) {
+      show();
     }
   };
   React.useEffect(() => {
@@ -146,7 +158,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     }
     hideTimerRef.current = setTimeout(() => {
       setOpacity(0);
-      transitionTimerRef.current = setTimeout(() => setVisible(false), transitionDuration);
+      transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
     }, exitDelay);
   };
   const positionModifiers = {
@@ -164,7 +176,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       style={{
         maxWidth: hasCustomMaxWidth ? maxWidth : null,
         opacity,
-        transition: `opacity ${transitionDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`
+        transition: `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`
       }}
       {...rest}
     >
@@ -219,7 +231,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       onFocus={triggerOnFocus && show}
       onBlur={triggerOnFocus && hide}
       onClick={triggerOnClick && onClick}
-      onKeyDown={triggerManually ? null : handleEscKeyClick}
+      onKeyDown={triggerManually ? null : handleKeyDown}
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}
@@ -228,11 +240,3 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   );
 };
 Tooltip.displayName = 'Tooltip';
-
-export enum TooltipPosition {
-  auto = 'auto',
-  top = 'top',
-  bottom = 'bottom',
-  left = 'left',
-  right = 'right'
-}
