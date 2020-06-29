@@ -51,6 +51,7 @@ export interface PopperProps {
   enableFlip?: boolean;
   placement?: Placement;
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -72,7 +73,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onClick,
   onKeyDown,
   enableFlip = true,
-  flipBehavior
+  flipBehavior = 'flip',
+  boundary = 'viewport'
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
@@ -98,12 +100,21 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     };
   }, [triggerElement, onMouseEnter, onMouseLeave, onFocus, onBlur, onClick]);
   const getPlacement = () => {
+    if (placement) {
+      return placement;
+    }
     let convertedPlacement = direction === 'up' ? 'top' : 'bottom';
     if (position !== 'center') {
-      convertedPlacement = `${placement}-${position === 'right' ? 'end' : 'start'}`;
+      convertedPlacement = `${convertedPlacement}-${position === 'right' ? 'end' : 'start'}`;
     }
     return convertedPlacement as Placement;
   };
+  const getPlacementMemo = React.useMemo(getPlacement, [direction, position, placement]);
+  const getOppositePlacementMemo = React.useMemo(() => getOppositePlacement(getPlacement()), [
+    direction,
+    position,
+    placement
+  ]);
   const sameWidthMod: Modifier<'sameWidth', {}> = React.useMemo(
     () => ({
       name: 'sameWidth',
@@ -120,14 +131,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }),
     [popperMatchesTriggerWidth]
   );
-  // Perhaps to be added in the future to the preventOverflow modifier for backwards compatibility reasons
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const mapBoundaryOptions: (
-    boundary: 'scrollParent' | 'window' | 'viewport' | HTMLElement
-  ) => Partial<FlipOptions> = boundary => {
+  const mapBoundaryOptions: () => Partial<FlipOptions> = () => {
     if (boundary === 'window') {
       return {
         // equivalent to boundary: 'window' in v1, usually NOT necessary in v2
+        altBoundary: false,
         rootBoundary: 'document'
       };
     } else if (boundary === 'scrollParent') {
@@ -138,16 +146,20 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       };
     } else if (boundary === 'viewport') {
       return {
+        altBoundary: false,
         rootBoundary: 'viewport'
       };
     } else {
+      // HTMLElement
       return {
+        altBoundary: false,
         boundary
       };
     }
   };
+  const mapBoundaryOptionsMemo = React.useMemo(mapBoundaryOptions, [boundary]);
   const { styles: popperStyles, attributes } = usePopper(triggerElement, popperElement, {
-    placement: placement || getPlacement(),
+    placement: getPlacementMemo,
     modifiers: [
       {
         name: 'offset',
@@ -167,8 +179,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         name: 'flip',
         enabled: enableFlip,
         options: {
-          fallbackPlacements:
-            flipBehavior === 'flip' ? [getOppositePlacement(placement || getPlacement())] : flipBehavior
+          fallbackPlacements: flipBehavior === 'flip' ? [getOppositePlacementMemo] : flipBehavior,
+          ...mapBoundaryOptionsMemo
         }
       },
       sameWidthMod
