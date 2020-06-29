@@ -176,6 +176,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
                   isFocused && styles.modifiers.focus,
+                  description && styles.modifiers.description,
                   className
                 )}
                 onKeyDown={this.onKeyDown}
