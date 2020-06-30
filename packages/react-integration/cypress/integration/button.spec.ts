@@ -14,6 +14,7 @@ describe('Button Demo Test', () => {
       cy.get('.pf-c-button[id="normal-btn-5"]').should('have.class', 'pf-m-link');
       cy.get('.pf-c-button[id="normal-btn-6"]').should('have.class', 'pf-m-plain');
       cy.get('.pf-c-button[id="normal-btn-7"]').should('have.class', 'pf-m-control');
+      cy.get('.pf-c-button[id="normal-btn-12"]').should('have.class', 'pf-m-small');
     });
   });
 

@@ -167,6 +167,25 @@ exports[`isInline 1`] = `
 </Button>
 `;
 
+exports[`isSmall 1`] = `
+<Button
+  isSmall={true}
+>
+  <button
+    aria-disabled={false}
+    aria-label={null}
+    className="pf-c-button pf-m-primary pf-m-small"
+    data-ouia-component-id={null}
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe={true}
+    disabled={false}
+    type="button"
+  >
+    Small Button
+  </button>
+</Button>
+`;
+
 exports[`link button 1`] = `
 <Button
   aria-label="link"

@@ -58,6 +58,11 @@ test('isInline', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('isSmall', () => {
+  const view = mount(<Button isSmall>Small Button</Button>);
+  expect(view).toMatchSnapshot();
+});
+
 test('allows passing in a string as the component', () => {
   const component = 'a';
   const view = mount(<Button component={component} />);
