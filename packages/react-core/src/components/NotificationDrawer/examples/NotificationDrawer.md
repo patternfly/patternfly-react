@@ -2,7 +2,18 @@
 title: 'Notification drawer'
 section: components
 cssPrefix: 'pf-c-notification-drawer'
-propComponents: ['NotificationDrawer', 'NotificationDrawerBody', 'NotificationDrawerHeader', 'NotificationDrawerGroup', 'NotificationDrawerGroupList', 'NotificationDrawerList', 'NotificationDrawerListItem', 'NotificationDrawerListItemBody', 'NotificationDrawerListItemHeader']
+propComponents:
+  [
+    'NotificationDrawer',
+    'NotificationDrawerBody',
+    'NotificationDrawerHeader',
+    'NotificationDrawerGroup',
+    'NotificationDrawerGroupList',
+    'NotificationDrawerList',
+    'NotificationDrawerListItem',
+    'NotificationDrawerListItemBody',
+    'NotificationDrawerListItemHeader',
+  ]
 typescript: true
 beta: true
 ---
@@ -11,45 +22,74 @@ import { Button, Dropdown, DropdownItem, DropdownPosition, DropdownDirection, Dr
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 ## Examples
+
 ```js title=Basic
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownSeparator,
+  KebabToggle,
+  NotificationDrawer,
+  NotificationDrawerBody,
+  NotificationDrawerHeader,
+  NotificationDrawerList,
+  NotificationDrawerListItem,
+  NotificationDrawerListItemBody,
+  NotificationDrawerListItemHeader,
+  Title
+} from '@patternfly/react-core';
 
 class BasicNotificationDrawer extends React.Component {
-constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
-      isActive: ''
+      isOpen0: false,
+      isOpen1: false,
+      isOpen2: false,
+      isOpen3: false,
+      isOpen4: false
     };
-    this.onToggle = isOpen => {
+    this.onToggle0 = isOpen0 => {
       this.setState({
-        isOpen,
+        isOpen0
+      });
+    };
+    this.onToggle1 = isOpen1 => {
+      this.setState({
+        isOpen1
+      });
+    };
+    this.onToggle2 = isOpen2 => {
+      this.setState({
+        isOpen2
+      });
+    };
+    this.onToggle3 = isOpen3 => {
+      this.setState({
+        isOpen3
+      });
+    };
+    this.onToggle4 = isOpen4 => {
+      this.setState({
+        isOpen4
       });
     };
     this.onSelect = event => {
       this.setState({
-        isOpen: !this.state.isOpen,
-        isActive: ''
+        isOpen0: false,
+        isOpen1: false,
+        isOpen2: false,
+        isOpen3: false,
+        isOpen4: false
       });
-      this.onFocus(event.target.id);
-    };
-    this.onClick = event => {
-      this.setState({
-        isActive: event.target.id
-      });
-      this.onFocus(event.target.id);
-    };
-    this.onFocus = (id) => {
-      if(id) {
-        const element = document.getElementById(id);
-        element.focus();
-      }
     };
   }
 
   render() {
-    const { isOpen, isActive } = this.state;
+    const { isOpen0, isOpen1, isOpen2, isOpen3, isOpen4 } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -61,135 +101,216 @@ constructor(props) {
       </DropdownItem>
     ];
     return (
-        <NotificationDrawer>
-          <NotificationDrawerHeader count={2}>
-            <Dropdown
-              onClick={this.onClick}
-              onSelect={this.onSelect}
-              toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-basic" />}
-              isOpen={isOpen && isActive ==="toggle-id-basic"}
-              isPlain
-              dropdownItems={dropdownItems}
-              id="notification-0"
-              position={DropdownPosition.right}
-              />
-          </NotificationDrawerHeader>
+      <NotificationDrawer>
+        <NotificationDrawerHeader count={2}>
+          <Dropdown
+            //onClick={this.onClick}
+            onSelect={this.onSelect}
+            toggle={<KebabToggle onToggle={this.onToggle0} id="toggle-id-0" />}
+            isOpen={isOpen0}
+            isPlain
+            dropdownItems={dropdownItems}
+            id="notification-0"
+            position={DropdownPosition.right}
+          />
+        </NotificationDrawerHeader>
         <NotificationDrawerBody>
-            <NotificationDrawerList>
-                <NotificationDrawerListItem variant="info">
-                    <NotificationDrawerListItemHeader variant="info" title="Unread info notification title" srTitle="Info notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-1" />}
-                          isOpen={isOpen && isActive==="toggle-id-1"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-1"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="5 minutes ago">
-                        This is an info notification description.
-                   </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-                <NotificationDrawerListItem variant="danger">
-                    <NotificationDrawerListItemHeader variant="danger" title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines." srTitle="Danger notification:">
-<Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-2" />}
-                          isOpen={isOpen && isActive==="toggle-id-2"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-2"
-                        />
-                    </NotificationDrawerListItemHeader>
-                        <NotificationDrawerListItemBody timestamp="10 minutes ago">This is a danger notification description. This is a long description to show how the title will wrap if it is long and wraps to multiple lines.
-                        </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-                <NotificationDrawerListItem variant="warning" isRead>
-                    <NotificationDrawerListItemHeader variant="warning" title="Read warning notification title" srTitle="Warning notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-3" />}
-                          isOpen={isOpen && isActive==="toggle-id-3"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-3"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="20 minutes ago">
-                        This is a warning notification description.
-                   </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-                <NotificationDrawerListItem variant="success" isRead>
-                    <NotificationDrawerListItemHeader variant="success" title="Read success notification title" srTitle="Success notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          direction={DropdownDirection.up}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-4" />}
-                          isOpen={isOpen && isActive==="toggle-id-4"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-4"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="30 minutes ago">
-                        This is a success notification description.
-                   </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-            </NotificationDrawerList>
+          <NotificationDrawerList>
+            <NotificationDrawerListItem variant="info">
+              <NotificationDrawerListItemHeader
+                variant="info"
+                title="Unread info notification title"
+                srTitle="Info notification:"
+              >
+                <Dropdown
+                  position={DropdownPosition.right}
+                  //onClick={this.onClick}
+                  onSelect={this.onSelect}
+                  toggle={<KebabToggle onToggle={this.onToggle1} id="toggle-id-1" />}
+                  isOpen={isOpen1}
+                  isPlain
+                  dropdownItems={dropdownItems}
+                  id="notification-1"
+                />
+              </NotificationDrawerListItemHeader>
+              <NotificationDrawerListItemBody timestamp="5 minutes ago">
+                This is an info notification description.
+              </NotificationDrawerListItemBody>
+            </NotificationDrawerListItem>
+            <NotificationDrawerListItem variant="danger">
+              <NotificationDrawerListItemHeader
+                variant="danger"
+                title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
+                srTitle="Danger notification:"
+              >
+                <Dropdown
+                  position={DropdownPosition.right}
+                  //onClick={this.onClick}
+                  onSelect={this.onSelect}
+                  toggle={<KebabToggle onToggle={this.onToggle2} id="toggle-id-2" />}
+                  isOpen={isOpen2}
+                  isPlain
+                  dropdownItems={dropdownItems}
+                  id="notification-2"
+                />
+              </NotificationDrawerListItemHeader>
+              <NotificationDrawerListItemBody timestamp="10 minutes ago">
+                This is a danger notification description. This is a long description to show how the title will wrap if
+                it is long and wraps to multiple lines.
+              </NotificationDrawerListItemBody>
+            </NotificationDrawerListItem>
+            <NotificationDrawerListItem variant="warning" isRead>
+              <NotificationDrawerListItemHeader
+                variant="warning"
+                title="Read warning notification title"
+                srTitle="Warning notification:"
+              >
+                <Dropdown
+                  position={DropdownPosition.right}
+                  //onClick={this.onClick}
+                  onSelect={this.onSelect}
+                  toggle={<KebabToggle onToggle={this.onToggle3} id="toggle-id-3" />}
+                  isOpen={isOpen3}
+                  isPlain
+                  dropdownItems={dropdownItems}
+                  id="notification-3"
+                />
+              </NotificationDrawerListItemHeader>
+              <NotificationDrawerListItemBody timestamp="20 minutes ago">
+                This is a warning notification description.
+              </NotificationDrawerListItemBody>
+            </NotificationDrawerListItem>
+            <NotificationDrawerListItem variant="success" isRead>
+              <NotificationDrawerListItemHeader
+                variant="success"
+                title="Read success notification title"
+                srTitle="Success notification:"
+              >
+                <Dropdown
+                  position={DropdownPosition.right}
+                  direction={DropdownDirection.up}
+                  //onClick={this.onClick}
+                  onSelect={this.onSelect}
+                  toggle={<KebabToggle onToggle={this.onToggle4} id="toggle-id-4" />}
+                  isOpen={isOpen4}
+                  isPlain
+                  dropdownItems={dropdownItems}
+                  id="notification-4"
+                />
+              </NotificationDrawerListItemHeader>
+              <NotificationDrawerListItemBody timestamp="30 minutes ago">
+                This is a success notification description.
+              </NotificationDrawerListItemBody>
+            </NotificationDrawerListItem>
+          </NotificationDrawerList>
         </NotificationDrawerBody>
       </NotificationDrawer>
-    )
+    );
   }
 }
 ```
 
 ```js title=Groups
 import React from 'react';
-import { Button, Dropdown, DropdownItem, DropdownPosition, DropdownDirection, DropdownSeparator, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStatePrimary, KebabToggle, NotificationDrawer, NotificationDrawerBody, NotificationDrawerHeader, NotificationDrawerGroup, NotificationDrawerGroupList, NotificationDrawerList, NotificationDrawerListItem, NotificationDrawerListItemBody, NotificationDrawerListItemHeader, Title } from '@patternfly/react-core';
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  DropdownDirection,
+  DropdownSeparator,
+  EmptyState,
+  EmptyStateBody,
+  EmptyStateIcon,
+  EmptyStatePrimary,
+  KebabToggle,
+  NotificationDrawer,
+  NotificationDrawerBody,
+  NotificationDrawerHeader,
+  NotificationDrawerGroup,
+  NotificationDrawerGroupList,
+  NotificationDrawerList,
+  NotificationDrawerListItem,
+  NotificationDrawerListItemBody,
+  NotificationDrawerListItemHeader,
+  Title
+} from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 class GroupNotificationDrawer extends React.Component {
-constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
-      isActive: '',
+      isOpen0: false,
+      isOpen1: false,
+      isOpen2: false,
+      isOpen3: false,
+      isOpen4: false,
+      isOpen5: false,
+      isOpen6: false,
+      isOpen7: false,
+      isOpen8: false,
       firstGroupExpanded: false,
       secondGroupExpanded: true,
-      thirdGroupExpanded: false,
+      thirdGroupExpanded: false
     };
-    this.onToggle = isOpen => {
+    this.onToggle0 = isOpen0 => {
       this.setState({
-        isOpen,
+        isOpen0
+      });
+    };
+    this.onToggle1 = isOpen1 => {
+      this.setState({
+        isOpen1
+      });
+    };
+    this.onToggle2 = isOpen2 => {
+      this.setState({
+        isOpen2
+      });
+    };
+    this.onToggle3 = isOpen3 => {
+      this.setState({
+        isOpen3
+      });
+    };
+    this.onToggle4 = isOpen4 => {
+      this.setState({
+        isOpen4
+      });
+    };
+    this.onToggle5 = isOpen5 => {
+      this.setState({
+        isOpen5
+      });
+    };
+    this.onToggle6 = isOpen6 => {
+      this.setState({
+        isOpen6
+      });
+    };
+    this.onToggle7 = isOpen7 => {
+      this.setState({
+        isOpen7
+      });
+    };
+    this.onToggle8 = isOpen8 => {
+      this.setState({
+        isOpen8
       });
     };
     this.onSelect = event => {
       this.setState({
-        isOpen: !this.state.isOpen,
-        isActive: ''
+        isOpen0: false,
+        isOpen1: false,
+        isOpen2: false,
+        isOpen3: false,
+        isOpen4: false,
+        isOpen5: false,
+        isOpen6: false,
+        isOpen7: false,
+        isOpen8: false
       });
-      this.onFocus(event.target.id);
-    };
-    this.onClick = event => {
-      this.setState({
-        isActive: event.target.id
-      });
-      this.onFocus(event.target.id);
-    };
-    this.onFocus = id => {
-      if(id) {
-        const element = document.getElementById(id);
-        element.focus();
-      }
     };
     this.toggleFirstDrawer = (event, value) => {
       this.setState({
@@ -207,8 +328,21 @@ constructor(props) {
       });
     };
   }
-render() {
-    const { isOpen, isActive, firstGroupExpanded, secondGroupExpanded, thirdGroupExpanded } = this.state;
+  render() {
+    const {
+      isOpen0,
+      isOpen1,
+      isOpen2,
+      isOpen3,
+      isOpen4,
+      isOpen5,
+      isOpen6,
+      isOpen7,
+      isOpen8,
+      firstGroupExpanded,
+      secondGroupExpanded,
+      thirdGroupExpanded
+    } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -220,186 +354,229 @@ render() {
       </DropdownItem>
     ];
     return (
-<NotificationDrawer>
-  <NotificationDrawerHeader count={4}>
-    <Dropdown
-      onClick={this.onClick}
-      onSelect={this.onSelect}
-      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-0" />}
-      isOpen={isOpen && isActive ==="toggle-id-0"}
-      isPlain
-      dropdownItems={dropdownItems}
-      id="notification-0"
-      position={DropdownPosition.right}
-      />
-  </NotificationDrawerHeader>
-  <NotificationDrawerBody>
-    <NotificationDrawerGroupList>
-      <NotificationDrawerGroup title="First notification group" isExpanded={firstGroupExpanded} count={2} onExpand={this.toggleFirstDrawer} >
-        <NotificationDrawerList isHidden={!firstGroupExpanded}>
+      <NotificationDrawer>
+        <NotificationDrawerHeader count={4}>
+          <Dropdown
+            onSelect={this.onSelect}
+            toggle={<KebabToggle onToggle={this.onToggle0} id="toggle-id-0" />}
+            isOpen={isOpen0}
+            isPlain
+            dropdownItems={dropdownItems}
+            id="notification-0"
+            position={DropdownPosition.right}
+          />
+        </NotificationDrawerHeader>
+        <NotificationDrawerBody>
+          <NotificationDrawerGroupList>
+            <NotificationDrawerGroup
+              title="First notification group"
+              isExpanded={firstGroupExpanded}
+              count={2}
+              onExpand={this.toggleFirstDrawer}
+            >
+              <NotificationDrawerList isHidden={!firstGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
-                    <NotificationDrawerListItemHeader variant="info" title="Unread info notification title" srTitle="Info notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-5" />}
-                          isOpen={isOpen && isActive==="toggle-id-5"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-5"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="5 minutes ago">
-                        This is an info notification description.
-                   </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="info"
+                    title="Unread info notification title"
+                    srTitle="Info notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle1} id="toggle-id-5" />}
+                      isOpen={isOpen1}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-5"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="5 minutes ago">
+                    This is an info notification description.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
                 <NotificationDrawerListItem variant="danger">
-                    <NotificationDrawerListItemHeader variant="danger" title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines." srTitle="Danger notification:">
-<Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-6" />}
-                          isOpen={isOpen && isActive==="toggle-id-6"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-6"
-                        />
-                    </NotificationDrawerListItemHeader>
-                        <NotificationDrawerListItemBody timestamp="10 minutes ago">This is a danger notification description. This is a long description to show how the title will wrap if it is long and wraps to multiple lines.
-                        </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="danger"
+                    title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
+                    srTitle="Danger notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle2} id="toggle-id-6" />}
+                      isOpen={isOpen2}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-6"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="10 minutes ago">
+                    This is a danger notification description. This is a long description to show how the title will
+                    wrap if it is long and wraps to multiple lines.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
                 <NotificationDrawerListItem variant="warning" isRead>
-                    <NotificationDrawerListItemHeader variant="warning" title="Read warning notification title" srTitle="Warning notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-7" />}
-                          isOpen={isOpen && isActive==="toggle-id-7"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-7"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="20 minutes ago">
-                        This is a warning notification description.
-                   </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="warning"
+                    title="Read warning notification title"
+                    srTitle="Warning notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle3} id="toggle-id-7" />}
+                      isOpen={isOpen3}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-7"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="20 minutes ago">
+                    This is a warning notification description.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
                 <NotificationDrawerListItem variant="success" isRead>
-                    <NotificationDrawerListItemHeader variant="success" title="Read success notification title" srTitle="Success notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          direction={DropdownDirection.up}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-8" />}
-                          isOpen={isOpen && isActive==="toggle-id-8"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-8"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="30 minutes ago">
-                        This is a success notification description.
-                   </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="success"
+                    title="Read success notification title"
+                    srTitle="Success notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      direction={DropdownDirection.up}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle4} id="toggle-id-8" />}
+                      isOpen={isOpen4}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-8"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="30 minutes ago">
+                    This is a success notification description.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
-            </NotificationDrawerList>
-        </NotificationDrawerGroup>
-        <NotificationDrawerGroup title="Second notification group" isExpanded={secondGroupExpanded} count={2}onExpand={this.toggleSecondDrawer} >
-            <NotificationDrawerList isHidden={!secondGroupExpanded}>
+              </NotificationDrawerList>
+            </NotificationDrawerGroup>
+            <NotificationDrawerGroup
+              title="Second notification group"
+              isExpanded={secondGroupExpanded}
+              count={2}
+              onExpand={this.toggleSecondDrawer}
+            >
+              <NotificationDrawerList isHidden={!secondGroupExpanded}>
                 <NotificationDrawerListItem variant="info">
-                    <NotificationDrawerListItemHeader variant="info" title="Unread info notification title" srTitle="Info notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-9" />}
-                          isOpen={isOpen && isActive==="toggle-id-9"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-9"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="5 minutes ago">
-                        This is an info notification description.
-                   </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="info"
+                    title="Unread info notification title"
+                    srTitle="Info notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle5} id="toggle-id-9" />}
+                      isOpen={isOpen5}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-9"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="5 minutes ago">
+                    This is an info notification description.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
                 <NotificationDrawerListItem variant="danger">
-                    <NotificationDrawerListItemHeader variant="danger" title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines." srTitle="Danger notification:">
-<Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-10" />}
-                          isOpen={isOpen && isActive==="toggle-id-10"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-10"
-                        />
-                    </NotificationDrawerListItemHeader>
-                        <NotificationDrawerListItemBody timestamp="10 minutes ago">This is a danger notification description. This is a long description to show how the title will wrap if it is long and wraps to multiple lines.
-                        </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="danger"
+                    title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
+                    srTitle="Danger notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle6} id="toggle-id-10" />}
+                      isOpen={isOpen6}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-10"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="10 minutes ago">
+                    This is a danger notification description. This is a long description to show how the title will
+                    wrap if it is long and wraps to multiple lines.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
                 <NotificationDrawerListItem variant="warning" isRead>
-                    <NotificationDrawerListItemHeader variant="warning" title="Read warning notification title" srTitle="Warning notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-11" />}
-                          isOpen={isOpen && isActive==="toggle-id-11"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-11"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="20 minutes ago">
-                        This is a warning notification description.
-                   </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="warning"
+                    title="Read warning notification title"
+                    srTitle="Warning notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle7} id="toggle-id-11" />}
+                      isOpen={isOpen7}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-11"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="20 minutes ago">
+                    This is a warning notification description.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
                 <NotificationDrawerListItem variant="success" isRead>
-                    <NotificationDrawerListItemHeader variant="success" title="Read success notification title" srTitle="Success notification:">
-                        <Dropdown
-                          position={DropdownPosition.right}
-                          direction={DropdownDirection.up}
-                          onClick={this.onClick}
-                          onSelect={this.onSelect}
-                          toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-12" />}
-                          isOpen={isOpen && isActive==="toggle-id-12"}
-                          isPlain
-                          dropdownItems={dropdownItems}
-                          id="notification-12"
-                        />
-                    </NotificationDrawerListItemHeader>
-                   <NotificationDrawerListItemBody timestamp="30 minutes ago">
-                        This is a success notification description.
-                   </NotificationDrawerListItemBody>
+                  <NotificationDrawerListItemHeader
+                    variant="success"
+                    title="Read success notification title"
+                    srTitle="Success notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      direction={DropdownDirection.up}
+                      onSelect={this.onSelect}
+                      toggle={<KebabToggle onToggle={this.onToggle8} id="toggle-id-12" />}
+                      isOpen={isOpen8}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="notification-12"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="30 minutes ago">
+                    This is a success notification description.
+                  </NotificationDrawerListItemBody>
                 </NotificationDrawerListItem>
-            </NotificationDrawerList>
-        </NotificationDrawerGroup>
-      <NotificationDrawerGroup title="Third notification group" isExpanded={thirdGroupExpanded} count={0} onExpand={this.toggleThirdDrawer}>
-        <NotificationDrawerList isHidden={!thirdGroupExpanded}>
-          <EmptyState variant={EmptyStateVariant.full}>
-            <EmptyStateIcon icon={SearchIcon} />
-              <Title headingLevel="h2" size="lg">
-                No alerts found
-              </Title>
-            <EmptyStateBody>
-              There are currently no critical alerts firing. There may be firing alerts of other severities or silenced critical alerts however.
-            </EmptyStateBody>
-            <EmptyStatePrimary>
-              <Button variant="link">Action</Button>
-            </EmptyStatePrimary>
-           </EmptyState>
-         </NotificationDrawerList>
-      </NotificationDrawerGroup>
-    </NotificationDrawerGroupList>
-  </NotificationDrawerBody>
-</NotificationDrawer>
-)
-}
+              </NotificationDrawerList>
+            </NotificationDrawerGroup>
+            <NotificationDrawerGroup
+              title="Third notification group"
+              isExpanded={thirdGroupExpanded}
+              count={0}
+              onExpand={this.toggleThirdDrawer}
+            >
+              <NotificationDrawerList isHidden={!thirdGroupExpanded}>
+                <EmptyState variant={EmptyStateVariant.full}>
+                  <EmptyStateIcon icon={SearchIcon} />
+                  <Title headingLevel="h2" size="lg">
+                    No alerts found
+                  </Title>
+                  <EmptyStateBody>
+                    There are currently no critical alerts firing. There may be firing alerts of other severities or
+                    silenced critical alerts however.
+                  </EmptyStateBody>
+                  <EmptyStatePrimary>
+                    <Button variant="link">Action</Button>
+                  </EmptyStatePrimary>
+                </EmptyState>
+              </NotificationDrawerList>
+            </NotificationDrawerGroup>
+          </NotificationDrawerGroupList>
+        </NotificationDrawerBody>
+      </NotificationDrawer>
+    );
+  }
 }
 ```
 
@@ -434,30 +611,30 @@ class LightweightNotificationDrawerDemo extends React.Component {
       thirdGroupExpanded: false
     };
 
-      this.onFocus = (id) => {
-        if (id) {
-          const element = document.getElementById(id);
-          element.focus();
-        }
-      };
-    
-      this.toggleFirstDrawer = (event, value) => {
-        this.setState({
-          firstGroupExpanded: value
-        });
-      };
-    
-      this.toggleSecondDrawer = (event, value) => {
-        this.setState({
-          secondGroupExpanded: value
-        });
-      };
-    
-      this.toggleThirdDrawer = (event, value) => {
-        this.setState({
-          thirdGroupExpanded: value
-        });
-      };
+    this.onFocus = id => {
+      if (id) {
+        const element = document.getElementById(id);
+        element.focus();
+      }
+    };
+
+    this.toggleFirstDrawer = (event, value) => {
+      this.setState({
+        firstGroupExpanded: value
+      });
+    };
+
+    this.toggleSecondDrawer = (event, value) => {
+      this.setState({
+        secondGroupExpanded: value
+      });
+    };
+
+    this.toggleThirdDrawer = (event, value) => {
+      this.setState({
+        thirdGroupExpanded: value
+      });
+    };
   }
 
   render() {

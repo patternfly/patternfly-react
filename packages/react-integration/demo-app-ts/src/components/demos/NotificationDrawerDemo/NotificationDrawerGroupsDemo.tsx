@@ -27,11 +27,18 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
 
 interface GroupsNotificationDrawerDemoState {
-  isOpen: boolean;
-  isActive: string;
-  firstGroupIsOpen: boolean;
-  secondGroupIsOpen: boolean;
-  thirdGroupIsOpen: boolean;
+  isOpen0: boolean;
+  isOpen1: boolean;
+  isOpen2: boolean;
+  isOpen3: boolean;
+  isOpen4: boolean;
+  isOpen5: boolean;
+  isOpen6: boolean;
+  isOpen7: boolean;
+  isOpen8: boolean;
+  firstGroupExpanded: boolean;
+  secondGroupExpanded: boolean;
+  thirdGroupExpanded: boolean;
 }
 
 export class GroupsNotificationDrawerDemo extends React.Component<
@@ -42,67 +49,109 @@ export class GroupsNotificationDrawerDemo extends React.Component<
   constructor(props: NotificationDrawerProps) {
     super(props);
     this.state = {
-      isOpen: false,
-      isActive: '',
-      firstGroupIsOpen: false,
-      secondGroupIsOpen: true,
-      thirdGroupIsOpen: false
+      isOpen0: false,
+      isOpen1: false,
+      isOpen2: false,
+      isOpen3: false,
+      isOpen4: false,
+      isOpen5: false,
+      isOpen6: false,
+      isOpen7: false,
+      isOpen8: false,
+      firstGroupExpanded: false,
+      secondGroupExpanded: true,
+      thirdGroupExpanded: false
     };
   }
 
-  onToggle = (isOpen: boolean) => {
+  onToggle0 = (isOpen0: boolean) => {
     this.setState({
-      isOpen
+      isOpen0
     });
   };
-
+  onToggle1 = (isOpen1: boolean) => {
+    this.setState({
+      isOpen1
+    });
+  };
+  onToggle2 = (isOpen2: boolean) => {
+    this.setState({
+      isOpen2
+    });
+  };
+  onToggle3 = (isOpen3: boolean) => {
+    this.setState({
+      isOpen3
+    });
+  };
+  onToggle4 = (isOpen4: boolean) => {
+    this.setState({
+      isOpen4
+    });
+  };
+  onToggle5 = (isOpen5: boolean) => {
+    this.setState({
+      isOpen5
+    });
+  };
+  onToggle6 = (isOpen6: boolean) => {
+    this.setState({
+      isOpen6
+    });
+  };
+  onToggle7 = (isOpen7: boolean) => {
+    this.setState({
+      isOpen7
+    });
+  };
+  onToggle8 = (isOpen8: boolean) => {
+    this.setState({
+      isOpen8
+    });
+  };
   onSelect = (event: any) => {
     this.setState({
-      isOpen: !this.state.isOpen,
-      isActive: ''
+      isOpen0: false,
+      isOpen1: false,
+      isOpen2: false,
+      isOpen3: false,
+      isOpen4: false,
+      isOpen5: false,
+      isOpen6: false,
+      isOpen7: false,
+      isOpen8: false
     });
-    this.onFocus(event.target.id);
   };
-
-  onClick = (event: any) => {
-    this.setState({
-      isActive: event.target.id
-    });
-    this.onFocus(event.target.id);
-  };
-
-  onFocus = (id: string) => {
-    if (id) {
-      const element = document.getElementById(id);
-      element.focus();
-    }
-  };
-
   toggleFirstDrawer = (event: any, value: boolean) => {
     this.setState({
-      firstGroupIsOpen: value
+      firstGroupExpanded: value
     });
   };
-
   toggleSecondDrawer = (event: any, value: boolean) => {
     this.setState({
-      secondGroupIsOpen: value
+      secondGroupExpanded: value
     });
   };
-
   toggleThirdDrawer = (event: any, value: boolean) => {
     this.setState({
-      thirdGroupIsOpen: value
+      thirdGroupExpanded: value
     });
   };
 
   render() {
     const {
-      isOpen,
-      isActive,
-      firstGroupIsOpen: firstGroupExpanded,
-      secondGroupIsOpen: secondGroupExpanded,
-      thirdGroupIsOpen: thirdGroupExpanded
+      isOpen0,
+      isOpen1,
+      isOpen2,
+      isOpen3,
+      isOpen4,
+      isOpen5,
+      isOpen6,
+      isOpen7,
+      isOpen8,
+      firstGroupExpanded,
+      secondGroupExpanded,
+      thirdGroupExpanded
     } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
@@ -114,15 +163,13 @@ export class GroupsNotificationDrawerDemo extends React.Component<
         Disabled Link
       </DropdownItem>
     ];
-
     return (
       <NotificationDrawer>
         <NotificationDrawerHeader count={4}>
           <Dropdown
-            onClick={this.onClick}
             onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-0" />}
-            isOpen={isOpen && isActive === 'toggle-id-0'}
+            toggle={<KebabToggle onToggle={this.onToggle0} id="toggle-id-0" />}
+            isOpen={isOpen0}
             isPlain
             dropdownItems={dropdownItems}
             id="notification-0"
@@ -146,10 +193,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                   >
                     <Dropdown
                       position={DropdownPosition.right}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-5" />}
-                      isOpen={isOpen && isActive === 'toggle-id-5'}
+                      toggle={<KebabToggle onToggle={this.onToggle1} id="toggle-id-5" />}
+                      isOpen={isOpen1}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-5"
@@ -167,10 +213,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                   >
                     <Dropdown
                       position={DropdownPosition.right}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-6" />}
-                      isOpen={isOpen && isActive === 'toggle-id-6'}
+                      toggle={<KebabToggle onToggle={this.onToggle2} id="toggle-id-6" />}
+                      isOpen={isOpen2}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-6"
@@ -189,10 +234,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                   >
                     <Dropdown
                       position={DropdownPosition.right}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-7" />}
-                      isOpen={isOpen && isActive === 'toggle-id-7'}
+                      toggle={<KebabToggle onToggle={this.onToggle3} id="toggle-id-7" />}
+                      isOpen={isOpen3}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-7"
@@ -211,10 +255,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       position={DropdownPosition.right}
                       direction={DropdownDirection.up}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-8" />}
-                      isOpen={isOpen && isActive === 'toggle-id-8'}
+                      toggle={<KebabToggle onToggle={this.onToggle4} id="toggle-id-8" />}
+                      isOpen={isOpen4}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-8"
@@ -241,10 +284,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                   >
                     <Dropdown
                       position={DropdownPosition.right}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-9" />}
-                      isOpen={isOpen && isActive === 'toggle-id-9'}
+                      toggle={<KebabToggle onToggle={this.onToggle5} id="toggle-id-9" />}
+                      isOpen={isOpen5}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-9"
@@ -262,10 +304,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                   >
                     <Dropdown
                       position={DropdownPosition.right}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-10" />}
-                      isOpen={isOpen && isActive === 'toggle-id-10'}
+                      toggle={<KebabToggle onToggle={this.onToggle6} id="toggle-id-10" />}
+                      isOpen={isOpen6}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-10"
@@ -284,10 +325,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                   >
                     <Dropdown
                       position={DropdownPosition.right}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-11" />}
-                      isOpen={isOpen && isActive === 'toggle-id-11'}
+                      toggle={<KebabToggle onToggle={this.onToggle7} id="toggle-id-11" />}
+                      isOpen={isOpen7}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-11"
@@ -306,10 +346,9 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     <Dropdown
                       position={DropdownPosition.right}
                       direction={DropdownDirection.up}
-                      onClick={this.onClick}
                       onSelect={this.onSelect}
-                      toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-12" />}
-                      isOpen={isOpen && isActive === 'toggle-id-12'}
+                      toggle={<KebabToggle onToggle={this.onToggle8} id="toggle-id-12" />}
+                      isOpen={isOpen8}
                       isPlain
                       dropdownItems={dropdownItems}
                       id="notification-12"
