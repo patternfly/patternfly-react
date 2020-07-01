@@ -75,10 +75,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
 
   cloneOption(child: React.ReactElement, index: number, randomId: string) {
     const { selected, sendRef, keyHandler } = this.props;
-    const isSelected =
-      selected && selected.constructor === Array
-        ? selected && Array.isArray(selected) && selected.includes(child.props.value)
-        : selected === child.props.value;
+    const isSelected = this.checkForValue(child.props.value, selected);
     return React.cloneElement(child, {
       inputId: `${randomId}-${index}`,
       id: `${child.props.id ? child.props.id : randomId}-${index}`,
@@ -87,6 +84,34 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       keyHandler,
       index
     });
+  }
+
+  checkForValue(
+    valueToCheck: string | SelectOptionObject,
+    options: string | SelectOptionObject | (string | SelectOptionObject)[]
+  ) {
+    if (!options) {
+      return false;
+    }
+
+    const isSelectOptionObject =
+      typeof valueToCheck !== 'string' &&
+      (valueToCheck as SelectOptionObject).toString &&
+      (valueToCheck as SelectOptionObject).compareTo;
+
+    if (Array.isArray(options)) {
+      if (isSelectOptionObject) {
+        return options.some(option => (option as SelectOptionObject).compareTo(valueToCheck));
+      } else {
+        return options.includes(valueToCheck);
+      }
+    } else {
+      if (isSelectOptionObject) {
+        return (options as SelectOptionObject).compareTo(valueToCheck);
+      } else {
+        return options === valueToCheck;
+      }
+    }
   }
 
   extendCheckboxChildren(children: React.ReactElement[]) {
@@ -106,7 +131,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
             >
               {React.Children.map(group.props.children, (option: React.ReactElement) =>
                 React.cloneElement(option, {
-                  isChecked: checked && checked.includes(option.props.value),
+                  isChecked: this.checkForValue(option.props.value, checked),
                   sendRef,
                   keyHandler,
                   index: index++
@@ -119,7 +144,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     }
     return React.Children.map(children, (child: React.ReactElement) =>
       React.cloneElement(child, {
-        isChecked: checked && checked.includes(child.props.value),
+        isChecked: this.checkForValue(child.props.value, checked),
         sendRef,
         keyHandler,
         index: index++

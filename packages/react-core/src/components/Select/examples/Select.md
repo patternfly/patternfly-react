@@ -1380,7 +1380,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         compareTo: function(value) {
           return this.toString()
             .toLowerCase()
-            .includes(value.toLowerCase());
+            .includes(value.toString().toLowerCase());
         }
       };
     };

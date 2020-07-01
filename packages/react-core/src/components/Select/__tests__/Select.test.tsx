@@ -189,7 +189,7 @@ describe('checkbox select', () => {
         onSelect={jest.fn()}
         onToggle={jest.fn()}
         onClear={jest.fn()}
-        isExpanded
+        isOpen
         hasInlineFilter
       >
         {selectOptions}
