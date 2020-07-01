@@ -11,6 +11,7 @@ exports[`drawer group with isExpanded applied  1`] = `
       aria-expanded={true}
       className="pf-c-notification-drawer__group-toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <div>
         Critical Alerts
@@ -47,6 +48,7 @@ exports[`drawer group with isRead applied  1`] = `
       aria-expanded={false}
       className="pf-c-notification-drawer__group-toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <div>
         Critical Alerts
@@ -83,6 +85,7 @@ exports[`renders with PatternFly Core styles 1`] = `
       aria-expanded={false}
       className="pf-c-notification-drawer__group-toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <div>
         Critical Alerts
