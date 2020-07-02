@@ -104,7 +104,6 @@ class BasicNotificationDrawer extends React.Component {
       <NotificationDrawer>
         <NotificationDrawerHeader count={2}>
           <Dropdown
-            //onClick={this.onClick}
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle0} id="toggle-id-0" />}
             isOpen={isOpen0}
@@ -124,7 +123,6 @@ class BasicNotificationDrawer extends React.Component {
               >
                 <Dropdown
                   position={DropdownPosition.right}
-                  //onClick={this.onClick}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle1} id="toggle-id-1" />}
                   isOpen={isOpen1}
@@ -145,7 +143,6 @@ class BasicNotificationDrawer extends React.Component {
               >
                 <Dropdown
                   position={DropdownPosition.right}
-                  //onClick={this.onClick}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle2} id="toggle-id-2" />}
                   isOpen={isOpen2}
@@ -167,7 +164,6 @@ class BasicNotificationDrawer extends React.Component {
               >
                 <Dropdown
                   position={DropdownPosition.right}
-                  //onClick={this.onClick}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle3} id="toggle-id-3" />}
                   isOpen={isOpen3}
@@ -189,7 +185,6 @@ class BasicNotificationDrawer extends React.Component {
                 <Dropdown
                   position={DropdownPosition.right}
                   direction={DropdownDirection.up}
-                  //onClick={this.onClick}
                   onSelect={this.onSelect}
                   toggle={<KebabToggle onToggle={this.onToggle4} id="toggle-id-4" />}
                   isOpen={isOpen4}

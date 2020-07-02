@@ -35,8 +35,8 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
     if (event.key === 'Enter' || event.key === ' ') {
       event.target.click();
     }
-  }
-  return(
+  };
+  return (
     <li
       {...props}
       className={css(
