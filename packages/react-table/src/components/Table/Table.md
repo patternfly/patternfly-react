@@ -1561,6 +1561,7 @@ class EditableRowsTable extends React.Component {
                 editableSelectProps: {
                   variant: 'typeaheadmulti',
                   'aria-label': "Row 2 cell 4 content",
+                  toggleId: 'editable-toggle'
                 }
               }
             },

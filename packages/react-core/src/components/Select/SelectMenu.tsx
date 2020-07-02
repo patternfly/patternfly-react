@@ -61,7 +61,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     if (isGrouped) {
       return React.Children.map(childrenArray, (group: React.ReactElement, index: number) =>
         React.cloneElement(group, {
-          titleId: group.props.label.replace(/\W/g, '-'),
+          titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
           children: group.props.children.map((option: React.ReactElement) =>
             this.cloneOption(option, index++, randomId)
           )
@@ -98,10 +98,10 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
           return group;
         }
         return React.cloneElement(group, {
-          titleId: group.props.label.replace(/\W/g, '-'),
+          titleId: group.props.label && group.props.label.replace(/\W/g, '-'),
           children: (
             <fieldset
-              aria-labelledby={group.props.label.replace(/\W/g, '-')}
+              aria-labelledby={group.props.label && group.props.label.replace(/\W/g, '-')}
               className={css(styles.selectMenuFieldset)}
             >
               {React.Children.map(group.props.children, (option: React.ReactElement) =>
