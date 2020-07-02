@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.19.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.18.0...demo-app-ts@4.19.0) (2020-07-02)
+
+
+### Features
+
+* **button:** add support to small variation ([#4433](https://github.com/patternfly/patternfly-react/issues/4433)) ([af9e292](https://github.com/patternfly/patternfly-react/commit/af9e292cd7ebd2752dfe7e220c28cf230bddb6d5))
+
+
+
+
+
 # [4.18.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.5...demo-app-ts@4.18.0) (2020-06-25)
 
 

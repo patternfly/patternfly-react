@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.14...@patternfly/react-docs@5.5.0) (2020-07-02)
+
+
+### Features
+
+* **table:** publishes prop type interfaces in docs ([#4461](https://github.com/patternfly/patternfly-react/issues/4461)) ([d70bf0f](https://github.com/patternfly/patternfly-react/commit/d70bf0fd54e77092c2dae44718b11296b880d82e))
+
+
+
+
+
 ## [5.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.4.13...@patternfly/react-docs@5.4.14) (2020-06-25)
 
 **Note:** Version bump only for package @patternfly/react-docs

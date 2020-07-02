@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.24.0...@patternfly/react-core@4.25.0) (2020-07-02)
+
+
+### Bug Fixes
+
+* **Select:** handle missing select group label ([#4464](https://github.com/patternfly/patternfly-react/issues/4464)) ([f29b8d9](https://github.com/patternfly/patternfly-react/commit/f29b8d90e8222ed5fcb0ca8918fd5ccf5e4160bc))
+
+
+### Features
+
+* **button:** add support to small variation ([#4433](https://github.com/patternfly/patternfly-react/issues/4433)) ([af9e292](https://github.com/patternfly/patternfly-react/commit/af9e292cd7ebd2752dfe7e220c28cf230bddb6d5))
+
+
+
+
+
 # [4.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.23.1...@patternfly/react-core@4.24.0) (2020-06-25)
 
 
