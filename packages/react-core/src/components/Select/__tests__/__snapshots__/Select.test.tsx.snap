@@ -2897,6 +2897,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-4"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -3515,6 +3516,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
             disabled={false}
             id="checkbox-select-expanded-filtered"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -4132,6 +4134,7 @@ exports[`select custom select filter filters properly 1`] = `
             disabled={false}
             id="custom-select-filters"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -7233,6 +7236,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             disabled={false}
             id="typeahead-multi-select-closed"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -7527,6 +7531,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-13"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -8466,6 +8471,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             disabled={false}
             id="typeahead-multi-select-selected"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -9074,6 +9080,7 @@ exports[`typeahead multi select test onChange 1`] = `
             disabled={false}
             id="pf-toggle-id-15"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -9347,6 +9354,7 @@ exports[`typeahead select renders closed successfully 1`] = `
             disabled={false}
             id="typeahead-select-closed"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -9641,6 +9649,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-7"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -10250,6 +10259,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-8"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -10804,6 +10814,7 @@ exports[`typeahead select test creatable option 1`] = `
             disabled={false}
             id="pf-toggle-id-12"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon
@@ -11171,6 +11182,7 @@ exports[`typeahead select test onChange 1`] = `
             disabled={false}
             id="pf-toggle-id-10"
             onClick={[Function]}
+            onKeyDown={[Function]}
             type="button"
           >
             <CaretDownIcon

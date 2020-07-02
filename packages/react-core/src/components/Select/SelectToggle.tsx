@@ -254,6 +254,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
                   onClose();
                 }
               }}
+              onKeyDown={(event: React.KeyboardEvent) => {
+                event.stopPropagation();
+              }}
               disabled={isDisabled}
             >
               <CaretDownIcon className={css(styles.selectToggleArrow)} />
