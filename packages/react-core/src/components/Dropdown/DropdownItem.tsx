@@ -40,6 +40,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   icon?: React.ReactNode;
   /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
   autoFocus?: boolean;
+  /** A short description of the dropdown item, displayed under the dropdown item content */
+  description?: React.ReactNode;
 }
 
 export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
@@ -61,6 +63,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   tabIndex = -1,
   icon = null,
   autoFocus,
+  description = null,
   styleChildren,
   ...props
 }: DropdownItemProps) => (
@@ -85,6 +88,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         icon={icon}
         autoFocus={autoFocus}
         styleChildren={styleChildren}
+        description={description}
         {...props}
       >
         {children}

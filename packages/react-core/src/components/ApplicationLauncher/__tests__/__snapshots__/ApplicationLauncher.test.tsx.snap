@@ -476,6 +476,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -534,6 +535,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -594,6 +596,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -654,6 +657,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -710,6 +714,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 icon={null}
                 index={4}
@@ -762,6 +767,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -820,6 +826,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -1879,6 +1886,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -1937,6 +1945,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -1997,6 +2006,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2057,6 +2067,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2113,6 +2124,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 icon={null}
                 index={4}
@@ -2165,6 +2177,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2223,6 +2236,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}

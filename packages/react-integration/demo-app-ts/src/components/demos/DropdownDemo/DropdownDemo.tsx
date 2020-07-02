@@ -151,8 +151,10 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         Disabled Action
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      <DropdownItem key="separated link" description="Separated Link's description">
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem key="separated action" component="button" description="Separated action's description">
         Separated Action
       </DropdownItem>
     ];
