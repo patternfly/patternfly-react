@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.20.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.19.1...demo-app-ts@4.20.0) (2020-07-06)
+
+
+### Features
+
+* **Select:** add option description property ([#4460](https://github.com/patternfly/patternfly-react/issues/4460)) ([bda22a3](https://github.com/patternfly/patternfly-react/commit/bda22a37f886a69504fab66da7f4827465552dc6))
+
+
+
+
+
 ## [4.19.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.19.0...demo-app-ts@4.19.1) (2020-07-06)
 
 **Note:** Version bump only for package demo-app-ts
