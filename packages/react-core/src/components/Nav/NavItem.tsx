@@ -56,19 +56,14 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     );
   };
 
-  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode => {
-    return React.cloneElement(child, {
+  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode =>
+    React.cloneElement(child, {
       onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
       'aria-current': isActive ? 'page' : null,
       ...(styleChildren && {
-        className: css(
-          styles.navLink,
-          isActive && styles.modifiers.current,
-          child.props && child.props.className
-        )
+        className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
       })
     });
-  };
 
   return (
     <li className={css(styles.navItem, className)}>

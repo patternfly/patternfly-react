@@ -178,34 +178,28 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
         childNode
       );
 
-    const renderClonedComponent = (component: React.ReactElement<any>) => {
-      return React.cloneElement(component, {
-      ...(styleChildren && {
-        className: css(component.props.className, classes)
-      })
+    const renderClonedComponent = (element: React.ReactElement<any>) =>
+      React.cloneElement(element, {
+        ...(styleChildren && {
+          className: css(element.props.className, classes)
+        })
       });
-    }
 
-    const renderDefaultComponent = (component: string) => {
-      const Component = component as any;
+    const renderDefaultComponent = (tag: string) => {
+      const Component = tag as any;
       return (
         <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
           {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
           {children}
         </Component>
       );
-    }
+    };
 
     return (
       <DropdownContext.Consumer>
         {({ onSelect, itemClass, disabledClass, plainTextClass }) => {
           if (this.props.role !== 'separator') {
-            classes = css(
-              classes,
-              isDisabled && disabledClass,
-              isPlainText && plainTextClass,
-              itemClass
-            );
+            classes = css(classes, isDisabled && disabledClass, isPlainText && plainTextClass, itemClass);
           }
           if (customChild) {
             return React.cloneElement(customChild as React.ReactElement<any>, {

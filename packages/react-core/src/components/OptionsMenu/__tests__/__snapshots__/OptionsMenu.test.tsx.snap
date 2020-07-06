@@ -732,6 +732,7 @@ exports[`optionsMenu expanded 1`] = `
                       isPlainText={false}
                       onClick={[Function]}
                       role="menuitem"
+                      styleChildren={true}
                       tabIndex={-1}
                       tooltipProps={Object {}}
                     >
@@ -780,6 +781,7 @@ exports[`optionsMenu expanded 1`] = `
                       isPlainText={false}
                       onClick={[Function]}
                       role="menuitem"
+                      styleChildren={true}
                       tabIndex={-1}
                       tooltipProps={Object {}}
                     >
@@ -832,6 +834,7 @@ exports[`optionsMenu expanded 1`] = `
                       isPlainText={false}
                       onClick={[Function]}
                       role="menuitem"
+                      styleChildren={true}
                       tabIndex={-1}
                       tooltipProps={Object {}}
                     >
@@ -881,6 +884,7 @@ exports[`optionsMenu expanded 1`] = `
                       isPlainText={false}
                       onClick={[Function]}
                       role="menuitem"
+                      styleChildren={true}
                       tabIndex={-1}
                       tooltipProps={Object {}}
                     >
@@ -966,6 +970,7 @@ exports[`optionsMenu expanded 1`] = `
                       isPlainText={false}
                       onClick={[Function]}
                       role="menuitem"
+                      styleChildren={true}
                       tabIndex={-1}
                       tooltipProps={Object {}}
                     >
@@ -1014,6 +1019,7 @@ exports[`optionsMenu expanded 1`] = `
                       isPlainText={false}
                       onClick={[Function]}
                       role="menuitem"
+                      styleChildren={true}
                       tabIndex={-1}
                       tooltipProps={Object {}}
                     >
