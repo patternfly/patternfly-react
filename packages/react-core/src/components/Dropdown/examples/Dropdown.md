@@ -1329,9 +1329,7 @@ class SimpleDropdown extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    
-    const disabledLinkDesc = (<React.Fragment><BellIcon /> Disabled link description</React.Fragment>);
-    
+        
     const dropdownItems = [
       <DropdownItem key="link" description="This is a description" icon={<CubesIcon />}>Link</DropdownItem>,
       <DropdownItem 
@@ -1342,7 +1340,7 @@ class SimpleDropdown extends React.Component {
       >
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled description={disabledLinkDesc}>
+      <DropdownItem key="disabled link" isDisabled description="Disabled link description">
         Disabled Link
       </DropdownItem>,
       <DropdownItem key="disabled action" isDisabled component="button" description="This is a description">
