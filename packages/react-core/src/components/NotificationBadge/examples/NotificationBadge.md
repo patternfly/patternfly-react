@@ -17,21 +17,47 @@ class SimpleNotificationBadge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isRead: false
+      isFirstRead: false,
+      isSecondRead: false,
+      isThirdRead: false,
+      isThirdNeedingAttention: true,
+      secondCount: 30,
+      thirdCount: 30
     };
-    this.onClick = () => {
+    this.onFirstClick = () => {
       this.setState({
-        isRead: true
+        isFirstRead: true
+      });
+    };
+    this.onSecondClick = () => {
+      this.setState({
+        isSecondRead: true,
+        secondCount: 0
+      });
+    };
+    this.onThirdClick = () => {
+      this.setState({
+        isThirdRead: true,
+        isThirdNeedingAttention: false,
+        thirdCount: 0
       });
     };
   }
 
   render() {
-    const { isRead } = this.state;
+    const { isFirstRead, isSecondRead, isThirdRead, isThirdNeedingAttention, secondCount, thirdCount } = this.state;
     return (
-      <NotificationBadge isRead={isRead} onClick={this.onClick} aria-label="Notifications">
-        <BellIcon />
-      </NotificationBadge>
+      <>
+        <NotificationBadge isRead={isFirstRead} onClick={this.onFirstClick} aria-label="First notifications">
+          <BellIcon />
+        </NotificationBadge>
+        <NotificationBadge isRead={isSecondRead} onClick={this.onSecondClick} aria-label="Second notifications" count={secondCount}>
+          <BellIcon />
+        </NotificationBadge>
+        <NotificationBadge isRead={isThirdRead} isNeedingAttention={isThirdNeedingAttention} onClick={this.onThirdClick} aria-label="Third notifications" count={thirdCount}>
+          <BellIcon />
+        </NotificationBadge>
+      </>
     );
   }
 }

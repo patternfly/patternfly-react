@@ -8,3 +8,15 @@ Object.values([true, false]).forEach(isRead => {
     expect(view).toMatchSnapshot();
   });
 });
+
+Object.values([true, false]).forEach(isNeedingAttention => {
+  test(`${isNeedingAttention} NotificationBadge isNeedingAttention`, () => {
+    const view = shallow(<NotificationBadge isNeedingAttention={isNeedingAttention}>{isNeedingAttention ? 'needs attention' : 'does not need attention'} Badge</NotificationBadge>);
+    expect(view).toMatchSnapshot();
+  });
+});
+
+test(`NotificationBadge count`, () => {
+  const view = shallow(<NotificationBadge count={3}>Badge</NotificationBadge>);
+  expect(view).toMatchSnapshot();
+});
