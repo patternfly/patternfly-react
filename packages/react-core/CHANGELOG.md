@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.25.0...@patternfly/react-core@4.26.0) (2020-07-06)
+
+
+### Features
+
+* **Select:** add logic to handle SelectOptionObject in comparisons ([#4469](https://github.com/patternfly/patternfly-react/issues/4469)) ([6179b52](https://github.com/patternfly/patternfly-react/commit/6179b524d59f50d373bbbe294897361f69ced598))
+
+
+
+
+
 # [4.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.24.0...@patternfly/react-core@4.25.0) (2020-07-02)
 
 
