@@ -410,7 +410,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild, typeaheadFilteredChildren } = this.state;
-    const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
+    const selectToggleId = toggleId || `pf-select-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     let childPlaceholderText = null as string;
