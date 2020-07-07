@@ -1041,7 +1041,7 @@ class ToolbarStacked extends React.Component {
             dropdownItems={splitButtonDropdownItems}
           />
       </ToolbarItem>
-      <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+      <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
         <Pagination
           itemCount={37}
           perPage={this.state.perPage}

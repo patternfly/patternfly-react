@@ -582,7 +582,7 @@ class CardViewBasic extends React.Component {
             dropdownItems={toolbarKebabDropdownItems}
           />
         </ToolbarItem>
-        <ToolbarItem variant="pagination" align={{ default: 'alignRight' }}>
+        <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
           {this.renderPagination()}
         </ToolbarItem>
       </React.Fragment>
