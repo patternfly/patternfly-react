@@ -3,7 +3,8 @@ title: 'Page'
 section: components
 cssPrefix: 'pf-c-page'
 typescript: true
-propComponents: ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
+propComponents:
+  ['Page', 'PageHeader', 'PageHeaderTools', 'PageHeaderToolsGroup', 'PageHeaderToolsItem', 'PageSidebar', 'PageSection']
 ---
 
 import { Page, PageHeader, PageHeaderTools, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
@@ -52,7 +53,7 @@ class VerticalPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -143,7 +144,7 @@ class VerticalPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -151,15 +152,10 @@ class VerticalPage extends React.Component {
         <PageSection variant={PageSectionVariants.light} hasNoPadding>
           Section with no padding
         </PageSection>
-        <PageSection
-          padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}
-        >
+        <PageSection padding={{ default: 'noPadding', md: 'padding', lg: 'padding' }}>
           Section with padding only on medium/large
         </PageSection>
-        <PageSection
-          variant={PageSectionVariants.light}
-          padding={{ md: 'noPadding' }}
-        >
+        <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
           Section with no padding on medium
         </PageSection>
       </Page>
@@ -210,7 +206,7 @@ class FillPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
