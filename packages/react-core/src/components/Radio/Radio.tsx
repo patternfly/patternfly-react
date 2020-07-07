@@ -2,9 +2,11 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
 export interface RadioProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'> {
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'disabled' | 'label' | 'onChange' | 'type'>,
+    OUIAProps {
   /** Additional classes added to the radio. */
   className?: string;
   /** Id of the radio. */
@@ -69,6 +71,8 @@ export class Radio extends React.Component<RadioProps> {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onChange,
       description,
+      ouiaId,
+      ouiaSafe = true,
       ...props
     } = this.props;
 
@@ -83,6 +87,7 @@ export class Radio extends React.Component<RadioProps> {
         checked={checked || isChecked}
         {...(checked === undefined && { defaultChecked })}
         {...(!label && { 'aria-label': ariaLabel })}
+        {...getOUIAProps(Radio.displayName, ouiaId, ouiaSafe)}
       />
     );
     const labelRendered = !label ? null : isLabelWrapped ? (

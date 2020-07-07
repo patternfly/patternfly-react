@@ -4,6 +4,7 @@ section: components
 cssPrefix: 'pf-c-radio'
 typescript: true
 propComponents: ['Radio']
+ouia: true
 ---
 import { Radio } from '@patternfly/react-core';
 
