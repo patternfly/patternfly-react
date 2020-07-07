@@ -99,7 +99,7 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.normalButton} id="normal-btn-10" tabIndex={2}>
           Button with tabindex set to 2
         </Button>
-        <Tooltip content="This tooltip content is available to the aria-disabled button">
+        <Tooltip id="button-with-tooltip-1" content="This tooltip content is available to the aria-disabled button">
           <Button
             {...this.normalButton}
             id="normal-btn-11"
@@ -154,7 +154,10 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
         <Button {...this.linkAsButton} id="link-as-btn-4" tabIndex={4}>
           Link as button with tabindex set to 4
         </Button>
-        <Tooltip content="This tooltip content is available to the aria-disabled link as button">
+        <Tooltip
+          id="button-with-tooltip-2"
+          content="This tooltip content is available to the aria-disabled link as button"
+        >
           <Button {...this.linkAsButton} id="link-as-btn-5" isAriaDisabled>
             Aria-disabled link as button with tooltip
           </Button>

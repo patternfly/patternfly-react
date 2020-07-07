@@ -1,13 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`popover can have a custom minimum width 1`] = `
-<PopoverBase
+<Popper
   appendTo={[Function]}
-  arrow={true}
-  boundary="window"
-  content={<React.Fragment />}
   distance={25}
-  flip={true}
+  enableFlip={true}
   flipBehavior={
     Array [
       "top",
@@ -19,49 +16,84 @@ exports[`popover can have a custom minimum width 1`] = `
       "bottom",
     ]
   }
-  hideOnClick={false}
-  interactive={true}
-  interactiveBorder={0}
-  isVisible={true}
-  lazy={true}
-  maxWidth="calc(1rem + 1rem + 18.75rem)"
-  onCreate={[Function]}
-  onHidden={[Function]}
-  onHide={[Function]}
-  onMount={[Function]}
-  onShow={[Function]}
-  onShown={[Function]}
+  isVisible={false}
+  onDocumentClick={[Function]}
+  onDocumentKeyDown={[Function]}
+  onPopperClick={[Function]}
+  onTriggerClick={[Function]}
+  onTriggerEnter={[Function]}
   placement="top"
-  popperOptions={
+  popper={
+    <FocusTrap
+      active={false}
+      aria-describedby="popover-pf-15941411039932r01yr30qc5-body"
+      aria-labelledby="popover-pf-15941411039932r01yr30qc5-header"
+      aria-modal="true"
+      className="pf-c-popover"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "returnFocusOnDeactivate": true,
+        }
+      }
+      onMouseDown={[Function]}
+      paused={false}
+      role="dialog"
+      style={
+        Object {
+          "maxWidth": null,
+          "minWidth": "600px",
+          "opacity": 0,
+          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
+        }
+      }
+    >
+      <PopoverArrow />
+      <PopoverContent>
+        <PopoverCloseButton
+          aria-label="Close"
+          onClose={[Function]}
+        />
+        <PopoverHeader
+          id="popover-pf-15941411039932r01yr30qc5-header"
+        >
+          <div>
+            Popover Header
+          </div>
+        </PopoverHeader>
+        <PopoverBody
+          id="popover-pf-15941411039932r01yr30qc5-body"
+        >
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        </PopoverBody>
+      </PopoverContent>
+    </FocusTrap>
+  }
+  popperMatchesTriggerWidth={false}
+  positionModifiers={
     Object {
-      "modifiers": Object {
-        "hide": Object {
-          "enabled": true,
-        },
-        "preventOverflow": Object {
-          "enabled": true,
-        },
-      },
+      "bottom": "pf-m-bottom",
+      "left": "pf-m-left",
+      "right": "pf-m-right",
+      "top": "pf-m-top",
     }
   }
-  theme="pf-popover"
-  trigger="manual"
+  trigger={
+    <div>
+      Toggle Popover
+    </div>
+  }
   zIndex={9999}
->
-  <div>
-    Toggle Popover
-  </div>
-</PopoverBase>
+/>
 `;
 
 exports[`popover can specify position as object value 1`] = `
-<PopoverBase
+<Popper
   appendTo={[Function]}
-  arrow={true}
-  boundary="window"
-  content={<React.Fragment />}
   distance={25}
-  flip={true}
+  enableFlip={true}
   flipBehavior={
     Array [
       "top",
@@ -73,110 +105,84 @@ exports[`popover can specify position as object value 1`] = `
       "bottom",
     ]
   }
-  hideOnClick={false}
-  interactive={true}
-  interactiveBorder={0}
-  isVisible={true}
-  lazy={true}
-  maxWidth="calc(1rem + 1rem + 18.75rem)"
-  onCreate={[Function]}
-  onHidden={[Function]}
-  onHide={[Function]}
-  onMount={[Function]}
-  onShow={[Function]}
-  onShown={[Function]}
+  isVisible={false}
+  onDocumentClick={[Function]}
+  onDocumentKeyDown={[Function]}
+  onPopperClick={[Function]}
+  onTriggerClick={[Function]}
+  onTriggerEnter={[Function]}
   placement="right"
-  popperOptions={
+  popper={
+    <FocusTrap
+      active={false}
+      aria-describedby="popover-pf-1594141103994w2ewqbp22i-body"
+      aria-labelledby="popover-pf-1594141103994w2ewqbp22i-header"
+      aria-modal="true"
+      className="pf-c-popover"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "returnFocusOnDeactivate": true,
+        }
+      }
+      onMouseDown={[Function]}
+      paused={false}
+      role="dialog"
+      style={
+        Object {
+          "maxWidth": null,
+          "minWidth": null,
+          "opacity": 0,
+          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
+        }
+      }
+    >
+      <PopoverArrow />
+      <PopoverContent>
+        <PopoverCloseButton
+          aria-label="Close"
+          onClose={[Function]}
+        />
+        <PopoverHeader
+          id="popover-pf-1594141103994w2ewqbp22i-header"
+        >
+          <div>
+            Popover Header
+          </div>
+        </PopoverHeader>
+        <PopoverBody
+          id="popover-pf-1594141103994w2ewqbp22i-body"
+        >
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        </PopoverBody>
+      </PopoverContent>
+    </FocusTrap>
+  }
+  popperMatchesTriggerWidth={false}
+  positionModifiers={
     Object {
-      "modifiers": Object {
-        "hide": Object {
-          "enabled": true,
-        },
-        "preventOverflow": Object {
-          "enabled": true,
-        },
-      },
+      "bottom": "pf-m-bottom",
+      "left": "pf-m-left",
+      "right": "pf-m-right",
+      "top": "pf-m-top",
     }
   }
-  theme="pf-popover"
-  trigger="manual"
+  trigger={
+    <div>
+      Toggle Popover
+    </div>
+  }
   zIndex={9999}
->
-  <div>
-    Toggle Popover
-  </div>
-</PopoverBase>
-`;
-
-exports[`popover passes along values to tippy.js 1`] = `
-<PopoverBase
-  appendTo={[Function]}
-  arrow={true}
-  boundary="window"
-  content={<React.Fragment />}
-  distance={25}
-  duration={
-    Array [
-      200,
-      200,
-    ]
-  }
-  flip={true}
-  flipBehavior={
-    Array [
-      "top",
-      "right",
-      "bottom",
-      "left",
-      "top",
-      "right",
-      "bottom",
-    ]
-  }
-  hideOnClick={false}
-  interactive={true}
-  interactiveBorder={0}
-  isVisible={true}
-  lazy={true}
-  maxWidth="calc(1rem + 1rem + 18.75rem)"
-  offset={20}
-  onCreate={[Function]}
-  onHidden={[Function]}
-  onHide={[Function]}
-  onMount={[Function]}
-  onShow={[Function]}
-  onShown={[Function]}
-  placement="right"
-  popperOptions={
-    Object {
-      "modifiers": Object {
-        "hide": Object {
-          "enabled": true,
-        },
-        "preventOverflow": Object {
-          "enabled": true,
-        },
-      },
-    }
-  }
-  theme="pf-popover"
-  trigger="manual"
-  zIndex={9999}
->
-  <div>
-    Tippy Props Test
-  </div>
-</PopoverBase>
+/>
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
-<PopoverBase
+<Popper
   appendTo={[Function]}
-  arrow={true}
-  boundary="window"
-  content={<React.Fragment />}
   distance={25}
-  flip={true}
+  enableFlip={true}
   flipBehavior={
     Array [
       "top",
@@ -188,37 +194,75 @@ exports[`popover renders close-button, header and body 1`] = `
       "bottom",
     ]
   }
-  hideOnClick={false}
-  interactive={true}
-  interactiveBorder={0}
-  isVisible={true}
-  lazy={true}
-  maxWidth="calc(1rem + 1rem + 18.75rem)"
-  onCreate={[Function]}
-  onHidden={[Function]}
-  onHide={[Function]}
-  onMount={[Function]}
-  onShow={[Function]}
-  onShown={[Function]}
+  isVisible={false}
+  onDocumentClick={[Function]}
+  onDocumentKeyDown={[Function]}
+  onPopperClick={[Function]}
+  onTriggerClick={[Function]}
+  onTriggerEnter={[Function]}
   placement="top"
-  popperOptions={
+  popper={
+    <FocusTrap
+      active={false}
+      aria-describedby="popover-pf-1594141103989q915r8xpar-body"
+      aria-labelledby="popover-pf-1594141103989q915r8xpar-header"
+      aria-modal="true"
+      className="pf-c-popover"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "returnFocusOnDeactivate": true,
+        }
+      }
+      onMouseDown={[Function]}
+      paused={false}
+      role="dialog"
+      style={
+        Object {
+          "maxWidth": null,
+          "minWidth": null,
+          "opacity": 0,
+          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
+        }
+      }
+    >
+      <PopoverArrow />
+      <PopoverContent>
+        <PopoverCloseButton
+          aria-label="Close"
+          onClose={[Function]}
+        />
+        <PopoverHeader
+          id="popover-pf-1594141103989q915r8xpar-header"
+        >
+          <div>
+            Popover Header
+          </div>
+        </PopoverHeader>
+        <PopoverBody
+          id="popover-pf-1594141103989q915r8xpar-body"
+        >
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        </PopoverBody>
+      </PopoverContent>
+    </FocusTrap>
+  }
+  popperMatchesTriggerWidth={false}
+  positionModifiers={
     Object {
-      "modifiers": Object {
-        "hide": Object {
-          "enabled": true,
-        },
-        "preventOverflow": Object {
-          "enabled": true,
-        },
-      },
+      "bottom": "pf-m-bottom",
+      "left": "pf-m-left",
+      "right": "pf-m-right",
+      "top": "pf-m-top",
     }
   }
-  theme="pf-popover"
-  trigger="manual"
+  trigger={
+    <div>
+      Toggle Popover
+    </div>
+  }
   zIndex={9999}
->
-  <div>
-    Toggle Popover
-  </div>
-</PopoverBase>
+/>
 `;

@@ -25,7 +25,7 @@ export enum PopoverPosition {
   right = 'right'
 }
 
-export interface PopoverProps {
+export interface PopoverProps extends React.HTMLProps<HTMLDivElement> {
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** The element to append the popover to, defaults to body */

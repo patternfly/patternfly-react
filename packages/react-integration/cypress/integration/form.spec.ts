@@ -59,6 +59,6 @@ describe('Form Demo Test', () => {
     cy.get('#helper-text-target')
       .click()
       .should('have.attr', 'aria-expanded', 'true');
-    cy.get('.tippy-popper').should('exist');
+    cy.get('.pf-c-popover').should('exist');
   });
 });

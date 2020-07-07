@@ -19,7 +19,7 @@ export enum TooltipPosition {
   right = 'right'
 }
 
-export interface TooltipProps {
+export interface TooltipProps extends React.HTMLProps<HTMLDivElement> {
   /** The element to append the tooltip to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /**

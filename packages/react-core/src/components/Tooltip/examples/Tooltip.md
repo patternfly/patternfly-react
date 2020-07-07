@@ -50,7 +50,7 @@ OnIconTooltip = () => (
 
 ```js title=Options
 import React from 'react';
-import { Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
+import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 
 OptionsTooltip = () => {
   const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
