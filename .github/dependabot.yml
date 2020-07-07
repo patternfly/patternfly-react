@@ -7,3 +7,8 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
+    allow:
+      # Just bump core for now
+      - dependency-name: "@patternfly/patternfly"
+    labels:
+      - "infrastructure"
