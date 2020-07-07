@@ -3,6 +3,9 @@
 exports[`Card should match snapshot (auto-generated) 1`] = `
 <article
   className="pf-c-card ''"
+  data-ouia-component-id={0}
+  data-ouia-component-type="PF4/Card"
+  data-ouia-safe={true}
 >
   ReactNode
 </article>
