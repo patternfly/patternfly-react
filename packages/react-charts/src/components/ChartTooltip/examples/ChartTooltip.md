@@ -7,7 +7,7 @@ hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartBar, ChartCursorFlyout, ChartCursorTooltip, ChartDonut, ChartGroup, ChartLabel, ChartLegend, ChartLegendTooltip, ChartLine, ChartPoint, ChartStack, ChartThemeColor, ChartTooltip, createContainer, getCustomTheme } from '@patternfly/react-charts';
-import { Button, Tooltip } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition } from '@patternfly/react-core';
 import './chart-tooltip.css';
 
 ## Introduction
@@ -665,7 +665,7 @@ CSSOverflow = (
 ```js title=Wrapped-chart
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
-import { Button, Tooltip } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition } from '@patternfly/react-core';
 
 class TooltipChart extends React.Component {
   constructor(props) {
