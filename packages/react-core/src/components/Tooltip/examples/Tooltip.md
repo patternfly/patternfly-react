@@ -17,13 +17,15 @@ import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
 BasicTooltip = () => (
-  <Tooltip
-    content={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-  >
-    <span tabIndex="0">I have a tooltip!</span>
-  </Tooltip>
+  <div style={{ margin: '100px' }}>
+    <Tooltip
+      content={
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      }
+    >
+      <span tabIndex="0" style={{ border: '1px dashed' }}>I have a tooltip!</span>
+    </Tooltip>
+  </div>
 )
 ```
 
@@ -33,7 +35,7 @@ import { Tooltip } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 OnIconTooltip = () => (
-  <div style={{ margin: '50px' }}>
+  <div style={{ margin: '100px' }}>
     <Tooltip
       position="top"
       content={
@@ -51,7 +53,7 @@ import React from 'react';
 import { Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 
 OptionsTooltip = () => {
-  const [trigger, setTrigger] = React.useState(['manual']);
+  const [trigger, setTrigger] = React.useState(['mouseenter', 'focus']);
   const [isVisible, setIsVisible] = React.useState(true);
   const [contentLeftAligned, setContentLeftAligned] = React.useState(false);
   const [enableFlip, setEnableFlip] = React.useState(true);
@@ -59,10 +61,8 @@ OptionsTooltip = () => {
   const [positionSelectOpen, setPositionSelectOpen] = React.useState(false);
   const [flipSelectOpen, setFlipSelectOpen] = React.useState(false);
   const [flipBehavior, setFlipBehavior] = React.useState('flip');
-  const [boundary, setBoundary] = React.useState('scrollParent');
-  const [boundarySelectOpen, setBoundarySelectOpen] = React.useState(false);
-  const [entryDelayInput, setEntryDelayInput] = React.useState(500);
-  const [exitDelayInput, setExitDelayInput] = React.useState(500);
+  const [entryDelayInput, setEntryDelayInput] = React.useState(0);
+  const [exitDelayInput, setExitDelayInput] = React.useState(0);
   const [animationDuration, setAnimationDuration] = React.useState(300);
   const tipBoxRef = React.useRef(null);
   const scrollToRef = ref => ref && ref.current && (ref.current.scrollTop = 400);
@@ -159,24 +159,6 @@ OptionsTooltip = () => {
           />
         </div>
         <div style={{ border: '1px solid'}}>
-          boundary
-          <Select
-            onToggle={() => setBoundarySelectOpen(!boundarySelectOpen)}
-            onSelect={(event, selection) => {
-              setBoundary(selection);
-              setBoundarySelectOpen(false);
-            }}
-            isOpen={boundarySelectOpen}
-            selections={boundary}
-            menuAppendTo={() => document.body}
-          >
-            <SelectOption value="scrollParent" />
-            <SelectOption value="window" />
-            <SelectOption value="viewport" />
-            <SelectOption value="HTMLElement" />
-          </Select>
-        </div>
-        <div style={{ border: '1px solid'}}>
           Entry delay <TextInput value={entryDelayInput} type="number" onChange={val => setEntryDelayInput(val)} aria-label="entry delay" />
           Exit delay <TextInput value={exitDelayInput} type="number" onChange={val => setExitDelayInput(val)} aria-label="exit delay" />
           Animation duration <TextInput value={animationDuration} type="number" onChange={val => setAnimationDuration(val)} aria-label="animation duration" />
@@ -186,6 +168,7 @@ OptionsTooltip = () => {
           <Select
             onToggle={() => setFlipSelectOpen(!flipSelectOpen)}
             onSelect={(event, selection) => {
+              console.log(selection);
               setFlipBehavior(selection);
               setFlipSelectOpen(false);
             }}
@@ -194,7 +177,7 @@ OptionsTooltip = () => {
             menuAppendTo={() => document.body}
           >
             <SelectOption value="flip" />
-            <SelectOption value={['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']} />
+            <SelectOption value="clockwise">['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']</SelectOption>
           </Select>
         </div>
       </div>
@@ -205,15 +188,14 @@ OptionsTooltip = () => {
           }
           trigger={trigger.join(' ')}
           enableFlip={enableFlip}
-          flipBehavior={flipBehavior}
+          flipBehavior={flipBehavior === 'flip' ? 'flip' : ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']}
           position={position}
           isVisible={isVisible}
-          boundary={boundary.startsWith('HTMLElement') ? document.getElementById('tooltip-boundary') : boundary}
-          appendTo={() => document.getElementById('tooltip-boundary')}
           entryDelay={entryDelayInput}
           exitDelay={exitDelayInput}
           animationDuration={animationDuration}
           isContentLeftAligned={contentLeftAligned}
+          appendTo={() => document.getElementById('tooltip-boundary')}
         >
           <Button className="tooltip-button">Tooltip</Button>
         </Tooltip>

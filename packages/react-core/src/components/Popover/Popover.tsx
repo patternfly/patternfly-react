@@ -1,6 +1,4 @@
 import * as React from 'react';
-import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
-import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
@@ -11,11 +9,13 @@ import { PopoverBody } from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
-import { GenerateId } from '../../helpers/GenerateId/GenerateId';
+import { PopoverArrow } from './PopoverArrow';
 import popoverMaxWidth from '@patternfly/react-tokens/dist/js/c_popover_MaxWidth';
+import popoverMinWidth from '@patternfly/react-tokens/dist/js/c_popover_MinWidth';
 import { ReactElement } from 'react';
-import { PickOptional } from '../../helpers/typeUtils';
 import { FocusTrap } from '../../helpers';
+import { Popper } from '../../helpers/Popper/Popper';
+import { getUniqueId } from '../../helpers/util';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -29,11 +29,9 @@ export interface PopoverProps {
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** The element to append the popover to, defaults to body */
-  appendTo?: Element | ((ref: Element) => Element);
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /** Body content */
   bodyContent: React.ReactNode;
-  /** If enableFlip is true, the popover responds to this boundary */
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** The reference element to which the popover is relatively placed to */
   children: ReactElement<any>;
   /** Popover additional class */
@@ -42,7 +40,10 @@ export interface PopoverProps {
   closeBtnAriaLabel?: string;
   /** Distance of the popover to its target, defaults to 25 */
   distance?: number;
-  /** If true, tries to keep the popover in view by flipping it if necessary */
+  /**
+   * If true, tries to keep the popover in view by flipping it if necessary
+   * If the position is set to 'auto', this prop is ignored
+   */
   enableFlip?: boolean;
   /**
    * The desired position to flip the popover to if the initial position is not possible.
@@ -72,15 +73,15 @@ export interface PopoverProps {
   /** Maximum width of the popover (default 18.75rem) */
   maxWidth?: string;
   /** Lifecycle function invoked when the popover has fully transitioned out. */
-  onHidden?: (tip: TippyInstance) => void;
+  onHidden?: () => void;
   /** Lifecycle function invoked when the popover begins to transition out. */
-  onHide?: (tip: TippyInstance) => void;
+  onHide?: () => void;
   /** Lifecycle function invoked when the popover has been mounted to the DOM. */
-  onMount?: (tip: TippyInstance) => void;
+  onMount?: () => void;
   /** Lifecycle function invoked when the popover begins to transition in. */
-  onShow?: (tip: TippyInstance) => void;
+  onShow?: () => void;
   /** Lifecycle function invoked when the popover has fully transitioned in. */
-  onShown?: (tip: TippyInstance) => void;
+  onShown?: () => void;
   /**
    * Popover position. Note: With 'enableFlip' set to true,
    * it will change the position if there is not enough space for the starting position.
@@ -89,13 +90,20 @@ export interface PopoverProps {
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
-   * clicked or the ESC key is used
+   * clicked, Enter key was used on it, or the ESC key is used
    */
-  shouldClose?: (tip: TippyInstance) => void;
+  shouldClose?: (hideFnc?: any) => void;
+  /**
+   * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
+   * used on the focused trigger
+   */
+  shouldOpen?: (showFnc?: any) => void;
   /** z-index of the popover */
   zIndex?: number;
-  /** additional Props to pass through to tippy.js */
-  tippyProps?: Partial<TippyProps>;
+  /** CSS fade transition animation duration */
+  animationDuration?: number;
+  /** id used as part of the various popover elements (popover-${id}-header/body/footer) */
+  id?: string;
 }
 
 export interface PopoverState {
@@ -103,240 +111,211 @@ export interface PopoverState {
   focusTrapActive: boolean;
 }
 
-export class Popover extends React.Component<PopoverProps, PopoverState> {
-  static displayName = 'Popover';
-  private tip: TippyInstance;
-  static defaultProps: PickOptional<PopoverProps> = {
-    position: 'top',
-    enableFlip: true,
-    className: '',
-    isVisible: null as boolean,
-    shouldClose: (): void => null,
-    'aria-label': '',
-    headerContent: null as typeof PopoverHeader,
-    footerContent: null as typeof PopoverFooter,
-    appendTo: () => document.body,
-    hideOnOutsideClick: true,
-    onHide: (): void => null,
-    onHidden: (): void => null,
-    onShow: (): void => null,
-    onShown: (): void => null,
-    onMount: (): void => null,
-    zIndex: 9999,
-    maxWidth: popoverMaxWidth && popoverMaxWidth.value,
-    closeBtnAriaLabel: 'Close',
-    distance: 25,
-    boundary: 'window',
-    // For every initial starting position, there are 3 escape positions
-    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
-    tippyProps: {}
-  };
-
-  constructor(props: PopoverProps) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      focusTrapActive: false
-    };
-  }
-
-  hideOrNotify = () => {
-    if (this.props.isVisible === null) {
-      // Handle closing
-      this.tip.hide();
-    } else {
-      // notify consumer
-      this.props.shouldClose(this.tip);
-    }
-  };
-
-  handleEscOrEnterKey = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
-      this.hideOrNotify();
-    } else if (!this.state.isOpen && event.keyCode === KEY_CODES.ENTER) {
-      this.setState({ focusTrapActive: true });
-    }
-  };
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleEscOrEnterKey, false);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscOrEnterKey, false);
-  }
-
-  storeTippyInstance = (tip: TippyInstance) => {
-    if (this.props.minWidth) {
-      tip.popperChildren.tooltip.style.minWidth = this.props.minWidth;
-    }
-    tip.popperChildren.tooltip.classList.add(styles.popover);
-    this.tip = tip;
-  };
-
-  closePopover = () => {
-    this.hideOrNotify();
-    this.setState({ focusTrapActive: false });
-  };
-
-  hideAllPopovers = () => {
-    document.querySelectorAll('.tippy-popper').forEach((popper: any) => {
-      if (popper._tippy) {
-        popper._tippy.hide();
+export const Popover: React.FunctionComponent<PopoverProps> = ({
+  children,
+  position = 'top',
+  enableFlip = true,
+  className = '',
+  isVisible = null as boolean,
+  shouldClose = (): void => null,
+  shouldOpen = (): void => null,
+  'aria-label': ariaLabel = '',
+  bodyContent,
+  headerContent = null as typeof PopoverHeader,
+  footerContent = null as typeof PopoverFooter,
+  appendTo = () => document.body,
+  hideOnOutsideClick = true,
+  onHide = (): void => null,
+  onHidden = (): void => null,
+  onShow = (): void => null,
+  onShown = (): void => null,
+  onMount = (): void => null,
+  zIndex = 9999,
+  minWidth = popoverMinWidth && popoverMinWidth.value,
+  maxWidth = popoverMaxWidth && popoverMaxWidth.value,
+  closeBtnAriaLabel = 'Close',
+  distance = 25,
+  // For every initial starting position, there are 3 escape positions
+  flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+  animationDuration = 300,
+  id,
+  ...rest
+}) => {
+  // could make this a prop in the future (true | false | 'toggle')
+  // const hideOnClick = true;
+  const uniqueId = id || getUniqueId();
+  const triggerManually = isVisible !== null;
+  const [visible, setVisible] = React.useState(false);
+  const [opacity, setOpacity] = React.useState(0);
+  const [focusTrapActive, setFocusTrapActive] = React.useState(false);
+  const transitionTimerRef = React.useRef(null);
+  const showTimerRef = React.useRef(null);
+  const hideTimerRef = React.useRef(null);
+  React.useEffect(() => {
+    onMount();
+  }, []);
+  React.useEffect(() => {
+    if (triggerManually) {
+      if (isVisible) {
+        show();
+      } else {
+        hide();
       }
-    });
+    }
+  }, [isVisible, triggerManually]);
+  const show = (withFocusTrap?: boolean) => {
+    onShow();
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+    }
+    if (hideTimerRef.current) {
+      clearTimeout(hideTimerRef.current);
+    }
+    showTimerRef.current = setTimeout(() => {
+      setVisible(true);
+      setOpacity(1);
+      withFocusTrap && setFocusTrapActive(true);
+      onShown();
+    }, 0);
   };
-
-  onHide = (tip: TippyInstance) => {
-    if (this.state.isOpen) {
-      this.setState({ isOpen: false });
+  const hide = () => {
+    onHide();
+    if (showTimerRef.current) {
+      clearTimeout(showTimerRef.current);
     }
-    return this.props.onHide(tip);
+    hideTimerRef.current = setTimeout(() => {
+      setOpacity(0);
+      setFocusTrapActive(false);
+      transitionTimerRef.current = setTimeout(() => {
+        setVisible(false);
+        onHidden();
+      }, animationDuration);
+    }, 0);
   };
-
-  onHidden = (tip: TippyInstance) => this.props.onHidden(tip);
-
-  onMount = (tip: TippyInstance) => this.props.onMount(tip);
-
-  onShow = (tip: TippyInstance) => {
-    const { hideOnOutsideClick, isVisible, onShow } = this.props;
-    // hide all other open popovers first if events are managed by us
-    if (!hideOnOutsideClick && isVisible === null) {
-      this.hideAllPopovers();
-    }
-    if (this.state.isOpen === false) {
-      this.setState({ isOpen: true });
-    }
-    return onShow(tip);
+  const positionModifiers = {
+    top: styles.modifiers.top,
+    bottom: styles.modifiers.bottom,
+    left: styles.modifiers.left,
+    right: styles.modifiers.right
   };
-
-  onShown = (tip: TippyInstance) => this.props.onShown(tip);
-
-  onContentMouseDown = () => {
-    if (this.state.focusTrapActive) {
-      this.setState({ focusTrapActive: false });
+  const hasCustomMinWidth = minWidth !== popoverMinWidth.value;
+  const hasCustomMaxWidth = maxWidth !== popoverMaxWidth.value;
+  const onDocumentKeyDown = (event: KeyboardEvent) => {
+    if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
+      if (triggerManually) {
+        shouldClose(hide);
+      } else {
+        hide();
+      }
     }
   };
-
-  render() {
-    /* eslint-disable @typescript-eslint/no-unused-vars */
-    const {
-      position,
-      enableFlip,
-      children,
-      className,
-      'aria-label': ariaLabel,
-      headerContent,
-      bodyContent,
-      footerContent,
-      isVisible,
-      shouldClose,
-      appendTo,
-      hideOnOutsideClick,
-      onHide,
-      onHidden,
-      onShow,
-      onShown,
-      onMount,
-      zIndex,
-      minWidth,
-      maxWidth,
-      closeBtnAriaLabel,
-      distance,
-      boundary,
-      flipBehavior,
-      tippyProps,
-      ...rest
-    } = this.props;
-    /* eslint-enable @typescript-eslint/no-unused-vars */
-
-    if (!headerContent && !ariaLabel) {
-      return new Error('aria-label is required when header is not used');
+  const onDocumentClick = () => {
+    // did not click on trigger or popper (otherwise the event bubbling would have been prevented) which means we clicked outside
+    if (hideOnOutsideClick && visible) {
+      if (triggerManually) {
+        shouldClose(hide);
+      } else {
+        hide();
+      }
     }
-
-    const content = this.state.isOpen ? (
-      <GenerateId>
-        {randomId => (
-          <FocusTrap
-            active={this.state.focusTrapActive}
-            focusTrapOptions={{ returnFocusOnDeactivate: false, clickOutsideDeactivates: true }}
-          >
-            <div
-              className={css(
-                !enableFlip &&
-                  (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top),
-                className
-              )}
-              role="dialog"
-              aria-modal="true"
-              aria-label={headerContent ? undefined : ariaLabel}
-              aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
-              aria-describedby={`popover-${randomId}-body`}
-              onMouseDown={this.onContentMouseDown}
-              {...rest}
-            >
-              <PopoverContent>
-                <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
-                {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
-                <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
-                {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}
-              </PopoverContent>
-            </div>
-          </FocusTrap>
-        )}
-      </GenerateId>
-    ) : (
-      <></>
-    );
-    const handleEvents = isVisible === null;
-    const shouldHideOnClick = () => {
-      if (handleEvents) {
-        if (hideOnOutsideClick === true) {
-          return true;
+  };
+  const onTriggerEnter = (event: KeyboardEvent) => {
+    if (event.keyCode === KEY_CODES.ENTER) {
+      if (!visible) {
+        if (triggerManually) {
+          shouldOpen(show);
+        } else {
+          show(true);
         }
-        return 'toggle';
+      } else {
+        if (triggerManually) {
+          shouldClose(hide);
+        } else {
+          hide();
+        }
       }
-      return false;
-    };
-    return (
-      <PopoverBase
-        {...tippyProps}
-        arrow
-        onCreate={this.storeTippyInstance}
-        maxWidth={maxWidth}
-        zIndex={zIndex}
-        appendTo={appendTo}
-        content={content}
-        lazy
-        trigger={handleEvents ? 'click' : 'manual'}
-        isVisible={isVisible}
-        hideOnClick={shouldHideOnClick()}
-        theme="pf-popover"
-        interactive
-        interactiveBorder={0}
-        placement={position}
-        distance={distance}
-        flip={enableFlip}
-        flipBehavior={flipBehavior}
-        boundary={boundary}
-        popperOptions={{
-          modifiers: {
-            preventOverflow: {
-              enabled: enableFlip
-            },
-            hide: {
-              enabled: enableFlip
-            }
-          }
-        }}
-        onHide={(tip: TippyInstance) => this.onHide(tip)}
-        onHidden={(tip: TippyInstance) => this.onHidden(tip)}
-        onShow={(tip: TippyInstance) => this.onShow(tip)}
-        onShown={(tip: TippyInstance) => this.onShown(tip)}
-        onMount={(tip: TippyInstance) => this.onMount(tip)}
-      >
-        {children}
-      </PopoverBase>
-    );
-  }
-}
+    }
+  };
+  const onTriggerClick = (event: MouseEvent) => {
+    event.stopPropagation();
+    if (triggerManually) {
+      if (visible) {
+        shouldClose(hide);
+      } else {
+        shouldOpen(show);
+      }
+    } else {
+      if (visible) {
+        hide();
+      } else {
+        show();
+      }
+    }
+  };
+  const onPopperClick = (event: MouseEvent) => {
+    event.stopPropagation();
+  };
+  const onContentMouseDown = () => {
+    if (focusTrapActive) {
+      setFocusTrapActive(false);
+    }
+  };
+  const closePopover = (event: any) => {
+    event.stopPropagation();
+    if (triggerManually) {
+      shouldClose(hide);
+    } else {
+      hide();
+    }
+  };
+  const content = (
+    <FocusTrap
+      active={focusTrapActive}
+      focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: true }}
+      className={css(styles.popover, className)}
+      role="dialog"
+      aria-modal="true"
+      aria-label={headerContent ? undefined : ariaLabel}
+      aria-labelledby={headerContent ? `popover-${uniqueId}-header` : undefined}
+      aria-describedby={`popover-${uniqueId}-body`}
+      onMouseDown={onContentMouseDown}
+      style={{
+        minWidth: hasCustomMinWidth ? minWidth : null,
+        maxWidth: hasCustomMaxWidth ? maxWidth : null,
+        opacity,
+        transition: `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`
+      }}
+      {...rest}
+    >
+      <PopoverArrow />
+      <PopoverContent>
+        <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />
+        {headerContent && <PopoverHeader id={`popover-${uniqueId}-header`}>{headerContent}</PopoverHeader>}
+        <PopoverBody id={`popover-${uniqueId}-body`}>{bodyContent}</PopoverBody>
+        {footerContent && <PopoverFooter id={`popover-${uniqueId}-footer`}>{footerContent}</PopoverFooter>}
+      </PopoverContent>
+    </FocusTrap>
+  );
+
+  return (
+    <Popper
+      trigger={children}
+      popper={content}
+      popperMatchesTriggerWidth={false}
+      appendTo={appendTo}
+      isVisible={visible}
+      positionModifiers={positionModifiers}
+      distance={distance}
+      placement={position}
+      onTriggerClick={onTriggerClick}
+      onTriggerEnter={onTriggerEnter}
+      onPopperClick={onPopperClick}
+      onDocumentClick={onDocumentClick}
+      onDocumentKeyDown={onDocumentKeyDown}
+      enableFlip={enableFlip}
+      zIndex={zIndex}
+      flipBehavior={flipBehavior}
+    />
+  );
+};
+Popover.displayName = 'Popover';

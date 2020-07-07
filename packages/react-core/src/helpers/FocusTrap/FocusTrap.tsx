@@ -2,7 +2,7 @@ import * as React from 'react';
 import createFocusTrap from 'focus-trap';
 import { Options as FocusTrapOptions, FocusTrap as IFocusTrap } from 'focus-trap';
 
-interface FocusTrapProps {
+interface FocusTrapProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   active?: boolean;
@@ -77,9 +77,11 @@ export class FocusTrap extends React.Component<FocusTrapProps> {
   }
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { children, className, focusTrapOptions, active, paused, ...rest } = this.props;
     return (
-      <div ref={this.divRef} className={this.props.className}>
-        {this.props.children}
+      <div ref={this.divRef} className={className} {...rest}>
+        {children}
       </div>
     );
   }

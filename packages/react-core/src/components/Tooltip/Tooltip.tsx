@@ -73,16 +73,8 @@ export interface TooltipProps {
   isVisible?: boolean;
   /** z-index of the tooltip */
   zIndex?: number;
-  /** ID */
+  /** id of the tooltip */
   id?: string;
-  /**
-   * If enableFlip is true, the tooltip responds to this boundary
-   * scrollParent: Will try to flip if scrolled out of view
-   * window: Will try to flip if placed near the document's edge and the default tooltip position would overflow
-   * viewport: Will try to flip if the viewport would cause the tooltip to overflow
-   * HTMLElement: Can cause the tooltip to flip when it overflows this HTMLElement
-   */
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
   /** CSS fade transition animation duration */
   animationDuration?: number;
 }
@@ -98,8 +90,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   isContentLeftAligned = false,
   enableFlip = true,
   className = '',
-  entryDelay = 500,
-  exitDelay = 500,
+  entryDelay = 0,
+  exitDelay = 0,
   appendTo = () => document.body,
   zIndex = 9999,
   maxWidth = tooltipMaxWidth.value,
@@ -109,7 +101,6 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
   children,
-  boundary = 'viewport',
   animationDuration = 300,
   ...rest
 }) => {
@@ -125,10 +116,12 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
   const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
-      hide();
-    } else if (event.keyCode === KEY_CODES.ENTER && !visible) {
-      show();
+    if (!triggerManually) {
+      if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
+        hide();
+      } else if (event.keyCode === KEY_CODES.ENTER && !visible) {
+        show();
+      }
     }
   };
   React.useEffect(() => {
@@ -185,7 +178,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     </div>
   );
 
-  const onClick = (event: any, triggerElement: any) => {
+  const onDocumentClick = (event: MouseEvent, triggerElement: HTMLElement) => {
     // event.currentTarget = document
     // event.target could be triggerElement or something else
     if (hideOnClick === true) {
@@ -230,12 +223,11 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       onMouseLeave={triggerOnMouseenter && hide}
       onFocus={triggerOnFocus && show}
       onBlur={triggerOnFocus && hide}
-      onClick={triggerOnClick && onClick}
-      onKeyDown={triggerManually ? null : handleKeyDown}
+      onDocumentClick={triggerOnClick && onDocumentClick}
+      onDocumentKeyDown={triggerManually ? null : handleKeyDown}
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}
-      boundary={boundary}
     />
   );
 };

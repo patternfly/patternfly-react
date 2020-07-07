@@ -50,6 +50,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement>, OUIAPro
   icon?: React.ReactNode | null;
   /** Sets the button tabindex. */
   tabIndex?: number;
+  /** forwarded ref */
+  innerRef?: any;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
@@ -70,6 +72,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   ouiaId,
   ouiaSafe = true,
   tabIndex = null,
+  innerRef,
   ...props
 }: ButtonProps) => {
   const Component = component as any;
@@ -120,6 +123,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       tabIndex={tabIndex !== null ? tabIndex : getDefaultTabIdx()}
       type={isButtonElement ? type : null}
       {...getOUIAProps(Button.displayName, ouiaId, ouiaSafe)}
+      ref={innerRef}
     >
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>

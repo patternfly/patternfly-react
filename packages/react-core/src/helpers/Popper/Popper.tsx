@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from 'react-popper';
-import { Placement, Modifier } from '@popperjs/core';
+import { Placement, Modifier, Boundary } from '@popperjs/core';
 import { Options as FlipOptions } from '@popperjs/core/lib/modifiers/flip';
 import getOppositePlacement from '@popperjs/core/lib/utils/getOppositePlacement';
 import { css } from '@patternfly/react-styles';
@@ -29,29 +29,54 @@ export interface PopperProps {
   direction?: 'up' | 'down';
   /** popper position */
   position?: 'right' | 'left' | 'center';
+  /** Instead of direction and position can set the placement of the popper */
+  placement?: Placement;
   /** The container to append the popper to. Defaults to 'document.body' */
   appendTo?: HTMLElement | (() => HTMLElement);
   /** z-index of the popper element */
   zIndex?: number;
   /** True to make the popper visible */
   isVisible?: boolean;
+  /**
+   * Map class names to positions, for example:
+   * {
+   *   top: styles.modifiers.top,
+   *   bottom: styles.modifiers.bottom,
+   *   left: styles.modifiers.left,
+   *   right: styles.modifiers.right
+   * }
+   */
   positionModifiers?: {
-    top?: any;
-    right?: any;
-    bottom?: any;
-    left?: any;
+    top?: string;
+    right?: string;
+    bottom?: string;
+    left?: string;
   };
+  /** Distance of the popper to the trigger */
   distance?: number;
-  onMouseEnter?: any;
-  onMouseLeave?: any;
-  onFocus?: any;
-  onBlur?: any;
-  onClick?: any;
-  onKeyDown?: any;
+  /** Callback function when mouse enters trigger */
+  onMouseEnter?: (event?: MouseEvent) => void;
+  /** Callback function when mouse leaves trigger */
+  onMouseLeave?: (event?: MouseEvent) => void;
+  /** Callback function when trigger is focused */
+  onFocus?: (event?: FocusEvent) => void;
+  /** Callback function when trigger is blurred (focus leaves) */
+  onBlur?: (event?: FocusEvent) => void;
+  /** Callback function when trigger is clicked */
+  onTriggerClick?: (event?: MouseEvent) => void;
+  /** Callback function when Enter key is used on trigger */
+  onTriggerEnter?: (event?: KeyboardEvent) => void;
+  /** Callback function when popper is clicked */
+  onPopperClick?: (event?: MouseEvent) => void;
+  /** Callback function when document is clicked */
+  onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement) => void;
+  /** Callback function when keydown event occurs on document */
+  onDocumentKeyDown?: (event?: KeyboardEvent) => void;
+  /** Enable to flip the popper when it reaches the boundary */
   enableFlip?: boolean;
-  placement?: Placement;
+  /** The behavior of how the popper flips when it reaches the boundary */
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  // boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -70,35 +95,58 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onMouseLeave,
   onFocus,
   onBlur,
-  onClick,
-  onKeyDown,
+  onDocumentClick,
+  onTriggerClick,
+  onTriggerEnter,
+  onPopperClick,
+  onDocumentKeyDown,
   enableFlip = true,
-  flipBehavior = 'flip',
-  boundary = 'viewport'
+  flipBehavior = 'flip'
+  // boundary = 'viewport',
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
-  const onClickCallback = (event: any) => onClick(event, triggerElement);
+  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, triggerElement), [
+    isVisible,
+    triggerElement,
+    onDocumentClick
+  ]);
   React.useEffect(() => {
     setReady(true);
-  });
+  }, []);
   React.useEffect(() => {
     onMouseEnter && triggerElement && triggerElement.addEventListener('mouseenter', onMouseEnter);
     onMouseLeave && triggerElement && triggerElement.addEventListener('mouseleave', onMouseLeave);
     onFocus && triggerElement && triggerElement.addEventListener('focus', onFocus);
     onBlur && triggerElement && triggerElement.addEventListener('blur', onBlur);
-    onClick && triggerElement && document.addEventListener('click', onClickCallback);
-    onKeyDown && triggerElement && document.addEventListener('keydown', onKeyDown, false);
+    onTriggerClick && triggerElement && triggerElement.addEventListener('click', onTriggerClick, false);
+    onTriggerEnter && triggerElement && triggerElement.addEventListener('keydown', onTriggerEnter, false);
+    onPopperClick && popperElement && popperElement.addEventListener('click', onPopperClick, false);
+    onDocumentClick && triggerElement && document.addEventListener('click', onDocumentClickCallback, false);
+    onDocumentKeyDown && triggerElement && document.addEventListener('keydown', onDocumentKeyDown, false);
     return () => {
       onMouseEnter && triggerElement && triggerElement.removeEventListener('mouseenter', onMouseEnter);
       onMouseLeave && triggerElement && triggerElement.removeEventListener('mouseleave', onMouseLeave);
       onFocus && triggerElement && triggerElement.removeEventListener('focus', onFocus);
       onBlur && triggerElement && triggerElement.removeEventListener('blur', onBlur);
-      onClick && triggerElement && document.removeEventListener('click', onClickCallback);
-      onKeyDown && triggerElement && document.removeEventListener('keydown', onKeyDown, false);
+      onTriggerClick && triggerElement && triggerElement.removeEventListener('click', onTriggerClick, false);
+      onTriggerEnter && triggerElement && triggerElement.removeEventListener('keydown', onTriggerEnter, false);
+      onPopperClick && popperElement && popperElement.removeEventListener('click', onPopperClick, false);
+      onDocumentClick && triggerElement && document.removeEventListener('click', onDocumentClickCallback, false);
+      onDocumentKeyDown && triggerElement && document.removeEventListener('keydown', onDocumentKeyDown, false);
     };
-  }, [triggerElement, onMouseEnter, onMouseLeave, onFocus, onBlur, onClick]);
+  }, [
+    triggerElement,
+    popperElement,
+    onMouseEnter,
+    onMouseLeave,
+    onFocus,
+    onBlur,
+    onDocumentClick,
+    onTriggerClick,
+    onPopperClick
+  ]);
   const getPlacement = () => {
     if (placement) {
       return placement;
@@ -131,7 +179,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }),
     [popperMatchesTriggerWidth]
   );
-  const mapBoundaryOptions: () => Partial<FlipOptions> = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const mapBoundaryOptions: (boundary: string | HTMLElement) => Partial<FlipOptions> = boundary => {
     if (boundary === 'window') {
       return {
         // equivalent to boundary: 'window' in v1, usually NOT necessary in v2
@@ -142,7 +191,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       return {
         // check the reference's/trigger's boundary context instead of popper's
         altBoundary: true,
-        boundary: 'clippingParents'
+        boundary: 'clippingParents' as Boundary
       };
     } else if (boundary === 'viewport') {
       return {
@@ -153,11 +202,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       // HTMLElement
       return {
         altBoundary: false,
-        boundary
+        boundary: boundary as HTMLElement
       };
     }
   };
-  const mapBoundaryOptionsMemo = React.useMemo(mapBoundaryOptions, [boundary]);
+  // maybe make this an option again to be backwards compatible although it shouldn't be needed anymore
+  // const mapBoundaryOptionsMemo = React.useMemo(mapBoundaryOptions, [boundary]);
   const { styles: popperStyles, attributes } = usePopper(triggerElement, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
@@ -177,10 +227,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       },
       {
         name: 'flip',
-        enabled: enableFlip,
+        enabled: getPlacementMemo.startsWith('auto') || enableFlip,
         options: {
-          fallbackPlacements: flipBehavior === 'flip' ? [getOppositePlacementMemo] : flipBehavior,
-          ...mapBoundaryOptionsMemo
+          fallbackPlacements: flipBehavior === 'flip' ? [getOppositePlacementMemo] : flipBehavior
+          // ...mapBoundaryOptionsMemo
         }
       },
       sameWidthMod
