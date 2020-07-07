@@ -26,10 +26,9 @@ exports[`Popover should match snapshot (auto-generated) 1`] = `
   popper={
     <FocusTrap
       active={false}
-      aria-describedby="popover-pf-1594141035405wmzbtak3b4-body"
+      aria-describedby="popover-test-body"
       aria-label="''"
       aria-modal="true"
-      boundary="window"
       className="pf-c-popover ''"
       focusTrapOptions={
         Object {
@@ -56,7 +55,7 @@ exports[`Popover should match snapshot (auto-generated) 1`] = `
           onClose={[Function]}
         />
         <PopoverBody
-          id="popover-pf-1594141035405wmzbtak3b4-body"
+          id="popover-test-body"
         >
           <div>
             ReactNode

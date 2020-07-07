@@ -278,11 +278,7 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
     );
 
     if (button.tooltip) {
-      return (
-        <Tooltip content={button.tooltip}>
-          {renderedButton}
-        </Tooltip>
-      );
+      return <Tooltip content={button.tooltip}>{renderedButton}</Tooltip>;
     }
 
     return renderedButton;

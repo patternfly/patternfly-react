@@ -26,8 +26,8 @@ exports[`popover can have a custom minimum width 1`] = `
   popper={
     <FocusTrap
       active={false}
-      aria-describedby="popover-pf-15941411039932r01yr30qc5-body"
-      aria-labelledby="popover-pf-15941411039932r01yr30qc5-header"
+      aria-describedby="popover-test-body"
+      aria-labelledby="popover-test-header"
       aria-modal="true"
       className="pf-c-popover"
       focusTrapOptions={
@@ -55,14 +55,14 @@ exports[`popover can have a custom minimum width 1`] = `
           onClose={[Function]}
         />
         <PopoverHeader
-          id="popover-pf-15941411039932r01yr30qc5-header"
+          id="popover-test-header"
         >
           <div>
             Popover Header
           </div>
         </PopoverHeader>
         <PopoverBody
-          id="popover-pf-15941411039932r01yr30qc5-body"
+          id="popover-test-body"
         >
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -115,8 +115,8 @@ exports[`popover can specify position as object value 1`] = `
   popper={
     <FocusTrap
       active={false}
-      aria-describedby="popover-pf-1594141103994w2ewqbp22i-body"
-      aria-labelledby="popover-pf-1594141103994w2ewqbp22i-header"
+      aria-describedby="popover-test-body"
+      aria-labelledby="popover-test-header"
       aria-modal="true"
       className="pf-c-popover"
       focusTrapOptions={
@@ -144,14 +144,14 @@ exports[`popover can specify position as object value 1`] = `
           onClose={[Function]}
         />
         <PopoverHeader
-          id="popover-pf-1594141103994w2ewqbp22i-header"
+          id="popover-test-header"
         >
           <div>
             Popover Header
           </div>
         </PopoverHeader>
         <PopoverBody
-          id="popover-pf-1594141103994w2ewqbp22i-body"
+          id="popover-test-body"
         >
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -204,8 +204,8 @@ exports[`popover renders close-button, header and body 1`] = `
   popper={
     <FocusTrap
       active={false}
-      aria-describedby="popover-pf-1594141103989q915r8xpar-body"
-      aria-labelledby="popover-pf-1594141103989q915r8xpar-header"
+      aria-describedby="popover-test-body"
+      aria-labelledby="popover-test-header"
       aria-modal="true"
       className="pf-c-popover"
       focusTrapOptions={
@@ -233,14 +233,14 @@ exports[`popover renders close-button, header and body 1`] = `
           onClose={[Function]}
         />
         <PopoverHeader
-          id="popover-pf-1594141103989q915r8xpar-header"
+          id="popover-test-header"
         >
           <div>
             Popover Header
           </div>
         </PopoverHeader>
         <PopoverBody
-          id="popover-pf-1594141103989q915r8xpar-body"
+          id="popover-test-body"
         >
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.

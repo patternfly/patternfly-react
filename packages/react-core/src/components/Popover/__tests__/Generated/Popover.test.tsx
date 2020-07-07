@@ -10,6 +10,7 @@ import {} from '../..';
 it('Popover should match snapshot (auto-generated)', () => {
   const view = shallow(
     <Popover
+      id="test"
       aria-label={"''"}
       appendTo={() => document.body}
       bodyContent={<div>ReactNode</div>}
