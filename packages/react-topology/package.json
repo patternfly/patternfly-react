@@ -38,6 +38,7 @@
     "mobx-react": "^6.2.0",
     "mobx-react-lite": "2.0.5",
     "point-in-svg-path": "^1.0.1",
+    "popper.js": "^1.16.1",
     "react-measure": "^2.3.0",
     "tslib": "^1.11.1",
     "webcola": "3.4.0"
