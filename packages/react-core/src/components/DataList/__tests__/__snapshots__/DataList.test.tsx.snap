@@ -45,27 +45,31 @@ exports[`DataList DataListAction dropdown 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <Dropdown
-    dropdownItems={
-      Array [
-        <DropdownItem
-          component="button"
-          onClick={[MockFunction]}
-        >
-          action-1
-        </DropdownItem>,
-        <DropdownItem
-          component="button"
-          onClick={[MockFunction]}
-        >
-          action-2
-        </DropdownItem>,
-      ]
-    }
-    isPlain={true}
-    position="right"
-    toggle={<KebabToggle />}
-  />
+  <div
+    className="pf-c-data-list__action"
+  >
+    <Dropdown
+      dropdownItems={
+        Array [
+          <DropdownItem
+            component="button"
+            onClick={[MockFunction]}
+          >
+            action-1
+          </DropdownItem>,
+          <DropdownItem
+            component="button"
+            onClick={[MockFunction]}
+          >
+            action-2
+          </DropdownItem>,
+        ]
+      }
+      isPlain={true}
+      position="right"
+      toggle={<KebabToggle />}
+    />
+  </div>
 </div>
 `;
 

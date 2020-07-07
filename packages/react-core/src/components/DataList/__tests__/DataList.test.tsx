@@ -116,7 +116,7 @@ describe('DataList', () => {
 
   test('DataListAction dropdown', () => {
     const view = shallow(
-      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
         <Dropdown
           isPlain
           position={DropdownPosition.right}
