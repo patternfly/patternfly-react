@@ -29,13 +29,10 @@ KebabToggle,
 Nav,
 NavItem,
 NavList,
-<<<<<<< HEAD
-=======
 OverflowMenu,
 OverflowMenuControl,
 OverflowMenuDropdownItem,
 OverflowMenuItem,
->>>>>>> add OverflowMenu to toolbar component
 Page,
 PageHeader,
 PageHeaderTools,
