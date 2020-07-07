@@ -10,12 +10,12 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   className?: string;
   /** Visibility at various breakpoints. */
   visibility?: {
-    default: 'hidden' | 'visible';
-    sm: 'hidden' | 'visible';
-    md: 'hidden' | 'visible';
-    lg: 'hidden' | 'visible';
-    xl: 'hidden' | 'visible';
-    '2xl': 'hidden' | 'visible';
+    default?: 'hidden' | 'visible';
+    sm?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl?': 'hidden' | 'visible';
   };
   /** True to make an icon button appear selected */
   isSelected?: boolean;
