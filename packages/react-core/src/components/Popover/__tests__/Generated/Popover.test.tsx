@@ -13,7 +13,6 @@ it('Popover should match snapshot (auto-generated)', () => {
       aria-label={"''"}
       appendTo={() => document.body}
       bodyContent={<div>ReactNode</div>}
-      boundary={'window'}
       children={<p>ReactElement</p>}
       className={"''"}
       closeBtnAriaLabel={"'Close'"}
@@ -34,7 +33,6 @@ it('Popover should match snapshot (auto-generated)', () => {
       position={'top'}
       shouldClose={(): void => null}
       zIndex={9999}
-      tippyProps={undefined}
     />
   );
   expect(view).toMatchSnapshot();

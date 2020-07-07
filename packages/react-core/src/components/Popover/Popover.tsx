@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
-import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
-import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css } from '@patternfly/react-styles';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody } from './PopoverBody';
@@ -25,7 +23,7 @@ export enum PopoverPosition {
   right = 'right'
 }
 
-export interface PopoverProps extends React.HTMLProps<HTMLDivElement> {
+export interface PopoverProps {
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** The element to append the popover to, defaults to body */

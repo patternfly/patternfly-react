@@ -1,8 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
-import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
-import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
 import { TooltipArrow } from './TooltipArrow';
@@ -19,7 +17,7 @@ export enum TooltipPosition {
   right = 'right'
 }
 
-export interface TooltipProps extends React.HTMLProps<HTMLDivElement> {
+export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
   /** The element to append the tooltip to, defaults to body */
   appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
   /**
