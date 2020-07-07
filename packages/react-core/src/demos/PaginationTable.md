@@ -27,6 +27,7 @@ import React from 'react';
 import {
   Checkbox,
   Pagination,
+  Title,
   Toolbar,
   ToolbarContent,
   ToolbarItem,

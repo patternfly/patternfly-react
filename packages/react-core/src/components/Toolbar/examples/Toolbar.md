@@ -935,7 +935,7 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
+import { EditIcon, FilterIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons';
 
 class ToolbarStacked extends React.Component {
   constructor(props) {
