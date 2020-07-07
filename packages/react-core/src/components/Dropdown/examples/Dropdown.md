@@ -970,10 +970,10 @@ class SplitButtonActionDropdown extends React.Component {
       });
     };
     this.onActionClick = event => {
-      console.log('Action clicked!');
+      window.alert('You selected an action button!');
     };
     this.onCogClick = event => {
-      console.log('Cog clicked!');
+      window.alert('You selected the Cog!');
     };
     this.onActionSelect = event => {
       this.setState({
@@ -990,24 +990,24 @@ class SplitButtonActionDropdown extends React.Component {
   render() {
     const { isActionOpen, isCogOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="action" component="button">
+      <DropdownItem key="action" component="button" onClick={this.onActionClick}>
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" component="button" isDisabled>
+      <DropdownItem key="disabled link" component="button" isDisabled onClick={this.onActionClick}>
         Disabled action
       </DropdownItem>,
-      <DropdownItem key="other action" component="button">
+      <DropdownItem key="other action" component="button" onClick={this.onActionClick}>
         Other action
       </DropdownItem>
     ];
     const dropdownIconItems = [
-      <DropdownItem key="action" component="button" icon={<CogIcon />}>
+      <DropdownItem key="action" component="button" icon={<CogIcon />} onClick={this.onActionClick}>
         Action
       </DropdownItem>,
-      <DropdownItem key="disabled link" component="button" icon={<BellIcon />} isDisabled>
+      <DropdownItem key="disabled link" component="button" icon={<BellIcon />} isDisabled onClick={this.onActionClick}>
         Disabled action
       </DropdownItem>,
-      <DropdownItem key="other action" component="button" icon={<CubesIcon />}>
+      <DropdownItem key="other action" component="button" icon={<CubesIcon />} onClick={this.onActionClick}>
         Other action
       </DropdownItem>
     ];
@@ -1215,9 +1215,9 @@ class ImageTextDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle 
-            id="toggle-id-9" 
-            onToggle={this.onToggle} 
+          <DropdownToggle
+            id="toggle-id-9"
+            onToggle={this.onToggle}
             toggleIndicator={CaretDownIcon}
             icon={<UserIcon />}
           >
