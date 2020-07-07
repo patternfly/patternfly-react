@@ -37,7 +37,7 @@ interface ConnectorComponentProps {
 
 type CreateConnectorRenderer = React.ComponentType<ConnectorComponentProps>;
 
-type OnCreateResult = ConnectorChoice[] | void | undefined | null;
+type OnCreateResult = ConnectorChoice[] | void | undefined | null | React.ReactElement[];
 
 type CreateConnectorWidgetProps = {
   element: Node;
@@ -63,8 +63,11 @@ interface PromptData {
   element: Node;
   target: Node | Graph;
   event: DragEvent;
-  choices: ConnectorChoice[];
+  choices: ConnectorChoice[] | React.ReactElement[];
 }
+
+const isReactElementArray = (choices: ConnectorChoice[] | React.ReactElement[]): choices is React.ReactElement[] =>
+  React.isValidElement(choices[0]);
 
 const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
 const DEFAULT_HANDLE_LENGTH = 32;
@@ -187,16 +190,18 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
             onKeepAlive(false);
           }}
         >
-          {prompt.choices.map((c: ConnectorChoice) => (
-            <ContextMenuItem
-              key={c.label}
-              onClick={() => {
-                onCreate(prompt.element, prompt.target, prompt.event, hintsRef.current, c);
-              }}
-            >
-              {c.label}
-            </ContextMenuItem>
-          ))}
+          {isReactElementArray(prompt.choices)
+            ? prompt.choices
+            : prompt.choices.map((c: ConnectorChoice) => (
+                <ContextMenuItem
+                  key={c.label}
+                  onClick={() => {
+                    onCreate(prompt.element, prompt.target, prompt.event, hintsRef.current, c);
+                  }}
+                >
+                  {c.label}
+                </ContextMenuItem>
+              ))}
         </ContextMenu>
       )}
     </>
