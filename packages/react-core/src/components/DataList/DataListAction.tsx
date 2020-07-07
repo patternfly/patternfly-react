@@ -23,6 +23,8 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
+  /* Flag to indicate that the action is a plain button (e.g. kebab dropdown toggle) so that styling is applied to align the button */
+  isPlainButtonAction?: boolean;
 }
 
 interface DataListActionState {
@@ -54,13 +56,14 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
       id,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      isPlainButtonAction,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
 
     return (
       <div className={css(styles.dataListItemAction, formatBreakpointMods(visibility, styles), className)} {...props}>
-        {children}
+        {isPlainButtonAction ? <div className={css(styles.dataListAction)}>{children}</div> : children}
       </div>
     );
   }
