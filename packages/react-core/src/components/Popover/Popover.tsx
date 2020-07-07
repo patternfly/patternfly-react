@@ -234,8 +234,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
-  const onTriggerClick = (event: MouseEvent) => {
-    event.stopPropagation();
+  const onTriggerClick = () => {
     if (triggerManually) {
       if (visible) {
         shouldClose(hide);

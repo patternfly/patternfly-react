@@ -56,9 +56,7 @@ describe('Form Demo Test', () => {
   });
 
   it('Verify selecting the form label help icon launches popover', () => {
-    cy.get('#helper-text-target')
-      .click()
-      .should('have.attr', 'aria-expanded', 'true');
+    cy.get('#helper-text-target').click();
     cy.get('.pf-c-popover').should('exist');
   });
 });
