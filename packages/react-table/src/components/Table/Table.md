@@ -3,7 +3,7 @@ title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
 typescript: true
-propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell']
+propComponents: ['Table', 'TableHeader', 'TableBody', 'EditableSelectInputCell', 'EditableTextCell', 'RowErrors', 'IHeaderRow', 'IRowData', 'IColumn', 'IExtraRowData', 'IExtraColumnData', 'ISortBy', 'IAction', 'ISeparator', 'ICell', 'IRowCell', 'IValidatorDef', 'IRow']
 ouia: true
 ---
 
@@ -1561,6 +1561,7 @@ class EditableRowsTable extends React.Component {
                 editableSelectProps: {
                   variant: 'typeaheadmulti',
                   'aria-label': "Row 2 cell 4 content",
+                  toggleId: 'editable-toggle'
                 }
               }
             },

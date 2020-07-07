@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.19.0...@patternfly/react-integration@4.20.0) (2020-07-06)
+
+
+### Features
+
+* **Select:** add option description property ([#4460](https://github.com/patternfly/patternfly-react/issues/4460)) ([bda22a3](https://github.com/patternfly/patternfly-react/commit/bda22a37f886a69504fab66da7f4827465552dc6))
+
+
+
+
+
+# [4.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.18.0...@patternfly/react-integration@4.19.0) (2020-07-02)
+
+
+### Features
+
+* **button:** add support to small variation ([#4433](https://github.com/patternfly/patternfly-react/issues/4433)) ([af9e292](https://github.com/patternfly/patternfly-react/commit/af9e292cd7ebd2752dfe7e220c28cf230bddb6d5))
+
+
+
+
+
 # [4.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.17.0...@patternfly/react-integration@4.18.0) (2020-06-25)
 
 

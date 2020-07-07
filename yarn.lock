@@ -11106,11 +11106,13 @@ gatsby-transformer-json@^2.3.0:
     "@babel/runtime" "^7.8.7"
     bluebird "^3.7.2"
 
-gatsby-transformer-react-docgen-typescript@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-react-docgen-typescript/-/gatsby-transformer-react-docgen-typescript-4.0.2.tgz#2abd0ef0250ccd2ba3e01732bdd5b7d1afcc79af"
+gatsby-transformer-react-docgen-typescript@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.npmjs.org/gatsby-transformer-react-docgen-typescript/-/gatsby-transformer-react-docgen-typescript-4.0.5.tgz#777e18c9f024e2693d016d1e716d21d1aabd57f7"
+  integrity sha512-33BumJ+Zkf5QA6gNNjognxMDHtCboTDq8HOfIRWwcHxhgzW3eRsRoZXHJPgq4yHwNjXvJoulqJlXYI6JnTZ2OQ==
   dependencies:
     react-docgen "^5.3.0"
+    typescript "^3.8.3"
 
 gatsby@2.21.0:
   version "2.21.0"

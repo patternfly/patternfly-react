@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.10.3...@patternfly/react-table@4.10.4) (2020-07-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.10.2...@patternfly/react-table@4.10.3) (2020-07-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.10.1...@patternfly/react-table@4.10.2) (2020-07-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [4.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.10.0...@patternfly/react-table@4.10.1) (2020-07-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [4.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.9.0...@patternfly/react-table@4.10.0) (2020-07-02)
+
+
+### Bug Fixes
+
+* **Select:** handle missing select group label ([#4464](https://github.com/patternfly/patternfly-react/issues/4464)) ([f29b8d9](https://github.com/patternfly/patternfly-react/commit/f29b8d90e8222ed5fcb0ca8918fd5ccf5e4160bc))
+
+
+### Features
+
+* **table:** publishes prop type interfaces in docs ([#4461](https://github.com/patternfly/patternfly-react/issues/4461)) ([d70bf0f](https://github.com/patternfly/patternfly-react/commit/d70bf0fd54e77092c2dae44718b11296b880d82e))
+
+
+
+
+
 # [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.8.6...@patternfly/react-table@4.9.0) (2020-06-25)
 
 

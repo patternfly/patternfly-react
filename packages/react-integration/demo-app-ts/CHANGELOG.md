@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.20.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.20.1...demo-app-ts@4.20.2) (2020-07-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.20.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.20.0...demo-app-ts@4.20.1) (2020-07-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.20.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.19.1...demo-app-ts@4.20.0) (2020-07-06)
+
+
+### Features
+
+* **Select:** add option description property ([#4460](https://github.com/patternfly/patternfly-react/issues/4460)) ([bda22a3](https://github.com/patternfly/patternfly-react/commit/bda22a37f886a69504fab66da7f4827465552dc6))
+
+
+
+
+
+## [4.19.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.19.0...demo-app-ts@4.19.1) (2020-07-06)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [4.19.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.18.0...demo-app-ts@4.19.0) (2020-07-02)
+
+
+### Features
+
+* **button:** add support to small variation ([#4433](https://github.com/patternfly/patternfly-react/issues/4433)) ([af9e292](https://github.com/patternfly/patternfly-react/commit/af9e292cd7ebd2752dfe7e220c28cf230bddb6d5))
+
+
+
+
+
 # [4.18.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.17.5...demo-app-ts@4.18.0) (2020-06-25)
 
 

@@ -111,6 +111,9 @@ export class ButtonDemo extends React.Component<ButtonProps, ButtonDemoState> {
             Aria-disabled with tooltip
           </Button>
         </Tooltip>
+        <Button {...this.normalButton} id="normal-btn-12" isSmall>
+          Small button
+        </Button>
 
         <Button
           id="aria-disabled-btn-1"

@@ -13,6 +13,14 @@ describe('Select Test', () => {
       .should('exist');
   });
 
+  it('Verify Description Select', () => {
+    cy.get('#single-select-with-descriptions').click();
+    cy.get('#pf-random-id-21-2').click();
+    cy.get('#single-select-with-descriptions')
+      .contains('Miss')
+      .should('exist');
+  });
+
   it('Verify Disabled Single Select', () => {
     cy.get('#disabled-single-select').should('be.disabled');
   });

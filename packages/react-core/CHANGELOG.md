@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.27.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.1...@patternfly/react-core@4.27.2) (2020-07-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.27.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.0...@patternfly/react-core@4.27.1) (2020-07-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.26.0...@patternfly/react-core@4.27.0) (2020-07-06)
+
+
+### Features
+
+* **Select:** add option description property ([#4460](https://github.com/patternfly/patternfly-react/issues/4460)) ([bda22a3](https://github.com/patternfly/patternfly-react/commit/bda22a37f886a69504fab66da7f4827465552dc6))
+
+
+
+
+
+# [4.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.25.0...@patternfly/react-core@4.26.0) (2020-07-06)
+
+
+### Features
+
+* **Select:** add logic to handle SelectOptionObject in comparisons ([#4469](https://github.com/patternfly/patternfly-react/issues/4469)) ([6179b52](https://github.com/patternfly/patternfly-react/commit/6179b524d59f50d373bbbe294897361f69ced598))
+
+
+
+
+
+# [4.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.24.0...@patternfly/react-core@4.25.0) (2020-07-02)
+
+
+### Bug Fixes
+
+* **Select:** handle missing select group label ([#4464](https://github.com/patternfly/patternfly-react/issues/4464)) ([f29b8d9](https://github.com/patternfly/patternfly-react/commit/f29b8d90e8222ed5fcb0ca8918fd5ccf5e4160bc))
+
+
+### Features
+
+* **button:** add support to small variation ([#4433](https://github.com/patternfly/patternfly-react/issues/4433)) ([af9e292](https://github.com/patternfly/patternfly-react/commit/af9e292cd7ebd2752dfe7e220c28cf230bddb6d5))
+
+
+
+
+
 # [4.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.23.1...@patternfly/react-core@4.24.0) (2020-06-25)
 
 

@@ -169,3 +169,18 @@ ButtonTypes = () => (
   </React.Fragment>
 );
 ```
+
+```js title=Small
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+
+ButtonSmallVariants = () => (
+  <React.Fragment>
+    <Button variant="primary" isSmall>Primary</Button>{' '}
+    <Button variant="secondary" isSmall>Secondary</Button>{' '}
+    <Button variant="tertiary" isSmall>Tertiary</Button>{' '}
+    <Button variant="danger" isSmall>Danger</Button>
+    <br /><br />
+  </React.Fragment>
+);
+```

@@ -91,16 +91,15 @@ class PageLayoutDefaultNav extends React.Component {
       .catch(err => this.setState({ error: err, perPage: 0, page: 0, total: 0 }));
   }
 
-    componentDidMount() {
+  componentDidMount() {
     this.fetch(this.state.page || 1, this.state.perPage || 20);
   }
-
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem, res } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -139,7 +138,12 @@ class PageLayoutDefaultNav extends React.Component {
     ];
     const headerTools = (
       <PageHeaderTools>
-        <PageHeaderToolsGroup visibility={{ default: 'hidden', lg: 'visible' }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */>
+        <PageHeaderToolsGroup
+          visibility={{
+            default: 'hidden',
+            lg: 'visible'
+          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+        >
           <PageHeaderToolsItem>
             <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
@@ -152,7 +156,11 @@ class PageLayoutDefaultNav extends React.Component {
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
         <PageHeaderToolsGroup>
-          <PageHeaderToolsItem visibility={{ lg: 'hidden' }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */>
+          <PageHeaderToolsItem
+            visibility={{
+              lg: 'hidden'
+            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
+          >
             <Dropdown
               isPlain
               position="right"
@@ -162,19 +170,15 @@ class PageLayoutDefaultNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </PageHeaderToolsItem>
-          <PageHeaderToolsItem visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */>
+          <PageHeaderToolsItem
+            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
+          >
             <Dropdown
               isPlain
               position="right"
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
-              toggle={
-                <DropdownToggle 
-                  onToggle={this.onDropdownToggle} 
-                >
-                  John Smith
-                </DropdownToggle>
-              }
+              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
               dropdownItems={userDropdownItems}
             />
           </PageHeaderToolsItem>
@@ -184,13 +188,9 @@ class PageLayoutDefaultNav extends React.Component {
     );
 
     const Header = (
-      <PageHeader
-        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
-        headerTools={headerTools}
-        showNavToggle
-      />
+      <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
 
