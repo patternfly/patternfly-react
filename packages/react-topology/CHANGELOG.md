@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.15...@patternfly/react-topology@4.4.16) (2020-07-08)
+
+
+### Bug Fixes
+
+* **topology:** add lost support for custom menu items in withCreateConnector ([#4493](https://github.com/patternfly/patternfly-react/issues/4493)) ([4fbb23d](https://github.com/patternfly/patternfly-react/commit/4fbb23d56876d0e12cc9e45bb71bd5a72771e5cf))
+* **topology:** correct mobx dependencies ([#4487](https://github.com/patternfly/patternfly-react/issues/4487)) ([6a17897](https://github.com/patternfly/patternfly-react/commit/6a17897c8c6a12201c95410080d745c0f48a6d4d))
+
+
+
+
+
 ## [4.4.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.14...@patternfly/react-topology@4.4.15) (2020-07-08)
 
 **Note:** Version bump only for package @patternfly/react-topology

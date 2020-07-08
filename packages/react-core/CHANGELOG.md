@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.27.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.3...@patternfly/react-core@4.27.4) (2020-07-08)
+
+
+### Bug Fixes
+
+* **DrawerPanelContent:** don't render children when hidden ([#4500](https://github.com/patternfly/patternfly-react/issues/4500)) ([10c7480](https://github.com/patternfly/patternfly-react/commit/10c7480364121c21fa8bdd2fb737758d716acf06))
+
+
+
+
+
 ## [4.27.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.2...@patternfly/react-core@4.27.3) (2020-07-08)
 
 **Note:** Version bump only for package @patternfly/react-core
