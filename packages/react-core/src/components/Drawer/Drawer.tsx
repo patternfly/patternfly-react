@@ -42,9 +42,9 @@ export const Drawer: React.SFC<DrawerProps> = ({
   onExpand = () => {},
   ...props
 }: DrawerProps) => {
-  React.useEffect(() => {
+  if (isExpanded) {
     setTimeout(onExpand, timeout);
-  }, [isExpanded]);
+  }
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic }}>
