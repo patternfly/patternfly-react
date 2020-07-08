@@ -2772,6 +2772,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                   aria-labelledby=" pf-toggle-id-4"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-4"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -2897,7 +2898,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-4"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -3391,6 +3392,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                   aria-labelledby=" checkbox-select-expanded-filtered"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="checkbox-select-expanded-filtered"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -3516,7 +3518,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
             disabled={false}
             id="checkbox-select-expanded-filtered"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -4001,6 +4003,7 @@ exports[`select custom select filter filters properly 1`] = `
                   aria-labelledby=" custom-select-filters"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="custom-select-filters"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -4134,7 +4137,7 @@ exports[`select custom select filter filters properly 1`] = `
             disabled={false}
             id="custom-select-filters"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -7179,6 +7182,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                   aria-labelledby=" typeahead-multi-select-closed"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="typeahead-multi-select-closed"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -7236,7 +7240,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             disabled={false}
             id="typeahead-multi-select-closed"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -7421,6 +7425,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   aria-labelledby=" pf-toggle-id-13"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-13"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -7531,7 +7536,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-13"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -8099,6 +8104,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   aria-labelledby=" typeahead-multi-select-selected"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="typeahead-multi-select-selected"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -8471,7 +8477,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             disabled={false}
             id="typeahead-multi-select-selected"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -8971,6 +8977,7 @@ exports[`typeahead multi select test onChange 1`] = `
                   aria-labelledby=" pf-toggle-id-15"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-15"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -9080,7 +9087,7 @@ exports[`typeahead multi select test onChange 1`] = `
             disabled={false}
             id="pf-toggle-id-15"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -9297,6 +9304,7 @@ exports[`typeahead select renders closed successfully 1`] = `
                   aria-labelledby=" typeahead-select-closed"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="typeahead-select-closed"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -9354,7 +9362,7 @@ exports[`typeahead select renders closed successfully 1`] = `
             disabled={false}
             id="typeahead-select-closed"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -9539,6 +9547,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   aria-labelledby=" pf-toggle-id-7"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-7"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -9649,7 +9658,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-7"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -10095,6 +10104,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   aria-labelledby=" pf-toggle-id-8"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-8"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -10259,7 +10269,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-8"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -10702,6 +10712,7 @@ exports[`typeahead select test creatable option 1`] = `
                   aria-labelledby=" pf-toggle-id-12"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-12"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -10814,7 +10825,7 @@ exports[`typeahead select test creatable option 1`] = `
             disabled={false}
             id="pf-toggle-id-12"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -11073,6 +11084,7 @@ exports[`typeahead select test onChange 1`] = `
                   aria-labelledby=" pf-toggle-id-10"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-10"
+                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -11182,7 +11194,7 @@ exports[`typeahead select test onChange 1`] = `
             disabled={false}
             id="pf-toggle-id-10"
             onClick={[Function]}
-            onKeyDown={[Function]}
+            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
