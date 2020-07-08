@@ -28,20 +28,24 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
-    {({ isExpanded, isStatic }) => (
-      <div
-        className={css(
-          styles.drawerPanel,
-          hasNoBorder && styles.modifiers.noBorder,
-          formatBreakpointMods(widths, styles),
-          className
-        )}
-        hidden={isStatic ? false : !isExpanded}
-        {...props}
-      >
-        {children}
-      </div>
-    )}
+    {({ isExpanded, isStatic }) => {
+      const hidden = isStatic ? false : !isExpanded;
+
+      return (
+        <div
+          className={css(
+            styles.drawerPanel,
+            hasNoBorder && styles.modifiers.noBorder,
+            formatBreakpointMods(widths, styles),
+            className
+          )}
+          hidden={hidden}
+          {...props}
+        >
+          {!hidden && children}
+        </div>
+      );
+    }}
   </DrawerContext.Consumer>
 );
 DrawerPanelContent.displayName = 'DrawerPanelContent';
