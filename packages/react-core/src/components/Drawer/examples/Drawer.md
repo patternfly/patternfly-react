@@ -95,7 +95,7 @@ class SimpleDrawer extends React.Component {
 }
 ```
 
-```js title=Panel-on-left
+```js title=Panel-on-right
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -109,7 +109,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-class SimpleDrawerPanelLeft extends React.Component {
+class SimpleDrawerPanelRight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -311,7 +311,7 @@ class SimpleDrawerInlineContent extends React.Component {
 }
 ```
 
-```js title=-Inline-panel-on-left
+```js title=-Inline-panel-on-right
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -325,7 +325,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-class DrawerInlineContentPanelLeft extends React.Component {
+class DrawerInlineContentPanelRight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
