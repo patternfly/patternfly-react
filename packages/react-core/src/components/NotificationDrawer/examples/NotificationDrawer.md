@@ -268,7 +268,7 @@ class GroupNotificationDrawer extends React.Component {
     };
   }
   render() {
-    const { isOpen, firstGroupExpanded, secondGroupExpanded, thirdGroupExpanded } = this.state;
+    const { isOpenMap, firstGroupExpanded, secondGroupExpanded, thirdGroupExpanded } = this.state;
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
