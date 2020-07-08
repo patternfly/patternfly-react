@@ -23,7 +23,7 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /* Flag to indicate that the action is a plain button (e.g. kebab dropdown toggle) so that styling is applied to align the button */
+  /** Flag to indicate that the action is a plain button (e.g. kebab dropdown toggle) so that styling is applied to align the button */
   isPlainButtonAction?: boolean;
 }
 
