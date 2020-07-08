@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
-import { c_drawer__panel_TransitionDuration }  from '@patternfly/react-tokens/dist/js/c_drawer__panel_TransitionDuration';
+import transitionDuration from '@patternfly/react-tokens/c_drawer__panel_TransitionDuration/c_drawer__panel_TransitionDuration/dist/js/c_drawer__panel_TransitionDuration';
 
 export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
@@ -30,7 +30,7 @@ export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isStatic: false
 });
 
-const timeout = Number.parseInt(c_drawer__panel_TransitionDuration.value.match(/\d+/)[0]);
+const timeout = Number.parseInt(transitionDuration.value.match(/\d+/)[0]);
 
 export const Drawer: React.SFC<DrawerProps> = ({
   className = '',
