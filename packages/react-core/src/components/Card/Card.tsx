@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
+import { getOUIAProps, OUIAProps } from '../../helpers';
 
-export interface CardProps extends React.HTMLProps<HTMLElement> {
+export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Content rendered inside the Card */
   children?: React.ReactNode;
   /** Additional classes added to the Card */
@@ -30,6 +31,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelectable = false,
   isSelected = false,
   isFlat = false,
+  ouiaId,
+  ouiaSafe = true,
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -46,6 +49,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
       )}
       tabIndex={isSelectable ? '0' : undefined}
       {...props}
+      {...getOUIAProps(Card.displayName, ouiaId, ouiaSafe)}
     >
       {children}
     </Component>

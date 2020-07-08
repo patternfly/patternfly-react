@@ -27,6 +27,9 @@ exports[`CatalogTile href renders properly 1`] = `
   >
     <a
       className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+      data-ouia-component-id={5}
+      data-ouia-component-type="PF4/Card"
+      data-ouia-safe={true}
       href="http://patternfly.org"
       id="test-href"
       onClick={[Function]}
@@ -130,6 +133,9 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <div
         className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        data-ouia-component-id={0}
+        data-ouia-component-type="PF4/Card"
+        data-ouia-safe={true}
         href="#"
         id="single-badge-test"
         onClick={[Function]}
@@ -450,6 +456,9 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <div
         className="pf-c-card pf-m-hoverable catalog-tile-pf"
+        data-ouia-component-id={1}
+        data-ouia-component-type="PF4/Card"
+        data-ouia-safe={true}
         href="#"
         id="multi-badge-test"
         onClick={[Function]}
@@ -883,6 +892,9 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <div
         className="pf-c-card pf-m-hoverable catalog-tile-pf"
+        data-ouia-component-id={2}
+        data-ouia-component-type="PF4/Card"
+        data-ouia-safe={true}
         href="#"
         id="test-iconClass"
         onClick={[Function]}
@@ -1160,6 +1172,9 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <a
         className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        data-ouia-component-id={3}
+        data-ouia-component-type="PF4/Card"
+        data-ouia-safe={true}
         href="https://github.com/patternfly/patternfly-react"
         id="tile-footer-test"
         onClick={[Function]}
@@ -1462,6 +1477,9 @@ exports[`CatalogTile renders properly 1`] = `
     >
       <a
         className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        data-ouia-component-id={4}
+        data-ouia-component-type="PF4/Card"
+        data-ouia-safe={true}
         href="https://github.com/patternfly/patternfly-react"
         id="custom-icon-svg-test"
         onClick={[Function]}
