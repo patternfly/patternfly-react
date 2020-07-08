@@ -30,10 +30,10 @@ export const NotificationDrawerListItem: React.FunctionComponent<NotificationDra
   variant,
   ...props
 }: NotificationDrawerListItemProps) => {
-  const onKeyDown = (event: any) => {
+  const onKeyDown = (event: React.KeyboardEvent) => {
     // Accessibility function. Click on the list item when pressing Enter or Space on it.
     if (event.key === 'Enter' || event.key === ' ') {
-      event.target.click();
+      (event.target as HTMLElement).click();
     }
   };
   return (
