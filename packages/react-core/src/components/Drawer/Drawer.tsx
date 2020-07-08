@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
+import { c_drawer__panel_TransitionDuration }  from '@patternfly/react-tokens/dist/js/c_drawer__panel_TransitionDuration';
 
 export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
@@ -15,10 +16,8 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isStatic?: boolean;
   /** Position of the drawer panel */
   position?: 'left' | 'right';
-  /** Lifecycle function invoked when the drawer has been mounted to the DOM. */
-  onMount?: () => void;
-  /** Lifecycle function invoked when the drawer has been unmounted from the DOM. */
-  onUnmount?: () => void;
+  /** Callback when drawer panel is expanded after waiting 250ms for animation to complete. */
+  onExpand?: () => void;
 }
 
 export interface DrawerContextProps {
@@ -31,6 +30,8 @@ export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isStatic: false
 });
 
+const timeout = Number.parseInt(c_drawer__panel_TransitionDuration.value.match(/\d+/)[0]);
+
 export const Drawer: React.SFC<DrawerProps> = ({
   className = '',
   children,
@@ -38,16 +39,12 @@ export const Drawer: React.SFC<DrawerProps> = ({
   isInline = false,
   isStatic = false,
   position = 'right',
-  onMount = () => {},
-  onUnmount = () => {},
+  onExpand = () => {},
   ...props
 }: DrawerProps) => {
   React.useEffect(() => {
-    onMount();
-    return () => {
-      onUnmount();
-    };
-  }, [isExpanded, onMount, onUnmount]);
+    setTimeout(onExpand, timeout);
+  }, [isExpanded]);
 
   return (
     <DrawerContext.Provider value={{ isExpanded, isStatic }}>
