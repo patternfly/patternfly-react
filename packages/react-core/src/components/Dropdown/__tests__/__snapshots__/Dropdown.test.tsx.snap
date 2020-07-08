@@ -228,6 +228,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -249,6 +250,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -270,6 +272,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -291,6 +294,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -313,6 +317,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -334,6 +339,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -370,6 +376,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -391,6 +398,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -412,6 +420,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -433,6 +442,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -455,6 +465,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -476,6 +487,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -659,6 +671,7 @@ exports[`KebabToggle dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -680,6 +693,7 @@ exports[`KebabToggle dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -701,6 +715,7 @@ exports[`KebabToggle dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -722,6 +737,7 @@ exports[`KebabToggle dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -744,6 +760,7 @@ exports[`KebabToggle dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -765,6 +782,7 @@ exports[`KebabToggle dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -800,6 +818,7 @@ exports[`KebabToggle dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -821,6 +840,7 @@ exports[`KebabToggle dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -842,6 +862,7 @@ exports[`KebabToggle dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -863,6 +884,7 @@ exports[`KebabToggle dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -885,6 +907,7 @@ exports[`KebabToggle dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -906,6 +929,7 @@ exports[`KebabToggle dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -1088,6 +1112,7 @@ exports[`KebabToggle expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -1109,6 +1134,7 @@ exports[`KebabToggle expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -1130,6 +1156,7 @@ exports[`KebabToggle expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -1151,6 +1178,7 @@ exports[`KebabToggle expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -1173,6 +1201,7 @@ exports[`KebabToggle expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -1194,6 +1223,7 @@ exports[`KebabToggle expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -1230,6 +1260,7 @@ exports[`KebabToggle expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -1251,6 +1282,7 @@ exports[`KebabToggle expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -1272,6 +1304,7 @@ exports[`KebabToggle expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -1293,6 +1326,7 @@ exports[`KebabToggle expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -1315,6 +1349,7 @@ exports[`KebabToggle expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -1336,6 +1371,7 @@ exports[`KebabToggle expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -1680,6 +1716,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$link"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -1714,6 +1751,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$action"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -1749,6 +1787,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$disabled link"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -1784,6 +1823,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$disabled action"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -1826,6 +1866,7 @@ exports[`KebabToggle expanded 1`] = `
               isPlainText={false}
               onClick={[Function]}
               role="separator"
+              styleChildren={true}
               tooltipProps={Object {}}
             >
               <li
@@ -1864,6 +1905,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$separated link"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -1898,6 +1940,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$separated action"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -1943,6 +1986,7 @@ exports[`KebabToggle plain 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -1964,6 +2008,7 @@ exports[`KebabToggle plain 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -1985,6 +2030,7 @@ exports[`KebabToggle plain 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -2006,6 +2052,7 @@ exports[`KebabToggle plain 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -2028,6 +2075,7 @@ exports[`KebabToggle plain 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -2049,6 +2097,7 @@ exports[`KebabToggle plain 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -2085,6 +2134,7 @@ exports[`KebabToggle plain 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -2106,6 +2156,7 @@ exports[`KebabToggle plain 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -2127,6 +2178,7 @@ exports[`KebabToggle plain 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -2148,6 +2200,7 @@ exports[`KebabToggle plain 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -2170,6 +2223,7 @@ exports[`KebabToggle plain 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -2191,6 +2245,7 @@ exports[`KebabToggle plain 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -2373,6 +2428,7 @@ exports[`KebabToggle regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -2394,6 +2450,7 @@ exports[`KebabToggle regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -2415,6 +2472,7 @@ exports[`KebabToggle regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -2436,6 +2494,7 @@ exports[`KebabToggle regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -2458,6 +2517,7 @@ exports[`KebabToggle regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -2479,6 +2539,7 @@ exports[`KebabToggle regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -2514,6 +2575,7 @@ exports[`KebabToggle regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -2535,6 +2597,7 @@ exports[`KebabToggle regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -2556,6 +2619,7 @@ exports[`KebabToggle regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -2577,6 +2641,7 @@ exports[`KebabToggle regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -2599,6 +2664,7 @@ exports[`KebabToggle regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -2620,6 +2686,7 @@ exports[`KebabToggle regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -2802,6 +2869,7 @@ exports[`KebabToggle right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -2823,6 +2891,7 @@ exports[`KebabToggle right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -2844,6 +2913,7 @@ exports[`KebabToggle right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -2865,6 +2935,7 @@ exports[`KebabToggle right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -2887,6 +2958,7 @@ exports[`KebabToggle right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -2908,6 +2980,7 @@ exports[`KebabToggle right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -2944,6 +3017,7 @@ exports[`KebabToggle right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -2965,6 +3039,7 @@ exports[`KebabToggle right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -2986,6 +3061,7 @@ exports[`KebabToggle right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -3007,6 +3083,7 @@ exports[`KebabToggle right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -3029,6 +3106,7 @@ exports[`KebabToggle right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -3050,6 +3128,7 @@ exports[`KebabToggle right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -3466,6 +3545,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -3487,6 +3567,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -3508,6 +3589,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -3529,6 +3611,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -3551,6 +3634,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -3572,6 +3656,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -3610,6 +3695,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -3631,6 +3717,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -3652,6 +3739,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -3673,6 +3761,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -3695,6 +3784,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -3716,6 +3806,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -3924,6 +4015,7 @@ exports[`dropdown dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -3945,6 +4037,7 @@ exports[`dropdown dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -3966,6 +4059,7 @@ exports[`dropdown dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -3987,6 +4081,7 @@ exports[`dropdown dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -4009,6 +4104,7 @@ exports[`dropdown dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -4030,6 +4126,7 @@ exports[`dropdown dropup 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -4067,6 +4164,7 @@ exports[`dropdown dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -4088,6 +4186,7 @@ exports[`dropdown dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -4109,6 +4208,7 @@ exports[`dropdown dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -4130,6 +4230,7 @@ exports[`dropdown dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -4152,6 +4253,7 @@ exports[`dropdown dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -4173,6 +4275,7 @@ exports[`dropdown dropup 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -4380,6 +4483,7 @@ exports[`dropdown expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -4401,6 +4505,7 @@ exports[`dropdown expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -4422,6 +4527,7 @@ exports[`dropdown expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -4443,6 +4549,7 @@ exports[`dropdown expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -4465,6 +4572,7 @@ exports[`dropdown expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -4486,6 +4594,7 @@ exports[`dropdown expanded 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -4524,6 +4633,7 @@ exports[`dropdown expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -4545,6 +4655,7 @@ exports[`dropdown expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -4566,6 +4677,7 @@ exports[`dropdown expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -4587,6 +4699,7 @@ exports[`dropdown expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -4609,6 +4722,7 @@ exports[`dropdown expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -4630,6 +4744,7 @@ exports[`dropdown expanded 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -4999,6 +5114,7 @@ exports[`dropdown expanded 1`] = `
             key=".$link"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -5033,6 +5149,7 @@ exports[`dropdown expanded 1`] = `
             key=".$action"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -5068,6 +5185,7 @@ exports[`dropdown expanded 1`] = `
             key=".$disabled link"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -5103,6 +5221,7 @@ exports[`dropdown expanded 1`] = `
             key=".$disabled action"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -5145,6 +5264,7 @@ exports[`dropdown expanded 1`] = `
               isPlainText={false}
               onClick={[Function]}
               role="separator"
+              styleChildren={true}
               tooltipProps={Object {}}
             >
               <li
@@ -5183,6 +5303,7 @@ exports[`dropdown expanded 1`] = `
             key=".$separated link"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -5217,6 +5338,7 @@ exports[`dropdown expanded 1`] = `
             key=".$separated action"
             onClick={[Function]}
             role="none"
+            styleChildren={true}
             tooltipProps={Object {}}
           >
             <li
@@ -5262,6 +5384,7 @@ exports[`dropdown primary 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -5283,6 +5406,7 @@ exports[`dropdown primary 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -5304,6 +5428,7 @@ exports[`dropdown primary 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -5325,6 +5450,7 @@ exports[`dropdown primary 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -5347,6 +5473,7 @@ exports[`dropdown primary 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -5368,6 +5495,7 @@ exports[`dropdown primary 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -5406,6 +5534,7 @@ exports[`dropdown primary 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -5427,6 +5556,7 @@ exports[`dropdown primary 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -5448,6 +5578,7 @@ exports[`dropdown primary 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -5469,6 +5600,7 @@ exports[`dropdown primary 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -5491,6 +5623,7 @@ exports[`dropdown primary 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -5512,6 +5645,7 @@ exports[`dropdown primary 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -5721,6 +5855,7 @@ exports[`dropdown regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -5742,6 +5877,7 @@ exports[`dropdown regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -5763,6 +5899,7 @@ exports[`dropdown regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -5784,6 +5921,7 @@ exports[`dropdown regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -5806,6 +5944,7 @@ exports[`dropdown regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -5827,6 +5966,7 @@ exports[`dropdown regular 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -5864,6 +6004,7 @@ exports[`dropdown regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -5885,6 +6026,7 @@ exports[`dropdown regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -5906,6 +6048,7 @@ exports[`dropdown regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -5927,6 +6070,7 @@ exports[`dropdown regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -5949,6 +6093,7 @@ exports[`dropdown regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -5970,6 +6115,7 @@ exports[`dropdown regular 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action
@@ -6177,6 +6323,7 @@ exports[`dropdown right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Link
@@ -6198,6 +6345,7 @@ exports[`dropdown right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Action
@@ -6219,6 +6367,7 @@ exports[`dropdown right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -6240,6 +6389,7 @@ exports[`dropdown right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -6262,6 +6412,7 @@ exports[`dropdown right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Link
@@ -6283,6 +6434,7 @@ exports[`dropdown right aligned 1`] = `
         isPlainText={false}
         onClick={[Function]}
         role="none"
+        styleChildren={true}
         tooltipProps={Object {}}
       >
         Separated Action
@@ -6321,6 +6473,7 @@ exports[`dropdown right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Link
@@ -6342,6 +6495,7 @@ exports[`dropdown right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Action
@@ -6363,6 +6517,7 @@ exports[`dropdown right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -6384,6 +6539,7 @@ exports[`dropdown right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -6406,6 +6562,7 @@ exports[`dropdown right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Link
@@ -6427,6 +6584,7 @@ exports[`dropdown right aligned 1`] = `
           isPlainText={false}
           onClick={[Function]}
           role="none"
+          styleChildren={true}
           tooltipProps={Object {}}
         >
           Separated Action

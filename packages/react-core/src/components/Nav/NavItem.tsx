@@ -4,9 +4,9 @@ import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
-  /** Content rendered inside the nav item */
+  /** Content rendered inside the nav item. If React.isValidElement(children) props onClick, className and aria-current will be injected. */
   children?: React.ReactNode;
-  /** Whether to add className to children */
+  /** Whether to set className on children when React.isValidElement(children) */
   styleChildren?: boolean;
   /** Additional classes added to the nav item */
   className?: string;
@@ -56,22 +56,19 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     );
   };
 
-  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode => {
-    const childClass = child.props && child.props.className;
-    const childClassName = styleChildren
-      ? css(styles.navLink, isActive && styles.modifiers.current, childClass)
-      : childClass;
-    return React.cloneElement(child, {
+  const renderClonedChild = (context: any, child: React.ReactElement): React.ReactNode =>
+    React.cloneElement(child, {
       onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-      className: childClassName,
-      'aria-current': isActive ? 'page' : null
+      'aria-current': isActive ? 'page' : null,
+      ...(styleChildren && {
+        className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
+      })
     });
-  };
 
   return (
     <li className={css(styles.navItem, className)}>
       <NavContext.Consumer>
-        {(context: any) =>
+        {context =>
           React.isValidElement(children)
             ? renderClonedChild(context, children as React.ReactElement)
             : renderDefaultLink(context)

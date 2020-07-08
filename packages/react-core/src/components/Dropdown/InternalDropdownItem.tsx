@@ -8,11 +8,13 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode;
+  /** Whether to set className on component when React.isValidElement(component) */
+  styleChildren?: boolean;
   /** Classes applied to root element of dropdown item */
   className?: string;
   /** Class applied to list element */
   listItemClassName?: string;
-  /** Indicates which component will be used as dropdown item */
+  /** Indicates which component will be used as dropdown item. Will have className injected if React.isValidElement(component) */
   component?: React.ReactNode;
   /** Role for the item */
   role?: string;
@@ -72,7 +74,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       sendRef: () => {}
     },
     enterTriggersArrowDown: false,
-    icon: null
+    icon: null,
+    styleChildren: true
   };
 
   componentDidMount() {
@@ -153,16 +156,16 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       enterTriggersArrowDown,
       icon,
       autoFocus,
+      styleChildren,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
-    const Component = component as any;
-    let classes: string;
+    let classes = css(icon && styles.modifiers.icon, className);
 
-    if (Component === 'a') {
+    if (component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
-    } else if (Component === 'button') {
+    } else if (component === 'button') {
       additionalProps.disabled = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
     }
@@ -175,19 +178,28 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
         childNode
       );
 
+    const renderClonedComponent = (element: React.ReactElement<any>) =>
+      React.cloneElement(element, {
+        ...(styleChildren && {
+          className: css(element.props.className, classes)
+        })
+      });
+
+    const renderDefaultComponent = (tag: string) => {
+      const Component = tag as any;
+      return (
+        <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
+          {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
+          {children}
+        </Component>
+      );
+    };
+
     return (
       <DropdownContext.Consumer>
         {({ onSelect, itemClass, disabledClass, plainTextClass }) => {
-          if (this.props.role === 'separator') {
-            classes = css(icon && styles.modifiers.icon, className);
-          } else {
-            classes = css(
-              icon && styles.modifiers.icon,
-              className,
-              isDisabled && disabledClass,
-              isPlainText && plainTextClass,
-              itemClass
-            );
+          if (this.props.role !== 'separator') {
+            classes = css(classes, isDisabled && disabledClass, isPlainText && plainTextClass, itemClass);
           }
           if (customChild) {
             return React.cloneElement(customChild as React.ReactElement<any>, {
@@ -209,16 +221,9 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               id={id}
             >
               {renderWithTooltip(
-                React.isValidElement(component) ? (
-                  React.cloneElement(component as React.ReactElement<any>, {
-                    className: css(component.props.className, classes)
-                  })
-                ) : (
-                  <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
-                    {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
-                    {children}
-                  </Component>
-                )
+                React.isValidElement(component)
+                  ? renderClonedComponent(component)
+                  : renderDefaultComponent(component as string)
               )}
               {additionalChild && this.extendAdditionalChildRef()}
             </li>

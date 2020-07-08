@@ -9,11 +9,15 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   className?: string;
   /** Class to be applied to list item */
   listItemClassName?: string;
-  /** A ReactElement to render, or a string to use as the component tag.
+  /**
+   * A ReactElement to render, or a string to use as the component tag.
    * Example: component={<Link to="/components/alert/">Alert</Link>}
    * Example: component="button"
+   * If React.isValidElement(component) the className prop will be injected unless styleChildren="false"
    */
   component?: React.ReactNode;
+  /** Whether to set className on component when React.isValidElement(component) */
+  styleChildren?: boolean;
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
   /** Render dropdown item as non-interactive item */
@@ -57,6 +61,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   tabIndex = -1,
   icon = null,
   autoFocus,
+  styleChildren,
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
@@ -79,6 +84,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         customChild={customChild}
         icon={icon}
         autoFocus={autoFocus}
+        styleChildren={styleChildren}
         {...props}
       >
         {children}
