@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.5...@patternfly/react-core@4.28.0) (2020-07-08)
+
+
+### Features
+
+* **dropdownitem:** add support for styleChildren and document ([#4476](https://github.com/patternfly/patternfly-react/issues/4476)) ([5d99c06](https://github.com/patternfly/patternfly-react/commit/5d99c0668afd12fc79695851a1959ed3ce375c81))
+
+
+
+
+
 ## [4.27.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.4...@patternfly/react-core@4.27.5) (2020-07-08)
 
 **Note:** Version bump only for package @patternfly/react-core
