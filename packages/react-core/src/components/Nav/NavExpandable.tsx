@@ -27,6 +27,8 @@ export interface NavExpandableProps
   id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally */
   onExpand?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => void;
+  /** Callback function to toggle the expandable content */
+  onToggle?: () => void;
 }
 
 interface NavExpandableState {
@@ -42,7 +44,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     className: '',
     groupId: null as string,
     isActive: false,
-    id: ''
+    id: '',
+    onToggle: (): any => undefined
   };
 
   expandableRef = React.createRef<HTMLAnchorElement>();
@@ -90,9 +93,27 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   };
 
   render() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
+    const {
+      onToggle: onToggleProp,
+      id,
+      title,
+      srText,
+      children,
+      className,
+      isActive,
+      groupId,
+      isExpanded,
+      onExpand,
+      ...props
+    } = this.props;
+
     const { expandedState } = this.state;
+    let onToggle = onToggleProp;
+
+    onToggle = () => {
+      onToggleProp();
+      this.setState(prevState => ({ expandedState: !prevState.expandedState }));
+    };
 
     return (
       <NavContext.Consumer>
@@ -108,12 +129,10 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
             {...props}
           >
-            <a
-              ref={this.expandableRef}
+            <button
               className={styles.navLink}
               id={srText ? null : this.id}
-              href="#"
-              onClick={e => e.preventDefault()}
+              onClick={onToggle}
               onMouseDown={e => e.preventDefault()}
               aria-expanded={expandedState}
             >
@@ -123,7 +142,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
                   <AngleRightIcon aria-hidden="true" />
                 </span>
               </span>
-            </a>
+            </button>
             <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
               {srText && (
                 <h2 className={css(a11yStyles.screenReader)} id={this.id}>
