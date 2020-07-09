@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.28.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.28.0...@patternfly/react-core@4.28.1) (2020-07-09)
+
+
+### Bug Fixes
+
+* **examples:** make the interactions in the demo more life-like ([#4492](https://github.com/patternfly/patternfly-react/issues/4492)) ([9503acf](https://github.com/patternfly/patternfly-react/commit/9503acfdfadced214938a6411aaf60380808b383))
+
+
+
+
+
 # [4.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.27.5...@patternfly/react-core@4.28.0) (2020-07-08)
 
 
