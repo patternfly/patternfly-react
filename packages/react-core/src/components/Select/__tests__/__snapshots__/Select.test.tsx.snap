@@ -2772,7 +2772,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                   aria-labelledby=" pf-toggle-id-4"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="pf-toggle-id-4"
-                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -2898,7 +2897,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
             disabled={false}
             id="pf-toggle-id-4"
             onClick={[Function]}
-            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
@@ -3392,7 +3390,6 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                   aria-labelledby=" checkbox-select-expanded-filtered"
                   class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                   id="checkbox-select-expanded-filtered"
-                  tabindex="-1"
                   type="button"
                 >
                   <svg
@@ -3518,7 +3515,6 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
             disabled={false}
             id="checkbox-select-expanded-filtered"
             onClick={[Function]}
-            tabIndex={-1}
             type="button"
           >
             <CaretDownIcon
