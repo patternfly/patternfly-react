@@ -1,4 +1,4 @@
-describe('Drawer Groups Demo Test', () => {
+describe('Notification Drawer Groups Demo Test', () => {
   it('Navigate to the drawer groups demo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#notification-drawer-groups-demo-nav-item-link').click();
@@ -83,7 +83,9 @@ describe('Drawer Groups Demo Test', () => {
 
   // Accessibility test
   it('Verify keyboard events happen correctly', () => {
-    // Verify the accessibility of toggle button on group list header
+    // Verify the list header toggle button keyboard interactivity opens/closes dropdown menu
+    // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
+    // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
       cy.get('#notification-0')
@@ -98,7 +100,8 @@ describe('Drawer Groups Demo Test', () => {
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('not.exist');
     });
-    // Verify the accessibility of group header
+    // Verify the group header keyboard interactivity opens/closes the whole group
+    // check whether the whole group is expanded, then press Enter on the group header and check whether the whole group is closed
     cy.get('.pf-c-notification-drawer__group')
       .first()
       .should('have.class', 'pf-m-expanded');
@@ -108,7 +111,7 @@ describe('Drawer Groups Demo Test', () => {
     cy.get('.pf-c-notification-drawer__group')
       .first()
       .should('not.have.class', 'pf-m-expanded');
-    // Verify the accessibility of toggle button on list item header
+    // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
     cy.get('#toggle-id-9').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
       cy.get('#notification-9')

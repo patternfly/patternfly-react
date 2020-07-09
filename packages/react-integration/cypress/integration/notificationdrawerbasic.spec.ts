@@ -1,4 +1,4 @@
-describe('Drawer Basic Demo Test', () => {
+describe('Notification Drawer Basic Demo Test', () => {
   it('Navigate to the drawer basic demo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#notification-drawer-basic-demo-nav-item-link').click();
@@ -64,7 +64,9 @@ describe('Drawer Basic Demo Test', () => {
 
   // Accessibility test
   it('Verify keyboard events happen correctly', () => {
-    // Verify the accessibility of toggle button on group list header
+    // Verify the list header toggle button keyboard interactivity opens/closes dropdown menu
+    // press Enter on toggle button, check whether the dropdown menu exsit and whether it focuses on the first item
+    // then press Tab on toggle button, check whether the dropdown menu is closed
     cy.get('#toggle-id-0').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
       cy.get('#notification-0')
@@ -79,7 +81,8 @@ describe('Drawer Basic Demo Test', () => {
         .find('.pf-c-dropdown__menu.pf-m-align-right')
         .should('not.exist');
     });
-    // Verify the accessibility of toggle button on list item header
+    // Verify the list item header toggle button keyboard interactivity opens/closes dropdown menu
+    // the method is the same as above
     cy.get('#toggle-id-1').then((toggleButton: JQuery<HTMLButtonElement>) => {
       cy.wrap(toggleButton).trigger('keydown', { keyCode: 13 });
       cy.get('#notification-1')

@@ -1,4 +1,4 @@
-describe('Drawer Lightweight Demo Test', () => {
+describe('Notification Drawer Lightweight Demo Test', () => {
   it('Navigate to the drawer lightweight demo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#notification-drawer-lightweight-demo-nav-item-link').click();

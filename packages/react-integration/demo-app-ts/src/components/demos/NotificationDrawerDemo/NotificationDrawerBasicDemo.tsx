@@ -64,7 +64,7 @@ export class BasicNotificationDrawerDemo extends React.Component<
       isOpen4
     });
   };
-  onSelect = (event: any) => {
+  onSelect = (event: React.SyntheticEvent<HTMLElement>) => {
     this.setState({
       isOpen0: false,
       isOpen1: false,

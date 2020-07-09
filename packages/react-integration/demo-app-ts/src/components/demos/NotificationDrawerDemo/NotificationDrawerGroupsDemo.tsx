@@ -53,22 +53,22 @@ export class GroupsNotificationDrawerDemo extends React.Component<
       isOpenMap: { [id]: isOpen }
     });
   };
-  onSelect = (event: any) => {
+  onSelect = (event: React.SyntheticEvent<HTMLElement>) => {
     this.setState({
       isOpenMap: null
     });
   };
-  toggleFirstDrawer = (event: any, value: boolean) => {
+  toggleFirstDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       firstGroupExpanded: value
     });
   };
-  toggleSecondDrawer = (event: any, value: boolean) => {
+  toggleSecondDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       secondGroupExpanded: value
     });
   };
-  toggleThirdDrawer = (event: any, value: boolean) => {
+  toggleThirdDrawer = (event: React.SyntheticEvent<HTMLElement>, value: boolean) => {
     this.setState({
       thirdGroupExpanded: value
     });
