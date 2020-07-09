@@ -21,6 +21,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AccordionDemo
   },
   {
+    id: 'alert-timeout-close-button-demo',
+    name: 'Alert Timeout Close Button Demo',
+    componentType: Examples.AlertTimeoutCloseButtonDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo
@@ -29,6 +34,16 @@ export const Demos: DemoInterface[] = [
     id: 'alert-group-demo',
     name: 'Alert Group Demo',
     componentType: Examples.AlertGroupDemo
+  },
+  {
+    id: 'alert-custom-timeout-demo',
+    name: 'Alert Custom Timeout Demo',
+    componentType: Examples.AlertCustomTimeoutDemo
+  },
+  {
+    id: 'alert-default-timeout-demo',
+    name: 'Alert Default Timeout Demo',
+    componentType: Examples.AlertDefaultTimeoutDemo
   },
   {
     id: 'application-launcher-demo',

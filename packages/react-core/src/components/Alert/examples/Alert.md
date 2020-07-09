@@ -312,3 +312,36 @@ class AsyncLiveRegionAlert extends React.Component {
   }
 }
 ```
+
+```js title=Alert-timeout
+import React from 'react';
+import { Alert, Button } from '@patternfly/react-core';
+
+class AlertTimeout extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false
+    };
+    this.onClick = () => {
+      this.setState({isOpen:true})
+    };
+  } 
+
+  render() {
+    const { isOpen } = this.state;
+    const buttonText = !isOpen ? "Show 2 alerts" : "0 alerts to show";
+    return (
+      <React.Fragment>
+        <Button variant="secondary" onClick={this.onClick} isDisabled={isOpen} >{buttonText} </Button>
+        {this.state.isOpen &&
+        <React.Fragment>
+          <Alert title="Default timeout Alert" timeout={true}>This alert will dismiss after 8 seconds </Alert>
+          <Alert title="Custom timeout Alert" timeout={16}>This alert will dismiss after 16 seconds </Alert>
+        </React.Fragment>
+        }
+      </React.Fragment>
+    );
+  }
+}
+```
