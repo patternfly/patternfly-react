@@ -1,5 +1,5 @@
 describe('Notification Drawer Groups Demo Test', () => {
-  it('Navigate to the drawer groups demo', () => {
+  it('Navigate to the notification drawer groups demo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#notification-drawer-groups-demo-nav-item-link').click();
     cy.url().should('eq', 'http://localhost:3000/notification-drawer-groups-demo-nav-link');
