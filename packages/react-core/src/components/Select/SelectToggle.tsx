@@ -254,6 +254,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
                   onClose();
                 }
               }}
+              {...((variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) && {
+                tabIndex: -1
+              })}
               disabled={isDisabled}
             >
               <CaretDownIcon className={css(styles.selectToggleArrow)} />
