@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.21.0...@patternfly/react-integration@4.22.0) (2020-07-10)
+
+
+### Bug Fixes
+
+* **drawer:** rename onMount to onExpand and add animation timeout ([#4508](https://github.com/patternfly/patternfly-react/issues/4508)) ([a908179](https://github.com/patternfly/patternfly-react/commit/a90817915d65201b3cf582665a19750dd9370019))
+
+
+### Features
+
+* **DataList:** Add support for action containers in DataList ([#4488](https://github.com/patternfly/patternfly-react/issues/4488)) ([386bedd](https://github.com/patternfly/patternfly-react/commit/386bedde711635627aecbf050273306958a746a2))
+* **Dropdown:** add description to DropdownItem ([#4468](https://github.com/patternfly/patternfly-react/issues/4468)) ([0508fe6](https://github.com/patternfly/patternfly-react/commit/0508fe69999dfc25093102923dfef46275d35709))
+
+
+
+
+
 # [4.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.20.0...@patternfly/react-integration@4.21.0) (2020-07-10)
 
 

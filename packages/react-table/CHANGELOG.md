@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.10.10...@patternfly/react-table@4.11.0) (2020-07-10)
+
+
+### Features
+
+* **Dropdown:** add description to DropdownItem ([#4468](https://github.com/patternfly/patternfly-react/issues/4468)) ([0508fe6](https://github.com/patternfly/patternfly-react/commit/0508fe69999dfc25093102923dfef46275d35709))
+
+
+
+
+
 ## [4.10.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.10.9...@patternfly/react-table@4.10.10) (2020-07-10)
 
 **Note:** Version bump only for package @patternfly/react-table

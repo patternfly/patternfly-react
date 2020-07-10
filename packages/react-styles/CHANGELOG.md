@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.3...@patternfly/react-styles@4.4.4) (2020-07-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 ## [4.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@4.4.2...@patternfly/react-styles@4.4.3) (2020-07-08)
 
 
