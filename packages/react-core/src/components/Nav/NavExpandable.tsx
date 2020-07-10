@@ -28,7 +28,7 @@ export interface NavExpandableProps
   /** allow consumer to optionally override this callback and manage expand state externally */
   onExpand?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => void;
   /** Callback function to toggle the expandable content */
-  onToggle?: () => void;
+  onClick?: () => void;
 }
 
 interface NavExpandableState {
@@ -45,7 +45,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     groupId: null as string,
     isActive: false,
     id: '',
-    onToggle: (): any => undefined
+    onClick: (): any => undefined
   };
 
   expandableRef = React.createRef<HTMLAnchorElement>();
@@ -93,25 +93,12 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   };
 
   render() {
-    const {
-      onToggle: onToggleProp,
-      id,
-      title,
-      srText,
-      children,
-      className,
-      isActive,
-      groupId,
-      isExpanded,
-      onExpand,
-      ...props
-    } = this.props;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
 
     const { expandedState } = this.state;
-    let onToggle = onToggleProp;
 
-    onToggle = () => {
-      onToggleProp();
+    const onClick = () => {
       this.setState(prevState => ({ expandedState: !prevState.expandedState }));
     };
 
@@ -132,7 +119,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
             <button
               className={styles.navLink}
               id={srText ? null : this.id}
-              onClick={onToggle}
+              onClick={onClick}
               onMouseDown={e => e.preventDefault()}
               aria-expanded={expandedState}
             >
