@@ -40,23 +40,21 @@ export const Drawer: React.SFC<DrawerProps> = ({
   position = 'right',
   onExpand = () => {},
   ...props
-}: DrawerProps) => {
-  return (
-    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand }}>
-      <div
-        className={css(
-          styles.drawer,
-          isExpanded && styles.modifiers.expanded,
-          isInline && styles.modifiers.inline,
-          isStatic && styles.modifiers.static,
-          position === 'left' && styles.modifiers.panelLeft,
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    </DrawerContext.Provider>
-  );
-};
+}: DrawerProps) => (
+  <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand }}>
+    <div
+      className={css(
+        styles.drawer,
+        isExpanded && styles.modifiers.expanded,
+        isInline && styles.modifiers.inline,
+        isStatic && styles.modifiers.static,
+        position === 'left' && styles.modifiers.panelLeft,
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  </DrawerContext.Provider>
+);
 Drawer.displayName = 'Drawer';
