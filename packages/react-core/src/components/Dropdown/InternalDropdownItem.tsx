@@ -51,6 +51,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   icon?: React.ReactNode;
   /** Initial focus on the item when the menu is opened (Note: Only applicable to one of the items) */
   autoFocus?: boolean;
+  /** A short description of the dropdown item, displayed under the dropdown item content */
+  description?: React.ReactNode;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -75,7 +77,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     },
     enterTriggersArrowDown: false,
     icon: null,
-    styleChildren: true
+    styleChildren: true,
+    description: null
   };
 
   componentDidMount() {
@@ -157,6 +160,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       icon,
       autoFocus,
       styleChildren,
+      description,
       ...additionalProps
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -187,10 +191,25 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
     const renderDefaultComponent = (tag: string) => {
       const Component = tag as any;
-      return (
-        <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
+
+      const componentContent = description ? (
+        <>
+          <div className={styles.dropdownMenuItemMain}>
+            {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
+            {children}
+          </div>
+          <div className={styles.dropdownMenuItemDescription}>{description}</div>
+        </>
+      ) : (
+        <>
           {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
           {children}
+        </>
+      );
+
+      return (
+        <Component {...additionalProps} href={href} ref={this.ref} className={classes} id={componentID}>
+          {componentContent}
         </Component>
       );
     };
@@ -199,7 +218,13 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       <DropdownContext.Consumer>
         {({ onSelect, itemClass, disabledClass, plainTextClass }) => {
           if (this.props.role !== 'separator') {
-            classes = css(classes, isDisabled && disabledClass, isPlainText && plainTextClass, itemClass);
+            classes = css(
+              classes,
+              isDisabled && disabledClass,
+              isPlainText && plainTextClass,
+              itemClass,
+              description && styles.modifiers.description
+            );
           }
           if (customChild) {
             return React.cloneElement(customChild as React.ReactElement<any>, {
@@ -207,6 +232,22 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               onKeyDown: this.onKeyDown
             });
           }
+
+          const componentContent = description ? (
+            <>
+              <div className={styles.dropdownMenuItemMain}>
+                {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
+                {children}
+              </div>
+              <div className={styles.dropdownMenuItemDescription}>{description}</div>
+            </>
+          ) : (
+            <>
+              {icon && <span className={css(styles.dropdownMenuItemIcon)}>{icon}</span>}
+              {children}
+            </>
+          );
+
           return (
             <li
               className={listItemClassName || null}

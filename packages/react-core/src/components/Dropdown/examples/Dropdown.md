@@ -1291,3 +1291,74 @@ class MenuOnDocumentBodyDropdown extends React.Component {
   }
 }
 ```
+```js title=Dropdown-with-descriptions
+import React from 'react';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownPosition,
+  DropdownDirection,
+  KebabToggle
+} from '@patternfly/react-core';
+import { BellIcon, CaretDownIcon, CubesIcon } from '@patternfly/react-icons';
+
+class SimpleDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById('toggle-id');
+      element.focus();
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+        
+    const dropdownItems = [
+      <DropdownItem key="link" description="This is a description" icon={<CubesIcon />}>Link</DropdownItem>,
+      <DropdownItem 
+        key="action" 
+        component="button" 
+        icon={<BellIcon />}
+        description="This is a very long description that describes the menu item"
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled description="Disabled link description">
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button" description="This is a description">
+        Disabled Action
+      </DropdownItem>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={
+          <DropdownToggle id="toggle-id" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
+            Dropdown
+          </DropdownToggle>
+        }
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
+```

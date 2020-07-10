@@ -74,7 +74,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       menuAppendTo,
       ...props
     } = this.props;
-    const id = toggle.props.id || `pf-toggle-id-${DropdownWithContext.currentId++}`;
+    const id = toggle.props.id || `pf-dropdown-toggle-id-${DropdownWithContext.currentId++}`;
     let component: string;
     let renderedContent: React.ReactNode[];
     let ariaHasPopup = false;

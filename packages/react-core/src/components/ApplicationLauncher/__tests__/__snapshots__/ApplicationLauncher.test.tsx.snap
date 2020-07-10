@@ -128,7 +128,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         aria-haspopup={true}
         aria-label="Application launcher"
         getMenuRef={[Function]}
-        id="pf-toggle-id-5"
+        id="pf-dropdown-toggle-id-5"
         isDisabled={false}
         isOpen={true}
         isPlain={false}
@@ -149,7 +149,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
-                id="pf-toggle-id-5"
+                id="pf-dropdown-toggle-id-5"
                 type="button"
               >
                 <span>
@@ -171,7 +171,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 </span>
               </button>
               <ul
-                aria-labelledby="pf-toggle-id-5"
+                aria-labelledby="pf-dropdown-toggle-id-5"
                 class="pf-c-app-launcher__menu"
                 role="menu"
               >
@@ -262,7 +262,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
           bubbleEvent={false}
           className=""
           getMenuRef={[Function]}
-          id="pf-toggle-id-5"
+          id="pf-dropdown-toggle-id-5"
           isActive={false}
           isDisabled={false}
           isOpen={true}
@@ -285,7 +285,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
-                  id="pf-toggle-id-5"
+                  id="pf-dropdown-toggle-id-5"
                   type="button"
                 >
                   <span>
@@ -307,7 +307,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </span>
                 </button>
                 <ul
-                  aria-labelledby="pf-toggle-id-5"
+                  aria-labelledby="pf-dropdown-toggle-id-5"
                   class="pf-c-app-launcher__menu"
                   role="menu"
                 >
@@ -397,7 +397,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
-            id="pf-toggle-id-5"
+            id="pf-dropdown-toggle-id-5"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -437,7 +437,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         </Toggle>
       </DropdownToggle>
       <DropdownMenu
-        aria-labelledby="pf-toggle-id-5"
+        aria-labelledby="pf-dropdown-toggle-id-5"
         autoFocus={false}
         className=""
         component="ul"
@@ -448,7 +448,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         setMenuComponentRef={[Function]}
       >
         <ul
-          aria-labelledby="pf-toggle-id-5"
+          aria-labelledby="pf-dropdown-toggle-id-5"
           autoFocus={false}
           className="pf-c-app-launcher__menu"
           hidden={false}
@@ -476,6 +476,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -534,6 +535,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -594,6 +596,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -654,6 +657,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -710,6 +714,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 icon={null}
                 index={4}
@@ -762,6 +767,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -820,6 +826,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -989,7 +996,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         aria-haspopup={true}
         aria-label="Application launcher"
         getMenuRef={[Function]}
-        id="pf-toggle-id-3"
+        id="pf-dropdown-toggle-id-3"
         isDisabled={false}
         isOpen={false}
         isPlain={false}
@@ -1010,7 +1017,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
-                id="pf-toggle-id-3"
+                id="pf-dropdown-toggle-id-3"
                 type="button"
               >
                 <span>
@@ -1041,7 +1048,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           bubbleEvent={false}
           className=""
           getMenuRef={[Function]}
-          id="pf-toggle-id-3"
+          id="pf-dropdown-toggle-id-3"
           isActive={false}
           isDisabled={false}
           isOpen={false}
@@ -1064,7 +1071,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
-                  id="pf-toggle-id-3"
+                  id="pf-dropdown-toggle-id-3"
                   type="button"
                 >
                   <span>
@@ -1094,7 +1101,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
-            id="pf-toggle-id-3"
+            id="pf-dropdown-toggle-id-3"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -1262,7 +1269,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         aria-haspopup={true}
         aria-label="Application launcher"
         getMenuRef={[Function]}
-        id="pf-toggle-id-2"
+        id="pf-dropdown-toggle-id-2"
         isDisabled={false}
         isOpen={false}
         isPlain={false}
@@ -1283,7 +1290,7 @@ exports[`ApplicationLauncher dropup 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
-                id="pf-toggle-id-2"
+                id="pf-dropdown-toggle-id-2"
                 type="button"
               >
                 <span>
@@ -1314,7 +1321,7 @@ exports[`ApplicationLauncher dropup 1`] = `
           bubbleEvent={false}
           className=""
           getMenuRef={[Function]}
-          id="pf-toggle-id-2"
+          id="pf-dropdown-toggle-id-2"
           isActive={false}
           isDisabled={false}
           isOpen={false}
@@ -1337,7 +1344,7 @@ exports[`ApplicationLauncher dropup 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
-                  id="pf-toggle-id-2"
+                  id="pf-dropdown-toggle-id-2"
                   type="button"
                 >
                   <span>
@@ -1367,7 +1374,7 @@ exports[`ApplicationLauncher dropup 1`] = `
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
-            id="pf-toggle-id-2"
+            id="pf-dropdown-toggle-id-2"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -1535,7 +1542,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         aria-haspopup={true}
         aria-label="Application launcher"
         getMenuRef={[Function]}
-        id="pf-toggle-id-4"
+        id="pf-dropdown-toggle-id-4"
         isDisabled={false}
         isOpen={true}
         isPlain={false}
@@ -1556,7 +1563,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
-                id="pf-toggle-id-4"
+                id="pf-dropdown-toggle-id-4"
                 type="button"
               >
                 <span>
@@ -1577,7 +1584,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                 </span>
               </button>
               <ul
-                aria-labelledby="pf-toggle-id-4"
+                aria-labelledby="pf-dropdown-toggle-id-4"
                 class="pf-c-app-launcher__menu"
                 role="menu"
               >
@@ -1668,7 +1675,7 @@ exports[`ApplicationLauncher expanded 1`] = `
           bubbleEvent={false}
           className=""
           getMenuRef={[Function]}
-          id="pf-toggle-id-4"
+          id="pf-dropdown-toggle-id-4"
           isActive={false}
           isDisabled={false}
           isOpen={true}
@@ -1691,7 +1698,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
-                  id="pf-toggle-id-4"
+                  id="pf-dropdown-toggle-id-4"
                   type="button"
                 >
                   <span>
@@ -1712,7 +1719,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </span>
                 </button>
                 <ul
-                  aria-labelledby="pf-toggle-id-4"
+                  aria-labelledby="pf-dropdown-toggle-id-4"
                   class="pf-c-app-launcher__menu"
                   role="menu"
                 >
@@ -1802,7 +1809,7 @@ exports[`ApplicationLauncher expanded 1`] = `
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
-            id="pf-toggle-id-4"
+            id="pf-dropdown-toggle-id-4"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -1840,7 +1847,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         </Toggle>
       </DropdownToggle>
       <DropdownMenu
-        aria-labelledby="pf-toggle-id-4"
+        aria-labelledby="pf-dropdown-toggle-id-4"
         autoFocus={false}
         className=""
         component="ul"
@@ -1851,7 +1858,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         setMenuComponentRef={[Function]}
       >
         <ul
-          aria-labelledby="pf-toggle-id-4"
+          aria-labelledby="pf-dropdown-toggle-id-4"
           autoFocus={false}
           className="pf-c-app-launcher__menu"
           hidden={false}
@@ -1879,6 +1886,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -1937,6 +1945,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -1997,6 +2006,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2057,6 +2067,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2113,6 +2124,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 icon={null}
                 index={4}
@@ -2165,6 +2177,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2223,6 +2236,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                     "sendRef": [Function],
                   }
                 }
+                description={null}
                 enterTriggersArrowDown={false}
                 href={null}
                 icon={null}
@@ -2392,7 +2406,7 @@ exports[`ApplicationLauncher regular 1`] = `
         aria-haspopup={true}
         aria-label="Application launcher"
         getMenuRef={[Function]}
-        id="pf-toggle-id-0"
+        id="pf-dropdown-toggle-id-0"
         isDisabled={false}
         isOpen={false}
         isPlain={false}
@@ -2413,7 +2427,7 @@ exports[`ApplicationLauncher regular 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
-                id="pf-toggle-id-0"
+                id="pf-dropdown-toggle-id-0"
                 type="button"
               >
                 <span>
@@ -2444,7 +2458,7 @@ exports[`ApplicationLauncher regular 1`] = `
           bubbleEvent={false}
           className=""
           getMenuRef={[Function]}
-          id="pf-toggle-id-0"
+          id="pf-dropdown-toggle-id-0"
           isActive={false}
           isDisabled={false}
           isOpen={false}
@@ -2467,7 +2481,7 @@ exports[`ApplicationLauncher regular 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
-                  id="pf-toggle-id-0"
+                  id="pf-dropdown-toggle-id-0"
                   type="button"
                 >
                   <span>
@@ -2497,7 +2511,7 @@ exports[`ApplicationLauncher regular 1`] = `
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
-            id="pf-toggle-id-0"
+            id="pf-dropdown-toggle-id-0"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
@@ -2665,7 +2679,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         aria-haspopup={true}
         aria-label="Application launcher"
         getMenuRef={[Function]}
-        id="pf-toggle-id-1"
+        id="pf-dropdown-toggle-id-1"
         isDisabled={false}
         isOpen={false}
         isPlain={false}
@@ -2686,7 +2700,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 aria-haspopup="true"
                 aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
-                id="pf-toggle-id-1"
+                id="pf-dropdown-toggle-id-1"
                 type="button"
               >
                 <span>
@@ -2717,7 +2731,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
           bubbleEvent={false}
           className=""
           getMenuRef={[Function]}
-          id="pf-toggle-id-1"
+          id="pf-dropdown-toggle-id-1"
           isActive={false}
           isDisabled={false}
           isOpen={false}
@@ -2740,7 +2754,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
                   aria-haspopup="true"
                   aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
-                  id="pf-toggle-id-1"
+                  id="pf-dropdown-toggle-id-1"
                   type="button"
                 >
                   <span>
@@ -2770,7 +2784,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
             aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
-            id="pf-toggle-id-1"
+            id="pf-dropdown-toggle-id-1"
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"

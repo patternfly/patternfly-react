@@ -105,7 +105,7 @@ exports[`optionsMenu expanded 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-4"
+        id="pf-dropdown-toggle-id-4"
         isOpen={true}
         isPlain={false}
         key=".0"
@@ -723,6 +723,7 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
+                      description={null}
                       enterTriggersArrowDown={false}
                       icon={null}
                       id=""
@@ -772,6 +773,7 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
+                      description={null}
                       enterTriggersArrowDown={false}
                       icon={null}
                       id=""
@@ -825,6 +827,7 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
+                      description={null}
                       enterTriggersArrowDown={false}
                       icon={null}
                       id=""
@@ -875,6 +878,7 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
+                      description={null}
                       enterTriggersArrowDown={false}
                       icon={null}
                       id=""
@@ -961,6 +965,7 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
+                      description={null}
                       enterTriggersArrowDown={false}
                       icon={null}
                       id=""
@@ -1010,6 +1015,7 @@ exports[`optionsMenu expanded 1`] = `
                           "sendRef": [Function],
                         }
                       }
+                      description={null}
                       enterTriggersArrowDown={false}
                       icon={null}
                       id=""
@@ -1169,7 +1175,7 @@ exports[`optionsMenu isDisabled 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-7"
+        id="pf-dropdown-toggle-id-7"
         isDisabled={true}
         isOpen={false}
         isPlain={false}
@@ -1491,7 +1497,7 @@ exports[`optionsMenu open up 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-2"
+        id="pf-dropdown-toggle-id-2"
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -1809,7 +1815,7 @@ exports[`optionsMenu plain 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-5"
+        id="pf-dropdown-toggle-id-5"
         isOpen={false}
         isPlain={true}
         key=".0"
@@ -2038,7 +2044,7 @@ exports[`optionsMenu regular 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-0"
+        id="pf-dropdown-toggle-id-0"
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -2357,7 +2363,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-3"
+        id="pf-dropdown-toggle-id-3"
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -2675,7 +2681,7 @@ exports[`optionsMenu right aligned 1`] = `
       <OptionsMenuToggle
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-1"
+        id="pf-dropdown-toggle-id-1"
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -3002,7 +3008,7 @@ exports[`optionsMenu text 1`] = `
       <OptionsMenuToggleWithText
         aria-haspopup={true}
         getMenuRef={[Function]}
-        id="pf-toggle-id-6"
+        id="pf-dropdown-toggle-id-6"
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -3018,7 +3024,7 @@ exports[`optionsMenu text 1`] = `
             >
               <div
                 class="pf-c-options-menu__toggle pf-m-text"
-                id="pf-toggle-id-6"
+                id="pf-dropdown-toggle-id-6"
               >
                 <span
                   class="pf-c-options-menu__toggle-text"
@@ -3052,7 +3058,7 @@ exports[`optionsMenu text 1`] = `
         <div
           className="pf-c-options-menu__toggle pf-m-text"
           getMenuRef={[Function]}
-          id="pf-toggle-id-6"
+          id="pf-dropdown-toggle-id-6"
         >
           <span
             className="pf-c-options-menu__toggle-text"
