@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.29.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.28.1...@patternfly/react-core@4.29.0) (2020-07-10)
+
+
+### Features
+
+* **Alert:** Add alert timeout functionality ([#4510](https://github.com/patternfly/patternfly-react/issues/4510)) ([3e43126](https://github.com/patternfly/patternfly-react/commit/3e43126c5d7ec9205b4b746c55198f83a447bd9b))
+* **Select:** fix typeahead button toggle propagation ([#4472](https://github.com/patternfly/patternfly-react/issues/4472)) ([8a574cf](https://github.com/patternfly/patternfly-react/commit/8a574cf36687f513e3bd7e4b4d64ce5ab1b53d87))
+
+
+
+
+
 ## [4.28.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.28.0...@patternfly/react-core@4.28.1) (2020-07-09)
 
 

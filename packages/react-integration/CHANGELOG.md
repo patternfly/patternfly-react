@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.20.0...@patternfly/react-integration@4.21.0) (2020-07-10)
+
+
+### Features
+
+* **Alert:** Add alert timeout functionality ([#4510](https://github.com/patternfly/patternfly-react/issues/4510)) ([3e43126](https://github.com/patternfly/patternfly-react/commit/3e43126c5d7ec9205b4b746c55198f83a447bd9b))
+
+
+
+
+
 # [4.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.19.0...@patternfly/react-integration@4.20.0) (2020-07-06)
 
 
