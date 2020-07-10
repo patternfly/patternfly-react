@@ -45,8 +45,8 @@ class SimpleDrawer extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -84,7 +84,7 @@ class SimpleDrawer extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount} >
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -117,8 +117,8 @@ class SimpleDrawerPanelRight extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -156,7 +156,7 @@ class SimpleDrawerPanelRight extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -189,8 +189,8 @@ class SimpleDrawerPanelLeft extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -228,7 +228,7 @@ class SimpleDrawerPanelLeft extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} position="left" onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} position="left" onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -261,8 +261,8 @@ class SimpleDrawerInlineContent extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -300,7 +300,7 @@ class SimpleDrawerInlineContent extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} isInline onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} isInline onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -333,8 +333,8 @@ class DrawerInlineContentPanelRight extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -372,7 +372,7 @@ class DrawerInlineContentPanelRight extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} isInline onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} isInline onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -405,8 +405,8 @@ class DrawerInlineContentPanelLeft extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -444,7 +444,7 @@ class DrawerInlineContentPanelLeft extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} isInline position="left" onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} isInline position="left" onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -477,8 +477,8 @@ class DrawerStackedContentBodyElements extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -516,7 +516,7 @@ class DrawerStackedContentBodyElements extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>content-body</DrawerContentBody>
             <DrawerContentBody hasPadding>content-body with padding</DrawerContentBody>
@@ -551,8 +551,8 @@ class DrawerStackedContentBodyElements extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -590,7 +590,7 @@ class DrawerStackedContentBodyElements extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick} >
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>content-body</DrawerContentBody>
             <DrawerContentBody hasPadding>content-body with padding</DrawerContentBody>
@@ -625,8 +625,8 @@ class DrawerModifiedContentPadding extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -664,7 +664,7 @@ class DrawerModifiedContentPadding extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody hasPadding>
               <b>Drawer content padding.</b> {drawerContent}
@@ -699,8 +699,8 @@ class DrawerModifiedPanelPadding extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -738,7 +738,7 @@ class DrawerModifiedPanelPadding extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>
@@ -772,8 +772,8 @@ class DrawerWithSection extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -811,7 +811,7 @@ class DrawerWithSection extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerSection>drawer-section</DrawerSection>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
@@ -883,8 +883,8 @@ class SimpleDrawer extends React.Component {
     };
     this.drawerRef = React.createRef();
 
-    this.onMount = () => {
-      this.state.isExpanded && this.drawerRef.current && this.drawerRef.current.focus()
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus()
     };
 
     this.onClick = () => {
@@ -922,7 +922,7 @@ class SimpleDrawer extends React.Component {
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
           Toggle Drawer
         </Button>
-        <Drawer isExpanded={isExpanded} onMount={this.onMount}>
+        <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
             <DrawerContentBody>{drawerContent}</DrawerContentBody>
           </DrawerContent>

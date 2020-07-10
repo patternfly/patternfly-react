@@ -43,6 +43,7 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
             <div
               className="pf-c-drawer__panel"
               hidden={true}
+              onTransitionEnd={[Function]}
             />
           </DrawerPanelContent>
         </div>
@@ -95,6 +96,7 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
             <div
               className="pf-c-drawer__panel"
               hidden={true}
+              onTransitionEnd={[Function]}
             />
           </DrawerPanelContent>
         </div>
@@ -147,6 +149,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
             <div
               className="pf-c-drawer__panel"
               hidden={false}
+              onTransitionEnd={[Function]}
             >
               <DrawerHead>
                 <DrawerPanelBody
@@ -279,6 +282,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
             <div
               className="pf-c-drawer__panel"
               hidden={false}
+              onTransitionEnd={[Function]}
             >
               <DrawerHead>
                 <DrawerPanelBody
@@ -411,6 +415,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
             <div
               className="pf-c-drawer__panel"
               hidden={false}
+              onTransitionEnd={[Function]}
             >
               <DrawerHead>
                 <DrawerPanelBody
