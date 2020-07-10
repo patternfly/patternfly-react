@@ -49,18 +49,18 @@ describe('Button Demo Test', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="normal-btn-11"]')
         .focus()
-        .should('have.attr', 'aria-describedby', 'tippy-1');
+        .should('have.attr', 'aria-describedby', 'button-with-tooltip-1');
     });
-    cy.get('.tippy-popper').should('be.visible');
+    cy.get('.pf-c-tooltip').should('be.visible');
   });
 
   it('Verify isAriaDisabled button has tooltip when hovered', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="normal-btn-11"]')
         .trigger('mouseover')
-        .should('have.attr', 'aria-describedby', 'tippy-1');
+        .should('have.attr', 'aria-describedby', 'button-with-tooltip-1');
     });
-    cy.get('.tippy-popper').should('be.visible');
+    cy.get('.pf-c-tooltip').should('be.visible');
   });
 
   it('Verify isAriaDisabled button prevents default actions', () => {
@@ -150,7 +150,7 @@ describe('Button Demo Test', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="link-as-btn-5"]')
         .focus()
-        .should('have.attr', 'aria-describedby', 'tippy-2');
+        .should('have.attr', 'aria-describedby', 'button-with-tooltip-2');
     });
   });
 
@@ -158,7 +158,7 @@ describe('Button Demo Test', () => {
     cy.get('.btn-demo-area').within(() => {
       cy.get('.pf-c-button[id="link-as-btn-5"]')
         .trigger('mouseover')
-        .should('have.attr', 'aria-describedby', 'tippy-2');
+        .should('have.attr', 'aria-describedby', 'button-with-tooltip-2');
     });
   });
 

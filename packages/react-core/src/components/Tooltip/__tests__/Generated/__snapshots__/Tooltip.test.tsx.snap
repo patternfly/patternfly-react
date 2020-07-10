@@ -1,34 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip should match snapshot (auto-generated) 1`] = `
-<PopoverBase
+<Popper
   appendTo={[Function]}
-  aria="describedby"
-  arrow={true}
-  boundary="window"
-  content={
-    <div
-      className="''"
-      id="''"
-      role="tooltip"
-    >
-      <TooltipContent
-        isLeftAligned={false}
-      >
-        <div>
-          ReactNode
-        </div>
-      </TooltipContent>
-    </div>
-  }
-  delay={
-    Array [
-      500,
-      500,
-    ]
-  }
   distance={15}
-  flip={true}
+  enableFlip={true}
   flipBehavior={
     Array [
       "top",
@@ -41,28 +17,52 @@ exports[`Tooltip should match snapshot (auto-generated) 1`] = `
     ]
   }
   isVisible={false}
-  lazy={true}
-  maxWidth="string"
-  onCreate={[Function]}
+  onBlur={[Function]}
+  onDocumentClick={false}
+  onDocumentKeyDown={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
   placement="top"
-  popperOptions={
+  popper={
+    <div
+      className="pf-c-tooltip ''"
+      id="''"
+      role="tooltip"
+      style={
+        Object {
+          "maxWidth": "string",
+          "opacity": 0,
+          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
+        }
+      }
+    >
+      <TooltipArrow />
+      <TooltipContent
+        isLeftAligned={false}
+      >
+        <div>
+          ReactNode
+        </div>
+      </TooltipContent>
+    </div>
+  }
+  popperMatchesTriggerWidth={false}
+  positionModifiers={
     Object {
-      "modifiers": Object {
-        "hide": Object {
-          "enabled": true,
-        },
-        "preventOverflow": Object {
-          "enabled": true,
-        },
-      },
+      "bottom": "pf-m-bottom",
+      "left": "pf-m-left",
+      "right": "pf-m-right",
+      "top": "pf-m-top",
     }
   }
-  theme="pf-tooltip"
-  trigger="'mouseenter focus'"
+  trigger={
+    <p
+      aria-describedby="''"
+    >
+      ReactElement
+    </p>
+  }
   zIndex={9999}
->
-  <p>
-    ReactElement
-  </p>
-</PopoverBase>
+/>
 `;

@@ -1,13 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover should match snapshot (auto-generated) 1`] = `
-<PopoverBase
+<Popper
   appendTo={[Function]}
-  arrow={true}
-  boundary="window"
-  content={<React.Fragment />}
   distance={25}
-  flip={true}
+  enableFlip={true}
   flipBehavior={
     Array [
       "top",
@@ -19,37 +16,68 @@ exports[`Popover should match snapshot (auto-generated) 1`] = `
       "bottom",
     ]
   }
-  hideOnClick={true}
-  interactive={true}
-  interactiveBorder={0}
-  isVisible={null}
-  lazy={true}
-  maxWidth="string"
-  onCreate={[Function]}
-  onHidden={[Function]}
-  onHide={[Function]}
-  onMount={[Function]}
-  onShow={[Function]}
-  onShown={[Function]}
+  isVisible={false}
+  onDocumentClick={[Function]}
+  onDocumentKeyDown={[Function]}
+  onPopperClick={[Function]}
+  onTriggerClick={[Function]}
+  onTriggerEnter={[Function]}
   placement="top"
-  popperOptions={
+  popper={
+    <FocusTrap
+      active={false}
+      aria-describedby="popover-test-body"
+      aria-label="''"
+      aria-modal="true"
+      className="pf-c-popover ''"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+          "returnFocusOnDeactivate": true,
+        }
+      }
+      onMouseDown={[Function]}
+      paused={false}
+      role="dialog"
+      style={
+        Object {
+          "maxWidth": "string",
+          "minWidth": "string",
+          "opacity": 0,
+          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
+        }
+      }
+    >
+      <PopoverArrow />
+      <PopoverContent>
+        <PopoverCloseButton
+          aria-label="'Close'"
+          onClose={[Function]}
+        />
+        <PopoverBody
+          id="popover-test-body"
+        >
+          <div>
+            ReactNode
+          </div>
+        </PopoverBody>
+      </PopoverContent>
+    </FocusTrap>
+  }
+  popperMatchesTriggerWidth={false}
+  positionModifiers={
     Object {
-      "modifiers": Object {
-        "hide": Object {
-          "enabled": true,
-        },
-        "preventOverflow": Object {
-          "enabled": true,
-        },
-      },
+      "bottom": "pf-m-bottom",
+      "left": "pf-m-left",
+      "right": "pf-m-right",
+      "top": "pf-m-top",
     }
   }
-  theme="pf-popover"
-  trigger="click"
+  trigger={
+    <p>
+      ReactElement
+    </p>
+  }
   zIndex={9999}
->
-  <p>
-    ReactElement
-  </p>
-</PopoverBase>
+/>
 `;

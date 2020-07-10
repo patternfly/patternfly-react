@@ -1,15 +1,12 @@
 import * as React from 'react';
-import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
-import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
-import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
-import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css } from '@patternfly/react-styles';
 import { TooltipContent } from './TooltipContent';
+import { TooltipArrow } from './TooltipArrow';
 import { KEY_CODES } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
-import { PickOptional } from '../../helpers/typeUtils';
+import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -19,13 +16,15 @@ export enum TooltipPosition {
   right = 'right'
 }
 
-export interface TooltipProps {
+export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
   /** The element to append the tooltip to, defaults to body */
-  appendTo?: Element | ((ref: Element) => Element);
-  /** Aria-labelledby or aria-describedby for tooltip */
-  aria?: 'describedby' | 'labelledby';
-  /** If enableFlip is true, the tooltip responds to this boundary */
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
+  /**
+   * aria-labelledby or aria-describedby for tooltip.
+   * The trigger will be cloned to add the aria attribute, and the corresponding id in the form of 'pf-tooltip-#' is added to the content container.
+   * If you don't want that or prefer to add the aria attribute yourself on the trigger, set aria to 'none'.
+   */
+  aria?: 'describedby' | 'labelledby' | 'none';
   /** The reference element to which the tooltip is relatively placed to */
   children: ReactElement<any>;
   /** Tooltip additional class */
@@ -50,17 +49,20 @@ export interface TooltipProps {
    * space to the right, so it finally shows the tooltip on the left.
    */
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
-  /** If true, displays as an application launcher */
-  isAppLauncher?: boolean;
-  /** Maximum width of the tooltip (default 12.5rem) */
+  /** Maximum width of the tooltip (default 18.75rem) */
   maxWidth?: string;
   /**
    * Tooltip position. Note: With 'enableFlip' set to true,
    * it will change the position if there is not enough space for the starting position.
    * The behavior of where it flips to can be controlled through the flipBehavior prop.
+   * The 'auto' position chooses the side with the most space.
+   * The 'auto' position requires the 'enableFlip' prop to be true.
    */
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  /** Tooltip trigger: click, mouseenter, focus, manual  */
+  /**
+   * Tooltip trigger: click, mouseenter, focus, manual
+   * Set to manual to trigger tooltip programmatically (through the isVisible prop)
+   */
   trigger?: string;
   /** Flag to indicate that the text content is left aligned */
   isContentLeftAligned?: boolean;
@@ -68,132 +70,171 @@ export interface TooltipProps {
   isVisible?: boolean;
   /** z-index of the tooltip */
   zIndex?: number;
-  /** additional Props to pass through to tippy.js */
-  tippyProps?: Partial<TippyProps>;
-  /** ID */
+  /** id of the tooltip */
   id?: string;
+  /** CSS fade transition animation duration */
+  animationDuration?: number;
+  /** @deprecated if you want to constrain the popper to a specific element use the appendTo prop instead */
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
-export class Tooltip extends React.Component<TooltipProps> {
-  static displayName = 'Tooltip';
-  private tip: TippyInstance;
-  static defaultProps: PickOptional<TooltipProps> = {
-    position: 'top',
-    trigger: 'mouseenter focus',
-    isVisible: false,
-    isContentLeftAligned: false,
-    enableFlip: true,
-    className: '',
-    entryDelay: 500,
-    exitDelay: 500,
-    appendTo: () => document.body,
-    zIndex: 9999,
-    maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
-    isAppLauncher: false,
-    distance: 15,
-    aria: 'describedby',
-    boundary: 'window',
-    // For every initial starting position, there are 3 escape positions
-    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
-    tippyProps: {},
-    id: ''
-  };
+// id for associating trigger with the content aria-describedby or aria-labelledby
+let pfTooltipIdCounter = 1;
 
-  storeTippyInstance = (tip: TippyInstance) => {
-    tip.popperChildren.tooltip.classList.add(styles.tooltip);
-    this.tip = tip;
+export const Tooltip: React.FunctionComponent<TooltipProps> = ({
+  content: bodyContent,
+  position = 'top',
+  trigger = 'mouseenter focus',
+  isVisible = false,
+  isContentLeftAligned = false,
+  enableFlip = true,
+  className = '',
+  entryDelay = 0,
+  exitDelay = 0,
+  appendTo = () => document.body,
+  zIndex = 9999,
+  maxWidth = tooltipMaxWidth.value,
+  distance = 15,
+  aria = 'describedby',
+  // For every initial starting position, there are 3 escape positions
+  flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+  id = `pf-tooltip-${pfTooltipIdCounter++}`,
+  children,
+  animationDuration = 300,
+  boundary,
+  ...rest
+}) => {
+  if (boundary && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The Tooltip boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
+    );
+  }
+  // could make this a prop in the future (true | false | 'toggle')
+  const hideOnClick = true;
+  const triggerOnMouseenter = trigger.includes('mouseenter');
+  const triggerOnFocus = trigger.includes('focus');
+  const triggerOnClick = trigger.includes('click');
+  const triggerManually = trigger === 'manual';
+  const [visible, setVisible] = React.useState(false);
+  const [opacity, setOpacity] = React.useState(0);
+  const transitionTimerRef = React.useRef(null);
+  const showTimerRef = React.useRef(null);
+  const hideTimerRef = React.useRef(null);
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (!triggerManually) {
+      if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
+        hide();
+      } else if (event.keyCode === KEY_CODES.ENTER && !visible) {
+        show();
+      }
+    }
   };
+  React.useEffect(() => {
+    if (triggerManually) {
+      if (isVisible) {
+        show();
+      } else {
+        hide();
+      }
+    }
+  }, [isVisible, triggerManually]);
+  const show = () => {
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+    }
+    if (hideTimerRef.current) {
+      clearTimeout(hideTimerRef.current);
+    }
+    showTimerRef.current = setTimeout(() => {
+      setVisible(true);
+      setOpacity(1);
+    }, entryDelay);
+  };
+  const hide = () => {
+    if (showTimerRef.current) {
+      clearTimeout(showTimerRef.current);
+    }
+    hideTimerRef.current = setTimeout(() => {
+      setOpacity(0);
+      transitionTimerRef.current = setTimeout(() => setVisible(false), animationDuration);
+    }, exitDelay);
+  };
+  const positionModifiers = {
+    top: styles.modifiers.top,
+    bottom: styles.modifiers.bottom,
+    left: styles.modifiers.left,
+    right: styles.modifiers.right
+  };
+  const hasCustomMaxWidth = maxWidth !== tooltipMaxWidth.value;
+  const content = (
+    <div
+      className={css(styles.tooltip, className)}
+      role="tooltip"
+      id={id}
+      style={{
+        maxWidth: hasCustomMaxWidth ? maxWidth : null,
+        opacity,
+        transition: getOpacityTransition(animationDuration)
+      }}
+      {...rest}
+    >
+      <TooltipArrow />
+      <TooltipContent isLeftAligned={isContentLeftAligned}>{bodyContent}</TooltipContent>
+    </div>
+  );
 
-  handleEscKeyClick = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
-      this.tip.hide();
+  const onDocumentClick = (event: MouseEvent, triggerElement: HTMLElement) => {
+    // event.currentTarget = document
+    // event.target could be triggerElement or something else
+    if (hideOnClick === true) {
+      // hide on inside the toggle as well as on outside clicks
+      if (visible) {
+        hide();
+      } else if (event.target === triggerElement) {
+        show();
+      }
+    } else if (hideOnClick === 'toggle' && event.target === triggerElement) {
+      // prevent outside clicks from hiding but allow it to still be toggled on toggle click
+      if (visible) {
+        hide();
+      } else {
+        show();
+      }
+    } else if (hideOnClick === false && !visible && event.target === triggerElement) {
+      show();
     }
   };
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleEscKeyClick, false);
-  }
+  const addAriaToTrigger = () => {
+    if (aria === 'describedby' && children.props && !children.props['aria-describedby']) {
+      return React.cloneElement(children, { 'aria-describedby': id });
+    } else if (aria === 'labelledby' && children.props && !children.props['aria-labelledby']) {
+      return React.cloneElement(children, { 'aria-labelledby': id });
+    }
+    return children;
+  };
 
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEscKeyClick, false);
-  }
-
-  extendChildren() {
-    return React.cloneElement(this.props.children, {
-      isAppLauncher: this.props.isAppLauncher
-    });
-  }
-
-  render() {
-    const {
-      position,
-      trigger,
-      isContentLeftAligned,
-      isVisible,
-      enableFlip,
-      children,
-      className,
-      content: bodyContent,
-      entryDelay,
-      exitDelay,
-      appendTo,
-      zIndex,
-      maxWidth,
-      isAppLauncher,
-      distance,
-      aria,
-      boundary,
-      flipBehavior,
-      tippyProps,
-      id,
-      ...rest
-    } = this.props;
-    const content = (
-      <div
-        className={css(
-          !enableFlip && (styles.modifiers[position as 'top' | 'bottom' | 'left' | 'right'] || styles.modifiers.top),
-          className
-        )}
-        role="tooltip"
-        id={id}
-        {...rest}
-      >
-        <TooltipContent isLeftAligned={isContentLeftAligned}>{bodyContent}</TooltipContent>
-      </div>
-    );
-    return (
-      <PopoverBase
-        {...tippyProps}
-        arrow
-        aria={aria}
-        onCreate={this.storeTippyInstance}
-        maxWidth={maxWidth}
-        zIndex={zIndex}
-        appendTo={appendTo}
-        content={content}
-        lazy
-        theme="pf-tooltip"
-        placement={position}
-        trigger={trigger}
-        delay={[entryDelay, exitDelay]}
-        distance={distance}
-        flip={enableFlip}
-        flipBehavior={flipBehavior}
-        boundary={boundary}
-        isVisible={isVisible}
-        popperOptions={{
-          modifiers: {
-            preventOverflow: {
-              enabled: enableFlip
-            },
-            hide: {
-              enabled: enableFlip
-            }
-          }
-        }}
-      >
-        {isAppLauncher ? this.extendChildren() : children}
-      </PopoverBase>
-    );
-  }
-}
+  return (
+    <Popper
+      trigger={aria !== 'none' ? addAriaToTrigger() : children}
+      popper={content}
+      popperMatchesTriggerWidth={false}
+      appendTo={appendTo}
+      isVisible={visible}
+      positionModifiers={positionModifiers}
+      distance={distance}
+      placement={position}
+      onMouseEnter={triggerOnMouseenter && show}
+      onMouseLeave={triggerOnMouseenter && hide}
+      onFocus={triggerOnFocus && show}
+      onBlur={triggerOnFocus && hide}
+      onDocumentClick={triggerOnClick && onDocumentClick}
+      onDocumentKeyDown={triggerManually ? null : handleKeyDown}
+      enableFlip={enableFlip}
+      zIndex={zIndex}
+      flipBehavior={flipBehavior}
+    />
+  );
+};
+Tooltip.displayName = 'Tooltip';

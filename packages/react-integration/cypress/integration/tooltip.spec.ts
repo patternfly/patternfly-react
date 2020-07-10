@@ -7,12 +7,12 @@ describe('Tooltip Demo Test', () => {
 
   it('Display Tooltip', () => {
     cy.get('div[id="tooltipTarget"]').then((tooltipLink: JQuery<HTMLDivElement>) => {
-      cy.get('.tippy-popper').should('not.exist');
+      cy.get('.pf-c-tooltip').should('not.exist');
       cy.wrap(tooltipLink)
         .trigger('mouseenter')
-        .get('.tippy-popper')
+        .get('.pf-c-tooltip')
         .should('exist')
-        .get('.tippy-popper')
+        .get('.pf-c-tooltip')
         .contains('World');
     });
   });
