@@ -553,7 +553,7 @@ class ColumnManagementAction extends React.Component {
         />
       </ToolbarItem>
       <ToolbarItem>
-        <OverflowMenu breakpoint="xl">
+        <OverflowMenu breakpoint="md">
           <OverflowMenuItem>
             <Button variant="primary">Action</Button>
           </OverflowMenuItem>
