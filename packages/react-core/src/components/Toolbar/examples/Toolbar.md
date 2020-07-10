@@ -1176,12 +1176,12 @@ class ToolbarStacked extends React.Component {
             <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
                <ToolbarItem variant="overflow-menu">
                 <OverflowMenu breakpoint="xl">
-                  <OverflowMenuContent isPersistent>
-                    <OverflowMenuGroup isPersistent groupType="button">
-                      <OverflowMenuItem isPersistent>
+                  <OverflowMenuContent>
+                    <OverflowMenuGroup groupType="button">
+                      <OverflowMenuItem>
                         <Button variant={ButtonVariant.primary}>Primary</Button>
                       </OverflowMenuItem>
-                      <OverflowMenuItem isPersistent>
+                      <OverflowMenuItem>
                         <Button variant={ButtonVariant.secondary}>Secondary</Button>
                       </OverflowMenuItem>
                     </OverflowMenuGroup>
