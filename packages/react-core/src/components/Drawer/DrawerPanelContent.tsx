@@ -28,7 +28,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
-    {({ isExpanded, isStatic }) => {
+    {({ isExpanded, isStatic, onExpand }) => {
       const hidden = isStatic ? false : !isExpanded;
 
       return (
@@ -39,6 +39,11 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
             formatBreakpointMods(widths, styles),
             className
           )}
+          onTransitionEnd={ev => {
+            if (!hidden && ev.nativeEvent.propertyName === 'transform') {
+              onExpand();
+            }
+          }}
           hidden={hidden}
           {...props}
         >

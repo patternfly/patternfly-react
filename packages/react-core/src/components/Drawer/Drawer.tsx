@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
-import transitionDuration from '@patternfly/react-tokens/dist/js/c_drawer__panel_TransitionDuration';
 
 export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
@@ -23,14 +22,14 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
 export interface DrawerContextProps {
   isExpanded: boolean;
   isStatic: boolean;
+  onExpand?: () => void;
 }
 
 export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isExpanded: false,
-  isStatic: false
+  isStatic: false,
+  onExpand: () => {}
 });
-
-const timeout = Number.parseInt(transitionDuration.value.match(/\d+/)[0]);
 
 export const Drawer: React.SFC<DrawerProps> = ({
   className = '',
@@ -42,12 +41,8 @@ export const Drawer: React.SFC<DrawerProps> = ({
   onExpand = () => {},
   ...props
 }: DrawerProps) => {
-  if (isExpanded) {
-    setTimeout(onExpand, timeout);
-  }
-
   return (
-    <DrawerContext.Provider value={{ isExpanded, isStatic }}>
+    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand }}>
       <div
         className={css(
           styles.drawer,

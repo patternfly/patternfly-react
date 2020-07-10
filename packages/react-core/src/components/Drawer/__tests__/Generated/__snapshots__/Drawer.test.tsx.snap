@@ -6,6 +6,7 @@ exports[`Drawer should match snapshot (auto-generated) 1`] = `
     Object {
       "isExpanded": false,
       "isStatic": false,
+      "onExpand": [Function],
     }
   }
 >
