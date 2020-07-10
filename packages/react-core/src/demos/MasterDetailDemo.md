@@ -7,64 +7,68 @@ section: 'demos'
 
 import React from 'react';
 import {
-Avatar,
-Brand,
-Breadcrumb,
-BreadcrumbItem,
-Button,
-ButtonVariant,
-Dropdown,
-Card,
-CardActions,
-CardBody,
-CardHeader,
-DataList,
-DataListAction,
-DataListItem,
-DataListItemCells,
-DataListItemRow,
-Toolbar,
-ToolbarItem,
-ToolbarContent,
-ToolbarFilter,
-ToolbarToggleGroup,
-ToolbarGroup,
-Divider,
-Drawer,
-DrawerActions,
-DrawerCloseButton,
-DrawerContent,
-DrawerContentBody,
-DrawerHead,
-DrawerPanelContent,
-DropdownToggle,
-DropdownItem,
-DropdownSeparator,
-Flex,
-FlexItem,
-Gallery,
-GalleryItem,
-InputGroup,
-KebabToggle,
-Nav,
-NavItem,
-NavList,
-Page,
-PageHeader,
-PageSection,
-PageSectionVariants,
-PageSidebar,
-Select,
-SelectOption,
-SimpleList,
-SimpleListItem,
-SkipToContent,
-Stack,
-StackItem,
-Text,
-TextContent,
-TextInput,
-Title
+  Avatar,
+  Brand,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  ButtonVariant,
+  Dropdown,
+  Card,
+  CardActions,
+  CardBody,
+  CardHeader,
+  DataList,
+  DataListAction,
+  DataListItem,
+  DataListItemCells,
+  DataListItemRow,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarFilter,
+  ToolbarToggleGroup,
+  ToolbarGroup,
+  Divider,
+  Drawer,
+  DrawerActions,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerHead,
+  DrawerPanelContent,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  Flex,
+  FlexItem,
+  Gallery,
+  GalleryItem,
+  InputGroup,
+  KebabToggle,
+  Nav,
+  NavItem,
+  NavList,
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  Page,
+  PageHeader,
+  PageSection,
+  PageSectionVariants,
+  PageSidebar,
+  Select,
+  SelectOption,
+  SimpleList,
+  SimpleListItem,
+  SkipToContent,
+  Stack,
+  StackItem,
+  Text,
+  TextContent,
+  TextInput,
+  Title
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
@@ -1301,6 +1305,10 @@ import {
   NavItem,
   NavList,
   NavVariants,
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   Page,
   PageHeader,
   PageSection,
@@ -1571,18 +1579,22 @@ class MasterDetailCardView extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
-        <ToolbarItem>
-          <Button variant="primary">Create a Project</Button>
-        </ToolbarItem>
-        <ToolbarItem>
-          <Dropdown
-            onSelect={this.onToolbarKebabDropdownSelect}
-            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
-            isOpen={isLowerToolbarKebabDropdownOpen}
-            isPlain
-            dropdownItems={toolbarKebabDropdownItems}
-          />
+        <ToolbarItem variant="overflow-menu">
+          <OverflowMenu breakpoint="xl">
+            <OverflowMenuItem isPersistent>{this.buildFilterDropdown()}</OverflowMenuItem>
+            <OverflowMenuItem isPersistent>
+              <Button variant="primary">Create a Project</Button>
+            </OverflowMenuItem>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={this.onToolbarKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
+                isOpen={isLowerToolbarKebabDropdownOpen}
+                isPlain
+                dropdownItems={toolbarKebabDropdownItems}
+              />
+            </OverflowMenuControl>
+          </OverflowMenu>
         </ToolbarItem>
       </React.Fragment>
     );

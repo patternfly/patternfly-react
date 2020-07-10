@@ -29,6 +29,10 @@ KebabToggle,
 Nav,
 NavItem,
 NavList,
+OverflowMenu,
+OverflowMenuControl,
+OverflowMenuDropdownItem,
+OverflowMenuItem,
 Page,
 PageHeader,
 PageHeaderTools,
@@ -44,7 +48,8 @@ Toolbar,
 ToolbarGroup,
 ToolbarItem,
 ToolbarFilter,
-ToolbarContent
+ToolbarContent,
+ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
@@ -92,6 +97,10 @@ import {
   Nav,
   NavItem,
   NavList,
+  OverflowMenu,
+  OverflowMenuControl,
+  OverflowMenuDropdownItem,
+  OverflowMenuItem,
   Page,
   PageHeader,
   PageHeaderTools,
@@ -110,7 +119,8 @@ import {
   ToolbarGroup,
   ToolbarItem,
   ToolbarFilter,
-  ToolbarContent
+  ToolbarContent,
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon, HelpIcon } from '@patternfly/react-icons';
@@ -448,6 +458,7 @@ class CardViewBasic extends React.Component {
           this.fetch(1, value);
         }}
         variant="top"
+        isCompact
       />
     );
   }
@@ -549,38 +560,42 @@ class CardViewBasic extends React.Component {
     } = this.state;
 
     const toolbarKebabDropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
+      <OverflowMenuDropdownItem key="link">Link</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action" component="button">
         Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="disabled link" isDisabled>
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="disabled action" isDisabled component="button">
         Disabled Action
-      </DropdownItem>,
+      </OverflowMenuDropdownItem>,
       <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
+      <OverflowMenuDropdownItem key="separated link">Separated Link</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="separated action" component="button">
         Separated Action
-      </DropdownItem>
+      </OverflowMenuDropdownItem>
     ];
 
     const toolbarItems = (
       <React.Fragment>
         <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-        <ToolbarItem>{this.buildFilterDropdown()}</ToolbarItem>
-        <ToolbarItem>
-          <Button variant="primary">Create a Project</Button>
-        </ToolbarItem>
-        <ToolbarItem>
-          <Dropdown
-            onSelect={this.onToolbarKebabDropdownSelect}
-            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
-            isOpen={isLowerToolbarKebabDropdownOpen}
-            isPlain
-            dropdownItems={toolbarKebabDropdownItems}
-          />
+        <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
+        <ToolbarItem variant="overflow-menu">
+          <OverflowMenu breakpoint="md">
+            <OverflowMenuItem>
+              <Button variant="primary">Create a Project</Button>
+            </OverflowMenuItem>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={this.onToolbarKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
+                isOpen={isLowerToolbarKebabDropdownOpen}
+                isPlain
+                dropdownItems={toolbarKebabDropdownItems}
+              />
+            </OverflowMenuControl>
+          </OverflowMenu>
         </ToolbarItem>
         <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
           {this.renderPagination()}
