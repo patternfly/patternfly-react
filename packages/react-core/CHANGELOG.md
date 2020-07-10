@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.30.0...@patternfly/react-core@4.30.1) (2020-07-10)
+
+
+### Bug Fixes
+
+* **expandable-section:** pass expandable value to onToggle ([#4427](https://github.com/patternfly/patternfly-react/issues/4427)) ([e016965](https://github.com/patternfly/patternfly-react/commit/e0169655dac62fc19890f6abae66a8eb98a25559))
+
+
+
+
+
 # [4.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.29.0...@patternfly/react-core@4.30.0) (2020-07-10)
 
 
