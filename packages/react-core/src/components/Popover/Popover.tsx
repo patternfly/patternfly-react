@@ -102,6 +102,8 @@ export interface PopoverProps {
   animationDuration?: number;
   /** id used as part of the various popover elements (popover-${id}-header/body/footer) */
   id?: string;
+  /** @deprecated if you want to constrain the popper to a specific element use the appendTo prop instead */
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
 export interface PopoverState {

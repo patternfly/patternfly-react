@@ -74,6 +74,8 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   id?: string;
   /** CSS fade transition animation duration */
   animationDuration?: number;
+  /** @deprecated if you want to constrain the popper to a specific element use the appendTo prop instead */
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
