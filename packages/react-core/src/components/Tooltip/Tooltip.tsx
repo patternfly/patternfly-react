@@ -101,8 +101,15 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   id = `pf-tooltip-${pfTooltipIdCounter++}`,
   children,
   animationDuration = 300,
+  boundary,
   ...rest
 }) => {
+  if (boundary && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The Tooltip boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
+    );
+  }
   // could make this a prop in the future (true | false | 'toggle')
   const hideOnClick = true;
   const triggerOnMouseenter = trigger.includes('mouseenter');

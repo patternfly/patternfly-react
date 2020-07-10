@@ -139,8 +139,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   flipBehavior = ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
   animationDuration = 300,
   id,
+  boundary,
   ...rest
 }) => {
+  if (boundary && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The Popover boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
+    );
+  }
   // could make this a prop in the future (true | false | 'toggle')
   // const hideOnClick = true;
   const uniqueId = id || getUniqueId();
