@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.30.1...@patternfly/react-core@4.31.0) (2020-07-10)
+
+
+### Bug Fixes
+
+* **select:** option with description on active display only value ([#4503](https://github.com/patternfly/patternfly-react/issues/4503)) ([eba354e](https://github.com/patternfly/patternfly-react/commit/eba354ecd67140b9165c60111c0df645c162ebfc))
+
+
+### Features
+
+* **Toolbar&OverflowMenu:** update docs to use OverflowMenu components ([#4459](https://github.com/patternfly/patternfly-react/issues/4459)) ([90246dc](https://github.com/patternfly/patternfly-react/commit/90246dc39fc92464dc70621c940be906ff621047))
+
+
+
+
+
 ## [4.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.30.0...@patternfly/react-core@4.30.1) (2020-07-10)
 
 
