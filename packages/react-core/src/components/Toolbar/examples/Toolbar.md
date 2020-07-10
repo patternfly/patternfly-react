@@ -1170,12 +1170,12 @@ class ToolbarStacked extends React.Component {
       <React.Fragment>
         <Toolbar>
           <ToolbarContent>
-            <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+            <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="lg">
               {toggleGroupItems}
             </ToolbarToggleGroup>
             <ToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</ToolbarGroup>
                <ToolbarItem variant="overflow-menu">
-                <OverflowMenu breakpoint="xl">
+                <OverflowMenu breakpoint="2xl">
                   <OverflowMenuContent>
                     <OverflowMenuGroup groupType="button">
                       <OverflowMenuItem>

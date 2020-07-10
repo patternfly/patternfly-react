@@ -105,7 +105,7 @@ class ComplexPaginationTableDemo extends React.Component {
             name="check"
           />
         </ToolbarItem>
-        <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
+        <ToolbarItem variant="pagination">
           {this.renderPagination()}
         </ToolbarItem>
       </ToolbarContent>

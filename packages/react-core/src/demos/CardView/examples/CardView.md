@@ -581,8 +581,8 @@ class CardViewBasic extends React.Component {
       <React.Fragment>
         <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
         <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
-        <ToolbarItem>
-        <OverflowMenu breakpoint="xl">
+        <ToolbarItem variant="overflow-menu">
+        <OverflowMenu breakpoint="md">
         <OverflowMenuItem>
           <Button variant="primary">Create a Project</Button>
         </OverflowMenuItem>

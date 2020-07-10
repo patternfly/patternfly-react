@@ -184,10 +184,11 @@ class BulkSelectTableDemo extends React.Component {
   renderToolbar() {
     return (
       <React.Fragment>
-        <Toolbar className="pf-l-toolbar pf-u-justify-content-space-between pf-u-mx-xl pf-u-my-md">
+        <Toolbar>
+          <ToolbarContent>
           <ToolbarGroup>
-            <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
-            <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>{this.renderPagination('top')}</ToolbarItem>
+            <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
+            <ToolbarItem variant="pagination">{this.renderPagination('top')}</ToolbarItem>
           </ToolbarGroup>
         </Toolbar>
       </React.Fragment>

@@ -1580,9 +1580,9 @@ class MasterDetailCardView extends React.Component {
     const toolbarItems = (
       <React.Fragment>
         <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarToggleGroup>
-          <ToolbarItem>
+          <ToolbarItem variant="overflow-menu">
             <OverflowMenu breakpoint="xl">
-              <OverflowMenuItem>
+              <OverflowMenuItem isPersistent>
                 <Button variant="primary">Create a Project</Button>
               </OverflowMenuItem>
               <OverflowMenuControl hasAdditionalOptions>

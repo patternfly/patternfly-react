@@ -552,7 +552,7 @@ class ColumnManagementAction extends React.Component {
           }
         />
       </ToolbarItem>
-      <ToolbarItem>
+      <ToolbarItem variant="overflow-menu">
         <OverflowMenu breakpoint="md">
           <OverflowMenuItem>
             <Button variant="primary">Action</Button>
@@ -562,7 +562,7 @@ class ColumnManagementAction extends React.Component {
           </OverflowMenuItem>
         </OverflowMenu>
       </ToolbarItem>
-            <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
+            <ToolbarItem variant="pagination">
               <Pagination
                 itemCount={37}
                 widgetId="pagination-options-menu-bottom"
