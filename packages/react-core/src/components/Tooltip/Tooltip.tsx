@@ -6,7 +6,7 @@ import { TooltipArrow } from './TooltipArrow';
 import { KEY_CODES } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
-import { Popper } from '../../helpers/Popper/Popper';
+import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -166,7 +166,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       style={{
         maxWidth: hasCustomMaxWidth ? maxWidth : null,
         opacity,
-        transition: `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`
+        transition: getOpacityTransition(animationDuration)
       }}
       {...rest}
     >
@@ -198,9 +198,9 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   };
 
   const addAriaToTrigger = () => {
-    if (aria === 'describedby' && !children.props['aria-describedby']) {
+    if (aria === 'describedby' && children.props && !children.props['aria-describedby']) {
       return React.cloneElement(children, { 'aria-describedby': id });
-    } else if (aria === 'labelledby' && !children.props['aria-labelledby']) {
+    } else if (aria === 'labelledby' && children.props && !children.props['aria-labelledby']) {
       return React.cloneElement(children, { 'aria-labelledby': id });
     }
     return children;

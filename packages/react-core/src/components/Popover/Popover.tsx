@@ -12,7 +12,7 @@ import popoverMaxWidth from '@patternfly/react-tokens/dist/js/c_popover_MaxWidth
 import popoverMinWidth from '@patternfly/react-tokens/dist/js/c_popover_MinWidth';
 import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
-import { Popper } from '../../helpers/Popper/Popper';
+import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
 
 export enum PopoverPosition {
@@ -119,8 +119,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   shouldOpen = (): void => null,
   'aria-label': ariaLabel = '',
   bodyContent,
-  headerContent = null as typeof PopoverHeader,
-  footerContent = null as typeof PopoverFooter,
+  headerContent = null,
+  footerContent = null,
   appendTo = () => document.body,
   hideOnOutsideClick = true,
   onHide = (): void => null,
@@ -280,7 +280,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         minWidth: hasCustomMinWidth ? minWidth : null,
         maxWidth: hasCustomMaxWidth ? maxWidth : null,
         opacity,
-        transition: `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`
+        transition: getOpacityTransition(animationDuration)
       }}
       {...rest}
     >

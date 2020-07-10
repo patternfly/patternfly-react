@@ -18,6 +18,9 @@ export interface ToggleMenuBaseProps {
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
 }
 
+export const getOpacityTransition = (animationDuration: number) =>
+  `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
+
 export interface PopperProps {
   /** The trigger element */
   trigger: React.ReactNode;
@@ -76,7 +79,6 @@ export interface PopperProps {
   enableFlip?: boolean;
   /** The behavior of how the popper flips when it reaches the boundary */
   flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
-  // boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
 export const Popper: React.FunctionComponent<PopperProps> = ({
@@ -102,7 +104,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onDocumentKeyDown,
   enableFlip = true,
   flipBehavior = 'flip'
-  // boundary = 'viewport',
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [popperElement, setPopperElement] = React.useState(null);
@@ -115,26 +116,36 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   React.useEffect(() => {
     setReady(true);
   }, []);
+  const addEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
+    if (listener && element) {
+      element.addEventListener(event, listener);
+    }
+  };
+  const removeEventListener = (listener: any, element: Document | HTMLElement, event: string) => {
+    if (listener && element) {
+      element.removeEventListener(event, listener);
+    }
+  };
   React.useEffect(() => {
-    onMouseEnter && triggerElement && triggerElement.addEventListener('mouseenter', onMouseEnter);
-    onMouseLeave && triggerElement && triggerElement.addEventListener('mouseleave', onMouseLeave);
-    onFocus && triggerElement && triggerElement.addEventListener('focus', onFocus);
-    onBlur && triggerElement && triggerElement.addEventListener('blur', onBlur);
-    onTriggerClick && triggerElement && triggerElement.addEventListener('click', onTriggerClick, false);
-    onTriggerEnter && triggerElement && triggerElement.addEventListener('keydown', onTriggerEnter, false);
-    onPopperClick && popperElement && popperElement.addEventListener('click', onPopperClick, false);
-    onDocumentClick && triggerElement && document.addEventListener('click', onDocumentClickCallback, false);
-    onDocumentKeyDown && triggerElement && document.addEventListener('keydown', onDocumentKeyDown, false);
+    addEventListener(onMouseEnter, triggerElement, 'mouseenter');
+    addEventListener(onMouseLeave, triggerElement, 'mouseleave');
+    addEventListener(onFocus, triggerElement, 'focus');
+    addEventListener(onBlur, triggerElement, 'blur');
+    addEventListener(onTriggerClick, triggerElement, 'click');
+    addEventListener(onTriggerEnter, triggerElement, 'keydown');
+    addEventListener(onPopperClick, popperElement, 'click');
+    onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
+    addEventListener(onDocumentKeyDown, document, 'keydown');
     return () => {
-      onMouseEnter && triggerElement && triggerElement.removeEventListener('mouseenter', onMouseEnter);
-      onMouseLeave && triggerElement && triggerElement.removeEventListener('mouseleave', onMouseLeave);
-      onFocus && triggerElement && triggerElement.removeEventListener('focus', onFocus);
-      onBlur && triggerElement && triggerElement.removeEventListener('blur', onBlur);
-      onTriggerClick && triggerElement && triggerElement.removeEventListener('click', onTriggerClick, false);
-      onTriggerEnter && triggerElement && triggerElement.removeEventListener('keydown', onTriggerEnter, false);
-      onPopperClick && popperElement && popperElement.removeEventListener('click', onPopperClick, false);
-      onDocumentClick && triggerElement && document.removeEventListener('click', onDocumentClickCallback, false);
-      onDocumentKeyDown && triggerElement && document.removeEventListener('keydown', onDocumentKeyDown, false);
+      removeEventListener(onMouseEnter, triggerElement, 'mouseenter');
+      removeEventListener(onMouseLeave, triggerElement, 'mouseleave');
+      removeEventListener(onFocus, triggerElement, 'focus');
+      removeEventListener(onBlur, triggerElement, 'blur');
+      removeEventListener(onTriggerClick, triggerElement, 'click');
+      removeEventListener(onTriggerEnter, triggerElement, 'keydown');
+      removeEventListener(onPopperClick, popperElement, 'click');
+      onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
+      removeEventListener(onDocumentKeyDown, document, 'keydown');
     };
   }, [
     triggerElement,
@@ -143,9 +154,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     onMouseLeave,
     onFocus,
     onBlur,
-    onDocumentClick,
     onTriggerClick,
-    onPopperClick
+    onTriggerEnter,
+    onPopperClick,
+    onDocumentClick,
+    onDocumentKeyDown
   ]);
   const getPlacement = () => {
     if (placement) {
@@ -207,6 +220,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   };
   // maybe make this an option again to be backwards compatible although it shouldn't be needed anymore
+  // boundary would be of type: 'scrollParent' | 'window' | 'viewport' | HTMLElement
   // const mapBoundaryOptionsMemo = React.useMemo(mapBoundaryOptions, [boundary]);
   const { styles: popperStyles, attributes } = usePopper(triggerElement, popperElement, {
     placement: getPlacementMemo,
