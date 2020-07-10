@@ -26,7 +26,7 @@ export class AlertCustomTimeoutDemo extends React.Component<{}, AlertCustomTimeo
           Open Alert
         </Button>
         {isOpenAlert && (
-          <Alert id="alert-custom-timeout" title="custom timeout" timeout={16}>
+          <Alert id="alert-custom-timeout" title="custom timeout" timeout={16000}>
             custom 16 second timeout
           </Alert>
         )}

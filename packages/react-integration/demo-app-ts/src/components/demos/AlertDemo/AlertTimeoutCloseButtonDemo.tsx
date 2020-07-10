@@ -31,7 +31,7 @@ export class AlertTimeoutCloseButtonDemo extends React.Component<{}, AlertTimeou
           <Alert
             id="close-button-alert"
             title="Alert close button"
-            timeout={100}
+            timeout={100000}
             actionClose={<AlertActionCloseButton id="test-close-button" onClose={this.onCloseClick} />}
           >
             Alert with close button and timeout

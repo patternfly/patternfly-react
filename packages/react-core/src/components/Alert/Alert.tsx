@@ -36,7 +36,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   variantLabel?: string;
   /** Flag to indicate if the Alert is in a live region */
   isLiveRegion?: boolean;
-  /** If set to true, the time out is 8 seconds.  If a number is provided, alert will be dismissed after that amount of time in seconds. */
+  /** If set to true, the time out is 8000 milliseconds.  If a number is provided, alert will be dismissed after that amount of time in milliseconds. */
   timeout?: number | boolean;
 }
 
@@ -77,7 +77,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       () => {
         setDisableAlert(true);
       },
-      timeout === true ? 8000 : timeout * 1000
+      timeout === true ? 8000 : timeout
     );
   }
 

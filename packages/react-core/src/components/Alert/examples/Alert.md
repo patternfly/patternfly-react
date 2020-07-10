@@ -337,7 +337,7 @@ class AlertTimeout extends React.Component {
         {this.state.isOpen &&
         <React.Fragment>
           <Alert title="Default timeout Alert" timeout={true}>This alert will dismiss after 8 seconds </Alert>
-          <Alert title="Custom timeout Alert" timeout={16}>This alert will dismiss after 16 seconds </Alert>
+          <Alert title="Custom timeout Alert" timeout={16000}>This alert will dismiss after 16 seconds </Alert>
         </React.Fragment>
         }
       </React.Fragment>
