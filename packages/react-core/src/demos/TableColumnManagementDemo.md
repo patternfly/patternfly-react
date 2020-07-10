@@ -528,49 +528,49 @@ class ColumnManagementAction extends React.Component {
     const toolbarItems = <React.Fragment>
       <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>Choose one</span>
       <ToolbarContent>
-      <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
-        <ToolbarItem>
-          <Select
-            id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
-            placeholderText={<><FilterIcon /> Name</>}
+        <ToolbarItem variant="overflow-menu">
+          <OverflowMenu breakpoint="md">
+              <OverflowMenuItem isPersistent>
+                <Select
+                  id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                  variant={SelectVariant.single}
+                  aria-label="Select Input"
+                  aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                  placeholderText={<><FilterIcon /> Name</>}
+                />
+              </OverflowMenuItem>
+              <OverflowMenuItem>
+                <OptionsMenu
+                  id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
+                  isPlain
+                  menuItems={[]}
+                  toggle={
+                    <OptionsMenuToggle
+                      toggleTemplate={<SortAmountDownIcon aria-hidden="true"/>}
+                      aria-label="Sort by"
+                      hideCaret/>
+                  }
+                />
+              </OverflowMenuItem>
+              <OverflowMenuGroup groupType="button" isPersistent>
+                <OverflowMenuItem>
+                  <Button variant="primary">Action</Button>
+                </OverflowMenuItem>
+                <OverflowMenuItem>
+                  <Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button>
+                </OverflowMenuItem>
+            </OverflowMenuGroup>
+          </OverflowMenu>
+        </ToolbarItem>
+        <ToolbarItem variant="pagination">
+          <Pagination
+            itemCount={37}
+            widgetId="pagination-options-menu-bottom"
+            page={1}
+            variant={PaginationVariant.top}
+            isCompact
           />
         </ToolbarItem>
-      </ToolbarToggleGroup>
-      <ToolbarItem>
-        <OptionsMenu
-          id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
-          isPlain
-          menuItems={[]}
-          toggle={
-            <OptionsMenuToggle
-              toggleTemplate={<SortAmountDownIcon aria-hidden="true"/>}
-              aria-label="Sort by"
-              hideCaret/>
-          }
-        />
-      </ToolbarItem>
-      <ToolbarItem variant="overflow-menu">
-        <OverflowMenu breakpoint="md">
-          <OverflowMenuItem>
-            <Button variant="primary">Action</Button>
-          </OverflowMenuItem>
-          <OverflowMenuItem>
-            <Button variant="link" onClick={this.handleModalToggle}>Manage columns</Button>
-          </OverflowMenuItem>
-        </OverflowMenu>
-      </ToolbarItem>
-            <ToolbarItem variant="pagination">
-              <Pagination
-                itemCount={37}
-                widgetId="pagination-options-menu-bottom"
-                page={1}
-                variant={PaginationVariant.top}
-                isCompact
-              />
-            </ToolbarItem>
       </ToolbarContent>
     </React.Fragment>;
 

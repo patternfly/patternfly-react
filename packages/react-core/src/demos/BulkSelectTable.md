@@ -185,7 +185,6 @@ class BulkSelectTableDemo extends React.Component {
     return (
       <React.Fragment>
         <Toolbar>
-          <ToolbarContent>
           <ToolbarGroup>
             <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
             <ToolbarItem variant="pagination">{this.renderPagination('top')}</ToolbarItem>

@@ -582,21 +582,21 @@ class CardViewBasic extends React.Component {
         <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
         <ToolbarItem toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarItem>
         <ToolbarItem variant="overflow-menu">
-        <OverflowMenu breakpoint="md">
-        <OverflowMenuItem>
-          <Button variant="primary">Create a Project</Button>
-        </OverflowMenuItem>
-          <OverflowMenuControl hasAdditionalOptions>
-            <Dropdown
-              onSelect={this.onToolbarKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
-              isOpen={isLowerToolbarKebabDropdownOpen}
-              isPlain
-              dropdownItems={toolbarKebabDropdownItems}
-            />
-          </OverflowMenuControl>
+          <OverflowMenu breakpoint="md">
+            <OverflowMenuItem>
+              <Button variant="primary">Create a Project</Button>
+            </OverflowMenuItem>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={this.onToolbarKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="toggle-id-6" />}
+                isOpen={isLowerToolbarKebabDropdownOpen}
+                isPlain
+                dropdownItems={toolbarKebabDropdownItems}
+              />
+            </OverflowMenuControl>
           </OverflowMenu>
-          </ToolbarItem>
+        </ToolbarItem>
         <ToolbarItem variant="pagination" alignment={{ default: 'alignRight' }}>
           {this.renderPagination()}
         </ToolbarItem>

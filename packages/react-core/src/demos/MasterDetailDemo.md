@@ -1579,23 +1579,23 @@ class MasterDetailCardView extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">{this.buildFilterDropdown()}</ToolbarToggleGroup>
-          <ToolbarItem variant="overflow-menu">
-            <OverflowMenu breakpoint="xl">
-              <OverflowMenuItem isPersistent>
-                <Button variant="primary">Create a Project</Button>
-              </OverflowMenuItem>
-              <OverflowMenuControl hasAdditionalOptions>
-                <Dropdown
-                  onSelect={this.onToolbarKebabDropdownSelect}
-                  toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
-                  isOpen={isLowerToolbarKebabDropdownOpen}
-                  isPlain
-                  dropdownItems={toolbarKebabDropdownItems}
-                />
-              </OverflowMenuControl>
-            </OverflowMenu>
-          </ToolbarItem>
+        <ToolbarItem variant="overflow-menu">
+          <OverflowMenu breakpoint="xl">
+            <OverflowMenuItem isPersistent>{this.buildFilterDropdown()}</OverflowMenuItem>
+            <OverflowMenuItem isPersistent>
+              <Button variant="primary">Create a Project</Button>
+            </OverflowMenuItem>
+            <OverflowMenuControl hasAdditionalOptions>
+              <Dropdown
+                onSelect={this.onToolbarKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
+                isOpen={isLowerToolbarKebabDropdownOpen}
+                isPlain
+                dropdownItems={toolbarKebabDropdownItems}
+              />
+            </OverflowMenuControl>
+          </OverflowMenu>
+        </ToolbarItem>
       </React.Fragment>
     );
 
