@@ -81,8 +81,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     // uncontrolled
     if (isExpanded === undefined) {
       propOrStateIsExpanded = this.state.isExpanded;
-      onToggle = isExpanded => {
-        this.setState({ isExpanded }, () => onToggleProp(this.state.isExpanded));
+      onToggle = isOpen => {
+        this.setState({ isExpanded: isOpen }, () => onToggleProp(this.state.isExpanded));
       };
     }
 
