@@ -11,13 +11,25 @@ const items = [
   <ContextSelectorItem key="4">Azure</ContextSelectorItem>
 ];
 
+const menuHeader = (
+  <React.Fragment>
+    Projects:
+    <ContextSelectorItem onClick={e => this.onSelect(e, 'All projects')}>
+      All projects
+    </ContextSelectorItem>
+  </React.Fragment>
+);
 test('Renders ContextSelector', () => {
   const view = shallow(<ContextSelector> {items} </ContextSelector>);
   expect(view).toMatchSnapshot();
 });
 
 test('Renders ContextSelector open', () => {
-  const view = shallow(<ContextSelector isOpen> {items} </ContextSelector>);
+  const view = shallow(
+    <ContextSelector isOpen menuHeader={menuHeader}>
+      {items}
+    </ContextSelector>
+  );
   expect(view).toMatchSnapshot();
 });
 

@@ -51,6 +51,20 @@ exports[`Renders ContextSelector open 1`] = `
       }
       paused={false}
     >
+      <ContextSelectorMenuList
+        className=""
+        isOpen={true}
+      >
+        Projects:
+        <ContextSelectorItem
+          className=""
+          isDisabled={false}
+          onClick={[Function]}
+          sendRef={[Function]}
+        >
+          All projects
+        </ContextSelectorItem>
+      </ContextSelectorMenuList>
       <div
         className="pf-c-context-selector__menu-search"
       >
@@ -89,7 +103,6 @@ exports[`Renders ContextSelector open 1`] = `
           className=""
           isOpen={true}
         >
-           
           <ContextSelectorItem
             className=""
             isDisabled={false}
@@ -135,7 +148,6 @@ exports[`Renders ContextSelector open 1`] = `
           >
             Azure
           </ContextSelectorItem>
-           
         </ContextSelectorMenuList>
       </ContextProvider>
     </FocusTrap>

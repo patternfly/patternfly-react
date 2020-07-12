@@ -43,6 +43,8 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
+  /** content that is inserted before the search bar filter */
+  menuHeader?: React.ReactNode;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps> {
@@ -61,7 +63,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     searchInputPlaceholder: 'Search',
     onSearchButtonClick: () => undefined as any,
     menuAppendTo: 'inline',
-    ouiaSafe: true
+    ouiaSafe: true,
+    menuHeader: null as React.ReactNode
   };
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
@@ -92,12 +95,15 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
       menuAppendTo,
       ouiaId,
       ouiaSafe,
+      menuHeader,
       ...props
     } = this.props;
+
     const menuContainer = (
       <div className={css(styles.contextSelectorMenu)}>
         {isOpen && (
           <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+            {menuHeader && <ContextSelectorMenuList isOpen={isOpen}>{menuHeader}</ContextSelectorMenuList>}
             <div className={css(styles.contextSelectorMenuSearch)}>
               <InputGroup>
                 <TextInput
