@@ -6,7 +6,7 @@ import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ExpandableSectionProps {
   /** Content rendered inside the Expandable Component */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Additional classes added to the Expandable Component */
   className?: string;
   /** Flag to indicate if the content is expanded */
