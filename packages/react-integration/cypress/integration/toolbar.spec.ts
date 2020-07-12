@@ -127,3 +127,73 @@ describe('Data Toolbar Demo Test', () => {
     });
   });
 });
+
+describe('Filter by type', () => {
+  it('Filter by Node and Region and clear all', () => {
+    cy.get('.pf-c-chip-group')
+      .eq(0)
+      .get('li.pf-c-chip-group__list-item')
+      .last()
+      .should('have.text', 'Node');
+    cy.get('.pf-c-toolbar__item')
+      .eq(3)
+      .click();
+    cy.get('label.pf-c-select__menu-item')
+      .eq(2)
+      .click();
+    cy.get('.pf-c-toolbar__item')
+      .eq(3)
+      .click();
+    cy.get('.pf-c-chip-group')
+      .eq(2)
+      .get('li.pf-c-chip-group__list-item')
+      .last()
+      .should('have.text', 'Region');
+    cy.get('div.pf-c-chip-group__close')
+      .eq(1)
+      .click();
+  });
+  it('Toggle Node filter', () => {
+    cy.get('.pf-c-chip-group').should('have.length', 2);
+    cy.get('.pf-c-toolbar__item')
+      .eq(3)
+      .click();
+    cy.get('label.pf-c-select__menu-item')
+      .eq(0)
+      .click();
+    cy.get('.pf-c-chip-group').should('have.length', 3);
+    cy.get('.pf-c-chip-group')
+      .eq(2)
+      .get('li.pf-c-chip-group__list-item')
+      .last()
+      .should('have.text', 'Node');
+    cy.get('label.pf-c-select__menu-item')
+      .eq(0)
+      .click();
+    cy.get('.pf-c-toolbar__item')
+      .eq(3)
+      .click();
+    cy.get('.pf-c-chip-group').should('have.length', 2);
+  });
+  it('Remove Region filter from type chip group', () => {
+    cy.get('.pf-c-toolbar__item')
+      .eq(3)
+      .click();
+    cy.get('label.pf-c-select__menu-item')
+      .eq(2)
+      .click();
+    cy.get('.pf-c-chip-group').should('have.length', 3);
+    cy.get('.pf-c-chip-group')
+      .eq(2)
+      .get('li.pf-c-chip-group__list-item')
+      .last()
+      .should('have.text', 'Region');
+    cy.get('.pf-c-toolbar__item')
+      .eq(3)
+      .click();
+    cy.get('.pf-c-chip-group.pf-m-category button.pf-c-button.pf-m-plain:nth-child(2)')
+      .eq(3)
+      .click();
+    cy.get('.pf-c-chip-group').should('have.length', 2);
+  });
+});

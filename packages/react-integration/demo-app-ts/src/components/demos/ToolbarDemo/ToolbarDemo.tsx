@@ -31,6 +31,7 @@ import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
 interface Filter {
   risk: string[];
   status: string[];
+  type: ToolbarChipGroup[];
   key: string[];
 }
 
@@ -39,6 +40,7 @@ interface ToolbarState {
   inputValue: string;
   statusisOpen: boolean;
   riskisOpen: boolean;
+  typeisOpen: boolean;
   filters: Filter;
   kebabIsOpen: boolean;
 }
@@ -52,9 +54,11 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
       inputValue: '',
       statusisOpen: false,
       riskisOpen: false,
+      typeisOpen: false,
       filters: {
         risk: ['Low'],
         status: ['New', 'Pending'],
+        type: [{ key: 'type', name: 'Node' }],
         key: ['']
       },
       kebabIsOpen: false
@@ -78,7 +82,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   };
 
   onSelect = (
-    type: keyof Filter,
+    type: keyof Omit<Filter, 'type'>,
     event: React.MouseEvent | React.ChangeEvent,
     selection: string | SelectOptionObject
   ) => {
@@ -105,7 +109,20 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     this.onSelect('risk', event, selection);
   };
 
-  onDelete = (type: string | ToolbarChipGroup = '', id: ToolbarChip | string = '') => {
+  onTypeSelect = (event: React.MouseEvent | React.ChangeEvent, selection: string) => {
+    const checked = (event.target as HTMLInputElement).checked;
+    const prevSelections = this.state.filters.type;
+    this.setState({
+      filters: {
+        ...this.state.filters,
+        type: checked
+          ? [...prevSelections, { key: 'type', name: selection }]
+          : prevSelections.filter((value: ToolbarChipGroup) => value.name !== selection)
+      }
+    });
+  };
+
+  onDelete = (type: string | ToolbarChipGroup = '', id: ToolbarChipGroup | ToolbarChip | string = '') => {
     if (type) {
       const lowerCaseType = typeof type === 'string' ? type.toLowerCase() : type.name.toLowerCase();
       this.setState(prevState => {
@@ -119,6 +136,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
       this.setState({
         filters: {
           risk: [],
+          type: [],
           status: [],
           key: []
         }
@@ -126,20 +144,37 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
     }
   };
 
-  onDeleteGroup = (category: string) => {
-    if (category) {
+  onDeleteGroup = (category: string | ToolbarChipGroup) => {
+    if (Boolean(category) === false) {
+      return;
+    }
+    if (typeof category === 'string') {
       this.setState(prevState => {
         prevState.filters[category.toLowerCase() as 'risk' | 'key' | 'status'] = [];
         return {
           filters: prevState.filters
         };
       });
+      return;
     }
+    const { name } = category as ToolbarChipGroup;
+    this.setState(prevState => ({
+      filters: {
+        ...prevState.filters,
+        [name]: []
+      }
+    }));
   };
 
   onStatusToggle = (isOpen: boolean) => {
     this.setState({
       statusisOpen: isOpen
+    });
+  };
+
+  onTypeToggle = (isOpen: boolean) => {
+    this.setState({
+      typeisOpen: isOpen
     });
   };
 
@@ -160,7 +195,7 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
   }
 
   render() {
-    const { inputValue, filters, statusisOpen, riskisOpen, kebabIsOpen } = this.state;
+    const { inputValue, filters, typeisOpen, statusisOpen, riskisOpen, kebabIsOpen } = this.state;
 
     const statusMenuItems = [
       <SelectOption key="statusNew" value="New" />,
@@ -173,6 +208,12 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
       <SelectOption key="riskLow" value="Low" />,
       <SelectOption key="riskMedium" value="Medium" />,
       <SelectOption key="riskHigh" value="High" />
+    ];
+
+    const typeMenuItems = [
+      <SelectOption key="typeNode" value="Node" />,
+      <SelectOption key="typeCluster" value="Cluster" />,
+      <SelectOption key="typeRegion" value="Region" />
     ];
 
     const toggleGroupItems = (
@@ -222,6 +263,24 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
               placeholderText="Risk"
             >
               {riskMenuItems}
+            </Select>
+          </ToolbarFilter>
+          <ToolbarFilter
+            chips={filters.type}
+            deleteChip={this.onDelete}
+            deleteChipGroup={(category: string | ToolbarChipGroup) => this.onDeleteGroup(category)}
+            categoryName="Type"
+          >
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Type"
+              onToggle={this.onTypeToggle}
+              onSelect={this.onTypeSelect}
+              selections={filters.type.map((v: ToolbarChipGroup) => v.name)}
+              isOpen={typeisOpen}
+              placeholderText="Type"
+            >
+              {typeMenuItems}
             </Select>
           </ToolbarFilter>
         </ToolbarGroup>
