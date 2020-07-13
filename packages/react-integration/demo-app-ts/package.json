@@ -1,7 +1,7 @@
 {
   "name": "demo-app-ts",
   "private": true,
-  "version": "4.22.2",
+  "version": "4.22.3",
   "scripts": {
     "build:demo-app": "react-scripts build",
     "start:demo-app": "react-scripts start"

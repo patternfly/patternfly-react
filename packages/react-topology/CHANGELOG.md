@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.23...@patternfly/react-topology@4.4.24) (2020-07-13)
+
+
+### Bug Fixes
+
+* **topology:** create connector drag spec configuration ([#4529](https://github.com/patternfly/patternfly-react/issues/4529)) ([fbe4ba8](https://github.com/patternfly/patternfly-react/commit/fbe4ba81861f012eccd7a88a4aed039f4f98b694))
+
+
+
+
+
 ## [4.4.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.4.22...@patternfly/react-topology@4.4.23) (2020-07-10)
 
 **Note:** Version bump only for package @patternfly/react-topology
