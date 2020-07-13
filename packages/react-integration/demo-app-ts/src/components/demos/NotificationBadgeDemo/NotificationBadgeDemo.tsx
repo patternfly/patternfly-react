@@ -1,11 +1,10 @@
 import React from 'react';
-import { NotificationBadge, NotificationBadgeProps } from '@patternfly/react-core';
+import { NotificationBadge, NotificationBadgeProps, NotificationBadgeVariant } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 interface NotificationBadgeDemoState {
   isFirstRead: boolean;
-  isSecondRead: boolean;
-  isSecondNeedingAttention: boolean;
+  secondVariant: NotificationBadgeVariant | 'read' | 'unread' | 'attention';
   secondCount: number;
 }
 
@@ -18,8 +17,7 @@ export class NotificationBadgeDemo extends React.Component<NotificationBadgeProp
     super(props);
     this.state = {
       isFirstRead: false,
-      isSecondRead: false,
-      isSecondNeedingAttention: true,
+      secondVariant: 'attention',
       secondCount: 30
     };
     this.onFirstClick = () => {
@@ -29,15 +27,13 @@ export class NotificationBadgeDemo extends React.Component<NotificationBadgeProp
     };
     this.onSecondClick = () => {
       this.setState({
-        isSecondRead: true,
-        isSecondNeedingAttention: false,
-        secondCount: 0
+        secondVariant: 'read'
       });
     };
   }
 
   render() {
-    const { isFirstRead, isSecondRead, isSecondNeedingAttention, secondCount } = this.state;
+    const { isFirstRead, secondVariant, secondCount } = this.state;
     return (
       <>
         <NotificationBadge
@@ -50,8 +46,7 @@ export class NotificationBadgeDemo extends React.Component<NotificationBadgeProp
         </NotificationBadge>
         <NotificationBadge
           id="notification-demo-badge2"
-          isRead={isSecondRead}
-          isNeedingAttention={isSecondNeedingAttention}
+          variant={secondVariant}
           onClick={this.onSecondClick}
           aria-label="Second notifications"
           count={secondCount}

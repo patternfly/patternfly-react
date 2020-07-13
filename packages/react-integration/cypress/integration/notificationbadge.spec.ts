@@ -24,6 +24,5 @@ describe('Notification Badge Demo Test', () => {
     cy.get('.pf-c-notification-badge')
       .last()
       .should('have.class', 'pf-m-read');
-    cy.get('.pf-c-notification-badge__count').should('not.exist');
   });
 });

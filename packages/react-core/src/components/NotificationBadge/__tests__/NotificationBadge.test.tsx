@@ -9,9 +9,9 @@ Object.values([true, false]).forEach(isRead => {
   });
 });
 
-Object.values([true, false]).forEach(isNeedingAttention => {
-  test(`${isNeedingAttention} NotificationBadge isNeedingAttention`, () => {
-    const view = shallow(<NotificationBadge isNeedingAttention={isNeedingAttention}>{isNeedingAttention ? 'needs attention' : 'does not need attention'} Badge</NotificationBadge>);
+Object.values([true, false]).forEach(attentionVariant => {
+  test(`${attentionVariant} NotificationBadge needs attention`, () => {
+    const view = shallow(<NotificationBadge variant='attention'>{attentionVariant ? 'needs attention' : 'does not need attention'} Badge</NotificationBadge>);
     expect(view).toMatchSnapshot();
   });
 });

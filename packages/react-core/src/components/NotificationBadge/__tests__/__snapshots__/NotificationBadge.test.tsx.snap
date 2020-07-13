@@ -30,12 +30,12 @@ exports[`false NotificationBadge 1`] = `
 </Button>
 `;
 
-exports[`false NotificationBadge isNeedingAttention 1`] = `
+exports[`false NotificationBadge needs attention 1`] = `
 <Button
   variant="plain"
 >
   <span
-    className="pf-c-notification-badge pf-m-unread"
+    className="pf-c-notification-badge pf-m-attention"
   >
     does not need attention
      Badge
@@ -56,7 +56,7 @@ exports[`true NotificationBadge 1`] = `
 </Button>
 `;
 
-exports[`true NotificationBadge isNeedingAttention 1`] = `
+exports[`true NotificationBadge needs attention 1`] = `
 <Button
   variant="plain"
 >

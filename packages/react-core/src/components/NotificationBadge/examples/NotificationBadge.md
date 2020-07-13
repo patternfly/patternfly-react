@@ -18,11 +18,11 @@ class SimpleNotificationBadge extends React.Component {
     super(props);
     this.state = {
       isFirstRead: false,
-      isSecondRead: false,
-      isThirdRead: false,
-      isThirdNeedingAttention: true,
+      secondVariant: 'unread',
+      thirdVariant: 'attention',
+      fourthVariant: 'attention',
       secondCount: 30,
-      thirdCount: 30
+      fourthCount: 30
     };
     this.onFirstClick = () => {
       this.setState({
@@ -31,30 +31,38 @@ class SimpleNotificationBadge extends React.Component {
     };
     this.onSecondClick = () => {
       this.setState({
-        isSecondRead: true,
-        secondCount: 0
+        secondVariant: 'read'
       });
     };
     this.onThirdClick = () => {
       this.setState({
-        isThirdRead: true,
-        isThirdNeedingAttention: false,
-        thirdCount: 0
+        thirdVariant: 'read'
+      });
+    };
+    this.onFourthClick = () => {
+      this.setState({
+        fourthVariant: 'read'
       });
     };
   }
 
   render() {
-    const { isFirstRead, isSecondRead, isThirdRead, isThirdNeedingAttention, secondCount, thirdCount } = this.state;
+    const { isFirstRead, secondVariant, thirdVariant, fourthVariant, secondCount, thirdCount, fourthCount } = this.state;
     return (
       <>
         <NotificationBadge isRead={isFirstRead} onClick={this.onFirstClick} aria-label="First notifications">
           <BellIcon />
         </NotificationBadge>
-        <NotificationBadge isRead={isSecondRead} onClick={this.onSecondClick} aria-label="Second notifications" count={secondCount}>
+        <br />
+        <NotificationBadge variant={secondVariant} onClick={this.onSecondClick} aria-label="Second notifications" count={secondCount}>
           <BellIcon />
         </NotificationBadge>
-        <NotificationBadge isRead={isThirdRead} isNeedingAttention={isThirdNeedingAttention} onClick={this.onThirdClick} aria-label="Third notifications" count={thirdCount}>
+        <br />
+        <NotificationBadge variant={thirdVariant} onClick={this.onThirdClick} aria-label="Third notifications">
+          <BellIcon />
+        </NotificationBadge>
+        <br />
+        <NotificationBadge variant={fourthVariant} onClick={this.onFourthClick} aria-label="Fourth notifications" count={fourthCount}>
           <BellIcon />
         </NotificationBadge>
       </>
