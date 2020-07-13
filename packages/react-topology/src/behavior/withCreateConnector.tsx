@@ -26,6 +26,8 @@ export interface ConnectorChoice {
 export interface CreateConnectorOptions {
   handleAngle?: number;
   handleLength?: number;
+  dragItem?: DragObjectWithType;
+  dragOperation?: DragOperationWithType;
 }
 
 interface ConnectorComponentProps {
@@ -80,7 +82,9 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     ConnectorComponent,
     handleAngle = DEFAULT_HANDLE_ANGLE,
     handleLength = DEFAULT_HANDLE_LENGTH,
-    contextMenuClass
+    contextMenuClass,
+    dragItem,
+    dragOperation
   } = props;
   const [prompt, setPrompt] = React.useState<PromptData | null>(null);
   const [active, setActive] = React.useState(false);
@@ -94,8 +98,8 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
       CollectProps,
       CreateConnectorWidgetProps
     > = {
-      item: { type: CREATE_CONNECTOR_DROP_TYPE },
-      operation: { type: CREATE_CONNECTOR_OPERATION },
+      item: dragItem || { type: CREATE_CONNECTOR_DROP_TYPE },
+      operation: dragOperation || { type: CREATE_CONNECTOR_OPERATION },
       begin: (monitor: DragSourceMonitor, dragProps: any) => {
         setActive(true);
         return dragProps.element;
@@ -122,7 +126,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
       })
     };
     return dragSourceSpec;
-  }, [setActive]);
+  }, [setActive, dragItem, dragOperation]);
   const [{ dragging, event, hints }, dragRef] = useDndDrag(spec, props);
 
   if (!active && dragging && !event) {
