@@ -4,13 +4,11 @@ section: components
 cssPrefix: null
 propComponents: ['Brand']
 ---
-import { Brand } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg';
 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { Brand } from '@patternfly/react-core';
 import pfLogo from './examples/pfLogo.svg';
 

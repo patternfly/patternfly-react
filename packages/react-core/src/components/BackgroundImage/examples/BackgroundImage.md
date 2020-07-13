@@ -5,8 +5,6 @@ cssPrefix: pf-c-background-image
 propComponents: ['BackgroundImage']
 ---
 
-import { BackgroundImage } from '@patternfly/react-core';
-
 ## Examples
 ### Basic
 ```js isFullscreen

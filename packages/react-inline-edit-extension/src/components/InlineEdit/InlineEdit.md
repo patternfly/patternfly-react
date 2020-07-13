@@ -12,7 +12,6 @@ import {
   TableEditConfirmation,
   TableTextInput
 } from '@patternfly/react-inline-edit-extension';
-import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
 ## Introduction
 Note: Inline Edit lives in its own package at [`@patternfly/react-inline-edit-extension`](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension)!
@@ -22,7 +21,6 @@ This package is currently an extension. Extension components do not undergo the 
 ## Examples
 ### Editable
 ```js
-import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
   editableTableBody,
@@ -337,7 +335,6 @@ class EditableTable extends React.Component {
 
 ### With inline edit columns
 ```js
-import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
   editableTableBody,
@@ -497,7 +494,6 @@ class EditableTableColumn extends React.Component {
 
 ### With collapsible rows
 ```js
-import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
   editableTableBody,

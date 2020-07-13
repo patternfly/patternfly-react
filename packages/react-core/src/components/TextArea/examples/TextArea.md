@@ -5,12 +5,9 @@ cssPrefix: pf-c-form-control
 propComponents: ['TextArea']
 ---
 
-import { TextArea } from '@patternfly/react-core';
-
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 class SimpleTextArea extends React.Component {
@@ -35,7 +32,6 @@ class SimpleTextArea extends React.Component {
 
 ### Invalid
 ```js
-import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 class InvalidTextArea extends React.Component {
@@ -68,7 +64,6 @@ class InvalidTextArea extends React.Component {
 
 ### Validated
 ```js
-import React from 'react';
 import { Form, FormGroup, TextArea } from '@patternfly/react-core';
 
 class InvalidTextArea extends React.Component {
@@ -137,7 +132,6 @@ class InvalidTextArea extends React.Component {
 
 ### Vertically resizable text area
 ```js
-import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 class VerticalResizeTextArea extends React.Component {
@@ -162,7 +156,6 @@ class VerticalResizeTextArea extends React.Component {
 
 ### Horizontally resizable text area
 ```js
-import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 class horizontalResizeTextArea extends React.Component {
@@ -187,7 +180,6 @@ class horizontalResizeTextArea extends React.Component {
 
 ### Uncontrolled
 ```js
-import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 UncontrolledTextArea = () => (

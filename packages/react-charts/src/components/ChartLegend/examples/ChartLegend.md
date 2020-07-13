@@ -33,7 +33,6 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 BasicRightAlignedLegend = (
@@ -63,7 +62,6 @@ BasicRightAlignedLegend = (
 
 ### Bottom aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 BottomAlignedLegend = (
@@ -98,9 +96,8 @@ BottomAlignedLegend = (
 )
 ```
 
-### Responsive bottom
-```js--left-aligned-legend
-import React from 'react';
+### Responsive bottom  left aligned legend
+```js
 import { ChartBullet } from '@patternfly/react-charts';
 
 class BulletChart extends React.Component {
@@ -167,7 +164,6 @@ class BulletChart extends React.Component {
 
 ### Standalone legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 StandaloneLegend = (
@@ -244,7 +240,6 @@ StandaloneLegend = (
 
 ### Interactive legend
 ```js
-import React from 'react';
 import { 
   Chart, 
   ChartArea, 
@@ -438,7 +433,6 @@ class InteractiveLegendChart extends React.Component {
 
 ### Legend tooltips
 ```js
-import React from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -498,7 +492,6 @@ class TooltipPieChart extends React.Component {
 
 ### Legend links
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
@@ -601,7 +594,6 @@ class LegendLinkPieChart extends React.Component {
 
 ### Legend layout
 ```js
-import React from 'react';
 import { ChartLabel, ChartLegend, ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 

@@ -15,7 +15,6 @@ This package is currently an extension. Extension components do not undergo the 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { VerticalTabs, VerticalTabsTab } from '@patternfly/react-catalog-view-extension';
 
 class MockVerticalTabsExample extends React.Component {

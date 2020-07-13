@@ -26,7 +26,6 @@ Learn to build a line chart using a Katacoda tutorial starting with a simple cha
 ## Examples
 ### Basic with right aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 BasicRightAligned = (
@@ -97,7 +96,6 @@ BasicRightAligned = (
 
 ### Green with bottom aligned legend
 ```js
-import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
 class BottomAlignedLegend extends React.Component {
@@ -190,9 +188,8 @@ class BottomAlignedLegend extends React.Component {
 }
 ```
 
-### Multi
-```js--color-(unordered)-with-responsive-container
-import React from 'react';
+### Multi-color (unordered) with responsive container
+```js
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 

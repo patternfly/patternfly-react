@@ -5,15 +5,11 @@ cssPrefix: pf-c-spinner
 propComponents: ['Spinner']
 ---
 
-import { Spinner } from '@patternfly/react-core';
-import { Alert } from '@patternfly/react-core';
-
 ## Spinner
 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
 SpinnerBasic = () => (<Spinner/>);
@@ -21,7 +17,6 @@ SpinnerBasic = () => (<Spinner/>);
 
 ### Size variations
 ```js
-import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
 SpinnerSizeVariations = () => (

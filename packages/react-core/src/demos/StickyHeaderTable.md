@@ -5,7 +5,6 @@ section: demos
 
 ### Basic
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,

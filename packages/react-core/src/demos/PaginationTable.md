@@ -4,27 +4,12 @@ section: demos
 ---
 
 ## Examples
-import {
-  Pagination,
-  PaginationVariant,
-  Title,
-  Toolbar,
-  ToolbarContent,
-  ToolbarItem,
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions,
-  Bullseye 
-} from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
-import { Spinner } from '@patternfly/react-core';
 
 ### Basic
 ```js
-import React from 'react';
 import {
   Checkbox,
   Pagination,
@@ -190,7 +175,6 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
 
 ### Automated pagination table demo
 ```js
-import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 

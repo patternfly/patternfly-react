@@ -17,7 +17,6 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 ### Empty
 ```js
-import React from 'react';
 import {
   Bullseye,
   Button,
@@ -73,7 +72,6 @@ class EmptyStateDemo extends React.Component {
 
 ### Loading
 ```js
-import React from 'react';
 import { Bullseye } from "@patternfly/react-core";
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core';
@@ -115,7 +113,6 @@ class LoadingStateDemo extends React.Component {
 
 ### Error
 ```js
-import React from 'react';
 import {
   Bullseye,
   EmptyState,

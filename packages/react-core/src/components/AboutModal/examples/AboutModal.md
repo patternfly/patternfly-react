@@ -4,14 +4,12 @@ section: components
 cssPrefix: pf-c-about-modal-box
 propComponents: ['AboutModal']
 ---
-import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './brandImg.svg';
 import bgImg from './patternfly-orb.svg';
 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
 
@@ -71,7 +69,6 @@ class SimpleAboutModal extends React.Component {
 
 ### Without product name
 ```js
-import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
 
@@ -130,7 +127,6 @@ class SimpleAboutModal extends React.Component {
 
 ### Complex user positioned content
 ```js
-import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
 
@@ -196,7 +192,6 @@ class ContentRichAboutModal extends React.Component {
 
 ### Custom background image
 ```js
-import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
 import bgImg from './examples/patternfly-orb.svg';

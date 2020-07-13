@@ -4,12 +4,10 @@ section: components
 cssPrefix: pf-c-skip-to-content
 propComponents: ['SkipToContent']
 ---
-import { SkipToContent } from '@patternfly/react-core';
 
 ## Examples
 ### Basic
 ```js isFullscreen
-import React from 'react';
 import { SkipToContent } from '@patternfly/react-core';
 
 class SimpleSkipToContent extends React.Component {

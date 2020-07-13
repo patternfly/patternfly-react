@@ -5,14 +5,12 @@ cssPrefix: pf-c-label
 propComponents: ['Label']
 ---
 
-import { Label } from '@patternfly/react-core';
 import { InfoCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
 
 ### Filled
 ```js
-import React from 'react';
 import { Label } from '@patternfly/react-core';
 import { InfoCircleIcon } from '@patternfly/react-icons';
 
@@ -126,7 +124,6 @@ FilledLabels = () => (
 
 ### Outline
 ```js
-import React from 'react';
 import { Label } from '@patternfly/react-core';
 import { InfoCircleIcon } from '@patternfly/react-icons';
 

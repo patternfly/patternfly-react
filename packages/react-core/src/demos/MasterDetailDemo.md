@@ -5,75 +5,6 @@ section: demos
 
 ## Examples
 
-import React from 'react';
-import {
-  Avatar,
-  Brand,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  ButtonVariant,
-  Dropdown,
-  Card,
-  CardActions,
-  CardBody,
-  CardHeader,
-  DataList,
-  DataListAction,
-  DataListItem,
-  DataListItemCells,
-  DataListItemRow,
-  Toolbar,
-  ToolbarItem,
-  ToolbarContent,
-  ToolbarFilter,
-  ToolbarToggleGroup,
-  ToolbarGroup,
-  Divider,
-  Drawer,
-  DrawerActions,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerContentBody,
-  DrawerHead,
-  DrawerPanelContent,
-  DropdownToggle,
-  DropdownItem,
-  DropdownSeparator,
-  Flex,
-  FlexItem,
-  Gallery,
-  GalleryItem,
-  InputGroup,
-  KebabToggle,
-  Nav,
-  NavItem,
-  NavList,
-  OverflowMenu,
-  OverflowMenuControl,
-  OverflowMenuGroup,
-  OverflowMenuItem,
-  Page,
-  PageHeader,
-  PageSection,
-  PageSectionVariants,
-  PageSidebar,
-  Select,
-  SelectOption,
-  SimpleList,
-  SimpleListItem,
-  SkipToContent,
-  Stack,
-  StackItem,
-  Text,
-  TextContent,
-  TextInput,
-  Title
-} from '@patternfly/react-core';
-
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import {
 BellIcon,
 CodeBranchIcon,
@@ -91,7 +22,6 @@ import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgA
 
 ### Master detail full page
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -151,9 +81,6 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import {
   BellIcon,
   CodeBranchIcon,
@@ -680,7 +607,6 @@ class MasterDetailFullPage extends React.Component {
 
 ### Master detail content padding
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -740,9 +666,6 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import {
   BellIcon,
   CodeBranchIcon,
@@ -1270,7 +1193,6 @@ class MasterDetailContentPadding extends React.Component {
 
 ### Master detail card view
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -1331,9 +1253,6 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, TrashIcon } from '@patternfly/react-icons';
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
@@ -1761,7 +1680,6 @@ class MasterDetailCardView extends React.Component {
 
 ### Master detail simple list in card
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -1814,9 +1732,6 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
 class MasterDetailSimpleListInCard extends React.Component {
@@ -1990,7 +1905,6 @@ class MasterDetailSimpleListInCard extends React.Component {
 
 ### Master detail data list in card
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -2046,8 +1960,6 @@ import {
 } from '@patternfly/react-core';
 
 import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon, FilterIcon, SearchIcon } from '@patternfly/react-icons';
 
 class MasterDetailDataListInCard extends React.Component {
@@ -2302,7 +2214,6 @@ class MasterDetailDataListInCard extends React.Component {
 
 ### Master detail inline modifier
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -2362,9 +2273,6 @@ import {
   Title
 } from '@patternfly/react-core';
 
-import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
-import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
-import { css } from '@patternfly/react-styles';
 import {
   BellIcon,
   CodeBranchIcon,

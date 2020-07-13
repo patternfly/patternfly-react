@@ -5,12 +5,10 @@ cssPrefix: pf-c-breadcrumb
 propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ouia: true
 ---
-import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 SimpleBreadcrumbs = () => (
@@ -27,7 +25,6 @@ SimpleBreadcrumbs = () => (
 
 ### Without home link
 ```js
-import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 WithoutLinkBreadcrumbs = () => (
@@ -46,7 +43,6 @@ WithoutLinkBreadcrumbs = () => (
 
 ### With heading
 ```js
-import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 HeadingBreadcrumbs = () => (

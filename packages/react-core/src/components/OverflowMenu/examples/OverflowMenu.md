@@ -5,14 +5,11 @@ cssPrefix: pf-c-overflow-menu
 propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
 ---
 
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
-import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 ## Examples
 ### Simple (responsive)
 ```js
-import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle } from '@patternfly/react-core';
 
@@ -71,7 +68,6 @@ class SimpleOverflowMenu extends React.Component {
 
 ### Group types
 ```js
-import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
@@ -162,7 +158,6 @@ class OverflowMenuGroupTypes extends React.Component {
 
 ### Multiple groups
 ```js
-import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
@@ -246,7 +241,6 @@ class OverflowMenuAdditionalOptions extends React.Component {
 
 ### Persistent
 ```js
-import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 

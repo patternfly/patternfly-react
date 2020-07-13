@@ -5,12 +5,9 @@ cssPrefix: pf-c-expandable-section
 propComponents: ['ExpandableSection']
 ---
 
-import { ExpandableSection } from '@patternfly/react-core';
-
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 class SimpleExpandableSection extends React.Component {
@@ -39,7 +36,6 @@ class SimpleExpandableSection extends React.Component {
 
 ### Uncontrolled
 ```js
-import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 
@@ -52,7 +48,6 @@ UncontrolledExpandable = () => (
 
 ### Uncontrolled with dynamic toggle text
 ```js
-import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
 

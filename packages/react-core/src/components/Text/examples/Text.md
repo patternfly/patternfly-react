@@ -18,7 +18,6 @@ import {
 ## Examples
 ### Headings
 ```js
-import React from 'react';
 import {
   TextContent,
   Text,
@@ -41,7 +40,6 @@ import {
 
 ### Body
 ```js
-import React from 'react';
 import {
   TextContent,
   Text,
@@ -77,7 +75,6 @@ Text components such as Text, TextList, TextListItem need to be placed within a 
 
 ### Unordered list
 ```js
-import React from 'react';
 import {
   TextContent,
   Text,
@@ -106,7 +103,6 @@ import {
 
 ### Ordered list
 ```js
-import React from 'react';
 import {
   TextContent,
   Text,
@@ -132,7 +128,6 @@ import {
 
 ### Data list
 ```js
-import React from 'react';
 import {
   TextContent,
   Text,

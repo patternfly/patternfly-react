@@ -29,7 +29,6 @@ import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ### Basic
 ```js
-import React from 'react';
 import {
   Button,
   ButtonVariant,

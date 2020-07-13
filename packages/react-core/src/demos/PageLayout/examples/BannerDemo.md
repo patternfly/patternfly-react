@@ -3,7 +3,6 @@ id: Banner
 section: demos
 ---
 
-import React from 'react';
 import {
 Avatar,
 Brand,
@@ -46,7 +45,6 @@ import imgAvatar from './imgAvatar.svg';
 
 ### Basic sticky banner
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,
@@ -275,7 +273,6 @@ class BannerDemo extends React.Component {
 
 ### Top and bottom banner
 ```js isFullscreen
-import React from 'react';
 import {
   Avatar,
   Brand,

@@ -16,7 +16,6 @@ This package is currently an extension. Extension components do not undergo the 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
 import pfLogo2 from './examples/pfLogo2.svg';
 
@@ -32,7 +31,6 @@ Basic = () => (
 
 ### With vendor description
 ```js
-import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
 import pfLogo2 from './examples/pfLogo2.svg';
 

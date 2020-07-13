@@ -6,23 +6,12 @@ propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'N
 ouia: true
 ---
 
-import {
-Nav,
-NavExpandable,
-NavItem,
-NavItemSeparator,
-NavList,
-NavGroup,
-PageHeader,
-PageSection
-} from '@patternfly/react-core';
 import './nav.css';
 
 ## Examples
 
 ### Default
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavDefaultList extends React.Component {
@@ -64,7 +53,6 @@ class NavDefaultList extends React.Component {
 
 ### Grouped
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavGroupedList extends React.Component {
@@ -114,7 +102,6 @@ class NavGroupedList extends React.Component {
 
 ### Expandable
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavExpandableList extends React.Component {
@@ -210,7 +197,6 @@ class NavExpandableList extends React.Component {
 
 ### Expandable (w/subnavigation titles)
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavExpandableTitlesList extends React.Component {
@@ -300,7 +286,6 @@ class NavExpandableTitlesList extends React.Component {
 
 ### Mixed
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
 
 class NavMixedList extends React.Component {
@@ -393,7 +378,6 @@ class NavMixedList extends React.Component {
 
 ### Horizontal (only in PageHeader)
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageHeader } from '@patternfly/react-core';
 
 class NavHorizontalList extends React.Component {
@@ -432,7 +416,6 @@ class NavHorizontalList extends React.Component {
 
 ### Tertiary
 ```js
-import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageSection } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {

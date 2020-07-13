@@ -9,8 +9,6 @@ This package is currently an extension. Extension components do not undergo the 
 <br />
 <br />
 
-import * as React from 'react';
-import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
@@ -20,7 +18,6 @@ import windowScrollerStyles from './WindowScroller.example.css';
 ## Examples
 ### Window scroller
 ```js
-import * as React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';

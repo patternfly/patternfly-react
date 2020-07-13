@@ -14,7 +14,6 @@ This package is currently an extension. Extension components do not undergo the 
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
 class SimpleTableTextInput extends React.Component {

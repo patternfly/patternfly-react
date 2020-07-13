@@ -21,7 +21,6 @@ Learn to build a donut chart using a Katacoda tutorial starting with a simple ch
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 Basic = (
@@ -41,7 +40,6 @@ Basic = (
 
 ### Right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 RightAlignedLegend = (
@@ -69,9 +67,8 @@ RightAlignedLegend = (
 )
 ```
 
-### Multi
-```js--color-(ordered)-with-right-aligned-legend
-import React from 'react';
+### Multi-color (ordered) with right aligned legend
+```js
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 MultiColorRightAlignedLegend = (
@@ -102,7 +99,6 @@ MultiColorRightAlignedLegend = (
 
 ### Bottom aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 BottomAlignedLegend = (
@@ -134,7 +130,6 @@ BottomAlignedLegend = (
 
 ### Small
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 Small = (
@@ -156,7 +151,6 @@ Small = (
 
 ### Small with right aligned legend
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 SmallWithRightLegend = (
@@ -187,7 +181,6 @@ SmallWithRightLegend = (
 
 ### Small with bottom aligned subtitle
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 SmallBottomSubtitle = (
@@ -219,7 +212,6 @@ SmallBottomSubtitle = (
 
 ### Small with right aligned subtitle
 ```js
-import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
 SmallRightSubtitle = (

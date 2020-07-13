@@ -5,12 +5,9 @@ propComponents: ['ContextSelector', 'ContextSelectorItem']
 ouia: true
 ---
 
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
-
 ## Examples
 ### Basic
 ```js
-import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
 class SimpleContextSelector extends React.Component {

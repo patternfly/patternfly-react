@@ -6,7 +6,6 @@ propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem']
 ouia: true
 ---
 
-import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator, Text } from '@patternfly/react-core';
 import { HelpIcon, StarIcon } from '@patternfly/react-icons';
 import { Link } from '@reach/router';
 import pfIcon from './pf-logo-small.svg';
@@ -19,7 +18,6 @@ To add a tooltip, use the `tooltip` prop and optionally add more tooltip props b
 
 ### Basic
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
 class SimpleApplicationLauncher extends React.Component {
@@ -62,7 +60,6 @@ class SimpleApplicationLauncher extends React.Component {
 
 ### Router link
 ```js
-import React from 'react';
 import { Link } from '@reach/router';
 import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent, Text } from '@patternfly/react-core';
 
@@ -129,7 +126,6 @@ class SimpleApplicationLauncher extends React.Component {
 
 ### Disabled
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
 class SimpleApplicationLauncher extends React.Component {
@@ -178,7 +174,6 @@ class SimpleApplicationLauncher extends React.Component {
 
 ### Aligned right
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { DropdownPosition } from '../Dropdown';
 
@@ -230,7 +225,6 @@ class SimpleApplicationLauncher extends React.Component {
 
 ### Aligned top
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { DropdownDirection } from '../Dropdown';
 
@@ -280,7 +274,6 @@ class SimpleApplicationLauncher extends React.Component {
 
 ### With tooltip
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
 class TooltipApplicationLauncher extends React.Component {
@@ -335,7 +328,6 @@ class TooltipApplicationLauncher extends React.Component {
 
 ### With sections and icons
 ```js
-import React from 'react';
 import {
   ApplicationLauncher,
   ApplicationLauncherIcon,
@@ -407,7 +399,6 @@ class ApplicationLauncherSections extends React.Component {
 
 ### With favorites and search
 ```js
-import React from 'react';
 import {
   ApplicationLauncher,
   ApplicationLauncherItem,
@@ -528,7 +519,6 @@ class ApplicationLauncherFavorites extends React.Component {
 
 ### With custom icon
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { HelpIcon } from '@patternfly/react-icons';
 
@@ -578,7 +568,6 @@ class ApplicationLauncheIcon extends React.Component {
 
 ### Basic with menu appended to document body
 ```js
-import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
 class ApplicationLauncherDocumentBody extends React.Component {

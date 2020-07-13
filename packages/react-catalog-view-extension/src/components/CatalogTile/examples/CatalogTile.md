@@ -18,7 +18,6 @@ This package is currently an extension. Extension components do not undergo the 
 ## Examples
 ### Basic featured tile
 ```js
-import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
@@ -49,7 +48,6 @@ Basic = () => (
 
 ### Basic with footer
 ```js
-import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
@@ -84,7 +82,6 @@ SimpleFooter = () => (
 
 ### Link variant
 ```js
-import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
@@ -115,7 +112,6 @@ Link = () => (
 
 ### With multiple icon badges
 ```js
-import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
 import { pfLogo2 } from './examples/pfLogo2.svg'
@@ -148,7 +144,6 @@ MultiIcon = () => (
 
 ### With text badge
 ```js
-import React from 'react';
 import { CatalogTile } from '@patternfly/react-catalog-view-extension';
 import { pfLogo2 } from './examples/pfLogo2.svg'
 

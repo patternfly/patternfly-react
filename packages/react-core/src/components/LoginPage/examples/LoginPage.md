@@ -32,7 +32,6 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclama
 ## Examples
 ### Basic
 ```js isFullscreen
-import React from 'react';
 import brandImg from './brandImgColor.svg';
 import {
   LoginFooterItem,

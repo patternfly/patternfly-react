@@ -5,7 +5,6 @@ cssPrefix: pf-c-tooltip
 propComponents: ['Tooltip']
 ---
 
-import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 import './TooltipExamples.css';
 
@@ -13,7 +12,6 @@ import './TooltipExamples.css';
 
 ### Basic
 ```js
-import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
 BasicTooltip = () => (
@@ -31,7 +29,6 @@ BasicTooltip = () => (
 
 ### On icon
 ```js
-import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
@@ -51,7 +48,6 @@ OnIconTooltip = () => (
 
 ### Options
 ```js
-import React from 'react';
 import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
 
 OptionsTooltip = () => {

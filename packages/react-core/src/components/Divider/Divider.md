@@ -5,11 +5,9 @@ cssPrefix: pf-c-divider
 typescript: true 
 propComponents: ['Divider']
 ---
-import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 ### Using hr (default)
 ```js
-import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
 DividerHr = () => (
@@ -19,7 +17,6 @@ DividerHr = () => (
 
 ### Using li
 ```js
-import React from 'react';
 import { Divider } from '@patternfly/react-core/dist';
 
 DividerLi = () => (
@@ -33,7 +30,6 @@ DividerLi = () => (
 
 ### Using div
 ```js
-import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
 DividerDiv = () => (
@@ -43,7 +39,6 @@ DividerDiv = () => (
 
 ### Inset medium
 ```js
-import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
 DividerInsetMedium = () => (
@@ -53,7 +48,6 @@ DividerInsetMedium = () => (
 
 ### Inset at various breakpoints
 ```js
-import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
 DividerInsetVarious = () => (
@@ -69,7 +63,6 @@ DividerInsetVarious = () => (
 
 ### Vertical in flex layout
 ```js
-import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 DividerVertical = () => (
@@ -83,7 +76,6 @@ DividerVertical = () => (
 
 ### Vertical, inset medium in flex layout
 ```js
-import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 DividerVerticalInsetMd = () => (
@@ -97,7 +89,6 @@ DividerVerticalInsetMd = () => (
 
 ### Vertical, inset at various breakpoints
 ```js
-import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
 DividerVerticalInsetVarious = () => (
