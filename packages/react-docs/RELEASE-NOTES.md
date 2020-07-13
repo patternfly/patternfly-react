@@ -4,7 +4,7 @@ section: overview
 releaseNoteTOC: true
 ---
 
-## 2020.08 release notes (2020-06-24)
+## 2020.09 release notes (2020-07-15)
 - [@patternfly/react-catalog-view-extension@4.4.24](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.4.24)
 - [@patternfly/react-charts@6.5.7](https://www.npmjs.com/package/@patternfly/react-charts/v/6.5.7)
 - [@patternfly/react-core@4.31.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.31.1)
