@@ -29,7 +29,7 @@ export class PopoverDemo extends Component {
           tippyProps={{ duration: 0, delay: 0 }}
           shouldClose={(tip: TippyInstance) => !tip}
         >
-          {this.myPopoverProps.children}
+          <button>Trigger</button>
         </Popover>
       </>
     );
