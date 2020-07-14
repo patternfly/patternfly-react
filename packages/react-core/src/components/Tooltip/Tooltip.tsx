@@ -38,7 +38,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * If you can wrap the reference with the Tooltip, you can use the children prop instead.
    * Usage: <Tooltip reference={() => document.getElementById('reference-element')} />
    */
-  reference?: HTMLElement | (() => HTMLElement);
+  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Tooltip additional class */
   className?: string;
   /** Tooltip content */

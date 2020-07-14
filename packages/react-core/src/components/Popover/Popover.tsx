@@ -43,7 +43,7 @@ export interface PopoverProps {
    * If you can wrap the reference with the Popover, you can use the children prop instead.
    * Usage: <Popover reference={() => document.getElementById('reference-element')} />
    */
-  reference?: HTMLElement | (() => HTMLElement);
+  reference?: HTMLElement | (() => HTMLElement) | React.RefObject<any>;
   /** Popover additional class */
   className?: string;
   /** Aria label for the Close button */
