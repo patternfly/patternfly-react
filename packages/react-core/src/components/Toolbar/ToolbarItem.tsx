@@ -29,6 +29,14 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'chip-group'
     | 'separator';
   /** Visibility at various breakpoints. */
+  visibility?: {
+    default?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+  };
+  /** Deprecated: prop misspelled */
   visiblity?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
@@ -61,6 +69,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   className,
   variant,
+  visibility,
   visiblity,
   alignment,
   spacer,
@@ -72,6 +81,14 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
     return <Divider className={css(styles.modifiers.vertical, className)} {...props} />;
   }
 
+  if (visiblity !== undefined) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'The ToolbarItem visiblity prop has been deprecated. ' +
+        'Please use the correctly spelled visibility prop instead.'
+    );
+  }
+
   return (
     <div
       className={css(
@@ -80,7 +97,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
           styles.modifiers[
             toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
           ],
-        formatBreakpointMods(visiblity, styles),
+        formatBreakpointMods(visibility || visiblity, styles),
         formatBreakpointMods(alignment, styles),
         formatBreakpointMods(spacer, styles),
         className
