@@ -12,6 +12,13 @@ export class TooltipDemo extends Component {
   }
 
   render() {
-    return <Tooltip content={this.myTooltipProps.content}>{this.myTooltipProps.children}</Tooltip>;
+    return (
+      <div>
+        <Tooltip content={this.myTooltipProps.content}>{this.myTooltipProps.children}</Tooltip>
+        <Tooltip content="test deprecated props" tippyProps={{ duration: 0, delay: 0 }} isAppLauncher>
+          <button>Trigger</button>
+        </Tooltip>
+      </div>
+    );
   }
 }

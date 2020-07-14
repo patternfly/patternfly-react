@@ -21,7 +21,7 @@ interface Options {
   raiseOnSelect?: boolean;
 }
 
-export const useSelection = ({ multiSelect, controlled, raiseOnSelect }: Options = {}): [boolean, OnSelect] => {
+export const useSelection = ({ multiSelect, controlled, raiseOnSelect = true }: Options = {}): [boolean, OnSelect] => {
   const element = React.useContext(ElementContext);
   const elementRef = React.useRef(element);
   elementRef.current = element;

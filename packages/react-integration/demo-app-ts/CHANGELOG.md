@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.22.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.22.4...demo-app-ts@4.22.5) (2020-07-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.22.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.22.3...demo-app-ts@4.22.4) (2020-07-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.22.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.22.2...demo-app-ts@4.22.3) (2020-07-13)
+
+
+### Bug Fixes
+
+* **topology:** create connector drag spec configuration ([#4529](https://github.com/patternfly/patternfly-react/issues/4529)) ([fbe4ba8](https://github.com/patternfly/patternfly-react/commit/fbe4ba81861f012eccd7a88a4aed039f4f98b694))
+
+
+
+
+
 ## [4.22.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.22.1...demo-app-ts@4.22.2) (2020-07-10)
 
 **Note:** Version bump only for package demo-app-ts

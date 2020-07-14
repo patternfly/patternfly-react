@@ -16,7 +16,6 @@ import useVisualizationController from '../hooks/useVisualizationController';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 
 interface VisualizationSurfaceProps {
-  visualization?: Controller;
   state?: State;
   children?: React.ReactNode;
 }
