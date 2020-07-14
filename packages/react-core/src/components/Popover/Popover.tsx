@@ -15,7 +15,7 @@ import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
-import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
+import { Instance as TippyInstance, Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum PopoverPosition {
   auto = 'auto',

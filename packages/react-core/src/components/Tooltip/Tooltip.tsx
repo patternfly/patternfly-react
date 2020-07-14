@@ -8,7 +8,7 @@ import { KEY_CODES } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
-import { Props as TippyProps } from 'tippy.js';
+import { Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum TooltipPosition {
   auto = 'auto',

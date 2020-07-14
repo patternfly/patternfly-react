@@ -1,6 +1,5 @@
 import { Popover } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import { Instance as TippyInstance } from 'tippy.js';
 
 export class PopoverDemo extends Component {
   myPopoverProps = {
@@ -24,11 +23,7 @@ export class PopoverDemo extends Component {
         >
           {this.myPopoverProps.children}
         </Popover>
-        <Popover
-          bodyContent="test deprecated props"
-          tippyProps={{ duration: 0, delay: 0 }}
-          shouldClose={(tip: TippyInstance) => !tip}
-        >
+        <Popover bodyContent="test deprecated props" tippyProps={{ duration: 0, delay: 0 }} shouldClose={tip => !tip}>
           <button>Trigger</button>
         </Popover>
       </>
