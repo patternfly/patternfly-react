@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css } from '@patternfly/react-styles';
@@ -7,6 +8,7 @@ import { KEY_CODES } from '../../helpers/constants';
 import tooltipMaxWidth from '@patternfly/react-tokens/dist/js/c_tooltip_MaxWidth';
 import { ReactElement } from 'react';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
+import { Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum TooltipPosition {
   auto = 'auto',
@@ -74,8 +76,12 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   id?: string;
   /** CSS fade transition animation duration */
   animationDuration?: number;
-  /** @deprecated if you want to constrain the popper to a specific element use the appendTo prop instead */
+  /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  /** @deprecated - no longer used */
+  isAppLauncher?: boolean;
+  /** @deprecated - no longer used */
+  tippyProps?: Partial<TippyProps>;
 }
 
 // id for associating trigger with the content aria-describedby or aria-labelledby
@@ -102,13 +108,18 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   children,
   animationDuration = 300,
   boundary,
+  isAppLauncher,
+  tippyProps,
   ...rest
 }) => {
-  if (boundary && process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'The Tooltip boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
-    );
+  if (process.env.NODE_ENV !== 'production') {
+    boundary !== undefined &&
+      console.warn(
+        'The Tooltip boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
+      );
+    isAppLauncher !== undefined &&
+      console.warn('The Tooltip isAppLauncher prop has been deprecated and is no longer used.');
+    tippyProps !== undefined && console.warn('The Tooltip tippyProps prop has been deprecated and is no longer used.');
   }
   // could make this a prop in the future (true | false | 'toggle')
   const hideOnClick = true;

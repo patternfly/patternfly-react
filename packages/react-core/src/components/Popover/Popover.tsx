@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
@@ -14,6 +15,7 @@ import { ReactElement } from 'react';
 import { FocusTrap } from '../../helpers';
 import { Popper, getOpacityTransition } from '../../helpers/Popper/Popper';
 import { getUniqueId } from '../../helpers/util';
+import { Instance as TippyInstance, Props as TippyProps } from '../../helpers/Popper/DeprecatedTippyTypes';
 
 export enum PopoverPosition {
   auto = 'auto',
@@ -70,16 +72,31 @@ export interface PopoverProps {
   minWidth?: string;
   /** Maximum width of the popover (default 18.75rem) */
   maxWidth?: string;
-  /** Lifecycle function invoked when the popover has fully transitioned out. */
-  onHidden?: () => void;
-  /** Lifecycle function invoked when the popover begins to transition out. */
-  onHide?: () => void;
-  /** Lifecycle function invoked when the popover has been mounted to the DOM. */
-  onMount?: () => void;
-  /** Lifecycle function invoked when the popover begins to transition in. */
-  onShow?: () => void;
-  /** Lifecycle function invoked when the popover has fully transitioned in. */
-  onShown?: () => void;
+  /**
+   * Lifecycle function invoked when the popover has fully transitioned out.
+   * Note: The tip argument is no longer passed and has been deprecated.
+   */
+  onHidden?: (tip?: TippyInstance) => void;
+  /**
+   * Lifecycle function invoked when the popover begins to transition out.
+   * Note: The tip argument is no longer passed and has been deprecated.
+   */
+  onHide?: (tip?: TippyInstance) => void;
+  /**
+   * Lifecycle function invoked when the popover has been mounted to the DOM.
+   * Note: The tip argument is no longer passed and has been deprecated.
+   */
+  onMount?: (tip?: TippyInstance) => void;
+  /**
+   * Lifecycle function invoked when the popover begins to transition in.
+   * Note: The tip argument is no longer passed and has been deprecated.
+   */
+  onShow?: (tip?: TippyInstance) => void;
+  /**
+   * Lifecycle function invoked when the popover has fully transitioned in.
+   * Note: The tip argument is no longer passed and has been deprecated.
+   */
+  onShown?: (tip?: TippyInstance) => void;
   /**
    * Popover position. Note: With 'enableFlip' set to true,
    * it will change the position if there is not enough space for the starting position.
@@ -88,22 +105,25 @@ export interface PopoverProps {
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
-   * clicked, Enter key was used on it, or the ESC key is used
+   * clicked, Enter key was used on it, or the ESC key is used.
+   * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (hideFnc?: any) => void;
+  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
    * used on the focused trigger
    */
-  shouldOpen?: (showFnc?: any) => void;
+  shouldOpen?: (showFunction?: () => void) => void;
   /** z-index of the popover */
   zIndex?: number;
   /** CSS fade transition animation duration */
   animationDuration?: number;
   /** id used as part of the various popover elements (popover-${id}-header/body/footer) */
   id?: string;
-  /** @deprecated if you want to constrain the popper to a specific element use the appendTo prop instead */
+  /** @deprecated - no longer used. if you want to constrain the popper to a specific element use the appendTo prop instead */
   boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  /** @deprecated - no longer used */
+  tippyProps?: Partial<TippyProps>;
 }
 
 export interface PopoverState {
@@ -140,13 +160,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   animationDuration = 300,
   id,
   boundary,
+  tippyProps,
   ...rest
 }) => {
-  if (boundary && process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'The Popover boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
-    );
+  if (process.env.NODE_ENV !== 'production') {
+    boundary !== undefined &&
+      console.warn(
+        'The Popover boundary prop has been deprecated. If you want to constrain the popper to a specific element use the appendTo prop instead.'
+      );
+    tippyProps !== undefined && console.warn('The Popover tippyProps prop has been deprecated and is no longer used.');
   }
   // could make this a prop in the future (true | false | 'toggle')
   // const hideOnClick = true;
@@ -210,7 +232,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
       if (triggerManually) {
-        shouldClose(hide);
+        shouldClose(null, hide);
       } else {
         hide();
       }
@@ -220,7 +242,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     // did not click on trigger or popper (otherwise the event bubbling would have been prevented) which means we clicked outside
     if (hideOnOutsideClick && visible) {
       if (triggerManually) {
-        shouldClose(hide);
+        shouldClose(null, hide);
       } else {
         hide();
       }
@@ -236,7 +258,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         }
       } else {
         if (triggerManually) {
-          shouldClose(hide);
+          shouldClose(null, hide);
         } else {
           hide();
         }
@@ -246,7 +268,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const onTriggerClick = () => {
     if (triggerManually) {
       if (visible) {
-        shouldClose(hide);
+        shouldClose(null, hide);
       } else {
         shouldOpen(show);
       }
@@ -269,7 +291,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const closePopover = (event: any) => {
     event.stopPropagation();
     if (triggerManually) {
-      shouldClose(hide);
+      shouldClose(null, hide);
     } else {
       hide();
     }

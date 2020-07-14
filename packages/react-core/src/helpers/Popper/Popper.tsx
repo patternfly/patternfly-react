@@ -192,36 +192,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }),
     [popperMatchesTriggerWidth]
   );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const mapBoundaryOptions: (boundary: string | HTMLElement) => Partial<FlipOptions> = boundary => {
-    if (boundary === 'window') {
-      return {
-        // equivalent to boundary: 'window' in v1, usually NOT necessary in v2
-        altBoundary: false,
-        rootBoundary: 'document'
-      };
-    } else if (boundary === 'scrollParent') {
-      return {
-        // check the reference's/trigger's boundary context instead of popper's
-        altBoundary: true,
-        boundary: 'clippingParents' as Boundary
-      };
-    } else if (boundary === 'viewport') {
-      return {
-        altBoundary: false,
-        rootBoundary: 'viewport'
-      };
-    } else {
-      // HTMLElement
-      return {
-        altBoundary: false,
-        boundary: boundary as HTMLElement
-      };
-    }
-  };
-  // maybe make this an option again to be backwards compatible although it shouldn't be needed anymore
-  // boundary would be of type: 'scrollParent' | 'window' | 'viewport' | HTMLElement
-  // const mapBoundaryOptionsMemo = React.useMemo(mapBoundaryOptions, [boundary]);
   const { styles: popperStyles, attributes } = usePopper(triggerElement, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
@@ -244,7 +214,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
         enabled: getPlacementMemo.startsWith('auto') || enableFlip,
         options: {
           fallbackPlacements: flipBehavior === 'flip' ? [getOppositePlacementMemo] : flipBehavior
-          // ...mapBoundaryOptionsMemo
         }
       },
       sameWidthMod
