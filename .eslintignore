@@ -38,3 +38,7 @@ lerna-debug.log
 
 # Deploy directory
 docs
+
+# Copied types
+DeprecatedPopperTypes.ts
+DeprecatedTippyTypes.ts
