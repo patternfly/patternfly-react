@@ -108,12 +108,12 @@ export interface PopoverProps {
    * clicked, Enter key was used on it, or the ESC key is used.
    * Note: The tip argument is no longer passed and has been deprecated.
    */
-  shouldClose?: (tip?: TippyInstance, hideFnc?: any) => void;
+  shouldClose?: (tip?: TippyInstance, hideFunction?: () => void) => void;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the Enter key is
    * used on the focused trigger
    */
-  shouldOpen?: (showFnc?: any) => void;
+  shouldOpen?: (showFunction?: () => void) => void;
   /** z-index of the popover */
   zIndex?: number;
   /** CSS fade transition animation duration */
