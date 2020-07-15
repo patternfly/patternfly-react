@@ -67,21 +67,23 @@ export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFi
   render() {
     const { children, chips, deleteChipGroup, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
+    const categoryKey = typeof categoryName === 'string' ? categoryName : categoryName.key;
+
     const chipGroup = chips.length ? (
       <ToolbarItem variant="chip-group">
         <ChipGroup
-          key={typeof categoryName === 'string' ? categoryName : categoryName.key}
+          key={categoryKey}
           categoryName={typeof categoryName === 'string' ? categoryName : categoryName.name}
           isClosable={deleteChipGroup !== undefined}
           onClick={() => deleteChipGroup(categoryName)}
         >
           {chips.map(chip =>
             typeof chip === 'string' ? (
-              <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
+              <Chip key={chip} onClick={() => deleteChip(categoryKey, chip)}>
                 {chip}
               </Chip>
             ) : (
-              <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
+              <Chip key={chip.key} onClick={() => deleteChip(categoryKey, chip)}>
                 {chip.node}
               </Chip>
             )
