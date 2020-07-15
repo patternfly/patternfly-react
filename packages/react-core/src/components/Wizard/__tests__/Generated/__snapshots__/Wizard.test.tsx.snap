@@ -3,7 +3,7 @@
 exports[`Wizard should match snapshot (auto-generated) 1`] = `
 <Modal
   actions={Array []}
-  appendTo={<body />}
+  appendTo={[Function]}
   aria-describedby="string"
   aria-label=""
   aria-labelledby="string"
