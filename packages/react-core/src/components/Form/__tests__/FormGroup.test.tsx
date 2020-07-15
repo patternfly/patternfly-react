@@ -137,6 +137,16 @@ describe('FormGroup component', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('should render form group validated warning variant', () => {
+    const view = mount(
+      <FormGroup label="label" fieldId="label-id" validated={ValidatedOptions.warning} helperText="Validated FormGroup">
+        <input id="id" />
+      </FormGroup>
+    );
+    expect(view.find('.pf-c-form__helper-text.pf-m-warning').length).toBe(1);
+    expect(view).toMatchSnapshot();
+  });
+
   test('should render correctly when label is not a string with Children = Array', () => {
     const view = mount(
       <FormGroup fieldId="id" label={returnFunction()}>

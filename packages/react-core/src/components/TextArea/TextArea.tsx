@@ -19,7 +19,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
    * If set to success, textarea will be modified to indicate valid state.
    * If set to error, textarea will be modified to indicate error state.
    */
-  validated?: 'success' | 'error' | 'default';
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** Value of the TextArea. */
   value?: string | number;
   /** A callback for when the TextArea value changes. */
@@ -64,7 +64,8 @@ export class TextArea extends React.Component<TextAreaProps> {
           styles.formControl,
           className,
           resizeOrientation !== TextAreResizeOrientation.both && styles.modifiers[orientation],
-          validated === ValidatedOptions.success && styles.modifiers.success
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning
         )}
         onChange={this.handleChange}
         {...(typeof this.props.defaultValue !== 'string' && { value })}

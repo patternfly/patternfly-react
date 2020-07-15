@@ -39,11 +39,12 @@ describe('Text Input Demo Test', () => {
     cy.get('#text-validated').then(textinput => {
       expect(textinput.attr('aria-invalid')).to.be.equal('false');
     });
-    // Clear text input and verify it is invalid
+    // Clear text input and verify it is warning
     cy.get('#text-validated')
       .clear()
       .then(textarea => {
-        expect(textarea.attr('aria-invalid')).to.be.equal('true');
+        expect(textarea.attr('aria-invalid')).to.be.equal('false');
       });
+    cy.get('#text-validated.pf-m-warning').should('exist');
   });
 });
