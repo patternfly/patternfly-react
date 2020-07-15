@@ -79,7 +79,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     onClose: () => undefined as any,
     variant: 'default',
     hasNoBodyWrapper: false,
-    appendTo: (typeof document !== 'undefined' && document.body) || null,
+    appendTo: () => document.body,
     ouiaSafe: true
   };
 
