@@ -3237,9 +3237,16 @@
     xmldoc "^1.1.2"
     yargs "^15.0.2"
 
+<<<<<<< HEAD
 "@patternfly/patternfly@4.23.3":
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.23.3.tgz#ecc60fe2a1c1315951dc39bf7d52ced9c1c74079"
+=======
+"@patternfly/patternfly@4.23.2":
+  version "4.23.2"
+  resolved "https://registry.npmjs.org/@patternfly/patternfly/-/patternfly-4.23.2.tgz#cd72982f73dd2303102027adeaaecac2b2cd4044"
+  integrity sha512-PlAzuJL/zr6QYUJiB74dbloDkJgqndlLiIdLValubj9uj92qp0NMGJDNERk+8pqhoYStNSAm3qzuuN7pNb7Hsg==
+>>>>>>> WIP description list
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
