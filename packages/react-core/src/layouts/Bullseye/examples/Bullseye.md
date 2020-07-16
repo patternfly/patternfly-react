@@ -3,7 +3,6 @@ id: Bullseye
 cssPrefix: pf-l-bullseye
 section: layouts
 propComponents: ['Bullseye']
-typescript: true 
 ---
 
 import './bullseye.css';
