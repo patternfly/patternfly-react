@@ -37,16 +37,6 @@ import {
 } from '@patternfly/react-table';
 
 import {
-    Checkbox,
-    Button,
-    EmptyState,
-    EmptyStateBody,
-    EmptyStatePrimary,
-    Bullseye,
-    SelectOption
-} from '@patternfly/react-core';
-
-import {
   SearchIcon,
   CodeBranchIcon,
   CodeIcon,
@@ -55,7 +45,7 @@ import {
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-import DemoSortableTable from './demo/DemoSortableTable';
+import DemoSortableTable from './DemoSortableTable';
 
 ## Examples
 
@@ -68,7 +58,6 @@ import {
   TableBody,
   textCenter,
 } from '@patternfly/react-table';
-import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 class SimpleTable extends React.Component {
@@ -121,7 +110,7 @@ class SimpleTable extends React.Component {
 
     return (
       <Table aria-label="Simple Table" cells={columns} rows={rows}>
-        <TableHeader className={css(styles.modifiers.nowrap)}/>
+        <TableHeader className={styles.modifiers.nowrap}/>
         <TableBody />
       </Table>
     );
