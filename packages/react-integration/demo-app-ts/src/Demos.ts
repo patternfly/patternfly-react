@@ -482,6 +482,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.RadioDemo
   },
   {
+    id: 'search-input-demo',
+    name: 'Search Input Demo',
+    componentType: Examples.SearchInputDemo
+  },
+  {
     id: 'select-demo',
     name: 'Select Demo',
     componentType: Examples.SelectDemo

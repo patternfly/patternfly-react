@@ -93,6 +93,7 @@ export * from './PieChartDemo/PieOrangeDemo';
 export * from './PopoverDemo/PopoverDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
+export * from './SearchInputDemo/SearchInputDemo';
 export * from './SelectDemo/SelectDemo';
 export * from './SelectDemo/FilteringSelectDemo';
 export * from './SimpleList/SimpleListDemo';

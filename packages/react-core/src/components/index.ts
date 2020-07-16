@@ -41,6 +41,7 @@ export * from './Pagination';
 export * from './Popover';
 export * from './Progress';
 export * from './Radio';
+export * from './SearchInput';
 export * from './Select';
 export * from './SimpleList';
 export * from './SkipToContent';
