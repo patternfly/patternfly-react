@@ -41,18 +41,14 @@ export class NotificationBadgeDemo extends React.Component<NotificationBadgeProp
           isRead={isFirstRead}
           onClick={this.onFirstClick}
           aria-label="First notifications"
-        >
-          <BellIcon />
-        </NotificationBadge>
+        />
         <NotificationBadge
           id="notification-demo-badge2"
           variant={secondVariant}
           onClick={this.onSecondClick}
           aria-label="Second notifications"
           count={secondCount}
-        >
-          <BellIcon />
-        </NotificationBadge>
+        />
       </>
     );
   }

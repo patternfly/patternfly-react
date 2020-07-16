@@ -5,9 +5,13 @@ exports[`NotificationBadge count 1`] = `
   variant="plain"
 >
   <span
-    className="pf-c-notification-badge pf-m-unread"
+    className="pf-c-notification-badge pf-m-read"
   >
-    Badge
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
     <span
       className="pf-c-notification-badge__count"
     >
@@ -24,8 +28,11 @@ exports[`false NotificationBadge 1`] = `
   <span
     className="pf-c-notification-badge pf-m-unread"
   >
-    unread
-     Badge
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
   </span>
 </Button>
 `;
@@ -39,6 +46,11 @@ exports[`false NotificationBadge needs attention 1`] = `
   >
     does not need attention
      Badge
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
   </span>
 </Button>
 `;
@@ -50,8 +62,11 @@ exports[`true NotificationBadge 1`] = `
   <span
     className="pf-c-notification-badge pf-m-read"
   >
-    read
-     Badge
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
   </span>
 </Button>
 `;
@@ -65,6 +80,11 @@ exports[`true NotificationBadge needs attention 1`] = `
   >
     needs attention
      Badge
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
   </span>
 </Button>
 `;

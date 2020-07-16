@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 Object.values([true, false]).forEach(isRead => {
   test(`${isRead} NotificationBadge`, () => {
-    const view = shallow(<NotificationBadge isRead={isRead}>{isRead ? 'read' : 'unread'} Badge</NotificationBadge>);
+    const view = shallow(<NotificationBadge isRead={isRead} />);
     expect(view).toMatchSnapshot();
   });
 });
@@ -17,6 +17,6 @@ Object.values([true, false]).forEach(attentionVariant => {
 });
 
 test(`NotificationBadge count`, () => {
-  const view = shallow(<NotificationBadge count={3}>Badge</NotificationBadge>);
+  const view = shallow(<NotificationBadge variant='read' count={3} />);
   expect(view).toMatchSnapshot();
 });

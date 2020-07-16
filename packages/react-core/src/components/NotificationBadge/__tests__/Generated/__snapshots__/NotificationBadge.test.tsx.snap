@@ -12,6 +12,11 @@ exports[`NotificationBadge should match snapshot (auto-generated) 1`] = `
     <div>
       ReactNode
     </div>
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
   </span>
 </Button>
 `;
