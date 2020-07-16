@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
-// import getOppositePlacement from './thirdparty/popper-core/utils/getOppositePlacement';
 import { css } from '@patternfly/react-styles';
 
 const hash: {
