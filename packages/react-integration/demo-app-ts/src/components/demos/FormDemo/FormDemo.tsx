@@ -21,7 +21,7 @@ export interface FormState {
   isOpen: boolean;
   selected: string[];
   validatedValue: string;
-  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.warning | ValidatedOptions.success;
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
@@ -40,7 +40,12 @@ export class FormDemo extends Component<FormProps, FormState> {
     this.setState({ value, isValid: /^\d+$/.test(value) });
   };
   handleValidatedTextInputChange = (value: string) => {
-    const validated = /^\d+$/.test(value) ? ValidatedOptions.success : ValidatedOptions.error;
+    let validated = ValidatedOptions.default;
+    if (value.length === 0) {
+      validated = ValidatedOptions.warning;
+    } else {
+      validated = /^\d+$/.test(value) ? ValidatedOptions.success : ValidatedOptions.error;
+    }
     this.setState({ validatedValue: value, validated });
   };
   onToggle = (isOpen: boolean) => {

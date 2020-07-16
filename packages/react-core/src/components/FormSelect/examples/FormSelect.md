@@ -114,6 +114,8 @@ class FormSelectInputInvalid extends React.Component {
         this.simulateNetworkCall(() => {
           if (value === '3') {
             this.setState({ validated: ValidatedOptions.success, helperText: 'You chose wisely' });
+          } else if (value === '') {
+              this.setState({ validated: ValidatedOptions.warning, helperText: 'You must select a value' });
           } else {
             this.setState({ validated: ValidatedOptions.error, invalidText: 'You must chose Three (thought that was obvious)' });
           }

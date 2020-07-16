@@ -17,9 +17,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   isRequired?: boolean;
   /**
    * Sets the FormGroup validated. If you set to success, text color of helper text will be modified to indicate valid state.
-   * If set to error,  text color of helper text will be modified to indicate error state.
+   * If set to error, text color of helper text will be modified to indicate error state.
+   * If set to warning, text color of helper text will be modified to indicate warning state.
    */
-  validated?: 'success' | 'error' | 'default';
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** Sets the FormGroup isInline. */
   isInline?: boolean;
   /** Removes top spacer from label. */
@@ -57,7 +58,11 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       helperText
     ) : (
       <div
-        className={css(styles.formHelperText, validated === ValidatedOptions.success && styles.modifiers.success)}
+        className={css(
+          styles.formHelperText,
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning
+        )}
         id={`${fieldId}-helper`}
         aria-live="polite"
       >
@@ -76,7 +81,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       </div>
     );
 
-  const showValidHelperTxt = (validationType: 'success' | 'error' | 'default') =>
+  const showValidHelperTxt = (validationType: 'success' | 'warning' | 'error' | 'default') =>
     validationType !== ValidatedOptions.error && helperText ? validHelperText : '';
 
   return (

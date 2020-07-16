@@ -92,14 +92,14 @@ class InvalidTextArea extends React.Component {
       },
         this.simulateNetworkCall(() => {
           if (value && value.length > 0) {
-            if (value.length > 10) {
+            if (value.length >= 10) {
               this.setState({validated: 'success', helperText: 'Thanks for your comments!'});
             } else {
               this.setState({validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
             }
           }
           else {
-            this.setState({validated: 'error', invalidText: 'You must have something to say'});
+            this.setState({validated: 'warning', helperText: 'You must have something to say'});
           }
         })
       );

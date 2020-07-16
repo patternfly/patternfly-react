@@ -42,5 +42,13 @@ describe('Form Select Demo Test', () => {
       expect(select.attr('aria-invalid')).to.be.equal('false');
     });
     cy.get('#validated-select.pf-m-success').should('exist');
+    // Select value other than 2 so it is warning
+    cy.get('#validated-select')
+      .select('2')
+      .should('have.value', '2');
+    cy.get('#validated-select').then(select => {
+      expect(select.attr('aria-invalid')).to.be.equal('false');
+    });
+    cy.get('#validated-select.pf-m-warning').should('exist');
   });
 });

@@ -251,7 +251,7 @@ exports[`required FormSelect input 1`] = `
   aria-invalid={false}
   aria-label="required FormSelect"
   className="pf-c-form-control"
-  data-ouia-component-id={9}
+  data-ouia-component-id={10}
   data-ouia-component-type="PF4/FormSelect"
   data-ouia-safe={true}
   disabled={false}
@@ -298,6 +298,29 @@ exports[`validated success FormSelect input 1`] = `
   aria-label="validated FormSelect"
   className="pf-c-form-control pf-m-success"
   data-ouia-component-id={7}
+  data-ouia-component-type="PF4/FormSelect"
+  data-ouia-safe={true}
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  required={false}
+  value=""
+>
+  <FormSelectOption
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`validated warning FormSelect input 1`] = `
+<select
+  aria-invalid={false}
+  aria-label="validated FormSelect"
+  className="pf-c-form-control pf-m-warning"
+  data-ouia-component-id={9}
   data-ouia-component-type="PF4/FormSelect"
   data-ouia-safe={true}
   disabled={false}
