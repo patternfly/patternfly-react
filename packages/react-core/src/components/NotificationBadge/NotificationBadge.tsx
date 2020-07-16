@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationBadge/notification-badge';
-import { BellIcon } from '@patternfly/react-icons';
+import { BellIcon } from '../../../../react-icons/dist/js/icons/bell-icon.js';
 
 export enum NotificationBadgeVariant {
   read = 'read',

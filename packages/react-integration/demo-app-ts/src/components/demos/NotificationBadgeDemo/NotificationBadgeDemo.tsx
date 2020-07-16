@@ -1,6 +1,5 @@
 import React from 'react';
 import { NotificationBadge, NotificationBadgeProps, NotificationBadgeVariant } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 
 interface NotificationBadgeDemoState {
   isFirstRead: boolean;
