@@ -132,12 +132,19 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
-  const handleKeyDown = (event: KeyboardEvent) => {
+  const onDocumentKeyDown = (event: KeyboardEvent) => {
     if (!triggerManually) {
       if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
         hide();
-      } else if (event.keyCode === KEY_CODES.ENTER && !visible) {
+      }
+    }
+  };
+  const onTriggerEnter = (event: KeyboardEvent) => {
+    if (event.keyCode === KEY_CODES.ENTER) {
+      if (!visible) {
         show();
+      } else {
+        hide();
       }
     }
   };
@@ -241,7 +248,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       onFocus={triggerOnFocus && show}
       onBlur={triggerOnFocus && hide}
       onDocumentClick={triggerOnClick && onDocumentClick}
-      onDocumentKeyDown={triggerManually ? null : handleKeyDown}
+      onDocumentKeyDown={triggerManually ? null : onDocumentKeyDown}
+      onTriggerEnter={triggerManually ? null : onTriggerEnter}
       enableFlip={enableFlip}
       zIndex={zIndex}
       flipBehavior={flipBehavior}

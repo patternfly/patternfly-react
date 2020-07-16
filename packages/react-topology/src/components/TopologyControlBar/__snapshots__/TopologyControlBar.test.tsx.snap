@@ -141,6 +141,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div
@@ -265,6 +266,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div
@@ -413,6 +415,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div
@@ -770,6 +773,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div
@@ -918,6 +922,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div
@@ -1066,6 +1071,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div
@@ -1214,6 +1220,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             onFocus={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            onTriggerEnter={[Function]}
                             placement="top"
                             popper={
                               <div

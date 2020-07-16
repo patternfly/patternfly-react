@@ -1,11 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { FindRefWrapper } from './FindRefWrapper';
-import { usePopper } from 'react-popper';
-import { Placement, Modifier, Boundary } from '@popperjs/core';
-import { Options as FlipOptions } from '@popperjs/core/lib/modifiers/flip';
-import getOppositePlacement from '@popperjs/core/lib/utils/getOppositePlacement';
+import { usePopper } from './thirdparty/react-popper/usePopper';
+import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
+
+const hash: {
+  [key: string]: string;
+} = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+
+const getOppositePlacement = (placement: Placement): any =>
+  placement.replace(/left|right|bottom|top/g, (matched: string) => hash[matched] as BasePlacement);
 
 export interface ToggleMenuBaseProps {
   /** The container to append the menu to. Defaults to 'inline'

@@ -42,3 +42,6 @@ docs
 # Copied types
 DeprecatedPopperTypes.ts
 DeprecatedTippyTypes.ts
+
+# Copied thirdparty
+packages/react-core/src/helpers/Popper/thirdparty/**/*
