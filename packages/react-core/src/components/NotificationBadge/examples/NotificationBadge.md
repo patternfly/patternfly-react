@@ -5,6 +5,7 @@ cssPrefix: pf-c-notification-badge
 propComponents: ['NotificationBadge']
 ---
 import { BellIcon } from '@patternfly/react-icons';
+import './notificationBadge.css';
 
 ## Examples
 ### Basic
@@ -35,11 +36,10 @@ class SimpleNotificationBadge extends React.Component {
   render() {
     const { isFirstRead, attentionVariant } = this.state;
     return (
-      <>
+      <div className='pf-t-dark'>
         <NotificationBadge isRead={isFirstRead} onClick={this.onFirstClick} aria-label="First notifications" />
-        <br />
         <NotificationBadge variant={attentionVariant} onClick={this.onSecondClick} aria-label="Second notifications" />
-      </>
+      </div>
     );
   }
 }
@@ -75,11 +75,10 @@ class NotificationBadgeWithCount extends React.Component {
   render() {
     const { firstVariant, firstCount, secondVariant, secondCount } = this.state;
     return (
-      <>
+      <div className='pf-t-dark'>
         <NotificationBadge variant={firstVariant} onClick={this.onFirstClick} aria-label="First notifications" count={firstCount} />
-        <br />
         <NotificationBadge variant={secondVariant} onClick={this.onSecondClick} aria-label="Second notifications" count={secondCount} />
-      </>
+      </div>
     );
   }
 }
