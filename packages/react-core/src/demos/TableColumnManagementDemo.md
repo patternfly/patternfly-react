@@ -41,7 +41,8 @@ import {
   SortAmountDownIcon
 } from '@patternfly/react-icons';
 
-```js title=Column-management-action
+### Column management action
+```js
 import React from 'react';
 import {
   Button,

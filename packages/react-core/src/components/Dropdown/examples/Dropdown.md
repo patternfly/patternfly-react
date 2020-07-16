@@ -13,7 +13,8 @@ import { Link } from '@reach/router';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -84,7 +85,8 @@ class SimpleDropdown extends React.Component {
 }
 ```
 
-```js title=With-initial-selection
+### With initial selection
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -156,7 +158,8 @@ class IntialSelectionDropdown extends React.Component {
 }
 ```
 
-```js title=With-groups
+### With groups
+```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
@@ -222,7 +225,8 @@ class GroupedDropdown extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -288,7 +292,8 @@ class DisabledDropdown extends React.Component {
 }
 ```
 
-```js title=Primary-toggle
+### Primary toggle
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -358,7 +363,8 @@ class PrimaryDropdown extends React.Component {
 }
 ```
 
-```js title=Position-right
+### Position right
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -426,7 +432,8 @@ class PositionRightDropdown extends React.Component {
 }
 ```
 
-```js title=Direction-up
+### Direction up
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -493,7 +500,8 @@ class DirectionUpDropdown extends React.Component {
 }
 ```
 
-```js title=With-kebab
+### With kebab
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -561,7 +569,8 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-```js title=Icon-only
+### Icon only
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -633,7 +642,8 @@ class IconDropdown extends React.Component {
 }
 ```
 
-```js title=Split-button
+### Split button
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -709,7 +719,8 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
-```js title=Split-button-(with-text)
+### Split button (with text)
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -781,7 +792,8 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
-```js title=Split-button-(3rd-state)
+### Split button (3rd state)
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -861,7 +873,8 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
-```js title=Split-button-(disabled)
+### Split button (disabled)
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -937,7 +950,8 @@ class SplitButtonDisabledDropdown extends React.Component {
 }
 ```
 
-```js title=Split-button-action
+### Split button action
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -1050,7 +1064,8 @@ class SplitButtonActionDropdown extends React.Component {
 }
 ```
 
-```js title=Basic-panel
+### Basic panel
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -1096,7 +1111,8 @@ class DropdownPanel extends React.Component {
 }
 ```
 
-```js title=Router-link
+### Router link
+```js
 import React from 'react';
 import {
   Button,
@@ -1160,7 +1176,8 @@ class RouterDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-with-image-and-text
+### Dropdown with image and text
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -1231,7 +1248,8 @@ class ImageTextDropdown extends React.Component {
 }
 ```
 
-```js title=Append-menu-document-body
+### Append menu document body
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -1290,7 +1308,8 @@ class MenuOnDocumentBodyDropdown extends React.Component {
   }
 }
 ```
-```js title=Dropdown-with-descriptions
+### Dropdown with descriptions
+```js
 import React from 'react';
 import {
   Dropdown,

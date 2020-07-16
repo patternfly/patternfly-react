@@ -50,7 +50,8 @@ import imgAvatar from './imgAvatar.svg';
 
 ## Examples
 
-```js title=Default-nav isFullscreen
+### Default nav
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -275,7 +276,8 @@ class PageLayoutDefaultNav extends React.Component {
 }
 ```
 
-```js title=Expandable-nav isFullscreen
+### Expandable nav
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -524,7 +526,8 @@ class PageLayoutExpandableNav extends React.Component {
 }
 ```
 
-```js title=Grouped-nav isFullscreen
+### Grouped nav
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -739,7 +742,8 @@ class PageLayoutGroupsNav extends React.Component {
 }
 ```
 
-```js title=Horizontal-nav isFullscreen
+### Horizontal nav
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -956,7 +960,8 @@ class PageLayoutHorizontalNav extends React.Component {
 }
 ```
 
-```js title=Manual-nav isFullscreen
+### Manual nav
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1203,7 +1208,8 @@ class PageLayoutManualNav extends React.Component {
 }
 ```
 
-```js title=Legacy/Light-Nav isFullscreen
+### Legacy/Light Nav
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,

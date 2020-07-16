@@ -8,7 +8,8 @@ ouia: true
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 

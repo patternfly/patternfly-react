@@ -8,21 +8,24 @@ propComponents: ['ClipboardCopy']
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
 <ClipboardCopy>This is editable</ClipboardCopy>;
 ```
 
-```js title=Read-Only
+### Read Only
+```js
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
 <ClipboardCopy isReadOnly>This is read-only</ClipboardCopy>;
 ```
 
-```js title=Expanded
+### Expanded
+```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -31,7 +34,8 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
   expansion.
 </ClipboardCopy>
 ```
-```js title=Read-only-expanded
+### Read only expanded
+```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -41,7 +45,8 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 </ClipboardCopy>
 ```
 
-```js title=Read-only-expanded-by-default
+### Read only expanded by default
+```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -51,7 +56,8 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 </ClipboardCopy>
 ```
 
-```js title=Expanded-with-array
+### Expanded with array
+```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -67,7 +73,8 @@ ClipboardCopyArrayOfElements = () => {
 }
 ```
 
-```js title=JSON-object-(wrap-code-with-pre)
+### JSON object (wrap code with pre)
+```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 

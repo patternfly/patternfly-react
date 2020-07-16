@@ -16,7 +16,8 @@ This package is currently an extension. Extension components do not undergo the 
 
 ## Examples
 
-```js title=Properties-Side-Panel-with-PropertyItems
+### Properties side panel
+```js
 import React from 'react';
 import { PropertiesSidePanel, PropertyItem } from '@patternfly/react-catalog-view-extension';
 import { OkIcon, ExternalLinkAltIcon, GlobeIcon } from '@patternfly/react-icons';

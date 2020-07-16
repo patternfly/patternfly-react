@@ -31,7 +31,8 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Examples
-```js title=Basic-with-right-aligned-legend
+### Basic with right aligned legend
+```js
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -60,7 +61,8 @@ BasicRightAlignedLegend = (
 )
 ```
 
-```js title=Bottom-aligned-legend
+### Bottom aligned legend
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -96,7 +98,8 @@ BottomAlignedLegend = (
 )
 ```
 
-```js title=Responsive-bottom--left-aligned-legend
+### Responsive bottom
+```js--left-aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -162,7 +165,8 @@ class BulletChart extends React.Component {
 }
 ```
 
-```js title=Standalone-legend
+### Standalone legend
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -238,7 +242,8 @@ StandaloneLegend = (
 )
 ```
 
-```js title=Interactive-legend
+### Interactive legend
+```js
 import React from 'react';
 import { 
   Chart, 
@@ -431,7 +436,8 @@ class InteractiveLegendChart extends React.Component {
 }
 ```
 
-```js title=Legend-tooltips
+### Legend tooltips
+```js
 import React from 'react';
 import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
@@ -490,7 +496,8 @@ class TooltipPieChart extends React.Component {
 }
 ```
 
-```js title=Legend-links
+### Legend links
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
@@ -592,7 +599,8 @@ class LegendLinkPieChart extends React.Component {
 }
 ```
 
-```js title=Legend-layout
+### Legend layout
+```js
 import React from 'react';
 import { ChartLabel, ChartLegend, ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';

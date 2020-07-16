@@ -70,7 +70,8 @@ This is a demo that showcases Patternfly cards.
 
 ## Examples
 
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,

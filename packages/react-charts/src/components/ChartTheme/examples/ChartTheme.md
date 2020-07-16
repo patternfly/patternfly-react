@@ -22,7 +22,8 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Examples
-```js title=Green
+### Green
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -95,7 +96,8 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
 )
 ```
 
-```js title=Multi--color-(ordered)
+### Multi
+```js--color-(ordered)
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -128,7 +130,8 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
 )
 ```
 
-```js title=Multi-color-(unordered)
+### Multi color (unordered)
+```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
@@ -194,7 +197,8 @@ MultiColorUnordered = (
 )
 ```
 
-```js title=Custom-colors
+### Custom colors
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
@@ -293,7 +297,8 @@ CustomColors = (
 )
 ```
 
-```js title=Custom-theme
+### Custom theme
+```js
 import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import {

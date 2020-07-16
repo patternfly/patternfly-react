@@ -23,7 +23,8 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 [Start course](https://katacoda.com/patternfly/courses/react-charts/stack-chart)
 
 ## Examples
-```js title=Basic-with-right-aligned-legend
+### Basic with right aligned legend
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -59,7 +60,8 @@ BasicRightAlignedLegend = (
 )
 ```
 
-```js title=Horizontal-with-bottom-aligned-legend
+### Horizontal with bottom aligned legend
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -95,7 +97,8 @@ Horizontal = (
 )
 ```
 
-```js title=Multi--color-(ordered)-horizontal-with-bottom-aligned-legend
+### Multi
+```js--color-(ordered)-horizontal-with-bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
@@ -165,7 +168,8 @@ MultiColorHorizontal = (
 )
 ```
 
-```js title=Monthly-data-with-responsive-container
+### Monthly data with responsive container
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
@@ -281,7 +285,8 @@ class MonthlyResponsiveStack extends React.Component {
 }
 ```
 
-```js title=Multi--color-(unordered)-responsive-container
+### Multi
+```js--color-(unordered)-responsive-container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 

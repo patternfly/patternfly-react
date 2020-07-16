@@ -7,7 +7,8 @@ propComponents: ['Divider']
 ---
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-```js title=Using-hr-(default)
+### Using hr (default)
+```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
@@ -16,7 +17,8 @@ DividerHr = () => (
 );
 ```
 
-```js title=Using-li
+### Using li
+```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist';
 
@@ -29,7 +31,8 @@ DividerLi = () => (
 );
 ```
 
-```js title=Using-div
+### Using div
+```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
@@ -38,7 +41,8 @@ DividerDiv = () => (
 );
 ```
 
-```js title=Inset-medium
+### Inset medium
+```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
@@ -47,7 +51,8 @@ DividerInsetMedium = () => (
 );
 ```
 
-```js title=Inset-at-various-breakpoints
+### Inset at various breakpoints
+```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core';
 
@@ -62,7 +67,8 @@ DividerInsetVarious = () => (
 );
 ```
 
-```js title=Vertical-in-flex-layout
+### Vertical in flex layout
+```js
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
@@ -75,7 +81,8 @@ DividerVertical = () => (
 );
 ```
 
-```js title=Vertical,-inset-medium-in-flex-layout
+### Vertical, inset medium in flex layout
+```js
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
@@ -88,7 +95,8 @@ DividerVerticalInsetMd = () => (
 );
 ```
 
-```js title=Vertical,-inset-at-various-breakpoints
+### Vertical, inset at various breakpoints
+```js
 import React from 'react';
 import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 

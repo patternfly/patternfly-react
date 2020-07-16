@@ -11,7 +11,8 @@ import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagr
 Most tab variations are available as open (default) or box style tabs. Select the 'isBox' checkbox to preview an example with box styled tabs.
 
 ## Examples
-```js title=Default
+### Default
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -76,7 +77,8 @@ class SimpleTabs extends React.Component {
 }
 ```
 
-```js title=Default-overflow
+### Default overflow
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -157,7 +159,8 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 }
 ```
 
-```js title=Vertical
+### Vertical
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -222,7 +225,8 @@ class VerticalTabs extends React.Component {
 }
 ```
 
-```js title=Inset
+### Inset
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -293,7 +297,8 @@ class InsetTabs extends React.Component {
 }
 ```
 
-```js title=Icons-and-text
+### Icons and text
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
 import { UsersIcon,  BoxIcon, DatabaseIcon, ServerIcon, LaptopIcon, ProjectDiagramIcon } from '@patternfly/react-icons';
@@ -339,7 +344,8 @@ class IconAndTextTabs extends React.Component {
 }
 ```
 
-```js title=Tabs-with-sub-tabs
+### Tabs with sub tabs
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -451,7 +457,8 @@ class SecondaryTabs extends React.Component {
 }
 ```
 
-```js title=Filled
+### Filled
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
 
@@ -507,7 +514,8 @@ class FilledTabs extends React.Component {
 }
 ```
 
-```js title=Filled-with-icons
+### Filled with icons
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
 import { UsersIcon,  BoxIcon, DatabaseIcon } from '@patternfly/react-icons';
@@ -564,7 +572,8 @@ class FilledTabsWithIcons extends React.Component {
 }
 ```
 
-```js title=Using-the-nav-element
+### Using the nav element
+```js
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
@@ -616,7 +625,8 @@ class TabsNav extends React.Component {
 ```
 
 
-```js title=Sub-nav-using-the-nav-element
+### Sub nav using the nav element
+```js
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
 
@@ -700,7 +710,8 @@ class SecondaryTabsNav extends React.Component {
 }
 ```
 
-```js title=Separate-content
+### Separate content
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabContent } from '@patternfly/react-core';
 
@@ -748,7 +759,8 @@ class SeparateTabContent extends React.Component {
 }
 ```
 
-```js title=Children-mounting-on-click
+### Children mounting on click
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
@@ -784,7 +796,8 @@ class MountingSimpleTabs extends React.Component {
 }
 ```
 
-```js title=Unmounting-invisible-children
+### Unmounting invisible children
+```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
@@ -820,7 +833,8 @@ class UnmountingSimpleTabs extends React.Component {
 }
 ```
 
-```js title=Toggled-separate-content
+### Toggled separate content
+```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent, Button, Divider } from '@patternfly/react-core';
 

@@ -9,7 +9,8 @@ import { Level, LevelItem } from '@patternfly/react-core';
 import './level.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
@@ -22,7 +23,8 @@ LevelBasicExample = () => (
 );
 ```
 
-```js title=With-gutters
+### With gutters
+```js
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 

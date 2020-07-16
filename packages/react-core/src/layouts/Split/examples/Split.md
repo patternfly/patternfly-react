@@ -9,7 +9,8 @@ import { Split, SplitItem } from '@patternfly/react-core';
 import './split.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
@@ -22,7 +23,8 @@ SplitBasicExample = () => (
 );
 ```
 
-```js title=With-gutter
+### With gutter
+```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 

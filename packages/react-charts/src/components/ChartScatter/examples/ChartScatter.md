@@ -21,7 +21,8 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Examples
-```js title=Area-chart
+### Area chart
+```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
@@ -136,7 +137,8 @@ class ScatterAreaChart extends React.Component {
 }
 ```
 
-```js title=Line-chart
+### Line chart
+```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 

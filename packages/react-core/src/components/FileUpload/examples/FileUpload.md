@@ -17,7 +17,8 @@ The basic `FileUpload` component can accept a file via browse or drag-and-drop, 
 
 If `type="text"` is passed (and `hideDefaultPreview` is not), a `TextArea` preview will be rendered underneath the filename bar. When a file is selected, its contents will be read into memory and passed to the `onChange` prop as a string (along with its filename). Typing/pasting text in the box will also call `onChange` with a string, and a string value is expected for the `value` prop.
 
-```js title=Simple-text-file
+### Simple text file
+```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
@@ -50,7 +51,8 @@ class SimpleTextFileUpload extends React.Component {
 
 A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop:
 
-```js title=Text-file-with-edits-allowed
+### Text file with edits allowed
+```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
@@ -90,7 +92,8 @@ Any [props accepted by `react-dropzone`'s `Dropzone` component](https://react-dr
 
 Restricting file sizes and types in this way is for user convenience only, and it cannot prevent a malicious user from submitting anything to your server. As with any user input, your application should also validate, sanitize and/or reject restricted files on the server side.
 
-```js title=Text-file-with-restrictions
+### Text file with restrictions
+```js
 import React from 'react';
 import { FileUpload, Form, FormGroup } from '@patternfly/react-core';
 
@@ -143,7 +146,8 @@ class TextFileUploadWithRestrictions extends React.Component {
 
 If no `type` prop is specified, the component will not read files directly. When a file is selected, a [`File` object](https://developer.mozilla.org/en-US/docs/Web/API/File) will be passed to `onChange` and your application will be responsible for reading from it (e.g. by using the [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) or attaching it to a [FormData object](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects)). A `File` object will also be expected for the `value` prop instead of a string, and no preview of the file contents will be shown by default. The `onReadStarted` and `onReadFinished` callbacks will also not be called since the component is not reading the file.
 
-```js title=Simple-file-of-any-format
+### Simple file of any format
+```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 
@@ -165,7 +169,8 @@ class SimpleFileUpload extends React.Component {
 
 Regardless of `type`, the preview area (the TextArea, or any future implementations of default previews for other types) can be removed by passing `hideDefaultPreview`, and a custom one can be rendered by passing `children`.
 
-```js title=Custom-file-preview
+### Custom file preview
+```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
 import FileUploadIcon from '@patternfly/react-icons/dist/js/icons/file-upload-icon';
@@ -204,7 +209,8 @@ class CustomPreviewFileUpload extends React.Component {
 
 Note that the `isLoading` prop is styled to position the spinner dead center above the entire component, so it should not be used with `hideDefaultPreview` unless a custom empty-state preview is provided via `children`. The below example prevents `isLoading` and `hideDefaultPreview` from being used at the same time. You can always provide your own spinner as part of the `children`!
 
-```js title=Custom-file-upload
+### Custom file upload
+```js
 import React from 'react';
 import { FileUploadField, Checkbox } from '@patternfly/react-core';
 

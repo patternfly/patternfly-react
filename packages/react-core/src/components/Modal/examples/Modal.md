@@ -22,7 +22,8 @@ import { WarningTriangleIcon, ThIcon, CaretDownIcon } from '@patternfly/react-ic
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -72,7 +73,8 @@ class SimpleModal extends React.Component {
 }
 ```
 
-```js title=With-description
+### With description
+```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -124,7 +126,8 @@ class SimpleModal extends React.Component {
 }
 ```
 
-```js title=Small
+### Small
+```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
@@ -175,7 +178,8 @@ class SmallModal extends React.Component {
 }
 ```
 
-```js title=Large
+### Large
+```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
@@ -226,7 +230,8 @@ class LargeModal extends React.Component {
 }
 ```
 
-```js title=Width
+### Width
+```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -277,7 +282,8 @@ class WidthModal extends React.Component {
 }
 ```
 
-```js title=Custom-header-and-footer
+### Custom header and footer
+```js
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
@@ -345,7 +351,8 @@ class CustomHeaderFooter extends React.Component {
 }
 ```
 
-```js title=No-header
+### No header
+```js
 import React from 'react';
 import { Modal, ModalVariant, Button } from '@patternfly/react-core';
 
@@ -396,7 +403,8 @@ class NoHeader extends React.Component {
 }
 ```
 
-```js title=With-wizard
+### With wizard
+```js
 import React from 'react';
 import { Modal, Button, Wizard } from '@patternfly/react-core';
 
@@ -454,7 +462,8 @@ class WithWizard extends React.Component {
 }
 ```
 
-```js title=With-dropdown
+### With dropdown
+```js
 import React from 'react';
 import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
 

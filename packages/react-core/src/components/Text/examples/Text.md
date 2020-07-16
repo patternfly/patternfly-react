@@ -16,7 +16,8 @@ import {
 } from '@patternfly/react-core';
 
 ## Examples
-```js title=Headings
+### Headings
+```js
 import React from 'react';
 import {
   TextContent,
@@ -38,7 +39,8 @@ import {
 </TextContent>
 ```
 
-```js title=Body
+### Body
+```js
 import React from 'react';
 import {
   TextContent,
@@ -73,7 +75,8 @@ import {
 
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
-```js title=Unordered-list
+### Unordered list
+```js
 import React from 'react';
 import {
   TextContent,
@@ -101,7 +104,8 @@ import {
 </TextContent>
 ```
 
-```js title=Ordered-list
+### Ordered list
+```js
 import React from 'react';
 import {
   TextContent,
@@ -126,7 +130,8 @@ import {
 </TextContent>
 ```
 
-```js title=Data-list
+### Data list
+```js
 import React from 'react';
 import {
   TextContent,

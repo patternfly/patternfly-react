@@ -37,7 +37,8 @@ import { css } from '@patternfly/react-styles';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Button,
@@ -87,7 +88,8 @@ SimpleDataList = () => (
 );
 ```
 
-```js title=Compact
+### Compact
+```js
 import React from 'react';
 import {
   Button,
@@ -137,7 +139,8 @@ SimpleDataList = () => (
 );
 ```
 
-```js title=Checkboxes,-actions-and-additional-cells
+### Checkboxes, actions and additional cells
+```js
 import React from 'react';
 import {
   Button,
@@ -352,7 +355,8 @@ class CheckboxActionDataList extends React.Component {
 }
 ```
 
-```js title=Actions:-single-and-multiple
+### Actions: single and multiple
+```js
 import React from 'react';
 import {
   Button,
@@ -462,7 +466,8 @@ class ActionsDataList extends React.Component {
 }
 ```
 
-```js title=Expandable
+### Expandable
+```js
 import React from 'react';
 import {
   Button,
@@ -703,7 +708,8 @@ class ExpandableDataList extends React.Component {
 }
 ```
 
-```js title=Width-modifiers
+### Width modifiers
+```js
 import React from 'react';
 import {
   Button,
@@ -906,7 +912,8 @@ class ModifiersDataList extends React.Component {
 }
 ```
 
-```js title=Selectable-rows
+### Selectable rows
+```js
 import React from 'react';
 import {
   Button,

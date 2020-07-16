@@ -7,7 +7,8 @@ propComponents: ['SkipToContent']
 import { SkipToContent } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
 import React from 'react';
 import { SkipToContent } from '@patternfly/react-core';
 

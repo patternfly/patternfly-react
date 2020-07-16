@@ -20,7 +20,8 @@ Learn to build a donut utilization chart using a Katacoda tutorial starting with
 [Start course](https://katacoda.com/patternfly/courses/react-charts/donut-utilization-chart)
 
 ## Donut utilization examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -39,7 +40,8 @@ Basic = (
 )
 ```
 
-```js title=Right-aligned-legend
+### Right aligned legend
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -96,7 +98,8 @@ class DonutUtilizationChart extends React.Component {
 }
 ```
 
-```js title=Inverted-with-right-aligned-legend
+### Inverted with right aligned legend
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -154,7 +157,8 @@ class InvertedDonutUtilizationChart extends React.Component {
 }
 ```
 
-```js title=Right-aligned-vertical-legend
+### Right aligned vertical legend
+```js
 import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -214,7 +218,8 @@ class VerticalLegendUtilizationChart extends React.Component {
 }
 ```
 
-```js title=Bottom-aligned-legend
+### Bottom aligned legend
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -244,7 +249,8 @@ BottomLegend = (
 )
 ```
 
-```js title=Small
+### Small
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -265,7 +271,8 @@ Small = (
 )
 ```
 
-```js title=Small-with-right-aligned-legend
+### Small with right aligned legend
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -323,7 +330,8 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-```js title=Small-with-bottom-aligned-subtitle
+### Small with bottom aligned subtitle
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -357,7 +365,8 @@ SmallBottomSubtitle = (
 )
 ```
 
-```js title=Small-with-right-aligned-subtitle
+### Small with right aligned subtitle
+```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -389,7 +398,8 @@ SmallBottomRightSubtitle = (
 ```
 
 ## Donut utilization threshold examples
-```js title=Static-thresholds
+### Static thresholds
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -413,7 +423,8 @@ StaticThresholds = (
 )
 ```
 
-```js title=Static-thresholds-with-right-aligned-legend
+### Static thresholds with right aligned legend
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -470,7 +481,8 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-```js title=Inverted-static-thresholds-with-right-aligned-legend
+### Inverted static thresholds with right aligned legend
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -533,7 +545,8 @@ class InvertedThresholdChart extends React.Component {
 }
 ```
 
-```js title=Static-thresholds-with-custom-legend
+### Static thresholds with custom legend
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -593,7 +606,8 @@ class CustomLegendThresholdChart extends React.Component {
 }
 ```
 
-```js title=Static-thresholds-with-bottom-aligned-legend
+### Static thresholds with bottom aligned legend
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -627,7 +641,8 @@ StaticThresholds = (
 )
 ```
 
-```js title=Small-with-static-thresholds
+### Small with static thresholds
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -653,7 +668,8 @@ SmallStaticThresholds = (
 )
 ```
 
-```js title=Small-with-static-thresholds-and-right-aligned-legend
+### Small with static thresholds and right aligned legend
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -711,7 +727,8 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-```js title=Small-with-subtitle
+### Small with subtitle
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -750,7 +767,8 @@ SmallStaticSubtitle = (
 )
 ```
 
-```js title=Small-with-right-aligned-subtitle
+### Small with right aligned subtitle
+```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 

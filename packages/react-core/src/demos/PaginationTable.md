@@ -22,7 +22,8 @@ import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/rea
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core';
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import {
   Checkbox,
@@ -187,7 +188,8 @@ To demonstrate this, navigate to the last page of data below using the `>>` navi
   - The default behavior would show the last page of results, which would only contain the last two rows (rows 11 - 12).
   - The `defaultToFullPage` prop navigates you back to the previous page which does contain a full page of 5 rows (rows 6 - 10).
 
-```js title=Automated-pagination-table-demo
+### Automated pagination table demo
+```js
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';

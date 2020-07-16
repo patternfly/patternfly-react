@@ -9,7 +9,8 @@ import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 
 ## Examples
-```js title=Static-alert-group
+### Static alert group
+```js
 import * as React from 'react';
 import { Alert, AlertGroup } from '@patternfly/react-core';
 
@@ -27,7 +28,8 @@ class StaticAlertGroup extends React.Component {
 }
 ```
 
-```js title=Toast-alert-group
+### Toast alert group
+```js
 import * as React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
 class ToastAlertGroup extends React.Component {
@@ -78,7 +80,8 @@ class ToastAlertGroup extends React.Component {
 }
 ```
 
-```js title=Singular-dynamic-alert-group
+### Singular dynamic alert group
+```js
 import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 class SingularAdditiveAlertGroup extends React.Component {
@@ -130,7 +133,8 @@ class SingularAdditiveAlertGroup extends React.Component {
 }
 ```
 
-```js title=Multiple-dynamic-alert-group
+### Multiple dynamic alert group
+```js
 import * as React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
 class MultipleAdditiveAlertGroup extends React.Component {
@@ -185,7 +189,8 @@ class MultipleAdditiveAlertGroup extends React.Component {
 }
 ```
 
-```js title=Async-alert-group
+### Async alert group
+```js
 import * as React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
 class AsyncAdditiveAlertGroup extends React.Component {

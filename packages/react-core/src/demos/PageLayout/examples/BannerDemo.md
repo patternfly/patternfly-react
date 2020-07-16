@@ -44,7 +44,8 @@ import imgAvatar from './imgAvatar.svg';
 
 ## Examples
 
-```js title=Basic-sticky-banner isFullscreen
+### Basic sticky banner
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -272,7 +273,8 @@ class BannerDemo extends React.Component {
 }
 ```
 
-```js title=Top-and-bottom-banner isFullscreen
+### Top and bottom banner
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,

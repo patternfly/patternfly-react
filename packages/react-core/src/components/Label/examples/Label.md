@@ -10,7 +10,8 @@ import { InfoCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
 
-```js title=Filled
+### Filled
+```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
 import { InfoCircleIcon } from '@patternfly/react-icons';
@@ -123,7 +124,8 @@ FilledLabels = () => (
 );
 ```
 
-```js title=Outline
+### Outline
+```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
 import { InfoCircleIcon } from '@patternfly/react-icons';

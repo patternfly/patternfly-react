@@ -30,7 +30,8 @@ import {
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 ## Examples
-```js title=Basic isFullscreen
+### Basic
+```js isFullscreen
 import React from 'react';
 import brandImg from './brandImgColor.svg';
 import {

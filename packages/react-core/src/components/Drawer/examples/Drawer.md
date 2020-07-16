@@ -21,7 +21,8 @@ import { Drawer, DrawerPanelContent, DrawerContent, DrawerContentBody, DrawerPan
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -94,7 +95,8 @@ class SimpleDrawer extends React.Component {
 }
 ```
 
-```js title=Panel-on-right
+### Panel on right
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -166,7 +168,8 @@ class SimpleDrawerPanelRight extends React.Component {
 }
 ```
 
-```js title=Panel-on-left
+### Panel on left
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -238,7 +241,8 @@ class SimpleDrawerPanelLeft extends React.Component {
 }
 ```
 
-```js title=Basic-inline
+### Basic inline
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -310,7 +314,8 @@ class SimpleDrawerInlineContent extends React.Component {
 }
 ```
 
-```js title=-Inline-panel-on-right
+### Inline panel on right
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -382,7 +387,8 @@ class DrawerInlineContentPanelRight extends React.Component {
 }
 ```
 
-```js title=-Inline-panel-on-left
+### Inline panel on left
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -454,7 +460,8 @@ class DrawerInlineContentPanelLeft extends React.Component {
 }
 ```
 
-```js title=Stacked-content-body-elements
+### Stacked content body elements
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -528,7 +535,8 @@ class DrawerStackedContentBodyElements extends React.Component {
 }
 ```
 
-```js title=Stacked-content-body-elements
+### Stacked content body elements
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -602,7 +610,8 @@ class DrawerStackedContentBodyElements extends React.Component {
 }
 ```
 
-```js title=Modified-content-padding
+### Modified content padding
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -676,7 +685,8 @@ class DrawerModifiedContentPadding extends React.Component {
 }
 ```
 
-```js title=Modified-panel-padding
+### Modified panel padding
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -748,7 +758,8 @@ class DrawerModifiedPanelPadding extends React.Component {
 }
 ```
 
-```js title=Additional-section-above-drawer-content
+### Additional section above drawer content
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -822,7 +833,8 @@ class DrawerWithSection extends React.Component {
 }
 ```
 
-```js title=Static-drawer
+### Static drawer
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,
@@ -860,7 +872,8 @@ StaticDrawer = () => {
 };
 ```
 
-```js title=Breakpoint
+### Breakpoint
+```js
 import React, { ReactFragment } from 'react';
 import {
   Drawer,

@@ -8,7 +8,8 @@ ouia: true
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
@@ -24,7 +25,8 @@ SimpleBreadcrumbs = () => (
 );
 ```
 
-```js title=Without-home-link
+### Without home link
+```js
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
@@ -42,7 +44,8 @@ WithoutLinkBreadcrumbs = () => (
 );
 ```
 
-```js title=With-heading
+### With heading
+```js
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 

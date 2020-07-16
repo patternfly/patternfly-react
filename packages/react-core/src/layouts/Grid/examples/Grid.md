@@ -8,7 +8,8 @@ import { Grid, GridItem } from '@patternfly/react-core';
 import './grid.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
@@ -34,7 +35,8 @@ GridBasicExample = () => (
 );
 ```
 
-```js title=With-gutters
+### With gutters
+```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
@@ -60,7 +62,8 @@ GridWithGuttersExample = () => (
 );
 ```
 
-```js title=With-overrides
+### With overrides
+```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 

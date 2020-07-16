@@ -11,14 +11,16 @@ import { Alert } from '@patternfly/react-core';
 ## Spinner
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
 SpinnerBasic = () => (<Spinner/>);
 ```
 
-```js title=Size-variations
+### Size variations
+```js
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 

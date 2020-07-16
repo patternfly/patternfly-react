@@ -8,7 +8,8 @@ ouia: true
 import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 ## Examples
-```js title=Top
+### Top
+```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -48,7 +49,8 @@ class PaginationTop extends React.Component {
 }
 ```
 
-```js title=Bottom
+### Bottom
+```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -86,7 +88,8 @@ class PaginationBottom extends React.Component {
 }
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -127,7 +130,8 @@ class PaginationDisabled extends React.Component {
 }
 ```
 
-```js title=No-items
+### No items
+```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -167,7 +171,8 @@ class PaginationTop extends React.Component {
 }
 ```
 
-```js title=One-page
+### One page
+```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -207,7 +212,8 @@ class PaginationTop extends React.Component {
 }
 ```
 
-```js title=Compact
+### Compact
+```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 

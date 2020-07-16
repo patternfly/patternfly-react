@@ -10,7 +10,8 @@ import { Bullseye } from '@patternfly/react-core';
 import './bullseye.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Bullseye } from '@patternfly/react-core';
 

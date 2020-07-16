@@ -41,7 +41,8 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import * as React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
@@ -167,7 +168,8 @@ class VirtualizedExample extends React.Component {
 }
 ```
 
-```js title=Sortable
+### Sortable
+```js
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
@@ -318,7 +320,8 @@ class SortableExample extends React.Component {
 }
 ```
 
-```js title=Selectable
+### Selectable
+```js
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
@@ -474,7 +477,8 @@ class SelectableExample extends React.Component {
 }
 ```
 
-```js title=Actions
+### Actions
+```js
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
@@ -625,7 +629,8 @@ class ActionsExample extends React.Component {
 }
 ```
 
-```js title=Filterable-with-WindowScroller
+### Filterable with WindowScroller
+```js
 import * as React from 'react';
 import {
   Button,

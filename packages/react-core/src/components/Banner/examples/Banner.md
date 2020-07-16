@@ -10,7 +10,8 @@ import { Banner } from '@patternfly/react-core';
 
 ## Examples
 
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Banner } from '@patternfly/react-core';
 

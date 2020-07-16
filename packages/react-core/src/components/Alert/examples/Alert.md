@@ -11,7 +11,8 @@ import './alert.css';
 
 ## Examples
 
-```js title=Types
+### Types
+```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -30,7 +31,8 @@ class AlertTypes extends React.Component {
 }
 ```
 
-```js title=Variations
+### Variations
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
@@ -76,7 +78,8 @@ class AlertVariations extends React.Component {
 }
 ```
 
-```js title=Inline-types
+### Inline types
+```js
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -95,7 +98,8 @@ class InlineAlert extends React.Component {
 }
 ```
 
-```js title=Inline-variations
+### Inline variations
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 
@@ -148,7 +152,8 @@ class InlineAlertVariations extends React.Component {
 }
 ```
 
-```js title=Static-live-region-alert
+### Static live region alert
+```js
 import React from 'react';
 import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -182,7 +187,8 @@ class StaticLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Dynamic-live-region-alert
+### Dynamic live region alert
+```js
 import React from 'react';
 import { Alert, InputGroup } from '@patternfly/react-core';
 
@@ -258,7 +264,8 @@ class DynamicLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Async-live-region-alert
+### Async live region alert
+```js
 import React from 'react';
 import { Alert, InputGroup } from '@patternfly/react-core';
 
@@ -312,7 +319,8 @@ class AsyncLiveRegionAlert extends React.Component {
 }
 ```
 
-```js title=Alert-timeout
+### Alert timeout
+```js
 import React from 'react';
 import { Alert, Button } from '@patternfly/react-core';
 

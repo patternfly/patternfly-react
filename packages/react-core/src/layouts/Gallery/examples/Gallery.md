@@ -9,7 +9,8 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 import './gallery.css';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
@@ -27,7 +28,8 @@ GalleryBasicExample = () => (
 );
 ```
 
-```js title=With-gutters
+### With gutters
+```js
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 

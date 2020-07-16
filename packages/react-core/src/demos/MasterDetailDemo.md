@@ -89,7 +89,8 @@ TimesCircleIcon
 import imgBrand from '@patternfly/react-core/src/demos/PageLayout/examples/imgBrand.svg';
 import imgAvatar from '@patternfly/react-core/src/demos/PageLayout/examples/imgAvatar.svg';
 
-```js title=Master-detail-full-page isFullscreen
+### Master detail full page
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -677,7 +678,8 @@ class MasterDetailFullPage extends React.Component {
 }
 ```
 
-```js title=Master-detail-content-padding isFullscreen
+### Master detail content padding
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1266,7 +1268,8 @@ class MasterDetailContentPadding extends React.Component {
 }
 ```
 
-```js title=Master-detail-card-view isFullscreen
+### Master detail card view
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1756,7 +1759,8 @@ class MasterDetailCardView extends React.Component {
 }
 ```
 
-```js title=Master-detail-simple-list-in-card isFullscreen
+### Master detail simple list in card
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1984,7 +1988,8 @@ class MasterDetailSimpleListInCard extends React.Component {
 }
 ```
 
-```js title=Master-detail-data-list-in-card isFullscreen
+### Master detail data list in card
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -2295,7 +2300,8 @@ class MasterDetailDataListInCard extends React.Component {
 }
 ```
 
-```js title=Master-detail-inline-modifier isFullscreen
+### Master detail inline modifier
+```js isFullscreen
 import React from 'react';
 import {
   Avatar,

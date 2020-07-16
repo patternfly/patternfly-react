@@ -10,7 +10,8 @@ import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Simple-(responsive)
+### Simple (responsive)
+```js
 import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle } from '@patternfly/react-core';
@@ -68,7 +69,8 @@ class SimpleOverflowMenu extends React.Component {
 }
 ```
 
-```js title=Group-types
+### Group types
+```js
 import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
@@ -158,7 +160,8 @@ class OverflowMenuGroupTypes extends React.Component {
 ```
 
 
-```js title=Multiple-groups
+### Multiple groups
+```js
 import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
@@ -241,7 +244,8 @@ class OverflowMenuAdditionalOptions extends React.Component {
 ```
 
 
-```js title=Persistent
+### Persistent
+```js
 import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';

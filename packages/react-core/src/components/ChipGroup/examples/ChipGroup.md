@@ -9,7 +9,8 @@ ouia: true
 import { Badge, Chip, ChipGroup } from '@patternfly/react-core';
 
 ## Examples
-```js title=Single
+### Single
+```js
 import React from 'react';
 import { Badge, Chip } from '@patternfly/react-core';
 
@@ -84,7 +85,8 @@ class SingleChip extends React.Component {
 }
 ```
 
-```js title=Simple-inline-chip-group
+### Simple inline chip group
+```js
 import React from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 
@@ -121,7 +123,8 @@ class SimpleInlineChipGroup extends React.Component {
 }
 ```
 
-```js title=Chip-groups-with-categories
+### Chip groups with categories
+```js
 import React from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 
@@ -157,7 +160,8 @@ class SimpleCategoryChipGroup extends React.Component {
 }
 ```
 
-```js title=Chip-groups-with-categories-removable
+### Chip groups with categories removable
+```js
 import React from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 

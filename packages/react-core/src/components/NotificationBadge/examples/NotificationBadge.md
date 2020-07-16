@@ -8,7 +8,8 @@ import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Basic
+### Basic
+```js
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';

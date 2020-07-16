@@ -11,7 +11,8 @@ import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon } from '
 
 ## Examples
 
-```js title=Variations
+### Variations
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon, ExternalLinkSquareAltIcon, CopyIcon } from '@patternfly/react-icons';
@@ -40,7 +41,8 @@ ButtonVariants = () => (
 );
 ```
 
-```js title=Disabled
+### Disabled
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
@@ -69,7 +71,8 @@ DisabledBtn = () => (
 );
 ```
 
-```js title=Aria-disabled
+### Aria disabled
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
@@ -98,7 +101,8 @@ AriaDisabledBtn = () => (
 );
 ```
 
-```js title=Aria-disabled-button-with-tooltip
+### Aria disabled button with tooltip
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
@@ -112,7 +116,8 @@ AriaDisabledBtnWithTooltip = () => (
 );
 ```
 
-```js title=Aria-disabled-link-as-button-with-tooltip
+### Aria disabled link as button with tooltip
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon, Tooltip } from '@patternfly/react-icons';
@@ -126,7 +131,8 @@ AriaDisabledLinkBtnWithTooltip = () => (
 );
 ```
 
-```js title=Links-as-button
+### Links as button
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 
@@ -148,7 +154,8 @@ LinkButton = () => (
 );
 ```
 
-```js title=Block-level
+### Block level
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon } from '@patternfly/react-icons';
@@ -156,7 +163,8 @@ import { TimesIcon } from '@patternfly/react-icons';
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
 
-```js title=Types
+### Types
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 
@@ -169,7 +177,8 @@ ButtonTypes = () => (
 );
 ```
 
-```js title=Small
+### Small
+```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 

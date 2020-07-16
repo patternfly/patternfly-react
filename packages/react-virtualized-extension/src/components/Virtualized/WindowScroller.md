@@ -18,7 +18,8 @@ import virtualGridStyles from './VirtualGrid.example.css';
 import windowScrollerStyles from './WindowScroller.example.css';
 
 ## Examples
-```js title=Window-scroller
+### Window scroller
+```js
 import * as React from 'react';
 import { debounce } from '@patternfly/react-core';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
