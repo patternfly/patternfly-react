@@ -11,7 +11,7 @@ interface TextAreaState {
   requiredIsValid: boolean;
   horizontalIsValid: boolean;
   verticalIsValid: boolean;
-  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success | ValidatedOptions.warning;
 }
 
 export class TextAreaDemo extends React.Component<{}, TextAreaState> {
@@ -52,8 +52,13 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     this.setState({ resizeVerticalTextArea: value, verticalIsValid });
   };
   handleChangeValidated = (value: string) => {
-    // If the text area contains less than 5 characters, set validated to error
-    const validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    // If the text area contains less than 5 characters, set validated to error. If empty set to warning.
+    let validated = ValidatedOptions.default;
+    if (value.length === 0) {
+      validated = ValidatedOptions.warning;
+    } else {
+      validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    }
     this.setState({ validatedTextArea: value, validated });
   };
 

@@ -30,7 +30,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
    * If set to success, input will be modified to indicate valid state.
    * If set to error,  input will be modified to indicate error state.
    */
-  validated?: 'success' | 'error' | 'default';
+  validated?: 'success' | 'warning' | 'error' | 'default';
   /** A callback for when the input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Type that the input accepts. */
@@ -60,7 +60,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
     'aria-label': null,
     className: '',
     isRequired: false,
-    validated: 'default' as 'success' | 'error' | 'default',
+    validated: 'default' as 'success' | 'warning' | 'error' | 'default',
     isDisabled: false,
     isReadOnly: false,
     type: TextInputTypes.text,
@@ -101,6 +101,7 @@ export class TextInputBase extends React.Component<TextInputProps> {
         className={css(
           styles.formControl,
           validated === ValidatedOptions.success && styles.modifiers.success,
+          validated === ValidatedOptions.warning && styles.modifiers.warning,
           className
         )}
         onChange={this.handleChange}

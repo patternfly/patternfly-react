@@ -359,7 +359,7 @@ class InvalidForm extends React.Component {
             if (parseInt(value, 10) >= 21) {
               this.setState({ validated: 'success', helperText: 'Enjoy your stay' });
             } else {
-              this.setState({ validated: 'error', invalidText: 'You must be at least 21 to continue' });
+              this.setState({ validated: 'warning', helperText: 'You must be at least 21 to continue' });
             }
           } else {
             this.setState({ validated: 'error', invalidText: 'Age has to be a number' });

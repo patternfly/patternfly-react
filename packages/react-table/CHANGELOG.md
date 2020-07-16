@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.11.6...@patternfly/react-table@4.12.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
+## [4.11.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.11.5...@patternfly/react-table@4.11.6) (2020-07-15)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## [4.11.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.11.4...@patternfly/react-table@4.11.5) (2020-07-14)
 
 **Note:** Version bump only for package @patternfly/react-table

@@ -13,8 +13,13 @@ export class TextInputDemo extends Component {
   };
 
   handleValidatedTextInputChange = (value: string) => {
-    // If the text input contains less than 5 characters, set validated to error
-    const validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    // If the text input contains less than 5 characters, set validated to error. If empty set to warning.
+    let validated = ValidatedOptions.default;
+    if (value.length === 0) {
+      validated = ValidatedOptions.warning;
+    } else {
+      validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    }
     this.setState({ validatedTexInputValue: value, validated });
   };
 

@@ -106,3 +106,39 @@ exports[`validated text input success 1`] = `
   </TextInputBase>
 </ForwardRef>
 `;
+
+exports[`validated text input success 2`] = `
+<ForwardRef
+  aria-label="validated text input"
+  onChange={[MockFunction]}
+  required={true}
+  validated="warning"
+  value="test input"
+>
+  <TextInputBase
+    aria-label="validated text input"
+    className=""
+    innerRef={null}
+    isDisabled={false}
+    isReadOnly={false}
+    isRequired={false}
+    onChange={[MockFunction]}
+    required={true}
+    type="text"
+    validated="warning"
+    value="test input"
+  >
+    <input
+      aria-invalid={false}
+      aria-label="validated text input"
+      className="pf-c-form-control pf-m-warning"
+      disabled={false}
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value="test input"
+    />
+  </TextInputBase>
+</ForwardRef>
+`;
