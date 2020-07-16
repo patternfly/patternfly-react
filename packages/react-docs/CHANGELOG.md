@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.5.18...@patternfly/react-docs@5.6.0) (2020-07-16)
+
+
+### Features
+
+* **FormGroup, FormSelect, TextInput, TextArea:** Add warning state ([#4554](https://github.com/patternfly/patternfly-react/issues/4554)) ([4e7f69a](https://github.com/patternfly/patternfly-react/commit/4e7f69a35abd247db99bd946a2c9bc931c335564))
+
+
+
+
+
 ## [5.5.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.5.17...@patternfly/react-docs@5.5.18) (2020-07-15)
 
 **Note:** Version bump only for package @patternfly/react-docs
