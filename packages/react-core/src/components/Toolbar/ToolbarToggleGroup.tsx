@@ -15,14 +15,6 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** Controls when filters are shown and when the toggle button is hidden. */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
   /** Visibility at various breakpoints. */
-  visibility?: {
-    default?: 'hidden' | 'visible';
-    md?: 'hidden' | 'visible';
-    lg?: 'hidden' | 'visible';
-    xl?: 'hidden' | 'visible';
-    '2xl'?: 'hidden' | 'visible';
-  };
-  /** Deprecated: prop misspelled */
   visiblity?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';
@@ -68,7 +60,6 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
     const {
       toggleIcon,
       variant,
-      visibility,
       visiblity,
       breakpoint,
       alignment,
@@ -82,14 +73,6 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
     if (!breakpoint && !toggleIcon) {
       // eslint-disable-next-line no-console
       console.error('ToolbarToggleGroup will not be visible without a breakpoint or toggleIcon.');
-    }
-
-    if (visiblity !== undefined) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'The ToolbarToggleGroup visiblity prop has been deprecated. ' +
-          'Please use the correctly spelled visibility prop instead.'
-      );
     }
 
     return (
@@ -119,7 +102,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                           | 'showOnXl'
                           | 'showOn_2xl'
                       ],
-                    formatBreakpointMods(visibility || visiblity, styles),
+                    formatBreakpointMods(visiblity, styles),
                     formatBreakpointMods(alignment, styles),
                     formatBreakpointMods(spacer, styles),
                     formatBreakpointMods(spaceItems, styles),
